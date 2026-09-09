@@ -1,5 +1,7 @@
 # Pilzkarte
 
+[![CI](https://github.com/frederikbeimgraben/pilzkarte/actions/workflows/ci.yml/badge.svg)](https://github.com/frederikbeimgraben/pilzkarte/actions/workflows/ci.yml)
+
 Mobile Web-App zur Pilzkarte: Vorhersage sammelbarer Pilzarten in
 Deutschland je Kalenderwoche, Eingabe-Ebenen, ein Faktor-Finder,
 Artenkatalog, eigene Funde, Marker und Zonen mit Konto über SSO.
