@@ -1,0 +1,1 @@
+"""Backend der Pilzkarte-App."""
