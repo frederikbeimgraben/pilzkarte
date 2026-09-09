@@ -1,0 +1,37 @@
+name = "Wiesenchampignon"
+lateinisch = "Agaricus campestris"
+gruppe = "champignon"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur Fruchtkörper mit rosa oder braunen Lamellen. Weiße Lamellen heißen stehen lassen."
+
+[merkmale]
+hut = "4 bis 10 cm, weiß, glatt bis fein schuppig, jung halbkugelig."
+lamellen = "Jung rosa, dann schokoladenbraun, frei stehend, nie weiß bleibend."
+stiel = "Kurz, weiß, mit schmalem, vergänglichem Ring, ohne Scheide."
+fleisch = "Weiß, im Schnitt schwach rosa."
+geruch = "Angenehm nach Champignon."
+geschmack = "Mild."
+sporenpulver = "Purpurbraun."
+vorkommen = "Zersetzer auf gedüngten Wiesen und Weiden, oft in Hexenringen."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
+essbar = "toedlichGiftig"
+
+[[verwechslungen]]
+name = "Karbolchampignon"
+merkmal = "Stielbasis im Schnitt chromgelb, Geruch nach Tinte oder Karbol."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Wiesenchampinon.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Wiesen-Champignon"

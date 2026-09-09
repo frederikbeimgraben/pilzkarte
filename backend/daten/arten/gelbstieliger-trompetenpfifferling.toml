@@ -1,0 +1,32 @@
+name = "Gelbstieliger Trompetenpfifferling"
+lateinisch = "Craterellus lutescens"
+gruppe = "leistling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["herbst"]
+baeume = ["fichte", "kiefer"]
+schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Trompetenpfifferlinge standen früher dort und werden mit ihnen geschützt."
+
+[merkmale]
+hut = "2 bis 6 cm, gelbbraun bis orangebraun, trichterig, Rand wellig."
+leisten = "Unterseite fast glatt bis schwach runzelig, orangegelb."
+stiel = "Hohl, leuchtend orangegelb."
+fleisch = "Dünn, zäh, gelblich."
+geruch = "Kräftig fruchtig, nach Mirabelle."
+geschmack = "Mild."
+sporenpulver = "Weißlich."
+vorkommen = "In feuchtem Moos unter Fichte und Kiefer, gern auf Kalk und in Quellmulden. Selten und örtlich."
+zeit = "September bis November."
+
+[[verwechslungen]]
+name = "Trompetenpfifferling"
+merkmal = "Unterseite mit deutlichen grauen Leisten."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Goldpfiffi.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Starkriechender_Trompetenpfifferling"

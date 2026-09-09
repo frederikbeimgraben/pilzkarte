@@ -1,0 +1,38 @@
+name = "Flockenstieliger Hexenröhrling"
+lateinisch = "Neoboletus erythropus"
+gruppe = "roehrling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "tanne", "buche"]
+karte = "hexen_flock"
+speisewertHinweis = "Roh giftig. Mindestens 15 Minuten durchgaren."
+
+[merkmale]
+hut = "6 bis 20 cm, dunkel- bis olivbraun, samtig matt, Rand jung eingerollt."
+roehren = "Röhren gelb, die Mündungen orange bis blutrot. Auf Druck sofort tiefblau."
+stiel = "Gelb, dicht mit feinen roten Flöckchen besetzt, ohne Netz."
+fleisch = "Gelb, im Schnitt augenblicklich dunkelblau."
+geruch = "Angenehm pilzig."
+geschmack = "Mild. Roh nicht kosten."
+sporenpulver = "Olivbraun."
+vorkommen = "Mykorrhiza mit Fichte, Tanne und Buche, auf sauren Böden, in Nadel- und Mischwäldern."
+zeit = "Juni bis Oktober, oft schon vor dem Steinpilz."
+
+[[verwechslungen]]
+name = "Netzstieliger Hexenröhrling"
+merkmal = "Stiel mit rotem Netz statt Flöckchen, auf Kalk."
+essbar = "bedingtEssbar"
+
+[[verwechslungen]]
+name = "Satansröhrling"
+merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Flocki.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Flockenstieliger_Hexen-Röhrling"

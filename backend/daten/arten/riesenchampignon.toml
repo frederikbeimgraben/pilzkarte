@@ -1,0 +1,31 @@
+name = "Riesenchampignon"
+lateinisch = "Agaricus augustus"
+gruppe = "champignon"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[merkmale]
+hut = "10 bis 25 cm, ockerbraun, dicht mit feinen braunen Schuppen bedeckt."
+lamellen = "Jung blassgrau, dann rosa, zuletzt dunkelbraun, frei."
+stiel = "Kräftig, weiß, unter dem großen Ring schuppig, gilbt bei Berührung."
+fleisch = "Weiß, gilbt langsam."
+geruch = "Kräftig nach Bittermandel oder Anis."
+geschmack = "Mild, nussig."
+sporenpulver = "Purpurbraun."
+vorkommen = "Zersetzer in Parks, Gärten, an Waldwegen und unter Hecken, gern auf nährstoffreichem Boden."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Karbolchampignon"
+merkmal = "Kleiner, Stielbasis chromgelb, Geruch nach Karbol."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Riesenchampignon.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Riesen-Champignon"

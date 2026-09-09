@@ -1,0 +1,37 @@
+name = "Butterpilz"
+lateinisch = "Suillus luteus"
+gruppe = "schmierroehrling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Die schleimige Huthaut abziehen. Sie führt bei manchen zu Durchfall."
+
+[merkmale]
+hut = "5 bis 12 cm, kastanienbraun, stark schleimig, Haut leicht abziehbar."
+roehren = "Blassgelb, fein, jung von einem weißen Schleier bedeckt."
+stiel = "Kurz, gelblich, mit häutigem violettbraunem Ring, darüber gekörnelt."
+fleisch = "Blassgelb, weich, ohne Farbwechsel."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Ockerbraun."
+vorkommen = "Mykorrhiza mit zweinadeligen Kiefern, in Forsten, auf Sandböden und an Wegrändern, oft in Reihen."
+zeit = "Juni bis November."
+
+[[verwechslungen]]
+name = "Kuhröhrling"
+merkmal = "Ohne Ring, Röhren weit und eckig, bei Kiefer."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Körnchenröhrling"
+merkmal = "Ohne Ring, Stiel dicht gekörnelt, Röhren tropfen jung milchig."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Butterroehring.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Butterpilz"

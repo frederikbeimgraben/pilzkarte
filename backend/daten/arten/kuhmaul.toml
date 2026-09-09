@@ -1,0 +1,32 @@
+name = "Kuhmaul"
+lateinisch = "Gomphidius glutinosus"
+gruppe = "gelbfuss"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Die schleimige Huthaut abziehen. Der Pilz färbt das Gericht schwarz."
+
+[merkmale]
+hut = "4 bis 12 cm, graubraun bis violettbraun, stark schleimig, im Alter schwarz fleckend."
+lamellen = "Weißlich, dick, entfernt, weit herablaufend, im Alter schwarzgrau."
+stiel = "Weiß, an der Basis leuchtend chromgelb, mit schleimiger Ringzone."
+fleisch = "Weiß, in der Stielbasis gelb."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Schwarz."
+vorkommen = "Bei Fichte, oft in Gesellschaft von Schmierröhrlingen, auf sauren Böden."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Kupferroter Gelbfuß"
+merkmal = "Hut kupferrot, bei Kiefer."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Kuhmaul.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Großer_Schmierling"

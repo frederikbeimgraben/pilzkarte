@@ -1,0 +1,42 @@
+name = "Parasol"
+lateinisch = "Macrolepiota procera"
+gruppe = "schirmling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+karte = "parasol"
+
+[merkmale]
+hut = "10 bis 30 cm, jung wie ein Paukenschlegel geschlossen, dann flach mit Buckel. Grober brauner Schuppenbelag auf hellem Grund."
+lamellen = "Weiß, frei, dicht, weich."
+stiel = "15 bis 40 cm, dünn, hohl, mit brauner Natterung wie Schlangenhaut, Basis knollig, Ring dick und verschiebbar."
+fleisch = "Weiß, bleibt beim Anschnitt weiß."
+geruch = "Angenehm nussig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer auf Wiesen, Weiden, an Waldrändern und in lichten Wäldern. Kein Wirtsbaum."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Safranschirmling"
+merkmal = "Stiel glatt ohne Natterung, Fleisch rötet im Schnitt."
+essbar = "bedingtEssbar"
+
+[[verwechslungen]]
+name = "Gift-Riesenschirmling"
+merkmal = "Stiel glatt, Fleisch rötet stark, Stielbasis gerandet knollig, meist in Gärten und Komposten."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Kleine Schirmlinge"
+merkmal = "Hut unter 10 cm, Stiel nicht genattert. Mehrere Arten sind tödlich giftig."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Parasol.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeiner_Riesenschirmling"

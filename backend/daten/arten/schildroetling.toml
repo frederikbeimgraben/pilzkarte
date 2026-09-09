@@ -1,0 +1,37 @@
+name = "Schildrötling"
+lateinisch = "Entoloma clypeatum"
+gruppe = "roetling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["fruehling"]
+baeume = ["obstbaum"]
+speisewertHinweis = "Nur für Kenner der Gattung. Die meisten Rötlinge sind giftig."
+
+[merkmale]
+hut = "4 bis 10 cm, graubraun, seidig faserig, mit stumpfem Buckel, bei Trockenheit hell ausblassend."
+lamellen = "Weißlich, dann fleischrosa, ausgebuchtet."
+stiel = "Weißlich, faserig, brüchig."
+fleisch = "Weiß, dünn."
+geruch = "Deutlich mehlig."
+geschmack = "Mehlig, mild."
+sporenpulver = "Rosa."
+vorkommen = "Bei Rosengewächsen: Schlehe, Weißdorn, Apfel und Birne, in Hecken und Streuobstwiesen."
+zeit = "April bis Juni."
+
+[[verwechslungen]]
+name = "Riesenrötling"
+merkmal = "Viel größer, im Sommer und Herbst im Laubwald. Stark giftig."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Maipilz"
+merkmal = "Lamellen bleiben weiß, Sporenpulver weiß."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schildroetling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schild-Rötling"

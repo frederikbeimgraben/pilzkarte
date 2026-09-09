@@ -1,0 +1,37 @@
+name = "Honiggelber Hallimasch"
+lateinisch = "Armillaria mellea"
+gruppe = "hallimasch"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["eiche", "buche", "obstbaum"]
+speisewertHinweis = "Roh giftig. Nur die Hüte, mindestens 20 Minuten kochen, das Kochwasser weggießen. Auch dann verträgt ihn nicht jeder."
+
+[merkmale]
+hut = "4 bis 12 cm, honiggelb bis olivgelb, in der Mitte mit feinen dunklen Schüppchen."
+lamellen = "Weißlich, im Alter rostfleckig, am Stiel etwas herablaufend."
+stiel = "Schlank, gelblich, mit dickem, gelb gesäumtem Ring, büschelig verwachsen."
+fleisch = "Weiß, faserig."
+geruch = "Kräftig pilzig, etwas säuerlich."
+geschmack = "Roh bitter und scharf."
+sporenpulver = "Weiß."
+vorkommen = "Parasit und Zersetzer an Laubholz, gern an Eiche, Buche und Obstbäumen, in großen Büscheln am Stammfuß."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Stockschwämmchen"
+merkmal = "Kleiner, Hut zweifarbig gezont, Sporenpulver rostbraun."
+essbar = "speisepilz"
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Stiel unterhalb des Rings silbrig faserig, Geruch mehlig, an Nadelholz."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/HoniggelberHallimasch.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Honiggelber_Hallimasch"

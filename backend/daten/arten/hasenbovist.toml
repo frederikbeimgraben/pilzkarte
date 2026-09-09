@@ -1,0 +1,30 @@
+name = "Hasenbovist"
+lateinisch = "Lycoperdon utriforme"
+gruppe = "staeubling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur jung mit weißem Inneren."
+
+[merkmale]
+fruchtkoerper = "6 bis 15 cm, kreiselförmig mit breitem Fuß, weiß bis graubraun, feldrig-schollig aufreißend."
+fleisch = "Jung weiß und fest, später olivbraun. Der Kopf zerfällt im Alter und lässt eine schüsselartige Basis stehen."
+geruch = "Jung angenehm."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Zersetzer auf Magerrasen, Weiden und Dünen, auf sandigen Böden."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Kartoffelbovist"
+merkmal = "Haut derb, innen früh schwarzviolett."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Hasenstaubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Hasen-Stäubling"

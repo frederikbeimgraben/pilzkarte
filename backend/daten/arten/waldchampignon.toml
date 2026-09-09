@@ -1,0 +1,36 @@
+name = "Waldchampignon"
+lateinisch = "Agaricus sylvaticus"
+gruppe = "champignon"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+
+[merkmale]
+hut = "5 bis 12 cm, mit braunen, faserigen Schuppen auf hellem Grund."
+lamellen = "Jung blassrosa, dann dunkelbraun, frei."
+stiel = "Schlank, weiß, mit hängendem Ring, Basis leicht knollig."
+fleisch = "Weiß, im Schnitt deutlich blutrot anlaufend."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Purpurbraun."
+vorkommen = "Zersetzer in Nadelwäldern, gern bei Fichte und an Ameisenhaufen."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Karbolchampignon"
+merkmal = "Stielbasis chromgelb, Geruch nach Karbol."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Perlhuhnchampignon"
+merkmal = "Fleisch rötet ebenfalls, Hut mit dunkleren Punkten. Ebenso essbar."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Waldegerling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Champignons"

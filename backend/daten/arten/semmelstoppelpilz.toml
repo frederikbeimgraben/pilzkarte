@@ -1,0 +1,32 @@
+name = "Semmelstoppelpilz"
+lateinisch = "Hydnum repandum"
+gruppe = "stoppelpilz"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "fichte", "eiche"]
+speisewertHinweis = "Ältere Stücke werden bitter. Stacheln vor dem Garen abstreifen."
+
+[merkmale]
+hut = "4 bis 15 cm, semmelgelb bis blass cremefarben, matt, unregelmäßig gebuchtet."
+stacheln = "Unterseite mit weichen, weißlichen Stacheln, die leicht abstreifbar sind und am Stiel herablaufen."
+stiel = "Kurz, dick, weißlich, oft seitlich angesetzt."
+fleisch = "Weiß, brüchig, im Alter etwas gilbend."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, im Alter leicht bitter."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Buche, Eiche und Fichte, in der Streu, oft in Reihen und Ringen."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Rotgelber Stoppelpilz"
+merkmal = "Kleiner, Hut kräftiger orangerot, Stacheln laufen kaum herab."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Semmel-Stoppelpilz"

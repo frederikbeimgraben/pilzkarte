@@ -1,0 +1,38 @@
+name = "Edelreizker"
+lateinisch = "Lactarius deliciosus"
+gruppe = "milchling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["kiefer"]
+karte = "reizker"
+
+[merkmale]
+hut = "4 bis 15 cm, orange mit dunkleren konzentrischen Zonen, in der Mitte vertieft, Rand jung eingerollt."
+lamellen = "Orange, dicht, am Stiel etwas herablaufend, auf Druck grünfleckig."
+milch = "Beim Anschnitt karottenrot, bleibt orange und läuft nicht weinrot an."
+stiel = "Kurz, hohl, orange, oft mit dunkleren Gruben."
+fleisch = "Blass orange, fest, im Schnitt grünend."
+geruch = "Fruchtig, angenehm."
+geschmack = "Mild bis leicht bitterlich."
+sporenpulver = "Blass ocker."
+vorkommen = "Mykorrhiza mit Kiefer, gern auf Kalk, an Wegrändern und in jungen Beständen."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Fichtenreizker"
+merkmal = "Milch wird nach Minuten weinrot, bei Fichte."
+essbar = "speisepilz"
+
+[[verwechslungen]]
+name = "Birkenreizker"
+merkmal = "Milch weiß, Hutrand zottig behaart, bei Birke."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Edelreizker.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Edel-Reizker"

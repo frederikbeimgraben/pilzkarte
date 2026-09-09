@@ -1,0 +1,32 @@
+name = "Habichtspilz"
+lateinisch = "Sarcodon imbricatus"
+gruppe = "stachelpilz"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Nur jung. Ältere Stücke sind bitter. Wird als Würzpilz getrocknet."
+
+[merkmale]
+hut = "8 bis 20 cm, graubraun, mit groben, dachziegelartig abstehenden dunklen Schuppen, in der Mitte vertieft."
+stacheln = "Unterseite mit grauen, herablaufenden Stacheln, die im Alter dunkeln."
+stiel = "Kurz, dick, graubraun."
+fleisch = "Weißlich bis grau, fest, im Alter zäh."
+geruch = "Würzig, im Alter unangenehm."
+geschmack = "Mild, im Alter bitter."
+sporenpulver = "Braun."
+vorkommen = "Mykorrhiza mit Fichte, in Bergwäldern und auf Sandböden, in Trupps."
+zeit = "August bis Oktober."
+
+[[verwechslungen]]
+name = "Kiefernhabichtspilz"
+merkmal = "Schuppen feiner, bei Kiefer."
+essbar = "bedingtEssbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Habichtspilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Habichtspilz"

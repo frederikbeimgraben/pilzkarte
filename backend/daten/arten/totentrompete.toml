@@ -1,0 +1,32 @@
+name = "Totentrompete"
+lateinisch = "Craterellus cornucopioides"
+gruppe = "leistling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["herbst"]
+baeume = ["buche", "eiche", "hainbuche"]
+schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Totentrompete stand früher dort und wird mit ihnen geschützt."
+
+[merkmale]
+hut = "3 bis 8 cm, tief trichterig bis röhrig, dunkel graubraun bis schwarz, Rand wellig umgebogen."
+leisten = "Außenseite glatt bis schwach runzelig, aschgrau bereift. Echte Leisten fehlen."
+stiel = "Setzt sich ohne Absatz in den Trichter fort, hohl."
+fleisch = "Dünn, zäh, grauschwarz."
+geruch = "Angenehm, im getrockneten Zustand kräftig würzig."
+geschmack = "Mild."
+sporenpulver = "Weißlich."
+vorkommen = "Mykorrhiza mit Buche, Eiche und Hainbuche, auf Kalk, in der Laubstreu. Steht dicht in Herden und ist am Boden schwer zu sehen."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Krause Kraterelle"
+merkmal = "Unterseite deutlich geadert, heller grau. Ebenso essbar."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Totentrompete.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Totentrompete"

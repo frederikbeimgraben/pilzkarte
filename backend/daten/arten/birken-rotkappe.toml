@@ -1,0 +1,36 @@
+name = "Birken-Rotkappe"
+lateinisch = "Leccinum versipelle"
+gruppe = "raufussroehrling"
+speisewert = "essbar"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+
+[merkmale]
+hut = "6 bis 20 cm, orange bis ziegelrot, Huthaut steht am Rand etwas über."
+roehren = "Grauweiß, Mündungen fein, auf Druck bräunend."
+stiel = "Weiß mit schwarzen Schüppchen, Basis oft blaugrün fleckend."
+fleisch = "Weiß, im Schnitt erst rosa, dann grau bis schwarz."
+geruch = "Unauffällig pilzig."
+geschmack = "Mild."
+sporenpulver = "Ockerbraun."
+vorkommen = "Mykorrhiza mit Birke, auf sauren Böden, in Mooren und feuchten Wäldern."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Espen-Rotkappe"
+merkmal = "Schüppchen am Stiel jung rötlich statt schwarz, bei Espe und Pappel."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Birkenrotkappe2004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Birken-Rotkappe"

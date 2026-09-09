@@ -1,0 +1,38 @@
+name = "Fichtenreizker"
+lateinisch = "Lactarius deterrimus"
+gruppe = "milchling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["fichte"]
+karte = "reizker"
+
+[merkmale]
+hut = "4 bis 12 cm, orange, nur schwach gezont, bald grünfleckig, Mitte vertieft."
+lamellen = "Orange, dicht, herablaufend, auf Druck rasch grün."
+milch = "Erst karottenrot, nach wenigen Minuten weinrot bis braunrot."
+stiel = "Kurz, hohl, orange, ohne deutliche Gruben."
+fleisch = "Orange, im Schnitt schnell grünend."
+geruch = "Fruchtig."
+geschmack = "Mild, leicht bitter."
+sporenpulver = "Blass ocker."
+vorkommen = "Mykorrhiza mit Fichte, in jungen Beständen und an Wegrändern, sehr häufig."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Edelreizker"
+merkmal = "Milch bleibt orange, bei Kiefer. Etwas besser im Geschmack."
+essbar = "speisepilz"
+
+[[verwechslungen]]
+name = "Birkenreizker"
+merkmal = "Milch weiß, Hutrand behaart, bei Birke."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Fichtenreizker.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Fichten-Reizker"

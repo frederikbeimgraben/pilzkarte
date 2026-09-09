@@ -1,0 +1,32 @@
+name = "Gelbschuppiger Hallimasch"
+lateinisch = "Armillaria gallica"
+gruppe = "hallimasch"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Roh giftig und geringwertig. Nur Hüte, lange kochen."
+
+[merkmale]
+hut = "3 bis 10 cm, ocker- bis fleischbraun, mit feinen gelblichen Schüppchen in der Mitte."
+lamellen = "Weißlich, später bräunlich fleckend, kurz herablaufend."
+stiel = "Zur Basis deutlich keulig verdickt, mit vergänglichem, gelbflockigem Ring."
+fleisch = "Weiß, faserig."
+geruch = "Pilzig."
+geschmack = "Roh scharf."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer an vergrabenem Laubholz, meist einzeln oder in kleinen Gruppen aus dem Boden, nicht in großen Büscheln."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Sporenpulver rostbraun, Stiel silbrig faserig."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FleischfarbeneHallimarsch.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Hallimasche"

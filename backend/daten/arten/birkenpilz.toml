@@ -1,0 +1,38 @@
+name = "Birkenpilz"
+lateinisch = "Leccinum scabrum"
+gruppe = "raufussroehrling"
+speisewert = "essbar"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+karte = "birkenpilz"
+speisewertHinweis = "Fleisch wird beim Garen weich und dunkel. Jung sammeln."
+
+[merkmale]
+hut = "5 bis 15 cm, grau- bis dunkelbraun, glatt, bei Nässe schmierig."
+roehren = "Weiß, im Alter grau, auf Druck kaum verfärbend."
+stiel = "Lang, schlank, weißlich, dicht mit dunklen bis schwarzen Schüppchen besetzt."
+fleisch = "Weiß, weich, im Schnitt höchstens schwach grau anlaufend."
+geruch = "Unauffällig pilzig."
+geschmack = "Mild."
+sporenpulver = "Ockerbraun."
+vorkommen = "Streng an Birke gebunden. In Wäldern, Mooren, Parks und an Straßenrändern, wo Birken stehen."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Rotkappen"
+merkmal = "Hut orange oder rot, Fleisch läuft im Schnitt dunkel an. Ebenfalls essbar."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Birkenpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeiner_Birkenpilz"

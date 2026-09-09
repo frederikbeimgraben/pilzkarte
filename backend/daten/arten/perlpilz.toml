@@ -1,0 +1,37 @@
+name = "Perlpilz"
+lateinisch = "Amanita rubescens"
+gruppe = "wulstling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "fichte", "eiche"]
+speisewertHinweis = "Roh giftig. Gut durchgaren. Nur für Sammler, die den Pantherpilz sicher trennen: das Röten des Fleisches ist das entscheidende Merkmal."
+
+[merkmale]
+hut = "5 bis 15 cm, fleischrosa bis graubraun, mit blassen, mehligen Flocken bedeckt."
+lamellen = "Weiß, frei, an der Schneide oft rötlich fleckend."
+stiel = "Weiß bis rosa, mit gerieftem hängendem Ring, Basis knollig, ohne Scheide, mit rötlichen Gürteln."
+fleisch = "Weiß, im Schnitt und an Fraßstellen deutlich weinrot anlaufend."
+geruch = "Unauffällig."
+geschmack = "Mild. Roh nicht kosten."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Buche, Eiche und Fichte, auf sauren Böden, sehr häufig."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Pantherpilz"
+merkmal = "Flocken rein weiß, Ring ungerieft, Stielbasis mit scharf gerandeter Knolle und Gürteln. Fleisch rötet nicht."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Grauer Wulstling"
+merkmal = "Grau, Fleisch rötet nicht, Geruch nach Rettich."
+essbar = "bedingtEssbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Perlpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Perlpilz"

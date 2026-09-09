@@ -1,0 +1,37 @@
+name = "Dunkler Hallimasch"
+lateinisch = "Armillaria ostoyae"
+gruppe = "hallimasch"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["fichte", "kiefer"]
+speisewertHinweis = "Roh giftig. Nur Hüte, lange kochen, Kochwasser weggießen."
+
+[merkmale]
+hut = "4 bis 15 cm, rot- bis dunkelbraun, dicht mit dunklen, abstehenden Schuppen besetzt."
+lamellen = "Weißlich, später rostfleckig, herablaufend."
+stiel = "Kräftig, mit dickem weißem Ring, der dunkle Schuppen am Rand trägt."
+fleisch = "Weiß, fest, faserig."
+geruch = "Kräftig pilzig."
+geschmack = "Roh scharf."
+sporenpulver = "Weiß."
+vorkommen = "Parasit an Nadelholz, vor allem Fichte und Kiefer, in Büscheln am Stammfuß und an Wurzeln."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Kleiner, Stiel silbrig faserig, Sporenpulver rostbraun."
+essbar = "toedlichGiftig"
+
+[[verwechslungen]]
+name = "Honiggelber Hallimasch"
+merkmal = "Heller, Ring gelb gesäumt, an Laubholz."
+essbar = "bedingtEssbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GemeinerHallimarsch.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Dunkler_Hallimasch"

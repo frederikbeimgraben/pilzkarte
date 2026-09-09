@@ -1,0 +1,31 @@
+name = "Espen-Rotkappe"
+lateinisch = "Leccinum aurantiacum"
+gruppe = "raufussroehrling"
+speisewert = "essbar"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["pappel", "eiche"]
+
+[merkmale]
+hut = "6 bis 20 cm, orangerot bis ziegelrot, feinfilzig."
+roehren = "Weißlich bis cremefarben, auf Druck bräunend."
+stiel = "Weiß mit rötlich braunen Schüppchen, die erst im Alter dunkeln."
+fleisch = "Weiß, im Schnitt weinrot, dann grauschwarz."
+geruch = "Unauffällig pilzig."
+geschmack = "Mild."
+sporenpulver = "Ockerbraun."
+vorkommen = "Mykorrhiza mit Espe und Pappel, auch bei Eiche, auf besseren Böden."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Birken-Rotkappe"
+merkmal = "Schüppchen schwarz, Stielbasis blaugrün, bei Birke."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Espenrotkappe.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Laubwald-Rotkappe"

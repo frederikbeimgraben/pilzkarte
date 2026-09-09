@@ -1,0 +1,37 @@
+name = "Maipilz"
+lateinisch = "Calocybe gambosa"
+gruppe = "ritterling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["fruehling"]
+baeume = ["hainbuche", "eiche"]
+speisewertHinweis = "Der Mehlgeruch ist das Hauptmerkmal. Ohne ihn stehen lassen."
+
+[merkmale]
+hut = "5 bis 12 cm, cremeweiß bis blass lederfarben, dickfleischig, Rand lange eingerollt."
+lamellen = "Weiß, sehr dicht und schmal, am Stiel ausgebuchtet."
+stiel = "Kräftig, weiß, voll, oft gebogen."
+fleisch = "Weiß, fest."
+geruch = "Stark nach frischem Mehl oder Gurke."
+geschmack = "Mehlig, mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer an Waldrändern, in Hecken, unter Hainbuche und Eiche, auf Kalk. In Reihen und Ringen."
+zeit = "April bis Juni."
+
+[[verwechslungen]]
+name = "Ziegelroter Rißpilz"
+merkmal = "Hut faserig aufreißend, Lamellen bräunlich, gleiche Zeit und gleicher Ort. Tödlich giftig."
+essbar = "toedlichGiftig"
+
+[[verwechslungen]]
+name = "Frühlings-Trichterling"
+merkmal = "Lamellen herablaufend, Fleisch dünn."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Maipilz"

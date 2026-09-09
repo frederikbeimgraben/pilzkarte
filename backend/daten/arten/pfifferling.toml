@@ -1,0 +1,37 @@
+name = "Pfifferling"
+lateinisch = "Cantharellus cibarius"
+gruppe = "leistling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "buche", "eiche", "kiefer"]
+karte = "pfifferling"
+
+[merkmale]
+hut = "2 bis 10 cm, dottergelb, jung gewölbt, später trichterig mit welligem Rand."
+leisten = "Gegabelte, stumpfe Leisten statt echter Lamellen, weit am Stiel herablaufend, in derselben Farbe wie der Hut."
+stiel = "Voll, fest, nach unten verjüngt, ohne Ring."
+fleisch = "Weißlich bis blassgelb, faserig, sehr fest."
+geruch = "Fruchtig, nach Aprikose."
+geschmack = "Mild, im Nachgeschmack pfeffrig scharf."
+sporenpulver = "Blass ockergelb."
+vorkommen = "Mykorrhiza mit Fichte, Buche, Eiche und Kiefer. Auf sauren, moosigen Böden, oft an Hängen und unter Heidelbeere."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Falscher Pfifferling"
+merkmal = "Orange statt dottergelb, echte dünne Lamellen, weiches Fleisch."
+essbar = "ohneSpeisewert"
+
+[[verwechslungen]]
+name = "Ölbaumtrichterling"
+merkmal = "Büschelig an Holz, echte Lamellen, größer. Im Süden."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Pfiffi.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Echter_Pfifferling"

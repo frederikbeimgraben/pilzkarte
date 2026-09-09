@@ -1,0 +1,31 @@
+name = "Ästiger Stachelbart"
+lateinisch = "Hericium coralloides"
+gruppe = "stachelbart"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Selten. Kleine Mengen nehmen und den Rest stehen lassen."
+
+[merkmale]
+fruchtkoerper = "10 bis 30 cm, weiß bis cremefarben, korallenartig verzweigt, an den Ästen hängen kurze Stacheln."
+stacheln = "0,5 bis 1 cm, weich, in Reihen an der Unterseite der Äste."
+fleisch = "Weiß, weich, brüchig."
+geruch = "Angenehm."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer an liegenden Buchenstämmen, seltener an anderem Laubholz, in naturnahen Wäldern."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Igelstachelbart"
+merkmal = "Unverzweigt, Stacheln viel länger."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/StachelbartEssbar1004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Ästiger_Stachelbart"

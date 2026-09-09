@@ -1,0 +1,37 @@
+name = "Rotfußröhrling"
+lateinisch = "Xerocomellus chrysenteron"
+gruppe = "roehrling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche", "fichte"]
+speisewertHinweis = "Weiches Fleisch, oft madig oder von Goldschimmel befallen. Nur junge, feste Stücke."
+
+[merkmale]
+hut = "3 bis 10 cm, olivbraun, matt und samtig, im Alter felderig aufreißend. In den Rissen zeigt sich rotes Fleisch."
+roehren = "Gelb, weit, auf Druck schwach blauend."
+stiel = "Schlank, gelb mit roter Faserung, ohne Netz."
+fleisch = "Blassgelb, unter der Huthaut rot, im Schnitt schwach blauend."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Mykorrhiza mit Laub- und Nadelbäumen, an Wegrändern und Böschungen, häufig."
+zeit = "Juni bis November."
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Hut ockerbraun, ohne rotes Fleisch in den Rissen, Röhren blauen kaum."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Goldschimmel auf Röhrlingen"
+merkmal = "Weißer, später goldgelber Belag auf dem Fruchtkörper. Befallene Pilze bleiben liegen."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Rotfuss.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeiner_Rotfußröhrling"

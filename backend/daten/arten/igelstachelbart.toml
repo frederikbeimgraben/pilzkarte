@@ -1,0 +1,31 @@
+name = "Igelstachelbart"
+lateinisch = "Hericium erinaceus"
+gruppe = "stachelbart"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Wild sehr selten. Wer ihn essen will, nimmt Zuchtware und lässt den Fund stehen."
+
+[merkmale]
+fruchtkoerper = "10 bis 25 cm, ein weißer, unverzweigter Klumpen, der lange herabhängende Stacheln trägt. Im Alter gilbend."
+stacheln = "1 bis 5 cm lang, weich, dicht, alle nach unten gerichtet."
+fleisch = "Weiß, weich, faserig."
+geruch = "Angenehm."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Schwächeparasit an alten Buchen und Eichen, meist an Stammwunden in Höhe. In Deutschland selten."
+zeit = "September bis November."
+
+[[verwechslungen]]
+name = "Ästiger Stachelbart"
+merkmal = "Deutlich verzweigt, Stacheln kürzer, an liegendem Holz."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Igelstachelbart.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Igel-Stachelbart"

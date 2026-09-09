@@ -1,0 +1,36 @@
+name = "Schafchampignon"
+lateinisch = "Agaricus arvensis"
+gruppe = "champignon"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[merkmale]
+hut = "8 bis 20 cm, weiß, im Alter gilbend, glatt."
+lamellen = "Jung fast weiß, dann graurosa, zuletzt schokoladenbraun, frei."
+stiel = "Weiß, mit großem, zweilagigem, unterseits radförmig gezacktem Ring."
+fleisch = "Weiß, im Schnitt schwach gilbend."
+geruch = "Deutlich nach Anis."
+geschmack = "Mild."
+sporenpulver = "Purpurbraun."
+vorkommen = "Zersetzer auf Wiesen, Weiden und an Waldrändern, gern bei Brennnesseln."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Karbolchampignon"
+merkmal = "Stielbasis chromgelb, Geruch nach Tinte statt Anis."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schafegerling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Weißer_Anis-Champignon"

@@ -1,0 +1,31 @@
+name = "Schwefelporling"
+lateinisch = "Laetiporus sulphureus"
+gruppe = "porling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["fruehling", "sommer"]
+baeume = ["eiche", "weide", "obstbaum"]
+speisewertHinweis = "Nur junge, saftige Ränder und gut durchgegart. An Robinie und Eibe stehen lassen: dort kommen Unverträglichkeiten vor."
+
+[merkmale]
+hut = "10 bis 40 cm breit, in dachigen Konsolen übereinander, schwefelgelb bis orange, wellig, im Alter blass kreidig."
+poren = "Schwefelgelb, fein, auf der Unterseite."
+fleisch = "Jung saftig und weich, weiß bis gelb, im Alter trocken, brüchig und geschmacklos."
+geruch = "Säuerlich, pilzig."
+geschmack = "Mild bis leicht säuerlich."
+sporenpulver = "Weiß."
+vorkommen = "Schwächeparasit an Eiche, Weide, Robinie und Obstbäumen, hoch am Stamm und an Wunden."
+zeit = "Mai bis September."
+
+[[verwechslungen]]
+name = "Zaunblättling und andere gelbe Porlinge"
+merkmal = "Fleisch zäh und korkig, nicht saftig."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schwefelporling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeiner_Schwefelporling"

@@ -1,0 +1,32 @@
+name = "Fuchsiger Rötelritterling"
+lateinisch = "Lepista flaccida"
+gruppe = "trichterling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["fichte", "buche"]
+speisewertHinweis = "Essbar, aber zäh und ohne Wert. Wird leicht mit giftigen Trichterlingen verwechselt."
+
+[merkmale]
+hut = "3 bis 9 cm, fuchsig orangebraun, trichterig, dünnfleischig, Rand wellig."
+lamellen = "Blass ockerfarben, sehr dicht, weit herablaufend, leicht ablösbar."
+stiel = "Dünn, zäh, in Hutfarbe, Basis filzig."
+fleisch = "Dünn, wässrig, blass."
+geruch = "Schwach säuerlich."
+geschmack = "Mild bis leicht bitter."
+sporenpulver = "Cremeweiß bis blass rosa."
+vorkommen = "Zersetzer in der Nadel- und Laubstreu, in Reihen und dichten Hexenringen."
+zeit = "September bis Dezember."
+
+[[verwechslungen]]
+name = "Ockerbrauner Trichterling"
+merkmal = "Lamellen weiß, nicht ablösbar. Nicht zum Essen."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FuchsigerRoeteltrichterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Fuchsiger_Rötelritterling"

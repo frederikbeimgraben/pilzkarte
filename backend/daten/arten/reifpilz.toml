@@ -1,0 +1,37 @@
+name = "Reifpilz"
+lateinisch = "Cortinarius caperatus"
+gruppe = "schleierling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "kiefer", "birke"]
+speisewertHinweis = "Der einzige Schleierling, den diese App zum Sammeln nennt. Der feste häutige Ring und der weiße Reif trennen ihn."
+
+[merkmale]
+hut = "5 bis 12 cm, ockergelb bis semmelfarben, in der Mitte mit einem weißen, reifartigen Belag, radial runzelig."
+lamellen = "Blass ocker, dann rostbraun, dicht, ausgebuchtet."
+stiel = "Weißlich, mit einem festen, häutigen Ring, darüber bereift."
+fleisch = "Weiß, fest."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Rostbraun."
+vorkommen = "Mykorrhiza mit Fichte, Kiefer und Birke, auf sauren Böden, in Heidelbeer- und Moorwäldern."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Spitzgebuckelter Rauhkopf"
+merkmal = "Hut rotbraun mit spitzem Buckel, Lamellen zimtbraun, ohne häutigen Ring. Tödlich giftig."
+essbar = "toedlichGiftig"
+
+[[verwechslungen]]
+name = "Pantherpilz"
+merkmal = "Sporenpulver weiß, Stielbasis gerandet knollig."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/ReifpilzEssbar1004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Reifpilz"

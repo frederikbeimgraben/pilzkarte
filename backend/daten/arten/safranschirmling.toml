@@ -1,0 +1,37 @@
+name = "Safranschirmling"
+lateinisch = "Chlorophyllum rhacodes"
+gruppe = "schirmling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Nur gut durchgegart und nicht in Mengen. Ein Teil der Sammler verträgt ihn nicht."
+
+[merkmale]
+hut = "8 bis 20 cm, mit groben, aufgerissenen braunen Schuppen auf weißem Grund."
+lamellen = "Weiß, frei, auf Druck rötend."
+stiel = "Glatt, ohne Natterung, weißlich, Basis knollig, mit dickem verschiebbarem Ring."
+fleisch = "Weiß, im Schnitt deutlich safranrot bis rotbraun anlaufend."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer in Nadelwäldern, an Wegrändern, in Parks und auf Komposten, oft in Hexenringen."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Parasol"
+merkmal = "Stiel genattert, Fleisch bleibt weiß."
+essbar = "speisepilz"
+
+[[verwechslungen]]
+name = "Gift-Riesenschirmling"
+merkmal = "Stielbasis scharf gerandet knollig, meist in Gärten und Komposten."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Safranschirmling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeiner_Safranschirmling"

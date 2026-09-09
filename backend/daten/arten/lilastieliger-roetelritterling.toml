@@ -1,0 +1,32 @@
+name = "Lilastieliger Rötelritterling"
+lateinisch = "Lepista personata"
+gruppe = "roetelritterling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = []
+speisewertHinweis = "Roh giftig. Gut durchgaren."
+
+[merkmale]
+hut = "6 bis 15 cm, blass graubraun bis ockerfarben, matt, Rand lange eingerollt."
+lamellen = "Weißlich bis blassocker, dicht, ausgebuchtet, leicht ablösbar."
+stiel = "Kräftig, deutlich violett und faserig, oft bereift."
+fleisch = "Weiß, fest."
+geruch = "Angenehm, aromatisch."
+geschmack = "Mild."
+sporenpulver = "Blass rosa."
+vorkommen = "Zersetzer auf Wiesen, Weiden und an Wegrändern, gern auf Kalk, in Hexenringen."
+zeit = "September bis November."
+
+[[verwechslungen]]
+name = "Violetter Rötelritterling"
+merkmal = "Auch der Hut ist violett, im Wald statt auf der Wiese."
+essbar = "bedingtEssbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/LilastieligerRoetelritterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Lilastiel-Rötelritterling"

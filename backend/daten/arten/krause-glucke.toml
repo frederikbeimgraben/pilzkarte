@@ -1,0 +1,30 @@
+name = "Krause Glucke"
+lateinisch = "Sparassis crispa"
+gruppe = "glucke"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Gründlich waschen, in den Lappen sitzt Sand und Nadelstreu."
+
+[merkmale]
+fruchtkoerper = "10 bis 40 cm, ein rundlicher Ballen aus vielen krausen, bandförmigen Lappen, cremeweiß bis ockergelb, im Alter braun."
+fleisch = "Weiß, elastisch, zäh."
+geruch = "Angenehm würzig, nussig."
+geschmack = "Mild, nussig."
+sporenpulver = "Weiß bis blassgelb."
+vorkommen = "Parasit am Wurzelhals alter Kiefern, seltener anderer Nadelbäume. Kommt am selben Baum viele Jahre wieder."
+zeit = "August bis Oktober."
+
+[[verwechslungen]]
+name = "Breitblättrige Glucke"
+merkmal = "Lappen breiter und flacher, an Laubholz und Tanne. Ebenso essbar."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/KrauseGlucke.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Krause_Glucke"

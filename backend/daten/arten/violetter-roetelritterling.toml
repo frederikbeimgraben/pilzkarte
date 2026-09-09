@@ -1,0 +1,37 @@
+name = "Violetter Rötelritterling"
+lateinisch = "Lepista nuda"
+gruppe = "roetelritterling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["herbst", "winter"]
+baeume = ["buche", "fichte"]
+speisewertHinweis = "Roh giftig. Mindestens 15 Minuten durchgaren."
+
+[merkmale]
+hut = "5 bis 15 cm, violett bis lilabraun, im Alter ausblassend, glatt, Rand eingerollt."
+lamellen = "Violett, dicht, am Stiel ausgebuchtet, leicht ablösbar."
+stiel = "Violett, faserig, Basis mit lila Myzelfilz."
+fleisch = "Blass violett, weich."
+geruch = "Angenehm, parfümiert nach Orangenschale."
+geschmack = "Mild."
+sporenpulver = "Blass rosa."
+vorkommen = "Zersetzer in der Streu von Laub- und Nadelwäldern, in Hecken und auf Komposten, oft in Reihen."
+zeit = "September bis Dezember."
+
+[[verwechslungen]]
+name = "Violetter Schleierling"
+merkmal = "Lamellen jung von einem spinnwebigen Schleier bedeckt, Sporenpulver rostbraun."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Lilastieliger Rötelritterling"
+merkmal = "Hut blass ockerbraun, nur der Stiel violett."
+essbar = "bedingtEssbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/VioletterRoetelritterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Violetter_Rötelritterling"

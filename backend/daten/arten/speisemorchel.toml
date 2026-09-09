@@ -1,0 +1,36 @@
+name = "Speisemorchel"
+lateinisch = "Morchella esculenta"
+gruppe = "morchel"
+speisewert = "bedingtEssbar"
+geschuetzt = true
+jahreszeiten = ["fruehling"]
+baeume = ["esche", "ulme", "obstbaum"]
+speisewertHinweis = "Roh giftig. Mindestens 15 Minuten garen."
+
+[merkmale]
+hut = "4 bis 10 cm, eiförmig bis rundlich, ockergelb bis graubraun, mit unregelmäßigen, wabenartigen Gruben. Er ist am Stiel vollständig angewachsen."
+stiel = "Weißlich, hohl, kleiig bereift, an der Basis oft gefurcht."
+fleisch = "Dünn, wachsartig, der ganze Pilz ist innen hohl."
+geruch = "Angenehm, würzig."
+geschmack = "Mild. Roh nicht kosten."
+sporenpulver = "Cremeweiß."
+vorkommen = "In Auwäldern, Parks, unter Esche, Ulme und Obstbäumen, auf Kalk und in frischer Rindenmulchschicht."
+zeit = "April bis Mai."
+
+[[verwechslungen]]
+name = "Frühjahrslorchel"
+merkmal = "Hirnartig gewunden statt wabig, Kappe nicht regelmäßig gegrubt. Giftig, auch nach dem Garen."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Käppchenmorchel"
+merkmal = "Kappe nur oben angewachsen, unten frei abstehend."
+essbar = "bedingtEssbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Speisemorchel.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Speise-Morchel"
