@@ -12,6 +12,13 @@ dependencies = [
 
 [project.optional-dependencies]
 grids = ["xarray>=2024.3", "netCDF4>=1.6", "numpy>=1.26"]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Die Kette importiert ihre Module flach, ueber sys.path. Die Tests tun
+# dasselbe, statt die Kette auf ein Paket umzubauen.
+pythonpath = ["src/pilze"]
 
 [build-system]
 requires = ["hatchling"]
