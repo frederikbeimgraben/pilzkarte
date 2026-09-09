@@ -1,0 +1,31 @@
+name = "Märzschneckling"
+lateinisch = "Hygrophorus marzuolus"
+gruppe = "schneckling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["tanne", "fichte", "buche"]
+
+[merkmale]
+hut = "5 bis 12 cm, jung weißlich, bald aschgrau bis schwarzgrau marmoriert, unregelmäßig gebuchtet."
+lamellen = "Weiß, dann grau, dick, wachsartig, entfernt, herablaufend."
+stiel = "Kräftig, weiß bis grau, voll."
+fleisch = "Weiß, fest."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Tanne, Fichte und Buche, in Bergwäldern. Wächst am Schneerand, oft halb unter der Streu verborgen."
+zeit = "Februar bis April."
+
+[[verwechslungen]]
+name = "Graue Ritterlinge"
+merkmal = "Lamellen dünn und dicht, nicht wachsartig, später im Jahr."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Maerzschneckling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/März-Schneckling"

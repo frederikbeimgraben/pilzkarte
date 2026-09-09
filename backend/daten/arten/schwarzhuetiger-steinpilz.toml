@@ -1,0 +1,36 @@
+name = "Schwarzhütiger Steinpilz"
+lateinisch = "Boletus aereus"
+gruppe = "roehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche", "kastanie"]
+
+[merkmale]
+hut = "8 bis 20 cm, dunkelbraun bis fast schwarz, matt, samtig, oft ungleich gebeult."
+roehren = "Jung weiß, dann gelb bis oliv."
+stiel = "Dick, bräunlich, mit feinem braunem Netz."
+fleisch = "Weiß, sehr fest, ohne Farbwechsel."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, nussig."
+sporenpulver = "Olivbraun."
+vorkommen = "Mykorrhiza mit Eiche, Buche und Esskastanie, wärmeliebend. In Deutschland nur im Süden und Westen häufiger."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Steinpilz"
+merkmal = "Hut heller braun, Netz weiß. Der gleiche Speisewert."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerSteini.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Bronze-Röhrling"

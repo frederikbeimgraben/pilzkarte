@@ -1,0 +1,32 @@
+name = "Speisetäubling"
+lateinisch = "Russula vesca"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Milde Täublinge sind essbar, scharfe nicht."
+
+[merkmale]
+hut = "5 bis 10 cm, fleischrosa bis weinbraun, oft blass ausgeblichen. Die Huthaut endet vor dem Rand, dort steht die Lamellenschneide vor."
+lamellen = "Weiß bis cremeweiß, brüchig, am Stiel oft rostfleckig."
+stiel = "Weiß, fest, an der Basis oft gelblich."
+fleisch = "Weiß, fest."
+geruch = "Unauffällig."
+geschmack = "Mild, nussig."
+sporenpulver = "Weiß bis cremeweiß."
+vorkommen = "Mykorrhiza mit Buche und Eiche, auf mäßig sauren Böden."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Scharfe Täublinge"
+merkmal = "Geschmack brennend scharf, Huthaut reicht bis zum Rand."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Speisetaubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Fleischroter_Speise-Täubling"

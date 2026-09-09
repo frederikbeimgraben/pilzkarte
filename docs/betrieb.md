@@ -83,6 +83,16 @@ Shell.
 Reihenfolge bei einer Änderung an beiden Seiten: erst `deploy/backend.sh`,
 dann `deploy/frontend.sh`. Die Migration läuft beim Neustart des Dienstes.
 
+## Kette und Backend-Daten
+
+`modell/src/pilze/arten_zaehlen.py` zählt die Begehungen je Art und schreibt
+die Saisontabelle nach `backend/daten/saison.json` (rund 26 kB, im Git). Aufruf
+im Arbeitsbaum der Kette:
+`python src/pilze/arten_zaehlen.py --tabelle ../backend/daten/saison.json`. Die
+Artprofile liegen daneben als TOML unter `backend/daten/arten/`. Beides geht
+mit `deploy/backend.sh` auf den Server; ohne diese Dateien startet der Dienst
+nicht.
+
 ## Lokale Entwicklung
 
 - Umgebung: `nix develop` bringt beide Seiten mit, `nix develop .#backend` und

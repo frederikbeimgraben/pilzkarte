@@ -1,0 +1,33 @@
+name = "Buchen-Schleimrübling"
+lateinisch = "Mucidula mucida"
+gruppe = "schleimruebling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+karte = "schleimruebling"
+speisewertHinweis = "Essbar, aber ohne Wert. Der Schleim lässt sich abwaschen."
+
+[merkmale]
+hut = "2 bis 8 cm, weiß bis grauweiß, durchscheinend, dick und glasig schleimig."
+lamellen = "Weiß, breit, entfernt stehend, am Stiel angewachsen."
+stiel = "Weiß, zäh, mit häutigem Ring, an der Basis oft gebogen."
+fleisch = "Weiß, dünn, wässrig."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Schwächeparasit an Buche, an Stämmen und an toten Ästen bis hoch in die Krone. Eine Anzeigerart für Buchenwald."
+zeit = "Juli bis November."
+
+[[verwechslungen]]
+name = "Keine gefährliche"
+merkmal = "Weiß, schleimig, beringt und an Buchenholz: die Kombination ist eindeutig."
+essbar = "ohneSpeisewert"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BeringterSchleimruebling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Buchen-Schleimrübling"

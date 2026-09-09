@@ -1,0 +1,36 @@
+name = "Flaschenbovist"
+lateinisch = "Lycoperdon perlatum"
+gruppe = "staeubling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+karte = "flaschenbovist"
+speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück durchschneiden."
+
+[merkmale]
+fruchtkoerper = "3 bis 7 cm, flaschen- bis birnenförmig mit einem verjüngten Fuß, weiß bis cremefarben, mit abwischbaren Stacheln und Warzen besetzt."
+fleisch = "Jung rein weiß und fest, dann gelb, zuletzt olivbraun und pulverig. Am Scheitel öffnet sich ein Loch."
+geruch = "Jung angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Zersetzer in Wäldern aller Art, an Wegrändern und auf Lichtungen, meist in Gruppen."
+zeit = "Juli bis November."
+
+[[verwechslungen]]
+name = "Kartoffelbovist"
+merkmal = "Derbe gelbbraune Haut, innen früh schwarzviolett marmoriert."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Knollenblätterpilz im Eistadium"
+merkmal = "Längs durchschneiden: im Ei zeichnen sich Hut und Lamellen ab, ein Stäubling ist gleichmäßig weiß."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Flaschenstaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Flaschen-Stäubling"

@@ -1,0 +1,33 @@
+name = "Schopftintling"
+lateinisch = "Coprinus comatus"
+gruppe = "tintling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+karte = "schopftintling"
+speisewertHinweis = "Nur solange die Lamellen weiß sind und am selben Tag verarbeiten."
+
+[merkmale]
+hut = "5 bis 15 cm hoch, jung geschlossen walzenförmig, weiß mit abstehenden Schuppen und ockerfarbenem Scheitel."
+lamellen = "Sehr dicht, weiß, dann rosa, dann schwarz. Sie zerfließen vom Rand her zu Tinte."
+stiel = "Weiß, hohl, mit einem losen, beweglichen Ring."
+fleisch = "Weiß, dünn, weich."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Schwarz."
+vorkommen = "Zersetzer auf Rasen, Wegrändern, Schutt und frisch bewegtem Boden. Kein Waldpilz."
+zeit = "Mai bis November."
+
+[[verwechslungen]]
+name = "Faltentintling"
+merkmal = "Grau, glatt, ohne Schuppen, büschelig an Holzresten. Mit Alkohol giftig."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schopftintling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schopf-Tintling"

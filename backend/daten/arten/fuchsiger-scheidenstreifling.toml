@@ -1,0 +1,37 @@
+name = "Fuchsiger Scheidenstreifling"
+lateinisch = "Amanita fulva"
+gruppe = "wulstling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke", "fichte"]
+speisewertHinweis = "Roh giftig. Nur für sichere Kenner: jeder Fruchtkörper muss mit ganzer Stielbasis ausgegraben und geprüft werden."
+
+[merkmale]
+hut = "4 bis 10 cm, fuchsig orangebraun, glatt, mit deutlich gerieftem Rand, ohne Flocken."
+lamellen = "Weiß, frei, dicht."
+stiel = "Schlank, blass, ohne Ring, Basis in einer hohen, häutigen, rostfleckigen Scheide."
+fleisch = "Weiß, dünn, zerbrechlich."
+geruch = "Unauffällig."
+geschmack = "Mild. Roh nicht kosten."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Birke und Fichte, auf sauren, feuchten Böden, oft einzeln."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
+essbar = "toedlichGiftig"
+
+[[verwechslungen]]
+name = "Pantherpilz"
+merkmal = "Hut mit weißen Flocken, mit Ring am Stiel."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RotbraunerScheidens.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Rotbrauner_Streifling"

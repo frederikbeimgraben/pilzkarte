@@ -1,0 +1,37 @@
+name = "Nelkenschwindling"
+lateinisch = "Marasmius oreades"
+gruppe = "schwindling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur die Hüte, die Stiele sind zäh. Auf Wiesen wachsen giftige Trichterlinge daneben."
+
+[merkmale]
+hut = "2 bis 5 cm, ledergelb bis blass beige, mit stumpfem Buckel, bei Trockenheit blass, bei Nässe dunkler."
+lamellen = "Blass creme, breit, entfernt stehend, am Stiel frei."
+stiel = "Dünn, sehr zäh, lässt sich verdrehen ohne zu brechen."
+fleisch = "Blass, dünn, ledrig."
+geruch = "Kräftig, nach Bittermandel."
+geschmack = "Mild, süßlich."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer auf Rasen, Wiesen und Weiden, in auffälligen Hexenringen."
+zeit = "Mai bis November."
+
+[[verwechslungen]]
+name = "Rinnigbereifter Trichterling"
+merkmal = "Lamellen weiß und herablaufend, Stiel brüchig. Auf denselben Wiesen. Giftig."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Feldtrichterling"
+merkmal = "Hut weißlich bereift, Lamellen herablaufend."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Nelkenschwindling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Nelken-Schwindling"

@@ -1,0 +1,32 @@
+name = "Grüngefelderter Täubling"
+lateinisch = "Russula virescens"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Vor dem Sammeln immer die Stielbasis freilegen: ein Täubling hat keine Scheide."
+
+[merkmale]
+hut = "5 bis 15 cm, graugrün, die Huthaut reißt in kleine, felderige Schollen auf."
+lamellen = "Weiß, brüchig, ziemlich dicht."
+stiel = "Weiß, fest, kurz."
+fleisch = "Weiß, fest, im Alter mürbe."
+geruch = "Unauffällig."
+geschmack = "Mild, nussig."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Buche und Eiche, wärmeliebend, auf besseren Böden."
+zeit = "Juli bis September."
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Hut gleichmäßig olivgrün ohne Felder, mit Ring und Scheide am Stiel."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GruengefelderterTaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Grüngefelderter_Täubling"

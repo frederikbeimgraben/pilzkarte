@@ -1,0 +1,36 @@
+name = "Schwarzfaseriger Ritterling"
+lateinisch = "Tricholoma portentosum"
+gruppe = "ritterling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["kiefer", "fichte"]
+
+[merkmale]
+hut = "5 bis 12 cm, grau mit violettem oder gelbem Ton, radial schwarzfaserig, glatt und bei Nässe schmierig."
+lamellen = "Weiß, im Alter gelblich, ausgebuchtet, entfernt."
+stiel = "Weiß bis blassgelb, faserig, ohne Ring."
+fleisch = "Weiß, unter der Huthaut grau, fest."
+geruch = "Schwach mehlig."
+geschmack = "Mild, mehlig."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Kiefer und Fichte, auf sauren Sandböden, spät im Jahr."
+zeit = "Oktober bis Dezember."
+
+[[verwechslungen]]
+name = "Erdritterling"
+merkmal = "Hut trocken filzig, kein gelber Ton."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Giftige graue Ritterlinge"
+merkmal = "Geschmack scharf oder bitter, Fleisch ohne Mehlgeruch."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schwarzfaserigerritterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schwarzfaseriger_Ritterling"

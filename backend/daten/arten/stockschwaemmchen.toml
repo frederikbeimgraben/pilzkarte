@@ -1,0 +1,32 @@
+name = "Stockschwämmchen"
+lateinisch = "Kuehneromyces mutabilis"
+gruppe = "schueppling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["buche", "birke"]
+speisewertHinweis = "Nur für Sammler, die den Gifthäubling sicher kennen. Jeden Fruchtkörper einzeln prüfen, nie ganze Büschel abschneiden."
+
+[merkmale]
+hut = "2 bis 6 cm, ockerbraun, beim Abtrocknen von der Mitte her hell werdend. Das gibt einen zweifarbigen Ring auf dem Hut."
+lamellen = "Jung blass, dann zimtbraun, am Stiel angewachsen."
+stiel = "Mit häutigem Ring, darunter dunkelbraun und deutlich abstehend schuppig."
+fleisch = "Blass, dünn."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Rostbraun."
+vorkommen = "Zersetzer an Laubholzstümpfen, vor allem Buche und Birke, in dichten Büscheln."
+zeit = "April bis November."
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Stiel unter dem Ring silbrig faserig statt schuppig, Geruch mehlig, meist an Nadelholz. Tödlich giftig."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Stockschwaemmchen.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeines_Stockschwämmchen"

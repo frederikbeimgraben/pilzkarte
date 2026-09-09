@@ -1,0 +1,32 @@
+name = "Goldröhrling"
+lateinisch = "Suillus grevillei"
+gruppe = "schmierroehrling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["laerche"]
+speisewertHinweis = "Huthaut abziehen, sonst wirkt er abführend."
+
+[merkmale]
+hut = "4 bis 12 cm, leuchtend gold- bis rotgelb, glänzend schleimig."
+roehren = "Zitronengelb, fein, auf Druck rostbraun fleckend."
+stiel = "Gelb, mit weißlichem Ring, darüber genetzt, darunter rotbraun gefleckt."
+fleisch = "Gelb, im Schnitt schwach rosa anlaufend."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Ockerbraun."
+vorkommen = "Streng an Lärche gebunden, in Parks, Alleen und Forsten."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Butterpilz"
+merkmal = "Hut braun statt goldgelb, bei Kiefer."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Goldroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gold-Röhrling"

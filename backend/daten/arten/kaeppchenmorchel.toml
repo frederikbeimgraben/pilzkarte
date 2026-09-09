@@ -1,0 +1,36 @@
+name = "Käppchenmorchel"
+lateinisch = "Mitrophora semilibera"
+gruppe = "morchel"
+speisewert = "bedingtEssbar"
+geschuetzt = true
+jahreszeiten = ["fruehling"]
+baeume = ["esche", "pappel"]
+speisewertHinweis = "Roh giftig, geringer Wert. Gut durchgaren."
+
+[merkmale]
+hut = "1 bis 4 cm, klein, kegelig, olivbraun, mit senkrechten Rippen. Nur die obere Hälfte ist mit dem Stiel verwachsen, der Rand steht frei ab."
+stiel = "Auffallend lang, weiß, hohl, kleiig, oft länger als die Kappe hoch ist."
+fleisch = "Sehr dünn, brüchig."
+geruch = "Schwach würzig."
+geschmack = "Mild. Roh nicht kosten."
+sporenpulver = "Cremeweiß."
+vorkommen = "In Auwäldern und feuchten Laubwäldern unter Esche und Pappel, auf Kalk."
+zeit = "März bis Mai."
+
+[[verwechslungen]]
+name = "Spitzmorchel"
+merkmal = "Kappe ganz angewachsen und viel größer im Verhältnis zum Stiel."
+essbar = "bedingtEssbar"
+
+[[verwechslungen]]
+name = "Frühjahrslorchel"
+merkmal = "Kappe hirnartig gewunden."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Kaeppchen.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Käppchen-Morchel"

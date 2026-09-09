@@ -1,0 +1,36 @@
+name = "Zitzen-Riesenschirmling"
+lateinisch = "Macrolepiota mastoidea"
+gruppe = "schirmling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[merkmale]
+hut = "6 bis 15 cm, blass beige, fein schuppig, mit einem scharf abgesetzten spitzen Buckel in der Mitte."
+lamellen = "Weiß, frei, dicht."
+stiel = "Schlank, hohl, nur schwach genattert, mit verschiebbarem Ring."
+fleisch = "Weiß, bleibt weiß."
+geruch = "Angenehm."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer in lichten Laubwäldern, an Waldrändern und auf Magerrasen, gern auf Kalk."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Parasol"
+merkmal = "Größer, Stiel deutlich genattert, Buckel stumpf."
+essbar = "speisepilz"
+
+[[verwechslungen]]
+name = "Kleine Schirmlinge"
+merkmal = "Hut unter 10 cm, Ring nicht verschiebbar."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchlankerRiesenschirmling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Zitzen-Riesenschirmling"

@@ -1,0 +1,36 @@
+name = "Büscheliger Rasling"
+lateinisch = "Lyophyllum decastes"
+gruppe = "rasling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[merkmale]
+hut = "4 bis 12 cm, graubraun bis dunkelbraun, glatt, glänzend, oft verbogen durch den Druck der Nachbarn."
+lamellen = "Weiß bis cremefarben, dicht, ausgebuchtet."
+stiel = "Weiß, fest, faserig, an der Basis mit den Nachbarn verwachsen."
+fleisch = "Weiß, fest, elastisch."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer auf verdichteten Böden, an Wegrändern, Böschungen und Baustellen, in dichten Büscheln aus einer Basis."
+zeit = "Juli bis November."
+
+[[verwechslungen]]
+name = "Riesenrötling"
+merkmal = "Lamellen werden rosa, Geruch mehlig, nicht büschelig."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Ziegelroter Rißpilz"
+merkmal = "Hut faserig aufreißend, Lamellen bräunlich."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BraunerRasling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Büscheliger_Rasling"

@@ -1,0 +1,36 @@
+name = "Spitzmorchel"
+lateinisch = "Morchella elata"
+gruppe = "morchel"
+speisewert = "bedingtEssbar"
+geschuetzt = true
+jahreszeiten = ["fruehling"]
+baeume = ["esche", "fichte"]
+speisewertHinweis = "Roh giftig. Mindestens 15 Minuten garen."
+
+[merkmale]
+hut = "4 bis 12 cm, kegelig und spitz, oliv- bis schwarzbraun, mit senkrechten Rippen und quer geteilten Kammern. Am Stiel angewachsen."
+stiel = "Weißlich, hohl, kleiig."
+fleisch = "Dünn, der Pilz ist durchgehend hohl."
+geruch = "Würzig."
+geschmack = "Mild. Roh nicht kosten."
+sporenpulver = "Cremeweiß."
+vorkommen = "In Auwäldern, auf Brandstellen, in Rindenmulch und unter Nadelholz, oft in Gärten und Beeten."
+zeit = "April bis Mai."
+
+[[verwechslungen]]
+name = "Frühjahrslorchel"
+merkmal = "Kappe hirnartig gewunden, keine Kammern."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Böhmische Verpel"
+merkmal = "Kappe längsrunzelig und nur am Scheitel befestigt."
+essbar = "nichtEmpfohlen"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Spitzmorchel.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Spitzmorchel"

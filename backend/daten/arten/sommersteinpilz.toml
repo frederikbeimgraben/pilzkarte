@@ -1,0 +1,42 @@
+name = "Sommersteinpilz"
+lateinisch = "Boletus reticulatus"
+gruppe = "roehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["fruehling", "sommer"]
+baeume = ["buche", "eiche", "hainbuche"]
+schutzHinweis = "Die Verordnung nennt Boletus edulis und Boletus aereus. Diese App behandelt die nahen Verwandten gleich, weil sie im Wald kaum zu trennen sind."
+
+[merkmale]
+hut = "8 bis 20 cm, hell hasel- bis lederbraun, matt und feinfilzig, im Alter oft felderig aufreißend."
+roehren = "Jung weiß, dann gelb bis oliv. Mündungen fein."
+stiel = "Kräftig, hellbraun, über die ganze Länge fein weiß genetzt."
+fleisch = "Weiß, fest, ohne Farbwechsel."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, nussig."
+sporenpulver = "Olivbraun."
+vorkommen = "Mykorrhiza mit Buche, Eiche und Hainbuche, gern in warmen Laubwäldern auf besseren Böden."
+zeit = "Mai bis September, oft der erste Steinpilz des Jahres."
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Steinpilz"
+merkmal = "Hut dunkler und glatt, Netz nur im oberen Stielteil, später im Jahr."
+essbar = "speisepilz"
+
+[[verwechslungen]]
+name = "Satansröhrling"
+merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Sommersteinpilz2004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Sommer-Steinpilz"

@@ -1,0 +1,31 @@
+name = "Gelber Graustieltäubling"
+lateinisch = "Russula claroflava"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+
+[merkmale]
+hut = "4 bis 10 cm, leuchtend chromgelb, glatt, Huthaut halb abziehbar."
+lamellen = "Cremefarben, im Alter und auf Druck grau anlaufend."
+stiel = "Weiß, im Alter grau werdend."
+fleisch = "Weiß, an der Luft langsam grau."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Blass ocker."
+vorkommen = "Mykorrhiza mit Birke, in Mooren und feuchten Birkenwäldern."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Gelber Ledertäubling"
+merkmal = "Geschmack scharf, Fleisch läuft nicht grau an."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GeGraustiel.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gelber_Graustiel-Täubling"

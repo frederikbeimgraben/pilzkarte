@@ -1,0 +1,36 @@
+name = "Anhängselröhrling"
+lateinisch = "Butyriboletus appendiculatus"
+gruppe = "roehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche"]
+
+[merkmale]
+hut = "8 bis 20 cm, hell- bis rötlichbraun, samtig, im Alter rissig."
+roehren = "Chromgelb, fein, auf Druck blauend."
+stiel = "Gelb, fein gelb genetzt, Basis zugespitzt und oft wurzelnd."
+fleisch = "Gelb, im Schnitt schwach blauend, in der Stielbasis weinrötlich."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, nussig."
+sporenpulver = "Olivbraun."
+vorkommen = "Wärmeliebend, Mykorrhiza mit Eiche und Buche auf Kalk. In Deutschland selten."
+zeit = "Juli bis September."
+
+[[verwechslungen]]
+name = "Satansröhrling"
+merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Flockenstieliger Hexenröhrling"
+merkmal = "Mündungen rot statt gelb, Stiel geflockt."
+essbar = "bedingtEssbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Anhaengselroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Anhängsel-Röhrling"

@@ -1,0 +1,32 @@
+name = "Mehlräsling"
+lateinisch = "Clitopilus prunulus"
+gruppe = "roetling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "fichte"]
+speisewertHinweis = "Nur mit dem starken Mehlgeruch und dem rosa Sporenabdruck. Ohne beides stehen lassen."
+
+[merkmale]
+hut = "3 bis 10 cm, weiß bis cremegrau, matt und wildlederartig, unregelmäßig gebuchtet, Rand lange eingerollt."
+lamellen = "Weiß, später blass rosa, weit herablaufend, leicht ablösbar."
+stiel = "Kurz, weiß, oft exzentrisch angesetzt."
+fleisch = "Weiß, weich."
+geruch = "Sehr stark nach frischem Mehl."
+geschmack = "Mehlig, mild."
+sporenpulver = "Rosa."
+vorkommen = "Mykorrhiza mit Buche und Fichte, an Wegrändern und auf Lichtungen. Gilt als Zeiger für Steinpilze am selben Ort."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Weiße Trichterlinge"
+merkmal = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch nicht mehlig. Mehrere Arten sind giftig."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/MehlraeslingEssbar1004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Mehl-Räsling"

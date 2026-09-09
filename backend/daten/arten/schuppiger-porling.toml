@@ -1,0 +1,32 @@
+name = "Schuppiger Porling"
+lateinisch = "Cerioporus squamosus"
+gruppe = "porling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["fruehling", "sommer"]
+baeume = ["ahorn", "esche", "ulme"]
+speisewertHinweis = "Nur ganz junge Ränder. Nach wenigen Tagen ist er zäh."
+
+[merkmale]
+hut = "10 bis 50 cm, nierenförmig, ockergelb mit groben, dunkelbraunen, anliegenden Schuppen."
+poren = "Weiß bis cremefarben, weit und eckig, herablaufend."
+stiel = "Kurz, seitlich, an der Basis schwarz."
+fleisch = "Weiß, jung weich, bald korkig zäh."
+geruch = "Kräftig nach Mehl oder Gurke."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Schwächeparasit an Laubholz, vor allem Ahorn, Esche und Ulme, an Wunden und Stümpfen. Ein Frühjahrspilz."
+zeit = "April bis Juli."
+
+[[verwechslungen]]
+name = "Andere große Porlinge"
+merkmal = "Ohne die groben Schuppen und ohne Mehlgeruch."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchuppigerPorling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schuppiger_Stielporling"

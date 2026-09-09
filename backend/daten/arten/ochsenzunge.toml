@@ -1,0 +1,32 @@
+name = "Ochsenzunge"
+lateinisch = "Fistulina hepatica"
+gruppe = "porling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "kastanie"]
+speisewertHinweis = "Nur jung. Der saure Geschmack bleibt auch nach dem Garen."
+
+[merkmale]
+hut = "8 bis 25 cm, zungen- bis leberförmig, blutrot bis rotbraun, feucht und klebrig, Oberfläche fein warzig."
+poren = "Unterseite blass gelblich bis rosa, die Röhren stehen einzeln nebeneinander und lassen sich trennen. Auf Druck bräunend."
+stiel = "Kurz, seitlich, oft fehlend."
+fleisch = "Rot marmoriert wie Fleisch, saftig, gibt roten Saft ab."
+geruch = "Säuerlich."
+geschmack = "Deutlich sauer."
+sporenpulver = "Blass rosabraun."
+vorkommen = "Schwächeparasit an alten Eichen und Esskastanien, am Stammfuß und an Wunden."
+zeit = "August bis Oktober."
+
+[[verwechslungen]]
+name = "Leberreischling an anderem Holz"
+merkmal = "Keine ernste Verwechslung. Die Art ist durch Farbe und trennbare Röhren eindeutig."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/LeberreischlingOchsenzunge.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Eichen-Leberreischling"

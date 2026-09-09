@@ -1,0 +1,31 @@
+name = "Rotgelber Stoppelpilz"
+lateinisch = "Hydnum rufescens"
+gruppe = "stoppelpilz"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["fichte", "buche"]
+
+[merkmale]
+hut = "2 bis 7 cm, orange- bis rotgelb, gleichmäßiger rund als beim Semmelstoppelpilz."
+stacheln = "Weiche, blass orange Stacheln, die am Stiel enden statt herabzulaufen."
+stiel = "Schlank, mittig angesetzt, blassgelb."
+fleisch = "Blassgelb, brüchig."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Fichte und Buche, in Moos und Nadelstreu."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Semmelstoppelpilz"
+merkmal = "Größer, blasser, Stacheln laufen am Stiel herab."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Stoppelpilze"

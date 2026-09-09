@@ -1,0 +1,37 @@
+name = "Frauentäubling"
+lateinisch = "Russula cyanoxantha"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Milde Täublinge sind essbar, scharfe nicht. Ein Stückchen Lamelle kosten und ausspucken."
+
+[merkmale]
+hut = "5 bis 15 cm, in Farben von violett über grün bis graublau, oft gemischt, Mitte meist dunkler."
+lamellen = "Weiß, weich und biegsam wie Speck, lassen sich mit dem Finger streichen, ohne zu brechen."
+stiel = "Weiß, fest, zylindrisch."
+fleisch = "Weiß, fest, im Alter grau."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Buche und Eiche, in Laub- und Mischwäldern, sehr häufig."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Scharfe Täublinge"
+merkmal = "Lamellen brechen splittrig, Geschmack nach Sekunden brennend scharf. Eine Geschmacksprobe klärt es."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Frauentaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Frauen-Täubling"

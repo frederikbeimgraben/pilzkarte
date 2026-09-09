@@ -1,0 +1,38 @@
+name = "Nebelkappe"
+lateinisch = "Clitocybe nebularis"
+gruppe = "trichterling"
+speisewert = "nichtEmpfohlen"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["buche", "fichte"]
+karte = "nebelkappe"
+speisewertHinweis = "Wird nicht mehr als Speisepilz empfohlen. Ein Teil der Sammler bekommt Magen-Darm-Beschwerden, auch nach dem Garen."
+
+[merkmale]
+hut = "6 bis 20 cm, nebelgrau bis graubraun, jung weiß bereift, Rand lange eingerollt."
+lamellen = "Cremeweiß, sehr gedrängt, am Stiel kurz herablaufend, leicht vom Hutfleisch ablösbar."
+stiel = "Kräftig, keulig, faserig, in Hutfarbe blasser."
+fleisch = "Weiß, fest."
+geruch = "Auffallend süßlich und dumpf, für viele unangenehm."
+geschmack = "Mild bis unangenehm."
+sporenpulver = "Cremeweiß."
+vorkommen = "Zersetzer in der Laub- und Nadelstreu, unter Buche und Fichte, oft in langen Reihen und Hexenringen."
+zeit = "September bis Dezember, hält den ersten Frost aus."
+
+[[verwechslungen]]
+name = "Riesenrötling"
+merkmal = "Lamellen laufen nicht herab und werden rosa, Geruch mehlig."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Bleiweißer Trichterling"
+merkmal = "Kleiner, rein weiß, dünnfleischig, Geruch mehlig."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Herbstblattl.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Nebelgrauer_Trichterling"

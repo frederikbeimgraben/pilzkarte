@@ -1,0 +1,29 @@
+name = "Judasohr"
+lateinisch = "Auricularia auricula-judae"
+gruppe = "ohrlappenpilz"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["herbst", "winter", "fruehling"]
+baeume = ["holunder"]
+
+[merkmale]
+fruchtkoerper = "3 bis 10 cm, ohrförmig, rotbraun bis olivbraun, gallertig elastisch. Trocknet zu einer harten Scholle ein und quillt bei Nässe wieder auf."
+fleisch = "Gallertig, zäh, mit feinem Flaum auf der Außenseite."
+geruch = "Unauffällig."
+geschmack = "Mild, fast neutral."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer an totem Holunder, seltener an anderem Laubholz. Wächst das ganze Jahr, auch im Frost."
+zeit = "Ganzjährig, Schwerpunkt Oktober bis April."
+
+[[verwechslungen]]
+name = "Gallertfleischiger Fältling"
+merkmal = "Unterseite deutlich gefaltet und aderig, an Nadelholz."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Judasohr.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Judasohr"

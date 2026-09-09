@@ -1,0 +1,32 @@
+name = "Trompetenpfifferling"
+lateinisch = "Craterellus tubaeformis"
+gruppe = "leistling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["herbst"]
+baeume = ["fichte", "buche"]
+schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Trompetenpfifferlinge standen früher dort und werden mit ihnen geschützt."
+
+[merkmale]
+hut = "2 bis 6 cm, graubraun, in der Mitte durchbohrt trichterig, Rand wellig."
+leisten = "Weit stehende, gegabelte graue Leisten, herablaufend."
+stiel = "Dünn, hohl, gelb bis orangegelb, oft gebogen."
+fleisch = "Dünn, zäh, blassgelb."
+geruch = "Schwach fruchtig."
+geschmack = "Mild."
+sporenpulver = "Weißlich."
+vorkommen = "In feuchtem Moos unter Fichte und Buche, gern an morschem Holz und in Hangwäldern. Erscheint in großen Trupps."
+zeit = "August bis Dezember, hält Frost aus."
+
+[[verwechslungen]]
+name = "Gelbstieliger Trompetenpfifferling"
+merkmal = "Unterseite fast glatt statt geleistet, Stiel leuchtend gelb."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Trompetenpfifferlinge.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Trompetenpfifferling"

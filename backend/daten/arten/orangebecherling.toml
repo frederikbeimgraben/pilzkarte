@@ -1,0 +1,30 @@
+name = "Orangebecherling"
+lateinisch = "Aleuria aurantia"
+gruppe = "becherling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = []
+speisewertHinweis = "Essbar, aber ohne Wert. Wird höchstens roh als Farbtupfer verwendet."
+
+[merkmale]
+fruchtkoerper = "2 bis 10 cm, schüssel- bis schalenförmig, innen leuchtend orange, außen weißlich bereift, ohne Stiel. Im Alter wellig verbogen."
+fleisch = "Sehr dünn, brüchig, wachsartig."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer auf offenem, verdichtetem Boden: Waldwege, Böschungen, Baustellen, oft in Gruppen."
+zeit = "August bis November."
+
+[[verwechslungen]]
+name = "Orangeroter Becherling"
+merkmal = "Kleiner, an anderem Standort. Ohne Speisewert."
+essbar = "ohneSpeisewert"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Orangebecherling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeiner_Orangebecherling"

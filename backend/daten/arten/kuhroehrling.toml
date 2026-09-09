@@ -1,0 +1,32 @@
+name = "Kuhröhrling"
+lateinisch = "Suillus bovinus"
+gruppe = "schmierroehrling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Weiches Fleisch, geringer Wert. Jung sammeln."
+
+[merkmale]
+hut = "4 bis 10 cm, ocker- bis lederbraun, bei Nässe klebrig, Rand lange eingebogen."
+roehren = "Ockergelb, weit und eckig, mehrfach geteilt, deutlich herablaufend."
+stiel = "Dünn, gelbbraun, ohne Ring."
+fleisch = "Blassgelb, weich, schwach rötend."
+geruch = "Unauffällig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Mykorrhiza mit Kiefer, auf sauren, feuchten Sandböden und in Moorrandwäldern."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Butterpilz"
+merkmal = "Mit Ring, Röhren fein statt weit."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Kuhroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Kuh-Röhrling"

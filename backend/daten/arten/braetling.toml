@@ -1,0 +1,32 @@
+name = "Brätling"
+lateinisch = "Lactarius volemus"
+gruppe = "milchling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche", "hainbuche"]
+
+[merkmale]
+hut = "5 bis 14 cm, orangebraun bis rostbraun, matt, oft feinrissig."
+lamellen = "Cremeweiß bis blassgelb, dicht, auf Druck braun fleckend."
+milch = "Reichlich, weiß, klebrig, trocknet braun ein."
+stiel = "Fest, in Hutfarbe, voll."
+fleisch = "Weiß, fest, im Schnitt bräunend."
+geruch = "Deutlich nach Fisch oder Hering, im Alter kräftig."
+geschmack = "Mild, nussig."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Buche, Eiche und Hainbuche, auf besseren Böden. In Deutschland stark zurückgegangen."
+zeit = "Juli bis September."
+
+[[verwechslungen]]
+name = "Andere braune Milchlinge"
+merkmal = "Milch spärlich oder scharf, kein Fischgeruch."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Braetling2004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Brätling"

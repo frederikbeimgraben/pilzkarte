@@ -1,0 +1,32 @@
+name = "Samtfußrübling"
+lateinisch = "Flammulina velutipes"
+gruppe = "ruebling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["weide", "pappel", "buche"]
+speisewertHinweis = "Nur die Hüte, die Stiele bleiben zäh."
+
+[merkmale]
+hut = "2 bis 8 cm, honig- bis orangebraun, glatt, bei Nässe klebrig glänzend."
+lamellen = "Blassgelb, breit, am Stiel ausgebuchtet."
+stiel = "Zäh, hohl, oben gelb, nach unten schwarzbraun und samtig."
+fleisch = "Blassgelb, im Hut weich, im Stiel zäh."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Zersetzer an geschwächtem Laubholz, gern Weide, Pappel und Buche, in Büscheln. Fruchtet bei Frost."
+zeit = "Oktober bis April."
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Mit Ring am Stiel, Sporenpulver rostbraun."
+essbar = "toedlichGiftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Samtfussruebling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gemeiner_Samtfußrübling"

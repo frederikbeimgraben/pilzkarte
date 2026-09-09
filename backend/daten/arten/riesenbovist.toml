@@ -1,0 +1,30 @@
+name = "Riesenbovist"
+lateinisch = "Calvatia gigantea"
+gruppe = "staeubling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur jung mit rein weißem Inneren. In Scheiben braten."
+
+[merkmale]
+fruchtkoerper = "20 bis 50 cm, kugelig, weiß, glatt bis feinfilzig, ohne Stiel, nur mit einem Myzelstrang am Boden."
+fleisch = "Jung rein weiß und fest wie Käse, später gelb, dann olivbraun und staubig. Die Hülle reißt unregelmäßig auf."
+geruch = "Jung angenehm."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Zersetzer auf Wiesen, Weiden, an Waldrändern und unter Brennnesseln, auf nährstoffreichem Boden."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Kartoffelbovist"
+merkmal = "Viel kleiner, Haut derb gelbbraun, innen früh schwarz."
+essbar = "giftig"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Riesenbovist.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Riesenbovist"

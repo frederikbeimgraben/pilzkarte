@@ -1,0 +1,31 @@
+name = "Riesenporling"
+lateinisch = "Meripilus giganteus"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Jung wird er gelegentlich gegessen, wird aber schnell zäh und bitter."
+
+[merkmale]
+fruchtkoerper = "30 bis 80 cm, eine Rosette aus wenigen großen, fächerförmigen gelbbraunen Hüten mit dunkler Zonierung."
+poren = "Weiß, fein, auf Druck und im Alter schwarz anlaufend."
+fleisch = "Weiß, faserig, zäh, schwärzt im Schnitt."
+geruch = "Säuerlich pilzig."
+geschmack = "Mild, bald bitter."
+sporenpulver = "Weiß."
+vorkommen = "Wurzelparasit an Buche, auch an Eiche und Linde, am Stammfuß und über Wurzeln. In Parks und Alleen häufig."
+zeit = "Juli bis Oktober."
+
+[[verwechslungen]]
+name = "Klapperschwamm"
+merkmal = "Viele kleine Hütchen, Fleisch schwärzt nicht."
+essbar = "speisepilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Riesenporling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Riesenporling"

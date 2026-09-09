@@ -1,0 +1,31 @@
+name = "Schafporling"
+lateinisch = "Albatrellus ovinus"
+gruppe = "porling"
+speisewert = "speisepilz"
+geschuetzt = true
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+
+[merkmale]
+hut = "5 bis 15 cm, weiß bis cremefarben, im Alter gilbend, oft rissig, unregelmäßig gebuchtet."
+poren = "Weiß, sehr fein, am Stiel herablaufend, im Alter gelb."
+stiel = "Kurz, dick, weiß, oft seitlich."
+fleisch = "Weiß, fest, brüchig, gilbt beim Garen."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, im Alter leicht bitter."
+sporenpulver = "Weiß."
+vorkommen = "Mykorrhiza mit Fichte, in Bergwäldern auf Kalk, oft in Gruppen verwachsen."
+zeit = "August bis Oktober."
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Poren gelblich, Fleisch bitterer. Ebenfalls essbar."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schafporling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schaf-Porling"

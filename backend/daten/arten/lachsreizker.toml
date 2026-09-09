@@ -1,0 +1,33 @@
+name = "Lachsreizker"
+lateinisch = "Lactarius salmonicolor"
+gruppe = "milchling"
+speisewert = "essbar"
+geschuetzt = false
+jahreszeiten = ["herbst"]
+baeume = ["tanne"]
+karte = "reizker"
+
+[merkmale]
+hut = "5 bis 15 cm, lachsorange, kaum gezont, glatt, Rand lange eingerollt."
+lamellen = "Lachsfarben, dicht, herablaufend, kaum grünend."
+milch = "Orange, läuft nach längerer Zeit weinrot an."
+stiel = "Kräftig, orange, oft mit blassen Gruben."
+fleisch = "Blass orange, fest."
+geruch = "Fruchtig."
+geschmack = "Mild bis bitterlich."
+sporenpulver = "Blass ocker."
+vorkommen = "Mykorrhiza mit Weißtanne, in Bergwäldern des Südens und Südwestens."
+zeit = "August bis Oktober."
+
+[[verwechslungen]]
+name = "Fichtenreizker"
+merkmal = "Kleiner, grünt stark, bei Fichte."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Lachsreizker.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Lachs-Reizker"

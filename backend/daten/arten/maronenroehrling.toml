@@ -1,0 +1,37 @@
+name = "Maronenröhrling"
+lateinisch = "Imleria badia"
+gruppe = "roehrling"
+speisewert = "speisepilz"
+geschuetzt = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "kiefer", "buche"]
+speisewertHinweis = "Nimmt Cäsium stärker auf als die meisten Arten. In Südbayern und im Bayerischen Wald sind größere Mengen nicht zu empfehlen."
+
+[merkmale]
+hut = "4 bis 15 cm, kastanien- bis dunkelbraun, jung samtig, bei Nässe glänzend klebrig."
+roehren = "Jung blassgelb, später grüngelb. Mündungen blauen auf Druck sofort."
+stiel = "Schlank, braun faserig, ohne Netz und ohne Flocken."
+fleisch = "Weiß bis blassgelb, blaut im Schnitt schwach und langsam."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Mykorrhiza mit Fichte und Kiefer, auch bei Buche. Auf sauren Böden, gern in Nadelforsten und an morschem Holz."
+zeit = "Juli bis November, Schwerpunkt September und Oktober."
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Röhren gelb, blauen kaum, Hut matt und rissig."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Maronenroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Maronen-Röhrling"
