@@ -25,6 +25,7 @@ from app.modules.arten.katalog import (
     karten_suchen,
     katalog,
     merkmale_bauen,
+    mittel_je_woche,
     profile_lesen,
     saison_lesen,
     spitze_woche_fuer,
@@ -299,6 +300,43 @@ def test_hoechstwert_gilt_fuer_beide_reihen(gebaut: Katalog) -> None:
     assert max(kurve.laufendes_jahr) <= kurve.hoechstwert
 
 
+def test_mittel_teilt_durch_die_geschlossenen_jahre() -> None:
+    assert mittel_je_woche([110, 55, 0], 11) == [10.0, 5.0, 0.0]
+
+
+def test_liste_nennt_die_begehungen_je_woche(gebaut: Katalog) -> None:
+    liste = gebaut.liste()
+
+    # Elf geschlossene Jahre, 2015 bis 2025: 100 Begehungen in KW 1 sind 9,1 je Jahr.
+    assert liste.begehungen_je_woche_alle_jahre[0] == 9.1
+    assert liste.begehungen_je_woche_alle_jahre[1] == 18.2
+    assert liste.begehungen_je_woche_alle_jahre[39] == 36.4
+    assert liste.begehungen_je_woche_laufendes_jahr == [50, 100, 0]
+
+
+def test_profil_nennt_die_begehungen_je_woche(gebaut: Katalog) -> None:
+    kurve = gebaut.art("steinpilz").saison
+
+    assert kurve.begehungen_je_woche_alle_jahre[0] == 9.1
+    assert kurve.begehungen_je_woche_laufendes_jahr == [50, 100, 0]
+
+
+def test_die_begehungen_des_laufenden_jahres_enden_mit_der_kurve(gebaut: Katalog) -> None:
+    kurve = gebaut.art("steinpilz").saison
+
+    assert len(kurve.begehungen_je_woche_laufendes_jahr) == len(kurve.laufendes_jahr)
+    assert len(kurve.begehungen_je_woche_alle_jahre) == len(kurve.alle_jahre) == WOCHEN
+
+
+def test_eine_duenne_woche_ist_an_ihrem_nenner_zu_erkennen(gebaut: Katalog) -> None:
+    kurve = gebaut.art("steinpilz").saison
+
+    # KW 3 traegt 0 Prozent, aber auch keine einzige Begehung. Das Frontend
+    # zeichnet sie darum blass statt als Absturz der Linie.
+    assert kurve.laufendes_jahr[2] == 0.0
+    assert kurve.begehungen_je_woche_laufendes_jahr[2] == 0
+
+
 def test_spitze_woche_zeigt_auf_die_beste_kalenderwoche(gebaut: Katalog) -> None:
     assert gebaut.art("steinpilz").spitze_woche == 40
 
@@ -433,7 +471,14 @@ async def test_liste_antwortet_in_camel_case(app: FastAPI) -> None:
 
     assert antwort.status_code == 200
     koerper = antwort.json()
-    assert set(koerper) == {"stand", "jahre", "begehungen", "arten"}
+    assert set(koerper) == {
+        "stand",
+        "jahre",
+        "begehungen",
+        "begehungenJeWocheAlleJahre",
+        "begehungenJeWocheLaufendesJahr",
+        "arten",
+    }
     erste = koerper["arten"][0]
     assert set(erste) == {
         "slug",
@@ -472,6 +517,8 @@ async def test_profil_antwortet_mit_tabelle_und_kurve(app: FastAPI) -> None:
         "jahre",
         "stand",
         "begehungen",
+        "begehungenJeWocheAlleJahre",
+        "begehungenJeWocheLaufendesJahr",
     }
     assert koerper["saison"]["laufendesJahr"] == [40.0, 5.0, 0.0]
 

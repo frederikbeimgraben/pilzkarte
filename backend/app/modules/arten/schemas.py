@@ -259,6 +259,10 @@ class SaisonKurve(BasisModell):
 
     Ein Wert ist der Anteil der Begehungen einer Kalenderwoche, bei denen die
     Art gefunden wurde. ``begehungen`` ist der Nenner der Reihe ``alleJahre``.
+
+    Die zwei ``begehungenJeWoche``-Reihen sind der Nenner selbst, je Woche.
+    Ohne sie sieht eine Woche mit drei Begehungen aus wie eine mit dreihundert,
+    und das laufende Jahr faellt am Ende ab, weil die Meldungen nachhinken.
     """
 
     alle_jahre: list[float]
@@ -267,6 +271,8 @@ class SaisonKurve(BasisModell):
     jahre: Jahresspanne
     stand: Woche
     begehungen: int
+    begehungen_je_woche_alle_jahre: list[float]
+    begehungen_je_woche_laufendes_jahr: list[int]
 
 
 class Merkmal(BasisModell):
@@ -316,11 +322,13 @@ class Art(BasisModell):
 class ArtenListe(BasisModell):
     """Die Antwort auf ``GET /api/arten``.
 
-    ``begehungen`` und ``jahre`` gelten fuer alle Arten gleich und stehen darum
-    einmal am Kopf statt in jeder Zeile.
+    ``begehungen``, ``jahre`` und die zwei ``begehungenJeWoche``-Reihen gelten
+    fuer alle Arten gleich und stehen darum einmal am Kopf statt in jeder Zeile.
     """
 
     stand: Woche
     jahre: Jahresspanne
     begehungen: int
+    begehungen_je_woche_alle_jahre: list[float]
+    begehungen_je_woche_laufendes_jahr: list[int]
     arten: list[ArtKurz]
