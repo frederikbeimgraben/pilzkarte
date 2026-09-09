@@ -1,0 +1,20 @@
+# Backend
+backend/.venv/
+backend/var/
+backend/.env
+backend/deploy.stamp
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+frontend/test-results/
+frontend/playwright-report/
+# Werkzeuge
+.playwright-mcp/
+*.log

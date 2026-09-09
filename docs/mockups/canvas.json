@@ -1,0 +1,197 @@
+{
+ "pages": [
+  {
+   "id": "screens",
+   "name": "Screens"
+  },
+  {
+   "id": "bausteine",
+   "name": "Bausteine"
+  }
+ ],
+ "artboards": [
+  {
+   "file": "Main.dc.html",
+   "title": "Karte · Blatt halb",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "KarteEingeklappt.dc.html",
+   "title": "Karte · eingeklappt",
+   "x": 480,
+   "y": 0,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "KarteEbenen.dc.html",
+   "title": "Karte · Ebenen-Knopf",
+   "x": 960,
+   "y": 0,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Ebene.dc.html",
+   "title": "Darstellung · Ebene",
+   "x": 1440,
+   "y": 0,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Kombination.dc.html",
+   "title": "Darstellung · Kombination",
+   "x": 1920,
+   "y": 0,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Faktor.dc.html",
+   "title": "Darstellung · Faktor",
+   "x": 2400,
+   "y": 0,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "KarteAktionen.dc.html",
+   "title": "Eintragen · Plus-Knopf",
+   "x": 0,
+   "y": 980,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "MeldenOrt.dc.html",
+   "title": "Eintragen · Ort",
+   "x": 480,
+   "y": 980,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "MeldenFormular.dc.html",
+   "title": "Eintragen · Fund beschreiben",
+   "x": 960,
+   "y": 980,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "ZoneZeichnen.dc.html",
+   "title": "Eintragen · Zone zeichnen",
+   "x": 1440,
+   "y": 980,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Anmelden.dc.html",
+   "title": "Eintragen · Anmelden beim Speichern",
+   "x": 1920,
+   "y": 980,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Arten.dc.html",
+   "title": "Reiter · Arten",
+   "x": 0,
+   "y": 1960,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Art.dc.html",
+   "title": "Objekt · Art",
+   "x": 480,
+   "y": 1960,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Funde.dc.html",
+   "title": "Reiter · Einträge",
+   "x": 960,
+   "y": 1960,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Fund.dc.html",
+   "title": "Objekt · Fund",
+   "x": 1440,
+   "y": 1960,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Zone.dc.html",
+   "title": "Objekt · Zone",
+   "x": 1920,
+   "y": 1960,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Mehr.dc.html",
+   "title": "Konto",
+   "x": 2400,
+   "y": 1960,
+   "w": 390,
+   "h": 844
+  },
+  {
+   "file": "Desktop.dc.html",
+   "title": "Rechner · 1440",
+   "x": 0,
+   "y": 2940,
+   "w": 1440,
+   "h": 900
+  },
+  {
+   "file": "Bausteine.dc.html",
+   "title": "Bausteine",
+   "x": 0,
+   "y": 0,
+   "w": 900,
+   "h": 720,
+   "page": "bausteine"
+  }
+ ],
+ "annotations": [
+  {
+   "id": "hinweis-karte",
+   "x": 0,
+   "y": -130,
+   "w": 380,
+   "text": "Kartenbild ist ein Platzhalter: OSM-Kacheln laden im Canvas nicht. Farbfeld = Vorhersage, blau = Regen-Ebene.",
+   "page": "screens"
+  },
+  {
+   "id": "hinweis-tokens",
+   "x": 960,
+   "y": -130,
+   "w": 380,
+   "text": "Alle Werte aus @stupa-makers/ui-kit: British Racing Green #004225, Archivo, 4-px-Raster, Radien 4/8/12/18, Controls 36 px.",
+   "page": "screens"
+  },
+  {
+   "id": "hinweis-bausteine",
+   "x": 0,
+   "y": -110,
+   "w": 380,
+   "text": "Sechs mobile Bausteine, die dem Kit fehlen. Vorschlag: Eintragspunkt @stupa-makers/ui-kit/mobile.",
+   "page": "bausteine"
+  }
+ ],
+ "launch": {
+  "view": "canvas",
+  "page": "screens"
+ }
+}

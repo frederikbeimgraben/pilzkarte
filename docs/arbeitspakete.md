@@ -1,0 +1,249 @@
+# Arbeitspakete
+
+Reihenfolge und Abnahmekriterien für die Umsetzung. Jedes Paket ist ein
+eigener Auftrag an einen Agenten, hat einen klaren Schnitt zu den anderen
+und endet mit grünen Tests. Der Product Owner nimmt ab, deployt und hakt ab.
+
+Legende: **[P]** kann parallel zu den Nachbarn im selben Block laufen.
+**Abnahme** ist die Liste, die der Agent im Abschlussbericht Punkt für Punkt
+belegt.
+
+## Block 0, Fundament
+
+### A0 Backend-Gerüst
+
+Ordner `backend`. FastAPI-App mit Settings aus Umgebung (`PILZE_*`),
+problem+json-Handler, SQLAlchemy-async-Engine, Alembic mit Baseline,
+Health-Endpunkt, `GET /api/config` (Issuer, Client ID, Origin, Version),
+Auth-Modul: JWKS vom Issuer laden und cachen, Bearer-Token prüfen (`iss`,
+`aud`, `exp`, Signatur), `sub` und `email` als `Nutzer`-Objekt. Dependency
+`aktueller_nutzer` (Pflicht) und `nutzer_optional`. `pyproject.toml` mit
+`uv`, dev-Extras, ruff, basedpyright strict, pytest-asyncio.
+
+Abnahme:
+- `uv run pytest` grün, Abdeckung ≥ 90 %, `core/auth` 100 % Zweige
+- Token mit falschem `aud`, abgelaufen, falscher Signatur, fehlend: je 401 als problem+json
+- JWKS-Cache: zweiter Aufruf trifft das Netz nicht (Test mit gemocktem httpx)
+- `alembic upgrade head` auf leerer SQLite legt das Schema an, `alembic heads` genau einer
+- `GET /api/health` 200, `GET /api/config` liefert die vier Felder
+- läuft mit genau den Paketen aus `betrieb.md`
+
+### A0b CI **[P zu A0, A1]**
+
+`.github/workflows/ci.yml` mit den sieben Jobs aus `CLAUDE.md`, Caches für
+`uv` und `npm`, Node 24, Python 3.13. Jobs, deren Ordner noch fehlt, enden
+grün mit einem Hinweis, bis A0 und A1 gemergt sind. Branch-Schutz auf
+`main`: alle Jobs Pflicht, kein Force-Push. Dependabot für npm, pip und
+Actions, wöchentlich.
+
+Abnahme:
+- CI läuft auf Pull Requests und auf `main`, alle Jobs grün
+- ein absichtlich fehlschlagender Test bricht den Job (im Bericht belegen und wieder entfernen)
+- Laufzeit unter 6 Minuten bei warmem Cache
+
+### A1 Frontend-Gerüst **[P zu A0]**
+
+Ordner `frontend`, Angular 22 (`npx @angular/cli@22 new pilzkarte
+--standalone --style=scss --ssr=false --zoneless`), ui-kit aus GitHub mit
+`overrides` für die Peer-Versionen, Tokens und Archivo eingebunden,
+`data-theme` hell/dunkel/system mit Persistenz, i18n-Dienst de/en mit
+Signal-Locale, `ApiClient` über `/api` mit problem+json-Fehlern als Toast,
+Proxy-Konfiguration (`/api` lokal, Kachelpfade auf pilze.beimgraben.net),
+Vitest mit Testing Library und axe, ESLint, Budgets im `angular.json`.
+
+Die sieben mobilen Bausteine als eigene Komponenten in `src/app/ui/`, nach
+Maßen aus `docs/mockups/bauen.py` und Artboard `Bausteine`: BottomNav
+(64 px), Sheet mit drei Rasten (Kopf 112 px, halb, voll; Ziehen und Tipp),
+ChipGroup, Segmented (Rolle tablist), Timeline (Wochenknopf 44 × 48 mit
+Balken, Prognose gestrichelt, Jahresmarke), ListRow, ActionBar (Fußleiste:
+Hauptaktion breit, darunter zwei gleich breite Knöpfe, Gefahr-Variante mit
+roter Umrandung).
+
+Abnahme:
+- `npm test`, `npm run lint`, `npm run typecheck`, `npm run build` grün
+- jede Baustein-Komponente hat einen Test mit axe ohne Verstoß
+- Storybook-artige Seite `/bausteine` (nur dev) zeigt alle sieben in hell und dunkel
+- Prod-Build unter 600 kB initial, Bundle-Budget im `angular.json`
+
+### A2 Shell und Karte
+
+Voraussetzung A1. Shell mit BottomNav (Karte, Arten, Einträge) und Avatar
+oben rechts. Route `/karte` mit MapLibre, Hintergrund OpenFreeMap liberty in
+hell und dunkel, Deutschland-Grenzen als `maxBounds` mit Rand. Blatt mit
+Kopf (Art, Woche, Zeitleiste) in drei Rasten. Protokoll `wert://` mit
+Worker: holt die Wertkachel `<slug>/<woche>/z/x/y.png`, färbt über die
+Nachschlagetabelle des Manifests, liefert RGBA an eine Rasterquelle.
+Manifest `<slug>.json` liefert Wochen, `top`, `mean`/`max`. Zeitleiste
+zeigt die Wochen des Manifests mit Balken aus `mean`, Pfeile und Play.
+Darstellung "Vorhersage" mit Rampe und Legende "Fundwahrscheinlichkeit je
+Begehung", 0 % bis Höchstwert. Deep Links `/karte?art=steinpilz&kw=2026-40`.
+
+Abnahme:
+- Karte lädt Steinpilz KW der aktuellen Woche in unter 2 s auf DSL (Prod-Build gegen pilze.beimgraben.net)
+- Wochenwechsel tauscht die Quelle ohne Flackern, Nachbarwochen vorgeladen
+- Blatt: drei Rasten per Geste und Tipp, Karte wird auf den freien Streifen eingepasst
+- Legende und Kopf entsprechen den Mockups `Main`, `KarteEingeklappt` in Maß und Text
+- Vitest für Worker-Färbung (Byte → Farbe, 0 → transparent) und Manifest-Parser
+
+## Block 1, Darstellung
+
+### B1 Ebenen **[P zu B2]**
+
+Route und Darstellung "Ebene": `layers.json` lesen, Ebenen-Liste im Blatt
+mit Gruppen (je Woche, fest), gewählte Ebene über `wert://` mit eigener Rampe
+und Einheit, Wochenebenen folgen der Zeitleiste. Ebenen-Knopf auf der Karte:
+Hintergrund (hell, dunkel, Topo, Satellit), Deckkraft, später Marker und
+Zonen. Screens `Ebene`, `KarteEbenen`.
+
+Abnahme:
+- alle Ebenen aus `layers.json` sichtbar, Einheit und Rampe je Ebene richtig
+- Deckkraft wirkt sofort, Hintergrundwechsel behält Position und Zoom
+
+### B2 Kombination und Faktor **[P zu B1]**
+
+Darstellung "Kombination" ohne Art: Faktoren mit Bedingung (unter, über,
+zwischen), Regel Schnittmenge oder Abgestuft (geometrisches Mittel der
+Erfüllungsgrade), Worker rechnet je Punkt aus mehreren Quellen. Screen
+`Faktor` mit Histogramm der Ebene (vorgerechnet, siehe C2), zwei Griffen,
+Anteil der Fläche. Kombination im URL-Zustand, später im Konto speichern.
+Screens `Kombination`, `Faktor`.
+
+Abnahme:
+- Schnittmenge einfarbig, Abgestuft als Rampe; Wechsel unter 200 ms bei Zoom 7
+- Faktor: Histogramm, Griffe, Anteil in Prozent, Bedingung als Feld
+- Worker-Tests: Schnittmenge, geometrisches Mittel, fehlende Daten (0) bleiben leer
+
+### C2 Histogramme im Rendering
+
+Im Repo Pilze (`src/pilze/input_layers.py`, `region_map.py`): je
+Ebene und Woche ein Histogramm mit 40 Klassen über Deutschland, in das
+Manifest der Ebene. Für die Vorhersage-Arten dasselbe je Woche.
+
+Abnahme:
+- `layers.json` und `<slug>.json` tragen `histogramm: {klassen: [...], anteile: [...]}`
+- `week_stats.py` füllt bestehende Manifeste nach
+- Renderzeit steigt um weniger als 5 %
+
+## Block 2, Arten
+
+### D1 Artenkatalog Backend
+
+`GET /api/arten` (Liste mit Stufe, Saisonkurve, Tags), `GET /api/arten/{slug}`
+(Profil als Merkmalstabelle: Hut, Röhren oder Lamellen, Stiel, Fleisch,
+Geruch, Geschmack, Sporenpulver, Vorkommen, Zeit, Speisewert, Schutz,
+Verwechslungen). Profile als YAML in `backend/daten/arten/*.yaml`,
+selbst geschrieben, mit Links zu 123pilzsuche und Wikipedia. Saisonkurve:
+Anteil positiver Begehungen je Kalenderwoche, alle Jahre und laufendes Jahr
+bis zur letzten vollen Woche, aus `funde/<slug>.json` und der
+Begehungstabelle (siehe Repo Pilze, `src/pilze/katalog.py` und `arten_zaehlen.py`; die Begehungstabelle wird als Parquet-Export unter `backend/daten/` abgelegt).
+Stufen: Vorhersage (Manifest vorhanden), Saison (≥ 60 Begehungen), Profil.
+
+Abnahme:
+- 23 Vorhersage-Arten, 42 Saison-Arten, 20 Profil-Arten laut `arten_zaehlen.py`, alle mit Profil
+- Saisonkurve in Prozent, beide Reihen, Test gegen eine Fixture
+- Tests je Endpunkt, Schema strikt, camelCase
+
+### D2 Arten Frontend
+
+Voraussetzung D1, A1. Reiter Arten: Suche, Chips (alle, mit Vorhersage,
+Röhrlinge, Herbst), Liste als Raster mit Kurve rechts und Tags darunter.
+Artseite tabellarisch, Saisonkurve mit beiden Reihen und Legende, Fußleiste
+"Auf der Karte anzeigen". Screens `Arten`, `Art`.
+
+Abnahme:
+- Liste und Artseite pixelnah zu den Mockups, hell und dunkel
+- Kurve: laufendes Jahr endet mit Punkt, Höchstwert als Achsenbeschriftung
+- axe ohne Verstoß, Tastaturbedienung der Liste
+
+## Block 3, Konto und Objekte
+
+### E1 Auth Frontend
+
+`oidc-client-ts` mit PKCE gegen den Issuer aus `/api/config`, Routen
+`/anmeldung` und `/anmeldung/still`, Token im Speicher, stille Erneuerung,
+`Authorization: Bearer` nur an `/api`. Anmelde-Blatt erst beim ersten
+Speichern (Screen `Anmelden`). Konto-Screen `Mehr` mit Abmelden,
+Darstellung, Offline, Über.
+
+Abnahme:
+- Anmelden gegen sso.beimgraben.net funktioniert lokal und in Prod
+- Karte, Arten, Ebenen ohne Anmeldung nutzbar
+- abgelaufenes Token wird still erneuert; scheitert das, Anmelde-Blatt statt Fehler
+
+### E2 Funde, Marker, Zonen Backend **[P zu E1]**
+
+Modelle und Endpunkte unter `/api/funde`, `/api/marker`, `/api/zonen`: CRUD
+je Besitzer, Sichtbarkeit privat oder geteilt, Zonen als Polygon (GeoJSON),
+Fotos `POST /api/funde/{id}/fotos` (≤ 3, 1600 px, EXIF weg, JPEG),
+`GET /api/funde/geteilt?bbox=` mit Rundung geschützter Arten auf 5 km.
+Zone: `GET /api/zonen/{id}/wert?art=&kw=` liefert Flächenmittel aus den
+Kacheln in `PILZE_MAPS` und die Zahl eigener Funde in der Fläche.
+
+Abnahme:
+- Besitzerprüfung: fremdes Objekt 404, Test je Endpunkt
+- Foto-Pipeline: EXIF und GPS nachweislich entfernt (Test liest die Datei zurück)
+- geteilte Funde geschützter Arten nie exakt, Test mit Steinpilz und Pfifferling
+- Alembic-Migration mit `IF NOT EXISTS`, ein Head
+
+### E3 Eintragen und Einträge Frontend
+
+Voraussetzung E1, E2, A2. Plus-Knopf öffnet Aktionsblatt (Fund, Marker,
+Zone). Fundort mit Fadenkreuz, Formular (Art, Anzahl, Datum, Notiz,
+Sichtbarkeit, Fotos), Marker mit Name und Notiz, Zone mit Terra Draw
+(Eckpunkte, Fläche läuft mit), Objekt-Blätter Fund, Marker, Zone mit
+Fußleiste. Reiter Einträge mit Chips (Funde, Marker, Zonen, geteilt).
+Ebenen-Knopf zeigt eigene Marker und Zonen, geteilte Funde. Screens
+`KarteAktionen`, `MeldenOrt`, `MeldenFormular`, `ZoneZeichnen`, `Fund`,
+`Zone`, `Funde`.
+
+Abnahme:
+- alle sieben Screens pixelnah, hell und dunkel, Texte wie in den Mockups
+- Fund mit drei Fotos in unter 10 s auf LTE gespeichert
+- Zone: Fläche in ha während des Zeichnens, Wert und Funde im Zonen-Blatt
+- Playwright: Fund melden von der Karte bis zum Eintrag in der Liste
+
+## Block 4, Offline und Feinschliff
+
+### F1 Offline-Warteschlange und PWA
+
+Service Worker mit `ngsw`, Manifest, Installationshinweis. IndexedDB über
+`idb`: Warteschlange für Funde, Marker, Zonen mit Fotos; Status
+"Übertragung ausstehend" in der Liste; Übertragung bei Netz; zuletzt
+gesehene Kacheln im Cache mit Obergrenze. Konto-Screen zeigt Speicher und
+ausstehende Übertragungen.
+
+Abnahme:
+- Playwright mit Netz aus: Karte öffnet mit gesehenen Kacheln, Fund geht später raus
+- Warteschlange 100 % Zweige
+- Lighthouse PWA-Prüfung ohne Fehler
+
+### F2 Offline-Gebiete
+
+PMTiles-Archiv für Deutschland auf dem Server (`/karte/deutschland.pmtiles`,
+Erzeugung als Skript in `tools/`), `pmtiles`-Protokoll im Client,
+Gebiet als Rechteck oder Landkreis wählen, Kacheln bis Zoom 14 und
+Wertkacheln der gewählten Arten laden, in IndexedDB ablegen, Protokoll
+bedient erst lokal. Verwaltung unter Konto, Offline.
+
+Abnahme:
+- Landkreis-Gebiet unter 40 MB, Fortschritt sichtbar, abbrechbar
+- Karte ohne Netz im Gebiet bis Zoom 14 vollständig
+- Speicher und Stand je Gebiet, Aktualisieren und Löschen
+
+### F3 Feinschliff
+
+Onboarding drei Screens, Standort-Knopf, Fehlerzustände, Leistungsbudget,
+a11y-Audit gegen AA, Desktop-Layout (Screen `Desktop`: Blatt als Seitenleiste
+ab 1024 px), beide Themes gegen den Prod-Build.
+
+Abnahme:
+- axe und Lighthouse a11y ohne Fehler auf allen Routen
+- Startzeit unter 3 s auf einem Mittelklasse-Telefon (Lighthouse mobil)
+- Desktop-Layout auf 1440 px entspricht dem Mockup
+
+## Deploy-Pakete (Product Owner)
+
+- **P1** `deploy/frontend.sh` und `deploy/backend.sh` erster Lauf,
+  Kachelpfade prüfen.
+  Erster Deploy nach A0 und A2.
+- **P2** PMTiles-Archiv erzeugen und hochladen, nach F2.

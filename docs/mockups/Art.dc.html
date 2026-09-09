@@ -1,0 +1,124 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><script src="./support.js"></script></head><body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+ *{box-sizing:border-box}
+ body{margin:0;background:#c7ccc8;font-family:'Archivo','Segoe UI',system-ui,sans-serif;color:#141815;-webkit-font-smoothing:antialiased}
+ a{color:#004225} a:hover{color:#00351e}
+ .tel{width:390px;height:844px;position:relative;overflow:hidden;background:#f7f8f7}
+ .desk{width:1440px;height:900px;position:relative;overflow:hidden;background:#f7f8f7;display:grid;grid-template-columns:400px 1fr;grid-template-rows:64px 1fr}
+ .karte{position:absolute;inset:0;background:
+   radial-gradient(120px 90px at 22% 18%, #dfe8d6 0, transparent 100%),
+   radial-gradient(160px 120px at 78% 30%, #d3dfcb 0, transparent 100%),
+   radial-gradient(200px 140px at 40% 62%, #d8e3d0 0, transparent 100%),
+   linear-gradient(180deg,#eef2ea,#e4ebe0)}
+ .karte svg{position:absolute;inset:0;width:100%;height:100%}
+ .heat{position:absolute;inset:0;mix-blend-mode:multiply;opacity:.92}
+ .tab-nav{position:absolute;left:0;right:0;bottom:0;height:64px;background:#ffffff;border-top:1px solid #e0e3e0;display:flex;padding:6px 8px 8px}
+ .tab-nav div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:12px;font-weight:600;color:#666c67}
+ .tab-nav div.on{color:#004225}
+ .tab-nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+ .blatt{position:absolute;left:0;right:0;bottom:64px;background:#ffffff;border-radius:18px 18px 0 0;box-shadow:0 8px 28px rgba(0,38,21,.14);display:flex;flex-direction:column}
+ .griff{height:24px;display:flex;align-items:center;justify-content:center}
+ .griff i{display:block;width:40px;height:4px;border-radius:2px;background:#e0e3e0}
+ .kopf{padding:0 16px 12px;border-bottom:1px solid #e0e3e0}
+ .kopfzeile{display:flex;align-items:center;justify-content:space-between;height:44px}
+ .kopfzeile b{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+ .kopfzeile b span{color:#666c67;font-weight:500;margin-right:6px}
+ .kopfzeile b em{font-style:normal;color:#8c1c16}
+ .knoepfe{display:flex;gap:0;border:1px solid #828a84;border-radius:8px;overflow:hidden;flex:0 0 auto;margin-left:12px}
+ .knoepfe i{display:flex;align-items:center;justify-content:center;width:38px;height:36px;background:#ffffff;border-left:1px solid #828a84}
+ .knoepfe i:first-child{border-left:0}
+ .knoepfe i svg{width:12px;height:12px;fill:#141815}
+ .leiste{display:flex;gap:6px;overflow:hidden;padding:10px 16px 2px;margin:0 -16px}
+ .woche{flex:0 0 auto;width:48px;height:56px;border:1px solid #e0e3e0;border-radius:8px;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;color:#666c67}
+ .woche small{font-size:10px;letter-spacing:.06em}
+ .woche b{font-size:15px;color:#141815;font-variant-numeric:tabular-nums}
+ .woche u{position:absolute;bottom:6px;left:8px;right:8px;height:3px;border-radius:2px;background:#e0e3e0;text-decoration:none}
+ .woche u i{display:block;height:100%;border-radius:2px;background:#c8a25a}
+ .woche.on{background:#004225;border-color:#004225}
+ .woche.on b,.woche.on small{color:#ffffff}
+ .woche.prog{border-style:dashed}
+ .woche.jahr::before{content:attr(data-jahr);position:absolute;top:3px;font-size:8px;font-weight:700;color:#8c6820}
+ .inhalt{padding:16px 16px 24px;display:flex;flex-direction:column;gap:24px;flex:1 1 auto;min-height:0;overflow:hidden}
+ .seg{display:flex;gap:4px;background:#eef0ee;border:1px solid #e0e3e0;border-radius:12px;padding:4px}
+ .seg div{flex:1;text-align:center;padding:9px 4px;font-size:15px;font-weight:600;color:#666c67;border-radius:8px}
+ .seg div.on{background:#ffffff;color:#141815;box-shadow:0 1px 2px rgba(0,38,21,.06),0 1px 3px rgba(0,38,21,.08)}
+ .h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#666c67;font-weight:600;margin-bottom:10px}
+ .chips{display:flex;gap:8px;overflow:hidden;padding-bottom:2px}
+ .chip{flex:0 0 auto;height:40px;display:flex;align-items:center;padding:0 16px;border:1px solid #828a84;border-radius:999px;font-size:14px;font-weight:600;color:#141815;background:#ffffff;white-space:nowrap}
+ .chip.on{background:#004225;border-color:#004225;color:#ffffff}
+ .rampe{display:flex;height:12px;border-radius:6px;overflow:hidden}
+ .rampe i{flex:1}
+ .enden{display:flex;justify-content:space-between;font-size:13px;color:#666c67;font-variant-numeric:tabular-nums;margin-top:6px}
+ .schalter{display:flex;align-items:center;gap:12px;height:48px;padding:0 14px;border:1px solid #e0e3e0;border-radius:10px;font-size:15px}
+ .schalter i{width:20px;height:20px;border:1px solid #828a84;border-radius:4px;background:#ffffff;display:flex;align-items:center;justify-content:center}
+ .schalter i.on{background:#004225;border-color:#004225}
+ .schalter i svg{width:12px;height:12px;stroke:#ffffff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+ .schalter em{font-style:normal;color:#666c67;margin-left:auto;font-size:13px}
+ .knopf{height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 20px;border-radius:10px;font-size:15px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+ .knopf.primaer{background:#004225;color:#ffffff}
+ .knopf.sekundaer{background:#ffffff;color:#141815;border-color:#828a84}
+ .knopf.geist{color:#004225}
+ .knopf.gefahr{background:#ffffff;color:#8c1c16;border-color:#8c1c16}
+ .knopf.gross{height:48px}
+ .knopf.breit{width:100%}
+ .knopf svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ .feld{height:44px;display:flex;align-items:center;padding:0 16px;border:1px solid #828a84;border-radius:10px;background:#ffffff;font-size:16px}
+ .feld.leer{color:#666c67}
+ .feld.mehrzeilig{height:80px;align-items:flex-start;padding-top:10px}
+ .label{font-size:14px;font-weight:500;margin-bottom:8px}
+ .badge{display:inline-flex;align-items:center;padding:4px 12px;font-size:12.5px;font-weight:600;line-height:1.4;border-radius:999px;background:#eef0ee;color:#666c67;white-space:nowrap}
+ .badge.p{background:#e9f1ec;color:#004225}
+ .badge.w{background:#f7eed8;color:#876010}
+ .badge.i{background:#dfeef3;color:#185468}
+ .badge.s{background:#e3f1e8;color:#1f5d38}
+ .schwebe{position:absolute;right:12px;width:48px;height:48px;border-radius:14px;background:#004225;color:#ffffff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(0,38,21,.14)}
+ .schwebe.hell{background:#ffffff;color:#141815;border:1px solid #e0e3e0}
+ .schwebe svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ .quelle{position:absolute;left:8px;top:8px;font-size:10px;color:#666c67;background:rgba(255,255,255,.75);padding:2px 6px;border-radius:4px}
+ .card{background:#ffffff;border:1px solid #e0e3e0;border-radius:12px;box-shadow:0 1px 2px rgba(0,38,21,.06),0 1px 3px rgba(0,38,21,.08);overflow:hidden}
+ .zeile{display:flex;align-items:center;gap:14px}
+ .stapel{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+ .titel{font-size:16px;font-weight:600}
+ .unter{font-size:14px;color:#666c67}
+ .kreuz{position:absolute;left:50%;top:38%;width:52px;height:52px;transform:translate(-50%,-50%)}
+ .kreuz::before,.kreuz::after{content:"";position:absolute;background:#004225}
+ .kreuz::before{left:50%;top:0;width:2px;height:100%;transform:translateX(-50%)}
+ .kreuz::after{top:50%;left:0;height:2px;width:100%;transform:translateY(-50%)}
+ .kreuz i{position:absolute;inset:14px;border:2px solid #004225;border-radius:50%;background:rgba(0,66,37,.12)}
+ .fund{position:absolute;width:16px;height:16px;border-radius:50%;background:#c8a25a;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+ .notiz{font-size:13px;color:#666c67;line-height:1.45}
+ .kopfleiste{height:64px;display:flex;align-items:center;gap:12px;padding:0 20px;border-bottom:1px solid #e0e3e0;background:#ffffff}
+ .kopfleiste b{font-size:22px;font-weight:600;letter-spacing:-.01em}
+ .kopfleiste .zurueck{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#004225}
+ .kopfleiste .zurueck svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ .seite{position:absolute;left:0;right:0;top:0;bottom:64px;display:flex;flex-direction:column;background:#f7f8f7}
+ .scroll{flex:1;overflow:hidden;padding:20px 16px;display:flex;flex-direction:column;gap:20px}
+ .funke{width:96px;height:40px;flex:0 0 auto}
+ .absatz{font-size:15px;line-height:1.55}
+ .absatz.leise{color:#666c67}
+ .liste{display:flex;flex-direction:column}
+ .liste .zeile{padding:16px 0;border-bottom:1px solid #e0e3e0}
+ .artliste{display:flex;flex-direction:column}
+ .artzeile{display:grid;grid-template-columns:minmax(0,1fr) 96px;grid-template-rows:auto auto auto;column-gap:16px;row-gap:0;align-items:center;padding:14px 16px;border-bottom:1px solid #e0e3e0}
+ .artzeile:last-child{border-bottom:0}
+ .artzeile.aktiv{background:#e9f1ec}
+ .artzeile .funke{grid-column:2;grid-row:1/3;align-self:center}
+ .artzeile .tags{grid-column:1/3;display:flex;gap:8px;margin-top:10px}
+ .tabelle{display:flex;flex-direction:column}
+ .tz{display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:12px;padding:10px 14px;border-bottom:1px solid #e0e3e0;font-size:14px;line-height:1.45}
+ .tz:last-child{border-bottom:0}
+ .tz:nth-child(even){background:#f7f8f7}
+ .tk{color:#666c67;font-weight:600}
+ .tw{color:#141815}
+ .fuss{margin-top:auto;padding:12px 16px 16px;border-top:1px solid #e0e3e0;background:#ffffff;display:flex;flex-direction:column;gap:10px}
+ .fuss .reihe{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .anno{position:absolute;font-size:11px;color:#8c6820;font-weight:600;letter-spacing:.04em}
+</style>
+</helmet>
+<div class="tel"><div class="seite"><div class="kopfleiste"><span class="zurueck"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></span><b>Steinpilz</b></div><div class="scroll" style="gap:20px"><div class="stapel" style="gap:10px;margin-top:-4px"><span class="unter" style="font-style:italic;font-size:15px">Boletus edulis · Röhrling</span><div style="display:flex;gap:8px"><span class="badge p">Vorhersage</span><span class="badge w">geschützt</span></div></div><div><div class="h2">Saison</div><svg class="funke" style="width:100%;height:72px" viewBox="0 0 330 72" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="71.5" x2="330" y2="71.5" stroke="#e0e3e0"/><line x1="0.0" y1="67" x2="0.0" y2="72" stroke="#828a84"/><line x1="58.2" y1="67" x2="58.2" y2="72" stroke="#828a84"/><line x1="116.5" y1="67" x2="116.5" y2="72" stroke="#828a84"/><line x1="174.7" y1="67" x2="174.7" y2="72" stroke="#828a84"/><line x1="232.9" y1="67" x2="232.9" y2="72" stroke="#828a84"/><line x1="284.7" y1="67" x2="284.7" y2="72" stroke="#828a84"/><text x="2" y="10" font-size="9" fill="#666c67" font-family="Archivo,system-ui">32 %</text><path d="M0,72 L0.0,69.0 L6.5,69.0 L12.9,69.0 L19.4,69.0 L25.9,69.0 L32.4,69.0 L38.8,69.0 L45.3,69.0 L51.8,69.0 L58.2,69.0 L64.7,69.0 L71.2,69.0 L77.6,69.0 L84.1,69.0 L90.6,69.0 L97.1,69.0 L103.5,69.0 L110.0,69.0 L116.5,69.0 L122.9,68.9 L129.4,68.8 L135.9,68.7 L142.4,68.4 L148.8,68.0 L155.3,67.3 L161.8,66.4 L168.2,65.2 L174.7,63.6 L181.2,61.7 L187.6,59.4 L194.1,56.6 L200.6,53.2 L207.1,48.9 L213.5,43.6 L220.0,37.3 L226.5,30.1 L232.9,23.0 L239.4,17.1 L245.9,13.5 L252.4,13.2 L258.8,16.5 L265.3,23.0 L271.8,31.5 L278.2,40.6 L284.7,49.0 L291.2,56.0 L297.6,61.1 L304.1,64.6 L310.6,66.7 L317.1,67.9 L323.5,68.5 L330.0,68.8 L330,72 Z" fill="#c8a25a" opacity=".3"/><path d="M0,72 L0.0,69.0 L6.5,68.8 L12.9,69.2 L19.4,69.1 L25.9,68.8 L32.4,68.9 L38.8,69.2 L45.3,69.1 L51.8,68.8 L58.2,69.0 L64.7,69.2 L71.2,68.8 L77.6,69.2 L84.1,68.9 L90.6,68.9 L97.1,69.0 L103.5,68.7 L110.0,69.1 L116.5,68.8 L122.9,68.9 L129.4,68.2 L135.9,68.3 L142.4,67.5 L148.8,66.5 L155.3,65.3 L161.8,64.3 L168.2,61.8 L174.7,59.4 L181.2,57.2 L187.6,53.2 L194.1,49.9 L200.6,44.9 L207.1,38.6 L213.5,30.8 L220.0,21.1 L226.5,15.1 L232.9,7.0 L239.4,5.0 L245.9,10.7 L245.9,72 Z" fill="#004225" opacity=".12"/><path d="M0.0,69.0 L6.5,68.8 L12.9,69.2 L19.4,69.1 L25.9,68.8 L32.4,68.9 L38.8,69.2 L45.3,69.1 L51.8,68.8 L58.2,69.0 L64.7,69.2 L71.2,68.8 L77.6,69.2 L84.1,68.9 L90.6,68.9 L97.1,69.0 L103.5,68.7 L110.0,69.1 L116.5,68.8 L122.9,68.9 L129.4,68.2 L135.9,68.3 L142.4,67.5 L148.8,66.5 L155.3,65.3 L161.8,64.3 L168.2,61.8 L174.7,59.4 L181.2,57.2 L187.6,53.2 L194.1,49.9 L200.6,44.9 L207.1,38.6 L213.5,30.8 L220.0,21.1 L226.5,15.1 L232.9,7.0 L239.4,5.0 L245.9,10.7" fill="none" stroke="#004225" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><circle cx="245.9" cy="10.7" r="3" fill="#004225"/></svg><div class="enden"><span>Jan</span><span>Apr</span><span>Jul</span><span>Okt</span><span>Dez</span></div><div class="enden" style="margin-top:8px"><span><i style="display:inline-block;width:14px;height:3px;background:#004225;vertical-align:middle;margin-right:6px;border-radius:2px"></i>2025 bis KW 39</span><span><i style="display:inline-block;width:14px;height:10px;background:#c8a25a;opacity:.35;vertical-align:middle;margin-right:6px;border-radius:2px"></i>2015 bis 2024, Anteil der Begehungen mit Fund</span></div></div><div><div class="h2">Merkmale</div><div class="card tabelle"><div class="tz"><span class="tk">Hut</span><span class="tw">6 bis 25 cm, hell- bis dunkelbraun, jung halbkugelig, später polsterförmig. Rand oft heller.</span></div><div class="tz"><span class="tk">Röhren</span><span class="tw">Jung weiß, später gelb bis olivgrün. Fein, am Stiel ausgebuchtet.</span></div><div class="tz"><span class="tk">Stiel</span><span class="tw">Dick, bauchig, hellbraun mit feinem weißem Netz im oberen Teil.</span></div><div class="tz"><span class="tk">Fleisch</span><span class="tw">Weiß, fest, verfärbt nicht.</span></div><div class="tz"><span class="tk">Geruch</span><span class="tw">Angenehm pilzig.</span></div><div class="tz"><span class="tk">Geschmack</span><span class="tw">Mild, nussig.</span></div><div class="tz"><span class="tk">Sporenpulver</span><span class="tw">Olivbraun.</span></div><div class="tz"><span class="tk">Vorkommen</span><span class="tw">Nadel- und Laubwald, meist bei Fichte und Buche. Saure Böden.</span></div><div class="tz"><span class="tk">Zeit</span><span class="tw">Juli bis November, Spitze im Oktober.</span></div><div class="tz"><span class="tk">Speisewert</span><span class="tw"><span class="badge s">Speisepilz</span></span></div><div class="tz"><span class="tk">Schutz</span><span class="tw">Besonders geschützt nach BArtSchV. Entnahme nur in geringen Mengen für den Eigenbedarf.</span></div></div></div><div><div class="h2">Verwechslung</div><div class="card tabelle"><div class="tz"><span class="tk">Gallenröhrling</span><span class="tw">Röhren rosa, Netz dunkel, sehr bitter. Ungenießbar.</span></div><div class="tz"><span class="tk">Sommersteinpilz</span><span class="tw">Heller, feiner genetzt, ab Juni. Essbar.</span></div></div></div><div class="notiz">Weiterführend: 123pilzsuche.de, Wikipedia.</div></div><div class="fuss"><span class="knopf primaer gross breit"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Auf der Karte anzeigen</span></div></div><div class="tab-nav"><div class=""><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Karte</span></div><div class="on"><svg viewBox="0 0 24 24"><path d="M4 11a8 6 0 0 1 16 0H4z"/><path d="M9 11v7a3 3 0 0 0 6 0v-7"/></svg><span>Arten</span></div><div class=""><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Einträge</span></div></div></div></x-dc>
+</body>
+</html>

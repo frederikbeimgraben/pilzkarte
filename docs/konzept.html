@@ -1,0 +1,426 @@
+<title>Pilzkarte App</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#f7f8f7; --surface:#ffffff; --sunken:#eef0ee; --border:#e0e3e0; --border-strong:#828a84;
+  --text:#141815; --muted:#666c67; --primary:#004225; --primary-subtle:#e9f1ec; --accent:#8c6820;
+  --warning-subtle:#f7eed8; --warning:#876010; --info-subtle:#dfeef3; --info:#185468;
+  --shadow:0 1px 2px rgba(0,38,21,.06),0 1px 3px rgba(0,38,21,.08);
+  --font:'Archivo','Segoe UI',system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,'SFMono-Regular',Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#0c0f0d; --surface:#1b1f1c; --sunken:#141815; --border:#2c322d; --border-strong:#646f68;
+  --text:#f7f8f7; --muted:#9aa19c; --primary:#72a384; --primary-subtle:#10271b; --accent:#c8a25a;
+  --warning-subtle:#2c2412; --warning:#d6a548; --info-subtle:#122730; --info:#5aa6c0;
+  --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#0c0f0d; --surface:#1b1f1c; --sunken:#141815; --border:#2c322d; --border-strong:#646f68;
+  --text:#f7f8f7; --muted:#9aa19c; --primary:#72a384; --primary-subtle:#10271b; --accent:#c8a25a;
+  --warning-subtle:#2c2412; --warning:#d6a548; --info-subtle:#122730; --info:#5aa6c0;
+  --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--primary)}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px 80px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px}
+@media (max-width:800px){ .wrap{grid-template-columns:1fr;gap:24px;padding:24px 16px 60px} .toc{display:none} }
+.toc{position:sticky;top:24px;align-self:start;font-size:13px}
+.toc b{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.toc a{display:block;color:var(--muted);text-decoration:none;padding:4px 0;border-left:2px solid transparent;padding-left:10px}
+.toc a:hover{color:var(--text);border-color:var(--primary)}
+header.kopf{margin-bottom:40px}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:36px;line-height:1.15;letter-spacing:-.01em;margin:6px 0 12px;text-wrap:balance}
+h2{font-size:22px;line-height:1.2;letter-spacing:-.01em;margin:48px 0 14px;padding-top:12px;border-top:1px solid var(--border);text-wrap:balance}
+h3{font-size:16px;margin:22px 0 8px}
+p{max-width:68ch;margin:0 0 12px;text-wrap:pretty}
+.lead{font-size:18px;color:var(--muted);max-width:60ch}
+.meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:14px}
+.meta span b{color:var(--text);font-weight:500}
+ul,ol{max-width:68ch;padding-left:22px;margin:0 0 12px}
+li{margin:4px 0}
+.karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0 6px}
+.karte{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.karte b{display:block;font-size:15px;margin-bottom:4px}
+.karte p{font-size:14px;color:var(--muted);margin:0}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0 6px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.tabelle{overflow-x:auto}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--sunken);color:var(--muted);white-space:nowrap}
+.tag.p{background:var(--primary-subtle);color:var(--primary)}
+.tag.w{background:var(--warning-subtle);color:var(--warning)}
+.tag.i{background:var(--info-subtle);color:var(--info)}
+code{font:13px var(--mono);background:var(--sunken);padding:1px 5px;border-radius:4px}
+pre{font:12.5px/1.5 var(--mono);background:var(--sunken);border:1px solid var(--border);border-radius:8px;padding:14px 16px;overflow-x:auto;max-width:100%}
+.ia{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}
+.ia .tab{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;min-height:150px}
+.ia .tab b{display:block;font-size:15px;margin-bottom:6px;color:var(--primary)}
+.ia .tab span{display:block;font-size:13px;color:var(--muted);padding:2px 0}
+.ia .tab span.m{color:var(--text)}
+@media (max-width:800px){ .ia{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.hinweis{background:var(--primary-subtle);border-radius:12px;padding:14px 18px;max-width:68ch;font-size:14.5px}
+.frage{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--border);max-width:68ch}
+.frage b{display:block;font-size:15px}
+.frage p{font-size:14px;color:var(--muted);margin:2px 0 0}
+.rail{display:grid;grid-template-columns:110px minmax(0,1fr);gap:0 18px;max-width:68ch}
+.rail .w{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.rail .t{padding:0 0 18px;border-left:2px solid var(--border);padding-left:18px;margin-left:6px}
+.rail .t b{display:block;font-size:15px}
+.rail .t p{font-size:14px;color:var(--muted);margin:4px 0 0}
+svg.diagramm{width:100%;max-width:680px;height:auto;display:block;margin:10px 0}
+</style>
+
+<div class="wrap">
+<nav class="toc">
+ <b>Inhalt</b>
+ <a href="#ziel">Ziel</a><a href="#prinzipien">Prinzipien</a><a href="#ia">Aufbau</a><a href="#screens">Screens</a>
+ <a href="#muster">Bedienmuster</a><a href="#features">Features</a><a href="#arten">Arten</a><a href="#konten">Konten und Fotos</a><a href="#plattform">Plattform</a><a href="#technik">Technik</a><a href="#markieren">Marker und Zonen</a><a href="#prinzipien-dev">Entwicklung</a><a href="#uikit">ui-kit</a>
+ <a href="#qualitaet">Qualität</a><a href="#offen">Entscheidungen</a><a href="#weg">Fahrplan</a>
+</nav>
+<main>
+<header class="kopf">
+ <div class="eyebrow">Konzept · Stand 9. September 2026</div>
+ <h1>Pilzkarte als App</h1>
+ <p class="lead">Aus der Karte wird eine mobile App: Angular 22, STUPA-MAKERS ui-kit, ein FastAPI-Backend nach den Regeln von STUPA-Workflow, Konten über den eigenen SSO. Dieses Papier legt fest, was sie kann, wie sie sich bedient und wie sie gebaut wird.</p>
+ <div class="meta"><span>Zielgerät <b>Telefon, eine Hand</b></span><span>Zweitgerät <b>Rechner, Spalte neben der Karte</b></span><span>Stack <b>Angular 22 · MapLibre GL · PWA · FastAPI</b></span><span>Konten <b>OIDC, sso.beimgraben.net</b></span></div>
+</header>
+
+<h2 id="ziel">Ziel und Nutzer</h2>
+<p>Die App beantwortet eine Frage: Wo lohnt sich diese Woche ein Gang, für diese Art? Sie wird von dir und einem kleinen Kreis genutzt, nicht öffentlich beworben. Daraus folgen drei Momente, für die sie gebaut wird.</p>
+<div class="karten">
+ <div class="karte"><b>Zu Hause planen</b><p>Karte über Wochen vergleichen, Art wechseln, Ebenen und Kombination prüfen. Meist Rechner oder Tablet, Zeit zum Schauen.</p></div>
+ <div class="karte"><b>Im Wald unterwegs</b><p>Eigener Standort auf der Karte, kein Netz, eine Hand, Handschuhe. Die Karte muss offen bleiben, die Woche greifbar.</p></div>
+ <div class="karte"><b>Fund melden</b><p>Ort setzen, Art wählen, Foto dazu, fertig. Unter einer Minute, auch ohne Netz. Später ansehen, was andere gemeldet haben.</p></div>
+</div>
+
+<h2 id="prinzipien">Prinzipien</h2>
+<ol>
+ <li><b>Karte zuerst.</b> Jede Ansicht lässt der Karte den größten Teil des Bildschirms. Bedienung liegt in einem Blatt, das die Karte nie ganz verdeckt.</li>
+ <li><b>Am Daumen.</b> Alles, was man beim Gehen braucht, liegt in der unteren Hälfte: Woche, Art, Melden, Navigation. Ziele mindestens 44 px.</li>
+ <li><b>Zeit ist immer greifbar.</b> Die Wochenleiste bleibt sichtbar, auch bei eingeklapptem Blatt. Sie zeigt je Woche, wie gut die Woche laut Karte ist.</li>
+ <li><b>Text nur, wo er entscheidet.</b> Beschriftungen statt Erklärungen. Hilfe liegt unter „Mehr“, nicht neben den Reglern.</li>
+ <li><b>Ein Akzent.</b> British Racing Green trägt die Bedienung, Bronze markiert die Zeit, die Farbrampe der Karte bleibt der Karte vorbehalten.</li>
+ <li><b>Ehrlich.</b> Prognosewochen sind gekennzeichnet, Höchstwerte stehen dabei, ein Zonenwert nennt die Woche, aus der er stammt.</li>
+</ol>
+
+<h2 id="ia">Aufbau</h2>
+<p>Die Karte steht im Zentrum. Alles andere ist ein Objekt mit genau einem Detail-Screen: eine Art, ein Fund, ein Marker, eine Zone. Jedes Objekt ist von der Karte aus per Tipp und aus seiner Liste erreichbar, und jeder Detail-Screen führt mit „Auf der Karte“ zurück. Drei Reiter, das Konto als Avatar oben auf der Karte.</p>
+<svg class="diagramm" viewBox="0 0 680 330" role="img" aria-label="Aufbau: drei Reiter Karte, Arten, Eintraege; Konto als Avatar; Detail-Screens fuer Art, Fund, Marker, Zone">
+ <defs><marker id="pf2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#828a84"/></marker></defs>
+ <g font-family="Archivo, system-ui, sans-serif" font-size="12.5">
+  <rect x="10" y="10" width="300" height="150" rx="10" fill="#e9f1ec" stroke="#004225"/>
+  <text x="24" y="32" fill="#004225" font-weight="600" font-size="14">Karte</text>
+  <text x="24" y="54" fill="#141815">Blatt: Darstellung und Zeit</text>
+  <text x="36" y="72" fill="#666c67">Vorhersage · Ebene · Kombination</text>
+  <text x="36" y="88" fill="#666c67">Zeitleiste, immer sichtbar</text>
+  <text x="24" y="110" fill="#141815">Ebenen-Knopf: Hintergrund, Funde, Marker, Zonen, Deckkraft</text>
+  <text x="24" y="130" fill="#141815">Plus-Knopf: Fund melden, Marker setzen, Zone zeichnen</text>
+  <text x="24" y="150" fill="#141815">Tipp auf ein Objekt öffnet sein Blatt</text>
+  <rect x="330" y="10" width="160" height="66" rx="10" fill="#ffffff" stroke="#828a84"/>
+  <text x="344" y="32" fill="#141815" font-weight="600" font-size="14">Arten</text>
+  <text x="344" y="52" fill="#666c67">Katalog, Suche, drei Stufen</text>
+  <text x="344" y="68" fill="#666c67">wählt die aktive Art</text>
+  <rect x="510" y="10" width="160" height="66" rx="10" fill="#ffffff" stroke="#828a84"/>
+  <text x="524" y="32" fill="#141815" font-weight="600" font-size="14">Einträge</text>
+  <text x="524" y="52" fill="#666c67">Funde · Marker · Zonen</text>
+  <text x="524" y="68" fill="#666c67">meine und geteilte</text>
+  <rect x="330" y="94" width="340" height="66" rx="10" fill="#ffffff" stroke="#828a84" stroke-dasharray="4 3"/>
+  <text x="344" y="116" fill="#141815" font-weight="600" font-size="14">Konto</text>
+  <text x="344" y="136" fill="#666c67">Avatar oben auf der Karte: Anmelden, Darstellung, Offline, Über</text>
+  <text x="344" y="152" fill="#666c67">nötig nur zum Speichern</text>
+  <g>
+   <rect x="10" y="220" width="150" height="90" rx="10" fill="#ffffff" stroke="#004225" stroke-width="1.5"/><text x="24" y="242" font-weight="600" fill="#141815">Art</text><text x="24" y="262" fill="#666c67">Profil, Saison,</text><text x="24" y="278" fill="#666c67">Verwechslung</text><text x="24" y="298" fill="#004225">→ auf der Karte</text>
+   <rect x="180" y="220" width="150" height="90" rx="10" fill="#ffffff" stroke="#004225" stroke-width="1.5"/><text x="194" y="242" font-weight="600" fill="#141815">Fund</text><text x="194" y="262" fill="#666c67">Fotos, Datum, Notiz,</text><text x="194" y="278" fill="#666c67">Sichtbarkeit</text><text x="194" y="298" fill="#004225">→ auf der Karte</text>
+   <rect x="350" y="220" width="150" height="90" rx="10" fill="#ffffff" stroke="#004225" stroke-width="1.5"/><text x="364" y="242" font-weight="600" fill="#141815">Marker</text><text x="364" y="262" fill="#666c67">Name, Farbe, Notiz,</text><text x="364" y="278" fill="#666c67">Sichtbarkeit</text><text x="364" y="298" fill="#004225">→ auf der Karte</text>
+   <rect x="520" y="220" width="150" height="90" rx="10" fill="#ffffff" stroke="#004225" stroke-width="1.5"/><text x="534" y="242" font-weight="600" fill="#141815">Zone</text><text x="534" y="262" fill="#666c67">Wochenwert, Fläche,</text><text x="534" y="278" fill="#666c67">Funde darin</text><text x="534" y="298" fill="#004225">→ auf der Karte</text>
+  </g>
+  <path d="M85 160 L85 220" stroke="#828a84" stroke-width="1.5" marker-end="url(#pf2)"/>
+  <path d="M255 160 L255 220" stroke="#828a84" stroke-width="1.5" marker-end="url(#pf2)"/>
+  <path d="M410 76 L410 190 L425 190 L425 220" stroke="#828a84" stroke-width="1.5" fill="none" marker-end="url(#pf2)"/>
+  <path d="M590 76 L590 220" stroke="#828a84" stroke-width="1.5" marker-end="url(#pf2)"/>
+  <text x="160" y="200" fill="#666c67" font-size="11">Tipp auf der Karte oder in der Liste</text>
+ </g>
+</svg>
+<h3>Regeln</h3>
+<ul>
+ <li><b>Eine aktive Art.</b> Sie wird im Reiter Arten gewählt; die Karte zeigt sie im Blattkopf und öffnet ihr Profil beim Tipp auf den Namen. Keine zweite Artwahl auf der Karte.</li>
+ <li><b>Das Blatt zeigt Darstellung und Zeit,</b> sonst nichts: Vorhersage, Ebene oder Kombination, dazu die Zeitleiste im Kopf.</li>
+ <li><b>Was auf der Karte liegt, schaltet der Ebenen-Knopf:</b> Hintergrund, geteilte Funde, Marker, Zonen, Deckkraft. Diese Schalter gelten für jede Darstellung.</li>
+ <li><b>Eintragen beginnt auf der Karte,</b> über den Plus-Knopf. Ort zuerst, dann das Blatt zum Beschreiben. Anmelden erst beim Speichern.</li>
+ <li><b>Ein Objekt, ein Screen.</b> Fund, Marker, Zone und Art haben je einen Detail-Screen; Karte und Liste öffnen denselben. Jeder Detail-Screen hat „Auf der Karte“.</li>
+ <li><b>Adressen tragen den Zustand:</b> <code>#karte?art=steinpilz&amp;kw=2025-40</code>, <code>#arten/steinpilz</code>, <code>#eintrag/…</code>, <code>#konto</code>. Ein Link reicht, um dieselbe Ansicht zu teilen.</li>
+</ul>
+
+<h2 id="screens">Screens</h2>
+<p>Nach Ort geordnet: was auf der Karte liegt, was ein Reiter ist, was ein Objekt ist. Die Mockups im Design-Canvas zeigen die Screens in Zielgröße 390 × 844.</p>
+<div class="tabelle"><table>
+<tr><th>Ort</th><th>Screen</th><th>Kernbedienung</th></tr>
+<tr><td rowspan="8"><b>Karte</b></td><td>Blatt halb</td><td>Kopf mit aktiver Art, Woche, Zeitleiste; Darstellung wählen; Legende der Darstellung</td></tr>
+<tr><td>Kombination</td><td>Faktoren mit Bedingung an- und abhaken, Schnittmenge oder abgestuft, Faktor hinzufügen, speichern. Ohne Art</td></tr>
+<tr><td>Faktor</td><td>Unter, über, zwischen; Histogramm der Ebene mit zwei Griffen; Anteil der Fläche, der zutrifft</td></tr>
+<tr><td>Blatt eingeklappt</td><td>Nur der Kopf bleibt, die Karte ist groß. Unterwegs der Normalzustand</td></tr>
+<tr><td>Ebenen-Knopf</td><td>Hintergrund, geteilte Funde, meine Marker, Zonen, Deckkraft. Gilt für jede Darstellung</td></tr>
+<tr><td>Plus-Knopf</td><td>Fund melden, Marker setzen, Zone zeichnen</td></tr>
+<tr><td>Ort setzen</td><td>Fadenkreuz, Standort-Knopf, „Fundort übernehmen“; bei der Zone Eckpunkte, Fläche läuft mit</td></tr>
+<tr><td>Objekt-Blatt</td><td>Tipp auf Fund, Marker oder Zone öffnet den Detail-Screen als Blatt über der Karte</td></tr>
+<tr><td rowspan="2"><b>Arten</b></td><td>Katalog</td><td>Suche, Filter nach Stufe und Gruppe, Karten mit Saisonkurve. Tipp wählt die Art und öffnet das Profil</td></tr>
+<tr><td>Art</td><td>Profil in drei Stufen als Merkmalstabelle wie bei 123pilzsuche, Saisonkurve mit laufendem Jahr; „Auf der Karte“ setzt sie aktiv und springt zurück</td></tr>
+<tr><td rowspan="1"><b>Einträge</b></td><td>Liste</td><td>Segment Funde, Marker, Zonen; Chips für Art und „nur meine“; Wartende mit Kennzeichen. Tipp öffnet das Objekt</td></tr>
+<tr><td rowspan="3"><b>Objekte</b></td><td>Fund</td><td>Fotos, Art, Datum, Anzahl, Notiz, Sichtbarkeit; Bearbeiten und Löschen für den Besitzer</td></tr>
+<tr><td>Marker</td><td>Name, Farbe, Notiz, Sichtbarkeit</td></tr>
+<tr><td>Zone</td><td>Name, Farbe, Sichtbarkeit, Notiz; Vorhersage in der Zone als Mittel der Fläche für Art und Woche, eigene Funde in der Zone; Eckpunkte bearbeiten</td></tr>
+<tr><td rowspan="2"><b>Konto</b></td><td>Anmelden</td><td>Erst beim Speichern: ein Satz, ein Knopf zum SSO, „später“ behält den Eintrag im Gerät</td></tr>
+<tr><td>Konto</td><td>Abmelden, Darstellung, Offline-Speicher, Quellen, Version</td></tr>
+</table></div>
+
+<h2 id="arten">Arten in drei Stufen</h2>
+<p>Der Katalog nennt alles, was man in Deutschland sammelt, rund 85 Arten. Was die App je Art zeigt, hängt an der Datenlage. Gezählt sind die Besuche ab 2015 mit mindestens zwei gemeldeten Arten, in denen die Art vorkam; das ist die Zahl, die ein Modell trägt.</p>
+<div class="karten">
+ <div class="karte"><b><span class="tag p">Vorhersage</span> ab 600 Besuche</b><p>Eigenes Modell, Karte je Woche, Zeitleiste mit Wochenwert. 23 Arten, neun davon heute schon live; Reizker und Netzstieliger Hexenröhrling liegen knapp darunter und bleiben, weil ihre Modelle stehen.</p></div>
+ <div class="karte"><b><span class="tag i">Saison</span> 60 bis 600</b><p>Profil, Saisonkurve aus den Funden und eine grobe Fundkarte auf 5 km. Keine Vorhersage. 42 Arten.</p></div>
+ <div class="karte"><b><span class="tag">Profil</span> unter 60</b><p>Nur das Profil mit Erkennen, Wo, Verwechslung, Schutz. 20 Arten, davon neun ohne Treffer, vermutlich ein Namensunterschied zu GBIF.</p></div>
+</div>
+<div class="tabelle"><table>
+<tr><th>Vorhersage</th><th></th><th style="text-align:right">Besuche</th></tr>
+<tr><td>Perlpilz</td><td style="font-style:italic;color:var(--muted)">Amanita rubescens</td><td style="text-align:right">3.079</td></tr><tr><td>Judasohr</td><td style="font-style:italic;color:var(--muted)">Auricularia auricula-judae</td><td style="text-align:right">2.682</td></tr><tr><td>Schopftintling</td><td style="font-style:italic;color:var(--muted)">Coprinus comatus</td><td style="text-align:right">2.614</td></tr><tr><td>Nebelkappe</td><td style="font-style:italic;color:var(--muted)">Clitocybe nebularis</td><td style="text-align:right">2.448</td></tr><tr><td>Maronenröhrling</td><td style="font-style:italic;color:var(--muted)">Imleria badia</td><td style="text-align:right">2.362</td></tr><tr><td>Flaschenbovist</td><td style="font-style:italic;color:var(--muted)">Lycoperdon perlatum</td><td style="text-align:right">2.243</td></tr><tr><td>Parasol</td><td style="font-style:italic;color:var(--muted)">Macrolepiota procera</td><td style="text-align:right">2.199</td></tr><tr><td>Steinpilz</td><td style="font-style:italic;color:var(--muted)">Boletus edulis</td><td style="text-align:right">1.853</td></tr><tr><td>Buchen-Schleimrübling</td><td style="font-style:italic;color:var(--muted)">Mucidula mucida</td><td style="text-align:right">1.527</td></tr><tr><td>Austernseitling</td><td style="font-style:italic;color:var(--muted)">Pleurotus ostreatus</td><td style="text-align:right">1.484</td></tr><tr><td>Riesenporling</td><td style="font-style:italic;color:var(--muted)">Meripilus giganteus</td><td style="text-align:right">1.363</td></tr><tr><td>Goldröhrling</td><td style="font-style:italic;color:var(--muted)">Suillus grevillei</td><td style="text-align:right">1.256</td></tr><tr><td>Stockschwämmchen</td><td style="font-style:italic;color:var(--muted)">Kuehneromyces mutabilis</td><td style="text-align:right">1.234</td></tr><tr><td>Schwefelporling</td><td style="font-style:italic;color:var(--muted)">Laetiporus sulphureus</td><td style="text-align:right">1.183</td></tr><tr><td>Rotfußröhrling</td><td style="font-style:italic;color:var(--muted)">Xerocomellus chrysenteron</td><td style="text-align:right">1.177</td></tr><tr><td>Flockenstieliger Hexenröhrling</td><td style="font-style:italic;color:var(--muted)">Neoboletus erythropus</td><td style="text-align:right">957</td></tr><tr><td>Krause Glucke</td><td style="font-style:italic;color:var(--muted)">Sparassis crispa</td><td style="text-align:right">856</td></tr><tr><td>Pfifferling</td><td style="font-style:italic;color:var(--muted)">Cantharellus cibarius</td><td style="text-align:right">799</td></tr><tr><td>Butterpilz</td><td style="font-style:italic;color:var(--muted)">Suillus luteus</td><td style="text-align:right">723</td></tr><tr><td>Fuchsiger Scheidenstreifling</td><td style="font-style:italic;color:var(--muted)">Amanita fulva</td><td style="text-align:right">707</td></tr><tr><td>Birkenpilz</td><td style="font-style:italic;color:var(--muted)">Leccinum scabrum</td><td style="text-align:right">669</td></tr><tr><td>Dunkler Hallimasch</td><td style="font-style:italic;color:var(--muted)">Armillaria ostoyae</td><td style="text-align:right">662</td></tr><tr><td>Frauentäubling</td><td style="font-style:italic;color:var(--muted)">Russula cyanoxantha</td><td style="text-align:right">604</td></tr>
+</table></div>
+<p>14 davon sind neu: Perlpilz, Judasohr, Maronenröhrling, Austernseitling, Riesenporling, Goldröhrling, Stockschwämmchen, Schwefelporling, Rotfußröhrling, Krause Glucke, Butterpilz, Fuchsiger Scheidenstreifling, Dunkler Hallimasch, Frauentäubling. Der Renderlauf wächst damit von zwei auf gut vier Stunden je Woche; das trägt der Homeserver nachts. Die Grenze von 600 kommt aus dem Sommersteinpilz: mit 405 Besuchen blieb sein Modell bei einem Deckel von 0,16, nicht brauchbar.</p>
+<div class="tabelle"><table>
+<tr><th>Saison, Auswahl</th><th></th><th style="text-align:right">Besuche</th></tr>
+<tr><td>Samtfußrübling</td><td style="font-style:italic;color:var(--muted)">Flammulina velutipes</td><td style="text-align:right">586</td></tr><tr><td>Fichtenreizker</td><td style="font-style:italic;color:var(--muted)">Lactarius deterrimus</td><td style="text-align:right">572</td></tr><tr><td>Ochsenzunge</td><td style="font-style:italic;color:var(--muted)">Fistulina hepatica</td><td style="text-align:right">570</td></tr><tr><td>Netzstieliger Hexenröhrling</td><td style="font-style:italic;color:var(--muted)">Suillellus luridus</td><td style="text-align:right">525</td></tr><tr><td>Violetter Rötelritterling</td><td style="font-style:italic;color:var(--muted)">Lepista nuda</td><td style="text-align:right">512</td></tr><tr><td>Nelkenschwindling</td><td style="font-style:italic;color:var(--muted)">Marasmius oreades</td><td style="text-align:right">470</td></tr><tr><td>Edelreizker</td><td style="font-style:italic;color:var(--muted)">Lactarius deliciosus</td><td style="text-align:right">434</td></tr><tr><td>Kuhröhrling</td><td style="font-style:italic;color:var(--muted)">Suillus bovinus</td><td style="text-align:right">431</td></tr><tr><td>Sommersteinpilz</td><td style="font-style:italic;color:var(--muted)">Boletus reticulatus</td><td style="text-align:right">405</td></tr><tr><td>Mehlräsling</td><td style="font-style:italic;color:var(--muted)">Clitopilus prunulus</td><td style="text-align:right">395</td></tr><tr><td>Semmelstoppelpilz</td><td style="font-style:italic;color:var(--muted)">Hydnum repandum</td><td style="text-align:right">394</td></tr><tr><td>Trompetenpfifferling</td><td style="font-style:italic;color:var(--muted)">Craterellus tubaeformis</td><td style="text-align:right">382</td></tr>
+<tr><td colspan="3" style="color:var(--muted)">und 30 weitere</td></tr>
+</table></div>
+<p>Bei den Namen ohne Treffer, etwa Speisemorchel, Brätling und Orangebecherling, ist der GBIF-Name zu prüfen; die Arten sind in Deutschland häufig genug, dass Null nicht stimmen kann.</p>
+
+<h2 id="konten">Konten und Fotos</h2>
+<p>Lesen bleibt ohne Konto. Ein Konto braucht, wer speichert: Fund, Marker, Zone, Foto. Die App fragt erst dann, im Moment des Speicherns, mit einem Satz, und führt zum SSO. Der begonnene Eintrag wartet solange im Gerät.</p>
+<h3>Anmeldung</h3>
+<ul>
+ <li><b>OIDC, Authorization Code mit PKCE</b> gegen <code>sso.beimgraben.net</code> (Authentik). Die App ist ein öffentlicher Client ohne Geheimnis, die Rückkehr-URL ist die App selbst.</li>
+ <li><b>Tokens bleiben kurz.</b> Das Access-Token geht als Bearer an die eigene API, das Backend prüft Signatur, Aussteller und Laufzeit über die JWKS von Authentik. Refresh über das SSO, nie über die API.</li>
+ <li><b>Ein Principal je Konto</b> aus <code>sub</code>, mit Anzeigename und E-Mail aus dem ID-Token. Der Name am Fund kommt aus dem Konto, nicht aus einem Feld.</li>
+ <li><b>Was dem Konto gehört:</b> Funde, Marker, Zonen, Fotos. Löschen und Ändern nur durch den Besitzer, geprüft im Backend. Sichtbarkeit je Eintrag: <em>nur ich</em> oder <em>geteilt</em>.</li>
+ <li><b>Ohne Netz</b> läuft das gespeicherte Token weiter; die Warteschlange sendet mit ihm, sobald Netz da ist. Ist es abgelaufen, fragt die App einmal nach und behält die Einträge.</li>
+</ul>
+<h3>Fotos</h3>
+<ul>
+ <li>Bis zu drei Fotos je Fund, aus der Kamera oder der Galerie, über <code>input capture</code>.</li>
+ <li>Das Gerät verkleinert vor dem Senden auf 1600 px Kante und entfernt die EXIF-Daten, darunter den GPS-Ort; der Fundort ist der gesetzte Punkt, nicht das Foto.</li>
+ <li>Das Backend legt Original und Vorschau ab, prüft Typ und Größe, hängt sie an den Fund und liefert sie nur mit den Rechten des Fundes aus.</li>
+ <li>In der Warteschlange liegen Fotos als Blob in IndexedDB; drei Fotos je Fund sind rund 1 MB.</li>
+</ul>
+
+<h2 id="plattform">Plattform: PWA, Capacitor oder Flutter</h2>
+<p>Die App soll teilweise offline gehen: Hintergrundkarte und Vorhersage für ein gewähltes Gebiet, Einträge in der Warteschlange, Katalog. Drei Wege führen dahin.</p>
+<div class="tabelle"><table>
+<tr><th>Weg</th><th>Offline</th><th>Kamera, Standort</th><th>Verteilung</th><th>Aufwand</th><th>Urteil</th></tr>
+<tr><td><b>PWA</b> (Angular, Service Worker)</td><td>Hülle und Kacheln im Cache, Daten in IndexedDB; kein Hintergrund-Sync auf iOS</td><td>Kamera über Datei-Eingabe, Standort im Vordergrund</td><td>Link, „Zum Startbildschirm“</td><td>ein Code, ui-kit</td><td><span class="tag p">Start</span></td></tr>
+<tr><td><b>Capacitor</b> um die PWA</td><td>wie PWA plus Dateisystem und Hintergrundaufgaben</td><td>native Kamera, Standort auch im Hintergrund</td><td>App Store und Play Store</td><td>derselbe Code, eine native Hülle</td><td><span class="tag i">Stufe 2 bei Bedarf</span></td></tr>
+<tr><td><b>Flutter</b></td><td>voll, eigene Datenbank</td><td>voll nativ</td><td>Stores</td><td>zweiter Code, kein ui-kit, eigene Kartenintegration</td><td><span class="tag">nur bei Neubau</span></td></tr>
+</table></div>
+<p>Empfehlung: PWA zuerst, weil sie alles trägt, was die drei Nutzungsmomente brauchen, und weil Kit und Angular-Konventionen aus STUPA-Workflow direkt gelten. Capacitor kommt dazu, wenn ein Store, die Kamera oder Standort im Hintergrund nötig werden; der Angular-Code bleibt derselbe. Flutter lohnt nur bei einem Neubau ohne das Kit.</p>
+<h3>Offline-Gebiete</h3>
+<p>Ein Gebiet, das man später ohne Netz braucht, lädt man vorher herunter. Das gilt für die Hintergrundkarte von OpenStreetMap genauso wie für die eigenen Wertkacheln; nur gesehene Kacheln zu behalten reicht im Wald nicht.</p>
+<div class="tabelle"><table>
+<tr><th>Was</th><th>Wie</th><th>Größe</th></tr>
+<tr><td>Hintergrundkarte</td><td>Vektorkacheln aus einem PMTiles-Archiv (Protomaps oder ein OpenFreeMap-Extrakt) auf dem eigenen Server. Die App holt für das Gebiet die Kacheln bis Zoom 14 über HTTP-Range und legt sie in IndexedDB ab. MapLibre liest über ein eigenes Protokoll erst lokal, dann vom Server.</td><td>Landkreis rund 20 bis 40 MB, Bundesland 200 bis 600 MB</td></tr>
+<tr><td>Vorhersage</td><td>Wertkacheln der gewählten Arten für die Wochen im Blatt, Zoom 5 bis 8, gleicher Speicher, gleiches Protokoll.</td><td>unter 1 MB je Art und Woche</td></tr>
+<tr><td>Eigene Objekte</td><td>Funde, Marker, Zonen mit Fotos in Kleinfassung liegen ohnehin lokal; Änderungen gehen in die Warteschlange.</td><td>klein</td></tr>
+</table></div>
+<p>Gebiete wählt man auf der Karte als Rechteck oder aus einer Liste der Landkreise; sie stehen unter Konto, Offline mit Größe, Stand und einem Knopf zum Aktualisieren. Die Schrift- und Stildateien der Karte hält der Service Worker immer vor. Zoom über 14 gibt es offline nicht, der Vektorstil zeichnet die Stufe 14 hochgerechnet weiter.</p>
+
+<h3>Zahlen mit Bezug</h3>
+<p>Jede Zahl in der App sagt, worauf sie sich bezieht: welche Art, welche Woche, welcher Ort oder welche Fläche, und was gemessen ist. „Karte in dieser Woche 21 %“ reicht nicht; es heißt „Vorhersage an diesem Ort, Steinpilz, KW 40, je Begehung: 21 %“. Die Legende der Rampe lautet „Fundwahrscheinlichkeit je Begehung“, mit Art und Woche im Blattkopf. Bei Zonen steht dabei, dass es das Mittel der Fläche ist, bei Faktoren, welche Wochen die Summe umfasst und welche Ebenen keinen Wochenbezug haben. Das gilt auch für Tooltips und die Bildschirmleser-Texte.</p>
+<h3>Die Saisonkurve</h3>
+<p>Auf der Artseite und klein in der Artenliste. Sie zeigt je Kalenderwoche den Anteil der Beobachtungsgänge, bei denen die Art gefunden wurde, in Prozent. Der Anteil rechnet den Sammlerfleiß heraus, eine reine Fundzahl täte das nicht. Zwei Reihen liegen übereinander: alle Jahre seit 2015 schwach als Fläche im Hintergrund, das laufende Jahr als Linie bis zur letzten vollen Woche. Die Linie endet dort mit einem Punkt, der Rest des Jahres bleibt leer. Beide Reihen teilen sich den Höchstwert, der in der Überschrift steht. Berechnet wird das beim Training aus den Gängen mit mindestens zwei Arten, die Karte braucht dafür nichts Neues.</p>
+<h2 id="muster">Bedienmuster</h2>
+<h3>Das Blatt</h3>
+<p>Ein Blatt von unten mit drei Rasten: <b>Kopf</b> (etwa 112 px: Art, Woche, Zeitleiste), <b>halb</b> (55 %), <b>voll</b>. Ziehen am Griff oder am Kopf, ein Tipp auf den Griff wechselt zwischen Kopf und voll. Der Karteninhalt darüber wird beim Einpassen auf den freien Streifen gerechnet, nicht geschätzt.</p>
+<h3>Die Zeitleiste</h3>
+<p>Eine waagrechte Leiste aus Wochenknöpfen. Jeder trägt die Kalenderwoche, unter dem Knopf einen Balken: das Mittel der Vorhersage über Deutschland in dieser Woche, relativ zum Höchstwert der Art. Jahreswechsel tragen eine Marke, Prognosewochen sind gestrichelt. Wischen scrollt, Tipp wählt, Pfeile und Play liegen daneben. Die Leiste steht im Blattkopf und bleibt in jeder Raste sichtbar.</p>
+<h3>Das Fadenkreuz</h3>
+<p>Fundort setzen heißt: Karte schieben, bis das Kreuz auf dem Ort liegt, dann bestätigen. Das trifft mit dem Daumen besser als ein Tipp und braucht keine Marke zum Verschieben. Der Standort-Knopf zentriert die Karte, das Kreuz bleibt.</p>
+<h3>Darstellung und Ebenen</h3>
+<p>Die drei Darstellungen sind ein Segment-Schalter im Blatt; was zu einer gehört, steht unter ihr. Was auf der Karte liegt, unabhängig von der Darstellung, schaltet der Ebenen-Knopf auf der Karte. Die Art steht im Blattkopf von Vorhersage und wird im Reiter Arten gewählt; die Chips der alten Seite entfallen.</p>
+<h3>Die Kombination</h3>
+<p>Die Kombination hängt an keiner Art. Sie ist ein Werkzeug, um selbst Überschneidungen von Faktoren zu finden: Niederschlag der letzten vier Wochen über 80 mm, Mitteltemperatur zwischen 8 und 16 °C, Buche im Umkreis, Hang unter 15 Grad. Jeder Faktor ist eine Ebene mit einer Bedingung: unter, über oder zwischen zwei Werten. Der Faktor-Screen zeigt dazu die Verteilung der Ebene in Deutschland als Histogramm mit zwei Griffen und sagt, welcher Anteil der Fläche die Bedingung erfüllt.</p>
+<p>Zwei Regeln: <b>Schnittmenge</b> färbt alles, wo jede angehakte Bedingung zutrifft, in einer Farbe. <b>Abgestuft</b> rechnet je Faktor den Grad der Erfüllung zwischen 0 und 1 und zeigt das geometrische Mittel als Rampe, so bleibt sichtbar, wo es knapp ist. Wochenfaktoren folgen der Zeitleiste. Eine Kombination lässt sich mit Konto unter einem Namen speichern und später wieder aufrufen; eigene Funde blendet man über den Ebenen-Knopf dazu, um die eigene Regel an ihnen zu prüfen.</p>
+
+<h2 id="features">Features nach Meilenstein</h2>
+<p>Jeder Meilenstein ist für sich benutzbar und geht live. Reihenfolge nach Nutzen für den Wald, nicht nach Aufwand.</p>
+<div class="tabelle"><table>
+<tr><th>Meilenstein</th><th>Enthält</th><th>Fertig, wenn</th></tr>
+<tr><td><span class="tag p">M1</span> <b>Fundament</b></td><td>Angular-Projekt mit ui-kit, Shell mit Navigation und Blatt, Karte mit Vorhersage-Kacheln, Zeitleiste, Arten-Chips, hell und dunkel, PWA-Hülle, Deploy auf den Homeserver</td><td>Die heutige Karte ist in der App nachgebaut und installierbar. Offline öffnet sie mit den gesehenen Kacheln</td></tr>
+<tr><td><span class="tag p">M2</span> <b>Ebenen</b></td><td>Ebenen-Ansicht mit Legende, Wochenebenen an der Zeitleiste, Kombination als Faktor-Finder mit Bedingungen je Ebene, Schnittmenge und abgestuft, Faktor-Screen mit Histogramm</td><td>Alle 22 Ebenen sichtbar, Kombination flüssig beim Zoomen, Histogramme je Ebene vorgerechnet</td></tr>
+<tr><td><span class="tag p">M3</span> <b>Konten und Funde</b></td><td>Anmelden über SSO beim ersten Speichern, Melden mit Fadenkreuz, Formular und Fotos, Warteschlange in IndexedDB mit Sync-Status, Fundliste mit Filtern, Fund-Detail, Löschen, Funde auf der Karte</td><td>Ein Fund mit Foto geht im Wald ohne Netz raus, sobald Netz da ist, und erscheint bei allen, die ihn sehen dürfen</td></tr>
+<tr><td><span class="tag p">M3b</span> <b>Marker und Zonen</b></td><td>Marker über das Fadenkreuz, Zonen als Polygon über Terra Draw, Bearbeiten der Eckpunkte, Farbe und Name, privat auf dem Gerät oder geteilt im Kreis, Zonenwert je Woche aus den Kacheln, Funde je Zone</td><td>Ein Revier lässt sich zeichnen, verschieben und löschen; die Zeitleiste zeigt seinen Wert je Woche</td></tr>
+<tr><td><span class="tag p">M4</span> <b>Arten</b></td><td>Katalog über alle sammelbaren Arten in drei Stufen, Suche, Profile als Merkmalstabelle, Saisonkurve, Sprung zur Karte, Links; Modelle für die neuen Vorhersage-Arten</td><td>Rund 85 Profile lesbar, 23 Arten mit Karte, jede Verwechslung mit Merkmal</td></tr>
+<tr><td><span class="tag p">M5</span> <b>Feinschliff</b></td><td>Onboarding in drei Screens, Installations-Hinweis, Standort-Knopf, Barrierefreiheit geprüft, Leistungsbudget eingehalten, Fehlerzustände, Offline-Gebiete für Hintergrundkarte und Vorhersage</td><td>Audit ohne AA-Fehler, Startzeit unter Budget auf einem Mittelklasse-Telefon</td></tr>
+<tr><td><span class="tag">später</span></td><td>Foto zum Fund, Push-Hinweis „gute Woche in deiner Gegend“, Fund-Export, mehrere Kreise mit eigenen Codes</td><td>—</td></tr>
+</table></div>
+
+<h2 id="technik">Technik</h2>
+<h3>Stack</h3>
+<div class="tabelle"><table>
+<tr><th>Teil</th><th>Wahl</th><th>Warum</th></tr>
+<tr><td>Framework</td><td>Angular 22, standalone, Signals, zoneless</td><td>Neuste stabile Version. Signals tragen den Zustand ohne Zusatzbibliothek, zoneless spart Laufzeit auf dem Telefon</td></tr>
+<tr><td>Oberfläche</td><td>@stupa-makers/ui-kit</td><td>Tokens, Buttons, Felder, Dialog, Toast, Badge, Card sind da. Was fehlt, wird als mobiler Eintrag dem Kit hinzugefügt</td></tr>
+<tr><td>Karte</td><td>MapLibre GL JS</td><td>Weiche Bewegung, Drehen, Neigen. Ein eigenes Kachelprotokoll färbt die Wertkacheln im Worker und rechnet dort auch die Kombination</td></tr>
+<tr><td>Zeichnen</td><td>Terra Draw mit MapLibre-Adapter, Turf für Fläche und Punkt-in-Fläche</td><td>Marker, Polygone, Freihand, Auswahl und Eckpunkte bearbeiten, Touch. Kein eigener Zeichencode</td></tr>
+<tr><td>Hintergrundkarte</td><td>Vektorkacheln von OpenFreeMap, Stil „liberty“</td><td>Frei, ohne Schlüssel, in hell und dunkel. Raster-OSM bleibt als Rückfall</td></tr>
+<tr><td>PWA</td><td>@angular/service-worker</td><td>Hülle vorgehalten, Kacheln nach Bedarf mit Obergrenze, API nie</td></tr>
+<tr><td>Offline-Daten</td><td>IndexedDB über idb</td><td>Warteschlange für Funde, zuletzt gesehene Fundliste, gewählte Art und Woche, Kachelspeicher der Offline-Gebiete</td></tr>
+<tr><td>Offline-Karte</td><td>PMTiles-Archiv auf dem Server, pmtiles.js im Client</td><td>Kacheln eines Gebiets über Range-Requests holen, lokal ablegen, per eigenem MapLibre-Protokoll zuerst lokal bedienen</td></tr>
+<tr><td>Backend</td><td>FastAPI, Pydantic v2, SQLAlchemy 2 async, Alembic, SQLite; Bilder auf Platte</td><td>Der Stack von STUPA-Workflow, ohne Docker als NixOS-Dienst. Kacheln und Manifeste bleiben Dateien. api.py geht darin auf</td></tr>
+<tr><td>Konten</td><td>OIDC Authorization Code + PKCE gegen Authentik, öffentlicher Client, Tokens im Backend geprüft (JWKS)</td><td>Ein Login für alles auf beimgraben.net. Lesen bleibt ohne Konto</td></tr>
+<tr><td>Tests</td><td>Jest mit Testing Library und axe, Playwright für drei Kernflüsse</td><td>Wie im ui-kit. Playwright prüft Karte, Melden ohne Netz und Kombination</td></tr>
+<tr><td>Build und Deploy</td><td>Nix devShell, <code>ng build</code>, rsync auf den Homeserver</td><td>Derselbe Weg wie heute. Die App liegt neben den Kacheln, Caddy liefert beides</td></tr>
+</table></div>
+
+<h3>Datenfluss</h3>
+<svg class="diagramm" viewBox="0 0 680 210" role="img" aria-label="Datenfluss: Renderlauf schreibt Kacheln und Manifeste, api.py hält Funde, die App liest beides und schreibt Funde">
+ <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#828a84"/></marker></defs>
+ <g font-family="Archivo, system-ui, sans-serif" font-size="13">
+  <rect x="10" y="20" width="180" height="64" rx="10" fill="#e9f1ec" stroke="#004225"/><text x="100" y="46" text-anchor="middle" fill="#004225" font-weight="600">Renderlauf, montags</text><text x="100" y="66" text-anchor="middle" fill="#004225">Kacheln, Manifeste, Ebenen</text>
+  <rect x="10" y="126" width="180" height="64" rx="10" fill="#e9f1ec" stroke="#004225"/><text x="100" y="152" text-anchor="middle" fill="#004225" font-weight="600">api.py</text><text x="100" y="172" text-anchor="middle" fill="#004225">Funde, Zugang, SQLite</text>
+  <rect x="250" y="70" width="180" height="70" rx="10" fill="#ffffff" stroke="#828a84"/><text x="340" y="98" text-anchor="middle" fill="#141815" font-weight="600">Caddy</text><text x="340" y="118" text-anchor="middle" fill="#666c67">Dateien und /api</text>
+  <rect x="490" y="20" width="180" height="170" rx="10" fill="#ffffff" stroke="#004225" stroke-width="1.5"/><text x="580" y="48" text-anchor="middle" fill="#141815" font-weight="600">App</text>
+  <text x="580" y="76" text-anchor="middle" fill="#666c67">Service Worker: Hülle, Kacheln</text><text x="580" y="98" text-anchor="middle" fill="#666c67">Worker: Färben, Kombination</text><text x="580" y="120" text-anchor="middle" fill="#666c67">IndexedDB: Warteschlange</text><text x="580" y="142" text-anchor="middle" fill="#666c67">MapLibre: Karte</text><text x="580" y="164" text-anchor="middle" fill="#666c67">Signals: Art, Woche, Ansicht</text>
+  <path d="M190 52 L250 90" stroke="#828a84" stroke-width="1.5" fill="none" marker-end="url(#pf)"/>
+  <path d="M190 158 L250 120" stroke="#828a84" stroke-width="1.5" fill="none" marker-end="url(#pf)"/>
+  <path d="M430 96 L490 96" stroke="#828a84" stroke-width="1.5" fill="none" marker-end="url(#pf)"/>
+  <path d="M490 116 L430 116" stroke="#828a84" stroke-width="1.5" fill="none" marker-end="url(#pf)"/>
+  <text x="460" y="88" text-anchor="middle" fill="#666c67" font-size="11">lesen</text><text x="460" y="132" text-anchor="middle" fill="#666c67" font-size="11">Funde</text>
+ </g>
+</svg>
+<h3>Struktur</h3>
+<pre>app/src/app/
+  core/          Zustand als Signals: Art, Woche, Ansicht, Zugang, Netz
+  data/          Manifeste, Katalog, Funde-API, Warteschlange (idb)
+  map/           MapLibre-Wrapper, wert://-Protokoll, Worker für Färben und Kombination
+  shell/         Navigation, Blatt mit Rasten, Blattkopf mit Zeitleiste
+  features/
+    karte/       Vorhersage, Ebene, Kombination
+    melden/      Fadenkreuz, Formular, Standort
+    markieren/   Marker, Zonen, Terra-Draw-Modi, Zonenwert
+    arten/       Liste, Profil, Saisonkurve
+    meine-karte/ Funde, Marker, Zonen als Listen
+    mehr/        Konto, Darstellung, Offline, Über
+  ui/            Mobile Bausteine, bis sie im ui-kit sind: Chips, Segment, Zeitleiste, Sheet, BottomNav
+
+backend/app/
+  modules/auth/      OIDC-Prüfung, Principal, Sichtbarkeit
+  modules/funde/     Funde mit Fotos
+  modules/markierungen/  Marker und Zonen
+  modules/arten/     Katalog und Stufen
+  shared/            problem+json, camelCase-Basis, Paging
+migrations/          Alembic, ein Head
+.claude/skills/      conventions, be-auth, be-funde, frontend, deploy
+.claude/memory/      Entscheidungen mit Datum</pre>
+<h3>Karte im Detail</h3>
+<p>Die Wertkacheln bleiben, wie sie sind: ein Byte je Punkt, 0 heißt keine Daten. Ein Protokoll <code>wert://art/woche/z/x/y</code> holt die Kachel, färbt sie im Worker über die Nachschlagetabelle und gibt sie MapLibre als Rasterquelle. Die Kombination ist dasselbe Protokoll mit mehreren Quellen: der Worker lädt die Kacheln der gewählten Ebenen, prüft je Punkt die Bedingungen und liefert eine Kachel; bei Schnittmenge ein Bit, bei abgestuft das geometrische Mittel der Erfüllungsgrade. Die Histogramme je Ebene und Woche rechnet der Server einmal beim Rendern und legt sie neben die Manifeste. Wochenwechsel tauschen die Quelle; die Nachbarwochen werden vorgeladen.</p>
+
+<h2 id="markieren">Marker und Zonen</h2>
+<p>Zwei Dinge will man auf der Karte festhalten: eine Stelle und ein Revier. Ein Marker ist ein Punkt mit Name und Notiz. Eine Zone ist eine Fläche, und sie bekommt von der Karte etwas zurück: den Mittelwert der Vorhersage innerhalb der Fläche, je Woche. So wird aus dem Revier eine Beobachtungsliste: die Zeitleiste zeigt, welche Woche sich dort lohnt.</p>
+<h3>Bibliotheken</h3>
+<div class="tabelle"><table>
+<tr><th>Bibliothek</th><th>Karte</th><th>Kann</th><th>Stand</th><th>Urteil</th></tr>
+<tr><td><b>Terra Draw</b></td><td>MapLibre, Mapbox, Leaflet, OpenLayers, Google</td><td>Punkt, Linie, Polygon, Rechteck, Kreis, Freihand, Auswahl mit Eckpunkten, Verschieben, Fangen</td><td>MIT, TypeScript, aktiv gepflegt, Touch</td><td><span class="tag p">Empfehlung</span></td></tr>
+<tr><td><b>Mapbox GL Draw</b></td><td>Mapbox, MapLibre mit Anpassungen</td><td>Punkt, Linie, Polygon, Auswahl</td><td>ISC, für MapLibre nur mit Versions- und Stilpflege</td><td><span class="tag">Rückfall</span></td></tr>
+<tr><td><b>Leaflet-Geoman</b></td><td>nur Leaflet</td><td>Zeichnen, Bearbeiten, Schneiden, Drehen</td><td>MIT in der freien Version, Pro kostet</td><td><span class="tag">falsche Karte</span></td></tr>
+<tr><td><b>Leaflet.draw</b></td><td>nur Leaflet</td><td>Grundformen</td><td>seit Jahren ohne Pflege</td><td><span class="tag">nein</span></td></tr>
+<tr><td><b>Turf</b></td><td>unabhängig</td><td>Fläche, Mittelpunkt, Punkt in Fläche, Puffer</td><td>MIT, Baukasten je Funktion</td><td><span class="tag p">dazu</span></td></tr>
+</table></div>
+<p>Terra Draw übernimmt Zeichnen und Bearbeiten, Turf die Rechnung. Der Zonenwert kommt aus dem Worker, der ohnehin die Kacheln färbt: er liest die Kacheln unter der Fläche und mittelt die Punkte darin.</p>
+<h3>Bedienung am Telefon</h3>
+<ul>
+ <li><b>Marker:</b> Fadenkreuz, „Hier“, dann das Blatt mit Name, Farbe, Notiz. Derselbe Weg wie beim Fund.</li>
+ <li><b>Zone:</b> Fadenkreuz setzt Eckpunkte über einen Knopf, die Fläche in Hektar läuft mit, „Zone schließen“ beendet. Danach lassen sich Eckpunkte mit dem Finger ziehen (Terra Draw, Auswahlmodus). Freihand als zweiter Weg für grobe Reviere.</li>
+ <li><b>Sichtbarkeit:</b> „Privat“ bleibt auf dem Gerät und geht nie zum Server; „Kreis“ wird geteilt wie ein Fund. Mit einem gemeinsamen Code ist das die einzige ehrliche Form von privat.</li>
+ <li><b>Sechs Farben</b> aus den Tokens, keine freie Farbwahl. Marker und Zonen einer Farbe lassen sich zusammen ein- und ausblenden.</li>
+</ul>
+<h3>Daten</h3>
+<pre>markierung
+  id           UUID vom Gerät
+  typ          marker | zone
+  geometrie    GeoJSON Point | Polygon, WGS84
+  name, notiz, farbe (1–6)
+  sichtbar     geraet | kreis
+  von          Name des Erstellers
+  erstellt, geaendert
+
+GET/POST/DELETE /api/markierungen   wie /api/funde, nur für sichtbar = kreis
+Gerät: IndexedDB, dieselbe Warteschlange wie Funde</pre>
+
+<h2 id="prinzipien-dev">Entwicklung nach STUPA-Workflow</h2>
+<p>Die Regeln aus STUPA-Workflow gelten hier unverändert, mit zwei Anpassungen an die Größe des Projekts. Sie stehen im Repo als <code>CONTRIBUTING.md</code>, als Skills unter <code>.claude/skills/</code> und als Memory mit datierten Entscheidungen.</p>
+<div class="tabelle"><table>
+<tr><th>Regel</th><th>Hier</th></tr>
+<tr><td>TDD, Rot → Grün → Refactor, kein <code>skip</code> ohne Grund</td><td>unverändert</td></tr>
+<tr><td>problem+json auf allen Fehlerpfaden (RFC 9457)</td><td>unverändert, ein Schema für App und Backend</td></tr>
+<tr><td>Rechte im Backend, Besitzer aus dem Token, nie aus dem Body</td><td>unverändert; Besitzer eines Eintrags = <code>sub</code></td></tr>
+<tr><td>Streng typisiert: Enums und Literals statt Strings, Pydantic mit <code>Annotated</code>, Python ≥ 3.13 voll annotiert</td><td>unverändert</td></tr>
+<tr><td>tz-aware überall, <code>datetime.now(UTC)</code></td><td>unverändert</td></tr>
+<tr><td>camelCase im JSON, gleiche Namen auf beiden Seiten</td><td>unverändert</td></tr>
+<tr><td>i18n de/en Parität, nichts hart kodiert</td><td>unverändert; de zuerst, en läuft mit</td></tr>
+<tr><td>a11y, hell und dunkel, Prüfung gegen den Prod-Build, visueller Selbstcheck mit Screenshots je Theme</td><td>unverändert; die Screenshot-Harness aus STUPA-Workflow wird übernommen</td></tr>
+<tr><td>Alembic mit Hash-IDs, genau ein Head, Migrationen idempotent</td><td>unverändert</td></tr>
+<tr><td>Standalone, OnPush, Signals, getrennte <code>.html</code>/<code>.scss</code>, nur semantische Tokens</td><td>unverändert</td></tr>
+<tr><td>Coverage-Gates 97 % Backend, 98/96/98/99 Frontend, 100 % Branch in kritischen Modulen</td><td><b>angepasst:</b> 90 % beide Seiten zum Start, 100 % Branch in <code>auth</code> und der Warteschlange; Ziel STUPA-Niveau ab M4</td></tr>
+<tr><td>Docker-Compose-Stack, Postgres, MinIO, ClamAV</td><td><b>angepasst:</b> NixOS-Dienste auf dem Homeserver, SQLite, Bilder auf Platte, kein Virenscan (nur Bilder, geprüft nach Typ und Größe)</td></tr>
+<tr><td>Nix-Dev-Shells je Komponente, kein Hand-Patchen von Pfaden</td><td>unverändert</td></tr>
+<tr><td>Fertig heißt: Branch, Commit, Push, PR, CI beobachten und reparieren</td><td>unverändert; CI auf GitHub wie im Kit</td></tr>
+</table></div>
+
+<h2 id="uikit">ui-kit: genutzt und ergänzt</h2>
+<div class="tabelle"><table>
+<tr><th>Aus dem Kit</th><th>Einsatz</th></tr>
+<tr><td>Tokens, Basis, Archivo</td><td>Alles. Hell und dunkel über <code>data-theme</code>, System als Standard</td></tr>
+<tr><td>Button, Input, Select, Checkbox</td><td>Formular, Einstellungen, Ansichten</td></tr>
+<tr><td>Dialog mit Greifleiste</td><td>Melde-Formular als Blatt, Bestätigungen</td></tr>
+<tr><td>Card, Badge</td><td>Artenliste, Fundliste, Kennzeichen wie „geschützt“, „wartet“, „Prognose“</td></tr>
+<tr><td>Toast, Loading Overlay</td><td>„Fund gespeichert“, „wartet auf Netz“, Laden der Karte</td></tr>
+<tr><td>Icon (Font Awesome)</td><td>Navigation und Knöpfe</td></tr>
+</table></div>
+<p>Es fehlen sechs mobile Bausteine. Vorschlag: ein zweiter Eintragspunkt <code>@stupa-makers/ui-kit/mobile</code>, damit die Antragsplattform sie später auch hat.</p>
+<div class="karten">
+ <div class="karte"><b>BottomNav</b><p>Vier Ziele mit Icon und Text, aktiv in Primärfarbe, sicherer Rand unten.</p></div>
+ <div class="karte"><b>Sheet</b><p>Blatt mit Rasten, Griff, festem Kopf und scrollendem Inhalt. Am Rechner eine Spalte.</p></div>
+ <div class="karte"><b>ChipGroup</b><p>Filterchips in Listen (Art, Stufe, „nur meine“), waagrecht scrollend.</p></div>
+ <div class="karte"><b>Segmented</b><p>Zwei bis vier Ansichten, eine aktiv, Rolle tablist.</p></div>
+ <div class="karte"><b>Timeline</b><p>Wochenknöpfe mit Wertbalken, Marken, Pfeilen und Play.</p></div>
+ <div class="karte"><b>ListRow</b><p>Zeile mit Punkt, Titel, Untertitel, optionalem Kennzeichen, tippbar.</p></div>
+</div>
+<div class="hinweis"><b>Versionshinweis.</b> Das Kit nennt Angular <code>^20</code> als Peer. Die App zielt auf 22. Erster Schritt im Kit: Peer auf <code>^20 || ^22</code> heben und gegen 22 bauen und testen. Erwartung: keine Änderung am Code, nur an <code>package.json</code>.</div>
+
+<h2 id="qualitaet">Qualität</h2>
+<div class="tabelle"><table>
+<tr><th>Ziel</th><th>Maß</th><th>Prüfung</th></tr>
+<tr><td>Start</td><td>Karte sichtbar unter 2,5 s auf 4G, Mittelklasse-Telefon</td><td>Lighthouse, Playwright mit Drosselung</td></tr>
+<tr><td>Bundle</td><td>Erstes Paket unter 300 kB gzip, MapLibre als eigenes Paket nachgeladen</td><td>Budget in <code>angular.json</code>, Build bricht bei Überschreitung</td></tr>
+<tr><td>Bewegung</td><td>Wochenwechsel unter 100 ms bei vorgeladenen Kacheln, Zoom bei 60 fps</td><td>Performance-Trace auf dem Gerät</td></tr>
+<tr><td>Barrierefreiheit</td><td>WCAG 2.1 AA, Ziele 44 px, Fokus sichtbar, Kontrast der Zeitleiste</td><td>axe in Jest, Handprüfung mit TalkBack</td></tr>
+<tr><td>Offline</td><td>Karte öffnet ohne Netz mit gesehenen Kacheln, Fund geht später raus</td><td>Playwright mit Netz aus</td></tr>
+<tr><td>Speicher</td><td>Kachel-Cache unter 150 MB, Obergrenze mit Verdrängung</td><td>Zähler unter „Mehr“</td></tr>
+</table></div>
+
+<h2 id="offen">Entscheidungen</h2>
+<p>Drei Fragen sind offen. Für jede steht eine Empfehlung dabei.</p>
+<div class="frage"><div><b>Vektor- oder Rasterhintergrund?</b><p>Vektor (OpenFreeMap) sieht besser aus, dreht und neigt, hat hell und dunkel. Raster (OSM) ist bekannter und cached kleiner. Empfehlung: Vektor, Raster als Rückfall bei Fehler.</p></div><span class="tag i">Empfehlung Vektor</span></div>
+<div class="frage"><div><b>Wer darf fremde Funde sehen?</b><p>Konten sind entschieden. Offen ist die Sichtbarkeit: alle Angemeldeten sehen alles Geteilte, oder es gibt Kreise mit Einladung. Empfehlung: erst alle Angemeldeten, Kreise später, wenn sich Fremde anmelden.</p></div><span class="tag i">Erst alle Angemeldeten</span></div>
+<div class="frage"><div><b>Mobile Bausteine im Kit oder in der App?</b><p>Im Kit kosten sie Abstimmung, in der App sind sie schneller. Empfehlung: erst in der App unter <code>ui/</code>, nach M3 ins Kit heben, wenn die API steht.</p></div><span class="tag i">Erst App, dann Kit</span></div>
+
+<h2 id="weg">Fahrplan</h2>
+<div class="rail">
+ <div class="w">Woche 1–2</div><div class="t"><b>M1 Fundament</b><p>Repo nach STUPA-Muster, Kit, Shell, Karte, Zeitleiste, PWA, Backend-Gerüst mit OIDC-Prüfung, Deploy. Ende: Karte live als App.</p></div>
+ <div class="w">Woche 3</div><div class="t"><b>M2 Ebenen</b><p>Ebenen-Ansicht, Kombination im Worker.</p></div>
+ <div class="w">Woche 4–5</div><div class="t"><b>M3 Konten und Funde</b><p>SSO-Login beim Speichern, Melden mit Fotos, Warteschlange, Liste, Sichtbarkeit.</p></div>
+ <div class="w">Woche 5–6</div><div class="t"><b>M3b Marker und Zonen</b><p>Terra Draw, Zonenwert, Meine Karte.</p></div>
+ <div class="w">Woche 6–7</div><div class="t"><b>M4 Arten</b><p>Katalog in drei Stufen, neue Modelle, Profile, Saisonkurven.</p></div>
+ <div class="w">Woche 8</div><div class="t"><b>M5 Feinschliff</b><p>Offline-Gebiete, Onboarding, Audit, Budgets, Fehlerzustände, Capacitor-Probe.</p></div>
+</div>
+<p>Nächster Schritt nach deiner Freigabe: Mockups abnehmen, dann M1 anfangen. Die Trainingsfunde der alten Seite kommen nicht mit. Die heutige Seite bleibt live, bis M1 sie ersetzt.</p>
+</main>
+</div>

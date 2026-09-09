@@ -1,0 +1,124 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><script src="./support.js"></script></head><body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+ *{box-sizing:border-box}
+ body{margin:0;background:#c7ccc8;font-family:'Archivo','Segoe UI',system-ui,sans-serif;color:#141815;-webkit-font-smoothing:antialiased}
+ a{color:#004225} a:hover{color:#00351e}
+ .tel{width:390px;height:844px;position:relative;overflow:hidden;background:#f7f8f7}
+ .desk{width:1440px;height:900px;position:relative;overflow:hidden;background:#f7f8f7;display:grid;grid-template-columns:400px 1fr;grid-template-rows:64px 1fr}
+ .karte{position:absolute;inset:0;background:
+   radial-gradient(120px 90px at 22% 18%, #dfe8d6 0, transparent 100%),
+   radial-gradient(160px 120px at 78% 30%, #d3dfcb 0, transparent 100%),
+   radial-gradient(200px 140px at 40% 62%, #d8e3d0 0, transparent 100%),
+   linear-gradient(180deg,#eef2ea,#e4ebe0)}
+ .karte svg{position:absolute;inset:0;width:100%;height:100%}
+ .heat{position:absolute;inset:0;mix-blend-mode:multiply;opacity:.92}
+ .tab-nav{position:absolute;left:0;right:0;bottom:0;height:64px;background:#ffffff;border-top:1px solid #e0e3e0;display:flex;padding:6px 8px 8px}
+ .tab-nav div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:12px;font-weight:600;color:#666c67}
+ .tab-nav div.on{color:#004225}
+ .tab-nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+ .blatt{position:absolute;left:0;right:0;bottom:64px;background:#ffffff;border-radius:18px 18px 0 0;box-shadow:0 8px 28px rgba(0,38,21,.14);display:flex;flex-direction:column}
+ .griff{height:24px;display:flex;align-items:center;justify-content:center}
+ .griff i{display:block;width:40px;height:4px;border-radius:2px;background:#e0e3e0}
+ .kopf{padding:0 16px 12px;border-bottom:1px solid #e0e3e0}
+ .kopfzeile{display:flex;align-items:center;justify-content:space-between;height:44px}
+ .kopfzeile b{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+ .kopfzeile b span{color:#666c67;font-weight:500;margin-right:6px}
+ .kopfzeile b em{font-style:normal;color:#8c1c16}
+ .knoepfe{display:flex;gap:0;border:1px solid #828a84;border-radius:8px;overflow:hidden;flex:0 0 auto;margin-left:12px}
+ .knoepfe i{display:flex;align-items:center;justify-content:center;width:38px;height:36px;background:#ffffff;border-left:1px solid #828a84}
+ .knoepfe i:first-child{border-left:0}
+ .knoepfe i svg{width:12px;height:12px;fill:#141815}
+ .leiste{display:flex;gap:6px;overflow:hidden;padding:10px 16px 2px;margin:0 -16px}
+ .woche{flex:0 0 auto;width:48px;height:56px;border:1px solid #e0e3e0;border-radius:8px;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;color:#666c67}
+ .woche small{font-size:10px;letter-spacing:.06em}
+ .woche b{font-size:15px;color:#141815;font-variant-numeric:tabular-nums}
+ .woche u{position:absolute;bottom:6px;left:8px;right:8px;height:3px;border-radius:2px;background:#e0e3e0;text-decoration:none}
+ .woche u i{display:block;height:100%;border-radius:2px;background:#c8a25a}
+ .woche.on{background:#004225;border-color:#004225}
+ .woche.on b,.woche.on small{color:#ffffff}
+ .woche.prog{border-style:dashed}
+ .woche.jahr::before{content:attr(data-jahr);position:absolute;top:3px;font-size:8px;font-weight:700;color:#8c6820}
+ .inhalt{padding:16px 16px 24px;display:flex;flex-direction:column;gap:24px;flex:1 1 auto;min-height:0;overflow:hidden}
+ .seg{display:flex;gap:4px;background:#eef0ee;border:1px solid #e0e3e0;border-radius:12px;padding:4px}
+ .seg div{flex:1;text-align:center;padding:9px 4px;font-size:15px;font-weight:600;color:#666c67;border-radius:8px}
+ .seg div.on{background:#ffffff;color:#141815;box-shadow:0 1px 2px rgba(0,38,21,.06),0 1px 3px rgba(0,38,21,.08)}
+ .h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#666c67;font-weight:600;margin-bottom:10px}
+ .chips{display:flex;gap:8px;overflow:hidden;padding-bottom:2px}
+ .chip{flex:0 0 auto;height:40px;display:flex;align-items:center;padding:0 16px;border:1px solid #828a84;border-radius:999px;font-size:14px;font-weight:600;color:#141815;background:#ffffff;white-space:nowrap}
+ .chip.on{background:#004225;border-color:#004225;color:#ffffff}
+ .rampe{display:flex;height:12px;border-radius:6px;overflow:hidden}
+ .rampe i{flex:1}
+ .enden{display:flex;justify-content:space-between;font-size:13px;color:#666c67;font-variant-numeric:tabular-nums;margin-top:6px}
+ .schalter{display:flex;align-items:center;gap:12px;height:48px;padding:0 14px;border:1px solid #e0e3e0;border-radius:10px;font-size:15px}
+ .schalter i{width:20px;height:20px;border:1px solid #828a84;border-radius:4px;background:#ffffff;display:flex;align-items:center;justify-content:center}
+ .schalter i.on{background:#004225;border-color:#004225}
+ .schalter i svg{width:12px;height:12px;stroke:#ffffff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+ .schalter em{font-style:normal;color:#666c67;margin-left:auto;font-size:13px}
+ .knopf{height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 20px;border-radius:10px;font-size:15px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+ .knopf.primaer{background:#004225;color:#ffffff}
+ .knopf.sekundaer{background:#ffffff;color:#141815;border-color:#828a84}
+ .knopf.geist{color:#004225}
+ .knopf.gefahr{background:#ffffff;color:#8c1c16;border-color:#8c1c16}
+ .knopf.gross{height:48px}
+ .knopf.breit{width:100%}
+ .knopf svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ .feld{height:44px;display:flex;align-items:center;padding:0 16px;border:1px solid #828a84;border-radius:10px;background:#ffffff;font-size:16px}
+ .feld.leer{color:#666c67}
+ .feld.mehrzeilig{height:80px;align-items:flex-start;padding-top:10px}
+ .label{font-size:14px;font-weight:500;margin-bottom:8px}
+ .badge{display:inline-flex;align-items:center;padding:4px 12px;font-size:12.5px;font-weight:600;line-height:1.4;border-radius:999px;background:#eef0ee;color:#666c67;white-space:nowrap}
+ .badge.p{background:#e9f1ec;color:#004225}
+ .badge.w{background:#f7eed8;color:#876010}
+ .badge.i{background:#dfeef3;color:#185468}
+ .badge.s{background:#e3f1e8;color:#1f5d38}
+ .schwebe{position:absolute;right:12px;width:48px;height:48px;border-radius:14px;background:#004225;color:#ffffff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(0,38,21,.14)}
+ .schwebe.hell{background:#ffffff;color:#141815;border:1px solid #e0e3e0}
+ .schwebe svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ .quelle{position:absolute;left:8px;top:8px;font-size:10px;color:#666c67;background:rgba(255,255,255,.75);padding:2px 6px;border-radius:4px}
+ .card{background:#ffffff;border:1px solid #e0e3e0;border-radius:12px;box-shadow:0 1px 2px rgba(0,38,21,.06),0 1px 3px rgba(0,38,21,.08);overflow:hidden}
+ .zeile{display:flex;align-items:center;gap:14px}
+ .stapel{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+ .titel{font-size:16px;font-weight:600}
+ .unter{font-size:14px;color:#666c67}
+ .kreuz{position:absolute;left:50%;top:38%;width:52px;height:52px;transform:translate(-50%,-50%)}
+ .kreuz::before,.kreuz::after{content:"";position:absolute;background:#004225}
+ .kreuz::before{left:50%;top:0;width:2px;height:100%;transform:translateX(-50%)}
+ .kreuz::after{top:50%;left:0;height:2px;width:100%;transform:translateY(-50%)}
+ .kreuz i{position:absolute;inset:14px;border:2px solid #004225;border-radius:50%;background:rgba(0,66,37,.12)}
+ .fund{position:absolute;width:16px;height:16px;border-radius:50%;background:#c8a25a;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+ .notiz{font-size:13px;color:#666c67;line-height:1.45}
+ .kopfleiste{height:64px;display:flex;align-items:center;gap:12px;padding:0 20px;border-bottom:1px solid #e0e3e0;background:#ffffff}
+ .kopfleiste b{font-size:22px;font-weight:600;letter-spacing:-.01em}
+ .kopfleiste .zurueck{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#004225}
+ .kopfleiste .zurueck svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ .seite{position:absolute;left:0;right:0;top:0;bottom:64px;display:flex;flex-direction:column;background:#f7f8f7}
+ .scroll{flex:1;overflow:hidden;padding:20px 16px;display:flex;flex-direction:column;gap:20px}
+ .funke{width:96px;height:40px;flex:0 0 auto}
+ .absatz{font-size:15px;line-height:1.55}
+ .absatz.leise{color:#666c67}
+ .liste{display:flex;flex-direction:column}
+ .liste .zeile{padding:16px 0;border-bottom:1px solid #e0e3e0}
+ .artliste{display:flex;flex-direction:column}
+ .artzeile{display:grid;grid-template-columns:minmax(0,1fr) 96px;grid-template-rows:auto auto auto;column-gap:16px;row-gap:0;align-items:center;padding:14px 16px;border-bottom:1px solid #e0e3e0}
+ .artzeile:last-child{border-bottom:0}
+ .artzeile.aktiv{background:#e9f1ec}
+ .artzeile .funke{grid-column:2;grid-row:1/3;align-self:center}
+ .artzeile .tags{grid-column:1/3;display:flex;gap:8px;margin-top:10px}
+ .tabelle{display:flex;flex-direction:column}
+ .tz{display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:12px;padding:10px 14px;border-bottom:1px solid #e0e3e0;font-size:14px;line-height:1.45}
+ .tz:last-child{border-bottom:0}
+ .tz:nth-child(even){background:#f7f8f7}
+ .tk{color:#666c67;font-weight:600}
+ .tw{color:#141815}
+ .fuss{margin-top:auto;padding:12px 16px 16px;border-top:1px solid #e0e3e0;background:#ffffff;display:flex;flex-direction:column;gap:10px}
+ .fuss .reihe{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .anno{position:absolute;font-size:11px;color:#8c6820;font-weight:600;letter-spacing:.04em}
+</style>
+</helmet>
+<div class="tel"><div class="karte" style="height:844px;bottom:auto"><svg class="heat" viewBox="0 0 390 420" preserveAspectRatio="xMidYMid slice"><defs><filter id="w"><feGaussianBlur stdDeviation="22"/></filter></defs><path d="M0 300 C80 260 140 330 220 290 S340 250 390 300" stroke="#b7c7e6" stroke-width="4" fill="none" opacity=".8"/><path d="M0 120 L120 150 L200 100 L290 170 L390 140" stroke="#ffffff" stroke-width="3" fill="none" opacity=".9"/><circle cx="90" cy="120" r="70" fill="#942864" opacity=".55" filter="url(#w)"/><circle cx="250" cy="90" r="60" fill="#e55c3c" opacity=".55" filter="url(#w)"/><circle cx="180" cy="200" r="90" fill="#c23b54" opacity=".55" filter="url(#w)"/><circle cx="310" cy="220" r="55" fill="#f88937" opacity=".55" filter="url(#w)"/><circle cx="60" cy="260" r="50" fill="#651a68" opacity=".55" filter="url(#w)"/></svg><svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 390 680"><polygon points="120,300 250,250 300,340 195,258" fill="rgba(0,66,37,.18)" stroke="#004225" stroke-width="2" stroke-dasharray="6 4"/><circle cx="120" cy="300" r="6" fill="#fff" stroke="#004225" stroke-width="2"/><circle cx="250" cy="250" r="6" fill="#fff" stroke="#004225" stroke-width="2"/><circle cx="300" cy="340" r="6" fill="#fff" stroke="#004225" stroke-width="2"/></svg><div class="kreuz" style="top:258px;left:195px"><i></i></div><span class="quelle" style="top:auto;bottom:8px">© OpenStreetMap</span><div style="position:absolute;left:12px;top:12px;width:40px;height:40px;border-radius:50%;background:#ffffff;border:1px solid #e0e3e0;box-shadow:0 1px 3px rgba(0,38,21,.12);display:flex;align-items:center;justify-content:center;font-weight:600;color:#004225">F</div></div><div class="schwebe hell" style="top:12px"><svg viewBox="0 0 24 24"><path d="M12 4l9 5-9 5-9-5z"/><path d="M3 14l9 5 9-5"/></svg></div><div class="schwebe hell" style="top:72px"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8"/></svg></div><div class="blatt" style="top:auto;bottom:64px"><div class="griff"><i></i></div><div class="inhalt" style="padding:4px 16px 16px;gap:4px"><b style="font-size:17px;font-weight:600">Zone zeichnen</b><span class="unter">4 Eckpunkte · 42 ha. Fadenkreuz auf den nächsten Eckpunkt setzen.</span></div><div class="fuss"><span class="knopf primaer gross breit">Eckpunkt setzen</span><div class="reihe"><span class="knopf sekundaer">Letzten Punkt entfernen</span><span class="knopf sekundaer">Zone abschließen</span></div></div></div><div class="tab-nav"><div class=""><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Karte</span></div><div class=""><svg viewBox="0 0 24 24"><path d="M4 11a8 6 0 0 1 16 0H4z"/><path d="M9 11v7a3 3 0 0 0 6 0v-7"/></svg><span>Arten</span></div><div class="on"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Einträge</span></div></div></div></x-dc>
+</body>
+</html>
