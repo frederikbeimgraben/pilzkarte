@@ -91,6 +91,12 @@ class AnmeldungFehlt(AppFehler):
     kopfzeilen: ClassVar[Mapping[str, str]] = {"WWW-Authenticate": "Bearer"}
 
 
+class NichtGefunden(AppFehler):
+    """Das angefragte Objekt gibt es nicht, oder es gehoert einem anderen."""
+
+    status: ClassVar[int] = 404
+
+
 def problem_antwort(
     status: int,
     *,

@@ -10,7 +10,7 @@ from app.core.db import motor
 from app.core.errors import fehlerbehandlung_registrieren
 from app.core.settings import einstellungen
 from app.core.version import VERSION
-from app.modules import basis
+from app.modules import arten, basis
 
 
 @asynccontextmanager
@@ -38,6 +38,7 @@ def app_bauen() -> FastAPI:
         allow_headers=["*"],
     )
     gebaut.include_router(basis.router, prefix="/api")
+    gebaut.include_router(arten.router, prefix="/api")
     fehlerbehandlung_registrieren(gebaut)
     return gebaut
 
