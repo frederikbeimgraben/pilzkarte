@@ -2,9 +2,9 @@ import { isDevMode } from '@angular/core';
 import type { Routes } from '@angular/router';
 
 /**
- * Die vier Reiter stehen als Platzhalter, damit die Struktur schon trägt; die
- * Inhalte kommen in A2 und später. Die Baustein-Seite gibt es nur in der
- * Entwicklung, sonst läge eine Werkstattseite im Betrieb.
+ * Die vier Reiter. Wo das Arbeitspaket noch aussteht, steht ein Platzhalter.
+ * Die Baustein-Seite gibt es nur in der Entwicklung, sonst läge eine
+ * Werkstattseite im Betrieb.
  */
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'karte' },
@@ -15,6 +15,10 @@ export const routes: Routes = [
   {
     path: 'arten',
     loadComponent: () => import('./features/arten/arten.component').then((m) => m.ArtenComponent),
+  },
+  {
+    path: 'arten/:slug',
+    loadComponent: () => import('./features/arten/art.component').then((m) => m.ArtComponent),
   },
   {
     path: 'eintraege',
