@@ -248,9 +248,14 @@ class Jahresspanne(BasisModell):
 
 
 class SaisonKurz(BasisModell):
-    """Die Kurve, wie die Artenliste sie klein zeichnet."""
+    """Die Kurve, wie die Artenliste sie klein zeichnet.
+
+    Beide Reihen, weil die Zeile der Artenliste dieselbe Kurve zeigt wie die
+    Artseite, nur kleiner. Die Nenner stehen am Kopf der Liste, nicht hier.
+    """
 
     alle_jahre: list[float]
+    laufendes_jahr: list[float]
     hoechstwert: float
 
 

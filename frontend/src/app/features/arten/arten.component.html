@@ -1,1 +1,45 @@
-<app-platzhalter [titel]="'nav.arten' | t" />
+<app-page-header [titel]="'nav.arten' | t" />
+<div class="arten">
+  <app-form-field
+    icon="suche"
+    [label]="'arten.suche' | t"
+    [labelVerstecken]="true"
+    [platzhalter]="'arten.suche' | t"
+    [wert]="suche()"
+    (wertChange)="suche.set($event)"
+  />
+  <app-chip-group
+    [chips]="chips()"
+    [wert]="chip()"
+    [beschriftung]="'arten.filter' | t"
+    (wertChange)="waehleChip($event)"
+  />
+  <app-card class="randlos">
+    @if (zeilen().length === 0) {
+      <app-note class="empty-state">{{ 'arten.leer' | t }}</app-note>
+    }
+    @for (zeile of zeilen(); track zeile.slug; let i = $index) {
+      <app-species-row
+        [name]="zeile.name"
+        [latein]="zeile.latein"
+        [aktiv]="zeile.aktiv"
+        (auswahl)="oeffne(zeile.slug)"
+        (keydown)="beiTaste($event, i)"
+      >
+        <app-season-curve
+          kurve
+          [alleJahre]="zeile.kurve"
+          [laufendesJahr]="zeile.laufend"
+          [begehungenAlleJahre]="begehungen()"
+          [begehungenLaufendesJahr]="begehungenLaufend()"
+          [beschriftung]="zeile.beschriftung"
+        />
+        <ng-container tags>
+          @for (marke of zeile.marken; track marke.text) {
+            <app-badge [variant]="marke.variant">{{ marke.text }}</app-badge>
+          }
+        </ng-container>
+      </app-species-row>
+    }
+  </app-card>
+</div>

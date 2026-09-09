@@ -38,6 +38,35 @@
   resize: none;
 }
 
-.feld::placeholder {
+.feld--icon {
+  gap: 10px;
+}
+
+.feld__icon {
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+// Der Rahmen gehört dem Kasten, nicht der Eingabe darin. Sonst stünden zwei
+// Rahmen ineinander und der Fokus säße am falschen Rand.
+.feld__eingabe {
+  flex: 1;
+  min-inline-size: 0;
+  padding: 0;
+  font: inherit;
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  background: none;
+  border: 0;
+  outline: none;
+}
+
+.feld--icon:focus-within {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.feld::placeholder,
+.feld__eingabe::placeholder {
   color: var(--color-text-muted);
 }

@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+// Der Inhalt scrollt, die Kopfleiste bleibt. Maße aus `docs/mockups/bauen.py`,
+// Klasse `.scroll`.
+.arten {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px var(--pilz-gutter);
+  overflow-y: auto;
+  // Wie die Chip-Reihe: die App füllt das Gerät, ein Balken am Rand gehörte zu
+  // einem Fenster. Gescrollt wird mit dem Daumen oder dem Rad.
+  scrollbar-width: none;
+}

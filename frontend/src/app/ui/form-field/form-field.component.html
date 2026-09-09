@@ -1,4 +1,6 @@
-<label class="feld__label" [attr.for]="nurAnzeige() ? null : feldId">{{ label() }}</label>
+<label class="feld__label" [class.sr-only]="labelVerstecken()" [attr.for]="nurAnzeige() ? null : feldId">{{
+  label()
+}}</label>
 @if (nurAnzeige()) {
   <button class="feld feld--knopf" type="button" [class.feld--leer]="leer()" (click)="anzeigeKlick.emit()">
     {{ leer() ? platzhalter() : wert() }}
@@ -11,6 +13,18 @@
     [attr.placeholder]="platzhalter() || null"
     (input)="beiEingabe($event)"
   ></textarea>
+} @else if (icon()) {
+  <span class="feld feld--icon">
+    <app-svg-icon class="feld__icon" [name]="icon()!" [groesse]="18" />
+    <input
+      class="feld__eingabe"
+      type="text"
+      [id]="feldId"
+      [value]="wert()"
+      [attr.placeholder]="platzhalter() || null"
+      (input)="beiEingabe($event)"
+    />
+  </span>
 } @else {
   <input
     class="feld"

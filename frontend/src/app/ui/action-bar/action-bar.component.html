@@ -1,11 +1,20 @@
 <div class="fuss">
   @if (haupt()) {
-    <app-button class="fuss__haupt" variant="primary" [block]="true" (click)="hauptKlick.emit()">
+    <app-button
+      class="fuss__haupt"
+      variant="primary"
+      [block]="true"
+      [disabled]="hauptDeaktiviert()"
+      (click)="hauptKlick.emit()"
+    >
       @if (hauptIcon()) {
         <app-svg-icon [name]="hauptIcon()!" [groesse]="16" />
       }
       {{ haupt() }}
     </app-button>
+  }
+  @if (unter()) {
+    <app-note class="fuss__unter" variante="unter">{{ unter() }}</app-note>
   }
   @if (zweite() && sekundaer()) {
     <div class="fuss__reihe">

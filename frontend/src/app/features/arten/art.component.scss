@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+// Der Inhalt scrollt, Kopfleiste und Fußleiste bleiben stehen. Maße aus
+// `docs/mockups/bauen.py`, Klasse `.scroll`.
+.art {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px var(--pilz-gutter);
+  overflow-y: auto;
+  // Wie die Chip-Reihe: die App füllt das Gerät, ein Balken am Rand gehörte zu
+  // einem Fenster. Gescrollt wird mit dem Daumen oder dem Rad.
+  scrollbar-width: none;
+}
+
+.art__kopf {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block-start: -4px;
+}
+
+.art__marken {
+  display: flex;
+  gap: var(--space-2);
+}
+
+// Die Abschnittsüberschrift der Mockups, Klasse `.h2`.
+.art__abschnitt {
+  margin: 0 0 10px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.art__quellen a {
+  color: var(--color-primary);
+}

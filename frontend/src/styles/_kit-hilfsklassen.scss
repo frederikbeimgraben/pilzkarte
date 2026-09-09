@@ -126,6 +126,13 @@
   margin-inline-start: 2px;
 }
 
+// Karten, deren Inhalt von Rand zu Rand geht: Listen und Tabellen. Der
+// Innenabstand steckt in der Karte des Kits fest als `.p-5`; ihn hier auf null
+// zu stellen ist der einzige Weg, der die Karte nicht nachbaut.
+app-card.randlos {
+  --space-5: 0;
+}
+
 // Leerzustand einer Liste oder Tabelle im Kit.
 .empty-state {
   padding: var(--space-5);

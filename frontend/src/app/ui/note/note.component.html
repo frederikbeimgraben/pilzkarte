@@ -1,1 +1,3 @@
-<p class="notiz" [class.notiz--unter]="variante() === 'unter'"><ng-content /></p>
+<p class="notiz" [class.notiz--unter]="variante() === 'unter'" [class.notiz--kursiv]="kursiv()">
+  <ng-content />
+</p>

@@ -210,6 +210,7 @@ class Katalog:
                     spitze_woche=spitze_woche_fuer(alle),
                     saison=SaisonKurz(
                         alle_jahre=alle,
+                        laufendes_jahr=laufend,
                         hoechstwert=max([*alle, *laufend]),
                     ),
                 )

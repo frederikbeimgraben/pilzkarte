@@ -494,7 +494,10 @@ async def test_liste_antwortet_in_camel_case(app: FastAPI) -> None:
         "spitzeWoche",
         "saison",
     }
-    assert set(erste["saison"]) == {"alleJahre", "hoechstwert"}
+    assert set(erste["saison"]) == {"alleJahre", "laufendesJahr", "hoechstwert"}
+    # Beide Reihen, wie im Profil: die Zeile zeichnet dieselbe Kurve, nur kleiner.
+    steinpilz = next(art for art in koerper["arten"] if art["slug"] == "steinpilz")
+    assert steinpilz["saison"]["laufendesJahr"] == [40.0, 5.0, 0.0]
 
 
 async def test_profil_antwortet_mit_tabelle_und_kurve(app: FastAPI) -> None:

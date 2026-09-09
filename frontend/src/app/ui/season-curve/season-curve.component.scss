@@ -48,12 +48,29 @@
   fill: var(--color-primary);
 }
 
+.funke__monate,
 .funke__legende {
   display: flex;
   justify-content: space-between;
-  margin-block-start: var(--space-2);
   font-size: 13px;
   color: var(--color-text-muted);
+}
+
+.funke__monate {
+  margin-block-start: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.funke__legende {
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+}
+
+// Die Jahreszahl des laufenden Jahres bricht nicht um; die längere Erklärung
+// der Fläche daneben darf es.
+.funke__legende span:first-child {
+  flex: none;
+  white-space: nowrap;
 }
 
 .funke__muster {
