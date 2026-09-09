@@ -20,7 +20,7 @@ frontend/playwright-report/
 *.log
 # Modell: Rohdaten, Zwischenstände, Modelle und gerenderte Karten sind
 # Ausgaben der Kette, nicht Quelltext
-modell/data/
-modell/reports/
-modell/models/
+modell/data
+modell/reports
+modell/models
 modell/.venv/
