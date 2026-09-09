@@ -1,10 +1,27 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { I18nService } from '../../core/i18n/i18n.service';
 
 /** Die Marken auf der Grundlinie stehen am Anfang der Monate Jan, Mär, … Nov. */
 const MONATSMARKEN = [0, 9, 18, 27, 36, 44] as const;
 
 /** Der Anteil des stärksten Wertes, unter dem eine Woche als dünn gilt. */
 const DUENN_UNTER = 0.25;
+
+/**
+ * Zentriertes gleitendes Mittel. Am Rand zählen die Nachbarn, die es gibt,
+ * sonst zöge eine gedachte Null die erste und die letzte Woche nach unten.
+ */
+export function glaette(reihe: readonly number[], fenster: number): readonly number[] {
+  if (fenster <= 1) return reihe;
+  const halb = Math.floor(fenster / 2);
+  return reihe.map((_, i) => {
+    const von = Math.max(0, i - halb);
+    const bis = Math.min(reihe.length - 1, i + halb);
+    let summe = 0;
+    for (let k = von; k <= bis; k++) summe += reihe[k];
+    return summe / (bis - von + 1);
+  });
+}
 
 let naechsteNummer = 0;
 
@@ -37,6 +54,11 @@ interface Zeichnung {
  * Sind die Begehungen je Woche bekannt, verblassen die Wochen, die auf wenigen
  * Begehungen ruhen. Ohne diese Zahlen sähe eine Woche mit drei Begehungen aus
  * wie eine mit dreihundert.
+ *
+ * Gezeichnet wird ein gleitendes Mittel über drei Wochen. Eine Woche mehr oder
+ * weniger ist Zufall des Meldeverhaltens, nicht der Saison. Die Achse behält
+ * den Höchstwert der Rohdaten, damit die Zahl neben der Kurve dieselbe ist wie
+ * in der Liste.
  */
 @Component({
   selector: 'app-season-curve',
@@ -59,6 +81,10 @@ export class SeasonCurveComponent {
   readonly begehungenAlleJahre = input<readonly number[]>([]);
   /** Der Nenner der Linie: Begehungen je Kalenderwoche im laufenden Jahr. */
   readonly begehungenLaufendesJahr = input<readonly number[]>([]);
+  /** Breite des gleitenden Mittels in Wochen. 1 zeichnet die Rohwerte. */
+  readonly glaettung = input(3);
+
+  private readonly i18n = inject(I18nService);
 
   protected readonly maskeId = `funke-dicht-${naechsteNummer++}`;
   protected readonly zeichnung = computed<Zeichnung>(() => this.rechne());
@@ -67,10 +93,13 @@ export class SeasonCurveComponent {
     const gross = this.gross();
     const breite = gross ? 330 : 88;
     const hoehe = gross ? 72 : 36;
-    const alle = this.alleJahre();
-    const laufend = this.laufendesJahr();
-    // Ohne Daten bleibt nur die Grundlinie; ein Höchstwert von 0 teilte durch null.
-    const top = Math.max(...alle, ...laufend, Number.EPSILON);
+    const fenster = this.glaettung();
+    const alle = glaette(this.alleJahre(), fenster);
+    const laufend = glaette(this.laufendesJahr(), fenster);
+    // Der Höchstwert kommt aus den Rohdaten, nicht aus der geglätteten Reihe.
+    // Sonst stiege die Kurve über die Zahl an der Achse hinaus.
+    // Ein Höchstwert von 0 teilte durch null; darum die kleinste Zahl als Boden.
+    const top = Math.max(...this.alleJahre(), ...this.laufendesJahr(), Number.EPSILON);
     const punkt = (i: number, wert: number): [number, number] => [
       (i / 51) * breite,
       hoehe - 3 - (wert / top) * (hoehe - 8),
@@ -91,6 +120,10 @@ export class SeasonCurveComponent {
       punktRadius: gross ? 3 : 2,
       duenn: this.duenneWochen(breite),
     };
+  }
+
+  protected glaettungText(): string {
+    return this.i18n.translate('saison.geglaettet', { wochen: this.glaettung() });
   }
 
   /**

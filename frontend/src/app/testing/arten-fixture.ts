@@ -41,6 +41,16 @@ export const MARONE_KURZ = kurz({
   kartenSlug: 'imleria_badia',
 });
 
+export const SEMMEL_KURZ = kurz({
+  slug: 'semmelstoppelpilz',
+  name: 'Semmelstoppelpilz',
+  lateinisch: 'Hydnum repandum',
+  gruppe: 'stoppelpilz',
+  stufe: 'saison',
+  tags: ['saison', 'stoppelpilz', 'sommer', 'herbst', 'buche'],
+  begehungenMitFund: 180,
+});
+
 export const MORCHEL_KURZ = kurz({
   slug: 'speisemorchel',
   name: 'Speisemorchel',
@@ -63,7 +73,7 @@ export const ARTEN_LISTE: ArtenListe = {
   begehungen: 48_120,
   begehungenJeWocheAlleJahre: BEGEHUNGEN_ALLE,
   begehungenJeWocheLaufendesJahr: BEGEHUNGEN_LAUFEND,
-  arten: [STEINPILZ_KURZ, MARONE_KURZ, MORCHEL_KURZ],
+  arten: [STEINPILZ_KURZ, MARONE_KURZ, SEMMEL_KURZ, MORCHEL_KURZ],
 };
 
 const SAISON: SaisonKurve = {

@@ -43,6 +43,7 @@ const de = {
   'fadenkreuz.beschriftung': 'Fundort',
 
   'saison.beschriftung': 'Saisonkurve',
+  'saison.geglaettet': 'geglättet über {wochen} Wochen',
 
   'histogramm.beschriftung': 'Verteilung',
 
@@ -323,6 +324,7 @@ const en: Record<TranslationKey, string> = {
   'fadenkreuz.beschriftung': 'Find location',
 
   'saison.beschriftung': 'Season curve',
+  'saison.geglaettet': 'smoothed over {wochen} weeks',
 
   'histogramm.beschriftung': 'Distribution',
 
