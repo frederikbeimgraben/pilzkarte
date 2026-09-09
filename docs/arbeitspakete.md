@@ -51,18 +51,18 @@ Signal-Locale, `ApiClient` über `/api` mit problem+json-Fehlern als Toast,
 Proxy-Konfiguration (`/api` lokal, Kachelpfade auf pilze.beimgraben.net),
 Vitest mit Testing Library und axe, ESLint, Budgets im `angular.json`.
 
-Die sieben mobilen Bausteine als eigene Komponenten in `src/app/ui/`, nach
-Maßen aus `docs/mockups/bauen.py` und Artboard `Bausteine`: BottomNav
-(64 px), Sheet mit drei Rasten (Kopf 112 px, halb, voll; Ziehen und Tipp),
-ChipGroup, Segmented (Rolle tablist), Timeline (Wochenknopf 44 × 48 mit
-Balken, Prognose gestrichelt, Jahresmarke), ListRow, ActionBar (Fußleiste:
-Hauptaktion breit, darunter zwei gleich breite Knöpfe, Gefahr-Variante mit
-roter Umrandung).
+Alle gemeinsamen Bausteine aus der Tabelle in `CLAUDE.md` als eigene
+Komponenten in `src/app/ui/`, nach Maßen aus `docs/mockups/bauen.py` und
+den Artboards. Jeder Baustein: eine Komponente, Inputs als Signals, Tokens
+nur semantisch, keine seitenspezifischen Stile. Was das Kit schon hat
+(Button, Card, Badge, Input, Dialog, Toast), wird aus dem Kit genommen und
+nicht nachgebaut.
 
 Abnahme:
 - `npm test`, `npm run lint`, `npm run typecheck`, `npm run build` grün
 - jede Baustein-Komponente hat einen Test mit axe ohne Verstoß
-- Storybook-artige Seite `/bausteine` (nur dev) zeigt alle sieben in hell und dunkel
+- Seite `/bausteine` (nur dev) zeigt alle Bausteine in hell und dunkel, neben dem Artboard `Bausteine` verglichen
+- keine Komponente außerhalb von `src/app/ui/` definiert eine Höhe, einen Radius oder eine Farbe für einen Baustein
 - Prod-Build unter 600 kB initial, Bundle-Budget im `angular.json`
 
 ### A2 Shell und Karte

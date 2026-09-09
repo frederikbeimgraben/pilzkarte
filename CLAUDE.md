@@ -54,6 +54,46 @@ backend/
   deploy.stamp     wird vom Deploy geschrieben, nicht committen
 ```
 
+## Gemeinsame Bausteine
+
+Was auf zwei Screens vorkommt, ist eine Komponente in `src/app/ui/`, wird
+dort einmal gestaltet und einmal getestet. Seiten komponieren, sie
+stylen nicht. Ein Maß, das zweimal auftaucht, ist ein Token. Die Liste
+stammt aus den Mockups (`docs/mockups/bauen.py` ist die Quelle der Maße):
+
+| Baustein | Aus den Mockups | Screens |
+| --- | --- | --- |
+| `BottomNav` | `nav()`, 64 px, aktiv primär | alle Reiter |
+| `Sheet` | `.blatt` mit `.griff`, drei Rasten | Karte, Objekte, Melden, Anmelden, Aktionen |
+| `SheetHead` | `kopf()`: Titel, Woche, Pfeilgruppe, Zeitleiste | Karte in jeder Darstellung, Faktor |
+| `Timeline` + `WeekButton` | `zeitleiste()`, `.woche` 44 × 48, Balken, Prognose, Jahresmarke | Karte, Desktop, Bausteine |
+| `Segmented` | `seg()`, Rolle tablist | Darstellung, Regel, Sichtbarkeit, Bedingung |
+| `ChipGroup` | `.chips`/`.chip` | Arten, Einträge, Ebenen |
+| `ListRow` | `.liste .zeile`, `fundzeile()`, `einstellung()` | Einträge, Konto, Ebenen |
+| `ActionBar` | `fuss()`: Hauptaktion breit, zwei gleich breite Nebenaktionen, Gefahr-Variante | Fund, Zone, Melden, Anmelden, Art, Faktor, Kombination, Ort, Zeichnen |
+| `ActionSheet` + `ActionRow` | `aktionsreihe()` | Plus-Menü |
+| `FloatingButton` | `schwebend()`, 48 px, Radius 14, hell und primär | Karte (Ebenen, Standort, Plus) |
+| `PageHeader` | `.kopfleiste` mit Zurück | Arten, Art, Einträge, Konto |
+| `Card` | `.card` | überall, aus dem Kit |
+| `KeyValueTable` + `KeyValueRow` | `.tabelle`/`.tz` | Art (Merkmale, Verwechslung), Zone (Kennzahlen), Faktor |
+| `MetricRow` | Beschriftung, Unterzeile, Wert rechts | Fund, Zone |
+| `Badge` | `.badge` mit Varianten p/w/i/s | Arten, Art, Einträge, Zone, Fund |
+| `SeasonCurve` | `funke()`: zwei Reihen, Achse, Legende | Arten (klein), Art (groß) |
+| `Ramp` | `rampe()`: Beschriftung, Farbverlauf, Enden | Vorhersage, Ebene, Kombination abgestuft |
+| `Crosshair` | `.kreuz` | Fundort, Zone zeichnen |
+| `FactorRow` | `faktor_zeile()` | Kombination |
+| `Histogram` + `RangeSlider` | `histogramm()`, `schieber()` | Faktor |
+| `ColorSwatches` | Farbfelder 36 px, Radius 10 | Zone, Marker |
+| `FormField` | `.label` + `.feld`, einzeilig und mehrzeilig | Melden, Zone, Marker |
+| `SpeciesRow` | `artkarte()`: Raster mit Kurve rechts, Tags unten | Arten |
+| `AvatarButton` | Kreis oben links | Karte |
+| `Note` | `.notiz`, `.unter` | überall |
+
+Wer einen Screen baut und einen Baustein braucht, der fehlt, legt ihn in
+`src/app/ui/` an, nicht in der Seite. Dasselbe gilt im Backend: Besitzer-
+prüfung, Paging, Fehler, Wochenformat und Bild-Pipeline liegen einmal in
+`app/core/` oder `app/shared/`, kein Modul kopiert sie.
+
 ## Hausregeln
 
 Übernommen aus STUPA-Workflow, angepasst an ein kleines Projekt ohne Docker.
