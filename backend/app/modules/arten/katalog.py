@@ -85,6 +85,16 @@ def anteil_je_woche(funde: Sequence[int], begehungen: Sequence[int]) -> list[flo
     ]
 
 
+def mittel_je_woche(begehungen: Sequence[int], jahre: int) -> list[float]:
+    """Begehungen je Kalenderwoche, gemittelt ueber die geschlossenen Jahre.
+
+    Das Mittel steht neben der Zahl des laufenden Jahres, darum teilt es durch
+    die Jahre. Eine Summe ueber elf Jahre waere elfmal so gross und liesse sich
+    mit dem laufenden Jahr nicht vergleichen.
+    """
+    return [round(wert / jahre, 1) for wert in begehungen]
+
+
 def spitze_woche_fuer(anteile: Sequence[float]) -> int | None:
     """Die Kalenderwoche mit dem hoechsten Anteil, oder nichts ohne einen Fund."""
     hoechster = max(anteile)
@@ -169,6 +179,15 @@ class Katalog:
     def _jahre(self) -> Jahresspanne:
         return Jahresspanne(von=self.tabelle.von_jahr, bis=self.tabelle.bis_jahr)
 
+    @property
+    def _begehungen_alle_jahre(self) -> list[float]:
+        anzahl = self.tabelle.bis_jahr - self.tabelle.von_jahr + 1
+        return mittel_je_woche(self.tabelle.begehungen_je_woche, anzahl)
+
+    @property
+    def _begehungen_laufendes_jahr(self) -> list[int]:
+        return self.tabelle.begehungen_je_woche_laufendes_jahr[: self.tabelle.stand_woche]
+
     def liste(self) -> ArtenListe:
         """Alle Arten mit Stufe, Tags und der kleinen Kurve."""
         arten: list[ArtKurz] = []
@@ -200,6 +219,8 @@ class Katalog:
             stand=self._stand,
             jahre=self._jahre,
             begehungen=sum(self.tabelle.begehungen_je_woche),
+            begehungen_je_woche_alle_jahre=self._begehungen_alle_jahre,
+            begehungen_je_woche_laufendes_jahr=self._begehungen_laufendes_jahr,
             arten=arten,
         )
 
@@ -233,6 +254,8 @@ class Katalog:
                 jahre=self._jahre,
                 stand=self._stand,
                 begehungen=sum(self.tabelle.begehungen_je_woche),
+                begehungen_je_woche_alle_jahre=self._begehungen_alle_jahre,
+                begehungen_je_woche_laufendes_jahr=self._begehungen_laufendes_jahr,
             ),
         )
 
