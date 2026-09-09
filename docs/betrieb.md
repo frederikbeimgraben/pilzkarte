@@ -85,6 +85,13 @@ dann `deploy/frontend.sh`. Die Migration läuft beim Neustart des Dienstes.
 
 ## Lokale Entwicklung
 
+- Umgebung: `nix develop` bringt beide Seiten mit, `nix develop .#backend` und
+  `nix develop .#frontend` je eine. Darin laufen die Befehle aus `CLAUDE.md`
+  ohne Umwege. NixOS hat kein `/lib64`; darum reicht die Schale die fertigen
+  Binärpakete von `uv` und `npm` durch einen FHS-Baum, sonst starten `ruff`,
+  `basedpyright`, `esbuild` und `greenlet` nicht. `uv` nimmt das Python 3.13
+  aus nixpkgs, also dasselbe wie der Dienst. Das Modell hat eine eigene Schale
+  in `modell/`.
 - Backend: `cd backend && uv sync && uv run uvicorn app.main:app --reload --port 8111`
 - Frontend: `cd frontend && npm ci && npm start`. `proxy.conf.json` leitet
   `/api` auf `127.0.0.1:8111` und die Kachelpfade auf
