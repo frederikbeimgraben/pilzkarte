@@ -34,6 +34,7 @@
           httpx
           lightgbm
           ipython
+          pytest
         ];
 
         python = pkgs.python312.withPackages corePackages;
