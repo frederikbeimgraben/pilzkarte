@@ -1,0 +1,43 @@
+:host {
+  display: block;
+}
+
+.feld__label {
+  display: block;
+  margin-block-end: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.feld {
+  display: flex;
+  align-items: center;
+  inline-size: 100%;
+  block-size: var(--pilz-feld-hoehe);
+  padding-inline: var(--pilz-gutter);
+  font: inherit;
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  text-align: start;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--pilz-farbfeld-radius);
+}
+
+.feld--knopf {
+  cursor: pointer;
+}
+
+.feld--leer {
+  color: var(--color-text-muted);
+}
+
+.feld--mehrzeilig {
+  block-size: 80px;
+  padding-block-start: 10px;
+  resize: none;
+}
+
+.feld::placeholder {
+  color: var(--color-text-muted);
+}

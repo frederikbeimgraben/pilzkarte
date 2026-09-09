@@ -1,0 +1,26 @@
+{
+  "/api": {
+    "target": "http://127.0.0.1:8111",
+    "secure": false
+  },
+  "^/layers_kacheln/": {
+    "target": "https://pilze.beimgraben.net",
+    "changeOrigin": true
+  },
+  "^/funde/": {
+    "target": "https://pilze.beimgraben.net",
+    "changeOrigin": true
+  },
+  "^/[a-z0-9_-]+_kacheln/": {
+    "target": "https://pilze.beimgraben.net",
+    "changeOrigin": true
+  },
+  "^/[a-z0-9_-]+_weeks/": {
+    "target": "https://pilze.beimgraben.net",
+    "changeOrigin": true
+  },
+  "^/[a-z0-9_-]+\\.json$": {
+    "target": "https://pilze.beimgraben.net",
+    "changeOrigin": true
+  }
+}

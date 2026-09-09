@@ -1,0 +1,10 @@
+.leiste {
+  display: flex;
+  gap: 6px;
+  padding-block: 10px 2px;
+  overflow-x: auto;
+  // Die Leiste läuft bis an den Rand des Blatts, der Inhalt daneben nicht.
+  margin-inline: calc(var(--pilz-gutter) * -1);
+  padding-inline: var(--pilz-gutter);
+  scrollbar-width: none;
+}

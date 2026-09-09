@@ -1,0 +1,12 @@
+@use '@stupa-makers/ui-kit/styles';
+@use 'styles/tokens';
+@use 'styles/kit-hilfsklassen';
+
+// Die App füllt das Gerät und scrollt nur innerhalb ihrer Flächen. Ein
+// Seitenscroll würde das Blatt und die Navigation vom Rand lösen.
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}

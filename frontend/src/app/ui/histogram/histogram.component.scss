@@ -1,0 +1,14 @@
+.histogramm {
+  display: block;
+  inline-size: 100%;
+  block-size: 64px;
+}
+
+.histogramm__balken {
+  fill: var(--color-border);
+}
+
+.histogramm__balken--drin {
+  fill: var(--color-primary);
+  opacity: 0.85;
+}

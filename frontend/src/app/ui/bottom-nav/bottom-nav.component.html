@@ -1,0 +1,13 @@
+<nav class="nav" [attr.aria-label]="beschriftung()">
+  @for (eintrag of eintraege(); track eintrag.pfad) {
+    <a
+      class="nav__eintrag"
+      [class.nav__eintrag--aktiv]="eintrag.pfad === aktiv()"
+      [routerLink]="eintrag.pfad"
+      [attr.aria-current]="eintrag.pfad === aktiv() ? 'page' : null"
+    >
+      <app-svg-icon [name]="eintrag.icon" />
+      <span class="nav__label">{{ eintrag.label }}</span>
+    </a>
+  }
+</nav>

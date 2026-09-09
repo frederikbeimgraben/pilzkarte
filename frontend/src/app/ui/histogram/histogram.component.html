@@ -1,0 +1,17 @@
+<svg
+  class="histogramm"
+  [attr.viewBox]="'0 0 ' + breite + ' ' + hoehe"
+  role="img"
+  [attr.aria-label]="beschriftung()"
+>
+  @for (balken of balken(); track $index) {
+    <rect
+      [class.histogramm__balken--drin]="balken.drin"
+      class="histogramm__balken"
+      [attr.x]="balken.x"
+      [attr.y]="balken.y"
+      [attr.width]="balken.breite"
+      [attr.height]="balken.hoehe"
+    />
+  }
+</svg>

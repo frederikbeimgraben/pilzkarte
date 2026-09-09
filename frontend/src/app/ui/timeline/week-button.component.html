@@ -1,0 +1,18 @@
+<button
+  class="woche"
+  type="button"
+  [class.woche--aktiv]="aktiv()"
+  [class.woche--prognose]="prognose()"
+  [attr.aria-label]="beschriftung()"
+  [attr.aria-pressed]="aktiv()"
+  (click)="auswahl.emit()"
+>
+  @if (jahresmarke()) {
+    <span class="woche__jahr" aria-hidden="true">{{ jahr() }}</span>
+  }
+  <span class="woche__kw" aria-hidden="true">{{ 'zeitleiste.kw' | t }}</span>
+  <span class="woche__zahl" aria-hidden="true">{{ woche() }}</span>
+  <span class="woche__spur" aria-hidden="true"
+    ><i class="woche__balken" [style.inline-size]="balken()"></i
+  ></span>
+</button>

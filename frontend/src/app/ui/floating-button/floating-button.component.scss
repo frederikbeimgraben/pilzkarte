@@ -1,0 +1,23 @@
+:host {
+  display: inline-flex;
+}
+
+.schwebe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--pilz-schwebe-groesse);
+  block-size: var(--pilz-schwebe-groesse);
+  color: var(--color-text);
+  cursor: pointer;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--pilz-schwebe-radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.schwebe--primaer {
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}

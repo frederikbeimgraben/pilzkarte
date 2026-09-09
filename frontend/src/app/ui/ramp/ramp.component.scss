@@ -1,0 +1,25 @@
+.rampe__beschriftung {
+  margin-block-end: 10px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.rampe {
+  display: flex;
+  block-size: var(--space-3);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.rampe__stufe {
+  flex: 1;
+}
+
+.rampe__enden {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: 6px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}

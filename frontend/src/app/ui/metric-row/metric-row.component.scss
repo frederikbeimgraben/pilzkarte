@@ -1,0 +1,36 @@
+:host {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: var(--space-3);
+  align-items: center;
+  padding: 10px 14px;
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+:host(:last-child) {
+  border-block-end: 0;
+}
+
+.metrik__stapel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-inline-size: 0;
+}
+
+.metrik__beschriftung {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+}
+
+.metrik__unter {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.metrik__wert {
+  font-size: var(--fs-lg);
+  font-variant-numeric: tabular-nums;
+}

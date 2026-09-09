@@ -1,0 +1,26 @@
+<ng-template #inhalt>
+  <span class="zeile__vorn"><ng-content select="[vorn]" /></span>
+  <span class="zeile__stapel">
+    <span class="zeile__titel">{{ titel() }}</span>
+    @if (unter()) {
+      <span class="zeile__unter">{{ unter() }}</span>
+    }
+    @if (notiz()) {
+      <span class="zeile__notiz">{{ notiz() }}</span>
+    }
+  </span>
+  @if (wert()) {
+    <span class="zeile__wert">{{ wert() }}</span>
+  }
+  <span class="zeile__hinten"><ng-content select="[hinten]" /></span>
+</ng-template>
+
+@if (anklickbar()) {
+  <button class="zeile zeile--knopf" type="button" (click)="auswahl.emit()">
+    <ng-container [ngTemplateOutlet]="inhalt" />
+  </button>
+} @else {
+  <div class="zeile">
+    <ng-container [ngTemplateOutlet]="inhalt" />
+  </div>
+}

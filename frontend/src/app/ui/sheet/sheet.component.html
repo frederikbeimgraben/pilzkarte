@@ -1,0 +1,18 @@
+<section
+  class="blatt"
+  role="dialog"
+  [attr.aria-label]="beschriftung()"
+  [attr.aria-modal]="modal() ? 'true' : null"
+  [style.block-size]="hoehe()"
+  (keydown)="beiTaste($event)"
+>
+  <button class="blatt__griff" type="button" [attr.aria-label]="griffText()" (click)="naechsteRaste()">
+    <span class="blatt__griff-strich"></span>
+  </button>
+  @if (griffTipp()) {
+    <p class="blatt__tipp">{{ 'sheet.griffTipp' | t }}</p>
+  }
+  <div class="blatt__inhalt">
+    <ng-content />
+  </div>
+</section>

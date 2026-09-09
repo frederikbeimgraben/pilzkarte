@@ -1,0 +1,56 @@
+.schieber {
+  position: relative;
+  block-size: 28px;
+}
+
+.schieber__spur,
+.schieber__gewaehlt {
+  position: absolute;
+  inset-block-start: 12px;
+  block-size: 4px;
+  border-radius: 2px;
+}
+
+.schieber__spur {
+  inset-inline: 0;
+  background: var(--color-border);
+}
+
+.schieber__gewaehlt {
+  background: var(--color-primary);
+}
+
+// Beide Regler liegen übereinander. Nur die Griffe nehmen Zeiger an, sonst
+// finge der obere Regler jeden Klick ab.
+.schieber__griff {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 0;
+  inline-size: 100%;
+  block-size: 28px;
+  margin: 0;
+  pointer-events: none;
+  appearance: none;
+  background: none;
+}
+
+.schieber__griff::-webkit-slider-thumb {
+  inline-size: 24px;
+  block-size: 24px;
+  pointer-events: auto;
+  appearance: none;
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.schieber__griff::-moz-range-thumb {
+  inline-size: 24px;
+  block-size: 24px;
+  pointer-events: auto;
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}

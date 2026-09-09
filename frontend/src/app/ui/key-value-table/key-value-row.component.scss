@@ -1,0 +1,28 @@
+:host {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  column-gap: var(--space-3);
+  padding: 10px 14px;
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+// Zebra und der fehlende letzte Strich hängen an der Lage der Zeile, nicht am
+// Rahmen. Deshalb stehen sie hier und nicht in der Tabelle.
+:host(:nth-child(even)) {
+  background: var(--color-bg);
+}
+
+:host(:last-child) {
+  border-block-end: 0;
+}
+
+.tz__schluessel {
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+}
+
+.tz__wert {
+  color: var(--color-text);
+}

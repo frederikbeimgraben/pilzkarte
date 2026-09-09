@@ -1,0 +1,14 @@
+<header class="kopfleiste">
+  @if (zurueck()) {
+    <button
+      class="kopfleiste__zurueck"
+      type="button"
+      [attr.aria-label]="zurueckText()"
+      (click)="zurueckKlick.emit()"
+    >
+      <app-svg-icon name="zurueck" [groesse]="20" />
+    </button>
+  }
+  <h1 class="kopfleiste__titel">{{ titel() }}</h1>
+  <div class="kopfleiste__aktionen"><ng-content /></div>
+</header>

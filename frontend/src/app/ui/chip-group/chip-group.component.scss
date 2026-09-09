@@ -1,0 +1,29 @@
+.chips {
+  display: flex;
+  gap: var(--space-2);
+  padding-block-end: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chip {
+  display: flex;
+  flex: none;
+  align-items: center;
+  block-size: var(--pilz-chip-hoehe);
+  padding-inline: var(--pilz-gutter);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  white-space: nowrap;
+  cursor: pointer;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+}
+
+.chip--aktiv {
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
