@@ -18,7 +18,7 @@ describe('ArtenZustand', () => {
     http.expectOne('/api/arten').flush(ARTEN_LISTE);
     zustand.ladeListe();
 
-    expect(zustand.liste()?.arten).toHaveLength(3);
+    expect(zustand.liste()?.arten).toHaveLength(4);
     http.verify();
   });
 

@@ -83,4 +83,7 @@
     <span><i class="funke__muster funke__muster--linie"></i>{{ legendeLaufend() }}</span>
     <span><i class="funke__muster funke__muster--flaeche"></i>{{ legendeJahre() }}</span>
   </div>
+  @if (glaettung() > 1) {
+    <p class="funke__glaettung">{{ glaettungText() }}</p>
+  }
 }

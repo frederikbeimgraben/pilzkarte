@@ -55,8 +55,25 @@ describe('ArtenComponent', () => {
 
     // Die kleine Kurve zeigt dieselben zwei Reihen wie die Artseite: die Fläche
     // aller Jahre und das laufende Jahr, das mit einem Punkt endet.
-    expect(container.querySelectorAll('.funke__alle')).toHaveLength(3);
-    expect(container.querySelectorAll('.funke__ende')).toHaveLength(3);
+    expect(container.querySelectorAll('.funke__alle')).toHaveLength(4);
+    expect(container.querySelectorAll('.funke__ende')).toHaveLength(4);
+  });
+
+  it('stellt die Arten nach Stufe und darin nach Namen auf', async () => {
+    await aufbauen();
+
+    // Vorhersage vor Saison vor Profil; die 23 Arten mit eigener Karte stehen
+    // damit oben statt zwischen den Profilen verstreut.
+    expect(namen()).toEqual(['Maronenröhrling', 'Steinpilz', 'Semmelstoppelpilz', 'Speisemorchel']);
+  });
+
+  it('lässt die aktive Art an ihrem Platz', async () => {
+    const { zustand, aktualisiere } = await aufbauen();
+
+    zustand.waehle('speisemorchel');
+    aktualisiere();
+
+    expect(namen().at(-1)).toBe('Speisemorchel');
   });
 
   it('sucht in Namen und lateinischen Namen', async () => {
@@ -87,19 +104,19 @@ describe('ArtenComponent', () => {
 
     await userEvent.click(screen.getByRole('button', { name: 'mit Vorhersage' }));
     aktualisiere();
-    expect(namen()).toEqual(['Steinpilz', 'Maronenröhrling']);
+    expect(namen()).toEqual(['Maronenröhrling', 'Steinpilz']);
 
     await userEvent.click(screen.getByRole('button', { name: 'Röhrlinge' }));
     aktualisiere();
-    expect(namen()).toEqual(['Steinpilz', 'Maronenröhrling']);
+    expect(namen()).toEqual(['Maronenröhrling', 'Steinpilz']);
 
     await userEvent.click(screen.getByRole('button', { name: 'Herbst' }));
     aktualisiere();
-    expect(namen()).toEqual(['Steinpilz', 'Maronenröhrling']);
+    expect(namen()).toEqual(['Maronenröhrling', 'Steinpilz', 'Semmelstoppelpilz']);
 
     await userEvent.click(screen.getByRole('button', { name: 'alle' }));
     aktualisiere();
-    expect(namen()).toHaveLength(3);
+    expect(namen()).toHaveLength(4);
   });
 
   it('hebt die aktive Art der Karte hervor', async () => {
@@ -118,22 +135,22 @@ describe('ArtenComponent', () => {
     const { router } = await aufbauen();
     const gerufen = vi.spyOn(router, 'navigate').mockResolvedValue(true);
 
-    screen.getByRole('button', { name: /Steinpilz/ }).focus();
+    screen.getByRole('button', { name: /Maronenröhrling/ }).focus();
     await userEvent.keyboard('{ArrowDown}');
-    expect(screen.getByRole('button', { name: /Maronenröhrling/ })).toHaveFocus();
+    expect(screen.getByRole('button', { name: /Steinpilz/ })).toHaveFocus();
 
     await userEvent.keyboard('{ArrowDown}{ArrowDown}');
     expect(screen.getByRole('button', { name: /Speisemorchel/ })).toHaveFocus();
 
     await userEvent.keyboard('{ArrowUp}{Enter}');
 
-    expect(gerufen).toHaveBeenCalledWith(['/arten', 'maronenroehrling']);
+    expect(gerufen).toHaveBeenCalledWith(['/arten', 'semmelstoppelpilz']);
   });
 
   it('lässt andere Tasten in Ruhe', async () => {
     await aufbauen();
 
-    const erste = screen.getByRole('button', { name: /Steinpilz/ });
+    const erste = screen.getByRole('button', { name: /Maronenröhrling/ });
     erste.focus();
     await userEvent.keyboard('{ArrowLeft}');
 

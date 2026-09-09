@@ -116,3 +116,13 @@ export const STUFE_BADGE: Record<Stufe, BadgeVariant> = {
   saison: 'info',
   profil: 'neutral',
 };
+
+/**
+ * Die Reihenfolge der Artenliste. Oben steht, wozu die App am meisten sagen
+ * kann; innerhalb einer Stufe entscheidet der Name.
+ */
+export const STUFE_RANG: Record<Stufe, number> = {
+  vorhersage: 0,
+  saison: 1,
+  profil: 2,
+};

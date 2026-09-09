@@ -15,7 +15,7 @@ import {
   type Chip,
 } from '../../ui';
 import { ArtenZustand } from './arten.zustand';
-import { STUFE_BADGE, TAG_TEXT } from './beschriftungen';
+import { STUFE_BADGE, STUFE_RANG, TAG_TEXT } from './beschriftungen';
 
 /** „alle“ zeigt den ganzen Katalog, jeder andere Chip ist ein Tag einer Art. */
 type ChipWert = 'alle' | Tag;
@@ -53,6 +53,10 @@ interface Zeile {
  * Der Reiter Arten: Suche, Chips und die Liste mit kleiner Saisonkurve. Der
  * Katalog kommt einmal vom Server; Suche und Chips filtern im Speicher, weil
  * 85 Arten keine Anfrage je Tastendruck wert sind.
+ *
+ * Die Liste steht nach Stufe, innerhalb nach Namen. So stehen unter „alle“ die
+ * 23 Arten mit Vorhersage oben, statt zwischen 62 Profilen verstreut. Die
+ * aktive Art bleibt an ihrem Platz, sonst spränge die Liste beim Auswählen.
  */
 @Component({
   selector: 'app-arten',
@@ -96,10 +100,15 @@ export class ArtenComponent {
     const gesucht = this.suche().trim().toLocaleLowerCase();
     const chip = this.chip();
     const aktiv = this.zustand.aktiveArt();
-    return (this.zustand.liste()?.arten ?? [])
+    // `filter` gibt schon eine eigene Liste zurück; `sort` rührt den Zustand nicht an.
+    const gefiltert = (this.zustand.liste()?.arten ?? [])
       .filter((art) => chip === 'alle' || art.tags.includes(chip))
-      .filter((art) => this.passt(art, gesucht))
-      .map((art) => this.zeile(art, art.slug === aktiv));
+      .filter((art) => this.passt(art, gesucht));
+    gefiltert.sort(
+      (links, rechts) =>
+        STUFE_RANG[links.stufe] - STUFE_RANG[rechts.stufe] || links.name.localeCompare(rechts.name, 'de'),
+    );
+    return gefiltert.map((art) => this.zeile(art, art.slug === aktiv));
   });
 
   constructor() {
