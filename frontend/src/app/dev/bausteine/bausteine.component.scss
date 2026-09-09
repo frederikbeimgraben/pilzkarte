@@ -1,0 +1,108 @@
+:host {
+  display: block;
+  block-size: 100%;
+  overflow: auto;
+  background: var(--color-bg);
+}
+
+.werkstatt__kopf {
+  padding: var(--space-5) var(--space-5) 0;
+}
+
+.werkstatt__hinweis {
+  margin-block-start: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.werkstatt__felder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--space-5);
+  padding: var(--space-5);
+}
+
+// Jedes Feld trägt seine eigenen Theme-Werte, die die Seite zur Laufzeit
+// aufträgt. Ohne eigenen Hintergrund bliebe der Grund des App-Themes stehen.
+.werkstatt__feld {
+  padding: var(--space-4);
+  // Die Textfarbe muss das Feld selbst setzen: Bausteine ohne eigene Farbe
+  // erbten sonst die des App-Themes statt die des Felds.
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.werkstatt__feldtitel {
+  margin-block-end: var(--space-4);
+  font-size: var(--fs-lg);
+  color: var(--color-text);
+}
+
+.galerie {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.galerie__titel {
+  margin-block-end: 10px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.galerie__reihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: var(--color-text);
+}
+
+.galerie__abstand {
+  display: block;
+  margin-block-start: var(--space-4);
+}
+
+.galerie__enden {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: 6px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+// Der Fundpunkt der Liste ist kein eigener Baustein, sondern das Zeichen, das
+// die Zeile vorn aufnimmt.
+.galerie__punkt {
+  display: block;
+  inline-size: var(--space-4);
+  block-size: var(--space-4);
+  background: var(--color-accent);
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.galerie__buehne {
+  position: relative;
+  block-size: 260px;
+  overflow: hidden;
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-lg);
+}
+
+.galerie__buehne app-sheet {
+  position: absolute;
+  inset: 0;
+}
+
+// Der Inhalt einer Karte im Kit hat keinen eigenen Abstand zwischen zwei
+// Bausteinen; auf der Werkstattseite braucht die Notiz darunter einen.
+.galerie app-note {
+  margin-block-start: var(--space-2);
+}
