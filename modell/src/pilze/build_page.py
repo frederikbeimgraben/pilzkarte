@@ -167,6 +167,8 @@ def main() -> None:
         if "weeks" not in meta:
             continue
         meta["title"] = TITLES.get(meta["name"], meta["name"])
+        for woche in meta["weeks"]:
+            woche.pop("histogramm", None)
         data[meta["name"]] = meta
         print(f"  {meta['name']}: {len(meta['weeks'])} weeks, max p {meta['top']:.3f}")
     if not data:
@@ -181,6 +183,12 @@ def main() -> None:
 
     layer_path = args.maps / "layers.json"
     inputs = json.loads(layer_path.read_text()) if layer_path.exists() else {"layers": {}}
+    # Die Manifeste gehen als JSON in die Seite. Die Histogramme braucht der
+    # Faktor-Screen der App, nicht diese Seite; drin wuerden sie index.html
+    # verdreifachen und bei jedem Besuch mitgeladen.
+    for ebene in inputs.get("layers", {}).values():
+        ebene.pop("histogramm", None)
+        ebene.pop("histogramme", None)
     print(f"  Eingabe-Ebenen: {len(inputs['layers'])}")
 
     # Die Seite startet mit dem Steinpilz, nicht mit der alphabetisch ersten
