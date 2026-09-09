@@ -130,6 +130,39 @@ For a local test the script also serves the map directory:
 
     python src/pilze/api.py --static reports/maps --port 8111
 
+## The manifests
+
+Every rendered map writes a manifest next to its tiles: `<slug>.json` per
+species, `layers.json` for the input layers. Beside the tile names each entry
+carries a histogram of its values over Germany. The Faktor screen of the app
+shows that distribution with two handles; the browser cannot count 2.3 million
+cells per week, and a value tile only holds a byte per point.
+
+    "histogramm": {"klassen": [41 edges], "anteile": [40 shares]}
+
+- Forty classes over the scale the entry already declares: `low` to `high` in
+  the unit of the layer, `0` to `top` for a prediction. A handle therefore
+  points at metres, at a pH or at a probability.
+- `klassen` holds 41 edges, not 40 lower edges. The upper edge of the last
+  class is a number the screen prints. It must not depend on a subtraction in
+  the browser.
+- `anteile` sums to 1. Every point covers the same 500 m by 500 m in an
+  equal-area projection, so a share is a share of the area. A point without
+  data does not count. A value outside the scale falls into the outer class,
+  which is where the value tile puts it too.
+- A weekly layer keeps its histograms in `histogramme`, a map from the week
+  key to the histogram, beside `weeks`. `weeks` stays a list of week keys:
+  `update.sh` deletes every tile folder that is no longer in it.
+- A prediction keeps its histogram in the week entry, `weeks[i].histogramm`.
+
+`region_map.py` and `input_layers.py` count while they still hold the field.
+`week_stats.py --maps reports/maps` fills a manifest that was rendered before,
+from the coarsest zoom level, and `--force` recomputes.
+
+## Tests
+
+    nix develop . --command python -m pytest tests
+
 ## Legal and ethical limits
 
 The iNaturalist and Observation.org records carry a CC-BY-NC license. They
