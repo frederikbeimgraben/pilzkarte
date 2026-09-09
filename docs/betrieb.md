@@ -56,9 +56,9 @@ pyjwt cryptography pillow httpx python-multipart
 ```
 
 Entwicklung und Tests brauchen zusätzlich `pytest`, `pytest-asyncio`,
-`ruff`, `basedpyright`, `httpx` (als Testclient). Das steht in der
-`pyproject.toml` unter `[project.optional-dependencies] dev` und wird lokal
-mit `uv` installiert. Auf dem Server wird nichts installiert.
+`pytest-cov`, `ruff`, `basedpyright`, `httpx` (als Testclient). Das steht in
+der `pyproject.toml` unter `[dependency-groups] dev`, damit `uv sync` es von
+allein installiert. Auf dem Server wird nichts installiert.
 
 ## Caddy-Verhalten
 
