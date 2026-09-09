@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  output,
+  viewChild,
+  type ElementRef,
+} from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
@@ -16,6 +25,7 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
 })
 export class WeekButtonComponent {
   private readonly i18n = inject(I18nService);
+  private readonly knopf = viewChild.required<ElementRef<HTMLButtonElement>>('knopf');
 
   readonly jahr = input.required<number>();
   readonly woche = input.required<number>();
@@ -25,10 +35,19 @@ export class WeekButtonComponent {
   readonly aktiv = input(false);
   /** Die erste Woche eines Jahres trägt die Jahreszahl über sich. */
   readonly jahresmarke = input(false);
+  /** Nur eine Woche der Leiste liegt im Tabulator-Weg; die Pfeile führen weiter. */
+  readonly imTabWeg = input(true);
 
   readonly auswahl = output();
 
   protected readonly balken = computed(() => `${Math.round(Math.min(Math.max(this.anteil(), 0), 1) * 100)}%`);
+
+  /** Holt die Woche in den Blick und, wenn gewünscht, in den Fokus. */
+  zeige(mitFokus: boolean): void {
+    const element = this.knopf().nativeElement;
+    element.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    if (mitFokus) element.focus();
+  }
 
   protected beschriftung(): string {
     const text = this.i18n.translate('zeitleiste.woche', { woche: this.woche(), jahr: this.jahr() });

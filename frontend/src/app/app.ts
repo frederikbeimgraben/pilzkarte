@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { ToastComponent } from '@stupa-makers/ui-kit';
+import { ShellComponent } from './shell/shell.component';
 
-/** Die Wurzel der App. Die Hülle mit Navigation und Blatt kommt in A2. */
+/** Die Wurzel der App: die Hülle mit Navigation, darin die Reiter. */
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, ToastComponent],
+  imports: [ShellComponent, ToastComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

@@ -1,3 +1,10 @@
 .platzhalter {
   padding: var(--space-5);
 }
+
+// In der Spaltenansicht liegt die Navigation über der Seite. Ohne diesen Rand
+// stünde die Kopfzeile eines Platzhalters darunter.
+:host-context(.huelle--spalte) {
+  display: block;
+  padding-block-start: var(--pilz-nav-hoehe);
+}

@@ -1,14 +1,27 @@
 <section
   class="blatt"
   role="dialog"
+  [class.blatt--spalte]="spalte()"
   [attr.aria-label]="beschriftung()"
   [attr.aria-modal]="modal() ? 'true' : null"
   [style.block-size]="hoehe()"
   (keydown)="beiTaste($event)"
 >
-  <button class="blatt__griff" type="button" [attr.aria-label]="griffText()" (click)="naechsteRaste()">
-    <span class="blatt__griff-strich"></span>
-  </button>
+  @if (!spalte()) {
+    <button
+      class="blatt__griff"
+      type="button"
+      [attr.aria-label]="griffText()"
+      (click)="naechsteRaste()"
+      (keydown)="beiGriffTaste($event)"
+      (pointerdown)="beiZeigerAb($event)"
+      (pointermove)="beiZeigerZug($event)"
+      (pointerup)="beiZeigerAuf($event)"
+      (pointercancel)="beiZeigerAuf($event)"
+    >
+      <span class="blatt__griff-strich"></span>
+    </button>
+  }
   @if (griffTipp()) {
     <p class="blatt__tipp">{{ 'sheet.griffTipp' | t }}</p>
   }

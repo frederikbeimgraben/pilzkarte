@@ -1,10 +1,12 @@
 <button
+  #knopf
   class="woche"
   type="button"
   [class.woche--aktiv]="aktiv()"
   [class.woche--prognose]="prognose()"
   [attr.aria-label]="beschriftung()"
   [attr.aria-pressed]="aktiv()"
+  [attr.tabindex]="imTabWeg() ? 0 : -1"
   (click)="auswahl.emit()"
 >
   @if (jahresmarke()) {

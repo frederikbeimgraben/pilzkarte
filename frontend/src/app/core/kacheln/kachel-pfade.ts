@@ -37,16 +37,13 @@ export function manifestPfad(slug: string): string {
   return `/${slug}.json`;
 }
 
-/** Eine Wertkachel: `<slug>_kacheln/<jahr>W<woche>/<z>/<x>/<y>.png`. */
-export function kachelPfad(
-  slug: string,
-  jahr: number,
-  woche: number,
-  z: number,
-  x: number,
-  y: number,
-): string {
-  return `/${slug}_kacheln/${jahr}W${String(woche).padStart(2, '0')}/${z}/${x}/${y}.png`;
+/**
+ * Eine Wertkachel. `wochenOrdner` steht so im Manifest der Art
+ * (`boletus_edulis_kacheln/2026W07`); die App leitet ihn nicht selbst her,
+ * damit ein Umbenennen im Rendering nur das Manifest betrifft.
+ */
+export function kachelPfad(wochenOrdner: string, z: number, x: number, y: number): string {
+  return `/${wochenOrdner}/${z}/${x}/${y}.png`;
 }
 
 /** Manifest der Eingabe-Ebenen. Die Kacheln liegen unter `layers_kacheln/`. */

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/angular';
 import { keineVerstoesse } from '../../testing/axe';
-import { RampComponent, VORHERSAGE_RAMPE } from './ramp.component';
+import { RampComponent } from './ramp.component';
+import { VORHERSAGE_RAMPE } from './rampe-farben';
 
 describe('RampComponent', () => {
   it('zeigt Beschriftung, beide Enden und jede Stufe', async () => {
