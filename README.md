@@ -4,14 +4,15 @@ Mobile Web-App zur Pilzkarte: Vorhersage sammelbarer Pilzarten in
 Deutschland je Kalenderwoche, Eingabe-Ebenen, ein Faktor-Finder,
 Artenkatalog, eigene Funde, Marker und Zonen mit Konto über SSO.
 
-Die Vorhersage selbst rechnet das Repo [Pilze](https://github.com/frederikbeimgraben/Pilze)
-und liefert sie als Wertkacheln; diese App färbt und kombiniert sie im
-Browser. Live unter https://pilze.beimgraben.net/.
+Die Vorhersage rechnet die Kette in `modell/` und liefert sie als
+Wertkacheln; die App färbt und kombiniert sie im Browser. Live unter
+https://pilze.beimgraben.net/.
 
 | Teil | Stack |
 | --- | --- |
 | `frontend/` | Angular 22, `@stupa-makers/ui-kit`, MapLibre GL, Terra Draw, PWA |
 | `backend/` | Python 3.13, FastAPI, SQLAlchemy async, Alembic, SQLite, OIDC über Authentik |
+| `modell/` | Vorhersagekette: GBIF und DWD holen, LightGBM je Art, Kacheln rendern. Eigenes `README.md` |
 | `docs/` | Konzept, Mockups, Betrieb, Arbeitspakete |
 | `deploy/` | rsync-Skripte für Homeserver |
 

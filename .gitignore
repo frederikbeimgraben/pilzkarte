@@ -18,3 +18,9 @@ frontend/playwright-report/
 # Werkzeuge
 .playwright-mcp/
 *.log
+# Modell: Rohdaten, Zwischenstände, Modelle und gerenderte Karten sind
+# Ausgaben der Kette, nicht Quelltext
+modell/data/
+modell/reports/
+modell/models/
+modell/.venv/

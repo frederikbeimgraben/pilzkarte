@@ -17,7 +17,7 @@ auch die andere Seite.
 | Pfad | Inhalt | Schreibt |
 | --- | --- | --- |
 | `/var/www/pilze` | Dokumentwurzel: Angular-Build im Wurzelverzeichnis, Kacheln je Art in `<slug>/z/x/y.png`, Manifeste `<slug>.json`, Ebenen `layers.json` und `layers_kacheln/`, Trainingsfunde `funde/` | `deploy.sh` (Build), `pilze-render` (Kacheln) |
-| `/var/lib/pilze-render` | Arbeitsbaum: `src/`, `models/`, `data/interim/`, `app/backend/` | `deploy/backend.sh`, dazu `deploy_daten.sh` im Repo Pilze |
+| `/var/lib/pilze-render` | Arbeitsbaum: `src/`, `models/`, `data/interim/` aus `modell/`, dazu `app/backend/` | `modell/deploy_daten.sh`, `deploy/backend.sh` |
 | `/var/lib/pilze-app` | `pilze.sqlite` und `fotos/` | Dienst `pilze-app` |
 
 ## Dienst `pilze-app`
@@ -79,7 +79,7 @@ Zielnutzer hat keine Shell.
 | Skript | Schlüssel | Ziel | Was |
 | --- | --- | --- | --- |
 | `deploy/frontend.sh` | `~/.ssh/pilze_deploy` | `/var/www/pilze` | Angular-Build. Schützt Kacheln, Manifeste und Ebenen vor `--delete` mit Filtern (`P /*/`, `P /*.json`) |
-| `deploy/backend.sh`, dazu `deploy_daten.sh` im Repo Pilze | `~/.ssh/pilze_daten` | `/var/lib/pilze-render` | Code, Modelle und Daten aus dem Repo Pilze. Das Backend dieses Repos geht mit `deploy/backend.sh` an dieselbe Stelle, `app/backend/` im Arbeitsbaum, und schreibt `app/backend/deploy.stamp` als letzten Schritt |
+| `modell/deploy_daten.sh` und `deploy/backend.sh` | `~/.ssh/pilze_daten` | `/var/lib/pilze-render` | Code, Modelle und Daten der Kette aus `modell/`. Das Backend geht mit `deploy/backend.sh` an dieselbe Stelle, `app/backend/` im Arbeitsbaum, und schreibt `app/backend/deploy.stamp` als letzten Schritt |
 
 Reihenfolge bei einer Änderung, die beides betrifft: erst `deploy/backend.sh`
 (Backend, Migration läuft beim Neustart), dann `deploy/frontend.sh` (Frontend). Ein

@@ -115,7 +115,7 @@ Abnahme:
 
 ### C2 Histogramme im Rendering
 
-Im Repo Pilze (`src/pilze/input_layers.py`, `region_map.py`): je
+In der Kette (`modell/src/pilze/input_layers.py`, `region_map.py`): je
 Ebene und Woche ein Histogramm mit 40 Klassen über Deutschland, in das
 Manifest der Ebene. Für die Vorhersage-Arten dasselbe je Woche.
 
@@ -135,7 +135,7 @@ Verwechslungen). Profile als YAML in `backend/daten/arten/*.yaml`,
 selbst geschrieben, mit Links zu 123pilzsuche und Wikipedia. Saisonkurve:
 Anteil positiver Begehungen je Kalenderwoche, alle Jahre und laufendes Jahr
 bis zur letzten vollen Woche, aus `funde/<slug>.json` und der
-Begehungstabelle (siehe Repo Pilze, `src/pilze/katalog.py` und `arten_zaehlen.py`; die Begehungstabelle wird als Parquet-Export unter `backend/daten/` abgelegt).
+Begehungstabelle (siehe `modell/src/pilze/katalog.py` und `arten_zaehlen.py`; die Begehungstabelle wird als Parquet-Export unter `backend/daten/` abgelegt).
 Stufen: Vorhersage (Manifest vorhanden), Saison (≥ 60 Begehungen), Profil.
 
 Abnahme:

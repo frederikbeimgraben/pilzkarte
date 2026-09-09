@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pilzkarte</title>
+<meta name="theme-color" content="#1b1b2f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="app.css?v=__VERSION__">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head><body>
+<div class="app" id="app">
+ <nav class="nav" id="nav">
+  <a href="#karte" data-seite="karte"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Karte</a>
+  <a href="#arten" data-seite="arten"><svg viewBox="0 0 24 24"><path d="M4 11a8 6 0 0 1 16 0H4z"/><path d="M9 11v7a3 3 0 0 0 6 0v-7"/></svg>Arten</a>
+  <a href="#funde" data-seite="funde"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Funde</a>
+  <a href="#info" data-seite="info"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>Info</a>
+ </nav>
+ <aside class="panel" id="panel">
+  <div class="griff" id="griff"><span></span></div>
+  <div class="zeit" id="zeit">
+   <div class="oben">
+    <b><span class="was" id="kopfWas"></span><span id="wochenTitel">–</span></b>
+    <div class="knoepfe">
+     <button id="zurueck" title="eine Woche zurück"><svg viewBox="0 0 12 12"><path d="M8.5 1.5 3.5 6l5 4.5z"/></svg></button>
+     <button id="play" title="Saison abspielen"><svg viewBox="0 0 12 12"><path d="M3 1.4 10 6 3 10.6Z"/></svg></button>
+     <button id="vor" title="eine Woche vor"><svg viewBox="0 0 12 12"><path d="M3.5 1.5 8.5 6l-5 4.5z"/></svg></button>
+    </div>
+   </div>
+   <div class="leiste" id="leiste"></div>
+  </div>
+  <div class="inhalt" id="inhalt">
+
+   <!-- Karte -->
+   <section class="seite" data-seite="karte">
+    <div class="block">
+     <div class="seg" role="tablist">
+      <button id="tabAus" role="tab" aria-selected="true">Vorhersage</button>
+      <button id="tabEin" role="tab" aria-selected="false">Ebene</button>
+      <button id="tabKombi" role="tab" aria-selected="false">Kombination</button>
+     </div>
+    </div>
+    <div class="block" id="paneAus">
+     <h2>Art</h2>
+     <div class="chips" id="artChips"></div>
+     <div class="ramp" id="ramp"></div>
+     <div class="ends"><span>0</span><span>Fundwahrscheinlichkeit</span><span>1</span></div>
+     <div class="ends" style="margin-top:2px"><span></span><span id="top"></span></div>
+     <label class="feld"><input type="checkbox" id="funde"> Trainingsfunde, KW ±2</label>
+     <label class="feld" id="meldungenZeile"><input type="checkbox" id="meldungen" checked> Gemeldete Funde <span id="meldungenZahl" style="color:var(--muted)"></span></label>
+    </div>
+    <div class="block" id="paneEin" style="display:none">
+     <h2>Ebene</h2>
+     <select class="feld" id="lay" style="margin-top:0"></select>
+     <div id="layinfo" style="display:none">
+      <div class="ramp" id="layramp"></div>
+      <div class="ends"><span id="laylo"></span><span id="layhi"></span></div>
+     </div>
+    </div>
+    <div class="block" id="paneKombi" style="display:none">
+     <h2>Ebenen verbinden</h2>
+     <select class="feld" id="kombiModus" style="margin-top:0">
+      <option value="geo">Produkt (geometrisches Mittel)</option>
+      <option value="min">Minimum, das schwächste Glied</option>
+      <option value="mittel">gewichtetes Mittel</option>
+     </select>
+     <ul class="kombi" id="kombiListe"></ul>
+     <div class="ramp" id="kombiramp"></div>
+     <div class="ends"><span>0</span><span>Kombinationswert</span><span>1</span></div>
+     <p class="hinweis">↓ dreht eine Ebene um: weniger ist besser.</p>
+    </div>
+    <div class="block">
+     <h2>Deckkraft</h2>
+     <div class="zeile"><input id="op" type="range" min="0" max="100" value="80"></div>
+    </div>
+   </section>
+
+   <!-- Arten -->
+   <section class="seite" data-seite="arten">
+    <div id="artenListe">
+     <input class="feld suche" id="suche" placeholder="Art suchen …" autocomplete="off">
+     <div class="raster" id="raster"></div>
+     <p class="hinweis">Kein Bestimmungsersatz. Im Zweifel zur <a href="https://www.dgfm-ev.de/pilzsachverstaendige" target="_blank" rel="noopener">Pilzberatung</a>.</p>
+    </div>
+    <div id="artDetail" class="detail" style="display:none"></div>
+   </section>
+
+   <!-- Funde -->
+   <section class="seite" data-seite="funde">
+    <div id="fundeOhneCode" class="karte">
+     <h3>Zugangscode</h3>
+     <p class="hinweis">Zum Sehen und Melden von Funden.</p>
+     <input class="feld" id="zugangFeld" placeholder="Zugangscode" autocomplete="off" autocapitalize="none" spellcheck="false">
+     <button class="knopf haupt breit" id="zugangKnopf">Anmelden</button>
+     <div class="status" id="zugangStatus"></div>
+    </div>
+    <div id="fundeMitCode" style="display:none">
+     <button class="knopf haupt breit" id="fundeMelden">Fund melden</button>
+     <div class="status" id="meldeStatus"></div>
+     <div class="block" style="margin-top:14px">
+      <div class="chips" id="fundChips"></div>
+      <label class="feld"><input type="checkbox" id="nurMeine"> nur meine</label>
+     </div>
+     <ul class="fundliste" id="fundliste"></ul>
+     <p class="hinweis" id="fundeLeer" style="display:none">Noch keine Funde gemeldet.</p>
+    </div>
+   </section>
+
+   <!-- Info -->
+   <section class="seite" data-seite="info">
+    <div class="block">
+     <h3>Karte</h3>
+     <p class="hinweis">Je Woche und 500-m-Zelle: die Wahrscheinlichkeit, dass ein Gang mit 4 notierten Arten die Art findet.
+      Gelernt aus 750.000 Fundmeldungen, Wetter, Baumarten und den Funden der Nachbarschaft. Zellen unter 3 % Wald sind leer.
+      Die letzten zwei Wochen sind Prognose.</p>
+    </div>
+    <div class="block">
+     <h3>App</h3>
+     <p class="hinweis">Über „Zum Startbildschirm“ installierbar. Gesehene Kacheln bleiben gespeichert, Funde ohne Netz warten im Gerät.</p>
+    </div>
+    <div class="block">
+     <h3>Zugang</h3>
+     <div class="status" id="zugangInfo"></div>
+     <button class="knopf klein" id="zugangVergessen" style="margin-top:6px">Code vergessen</button>
+     <button class="knopf klein" id="cacheLeeren" style="margin-top:6px">Gespeicherte Kacheln löschen</button>
+    </div>
+    <div class="block">
+     <h3>Quellen</h3>
+     <p class="hinweis">Funde: <a href="https://doi.org/10.15468/dl.9sapgr" target="_blank" rel="noopener">GBIF, DOI 10.15468/dl.9sapgr</a>, darin NABU|naturgucker (CC-BY), iNaturalist und Observation.org (CC-BY-NC).<br>
+      Wetter: <a href="https://opendata.dwd.de" target="_blank" rel="noopener">DWD HYRAS</a>, CC-BY-4.0.<br>
+      Baumarten: <a href="https://atlas.thuenen.de" target="_blank" rel="noopener">Thünen-Institut</a>, Blickensdörfer et al. 2024.<br>
+      Boden: <a href="https://soilgrids.org" target="_blank" rel="noopener">SoilGrids</a>, ISRIC, CC-BY-4.0. Gelände: Copernicus DEM GLO-90.<br>
+      Karte: © OpenStreetMap-Mitwirkende, ODbL. Trainingsfunde auf 5-km-Zellmitte. Nicht kommerziell.</p>
+     <p class="hinweis">Stand __VERSION__</p>
+    </div>
+   </section>
+  </div>
+ </aside>
+
+ <main style="position:relative;min-height:0">
+  <div id="map"></div>
+  <div class="schwebend fadenkreuz"><i></i></div>
+  <div class="schwebend meldebalken" id="meldebalken">
+   <p id="meldeAnleitung">Karte verschieben, bis das Kreuz auf dem Fundort liegt.</p>
+   <div class="zeile">
+    <button class="knopf klein" id="ortGps">Mein Standort</button>
+    <button class="knopf klein" id="meldeAbbruch">Abbrechen</button>
+    <button class="knopf klein haupt" id="ortHier">Hier ist es</button>
+   </div>
+  </div>
+  <button class="schwebend fab" id="fab" title="Fund melden"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+ </main>
+</div>
+
+<dialog class="blatt" id="meldeDialog">
+ <form class="innen" method="dialog" id="meldeForm">
+  <h2>Fund melden</h2>
+  <div class="status" id="meldeOrt"></div>
+  <select class="feld" id="meldeArt"></select>
+  <input class="feld" type="date" id="meldeDatum" required>
+  <input class="feld" type="number" id="meldeAnzahl" min="1" max="999" placeholder="Anzahl (optional)">
+  <input class="feld" id="meldeName" placeholder="Dein Name" maxlength="40" required>
+  <textarea class="feld" id="meldeNotiz" placeholder="Notiz (optional)" maxlength="500"></textarea>
+  <div class="status warn" id="meldeFehler"></div>
+  <div class="zeile" style="justify-content:flex-end;margin-top:10px">
+   <button class="knopf" type="button" id="meldeSchliessen">Abbrechen</button>
+   <button class="knopf haupt" type="submit" id="meldeSpeichern">Speichern</button>
+  </div>
+ </form>
+</dialog>
+
+<script>
+const SPECIES = __DATA__;
+const INPUTS = __INPUTS__;
+const KATALOG = __KATALOG__;
+const COLORS = __COLORS__;
+const GEBIET_ROH = __BOUNDS__;
+const VERSION = '__VERSION__';
+</script>
+<script src="app.js?v=__VERSION__"></script>
+</body></html>

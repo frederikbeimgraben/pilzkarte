@@ -11,6 +11,7 @@ Betriebsvertrag. Erst lesen, dann bauen.
 | `docs/betrieb.md` | Pfade, Umgebung, Dienst, Caddy, Deploy. Vertrag zum NixOS-Modul |
 | `docs/sso-authentik.md` | der OIDC-Client, gegen den Frontend und Backend laufen |
 | `docs/arbeitspakete.md` | die Arbeitspakete mit Abnahmekriterien, in Reihenfolge |
+| `modell/README.md`, `modell/BACKLOG.md` | das Modell: Ziel, Datenlage, gemessene Entscheidungen, offene Punkte |
 
 ## Was das ist
 
@@ -52,7 +53,18 @@ backend/
   migrations/      Alembic, ein Head
   tests/
   deploy.stamp     wird vom Deploy geschrieben, nicht committen
+modell/            Vorhersagekette: Daten holen, Modelle trainieren, Kacheln rendern
+  src/pilze/       die Module, `README.md` und `BACKLOG.md` erklären Ziel und Stand
+  update.sh        die wöchentliche Kette auf dem Homeserver
+  run_all.sh       alle Arten neu trainieren und rendern
+  data/ models/ reports/   Ausgaben, nicht im Git
+deploy/            rsync-Skripte für Frontend und Backend; `modell/deploy_daten.sh` für die Kette
 ```
+
+`modell/` hat eigene Regeln: Python 3.12 aus `modell/flake.nix`, Pakete aus
+nixpkgs, keine Tests-Pflicht für Experimente, aber Warum-Kommentare und
+Docstrings wie überall. Änderungen dort prüft man mit einem Render einer Art
+(`render_de.sh`), nicht mit der App.
 
 ## Gemeinsame Bausteine
 
