@@ -1,0 +1,179 @@
+name: CI
+
+# Der Branch-Schutz auf main verlangt alle sieben Prüfungen. Damit er schon
+# greift, bevor A0 und A1 gemergt sind, prüft jeder Job zuerst, ob sein
+# Ordner da ist. Fehlt er, endet der Job grün mit einem Hinweis. Ein Job mit
+# `if` auf Job-Ebene wäre übersprungen und meldete dem Branch-Schutz nichts.
+# setup-uv führt oberhalb von v7 keinen mitlaufenden Major-Tag, darum die
+# genaue Version. Dependabot hebt sie an.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Ein neuer Push macht den laufenden Test desselben Branches wertlos.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "24"
+  PYTHON_VERSION: "3.13"
+
+jobs:
+  be-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Backend vorhanden
+        run: .github/scripts/ordner.sh backend/pyproject.toml backend A0
+      - if: steps.ordner.outputs.da == 'true'
+        uses: astral-sh/setup-uv@v10.0.1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: |
+            backend/pyproject.toml
+            backend/uv.lock
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: backend
+        run: uv sync --all-extras
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: backend
+        run: uv run ruff check .
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: backend
+        run: uv run ruff format --check .
+
+  be-typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Backend vorhanden
+        run: .github/scripts/ordner.sh backend/pyproject.toml backend A0
+      - if: steps.ordner.outputs.da == 'true'
+        uses: astral-sh/setup-uv@v10.0.1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: |
+            backend/pyproject.toml
+            backend/uv.lock
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: backend
+        run: uv sync --all-extras
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: backend
+        run: uv run basedpyright
+
+  be-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Backend vorhanden
+        run: .github/scripts/ordner.sh backend/pyproject.toml backend A0
+      - if: steps.ordner.outputs.da == 'true'
+        uses: astral-sh/setup-uv@v10.0.1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: |
+            backend/pyproject.toml
+            backend/uv.lock
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: backend
+        run: uv sync --all-extras
+      # Die Abdeckungsgrenze steht in backend/pyproject.toml, nicht hier.
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: backend
+        run: uv run pytest --cov
+
+  fe-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Frontend vorhanden
+        run: .github/scripts/ordner.sh frontend/package.json frontend A1
+      - if: steps.ordner.outputs.da == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm ci
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm run lint
+
+  fe-typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Frontend vorhanden
+        run: .github/scripts/ordner.sh frontend/package.json frontend A1
+      - if: steps.ordner.outputs.da == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm ci
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm run typecheck
+
+  fe-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Frontend vorhanden
+        run: .github/scripts/ordner.sh frontend/package.json frontend A1
+      - if: steps.ordner.outputs.da == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm ci
+      # test:ci läuft einmal durch und misst die Abdeckung; npm test bleibt
+      # der Wachmodus für die Entwicklung.
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm run test:ci
+
+  fe-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Frontend vorhanden
+        run: .github/scripts/ordner.sh frontend/package.json frontend A1
+      - if: steps.ordner.outputs.da == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm ci
+      # Die Budgets stehen in frontend/angular.json und brechen den Build.
+      - if: steps.ordner.outputs.da == 'true'
+        working-directory: frontend
+        run: npm run build

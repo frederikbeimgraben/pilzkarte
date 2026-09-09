@@ -1,0 +1,28 @@
+version: 2
+
+# Minor und Patch kommen je Ökosystem als ein Pull Request. Ein Solo-Projekt
+# hält sonst mehr Update-PRs offen, als es prüfen kann.
+updates:
+  - package-ecosystem: npm
+    directory: /frontend
+    schedule:
+      interval: weekly
+    groups:
+      klein:
+        update-types: [minor, patch]
+
+  - package-ecosystem: pip
+    directory: /backend
+    schedule:
+      interval: weekly
+    groups:
+      klein:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      klein:
+        update-types: [minor, patch]
