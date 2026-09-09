@@ -1,0 +1,98 @@
+[project]
+name = "pilzkarte-backend"
+version = "0.1.0"
+description = "Backend der Pilzkarte-App"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.116",
+    "uvicorn>=0.35",
+    "sqlalchemy>=2.0",
+    "alembic>=1.16",
+    "pydantic>=2.11",
+    "pydantic-settings>=2.10",
+    "aiosqlite>=0.21",
+    "pyjwt[crypto]>=2.10",
+    "pillow>=11.3",
+    "httpx>=0.28",
+    "python-multipart>=0.0.20",
+]
+
+# Werkzeuge fuer Entwicklung und Tests. Als Gruppe, nicht als Extra: `uv sync`
+# installiert die Gruppe von allein, ein Extra nur mit zusaetzlichem Schalter.
+# Auf dem Server wird nichts davon installiert.
+[dependency-groups]
+dev = [
+    "pytest>=8.4",
+    "pytest-asyncio>=1.1",
+    "pytest-cov>=6.2",
+    "ruff>=0.12",
+    "basedpyright>=1.31",
+]
+
+# Der Dienst startet den Code aus dem Arbeitsverzeichnis, er installiert kein
+# Paket. Lokal soll es genauso laufen.
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "--cov=app --cov-branch --cov-report=term-missing"
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+exclude_also = ["if TYPE_CHECKING:"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    # D203 und D211, D212 und D213 schliessen sich paarweise aus.
+    "D203",
+    "D213",
+    # Der Formatter setzt die Kommas selbst.
+    "COM812",
+    # Die Meldungen sind deutsche Prosa und stehen an der Wurfstelle, nicht in
+    # einer Variablen darueber.
+    "EM101",
+    "EM102",
+    "TRY003",
+    # Prueft englische Verbformen. Die Docstrings sind deutsch.
+    "D401",
+    # Der Klassen-Docstring sagt schon, was die Klasse haelt.
+    "D105",
+    "D107",
+    # Die Lizenz steht einmal in LICENSE, nicht in jeder Datei.
+    "CPY001",
+    # Fachbegriffe sind deutsch: eine Ausnahme heisst Fehler, nicht Error.
+    "N818",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    # Tests behaupten mit assert und arbeiten mit festen Beispielwerten.
+    "S101",
+    "PLR2004",
+    # Ein Test braucht keinen Docstring-Zwang fuer jedes Modul.
+    "D100",
+    "D103",
+]
+"migrations/*" = [
+    # Alembic laedt die Dateien ueber den eigenen Pfad, nicht als Paket.
+    "INP001",
+]
+
+[tool.ruff.lint.flake8-type-checking]
+runtime-evaluated-base-classes = ["pydantic.BaseModel", "pydantic_settings.BaseSettings"]
+
+[tool.basedpyright]
+typeCheckingMode = "strict"
+pythonVersion = "3.13"
+include = ["app", "tests", "migrations"]
+venvPath = "."
+venv = ".venv"
