@@ -2,25 +2,23 @@
 
 [![CI](https://github.com/frederikbeimgraben/pilzkarte/actions/workflows/ci.yml/badge.svg)](https://github.com/frederikbeimgraben/pilzkarte/actions/workflows/ci.yml)
 
-Mobile Web-App zur Pilzkarte: Vorhersage sammelbarer Pilzarten in
-Deutschland je Kalenderwoche, Eingabe-Ebenen, ein Faktor-Finder,
-Artenkatalog, eigene Funde, Marker und Zonen mit Konto über SSO.
+Web-App zur Pilzvorhersage in Deutschland. Die Karte zeigt je Kalenderwoche,
+wo eine sammelbare Art wahrscheinlich wächst. Dazu Eingabe-Ebenen, ein
+Faktor-Finder, ein Artenkatalog und eigene Funde, Marker und Zonen mit Konto.
 
-Die Vorhersage rechnet die Kette in `modell/` und liefert sie als
-Wertkacheln; die App färbt und kombiniert sie im Browser. Live unter
-https://pilze.beimgraben.net/.
+Live: https://pilze.beimgraben.net/
 
-| Teil | Stack |
+| Ordner | Inhalt |
 | --- | --- |
 | `frontend/` | Angular 22, `@stupa-makers/ui-kit`, MapLibre GL, Terra Draw, PWA |
-| `backend/` | Python 3.13, FastAPI, SQLAlchemy async, Alembic, SQLite, OIDC über Authentik |
-| `modell/` | Vorhersagekette: GBIF und DWD holen, LightGBM je Art, Kacheln rendern. Eigenes `README.md` |
+| `backend/` | Python 3.13, FastAPI, SQLAlchemy async, Alembic, SQLite, OIDC gegen Authentik |
+| `modell/` | Vorhersagekette: GBIF und DWD laden, LightGBM je Art, Kacheln rendern |
 | `docs/` | Konzept, Mockups, Betrieb, Arbeitspakete |
-| `deploy/` | rsync-Skripte für Homeserver |
+| `deploy/` | rsync-Skripte für den Homeserver |
 
-Einstieg für Entwicklung und Agenten: `CLAUDE.md`. Betrieb:
-`docs/betrieb.md`. Reihenfolge der Arbeit: `docs/arbeitspakete.md`.
+Einstieg: `CLAUDE.md`. Betrieb: `docs/betrieb.md`. Reihenfolge der Arbeit:
+`docs/arbeitspakete.md`.
 
 ## Lizenz
 
-GPL-3.0-or-later, wie das ui-kit, von dem die App abhängt. Siehe `LICENSE`.
+GPL-3.0-or-later, siehe `LICENSE`.

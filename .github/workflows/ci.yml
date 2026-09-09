@@ -151,7 +151,7 @@ jobs:
       - if: steps.ordner.outputs.da == 'true'
         working-directory: frontend
         run: npm ci
-      # test:ci läuft einmal durch und misst die Abdeckung; npm test bleibt
+      # test:ci läuft einmal durch und misst die Abdeckung. npm test bleibt
       # der Wachmodus für die Entwicklung.
       - if: steps.ordner.outputs.da == 'true'
         working-directory: frontend

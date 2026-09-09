@@ -1,12 +1,9 @@
 # Arbeitspakete
 
-Reihenfolge und Abnahmekriterien für die Umsetzung. Jedes Paket ist ein
-eigener Auftrag an einen Agenten, hat einen klaren Schnitt zu den anderen
-und endet mit grünen Tests. Der Product Owner nimmt ab, deployt und hakt ab.
-
-Legende: **[P]** kann parallel zu den Nachbarn im selben Block laufen.
-**Abnahme** ist die Liste, die der Agent im Abschlussbericht Punkt für Punkt
-belegt.
+Ein Paket ist ein Auftrag an einen Agenten. Es endet mit grünen Tests und
+einem PR. Der Product Owner nimmt ab und deployt. **[P]** heißt: läuft
+parallel zu den Nachbarn im Block. **Abnahme** belegt der Agent im Bericht
+Punkt für Punkt.
 
 ## Block 0, Fundament
 
@@ -109,7 +106,7 @@ Anteil der Fläche. Kombination im URL-Zustand, später im Konto speichern.
 Screens `Kombination`, `Faktor`.
 
 Abnahme:
-- Schnittmenge einfarbig, Abgestuft als Rampe; Wechsel unter 200 ms bei Zoom 7
+- Schnittmenge einfarbig, Abgestuft als Rampe. Wechsel unter 200 ms bei Zoom 7
 - Faktor: Histogramm, Griffe, Anteil in Prozent, Bedingung als Feld
 - Worker-Tests: Schnittmenge, geometrisches Mittel, fehlende Daten (0) bleiben leer
 
@@ -135,8 +132,9 @@ Verwechslungen). Profile als YAML in `backend/daten/arten/*.yaml`,
 selbst geschrieben, mit Links zu 123pilzsuche und Wikipedia. Saisonkurve:
 Anteil positiver Begehungen je Kalenderwoche, alle Jahre und laufendes Jahr
 bis zur letzten vollen Woche, aus `funde/<slug>.json` und der
-Begehungstabelle (siehe `modell/src/pilze/katalog.py` und `arten_zaehlen.py`; die Begehungstabelle wird als Parquet-Export unter `backend/daten/` abgelegt).
-Stufen: Vorhersage (Manifest vorhanden), Saison (≥ 60 Begehungen), Profil.
+Begehungstabelle (siehe `modell/src/pilze/katalog.py` und `arten_zaehlen.py`). Die Begehungstabelle liegt als Parquet-Export unter `backend/daten/`.
+Stufen: Vorhersage (Manifest vorhanden), Saison (60 oder mehr Begehungen), Profil.
+`arten_zaehlen.py` bekommt dabei Docstring, Argumente und Tests.
 
 Abnahme:
 - 23 Vorhersage-Arten, 42 Saison-Arten, 20 Profil-Arten laut `arten_zaehlen.py`, alle mit Profil
@@ -168,7 +166,7 @@ Darstellung, Offline, Über.
 Abnahme:
 - Anmelden gegen sso.beimgraben.net funktioniert lokal und in Prod
 - Karte, Arten, Ebenen ohne Anmeldung nutzbar
-- abgelaufenes Token wird still erneuert; scheitert das, Anmelde-Blatt statt Fehler
+- abgelaufenes Token wird still erneuert. Scheitert das, öffnet sich das Anmelde-Blatt statt eines Fehlers
 
 ### E2 Funde, Marker, Zonen Backend **[P zu E1]**
 
@@ -207,8 +205,8 @@ Abnahme:
 ### F1 Offline-Warteschlange und PWA
 
 Service Worker mit `ngsw`, Manifest, Installationshinweis. IndexedDB über
-`idb`: Warteschlange für Funde, Marker, Zonen mit Fotos; Status
-"Übertragung ausstehend" in der Liste; Übertragung bei Netz; zuletzt
+`idb`: Warteschlange für Funde, Marker, Zonen mit Fotos. Status
+"Übertragung ausstehend" in der Liste. Übertragung bei Netz. Zuletzt
 gesehene Kacheln im Cache mit Obergrenze. Konto-Screen zeigt Speicher und
 ausstehende Übertragungen.
 
