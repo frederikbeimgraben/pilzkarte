@@ -1,0 +1,24 @@
+// Maße der Pilzkarte, die in mehr als einem Baustein vorkommen.
+//
+// Die Werte stammen aus `docs/mockups/bauen.py`. Farben, Radien, Schrift und
+// Abstände kommen aus dem ui-kit; hier stehen nur die Maße, die das Kit nicht
+// kennt, weil es keine mobile Kartenoberfläche baut.
+:root {
+  --pilz-nav-hoehe: 64px;
+  --pilz-kopfleiste-hoehe: 64px;
+  --pilz-gutter: 16px;
+  --pilz-griff-hoehe: 24px;
+  --pilz-griff-breite: 40px;
+  --pilz-feld-hoehe: 44px;
+  --pilz-aktion-hoehe: 48px;
+  --pilz-chip-hoehe: 40px;
+  --pilz-woche-breite: 48px;
+  --pilz-woche-hoehe: 56px;
+  --pilz-schwebe-groesse: 48px;
+  --pilz-schwebe-radius: 14px;
+  --pilz-farbfeld-groesse: 36px;
+  --pilz-farbfeld-radius: 10px;
+  --pilz-avatar-groesse: 40px;
+  --pilz-piktogramm-groesse: 22px;
+  --pilz-blatt-schatten: var(--shadow-lg);
+}
