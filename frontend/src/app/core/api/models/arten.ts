@@ -143,9 +143,13 @@ export interface Merkmal {
   text: string;
 }
 
-/** Die Kurve, wie die Artenliste sie klein zeichnet. */
+/**
+ * Die Kurve, wie die Artenliste sie klein zeichnet: beide Reihen, denselben
+ * Höchstwert. Die Nenner stehen am Kopf der Liste, nicht in jeder Zeile.
+ */
 export interface SaisonKurz {
   alleJahre: number[];
+  laufendesJahr: number[];
   hoechstwert: number;
 }
 
@@ -155,7 +159,6 @@ export interface SaisonKurz {
  * Wochen damit blasser.
  */
 export interface SaisonKurve extends SaisonKurz {
-  laufendesJahr: number[];
   jahre: Jahresspanne;
   stand: Woche;
   begehungen: number;

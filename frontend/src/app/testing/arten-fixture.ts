@@ -20,7 +20,7 @@ function kurz(art: Partial<ArtKurz> & Pick<ArtKurz, 'slug' | 'name' | 'lateinisc
     kartenSlug: null,
     begehungenMitFund: 1853,
     spitzeWoche: 40,
-    saison: { alleJahre: glocke(39, 32), hoechstwert: 32 },
+    saison: { alleJahre: glocke(39, 32), laufendesJahr: glocke(39, 28).slice(0, 36), hoechstwert: 32 },
     ...art,
   };
 }
@@ -50,7 +50,11 @@ export const MORCHEL_KURZ = kurz({
   tags: ['profil', 'morchel', 'fruehling', 'esche'],
   begehungenMitFund: 0,
   spitzeWoche: null,
-  saison: { alleJahre: Array.from({ length: WOCHEN }, () => 0), hoechstwert: 0 },
+  saison: {
+    alleJahre: Array.from({ length: WOCHEN }, () => 0),
+    laufendesJahr: Array.from({ length: 36 }, () => 0),
+    hoechstwert: 0,
+  },
 });
 
 export const ARTEN_LISTE: ArtenListe = {

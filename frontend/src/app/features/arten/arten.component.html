@@ -29,8 +29,9 @@
         <app-season-curve
           kurve
           [alleJahre]="zeile.kurve"
-          [laufendesJahr]="ohneLaufend"
+          [laufendesJahr]="zeile.laufend"
           [begehungenAlleJahre]="begehungen()"
+          [begehungenLaufendesJahr]="begehungenLaufend()"
           [beschriftung]="zeile.beschriftung"
         />
         <ng-container tags>

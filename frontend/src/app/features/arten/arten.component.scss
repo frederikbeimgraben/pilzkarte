@@ -15,4 +15,7 @@
   gap: 20px;
   padding: 20px var(--pilz-gutter);
   overflow-y: auto;
+  // Wie die Chip-Reihe: die App füllt das Gerät, ein Balken am Rand gehörte zu
+  // einem Fenster. Gescrollt wird mit dem Daumen oder dem Rad.
+  scrollbar-width: none;
 }

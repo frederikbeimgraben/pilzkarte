@@ -45,6 +45,7 @@ interface Zeile {
   aktiv: boolean;
   marken: Marke[];
   kurve: readonly number[];
+  laufend: readonly number[];
   beschriftung: string;
 }
 
@@ -76,9 +77,6 @@ export class ArtenComponent {
   private readonly router = inject(Router);
   private readonly zeilenRefs = viewChildren(SpeciesRowComponent);
 
-  /** Die kleine Kurve zeigt nur die Fläche; die Liste trägt kein laufendes Jahr. */
-  protected readonly ohneLaufend: readonly number[] = [];
-
   protected readonly suche = signal('');
   protected readonly chip = signal<ChipWert>('alle');
 
@@ -89,6 +87,9 @@ export class ArtenComponent {
   /** Die Begehungen je Woche gelten für alle Arten gleich und stehen am Kopf. */
   protected readonly begehungen = computed<readonly number[]>(
     () => this.zustand.liste()?.begehungenJeWocheAlleJahre ?? [],
+  );
+  protected readonly begehungenLaufend = computed<readonly number[]>(
+    () => this.zustand.liste()?.begehungenJeWocheLaufendesJahr ?? [],
   );
 
   protected readonly zeilen = computed<Zeile[]>(() => {
@@ -158,6 +159,7 @@ export class ArtenComponent {
       aktiv,
       marken: marken.slice(0, aktiv ? 2 : 3),
       kurve: art.saison.alleJahre,
+      laufend: art.saison.laufendesJahr,
       beschriftung: this.i18n.translate('art.kurve.beschriftung', {
         name: art.name,
         hoechstwert: Math.round(art.saison.hoechstwert),

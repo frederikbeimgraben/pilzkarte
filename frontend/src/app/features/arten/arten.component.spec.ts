@@ -50,6 +50,15 @@ describe('ArtenComponent', () => {
     await keineVerstoesse(container);
   });
 
+  it('zeichnet in jeder Zeile beide Reihen der Saisonkurve', async () => {
+    const { container } = await aufbauen();
+
+    // Die kleine Kurve zeigt dieselben zwei Reihen wie die Artseite: die Fläche
+    // aller Jahre und das laufende Jahr, das mit einem Punkt endet.
+    expect(container.querySelectorAll('.funke__alle')).toHaveLength(3);
+    expect(container.querySelectorAll('.funke__ende')).toHaveLength(3);
+  });
+
   it('sucht in Namen und lateinischen Namen', async () => {
     const { aktualisiere } = await aufbauen();
     const feld = screen.getByLabelText('Art suchen');
