@@ -1,53 +1,26 @@
 # SSO-Client in Authentik
 
-Einmal von Hand unter https://sso.beimgraben.net/. Die App ist ein
-öffentlicher Client mit Authorization Code und PKCE. Das Backend prüft die
-Token gegen JWKS. Es gibt kein Client-Secret.
+Der Client ist ein Blueprint im NixOS-Repo, wie die anderen Anwendungen:
+`modules/hosts/server/identity/authentik-blueprints/pilze.yaml`. Der
+Authentik-Worker legt ihn beim Switch des Servers an und gleicht ihn ab.
+Nichts wird von Hand geklickt.
 
-## Provider
+## Was der Blueprint anlegt
 
-Anwendungen, Provider, Erstellen, Typ **OAuth2/OpenID Provider**.
-
-| Feld | Wert |
+| Objekt | Wert |
 | --- | --- |
-| Name | `pilze` |
-| Authorization flow | implicit-consent |
-| Client type | Public |
+| Provider `pilze` | Public Client, Authorization Code mit PKCE, Refresh Token |
 | Client ID | `pilze` |
-| Redirect URIs | siehe unten, Matching Strict |
 | Signing Key | das selbstsignierte Zertifikat der Instanz |
-| Access code validity | `minutes=1` |
-| Access token validity | `hours=1` |
-| Refresh token validity | `days=30` |
+| Access Token | 1 Stunde |
+| Refresh Token | 30 Tage |
 | Scopes | `openid`, `email`, `profile`, `offline_access` |
-| Subject mode | Based on the User's hashed ID |
-| Include claims in id_token | an |
+| Redirect URIs | `https://pilze.beimgraben.net/anmeldung`, `…/anmeldung/still`, dazu `http://localhost:4200/…` für die Entwicklung |
+| Anwendung `pilze` | Name Pilzkarte, Launch URL `https://pilze.beimgraben.net/` |
+| Gruppe `app_pilze` | wer speichern darf. Mitglieder werden in der Admin-Oberfläche zugewiesen |
 
-Redirect URIs, je ein Eintrag:
-
-```
-https://pilze.beimgraben.net/anmeldung
-https://pilze.beimgraben.net/anmeldung/still
-http://localhost:4200/anmeldung
-http://localhost:4200/anmeldung/still
-```
-
-`/anmeldung/still` ist die stille Erneuerung im iframe. Die
-localhost-Einträge sind für die Entwicklung.
-
-## Anwendung
-
-Anwendungen, Erstellen.
-
-| Feld | Wert |
-| --- | --- |
-| Name | `Pilzkarte` |
-| Slug | `pilze` |
-| Provider | `pilze` |
-| Launch URL | `https://pilze.beimgraben.net/` |
-
-Die App braucht keine Gruppen oder Rollen. Jede angemeldete Person sieht nur
-ihre eigenen Objekte.
+`/anmeldung/still` ist die stille Erneuerung im iframe. Es gibt kein
+Client-Secret.
 
 ## Ergebnis
 
@@ -68,5 +41,6 @@ Das NixOS-Modul `homeserver-pilze-app` setzt Issuer und Client ID als
 curl -s https://sso.beimgraben.net/application/o/pilze/.well-known/openid-configuration | jq .issuer
 ```
 
-Erwartet: `"https://sso.beimgraben.net/application/o/pilze/"`. Bei 404 stimmt
-der Slug nicht.
+Erwartet: `"https://sso.beimgraben.net/application/o/pilze/"`. Bei 404 hat
+der Worker den Blueprint nicht angewendet, siehe `journalctl -u
+authentik-worker` auf dem Server.
