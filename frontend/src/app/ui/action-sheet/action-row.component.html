@@ -1,0 +1,9 @@
+<button class="reihe" type="button" (click)="auswahl.emit()">
+  <span class="reihe__kachel"><app-svg-icon [name]="icon()" [groesse]="22" /></span>
+  <span class="reihe__stapel">
+    <span class="reihe__titel">{{ titel() }}</span>
+    @if (unter()) {
+      <span class="reihe__unter">{{ unter() }}</span>
+    }
+  </span>
+</button>

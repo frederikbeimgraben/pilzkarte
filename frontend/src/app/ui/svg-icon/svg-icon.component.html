@@ -1,0 +1,71 @@
+<svg
+  [attr.viewBox]="viewBox()"
+  [attr.width]="groesse()"
+  [attr.height]="groesse()"
+  [attr.role]="rolle()"
+  [attr.aria-label]="beschriftung() ?? null"
+  [attr.aria-hidden]="versteckt()"
+  [class.gefuellt]="gefuellt()"
+>
+  @switch (name()) {
+    @case ('karte') {
+      <path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z" />
+      <path d="M9 4v14M15 6v14" />
+    }
+    @case ('arten') {
+      <path d="M4 11a8 6 0 0 1 16 0H4z" />
+      <path d="M9 11v7a3 3 0 0 0 6 0v-7" />
+    }
+    @case ('funde') {
+      <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
+      <circle cx="12" cy="10" r="2.5" />
+    }
+    @case ('mehr') {
+      <circle cx="5" cy="12" r="1.6" />
+      <circle cx="12" cy="12" r="1.6" />
+      <circle cx="19" cy="12" r="1.6" />
+    }
+    @case ('plus') {
+      <path d="M12 5v14M5 12h14" />
+    }
+    @case ('ort') {
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+      <circle cx="12" cy="12" r="8" />
+    }
+    @case ('ebenen') {
+      <path d="M12 4l9 5-9 5-9-5z" />
+      <path d="M3 14l9 5 9-5" />
+    }
+    @case ('zurueck') {
+      <path d="M15 5l-7 7 7 7" />
+    }
+    @case ('zu') {
+      <path d="M6 6l12 12M18 6L6 18" />
+    }
+    @case ('haken') {
+      <path d="M5 12l5 5 9-10" />
+    }
+    @case ('zone') {
+      <path d="M5 8l7-4 7 5-2 8-8 3-4-6z" />
+      <circle cx="5" cy="8" r="1.5" />
+      <circle cx="12" cy="4" r="1.5" />
+      <circle cx="19" cy="9" r="1.5" />
+      <circle cx="17" cy="17" r="1.5" />
+      <circle cx="9" cy="20" r="1.5" />
+    }
+    @case ('suche') {
+      <circle cx="11" cy="11" r="7" />
+      <path d="M20 20l-4-4" />
+    }
+    @case ('links') {
+      <path d="M8.5 1.5 3.5 6l5 4.5z" />
+    }
+    @case ('rechts') {
+      <path d="M3.5 1.5 8.5 6l-5 4.5z" />
+    }
+    @case ('abspielen') {
+      <path d="M3 1.4 10 6 3 10.6Z" />
+    }
+  }
+</svg>

@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.notiz {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.notiz--unter {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+}

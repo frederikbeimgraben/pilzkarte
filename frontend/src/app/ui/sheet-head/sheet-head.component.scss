@@ -1,0 +1,79 @@
+.kopf {
+  padding-inline: var(--pilz-gutter);
+  padding-block-end: var(--space-3);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.kopf__zeile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  block-size: var(--pilz-feld-hoehe);
+}
+
+.kopf__titel {
+  min-inline-size: 0;
+  overflow: hidden;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kopf__art {
+  padding: 0;
+  font: inherit;
+  color: var(--color-text);
+  background: none;
+  border: 0;
+}
+
+.kopf__art--link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.kopf__trenner {
+  margin-inline: 0 6px;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+}
+
+.kopf__woche {
+  color: var(--color-text);
+}
+
+.kopf__hinweis {
+  margin-inline-start: 6px;
+  color: var(--color-danger);
+}
+
+.kopf__pfeile {
+  display: flex;
+  flex: none;
+  margin-inline-start: var(--space-3);
+  overflow: hidden;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+}
+
+.kopf__pfeil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 38px;
+  block-size: var(--control-height);
+  color: var(--color-text);
+  cursor: pointer;
+  background: var(--color-surface);
+  border: 0;
+  border-inline-start: var(--border-width) solid var(--color-border-strong);
+}
+
+.kopf__pfeil:first-child {
+  border-inline-start: 0;
+}

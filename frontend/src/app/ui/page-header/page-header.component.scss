@@ -1,0 +1,36 @@
+.kopfleiste {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  block-size: var(--pilz-kopfleiste-hoehe);
+  padding-inline: var(--space-5);
+  background: var(--color-surface);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.kopfleiste__zurueck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--control-height);
+  block-size: var(--control-height);
+  color: var(--color-primary);
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+.kopfleiste__titel {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.kopfleiste__aktionen {
+  margin-inline-start: auto;
+}
+
+.kopfleiste__aktionen:empty {
+  display: none;
+}

@@ -1,0 +1,13 @@
+<div class="leiste" role="group" [attr.aria-label]="beschriftung()">
+  @for (woche of angezeigt(); track woche.schluessel) {
+    <app-week-button
+      [jahr]="woche.jahr"
+      [woche]="woche.woche"
+      [anteil]="woche.anteil"
+      [prognose]="woche.prognose"
+      [jahresmarke]="woche.jahresmarke"
+      [aktiv]="istAktiv(woche)"
+      (auswahl)="auswahl.emit(woche)"
+    />
+  }
+</div>

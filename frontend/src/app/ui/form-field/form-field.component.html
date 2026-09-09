@@ -1,0 +1,23 @@
+<label class="feld__label" [attr.for]="nurAnzeige() ? null : feldId">{{ label() }}</label>
+@if (nurAnzeige()) {
+  <button class="feld feld--knopf" type="button" [class.feld--leer]="leer()" (click)="anzeigeKlick.emit()">
+    {{ leer() ? platzhalter() : wert() }}
+  </button>
+} @else if (mehrzeilig()) {
+  <textarea
+    class="feld feld--mehrzeilig"
+    [id]="feldId"
+    [value]="wert()"
+    [attr.placeholder]="platzhalter() || null"
+    (input)="beiEingabe($event)"
+  ></textarea>
+} @else {
+  <input
+    class="feld"
+    type="text"
+    [id]="feldId"
+    [value]="wert()"
+    [attr.placeholder]="platzhalter() || null"
+    (input)="beiEingabe($event)"
+  />
+}

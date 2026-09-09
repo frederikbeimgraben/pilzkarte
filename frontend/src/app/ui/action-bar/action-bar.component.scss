@@ -1,0 +1,33 @@
+.fuss {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block-start: auto;
+  padding: var(--space-3) var(--pilz-gutter) var(--pilz-gutter);
+  background: var(--color-surface);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+.fuss__reihe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+// Der Knopf des Kits füllt seinen Wirt in der Höhe; die Maße der Mockups
+// stehen deshalb hier und nicht im Kit.
+app-button {
+  min-block-size: var(--pilz-feld-hoehe);
+}
+
+.fuss__haupt {
+  min-block-size: var(--pilz-aktion-hoehe);
+}
+
+// Gefahr ist im Mockup ein roter Rand auf heller Fläche, nicht eine rote
+// Fläche. Die zweite Variante des Kits trifft das, sobald ihre beiden Tokens
+// auf die Gefahrfarbe zeigen.
+.fuss__gefahr {
+  --color-border-strong: var(--color-danger);
+  --color-text: var(--color-danger);
+}

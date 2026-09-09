@@ -1,0 +1,16 @@
+.aktionen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--pilz-gutter) var(--space-2);
+}
+
+.aktionen__titel {
+  font-size: 17px;
+  font-weight: var(--fw-semibold);
+}
+
+.aktionen__liste {
+  display: flex;
+  flex-direction: column;
+}

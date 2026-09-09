@@ -1,0 +1,18 @@
+:host {
+  display: inline-flex;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--pilz-avatar-groesse);
+  block-size: var(--pilz-avatar-groesse);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  cursor: pointer;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}

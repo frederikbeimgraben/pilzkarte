@@ -1,0 +1,39 @@
+:host {
+  display: inline-flex;
+}
+
+.kreuz {
+  position: relative;
+  display: block;
+  inline-size: 52px;
+  block-size: 52px;
+}
+
+.kreuz::before,
+.kreuz::after {
+  position: absolute;
+  content: '';
+  background: var(--color-primary);
+}
+
+.kreuz::before {
+  inset-block: 0;
+  inset-inline-start: 50%;
+  inline-size: 2px;
+  transform: translateX(-50%);
+}
+
+.kreuz::after {
+  inset-inline: 0;
+  inset-block-start: 50%;
+  block-size: 2px;
+  transform: translateY(-50%);
+}
+
+.kreuz__ring {
+  position: absolute;
+  inset: 14px;
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+}

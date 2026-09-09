@@ -1,0 +1,13 @@
+<div class="chips" role="group" [attr.aria-label]="beschriftung()">
+  @for (chip of chips(); track chip.wert) {
+    <button
+      class="chip"
+      type="button"
+      [class.chip--aktiv]="chip.wert === wert()"
+      [attr.aria-pressed]="chip.wert === wert()"
+      (click)="wertChange.emit(chip.wert)"
+    >
+      {{ chip.label }}
+    </button>
+  }
+</div>

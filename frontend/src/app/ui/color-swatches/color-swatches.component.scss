@@ -1,0 +1,17 @@
+.farben {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.farben__feld {
+  inline-size: var(--pilz-farbfeld-groesse);
+  block-size: var(--pilz-farbfeld-groesse);
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--pilz-farbfeld-radius);
+}
+
+.farben__feld--gewaehlt {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}

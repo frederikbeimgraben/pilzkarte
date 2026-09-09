@@ -1,0 +1,38 @@
+<div class="fuss">
+  @if (haupt()) {
+    <app-button class="fuss__haupt" variant="primary" [block]="true" (click)="hauptKlick.emit()">
+      @if (hauptIcon()) {
+        <app-svg-icon [name]="hauptIcon()!" [groesse]="16" />
+      }
+      {{ haupt() }}
+    </app-button>
+  }
+  @if (zweite() && sekundaer()) {
+    <div class="fuss__reihe">
+      <app-button variant="secondary" [block]="true" (click)="zweiteKlick.emit()">{{ zweite() }}</app-button>
+      <app-button variant="secondary" [block]="true" (click)="sekundaerKlick.emit()">{{
+        sekundaer()
+      }}</app-button>
+    </div>
+  } @else if (gefahr() && sekundaer()) {
+    <div class="fuss__reihe">
+      <app-button class="fuss__gefahr" variant="secondary" [block]="true" (click)="gefahrKlick.emit()">{{
+        gefahr()
+      }}</app-button>
+      <app-button variant="secondary" [block]="true" (click)="sekundaerKlick.emit()">{{
+        sekundaer()
+      }}</app-button>
+    </div>
+  } @else if (sekundaer()) {
+    <app-button class="fuss__haupt" variant="secondary" [block]="true" (click)="sekundaerKlick.emit()">{{
+      sekundaer()
+    }}</app-button>
+  } @else if (gefahr()) {
+    <app-button class="fuss__gefahr" variant="secondary" [block]="true" (click)="gefahrKlick.emit()">{{
+      gefahr()
+    }}</app-button>
+  }
+  @if (geist()) {
+    <app-button variant="ghost" [block]="true" (click)="geistKlick.emit()">{{ geist() }}</app-button>
+  }
+</div>

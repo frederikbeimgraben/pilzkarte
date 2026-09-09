@@ -1,0 +1,43 @@
+<svg
+  class="funke"
+  [class.funke--gross]="gross()"
+  [attr.viewBox]="'0 0 ' + zeichnung().breite + ' ' + zeichnung().hoehe"
+  [attr.preserveAspectRatio]="achse() ? 'xMidYMid meet' : 'none'"
+  role="img"
+  [attr.aria-label]="beschriftung()"
+>
+  <line
+    class="funke__grund"
+    x1="0"
+    [attr.y1]="zeichnung().hoehe - 0.5"
+    [attr.x2]="zeichnung().breite"
+    [attr.y2]="zeichnung().hoehe - 0.5"
+  />
+  @for (marke of zeichnung().marken; track marke) {
+    <line
+      class="funke__marke"
+      [attr.x1]="marke"
+      [attr.y1]="zeichnung().hoehe - 5"
+      [attr.x2]="marke"
+      [attr.y2]="zeichnung().hoehe"
+    />
+  }
+  @if (achse()) {
+    <text class="funke__achse" x="2" y="10">{{ achse() }}</text>
+  }
+  <path class="funke__alle" [attr.d]="zeichnung().alleJahre" />
+  <path class="funke__laufend-flaeche" [attr.d]="zeichnung().laufendFlaeche" />
+  <path class="funke__laufend" [attr.d]="zeichnung().laufendLinie" />
+  <circle
+    class="funke__ende"
+    [attr.cx]="zeichnung().endeX"
+    [attr.cy]="zeichnung().endeY"
+    [attr.r]="zeichnung().punktRadius"
+  />
+</svg>
+@if (legendeLaufend() || legendeJahre()) {
+  <div class="funke__legende">
+    <span><i class="funke__muster funke__muster--linie"></i>{{ legendeLaufend() }}</span>
+    <span><i class="funke__muster funke__muster--flaeche"></i>{{ legendeJahre() }}</span>
+  </div>
+}

@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  block-size: var(--pilz-nav-hoehe);
+  padding: 6px 8px 8px;
+  background: var(--color-surface);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+.nav__eintrag {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.nav__eintrag--aktiv {
+  color: var(--color-primary);
+}
+
+.nav__label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+}

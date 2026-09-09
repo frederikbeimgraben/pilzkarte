@@ -1,0 +1,77 @@
+.funke {
+  inline-size: 96px;
+  block-size: 40px;
+}
+
+.funke--gross {
+  inline-size: 100%;
+  block-size: 72px;
+}
+
+.funke__grund {
+  stroke: var(--color-border);
+}
+
+.funke__marke {
+  stroke: var(--color-border-strong);
+}
+
+.funke__achse {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  fill: var(--color-text-muted);
+}
+
+.funke__alle {
+  fill: var(--color-accent);
+  opacity: 0.3;
+}
+
+.funke__laufend-flaeche {
+  fill: var(--color-primary);
+  opacity: 0.12;
+}
+
+.funke__laufend {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.funke--gross .funke__laufend {
+  stroke-width: 2;
+}
+
+.funke__ende {
+  fill: var(--color-primary);
+}
+
+.funke__legende {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: var(--space-2);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.funke__muster {
+  display: inline-block;
+  margin-inline-end: 6px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.funke__muster--linie {
+  inline-size: 14px;
+  block-size: 3px;
+  background: var(--color-primary);
+}
+
+.funke__muster--flaeche {
+  inline-size: 14px;
+  block-size: 10px;
+  background: var(--color-accent);
+  opacity: 0.35;
+}

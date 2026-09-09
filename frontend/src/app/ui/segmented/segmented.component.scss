@@ -1,0 +1,27 @@
+.seg {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  background: var(--color-surface-sunken);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.seg__wahl {
+  flex: 1;
+  padding: 9px var(--space-1);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+.seg__wahl--aktiv {
+  color: var(--color-text);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}

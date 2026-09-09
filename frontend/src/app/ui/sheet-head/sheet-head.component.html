@@ -1,0 +1,49 @@
+<header class="kopf">
+  <div class="kopf__zeile">
+    <p class="kopf__titel">
+      @if (titelAlsLink()) {
+        <button class="kopf__art kopf__art--link" type="button" (click)="titelKlick.emit()">
+          {{ titel() }}
+        </button>
+      } @else {
+        <span class="kopf__art">{{ titel() }}</span>
+      }
+      @if (woche()) {
+        <span class="kopf__trenner" aria-hidden="true">·</span>
+        <span class="kopf__woche">{{ woche() }}</span>
+      }
+      @if (hinweis()) {
+        <span class="kopf__hinweis">{{ hinweis() }}</span>
+      }
+    </p>
+    @if (pfeile()) {
+      <div class="kopf__pfeile">
+        <button
+          class="kopf__pfeil"
+          type="button"
+          [attr.aria-label]="text('zeitleiste.zurueck')"
+          (click)="zurueck.emit()"
+        >
+          <app-svg-icon name="links" [groesse]="12" />
+        </button>
+        <button
+          class="kopf__pfeil"
+          type="button"
+          [attr.aria-label]="text('zeitleiste.abspielen')"
+          (click)="abspielen.emit()"
+        >
+          <app-svg-icon name="abspielen" [groesse]="12" />
+        </button>
+        <button
+          class="kopf__pfeil"
+          type="button"
+          [attr.aria-label]="text('zeitleiste.vor')"
+          (click)="vor.emit()"
+        >
+          <app-svg-icon name="rechts" [groesse]="12" />
+        </button>
+      </div>
+    }
+  </div>
+  <div class="kopf__leiste"><ng-content /></div>
+</header>
