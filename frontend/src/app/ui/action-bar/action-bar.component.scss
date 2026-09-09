@@ -31,3 +31,9 @@ app-button {
   --color-border-strong: var(--color-danger);
   --color-text: var(--color-danger);
 }
+
+// Die Unterzeile erklaert eine abgeschaltete Hauptaktion und steht darum
+// mittig darunter, nicht am linken Rand wie ein Absatz.
+.fuss__unter {
+  text-align: center;
+}

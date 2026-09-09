@@ -12,4 +12,6 @@ export type NoteVariante = 'notiz' | 'unter';
 })
 export class NoteComponent {
   readonly variante = input<NoteVariante>('notiz');
+  /** Kursiv, wie der lateinische Name einer Art. */
+  readonly kursiv = input(false);
 }

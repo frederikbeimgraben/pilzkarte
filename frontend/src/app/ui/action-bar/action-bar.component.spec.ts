@@ -49,6 +49,26 @@ describe('ActionBarComponent', () => {
     expect(screen.getByRole('button', { name: 'Faktor hinzufügen' })).toBeInTheDocument();
   });
 
+  it('schaltet die Hauptaktion ab und nennt darunter den Grund', async () => {
+    const { container, fixture } = await render(ActionBarComponent, {
+      inputs: {
+        haupt: 'Auf der Karte anzeigen',
+        hauptDeaktiviert: true,
+        unter: 'Für diese Art gibt es keine Vorhersage',
+      },
+    });
+    let gerufen = 0;
+    fixture.componentInstance.hauptKlick.subscribe(() => (gerufen += 1));
+
+    const knopf = screen.getByRole('button', { name: 'Auf der Karte anzeigen' });
+    expect(knopf).toBeDisabled();
+    await userEvent.click(knopf);
+
+    expect(gerufen).toBe(0);
+    expect(screen.getByText('Für diese Art gibt es keine Vorhersage')).toBeInTheDocument();
+    await keineVerstoesse(container);
+  });
+
   it('zeigt eine einzelne Gefahr-Aktion über die volle Breite', async () => {
     const { container } = await render(ActionBarComponent, { inputs: { gefahr: 'Faktor entfernen' } });
 

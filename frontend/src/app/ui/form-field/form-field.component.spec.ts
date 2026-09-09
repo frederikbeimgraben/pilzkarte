@@ -39,6 +39,21 @@ describe('FormFieldComponent', () => {
     await keineVerstoesse(container);
   });
 
+  it('stellt ein Suchfeld mit Lupe und versteckter Beschriftung', async () => {
+    const { container, fixture } = await render(FormFieldComponent, {
+      inputs: { label: 'Art suchen', platzhalter: 'Art suchen', icon: 'suche', labelVerstecken: true },
+    });
+    const eingaben: string[] = [];
+    fixture.componentInstance.wertChange.subscribe((wert) => eingaben.push(wert));
+
+    await userEvent.type(screen.getByLabelText('Art suchen'), 'Stein');
+
+    expect(eingaben.at(-1)).toBe('Stein');
+    expect(container.querySelector('.feld__label')).toHaveClass('sr-only');
+    expect(container.querySelector('.feld__icon')).not.toBeNull();
+    await keineVerstoesse(container);
+  });
+
   it('zeigt im leeren Anzeigefeld den Platzhalter', async () => {
     await render(FormFieldComponent, {
       inputs: { label: 'Anzahl', platzhalter: 'optional', nurAnzeige: true },

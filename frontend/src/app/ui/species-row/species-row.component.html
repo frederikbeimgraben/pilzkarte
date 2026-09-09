@@ -1,6 +1,18 @@
-<button class="artzeile" type="button" [class.artzeile--aktiv]="aktiv()" (click)="auswahl.emit()">
+<button
+  #knopf
+  class="artzeile"
+  type="button"
+  [class.artzeile--aktiv]="aktiv()"
+  [attr.aria-current]="aktiv() ? 'true' : null"
+  (click)="auswahl.emit()"
+>
   <span class="artzeile__name">{{ name() }}</span>
   <span class="artzeile__kurve"><ng-content select="[kurve]" /></span>
   <span class="artzeile__latein">{{ latein() }}</span>
-  <span class="artzeile__tags"><ng-content select="[tags]" /></span>
+  <span class="artzeile__tags">
+    @if (aktiv()) {
+      <span class="artzeile__marke">{{ aktivText() }}</span>
+    }
+    <ng-content select="[tags]" />
+  </span>
 </button>

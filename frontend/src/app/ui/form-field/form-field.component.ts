@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.component';
 
 let naechsteNummer = 0;
 
@@ -14,6 +15,7 @@ let naechsteNummer = 0;
 @Component({
   selector: 'app-form-field',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SvgIconComponent],
   templateUrl: './form-field.component.html',
   styleUrl: './form-field.component.scss',
 })
@@ -24,6 +26,13 @@ export class FormFieldComponent {
   readonly mehrzeilig = input(false);
   /** Ein Feld, das nur zeigt und beim Tippen eine Auswahl öffnet. */
   readonly nurAnzeige = input(false);
+  /** Ein Piktogramm vor der Eingabe, wie die Lupe im Suchfeld. */
+  readonly icon = input<PiktogrammName>();
+  /**
+   * Versteckt die Beschriftung, ohne sie wegzulassen. Das Suchfeld der
+   * Mockups trägt keine sichtbare Beschriftung, ein Screenreader braucht sie.
+   */
+  readonly labelVerstecken = input(false);
 
   readonly wertChange = output<string>();
   readonly anzeigeKlick = output();

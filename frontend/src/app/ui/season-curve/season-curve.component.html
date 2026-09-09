@@ -6,6 +6,38 @@
   role="img"
   [attr.aria-label]="beschriftung()"
 >
+  @if (zeichnung().duenn.length) {
+    <defs>
+      <!-- Grauwerte statt Farben: die Maske steuert Deckkraft, nicht das Thema. -->
+      <mask
+        [attr.id]="maskeId"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        [attr.width]="zeichnung().breite"
+        [attr.height]="zeichnung().hoehe"
+        color-interpolation="sRGB"
+      >
+        <rect
+          x="0"
+          y="0"
+          [attr.width]="zeichnung().breite"
+          [attr.height]="zeichnung().hoehe"
+          fill="#ffffff"
+        />
+        @for (streifen of zeichnung().duenn; track streifen.x) {
+          <rect
+            class="funke__duenn"
+            [attr.x]="streifen.x"
+            y="0"
+            [attr.width]="streifen.breite"
+            [attr.height]="zeichnung().hoehe"
+            fill="#8c8c8c"
+          />
+        }
+      </mask>
+    </defs>
+  }
   <line
     class="funke__grund"
     x1="0"
@@ -25,16 +57,27 @@
   @if (achse()) {
     <text class="funke__achse" x="2" y="10">{{ achse() }}</text>
   }
-  <path class="funke__alle" [attr.d]="zeichnung().alleJahre" />
-  <path class="funke__laufend-flaeche" [attr.d]="zeichnung().laufendFlaeche" />
-  <path class="funke__laufend" [attr.d]="zeichnung().laufendLinie" />
-  <circle
-    class="funke__ende"
-    [attr.cx]="zeichnung().endeX"
-    [attr.cy]="zeichnung().endeY"
-    [attr.r]="zeichnung().punktRadius"
-  />
+  <g [attr.mask]="zeichnung().duenn.length ? 'url(#' + maskeId + ')' : null">
+    <path class="funke__alle" [attr.d]="zeichnung().alleJahre" />
+    @if (zeichnung().hatLaufend) {
+      <path class="funke__laufend-flaeche" [attr.d]="zeichnung().laufendFlaeche" />
+      <path class="funke__laufend" [attr.d]="zeichnung().laufendLinie" />
+      <circle
+        class="funke__ende"
+        [attr.cx]="zeichnung().endeX"
+        [attr.cy]="zeichnung().endeY"
+        [attr.r]="zeichnung().punktRadius"
+      />
+    }
+  </g>
 </svg>
+@if (monate().length) {
+  <div class="funke__monate">
+    @for (monat of monate(); track monat) {
+      <span>{{ monat }}</span>
+    }
+  </div>
+}
 @if (legendeLaufend() || legendeJahre()) {
   <div class="funke__legende">
     <span><i class="funke__muster funke__muster--linie"></i>{{ legendeLaufend() }}</span>

@@ -48,12 +48,21 @@
   fill: var(--color-primary);
 }
 
+.funke__monate,
 .funke__legende {
   display: flex;
   justify-content: space-between;
-  margin-block-start: var(--space-2);
   font-size: 13px;
   color: var(--color-text-muted);
+}
+
+.funke__monate {
+  margin-block-start: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.funke__legende {
+  margin-block-start: var(--space-2);
 }
 
 .funke__muster {

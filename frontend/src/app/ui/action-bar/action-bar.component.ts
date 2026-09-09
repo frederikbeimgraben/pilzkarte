@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { ButtonComponent } from '@stupa-makers/ui-kit';
+import { NoteComponent } from '../note/note.component';
 import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.component';
 
 /**
@@ -11,13 +12,16 @@ import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.comp
 @Component({
   selector: 'app-action-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ButtonComponent, SvgIconComponent],
+  imports: [ButtonComponent, NoteComponent, SvgIconComponent],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',
 })
 export class ActionBarComponent {
   readonly haupt = input<string>();
   readonly hauptIcon = input<PiktogrammName>();
+  readonly hauptDeaktiviert = input(false);
+  /** Steht die Hauptaktion nicht offen, sagt diese Zeile darunter, warum. */
+  readonly unter = input<string>();
   readonly sekundaer = input<string>();
   /** Die linke der beiden Nebenaktionen, wenn keine Gefahr im Spiel ist. */
   readonly zweite = input<string>();

@@ -27,6 +27,24 @@ describe('SpeciesRowComponent', () => {
     await keineVerstoesse(container);
   });
 
+  it('markiert die aktive Art für Auge und Hilfsmittel', async () => {
+    await render(WirtComponent);
+
+    const knopf = screen.getByRole('button', { name: /Steinpilz/ });
+    expect(knopf).toHaveAttribute('aria-current', 'true');
+    expect(screen.getByText('aktiv')).toBeInTheDocument();
+  });
+
+  it('nimmt den Fokus auf Zuruf an, damit Pfeiltasten durch die Liste wandern', async () => {
+    const { fixture } = await render(SpeciesRowComponent, {
+      inputs: { name: 'Birkenpilz', latein: 'Leccinum scabrum' },
+    });
+
+    fixture.componentInstance.fokussiere();
+
+    expect(screen.getByRole('button', { name: /Birkenpilz/ })).toHaveFocus();
+  });
+
   it('meldet die gewählte Art', async () => {
     const { fixture } = await render(SpeciesRowComponent, {
       inputs: { name: 'Pfifferling', latein: 'Cantharellus cibarius' },
