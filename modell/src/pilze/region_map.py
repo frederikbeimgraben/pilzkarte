@@ -23,7 +23,6 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import json
 import pickle
 import subprocess
 import sys
@@ -42,6 +41,7 @@ from pyproj import Transformer
 
 sys.path.insert(0, str(Path(__file__).parent))
 from build_dataset import add_anomalies, add_lags, week_number
+from manifest import histogramm, schreibe
 from tiles import schreibe_kacheln
 from tree_species import CLASSES, CONIFERS
 from visit_model import BLOCK_M, ActivityFields
@@ -521,6 +521,12 @@ def main() -> None:
         eintrag = {"year": year, "week": week, "forecast": bool(ahead),
                    "mean": round(float(np.nanmean(field)), 4),
                    "max": round(float(np.nanmax(field)), 4)}
+        # Das Histogramm laeuft ueber 0 bis top, also ueber die Skala der
+        # Kacheln. Aus dem Feld gerechnet, nicht aus den Kacheln gelesen: das
+        # Raster ist flaechentreu, jeder Punkt steht fuer dieselbe Flaeche.
+        verteilung = histogramm(field, 0.0, top)
+        if verteilung is not None:
+            eintrag["histogramm"] = verteilung
         if not args.no_image:
             eintrag["file"] = f"{args.name}_weeks/{year}W{week:02d}.png"
         if args.tiles:
@@ -618,7 +624,7 @@ def main() -> None:
             belegt.setdefault(str(z), []).append(f"{x}/{y}")
         meta["tiles"] = {"zooms": [z0, z1], "have": belegt}
         print(f"  Kacheln gesamt: {kachelzahl}, {kachelbytes/1e6:.1f} MB")
-    (args.out / f"{args.name}.json").write_text(json.dumps(meta, indent=1))
+    schreibe(args.out / f"{args.name}.json", meta)
     print(f"\nwrote {len(manifest)} weeks and {args.out}/{args.name}.json  (top {top:.3f})")
 
 

@@ -37,6 +37,7 @@ from pyproj import Transformer
 
 sys.path.insert(0, str(Path(__file__).parent))
 from build_dataset import week_number
+from manifest import histogramm, schreibe
 from region_map import (COLORS, MODEL_CRS, REGION, TRAIN_CELL,
                         raster_ausrichten, render)
 from tiles import schreibe_kacheln
@@ -210,10 +211,17 @@ def main() -> None:
                 continue
             values = grid[column].to_numpy(dtype="float32")
             low, high = np.nanpercentile(values, [2, 98])
-            source = schreibe_feld(to_field(values), work, bounds, args.step, low, high)
+            feld = to_field(values)
+            source = schreibe_feld(feld, work, bounds, args.step, low, high)
             k = SKALA.get(name, 1.0)
+            unten, oben = round(float(low) * k, 3), round(float(high) * k, 3)
             eintrag = {"label": label, "unit": unit, "static": True,
-                       "low": round(float(low) * k, 3), "high": round(float(high) * k, 3)}
+                       "low": unten, "high": oben}
+            # Ueber die Skala der Ebene, in ihrer Einheit. Die Griffe im
+            # Faktor-Screen zeigen damit auf Meter oder pH, nicht auf 0 bis 1.
+            verteilung = histogramm(feld * k, unten, oben)
+            if verteilung is not None:
+                eintrag["histogramm"] = verteilung
             if not args.no_image:
                 schreibe_bild(source, folder / f"{name}.png", work)
                 eintrag["file"] = f"layers/{name}.png"
@@ -245,13 +253,21 @@ def main() -> None:
             wurzel = args.out / "layers_kacheln" / name
             eintrag = {"label": label, "unit": unit, "static": False,
                        "low": low, "high": high, "weeks": []}
+            # Je Woche ein Histogramm, aber nicht in `weeks`: dort stehen
+            # Wochenschluessel, und `update.sh` raeumt die Kachelordner nach
+            # dieser Liste auf. Eine Zuordnung daneben laesst beides heil.
+            verteilungen: dict[str, dict] = {}
             gefuellt_erste = None
             for year, week in wochen:
                 zeile = wetter[(wetter["iso_year"] == year) & (wetter["iso_week"] == week)]
                 werte = pd.Series(zeile[column].to_numpy(), index=zeile["cell"].to_numpy())
                 values = werte.reindex(zellen).to_numpy(dtype="float32")
-                source = schreibe_feld(to_field(values), work, bounds, args.step, low, high)
+                feld = to_field(values)
+                source = schreibe_feld(feld, work, bounds, args.step, low, high)
                 schluessel = f"{year}W{week:02d}"
+                verteilung = histogramm(feld, low, high)
+                if verteilung is not None:
+                    verteilungen[schluessel] = verteilung
                 if not args.no_image:
                     schreibe_bild(source, folder / f"{name}_{schluessel}.png", work)
                 if args.tiles:
@@ -260,6 +276,7 @@ def main() -> None:
                     if gefuellt_erste is None:
                         gefuellt_erste = gefuellt
                 eintrag["weeks"].append(schluessel)
+            eintrag["histogramme"] = verteilungen
             if args.tiles:
                 eintrag.update(tiles=f"layers_kacheln/{name}", zooms=[z0, z1],
                                have=belegung(gefuellt_erste or []))
@@ -271,7 +288,7 @@ def main() -> None:
 
     meta = {"bounds": [[wgs_box[1], wgs_box[0]], [wgs_box[3], wgs_box[2]]],
             "layers": layers}
-    manifest_path.write_text(json.dumps(meta, indent=1))
+    schreibe(manifest_path, meta)
     print(f"\nwrote {len(layers)} layers and {manifest_path}")
 
 

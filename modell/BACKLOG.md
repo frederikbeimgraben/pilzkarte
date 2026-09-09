@@ -453,8 +453,25 @@ ist jedes Mal derselbe: zu wenige Besuche fuer ein eigenes Modell.
    `webmap`) liegen in `~/Workspace/~Archived/Pilze-experimente`; ihre
    Ergebnisse stehen unter "Entscheidungen, gemessen". Die Kette liefert
    Kacheln, Manifeste, `funde/` und `layers.json`. Offen hier:
-   - [ ] C2 Histogramme je Ebene und Woche ins Manifest (`input_layers.py`,
+   - [x] C2 Histogramme je Ebene und Woche ins Manifest (`input_layers.py`,
          `region_map.py`, `week_stats.py`), Auftrag aus `arbeitspakete.md`.
+         **Gebaut 2026-09-09.** 40 Klassen ueber die Skala des Eintrags, 41
+         Kanten und 40 Anteile, gerechnet aus dem Feld statt aus den Kacheln:
+         das Modellraster ist flaechentreu, also ist ein Anteil ein
+         Flaechenanteil. Kosten 19,5 ms je Woche auf 2,32 Mio Punkten gegen
+         rund 6,7 s Renderzeit je Woche, also 0,3 Prozent. Wochenebenen
+         tragen ihre Histogramme in `histogramme` neben `weeks`, nicht in
+         `weeks`: dort stehen die Wochenschluessel, nach denen `update.sh`
+         die Kachelordner aufraeumt, und eine Liste von Objekten haette beim
+         naechsten Lauf alle Kacheln geloescht. `week_stats.py` fuellt
+         bestehende Manifeste aus den z5-Kacheln nach und laesst ein Mittel,
+         das schon dasteht, unangetastet — das kam aus dem Feld und ist
+         genauer. Die Manifeste wachsen: eine Art von 14 auf 78 kB,
+         `layers.json` von 37 auf 494 kB (gzip 69 kB). Zahlenlisten stehen
+         deshalb auf einer Zeile; mit `json.dumps(indent=1)` waere
+         `layers.json` ueber 2 MB gross. `build_page.py` laesst die
+         Histogramme aus der alten Seite heraus, `index.html` bleibt bei
+         179 kB. `update.sh` bleibt unveraendert.
    - [ ] Begehungstabelle als Parquet-Export für die Saisonkurve der App.
    - [ ] `src/pilze/api.py`, `build_page.py`, `web/`, `katalog.py` fallen
          weg, sobald die App den Reiter Arten und das Melden übernimmt.
