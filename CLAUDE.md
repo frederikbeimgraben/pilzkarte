@@ -100,6 +100,11 @@ in `app/core/` oder `app/shared/`.
 
 ## Regeln
 
+- **Der Kartenzustand lebt in der App, nicht in der Adresse.** Art, Woche,
+  Darstellung, Ebene, Faktoren und Sichtbarkeiten stehen in `KartenZustand`
+  und werden lokal gesichert, damit sie Neuladen und Offline-Betrieb
+  überstehen. Die Adresse wird nicht geschrieben. Ein tiefer Link wird beim
+  ersten Laden einmal übernommen und danach aus der Adresse entfernt.
 - TDD. Test zuerst, dann der kleinste Code, dann aufräumen. Kein `skip` ohne Grund.
 - Kommentare sagen Warum, nie Was. Kein Kommentar erzählt den Code nach.
 - Kein toter Code, keine ungenutzten Importe, keine `print`- oder `console.log`-Reste, keine TODOs.
