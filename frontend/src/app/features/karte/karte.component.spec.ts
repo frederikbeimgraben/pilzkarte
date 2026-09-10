@@ -66,7 +66,8 @@ describe('KarteComponent', () => {
       screen.getByRole('img', { name: /Fundwahrscheinlichkeit je Begehung: 0 % – 50 %/ }),
     ).toBeInTheDocument();
     expect(attrappe.optionen?.stil).toContain('liberty');
-    expect(attrappe.optionen?.minZoom).toBe(5);
+    // MapLibre zählt für 512er-Kacheln: die 4 ist die Stufe 5 der Wertkacheln.
+    expect(attrappe.optionen?.minZoom).toBe(4);
     expect(attrappe.optionen?.maxZoom).toBe(14);
   });
 

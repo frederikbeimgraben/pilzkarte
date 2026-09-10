@@ -118,6 +118,16 @@ export function findeWoche(manifest: ArtManifest, schluessel: string): ManifestW
   return manifest.wochen.find((woche) => wochenSchluessel(woche) === schluessel) ?? null;
 }
 
+/** Alle Kacheln einer Zoomstufe, die Daten tragen. */
+export function kachelnAufStufe(manifest: ArtManifest, zoom: number): [number, number, number][] {
+  const kacheln: [number, number, number][] = [];
+  for (const schluessel of manifest.vorhanden) {
+    const [z, x, y] = schluessel.split('/').map(Number);
+    if (z === zoom) kacheln.push([z, x, y]);
+  }
+  return kacheln;
+}
+
 /**
  * Die Balken der Zeitleiste. Der Balken ist das Mittel der Woche, relativ zur
  * besten Woche der Art; eine dunkle Karte bekommt so einen kurzen Balken.

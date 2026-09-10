@@ -45,7 +45,7 @@ export class WeekButtonComponent {
   /** Holt die Woche in den Blick und, wenn gewünscht, in den Fokus. */
   zeige(mitFokus: boolean): void {
     const element = this.knopf().nativeElement;
-    element.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    element.scrollIntoView({ block: 'nearest', inline: 'center' });
     if (mitFokus) element.focus();
   }
 

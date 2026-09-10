@@ -20,12 +20,13 @@ import {
   aktuelleWoche,
   balkenAnteile,
   findeWoche,
+  kachelnAufStufe,
   wochenSchluessel,
   type ArtManifest,
   type ManifestWoche,
 } from '../../core/kacheln/manifest';
 import { sichtbareKacheln } from '../../map/kachel-raster';
-import { DEUTSCHLAND, HINTERGRUND, ZOOM_MAX, ZOOM_MIN } from '../../map/hintergrund';
+import { DEUTSCHLAND, HINTERGRUND, MAX_GRENZEN, ZOOM_MAX, ZOOM_MIN } from '../../map/hintergrund';
 import { KARTE_ADAPTER, WERT_ARBEITER, KARTE_ANBIETER } from '../../map/karte.tokens';
 import { WertProtokoll, wertVorlage } from '../../map/wert-protokoll';
 import { ThemeService } from '../../core/theme/theme.service';
@@ -130,6 +131,8 @@ export class KarteComponent implements OnDestroy {
   );
 
   constructor() {
+    this.adapter.waermeAuf();
+
     this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe((abfrage) => {
       this.zustand.uebernimm(abfrage.get('art'), abfrage.get('kw'), abfrage.get('ansicht'));
     });
@@ -235,12 +238,30 @@ export class KarteComponent implements OnDestroy {
       const manifest = await this.manifeste.hole(slug);
       this.protokoll.merkeArt(manifest);
       this.manifest.set(manifest);
+      this.ladeUebersicht(manifest);
       this.schreibeAdresse();
     } catch {
       // Ohne Manifest bleibt die Hintergrundkarte stehen; das Blatt zeigt dann
       // keine Wochen. Ein Fehlerbild wäre hier nicht hilfreicher.
       this.manifest.set(null);
     }
+  }
+
+  /**
+   * Die groben Stufen der gewählten Woche, sofort nach dem Manifest.
+   *
+   * MapLibre ist an dieser Stelle noch nicht geladen. Wären die Kacheln erst
+   * nach seinem Stil an der Reihe, käme die Vorhersage rund eine Sekunde nach
+   * der Hintergrundkarte; so liegt sie schon im Speicher des Workers.
+   */
+  private ladeUebersicht(manifest: ArtManifest): void {
+    const woche = this.woche();
+    if (!woche) return;
+    this.protokoll.vorladen(
+      manifest.slug,
+      [woche.kachelPfad],
+      [...kachelnAufStufe(manifest, manifest.zoomVon), ...kachelnAufStufe(manifest, manifest.zoomVon + 1)],
+    );
   }
 
   private async starteKarte(): Promise<void> {
@@ -250,8 +271,7 @@ export class KarteComponent implements OnDestroy {
       zoom: ZOOM_MIN,
       minZoom: ZOOM_MIN,
       maxZoom: ZOOM_MAX,
-      maxGrenzen: DEUTSCHLAND,
-      urheber: this.i18n.translate('karte.urheber'),
+      maxGrenzen: MAX_GRENZEN,
       protokoll: { name: 'wert', aufloesen: this.protokoll.aufloesen },
     });
     this.adapter.passeEin(DEUTSCHLAND, this.polster(this.zustand.raste(), this.breit()));

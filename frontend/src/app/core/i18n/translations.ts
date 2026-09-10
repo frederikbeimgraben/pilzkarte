@@ -27,8 +27,6 @@ const de = {
   'karte.rampeVon': '0 %',
   'karte.prozent': '{wert} %',
   'karte.prognoseHinweis': '· Prognose',
-  'karte.urheber':
-    '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> · <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">© OpenMapTiles</a> · Daten von <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
 
   'darstellung.beschriftung': 'Darstellung',
   'darstellung.vorhersage': 'Vorhersage',
@@ -336,8 +334,6 @@ const en: Record<TranslationKey, string> = {
   'karte.rampeVon': '0 %',
   'karte.prozent': '{wert} %',
   'karte.prognoseHinweis': '· Forecast',
-  'karte.urheber':
-    '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> · <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">© OpenMapTiles</a> · Data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
 
   'darstellung.beschriftung': 'View',
   'darstellung.vorhersage': 'Forecast',

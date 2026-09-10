@@ -2,7 +2,7 @@ import { MapLibreAdapter, type KartenOptionen, type MaplibreModul } from './map-
 
 interface Ereignis {
   typ: string;
-  hoerer: () => void;
+  hoerer: (nutzlast: unknown) => void;
 }
 
 /** Eine MapLibre-Karte ohne WebGL, so weit der Adapter sie anfasst. */
@@ -27,21 +27,30 @@ class KarteAttrappe {
     this.stile.push(stil);
   }
 
+  kontrollen: { steuerung: unknown; ort: string }[] = [];
+
   once(typ: string, hoerer: () => void): void {
     this.einmal.set(typ, hoerer);
+    // Die echte Karte meldet `style.load`, sobald der Stil steht.
+    if (typ === 'style.load' && !this.stile.length) hoerer();
   }
 
-  on(typ: string, hoerer: () => void): void {
+  addControl(steuerung: unknown, ort: string): void {
+    this.kontrollen.push({ steuerung, ort });
+  }
+
+  on(typ: string, hoerer: (nutzlast: unknown) => void): void {
     this.hoerer.push({ typ, hoerer });
   }
 
-  off(typ: string, hoerer: () => void): void {
+  off(typ: string, hoerer: (nutzlast: unknown) => void): void {
     const index = this.hoerer.findIndex((e) => e.typ === typ && e.hoerer === hoerer);
     if (index >= 0) this.hoerer.splice(index, 1);
   }
 
-  loese(typ: string): void {
-    for (const eintrag of [...this.hoerer]) if (eintrag.typ === typ) eintrag.hoerer();
+  loese(typ: string, quelle = 'wert-a'): void {
+    const nutzlast = { sourceId: quelle, sourceDataType: 'content', isSourceLoaded: this.quelleFertig };
+    for (const eintrag of [...this.hoerer]) if (eintrag.typ === typ) eintrag.hoerer(nutzlast);
   }
 
   addSource(id: string, quelle: object): void {
@@ -77,6 +86,12 @@ class KarteAttrappe {
     return this.quelleFertig;
   }
 
+  polster: unknown[] = [];
+
+  setPadding(polster: unknown): void {
+    this.polster.push(polster);
+  }
+
   fitBounds(grenzen: unknown, optionen: unknown): void {
     this.eingepasst.push({ grenzen, optionen });
   }
@@ -98,6 +113,11 @@ class KarteAttrappe {
   }
 }
 
+/** Der Urheberhinweis; der Adapter fragt ihn nichts, er setzt ihn nur. */
+class HinweisAttrappe {
+  constructor(readonly optionen: unknown) {}
+}
+
 const OPTIONEN: KartenOptionen = {
   stil: 'hell',
   zentrum: [10.4, 51.2],
@@ -108,7 +128,6 @@ const OPTIONEN: KartenOptionen = {
     [4, 46],
     [16, 56],
   ],
-  urheber: '© OpenStreetMap',
   protokoll: { name: 'wert', aufloesen: () => Promise.resolve({ data: new ArrayBuffer(0) }) },
 };
 
@@ -120,6 +139,7 @@ function modul(): { modul: MaplibreModul; angemeldet: string[]; abgemeldet: stri
     abgemeldet,
     modul: {
       Map: KarteAttrappe as unknown as MaplibreModul['Map'],
+      AttributionControl: HinweisAttrappe as unknown as MaplibreModul['AttributionControl'],
       addProtocol: (name: string) => angemeldet.push(name),
       removeProtocol: (name: string) => abgemeldet.push(name),
     },
@@ -147,10 +167,8 @@ describe('MapLibreAdapter', () => {
     expect(angemeldet).toEqual(['wert']);
     expect(karte.optionen['minZoom']).toBe(5);
     expect(karte.optionen['maxBounds']).toEqual(OPTIONEN.maxGrenzen);
-    expect(karte.optionen['attributionControl']).toEqual({
-      compact: false,
-      customAttribution: '© OpenStreetMap',
-    });
+    expect(karte.optionen['attributionControl']).toBe(false);
+    expect(karte.kontrollen[0].ort).toBe('top-right');
   });
 
   it('legt die erste Woche sofort sichtbar auf die Karte', async () => {
@@ -172,16 +190,49 @@ describe('MapLibreAdapter', () => {
     expect(karte.deckkraft.get('wert-a')).toBe(0);
     expect(karte.ebenen.has('wert-b')).toBe(true);
 
-    karte.loese('idle');
+    karte.loese('sourcedata');
 
     expect(karte.deckkraft.get('wert-a')).toBe(0);
 
     karte.quelleFertig = true;
-    karte.loese('idle');
+    karte.loese('sourcedata', 'wert-b');
+
+    expect(karte.deckkraft.get('wert-a')).toBe(0);
+
+    karte.loese('sourcedata');
 
     expect(karte.deckkraft.get('wert-a')).toBe(1);
     expect(karte.ebenen.has('wert-b')).toBe(false);
     expect(karte.quellen.has('wert-b')).toBe(false);
+  });
+
+  it('zeigt die neue Woche auch dann, wenn eine Kachel ausbleibt', async () => {
+    vi.useFakeTimers();
+    try {
+      const { adapter: a, karte } = await adapter();
+      a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+      karte.quelleFertig = false;
+
+      a.zeigeWert('wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+      vi.advanceTimersByTime(1500);
+
+      expect(karte.deckkraft.get('wert-a')).toBe(1);
+      expect(karte.ebenen.has('wert-b')).toBe(false);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('bringt einen offenen Tausch zu Ende, bevor die dritte Woche kommt', async () => {
+    const { adapter: a, karte } = await adapter();
+    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    karte.quelleFertig = false;
+    a.zeigeWert('wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+
+    a.zeigeWert('wert://art/w42/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+
+    expect(karte.ebenen.size).toBe(2);
+    expect([...karte.deckkraft.values()].some((wert) => wert === 1)).toBe(true);
   });
 
   it('legt dieselbe Woche nicht zweimal auf', async () => {
@@ -200,7 +251,7 @@ describe('MapLibreAdapter', () => {
     karte.ebenen.clear();
 
     a.setzeStil('dunkel');
-    karte.einmal.get('styledata')?.();
+    karte.einmal.get('style.load')?.();
 
     expect(karte.stile).toEqual(['dunkel']);
     expect(karte.quellen.has('wert-b')).toBe(true);
@@ -213,10 +264,8 @@ describe('MapLibreAdapter', () => {
     a.passeEin(OPTIONEN.maxGrenzen, polster);
     a.setzePolster(polster);
 
-    expect(karte.eingepasst[0]).toEqual({
-      grenzen: OPTIONEN.maxGrenzen,
-      optionen: { padding: polster, duration: 0 },
-    });
+    expect(karte.polster[0]).toEqual(polster);
+    expect(karte.eingepasst[0]).toEqual({ grenzen: OPTIONEN.maxGrenzen, optionen: { duration: 0 } });
     expect(karte.bewegt[0]).toEqual({ padding: polster, duration: 220 });
     expect(a.ausschnitt()).toEqual({
       zoom: 7,

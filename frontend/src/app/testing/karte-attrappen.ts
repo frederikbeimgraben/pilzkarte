@@ -20,6 +20,12 @@ export class KartenAttrappe implements MapAdapter {
     ausschnitt: { west: 9.9, sued: 50.9, ost: 10.9, nord: 51.9 },
   };
 
+  gewaermt = 0;
+
+  waermeAuf(): void {
+    this.gewaermt += 1;
+  }
+
   starte(_wirt: HTMLElement, optionen: KartenOptionen): Promise<void> {
     this.optionen = optionen;
     return Promise.resolve();
