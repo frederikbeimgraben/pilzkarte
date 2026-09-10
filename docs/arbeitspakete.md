@@ -357,8 +357,10 @@ Jede angemeldete Person darf ein Bild zu einer Art einreichen. Sichtbar
 wird es erst nach der Prüfung durch jemanden mit dem Recht „Bilder
 freigeben".
 
-- Zustände: eingereicht, freigegeben, abgelehnt. Eine Absage nennt einen
-  Grund, den die einreichende Person sieht.
+- Zustände: eingereicht, freigegeben, abgelehnt. Ablehnen führt in einen
+  eigenen Schritt, der nach dem Grund fragt, mit Vorschlägen wie
+  „unscharf" oder „Art nicht erkennbar". Ohne Grund geht die Absage nicht
+  hinaus. Die einreichende Person sieht ihn.
 - Bis zur Freigabe sieht das Bild nur, wer es eingereicht hat.
 - Unter Konto steht „Meine Bilder" mit dem Zustand je Einreichung.
 - In der Verwaltung eine Liste der offenen Einreichungen mit Freigeben
@@ -373,7 +375,9 @@ Abnahme:
 
 Mit dem passenden Recht lassen sich Arten anlegen, ändern und löschen.
 Beim Anlegen genügen Name, lateinischer Name und Quelle; die Merkmale
-liest ein Vorschlag aus der Quelle und legt sie zum Prüfen bereit. Eine
+liest ein Vorschlag aus der Quelle und legt sie zum Prüfen bereit. Im
+selben Screen stehen die Texte der Art: Kurzbeschreibung, Merkmale,
+Hinweise zu Speisewert und Schutz, der Unterschied je Verwechslung. Eine
 Art mit Karte oder mit Funden lässt sich nicht löschen, nur verbergen.
 Wer ein Feld ändert, steht mit Datum daran. Entwürfe: Artboards 11 bis 13.
 
@@ -401,8 +405,16 @@ Abnahme:
 
 ### G1 Texte in der Datenbank
 
-Die Oberfläche trägt heute ihre Texte im Code. Sie ziehen in die
-Datenbank um und werden mit einer Rolle bearbeitbar.
+Es gibt zwei Sorten Text, an zwei Orten.
+
+- **Texte der Oberfläche** sind die Zeichenketten der App. Sie ziehen in
+  die Datenbank um und stehen in der Verwaltung unter „Texte".
+- **Texte einer Art** sind Kurzbeschreibung, Merkmale, Hinweise zu
+  Speisewert und Schutz sowie der Unterschied zu einer Verwechslung. Sie
+  gehören zur Art und werden dort bearbeitet, im Screen „Art bearbeiten"
+  (Paket J1), nicht in der Verwaltung der Oberfläche.
+
+Dieses Paket betrifft die Texte der Oberfläche.
 
 - Tabelle `text` (Schlüssel, Sprache, Wert, geändert am, geändert von).
   Eine Migration schreibt den Anfangsbestand aus dem heutigen Katalog,
