@@ -303,6 +303,24 @@ Abnahme:
 - Karte ohne Netz im Gebiet bis Zoom 14 vollständig
 - Speicher und Stand je Gebiet, Aktualisieren und Löschen
 
+### F4 Name und Icon
+
+Die App heißt **Primordium**. Ein Primordium ist der Knoten im Myzel, aus
+dem ein Fruchtkörper wird: der Moment vor dem Pilz, und genau den sagt die
+App vorher. Das Icon ist die Silhouette eines Röhrlingshuts mit
+Höhenlinien darin, einfarbig, lesbar ab 32 px.
+
+Umfang: Icon als SVG in mehreren Größen und als maskierbares PNG für die
+PWA, `<title>`, `manifest.webmanifest` (`name`, `short_name`, `icons`,
+Themenfarbe), i18n-Schlüssel `app.title` in beiden Sprachen, README,
+Konzept, Konto-Screen unter Über. Der Ordner und das Repo behalten den
+Namen `pilzkarte`, die Domain bleibt `pilze.beimgraben.net`.
+
+Abnahme:
+- Icon in hell und dunkel auf dem Startbildschirm eines Telefons geprüft
+- Lighthouse PWA-Prüfung ohne Fehler zu den Icons
+- kein Vorkommen von „Pilzkarte“ mehr in der Oberfläche
+
 ### F3 Feinschliff
 
 Onboarding drei Screens, Standort-Knopf, Fehlerzustände, Leistungsbudget,
