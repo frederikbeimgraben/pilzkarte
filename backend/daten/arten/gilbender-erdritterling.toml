@@ -1,0 +1,46 @@
+name = "Gilbender Erdritterling"
+lateinisch = "Tricholoma scalpturatum = gilbender erdritterling + tricholoma scalpturatum var. argyraceum = schmalsporiger gilbender erdritterling"
+gruppe = "ritterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Kenntlich an den beim Reiben gilbenden Lamellen und am ranzig mehligen Geruch. Die Gilbung bleibt oft aus, deshalb ist er schwer zu bestimmen und von den giftigen Erdritterlingen kaum sicher zu trennen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GilbenderErd.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 8, selten bis 9 cm breit, hell silbergrau bis graubraun auf cremegrauem Grund, trocken, filzig und schuppig, mit kleinem Buckel. Rand jung eingebogen und durch weißliche Cortinareste mit dem Stiel verbunden."
+lamellen = "Weiß bis grauweißlich, beim Reiben gilbend, mit Zwischenlamellen, Schneiden etwas wellig."
+stiel = "3 bis 8, selten bis 11 cm hoch und 8 bis 15, selten bis 18 mm dick. Weiß, blassgrau bis graubraun, oft weißlich überfasert, meist glatt, zylindrisch gleich dick, oft verbogen, alt faserig hohl."
+fleisch = "Weißlich, dünn, im Alter gilbend, bei Verletzung höchstens am nächsten Tag. Die Reaktion bleibt nicht selten aus."
+geruch = "Ranzig mehlig."
+geschmack = "Ranzig mehlig, mild, leicht erdig."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz mit verschiedenen Sträuchern, im Mischwald, auf Wiesen sowie in Parks und Gärten. Sehr selten."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Tigerritterling"
+merkmal = "Hut mit grauen, tigerartig angeordneten Schuppen, Lamellen nicht gilbend."
+essbar = "toedlichGiftig"
+slug = "tigerritterling"
+
+[[verwechslungen]]
+name = "Seifenritterling"
+merkmal = "Geruch nach Kernseife, Fleisch bei Verletzung rötend."
+essbar = "giftig"
+slug = "seifenritterling"
+
+[[verwechslungen]]
+name = "Mausgrauer Erdritterling"
+merkmal = "Hut mausgrau und faserig, Lamellen nicht gilbend."
+essbar = "giftig"
+slug = "mausgrauer-erdritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GilbenderErd.htm"

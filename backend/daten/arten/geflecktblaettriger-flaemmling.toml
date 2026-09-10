@@ -1,0 +1,50 @@
+name = "Geflecktblättriger Flämmling"
+lateinisch = "Gymnopilus penetrans"
+gruppe = "schueppling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Kenntlich am stark bitteren Geschmack und an den jung hellgelben, bald orangen und rostfleckigen Lamellen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GefleckterFlaemmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 8, selten bis 12 cm breit, einzelne auch unter 2 oder über 12 cm, sehr größenvariabel. Gelbfuchsig, gelbbraun, fuchsigorange bis zimtbraun, kahl und matt. Rand kann gerieft sein und ist meist heller gelblich-orange."
+lamellen = "Jung hellgelb, bald orange und rostfleckig, dünn, gedrängt, angewachsen bis herablaufend, mit Zwischenlamellen."
+stiel = "4 bis 8, selten bis 12 cm lang und 0,4 bis 0,9, selten bis 1,2 cm dick. Weißlich bis gelblich, weißlich-rotbräunlich überfasert, oft mit faseriger, angedeuteter Ringzone. Basis oft verdickt und mit Myzelfilz."
+fleisch = "Orangegelb, braunocker bis rostbraun, wässrig und faserig."
+geruch = "Nicht unangenehm, holzig."
+geschmack = "Stark bitter."
+sporenpulver = "Gelbbraun."
+vorkommen = "Folgezersetzer an Totholz, meist auf Nadelholzstümpfen und dicken Ästen, oft büschelig wachsend."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rotbrauner Flämmling"
+merkmal = "Hut mehr rotbraun, Lamellen weniger deutlich rostfleckig."
+essbar = "giftig"
+slug = "rotbrauner-flaemmling"
+
+[[verwechslungen]]
+name = "Grünblättriger Schwefelkopf"
+merkmal = "Lamellen jung schwefelgelb, später grünlich, wächst büschelig an Stümpfen."
+essbar = "giftig"
+slug = "gruenblaettriger-schwefelkopf"
+
+[[verwechslungen]]
+name = "Samtschuppiger Tannenflämmling"
+merkmal = "Hut samtig bis feinschuppig, an Nadelholz, ebenfalls bitter."
+essbar = "giftig"
+slug = "samtschuppiger-tannenflaemmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GefleckterFlaemmling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Geflecktblättriger_Flämmling"

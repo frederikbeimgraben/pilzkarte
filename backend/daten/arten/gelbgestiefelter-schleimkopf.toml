@@ -1,0 +1,38 @@
+name = "Gelbgestiefelter Schleimkopf"
+lateinisch = "Cortinarius triumphans"
+gruppe = "schleierling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+speisewertHinweis = "In Deutschland gefährdet (Rote Liste 3), in der Schweiz verletzlich. Besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GelbgestiefelteSchleimkopf.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch gelblich, auf dem Hut rötlich."
+
+[merkmale]
+hut = "5 bis 11, selten bis 13 cm breit, gelbocker, gelbbraun, gelbfuchsig bis rötlichbraun, feucht schleimig bis schmierig. Haut faserig-schuppig, Rand eingerollt und jung mit bräunlichen Velumresten behangen."
+lamellen = "Cremegrau bis grauocker mit violettem oder rosa Schimmer, später ockerbraun, ausgebuchtet angewachsen. Schneiden wellig und weißlich."
+stiel = "Weißlich bis gelbocker, mit braun fuchsigen Velumbändern gegürtelt, zur Basis knollig verdickt."
+fleisch = "Weiß bis leicht hellocker."
+geruch = "Neutral, eventuell etwas nach Hefe."
+geschmack = "Mild."
+sporenpulver = "Ockerbraun."
+vorkommen = "Symbiosepilz bei Birke, im Laubwald sowie in Parks und Gärten. Selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Kuhmaul"
+merkmal = "Lamellen dick, weit stehend und herablaufend, Hut graubraun und schleimig, Stielbasis innen leuchtend gelb."
+essbar = "speisepilz"
+slug = "kuhmaul"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GelbgestiefelteSchleimkopf.htm"

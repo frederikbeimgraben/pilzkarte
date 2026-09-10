@@ -1,0 +1,39 @@
+name = "Gemeine Morchel"
+lateinisch = "Morchella vulgaris"
+gruppe = "morchel"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["fruehling"]
+baeume = []
+speisewertHinweis = "Roh giftig, nur durchgegart essen. Morcheln sind besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GemeineMorchel.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "2 bis 6, selten bis 8 cm breit, hellbraun, graubraun bis rußbraun, rostfarbig gefleckt, ohne Gelbockertöne. Wabenartig mit tiefen Hohlkammern, Hut ohne Einbuchtung mit dem Stiel verwachsen. Die äußeren Rippen verlaufen meist eher waagerecht, bei der Spitzmorchel eher senkrecht."
+stiel = "2,5 bis 4, selten bis 5 cm lang, an der Basis 1,3 bis 3,6, selten bis 4 cm breit. Weißlich, hohl und kammerig, zur Hutspitze pyramidenartig verjüngt."
+fleisch = "Weißlich hellgelb, wachsartig, brüchig und hohl."
+geruch = "Angenehm würzig und pilzig, selten spermatisch."
+geschmack = "Mild, roh giftig."
+sporenpulver = "Weißlich."
+vorkommen = "Folgezersetzer in Auwäldern und Nadelwald-Auwäldern, in Gärten und Parks, auf kalkreichen oder sandigen Böden. Sehr standorttreu."
+zeit = "Frühling, Februar bis Juni."
+
+[[verwechslungen]]
+name = "Zipfellorchel"
+merkmal = "Hut zipfelig gelappt statt wabig gekammert, Rand frei und nicht mit dem Stiel verwachsen."
+essbar = "toedlichGiftig"
+slug = "zipfellorchel"
+
+[[verwechslungen]]
+name = "Dickfüßige Morchel"
+merkmal = "Stiel auffällig dick und breit, der Hut wirkt dagegen klein."
+essbar = "speisepilz"
+slug = "dickfuessige-morchel"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GemeineMorchel.htm"

@@ -1,0 +1,32 @@
+name = "Gelbe Koralle"
+lateinisch = "Ramaria flava"
+gruppe = "stachelbart"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "fichte"]
+speisewertHinweis = "In Deutschland gefährdet (Rote Liste 3) und sehr selten. Den Fund besser stehen lassen. Alte Astspitzen schmecken bitter."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GelbeKoralle1004.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "Einzelne Äste 0,5 bis 1, selten bis 1,2 cm dick, die Büschel bis 15, selten bis 25 cm breit. Gelb, ganz jung etwas weißlich, später goldgelb und schwefelgelb ausblassend. Aus einem weißen Strunk ästig verzweigt. Unterseite jung weißlich, später zunehmend gelblich."
+stiel = "Strunk schwefelgelb, hell dottergelb bis grüngelb, Astspitzen gleichfarbig, Basis weißlich, dick und fest, oft mit fleischroten Flecken. Die Äste stehen sehr gedrängt."
+fleisch = "Schmutzig weiß, im Strunk marmoriert und milchweiß, auf Druck nicht verfärbend, weich und brüchig."
+geruch = "Pilzig würzig, teils unbedeutend bis herb."
+geschmack = "Neutral, an den Spitzen alt bitterlich."
+sporenpulver = "Creme-ocker."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Buche, auch bei Fichte, auf kalkreichem Boden. Sehr selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Goldgelbe Koralle"
+merkmal = "Astspitzen goldgelb bis orange, Strunk ohne die fleischroten Flecken."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GelbeKoralle1004.htm"

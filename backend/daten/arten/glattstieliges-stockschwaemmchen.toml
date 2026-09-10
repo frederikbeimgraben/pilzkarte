@@ -1,0 +1,45 @@
+name = "Glattstieliges Stockschwämmchen"
+lateinisch = "Pholiota lignicola"
+gruppe = "schueppling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Der Stiel ist glatt und dunkel, ohne die braunen Schüppchen des Stockschwämmchens. Wegen der Ähnlichkeit mit dem Gifthäubling nicht sammeln."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GlattstielStockschwamm.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "1 bis 3, selten bis 5 cm breit, hellbraun, dunkelbraun, haselnussbraun, dattelbraun bis gelbbraun, Mitte ausbleichend. Meist mit kleinen braunen bis graubraunen Schüppchen besetzt."
+lamellen = "Hellbraun, beigebraun, nussbraun bis zimtbraun, angeheftet und leicht herablaufend, schmal und gedrängt, mit Zwischenlamellen."
+stiel = "Dunkelbraun, rostbraun bis schwarzbraun, glatt, weißfaserig wie bei den Gifthäublingen, nur selten mit flüchtigem Ring."
+fleisch = "Gelblich, blassbraun, honigbraun bis rostbraun, dünn und brüchig, Basis dunkler braun."
+geruch = "Schwach pilzartig."
+geschmack = "Mild."
+sporenpulver = "Zimtbraun."
+vorkommen = "Folgezersetzer an totem Laubholz, an Stümpfen, Ästen und Holzabfällen, meist büschelig aus einem Strunk."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Geruch muffig nach faulendem Holz, Sporenpulver rostbraun, meist an Nadelholz."
+essbar = "toedlichGiftig"
+slug = "gifthaeubling"
+
+[[verwechslungen]]
+name = "Stockschwämmchen"
+merkmal = "Stiel unterhalb der Ringzone braun geschuppt, mit deutlicherem Ring."
+essbar = "bedingtEssbar"
+slug = "stockschwaemmchen"
+
+[[verwechslungen]]
+name = "Japanisches Stockschwämmchen"
+merkmal = "Hut kräftiger gefärbt, Stiel unter dem Ring deutlich schuppig."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GlattstielStockschwamm.htm"

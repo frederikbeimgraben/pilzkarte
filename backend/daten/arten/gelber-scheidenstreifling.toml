@@ -1,0 +1,38 @@
+name = "Gelber Scheidenstreifling"
+lateinisch = "Amanita contui"
+gruppe = "wulstling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+speisewertHinweis = "Roh giftig, nur durchgegart essen. Er hat wie alle Scheidenstreiflinge keinen Ring, deshalb ist die Scheide an der Basis stets freizulegen und mit den Knollenblätterpilzen zu vergleichen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GelberStreifling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Stielfleisch dunkel weinrot."
+
+[merkmale]
+hut = "3 bis 8, selten bis 11 cm breit, gelb bis orange, Mitte dunkler, Rand heller und auf etwa einem Drittel des Radius stark gerieft. Oberfläche glatt, bei alten Exemplaren Huthaut zweischichtig."
+lamellen = "Weiß, cremefarben bis safranfarben, frei."
+stiel = "Weiß genattert auf hellbraunem bis hell ockerbraunem Grund, alt gern schuppig-sparrig, nach oben verjüngt, im Alter hohl. Basis etwas verdickt, mit weißer, sackartig lappiger und sehr vergänglicher Scheide, ohne Knolle."
+fleisch = "Weiß."
+geruch = "Unbedeutend, neutral."
+geschmack = "Mild, roh giftig."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Laubwald, nur bei Birke. Relativ selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Fuchsiger Scheidenstreifling"
+merkmal = "Hut fuchsig orangebraun statt gelb, Stiel ohne die deutliche Natterung."
+essbar = "bedingtEssbar"
+slug = "fuchsiger-scheidenstreifling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GelberStreifling.htm"

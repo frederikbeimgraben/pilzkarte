@@ -1,0 +1,38 @@
+name = "Gezonter Ohrlappenpilz"
+lateinisch = "Auricularia mesenterica"
+gruppe = "ohrlappenpilz"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = ["esche", "pappel", "buche", "birke"]
+speisewertHinweis = "Fleisch trocken hart und hornartig, ohne Speisewert."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GezonterOhrlappenpilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "Die einzelnen Hütchen 4 bis 12, im Verbund bis 25 cm breit, graubraun bis hellbraun, striegelig-filzig behaart und in verschiedenen Brauntönen bunt gezont. Sie sitzen versetzt nebeneinander und wirken oft violett getönt."
+lamellen = "Unterseite grau, grauweiß, braun, braun-purpurviolett bis beigebraun, alt schwarz. Aderig-faltig, wellig, gallertartig und glatt."
+stiel = "Kein Stiel, die Hütchen sitzen dachziegelig übereinander."
+fleisch = "Grau, weißlich, braun bis blauschwarz. Feucht gallertartig aufgeschwollen, trocken hart und hornartig, gegen das Licht undurchsichtig."
+geruch = "Neutral."
+geschmack = "Unbedeutend."
+sporenpulver = "Weiß, transparent."
+vorkommen = "Folgezersetzer und Weißfäuleerreger an Totholz von Laubbäumen, bevorzugt Esche, Pappel, Buche und Birke, an Stümpfen und an Baumrinde. In Wäldern und Parkanlagen, gern in Auwäldern und Flussniederungen."
+zeit = "Ganzjährig."
+
+[[verwechslungen]]
+name = "Judasohr"
+merkmal = "Dünner und ohrförmig, gegen das Licht durchscheinend, Oberfläche nur fein filzig und nicht bunt gezont."
+essbar = "speisepilz"
+slug = "judasohr"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GezonterOhrlappenpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gezonter_Ohrlappenpilz"
