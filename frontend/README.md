@@ -101,11 +101,34 @@ Eine Vorhersage-Art taugt als Faktor: `ebeneAusArt` bringt sie in die Form
 einer Ebene. Beide tragen Skala, Kachelordner je Woche und ein Histogramm,
 also führt nur ein Weg durch die Anwendung.
 
+### Der Worker von MapLibre
+
+MapLibre 6 liegt als drei ESM-Dateien vor: Bündel, geteilter Teil und Worker.
+Der Worker kommt zur Laufzeit über `new URL('./maplibre-gl-worker.mjs',
+import.meta.url)`; kein Bündler nimmt ihn dabei mit. `angular.json` kopiert
+darum `maplibre-gl-worker.mjs` und `maplibre-gl-shared.mjs` in die Wurzel der
+Ausgabe. Fehlen sie, laufen nur die Rasterebenen: Vektorkacheln und jede
+GeoJSON-Quelle (Marker, Zonen, Funde) bleiben leer, und MapLibre meldet
+„Style is not done loading“.
+
 ### Rollen
 
 Zwei Wertebenen liegen übereinander: `vorhersage` unten, `ebene` darüber. Jede
 Rolle hat eigene Quellen, eine eigene Deckkraft und ihren eigenen Wechsel ohne
 Flackern.
+
+## Eigene Objekte auf der Karte
+
+Marker, Zonen und Funde liegen als eigene GeoJSON-Quellen über den
+Wertebenen: Zonen als Fläche unten, Punkte darüber. Die Farbe steht am
+Feature, nicht in der Schicht, damit jede Zone und jeder Marker die gewählte
+der sechs Farben trägt. Ein geteilter Fund einer geschützten Art kommt vom
+Dienst auf 5 km gerundet; er wird zum großen, blassen Kreis und behauptet so
+keinen Punkt, den es nicht gibt.
+
+Terra Draw zeichnet die Fläche einer Zone und lässt ihre Eckpunkte ziehen. Es
+nimmt nur Koordinaten mit höchstens neun Stellen an; `zonen-zeichner.ts`
+rundet darum auf sechs, rund elf Zentimeter.
 
 ## Werkstattseite
 

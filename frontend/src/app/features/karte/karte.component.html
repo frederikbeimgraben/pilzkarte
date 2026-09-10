@@ -159,9 +159,15 @@
           [deckkraft]="zustand.deckkraft()"
           [zeigtEbene]="zeigtEbene()"
           [vorhersageDarunter]="zustand.vorhersageDarunter()"
+        [zeigeMarker]="zustand.zeigeMarker()"
+        [zeigeZonen]="zustand.zeigeZonen()"
+        [zeigeGeteilteFunde]="zustand.zeigeGeteilteFunde()"
           (hintergrundChange)="zustand.setzeHintergrund($event)"
           (deckkraftChange)="setzeDeckkraft($event)"
           (vorhersageDarunterChange)="zustand.vorhersageDarunter.set($event)"
+        (zeigeMarkerChange)="zustand.zeigeMarker.set($event)"
+        (zeigeZonenChange)="zustand.zeigeZonen.set($event)"
+        (zeigeGeteilteFundeChange)="zustand.zeigeGeteilteFunde.set($event)"
           (schliessen)="ebenenOffen.set(false)"
         />
       </div>

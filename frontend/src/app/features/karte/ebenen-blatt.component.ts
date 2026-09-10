@@ -15,8 +15,8 @@ interface HintergrundWahl {
 
 /**
  * Was auf der Karte liegt, unabhängig von der Darstellung: Hintergrund,
- * Deckkraft der Wertebene und, in der Darstellung Ebene, die Vorhersage
- * darunter. Marker und Zonen kommen später dazu.
+ * Deckkraft der Wertebene, in der Darstellung Ebene die Vorhersage darunter,
+ * und die eigenen Marker, Zonen und die geteilten Funde.
  */
 @Component({
   selector: 'app-ebenen-blatt',
@@ -42,10 +42,16 @@ export class EbenenBlattComponent {
   /** Nur in der Darstellung Ebene lässt sich die Vorhersage darunter legen. */
   readonly zeigtEbene = input(false);
   readonly vorhersageDarunter = input(false);
+  readonly zeigeMarker = input(true);
+  readonly zeigeZonen = input(true);
+  readonly zeigeGeteilteFunde = input(true);
 
   readonly hintergrundChange = output<Hintergrund>();
   readonly deckkraftChange = output<number>();
   readonly vorhersageDarunterChange = output<boolean>();
+  readonly zeigeMarkerChange = output<boolean>();
+  readonly zeigeZonenChange = output<boolean>();
+  readonly zeigeGeteilteFundeChange = output<boolean>();
   readonly schliessen = output();
 
   protected readonly wahlen = computed<HintergrundWahl[]>(() =>

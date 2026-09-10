@@ -4,14 +4,7 @@ import { KARTE_ADAPTER, WERT_ARBEITER } from '../map/karte.tokens';
 import type { Ausschnitt } from '../map/kachel-raster';
 import type { FeatureCollection } from 'geojson';
 import type { Map as MapLibreKarte } from 'maplibre-gl';
-import type {
-  Grenzen,
-  KartenOptionen,
-  MapAdapter,
-  ObjektEbene,
-  Polster,
-  Rolle,
-} from '../map/map-adapter';
+import type { Grenzen, KartenOptionen, MapAdapter, ObjektEbene, Polster, Rolle } from '../map/map-adapter';
 import type { WertAntwort, WertAuftrag } from '../map/wert-nachrichten';
 import type { FaerbeArbeiter } from '../map/wert-protokoll';
 

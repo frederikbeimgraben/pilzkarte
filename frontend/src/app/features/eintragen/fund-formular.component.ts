@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, output, signal } from '@angular/core';
-import { ToastService } from '@stupa-makers/ui-kit';
+import { FormsModule } from '@angular/forms';
+import { CheckboxComponent, ToastService } from '@stupa-makers/ui-kit';
 import type { ArtKurz, Fund, FundEingabe, Sichtbarkeit } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -31,7 +32,9 @@ export interface FundAbgabe {
   imports: [
     ActionBarComponent,
     ArtWahlComponent,
+    CheckboxComponent,
     FormFieldComponent,
+    FormsModule,
     FotoWahlComponent,
     NoteComponent,
     SegmentedComponent,
@@ -63,6 +66,7 @@ export class FundFormularComponent {
   private readonly anzahlWahl = signal<string | null>(null);
   private readonly notizWahl = signal<string | null>(null);
   private readonly sichtbarkeitWahl = signal<Sichtbarkeit | null>(null);
+  private readonly trainingWahl = signal<boolean | null>(null);
 
   protected readonly fotos = signal<readonly File[]>([]);
   protected readonly artWahlOffen = signal(false);
@@ -79,6 +83,10 @@ export class FundFormularComponent {
   protected readonly notiz = computed(() => this.notizWahl() ?? this.start()?.notiz ?? '');
   protected readonly sichtbarkeit = computed(
     () => this.sichtbarkeitWahl() ?? this.start()?.sichtbarkeit ?? 'privat',
+  );
+  // Die Freigabe ist eine bewusste Entscheidung, keine Vorgabe: aus.
+  protected readonly fuerTraining = computed(
+    () => this.trainingWahl() ?? this.start()?.fuerTraining ?? false,
   );
 
   /**
@@ -126,6 +134,10 @@ export class FundFormularComponent {
     this.sichtbarkeitWahl.set(wert === 'geteilt' ? 'geteilt' : 'privat');
   }
 
+  protected setzeTraining(wert: boolean): void {
+    this.trainingWahl.set(wert);
+  }
+
   protected absende(): void {
     const eingabe = this.pruefe();
     if (eingabe !== null) this.absenden.emit({ eingabe, fotos: this.fotos() });
@@ -161,6 +173,7 @@ export class FundFormularComponent {
       anzahl,
       notiz: notiz === '' ? null : notiz,
       sichtbarkeit: this.sichtbarkeit(),
+      fuerTraining: this.fuerTraining(),
     };
   }
 }

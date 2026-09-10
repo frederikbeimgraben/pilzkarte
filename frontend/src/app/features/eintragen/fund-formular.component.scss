@@ -33,6 +33,14 @@
   gap: var(--space-3);
 }
 
+// Der Schalter und sein Satz gehören zusammen; der Satz steht darunter, wie
+// die Unterzeile einer Kennzahl.
+.melden__freigabe {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
 .melden__label {
   margin: 0 0 var(--space-2);
   font-size: var(--fs-sm);

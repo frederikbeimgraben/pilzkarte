@@ -14,6 +14,15 @@
   gap: var(--space-3);
 }
 
+// Zwei Nebenaktionen teilen sich 390 px. Ohne dies wüchse ein langer Text wie
+// „Letzten Punkt entfernen“ aus dem Blatt heraus, statt zu kürzen; der
+// schmalere Innenabstand lässt ihn meist ganz stehen.
+.fuss__reihe > * {
+  --space-5: var(--space-3);
+
+  min-inline-size: 0;
+}
+
 // Der Knopf des Kits füllt seinen Wirt in der Höhe; die Maße der Mockups
 // stehen deshalb hier und nicht im Kit.
 app-button {

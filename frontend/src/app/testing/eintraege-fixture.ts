@@ -14,6 +14,7 @@ export const FUND: Fund = {
   anzahl: 3,
   notiz: 'Unter Fichten am Weg, drei junge, Kappen noch geschlossen.',
   sichtbarkeit: 'geteilt',
+  fuerTraining: true,
   fotos: [{ id: 'foto-eins', breite: 1600, hoehe: 1200, erstelltAm: '2026-09-06T10:00:00+02:00' }],
   erstelltAm: '2026-09-06T10:00:00+02:00',
   geaendertAm: '2026-09-06T10:00:00+02:00',

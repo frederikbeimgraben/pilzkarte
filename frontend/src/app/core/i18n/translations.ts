@@ -67,6 +67,10 @@ const de = {
   'ebenenKnopf.hintergrund': 'Hintergrund',
   'ebenenKnopf.deckkraft': 'Deckkraft der Wertebene',
   'ebenenKnopf.vorhersageDarunter': 'Vorhersage darunter zeigen',
+  'ebenenKnopf.eigenes': 'Eigenes und Geteiltes',
+  'ebenenKnopf.marker': 'Meine Marker',
+  'ebenenKnopf.zonen': 'Zonen',
+  'ebenenKnopf.geteilteFunde': 'Geteilte Funde',
   'ebenenKnopf.fertig': 'Fertig',
   'ebenenKnopf.schliessen': 'Schließen',
 
@@ -298,8 +302,6 @@ const de = {
   'eintragen.zoneUnter': 'Fläche mit eigener Vorhersage anlegen',
   'eintragen.abbrechen': 'Abbrechen',
   'eintragen.speichern': 'Speichern',
-  'eintragen.standort': 'Standort',
-  'eintragen.standortFehler': 'Der Standort ist gerade nicht zu haben.',
   'eintragen.ortFehlt': 'Die Karte steht noch nicht.',
 
   'farbe.gruen': 'Grün',
@@ -335,6 +337,9 @@ const de = {
   'melden.fotoEntfernen': 'Foto {nummer} entfernen',
   'melden.fotoVorschau': 'Foto {nummer}',
   'melden.fotosVoll': 'An einem Fund hängen höchstens drei Fotos.',
+  'melden.training': 'Für das Training freigeben',
+  'melden.trainingUnter':
+    'Der genaue Fundort fließt in das Modell der nächsten Vorhersage ein. Unabhängig von der Sichtbarkeit.',
   'melden.hinweis': 'Ohne Verbindung wird der Fund lokal gespeichert und später übertragen.',
   'melden.gespeichert': 'Der Fund ist gespeichert.',
   'melden.wartet': 'Der Fund wartet auf die Übertragung.',
@@ -592,6 +597,10 @@ const en: Record<TranslationKey, string> = {
   'ebenenKnopf.hintergrund': 'Background',
   'ebenenKnopf.deckkraft': 'Opacity of the value layer',
   'ebenenKnopf.vorhersageDarunter': 'Show the forecast underneath',
+  'ebenenKnopf.eigenes': 'Yours and shared',
+  'ebenenKnopf.marker': 'My markers',
+  'ebenenKnopf.zonen': 'Zones',
+  'ebenenKnopf.geteilteFunde': 'Shared finds',
   'ebenenKnopf.fertig': 'Done',
   'ebenenKnopf.schliessen': 'Close',
 
@@ -823,8 +832,6 @@ const en: Record<TranslationKey, string> = {
   'eintragen.zoneUnter': 'Make an area with its own forecast',
   'eintragen.abbrechen': 'Cancel',
   'eintragen.speichern': 'Save',
-  'eintragen.standort': 'Location',
-  'eintragen.standortFehler': 'The location is not available right now.',
   'eintragen.ortFehlt': 'The map is not ready yet.',
 
   'farbe.gruen': 'Green',
@@ -860,6 +867,9 @@ const en: Record<TranslationKey, string> = {
   'melden.fotoEntfernen': 'Remove photo {nummer}',
   'melden.fotoVorschau': 'Photo {nummer}',
   'melden.fotosVoll': 'A find holds at most three photos.',
+  'melden.training': 'Release for the training',
+  'melden.trainingUnter':
+    'The exact location goes into the model of the next forecast. Independent of the visibility.',
   'melden.hinweis': 'Without a connection the find is kept on the device and sent later.',
   'melden.gespeichert': 'The find is saved.',
   'melden.wartet': 'The find waits to be sent.',

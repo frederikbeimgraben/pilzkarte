@@ -89,6 +89,20 @@ describe('EintraegeApi', () => {
     http.expectOne({ url: `/api/zonen/${ZONE.id}`, method: 'DELETE' }).flush(null);
   });
 
+  it('schickt die Freigabe für das Training mit', () => {
+    const { api, http } = aufbauen();
+
+    api.fundAnlegen({ ...FUND, sichtbarkeit: 'privat', fuerTraining: true }).subscribe();
+    const anlegen = http.expectOne({ url: '/api/funde', method: 'POST' });
+    expect(anlegen.request.body).toMatchObject({ fuerTraining: true });
+    anlegen.flush(FUND);
+
+    api.fundAendern(FUND.id, { fuerTraining: false }).subscribe();
+    const aendern = http.expectOne({ url: `/api/funde/${FUND.id}`, method: 'PATCH' });
+    expect(aendern.request.body).toMatchObject({ fuerTraining: false });
+    aendern.flush(FUND);
+  });
+
   it('fragt den Zonenwert mit Art, Jahr und Woche', () => {
     const { api, http } = aufbauen();
 

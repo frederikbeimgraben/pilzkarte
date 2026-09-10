@@ -39,6 +39,11 @@ export interface Fund {
   anzahl: number | null;
   notiz: string | null;
   sichtbarkeit: Sichtbarkeit;
+  /**
+   * Die Freigabe für das Modell. Sie steht neben der Sichtbarkeit: geteilt
+   * heißt für andere gerundet, für das Training zählt nur der genaue Punkt.
+   */
+  fuerTraining: boolean;
   fotos: Foto[];
   erstelltAm: string;
   geaendertAm: string;
@@ -53,6 +58,8 @@ export interface FundEingabe {
   anzahl?: number | null;
   notiz?: string | null;
   sichtbarkeit: Sichtbarkeit;
+  /** Siehe {@link Fund.fuerTraining}. Ohne Angabe bleibt der Fund draußen. */
+  fuerTraining?: boolean;
 }
 
 /** Was sich an einem Fund ändern lässt. Weggelassene Felder bleiben. */

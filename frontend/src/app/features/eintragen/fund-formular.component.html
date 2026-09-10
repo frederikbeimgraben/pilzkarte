@@ -54,6 +54,12 @@
         (wertChange)="setzeSichtbarkeit($event)"
       />
     </div>
+    <div class="melden__freigabe">
+      <app-checkbox [ngModel]="fuerTraining()" (ngModelChange)="setzeTraining($event)">{{
+        'melden.training' | t
+      }}</app-checkbox>
+      <app-note variante="unter">{{ 'melden.trainingUnter' | t }}</app-note>
+    </div>
     <app-note>{{ 'melden.hinweis' | t }}</app-note>
   </div>
   <app-action-bar

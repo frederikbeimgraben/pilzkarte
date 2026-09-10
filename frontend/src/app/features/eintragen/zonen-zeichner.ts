@@ -17,6 +17,16 @@ export interface ZeichenSitzung {
   beende(): void;
 }
 
+/**
+ * Terra Draw weist Koordinaten mit mehr Stellen zurück. Sechs sind rund elf
+ * Zentimeter; genauer trifft weder der Daumen noch die Karte.
+ */
+const STELLEN = 1e6;
+
+function gerundet(ort: Ort): [number, number] {
+  return [Math.round(ort[0] * STELLEN) / STELLEN, Math.round(ort[1] * STELLEN) / STELLEN];
+}
+
 /** Die Formen, die Terra Draw je nach Zahl der Eckpunkte hält. */
 export type Geometrie =
   | { type: 'Point'; coordinates: [number, number] }
@@ -30,10 +40,9 @@ export type Geometrie =
  */
 export function geometrieFuer(ring: readonly Ort[]): { geometrie: Geometrie; modus: string } | null {
   if (ring.length === 0) return null;
-  if (ring.length === 1) {
-    return { geometrie: { type: 'Point', coordinates: [ring[0][0], ring[0][1]] }, modus: 'point' };
-  }
-  const punkte: [number, number][] = ring.map(([lon, lat]) => [lon, lat]);
+  if (ring.length === 1)
+    return { geometrie: { type: 'Point', coordinates: gerundet(ring[0]) }, modus: 'point' };
+  const punkte = ring.map(gerundet);
   if (ring.length === 2) {
     return { geometrie: { type: 'LineString', coordinates: punkte }, modus: 'linestring' };
   }

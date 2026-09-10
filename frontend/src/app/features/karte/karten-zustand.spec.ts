@@ -1,11 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import {
-  KartenZustand,
-  STANDARD_ART,
-  STANDARD_EBENE,
-  leseObjekt,
-  schreibeObjekt,
-} from './karten-zustand';
+import { KartenZustand, STANDARD_ART, STANDARD_EBENE, leseObjekt, schreibeObjekt } from './karten-zustand';
 
 const LEER = {
   art: null,

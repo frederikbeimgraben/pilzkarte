@@ -175,9 +175,7 @@ export class KarteComponent implements OnDestroy {
    * Über der Karte liegt immer nur ein Blatt. Solange das Eintragen läuft oder
    * ein Objekt offen ist, tritt das Blatt der Karte zurück.
    */
-  protected readonly ueberlagert = computed(
-    () => this.eintragen.laeuft() || this.zustand.objekt() !== null,
-  );
+  protected readonly ueberlagert = computed(() => this.eintragen.laeuft() || this.zustand.objekt() !== null);
 
   protected readonly zeigtEbene = computed(() => this.zustand.darstellung() === 'ebene');
   protected readonly zeigtKombination = computed(() => this.zustand.darstellung() === 'kombination');

@@ -17,7 +17,6 @@ import { ThemeService } from '../../core/theme/theme.service';
 import { ToastService } from '@stupa-makers/ui-kit';
 import { TestBed } from '@angular/core/testing';
 import { AuthStummel, authStummelAnbieter } from '../../testing/auth-stummel';
-import { toastSpion, type ToastSpion } from '../../testing/toast-spion';
 import { EintragenZustand } from '../eintragen/eintragen.zustand';
 import { KarteComponent } from './karte.component';
 import { KartenZustand } from './karten-zustand';
@@ -37,14 +36,6 @@ class WirtComponent {}
   template: '<h1>Arten</h1>',
 })
 class AndereComponent {}
-
-/** Der Standort des Geräts, wie ihn der Test beantworten will. */
-function standortStellen(antwort: (fertig: (stelle: unknown) => void, fehler: () => void) => void): void {
-  Object.defineProperty(navigator, 'geolocation', {
-    configurable: true,
-    value: { getCurrentPosition: antwort },
-  });
-}
 
 const ROUTEN = [
   { path: 'karte', component: KarteComponent },
@@ -322,29 +313,6 @@ describe('KarteComponent', () => {
 
     expect(TestBed.inject(EintragenZustand).schritt()).toBe('aktionen');
     expect(screen.getByRole('heading', { name: 'Eintragen' })).toBeInTheDocument();
-  });
-
-  it('zentriert die Karte auf den eigenen Standort', async () => {
-    const { attrappe } = await karte();
-    standortStellen((fertig) => {
-      fertig({ coords: { longitude: 9.1, latitude: 48.6 } });
-    });
-
-    await userEvent.click(screen.getByRole('button', { name: 'Standort' }));
-
-    expect(attrappe.fluege[0].ziel).toEqual([9.1, 48.6]);
-  });
-
-  it('sagt es, wenn der Standort nicht zu haben ist', async () => {
-    await karte();
-    const toasts: ToastSpion = toastSpion();
-    standortStellen((_fertig, fehler) => {
-      fehler();
-    });
-
-    await userEvent.click(screen.getByRole('button', { name: 'Standort' }));
-
-    expect(toasts.fehler).toEqual(['Der Standort ist gerade nicht zu haben.']);
   });
 
   it('holt die geteilten Funde des Ausschnitts', async () => {

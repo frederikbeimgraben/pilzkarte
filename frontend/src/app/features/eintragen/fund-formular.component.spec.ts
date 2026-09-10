@@ -80,6 +80,7 @@ describe('FundFormularComponent', () => {
       anzahl: 3,
       notiz: 'Unter Fichten',
       sichtbarkeit: 'geteilt',
+      fuerTraining: false,
     });
   });
 
@@ -133,6 +134,20 @@ describe('FundFormularComponent', () => {
     expect(aufbau.toasts.fehler).toEqual(['Die Anzahl ist eine ganze Zahl ab 1.']);
   });
 
+  it('gibt einen Fund erst auf Wunsch für das Training frei', async () => {
+    const aufbau = await aufbauen();
+
+    expect(
+      screen.getByText(
+        'Der genaue Fundort fließt in das Modell der nächsten Vorhersage ein. Unabhängig von der Sichtbarkeit.',
+      ),
+    ).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('checkbox', { name: 'Für das Training freigeben' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Speichern' }));
+
+    expect(aufbau.abgaben[0].eingabe.fuerTraining).toBe(true);
+  });
+
   it('meldet den Abbruch', async () => {
     const aufbau = await aufbauen();
 
@@ -157,6 +172,10 @@ describe('FundFormularComponent', () => {
     expect(screen.getByLabelText('Datum')).toHaveValue('2026-09-06');
     expect(screen.getByLabelText('Anzahl')).toHaveValue(3);
     expect(screen.queryByText('Fotos')).not.toBeInTheDocument();
+    // `ngModel` schreibt den Anfangswert erst nach dem ersten Durchlauf.
+    await vi.waitFor(() =>
+      expect(screen.getByRole('checkbox', { name: 'Für das Training freigeben' })).toBeChecked(),
+    );
   });
 
   it('lässt die Anzahl leer, wenn der Fund keine trägt', async () => {

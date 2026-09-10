@@ -33,6 +33,23 @@
         >
       </section>
     }
+
+    <section class="ebenen-blatt__teil">
+      <h3 class="ebenen-blatt__titel">{{ 'ebenenKnopf.eigenes' | t }}</h3>
+      <div class="ebenen-blatt__schalter">
+        <app-checkbox [ngModel]="zeigeMarker()" (ngModelChange)="zeigeMarkerChange.emit($event)">{{
+          'ebenenKnopf.marker' | t
+        }}</app-checkbox>
+        <app-checkbox [ngModel]="zeigeZonen()" (ngModelChange)="zeigeZonenChange.emit($event)">{{
+          'ebenenKnopf.zonen' | t
+        }}</app-checkbox>
+        <app-checkbox
+          [ngModel]="zeigeGeteilteFunde()"
+          (ngModelChange)="zeigeGeteilteFundeChange.emit($event)"
+          >{{ 'ebenenKnopf.geteilteFunde' | t }}</app-checkbox
+        >
+      </div>
+    </section>
   </div>
   <app-action-bar [haupt]="'ebenenKnopf.fertig' | t" (hauptKlick)="schliessen.emit()" />
 </app-sheet>
