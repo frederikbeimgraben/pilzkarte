@@ -16,6 +16,7 @@ hier ändert, ändert auch die andere Seite.
 | Pfad | Inhalt | Schreibt |
 | --- | --- | --- |
 | `/var/www/pilze` | Angular-Build in der Wurzel. Kacheln `<slug>/z/x/y.png`, Manifeste `<slug>.json`, `layers.json`, `layers_kacheln/`, `funde/` | `deploy/frontend.sh`, `pilze-render` |
+| `/var/www/pilze/karte` | `deutschland.pmtiles`: Vektorkacheln für Deutschland bis Zoom 14 | `tools/pmtiles/hochladen.sh` |
 | `/var/lib/pilze-render` | Arbeitsbaum: `src/`, `models/`, `data/interim/` aus `modell/`, dazu `app/backend/` | `modell/deploy_daten.sh`, `deploy/backend.sh` |
 | `/var/lib/pilze-app` | `pilze.sqlite`, `fotos/` | Dienst `pilze-app` |
 
@@ -79,6 +80,7 @@ Shell.
 | `deploy/frontend.sh` | `~/.ssh/pilze_deploy` | `/var/www/pilze` | Angular-Build. Filter `P /*/` und `P /*.json` schützen Kacheln, Manifeste und Ebenen vor `--delete` |
 | `deploy/backend.sh` | `~/.ssh/pilze_daten` | `/var/lib/pilze-render/app/backend` | Backend. Schreibt `deploy.stamp` in einem zweiten Aufruf |
 | `modell/deploy_daten.sh` | `~/.ssh/pilze_daten` | `/var/lib/pilze-render` | Kette, Modelle, Daten |
+| `tools/pmtiles/hochladen.sh` | `~/.ssh/pilze_deploy` | `/var/www/pilze/karte` | PMTiles-Archiv. Ohne `--delete`, nur bei einer neuen Fassung |
 
 Reihenfolge bei einer Änderung an beiden Seiten: erst `deploy/backend.sh`,
 dann `deploy/frontend.sh`. Die Migration läuft beim Neustart des Dienstes.
