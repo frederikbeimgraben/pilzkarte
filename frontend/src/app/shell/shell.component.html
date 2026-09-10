@@ -6,7 +6,7 @@
     [beschriftung]="'nav.beschriftung' | t"
     [variante]="breit() ? 'spalte' : 'unten'"
   />
-  <main class="huelle__inhalt">
+  <main class="huelle__inhalt" [class.huelle__inhalt--unter]="breit() && !aufDerKarte()">
     <router-outlet />
   </main>
   @if (aufDerKarte()) {

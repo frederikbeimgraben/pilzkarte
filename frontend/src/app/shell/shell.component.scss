@@ -40,8 +40,14 @@
   grid-area: 1 / 1 / 2 / 2;
 }
 
+// Die Seite füllt die ganze Fläche; die Karte braucht beide Spalten. Nur die
+// Karte darf unter der Navigation liegen, jede andere Seite rückt darunter.
 .huelle--spalte .huelle__inhalt {
   grid-area: 1 / 1 / 3 / 3;
+}
+
+.huelle__inhalt--unter {
+  padding-block-start: var(--pilz-nav-hoehe);
 }
 
 .huelle--spalte .huelle__avatar {

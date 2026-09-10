@@ -18,9 +18,11 @@ npm run build     Produktionsbündel, mit Budgets
 ## Aufbau
 
 ```
-src/app/core/     theme, i18n, api, config, kacheln
+src/app/core/     theme, i18n, api, config, kacheln, layout
+src/app/map/      MapLibre hinter einem Adapter, wert://-Protokoll, Färbe-Worker
+src/app/shell/    Navigation und Avatar um die Reiter
 src/app/ui/       die gemeinsamen Bausteine aus CLAUDE.md
-src/app/features/ die Reiter, in A1 noch Platzhalter
+src/app/features/ die Reiter
 src/app/dev/      /bausteine, nur in der Entwicklung
 src/styles/       Maße der Pilzkarte und Hilfsklassen für das Kit
 ```
@@ -56,6 +58,29 @@ Die Tests laufen isoliert (`isolate` im `test`-Ziel). Ohne Isolierung teilen
 sich alle Testdateien eine Umgebung; die Vorgaben aus `src/test-setup.ts`
 greifen dann nur für die erste Datei, und die Sprache der Oberfläche wechselt
 mitten im Lauf.
+
+## Die Karte
+
+Der Hintergrund kommt von OpenFreeMap („liberty“ hell, „dark“ dunkel) und folgt
+dem Theme. MapLibre liegt hinter `MapAdapter`; die Kartenseite kennt es nicht
+und läuft in den Tests ohne WebGL.
+
+Zwei Punkte, die MapLibre anders macht, als man erwartet:
+
+- Es zählt Zoomstufen für 512er-Kacheln. Die Wertkacheln sind 256 Punkte breit,
+  ihre Stufe 5 ist hier die 4.
+- `load` und `idle` bleiben auf dieser Karte aus. Der Wochenwechsel hört darum
+  auf `sourcedata` der neuen Quelle und hat eine Frist als Notbremse.
+
+### `wert://`
+
+Eine Rasterquelle mit der Vorlage `wert://<art>/<wochenordner>/{z}/{x}/{y}`.
+Das Protokoll schlägt die Kachel im Manifest nach: was dort nicht steht, wird
+nie geholt und kommt leer zurück, ohne 404. Alles andere geht an einen Worker.
+Der holt das PNG (ein Byte je Punkt), färbt es über eine Nachschlagetabelle aus
+dem Höchstwert der Art und schickt ein `ImageBitmap` zurück. Die rohen Bytes
+bleiben im Worker, begrenzt auf 16 MB; die Nachbarwochen liegen so schon da,
+bevor jemand sie wählt.
 
 ## Werkstattseite
 

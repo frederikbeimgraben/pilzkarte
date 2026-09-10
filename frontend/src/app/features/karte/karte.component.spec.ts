@@ -39,10 +39,11 @@ async function karte(adresse = '/karte'): Promise<{
   attrappe: KartenAttrappe;
   arbeiter: ArbeiterAttrappe;
   stabil: () => Promise<void>;
+  container: HTMLElement;
 }> {
   manifestAntwort();
   const { karte: attrappe, arbeiter } = karteMitAttrappen();
-  const { fixture, navigate } = await render(WirtComponent, {
+  const { fixture, navigate, container } = await render(WirtComponent, {
     providers: [provideRouter(ROUTEN)],
   });
   const stabil = async (): Promise<void> => {
@@ -52,12 +53,12 @@ async function karte(adresse = '/karte'): Promise<{
   };
   await navigate(adresse);
   await stabil();
-  return { attrappe, arbeiter, stabil };
+  return { attrappe, arbeiter, stabil, container };
 }
 
 describe('KarteComponent', () => {
   it('zeigt Karte, Blattkopf, Zeitleiste und Legende', async () => {
-    const { attrappe } = await karte();
+    const { attrappe, container } = await karte();
 
     expect(screen.getByRole('region', { name: 'Karte von Deutschland' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Steinpilz' })).toBeInTheDocument();
@@ -69,6 +70,7 @@ describe('KarteComponent', () => {
     // MapLibre zählt für 512er-Kacheln: die 4 ist die Stufe 5 der Wertkacheln.
     expect(attrappe.optionen?.minZoom).toBe(4);
     expect(attrappe.optionen?.maxZoom).toBe(14);
+    await keineVerstoesse(container);
   });
 
   it('nimmt ohne Angabe die jüngste gemessene Woche, nicht die Prognose', async () => {
