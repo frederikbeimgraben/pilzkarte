@@ -21,7 +21,7 @@ from app.core.settings import einstellungen
 from app.main import app_bauen
 from app.models import Base
 from app.modules.arten.router import aktueller_katalog
-from tests.objekte import testkatalog
+from tests.objekte import katalog_der_tests
 
 ISSUER = "https://sso.example.test/application/o/pilze/"
 CLIENT_ID = "pilze"
@@ -160,7 +160,7 @@ async def schema() -> AsyncIterator[None]:
 def objekt_app(schema: None) -> FastAPI:  # noqa: ARG001
     """Die App mit Schema und dem Katalog der Tests statt dem der Dateien."""
     gebaut = app_bauen()
-    gebaut.dependency_overrides[aktueller_katalog] = testkatalog
+    gebaut.dependency_overrides[aktueller_katalog] = katalog_der_tests
     return gebaut
 
 

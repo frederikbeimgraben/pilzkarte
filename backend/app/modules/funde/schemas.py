@@ -37,6 +37,9 @@ class FundEingabe(BasisModell):
     anzahl: Anzahl | None = None
     notiz: Notiz | None = None
     sichtbarkeit: Sichtbarkeit = Sichtbarkeit.PRIVAT
+    # Getrennt von der Sichtbarkeit: geteilt heisst gerundet fuer die anderen,
+    # fuer das Training zaehlt nur der genaue Punkt.
+    fuer_training: bool = False
 
 
 class FundAenderung(BasisModell):
@@ -49,6 +52,7 @@ class FundAenderung(BasisModell):
     anzahl: Anzahl | None = None
     notiz: Notiz | None = None
     sichtbarkeit: Sichtbarkeit | None = None
+    fuer_training: bool | None = None
 
 
 class FundAus(BasisModell):
@@ -62,6 +66,7 @@ class FundAus(BasisModell):
     anzahl: int | None
     notiz: str | None
     sichtbarkeit: Sichtbarkeit
+    fuer_training: bool
     fotos: list[FotoAus]
     erstellt_am: Zeitpunkt
     geaendert_am: Zeitpunkt
@@ -103,6 +108,7 @@ def fund_aus(fund: Fund) -> FundAus:
         anzahl=fund.anzahl,
         notiz=fund.notiz,
         sichtbarkeit=fund.sichtbarkeit,
+        fuer_training=fund.fuer_training,
         fotos=[foto_aus(foto) for foto in fund.fotos],
         erstellt_am=fund.erstellt_am,
         geaendert_am=fund.geaendert_am,

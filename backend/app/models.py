@@ -5,7 +5,7 @@ from enum import Enum
 from typing import Final
 from uuid import uuid4
 
-from sqlalchemy import Date, DateTime, Dialect, Float, ForeignKey, String, Text
+from sqlalchemy import Boolean, Date, DateTime, Dialect, Float, ForeignKey, String, Text, false
 from sqlalchemy import Enum as SaEnum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.types import TypeDecorator
@@ -112,6 +112,11 @@ class Fund(Besitztum):
     lon: Mapped[float] = mapped_column(Float)
     datum: Mapped[date] = mapped_column(Date, index=True)
     anzahl: Mapped[int | None] = mapped_column(default=None)
+    # Wer das setzt, gibt den genauen Fundort an die Kette weiter. Die Vorgabe
+    # ist darum nein, und nur der Besitzer kann sie aendern.
+    # Ohne Index: die Kette liest die Liste einmal je Lauf, und eine Spalte
+    # mit zwei Werten hilft SQLite dabei nicht.
+    fuer_training: Mapped[bool] = mapped_column(Boolean, default=False, server_default=false())
 
     fotos: Mapped[list["Foto"]] = relationship(
         back_populates="fund",
