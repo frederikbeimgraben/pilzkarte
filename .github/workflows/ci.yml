@@ -177,3 +177,24 @@ jobs:
       - if: steps.ordner.outputs.da == 'true'
         working-directory: frontend
         run: npm run build
+
+  mo-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: ordner
+        name: Modell vorhanden
+        run: .github/scripts/ordner.sh modell/flake.nix modell C2
+      # Die Kette hängt an numpy, pandas, xarray und lightgbm aus nixpkgs.
+      # modell/flake.nix legt diese Versionen als einzige Stelle fest, und
+      # pip-Räder finden auf NixOS kein libstdc++. Darum Nix statt pip.
+      - if: steps.ordner.outputs.da == 'true'
+        uses: DeterminateSystems/nix-installer-action@v23
+        with:
+          diagnostic-endpoint: ""
+      # Ohne Store-Cache: magic-nix-cache lud den Abschluss der Shell gemessene
+      # 5 min 25 s in den Actions-Cache, bei 3 min 05 s Testlauf. cache.nixos.org
+      # liefert dieselben Pfade schneller, und der Actions-Cache bleibt für npm
+      # und uv frei.
+      - if: steps.ordner.outputs.da == 'true'
+        run: nix develop ./modell -c python -m pytest modell/tests -q
