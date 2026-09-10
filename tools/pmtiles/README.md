@@ -6,7 +6,7 @@ je Gebiet die Kacheln über HTTP-Range und legt sie in IndexedDB ab (F2b).
 Caddy liefert Range-Requests über `file_server`, siehe `docs/betrieb.md`.
 
 ```
-./bauen.sh        # baut arbeit/deutschland.pmtiles, dauert rund eine Stunde
+./bauen.sh        # baut arbeit/deutschland.pmtiles, dauert rund 20 min
 ./hochladen.sh    # rsync nach /var/www/pilze/karte, dann Range- und Show-Probe
 ```
 
@@ -22,6 +22,17 @@ OpenMapTiles. Die Aufrufliste in `bauen.sh` ist die von OpenFreeMap
 (`tilegen/tilegen_lib/planetiler.py`), nur mit `--area=germany`. Damit tragen
 die Kacheln dasselbe Schema und dieselben Felder wie die Online-Karte, und die
 Stile „liberty“ und „dark“ zeichnen offline wie online.
+
+Zwei Argumente weichen ab, damit das Archiv unter 3 GB bleibt. Keines ändert
+das Bild:
+
+| Aufruf | Warum | Größe |
+| --- | --- | --- |
+| wie OpenFreeMap | 84 Sprachen, Merkmal-IDs | 3,25 GB |
+| `--languages=de,en` | Als Beschriftung lesen die Stile allein `name:latin` und `name:nonlatin`. Die App spricht de und en | 3,12 GB |
+| dazu `--exclude-ids` | Merkmal-IDs braucht nur, wer `feature-state` setzt. Die Hintergrundkarte wird bloß gezeichnet | 2,86 GB |
+
+Deutschland bis Zoom 14 hat damit 256 641 Kacheln, die größte 373 kB.
 
 Zwei Wege wurden verworfen:
 

@@ -5,6 +5,19 @@
 # nur mit --area=germany statt planet. Nur so tragen die Kacheln dieselben
 # Felder wie die Online-Karte, und die Stile "liberty" und "dark" passen offline
 # ohne Aenderung.
+#
+# Zwei Abweichungen halten das Archiv unter 3 GB, ohne dass ein Pixel anders
+# aussieht:
+#
+# --languages: nur de und en statt der 84 Sprachen von OpenFreeMap. Die Stile
+# lesen als Beschriftung allein name:latin und name:nonlatin, und die App
+# spricht de und en.
+#
+# --exclude-ids: die Kacheln tragen keine Merkmal-IDs. Die braucht nur, wer
+# feature-state setzt; die Hintergrundkarte wird bloss gezeichnet.
+#
+# Gemessen an Deutschland, Zoom 14: 3,25 GB mit allen Sprachen, 3,12 GB mit
+# de und en, 2,86 GB auch ohne IDs.
 set -euo pipefail
 
 PLANETILER_VERSION=${PLANETILER_VERSION:-v0.10.2}
@@ -43,7 +56,8 @@ nix run nixpkgs#jdk21 -- \
   --storage=mmap \
   --nodemap-type=sparsearray \
   --force \
-  --languages=default,tok \
+  --languages=de,en \
+  --exclude-ids \
   --transliterate=false
 zeit_ende=$(date +%s)
 
