@@ -3,25 +3,64 @@ lateinisch = "Russula vesca"
 gruppe = "taeubling"
 speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "eiche"]
-speisewertHinweis = "Milde Täublinge sind essbar, scharfe nicht."
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["eiche", "buche", "fichte", "hainbuche"]
+speisewertHinweis = "Das beste Merkmal ist die verkürzte Huthaut, die die Lamellen am Rand frei lässt. Sie kann auch bei anderen Täublingen auftreten, deshalb zusätzlich auf den milden Geschmack achten."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Speisetaubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Fleisch lagunenblau bis blaugrün."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Fleisch rosaorange."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Fleisch fleischrosa bis orangerosa."
+
+[[reagenzien]]
+reagenz = "anilin"
+reaktion = "Lamellen gelb bis zitronengelb."
 
 [merkmale]
-hut = "5 bis 10 cm, fleischrosa bis weinbraun, oft blass ausgeblichen. Die Huthaut endet vor dem Rand, dort steht die Lamellenschneide vor."
-lamellen = "Weiß bis cremeweiß, brüchig, am Stiel oft rostfleckig."
-stiel = "Weiß, fest, an der Basis oft gelblich."
-fleisch = "Weiß, fest."
-geruch = "Unauffällig."
+hut = "4 bis 12, selten bis 15 cm breit, bräunlich, fleischfarben, weinbraun, graulila, haselnuss-, stein- oder purpurbraun, kaum bunt und dabei ausblassend, selten grün. Die Huthaut deckt die Lamellen nicht ganz, diese stehen am Rand etwas vor. Sie lässt sich zu etwa einem Drittel abziehen."
+lamellen = "Weiß, später etwas gelblich, schnell braunfleckig, alte Schneiden bräunend, am Stielansatz gegabelt. Sie ragen über den Hutrand."
+stiel = "3 bis 11, selten bis 12 cm hoch, 1 bis 3, selten bis 4 cm dick, weiß, nie rötlich überhaucht, alt meist gelbbraun fleckend, Basis oft verdickt."
+fleisch = "Weiß, fest, brüchig, kompakt."
+geruch = "Angenehm."
 geschmack = "Mild, nussig."
-sporenpulver = "Weiß bis cremeweiß."
-vorkommen = "Mykorrhiza mit Buche und Eiche, auf mäßig sauren Böden."
-zeit = "Juni bis Oktober."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald, gern im sauren Laub- oder Nadelwald bei Eiche, Buche, Fichte und Hainbuche, auf sandigen, leicht lehmigen, sauren bis neutralen Böden. Sehr häufig."
+zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Scharfe Täublinge"
-merkmal = "Geschmack brennend scharf, Huthaut reicht bis zum Rand."
+name = "Kiefernspeitäubling"
+merkmal = "Hut blut- bis kirschrot, alt mattrot, Stiel weiß ohne Rottöne."
+essbar = "giftig"
+slug = "kiefernspeitaeubling"
+
+[[verwechslungen]]
+name = "Birkenspeitäubling"
+merkmal = "Hut weißlich, blass rosa bis rosenrot, Lamellen sehr zerbrechlich, Stiel weiß und brüchig."
+essbar = "giftig"
+slug = "birkenspeitaeubling"
+
+[[verwechslungen]]
+name = "Buchenspeitäubling"
+merkmal = "Hut zinnoberrot bis karminrot, Lamellen weiß, im Alter gelblich, ausgebuchtet angewachsen."
+essbar = "giftig"
+slug = "buchenspeitaeubling"
+
+[[verwechslungen]]
+name = "Flammstieltäubling"
+merkmal = "Hut blut- bis kirschrot, Stiel weiß und rot geflammt."
 essbar = "ungeniessbar"
+slug = "flammstieltaeubling"
 
 [[links]]
 titel = "123pilzsuche.de"

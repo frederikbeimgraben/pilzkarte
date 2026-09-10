@@ -3,25 +3,55 @@ lateinisch = "Craterellus tubaeformis"
 gruppe = "leistling"
 speisewert = "speisepilz"
 geschuetzt = true
-jahreszeiten = ["herbst"]
-baeume = ["fichte", "buche"]
-schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Trompetenpfifferlinge standen früher dort und werden mit ihnen geschützt."
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Gut zum Trocknen und als Mischpilz. Beim Putzen den hohlen Stiel prüfen, dort sitzen oft Schnecken und Insekten. Alte, nicht mehr brauchbare Stücke verfärben sich schwärzlich."
+schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Der Trompetenpfifferling steht heute meist als Craterellus tubaeformis und wird hier mit ihnen geschützt."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Trompetenpfifferlinge.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "2 bis 6 cm, graubraun, in der Mitte durchbohrt trichterig, Rand wellig."
-leisten = "Weit stehende, gegabelte graue Leisten, herablaufend."
-stiel = "Dünn, hohl, gelb bis orangegelb, oft gebogen."
-fleisch = "Dünn, zäh, blassgelb."
-geruch = "Schwach fruchtig."
+hut = "1 bis 7, selten bis 9 cm breit, gelbbraun, in der Mitte gefurcht und radial wellig."
+leisten = "Graugelb, gegabelt, herablaufend, fest mit dem Fleisch verwachsen."
+stiel = "3 bis 10, selten bis 16 cm lang, 2 bis 5, selten bis 7 mm dick, gelblich bis gelbbraun, schlank, faserig, hohl, Basis heller, Myzel weiß bis blass gelblich."
+fleisch = "Dünn, weich, faserig, gelblich."
+geruch = "Schwach obstartig, fruchtig."
 geschmack = "Mild."
-sporenpulver = "Weißlich."
-vorkommen = "In feuchtem Moos unter Fichte und Buche, gern an morschem Holz und in Hangwäldern. Erscheint in großen Trupps."
-zeit = "August bis Dezember, hält Frost aus."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Laub- und Nadelwald, gern bei Heidelbeeren. Regional sehr häufig."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Flämmiger Saftling"
+merkmal = "Nur 1 bis 2, selten bis 3 cm breit, Hut gelb, goldgelb bis orange, mit echten Lamellen statt Leisten."
+essbar = "giftig"
+slug = "flaemmiger-saftling"
+
+[[verwechslungen]]
+name = "Grüngelber Nabeling"
+merkmal = "1 bis 3, selten bis 4 cm breit, Hut gelb, olivgelb bis grüngelb, mit dicklichen gelben Lamellen."
+essbar = "ungeniessbar"
+slug = "gruengelber-nabeling"
+
+[[verwechslungen]]
+name = "Mehltrichterling"
+merkmal = "Hut dunkelgrau bis graubraun und hellgrau bereift, mit grauen Lamellen, wächst in Wiesen."
+essbar = "ungeniessbar"
+slug = "mehltrichterling"
 
 [[verwechslungen]]
 name = "Gelbstieliger Trompetenpfifferling"
-merkmal = "Unterseite fast glatt statt geleistet, Stiel leuchtend gelb."
+merkmal = "Stiel leuchtend gelb statt gelbbraun."
 essbar = "speisepilz"
+slug = "gelbstieliger-trompetenpfifferling"
+
+[[verwechslungen]]
+name = "Schwärzender Leistling"
+merkmal = "Größer, Hut eidottergelb bis braungelb, Fleisch bei Verletzung und im Alter schwärzend."
+essbar = "essbar"
+slug = "schwaerzender-leistling"
 
 [[links]]
 titel = "123pilzsuche.de"

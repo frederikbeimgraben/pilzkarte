@@ -3,35 +3,48 @@ lateinisch = "Boletus reticulatus"
 gruppe = "roehrling"
 speisewert = "speisepilz"
 geschuetzt = true
-jahreszeiten = ["fruehling", "sommer"]
-baeume = ["buche", "eiche", "hainbuche"]
-schutzHinweis = "Die Verordnung nennt Boletus edulis und Boletus aereus. Diese App behandelt die nahen Verwandten gleich, weil sie im Wald kaum zu trennen sind."
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche", "linde", "kastanie"]
+schutzHinweis = "Die Verordnung nennt Boletus edulis, Boletus aereus und Boletus appendiculatus, nicht aber Boletus reticulatus. Dieses Projekt behandelt ihn gleich."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Sommersteinpilz2004.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "8 bis 20 cm, hell hasel- bis lederbraun, matt und feinfilzig, im Alter oft felderig aufreißend."
-roehren = "Jung weiß, dann gelb bis oliv. Mündungen fein."
-stiel = "Kräftig, hellbraun, über die ganze Länge fein weiß genetzt."
-fleisch = "Weiß, fest, ohne Farbwechsel."
-geruch = "Angenehm pilzig."
-geschmack = "Mild, nussig."
+hut = "4 bis 22, selten bis 28 cm breit, hell lederbraun, ockerbraun, blass bräunlich, milchkaffee- bis haselnussbraun, Huthaut oft uneben. Jung halbkugelig und fest geschlossen, später polsterförmig bis flach. Matt, feinfilzig bis samtig und trocken, bei Nässe feucht, aber nie schleimig. Bei Trockenheit reißt die Huthaut felderig auf und lässt in den Rissen das weiße Fleisch sehen."
+roehren = "Weißlich, gelblich, gelbgrün, alt olivgrün."
+stiel = "5 bis 15 cm lang, 2 bis 5 cm dick, weißlich, blassbraun, bräunlich überfasert. Mit weißem, im Alter bräunlichem Netz, das erhaben fühlbar ist und von der Spitze bis weit zur Basis reicht. Die Maschen sind weißlich bis hellbraun."
+fleisch = "Weißlich, nicht verfärbend, unter der Huthaut weiß und nicht rotbräunlich wie beim Fichtensteinpilz."
+geruch = "Nussig, der typische Steinpilzgeruch."
+geschmack = "Mild, pilzig, nussig."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Buche, Eiche und Hainbuche, gern in warmen Laubwäldern auf besseren Böden."
-zeit = "Mai bis September, oft der erste Steinpilz des Jahres."
+vorkommen = "Symbiosepilz im Mischwald, gern bei Eiche, Buche, Linde und Esskastanie."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
-essbar = "ungeniessbar"
-
-[[verwechslungen]]
-name = "Steinpilz"
-merkmal = "Hut dunkler und glatt, Netz nur im oberen Stielteil, später im Jahr."
-essbar = "speisepilz"
-
-[[verwechslungen]]
-name = "Satansröhrling"
-merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
+merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
 essbar = "giftig"
+slug = "gallenroehrling"
+
+[[verwechslungen]]
+name = "Fichtensteinpilz"
+merkmal = "Netz nur im oberen Stielteil, unter der Huthaut eine rotbräunliche Zone."
+essbar = "speisepilz"
+slug = "steinpilz"
+
+[[verwechslungen]]
+name = "Maronenröhrling"
+merkmal = "Hut glatt und feucht, Röhren gelblich bis grüngelb und auf Druck blaugrün, Stiel ohne Netz."
+essbar = "speisepilz"
+slug = "maronenroehrling"
+
+[[verwechslungen]]
+name = "Schwarzhütiger Steinpilz"
+merkmal = "Hut kastanien- bis schwarzbraun oder hell bronzefarben, Stiel faserig rillig."
+essbar = "speisepilz"
+slug = "schwarzhuetiger-steinpilz"
 
 [[links]]
 titel = "123pilzsuche.de"

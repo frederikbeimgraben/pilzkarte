@@ -4,34 +4,62 @@ gruppe = "roehrling"
 speisewert = "speisepilz"
 geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["fichte", "kiefer", "buche", "eiche"]
+baeume = ["fichte", "tanne", "kiefer", "eiche", "hainbuche", "linde", "kastanie", "buche", "birke"]
 karte = "boletus_edulis"
+speisewertHinweis = "Bei einem Fund ohne oder mit kaum sichtbarem Netz am Stiel und mit gelblichen Röhren entscheidet eine Geschmacksprobe, ob ein bitterer Gallenröhrling vorliegt."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch blass braun."
+
+[[reagenzien]]
+reagenz = "melzer"
+reaktion = "Fleisch ocker mit graugrüner Schattierung."
 
 [merkmale]
-hut = "6 bis 25 cm, hell- bis dunkelbraun, jung halbkugelig, später polsterförmig. Rand oft heller, Haut trocken, bei Nässe leicht klebrig."
-roehren = "Jung weiß und fest, später gelb bis olivgrün. Mündungen fein, am Stiel ausgebuchtet, auf Druck ohne Farbwechsel."
-stiel = "5 bis 20 cm, dick und bauchig, blass beige, im oberen Teil mit feinem weißem Netz."
-fleisch = "Weiß, fest, unter der Huthaut oft bräunlich. Verfärbt sich beim Anschnitt nicht."
-geruch = "Angenehm pilzig, im Alter etwas süßlich."
-geschmack = "Mild und nussig, auch roh nicht bitter."
+hut = "4 bis 20, selten bis 25 cm breit, wildlederartig braun bis haselnussbraun. Der Rand bleibt lange eingerollt und ist meist weiß."
+roehren = "Weißlich, gelblich, gelbgrün, später olivgrün, vereinzelt auf Druck bläulich bis grünlich. Ganz jung sind sie verschlossen wie Bienenwaben, beim Gallenröhrling ist das nicht so."
+stiel = "Weißlich, bräunlich überfasert, mit weißem, im Alter bräunlichem Netz."
+fleisch = "Weißlich, nicht verfärbend, unter der Huthaut mit einer kurzen rotbräunlichen Zone, anders als beim weißen Sommersteinpilz. Der Kiefernsteinpilz zeigt dieselbe Zone."
+geruch = "Sehr angenehm, pilzig."
+geschmack = "Mild, angenehm pilzig."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Fichte, Kiefer, Buche und Eiche. Auf sauren bis neutralen Böden, gern an Wegrändern, Lichtungen und Waldrändern."
-zeit = "Juni bis November, Schwerpunkt September und Oktober."
+vorkommen = "Symbiosepilz im Mischwald, gern bei Fichte, Tanne und Kiefer, seltener bei Eiche, Hainbuche, Linde, Kastanie, Buche, Birke und anderen Laubbäumen."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
-essbar = "ungeniessbar"
+merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
+essbar = "giftig"
+slug = "gallenroehrling"
+
+[[verwechslungen]]
+name = "Maronenröhrling"
+merkmal = "Hut dunkel- bis hellbraun und feucht glatt, Röhren auf Druck blaugrün, Stiel ohne Netz."
+essbar = "speisepilz"
+slug = "maronenroehrling"
 
 [[verwechslungen]]
 name = "Sommersteinpilz"
-merkmal = "Hut heller, oft felderig rissig, Netz feiner und über den ganzen Stiel. Ebenso essbar."
+merkmal = "Netz zieht sich über den ganzen Stiel, Fleisch unter der Huthaut weiß, Huthaut bei Trockenheit felderig rissig."
 essbar = "speisepilz"
+slug = "sommersteinpilz"
 
 [[verwechslungen]]
-name = "Satansröhrling"
-merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
-essbar = "giftig"
+name = "Kiefernsteinpilz"
+merkmal = "Hut rotbraun, weinrot bis purpurbraun, Stiel nuss- bis rotbräunlich."
+essbar = "speisepilz"
+slug = "kiefernsteinpilz"
+
+[[verwechslungen]]
+name = "Gelbfleckiger Steinpilz"
+merkmal = "Hut hell ockerbraun bis dottergelb, Röhren satt gelb und nicht blauend, Stiel dünner."
+essbar = "essbar"
+slug = "gelbfleckiger-steinpilz"
 
 [[links]]
 titel = "123pilzsuche.de"

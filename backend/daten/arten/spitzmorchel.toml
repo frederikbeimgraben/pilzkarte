@@ -4,28 +4,34 @@ gruppe = "morchel"
 speisewert = "bedingtEssbar"
 geschuetzt = true
 jahreszeiten = ["fruehling"]
-baeume = ["esche", "fichte"]
-speisewertHinweis = "Roh giftig. Mindestens 15 Minuten garen."
+baeume = []
+speisewertHinweis = "Roh giftig. Gut durchgaren. Besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Spitzmorchel.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "4 bis 12 cm, kegelig und spitz, oliv- bis schwarzbraun, mit senkrechten Rippen und quer geteilten Kammern. Am Stiel angewachsen."
-stiel = "Weißlich, hohl, kleiig."
-fleisch = "Dünn, der Pilz ist durchgehend hohl."
-geruch = "Würzig."
-geschmack = "Mild. Roh nicht kosten."
-sporenpulver = "Cremeweiß."
-vorkommen = "In Auwäldern, auf Brandstellen, in Rindenmulch und unter Nadelholz, oft in Gärten und Beeten."
-zeit = "April bis Mai."
+fruchtkoerper = "5 bis 15, selten bis 20 cm hoch und 3 bis 8 cm breit, olivbeige, dunkel gelbbraun bis graubraun, alt schwärzlich, hohl. Zugespitzt, der Rand ist ganz mit dem Stiel verwachsen. Fast schwarze Formen sind die Schwarze Spitzmorchel und die Gerippte Morchel, rötliche die Fleischfarbene Spitzmorchel. Alle sind ebenso essbar."
+stiel = "Weiß, ockergelb bis hellbräunlich, körnig, kammerig hohl. Ein rosa Stiel weist auf die Rosastielige Spitzmorchel hin, die ebenso essbar ist."
+fleisch = "Weißlich, dünn, wachsartig, brüchig, im Stiel knorpelig und kammerig hohl."
+geruch = "Angenehm."
+geschmack = "Mild. Roh ist er giftig."
+sporenpulver = "Weißlich bis cremefarben."
+vorkommen = "Folgezersetzer, häufig in Rindenmulch, dazu in Auwäldern, Parks, Gärten, an Waldrändern, auf Brandstellen und Waldwiesen, sehr standorttreu."
+zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai, andernorts bis Juni."
 
 [[verwechslungen]]
-name = "Frühjahrslorchel"
-merkmal = "Kappe hirnartig gewunden, keine Kammern."
-essbar = "giftig"
+name = "Zipfellorchel"
+merkmal = "Hut 4 bis 11, selten bis 14 cm breit, bräunlich, aderig und zipfelmützenartig hoch gestellt, ohne Waben oder Kammern."
+essbar = "toedlichGiftig"
+slug = "zipfellorchel"
 
 [[verwechslungen]]
-name = "Böhmische Verpel"
-merkmal = "Kappe längsrunzelig und nur am Scheitel befestigt."
-essbar = "nichtEmpfohlen"
+name = "Speisemorchel"
+merkmal = "Käppchen eiförmig mit runden Waben statt Längsrippen, gelb bis hellbraun."
+essbar = "bedingtEssbar"
+slug = "speisemorchel"
 
 [[links]]
 titel = "123pilzsuche.de"

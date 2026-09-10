@@ -1,27 +1,60 @@
 name = "Stockschwämmchen"
 lateinisch = "Kuehneromyces mutabilis"
 gruppe = "schueppling"
-speisewert = "speisepilz"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
-baeume = ["buche", "birke"]
-speisewertHinweis = "Nur für Sammler, die den Gifthäubling sicher kennen. Jeden Fruchtkörper einzeln prüfen, nie ganze Büschel abschneiden."
+baeume = []
+speisewertHinweis = "Nicht roh essen. Nur für Sammler, die den tödlich giftigen Gifthäubling sicher trennen: jeden Fruchtkörper einzeln mit Stiel prüfen, nie ganze Büschel abschneiden. Das Stockschwämmchen hat unter dem häutigen Ring deutliche Schüppchen und riecht pilzig, der Gifthäubling ist dort seidig faserig und silbrig. Eine Pilzberatung gibt Stockschwämmchen ohne Stiel nicht frei. Die Stiele sind sehr zäh und taugen höchstens als Pilzpulver."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Stockschwaemmchen.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Ohne Reaktion auf dem Hut."
 
 [merkmale]
-hut = "2 bis 6 cm, ockerbraun, beim Abtrocknen von der Mitte her hell werdend. Das gibt einen zweifarbigen Ring auf dem Hut."
-lamellen = "Jung blass, dann zimtbraun, am Stiel angewachsen."
-stiel = "Mit häutigem Ring, darunter dunkelbraun und deutlich abstehend schuppig."
-fleisch = "Blass, dünn."
-geruch = "Angenehm pilzig."
-geschmack = "Mild."
-sporenpulver = "Rostbraun."
-vorkommen = "Zersetzer an Laubholzstümpfen, vor allem Buche und Birke, in dichten Büscheln."
-zeit = "April bis November."
+hut = "1 bis 10, selten bis 15 cm breit, hellbraun, dunkelbraun bis haselnussbraun, von der Mitte her ausbleichend, meist mit kleinen braunen bis graubraunen Schüppchen."
+lamellen = "Hellbraun, nussbraun bis zimtbraun, angeheftet, schmal, gedrängt, leicht herablaufend, mit Zwischenlamellen."
+stiel = "1 bis 10, selten bis 15 cm lang, 3 bis 12, selten bis 18 mm dick. Oberhalb des Rings hellgelb und glatt, darunter mit abstehenden gelbbraunen bis kastanienbraunen Schüppchen auf gelbweißem Grund, zur Basis dunkler braun, überwiegend hohl. Ring häutig, aufsteigend, bräunlich und vergänglich."
+fleisch = "Dünn, gelblich bis blassbraun oder rostbraun, an der Basis dunkler braun."
+geruch = "Angenehm pilzig, würzig."
+geschmack = "Mild, nussig, würzig."
+sporenpulver = "Rostbraun bis zimtbraun."
+vorkommen = "Folgezersetzer an totem Laubholz, an Stümpfen und Ästen, über 700 Meter Höhe vereinzelt auch an Nadelholz. Meist büschelig aus einem Strunk."
+zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
 name = "Gifthäubling"
-merkmal = "Stiel unter dem Ring silbrig faserig statt schuppig, Geruch mehlig, meist an Nadelholz. Tödlich giftig."
+merkmal = "Stiel unter dem Ring nicht schuppig, sondern seidig faserig und silbrig, Ring dünn und faserig."
 essbar = "toedlichGiftig"
+slug = "gifthaeubling"
+
+[[verwechslungen]]
+name = "Grünblättriger Schwefelkopf"
+merkmal = "Hut kahl, gelb bis schwefelgelb oder grünlich, Lamellen grün bis grüngelb, alt olivbräunlich."
+essbar = "giftig"
+slug = "gruenblaettriger-schwefelkopf"
+
+[[verwechslungen]]
+name = "Feuchtstellen-Schüppling"
+merkmal = "Hut kastanienbraun bis gelbocker, Lamellen hell cremegelb, später zimtbraun, alt dunkel purpurbraun."
+essbar = "ungeniessbar"
+slug = "feuchtstellen-schueppling"
+
+[[verwechslungen]]
+name = "Glattstieliges Stockschwämmchen"
+merkmal = "Kleiner, 1 bis 3, selten bis 5 cm breit, Stiel dunkelbraun bis schwarzbraun und glatt, nur selten mit Schüppchen."
+essbar = "ungeniessbar"
+slug = "glattstieliges-stockschwaemmchen"
+
+[[verwechslungen]]
+name = "Rauchblättriger Schwefelkopf"
+merkmal = "Hut ockerbraun bis gelbbraun und kahl, ohne Schüppchen, Lamellen grau bis graulila, nie gelb oder grün."
+essbar = "essbar"
+slug = "rauchblaettriger-schwefelkopf"
 
 [[links]]
 titel = "123pilzsuche.de"

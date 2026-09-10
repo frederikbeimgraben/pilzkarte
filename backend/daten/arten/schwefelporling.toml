@@ -4,23 +4,57 @@ gruppe = "porling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["fruehling", "sommer"]
-baeume = ["eiche", "weide", "obstbaum"]
-speisewertHinweis = "Nur junge, saftige Ränder und gut durchgegart. An Robinie und Eibe stehen lassen: dort kommen Unverträglichkeiten vor."
+baeume = ["buche", "eiche", "weide", "birke", "laerche", "obstbaum"]
+speisewertHinweis = "Roh unverträglich wegen Oxalsäure. Nur junge Stücke, in etwa 1 cm dicke Scheiben schneiden, zehn Minuten in Salzwasser kochen und das Kochwasser weggießen. Funde an Eibe und Goldregen stehen lassen, der Pilz kann das Gift des Baumes aufnehmen. Auch Funde aus Obstplantagen meiden, wegen der Spritzmittel. Die DGfM nennt gelegentlich Magen-Darm-Beschwerden und allergische Reaktionen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Schwefelporling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Ohne Reaktion auf Fleisch, Poren und Hut."
 
 [merkmale]
-hut = "10 bis 40 cm breit, in dachigen Konsolen übereinander, schwefelgelb bis orange, wellig, im Alter blass kreidig."
-poren = "Schwefelgelb, fein, auf der Unterseite."
-fleisch = "Jung saftig und weich, weiß bis gelb, im Alter trocken, brüchig und geschmacklos."
-geruch = "Säuerlich, pilzig."
-geschmack = "Mild bis leicht säuerlich."
+fruchtkoerper = "5 bis 30, selten bis 50 cm breit, orange, hellgelb, gelbbraun bis blass gelblich, alt weiß. Fächerförmig und dachziegelartig übereinander, samtig."
+poren = "Gelb, alt weiß."
+stiel = "Kein Stiel. Der Fruchtkörper sitzt waagrecht am Stamm."
+fleisch = "Gelb, alt weiß ausbleichend, jung weich und elastisch, im Alter hart, trocken, brüchig und zäh."
+geruch = "Aromatisch, säuerlich, pilzig, obstartig."
+geschmack = "Säuerlich, alt nach Käse. An Hartholz wie Buche und Eiche oft bitterlich, an Weide und Birke immer mild."
 sporenpulver = "Weiß."
-vorkommen = "Schwächeparasit an Eiche, Weide, Robinie und Obstbäumen, hoch am Stamm und an Wunden."
+vorkommen = "An Laubbäumen, in höheren Lagen auch bei Lärche. Parasit oder Folgezersetzer, löst Braunfäule aus, Fruchtkörper einjährig. Auf Nadelholz wächst stattdessen der Nadelholzschwefelporling."
 zeit = "Mai bis September."
 
 [[verwechslungen]]
-name = "Zaunblättling und andere gelbe Porlinge"
-merkmal = "Fleisch zäh und korkig, nicht saftig."
+name = "Zimtfarbener Weichporling"
+merkmal = "Fleisch dickfleischig, weich und zimtbraun bis rosabraun, nicht gelb."
+essbar = "toedlichGiftig"
+slug = "zimtfarbener-weichporling"
+
+[[verwechslungen]]
+name = "Duftender Goldporling"
+merkmal = "Liegt dem Holz flach auf, ohne abstehende Fächer, Myzel orangerot."
 essbar = "ungeniessbar"
+slug = "duftender-goldporling"
+
+[[verwechslungen]]
+name = "Leuchtender Weichporling"
+merkmal = "Flach am Substrat angewachsen, Fleisch gelblich bis orangerot, jung weich und saftig."
+essbar = "ungeniessbar"
+slug = "leuchtender-weichporling"
+
+[[verwechslungen]]
+name = "Riesenporling"
+merkmal = "Hut jung fast weiß, später hellbraun, Fleisch weiß und im Schnitt langsam braunschwarz anlaufend."
+essbar = "ungeniessbar"
+slug = "riesenporling"
+
+[[verwechslungen]]
+name = "Nadelholzschwefelporling"
+merkmal = "Sieht gleich aus, wächst aber an Nadelholz, meist Fichte und Tanne."
+essbar = "essbar"
+slug = "nadelholzschwefelporling"
 
 [[links]]
 titel = "123pilzsuche.de"
