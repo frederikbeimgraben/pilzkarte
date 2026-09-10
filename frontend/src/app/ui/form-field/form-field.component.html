@@ -28,7 +28,7 @@
 } @else {
   <input
     class="feld"
-    type="text"
+    [type]="typ()"
     [id]="feldId"
     [value]="wert()"
     [attr.placeholder]="platzhalter() || null"

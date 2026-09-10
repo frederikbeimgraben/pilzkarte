@@ -113,7 +113,7 @@ export class BausteineComponent {
   protected readonly faktorAktiv = signal(true);
   protected readonly von = signal(80);
   protected readonly bis = signal(240);
-  protected readonly farbe = signal(OBJEKT_FARBEN[0]);
+  protected readonly farbe = signal<string>(OBJEKT_FARBEN[0]);
   protected readonly notizWert = signal('');
 
   constructor() {
