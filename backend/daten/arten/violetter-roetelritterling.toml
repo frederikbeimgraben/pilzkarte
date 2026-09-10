@@ -31,19 +31,19 @@ slug = "bocksdickfuss"
 [[verwechslungen]]
 name = "Nebelkappe"
 merkmal = "Hut graubraun bis weißgrau und etwas radialfaserig, Lamellen weißlich bis cremegelb und herablaufend."
-essbar = "nichtEmpfohlen"
+essbar = "giftig"
 slug = "nebelkappe"
 
 [[verwechslungen]]
 name = "Lilastieliger Rötelritterling"
 merkmal = "Hut grauviolett bis graubräunlich statt lilaviolett, Lamellen nur weißlich lila."
-essbar = "bedingtEssbar"
+essbar = "speisepilz"
 slug = "lilastieliger-roetelritterling"
 
 [[verwechslungen]]
 name = "Lavendelfarbener Rötelritterling"
 merkmal = "Hut rötlichlila bis lavendelfarben, ebenfalls hygrophan."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "lavendelfarbener-roetelritterling"
 
 [[verwechslungen]]

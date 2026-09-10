@@ -25,6 +25,7 @@ from app.modules.arten.schemas import (
     Jahreszeit,
     MerkmalSchluessel,
     Profil,
+    Quelle,
     Saisontabelle,
     Verwechslung,
     Verweis,
@@ -57,6 +58,10 @@ def _profil(name: str, lateinisch: str, *, geschuetzt: bool) -> Profil:
         geschuetzt=geschuetzt,
         jahreszeiten=[Jahreszeit.HERBST],
         baeume=[Baumart.FICHTE],
+        quelle=Quelle(
+            url="https://www.123pilzsuche.de/daten/details/Steinpilze.htm",
+            geprueft_am="2026-09-10",
+        ),
         merkmale={
             MerkmalSchluessel.FLEISCH: "Weiss.",
             MerkmalSchluessel.GERUCH: "Pilzig.",

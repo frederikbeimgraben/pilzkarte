@@ -34,7 +34,7 @@ zeit = "Frühling bis Spätherbst."
 [[verwechslungen]]
 name = "Kurznetziger Hexenröhrling"
 merkmal = "Netz nur im oberen Stielteil, im Alter zur Mitte hin verschoben, Stielfleisch stark weinrot, Röhrenboden orangerot."
-essbar = "giftig"
+essbar = "bedingtEssbar"
 slug = "kurznetziger-hexenroehrling"
 
 [[verwechslungen]]

@@ -25,25 +25,23 @@ zeit = "Spätsommer bis Spätherbst."
 name = "Weißstieliger Rötling"
 merkmal = "Lamellen laufen rosa an, Sporenpulver rosa, wächst nicht büschelig."
 essbar = "giftig"
-slug = "weissstieliger-roetling"
 
 [[verwechslungen]]
 name = "Nebelkappe"
 merkmal = "Hut nebelgrau, Geruch auffallend süßlich, wächst in Reihen statt in Büscheln."
-essbar = "nichtEmpfohlen"
+essbar = "giftig"
 slug = "nebelkappe"
 
 [[verwechslungen]]
 name = "Panzerrasling"
 merkmal = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "panzerrasling"
 
 [[verwechslungen]]
 name = "Frostrasling"
 merkmal = "Hut aschgrau bis dunkel graubraun, Stiele meist einzeln nebeneinander und tief im Boden."
 essbar = "essbar"
-slug = "frostrasling"
 
 [[links]]
 titel = "123pilzsuche.de"

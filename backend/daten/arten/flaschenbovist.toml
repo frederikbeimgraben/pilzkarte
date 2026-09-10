@@ -31,13 +31,13 @@ slug = "birnenstaeubling"
 [[verwechslungen]]
 name = "Bräunlicher Stäubling"
 merkmal = "Birnenförmig, bräunlich, mit dunkelbraunen Stacheln."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "braeunlicher-staeubling"
 
 [[verwechslungen]]
 name = "Igelstäubling"
 merkmal = "Stacheln stehen in Gruppen zusammengeneigt, Spitzen weißlich."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "igelstaeubling"
 
 [[verwechslungen]]
@@ -49,7 +49,7 @@ slug = "rauer-staeubling"
 [[verwechslungen]]
 name = "Beutelstäubling"
 merkmal = "Bis 25 cm hoch, Außenhaut fällt großflächig ab, Fleisch alt purpurbraun."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "beutelstaeubling"
 
 [[links]]

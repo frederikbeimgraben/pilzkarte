@@ -37,13 +37,13 @@ slug = "gruensporschirmling"
 [[verwechslungen]]
 name = "Parasol"
 merkmal = "Deutlich größer, Stiel kräftig genattert, Doppelring stark ausgeprägt, Buckel meist nur stumpf."
-essbar = "speisepilz"
+essbar = "bedingtEssbar"
 slug = "parasol"
 
 [[verwechslungen]]
 name = "Sternschuppiger Riesenschirmpilz"
 merkmal = "Hut mit braunen, sternförmig aufreißenden Schuppen, Stiel fein braun genattert, Stielrinde rötend."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "sternschuppiger-riesenschirmpilz"
 
 [[verwechslungen]]

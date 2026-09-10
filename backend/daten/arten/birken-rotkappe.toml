@@ -25,25 +25,25 @@ zeit = "Frühling bis Spätherbst."
 [[verwechslungen]]
 name = "Fichtenrotkappe"
 merkmal = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "fichtenrotkappe"
 
 [[verwechslungen]]
 name = "Eichenrotkappe"
 merkmal = "Stielschuppen rötlich bis rotgrau auf weißem Grund, Huthaut meist verkürzt."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "eichenrotkappe"
 
 [[verwechslungen]]
 name = "Espenrotkappe"
 merkmal = "Stielschuppen jung weißlich, später orangebraun, Fleisch graulila."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "espen-rotkappe"
 
 [[verwechslungen]]
 name = "Kiefernrotkappe"
 merkmal = "Hut fuchsrot bis rotbraun und samtig, Schuppen erst hellbraun, dann rötlich."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "kiefernrotkappe"
 
 [[links]]

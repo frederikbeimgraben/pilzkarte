@@ -51,13 +51,13 @@ slug = "schafchampignon"
 [[verwechslungen]]
 name = "Frühlingschampignon"
 merkmal = "Hut weiß bis gelblich und bei Berührung strohgelb verfärbend, Stiel gilbend, Spitze etwas rötlich."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "fruehlingschampignon"
 
 [[verwechslungen]]
 name = "Braunschuppiger Wiesenchampignon"
 merkmal = "Varietät des Wiesenchampignons, Hut braun schuppig, Ring ebenso verkümmert."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "braunschuppiger-wiesenchampignon"
 
 [[links]]

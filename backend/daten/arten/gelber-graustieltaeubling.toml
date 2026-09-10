@@ -47,19 +47,19 @@ slug = "blassgelber-taeubling"
 [[verwechslungen]]
 name = "Ockertäubling"
 merkmal = "Hut gelbocker, honiggelb bis rostrot und matt, Fleisch grauend ohne vorheriges Röten, Geschmack etwas bitterlich."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "ockertaeubling"
 
 [[verwechslungen]]
 name = "Violettstieliger Pfirsichtäubling"
 merkmal = "Stiel später rosalila überhaucht und netzig warzig, Geruch im Alter heringsartig."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "violettstieliger-pfirsichtaeubling"
 
 [[verwechslungen]]
 name = "Orangeroter Graustieltäubling"
 merkmal = "Hut gelborange, ziegelrot bis kupferfarben, im Nadelwald und Torfmoor."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "orangeroter-graustieltaeubling"
 
 [[links]]

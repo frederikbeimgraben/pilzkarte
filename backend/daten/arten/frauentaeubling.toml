@@ -45,13 +45,13 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Rissiger Frauentäubling"
 merkmal = "Huthaut in der Mitte deutlich rissig aufgesprungen."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "rissiger-frauentaeubling"
 
 [[verwechslungen]]
 name = "Olivfarbener Frauentäubling"
 merkmal = "Hut olivgrün mit violetten Flecken."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "olivfarbener-frauentaeubling"
 
 [[verwechslungen]]
@@ -63,7 +63,7 @@ slug = "gruengefelderter-taeubling"
 [[verwechslungen]]
 name = "Grasgrüner Täubling"
 merkmal = "Hut graugrün bis grasgrün, Lamellen brüchig, Stiel längsgerieft."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "grasgruener-taeubling"
 
 [[verwechslungen]]

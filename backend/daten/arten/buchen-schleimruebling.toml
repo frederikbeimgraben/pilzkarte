@@ -38,13 +38,13 @@ slug = "weisser-dachpilz"
 [[verwechslungen]]
 name = "Seidiger Dachpilz"
 merkmal = "Hut elfenbeinweiß mit dunklerem Scheitel, Lamellen später rotbraun, ohne Ring."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "seidiger-dachpilz"
 
 [[verwechslungen]]
 name = "Olivgrauer Schneckling"
 merkmal = "Hut dunkelbraun bis olivgrau, Stiel genattert, Lamellen wachsartig."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "olivgrauer-schneckling"
 
 [[verwechslungen]]

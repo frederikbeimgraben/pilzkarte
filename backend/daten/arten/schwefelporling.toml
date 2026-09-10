@@ -47,13 +47,13 @@ slug = "leuchtender-weichporling"
 [[verwechslungen]]
 name = "Riesenporling"
 merkmal = "Hut jung fast weiß, später hellbraun, Fleisch weiß und im Schnitt langsam braunschwarz anlaufend."
-essbar = "ungeniessbar"
+essbar = "ohneSpeisewert"
 slug = "riesenporling"
 
 [[verwechslungen]]
 name = "Nadelholzschwefelporling"
 merkmal = "Sieht gleich aus, wächst aber an Nadelholz, meist Fichte und Tanne."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "nadelholzschwefelporling"
 
 [[links]]

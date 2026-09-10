@@ -41,19 +41,19 @@ slug = "gelbgruener-kammporling"
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Hut semmelgelb bis orangebraun, Stiel kürzer, schmeckt schnell bitterlich."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Rötender Schafeuterporling"
 merkmal = "Hut fleischrosa bis rosa getönt, Druckstellen röten und gilben."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "roetender-schafeuterporling"
 
 [[verwechslungen]]
 name = "Zitronenporling"
 merkmal = "Hut schnell zitronengelb, Fleisch im Schnitt langsam schwach rotbraun anlaufend."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "zitronenporling"
 
 [[links]]

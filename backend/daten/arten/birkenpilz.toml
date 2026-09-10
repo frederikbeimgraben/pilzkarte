@@ -32,19 +32,19 @@ slug = "roetender-birkenpilz"
 [[verwechslungen]]
 name = "Vielverfärbender Birkenpilz"
 merkmal = "Fleisch erst hellrosa, dann stark kornblumenblau."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "vielverfaerbender-birkenpilz"
 
 [[verwechslungen]]
 name = "Schwarzhütiger Birkenpilz"
 merkmal = "Hut dunkel schwarzbraun und feinsamtig, Stielbasis keulig und oft schwarz."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "schwarzhuetiger-birkenpilz"
 
 [[verwechslungen]]
 name = "Hainbuchenröhrling"
 merkmal = "Huthaut wie gehämmert runzelig, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "hainbuchenroehrling"
 
 [[links]]

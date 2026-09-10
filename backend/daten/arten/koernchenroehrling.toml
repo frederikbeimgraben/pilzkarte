@@ -25,7 +25,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Ringloser Butterpilz"
 merkmal = "Stielbasis rosa, unter der abgezogenen Huthaut bleibt eine braune Faserung sichtbar."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "ringloser-butterpilz"
 
 [[verwechslungen]]
@@ -37,13 +37,13 @@ slug = "butterpilz"
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Hut hellgelb, später orangerötlich, mit gelblichem Ring, Röhren auf Druck rosalila fleckend, bei Lärche."
-essbar = "speisepilz"
+essbar = "bedingtEssbar"
 slug = "goldroehrling"
 
 [[verwechslungen]]
 name = "Sandröhrling"
 merkmal = "Huthaut körnig filzig und matt, Röhren bräunlich bis rostgelb, Fleisch bei Verletzung blauend."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "sandroehrling"
 
 [[verwechslungen]]

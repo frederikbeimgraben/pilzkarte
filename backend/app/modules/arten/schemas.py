@@ -222,9 +222,7 @@ class Profil(BasisModell):
     karte: str | None = None
     speisewert_hinweis: str | None = None
     schutz_hinweis: str | None = None
-    # Pflicht, sobald alle Profile geprueft sind. Bis dahin darf ein noch
-    # ungeprueftes Profil die Quelle weglassen.
-    quelle: Quelle | None = None
+    quelle: Quelle
     reagenzien: list[Reagenzeintrag] = Field(default_factory=list["Reagenzeintrag"])
     merkmale: dict[MerkmalSchluessel, str]
     verwechslungen: list[Verwechslung] = Field(min_length=1)

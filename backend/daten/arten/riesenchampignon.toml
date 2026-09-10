@@ -51,13 +51,13 @@ slug = "rebhuhnegerling"
 [[verwechslungen]]
 name = "Großer Waldchampignon"
 merkmal = "Fleisch verfärbt sich im Schnitt sofort blutrot, Geruch nicht anisartig, im Nadelwald."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "grosser-waldchampignon"
 
 [[verwechslungen]]
 name = "Kleiner Wald-Champignon"
 merkmal = "Deutlich kleiner, Fleisch bei Verletzung gelborange und später blutrot, im sauren Nadelwald."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "kleiner-wald-champignon"
 
 [[links]]

@@ -59,6 +59,10 @@ karte = "boletus_edulis"
 speisewertHinweis = "Jung sammeln."
 schutzHinweis = "Auch die Verwandten schont man."
 
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"
+geprueftAm = "2026-09-10"
+
 [merkmale]
 hut = "Braun."
 roehren = "Weiss, dann oliv."
@@ -89,6 +93,10 @@ geschuetzt = false
 jahreszeiten = ["fruehling"]
 baeume = []
 
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
+geprueftAm = "2026-09-10"
+
 [merkmale]
 hut = "Cremeweiss."
 lamellen = "Weiss."
@@ -117,6 +125,10 @@ speisewert = "speisepilz"
 geschuetzt = true
 jahreszeiten = ["sommer"]
 baeume = ["buche"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Braetling2004.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
 hut = "Rostbraun."
@@ -767,14 +779,16 @@ async def test_liste_braucht_kein_token(app: FastAPI) -> None:
 def test_alle_ausgelieferten_profile_sind_gueltig() -> None:
     profile = profile_lesen(DATEN / "arten")
 
-    assert len(profile) == 85
+    assert len(profile) == 309
+    assert sum(1 for profil in profile.values() if profil.sammelbar) == 85
 
 
 def test_jede_art_der_kette_hat_ein_profil() -> None:
     profile = profile_lesen(DATEN / "arten")
     tabelle = saison_lesen(DATEN / "saison.json")
 
-    assert {profil.lateinisch for profil in profile.values()} == set(tabelle.arten)
+    sammelbar = {p.lateinisch for p in profile.values() if p.sammelbar}
+    assert sammelbar == set(tabelle.arten)
 
 
 def _maps_der_kette(ziel: Path) -> Path:
@@ -829,12 +843,6 @@ def test_dreiundzwanzig_arten_tragen_ein_modell(tmp_path: Path) -> None:
     assert sum(1 for art in gebaut.liste().arten if art.vorhersage_geplant) == 23
 
 
-def test_jedes_profil_verlinkt_zwei_quellen() -> None:
-    for slug, profil in profile_lesen(DATEN / "arten").items():
-        titel = [verweis.titel for verweis in profil.links]
-        assert titel == ["123pilzsuche.de", "Wikipedia"], slug
-
-
 def test_jeder_slug_ist_eine_adresse() -> None:
     for slug in profile_lesen(DATEN / "arten"):
         assert slug == slug.lower()
@@ -864,3 +872,76 @@ async def test_der_dienst_nimmt_die_ausgelieferten_dateien() -> None:
 
     assert antwort.status_code == 200
     assert antwort.json()["lateinisch"] == "Boletus edulis"
+
+
+# ------------------------------------------------- die geprueften Profile
+
+
+def test_jedes_profil_nennt_seine_quelle() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        assert profil.quelle is not None, slug
+        assert profil.quelle.url.startswith("https://www.123pilzsuche.de/"), slug
+        assert profil.quelle.geprueft_am == "2026-09-10", slug
+
+
+def test_jede_verwechslung_traegt_namen_und_merkmal() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        for verwechslung in profil.verwechslungen:
+            assert verwechslung.name.strip(), slug
+            assert verwechslung.merkmal.strip(), slug
+
+
+def test_kein_merkmal_und_kein_hinweis_ist_leer() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        for text in profil.merkmale.values():
+            assert text.strip(), slug
+        assert profil.name.strip(), slug
+        assert profil.lateinisch.strip(), slug
+        for hinweis in (profil.speisewert_hinweis, profil.schutz_hinweis):
+            assert hinweis is None or hinweis.strip(), slug
+
+
+def test_jeder_verwechslungsslug_zeigt_auf_ein_profil() -> None:
+    profile = profile_lesen(DATEN / "arten")
+
+    for slug, profil in profile.items():
+        for verwechslung in profil.verwechslungen:
+            if verwechslung.slug is not None:
+                assert verwechslung.slug in profile, f"{slug} zeigt auf {verwechslung.slug}"
+
+
+def test_die_essbarkeit_einer_verwechslung_passt_zu_ihrem_profil() -> None:
+    # Sonst stuende dieselbe Art auf zwei Seiten mit zwei Urteilen.
+    profile = profile_lesen(DATEN / "arten")
+
+    for slug, profil in profile.items():
+        for verwechslung in profil.verwechslungen:
+            if verwechslung.slug is not None:
+                ziel = profile[verwechslung.slug]
+                assert verwechslung.essbar == ziel.speisewert, f"{slug} zu {verwechslung.slug}"
+
+
+def test_die_sammelbaren_arten_bleiben_fuenfundachtzig() -> None:
+    profile = profile_lesen(DATEN / "arten")
+
+    assert sum(1 for profil in profile.values() if profil.sammelbar) == 85
+
+
+def test_verwechslungsarten_tragen_die_stufe_verwechslung(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, _maps_der_kette(tmp_path / "maps"))
+    arten = {art.slug: art for art in gebaut.liste().arten}
+    profile = profile_lesen(DATEN / "arten")
+
+    for slug, profil in profile.items():
+        if not profil.sammelbar:
+            assert arten[slug].stufe == Stufe.VERWECHSLUNG, slug
+            assert arten[slug].saison is None, slug
+            assert arten[slug].karten_slug is None, slug
+
+
+def test_jedes_profil_verlinkt_seine_quellseite() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        titel = [verweis.titel for verweis in profil.links]
+        assert titel[0] == "123pilzsuche.de", slug
+        assert titel[1:] in ([], ["Wikipedia"]), slug
+        assert profil.links[0].url == (profil.quelle.url if profil.quelle else ""), slug

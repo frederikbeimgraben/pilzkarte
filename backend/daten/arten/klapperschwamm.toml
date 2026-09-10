@@ -25,13 +25,13 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Eichhase"
 merkmal = "Viele kleine runde Porenpilze mit mittigem Stielchen an einem Strunk, Fruchtkörper heller und gesprenkelt bräunlich."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "eichhase"
 
 [[verwechslungen]]
 name = "Bergporling"
 merkmal = "Hüte braun und samtig, fächerförmig ineinander verwachsen, Geschmack jung mild und schnell extrem scharf, bei Weißtanne."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "bergporling"
 
 [[verwechslungen]]
@@ -43,7 +43,7 @@ slug = "krause-glucke"
 [[verwechslungen]]
 name = "Breitblättrige Glucke"
 merkmal = "Hirnartig breit gekräuselt, ohne Hüte und ohne Röhren, beim Kochen Waschküchengeruch."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "breitblaettrige-glucke"
 
 [[verwechslungen]]

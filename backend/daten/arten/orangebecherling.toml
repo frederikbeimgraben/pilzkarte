@@ -28,19 +28,19 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Österreichischer Prachtbecherling"
 merkmal = "Innenseite zinnoberrot statt orange, Außenseite filzig haarig, meist mit kurzem Stiel, von Winter bis Mai."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "oesterreichischer-prachtbecherling"
 
 [[verwechslungen]]
 name = "Scharlachroter Kelchbecherling"
 merkmal = "Innenseite zinnoberrot, unterer Teil ganz weiß und filzig haarig, an Laubholzästen von Winter bis Mai."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "scharlachroter-kelchbecherling"
 
 [[verwechslungen]]
 name = "Linden-Kelchbecherling"
 merkmal = "Innenseite zinnober- bis karminrot, an vergrabenen Lindenzweigen und anderem Laubholz, von Winter bis Mai."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "linden-kelchbecherling"
 
 [[links]]

@@ -41,19 +41,19 @@ slug = "becherfoermiger-saegeblaettling"
 [[verwechslungen]]
 name = "Bergporling"
 merkmal = "Poren schwärzen auf Druck nicht, Geruch ganz jung etwas anisartig, Wurzelparasit an Weißtanne."
-essbar = "essbar"
+essbar = "ohneSpeisewert"
 slug = "bergporling"
 
 [[verwechslungen]]
 name = "Klapperschwamm"
 merkmal = "Graubraune Einzelhüte, rosettenartig verwachsen, Röhren schwärzen auf Druck nicht, am Wurzelbereich von Eiche."
-essbar = "essbar"
+essbar = "bedingtEssbar"
 slug = "klapperschwamm"
 
 [[verwechslungen]]
 name = "Eichhase"
 merkmal = "Viele kleine Einzelhüte an einem verzweigten Strunk, Poren cremefarben bis hellbraun, am Fuß von Eichen."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "eichhase"
 
 [[links]]

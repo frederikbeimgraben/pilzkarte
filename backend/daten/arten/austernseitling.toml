@@ -41,13 +41,13 @@ slug = "gelbstieliger-muschelseitling"
 [[verwechslungen]]
 name = "Rillstieliger Seitling"
 merkmal = "Lamellen queradrig und netzig verbunden, laufen bis zur Stielbasis."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "rillstieliger-seitling"
 
 [[verwechslungen]]
 name = "Lungenseitling"
 merkmal = "Nie rein weiß, sondern milchweiß bis cremeweiß, dünnfleischiger, im Sommer."
-essbar = "essbar"
+essbar = "bedingtEssbar"
 slug = "lungenseitling"
 
 [[verwechslungen]]

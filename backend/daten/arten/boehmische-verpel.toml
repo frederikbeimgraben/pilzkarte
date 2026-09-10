@@ -31,25 +31,25 @@ slug = "runzelige-fingerhutverpel"
 [[verwechslungen]]
 name = "Glatte Fingerhutverpel"
 merkmal = "Hut nur gerunzelt mit Querrillen, ohne hochgestellte Längsrillen."
-essbar = "giftig"
+essbar = "bedingtEssbar"
 slug = "glatte-fingerhutverpel"
 
 [[verwechslungen]]
 name = "Käppchenmorchel"
 merkmal = "Stiel hohl, das Käppchen ist zu einem Drittel mit ihm verwachsen und meist zugespitzt."
-essbar = "speisepilz"
+essbar = "bedingtEssbar"
 slug = "kaeppchenmorchel"
 
 [[verwechslungen]]
 name = "Spitzmorchel"
 merkmal = "Käppchen mit Kammern und ganz am Stiel angewachsen."
-essbar = "speisepilz"
+essbar = "bedingtEssbar"
 slug = "spitzmorchel"
 
 [[verwechslungen]]
 name = "Speisemorchel"
 merkmal = "Käppchen wabenartig und ganz am Stiel angewachsen."
-essbar = "speisepilz"
+essbar = "bedingtEssbar"
 slug = "speisemorchel"
 
 [[links]]

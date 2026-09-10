@@ -25,25 +25,25 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Ellipsoidsporige Stoppelpilz"
 merkmal = "Deutlich kleiner, 2 bis 5, selten bis 6 cm breit, Hut gelborange bis terracottafarben."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "ellipsoidsporige-stoppelpilz"
 
 [[verwechslungen]]
 name = "Genabelter Semmelstoppelpilz"
 merkmal = "Fast gleich, Stiel 2,5 bis 6 cm hoch. Sicher nur unter dem Mikroskop zu trennen, sehr selten."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "genabelter-semmelstoppelpilz"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Unterseite mit Poren statt Stoppeln, mehrere Stiele oft miteinander verwachsen."
-essbar = "essbar"
+essbar = "speisepilz"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Schafporling"
 merkmal = "Hut weiß, später gelblich, braun- bis graugelb, Unterseite mit Poren, Stiel mit graubraunen bis dunkelbraunen Flecken."
-essbar = "speisepilz"
+essbar = "bedingtEssbar"
 slug = "schafporling"
 
 [[links]]
