@@ -3,29 +3,41 @@ lateinisch = "Mitrophora semilibera"
 gruppe = "morchel"
 speisewert = "bedingtEssbar"
 geschuetzt = true
-jahreszeiten = ["fruehling"]
-baeume = ["esche", "pappel"]
-speisewertHinweis = "Roh giftig, geringer Wert. Gut durchgaren."
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["pappel"]
+speisewertHinweis = "Roh giftig wie alle Morcheln. Gut durchgaren, sonst drohen Magen-Darm-Vergiftungen. Dazu kommt das Morchella-Syndrom mit Trunkenheitsgefühl, Zittern und Schwindel. Besonders geschützt, nur für den Eigenbedarf sammeln."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Kaeppchen.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "1 bis 4 cm, klein, kegelig, olivbraun, mit senkrechten Rippen. Nur die obere Hälfte ist mit dem Stiel verwachsen, der Rand steht frei ab."
-stiel = "Auffallend lang, weiß, hohl, kleiig, oft länger als die Kappe hoch ist."
-fleisch = "Sehr dünn, brüchig."
-geruch = "Schwach würzig."
-geschmack = "Mild. Roh nicht kosten."
-sporenpulver = "Cremeweiß."
-vorkommen = "In Auwäldern und feuchten Laubwäldern unter Esche und Pappel, auf Kalk."
-zeit = "März bis Mai."
+fruchtkoerper = "2 bis 4,5, selten bis 6 cm breit, hellbraun, dunkelbraun bis gelbbraun. Wabenartiges Käppchen, innen hohl, meist zugespitzt. Es ist nur zu etwa einem Drittel mit dem Stiel verwachsen, der übrige Rand steht frei ab."
+stiel = "Weißlich bis gelblich oder gelbbraun, dünnfleischig, runzelig furchig, hohl. Die Außenhaut trägt große körnige weiße Schüppchen."
+fleisch = "Weißlich bis gelblich, dünn, wachsartig, sehr zerbrechlich."
+geruch = "Angenehm."
+geschmack = "Mild. Roh giftig, nicht kosten."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer in Mischwald und Auwald, gern bei Pappeln und Espen oder im Rindenmulch. Oft zusammen mit Spitzmorcheln. Funde aus Rindenmulch schmecken schwächer als die aus dem Auwald."
+zeit = "Februar bis Juni, in kälteren Lagen nicht vor Anfang April."
+
+[[verwechslungen]]
+name = "Zipfellorchel"
+merkmal = "Hut zipfelmützenartig hoch gestülpt und aderig statt wabenartig, mit heller Verbindungsnaht."
+essbar = "toedlichGiftig"
+slug = "zipfellorchel"
+
+[[verwechslungen]]
+name = "Böhmische Morchel"
+merkmal = "Käppchen rundlich statt zugespitzt, runzelig labyrinthartig, nur an der Spitze flach mit dem Stiel verwachsen."
+essbar = "speisepilz"
+slug = "boehmische-verpel"
 
 [[verwechslungen]]
 name = "Spitzmorchel"
-merkmal = "Kappe ganz angewachsen und viel größer im Verhältnis zum Stiel."
+merkmal = "Käppchen kammerig und mit dem Rand ganz am Stiel angewachsen, Fruchtkörper deutlich größer."
 essbar = "bedingtEssbar"
-
-[[verwechslungen]]
-name = "Frühjahrslorchel"
-merkmal = "Kappe hirnartig gewunden."
-essbar = "giftig"
+slug = "spitzmorchel"
 
 [[links]]
 titel = "123pilzsuche.de"

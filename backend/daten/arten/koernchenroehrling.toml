@@ -1,27 +1,56 @@
 name = "Körnchenröhrling"
 lateinisch = "Suillus granulatus"
 gruppe = "schmierroehrling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
-speisewertHinweis = "Huthaut abziehen."
+speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen und die schleimige Huthaut abziehen. Die DGfM nennt Magen-Darm-Beschwerden mit starkem Durchfall und mögliche Allergien; wer darauf reagiert, meidet alle Schmierröhrlinge."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Koernchenroehrling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "4 bis 12 cm, gelb- bis rotbraun, schleimig, Haut abziehbar."
-roehren = "Blassgelb, fein, jung mit milchigen Tröpfchen an den Mündungen."
-stiel = "Blassgelb, ohne Ring, oben dicht mit braunen Körnchen besetzt."
-fleisch = "Blassgelb, ohne Farbwechsel."
-geruch = "Unauffällig."
-geschmack = "Mild."
-sporenpulver = "Ockerbraun."
-vorkommen = "Mykorrhiza mit Kiefer, gern auf Kalk, an Wegrändern und in lichten Forsten."
-zeit = "Juni bis Oktober."
+hut = "4 bis 12, selten bis 15 cm breit, kastanienbraun, hellbraun bis ockerbraun, bei Nässe sehr schmierig."
+roehren = "Zitronengelb bis ockergelb, jung milchig tropfend, rundlich verzogen bis eckig."
+stiel = "5 bis 13, selten bis 15 cm lang, 1 bis 3, selten bis 4 cm dick, gelblichweiß, ohne Ring, bräunlich gesprenkelt und punktiert."
+fleisch = "Gelblich bis hellgelb, jung fest, alt weich und schwammig. Unter der Huthaut immer gelblich und ohne Faserung."
+geruch = "Würzig, leicht fruchtig."
+geschmack = "Schwach säuerlich, mild."
+sporenpulver = "Braun bis ockerbraun."
+vorkommen = "Symbiosepilz bei Kiefer, auf kalkhaltigem oder saurem Boden, oft zusammen mit dem Butterpilz. Regional sehr häufig."
+zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Butterpilz"
-merkmal = "Mit häutigem Ring am Stiel."
+name = "Ringloser Butterpilz"
+merkmal = "Stielbasis rosa, unter der abgezogenen Huthaut bleibt eine braune Faserung sichtbar."
 essbar = "essbar"
+slug = "ringloser-butterpilz"
+
+[[verwechslungen]]
+name = "Butterröhrling"
+merkmal = "Stiel mit braunviolettem Ring."
+essbar = "speisepilz"
+slug = "butterpilz"
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Hut hellgelb, später orangerötlich, mit gelblichem Ring, Röhren auf Druck rosalila fleckend, bei Lärche."
+essbar = "speisepilz"
+slug = "goldroehrling"
+
+[[verwechslungen]]
+name = "Sandröhrling"
+merkmal = "Huthaut körnig filzig und matt, Röhren bräunlich bis rostgelb, Fleisch bei Verletzung blauend."
+essbar = "essbar"
+slug = "sandroehrling"
+
+[[verwechslungen]]
+name = "Mediterraner Röhrling"
+merkmal = "Röhren oft mit gelben Tröpfchen, Stielbasis rosaviolett, Myzelfäden rosa."
+essbar = "essbar"
+slug = "mediterraner-roehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

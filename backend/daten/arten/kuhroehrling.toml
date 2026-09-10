@@ -5,23 +5,52 @@ speisewert = "essbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
-speisewertHinweis = "Weiches Fleisch, geringer Wert. Jung sammeln."
+speisewertHinweis = "Etwas säuerlich, guter Mischpilz und Trockenpilz. Beim Kochen läuft das Fleisch rosa bis leicht violett an."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Kuhroehrling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "4 bis 10 cm, ocker- bis lederbraun, bei Nässe klebrig, Rand lange eingebogen."
-roehren = "Ockergelb, weit und eckig, mehrfach geteilt, deutlich herablaufend."
-stiel = "Dünn, gelbbraun, ohne Ring."
-fleisch = "Blassgelb, weich, schwach rötend."
-geruch = "Unauffällig."
-geschmack = "Mild."
-sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Kiefer, auf sauren, feuchten Sandböden und in Moorrandwäldern."
-zeit = "Juli bis Oktober."
+hut = "2 bis 12, selten bis 15 cm breit, bräunlich, glatt, kahl und ledrig, feucht schmierig, trocken glänzend. Halbkugelig bis polsterförmig oder gebuckelt, Rand scharfkantig und wellig verbogen."
+roehren = "Graugelb, bräunlich bis später rotbraun, selten mit hellblauen Flecken, schwer vom Fleisch lösbar, angewachsen und etwas herablaufend. Mündungen schnell groß, länglich bis unregelmäßig eckig."
+stiel = "4 bis 6, selten bis 10 cm lang, 4 bis 15, selten bis 18 mm dick, hellbraun, voll, oft verbogen, zur Basis oft rötlich bis rosa."
+fleisch = "Hellgelb bis gelb, alt kupferrötlich, elastisch, zäh und dünn. Meist nicht blauend, allenfalls im Hut und über den Röhren, nie im Stiel."
+geruch = "Pilzig angenehm, leicht obstartig."
+geschmack = "Säuerlich bis süßlich, meist mild, selten mit einem Hauch Bitternote, die beim Garen vergeht."
+sporenpulver = "Olivgrün bis blass olivbraun."
+vorkommen = "Symbiosepilz bei Kiefer, gern auf sandigem, nährstoffarmem Boden, einzeln oder mit mehreren aus einem Strunk. Oft zusammen mit dem Rosenroten Gelbfuß, der auf seinem Myzel wächst."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Butterpilz"
-merkmal = "Mit Ring, Röhren fein statt weit."
+name = "Erlengrübling"
+merkmal = "Hut gelblich bis olivgelb mit grübchenartig vertiefter Oberfläche, Röhren auf Druck grünblau, nur bei Erle."
+essbar = "giftig"
+slug = "erlengruebling"
+
+[[verwechslungen]]
+name = "Sandröhrling"
+merkmal = "Röhren fein und eng statt grob und eckig, Stielfleisch gelblich und blauend, Basis meist keulig verdickt."
 essbar = "essbar"
+slug = "sandroehrling"
+
+[[verwechslungen]]
+name = "Hohlfußröhrling"
+merkmal = "Hut schuppig filzig und rostbraun, Stiel hohl mit angedeuteter Ringzone, bei Lärche."
+essbar = "essbar"
+slug = "hohlfussroehrling"
+
+[[verwechslungen]]
+name = "Schmerling"
+merkmal = "Röhren zitronengelb und jung milchig tropfend, Stiel bräunlich punktiert."
+essbar = "bedingtEssbar"
+slug = "koernchenroehrling"
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Hut wildlederartig filzig, Röhren jung leuchtend gelb, Stiel fast weiß, lang und schlank."
+essbar = "speisepilz"
+slug = "ziegenlippe"
 
 [[links]]
 titel = "123pilzsuche.de"

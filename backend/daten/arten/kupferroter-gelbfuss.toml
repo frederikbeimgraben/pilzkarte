@@ -1,27 +1,50 @@
 name = "Kupferroter Gelbfuß"
 lateinisch = "Chroogomphus rutilus"
 gruppe = "gelbfuss"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
-speisewertHinweis = "Geringer Wert, färbt das Gericht dunkel."
+speisewertHinweis = "Beim Kochen wird er violettbraun und schmeckt parfümiert, ähnlich dem Violetten Rötelritterling."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/KupferroterGelbfuss.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "4 bis 10 cm, kupferrot bis weinbraun, glänzend, bei Nässe klebrig, mit spitzem Buckel."
-lamellen = "Ockergelb, dick, entfernt, herablaufend, im Alter schwarz."
-stiel = "Zur Basis verjüngt, gelblich, im Anschnitt safrangelb."
-fleisch = "Gelblich bis lachsfarben, weich."
-geruch = "Unauffällig."
+hut = "2,5 bis 8, selten bis 10 cm breit, braun, orangebraun bis graubraun, feucht schmierig, kahl und nicht filzig, jung mit Schleier."
+lamellen = "Jung purpurbraun, dazu gelborange bis rotbraun, entfernt stehend, weit herablaufend, leicht ablösbar."
+stiel = "6 bis 8, selten bis 12 cm hoch, 0,6 bis 1,5, selten bis 2 cm dick, gelborange, voll, zur Basis verjüngt, lang und schlank. Bei Verletzung rötlich verfärbend."
+fleisch = "Gelborange, fest, bei Verletzung rötlich verfärbend."
+geruch = "Neutral."
 geschmack = "Mild."
-sporenpulver = "Schwärzlich."
-vorkommen = "Bei Kiefer, meist zusammen mit dem Butterpilz, auf sauren Sandböden."
-zeit = "August bis November."
+sporenpulver = "Olivschwarz, olivbraun bis violettschwarz."
+vorkommen = "Symbiosepilz unter Kiefern, vereinzelt parasitisch an Myzelien von Wurzeltrüffeln."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kuhmaul"
-merkmal = "Hut graubraun statt kupferrot, bei Fichte."
+name = "Spitzgebuckelter Raukopf"
+merkmal = "Hut meist spitz gebuckelt, radialfaserig und rau, Lamellen zimtbraun und nur angeheftet, Stiel rostbraun genattert."
+essbar = "toedlichGiftig"
+slug = "spitzgebuckelter-raukopf"
+
+[[verwechslungen]]
+name = "Filziger Gelbfuß"
+merkmal = "Hut filzig schuppig, Lamellen weniger weit herablaufend, bei Fichte."
 essbar = "essbar"
+slug = "filziger-gelbfuss"
+
+[[verwechslungen]]
+name = "Schweinsohr"
+merkmal = "Trichterförmig, mit stumpfen Leisten statt Lamellen, ganz violett."
+essbar = "essbar"
+slug = "schweinsohr"
+
+[[verwechslungen]]
+name = "Aprikosen-Gelbfuß"
+merkmal = "Hut orangebraun, rosa bis violett, Stiel mit hellerer orangefarbener Ringzone."
+essbar = "essbar"
+slug = "aprikosen-gelbfuss"
 
 [[links]]
 titel = "123pilzsuche.de"
