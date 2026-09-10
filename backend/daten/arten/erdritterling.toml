@@ -1,32 +1,56 @@
 name = "Erdritterling"
 lateinisch = "Tricholoma terreum"
 gruppe = "ritterling"
-speisewert = "essbar"
+speisewert = "toedlichGiftig"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["kiefer"]
-speisewertHinweis = "Nur für Kenner der Gattung. Die grauen Ritterlinge sind schwer zu trennen und einige machen Muskelschäden."
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer", "fichte", "tanne", "douglasie"]
+speisewertHinweis = "123pilzsuche führt ihn als tödlich giftig. Er galt lange als Speisepilz; die grauen Ritterlinge sind untereinander kaum zu trennen und einige schädigen die Muskulatur. Stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GemeinerErdritterling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "3 bis 8 cm, mausgrau, dicht filzig bis feinschuppig, trocken, mit stumpfem Buckel."
-lamellen = "Weißlich bis grau, ausgebuchtet, ziemlich entfernt."
-stiel = "Weißlich, faserig, ohne Ring, brüchig."
-fleisch = "Weiß, dünn, unveränderlich."
-geruch = "Unauffällig, nicht mehlig."
-geschmack = "Mild."
+hut = "4 bis 7, selten bis 9 cm breit, hell silbergrau bis graubraun, trocken, filzig und feinschuppig, mit kleinem Buckel. Rand jung fein wollig."
+lamellen = "Grauweißlich, Schneiden manchmal schwärzlich und leicht gesägt. Junge Fruchtkörper mit Schleier."
+stiel = "3 bis 9, selten bis 12 cm lang, weiß bis grauweiß, Spitze weißlich flockig bereift, nach Berührung etwas rostbraun."
+fleisch = "Weiß, weich, höchstens etwas grauend."
+geruch = "Neutral, ausdrücklich nicht mehlartig."
+geschmack = "Mild, nicht mehlartig."
 sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Kiefer, auf Kalk, an Wegrändern und in lichten Forsten, in Trupps."
-zeit = "September bis November."
+vorkommen = "Symbiosepilz mit Nadelbäumen, gern Kiefer, Fichte, Tanne und Douglasie, auf nährstoffreichen und oft kalkhaltigen Böden. In Mischwald, Nadelwald, Wiesen und Parks."
+zeit = "Frühsommer bis Spätherbst, im Herbst häufiger."
 
 [[verwechslungen]]
-name = "Andere graue Ritterlinge"
-merkmal = "Geruch oder Geschmack mehlig oder scharf. Mehrere Arten sind giftig."
+name = "Tigerritterling"
+merkmal = "Hut weiß mit silbergrauen bis graubraunen Schuppen, Lamellen im Alter gelblich, Stiel keulig."
+essbar = "toedlichGiftig"
+slug = "tigerritterling"
+
+[[verwechslungen]]
+name = "Gilbender Erdritterling"
+merkmal = "Lamellen gilben beim Reiben."
 essbar = "giftig"
+slug = "gilbender-erdritterling"
 
 [[verwechslungen]]
-name = "Schwarzfaseriger Ritterling"
-merkmal = "Hut glatt und schmierig, mit gelblichem Ton."
-essbar = "speisepilz"
+name = "Mausgrauer Erdritterling"
+merkmal = "Hut mausgrau bis aschgrau mit bläulichem Ton, Stiel jung mit weißem Haarschleier."
+essbar = "giftig"
+slug = "mausgrauer-erdritterling"
+
+[[verwechslungen]]
+name = "Rötender Erdritterling"
+merkmal = "Lamellen schimmern rötlich, Stiel mit dunklen Fasern."
+essbar = "giftig"
+slug = "roetender-erdritterling"
+
+[[verwechslungen]]
+name = "Risspilzähnlicher Erdritterling"
+merkmal = "Hut lilabraun getönt, Lamellen mit Zwischenlamellen."
+essbar = "ungeniessbar"
+slug = "risspilzaehnlicher-erdritterling"
 
 [[links]]
 titel = "123pilzsuche.de"

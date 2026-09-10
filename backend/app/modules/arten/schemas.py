@@ -75,6 +75,7 @@ class Baumart(StrEnum):
     KIEFER = "kiefer"
     TANNE = "tanne"
     LAERCHE = "laerche"
+    DOUGLASIE = "douglasie"
     BUCHE = "buche"
     EICHE = "eiche"
     BIRKE = "birke"

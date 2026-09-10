@@ -3,30 +3,54 @@ lateinisch = "Armillaria ostoyae"
 gruppe = "hallimasch"
 speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
+jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
-speisewertHinweis = "Roh giftig. Nur Hüte, lange kochen, Kochwasser weggießen."
+speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Roh macht er ein Taubheitsgefühl im Hals. Nur die Hüte, lange kochen, das Kochwasser weggießen. Auch dann kommen Magen-Darm-Beschwerden vor."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GemeinerHallimarsch.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "4 bis 15 cm, rot- bis dunkelbraun, dicht mit dunklen, abstehenden Schuppen besetzt."
-lamellen = "Weißlich, später rostfleckig, herablaufend."
-stiel = "Kräftig, mit dickem weißem Ring, der dunkle Schuppen am Rand trägt."
-fleisch = "Weiß, fest, faserig."
-geruch = "Kräftig pilzig."
-geschmack = "Roh scharf."
+hut = "2 bis 10, selten bis 14 cm breit, rotbraun, mit abwischbaren braunen Schüppchen, im Alter gerieft. Farbe und Form sind sehr veränderlich."
+lamellen = "Weißlich, später rostbraun, angewachsen und mit einem Zahn herablaufend, Schneiden wellig."
+stiel = "4 bis 22, selten bis 25 cm lang, zäh, längsfaserig, weißlich bis bräunlich, Spitze heller. Mit dickem Ring, darunter weiße bis weißbraune wollige Schüppchen."
+fleisch = "Weißlich."
+geruch = "Pilzig."
+geschmack = "Herb, kratzend, seifig."
 sporenpulver = "Weiß."
-vorkommen = "Parasit an Nadelholz, vor allem Fichte und Kiefer, in Büscheln am Stammfuß und an Wurzeln."
-zeit = "August bis November."
+vorkommen = "An Nadelholzresten in Wäldern, Gärten und Parks. Parasit an kranken Bäumen, sonst Folgezersetzer. Meist büschelig, manchmal einzeln ohne sichtbares Holz. Sehr häufig."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Kleiner, Stiel silbrig faserig, Sporenpulver rostbraun."
+name = "Sparriger Risspilz"
+merkmal = "Hut mit braunen, dornartigen, spitzen Schuppen, Lamellen grau bis graubraun, Sporenpulver braun."
 essbar = "toedlichGiftig"
+slug = "sparriger-risspilz"
+
+[[verwechslungen]]
+name = "Wolliger Risspilz"
+merkmal = "Hut braun bis orangebraun, wollig filzig, nicht sparrig, Lamellen graubraun bis rostbraun."
+essbar = "toedlichGiftig"
+slug = "wolliger-risspilz"
+
+[[verwechslungen]]
+name = "Sparriger Schüppling"
+merkmal = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun."
+essbar = "giftig"
+slug = "sparriger-schueppling"
 
 [[verwechslungen]]
 name = "Honiggelber Hallimasch"
-merkmal = "Heller, Ring gelb gesäumt, an Laubholz."
+merkmal = "Hut gelblich bis zitronengelb, an Laubholz."
 essbar = "bedingtEssbar"
+slug = "honiggelber-hallimasch"
+
+[[verwechslungen]]
+name = "Gelbschuppiger Hallimasch"
+merkmal = "Hut haselnussbraun mit grauen Schüppchen, Stielbasis keulig, meist einzeln aus dem Boden."
+essbar = "bedingtEssbar"
+slug = "gelbschuppiger-hallimasch"
 
 [[links]]
 titel = "123pilzsuche.de"

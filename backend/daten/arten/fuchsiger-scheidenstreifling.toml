@@ -4,29 +4,65 @@ gruppe = "wulstling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["birke", "fichte"]
-speisewertHinweis = "Roh giftig. Nur für sichere Kenner: jeder Fruchtkörper muss mit ganzer Stielbasis ausgegraben und geprüft werden."
+baeume = ["fichte", "birke"]
+speisewertHinweis = "Roh unverträglich. Nur für Sammler, die den Pantherpilz sicher trennen: jeden Fruchtkörper mit ganzer Stielbasis ausgraben und die Scheide prüfen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RotbraunerScheidens.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch braun bis schokoladenbraun."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Fleisch braun bis schokoladenbraun."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Huthaut und Scheide nach zwei Minuten blau."
 
 [merkmale]
-hut = "4 bis 10 cm, fuchsig orangebraun, glatt, mit deutlich gerieftem Rand, ohne Flocken."
-lamellen = "Weiß, frei, dicht."
-stiel = "Schlank, blass, ohne Ring, Basis in einer hohen, häutigen, rostfleckigen Scheide."
-fleisch = "Weiß, dünn, zerbrechlich."
-geruch = "Unauffällig."
-geschmack = "Mild. Roh nicht kosten."
+hut = "3 bis 6, selten bis 9 cm breit, gelb, fuchsig, orange bis dunkel rotbraun, Mitte dunkler, Rand heller und auf etwa einem Drittel des Radius stark gerieft."
+lamellen = "Weiß bis hell cremefarben, wellig, fast frei."
+stiel = "7 bis 18, selten bis 20 cm lang, weiß bis hell rötlichbräunlich, feinflockig, nicht genattert, nach oben verjüngt, im Alter hohl. Kein Ring. Basis in einer rotbraun bis ockerlich gefleckten Scheide."
+fleisch = "Weiß bis gelblich."
+geruch = "Neutral."
+geschmack = "Mild."
 sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Birke und Fichte, auf sauren, feuchten Böden, oft einzeln."
-zeit = "Juni bis Oktober."
-
-[[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
-essbar = "toedlichGiftig"
+vorkommen = "Symbiosepilz im Mischwald, meist Nadelwald, auf moorigen Böden."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Pantherpilz"
-merkmal = "Hut mit weißen Flocken, mit Ring am Stiel."
+merkmal = "Hut mit weißen Flocken, Stiel mit Ring und gerandeter Knolle."
+essbar = "toedlichGiftig"
+slug = "pantherpilz"
+
+[[verwechslungen]]
+name = "Isabellfarbiger Wulstling"
+merkmal = "Hut cremeweiß bis isabellfarben, Stiel rübenartig verdickt."
 essbar = "giftig"
+slug = "isabellfarbige-wulstling"
+
+[[verwechslungen]]
+name = "Großscheidiger Scheidenstreifling"
+merkmal = "Hut braun bis lederbraun, Scheide auffallend groß."
+essbar = "essbar"
+slug = "grossscheidiger-scheidenstreifling"
+
+[[verwechslungen]]
+name = "Grauhäutiger Scheidenstreifling"
+merkmal = "Hut graubraun bis grauocker, Stiel graubraun genattert."
+essbar = "essbar"
+slug = "grauhaeutiger-scheidenstreifling"
+
+[[verwechslungen]]
+name = "Gelber Scheidenstreifling"
+merkmal = "Hut gelb bis orange, Stiel weiß genattert auf hellbraunem Grund."
+essbar = "essbar"
+slug = "gelber-scheidenstreifling"
 
 [[links]]
 titel = "123pilzsuche.de"

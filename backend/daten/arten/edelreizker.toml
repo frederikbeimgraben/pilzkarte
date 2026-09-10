@@ -3,31 +3,43 @@ lateinisch = "Lactarius deliciosus"
 gruppe = "milchling"
 speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["herbst"]
+jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 karte = "reizker"
 
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Edelreizker.htm"
+geprueftAm = "2026-09-10"
+
 [merkmale]
-hut = "4 bis 15 cm, orange mit dunkleren konzentrischen Zonen, in der Mitte vertieft, Rand jung eingerollt."
-lamellen = "Orange, dicht, am Stiel etwas herablaufend, auf Druck grünfleckig."
-milch = "Beim Anschnitt karottenrot, bleibt orange und läuft nicht weinrot an."
-stiel = "Kurz, hohl, orange, oft mit dunkleren Gruben."
-fleisch = "Blass orange, fest, im Schnitt grünend."
-geruch = "Fruchtig, angenehm."
-geschmack = "Mild bis leicht bitterlich."
-sporenpulver = "Blass ocker."
-vorkommen = "Mykorrhiza mit Kiefer, gern auf Kalk, an Wegrändern und in jungen Beständen."
-zeit = "August bis November."
+hut = "4 bis 10, selten bis 15 cm breit, orange, weißlich bereift, mit konzentrisch getropften Flecken. Glatt, feucht etwas schleimig, Rand lange eingebogen. Verletzte Stellen laufen später grün an."
+lamellen = "Orangeocker bis blassocker."
+milch = "Karottenrot bis orangerot, kaum veränderlich."
+stiel = "2 bis 5, selten bis 7 cm lang, orange bis weißlich bereift, mit orangefarbenen Grübchen, innen wattig, später hohl."
+fleisch = "Rötlich bis orange, an der Luft grünlich verfärbend, fest und brüchig."
+geruch = "Süßlich, obstartig."
+geschmack = "Mild, nach Weißkraut, kaum bitterlich."
+sporenpulver = "Hell ockergelb."
+vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier bei Kiefer."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Fichtenreizker"
-merkmal = "Milch wird nach Minuten weinrot, bei Fichte."
+merkmal = "Milch wird nach etwa 15 Minuten weinrot, Stiel ohne Grübchen, bei Fichte."
 essbar = "speisepilz"
+slug = "fichtenreizker"
 
 [[verwechslungen]]
-name = "Birkenreizker"
-merkmal = "Milch weiß, Hutrand zottig behaart, bei Birke."
-essbar = "giftig"
+name = "Lachsreizker"
+merkmal = "Hut genabelt bis trichterförmig, bei Tanne."
+essbar = "speisepilz"
+slug = "lachsreizker"
+
+[[verwechslungen]]
+name = "Spangrüner Kiefernreizker"
+merkmal = "Lamellen mit deutlich blaugrünen Tönen, Stielgrübchen flach."
+essbar = "essbar"
+slug = "spangruener-kiefernreizker"
 
 [[links]]
 titel = "123pilzsuche.de"

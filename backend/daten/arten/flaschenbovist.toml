@@ -1,31 +1,56 @@
 name = "Flaschenbovist"
 lateinisch = "Lycoperdon perlatum"
 gruppe = "staeubling"
-speisewert = "bedingtEssbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "flaschenbovist"
-speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück durchschneiden."
+speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Flaschenstaeubling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-fruchtkoerper = "3 bis 7 cm, flaschen- bis birnenförmig mit einem verjüngten Fuß, weiß bis cremefarben, mit abwischbaren Stacheln und Warzen besetzt."
-fleisch = "Jung rein weiß und fest, dann gelb, zuletzt olivbraun und pulverig. Am Scheitel öffnet sich ein Loch."
-geruch = "Jung angenehm pilzig."
+fruchtkoerper = "2 bis 5, selten bis 7 cm breit und bis 8 cm hoch, keulig bis birnenförmig mit stielartigem Fuß. Jung weiß, im Alter bräunlich."
+stacheln = "Blasse, pyramidenartig zugespitzte, körnige Stacheln. Fallen sie ab, bleibt ein Netzmuster zurück."
+fleisch = "Jung weiß, später gelb, alt oliv- bis schwarzbraun und pulverig."
+geruch = "Angenehm pilzig."
 geschmack = "Mild."
 sporenpulver = "Olivbraun."
-vorkommen = "Zersetzer in Wäldern aller Art, an Wegrändern und auf Lichtungen, meist in Gruppen."
-zeit = "Juli bis November."
+vorkommen = "Folgezersetzer im Mischwald, aus der Erde, selten aus verrottetem Totholz."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kartoffelbovist"
-merkmal = "Derbe gelbbraune Haut, innen früh schwarzviolett marmoriert."
-essbar = "giftig"
+name = "Birnenstäubling"
+merkmal = "Kugelig, bräunlich, Geruch unangenehm gasartig."
+essbar = "essbar"
+slug = "birnenstaeubling"
 
 [[verwechslungen]]
-name = "Knollenblätterpilz im Eistadium"
-merkmal = "Längs durchschneiden: im Ei zeichnen sich Hut und Lamellen ab, ein Stäubling ist gleichmäßig weiß."
-essbar = "toedlichGiftig"
+name = "Bräunlicher Stäubling"
+merkmal = "Birnenförmig, bräunlich, mit dunkelbraunen Stacheln."
+essbar = "essbar"
+slug = "braeunlicher-staeubling"
+
+[[verwechslungen]]
+name = "Igelstäubling"
+merkmal = "Stacheln stehen in Gruppen zusammengeneigt, Spitzen weißlich."
+essbar = "essbar"
+slug = "igelstaeubling"
+
+[[verwechslungen]]
+name = "Rauer Stäubling"
+merkmal = "Weißlich, kugelig, zur Basis zugespitzt, mit langen Myzelsträngen."
+essbar = "essbar"
+slug = "rauer-staeubling"
+
+[[verwechslungen]]
+name = "Beutelstäubling"
+merkmal = "Bis 25 cm hoch, Außenhaut fällt großflächig ab, Fleisch alt purpurbraun."
+essbar = "essbar"
+slug = "beutelstaeubling"
 
 [[links]]
 titel = "123pilzsuche.de"
