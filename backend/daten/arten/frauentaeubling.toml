@@ -5,28 +5,83 @@ speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
-speisewertHinweis = "Milde Täublinge sind essbar, scharfe nicht. Ein Stückchen Lamelle kosten und ausspucken."
+speisewertHinweis = "Die biegsamen, nicht brechenden Lamellen sind sein sicherstes Merkmal."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Violettgrüner Frauentäubling", "Blautäubling", "Rissighütiger Frauentäubling", "Bläulicher Täubling", "Grüntäubling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Frauentaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Fleisch weinbraun."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Ohne Reaktion oder erst nach Stunden hell olivgrün bis graugrün."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Blaugrün."
+
+[[reagenzien]]
+reagenz = "naoh"
+reaktion = "Huthaut bräunlich."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Rosaorange."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0 }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 6.5, bis = 10.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.5 }
 
 [merkmale]
-hut = "5 bis 15 cm, in Farben von violett über grün bis graublau, oft gemischt, Mitte meist dunkler."
-lamellen = "Weiß, weich und biegsam wie Speck, lassen sich mit dem Finger streichen, ohne zu brechen."
-stiel = "Weiß, fest, zylindrisch."
-fleisch = "Weiß, fest, im Alter grau."
-geruch = "Unauffällig."
-geschmack = "Mild."
+hut = "4 bis 12, selten bis 16 cm breit, grün, braun, blau bis lila in wechselnden Mischungen, Huthaut meist glanzlos. Mitte meist vertieft."
+lamellen = "Weiß, gerade angewachsen, oft gegabelt, in Stielnähe queraderig. Sie sind biegsam und brechen beim Streichen nicht; sie fühlen sich klebrig pappig an."
+stiel = "3 bis 14, selten bis 16 cm hoch, weiß, selten lila oder bläulich überhaucht, bereift und fein runzelig, voll und fest, alt schwammig."
+fleisch = "Weiß, nicht verfärbend, brüchig, unter der Huthaut etwas violettblau."
+geruch = "Neutral."
+geschmack = "Mild, nussartig."
 sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Buche und Eiche, in Laub- und Mischwäldern, sehr häufig."
-zeit = "Juni bis Oktober."
+vorkommen = "Symbiosepilz im Mischwald, regional sehr häufig."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Scharfe Täublinge"
-merkmal = "Lamellen brechen splittrig, Geschmack nach Sekunden brennend scharf. Eine Geschmacksprobe klärt es."
-essbar = "ungeniessbar"
+name = "Rissiger Frauentäubling"
+merkmal = "Huthaut in der Mitte deutlich rissig aufgesprungen."
+essbar = "speisepilz"
+slug = "rissiger-frauentaeubling"
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
-essbar = "toedlichGiftig"
+name = "Olivfarbener Frauentäubling"
+merkmal = "Hut olivgrün mit violetten Flecken."
+essbar = "speisepilz"
+slug = "olivfarbener-frauentaeubling"
+
+[[verwechslungen]]
+name = "Grüngefelderter Täubling"
+merkmal = "Huthaut reißt in felderige Schollen auf, Lamellen brüchig."
+essbar = "speisepilz"
+slug = "gruengefelderter-taeubling"
+
+[[verwechslungen]]
+name = "Grasgrüner Täubling"
+merkmal = "Hut graugrün bis grasgrün, Lamellen brüchig, Stiel längsgerieft."
+essbar = "speisepilz"
+slug = "grasgruener-taeubling"
+
+[[verwechslungen]]
+name = "Taubentäubling"
+merkmal = "Hut schwarzoliv bis olivgrau, Lamellen sehr brüchig."
+essbar = "essbar"
+slug = "taubentaeubling"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,0 +1,46 @@
+name = "Dorniger Stachelbart"
+lateinisch = "Hericium cirrhatum"
+gruppe = "stachelbart"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst", "winter"]
+baeume = ["buche", "birke"]
+speisewertHinweis = "In Deutschland und der Schweiz auf der Roten Liste und generell sehr selten. Den Fund besser stehen lassen."
+marktfaehig = false
+wertigkeit = 3
+gefaehrdung = "unbekanntesAusmass"
+synonyme = ["Creolophus cirrhatus", "Creolophus cirratus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/DornigerStachelbart.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 2.8, bis = 4.5 }
+sporenBreiteUm = { von = 3.0, bis = 4.2 }
+
+[merkmale]
+fruchtkoerper = "5 bis 20, selten bis 25 cm breit, weiß, später schmutzig gelb mit orangen, rosa bis roten Verfärbungen. Aus einzelnen, unregelmäßig gelappten, oft verbogenen Hüten aufgebaut."
+stacheln = "Weißliche bis gelbliche, abwärts gerichtete Äste, die vom gemeinsamen Strunk ausgehen."
+fleisch = "Weißlich bis gelblich, weich und fleischig, alt zäh und brüchig, bei Verletzung gilbend."
+geruch = "Angenehm, ähnlich dem Schwefelporling."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer an Totholz von Laubbäumen, gern Buche und Birke, löst Weißfäule aus. Sehr selten, in Deutschland und der Schweiz gefährdet."
+zeit = "Spätsommer bis Winter, sporadisch schon ab Juni."
+
+[[verwechslungen]]
+name = "Nördlicher Stachelseitling"
+merkmal = "Hüte dachziegelig übereinander am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
+essbar = "ungeniessbar"
+slug = "noerdlicher-stachelseitling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/DornigerStachelbart.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Dorniger_Stachelbart"

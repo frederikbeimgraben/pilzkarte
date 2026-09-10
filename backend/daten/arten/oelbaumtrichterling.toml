@@ -1,0 +1,68 @@
+name = "Ölbaumtrichterling"
+lateinisch = "Omphalotus olearius"
+gruppe = "trichterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "kastanie"]
+speisewertHinweis = "Sehr giftig. Er verursacht heftige Brechdurchfälle nach 15 Minuten bis 4 Stunden, meist durch Iludin; Leberschäden sind nicht ausgeschlossen. Er hat echte, ablösbare Lamellen statt Leisten, und Myzel und Lamellen leuchten nachts."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Ölbaumpilz", "Orangefarbener Ölbaumtrichterling", "Dunkler Ölbaumtrichterling"]
+synonyme = ["Omphalotus illudens"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Olbaumtrichterling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Hut grün."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Hut grün."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 17.0 }
+sporenLaengeUm = { von = 4.0, bis = 7.0 }
+sporenBreiteUm = { von = 3.5, bis = 6.5 }
+
+[merkmale]
+hut = "3 bis 11, selten bis 13 cm breit, leuchtend orange, orangegelb bis fuchsigbraun, jung leicht gebuckelt, später trichterförmig vertieft, Rand lange eingerollt."
+lamellen = "Leuchtend goldgelb, herablaufend, mit sehr vielen kurzen Zwischenlamellen, selten gegabelt."
+stiel = "5 bis 15, selten bis 17 cm lang, 0,5 bis 1,5, selten bis 2 cm dick, leuchtend orange bis fuchsigbraun, im Mittelfeld verdickt und darunter meist verjüngt."
+fleisch = "Gelblich bis orange, zäh und längsfaserig."
+geruch = "Nach Nadelholz, neutral bis unangenehm."
+geschmack = "Mild, unangenehm."
+sporenpulver = "Weiß, cremefarben bis hellgelb."
+vorkommen = "Parasit oder Folgezersetzer an Laubholz, an Ölbaum, Eiche, Edelkastanie und Bambus, wärmeliebend. In Europa überwiegend im Mittelmeerraum, sonst sehr selten."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Falscher Pfifferling"
+merkmal = "Hut feinfilzig, Lamellen ablösbar und viele gegabelt, Fleisch dünn und biegsam, auf Nadelstreu."
+essbar = "giftig"
+slug = "falscher-pfifferling"
+
+[[verwechslungen]]
+name = "Fuchsiger Röteltrichterling"
+merkmal = "Hut haselnussbraun statt orange, Lamellen weißlich bis fuchsig, Geruch nach frisch geschnittenem Gras."
+essbar = "essbar"
+slug = "fuchsiger-roetelritterling"
+
+[[verwechslungen]]
+name = "Samtpfifferling"
+merkmal = "Kleiner, mit gelblichen, weit herablaufenden Leisten statt Lamellen, Hut samtig zottig."
+essbar = "speisepilz"
+slug = "samtpfifferling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Olbaumtrichterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Dunkler_Ölbaumtrichterling"

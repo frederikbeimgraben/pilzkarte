@@ -1,0 +1,64 @@
+name = "Herbstrotfußröhrling"
+lateinisch = "Xerocomellus pruinatus"
+gruppe = "roehrling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Herbstrotfuß", "Bereifter Rotfuß", "Stattlicher Rotfuß"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RotfussHerbst.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "melzer"
+reaktion = "Fleisch junger Fruchtkörper olivgrün."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 9.0, bis = 17.0 }
+sporenBreiteUm = { von = 3.8, bis = 6.2 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 10 cm breit, bräunlich, samtig filzig, später aufreißend. Unter der Huthaut liegt immer eine Rotfärbung. Oberfläche feucht klebrig. Gelbliche Fraßstellen werden nach einigen Stunden rötlich."
+roehren = "Gelb, alt dunkler braun bis rostbraun, auf Druck kaum blauend, dicker als das Hutfleisch."
+stiel = "3 bis 10, selten bis 13 cm lang und 1 bis 4, selten bis 5 cm dick, rötlich punktiert und flockig, ohne Netz. Spitze verjüngt, Basis bauchig, spindelig bis rübenknollig, Myzel hellgelb."
+fleisch = "Gelblich, manchmal blauend und etwas rötend. Die Gelbfärbung ist stärker als bei den anderen Rotfußarten."
+geruch = "Pilzig, etwas säuerlich bis neutral."
+geschmack = "Säuerlich."
+sporenpulver = "Olivbraun bis senfgelb."
+vorkommen = "Symbiosepilz im Mischwald. Sehr häufig."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau und samtig, Stiel zur Basis rot und mit Netz, Fleisch blaut sofort."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Rotfußröhrling"
+merkmal = "Stiel schlanker, Hut stärker aufreißend mit rotem Grund, Fleisch weniger gelb."
+essbar = "essbar"
+slug = "rotfussroehrling"
+
+[[verwechslungen]]
+name = "Maronenröhrling"
+merkmal = "Hut kastanienbraun, Röhren gelb und auf Druck deutlich blauend, Stiel ohne rote Punkte."
+essbar = "bedingtEssbar"
+slug = "maronenroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RotfussHerbst.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Bereifter_Rotfußröhrling"

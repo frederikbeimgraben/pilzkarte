@@ -3,24 +3,58 @@ lateinisch = "Hericium coralloides"
 gruppe = "stachelbart"
 speisewert = "essbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["buche"]
-speisewertHinweis = "Selten. Kleine Mengen nehmen und den Rest stehen lassen."
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "tanne"]
+speisewertHinweis = "Selten und in Deutschland auf der Roten Liste. Kleine Mengen nehmen oder den Fund stehen lassen."
+marktfaehig = true
+wertigkeit = 3
+haeufigkeit = "selten"
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Buchenstachelbart", "Eiskoralle", "Bartkoralle"]
+synonyme = ["Hericium ramosum = buchenstachelbart"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/StachelbartEssbar1004.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 4.0, bis = 5.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
 
 [merkmale]
-fruchtkoerper = "10 bis 30 cm, weiß bis cremefarben, korallenartig verzweigt, an den Ästen hängen kurze Stacheln."
-stacheln = "0,5 bis 1 cm, weich, in Reihen an der Unterseite der Äste."
-fleisch = "Weiß, weich, brüchig."
-geruch = "Angenehm."
+fruchtkoerper = "3 bis 12, selten bis 25 cm breit, weiß, im Alter schmutzig gelb. Vom gemeinsamen Strunk gehen aufwärts gerichtete Äste aus."
+stacheln = "An den Ästen, jung bärtig abstehend, im Alter herabhängend."
+fleisch = "Weißlich, jung weich und fleischig, im Alter zäh und brüchig."
+geruch = "Angenehm, leicht rettichartig."
 geschmack = "Mild."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer an liegenden Buchenstämmen, seltener an anderem Laubholz, in naturnahen Wäldern."
-zeit = "August bis November."
+vorkommen = "Folgezersetzer an Totholz von Laubbäumen, gern Buche, vereinzelt an Tanne. Selten."
+zeit = "Spätsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Nördlicher Stachelseitling"
+merkmal = "Dachziegelig übereinanderstehende Hüte am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
+essbar = "ungeniessbar"
+slug = "noerdlicher-stachelseitling"
+
+[[verwechslungen]]
+name = "Rasiges Stachelspitzchen"
+merkmal = "Nur ein bis drei Millimeter groß, einzelne weiße Stacheln auf dem Holz."
+essbar = "ungeniessbar"
+slug = "rasiges-stachelspitzchen"
 
 [[verwechslungen]]
 name = "Igelstachelbart"
-merkmal = "Unverzweigt, Stacheln viel länger."
+merkmal = "Unverzweigt, ein Klumpen mit langen herabhängenden Stacheln."
 essbar = "speisepilz"
+slug = "igelstachelbart"
+
+[[verwechslungen]]
+name = "Dorniger Stachelbart"
+merkmal = "Aus einzelnen dachziegeligen Hüten aufgebaut, gilbt bei Verletzung."
+essbar = "essbar"
+slug = "dorniger-stachelbart"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,0 +1,49 @@
+name = "Löwengelber Porling"
+lateinisch = "Cerioporus leptocephalus"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["buche"]
+marktfaehig = false
+synonyme = ["Polyporus leptocephalus", "(polyporus varius", "Boletus leptocephalus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/LoewenPorling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch und Hut braunorange."
+
+[[reagenzien]]
+reagenz = "naoh"
+reaktion = "Poren rosa bis braunrosa."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 6.0, bis = 10.0 }
+sporenBreiteUm = { von = 2.0, bis = 4.0 }
+
+[merkmale]
+hut = "3 bis 6, selten bis 8 cm breit, graugelb, hellgelb, orange, ocker bis rötlich ockergelb, matt filzig bis kahl, Rand scharf."
+poren = "Drei bis sechs je Millimeter, hellgelblich bis cremegelb, braunfleckend, später gelbbraun, am Stiel herablaufend. Röhrenschicht 0,5 bis 3 mm dick."
+stiel = "1 bis 3, selten bis 4 cm lang, 2 bis 7, selten bis 9 mm dick, bräunlich bis gelbbraun, nach oben fein samtig, Basis dunkler bis schwärzlich. Meist seitlich angesetzt und gebogen."
+fleisch = "Hellgelb bis schmutzig weißlich, dünn und zäh."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, etwas bitterlich."
+sporenpulver = "Weißlich."
+vorkommen = "Folgezersetzer an Laubholz, gern Buche."
+zeit = "Frühling bis Herbst."
+
+[[verwechslungen]]
+name = "Schuppiger Porling"
+merkmal = "Viel größer, Hut mit groben braunen Schuppen, Poren weißlich und nur ein bis zwei je Millimeter."
+essbar = "bedingtEssbar"
+slug = "schuppiger-porling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/LoewenPorling.htm"

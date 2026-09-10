@@ -1,0 +1,52 @@
+name = "Spitzkegeliger Tintling"
+lateinisch = "Coprinopsis acuminata"
+gruppe = "tintling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Stark giftig. Zu erkennen am stumpf spitzen, dunkleren Hutscheitel, den braunen Schuppen auf grauweißem Grund und der ringartigen Wulst an der verdickten Stielbasis."
+marktfaehig = false
+synonyme = ["Coprinus acuminatus", "Coprinus atramentarius var. acuminatus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SpitzTintling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 6.0, bis = 10.6 }
+sporenBreiteUm = { von = 4.1, bis = 5.7 }
+
+[merkmale]
+hut = "2 bis 5, selten bis 7 cm breit, grauweiß mit braunen Schuppen, gerieft und leicht faltig, oft mit dunklerem, stumpf spitzem Scheitel."
+lamellen = "Weißlich bis grau, eng stehend und bald zerfließend."
+stiel = "Weiß, an der Basis verdickt und leicht wurzelnd, dort mit einer ringartigen Wulst."
+fleisch = "Weiß, dünn und weich; es zerfließt rasch schwarz."
+geruch = "Neutral."
+geschmack = "Mild."
+sporenpulver = "Schwarz."
+vorkommen = "Folgezersetzer an Waldwegen und in Gärten, liebt lehm- und kalkreichen Boden."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Faltentintling"
+merkmal = "Hut ohne spitzen Scheitel, Lamellen abgerundet angewachsen bis schmal angeheftet, Sporenpulver schwarzbraun."
+essbar = "giftig"
+slug = "faltentintling"
+
+[[verwechslungen]]
+name = "Ringtintling"
+merkmal = "Stiel mit tief sitzendem, verschiebbarem Ring, Lamellen jung weiß mit fleischrötlichen Schneiden, wächst auf Mist und Dung."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Spechttintling"
+merkmal = "Hut braun mit weißen flockigen Schuppen, Geruch muffig bis teerartig."
+essbar = "ungeniessbar"
+slug = "spechttintling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SpitzTintling.htm"

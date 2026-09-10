@@ -1,0 +1,62 @@
+name = "Rauchblättriger Schwefelkopf"
+lateinisch = "Hypholoma capnoides"
+gruppe = "schueppling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["herbst", "fruehling"]
+baeume = ["kiefer", "fichte", "douglasie"]
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Graublättriger Schwefelkopf"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Rauchblaettrige.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut rot."
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
+
+[merkmale]
+hut = "1 bis 8, selten bis 12 cm breit, ockerbraun bis gelbbraun, ocker bis dunkelbraun, kahl und ohne Schüppchen, Rand meist heller und teils mit feinen Schleierresten."
+lamellen = "Grau, rauchgrau bis graulila, niemals gelb oder grün, angeheftet bis angewachsen, fast gedrängt."
+stiel = "2 bis 8, selten bis 10 cm lang, 4 bis 10, selten bis 12 mm dick, schmutzig weiß bis gelbweiß, zur Basis bräunlich, faserig, hohl, schlank. Jung oft mit angedeutetem Ring aus Velumresten."
+fleisch = "Weißlich bis gelblich, in der Stielbasis gern gelborange, faserig."
+geruch = "Etwas stechend, an Blausäure erinnernd, aber nicht unangenehm, oft mit einem Hauch obstartigem Duft."
+geschmack = "Mild, angenehm pilzig, würzig und nussig."
+sporenpulver = "Dunkel lilabraun, violettbraun bis lilaschwarz."
+vorkommen = "Folgezersetzer auf Nadelholzstümpfen, gern Kiefer, Fichte und Douglasie, auch an vergrabenen Wurzeln und Ästen. In Gruppen wachsend."
+zeit = "Herbst bis Spätherbst, selten im Frühjahr."
+
+[[verwechslungen]]
+name = "Rotbrauner Flämmling"
+merkmal = "Lamellen und Sporenpulver rostbraun statt grau, Geschmack bitter."
+essbar = "giftig"
+slug = "rotbrauner-flaemmling"
+
+[[verwechslungen]]
+name = "Nadelschüppling"
+merkmal = "Hut gelbbraun und schuppig, Lamellen bräunlich, Geschmack bitter."
+essbar = "giftig"
+slug = "nadelschueppling"
+
+[[verwechslungen]]
+name = "Stockschwämmchen"
+merkmal = "Hut zweifarbig hygrophan, Lamellen zimtbraun, Stiel unter dem Ring dunkelbraun beschuppt."
+essbar = "bedingtEssbar"
+slug = "stockschwaemmchen"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Rauchblaettrige.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Graublättriger_Schwefelkopf"

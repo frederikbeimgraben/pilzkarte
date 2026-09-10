@@ -1,0 +1,58 @@
+name = "Satansröhrling"
+lateinisch = "Rubroboletus satanas"
+gruppe = "roehrling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Giftig. Er ist am weißlichen bis grauen Hut, an den karminroten Röhrenmündungen, am dicken bauchigen Stiel mit roter Netzzeichnung und am aasartigen Geruch alter Fruchtkörper zu erkennen."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Satanspilz", "Teufelspilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Satanspilz-Satansroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 7.0, bis = 14.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 9.5, bis = 15.0 }
+sporenBreiteUm = { von = 3.5, bis = 7.0 }
+
+[merkmale]
+hut = "5 bis 20, selten bis 25 cm breit, weiß bis hellgrau, grauoliv oder ockerlederfarben, jung halbkugelig, später polsterförmig ausgebreitet, im Alter unregelmäßig verbogen. Rand eingebogen, Oberfläche nicht blauend."
+roehren = "Zuerst gelblich, dann orangerot, später karmin- bis purpurrot. Röhrenboden gelb, auf Druck leicht grünblau."
+stiel = "7 bis 14, selten bis 16 cm hoch, an der Basis 8 bis 12, selten 14 cm dick, an der Spitze 4 bis 7, selten 8 cm dick. Bauchig knollig, zur Basis heller und zugespitzt, oben mit hellgelber bis rötlicher Netzzeichnung, gern zur Basis rötlich, auf Druck leicht grünblau."
+fleisch = "Weißlich grau bis hell gelblich, im Anschnitt meist nur schwach blauend."
+geruch = "Neutral bis unangenehm, im Alter aasartig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Buche, auf kalkreichem Boden. Selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Falscher Satansröhrling"
+merkmal = "Hut rosa bis fleischfarben getönt, Fleisch deutlich blauend."
+essbar = "giftig"
+slug = "falscher-satansroehrling"
+
+[[verwechslungen]]
+name = "Blasshütiger Purpurröhrling"
+merkmal = "Hutfleisch bleibt gelb, nur das Stielfleisch blaut, Stiel unten kräftig rot."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Blaufleckender Purpurröhrling"
+merkmal = "Hut mit rosa bis rötlichen Tönen, Fleisch sofort und stark blauend."
+essbar = "giftig"
+slug = "blaufleckender-purpurroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Satanspilz-Satansroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Satans-Röhrling"

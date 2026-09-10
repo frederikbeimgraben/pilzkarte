@@ -1,0 +1,60 @@
+name = "Sandröhrling"
+lateinisch = "Suillus variegatus"
+gruppe = "schmierroehrling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Guter Speisepilz, in der Schweiz aber nicht marktfaehig."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Hirsepilz"]
+synonyme = ["Boletus variegatus", "Versipellis variegata", "Suillus variegatus f. rubescens", "Boletus aureus", "Boletus squalidus", "Boletopsis squalida", "Ixocomus variegatus", "Suillus squalidus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Sandroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 18.0 }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
+stielDickeCm = { von = 1.5, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 8.0, bis = 11.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
+
+[merkmale]
+hut = "4 bis 12, selten bis 18 cm breit, gelb, gelbocker, ockerbraun bis olivocker. Huthaut matt, koernig filzig bis feinschuppig, teils etwas felderig aufreissend, erst nach laengerem Regen schmierig. Rand jung leicht ueberstehend, eingerollt und scharfkantig."
+roehren = "Braeunlich, rostgelb, rostbraun, senffarben bis blass ockerfarben, alt schmutzig olivbraun, kurz, rundlich bis leicht eckig, kaum vom Fleisch loesbar, etwas herablaufend, auf Druck etwas blauend und spaeter wieder entfaerbend."
+stiel = "5 bis 10, selten bis 12 cm lang und 1,5 bis 2, selten bis 3 cm dick, heller als der Hut, gelblich, fein braunkoernig ueberreift, ohne Ringzone. Kraeftig, zylindrisch bis keulig, zur Basis verdickt, bei Verletzung leicht bis mittelstark blauend."
+fleisch = "Gelblich bis blassgelb, in der Stielbasis leicht orange, vor allem im dickfleischigen Hut leicht bis mittelstark blauend."
+geruch = "Sehr pilzig angenehm bis etwas saeuerlich."
+geschmack = "Mild, angenehm pilzartig bis etwas saeuerlich."
+sporenpulver = "Olivbraun, ockerbraun, walnussbraun bis sienabraun."
+vorkommen = "Symbiosepilz der Kiefer auf saurem, sandigem Boden."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Hut olivbraun bis gelbbraun und samtig, Roehren grob und gelb, bei Laubbaeumen."
+essbar = "speisepilz"
+slug = "ziegenlippe"
+
+[[verwechslungen]]
+name = "Rostroter Laerchenroehrling"
+merkmal = "Hut rostrot bis ziegelrot und schleimig, nur bei Laerche."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Kuhroehrling"
+merkmal = "Hut ockerbraun und schmierig, Roehren weitloecherig und herablaufend, Fleisch kaum blauend."
+essbar = "essbar"
+slug = "kuhroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Sandroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Sand-Röhrling"

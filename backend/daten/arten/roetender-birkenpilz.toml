@@ -1,0 +1,51 @@
+name = "Rötender Birkenpilz"
+lateinisch = "Leccinum oxydabile"
+gruppe = "raufussroehrling"
+speisewert = "essbar"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+speisewertHinweis = "Raufussroehrlinge sind besonders geschuetzt, diese Art ist zudem extrem selten. Nur kleine Mengen fuer den Eigenbedarf oder den Fund stehen lassen."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrSelten"
+synonyme = ["Leccinum scabrum var. oxydabile", "Krombholzia oxydabilis", "Krombholzia scabra f. oxydabilis", "Boletus scaber var. oxydabilis", "Boletus scaber f. oxydabilis"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RoetenderBirkenpilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 5.0, bis = 7.0, seltenBis = 8.0 }
+stielDickeCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 16.0, bis = 20.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
+
+[merkmale]
+hut = "4 bis 9, selten bis 13 cm breit, graubraun, gelbbraun bis roetlichbraun, filzig mit Schuppchen, polsterfoermig. Huthaut verkuerzt."
+roehren = "Weisslich bis isabellfarben, spaeter grau und fleckend, im Alter sehr schwabbelig, leicht abloesbar."
+stiel = "5 bis 7, selten bis 8 cm lang und 2 bis 3, selten bis 4 cm dick, schmutzigweiss mit weissen bis schwarzbraunen Schuppen, bauchig, Basis duenner."
+fleisch = "Weisslich bis grauweisslich, nach dem Anschnitt rosa, roetlich bis korallenrot verfaerbend, die unterste Stielbasis bleibt meist weiss. Jung fest, spaeter schwammig."
+geruch = "Unbedeutend."
+geschmack = "Mild."
+sporenpulver = "Braun."
+vorkommen = "Symbiosepilz bei Birke. Extrem selten."
+zeit = "Sommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Vielverfaerbender Birkenpilz"
+merkmal = "Fleisch im Schnitt erst rosa, dann grauschwarz, Stielbasis blaugruen."
+essbar = "speisepilz"
+slug = "vielverfaerbender-birkenpilz"
+
+[[verwechslungen]]
+name = "Hainbuchenroehrling"
+merkmal = "Bei Hainbuche und Hasel, Hut ockerbraun mit hammerschlagartig unebener Oberflaeche."
+essbar = "speisepilz"
+slug = "hainbuchenroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RoetenderBirkenpilz.htm"

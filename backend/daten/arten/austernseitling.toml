@@ -1,31 +1,68 @@
 name = "Austernseitling"
 lateinisch = "Pleurotus ostreatus"
 gruppe = "seitling"
-speisewert = "speisepilz"
+speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["herbst", "winter"]
-baeume = ["buche", "pappel", "weide"]
+jahreszeiten = ["herbst", "winter", "fruehling"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Austernpilz", "Kalbfleischpilz", "Buchenschwamm", "Drehling", "Austernschwamm", "Eichhännchen", "Muschelpilz", "Sommerauster"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Austernseitling1105.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut ohne Reaktion."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 15.0, seltenBis = 20.0 }
+sporenLaengeUm = { von = 7.0, bis = 11.0 }
+sporenBreiteUm = { von = 2.0, bis = 4.0 }
 
 [merkmale]
-hut = "5 bis 20 cm, muschel- bis austernförmig, grau, blaugrau bis braun, glatt."
-lamellen = "Weiß bis cremefarben, weit am kurzen Stiel herablaufend."
-stiel = "Kurz, seitlich angesetzt, an der Basis weißfilzig, oft fehlend."
-fleisch = "Weiß, im Hut weich, am Ansatz zäh."
-geruch = "Angenehm pilzig."
+hut = "2 bis 15, selten bis 20 cm breit, silbergrau, grau bis graubraun, nach den ersten Frostschäden meist brauner. Muschelförmig, glatt und kahl, Rand jung eingerollt."
+lamellen = "Weißlich, später gelblich, am Stiel herablaufend, Schneiden wellig und leicht gekerbt. Sie laufen nicht bis zur Stielbasis."
+stiel = "Kurz und dick, seitlich angesetzt, oft fast fehlend, an der Basis filzig, korkig und zäh."
+fleisch = "Weiß bis grauweiß, im Alter zäh, im Stielbereich schon jung sehr zäh."
+geruch = "Würzig pilzig, etwas nach Porling."
 geschmack = "Mild."
-sporenpulver = "Weißlich mit lila Ton."
-vorkommen = "Zersetzer an geschwächtem Laubholz, vor allem Buche und Pappel, in dachig übereinanderstehenden Büscheln. Braucht einen Kältereiz."
-zeit = "Oktober bis März."
+sporenpulver = "Weiß bis hell lilagrau."
+vorkommen = "Folgezersetzer an lebenden und abgestorbenen Laubbäumen, vor allem Buche und Eiche, vereinzelt an Nadelholz. Wächst bis zehn Meter hoch am Stamm."
+zeit = "Herbst bis Frühjahr. Er braucht einen Kältereiz und ist ab Mitte November häufig."
 
 [[verwechslungen]]
 name = "Ohrförmiger Seitling"
-merkmal = "Kleiner, zäh, an Nadelholz."
-essbar = "ungeniessbar"
+merkmal = "Rein weiß, ohne Stiel, Lamellen sehr gedrängt."
+essbar = "toedlichGiftig"
+slug = "ohrfoermiger-seitling"
 
 [[verwechslungen]]
-name = "Grünblättriger Schwefelkopf"
-merkmal = "Lamellen grünlich, Geschmack bitter, an Stümpfen."
-essbar = "giftig"
+name = "Gelbstieliger Muschelseitling"
+merkmal = "Hut grünbraun bis schwarzbraun, Stiel ockergelb mit bräunlichen Schüppchen."
+essbar = "ungeniessbar"
+slug = "gelbstieliger-muschelseitling"
+
+[[verwechslungen]]
+name = "Rillstieliger Seitling"
+merkmal = "Lamellen queradrig und netzig verbunden, laufen bis zur Stielbasis."
+essbar = "speisepilz"
+slug = "rillstieliger-seitling"
+
+[[verwechslungen]]
+name = "Lungenseitling"
+merkmal = "Nie rein weiß, sondern milchweiß bis cremeweiß, dünnfleischiger, im Sommer."
+essbar = "bedingtEssbar"
+slug = "lungenseitling"
+
+[[verwechslungen]]
+name = "Berindeter Seitling"
+merkmal = "Hut mit dunklen Schüppchen, Stiel mit flüchtigem Ring."
+essbar = "essbar"
+slug = "berindeter-seitling"
 
 [[links]]
 titel = "123pilzsuche.de"

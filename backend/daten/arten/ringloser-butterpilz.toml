@@ -1,0 +1,62 @@
+name = "Ringloser Butterpilz"
+lateinisch = "Suillus collinitus"
+gruppe = "schmierroehrling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "kiefer"]
+speisewertHinweis = "In der Schweiz nicht marktfähig, Relative Wertigkeit 4. Kulinarisch bringt er kaum etwas."
+marktfaehig = false
+wertigkeit = 4
+weitereNamen = ["Ringloser Butter-Röhrling", "Rosafüßiger Körnchen-Röhrling"]
+synonyme = ["Suillus fluryi"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RingloserButterpilz.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Lachsrosa."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
+sporenLaengeUm = { von = 7.5, bis = 10.5 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
+
+[merkmale]
+hut = "4 bis 12, selten bis 14 cm breit, braun, rotbraun bis kastanienbraun, eingewachsen faserig, glänzend, feucht schleimig bis schmierig."
+roehren = "Gelb, am Stiel ausgebuchtet angewachsen."
+stiel = "Gelblich, ohne Ring, mit bräunlichen Pünktchen, Basis rosa."
+fleisch = "Gelblich, im Hut hellgelb, im Stiel dunkler gelb, unter der Huthaut mit sichtbarer brauner Faserung."
+geruch = "Obstartig, säuerlich."
+geschmack = "Mild säuerlich."
+sporenpulver = "Hellbraun bis ockerbraun."
+vorkommen = "Symbiosepilz an Waldrändern und in Parks unter Fichte und Kiefer, gern auf kalkreichem Boden."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Körnchenröhrling"
+merkmal = "Stiel oben mit milchigen Tröpfchen und Drüsenpunkten, Stielbasis nicht rosa."
+essbar = "bedingtEssbar"
+slug = "koernchenroehrling"
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Bei Lärche, Hut gelb bis gelbbraun, Stiel mit Ring."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[verwechslungen]]
+name = "Weißbrauner Schmierröhrling"
+merkmal = "Hut weißlich bis hellbraun, Stielbasis ohne Rosaton."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RingloserButterpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Ringloser_Butterpilz"

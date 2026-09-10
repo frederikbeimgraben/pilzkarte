@@ -1,33 +1,59 @@
 name = "Birkenpilz"
 lateinisch = "Leccinum scabrum"
 gruppe = "raufussroehrling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 karte = "birkenpilz"
-speisewertHinweis = "Fleisch wird beim Garen weich und dunkel. Jung sammeln."
+speisewertHinweis = "Jung sammeln. Im Alter wird das Fleisch schwammig."
+marktfaehig = false
+wertigkeit = 2
+weitereNamen = ["Gemeiner Birkenpilz", "Langhaxen", "Graugrüner Birkenpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Birkenpilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 26.0 }
+sporenLaengeUm = { von = 13.0, bis = 18.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
-hut = "5 bis 15 cm, grau- bis dunkelbraun, glatt, bei Nässe schmierig."
-roehren = "Weiß, im Alter grau, auf Druck kaum verfärbend."
-stiel = "Lang, schlank, weißlich, dicht mit dunklen bis schwarzen Schüppchen besetzt."
-fleisch = "Weiß, weich, im Schnitt höchstens schwach grau anlaufend."
-geruch = "Unauffällig pilzig."
-geschmack = "Mild."
-sporenpulver = "Ockerbraun."
-vorkommen = "Streng an Birke gebunden. In Wäldern, Mooren, Parks und an Straßenrändern, wo Birken stehen."
-zeit = "Juni bis Oktober."
+hut = "4 bis 16, selten bis 26 cm breit, grau-, gelb- bis rotbraun, bei Nässe schmierig, jung halbkugelig, später abflachend."
+roehren = "Weißlich, später grau, im Alter sehr schwabbelig, leicht ablösbar."
+stiel = "Schmutzig weiß, mit weißen bis schwarzbraunen Schuppen."
+fleisch = "Weißlich bis grauweiß, nicht rötend, jung fest, später schwammig."
+geruch = "Neutral, allenfalls schwach pilzig."
+geschmack = "Mild, etwas säuerlich."
+sporenpulver = "Gelbbraun."
+vorkommen = "Symbiosepilz bei Birke."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
-essbar = "ungeniessbar"
-
-[[verwechslungen]]
-name = "Rotkappen"
-merkmal = "Hut orange oder rot, Fleisch läuft im Schnitt dunkel an. Ebenfalls essbar."
+name = "Rötender Birkenpilz"
+merkmal = "Fleisch läuft im Schnitt rosa bis korallenrot an."
 essbar = "essbar"
+slug = "roetender-birkenpilz"
+
+[[verwechslungen]]
+name = "Vielverfärbender Birkenpilz"
+merkmal = "Fleisch erst hellrosa, dann stark kornblumenblau."
+essbar = "speisepilz"
+slug = "vielverfaerbender-birkenpilz"
+
+[[verwechslungen]]
+name = "Schwarzhütiger Birkenpilz"
+merkmal = "Hut dunkel schwarzbraun und feinsamtig, Stielbasis keulig und oft schwarz."
+essbar = "speisepilz"
+slug = "schwarzhuetiger-birkenpilz"
+
+[[verwechslungen]]
+name = "Hainbuchenröhrling"
+merkmal = "Huthaut wie gehämmert runzelig, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila."
+essbar = "speisepilz"
+slug = "hainbuchenroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

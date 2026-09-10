@@ -1,0 +1,54 @@
+name = "Duftender Goldporling"
+lateinisch = "Auriporia aurulenta"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = ["fichte", "kiefer"]
+speisewertHinweis = "Er wächst flach auf dem Holz und besteht fast nur aus Röhren. Als Speisepilz kommt er nicht infrage. In Deutschland extrem selten, deshalb stehen lassen."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "extremSelten"
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/DuftenderGoldporling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 30.0 }
+sporenLaengeUm = { von = 4.0, bis = 6.1 }
+sporenBreiteUm = { von = 2.4, bis = 4.0 }
+
+[merkmale]
+fruchtkoerper = "5 bis 13, selten bis 30 cm breit, orange bis leuchtend gelb, karottenrot bis blutrot, die Zuwachsstellen oft orangerosa. Rand oft ausgefranst. Er wirkt, als bestünde er nur aus Röhren."
+poren = "Zwei bis drei je Millimeter, rundlich, orange bis gelb."
+stiel = "Fehlt. Der Pilz liegt flach dem Holz auf, das Myzel ist orangerot."
+fleisch = "Gelb bis orange, weich und fast gallertig, später verhärtend."
+geruch = "Nach Anis, Aprikosenkompott oder süßlich nach Vanille."
+geschmack = "Unbedeutend."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer an totem Nadelholz, gern an verrottetem Holz von Fichte und Kiefer, überzieht auch alte Porlinge. Löst Braunfäule aus. In Deutschland extrem selten."
+zeit = "Ganzjährig."
+
+[[verwechslungen]]
+name = "Zimtfarbiger Weichporling"
+merkmal = "Zimtbraune bis rostbraune Farben statt Orange, ohne Anisgeruch."
+essbar = "toedlichGiftig"
+slug = "zimtfarbiger-weichporling"
+
+[[verwechslungen]]
+name = "Leuchtender Weichporling"
+merkmal = "Blasser gelborange, ohne den süßlichen Anisgeruch."
+essbar = "ungeniessbar"
+slug = "leuchtender-weichporling"
+
+[[verwechslungen]]
+name = "Schwefelporling"
+merkmal = "Bildet dachziegelige Konsolen mit Hutkante, wächst an Laubholz."
+essbar = "bedingtEssbar"
+slug = "schwefelporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/DuftenderGoldporling.htm"

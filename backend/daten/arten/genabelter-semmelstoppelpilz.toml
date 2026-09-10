@@ -1,0 +1,56 @@
+name = "Genabelter Semmelstoppelpilz"
+lateinisch = "Hydnum umbilicatum"
+gruppe = "stoppelpilz"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Extrem selten, deshalb besser stehen lassen. Alte Fruchtkörper werden bitter."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+synonyme = ["Dentinum umbilicatum"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GenabelterSemmelstoppelpilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 2.5, bis = 6.0 }
+sporenLaengeUm = { von = 8.0, bis = 10.0 }
+sporenBreiteUm = { von = 7.5, bis = 8.5 }
+
+[merkmale]
+hut = "4 bis 20, selten bis 25 cm breit, jung weißlich gelb bis semmelgelb, später dunkler gelblich. Rand lange eingerollt, Mitte genabelt und vertieft."
+stacheln = "Weiß bis hellorange, im Alter gelblich, kegelig und relativ weit auseinander stehend, am Stiel etwas herablaufend."
+stiel = "2,5 bis 6 cm hoch und 0,5 bis 1 cm dick, weißlich bis hellgelb, auf Druck gilbend, Oberfläche trocken."
+fleisch = "Gelblichweiß, cremegelb bis hellorange, fest und etwas brüchig, läuft bei Verletzung gelbrosa bis braun an."
+geruch = "Angenehm."
+geschmack = "Mild, alt bitterlich."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz in Mischwäldern. Extrem selten."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Ellipsoidsporiger Stoppelpilz"
+merkmal = "Hutmitte nicht genabelt, Stacheln dichter stehend."
+essbar = "speisepilz"
+slug = "ellipsoidsporige-stoppelpilz"
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Unterseite mit Poren statt mit Stacheln."
+essbar = "speisepilz"
+slug = "semmelporling"
+
+[[verwechslungen]]
+name = "Schafporling"
+merkmal = "Hut weißlich, Unterseite mit feinen weißen Poren."
+essbar = "bedingtEssbar"
+slug = "schafporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GenabelterSemmelstoppelpilz.htm"

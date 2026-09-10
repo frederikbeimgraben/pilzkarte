@@ -1,0 +1,49 @@
+name = "Hainbuchenröhrling"
+lateinisch = "Leccinellum pseudoscabrum"
+gruppe = "raufussroehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["hainbuche", "hasel"]
+speisewertHinweis = "Als Raufußröhrling besonders geschützt, also nur für den Eigenbedarf sammeln. Das Fleisch wird beim Kochen schwarz."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Hainbuchenraufußröhrling"]
+synonyme = ["Leccinum pseudoscabrum", "Leccinum carpini", "Leccinum griseum", "Leccinellum carpini", "Boletus scaber var. carpini", "Boletus pseudoscaber"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Hainbuchenroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
+stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.4 }
+sporenLaengeUm = { von = 16.0, bis = 28.0 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 13 cm breit, kastanienbraun, hellbraun bis olivgelb. Die Haut wirkt gehämmert und runzelig, alt felderig rissig. Rand jung eingebogen, alt verkürzt, dann quellen die Röhren hervor."
+roehren = "Schmutzigweiß, creme bis ockergelb, später blass grauocker, auf Druck bräunlich bis violettschwärzlich."
+stiel = "4 bis 12, selten bis 14 cm lang und 0,6 bis 1,2, selten bis 1,4 cm dick, weißlich, mit braunschwarzen bis grauschwarzen Schüppchen. Nach Verletzung grauviolett und nach kurzer Zeit schwarz."
+fleisch = "Grauweiß, im Anschnitt zuerst rötlich, nach wenigen Minuten grauviolett bis schwarzlila, fest. Beim Kochen schwarz, nahe der Basis bläulich."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, pilzig."
+sporenpulver = "Ockerbraun bis schmutzig braun."
+vorkommen = "Symbiosepilz im Laubwald, meist unter Hainbuche, seltener bei Hasel. Gern zusammen mit dem Hainbuchenmilchling."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rötender Birkenpilz"
+merkmal = "Bei Birke, Huthaut glatt statt gehämmert, Fleisch rötet und wird nicht schwarz."
+essbar = "essbar"
+slug = "roetender-birkenpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Hainbuchenroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Hainbuchen-Raufuß"

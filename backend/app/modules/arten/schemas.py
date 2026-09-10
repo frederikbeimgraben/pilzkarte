@@ -25,6 +25,9 @@ class Stufe(StrEnum):
     VORHERSAGE = "vorhersage"
     SAISON = "saison"
     PROFIL = "profil"
+    # Eine Art, die nur im Katalog steht, weil man eine sammelbare mit ihr
+    # verwechselt. Sie traegt keine Saisonkurve und keine Karte.
+    VERWECHSLUNG = "verwechslung"
 
 
 class Gruppe(StrEnum):
@@ -72,10 +75,13 @@ class Baumart(StrEnum):
     KIEFER = "kiefer"
     TANNE = "tanne"
     LAERCHE = "laerche"
+    DOUGLASIE = "douglasie"
     BUCHE = "buche"
     EICHE = "eiche"
     BIRKE = "birke"
+    ERLE = "erle"
     HAINBUCHE = "hainbuche"
+    HASEL = "hasel"
     PAPPEL = "pappel"
     WEIDE = "weide"
     LINDE = "linde"
@@ -85,6 +91,44 @@ class Baumart(StrEnum):
     KASTANIE = "kastanie"
     HOLUNDER = "holunder"
     OBSTBAUM = "obstbaum"
+
+
+class Haeufigkeit(StrEnum):
+    """Wie oft man die Art findet, laut ihrer Quellseite."""
+
+    SEHR_HAEUFIG = "sehrHaeufig"
+    HAEUFIG = "haeufig"
+    ZERSTREUT = "zerstreut"
+    SELTEN = "selten"
+    SEHR_SELTEN = "sehrSelten"
+
+
+class Gefaehrdung(StrEnum):
+    """Die Stufe der Roten Liste Deutschlands, wenn die Quellseite eine nennt."""
+
+    VOM_AUSSTERBEN_BEDROHT = "vomAussterbenBedroht"
+    STARK_GEFAEHRDET = "starkGefaehrdet"
+    GEFAEHRDET = "gefaehrdet"
+    UNBEKANNTES_AUSMASS = "unbekanntesAusmass"
+    EXTREM_SELTEN = "extremSelten"
+    VORWARNLISTE = "vorwarnliste"
+    DATEN_UNZUREICHEND = "datenUnzureichend"
+
+
+class Reagenz(StrEnum):
+    """Die Chemikalien, mit denen ein Bestimmer eine Farbreaktion auslöst."""
+
+    KOH = "koh"
+    NAOH = "naoh"
+    FESO4 = "feso4"
+    GUAJAK = "guajak"
+    MELZER = "melzer"
+    ANILIN = "anilin"
+    PHENOL = "phenol"
+    AMMONIAK = "ammoniak"
+    SULFOVANILLIN = "sulfovanillin"
+    FORMALIN = "formalin"
+    SCHAEFFER = "schaeffer"
 
 
 class Jahreszeit(StrEnum):
@@ -130,6 +174,7 @@ class MerkmalSchluessel(StrEnum):
     GERUCH = "geruch"
     GESCHMACK = "geschmack"
     SPORENPULVER = "sporenpulver"
+    REAGENZIEN = "reagenzien"
     VORKOMMEN = "vorkommen"
     ZEIT = "zeit"
     SPEISEWERT = "speisewert"
@@ -141,12 +186,57 @@ class MerkmalSchluessel(StrEnum):
 type Tag = Stufe | Gruppe | Jahreszeit | Baumart
 
 
-class Verwechslung(BasisModell):
-    """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal."""
+class Spanne(BasisModell):
+    """Ein Messbereich, so wie 123pilzsuche ihn schreibt: 4 bis 20, selten bis 25."""
 
-    name: str
-    merkmal: str
+    von: float = Field(gt=0)
+    bis: float = Field(gt=0)
+    selten_bis: float | None = Field(default=None, gt=0)
+
+    @model_validator(mode="after")
+    def _reihenfolge(self) -> "Spanne":
+        if self.von > self.bis:
+            raise ValueError("Der untere Wert einer Spanne liegt ueber dem oberen.")
+        if self.selten_bis is not None and self.selten_bis < self.bis:
+            raise ValueError("Der Ausnahmewert liegt unter dem oberen Wert.")
+        return self
+
+
+class Masse(BasisModell):
+    """Die Zahlen, die die Quellseite nennt. Was sie nicht nennt, bleibt leer.
+
+    Huete werden in Zentimetern breit gemessen, Sporen in Mikrometern. Ein Pilz
+    hat entweder einen Hut oder einen Fruchtkoerper, nie beides.
+    """
+
+    hut_breite_cm: Spanne | None = None
+    fruchtkoerper_breite_cm: Spanne | None = None
+    fruchtkoerper_hoehe_cm: Spanne | None = None
+    stiel_laenge_cm: Spanne | None = None
+    stiel_dicke_cm: Spanne | None = None
+    sporen_laenge_um: Spanne | None = None
+    sporen_breite_um: Spanne | None = None
+
+
+class Verwechslung(BasisModell):
+    """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
+
+    ``slug`` zeigt auf das eigene Profil der Art, wenn es eines gibt. Das
+    Frontend verlinkt darauf, damit man die Verwechslung nachschlagen kann,
+    statt sie nur genannt zu bekommen.
+    """
+
+    name: str = Field(min_length=1)
+    merkmal: str = Field(min_length=1)
     essbar: Essbarkeit
+    slug: str | None = None
+
+
+class Reagenzeintrag(BasisModell):
+    """Eine Chemikalie und die Farbe, die sie am Pilz hervorruft."""
+
+    reagenz: Reagenz
+    reaktion: str = Field(min_length=1)
 
 
 class Verweis(BasisModell):
@@ -156,6 +246,22 @@ class Verweis(BasisModell):
     url: str
 
 
+WERTIGKEIT_BESTE = 1
+WERTIGKEIT_SCHWAECHSTE = 6
+
+
+class Quelle(BasisModell):
+    """Woher die Angaben eines Profils stammen und wann sie geprueft wurden.
+
+    Die Texte sind selbst formuliert, die Fakten nicht selbst erfunden. Wer ein
+    Merkmal anzweifelt, findet unter ``url`` die Seite, gegen die es zuletzt
+    geprueft wurde.
+    """
+
+    url: str
+    geprueft_am: str = Field(pattern=r"^\d{4}-\d{2}-\d{2}$")
+
+
 class Profil(BasisModell):
     """Eine Datei unter ``daten/arten/<slug>.toml``.
 
@@ -163,19 +269,50 @@ class Profil(BasisModell):
     anders heisst als der Slug.
     """
 
-    name: str
-    lateinisch: str
+    name: str = Field(min_length=1)
+    lateinisch: str = Field(min_length=1)
     gruppe: Gruppe
     speisewert: Essbarkeit
     geschuetzt: bool
     jahreszeiten: list[Jahreszeit] = Field(min_length=1)
     baeume: list[Baumart]
+    sammelbar: bool = True
+    # Die Positivliste der DGfM. Nur was dort steht, darf in den Handel.
+    marktfaehig: bool = False
+    # Die "Relative Wertigkeit" von 123pilzsuche: 1 ist die beste Stufe,
+    # 6 die schwaechste. Die Seite nennt sie nicht fuer jede Art.
+    wertigkeit: int | None = Field(default=None, ge=WERTIGKEIT_BESTE, le=WERTIGKEIT_SCHWAECHSTE)
+    haeufigkeit: Haeufigkeit | None = None
+    gefaehrdung: Gefaehrdung | None = None
+    weitere_namen: list[str] = Field(default_factory=list[str])
+    synonyme: list[str] = Field(default_factory=list[str])
+    masse: Masse = Field(default_factory=Masse)
     karte: str | None = None
     speisewert_hinweis: str | None = None
     schutz_hinweis: str | None = None
+    quelle: Quelle
+    reagenzien: list[Reagenzeintrag] = Field(default_factory=list["Reagenzeintrag"])
     merkmale: dict[MerkmalSchluessel, str]
     verwechslungen: list[Verwechslung] = Field(min_length=1)
     links: list[Verweis] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def _keine_karte_ohne_sammeln(self) -> "Profil":
+        # Eine Verwechslungsart traegt kein Modell. Ein Manifest waere ein
+        # Tippfehler, und die Stufe wuerde davon nicht vorhersage.
+        if not self.sammelbar and self.karte:
+            raise ValueError("Eine nicht sammelbare Art hat keine Karte.")
+        return self
+
+    @field_validator("merkmale")
+    @classmethod
+    def _keine_leere_zeile(cls, wert: dict[MerkmalSchluessel, str]) -> dict[MerkmalSchluessel, str]:
+        # Eine leere Zeile in der Merkmalstabelle sieht aus wie ein Fehler der
+        # App. Fehlt die Angabe, laesst man den Schluessel ganz weg.
+        leer = [schluessel for schluessel, text in wert.items() if not text.strip()]
+        if leer:
+            raise ValueError(f"Diese Merkmale sind leer: {', '.join(sorted(leer))}.")
+        return wert
 
     @field_validator("merkmale")
     @classmethod
@@ -197,9 +334,14 @@ class Profil(BasisModell):
     @field_validator("merkmale")
     @classmethod
     def _selbst_gesetzt(cls, wert: dict[MerkmalSchluessel, str]) -> dict[MerkmalSchluessel, str]:
-        # Speisewert und Schutz stellt der Dienst aus den Enums zusammen. Stuende
-        # beides auch als Text in der Datei, koennten die zwei auseinanderlaufen.
-        gesetzt = {MerkmalSchluessel.SPEISEWERT, MerkmalSchluessel.SCHUTZ} & set(wert)
+        # Speisewert, Schutz und Reagenzien stellt der Dienst aus den Enums
+        # zusammen. Stuenden sie auch als Text in der Datei, koennten Anzeige
+        # und Filterwert auseinanderlaufen.
+        gesetzt = {
+            MerkmalSchluessel.SPEISEWERT,
+            MerkmalSchluessel.SCHUTZ,
+            MerkmalSchluessel.REAGENZIEN,
+        } & set(wert)
         if gesetzt:
             raise ValueError(f"Diese Merkmale setzt der Dienst: {', '.join(sorted(gesetzt))}.")
         return wert
@@ -280,6 +422,13 @@ class SaisonKurve(BasisModell):
     begehungen_je_woche_laufendes_jahr: list[int]
 
 
+class Marktfaehigkeit(BasisModell):
+    """Ob die DGfM die Art auf ihrer Positivliste der Speisepilze fuehrt."""
+
+    marktfaehig: bool
+    quelle: Quelle
+
+
 class Merkmal(BasisModell):
     """Eine Zeile der Merkmalstabelle."""
 
@@ -299,10 +448,14 @@ class ArtKurz(BasisModell):
     geschuetzt: bool
     speisewert: Essbarkeit
     karten_slug: str | None
+    sammelbar: bool
+    marktfaehig: bool
+    wertigkeit: int | None
+    haeufigkeit: Haeufigkeit | None
     vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
-    saison: SaisonKurz
+    saison: SaisonKurz | None
 
 
 class Art(BasisModell):
@@ -317,13 +470,22 @@ class Art(BasisModell):
     geschuetzt: bool
     speisewert: Essbarkeit
     karten_slug: str | None
+    sammelbar: bool
+    marktfaehigkeit: Marktfaehigkeit
+    wertigkeit: int | None
+    haeufigkeit: Haeufigkeit | None
+    gefaehrdung: Gefaehrdung | None
+    weitere_namen: list[str]
+    synonyme: list[str]
+    masse: Masse
+    quelle: Quelle
     vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
     merkmale: list[Merkmal]
     verwechslungen: list[Verwechslung]
     links: list[Verweis]
-    saison: SaisonKurve
+    saison: SaisonKurve | None
 
 
 class ArtenListe(BasisModell):

@@ -1,25 +1,55 @@
 name = "Orangebecherling"
 lateinisch = "Aleuria aurantia"
 gruppe = "becherling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
+jahreszeiten = ["sommer", "herbst"]
 baeume = []
-speisewertHinweis = "Essbar, aber ohne Wert. Wird höchstens roh als Farbtupfer verwendet."
+speisewertHinweis = "Eine der wenigen roh essbaren Arten, als Salatpilz oder zum Füllen der Kelche. Er hat kaum Eigengeschmack und ist oft sandig."
+marktfaehig = false
+wertigkeit = 3
+weitereNamen = ["Gemeiner Orangebecherling", "Orangeroter Becherling", "Feuerroter Becherpilz", "Orangeroter Becherpilz", "Pomeranzenfarbiger Becherpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Orangebecherling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf der Oberfläche ohne Reaktion."
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 17.0, bis = 25.0 }
+sporenBreiteUm = { von = 9.0, bis = 11.0 }
 
 [merkmale]
-fruchtkoerper = "2 bis 10 cm, schüssel- bis schalenförmig, innen leuchtend orange, außen weißlich bereift, ohne Stiel. Im Alter wellig verbogen."
-fleisch = "Sehr dünn, brüchig, wachsartig."
-geruch = "Unauffällig."
-geschmack = "Mild."
-sporenpulver = "Weiß."
-vorkommen = "Zersetzer auf offenem, verdichtetem Boden: Waldwege, Böschungen, Baustellen, oft in Gruppen."
-zeit = "August bis November."
+fruchtkoerper = "1 bis 10, selten bis 12 cm breit, orange, gelborange oder gelb, kahl. Schüssel- bis kelchförmig, später abgeflacht und unregelmäßig. Außenseite blasser rosalich und weißlich körnig kleiig, im Alter fast kahl."
+stiel = "Sehr kurz bis meist fehlend, nur ein wurzelartiges Ende."
+fleisch = "Hellgelb bis orangegelb, mit wachsartiger Oberfläche, sonst dünn, spröde und sehr brüchig."
+geruch = "Neutral."
+geschmack = "Mild und neutral, roh essbar."
+sporenpulver = "Weiß bis farblos."
+vorkommen = "Folgezersetzer in Wäldern, Gärten und Parks, auf nackter trockener Erde, oft sandig oder lehmig, selten auf Holzabfällen wie Hackschnitzeln. Oft büschelig."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Orangeroter Becherling"
-merkmal = "Kleiner, an anderem Standort. Ohne Speisewert."
+name = "Österreichischer Prachtbecherling"
+merkmal = "Innenseite zinnoberrot statt orange, Außenseite filzig haarig, meist mit kurzem Stiel, von Winter bis Mai."
 essbar = "ohneSpeisewert"
+slug = "oesterreichischer-prachtbecherling"
+
+[[verwechslungen]]
+name = "Scharlachroter Kelchbecherling"
+merkmal = "Innenseite zinnoberrot, unterer Teil ganz weiß und filzig haarig, an Laubholzästen von Winter bis Mai."
+essbar = "ohneSpeisewert"
+slug = "scharlachroter-kelchbecherling"
+
+[[verwechslungen]]
+name = "Linden-Kelchbecherling"
+merkmal = "Innenseite zinnober- bis karminrot, an vergrabenen Lindenzweigen und anderem Laubholz, von Winter bis Mai."
+essbar = "ohneSpeisewert"
+slug = "linden-kelchbecherling"
 
 [[links]]
 titel = "123pilzsuche.de"

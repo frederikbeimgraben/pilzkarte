@@ -3,25 +3,60 @@ lateinisch = "Craterellus cornucopioides"
 gruppe = "leistling"
 speisewert = "speisepilz"
 geschuetzt = true
-jahreszeiten = ["herbst"]
-baeume = ["buche", "eiche", "hainbuche"]
-schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Totentrompete stand früher dort und wird mit ihnen geschützt."
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche"]
+speisewertHinweis = "Gut zum Trocknen. Beim Putzen den hohlen Stiel prüfen, dort sitzen oft Schnecken und Insekten."
+schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Totentrompete steht heute als Craterellus cornucopioides und wird hier mit ihnen geschützt."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Herbsttrompete", "Füllhorn", "Kraterpilz", "Herbstleistling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Totentrompete.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 3.0, bis = 11.0, seltenBis = 13.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 11.0, bis = 14.0 }
+sporenBreiteUm = { von = 7.0, bis = 9.0 }
 
 [merkmale]
-hut = "3 bis 8 cm, tief trichterig bis röhrig, dunkel graubraun bis schwarz, Rand wellig umgebogen."
-leisten = "Außenseite glatt bis schwach runzelig, aschgrau bereift. Echte Leisten fehlen."
-stiel = "Setzt sich ohne Absatz in den Trichter fort, hohl."
-fleisch = "Dünn, zäh, grauschwarz."
-geruch = "Angenehm, im getrockneten Zustand kräftig würzig."
+hut = "3 bis 6, selten bis 8 cm breit, grauschwarz, braunschwarz bis gelbbraun, trichterförmig genabelt, dünnfleischig, bräunlich feinkörnig bereift."
+leisten = "Grauschwarz bis braunschwarz, fast nicht sichtbar."
+stiel = "3 bis 11, selten bis 13 cm lang, 1 bis 3, selten bis 4 cm dick, grauschwarz, ohne Absatz in den Hut übergehend, Basis schwarz werdend."
+fleisch = "Schwarzbraun, gelbbraun bis rußbraun, dünn, zäh, elastisch."
+geruch = "Angenehm fruchtig aromatisch, etwas süßlich."
 geschmack = "Mild."
-sporenpulver = "Weißlich."
-vorkommen = "Mykorrhiza mit Buche, Eiche und Hainbuche, auf Kalk, in der Laubstreu. Steht dicht in Herden und ist am Boden schwer zu sehen."
-zeit = "August bis November."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Eiche und Buche, kalkliebend. Sehr häufig, wegen der grauschwarzen Farbe aber leicht zu übersehen."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Krause Kraterelle"
-merkmal = "Unterseite deutlich geadert, heller grau. Ebenso essbar."
+name = "Kohlenleistling"
+merkmal = "1 bis 4, selten bis 6 cm breit, Unterseite mit grauweißen, eng stehenden Lamellen statt fast glatter Leisten."
+essbar = "ungeniessbar"
+slug = "kohlenleistling"
+
+[[verwechslungen]]
+name = "Schwarzer Kelchpilz"
+merkmal = "Kelchförmig, ohne Leisten, Fleisch braun und fleischig lederartig, Stiel nach unten verjüngt."
+essbar = "ungeniessbar"
+slug = "schwarzer-kelchpilz"
+
+[[verwechslungen]]
+name = "Grauer Leistling"
+merkmal = "Hut schwarzgrau bis graubraun und feinschuppig, Rand wellig, Fleisch schmutzig weißlich bis grau."
 essbar = "essbar"
+slug = "grauer-leistling"
+
+[[verwechslungen]]
+name = "Verbogener Leistling"
+merkmal = "Viel kleiner, 1 bis 3, selten bis 4 cm breit, Hut lehmbraun bis gelbbraun, Fleisch blassgrau."
+essbar = "speisepilz"
+slug = "verbogener-leistling"
 
 [[links]]
 titel = "123pilzsuche.de"

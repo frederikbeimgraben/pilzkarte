@@ -1,0 +1,53 @@
+name = "Übelriechender Egerling"
+lateinisch = "Agaricus maleolens"
+gruppe = "champignon"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Ungenießbar wegen des widerlich fischartigen Geruchs."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Übelriechender Champignon"]
+synonyme = ["Psalliota ingrata", "Agaricus ingratus", "Agaricus bernardii syn. maleolens", "Agaricus ingratus syn. maleolens", "Agaricus ingratus var. maleolens"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/UebelriechenderEgerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Kaum verfärbend."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
+
+[merkmale]
+hut = "3 bis 9, selten bis 12 cm breit, schmutzigbraun bis gelbbraun, später braunschuppig auf weißlichem Grund, jung glatt, Rand lange eingerollt."
+lamellen = "Zuerst graurosa, später bräunlich, frei."
+stiel = "Weißlich, Basis braunfleckig, mit doppeltem Ring. Spitze leicht vom Hutfleisch abtrennbar."
+fleisch = "Weiß, läuft braunrosa an."
+geruch = "Widerlich fischartig, stinkend und unangenehm."
+geschmack = "Mild."
+sporenpulver = "Purpurbraun."
+vorkommen = "Folgezersetzer in Gärten, auf Wiesen, an Waldwegen, in Parks und auf Rasenflächen, gern auf grasfreien Stellen. Selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rebhuhnegerling"
+merkmal = "Hut graubraun bis rauchschwärzlich, Fleisch chromgelb und später braunrot anlaufend, Geruch karbolartig statt fischartig, Ring gerandet."
+essbar = "giftig"
+slug = "rebhuhnegerling"
+
+[[verwechslungen]]
+name = "Wiesenchampignon"
+merkmal = "Hut weiß und glatt, Ring vergänglich, Stielbasis ohne Knolle, Geruch angenehm pilzig."
+essbar = "speisepilz"
+slug = "wiesenchampignon"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/UebelriechenderEgerling.htm"

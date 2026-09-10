@@ -1,0 +1,59 @@
+name = "Weißer Knollenblätterpilz"
+lateinisch = "Amanita phalloides var. alba"
+gruppe = "wulstling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["buche", "eiche", "esche"]
+speisewertHinweis = "Tödlich giftig, schon ein Fruchtkörper schädigt die Leber. Niemals kosten. Zu erkennen an weißen freien Lamellen, ungerieftem Hutrand, häutigem hängendem Ring und der zwiebeligen Knolle in einer häutigen, sackartigen Scheide."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Weißer Grüner Knollenblätterpilz", "Weißhütiger Knollenblätterpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WeisserKnolli.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch und Huthaut bleiben unverfärbt, anders als beim Kegelhütigen Knollenblätterpilz, der gelb wird."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 8.0, bis = 11.0 }
+sporenBreiteUm = { von = 6.0, bis = 9.0 }
+
+[merkmale]
+hut = "3 bis 12, selten bis 15 cm breit, weißlich, nicht gerieft, radialfaserig, jung halbkugelig bis konvex, später flach ausgebreitet, mit spärlichen weißen Velumresten. Die Huthaut lässt sich tortenstückförmig bis zur Mitte abziehen."
+lamellen = "Weiß, frei bis fein angewachsen, relativ eng stehend."
+stiel = "5 bis 12, selten bis 15 cm lang, 1 bis 3, selten bis 6 cm dick, weiß, faserig, fein genattert, mit angedrückten Velumschüppchen, voll. Basis zwiebelknollig und gerandet, in einer häutigen sackartigen Scheide. Ring weiß, häutig, hängend."
+fleisch = "Weiß, unter der Huthaut gelbgrünlich, beim Durchschneiden ohne Verfärbung, brüchig."
+geruch = "Jung geruchlos, später süßlich, honigartig oder aasartig."
+geschmack = "Mild und würzig, aber niemals kosten."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz in Mischwald, Parkanlagen und Gärten, überwiegend bei Laubbäumen wie Buche, Eiche und Esche, selten bei Nadelbäumen. Selten."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Kegelhütiger Knollenblätterpilz"
+merkmal = "Hut kegelig gebuckelt, Huthaut färbt sich mit Kalilauge gelb."
+essbar = "toedlichGiftig"
+slug = "kegelhuetiger-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Hut grünlich, oliv bis gelbgrün statt rein weißlich."
+essbar = "toedlichGiftig"
+slug = "gruener-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Riesenrötling"
+merkmal = "Lamellen im Alter rosa vom Sporenpulver, ohne Ring und ohne Scheide an der Basis."
+essbar = "toedlichGiftig"
+slug = "riesenroetling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WeisserKnolli.htm"

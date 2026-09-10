@@ -1,32 +1,82 @@
 name = "Maronenröhrling"
 lateinisch = "Imleria badia"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["fichte", "kiefer", "buche"]
-speisewertHinweis = "Nimmt Cäsium stärker auf als die meisten Arten. In Südbayern und im Bayerischen Wald sind größere Mengen nicht zu empfehlen."
+baeume = []
+speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen. Er nimmt Cäsium 137 stärker auf als die meisten Arten; für Kinder und Schwangere sind größere Mengen nicht zu empfehlen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Braunkappen", "Braunkuppen", "Braune", "Bräunling", "Marone"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Maronenroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut schwärzlich kastanienbraun bis etwas orange, im Fleisch blassorange."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Auf dem Hut schwarz mit blaugrünem Schimmer, im Fleisch ohne Reaktion."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Im Fleisch ohne Reaktion bis etwas grau, auf dem Hut ohne Reaktion oder schwarzoliv."
+
+[[reagenzien]]
+reagenz = "melzer"
+reaktion = "In den Lamellen blau."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
 
 [merkmale]
-hut = "4 bis 15 cm, kastanien- bis dunkelbraun, jung samtig, bei Nässe glänzend klebrig."
-roehren = "Jung blassgelb, später grüngelb. Mündungen blauen auf Druck sofort."
-stiel = "Schlank, braun faserig, ohne Netz und ohne Flocken."
-fleisch = "Weiß bis blassgelb, blaut im Schnitt schwach und langsam."
-geruch = "Angenehm pilzig."
-geschmack = "Mild."
+hut = "3 bis 15, selten bis 25 cm breit, dunkel- bis hellbraun oder olivbraun, glatt, matt und feinsamtig, feucht schmierig und glänzend."
+roehren = "Gelblich bis grüngelb, auf Druck blaugrün, rundlich und feinporig, ablösbar, am Stiel ausgebuchtet angewachsen, im Alter schwammig."
+stiel = "5 bis 12, selten bis 15 cm lang, 1 bis 5, selten bis 6 cm dick, bräunlich bis gelbbraun, längsfaserig, ohne Netz, zur Basis knollig verdickt und oft gebogen. Die Stielrinde hat eine eingewachsene Maserung."
+fleisch = "Weißlich bis hellgelb, mehr oder weniger stark blauend."
+geruch = "Angenehm pilzig, schwach säuerlich."
+geschmack = "Nussig, pilzig."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Fichte und Kiefer, auch bei Buche. Auf sauren Böden, gern in Nadelforsten und an morschem Holz."
-zeit = "Juli bis November, Schwerpunkt September und Oktober."
+vorkommen = "Symbiosepilz in Misch- und Nadelwäldern, gern auf saurem Boden."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
-essbar = "ungeniessbar"
+merkmal = "Röhren jung weiß, später rosa, Stiel mit braunem Netz. Schon ein kleines Stück Fleisch schmeckt sehr bitter."
+essbar = "giftig"
+slug = "gallenroehrling"
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau und samtig, Stiel zur Basis rot mit Netz, Fleisch sofort blauend, Geruch säuerlich muffig."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Steinpilz"
+merkmal = "Röhren weißlich bis gelbgrün und kaum blauend, Stiel mit weißem Netz."
+essbar = "speisepilz"
+slug = "steinpilz"
+
+[[verwechslungen]]
+name = "Rotfußröhrling"
+merkmal = "Huthaut aufreißend, darunter eine rote Zone, Stiel rötlich punktiert, Fleisch nur stellenweise blauend."
+essbar = "essbar"
+slug = "rotfussroehrling"
 
 [[verwechslungen]]
 name = "Ziegenlippe"
-merkmal = "Röhren gelb, blauen kaum, Hut matt und rissig."
-essbar = "essbar"
+merkmal = "Hut wildlederartig filzig, Röhren jung leuchtend gelb und höchstens leicht blauend, Stiel fast weiß und schlank."
+essbar = "speisepilz"
+slug = "ziegenlippe"
 
 [[links]]
 titel = "123pilzsuche.de"

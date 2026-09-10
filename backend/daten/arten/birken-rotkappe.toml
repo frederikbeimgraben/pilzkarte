@@ -1,31 +1,61 @@
 name = "Birken-Rotkappe"
 lateinisch = "Leccinum versipelle"
 gruppe = "raufussroehrling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = true
-jahreszeiten = ["sommer", "herbst"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["birke"]
+speisewertHinweis = "Roh führt er zu Vergiftungen. Durchgaren und nur junge Stücke nehmen, im Alter wird das Fleisch schwarz und ist dann nicht mehr essbar."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "haeufig"
+weitereNamen = ["Birkenrotkappe", "Heiderotkappe", "Schwarzschuppiger Birkenröhrling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Birkenrotkappe2004.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 12.0, bis = 16.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
-hut = "6 bis 20 cm, orange bis ziegelrot, Huthaut steht am Rand etwas über."
-roehren = "Grauweiß, Mündungen fein, auf Druck bräunend."
-stiel = "Weiß mit schwarzen Schüppchen, Basis oft blaugrün fleckend."
-fleisch = "Weiß, im Schnitt erst rosa, dann grau bis schwarz."
-geruch = "Unauffällig pilzig."
-geschmack = "Mild."
-sporenpulver = "Ockerbraun."
-vorkommen = "Mykorrhiza mit Birke, auf sauren Böden, in Mooren und feuchten Wäldern."
-zeit = "Juli bis Oktober."
+hut = "4 bis 20, selten bis 22 cm breit, braunrot bis orangegelb, feinfilzig, dickfleischig, trocken, bei Nässe schmierig und klebrig. Die Huthaut steht am Rand über."
+roehren = "Weißlich, später grau, leicht ablösbar, im Alter stark schwammig."
+stiel = "6 bis 20 cm hoch, 1 bis 4 cm dick, weißlich, mit schwärzlichen Schüppchen, zur Basis oft schwarzbraun."
+fleisch = "Weiß bis violettgrau, schwach blauend, an der Basis eher blaugrün fleckend. Im Alter ganz schwarz."
+geruch = "Angenehm pilzig."
+geschmack = "Mild und angenehm."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz bei Birke, in Deutschland häufig."
+zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Espen-Rotkappe"
-merkmal = "Schüppchen am Stiel jung rötlich statt schwarz, bei Espe und Pappel."
-essbar = "essbar"
+name = "Fichtenrotkappe"
+merkmal = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
+essbar = "speisepilz"
+slug = "fichtenrotkappe"
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
-essbar = "ungeniessbar"
+name = "Eichenrotkappe"
+merkmal = "Stielschuppen rötlich bis rotgrau auf weißem Grund, Huthaut meist verkürzt."
+essbar = "speisepilz"
+slug = "eichenrotkappe"
+
+[[verwechslungen]]
+name = "Espenrotkappe"
+merkmal = "Stielschuppen jung weißlich, später orangebraun, Fleisch graulila."
+essbar = "speisepilz"
+slug = "espen-rotkappe"
+
+[[verwechslungen]]
+name = "Kiefernrotkappe"
+merkmal = "Hut fuchsrot bis rotbraun und samtig, Schuppen erst hellbraun, dann rötlich."
+essbar = "speisepilz"
+slug = "kiefernrotkappe"
 
 [[links]]
 titel = "123pilzsuche.de"

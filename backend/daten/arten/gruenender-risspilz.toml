@@ -1,0 +1,40 @@
+name = "Grünender Risspilz"
+lateinisch = "Inocybe aeruginascens"
+gruppe = "schleierling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer"]
+baeume = ["pappel", "weide", "linde", "eiche"]
+speisewertHinweis = "Giftig und halluzinogen. Das Grünen an Stiel und Fleisch ist das sicherste Merkmal."
+marktfaehig = false
+weitereNamen = ["Grünlichverfärbender Risspilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GruenenderRisspilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+stielLaengeCm = { von = 2.0, bis = 7.0 }
+
+[merkmale]
+hut = "2 bis 5, selten bis 7 cm breit, strohgelb, grünlichgelb bis braun, radial rissig und faserig, Rand wellig."
+lamellen = "Jung grauweißlich, später graubraun bis tabakbraun, ausgebuchtet angewachsen, Schneiden wellig und gezahnt."
+stiel = "2 bis 7 cm lang, hellgrau bis weißgelblich, von unten her blaugrün anlaufend, im Alter oft ganz grünlich, feinflockig und längsfaserig, Basis etwas verdickt."
+fleisch = "Glasig weiß bis hellbraun, bei Verletzung grün bis blaugrün."
+geruch = "Spermatisch, im Alter unangenehm seifig."
+geschmack = "Mild."
+sporenpulver = "Lehmbraun."
+vorkommen = "Symbiosepilz bei Laubbäumen, gern Pappel, Weide, Linde und Eiche, auf feuchtem sandigem Boden. In Mischwald, Parks und Gärten."
+zeit = "Frühling bis Sommer."
+
+[[verwechslungen]]
+name = "Nelkenschwindling"
+merkmal = "Hut ledergelb mit stumpfem Buckel, Lamellen blass creme und entfernt, Stiel zäh und verdrehbar, Sporenpulver weiß."
+essbar = "bedingtEssbar"
+slug = "nelkenschwindling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GruenenderRisspilz.htm"

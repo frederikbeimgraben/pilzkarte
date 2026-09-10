@@ -1,0 +1,55 @@
+name = "Gelber Hohlfußröhrling"
+lateinisch = "Suillus cavipes var. aereus"
+gruppe = "schmierroehrling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["laerche"]
+speisewertHinweis = "In dieser gelben Form sehr selten. Die Schweiz führt ihn als nicht marktfähig."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrSelten"
+synonyme = ["Suillus cavipes f. aereus", "Boletinus cavipes f. aureus", "Boletinus cavipes var. aureus", "Boletus cavipes", "Suillus cavipes var. aureus", "Boletinus cavipes", "Boletinus cavipe", "Paxillus porosus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/HohlfussroehrlingGelb.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.5 }
+sporenBreiteUm = { von = 3.5, bis = 4.5 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 10 cm breit, kanariengelb, bräunlich schuppig und filzig, Mitte oft gebuckelt. Rand lange eingerollt, jung durch ein spinnwebiges Velum mit dem Stiel verbunden; davon bleibt eine angedeutete Ringzone."
+roehren = "Gelblich, wabenartig, angewachsen bis herablaufend, schwer vom Hut trennbar."
+stiel = "Hohl, gelbschuppig mit bräunlichen Längszonen oberhalb der Ringzone, faserig und gelb benetzt."
+fleisch = "Hellgelb, nicht verfärbend."
+geruch = "Pilzig, würzig."
+geschmack = "Mild."
+sporenpulver = "Gelboliv."
+vorkommen = "Symbiosepilz unter Lärche, hauptsächlich auf saurem Boden."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Stiel voll und mit häutigem Ring, Hut feucht schmierig statt filzig-schuppig."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[verwechslungen]]
+name = "Elfenbeinröhrling"
+merkmal = "Hut weißlich bis elfenbeinfarben, Stiel voll und ohne Ringzone."
+essbar = "speisepilz"
+slug = "elfenbeinroehrling"
+
+[[verwechslungen]]
+name = "Kuhröhrling"
+merkmal = "Hut ockerbraun und schmierig, Röhren weit und olivgelb, Stiel voll."
+essbar = "essbar"
+slug = "kuhroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/HohlfussroehrlingGelb.htm"

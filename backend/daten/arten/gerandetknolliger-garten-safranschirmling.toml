@@ -1,0 +1,54 @@
+name = "Gerandetknolliger Garten-Safranschirmling"
+lateinisch = "Chlorophyllum brunneum"
+gruppe = "schirmling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Erkennbar an der breiten, tellerartig gerandeten Stielknolle, am einfachen Ring und am stark safranfarben rötenden Fleisch. Er wächst auf Kompost und in Gewächshäusern, kaum im Wald."
+marktfaehig = false
+weitereNamen = ["Gerandetknolliger Gartenriesenschirmling", "Safranschirmling-Gartenform", "Rötender Gartenschirmpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Gartenschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 26.0 }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.0, bis = 15.0 }
+sporenBreiteUm = { von = 6.0, bis = 9.5 }
+
+[merkmale]
+hut = "4 bis 15, selten bis 20 cm breit, schmutzig weiß bis braun, cremeweißlich bis hellocker, mit gezonten, weichen, wolligen, abstehenden braunen Schüppchen, die sternförmig aufreißen und zur Mitte hin dichter stehen. Rand flockig und meist fetzig behangen. Jung eiförmig, später halbkugelig."
+lamellen = "Weiß bis graubräunlich, frei."
+stiel = "6 bis 20, selten bis 26 cm lang und 1 bis 5, selten bis 6 cm dick. Hellbräunlich, glatt, nicht genattert, bei Verletzung rötend. Ring verschiebbar, breit, wollig filzig und einfach. Junge Fruchtkörper haben eine breite, tellerartige Stielknolle."
+fleisch = "Weißlich bis cremefarben, bei Verletzung zuerst stark safranfarben rötend, später weinrot bis bräunlich."
+geruch = "Unbedeutend bis unangenehm."
+geschmack = "Mild, unbedeutend."
+sporenpulver = "Weiß bis hell cremefarben."
+vorkommen = "Folgezersetzer auf Komposthaufen und wärmeerzeugendem Substrat, häufiger in Gewächshäusern sowie in wind- und kältegeschützten Gartenanlagen. Im Wald selten und dann bei Kompostablagerungen."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Grünsporschirmling"
+merkmal = "Lamellen im Alter grünlich, Sporenpulver grün, Fleisch nur schwach rötend."
+essbar = "giftig"
+slug = "gruensporschirmling"
+
+[[verwechslungen]]
+name = "Parasol"
+merkmal = "Stiel deutlich genattert, Ring doppelt, Fleisch kaum rötend."
+essbar = "bedingtEssbar"
+slug = "parasol"
+
+[[verwechslungen]]
+name = "Olivbrauner Safranschirmling"
+merkmal = "Stielbasis ohne tellerartig gerandete Knolle, wächst im Wald."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Gartenschirmling.htm"

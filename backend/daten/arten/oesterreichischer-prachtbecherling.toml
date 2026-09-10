@@ -1,0 +1,49 @@
+name = "Österreichischer Prachtbecherling"
+lateinisch = "Sarcoscypha austriaca"
+gruppe = "becherling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["weide", "pappel", "linde"]
+speisewertHinweis = "Ungiftig, aber ohne Wert für die Küche. 123pilzsuche gibt die Relative Wertigkeit 5."
+marktfaehig = false
+wertigkeit = 5
+weitereNamen = ["Blutroter Kelchbecherling", "Blutroter Prachtbecherling", "Österreichischer Kelchbecherling"]
+synonyme = ["Molliardiomyces coccineus", "Peziza austriaca", "Lachnea austriaca"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/AustriaPrachtbecherling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 22.5, bis = 35.0 }
+sporenBreiteUm = { von = 9.9, bis = 13.5 }
+
+[merkmale]
+fruchtkoerper = "1 bis 7, selten bis 9 cm breit, kelch- bis schüsselförmig, Innenseite zinnoberrot, in gelber Form als Gelber Prachtbecherling geführt. Rand lange eingerollt, Außenseite blasser und filzig haarig, später abgeflacht."
+stiel = "2 bis 3, selten bis 4 cm lang, weißlich bis gelblich, Spitze rötlich, meist kurz."
+fleisch = "Weißlich bis hellgelb mit roter Innenschicht, dünn und wachsartig."
+geruch = "Neutral, unbedeutend."
+geschmack = "Mild, neutral."
+sporenpulver = "Weiß bis farblos."
+vorkommen = "Folgezersetzer an Laubholzästen, gern in Auwäldern bei Erle, Weide und Espe, seltener Linde. Gern auf sandigem, kalkreichem Boden."
+zeit = "Winter bis Mai."
+
+[[verwechslungen]]
+name = "Linden-Kelchbecherling"
+merkmal = "Wächst an verrotteten Lindenzweigen, sonst kaum zu trennen."
+essbar = "ohneSpeisewert"
+slug = "linden-kelchbecherling"
+
+[[verwechslungen]]
+name = "Scharlachroter Kelchbecherling"
+merkmal = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
+essbar = "ohneSpeisewert"
+slug = "scharlachroter-kelchbecherling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/AustriaPrachtbecherling.htm"

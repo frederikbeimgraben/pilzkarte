@@ -1,24 +1,62 @@
 name = "Judasohr"
 lateinisch = "Auricularia auricula-judae"
 gruppe = "ohrlappenpilz"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["herbst", "winter", "fruehling"]
-baeume = ["holunder"]
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = ["holunder", "birke"]
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Holunderschwammpilz", "Holunderpilz", "Holunderschwamm", "Black Fungus", "Weißes Judasohr"]
+synonyme = ["Auricularia auricula", "Auricularia sambucina oder hirneola auricula-judae", "Auricularia polytricha"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Judasohr.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+sporenLaengeUm = { von = 11.0, bis = 23.0 }
+sporenBreiteUm = { von = 4.0, bis = 8.0 }
 
 [merkmale]
-fruchtkoerper = "3 bis 10 cm, ohrförmig, rotbraun bis olivbraun, gallertig elastisch. Trocknet zu einer harten Scholle ein und quillt bei Nässe wieder auf."
-fleisch = "Gallertig, zäh, mit feinem Flaum auf der Außenseite."
-geruch = "Unauffällig."
-geschmack = "Mild, fast neutral."
-sporenpulver = "Weiß."
-vorkommen = "Zersetzer an totem Holunder, seltener an anderem Laubholz. Wächst das ganze Jahr, auch im Frost."
-zeit = "Ganzjährig, Schwerpunkt Oktober bis April."
+fruchtkoerper = "1 bis 13, selten bis 16 cm breit, ohrförmig, braun, schwarzbraun bis schwarz, selten weiß, von Adern durchzogen, Oberfläche meist etwas feinfilzig. Die Rückseite ist feinkörnig filzig und blassgrau."
+stiel = "Kurz oder fehlend, mit dem Fruchtkörper verwachsen, braun."
+fleisch = "Bräunlich, schwarzbraun bis schwarz, durchscheinend, zäh, elastisch gallertartig. Trocknet auf etwa ein Drittel zusammen und quillt bei Feuchtigkeit wieder auf."
+geruch = "Neutral bis muffig erdig."
+geschmack = "Mild bis geschmacklos, gallertartig."
+sporenpulver = "Weiß bis cremegelblich."
+vorkommen = "Meist an Laubholz, vor allem Holunder, auch Birke und anderes Laubholz, fast nie an Nadelholz. Parasitisch und folgezersetzend, Auslöser von Weißfäule, frostbeständig."
+zeit = "Ganzjährig, Schwerpunkt Winter und Frühjahr bei feuchtem Wetter."
 
 [[verwechslungen]]
-name = "Gallertfleischiger Fältling"
-merkmal = "Unterseite deutlich gefaltet und aderig, an Nadelholz."
+name = "Kleines Judasohr"
+merkmal = "Nur 0,5 bis 1, selten bis 2 cm breit, Oberseite mit weißlichem haarigem Filz, an Zitterpappel und Weide."
 essbar = "ungeniessbar"
+slug = "kleines-judasohr"
+
+[[verwechslungen]]
+name = "Gezonter Ohrlappenpilz"
+merkmal = "Oberseite striegelig filzig behaart und bunt gezont, Hütchen dachziegelig nebeneinander, Fleisch gegen das Licht undurchsichtig."
+essbar = "ungeniessbar"
+slug = "gezonter-ohrlappenpilz"
+
+[[verwechslungen]]
+name = "Weißtannenfingerhut"
+merkmal = "Nur 0,5 bis 1,5, selten bis 2 cm breit, becher- bis fingerhutförmig, außen raukörnig, an Nadelholz."
+essbar = "ungeniessbar"
+slug = "weisstannenfingerhut"
+
+[[verwechslungen]]
+name = "Kerbrandiger Napfbecherling"
+merkmal = "Schüsselförmig, hellbraun mit gekerbtem Rand, Fleisch brüchig statt gallertartig, wächst auf Erde."
+essbar = "ungeniessbar"
+slug = "kerbrandiger-napfbecherling"
+
+[[verwechslungen]]
+name = "Kreisel-Drüsling"
+merkmal = "Kreisel- bis becherförmig, haselnuss- bis kandisbraun, Fleisch weich und schwabbelig, meist an Weide."
+essbar = "essbar"
+slug = "kreisel-druesling"
 
 [[links]]
 titel = "123pilzsuche.de"

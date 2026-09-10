@@ -1,0 +1,48 @@
+name = "Rosenroter Gelbfuß"
+lateinisch = "Gomphidius roseus"
+gruppe = "gelbfuss"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Selten. Er lebt parasitisch auf dem Myzel des Kuhröhrlings und steht darum immer neben ihm."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Rosenroter Gelbfuss", "Rosenroter Schmierling", "Rosa Schmierling"]
+synonyme = ["Agaricus glutinosus roseus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RosenroterGelbfuss.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 15.5, bis = 21.0 }
+sporenBreiteUm = { von = 4.5, bis = 6.5 }
+
+[merkmale]
+hut = "2 bis 7, selten bis 9 cm breit, rosenrot, schmierig aber nicht schleimig, samtig, oft schwarz fleckend, jung mit Schleier."
+lamellen = "Weißlich, später graulich, breit, weich und wachsartig, etwas herablaufend, leicht ablösbar."
+stiel = "Weißlich, oft mit schwarzen Flecken, mit einer wollig verdickten Ringzone, die der Sporenabwurf schwarz färbt. Basis verjüngt, gelblich und schleimig."
+fleisch = "Weißlich, zart und weich, unter der Huthaut und in der Stielbasis rötlich bis gelblich."
+geruch = "Neutral."
+geschmack = "Mild."
+sporenpulver = "Dunkelbraun bis schwarzbraun."
+vorkommen = "Bei Kiefer auf sandigem, saurem Boden. Wächst parasitisch auf dem Myzel des Kuhröhrlings. Selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Kuhmaul"
+merkmal = "Hut graubraun bis violettbraun und stark schleimig, Stielbasis leuchtend chromgelb, bei Fichte."
+essbar = "speisepilz"
+slug = "kuhmaul"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RosenroterGelbfuss.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Rosenroter_Schmierling"

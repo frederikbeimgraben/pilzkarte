@@ -1,0 +1,59 @@
+name = "Gelbstieliger Muschelseitling"
+lateinisch = "Panellus serotinus"
+gruppe = "seitling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["herbst", "winter", "fruehling"]
+baeume = []
+speisewertHinweis = "Fleisch zäh, Geschmack oft bitterlich."
+marktfaehig = false
+weitereNamen = ["Gelbstieliger Zwergknäueling", "Später Seitling", "Gelber Muscheling", "Mukitake"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GelbstieligerMuschelseitling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 3.5, bis = 6.0 }
+sporenBreiteUm = { von = 0.7, bis = 2.0 }
+
+[merkmale]
+hut = "3 bis 15, selten bis 22 cm breit, grünbraun, grünocker, schwarzbraun, grau bis graubraun, muschelförmig und fein braunfilzig. Die Farben sind veränderlich, Rand jung eingerollt."
+lamellen = "Jung weißlich, später cremegelb bis ockerlich, gedrängt, gerade angewachsen und am Stiel herablaufend, dort aber nach unten scharf abgegrenzt. Auf Druck und im Alter gelbbraun verfärbend."
+stiel = "1 bis 4, selten bis 5 cm lang und 1 bis 5, selten bis 6 cm dick. Ockergelblich, grüngelb bis gelbbraun mit bräunlichen Schüppchen, kurz, zur Anwachsstelle zugespitzt."
+fleisch = "Weißlich bis ockerlich, zäh."
+geruch = "Leicht pilzig."
+geschmack = "Mild bis etwas bitterlich."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer, teils parasitisch, auf Laubholz, gern zusammen mit dem Austernseitling am selben Stamm."
+zeit = "Herbst bis Frühling."
+
+[[verwechslungen]]
+name = "Austernseitling"
+merkmal = "Stiel ohne gelbe Töne, die Lamellen laufen ohne Abgrenzung tief am Stiel herab."
+essbar = "bedingtEssbar"
+slug = "austernseitling"
+
+[[verwechslungen]]
+name = "Rillstieliger Seitling"
+merkmal = "Stiel deutlich gerillt, Hut hell graubraun, Fleisch nicht bitter."
+essbar = "speisepilz"
+slug = "rillstieliger-seitling"
+
+[[verwechslungen]]
+name = "Berindeter Seitling"
+merkmal = "Hut hellbraun und trocken, Stiel ohne gelbe Schüppchen."
+essbar = "essbar"
+slug = "berindeter-seitling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GelbstieligerMuschelseitling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gelbstieliger_Muschelseitling"

@@ -3,29 +3,64 @@ lateinisch = "Agaricus arvensis"
 gruppe = "champignon"
 speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["sommer", "herbst"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
+speisewertHinweis = "Anis-Egerlinge gilben nur an der Oberfläche. Gilbt die Stielbasis im Schnitt kräftig und riecht der Pilz nach Karbol, ist es ein Karbolegerling."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Schaf-Champignon", "Weißer Anisegerling", "Ackerblätterling", "Schaf-Egerling", "Weißer Anis-Champignon"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Schafegerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Gelb verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Positiv: orange, rotorange bis dunkel purpurrot."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 4.5, bis = 5.5 }
 
 [merkmale]
-hut = "8 bis 20 cm, weiß, im Alter gilbend, glatt."
-lamellen = "Jung fast weiß, dann graurosa, zuletzt schokoladenbraun, frei."
-stiel = "Weiß, mit großem, zweilagigem, unterseits radförmig gezacktem Ring."
-fleisch = "Weiß, im Schnitt schwach gilbend."
-geruch = "Deutlich nach Anis."
-geschmack = "Mild."
+hut = "4 bis 12, selten bis 15 cm breit, weiß, abgeflacht und fleischig, Huthaut seidig und etwas flockig feinschuppig. Rand eingerollt."
+lamellen = "Grauweiß, später graurosa, alt schwarzbraun, sehr dicht stehend, frei."
+stiel = "Weiß, leicht gilbend, unter dem Ring körnig, Basis leicht knollig verdickt. Ring weiß, jung sternförmig von der Hutunterseite abreißend, später hängend und wellig."
+fleisch = "Weiß, leicht gelblich anlaufend, fest und kernig."
+geruch = "Anis- und mandelartig."
+geschmack = "Mild, pilzig, nussig, etwas anisartig."
 sporenpulver = "Purpurbraun."
-vorkommen = "Zersetzer auf Wiesen, Weiden und an Waldrändern, gern bei Brennnesseln."
-zeit = "Juni bis Oktober."
+vorkommen = "Folgezersetzer auf mit Pferdemist gedüngten Wiesen, auf Kuhweiden und in Parks, selten im Wald."
+zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Karbolchampignon"
-merkmal = "Stielbasis chromgelb, Geruch nach Tinte statt Anis."
-essbar = "giftig"
-
-[[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
+name = "Weißer Knollenblätterpilz"
+merkmal = "Lamellen bleiben weiß, Stiel mit häutigem Ring, Basis mit gerandeter Knolle in einer sackartigen Scheide."
 essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Karbolegerling"
+merkmal = "Stielbasis läuft im Schnitt kräftig gelb an, Geruch tintig bis karbolartig."
+essbar = "giftig"
+slug = "karbolegerling"
+
+[[verwechslungen]]
+name = "Falscher Wiesenegerling"
+merkmal = "Stielbasis gilbt auf Druck, Lamellenschneiden fast schwarz, Geruch karbolartig."
+essbar = "giftig"
+slug = "falscher-wiesenegerling"
+
+[[verwechslungen]]
+name = "Wiesenchampignon"
+merkmal = "Kleiner, ohne Anisgeruch, Ring verkümmert, Stiel ohne Knolle, Fleisch rötet statt zu gilben."
+essbar = "speisepilz"
+slug = "wiesenchampignon"
 
 [[links]]
 titel = "123pilzsuche.de"

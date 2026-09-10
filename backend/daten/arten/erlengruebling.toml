@@ -1,0 +1,62 @@
+name = "Erlengrübling"
+lateinisch = "Gyrodon lividus"
+gruppe = "roehrling"
+speisewert = "giftig"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er gilt als giftverdächtig. Zu erkennen an den sehr kurzen, feinen, herablaufenden gelben Poren, die auf Druck grünblau und später schwarzbraun werden, an der grübchenartig vertieften Huthaut und daran, dass er fast nur bei Erlen wächst. Er ist besonders geschützt."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+synonyme = ["Boletus chrysenteron var. lividus", "Gyrodon labyrinthicus", "Gyrodon sistotrema var. brachyporus", "Uloporus lividus", "Cladomeris sistotrema", "Boletus lividus var. rubescens"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Erlengruebling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Keine Reaktion."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 4.5, bis = 7.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
+
+[merkmale]
+hut = "3 bis 9, selten bis 12 cm breit, gelblich, olivgelb bis hellbraun, feucht etwas schmierig. Die Oberfläche ist glatt und grübchenartig vertieft. Rand dünn und eingerollt, im Alter aufgebogen mit scharfer Kante."
+roehren = "Gelblich bis goldgelb, sehr kurz und feinporig, länglich eckig und ungleich lang, herablaufend, auf Druck grünblau, später braun bis schwarzbraun."
+stiel = "3 bis 7, selten bis 10 cm lang und 3 bis 11, selten bis 15 mm dick, gelblich bis hellbraun, alt dunkel- bis rotbraun, faserig mit Längsfibrillen, leicht spindelförmig, zur Basis verjüngt. Myzel rötlichbraun."
+fleisch = "Cremefarben bis blassgelb, auf Druck blauend, später bräunend."
+geruch = "Neutral, schwach fruchtig bis angenehm pilzig."
+geschmack = "Säuerlich und leicht bitterlich."
+sporenpulver = "Olivbraun bis ockerbraun."
+vorkommen = "Symbiosepilz im Laubwald, gern im Auwald, fast nur bei Erlen. Sehr selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Kuhröhrling"
+merkmal = "Röhren weiter und nicht so fein, Hut ohne Grübchen, wächst bei Kiefer."
+essbar = "essbar"
+slug = "kuhroehrling"
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Hut trocken und samtig statt grübchenartig, Röhren angewachsen statt herablaufend."
+essbar = "speisepilz"
+slug = "ziegenlippe"
+
+[[verwechslungen]]
+name = "Rostroter Lärchenröhrling"
+merkmal = "Hut rostrot und schmierig, bei Lärche, Röhren nicht so kurz."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Erlengruebling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Erlen-Grübling"

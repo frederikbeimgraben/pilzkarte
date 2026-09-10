@@ -1,0 +1,53 @@
+name = "Grauer Leistling"
+lateinisch = "Cantharellus cinereus"
+gruppe = "leistling"
+speisewert = "essbar"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Nur wenig oder gar nichts mitnehmen."
+marktfaehig = true
+wertigkeit = 1
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Graue Kraterelle", "Grauer Pfifferling"]
+synonyme = ["Craterellus cinereus", "Pseudocraterellus cinereus", "Merulius cinereus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GrauerLeistling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 2.5, bis = 6.0, seltenBis = 8.0 }
+
+[merkmale]
+hut = "2 bis 8, selten bis 9 cm breit, schwarzgrau bis graubraun, feinschuppig, Rand wellig. Das Hymenium bilden Adern und Falten."
+leisten = "Heller weißlich-grau, herablaufend, mit Querleisten, fest mit dem Fleisch verbunden wie bei allen Leistlingen."
+stiel = "2,5 bis 6, selten bis 8 cm lang und 3 bis 6, selten bis 9 mm dick, graubraun bis schwarzbraun, lang gezogen, glatt, jung voll, später hohl."
+fleisch = "Schmutzig weißlich bis grau, dünn und biegsam."
+geruch = "Fruchtig, obstartig, angenehm, nach Pflaumen."
+geschmack = "Mild, pilzig."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Laubwald, gern im Buchenwald. In Deutschland gefährdet."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Verbogener Leistling"
+merkmal = "Kleiner und dünner, Hut graubraun bis olivbraun, Leisten gelblich bis grau."
+essbar = "speisepilz"
+slug = "verbogener-leistling"
+
+[[verwechslungen]]
+name = "Kohlenleistling"
+merkmal = "Wächst auf Brandstellen, Fruchtkörper klein und graubraun."
+essbar = "ungeniessbar"
+slug = "kohlenleistling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GrauerLeistling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Graue_Kraterelle"

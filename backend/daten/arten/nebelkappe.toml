@@ -1,33 +1,71 @@
 name = "Nebelkappe"
 lateinisch = "Clitocybe nebularis"
 gruppe = "trichterling"
-speisewert = "nichtEmpfohlen"
+speisewert = "giftig"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["buche", "fichte"]
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
 karte = "nebelkappe"
-speisewertHinweis = "Wird nicht mehr als Speisepilz empfohlen. Ein Teil der Sammler bekommt Magen-Darm-Beschwerden, auch nach dem Garen."
+speisewertHinweis = "123pilzsuche führt sie als giftig. Der Stoff Nebularin löst Magen-Darm-Beschwerden aus, auch nach dem Garen. In der Schweiz ist sie nicht marktfähig."
+marktfaehig = false
+weitereNamen = ["Herbstblattl", "Nebelgrauer Röteltrichterling", "Nebelgrauer Trichterling", "Graukappe", "Graukopf"]
+synonyme = ["Lepista nebularis", "Clitocybe pileolaris", "Gymnopus nebularis", "Clitocybe nebularis var. alba"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Herbstblattl.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut ohne Reaktion."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 5.5, bis = 8.5 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
-hut = "6 bis 20 cm, nebelgrau bis graubraun, jung weiß bereift, Rand lange eingerollt."
-lamellen = "Cremeweiß, sehr gedrängt, am Stiel kurz herablaufend, leicht vom Hutfleisch ablösbar."
-stiel = "Kräftig, keulig, faserig, in Hutfarbe blasser."
-fleisch = "Weiß, fest."
-geruch = "Auffallend süßlich und dumpf, für viele unangenehm."
-geschmack = "Mild bis unangenehm."
-sporenpulver = "Cremeweiß."
-vorkommen = "Zersetzer in der Laub- und Nadelstreu, unter Buche und Fichte, oft in langen Reihen und Hexenringen."
-zeit = "September bis Dezember, hält den ersten Frost aus."
+hut = "4 bis 20, selten bis 25 cm breit, graubraun bis weißgrau, etwas radialfaserig, Haut glatt und abziehbar. Rand meist eingerollt, Mitte im Alter eingedellt und weißlich bereift."
+lamellen = "Weißlich bis cremegelb, angewachsen und herablaufend, verschiebbar und leicht ablösbar, Schneiden meist wellig."
+stiel = "5 bis 12, selten bis 16 cm lang, 1 bis 4, selten bis 5 cm dick, graubraun, bräunlich punktiert oder faserig auf weißlichem Grund, im Alter hohl. Basis knollig verdickt mit weißlichem Myzelfilz."
+fleisch = "Weißlich, fest, faserig."
+geruch = "Unangenehm süßlich, nach Raps, etwas parfümiert, an Schimmelkäse erinnernd."
+geschmack = "Säuerlich unangenehm, mild."
+sporenpulver = "Cremegelblich bis hellgelblich."
+vorkommen = "Folgezersetzer im Mischwald, gern in Hexenringen. Massenpilz im Spätherbst."
+zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Riesenrötling"
-merkmal = "Lamellen laufen nicht herab und werden rosa, Geruch mehlig."
-essbar = "giftig"
+merkmal = "Lamellen jung gelblich, später rotocker und praktisch nie herablaufend, Geruch säuerlich mehlig, Sporenpulver rosabraun."
+essbar = "toedlichGiftig"
+slug = "riesenroetling"
 
 [[verwechslungen]]
-name = "Bleiweißer Trichterling"
-merkmal = "Kleiner, rein weiß, dünnfleischig, Geruch mehlig."
-essbar = "giftig"
+name = "Graublättriger Trichterling"
+merkmal = "Deutlich kleiner, Hut milchkaffeebraun mit runzeligem Rand, Lamellen grauweiß bis graubraun."
+essbar = "ungeniessbar"
+slug = "graublaettriger-trichterling"
+
+[[verwechslungen]]
+name = "Mönchskopf"
+merkmal = "Hut bräunlich mit einem Buckel in der Mitte, Lamellen weit herablaufend, Stiel keulig."
+essbar = "speisepilz"
+slug = "moenchskopf"
+
+[[verwechslungen]]
+name = "Büschelrasling"
+merkmal = "Hut ledergelb bis orangebraun, wächst büschelig aus einem Strunk, Fleisch zäh und elastisch."
+essbar = "speisepilz"
+slug = "bueschliger-rasling"
+
+[[verwechslungen]]
+name = "Horngrauer Rötelritterling"
+merkmal = "Hut graubraun mit konzentrischen Wasserflecken, Lamellen später cremerosa, Geruch mehlartig statt parfümiert."
+essbar = "ohneSpeisewert"
+slug = "horngrauer-roetelritterling"
 
 [[links]]
 titel = "123pilzsuche.de"

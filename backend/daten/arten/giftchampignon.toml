@@ -1,0 +1,57 @@
+name = "Giftchampignon"
+lateinisch = "Amanita phalloides (var. amanita phalloides f. citrina, amanita phalloides f. dunensis, amanita phalloides var. umbrina, amanita phalloides var. euphalloides, amanita phalloides var. larroquei, amanita phalloides var. pulla, amanita phalloides var. verna, amanita phalloides var. striatula)"
+gruppe = "wulstling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche"]
+speisewertHinweis = "Absolut tödlich giftig, schon etwa 20 Gramm genügen und das Gift schädigt die Leber. Zu erkennen an der häutigen, eierschalenartigen Volva an der Stielknolle, am hängenden Ring, an den stets weißen Lamellen und am nicht gerieften Hutrand. Niemals kosten."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Grüner Knollenblätterpilz", "Grüner Mörder"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch und Huthaut ohne Verfärbung, anders als beim Kegelhütigen Knollenblätterpilz, der gelb wird."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 17.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 7.0, bis = 12.0 }
+sporenBreiteUm = { von = 6.0, bis = 10.0 }
+
+[merkmale]
+hut = "3 bis 15, selten bis 17 cm breit, grünlich, gelb, ocker, bräunlich, olivgrün, olivbraun bis grüngrau, ganz jung auch weiß. Jung eiförmig-halbkugelig mit weißer Gesamthülle, später aufschirmend. Huthaut fein radialfaserig eingewachsen, feucht etwas klebrig, Rand nicht gerieft."
+lamellen = "Weiß, eng stehend, frei bis fein angewachsen, oft mit Zahn herablaufend."
+stiel = "5 bis 12, selten bis 15 cm lang und 1 bis 4, selten bis 6 cm dick. Weiß bis gelbgrünlich, faserig, oft genattert. Basis zwiebelknollig mit häutiger, eierschalenartiger Volva. Ring weiß bis gelblich, häutig, hängend, oben meist leicht gerieft."
+fleisch = "Weiß, unter der Huthaut gelbgrünlich, beim Schneiden unveränderlich."
+geruch = "Jung geruchlos, nach Kleeheu, süßlich oder kunsthonigartig, alt widerlich, aasartig bis nach Ammoniak."
+geschmack = "Mild, süßlich und angenehm. Kostproben sind wegen der Leberschädigung lebensgefährlich."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz meist bei Laubbäumen, vor allem Eiche und Buche, selten bei Nadelbäumen, auch in Parks und Gärten. Häufig."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Weißer Knollenblätterpilz"
+merkmal = "Hut rein weiß statt grünlich, sonst gleich gebaut und ebenso tödlich."
+essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Frauentäubling"
+merkmal = "Fleisch spröde, Lamellen brechen, ohne Ring und ohne Volva."
+essbar = "speisepilz"
+slug = "frauentaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Amanita_phalloides_(var._amanita_phalloides_f._citrina,_amanita_phalloides_f._dunensis,_amanita_phalloides_var._umbrina,_amanita_phalloides_var._euphalloides,_amanita_phalloides_var._larroquei,_amanita_phalloides_var._pulla,_amanita_phalloides_var._verna,_amanita_phalloides_var._striatula)"

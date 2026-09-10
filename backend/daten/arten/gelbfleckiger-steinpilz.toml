@@ -1,0 +1,53 @@
+name = "Gelbfleckiger Steinpilz"
+lateinisch = "Boletus fulvomaculatus"
+gruppe = "roehrling"
+speisewert = "essbar"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Ein Steinpilz und damit besonders geschützt. Er ist sehr selten, deshalb höchstens ein Fruchtkörper für den Eigenbedarf."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GelbfleckigerSteinpilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 10.0, bis = 20.0 }
+sporenBreiteUm = { von = 3.0, bis = 8.0 }
+
+[merkmale]
+hut = "5 bis 20, selten bis 25 cm breit, hell ockerbraun, dottergelb bis bronzefarben, immer gelbfleckig. Feucht und im Alter schmierig, mit gelber Zwischenschicht in der Huthaut."
+roehren = "Jung weißlich, später satt gelb bis ockergelb, nicht blauend."
+stiel = "Braun bis hellbraun mit weißer Netzzeichnung, dünner als beim Fichtensteinpilz, faserig und furchig. Basis verdickt und zugespitzt."
+fleisch = "Weiß, nicht blauend, fest und fleischig, wird schnell schwammig."
+geruch = "Neutral."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz im Laubwald, ohne genannten Wirtsbaum. Sehr selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, bald rosa, Stiel mit grobem dunklem Netz, Geschmack sehr bitter."
+essbar = "giftig"
+slug = "gallenroehrling"
+
+[[verwechslungen]]
+name = "Wurzelnder Bitterröhrling"
+merkmal = "Hut grau bis braungrau, Fleisch stark blauend, Geschmack bitter."
+essbar = "giftig"
+slug = "wurzelnder-bitterroehrling"
+
+[[verwechslungen]]
+name = "Birkensteinpilz"
+merkmal = "Hut hell lederbraun ohne gelbe Flecken, wächst bei Birke."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GelbfleckigerSteinpilz.htm"

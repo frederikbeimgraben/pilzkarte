@@ -1,0 +1,52 @@
+name = "Grauer Lärchenröhrling"
+lateinisch = "Suillus viscidus"
+gruppe = "schmierroehrling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["laerche"]
+speisewertHinweis = "Von der DGfM als Speisepilz geführt. Er ist selten, deshalb nur wenig mitnehmen."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "selten"
+synonyme = ["Suillus laricinus", "Suillus aeruginascens"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GraublasserLaerchenroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
+sporenLaengeUm = { von = 8.0, bis = 14.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
+
+[merkmale]
+hut = "4 bis 12, selten bis 14 cm breit, hellbraun, olivgrau, gelbgrau, braungelb bis rotbraun, alt blassgrau. Rand lange eingerollt, Mitte etwas gebuckelt."
+roehren = "Grau, grauweiß bis graubräunlich, auf Druck oliv anlaufend."
+stiel = "Graubräunlich marmoriert, feucht schmierig."
+fleisch = "Grauweißlich, schwammig."
+geruch = "Fruchtig."
+geschmack = "Mild säuerlich."
+sporenpulver = "Braun."
+vorkommen = "Symbiosepilz bei Lärche auf kalkreichem Boden. Selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Rostroter Lärchenröhrling"
+merkmal = "Ebenfalls bei Lärche, aber mit gelben statt grauen Röhren, Hut rostrot bis rotbraun."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Bei Lärche, Hut goldgelb bis rostgelb, Röhren goldgelb, Stiel mit Ring."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GraublasserLaerchenroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Grauer_Lärchen-Röhrling"

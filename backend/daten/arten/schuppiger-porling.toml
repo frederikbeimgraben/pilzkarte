@@ -4,24 +4,62 @@ gruppe = "porling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["fruehling", "sommer"]
-baeume = ["ahorn", "esche", "ulme"]
-speisewertHinweis = "Nur ganz junge Ränder. Nach wenigen Tagen ist er zäh."
+baeume = []
+speisewertHinweis = "Nur jung essbar und dann relativ minderwertig. 123pilze gibt ihm die Relative Wertigkeit 4."
+marktfaehig = true
+wertigkeit = 4
+weitereNamen = ["Schuppiger Stielporling", "Schwarzfußporling", "Schuppiger Schwarzfußporling"]
+synonyme = ["Polyporus squamosus", "Bresadolia squamosa", "Polyporus squamosus forma rostkovii", "Polyporus westii", "Polyporellus squamosus forma rostkovii", "Polyporus squamosus forma michelii", "Polyporus retirugus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchuppigerPorling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 40.0 }
+sporenLaengeUm = { von = 7.8, bis = 17.0 }
+sporenBreiteUm = { von = 3.6, bis = 6.0 }
 
 [merkmale]
-hut = "10 bis 50 cm, nierenförmig, ockergelb mit groben, dunkelbraunen, anliegenden Schuppen."
-poren = "Weiß bis cremefarben, weit und eckig, herablaufend."
-stiel = "Kurz, seitlich, an der Basis schwarz."
-fleisch = "Weiß, jung weich, bald korkig zäh."
-geruch = "Kräftig nach Mehl oder Gurke."
-geschmack = "Mild."
+hut = "3 bis 25, selten bis 40 cm breit, blassbraun bis weißlich hellgelb, konzentrisch mit erst hellbraunen, im Alter dunkelbraunen Schuppen besetzt, normalerweise ohne Wimpern am Rand. Rand lange eingerollt."
+poren = "Weißlich bis blassgelb, eckig, herablaufend, ein bis zwei Poren je Millimeter."
+stiel = "Dickfleischig, weißlich bis hellbräunlich mit netzartiger Zeichnung, exzentrisch bis seitlich angesetzt. Basis zuerst gelblich, im Alter schwarz."
+fleisch = "Weiß bis cremeweiß, jung wässrig weich, im Alter sehr zäh."
+geruch = "Gurkenartig, mehlig, honigartig."
+geschmack = "Mild, mehl- bis nussartig."
 sporenpulver = "Weiß."
-vorkommen = "Schwächeparasit an Laubholz, vor allem Ahorn, Esche und Ulme, an Wunden und Stümpfen. Ein Frühjahrspilz."
-zeit = "April bis Juli."
+vorkommen = "Folgezersetzer an Laubholz, gern büschelig zusammenwachsend, löst Weißfäule aus."
+zeit = "Frühjahr bis Sommer, Fruchtkörper sind ganzjährig zu finden."
 
 [[verwechslungen]]
-name = "Andere große Porlinge"
-merkmal = "Ohne die groben Schuppen und ohne Mehlgeruch."
+name = "Löwengelber Porling"
+merkmal = "Nur 3 bis 6 cm breit, Hut graugelb bis orange, kahl und ohne Schuppen."
 essbar = "ungeniessbar"
+slug = "loewengelber-porling"
+
+[[verwechslungen]]
+name = "Schuppiger Sägeblättling"
+merkmal = "Lamellen statt Poren, Schneiden stark gesägt, wächst an Nadelholz."
+essbar = "ungeniessbar"
+slug = "schuppiger-saegeblaettling"
+
+[[verwechslungen]]
+name = "Sklerotienporling"
+merkmal = "Kleiner, Hutrand bewimpert, Stiel meist zentral, Basis filzig und nicht schwarz."
+essbar = "essbar"
+slug = "sklerotienporling"
+
+[[verwechslungen]]
+name = "Riesenporling"
+merkmal = "Viele fächerförmige Hüte an einem Strunk, Poren schwärzen auf Druck."
+essbar = "ohneSpeisewert"
+slug = "riesenporling"
+
+[[verwechslungen]]
+name = "Berindeter Seitling"
+merkmal = "Lamellen statt Poren, herablaufend und gegabelt, Stiel mit flüchtigem Ring."
+essbar = "essbar"
+slug = "berindeter-seitling"
 
 [[links]]
 titel = "123pilzsuche.de"

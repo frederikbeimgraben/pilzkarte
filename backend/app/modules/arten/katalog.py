@@ -23,9 +23,12 @@ from app.modules.arten.schemas import (
     ArtKurz,
     Essbarkeit,
     Jahresspanne,
+    Marktfaehigkeit,
     Merkmal,
     MerkmalSchluessel,
     Profil,
+    Quelle,
+    Reagenz,
     SaisonKurve,
     SaisonKurz,
     Saisontabelle,
@@ -37,6 +40,13 @@ from app.shared.schemas import Woche
 # Der Ordner liegt neben ``app`` und wird mit dem Backend ausgeliefert. Ein
 # eigener Pfad in der Umgebung waere ein weiterer Vertrag zum NixOS-Modul.
 DATEN = Path(__file__).resolve().parents[3] / "daten"
+
+# Die Positivliste der DGfM entscheidet, was in den Handel darf. Sie steht als
+# PDF im Netz und traegt ihren eigenen Stand.
+MARKT_QUELLE = Quelle(
+    url="https://www.dgfm-ev.de/files/dokumente/PSV/2026-08-11_positivliste_speisepilze.pdf",
+    geprueft_am="2026-05-01",
+)
 
 SCHWELLE_VORHERSAGE = 600
 SCHWELLE_SAISON = 60
@@ -62,14 +72,33 @@ SCHUTZ_NEIN = (
     "Nicht besonders gesch\u00fctzt. Es gelten die Regeln des Landes und des Waldbesitzers."
 )
 
+REAGENZ_TEXT: dict[Reagenz, str] = {
+    Reagenz.KOH: "Kalilauge (KOH)",
+    Reagenz.NAOH: "Natronlauge (NaOH)",
+    Reagenz.FESO4: "Eisensulfat (FeSO\u2084)",
+    Reagenz.GUAJAK: "Guajak",
+    Reagenz.MELZER: "Melzers Reagenz",
+    Reagenz.ANILIN: "Anilin",
+    Reagenz.PHENOL: "Phenol",
+    Reagenz.AMMONIAK: "Ammoniak",
+    Reagenz.SULFOVANILLIN: "Sulfovanillin",
+    Reagenz.FORMALIN: "Formalin",
+    Reagenz.SCHAEFFER: "Sch\u00e4ffer-Reaktion",
+}
 
-def stufe_fuer(begehungen_mit_fund: int, *, hat_karte: bool) -> Stufe:
+
+def stufe_fuer(begehungen_mit_fund: int, *, hat_karte: bool, sammelbar: bool = True) -> Stufe:
     """Die Stufe einer Art: was die App zu ihr zeigen kann, heute.
 
     ``vorhersage`` heisst, dass eine Karte da ist. Die Datenlage allein reicht
     nicht: 23 Arten tragen ein Modell, gerendert sind erst 13. Der Chip "mit
     Vorhersage" zeigte sonst zehn Arten ohne Karte.
+
+    ``verwechslung`` traegt eine Art, die niemand sammelt. Sie steht im Katalog,
+    weil eine sammelbare Art ihr aehnlich sieht.
     """
+    if not sammelbar:
+        return Stufe.VERWECHSLUNG
     if hat_karte:
         return Stufe.VORHERSAGE
     if begehungen_mit_fund >= SCHWELLE_SAISON:
@@ -133,6 +162,10 @@ def merkmale_bauen(profil: Profil) -> list[Merkmal]:
     if profil.schutz_hinweis:
         schutz = f"{schutz} {profil.schutz_hinweis}"
     zeilen[MerkmalSchluessel.SCHUTZ] = schutz
+    if profil.reagenzien:
+        zeilen[MerkmalSchluessel.REAGENZIEN] = " ".join(
+            f"{REAGENZ_TEXT[eintrag.reagenz]}: {eintrag.reaktion}" for eintrag in profil.reagenzien
+        )
     return [
         Merkmal(schluessel=schluessel, text=zeilen[schluessel])
         for schluessel in MerkmalSchluessel
@@ -210,7 +243,11 @@ class Katalog:
             zaehlung = self._zaehlung(profil)
             alle, laufend = self._reihen(profil)
             karte = self.karten.get(slug)
-            stufe = stufe_fuer(zaehlung.begehungen_mit_fund, hat_karte=karte is not None)
+            stufe = stufe_fuer(
+                zaehlung.begehungen_mit_fund,
+                hat_karte=karte is not None,
+                sammelbar=profil.sammelbar,
+            )
             arten.append(
                 ArtKurz(
                     slug=slug,
@@ -222,14 +259,20 @@ class Katalog:
                     geschuetzt=profil.geschuetzt,
                     speisewert=profil.speisewert,
                     karten_slug=karte,
+                    sammelbar=profil.sammelbar,
+                    marktfaehig=profil.marktfaehig,
+                    wertigkeit=profil.wertigkeit,
+                    haeufigkeit=profil.haeufigkeit,
                     vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
                     begehungen_mit_fund=zaehlung.begehungen_mit_fund,
-                    spitze_woche=spitze_woche_fuer(alle),
+                    spitze_woche=spitze_woche_fuer(alle) if profil.sammelbar else None,
                     saison=SaisonKurz(
                         alle_jahre=alle,
                         laufendes_jahr=laufend,
                         hoechstwert=max([*alle, *laufend]),
-                    ),
+                    )
+                    if profil.sammelbar
+                    else None,
                 )
             )
         arten.sort(key=lambda art: art.name)
@@ -271,7 +314,11 @@ class Katalog:
         zaehlung = self._zaehlung(profil)
         alle, laufend = self._reihen(profil)
         karte = self.karten.get(slug)
-        stufe = stufe_fuer(zaehlung.begehungen_mit_fund, hat_karte=karte is not None)
+        stufe = stufe_fuer(
+            zaehlung.begehungen_mit_fund,
+            hat_karte=karte is not None,
+            sammelbar=profil.sammelbar,
+        )
         return Art(
             slug=slug,
             name=profil.name,
@@ -282,9 +329,18 @@ class Katalog:
             geschuetzt=profil.geschuetzt,
             speisewert=profil.speisewert,
             karten_slug=karte,
+            sammelbar=profil.sammelbar,
+            marktfaehigkeit=Marktfaehigkeit(marktfaehig=profil.marktfaehig, quelle=MARKT_QUELLE),
+            wertigkeit=profil.wertigkeit,
+            haeufigkeit=profil.haeufigkeit,
+            gefaehrdung=profil.gefaehrdung,
+            weitere_namen=profil.weitere_namen,
+            synonyme=profil.synonyme,
+            masse=profil.masse,
+            quelle=profil.quelle,
             vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
             begehungen_mit_fund=zaehlung.begehungen_mit_fund,
-            spitze_woche=spitze_woche_fuer(alle),
+            spitze_woche=spitze_woche_fuer(alle) if profil.sammelbar else None,
             merkmale=merkmale_bauen(profil),
             verwechslungen=profil.verwechslungen,
             links=profil.links,
@@ -297,7 +353,9 @@ class Katalog:
                 begehungen=sum(self.tabelle.begehungen_je_woche),
                 begehungen_je_woche_alle_jahre=self._begehungen_alle_jahre,
                 begehungen_je_woche_laufendes_jahr=self._begehungen_laufendes_jahr,
-            ),
+            )
+            if profil.sammelbar
+            else None,
         )
 
 

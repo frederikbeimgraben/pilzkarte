@@ -1,0 +1,43 @@
+name = "Wohlriechender Trichterling"
+lateinisch = "Clitocybe obsoleta"
+gruppe = "trichterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Giftig. Zu erkennen am aufdringlich anis- bis fenchelartigen Geruch, am hygrophanen graubraunen Hut mit eingedrückter Mitte und am knorpelig-elastischen, oft breitgedrückten Stiel."
+marktfaehig = false
+weitereNamen = ["Fleischbräunlicher Anistrichterling"]
+synonyme = ["Omphalia obsoleta", "Agaricus obsoletus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FleischAnistrichterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 1.0, bis = 3.5, seltenBis = 5.0 }
+sporenLaengeUm = { von = 5.5, bis = 7.5 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
+
+[merkmale]
+hut = "2 bis 6, selten bis 8 cm breit, caramelbraun, graubraun, graubeige bis fleischbräunlich, hygrophan, Mitte eingedrückt und alt genabelt, speckig glänzend. Rand lange wellig nach unten gebogen und leicht durchscheinend gerieft."
+lamellen = "Grauweiß bis gelblichweiß, angewachsen und bogig herablaufend, gedrängt, mit vielen Zwischenlamellen, Schneiden gleichfarbig und glatt."
+stiel = "1 bis 3,5, selten bis 5 cm lang, 5 bis 8, selten bis 11 mm dick, braunweißlich, durchscheinend, schwach weißfaserig, etwas bereift, knorpelig-elastisch und steif, oft breitgedrückt, alt hohl. Basis spindelig erweitert mit weißem Myzelgeflecht."
+fleisch = "Weiß bis cremeweiß oder hellbraun, im Hut- und Stielkern cremeweiß, dünn."
+geruch = "Aufdringlich anisartig, fenchelartig, süßlich."
+geschmack = "Mild, süßlich, etwas ranzig."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer im Mischwald, gern Nadelwald, im Laub oder Moos an feuchten Stellen."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Graublättriger Trichterling"
+merkmal = "Lamellen deutlich grau, kein Anisgeruch."
+essbar = "ungeniessbar"
+slug = "graublaettriger-trichterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FleischAnistrichterling.htm"

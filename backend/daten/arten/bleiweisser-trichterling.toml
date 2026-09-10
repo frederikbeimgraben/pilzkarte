@@ -1,0 +1,53 @@
+name = "Bleiweißer Trichterling"
+lateinisch = "Clitocybe phyllophila"
+gruppe = "trichterling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er wird für den Mehlräsling gehalten, riecht aber nicht nach Mehl, sondern muffig süßlich bis parfümiert. Weiße Trichterlinge gelten als Muscarinträger; weiße Pilze aus Wald und Garten gehören nicht in den Korb."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Bleiweißer Firnistrichterling", "Laubfreundtrichterling", "Streuliebender Trichterling", "Fichtentrichterling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BleiweisserTrichterling2004.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 14.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 3.2, bis = 5.0 }
+sporenBreiteUm = { von = 2.5, bis = 4.0 }
+
+[merkmale]
+hut = "2 bis 9, selten bis 14 cm breit, flach gewölbt oder leicht gebuckelt, weiß und schimmelartig glasig bereift."
+lamellen = "Zuerst weiß, später leicht cremegelb bis rosabraun, etwas herablaufend, leicht ablösbar, mit kürzeren Zwischenlamellen."
+stiel = "3 bis 7, selten bis 9 cm lang und 3 bis 9, selten bis 13 mm dick, weiß, cremefarben bis beige, meist weißlich bereift, voll, oft gekrümmt, zäh und elastisch. Basis meist verdickt und in ein weißes Myzelgeflecht auslaufend."
+fleisch = "Weiß bis cremeweiß, im Hut etwas graubraun, dünn und wässrig zäh."
+geruch = "Pilzig und süßlich aromatisch, schwach fruchtig bis parfümiert, alt muffig."
+geschmack = "Mild, etwas ranzig."
+sporenpulver = "Weiß, selten mit einem Hauch Cremeweiß bis Cremerosa."
+vorkommen = "Folgezersetzer meist im Nadelwald, selten im Laubwald, oft im Hexenring. Häufig."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rinnigbereifter Trichterling"
+merkmal = "Hutrand weiß bereift mit konzentrisch angeordneten ockerlichen Flecken, Stiel kürzer, auf Wiesen, Feldern und an Wegrändern."
+essbar = "toedlichGiftig"
+slug = "rinnigbereifter-trichterling"
+
+[[verwechslungen]]
+name = "Mehlräsling"
+merkmal = "Riecht und schmeckt stark nach Mehl und Gurke, Hut samtig bereift, Fleisch fest."
+essbar = "speisepilz"
+slug = "mehlraesling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BleiweisserTrichterling2004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Bleiweißer_Firnis-Trichterling"

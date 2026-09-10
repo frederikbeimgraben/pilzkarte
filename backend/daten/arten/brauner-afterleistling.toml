@@ -1,0 +1,54 @@
+name = "Brauner Afterleistling"
+lateinisch = "Hygrophoropsis rufa"
+gruppe = "leistling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Erst in größerer Menge reizt er Magen und Darm; einzelne Stücke sind harmlos, schmecken aber muffig. Er schmeckt mild, echte Pfifferlinge schmecken pfefferig scharf."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+synonyme = ["Hygrophoropsis aurantiaca var. rufa"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BrauneAfterleistling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 5.5, bis = 6.4 }
+sporenBreiteUm = { von = 3.5, bis = 4.4 }
+
+[merkmale]
+hut = "2 bis 12, selten bis 15 cm breit, braun bis braunorange, feinfilzig, Rand lange eingerollt."
+lamellen = "Orangegelb bis braungelb, herablaufend, viele gegabelt und vom Fleisch ablösbar. Bei Leistlingen wie dem Pfifferling sind die Leisten fest mit dem Fleisch verwachsen."
+stiel = "Orangegelb, orangebraun bis gelbbraun, körnig schuppig, biegsam, größtenteils hohl und deutlich dicker als beim Falschen Pfifferling."
+fleisch = "Gelblich bis orange, dünn, biegsam, weich, zäh und schwammig."
+geruch = "Säuerlich, unbedeutend."
+geschmack = "Mild."
+sporenpulver = "Hellgelb."
+vorkommen = "Folgezersetzer im Laubwald an Strünken oder an vergrabenem Holz. Sehr selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Falscher Pfifferling"
+merkmal = "Hut leuchtend orange statt braun, Stiel dünner, im Nadelwald auf Nadelstreu."
+essbar = "giftig"
+slug = "falscher-pfifferling"
+
+[[verwechslungen]]
+name = "Ölbaumtrichterling"
+merkmal = "Lamellen leuchtend goldgelb und kaum gegabelt, an Laubholz, bei uns fast nur im Mittelmeerraum."
+essbar = "giftig"
+slug = "oelbaumtrichterling"
+
+[[verwechslungen]]
+name = "Purpuroranger Afterleistling"
+merkmal = "Kleiner, Lamellen weißlich bis fleischrosa und marmoriert, auf kalkhaltigem Boden im Nadel- und Mischwald."
+essbar = "giftig"
+slug = "purpuroranger-afterleistling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BrauneAfterleistling.htm"

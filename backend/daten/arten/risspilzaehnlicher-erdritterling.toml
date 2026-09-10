@@ -1,0 +1,58 @@
+name = "Risspilzähnlicher Erdritterling"
+lateinisch = "Tricholoma argyraceum"
+gruppe = "ritterling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Ungeniessbar. Erdritterlinge sind schwer zu trennen und gelten als verdaechtig, deshalb keine Kostproben."
+marktfaehig = true
+synonyme = ["Tricholoma inocybeoides", "Tricholoma inocyboides", "Tricholoma scalpturatum var. argyraceum", "Tricholoma argyraceum forma inocybeoides", "Tricholoma myomyces var. argyraceum"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RisspilzErdritterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 4.5, bis = 7.0 }
+sporenBreiteUm = { von = 2.7, bis = 4.5 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 10 cm breit, hell silbergrau, graubraun bis lilabraun, trocken, filzig und schuppig, mit kleinem spitzem Buckel. Rand etwas eingebogen und uneben, ohne auffaelliges Velum."
+lamellen = "Weiss bis grauweisslich, mit Zwischenlamellen."
+stiel = "3 bis 8, selten bis 11 cm hoch und 8 bis 15, selten bis 18 mm dick, weiss, blassgrau bis graubraun, oft weisslich ueberfasert, im Alter faserig-hohl."
+fleisch = "Weisslich bis gelbbraun, duenn, im Alter etwas gilbend."
+geruch = "Nach Mehl, manchmal nur schwach."
+geschmack = "Mild."
+sporenpulver = "Weiss."
+vorkommen = "Symbiosepilz mit verschiedenen Straeuchern in Mischwald, auf Wiesen sowie in Parks und Gaerten, gern auf kalkreichem Boden. Extrem selten und kaum bekannt."
+zeit = "Sommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Tigerritterling"
+merkmal = "Deutlich groesser und kraeftiger, Hut mit groben dunkelgrauen Schuppen auf hellem Grund, Lamellen mit gelblichen Tropfen."
+essbar = "toedlichGiftig"
+slug = "tigerritterling"
+
+[[verwechslungen]]
+name = "Schwarzschuppiger Erdritterling"
+merkmal = "Hut mit groben, abstehenden schwarzen Schuppen."
+essbar = "giftig"
+slug = "schwarzschuppiger-erdritterling"
+
+[[verwechslungen]]
+name = "Seifenritterling"
+merkmal = "Geruch seifenartig, Fleisch bei Verletzung langsam roetend."
+essbar = "giftig"
+slug = "seifenritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RisspilzErdritterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gilbender_Erd-Ritterling"

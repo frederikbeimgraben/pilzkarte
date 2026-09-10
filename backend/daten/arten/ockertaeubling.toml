@@ -1,0 +1,71 @@
+name = "Ockertäubling"
+lateinisch = "Russula ochroleuca"
+gruppe = "taeubling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["pappel"]
+speisewertHinweis = "Sehr minderwertig, 123pilzsuche gibt die Relative Wertigkeit 5. Er schmeckt teils schärflich und etwas bitterlich."
+marktfaehig = false
+wertigkeit = 5
+weitereNamen = ["Ockergelber Täubling", "Zitronentäubling", "Ockerweißer Täubling"]
+synonyme = ["Russula citrina", "Russula granulosa", "Russula ochroleuca var. granulosa"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Ockertaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Intensiv blaugrün bis schwarzgrün."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Hell orangerosa, kaum sichtbar."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Dunkel weinrot."
+
+[[reagenzien]]
+reagenz = "anilin"
+reaktion = "Keine oder kaum eine Reaktion."
+
+[[reagenzien]]
+reagenz = "sulfovanillin"
+reaktion = "Keine oder kaum eine Reaktion."
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "An der Stielbasis rot, feuerrot bis rostrot. Markantes Merkmal."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+
+[merkmale]
+hut = "3 bis 10, selten bis 12 cm breit, hellgelb, gelbocker, honiggelb, olivocker, grünocker oder rostrot, kahl und matt, nur feucht etwas glänzend. Huthaut bis zur Hälfte abziehbar, Rand glatt bis schwach gerieft, im Alter leicht trichterförmig."
+lamellen = "Weiß, später schmutzig cremefarben, angewachsen, am Grund queraderig verbunden, Schneiden im Alter bräunlich."
+stiel = "3 bis 8, selten bis 11 cm lang, 1 bis 2, selten bis 3 cm dick, weiß, im Alter leicht grauend oder gelblich, alt hohl."
+fleisch = "Weiß, später grau."
+geruch = "Obstartig, würzig."
+geschmack = "Mild, manchmal leicht schärflich und etwas bitterlich, aber nicht brennend scharf."
+sporenpulver = "Hellgelb, blasscreme, fast weiß."
+vorkommen = "Symbiosepilz in Mischwald, überwiegend im Nadelwald, vereinzelt bei Espe und Erle, gern auf saurem Boden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Blassgelber Täubling"
+merkmal = "Kleiner, Hut jung zitronengelb, Stiel keulig und schnell hohl, Geschmack scharf."
+essbar = "giftig"
+slug = "blassgelber-taeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Ockertaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Zitronen-Täubling"

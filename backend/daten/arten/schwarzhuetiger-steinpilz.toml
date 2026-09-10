@@ -4,28 +4,51 @@ gruppe = "roehrling"
 speisewert = "speisepilz"
 geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["eiche", "buche", "kastanie"]
+baeume = ["eiche", "kastanie"]
+speisewertHinweis = "Besonders geschützt und selten. Wenn überhaupt, nur wenige Fruchtkörper für den Eigenbedarf."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Weißer Bronzeröhrling"]
+synonyme = ["Boletus edulis forma aereus", "Tubiporus edulis subsp. aereus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerSteini.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
+sporenLaengeUm = { von = 10.5, bis = 19.0 }
+sporenBreiteUm = { von = 3.5, bis = 7.0 }
 
 [merkmale]
-hut = "8 bis 20 cm, dunkelbraun bis fast schwarz, matt, samtig, oft ungleich gebeult."
-roehren = "Jung weiß, dann gelb bis oliv."
-stiel = "Dick, bräunlich, mit feinem braunem Netz."
-fleisch = "Weiß, sehr fest, ohne Farbwechsel."
-geruch = "Angenehm pilzig."
-geschmack = "Mild, nussig."
+hut = "4 bis 15, selten bis 20 cm breit, kastanien- bis schwarzbraun oder hell bronzefarben, feinsamtig und matt weißlich bereift. Rand meist heller."
+roehren = "Weißlich, hellgelb bis cremegelb, nicht blauend oder nur leicht grünblau verfärbend."
+stiel = "Ockerbraun, hellbraun bis blass lederbraun, faserig rillig, vor allem an der Spitze mit weißlicher bis brauner Netzzeichnung. Basis weißlich und verdickt."
+fleisch = "Weiß, nicht blauend, selten etwas rötlich werdend, fest und fleischig."
+geruch = "Mandelartig, nussig."
+geschmack = "Mild, pilzig, nussig."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Eiche, Buche und Esskastanie, wärmeliebend. In Deutschland nur im Süden und Westen häufiger."
-zeit = "Juli bis Oktober."
+vorkommen = "Symbiosepilz im Laubwald, meist bei Eiche und Edelkastanie. Selten."
+zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
 name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
-essbar = "ungeniessbar"
+merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack immer sehr bitter."
+essbar = "giftig"
+slug = "gallenroehrling"
 
 [[verwechslungen]]
-name = "Steinpilz"
-merkmal = "Hut heller braun, Netz weiß. Der gleiche Speisewert."
+name = "Wurzelnder Bitterröhrling"
+merkmal = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Geschmack sehr bitter."
+essbar = "giftig"
+slug = "wurzelnder-bitterroehrling"
+
+[[verwechslungen]]
+name = "Gelber Steinpilz"
+merkmal = "Röhren gelblich, Fleisch zitronengelb und leicht blauend, Stielbasis mit wurzelndem Anhängsel."
 essbar = "speisepilz"
+slug = "anhaengselroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

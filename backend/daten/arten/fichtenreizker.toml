@@ -1,33 +1,62 @@
 name = "Fichtenreizker"
 lateinisch = "Lactarius deterrimus"
 gruppe = "milchling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["herbst"]
+jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 karte = "reizker"
+speisewertHinweis = "Schmeckt bitterlich und leicht scharf, geringer als der Edelreizker."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Nadelwaldreizker"]
+synonyme = ["Lactarius deliciosus var. deterrimus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Fichtenreizker.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 17.0 }
+sporenLaengeUm = { von = 7.5, bis = 10.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.6 }
 
 [merkmale]
-hut = "4 bis 12 cm, orange, nur schwach gezont, bald grünfleckig, Mitte vertieft."
-lamellen = "Orange, dicht, herablaufend, auf Druck rasch grün."
-milch = "Erst karottenrot, nach wenigen Minuten weinrot bis braunrot."
-stiel = "Kurz, hohl, orange, ohne deutliche Gruben."
-fleisch = "Orange, im Schnitt schnell grünend."
-geruch = "Fruchtig."
-geschmack = "Mild, leicht bitter."
-sporenpulver = "Blass ocker."
-vorkommen = "Mykorrhiza mit Fichte, in jungen Beständen und an Wegrändern, sehr häufig."
-zeit = "August bis November."
+hut = "4 bis 10, selten bis 15 cm breit, orange bis orangerot, ausblassend, bald mit kräftigen grünen Flecken vor allem in der Mitte, dunkler gezont. Feucht stark schleimig, später flach trichterförmig vertieft."
+lamellen = "Orangeocker bis blassorange, bogig angewachsen und etwas herablaufend, brüchig, in Stielnähe gegabelt, mit kürzeren Zwischenlamellen."
+milch = "Karottenrot bis orangerot, nach etwa 15 Minuten weinrot."
+stiel = "5 bis 15, selten bis 17 cm lang, rötlich bis orange, etwas weißlich bereift, sofort hohl, ohne Grübchen."
+fleisch = "Rötlich, im Stiel weißlich bis hellorange, brüchig."
+geruch = "Süßlich, obstartig."
+geschmack = "Bitterlich, leicht scharf."
+sporenpulver = "Blassocker."
+vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier bei Fichte."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Edelreizker"
-merkmal = "Milch bleibt orange, bei Kiefer. Etwas besser im Geschmack."
+merkmal = "Milch bleibt karottenrot, Stiel mit orangefarbenen Grübchen, bei Kiefer."
 essbar = "speisepilz"
+slug = "edelreizker"
 
 [[verwechslungen]]
-name = "Birkenreizker"
-merkmal = "Milch weiß, Hutrand behaart, bei Birke."
-essbar = "giftig"
+name = "Lachsreizker"
+merkmal = "Hut genabelt bis trichterförmig, bei Tanne."
+essbar = "speisepilz"
+slug = "lachsreizker"
+
+[[verwechslungen]]
+name = "Blaureizker"
+merkmal = "Hut graurosa bis rosa-lehmfarben, Lamellen laufen grünlich bis weinrot an."
+essbar = "speisepilz"
+slug = "blaureizker"
+
+[[verwechslungen]]
+name = "Weinroter Reizker"
+merkmal = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkelbraun."
+essbar = "speisepilz"
+slug = "weinroter-reizker"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -4,28 +4,49 @@ gruppe = "morchel"
 speisewert = "bedingtEssbar"
 geschuetzt = true
 jahreszeiten = ["fruehling"]
-baeume = ["esche", "ulme", "obstbaum"]
-speisewertHinweis = "Roh giftig. Mindestens 15 Minuten garen."
+baeume = []
+speisewertHinweis = "Roh giftig. Gut durchgaren. Besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Morchel", "Rundmorchel"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Speisemorchel.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+fruchtkoerperHoeheCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 17.0, bis = 22.0 }
+sporenBreiteUm = { von = 8.0, bis = 12.0 }
 
 [merkmale]
-hut = "4 bis 10 cm, eiförmig bis rundlich, ockergelb bis graubraun, mit unregelmäßigen, wabenartigen Gruben. Er ist am Stiel vollständig angewachsen."
-stiel = "Weißlich, hohl, kleiig bereift, an der Basis oft gefurcht."
-fleisch = "Dünn, wachsartig, der ganze Pilz ist innen hohl."
-geruch = "Angenehm, würzig."
-geschmack = "Mild. Roh nicht kosten."
-sporenpulver = "Cremeweiß."
-vorkommen = "In Auwäldern, Parks, unter Esche, Ulme und Obstbäumen, auf Kalk und in frischer Rindenmulchschicht."
-zeit = "April bis Mai."
+fruchtkoerper = "5 bis 12, selten bis 16 cm hoch und 3 bis 7, selten bis 9 cm breit, gelb, hellbraun, graugelb bis grüngelb, unregelmäßig wabenartig und hohl. Eiförmig, manchmal stumpfkegelig."
+stiel = "Weißlich und hohl. Ein klumpig dicker Stiel weist auf die Dickfüßige Morchel hin, die ebenso essbar ist."
+fleisch = "Weißlich bis hellgelb, brüchig, wachsartig, hohl."
+geruch = "Angenehm würzig, pilzig."
+geschmack = "Mild. Roh ist er giftig."
+sporenpulver = "Hell cremefarben."
+vorkommen = "In Auwäldern, Parks, Gärten, an Waldrändern, auf Waldwiesen und in Rindenmulch, sehr standorttreu. Oft zusammen mit Morchelbecherlingen."
+zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai."
 
 [[verwechslungen]]
-name = "Frühjahrslorchel"
-merkmal = "Hirnartig gewunden statt wabig, Kappe nicht regelmäßig gegrubt. Giftig, auch nach dem Garen."
-essbar = "giftig"
+name = "Gemeine Morchel"
+merkmal = "Kleiner, 2 bis 6, selten bis 8 cm breit, hellbraun, graubraun bis rußbraun mit rostfarbenen Flecken."
+essbar = "speisepilz"
+slug = "gemeine-morchel"
 
 [[verwechslungen]]
-name = "Käppchenmorchel"
-merkmal = "Kappe nur oben angewachsen, unten frei abstehend."
+name = "Dickfüßige Morchel"
+merkmal = "Stiel klumpig dick und längs gefurcht, sonst gleich."
+essbar = "speisepilz"
+slug = "dickfuessige-morchel"
+
+[[verwechslungen]]
+name = "Spitzmorchel"
+merkmal = "Käppchen zugespitzt, olivbeige bis graubraun, mit Längsrippen und Kammern statt runder Waben."
 essbar = "bedingtEssbar"
+slug = "spitzmorchel"
 
 [[links]]
 titel = "123pilzsuche.de"

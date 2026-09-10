@@ -1,0 +1,49 @@
+name = "Großer Kiefernschneckling"
+lateinisch = "Hygrophorus latitabundus"
+gruppe = "schneckling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "In Deutschland gefährdet und sehr selten. Stehen lassen."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Grauweißer Schneckling", "Dunkler Kiefern-Schneckling"]
+synonyme = ["Hygrophorus fuscoalbus", "Hygrophorus limacinus", "Hygrophorus olivaceoalbus var. obesus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GrosserKiefernschneckling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 9.0, bis = 14.0 }
+sporenBreiteUm = { von = 6.0, bis = 8.0 }
+
+[merkmale]
+hut = "5 bis 10, selten bis 12 cm breit, graubraun bis olivbraun, Mitte dunkler mit stumpfem Buckel. Haut schleimig und glänzend, Rand lange eingerollt."
+lamellen = "Weiß bis leicht gelblich, etwas herablaufend, mit Zwischenlamellen, Schneiden glatt."
+stiel = "Weißlich bis hellgelb, teils olivbraun genattert, schleimig, mit schleimiger Ringzone im oberen Drittel, Basis zugespitzt."
+fleisch = "Weiß."
+geruch = "Angenehm, aromatisch fruchtig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz bei Kiefer, auf kalkreichem Boden, in Wäldern, Parks, an Waldrändern und in Heiden. Sehr selten, in Deutschland gefährdet."
+zeit = "Spätsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Märzschneckling"
+merkmal = "Hut aschgrau bis schwarzgrau marmoriert, im Vorfrühling am Schneerand."
+essbar = "speisepilz"
+slug = "maerzschneckling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GrosserKiefernschneckling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Großer_Kiefern-Schneckling"

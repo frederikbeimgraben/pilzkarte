@@ -1,30 +1,63 @@
 name = "Klapperschwamm"
 lateinisch = "Grifola frondosa"
 gruppe = "porling"
-speisewert = "speisepilz"
+speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["eiche"]
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "kastanie", "linde", "buche"]
+speisewertHinweis = "Nur jung essbar, im Alter wird er sehr zäh."
+marktfaehig = true
+weitereNamen = ["Maitake", "Spatelhütiger Porling", "Laubporling", "Kamm-Porling Graue Gans", "Gemeiner Klapperschwamm"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Klapperschwamm.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.0 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
-fruchtkoerper = "20 bis 50 cm, ein Busch aus vielen grau- bis olivbraunen, spatelförmigen Hütchen auf einem verzweigten weißen Strunk."
-poren = "Weiß bis cremefarben, fein, laufen am Strunk herab."
-fleisch = "Weiß, fest, faserig."
-geruch = "Kräftig würzig."
-geschmack = "Mild, würzig."
+hut = "3 bis 7, selten bis 9 cm breit je Einzelhut, graubraun, in Büscheln bis 50 cm Breite. Breite halbierte Einzelhüte, büschelig oder rosettenartig verwachsen, Oberseite etwas radialfaserig oder runzelig."
+roehren = "Weißlich bis weißbraun, auf Druck nicht schwärzend."
+stiel = "Graubraun, verzweigt sich in viele dünnere Äste."
+fleisch = "Hellbraun."
+geruch = "Angenehm."
+geschmack = "Mild."
 sporenpulver = "Weiß."
-vorkommen = "Schwächeparasit am Stammfuß alter Eichen, seltener Buchen. Kehrt jahrelang an denselben Baum zurück."
-zeit = "September bis November."
-
-[[verwechslungen]]
-name = "Riesenporling"
-merkmal = "Hüte viel größer und wenige, Fleisch schwärzt auf Druck."
-essbar = "ungeniessbar"
+vorkommen = "Parasit und Folgezersetzer im Wurzelbereich von Eiche und Kastanie, seltener bei Linde oder Buche. Er löst Weißfäule aus."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Eichhase"
-merkmal = "Hütchen rund mit mittigem Stielchen, im Sommer."
-essbar = "essbar"
+merkmal = "Viele kleine runde Porenpilze mit mittigem Stielchen an einem Strunk, Fruchtkörper heller und gesprenkelt bräunlich."
+essbar = "speisepilz"
+slug = "eichhase"
+
+[[verwechslungen]]
+name = "Bergporling"
+merkmal = "Hüte braun und samtig, fächerförmig ineinander verwachsen, Geschmack jung mild und schnell extrem scharf, bei Weißtanne."
+essbar = "ohneSpeisewert"
+slug = "bergporling"
+
+[[verwechslungen]]
+name = "Krause Glucke"
+merkmal = "Blumenkohlartig aus krausen Lappen, ohne Hüte und ohne Röhren, am Wurzelgeflecht von Kiefern."
+essbar = "speisepilz"
+slug = "krause-glucke"
+
+[[verwechslungen]]
+name = "Breitblättrige Glucke"
+merkmal = "Hirnartig breit gekräuselt, ohne Hüte und ohne Röhren, beim Kochen Waschküchengeruch."
+essbar = "ohneSpeisewert"
+slug = "breitblaettrige-glucke"
+
+[[verwechslungen]]
+name = "Riesenporling"
+merkmal = "Einzelhüte viel größer, Poren auf Druck und Fleisch im Schnitt schwärzend."
+essbar = "ohneSpeisewert"
+slug = "riesenporling"
 
 [[links]]
 titel = "123pilzsuche.de"

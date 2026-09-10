@@ -1,0 +1,55 @@
+name = "Brauner Haarstielporling"
+lateinisch = "Jahnoporus hirtus"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Er schmeckt schärflich bis bitterlich. In Deutschland vom Aussterben bedroht und deshalb stehen zu lassen."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "vomAussterbenBedroht"
+synonyme = ["Piptoporus hirtus", "Polyporus lucienqueletii", "Cerioporus lucienqueletii", "Polyporus hirtus", "Albatrellus hirtus", "Favolus hirtus", "Polyporellus hirtus", "Polyporus hispidellus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Haarstielporling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 18.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 2.0, bis = 17.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
+
+[merkmale]
+hut = "5 bis 18, selten bis 25 cm breit, hellbraun, gelbbraun, orangebraun, rosabraun bis kastanienbraun, fein samtig kurzhaarig mit verklebten Haarbüscheln, filzig. Rand gewellt, dünnfleischig."
+poren = "Weißlich, scharf stachelartig, tief bis zur Stielbasis herablaufend."
+stiel = "Weißlich und filzig, zentral angesetzt, zur Spitze dicker, Basis bräunlich."
+fleisch = "Weiß bis leicht gelblich, alt bräunlich."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, leicht schärflich bis bitterlich."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer meist im Nadelwald, gern an totem Fichtenholz, oft an vergrabenem Holz und deshalb scheinbar am Boden. Sehr selten, in der Schweiz stark gefährdet, in Deutschland vom Aussterben bedroht."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Bergporling"
+merkmal = "Hut braun und samtig, Fächer aus einem gemeinsamen Strunk, Geschmack schnell extrem scharf, an Weißtanne."
+essbar = "ohneSpeisewert"
+slug = "bergporling"
+
+[[verwechslungen]]
+name = "Riesenporling"
+merkmal = "Poren auf Druck schwärzend, Fleisch im Schnitt braunschwarz, an Laubholzstümpfen."
+essbar = "ohneSpeisewert"
+slug = "riesenporling"
+
+[[verwechslungen]]
+name = "Schuppiger Porling"
+merkmal = "Hut mit konzentrisch angeordneten braunen Schuppen, Stiel seitlich und im Alter mit schwarzer Basis, an Laubholz."
+essbar = "bedingtEssbar"
+slug = "schuppiger-porling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Haarstielporling.htm"

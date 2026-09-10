@@ -1,0 +1,63 @@
+name = "Bergporling"
+lateinisch = "Bondarzewia mesenterica"
+gruppe = "porling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["tanne"]
+speisewertHinweis = "Nur ganz junge Fruchtkörper sind essbar; sie werden schnell extrem scharf und dann ungeniessbar."
+marktfaehig = false
+wertigkeit = 4
+haeufigkeit = "haeufig"
+synonyme = ["Bondarzewia montana", "Grifola mesenterica", "Grifola montana", "Cladomeris montanus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Bergporling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Lagunenblau bis blaugrün."
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf den Röhren gelblich, auf dem Hut weinrötlich."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0 }
+sporenLaengeUm = { von = 5.0, bis = 8.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
+
+[merkmale]
+hut = "4 bis 30, in Ausnahmen bis 200 cm breit, braun und samtig, fächerförmig ineinander verwachsen und aus einem gemeinsamen Strunk wachsend, Rand wellig."
+poren = "Weiß bis gelblich, herablaufend."
+stiel = "Weiß bis gelb, Basis weißlich und bräunlich getupft, verbogen."
+fleisch = "Weiß bis leicht gelblich, weich."
+geruch = "Pilzig und angenehm, ganz jung etwas anisartig."
+geschmack = "Jung mild, dann schnell extrem scharf."
+sporenpulver = "Weiß."
+vorkommen = "Wurzelparasit im Nadelwald, gern an Weißtanne. In Tschechien und im Bayerischen Wald häufig, in der Schweiz potenziell gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Riesenporling"
+merkmal = "Poren auf Druck schwärzend, Fleisch im Schnitt langsam braunschwarz, gern an Buchenstümpfen."
+essbar = "ohneSpeisewert"
+slug = "riesenporling"
+
+[[verwechslungen]]
+name = "Klapperschwamm"
+merkmal = "Graubraune halbierte Einzelhüte in Büscheln, im Wurzelbereich von Eiche und Kastanie."
+essbar = "bedingtEssbar"
+slug = "klapperschwamm"
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Hut semmelgelb bis orangebraun, Poren grünweißlich, Fleisch fest und brüchig."
+essbar = "speisepilz"
+slug = "semmelporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Bergporling.htm"

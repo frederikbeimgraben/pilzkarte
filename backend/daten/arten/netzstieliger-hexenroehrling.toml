@@ -3,31 +3,72 @@ lateinisch = "Suillellus luridus"
 gruppe = "roehrling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["sommer", "herbst"]
-baeume = ["eiche", "buche", "linde"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
 karte = "hexen_netz"
-speisewertHinweis = "Roh giftig. Gut durchgaren und nicht mit Alkohol zusammen essen."
+speisewertHinweis = "123pilzsuche führt ihn als nur bedingt essbar. Gut durchgaren und nicht mit Alkohol zusammen essen, das gibt Magen-Darm-Beschwerden. Etwa ein bis fünf von hundert Personen vertragen ihn nicht; darum nicht weitergeben und Vorräte deutlich beschriften."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Netzstielige Hexenröhrling", "Netzhexe"]
+synonyme = ["Boletus luridus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/NetzstieligeHexenroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Hut dunkelrot, Fleisch orange."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Hut olivgrau, Fleisch hell olivgelb."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
+sporenLaengeUm = { von = 11.0, bis = 18.0 }
+sporenBreiteUm = { von = 4.5, bis = 7.5 }
 
 [merkmale]
-hut = "5 bis 20 cm, oliv- bis graubraun, oft mit rötlichem Ton, matt und feinfilzig."
-roehren = "Röhren gelb, Mündungen orange bis rot. Über den Röhren liegt im Schnitt eine rote Linie."
-stiel = "Gelb bis rötlich, mit grobem rotem Netz über die ganze Länge."
-fleisch = "Gelb, im Schnitt kräftig blauend."
+hut = "3 bis 15, selten bis 22 cm breit, hell- bis dunkelbraun, lederfarben oder graubraun mit Olivton, samtig und etwas klebrig, auf Druck blauend. Zwischen Hutfleisch und Röhren liegt eine rote Zone."
+roehren = "Röhrenmündungen rot, Röhrenboden gelb, orangegelb bis fast weinrot, vom Fleisch lösbar."
+stiel = "Auf gelblichem Grund mit rötlicher bis dunkelbrauner Netzzeichnung über die ganze Länge, oft ganz rötlich überhaucht. Basis dunkler und rot punktiert."
+fleisch = "Gelb, im Schnitt sofort schwarzblau, in der Stielbasis rötlich."
 geruch = "Angenehm pilzig."
-geschmack = "Mild. Roh nicht kosten."
+geschmack = "Mild."
 sporenpulver = "Olivbraun."
-vorkommen = "Kalkliebend, bei Eiche, Buche und Linde, auch in Parks und Alleen."
-zeit = "Mai bis Oktober, beginnt früh im Jahr."
+vorkommen = "Symbiosepilz in Laubwäldern und Parkanlagen, auf kalkhaltigem Boden."
+zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Flockenstieliger Hexenröhrling"
-merkmal = "Stiel geflockt statt genetzt, saure Böden."
+name = "Kurznetziger Hexenröhrling"
+merkmal = "Netz nur im oberen Stielteil, im Alter zur Mitte hin verschoben, Stielfleisch stark weinrot, Röhrenboden orangerot."
 essbar = "bedingtEssbar"
+slug = "kurznetziger-hexenroehrling"
 
 [[verwechslungen]]
 name = "Satansröhrling"
-merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
+merkmal = "Hut weiß bis hellgrau oder grauoliv, Stielbasis dick knollig und rot, Fleisch nur schwach blauend, Geruch im Alter aasartig."
 essbar = "giftig"
+slug = "satansroehrling"
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Röhren gelblich statt rot, Hut lehmgrau und trocken samtig, Geschmack bitter."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Blaufleckender Purpurröhrling"
+merkmal = "Hut purpurrot bis weinrosa und blau fleckend, Stielbasis karminrot, Fleisch sofort stark blauend."
+essbar = "giftig"
+slug = "blaufleckender-purpurroehrling"
+
+[[verwechslungen]]
+name = "Flockenstieliger Hexenröhrling"
+merkmal = "Stiel mit roten Flöckchen und ohne jedes Netz, Hut dunkelbraun, auf saurem Boden."
+essbar = "bedingtEssbar"
+slug = "flockenstieliger-hexenroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

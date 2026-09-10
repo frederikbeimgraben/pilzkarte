@@ -34,11 +34,19 @@ from app.modules.arten.katalog import (
 )
 from app.modules.arten.router import aktueller_katalog
 from app.modules.arten.schemas import (
+    WERTIGKEIT_BESTE,
+    WERTIGKEIT_SCHWAECHSTE,
     WOCHEN,
     Essbarkeit,
+    Gefaehrdung,
+    Haeufigkeit,
     MerkmalSchluessel,
     Profil,
+    Reagenz,
+    Reagenzeintrag,
+    SaisonKurve,
     Saisontabelle,
+    Spanne,
     Stufe,
 )
 
@@ -55,6 +63,10 @@ baeume = ["fichte", "buche"]
 karte = "boletus_edulis"
 speisewertHinweis = "Jung sammeln."
 schutzHinweis = "Auch die Verwandten schont man."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
 hut = "Braun."
@@ -86,6 +98,10 @@ geschuetzt = false
 jahreszeiten = ["fruehling"]
 baeume = []
 
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
+geprueftAm = "2026-09-10"
+
 [merkmale]
 hut = "Cremeweiss."
 lamellen = "Weiss."
@@ -115,6 +131,10 @@ geschuetzt = true
 jahreszeiten = ["sommer"]
 baeume = ["buche"]
 
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Braetling2004.htm"
+geprueftAm = "2026-09-10"
+
 [merkmale]
 hut = "Rostbraun."
 milch = "Weiss und reichlich."
@@ -133,6 +153,51 @@ essbar = "ungeniessbar"
 [[links]]
 titel = "Wikipedia"
 url = "https://de.wikipedia.org/wiki/Br%C3%A4tling"
+"""
+
+
+GALLENROEHRLING = """
+name = "Gallenroehrling"
+lateinisch = "Tylopilus felleus"
+gruppe = "roehrling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Gallenroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch braeunt."
+
+[[reagenzien]]
+reagenz = "melzer"
+reaktion = "Ohne Reaktion."
+
+[merkmale]
+hut = "Hellbraun."
+roehren = "Jung weiss, bald rosa."
+stiel = "Mit grobem dunklem Netz."
+fleisch = "Weiss."
+geruch = "Unauffaellig."
+geschmack = "Sehr bitter."
+sporenpulver = "Rosa."
+vorkommen = "Bei Fichte."
+zeit = "Juni bis Oktober."
+
+[[verwechslungen]]
+name = "Steinpilz"
+merkmal = "Roehren bleiben weiss bis oliv, Netz weiss, Geschmack mild."
+essbar = "speisepilz"
+slug = "steinpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Gallenroehrling.htm"
 """
 
 
@@ -177,6 +242,7 @@ def daten(tmp_path: Path) -> Path:
         ("steinpilz", STEINPILZ),
         ("maipilz", MAIPILZ),
         ("braetling", BRAETLING),
+        ("gallenroehrling", GALLENROEHRLING),
     ]:
         (ordner / "arten" / f"{slug}.toml").write_text(inhalt, encoding="utf-8")
     (ordner / "saison.json").write_text(json.dumps(_tabelle()), encoding="utf-8")
@@ -203,6 +269,13 @@ def app(gebaut: Katalog) -> FastAPI:
     gebaute_app = app_bauen()
     gebaute_app.dependency_overrides[aktueller_katalog] = lambda: gebaut
     return gebaute_app
+
+
+def kurve_von(gebaut: Katalog, slug: str) -> SaisonKurve:
+    """Die Kurve einer sammelbaren Art. Fehlt sie, liegt der Test falsch."""
+    saison = gebaut.art(slug).saison
+    assert saison is not None
+    return saison
 
 
 def klient(app: FastAPI) -> httpx.AsyncClient:
@@ -261,7 +334,12 @@ def test_spitze_woche_fehlt_ohne_fund() -> None:
 def test_liste_traegt_alle_arten_nach_namen(gebaut: Katalog) -> None:
     liste = gebaut.liste()
 
-    assert [art.name for art in liste.arten] == ["Braetling", "Maipilz", "Steinpilz"]
+    assert [art.name for art in liste.arten] == [
+        "Braetling",
+        "Gallenroehrling",
+        "Maipilz",
+        "Steinpilz",
+    ]
 
 
 def test_liste_nennt_stand_jahre_und_nenner(gebaut: Katalog) -> None:
@@ -280,6 +358,7 @@ def test_stufen_kommen_aus_karte_und_tabelle(gebaut: Katalog) -> None:
         "steinpilz": Stufe.VORHERSAGE,
         "maipilz": Stufe.SAISON,
         "braetling": Stufe.PROFIL,
+        "gallenroehrling": Stufe.VERWECHSLUNG,
     }
 
 
@@ -301,7 +380,12 @@ def test_ohne_manifest_bleibt_die_art_auf_saison(daten: Path, tmp_path: Path) ->
 def test_vorhersage_geplant_steht_in_liste_und_profil(gebaut: Katalog) -> None:
     geplant = {art.slug: art.vorhersage_geplant for art in gebaut.liste().arten}
 
-    assert geplant == {"steinpilz": True, "maipilz": False, "braetling": False}
+    assert geplant == {
+        "steinpilz": True,
+        "maipilz": False,
+        "braetling": False,
+        "gallenroehrling": False,
+    }
     assert gebaut.art("steinpilz").vorhersage_geplant is True
 
 
@@ -319,15 +403,16 @@ def test_die_stufe_folgt_der_karte_auch_ohne_begehungen(daten: Path, tmp_path: P
 
 def test_art_ohne_zeile_in_der_tabelle_bleibt_leer(gebaut: Katalog) -> None:
     art = gebaut.art("braetling")
+    kurve = kurve_von(gebaut, "braetling")
 
     assert art.begehungen_mit_fund == 0
     assert art.spitze_woche is None
-    assert art.saison.hoechstwert == 0.0
-    assert set(art.saison.alle_jahre) == {0.0}
+    assert kurve.hoechstwert == 0.0
+    assert set(kurve.alle_jahre) == {0.0}
 
 
 def test_saisonkurve_rechnet_beide_reihen(gebaut: Katalog) -> None:
-    kurve = gebaut.art("steinpilz").saison
+    kurve = kurve_von(gebaut, "steinpilz")
 
     # 10 von 100, 20 von 200, 200 von 400 Begehungen der geschlossenen Jahre.
     assert kurve.alle_jahre[0] == 10.0
@@ -338,14 +423,14 @@ def test_saisonkurve_rechnet_beide_reihen(gebaut: Katalog) -> None:
 
 
 def test_laufendes_jahr_endet_an_der_letzten_vollen_woche(gebaut: Katalog) -> None:
-    kurve = gebaut.art("steinpilz").saison
+    kurve = kurve_von(gebaut, "steinpilz")
 
     assert len(kurve.laufendes_jahr) == 3
     assert len(kurve.alle_jahre) == WOCHEN
 
 
 def test_hoechstwert_gilt_fuer_beide_reihen(gebaut: Katalog) -> None:
-    kurve = gebaut.art("steinpilz").saison
+    kurve = kurve_von(gebaut, "steinpilz")
 
     assert kurve.hoechstwert == 50.0
     assert max(kurve.laufendes_jahr) <= kurve.hoechstwert
@@ -366,21 +451,21 @@ def test_liste_nennt_die_begehungen_je_woche(gebaut: Katalog) -> None:
 
 
 def test_profil_nennt_die_begehungen_je_woche(gebaut: Katalog) -> None:
-    kurve = gebaut.art("steinpilz").saison
+    kurve = kurve_von(gebaut, "steinpilz")
 
     assert kurve.begehungen_je_woche_alle_jahre[0] == 9.1
     assert kurve.begehungen_je_woche_laufendes_jahr == [50, 100, 0]
 
 
 def test_die_begehungen_des_laufenden_jahres_enden_mit_der_kurve(gebaut: Katalog) -> None:
-    kurve = gebaut.art("steinpilz").saison
+    kurve = kurve_von(gebaut, "steinpilz")
 
     assert len(kurve.begehungen_je_woche_laufendes_jahr) == len(kurve.laufendes_jahr)
     assert len(kurve.begehungen_je_woche_alle_jahre) == len(kurve.alle_jahre) == WOCHEN
 
 
 def test_eine_duenne_woche_ist_an_ihrem_nenner_zu_erkennen(gebaut: Katalog) -> None:
-    kurve = gebaut.art("steinpilz").saison
+    kurve = kurve_von(gebaut, "steinpilz")
 
     # KW 3 traegt 0 Prozent, aber auch keine einzige Begehung. Das Frontend
     # zeichnet sie darum blass statt als Absturz der Linie.
@@ -401,7 +486,12 @@ def test_tags_beginnen_mit_der_stufe(gebaut: Katalog) -> None:
 def test_karte_kommt_nur_mit_manifest(gebaut: Katalog) -> None:
     karten = {art.slug: art.karten_slug for art in gebaut.liste().arten}
 
-    assert karten == {"steinpilz": "boletus_edulis", "maipilz": None, "braetling": None}
+    assert karten == {
+        "steinpilz": "boletus_edulis",
+        "maipilz": None,
+        "braetling": None,
+        "gallenroehrling": None,
+    }
 
 
 def test_karte_faellt_auf_den_slug_zurueck(daten: Path, tmp_path: Path) -> None:
@@ -416,6 +506,44 @@ def test_karte_faellt_auf_den_slug_zurueck(daten: Path, tmp_path: Path) -> None:
 def test_unbekannter_slug_ist_ein_fehler(gebaut: Katalog) -> None:
     with pytest.raises(NichtGefunden):
         gebaut.art("gibt-es-nicht")
+
+
+def test_eine_verwechslungsart_traegt_keine_saisonkurve(gebaut: Katalog) -> None:
+    galle = gebaut.art("gallenroehrling")
+
+    assert galle.stufe == Stufe.VERWECHSLUNG
+    assert galle.sammelbar is False
+    assert galle.saison is None
+    assert galle.spitze_woche is None
+    assert galle.karten_slug is None
+
+
+def test_sammelbare_arten_tragen_die_kurve(gebaut: Katalog) -> None:
+    sammelbar = {art.slug: art.sammelbar for art in gebaut.liste().arten}
+
+    assert sammelbar == {
+        "steinpilz": True,
+        "maipilz": True,
+        "braetling": True,
+        "gallenroehrling": False,
+    }
+    assert all(art.saison is not None for art in gebaut.liste().arten if art.sammelbar)
+    assert all(art.saison is None for art in gebaut.liste().arten if not art.sammelbar)
+
+
+def test_eine_verwechslung_verlinkt_ihr_eigenes_profil(gebaut: Katalog) -> None:
+    galle = gebaut.art("gallenroehrling")
+
+    assert galle.verwechslungen[0].slug == "steinpilz"
+    assert gebaut.art(galle.verwechslungen[0].slug or "").name == "Steinpilz"
+
+
+def test_eine_nicht_sammelbare_art_darf_keine_karte_haben() -> None:
+    grundlage = tomllib.loads(GALLENROEHRLING)
+    grundlage["karte"] = "gallenroehrling"
+
+    with pytest.raises(ValidationError, match="keine Karte"):
+        Profil.model_validate(grundlage)
 
 
 # ------------------------------------------------------------------ Merkmale
@@ -463,6 +591,55 @@ def test_jede_essbarkeit_hat_einen_satz(gebaut: Katalog) -> None:
 
 
 # ------------------------------------------------------------------ Dateien
+
+
+def test_reagenzien_stehen_als_zeile_in_der_tabelle(gebaut: Katalog) -> None:
+    zeilen = {zeile.schluessel: zeile.text for zeile in gebaut.art("gallenroehrling").merkmale}
+
+    assert zeilen[MerkmalSchluessel.REAGENZIEN] == (
+        "Kalilauge (KOH): Fleisch braeunt. Melzers Reagenz: Ohne Reaktion."
+    )
+
+
+def test_die_reagenzzeile_steht_hinter_dem_sporenpulver(gebaut: Katalog) -> None:
+    schluessel = [zeile.schluessel for zeile in gebaut.art("gallenroehrling").merkmale]
+
+    assert schluessel.index(MerkmalSchluessel.SPORENPULVER) + 1 == schluessel.index(
+        MerkmalSchluessel.REAGENZIEN
+    )
+
+
+def test_ohne_reagenzien_fehlt_die_zeile(gebaut: Katalog) -> None:
+    schluessel = [zeile.schluessel for zeile in gebaut.art("steinpilz").merkmale]
+
+    assert MerkmalSchluessel.REAGENZIEN not in schluessel
+
+
+def test_jedes_reagenz_hat_einen_namen(gebaut: Katalog) -> None:
+    profil = gebaut.profile["gallenroehrling"]
+
+    for wert in Reagenz:
+        geaendert = profil.model_copy(
+            update={"reagenzien": [Reagenzeintrag(reagenz=wert, reaktion="x")]}
+        )
+        zeilen = {zeile.schluessel: zeile.text for zeile in merkmale_bauen(geaendert)}
+        assert zeilen[MerkmalSchluessel.REAGENZIEN].endswith(": x")
+
+
+def test_profil_verbietet_eine_leere_zeile() -> None:
+    grundlage = _profil_grundlage()
+    grundlage["merkmale"]["hut"] = "   "
+
+    with pytest.raises(ValidationError, match="leer"):
+        Profil.model_validate(grundlage)
+
+
+def test_profil_setzt_die_reagenzzeile_nicht_selbst() -> None:
+    grundlage = _profil_grundlage()
+    grundlage["merkmale"]["reagenzien"] = "KOH braun."
+
+    with pytest.raises(ValidationError, match="reagenzien"):
+        Profil.model_validate(grundlage)
 
 
 def test_profil_verbietet_ein_fremdes_feld() -> None:
@@ -541,6 +718,10 @@ async def test_liste_antwortet_in_camel_case(app: FastAPI) -> None:
         "geschuetzt",
         "speisewert",
         "kartenSlug",
+        "sammelbar",
+        "marktfaehig",
+        "wertigkeit",
+        "haeufigkeit",
         "vorhersageGeplant",
         "begehungenMitFund",
         "spitzeWoche",
@@ -562,7 +743,12 @@ async def test_profil_antwortet_mit_tabelle_und_kurve(app: FastAPI) -> None:
     assert koerper["kartenSlug"] == "boletus_edulis"
     assert koerper["merkmale"][0] == {"schluessel": "hut", "text": "Braun."}
     assert koerper["verwechslungen"] == [
-        {"name": "Gallenroehrling", "merkmal": "Bitter.", "essbar": "ungeniessbar"}
+        {
+            "name": "Gallenroehrling",
+            "merkmal": "Bitter.",
+            "essbar": "ungeniessbar",
+            "slug": None,
+        }
     ]
     assert koerper["links"][0]["url"].startswith("https://")
     assert set(koerper["saison"]) == {
@@ -601,14 +787,16 @@ async def test_liste_braucht_kein_token(app: FastAPI) -> None:
 def test_alle_ausgelieferten_profile_sind_gueltig() -> None:
     profile = profile_lesen(DATEN / "arten")
 
-    assert len(profile) == 85
+    assert len(profile) == 309
+    assert sum(1 for profil in profile.values() if profil.sammelbar) == 85
 
 
 def test_jede_art_der_kette_hat_ein_profil() -> None:
     profile = profile_lesen(DATEN / "arten")
     tabelle = saison_lesen(DATEN / "saison.json")
 
-    assert {profil.lateinisch for profil in profile.values()} == set(tabelle.arten)
+    sammelbar = {p.lateinisch for p in profile.values() if p.sammelbar}
+    assert sammelbar == set(tabelle.arten)
 
 
 def _maps_der_kette(ziel: Path) -> Path:
@@ -663,12 +851,6 @@ def test_dreiundzwanzig_arten_tragen_ein_modell(tmp_path: Path) -> None:
     assert sum(1 for art in gebaut.liste().arten if art.vorhersage_geplant) == 23
 
 
-def test_jedes_profil_verlinkt_zwei_quellen() -> None:
-    for slug, profil in profile_lesen(DATEN / "arten").items():
-        titel = [verweis.titel for verweis in profil.links]
-        assert titel == ["123pilzsuche.de", "Wikipedia"], slug
-
-
 def test_jeder_slug_ist_eine_adresse() -> None:
     for slug in profile_lesen(DATEN / "arten"):
         assert slug == slug.lower()
@@ -698,3 +880,149 @@ async def test_der_dienst_nimmt_die_ausgelieferten_dateien() -> None:
 
     assert antwort.status_code == 200
     assert antwort.json()["lateinisch"] == "Boletus edulis"
+
+
+# ------------------------------------------------- die geprueften Profile
+
+
+def test_jedes_profil_nennt_seine_quelle() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        assert profil.quelle is not None, slug
+        assert profil.quelle.url.startswith("https://www.123pilzsuche.de/"), slug
+        assert profil.quelle.geprueft_am == "2026-09-10", slug
+
+
+def test_jede_verwechslung_traegt_namen_und_merkmal() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        for verwechslung in profil.verwechslungen:
+            assert verwechslung.name.strip(), slug
+            assert verwechslung.merkmal.strip(), slug
+
+
+def test_kein_merkmal_und_kein_hinweis_ist_leer() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        for text in profil.merkmale.values():
+            assert text.strip(), slug
+        assert profil.name.strip(), slug
+        assert profil.lateinisch.strip(), slug
+        for hinweis in (profil.speisewert_hinweis, profil.schutz_hinweis):
+            assert hinweis is None or hinweis.strip(), slug
+
+
+def test_jeder_verwechslungsslug_zeigt_auf_ein_profil() -> None:
+    profile = profile_lesen(DATEN / "arten")
+
+    for slug, profil in profile.items():
+        for verwechslung in profil.verwechslungen:
+            if verwechslung.slug is not None:
+                assert verwechslung.slug in profile, f"{slug} zeigt auf {verwechslung.slug}"
+
+
+def test_die_essbarkeit_einer_verwechslung_passt_zu_ihrem_profil() -> None:
+    # Sonst stuende dieselbe Art auf zwei Seiten mit zwei Urteilen.
+    profile = profile_lesen(DATEN / "arten")
+
+    for slug, profil in profile.items():
+        for verwechslung in profil.verwechslungen:
+            if verwechslung.slug is not None:
+                ziel = profile[verwechslung.slug]
+                assert verwechslung.essbar == ziel.speisewert, f"{slug} zu {verwechslung.slug}"
+
+
+def test_die_sammelbaren_arten_bleiben_fuenfundachtzig() -> None:
+    profile = profile_lesen(DATEN / "arten")
+
+    assert sum(1 for profil in profile.values() if profil.sammelbar) == 85
+
+
+def test_verwechslungsarten_tragen_die_stufe_verwechslung(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, _maps_der_kette(tmp_path / "maps"))
+    arten = {art.slug: art for art in gebaut.liste().arten}
+    profile = profile_lesen(DATEN / "arten")
+
+    for slug, profil in profile.items():
+        if not profil.sammelbar:
+            assert arten[slug].stufe == Stufe.VERWECHSLUNG, slug
+            assert arten[slug].saison is None, slug
+            assert arten[slug].karten_slug is None, slug
+
+
+def test_jedes_profil_verlinkt_seine_quellseite() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        titel = [verweis.titel for verweis in profil.links]
+        assert titel[0] == "123pilzsuche.de", slug
+        assert titel[1:] in ([], ["Wikipedia"]), slug
+        assert profil.links[0].url == (profil.quelle.url if profil.quelle else ""), slug
+
+
+# ------------------------------------------------- Zahlen und Listen der Quelle
+
+
+def test_eine_spanne_laeuft_von_klein_nach_gross() -> None:
+    spanne = Spanne(von=4, bis=20, selten_bis=25)
+
+    assert (spanne.von, spanne.bis, spanne.selten_bis) == (4, 20, 25)
+
+
+def test_eine_verdrehte_spanne_ist_kein_mass() -> None:
+    with pytest.raises(ValidationError, match="unter"):
+        Spanne(von=20, bis=4)
+
+
+def test_der_ausnahmewert_liegt_ueber_dem_oberen_wert() -> None:
+    with pytest.raises(ValidationError, match="Ausnahmewert"):
+        Spanne(von=4, bis=20, selten_bis=10)
+
+
+def test_die_wertigkeit_bleibt_in_der_skala_von_eins_bis_sechs() -> None:
+    for profil in profile_lesen(DATEN / "arten").values():
+        if profil.wertigkeit is not None:
+            assert WERTIGKEIT_BESTE <= profil.wertigkeit <= WERTIGKEIT_SCHWAECHSTE
+
+
+def test_marktfaehig_folgt_der_positivliste_der_dgfm(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, tmp_path)
+
+    # Der Steinpilz steht auf der Liste, der Gruene Knollenblaetterpilz nicht.
+    assert gebaut.art("steinpilz").marktfaehigkeit.marktfaehig is True
+    assert gebaut.art("gruener-knollenblaetterpilz").marktfaehigkeit.marktfaehig is False
+
+
+def test_die_marktfaehigkeit_nennt_ihre_quelle(tmp_path: Path) -> None:
+    quelle = katalog(DATEN, tmp_path).art("steinpilz").marktfaehigkeit.quelle
+
+    assert quelle.url.startswith("https://www.dgfm-ev.de/")
+    assert quelle.geprueft_am == "2026-05-01"
+
+
+def test_die_masse_kommen_aus_der_quellseite(tmp_path: Path) -> None:
+    masse = katalog(DATEN, tmp_path).art("steinpilz").masse
+
+    assert masse.hut_breite_cm is not None
+    assert (masse.hut_breite_cm.von, masse.hut_breite_cm.bis) == (4.0, 20.0)
+    assert masse.hut_breite_cm.selten_bis == 25.0
+    assert masse.sporen_laenge_um is not None
+
+
+def test_jede_haeufigkeit_und_gefaehrdung_ist_ein_enumwert() -> None:
+    for profil in profile_lesen(DATEN / "arten").values():
+        assert profil.haeufigkeit is None or isinstance(profil.haeufigkeit, Haeufigkeit)
+        assert profil.gefaehrdung is None or isinstance(profil.gefaehrdung, Gefaehrdung)
+
+
+def test_kein_weiterer_name_wiederholt_den_hauptnamen() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        assert profil.name not in profil.weitere_namen, slug
+        assert profil.lateinisch not in profil.synonyme, slug
+
+
+async def test_das_profil_liefert_die_zahlen_der_quelle() -> None:
+    async with klient(app_bauen()) as ruf:
+        antwort = await ruf.get("/api/arten/steinpilz")
+
+    koerper = antwort.json()
+    assert koerper["marktfaehigkeit"]["marktfaehig"] is True
+    assert koerper["wertigkeit"] == 1
+    assert koerper["masse"]["hutBreiteCm"] == {"von": 4.0, "bis": 20.0, "seltenBis": 25.0}
+    assert "Herrenpilz" in koerper["weitereNamen"]
+    assert koerper["quelle"]["url"].startswith("https://www.123pilzsuche.de/")

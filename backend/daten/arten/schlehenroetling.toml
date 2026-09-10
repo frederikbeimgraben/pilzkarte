@@ -1,0 +1,60 @@
+name = "Schlehenrötling"
+lateinisch = "Entoloma sepium"
+gruppe = "roetling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer"]
+baeume = ["obstbaum"]
+speisewertHinweis = "Nur etwas für Kenner, denn mehrere Rötlinge sind giftig und der Riesenrötling gilt als tödlich giftig. In Deutschland auf der Vorwarnliste."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "selten"
+weitereNamen = ["Blasser Pflaumen-Rötling", "Blassbrauner Schlehenrötling", "Blasser Rötling"]
+synonyme = ["Rhodophyllus sepius", "Agaricus sepius", "Entoloma saundersii sensu", "Entoloma clypeatum var. sepium"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Schlehenroetling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "anilin"
+reaktion = "Orangerosa bis rot."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Blaugrün bis türkis, im Hutfleisch und an der Stielbasis mehr blau."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 14.0 }
+stielDickeCm = { von = 0.5, bis = 1.8, seltenBis = 3.0 }
+sporenLaengeUm = { von = 7.5, bis = 11.0 }
+sporenBreiteUm = { von = 7.0, bis = 10.0 }
+
+[merkmale]
+hut = "2 bis 8, selten bis 10 cm breit, weißlich, cremegelb bis graubräunlich, im Alter silbrig braun, kegelig gewölbt, später ausgebreitet und etwas gebuckelt. Oberfläche eingewachsen radialfaserig und fein behaart, nur schwach hygrophan, Rand lange eingerollt."
+lamellen = "Weiß, später leicht rosa, ziemlich dicht, etwas ausgebuchtet angewachsen, mit Zwischenlamellen, zum Stiel vereinzelt gegabelt, manchmal rosa fleckig."
+stiel = "3 bis 8, selten bis 14 cm lang und 0,5 bis 1,8, selten 3 cm dick, weißlich bis cremegelb, alt etwas bräunend, feinfaserig, zur Basis meist verdickt. Fraßgänge von Insekten verfärben leicht orangebraun."
+fleisch = "Weiß bis grauweiß, faserig, fest, in der Hutmitte dick. Bei Verletzung braunrot, orangebraun bis safranfarben verfärbend."
+geruch = "Süßlich obstartig, bei Verletzung mehlig."
+geschmack = "Mild, mehlig."
+sporenpulver = "Rosa bis hell braunrosa."
+vorkommen = "Symbiosepilz von Rosengewächsen, an Waldrändern, in Gärten und Parks unter Schlehe, Weißdorn und Pflaumenbaum, büschelig gedrängt. Selten."
+zeit = "Frühling bis Sommer."
+
+[[verwechslungen]]
+name = "Riesenrötling"
+merkmal = "Deutlich größer, Hut gelblich grau, wächst im Laubwald und auf Wiesen, nicht büschelig unter Schlehen."
+essbar = "toedlichGiftig"
+slug = "riesenroetling"
+
+[[verwechslungen]]
+name = "Maipilz"
+merkmal = "Lamellen bleiben weiß bis cremefarben, Sporenpulver weiß, Geruch stark mehlig."
+essbar = "speisepilz"
+slug = "maipilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schlehenroetling.htm"

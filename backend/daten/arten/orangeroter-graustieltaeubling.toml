@@ -1,0 +1,61 @@
+name = "Orangeroter Graustieltäubling"
+lateinisch = "Russula decolorans"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer", "tanne", "fichte"]
+marktfaehig = true
+wertigkeit = 1
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/OrangGraustieltaeub.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Hell graurosa."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Blaugrün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Weinbraun."
+
+[[reagenzien]]
+reagenz = "formalin"
+reaktion = "Rosa."
+
+[masse]
+stielLaengeCm = { von = 3.0, bis = 11.0, seltenBis = 13.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.5 }
+sporenLaengeUm = { von = 8.4, bis = 13.5 }
+sporenBreiteUm = { von = 6.7, bis = 10.0 }
+
+[merkmale]
+hut = "3 bis 11, selten bis 13 cm breit, gelborange, ockergelborange, dunkelorangerot, ziegelrot bis kupferfarben."
+lamellen = "Weißlich bis hellocker, Schneide gelb, bei Verletzung zuerst rötend, später grauend."
+stiel = "3 bis 11, selten bis 13 cm lang, 1 bis 2, selten bis 3,5 cm dick, weiß, auf Druck oder bei Verletzung zuerst rötend, später grauend."
+fleisch = "Weiß, fest, nach dem Anschnitt zuerst rötend, später grauend."
+geruch = "Neutral."
+geschmack = "Mild, leicht schärflich."
+sporenpulver = "Hellocker bis dunkelcreme."
+vorkommen = "Symbiosepilz im Nadelwald und in Torfmooren, gern bei Kiefer, Tanne und Fichte. Im Flachland fehlend."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Gelber Graustieltäubling"
+merkmal = "Hut rein chromgelb bis zitronengelb, nicht orangerot. Auf moorigem saurem Boden bei Birke."
+essbar = "speisepilz"
+slug = "gelber-graustieltaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/OrangGraustieltaeub.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Orangeroter_Graustiel-Täubling"

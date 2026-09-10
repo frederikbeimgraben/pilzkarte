@@ -1,0 +1,65 @@
+name = "Gelbgrüner Kammporling"
+lateinisch = "Albatrellus cristatus"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche", "kastanie", "tanne", "laerche", "fichte"]
+speisewertHinweis = "Riecht unangenehm bis stinkend und schmeckt bitter."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Grüner Kammporling"]
+synonyme = ["Scutiger cristatus", "Polypilus poripes", "Polyporus cristatiformis", "Boletus cristatus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GruenerKamm.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Rasch rosa bis rot, unter der Huthaut orange, an den Poren nur schwach. Ganz junge Fruchtkörper reagieren teils nicht."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
+
+[merkmale]
+hut = "4 bis 12, selten bis 20 cm breit, gelbgrün, olivgrün bis gelbbraun. Rand wellig und unregelmäßig verbogen, Oberfläche samtig, lederig bis schuppig aufgerissen."
+poren = "Weiß, später gelblich, herablaufend, sehr kurz, eckig-rundlich bis eckig, etwa 1 bis 4 je Millimeter."
+stiel = "3 bis 7, selten bis 9 cm lang und 1 bis 4, selten bis 5 cm dick. Weißlich bis gelbgrünlich, strunkartig und sehr kurz, mittig bis seitlich angesetzt."
+fleisch = "Jung weiß, innen blass oliv, später gelb, zäh, lederig und trocken."
+geruch = "Unangenehm, stinkend, teils mit leichtem Pilzgeruch."
+geschmack = "Unangenehm und bitterlich."
+sporenpulver = "Weiß, durchscheinend."
+vorkommen = "Symbiosepilz im Mischwald, meist mit Laubbäumen, gern bei Buche, Eiche und Kastanie, seltener bei Tanne, Lärche oder Fichte. Selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Schafporling"
+merkmal = "Hut weißlich bis cremefarben ohne Grünton, Poren weiß, Fleisch weiß und mild."
+essbar = "bedingtEssbar"
+slug = "schafporling"
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Hut semmelgelb bis orange, Fleisch mild, Poren gelblich."
+essbar = "speisepilz"
+slug = "semmelporling"
+
+[[verwechslungen]]
+name = "Zitronenporling"
+merkmal = "Hut zitronengelb bis cremefarben ohne Olivgrün, Fleisch mild."
+essbar = "speisepilz"
+slug = "zitronenporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GruenerKamm.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gelbgrüner_Kamm-Porling"

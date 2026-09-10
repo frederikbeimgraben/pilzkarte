@@ -1,0 +1,49 @@
+name = "Rinnigbereifter Trichterling"
+lateinisch = "Clitocybe rivulosa"
+gruppe = "trichterling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Toedlich giftig. Er waechst auf Wiesen, schmeckt mild und wird deshalb mit Champignons und Raslingen verwechselt. Zu erkennen ist er am kleinen weissen Hut mit konzentrischen Ringzonen und den sehr gedraengten, weisslichen bis cremefarbenen Lamellen. Keine Kostproben."
+marktfaehig = false
+weitereNamen = ["Weißer Gifttrichterling"]
+synonyme = ["Clitocybe rivulosa var. dealbata", "Clitocybe dealbata var. rivulosa", "Omphalia rivulosa", "Clitocybe rivulosa var. neptunea"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Rinnigertrichterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 3.9, bis = 6.0 }
+sporenBreiteUm = { von = 2.5, bis = 4.0 }
+
+[merkmale]
+hut = "2 bis 10, selten bis 13 cm breit, weisslich, elfenbeinweiss bis etwas ockerlich. Rand jung heller, eingerollt und weiss bereift, spaeter mit konzentrisch angeordneten ockerlichen Flecken. Glatt und wachsartig, feucht nicht schleimig, Huthaut nicht abziehbar."
+lamellen = "Weiss, cremegrau, hellbraun bis beige, fast gerade angewachsen, sporadisch minimal herablaufend, sehr gedraengt, mit Zwischenlamellen, teils gegabelt."
+stiel = "2 bis 3, selten bis 4 cm lang und 0,4 bis 0,7, selten bis 0,9 cm dick, weisslich, faserig, blass ockerrosa, Spitze bereift, im Alter rosabraeunlich und hohl werdend. Zylindrisch und gleich dick."
+fleisch = "Weisslich bis blass ockerbraeunlich, duenn, Stielrinde etwas heller."
+geruch = "Suesslich-pilzartig, saeuerlich fruchtig, nicht mehlartig und nicht nach Anis."
+geschmack = "Mild, oft angenehm pilzartig, etwas adstringierend."
+sporenpulver = "Weiss bis hell cremeweiss."
+vorkommen = "Folgezersetzer an pflanzlichen Abfaellen auf Wiesen, Feldern, in Parks sowie an Weg- und Waldraendern, auf saurem Boden."
+zeit = "Sommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Bleiweisser Trichterling"
+merkmal = "Hut rein weiss und mehlig bereift, ohne konzentrische Zonen."
+essbar = "toedlichGiftig"
+slug = "bleiweisser-trichterling"
+
+[[verwechslungen]]
+name = "Mehlraesling"
+merkmal = "Stark mehlartiger Geruch und Geschmack, Lamellen weit herablaufend, Sporenpulver blass rosa."
+essbar = "speisepilz"
+slug = "mehlraesling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Rinnigertrichterling.htm"

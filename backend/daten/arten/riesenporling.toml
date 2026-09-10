@@ -1,26 +1,68 @@
 name = "Riesenporling"
 lateinisch = "Meripilus giganteus"
 gruppe = "porling"
-speisewert = "ungeniessbar"
+speisewert = "ohneSpeisewert"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "eiche"]
-speisewertHinweis = "Jung wird er gelegentlich gegessen, wird aber schnell zäh und bitter."
+baeume = ["tanne", "buche"]
+speisewertHinweis = "Nur ganz junge Fruchtkörper sind mild. Er wird schnell scharf und bitter und ist dann unbrauchbar."
+marktfaehig = false
+wertigkeit = 4
+synonyme = ["Agaricus aequivocus", "Flabellopilus giganteus", "Polyporus aequivocus", "Polypilus frondosus var. intybaceus", "Polypilus giganteus", "Grifola gigantea", "Grifola acanthoides"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Riesenporling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Im Fleisch ohne Verfärbung."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0 }
+sporenLaengeUm = { von = 4.2, bis = 8.0 }
+sporenBreiteUm = { von = 3.5, bis = 7.0 }
 
 [merkmale]
-fruchtkoerper = "30 bis 80 cm, eine Rosette aus wenigen großen, fächerförmigen gelbbraunen Hüten mit dunkler Zonierung."
-poren = "Weiß, fein, auf Druck und im Alter schwarz anlaufend."
-fleisch = "Weiß, faserig, zäh, schwärzt im Schnitt."
-geruch = "Säuerlich pilzig."
-geschmack = "Mild, bald bitter."
-sporenpulver = "Weiß."
-vorkommen = "Wurzelparasit an Buche, auch an Eiche und Linde, am Stammfuß und über Wurzeln. In Parks und Alleen häufig."
-zeit = "Juli bis Oktober."
+hut = "4 bis 30, selten bis 200 cm breit, jung fast weiß, später hell- bis gelbbraun, zuletzt mit vielen kleinen braunen flachen Schuppen, fein samtig bis kahl, oft radial gestreift und konzentrisch gezont. Die fächerförmigen Hüte überlappen sich und wachsen aus einem gemeinsamen Strunk. Ganz jung färben sich Druckstellen sofort braunschwarz."
+poren = "Weißlich bis gelblich, eckig, herablaufend, auf Druck schwärzend. Röhren bis 8 mm tief."
+stiel = "Verbogen, gern seitlich angesetzt, Basis weißlich und bräunlich getupft."
+fleisch = "Weiß bis leicht gelblich, weich, im Schnitt langsam braunschwarz verfärbend."
+geruch = "Pilzig, angenehm."
+geschmack = "Jung mild, später scharf und bitter."
+sporenpulver = "Weiß bis cremeweiß."
+vorkommen = "Folgezersetzer im Mischwald, im Nadelwald gern an Weißtanne, im Laubwald an Buchenstümpfen."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Brauner Haarstielporling"
+merkmal = "Hut samtig kurzhaarig mit verklebten Haarbüscheln, dünnfleischig, zentral gestielt, Poren schwärzen nicht."
+essbar = "ungeniessbar"
+slug = "brauner-haarstielporling"
+
+[[verwechslungen]]
+name = "Becherförmiger Sägeblättling"
+merkmal = "Mit Lamellen statt Poren, Schneiden gesägt und wellig, Geschmack bitterlich."
+essbar = "ungeniessbar"
+slug = "becherfoermiger-saegeblaettling"
+
+[[verwechslungen]]
+name = "Bergporling"
+merkmal = "Poren schwärzen auf Druck nicht, Geruch ganz jung etwas anisartig, Wurzelparasit an Weißtanne."
+essbar = "ohneSpeisewert"
+slug = "bergporling"
 
 [[verwechslungen]]
 name = "Klapperschwamm"
-merkmal = "Viele kleine Hütchen, Fleisch schwärzt nicht."
+merkmal = "Graubraune Einzelhüte, rosettenartig verwachsen, Röhren schwärzen auf Druck nicht, am Wurzelbereich von Eiche."
+essbar = "bedingtEssbar"
+slug = "klapperschwamm"
+
+[[verwechslungen]]
+name = "Eichhase"
+merkmal = "Viele kleine Einzelhüte an einem verzweigten Strunk, Poren cremefarben bis hellbraun, am Fuß von Eichen."
 essbar = "speisepilz"
+slug = "eichhase"
 
 [[links]]
 titel = "123pilzsuche.de"

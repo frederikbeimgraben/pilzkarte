@@ -1,0 +1,59 @@
+name = "Eichhase"
+lateinisch = "Polyporus umbellatus"
+gruppe = "porling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche"]
+speisewertHinweis = "Jung sammeln, im Alter wird er bitter. Er ist überwiegend selten und kommt jährlich an derselben Stelle wieder, deshalb den Standort schonen."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Ästiger Porling", "Ästiger Büschelporling"]
+synonyme = ["Dendropolyporus umbellatus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Eichhase2004.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 2.5, bis = 3.5 }
+
+[merkmale]
+fruchtkoerper = "Einzelhüte 2 bis 5, selten bis 7 cm breit, in Büscheln bis 100 cm. Gesprenkelt bräunlich, cremefarben bis haselnussbraun. Viele kleine Porenpilze entspringen einem gemeinsamen Strunk."
+poren = "Cremefarben bis hellbraun, herablaufend, im Alter ablösbar."
+stiel = "Cremefarben bis hellbraun, mittig angesetzt."
+fleisch = "Weiß bis cremefarben, dünn und brüchig."
+geruch = "Angenehm pilzig."
+geschmack = "Nussig, im Alter bitter."
+sporenpulver = "Weiß."
+vorkommen = "Am Fuß von Laubbäumen, meist Eiche, seltener Buche. Parasitisch und folgezersetzend, löst Weißfäule aus. Kommt jährlich an derselben Stelle wieder."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Klapperschwamm"
+merkmal = "Hüte breiter und zungenförmig, grau bis graubraun, in einem großen Büschel am Stammfuß."
+essbar = "bedingtEssbar"
+slug = "klapperschwamm"
+
+[[verwechslungen]]
+name = "Bergporling"
+merkmal = "Größere, fächerförmige Hüte, wächst an Nadelholz im Bergwald."
+essbar = "ohneSpeisewert"
+slug = "bergporling"
+
+[[verwechslungen]]
+name = "Krause Glucke"
+merkmal = "Blattartig gekräuselt statt aus vielen kleinen Hüten, an Kiefer."
+essbar = "speisepilz"
+slug = "krause-glucke"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Eichhase2004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Eichhase"

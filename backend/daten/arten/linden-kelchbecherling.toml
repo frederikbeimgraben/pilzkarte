@@ -1,0 +1,52 @@
+name = "Linden-Kelchbecherling"
+lateinisch = "Sarcoscypha jurana"
+gruppe = "becherling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["linde"]
+speisewertHinweis = "Ungiftig, aber nicht schmackhaft. 123pilzsuche gibt die Relative Wertigkeit 5."
+marktfaehig = false
+wertigkeit = 5
+weitereNamen = ["Scharlachroter Linden-Kelchbecherling"]
+synonyme = ["Sarcoscypha coccinea var. jurana + sarcoscypha emarginata"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Linden-Kelchbecherling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "melzer"
+reaktion = "Auf der Scheibe blau oder grün."
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 21.6, bis = 27.7 }
+sporenBreiteUm = { von = 11.2, bis = 13.0 }
+
+[merkmale]
+fruchtkoerper = "1 bis 7, selten bis 9 cm breit, kelch-, becher- bis schüsselförmig. Innenseite zinnoberrot bis karminrot, selten gelb, dünn und wachsartig. Außenseite blasser und weißlich, filzig bis haarig, Rand lange eingebogen."
+stiel = "Bis etwa 3 cm lang, weißlich bis gelblich, Spitze rötlich, meist kurz."
+fleisch = "Weißlich bis hellgelb mit roter Innenschicht, dünn und wachsartig."
+geruch = "Neutral, unbedeutend."
+geschmack = "Mild, neutral."
+sporenpulver = "Weiß bis farblos."
+vorkommen = "Folgezersetzer an eingegrabenen oder aufliegenden verrotteten Lindenzweigen, seltener an anderem Laubholz."
+zeit = "Winter bis Mai."
+
+[[verwechslungen]]
+name = "Österreichischer Prachtbecherling"
+merkmal = "Wächst an Erle, Weide und Espe, die Haare der Außenseite sind korkenzieherartig gewunden."
+essbar = "ohneSpeisewert"
+slug = "oesterreichischer-prachtbecherling"
+
+[[verwechslungen]]
+name = "Scharlachroter Kelchbecherling"
+merkmal = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
+essbar = "ohneSpeisewert"
+slug = "scharlachroter-kelchbecherling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Linden-Kelchbecherling.htm"

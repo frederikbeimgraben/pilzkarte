@@ -1,27 +1,65 @@
 name = "Ochsenzunge"
 lateinisch = "Fistulina hepatica"
 gruppe = "porling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["eiche", "kastanie"]
-speisewertHinweis = "Nur jung. Der saure Geschmack bleibt auch nach dem Garen."
+baeume = ["eiche", "buche", "weide"]
+speisewertHinweis = "Nur jung nehmen. Der säuerliche Geschmack bleibt auch nach dem Garen; die Seite empfiehlt vor allem Pilzpulver."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Leberreischling", "Leberpilz"]
+synonyme = ["Fistulina hepatica var. endoxantha", "Confistulina hepatica", "Ptychogaster hepaticus", "Fistulina endoxantha", "Ceriomyces hepaticus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/LeberreischlingOchsenzunge.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 25.0, seltenBis = 35.0 }
+sporenLaengeUm = { von = 3.5, bis = 5.0 }
+sporenBreiteUm = { von = 2.5, bis = 3.5 }
 
 [merkmale]
-hut = "8 bis 25 cm, zungen- bis leberförmig, blutrot bis rotbraun, feucht und klebrig, Oberfläche fein warzig."
-poren = "Unterseite blass gelblich bis rosa, die Röhren stehen einzeln nebeneinander und lassen sich trennen. Auf Druck bräunend."
-stiel = "Kurz, seitlich, oft fehlend."
-fleisch = "Rot marmoriert wie Fleisch, saftig, gibt roten Saft ab."
-geruch = "Säuerlich."
-geschmack = "Deutlich sauer."
-sporenpulver = "Blass rosabraun."
-vorkommen = "Schwächeparasit an alten Eichen und Esskastanien, am Stammfuß und an Wunden."
-zeit = "August bis Oktober."
+hut = "5 bis 25, selten bis 35 cm breit und 6 bis 8, selten bis 9 cm dick, rötlich, beigerot bis blutrot, alt weinrot bis dunkel braunrot, radial gestreift, mit weißlichem Rand an der Zuwachsstelle. Unreif tritt ein rotes schleimig harziges Sekret aus. Haut leicht abziehbar. Zungen- bis konsolenförmig, oft mehrere übereinander."
+poren = "Blassgelb, später rötlich bis rotbraun, auf Druck bräunend."
+stiel = "Kurz, seitlich angesetzt, unregelmäßig."
+fleisch = "Fleischrötlich, weich."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, säuerlich."
+sporenpulver = "Hellbraun."
+vorkommen = "Schwächeparasit und Folgezersetzer an Laubbäumen im Misch- und Auwald, gern Eiche, Buche und Weide, er braucht Bestände alter Eichen. Gern auf kalkhaltigem Boden. Er löst Braunfäule aus."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Leberreischling an anderem Holz"
-merkmal = "Keine ernste Verwechslung. Die Art ist durch Farbe und trennbare Röhren eindeutig."
-essbar = "essbar"
+name = "Zimtfarbiger Weichporling"
+merkmal = "Ohne Stiel, waagrecht vom Stamm abstehend, Poren und Fleisch zimtbraun bis rosabraun."
+essbar = "toedlichGiftig"
+slug = "zimtfarbiger-weichporling"
+
+[[verwechslungen]]
+name = "Tropfender Schillerporling"
+merkmal = "Hut hellbraun bis tabakbraun und bereift, jung mit hellbraunen Tröpfchen, Poren dunkelbraun, Fleisch rostbraun und korkig."
+essbar = "ungeniessbar"
+slug = "tropfender-schillerporling"
+
+[[verwechslungen]]
+name = "Flacher Schillerporling"
+merkmal = "Fruchtkörper rostbraun, Oberfläche rauhaarig filzig, Poren jung gelb schillernd, Fleisch bräunlich."
+essbar = "ungeniessbar"
+slug = "flacher-schillerporling"
+
+[[verwechslungen]]
+name = "Eichenfeuerschwamm"
+merkmal = "Fruchtkörper kastanien- bis schwarzbraun, Fleisch holzig, fest und zäh, mehrjährig an lebenden Eichen."
+essbar = "ungeniessbar"
+slug = "eichenfeuerschwamm"
+
+[[verwechslungen]]
+name = "Eichenzunge"
+merkmal = "Hut blass lederfarben bis ockerbraun, flockig körnig, auf Druck rotbraun, Fleisch später hart. Sehr selten."
+essbar = "ohneSpeisewert"
+slug = "eichenzunge"
 
 [[links]]
 titel = "123pilzsuche.de"

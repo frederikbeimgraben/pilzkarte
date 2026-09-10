@@ -1,0 +1,43 @@
+name = "Samtschuppiger Tannenflämmling"
+lateinisch = "Gymnopilus sapineus"
+gruppe = "schueppling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["tanne", "kiefer"]
+speisewertHinweis = "Giftig und halluzinogen. Der bitterliche Geschmack, die gelben bis rostbraunen Lamellen und das rostbraune Sporenpulver kennzeichnen ihn."
+marktfaehig = false
+weitereNamen = ["Scaly Rustgill"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SamttannFlaemmling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.6 }
+sporenLaengeUm = { von = 6.5, bis = 10.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
+
+[merkmale]
+hut = "2 bis 8, selten bis 10 cm breit, gelbfuchsig bis gelbbraun, matt, trocken und schuppig auf gelblichem Grund, fein behaart. Mitte oft dunkler, gern mit senkrechten Rissen wie bei Risspilzen. Rand nicht gerieft, lange etwas eingerollt, spaeter nach aussen gekruemmt."
+lamellen = "Gelb, goldgelb bis orangebraun, alt rostbraun, angeheftet angewachsen und leicht herablaufend, oft mit rostbraunen Flecken, Schneiden wellig-gesaegt."
+stiel = "4 bis 8, selten bis 10 cm lang und 0,6 bis 1,2, selten bis 1,6 cm dick, gelblich, orangebraun bis rotbraun gefleckt, alt rostbraun, glatt oder fein behaart, weisslich bereift, mit einer nur durch Sporenpulver angedeuteten Ringzone. Zur Basis duenner, Grund nachdunkelnd, Myzel weisslich bis gelblich."
+fleisch = "Weisslich, hellgelb, gelb bis orangegelb, im Alter rotbraun, faserig."
+geruch = "Angenehm, suesslich, leicht holzig."
+geschmack = "Meist bitterlich, die Bitterkeit ist oft kaum wahrnehmbar."
+sporenpulver = "Orangebraun bis rostbraun."
+vorkommen = "Folgezersetzer auf Nadeltotholz, bevorzugt an Tanne und Kiefer, auch auf Zapfen und Holzresten."
+zeit = "Sommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Geflecktblaettriger Flaemmling"
+merkmal = "Hut glatt bis fein faserig statt schuppig, Lamellen mit auffaelligen rostbraunen Flecken."
+essbar = "giftig"
+slug = "geflecktblaettriger-flaemmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SamttannFlaemmling.htm"

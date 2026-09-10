@@ -1,0 +1,60 @@
+name = "Kuhroter Milchling"
+lateinisch = "Lactarius hysginus"
+gruppe = "milchling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Der Geschmack ist extrem scharf."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "starkGefaehrdet"
+weitereNamen = ["Fleischroter Milchling"]
+synonyme = ["Lactarius curtus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/KuhroterMilchling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 7.0, bis = 9.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
+
+[merkmale]
+hut = "5 bis 11, selten bis 13 cm breit, fleischrosa, bräunlich, kastanienbraun bis purpurbraun. Mitte eingedrückt bis genabelt oder trichterförmig, Haut abziehbar, Rand lange eingebogen."
+lamellen = "Blassgelb, später ockergelb, angewachsen bis etwas herablaufend, gedrängt, mit Zwischenlamellen."
+milch = "Weiß und unveränderlich, anfangs mild, schnell brennend scharf."
+stiel = "Blassbraun bis blassocker, alt rotbraun, oft mit dunkleren Gruben, Spitze meist heller."
+fleisch = "Weiß, unter der Huthaut bräunlich."
+geruch = "Obstartig, nach Zichorien und Maggi, ähnlich dem Kampfermilchling."
+geschmack = "Extrem scharf."
+sporenpulver = "Hellocker."
+vorkommen = "Symbiosepilz im Mischwald, gern in Bergregionen, auf saurem grasigem Boden. Sehr selten, in Deutschland stark gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rotbrauner Milchling"
+merkmal = "Hut rotbraun bis ziegel-rotbraun mit kleinem Buckel, Geruch harzig, Schärfe erst nach etwa einer Minute."
+essbar = "ungeniessbar"
+slug = "rotbrauner-milchling"
+
+[[verwechslungen]]
+name = "Braunroter Milchling"
+merkmal = "Milch lange mild und erst später bitterlich, Geruch würzig-anisartig, Lamellen gelblich bis orangegelb."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Runzeliggezonter Milchling"
+merkmal = "Milch weiß und mild, Hutrand runzelig und gezahnt, Geruch etwas nach Artischocken."
+essbar = "essbar"
+slug = "runzeliggezonter-milchling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/KuhroterMilchling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Kuhroter_Milchling"

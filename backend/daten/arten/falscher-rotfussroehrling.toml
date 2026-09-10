@@ -1,0 +1,56 @@
+name = "Falscher Rotfußröhrling"
+lateinisch = "Xerocomellus porosporus"
+gruppe = "roehrling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "In Europa selten, in der Schweiz verletzlich. Kein Sammelpilz."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "selten"
+weitereNamen = ["Falscher Rotfuß", "Düsterner Rotfußröhrling"]
+synonyme = ["Boletus porosporus", "Xerocomus porosporus", "Boletus porosporus var. americanus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RotfussFalsch.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 12.0, bis = 15.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
+
+[merkmale]
+hut = "2 bis 7, selten bis 9 cm breit, braun, beigebraun bis nussbraun, filzig, im Alter aufgerissen. Die rote Schicht zwischen Huthaut und Fleisch ist schwächer ausgeprägt als bei den anderen Rotfußarten."
+roehren = "Gelb."
+stiel = "Gelblich, weißgrau bis graugelb, nur wenige rötliche Punkte, oft ganz ohne Rotfärbung, zur Basis schwärzlich bis grauschwarz, manchmal bauchig verdickt."
+fleisch = "Schmutzig gelblich, jung in der Mitte rötlich, bei Verletzung blauend und schnell wieder weißlich."
+geruch = "Neutral, leicht pilzig obstartig."
+geschmack = "Mild, etwas säuerlich."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz im Mischwald. In Europa selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Maronenröhrling"
+merkmal = "Hut kastanienbraun, Röhren gelb und auf Druck blau, Stiel ohne rote Punkte."
+essbar = "bedingtEssbar"
+slug = "maronenroehrling"
+
+[[verwechslungen]]
+name = "Herbstrotfußröhrling"
+merkmal = "Stiel deutlich rot punktiert, unter der Huthaut eine kräftig rote Schicht."
+essbar = "essbar"
+slug = "herbstrotfussroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RotfussFalsch.htm"

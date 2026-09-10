@@ -1,26 +1,84 @@
 name = "Ziegenlippe"
 lateinisch = "Xerocomus subtomentosus"
 gruppe = "roehrling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "eiche", "fichte"]
+baeume = []
+speisewertHinweis = "Es gibt drei Ziegenlippen-Arten mit gleichem Speisewert. Sie trennen sich am Stiel: heller Stiel ohne Netz bei der Ziegenlippe, bräunlicher Stiel mit Netz beim Braunen Filzröhrling."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "haeufig"
+weitereNamen = ["Schafheiterl", "Gänsemaul", "Mooshäuptchen", "Hellstieliger Filz-Röhrling"]
+synonyme = ["Boletus subtomentosus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Ziegenlippe.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut rot bis orangerot, auf dem Fleisch orangerot."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Auf der Huthaut dunkelrot oder blaugrün möglich, auf dem Fleisch negativ."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Negativ bis grau auf Hut und Fleisch."
+
+[[reagenzien]]
+reagenz = "melzer"
+reaktion = "Poren grün."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 5.0, bis = 9.0, seltenBis = 11.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 10.0, bis = 16.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
-hut = "4 bis 12 cm, ocker- bis olivbraun, trocken und samtig wie Wildleder."
-roehren = "Leuchtend gelb, weit und eckig, auf Druck kaum blauend."
-stiel = "Gelbbraun, längsfaserig, oben oft mit groben Rippen."
-fleisch = "Weißlich bis blassgelb, im Schnitt allenfalls schwach blauend."
-geruch = "Unauffällig."
+hut = "4 bis 9, selten bis 12 cm breit, graubraun, hell olivbraun bis olivocker, wildlederartig filzig und feinsamtig. Unter der Huthaut leicht rosalich."
+roehren = "Jung leuchtend gelb, chromgelb bis ockergelb, später gelbbraun bis grünbraun, alt gelbgrün, gelegentlich leicht blauend, am Stiel ausgebuchtet angewachsen."
+stiel = "5 bis 9, selten bis 11 cm lang, 1 bis 2, selten 3 cm dick, fast weiß, lang und schlank, etwas bräunlich fleckig, im Alter die Spitze rötlich. Meist etwas verdreht und schwach längsrillig, Basis zugespitzt, das anhängende Myzel weißlich bis blassgelb."
+fleisch = "Hellgelb, im Hut cremegelb bis blassgelb, im Stiel schmutzig cremefarben, vom Hut zur Basis ockergelb bis braunrötlich."
+geruch = "Neutral."
 geschmack = "Mild."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Laub- und Nadelbäumen, gern an moosigen Wegrändern."
-zeit = "Juni bis Oktober."
+vorkommen = "Symbiosepilz im Mischwald, relativ häufig."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Brauner Filzröhrling"
+merkmal = "Stiel gelblich bis bräunlich mit Netzzeichnung statt fast weiß."
+essbar = "speisepilz"
+slug = "brauner-filzroehrling"
+
+[[verwechslungen]]
+name = "Samtiger Filzröhrling"
+merkmal = "Hut auch rotbraun, Stiel mit Netz von der Mitte bis zur Spitze, Geruch nach Schwefel."
+essbar = "speisepilz"
+slug = "samtiger-filzroehrling"
 
 [[verwechslungen]]
 name = "Rotfußröhrling"
-merkmal = "Hut felderig rissig mit rotem Fleisch in den Rissen, Stiel rot gefasert."
+merkmal = "Hut später aufgerissen, Stiel rötlich punktiert, Röhren gelb bis olivgelb und etwas herablaufend."
 essbar = "essbar"
+slug = "rotfussroehrling"
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Hut schleimig und schmierig, hellgelb bis orangerötlich, Röhren auf Druck rosalila fleckend, Stiel mit Ring."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[verwechslungen]]
+name = "Kuhröhrling"
+merkmal = "Hut bräunlich, schmierig, glatt und kahl, Röhren graugelb bis rotbraun, Stiel deutlich dünner."
+essbar = "essbar"
+slug = "kuhroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

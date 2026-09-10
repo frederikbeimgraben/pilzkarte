@@ -4,29 +4,77 @@ gruppe = "roehrling"
 speisewert = "essbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "eiche", "fichte"]
-speisewertHinweis = "Weiches Fleisch, oft madig oder von Goldschimmel befallen. Nur junge, feste Stücke."
+baeume = []
+speisewertHinweis = "Nur Mischpilz. Er ist oft madig und häufig von Goldschimmel befallen; befallene Stücke wegwerfen. Lässt sich der Hut mit zwei Fingern eindrücken, ist er nicht mehr brauchbar."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Gemeiner Rotfußröhrling", "Echter Rotfußröhrling"]
+synonyme = ["Xerocomus chrysenteron", "Boletus chrysenteron", "Versipellis chrysenteron", "Suillus chrysenteron", "Boletus pascuus sensu", "Boletus chrysenteron var. nanus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Rotfuss.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut negativ bis bräunlich, auf dem Stiel orange."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Auf dem Hut oliv, auf dem Stiel negativ."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Überall negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
+stielDickeCm = { von = 0.7, bis = 3.0, seltenBis = 4.5 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 3.0, bis = 6.0 }
 
 [merkmale]
-hut = "3 bis 10 cm, olivbraun, matt und samtig, im Alter felderig aufreißend. In den Rissen zeigt sich rotes Fleisch."
-roehren = "Gelb, weit, auf Druck schwach blauend."
-stiel = "Schlank, gelb mit roter Faserung, ohne Netz."
-fleisch = "Blassgelb, unter der Huthaut rot, im Schnitt schwach blauend."
-geruch = "Unauffällig."
-geschmack = "Mild."
+hut = "4 bis 10, selten bis 13 cm breit, bräunlich, filzig samtig, später aufgerissen. Unter der Huthaut liegt eine Rotfärbung wie ein Schutzanstrich über dem Fleisch."
+roehren = "Gelb bis olivgelb, angewachsen und etwas herablaufend."
+stiel = "2 bis 12, selten bis 15 cm lang, 0,7 bis 3, selten bis 4,5 cm dick, rötlich punktiert und flockig, ohne Netzzeichnung."
+fleisch = "Gelblich, manchmal blau färbend."
+geruch = "Pilzig, etwas säuerlich bis neutral."
+geschmack = "Säuerlich."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Laub- und Nadelbäumen, an Wegrändern und Böschungen, häufig."
-zeit = "Juni bis November."
+vorkommen = "Symbiosepilz im Mischwald, sehr häufig."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Stiel mit weißem, gelbem bis braunrotem Netz, Fleisch sofort stark blauend, Geschmack bitter."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Maronenröhrling"
+merkmal = "Hut glatt und feucht schmierig, Röhren auf Druck blaugrün, ohne Rotfärbung unter der Huthaut."
+essbar = "bedingtEssbar"
+slug = "maronenroehrling"
+
+[[verwechslungen]]
+name = "Herbstrotfußröhrling"
+merkmal = "Stiel dicker und fester, Fleisch auffallend gelb, Röhren kaum blauend, im Oktober und November."
+essbar = "essbar"
+slug = "herbstrotfussroehrling"
+
+[[verwechslungen]]
+name = "Falscher Rotfußröhrling"
+merkmal = "Stiel zur Basis schwärzlich und kaum rot punktiert, Rotfärbung unter der Huthaut nur schwach."
+essbar = "essbar"
+slug = "falscher-rotfussroehrling"
 
 [[verwechslungen]]
 name = "Ziegenlippe"
-merkmal = "Hut ockerbraun, ohne rotes Fleisch in den Rissen, Röhren blauen kaum."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Goldschimmel auf Röhrlingen"
-merkmal = "Weißer, später goldgelber Belag auf dem Fruchtkörper. Befallene Pilze bleiben liegen."
-essbar = "ungeniessbar"
+merkmal = "Hut graubraun bis olivocker und wildlederartig filzig, Stiel fast weiß und ohne rote Punkte."
+essbar = "speisepilz"
+slug = "ziegenlippe"
 
 [[links]]
 titel = "123pilzsuche.de"
