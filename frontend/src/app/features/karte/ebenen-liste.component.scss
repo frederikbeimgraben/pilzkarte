@@ -1,0 +1,23 @@
+.ebenen {
+  display: flex;
+  flex-direction: column;
+}
+
+.ebenen__gruppe {
+  margin-block: var(--space-3) var(--space-1);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ebenen__gruppe:first-child {
+  margin-block-start: 0;
+}
+
+// Die gewählte Zeile bekommt den Grund der Primärfarbe, wie die aktive Art in
+// der Artenliste.
+.ebenen__zeile--aktiv {
+  background: var(--color-primary-subtle);
+}

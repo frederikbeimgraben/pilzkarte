@@ -25,6 +25,7 @@ export { RampComponent } from './ramp/ramp.component';
 export { VORHERSAGE_RAMPE } from './ramp/rampe-farben';
 export { RangeSliderComponent } from './range-slider/range-slider.component';
 export { SeasonCurveComponent } from './season-curve/season-curve.component';
+export { SliderComponent } from './slider/slider.component';
 export { SegmentedComponent, type SegmentOption } from './segmented/segmented.component';
 export {
   KOPF_HOEHE,

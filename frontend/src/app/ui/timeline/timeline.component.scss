@@ -8,3 +8,9 @@
   padding-inline: var(--pilz-gutter);
   scrollbar-width: none;
 }
+
+// Eine feste Ebene hat keine Woche. Die Leiste bleibt stehen, damit die Zeit
+// greifbar bleibt, tritt aber zurück.
+.leiste--gedaempft {
+  opacity: 0.45;
+}

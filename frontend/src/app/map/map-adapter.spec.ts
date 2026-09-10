@@ -48,7 +48,7 @@ class KarteAttrappe {
     if (index >= 0) this.hoerer.splice(index, 1);
   }
 
-  loese(typ: string, quelle = 'wert-a'): void {
+  loese(typ: string, quelle = 'wert-vorhersage-a'): void {
     const nutzlast = { sourceId: quelle, sourceDataType: 'content', isSourceLoaded: this.quelleFertig };
     for (const eintrag of [...this.hoerer]) if (eintrag.typ === typ) eintrag.hoerer(nutzlast);
   }
@@ -57,9 +57,12 @@ class KarteAttrappe {
     this.quellen.set(id, quelle);
   }
 
-  addLayer(ebene: { id: string; paint: Record<string, number> }): void {
+  readonly vorGelegt = new Map<string, string | undefined>();
+
+  addLayer(ebene: { id: string; paint: Record<string, number> }, vor?: string): void {
     this.ebenen.set(ebene.id, ebene);
     this.deckkraft.set(ebene.id, ebene.paint['raster-opacity']);
+    this.vorGelegt.set(ebene.id, vor);
   }
 
   getSource(id: string): object | undefined {
@@ -129,6 +132,7 @@ const OPTIONEN: KartenOptionen = {
     [16, 56],
   ],
   protokoll: { name: 'wert', aufloesen: () => Promise.resolve({ data: new ArrayBuffer(0) }) },
+  kompakt: false,
 };
 
 function modul(): { modul: MaplibreModul; angemeldet: string[]; abgemeldet: string[] } {
@@ -174,50 +178,50 @@ describe('MapLibreAdapter', () => {
   it('legt die erste Woche sofort sichtbar auf die Karte', async () => {
     const { adapter: a, karte } = await adapter();
 
-    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
 
-    expect(karte.deckkraft.get('wert-b')).toBe(1);
-    expect(karte.quellen.has('wert-b')).toBe(true);
+    expect(karte.deckkraft.get('wert-vorhersage-b')).toBe(1);
+    expect(karte.quellen.has('wert-vorhersage-b')).toBe(true);
   });
 
   it('blendet die zweite Woche erst ein, wenn ihre Kacheln da sind', async () => {
     const { adapter: a, karte } = await adapter();
-    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
     karte.quelleFertig = false;
 
-    a.zeigeWert('wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
 
-    expect(karte.deckkraft.get('wert-a')).toBe(0);
-    expect(karte.ebenen.has('wert-b')).toBe(true);
+    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
+    expect(karte.ebenen.has('wert-vorhersage-b')).toBe(true);
 
     karte.loese('sourcedata');
 
-    expect(karte.deckkraft.get('wert-a')).toBe(0);
+    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
 
     karte.quelleFertig = true;
-    karte.loese('sourcedata', 'wert-b');
+    karte.loese('sourcedata', 'wert-vorhersage-b');
 
-    expect(karte.deckkraft.get('wert-a')).toBe(0);
+    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
 
     karte.loese('sourcedata');
 
-    expect(karte.deckkraft.get('wert-a')).toBe(1);
-    expect(karte.ebenen.has('wert-b')).toBe(false);
-    expect(karte.quellen.has('wert-b')).toBe(false);
+    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(1);
+    expect(karte.ebenen.has('wert-vorhersage-b')).toBe(false);
+    expect(karte.quellen.has('wert-vorhersage-b')).toBe(false);
   });
 
   it('zeigt die neue Woche auch dann, wenn eine Kachel ausbleibt', async () => {
     vi.useFakeTimers();
     try {
       const { adapter: a, karte } = await adapter();
-      a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+      a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
       karte.quelleFertig = false;
 
-      a.zeigeWert('wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+      a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
       vi.advanceTimersByTime(1500);
 
-      expect(karte.deckkraft.get('wert-a')).toBe(1);
-      expect(karte.ebenen.has('wert-b')).toBe(false);
+      expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(1);
+      expect(karte.ebenen.has('wert-vorhersage-b')).toBe(false);
     } finally {
       vi.useRealTimers();
     }
@@ -225,11 +229,11 @@ describe('MapLibreAdapter', () => {
 
   it('bringt einen offenen Tausch zu Ende, bevor die dritte Woche kommt', async () => {
     const { adapter: a, karte } = await adapter();
-    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
     karte.quelleFertig = false;
-    a.zeigeWert('wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
 
-    a.zeigeWert('wert://art/w42/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w42/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
 
     expect(karte.ebenen.size).toBe(2);
     expect([...karte.deckkraft.values()].some((wert) => wert === 1)).toBe(true);
@@ -238,15 +242,15 @@ describe('MapLibreAdapter', () => {
   it('legt dieselbe Woche nicht zweimal auf', async () => {
     const { adapter: a, karte } = await adapter();
 
-    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
 
     expect(karte.quellen.size).toBe(1);
   });
 
   it('legt die Wertkacheln nach einem Stilwechsel wieder auf', async () => {
     const { adapter: a, karte } = await adapter();
-    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
     karte.quellen.clear();
     karte.ebenen.clear();
 
@@ -254,7 +258,7 @@ describe('MapLibreAdapter', () => {
     karte.einmal.get('style.load')?.();
 
     expect(karte.stile).toEqual(['dunkel']);
-    expect(karte.quellen.has('wert-b')).toBe(true);
+    expect(karte.quellen.has('wert-vorhersage-b')).toBe(true);
   });
 
   it('passt ein, polstert und liest den Ausschnitt', async () => {
@@ -297,12 +301,83 @@ describe('MapLibreAdapter', () => {
     const a = new MapLibreAdapter(() => Promise.resolve(modul().modul));
 
     a.setzeStil('hell');
-    a.zeigeWert('wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
     a.passeEin(OPTIONEN.maxGrenzen, { top: 0, bottom: 0, left: 0, right: 0 });
     a.setzePolster({ top: 0, bottom: 0, left: 0, right: 0 });
     a.beiBewegung(() => undefined);
     a.zerstoere();
 
     expect(a.ausschnitt()).toBeNull();
+  });
+
+  it('legt die Vorhersage unter die Ebene', async () => {
+    const { adapter: a, karte } = await adapter();
+
+    a.zeigeWert('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+
+    expect(karte.ebenen.has('wert-ebene-b')).toBe(true);
+    expect(karte.ebenen.has('wert-vorhersage-b')).toBe(true);
+    expect(karte.vorGelegt.get('wert-vorhersage-b')).toBe('wert-ebene-b');
+    expect(karte.vorGelegt.get('wert-ebene-b')).toBeUndefined();
+  });
+
+  it('räumt eine Rolle ab, wenn sie nichts mehr zeigt', async () => {
+    const { adapter: a, karte } = await adapter();
+    a.zeigeWert('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+
+    a.zeigeWert('ebene', null, OPTIONEN.maxGrenzen, 5, 8);
+
+    expect(karte.ebenen.size).toBe(0);
+    expect(karte.quellen.size).toBe(0);
+  });
+
+  it('setzt die Deckkraft nur auf der sichtbaren Ebene einer Rolle', async () => {
+    const { adapter: a, karte } = await adapter();
+    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+
+    a.setzeDeckkraft('vorhersage', 0.4);
+
+    expect(karte.deckkraft.get('wert-vorhersage-b')).toBeCloseTo(0.4);
+
+    karte.quelleFertig = false;
+    a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+
+    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
+
+    karte.quelleFertig = true;
+    karte.loese('sourcedata', 'wert-vorhersage-a');
+
+    expect(karte.deckkraft.get('wert-vorhersage-a')).toBeCloseTo(0.4);
+  });
+
+  it('hält die Deckkraft zwischen null und voll', async () => {
+    const { adapter: a, karte } = await adapter();
+    a.zeigeWert('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+
+    a.setzeDeckkraft('ebene', 3);
+
+    expect(karte.deckkraft.get('wert-ebene-b')).toBe(1);
+  });
+
+  it('zentriert auf einen Punkt', async () => {
+    const { adapter: a, karte } = await adapter();
+
+    a.zentriere([9.1, 48.8], 11);
+
+    expect(karte.bewegt.at(-1)).toEqual({ center: [9.1, 48.8], zoom: 11, duration: 600 });
+  });
+
+  it('klappt den Urheberhinweis am Telefon ein', async () => {
+    const { modul: m } = modul();
+    const wirt = document.createElement('div');
+    const hinweis = document.createElement('div');
+    hinweis.className = 'maplibregl-ctrl-attrib maplibregl-compact-show';
+    wirt.append(hinweis);
+    const a = new MapLibreAdapter(() => Promise.resolve(m));
+
+    await a.starte(wirt, { ...OPTIONEN, kompakt: true });
+
+    expect(hinweis.classList.contains('maplibregl-compact-show')).toBe(false);
   });
 });

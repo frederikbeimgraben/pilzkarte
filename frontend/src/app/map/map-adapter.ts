@@ -10,6 +10,14 @@ export type MaplibreModul = Pick<
 /** Südwest- und Nordostecke als [Länge, Breite]. */
 export type Grenzen = readonly [readonly [number, number], readonly [number, number]];
 
+/**
+ * Zwei Wertebenen liegen übereinander: die Vorhersage unten, die Eingabe-Ebene
+ * darüber. Jede Rolle hat eigene Quellen und eine eigene Deckkraft.
+ */
+export type Rolle = 'vorhersage' | 'ebene';
+
+export const ROLLEN: readonly Rolle[] = ['vorhersage', 'ebene'];
+
 /** Der freie Streifen der Karte: was Blatt, Navigation und Kopf verdecken. */
 export interface Polster {
   top: number;
@@ -32,6 +40,8 @@ export interface KartenOptionen {
   maxZoom: number;
   maxGrenzen: Grenzen;
   protokoll: Protokoll;
+  /** Am Telefon steht der Urheberhinweis eingeklappt, sonst deckte er die Karte. */
+  kompakt: boolean;
 }
 
 /**
@@ -43,24 +53,43 @@ export interface MapAdapter {
   waermeAuf(): void;
   starte(wirt: HTMLElement, optionen: KartenOptionen): Promise<void>;
   setzeStil(stil: string): void;
-  /** Legt die Wertkacheln einer Woche auf die Karte, ohne Flackern. */
-  zeigeWert(vorlage: string, grenzen: Grenzen, zoomVon: number, zoomBis: number): void;
+  /** Legt die Kacheln einer Rolle auf die Karte, ohne Flackern. `null` räumt sie ab. */
+  zeigeWert(rolle: Rolle, vorlage: string | null, grenzen: Grenzen, zoomVon: number, zoomBis: number): void;
+  /** Deckkraft einer Rolle, 0 bis 1. */
+  setzeDeckkraft(rolle: Rolle, wert: number): void;
   passeEin(grenzen: Grenzen, polster: Polster): void;
   setzePolster(polster: Polster): void;
+  zentriere(punkt: readonly [number, number], zoom: number): void;
   ausschnitt(): { zoom: number; ausschnitt: Ausschnitt } | null;
   beiBewegung(hoerer: () => void): void;
   zerstoere(): void;
 }
 
-const QUELLEN = ['wert-a', 'wert-b'] as const;
-
 /** Nach dieser Zeit wird die neue Woche auch ohne alle Kacheln sichtbar. */
 const TAUSCH_FRIST = 1500;
+
+/** Der Zustand einer Rolle: welche Quelle liegt, welche wartet. */
+interface RollenStand {
+  aktiv: 0 | 1;
+  vorlage: string | null;
+  raum: { grenzen: Grenzen; zoomVon: number; zoomBis: number } | null;
+  tausch: (() => void) | null;
+  deckkraft: number;
+}
+
+function neuerStand(): RollenStand {
+  return { aktiv: 0, vorlage: null, raum: null, tausch: null, deckkraft: 1 };
+}
+
+/** Die beiden Ebenen-Namen einer Rolle. Sie wechseln sich beim Nachladen ab. */
+function ebeneName(rolle: Rolle, platz: 0 | 1): string {
+  return `wert-${rolle}-${platz === 0 ? 'a' : 'b'}`;
+}
 
 /**
  * MapLibre hinter der Schnittstelle.
  *
- * Der Wochenwechsel läuft über zwei Rasterquellen im Wechsel: die neue Woche
+ * Der Wechsel einer Woche läuft über zwei Rasterquellen je Rolle: die neue
  * wird unsichtbar geladen und erst sichtbar geschaltet, wenn ihre Kacheln da
  * sind. Ein Tausch an einer Quelle würde die Karte kurz leer zeigen.
  */
@@ -68,10 +97,7 @@ export class MapLibreAdapter implements MapAdapter {
   private modul: MaplibreModul | null = null;
   private protokollName: string | null = null;
   private karte: MapLibreKarte | null = null;
-  private aktiv = 0;
-  private vorlage: string | null = null;
-  private tausch: (() => void) | null = null;
-  private wertRaum: { grenzen: Grenzen; zoomVon: number; zoomBis: number } | null = null;
+  private readonly staende = new Map<Rolle, RollenStand>(ROLLEN.map((rolle) => [rolle, neuerStand()]));
 
   constructor(private readonly lade: () => Promise<MaplibreModul>) {}
 
@@ -100,7 +126,8 @@ export class MapLibreAdapter implements MapAdapter {
       // der Stil von OpenFreeMap selbst; ein zweiter eigener stünde doppelt da.
       attributionControl: false,
     });
-    this.karte.addControl(new modul.AttributionControl({ compact: true }), 'top-right');
+    this.karte.addControl(new modul.AttributionControl({ compact: optionen.kompakt }), 'top-right');
+    if (optionen.kompakt) this.klappeHinweisEin(wirt);
     // Eine Quelle vor dem Stil wirft. `style.load` ist das erste Ereignis, nach
     // dem der Stil steht; `load` wartet zusätzlich auf jede Kachel und bleibt
     // über einer langsamen Leitung lange aus.
@@ -116,27 +143,37 @@ export class MapLibreAdapter implements MapAdapter {
     if (!karte) return;
     karte.setStyle(stil);
     // Ein neuer Stil wirft alle eigenen Quellen weg. Sie kommen zurück, sobald
-    // der Stil steht, sonst wäre die Vorhersage nach dem Themenwechsel fort.
+    // der Stil steht, sonst wären Vorhersage und Ebene nach dem Wechsel fort.
     karte.once('style.load', () => {
-      this.aktiv = 0;
-      const vorlage = this.vorlage;
-      this.vorlage = null;
-      if (vorlage && this.wertRaum) {
-        this.zeigeWert(vorlage, this.wertRaum.grenzen, this.wertRaum.zoomVon, this.wertRaum.zoomBis);
+      for (const rolle of ROLLEN) {
+        const stand = this.stand(rolle);
+        const vorlage = stand.vorlage;
+        const raum = stand.raum;
+        stand.aktiv = 0;
+        stand.vorlage = null;
+        stand.tausch = null;
+        if (vorlage && raum) this.zeigeWert(rolle, vorlage, raum.grenzen, raum.zoomVon, raum.zoomBis);
       }
     });
   }
 
-  zeigeWert(vorlage: string, grenzen: Grenzen, zoomVon: number, zoomBis: number): void {
+  zeigeWert(rolle: Rolle, vorlage: string | null, grenzen: Grenzen, zoomVon: number, zoomBis: number): void {
     const karte = this.karte;
-    if (!karte || vorlage === this.vorlage) return;
-    this.vorlage = vorlage;
-    this.wertRaum = { grenzen, zoomVon, zoomBis };
+    const stand = this.stand(rolle);
+    if (!karte || vorlage === stand.vorlage) return;
     // Ein noch offener Tausch wird zuerst zu Ende gebracht, sonst lägen drei
     // Wochen übereinander und keine wäre sichtbar.
-    this.schliesseTausch();
-    const alt = QUELLEN[this.aktiv];
-    const neu = QUELLEN[1 - this.aktiv];
+    this.schliesseTausch(rolle);
+    const alt = ebeneName(rolle, stand.aktiv);
+    const neu = ebeneName(rolle, stand.aktiv === 0 ? 1 : 0);
+    stand.vorlage = vorlage;
+    if (vorlage === null) {
+      this.entferne(alt);
+      this.entferne(neu);
+      stand.raum = null;
+      return;
+    }
+    stand.raum = { grenzen, zoomVon, zoomBis };
     this.entferne(neu);
     karte.addSource(neu, {
       type: 'raster',
@@ -147,53 +184,34 @@ export class MapLibreAdapter implements MapAdapter {
       bounds: [grenzen[0][0], grenzen[0][1], grenzen[1][0], grenzen[1][1]],
       attribution: '',
     });
-    karte.addLayer({
-      id: neu,
-      type: 'raster',
-      source: neu,
-      paint: {
-        'raster-opacity': karte.getLayer(alt) ? 0 : 1,
-        // Ohne diese beiden Nullen blendet MapLibre über 300 ms ein. Die alte
-        // Woche ist da schon weg, und dazwischen bliebe die Karte leer.
-        'raster-opacity-transition': { duration: 0, delay: 0 },
-        'raster-fade-duration': 0,
+    karte.addLayer(
+      {
+        id: neu,
+        type: 'raster',
+        source: neu,
+        paint: {
+          'raster-opacity': karte.getLayer(alt) ? 0 : stand.deckkraft,
+          // Ohne diese beiden Nullen blendet MapLibre über 300 ms ein. Die alte
+          // Woche ist da schon weg, und dazwischen bliebe die Karte leer.
+          'raster-opacity-transition': { duration: 0, delay: 0 },
+          'raster-fade-duration': 0,
+        },
       },
-    });
-    this.aktiv = 1 - this.aktiv;
+      this.ueber(rolle),
+    );
+    stand.aktiv = stand.aktiv === 0 ? 1 : 0;
     if (!karte.getLayer(alt)) return;
-    this.tauscheNachLaden(karte, alt, neu);
+    this.tauscheNachLaden(karte, rolle, alt, neu);
   }
 
-  /**
-   * Blendet die neue Woche ein, sobald ihre Kacheln liegen, und nimmt die alte
-   * weg. Die Frist ist die Notbremse: fehlt eine Kachel dauerhaft, bliebe die
-   * neue Woche sonst für immer unsichtbar.
-   */
-  private tauscheNachLaden(karte: MapLibreKarte, alt: string, neu: string): void {
-    const fertig = (): void => {
-      clearTimeout(frist);
-      karte.off('sourcedata', beiDaten);
-      this.tausch = null;
-      karte.setPaintProperty(neu, 'raster-opacity', 1);
-      this.entferne(alt);
-    };
-    const beiDaten = (ereignis: MapSourceDataEvent): void => {
-      // Die Meldungen zur Quelle selbst („Beschreibung gelesen“, „sichtbar
-      // geschaltet“) kommen, bevor die erste Kachel angefragt ist. Auf sie zu
-      // hören hieße, die alte Woche vor der neuen wegzunehmen.
-      if (ereignis.sourceId !== neu) return;
-      if (ereignis.sourceDataType === 'metadata' || ereignis.sourceDataType === 'visibility') return;
-      if (ereignis.isSourceLoaded) fertig();
-    };
-    const frist = setTimeout(fertig, TAUSCH_FRIST);
-    this.tausch = fertig;
-    karte.on('sourcedata', beiDaten);
-  }
-
-  private schliesseTausch(): void {
-    const tausch = this.tausch;
-    this.tausch = null;
-    tausch?.();
+  setzeDeckkraft(rolle: Rolle, wert: number): void {
+    const stand = this.stand(rolle);
+    stand.deckkraft = Math.min(Math.max(wert, 0), 1);
+    const karte = this.karte;
+    if (!karte || stand.vorlage === null) return;
+    // Nur die sichtbare Ebene: die wartende steht auf 0 und käme sonst zu früh.
+    const sichtbar = ebeneName(rolle, stand.aktiv);
+    if (karte.getLayer(sichtbar)) karte.setPaintProperty(sichtbar, 'raster-opacity', stand.deckkraft);
   }
 
   passeEin(grenzen: Grenzen, polster: Polster): void {
@@ -207,6 +225,10 @@ export class MapLibreAdapter implements MapAdapter {
 
   setzePolster(polster: Polster): void {
     this.karte?.easeTo({ padding: polster, duration: 220 });
+  }
+
+  zentriere(punkt: readonly [number, number], zoom: number): void {
+    this.karte?.easeTo({ center: [punkt[0], punkt[1]], zoom, duration: 600 });
   }
 
   ausschnitt(): { zoom: number; ausschnitt: Ausschnitt } | null {
@@ -229,13 +251,70 @@ export class MapLibreAdapter implements MapAdapter {
   }
 
   zerstoere(): void {
-    this.schliesseTausch();
+    for (const rolle of ROLLEN) this.schliesseTausch(rolle);
     if (this.protokollName) this.modul?.removeProtocol(this.protokollName);
     this.protokollName = null;
     this.karte?.remove();
     this.karte = null;
     this.modul = null;
-    this.vorlage = null;
+    for (const rolle of ROLLEN) this.staende.set(rolle, neuerStand());
+  }
+
+  private stand(rolle: Rolle): RollenStand {
+    let stand = this.staende.get(rolle);
+    if (!stand) {
+      stand = neuerStand();
+      this.staende.set(rolle, stand);
+    }
+    return stand;
+  }
+
+  /**
+   * Vor welcher Ebene die neue liegt. Die Vorhersage gehört unter die
+   * Eingabe-Ebene, sonst verdeckte sie die Ebene, die man gerade lesen will.
+   */
+  private ueber(rolle: Rolle): string | undefined {
+    const karte = this.karte;
+    if (rolle !== 'vorhersage' || !karte) return undefined;
+    for (const platz of [0, 1] as const) {
+      const name = ebeneName('ebene', platz);
+      if (karte.getLayer(name)) return name;
+    }
+    return undefined;
+  }
+
+  /**
+   * Blendet die neue Woche ein, sobald ihre Kacheln liegen, und nimmt die alte
+   * weg. Die Frist ist die Notbremse: fehlt eine Kachel dauerhaft, bliebe die
+   * neue Woche sonst für immer unsichtbar.
+   */
+  private tauscheNachLaden(karte: MapLibreKarte, rolle: Rolle, alt: string, neu: string): void {
+    const stand = this.stand(rolle);
+    const fertig = (): void => {
+      clearTimeout(frist);
+      karte.off('sourcedata', beiDaten);
+      stand.tausch = null;
+      karte.setPaintProperty(neu, 'raster-opacity', stand.deckkraft);
+      this.entferne(alt);
+    };
+    const beiDaten = (ereignis: MapSourceDataEvent): void => {
+      // Die Meldungen zur Quelle selbst („Beschreibung gelesen“, „sichtbar
+      // geschaltet“) kommen, bevor die erste Kachel angefragt ist. Auf sie zu
+      // hören hieße, die alte Woche vor der neuen wegzunehmen.
+      if (ereignis.sourceId !== neu) return;
+      if (ereignis.sourceDataType === 'metadata' || ereignis.sourceDataType === 'visibility') return;
+      if (ereignis.isSourceLoaded) fertig();
+    };
+    const frist = setTimeout(fertig, TAUSCH_FRIST);
+    stand.tausch = fertig;
+    karte.on('sourcedata', beiDaten);
+  }
+
+  private schliesseTausch(rolle: Rolle): void {
+    const stand = this.stand(rolle);
+    const tausch = stand.tausch;
+    stand.tausch = null;
+    tausch?.();
   }
 
   private entferne(id: string): void {
@@ -243,5 +322,13 @@ export class MapLibreAdapter implements MapAdapter {
     if (!karte) return;
     if (karte.getLayer(id)) karte.removeLayer(id);
     if (karte.getSource(id)) karte.removeSource(id);
+  }
+
+  /**
+   * MapLibre zeigt den Hinweis zunächst offen. Am Telefon deckt er damit die
+   * halbe Karte; ein Tipp auf das i klappt ihn wieder auf.
+   */
+  private klappeHinweisEin(wirt: HTMLElement): void {
+    wirt.querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
   }
 }

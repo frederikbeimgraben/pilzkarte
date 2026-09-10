@@ -7,6 +7,7 @@
   [attr.aria-label]="beschriftung()"
   [attr.aria-pressed]="aktiv()"
   [attr.tabindex]="imTabWeg() ? 0 : -1"
+  [disabled]="gesperrt()"
   (click)="auswahl.emit()"
 >
   @if (jahresmarke()) {

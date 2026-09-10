@@ -1,5 +1,16 @@
 <div class="karte">
   <div #flaeche class="karte__flaeche" role="region" [attr.aria-label]="'karte.beschriftung' | t"></div>
+
+  <div class="karte__knoepfe">
+    <app-floating-button
+      icon="ebenen"
+      [beschriftung]="'ebenenKnopf.titel' | t"
+      [variante]="ebenenOffen() ? 'primaer' : 'hell'"
+      (klick)="ebenenOffen.set(!ebenenOffen())"
+    />
+    <app-floating-button icon="ort" [beschriftung]="'karte.standort' | t" (klick)="zumStandort()" />
+  </div>
+
   <div class="karte__blatt">
     <app-sheet
       [beschriftung]="'karte.blatt' | t"
@@ -8,8 +19,8 @@
       (rasteChange)="setzeRaste($event)"
     >
       <app-sheet-head
-        [titel]="artName()"
-        [titelAlsLink]="true"
+        [titel]="kopfTitel()"
+        [titelAlsLink]="!zeigtEbene()"
         [woche]="wochenText()"
         [hinweis]="prognoseHinweis()"
         (titelKlick)="zuDenArten()"
@@ -20,10 +31,15 @@
         <app-timeline
           [wochen]="leiste()"
           [aktiv]="woche()"
+          [gedaempft]="festeEbene()"
           [beschriftung]="'zeitleiste.beschriftung' | t"
           (auswahl)="waehleWoche($event)"
         />
+        @if (ebenenHinweis()) {
+          <app-note variante="unter">{{ ebenenHinweis() }}</app-note>
+        }
       </app-sheet-head>
+
       <div class="karte__inhalt">
         <app-segmented
           [optionen]="darstellungen()"
@@ -31,12 +47,50 @@
           [beschriftung]="'darstellung.beschriftung' | t"
           (wertChange)="setzeDarstellung($event)"
         />
-        @if (zustand.darstellung() === 'vorhersage') {
-          <app-ramp [beschriftung]="'karte.rampe' | t" [von]="'karte.rampeVon' | t" [bis]="rampeBis()" />
-        } @else {
-          <app-note>{{ 'platzhalter.hinweis' | t }}</app-note>
+
+        @switch (zustand.darstellung()) {
+          @case ('vorhersage') {
+            <app-ramp [beschriftung]="rampenTitel()" [von]="rampeVon()" [bis]="rampeBis()" />
+          }
+          @case ('ebene') {
+            @if (ebene(); as gewaehlt) {
+              <app-ramp [beschriftung]="rampenTitel()" [von]="rampeVon()" [bis]="rampeBis()" />
+              <app-ebenen-liste
+                [ebenen]="alleEbenen()"
+                [gewaehlt]="gewaehlt.id"
+                [beschriftung]="'ebene.beschriftung' | t"
+                (auswahl)="waehleEbene($event)"
+              />
+            } @else {
+              <app-note>{{ 'ebene.keine' | t }}</app-note>
+            }
+          }
+          @default {
+            <app-note>{{ 'platzhalter.hinweis' | t }}</app-note>
+          }
         }
       </div>
     </app-sheet>
   </div>
+
+  @if (ebenenOffen()) {
+    <button
+      class="karte__schleier"
+      type="button"
+      [attr.aria-label]="'ebenenKnopf.schliessen' | t"
+      (click)="ebenenOffen.set(false)"
+    ></button>
+    <div class="karte__blatt karte__blatt--ebenen">
+      <app-ebenen-blatt
+        [hintergrund]="zustand.hintergrund()"
+        [deckkraft]="zustand.deckkraft()"
+        [zeigtEbene]="zeigtEbene()"
+        [vorhersageDarunter]="zustand.vorhersageDarunter()"
+        (hintergrundChange)="zustand.setzeHintergrund($event)"
+        (deckkraftChange)="setzeDeckkraft($event)"
+        (vorhersageDarunterChange)="zustand.vorhersageDarunter.set($event)"
+        (schliessen)="ebenenOffen.set(false)"
+      />
+    </div>
+  }
 </div>
