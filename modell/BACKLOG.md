@@ -493,7 +493,12 @@ ist jedes Mal derselbe: zu wenige Besuche fuer ein eigenes Modell.
          Minuten je Groesse (Zeitstempel der Zwischenspeicher: 19:42:08,
          19:44:21, 19:46:13) und legte drei Dateien unter
          `data/interim/weekly/` an; danach zieht `update.sh` sie mit
-         `--refresh-from` wie alles andere nach.
+         `--refresh-from` wie alles andere nach. Auf den Server muessen die
+         drei Zwischenspeicher einmal mitgehen: dort liegt nur das laufende
+         und das Vorjahr an HYRAS, eine Groesse ohne Zwischenspeicher kaeme
+         also mit zu wenigen Zell-Wochen heraus und `merge_weekly.py` braeche
+         ab. `deploy_daten.sh` spiegelt `data/interim/weekly/` schon mit, es
+         genuegt also, ihn einmal laufen zu lassen.
          Die Renderzeit war das Problem. Acht Ebenen mehr kosteten 66 Prozent
          mehr, die Abnahme laesst 30 zu. Gemessen an zwei Wochen, CPU-Zeit mit
          Kindprozessen, Median aus drei Laeufen: 7 Ebenen 55,1 s, 15 Ebenen
