@@ -62,13 +62,83 @@ class Base(DeclarativeBase):
     """Gemeinsame Wurzel aller Tabellen."""
 
 
-class User(Base):
-    """Ein Konto. Es entsteht beim ersten Zugriff, erkannt am ``sub`` des Tokens."""
+class Person(Base):
+    """Ein Konto. Es entsteht beim ersten Zugriff, erkannt am ``sub`` des Tokens.
+
+    ``app.core.auth.User`` ist die Person im Token, diese Zeile ist ihr
+    Gedächtnis. Nur so weiß die Rollenverwaltung, wen es überhaupt gibt: das
+    SSO gibt keine Liste heraus.
+    """
 
     __tablename__ = "nutzer"
 
     sub: Mapped[str] = mapped_column(String(255), primary_key=True)
+    email: Mapped[str | None] = mapped_column(String(255), default=None)
+    name: Mapped[str | None] = mapped_column(String(255), default=None)
     created_at: Mapped[datetime] = mapped_column("erstellt_am", UtcTime, default=utc_now)
+
+
+class Role(Base):
+    """Eine Rolle. Zwei stehen fest, alles Weitere legt jemand mit dem Recht an."""
+
+    __tablename__ = "role"
+
+    id: Mapped[str] = mapped_column(String(ID_LENGTH), primary_key=True, default=new_identifier)
+    # Der Slug trägt die Bedeutung, der Name nur die Beschriftung. Nur so
+    # bleiben die festen Rollen erkennbar, auch wenn jemand sie umbenennt.
+    slug: Mapped[str] = mapped_column(String(64), unique=True)
+    name: Mapped[str] = mapped_column(String(80))
+    description: Mapped[str | None] = mapped_column(Text, default=None)
+    built_in: Mapped[bool] = mapped_column(Boolean, default=False, server_default=false())
+    created_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now)
+    updated_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now, onupdate=utc_now)
+
+
+class PermissionRow(Base):
+    """Ein Recht in der Datenbank.
+
+    Der Katalog steht im Code, in ``app.modules.access.permissions``. Diese
+    Tabelle spiegelt ihn, damit ``role_permission`` einen Fremdschlüssel hat
+    und ein Recht nicht als Tippfehler in einer Rolle landet. Der Dienst
+    gleicht sie beim Start ab.
+    """
+
+    __tablename__ = "permission"
+
+    key: Mapped[str] = mapped_column(String(40), primary_key=True)
+    area: Mapped[str] = mapped_column(String(20))
+
+
+class RolePermission(Base):
+    """Ein Recht an einer Rolle."""
+
+    __tablename__ = "role_permission"
+
+    role_id: Mapped[str] = mapped_column(
+        ForeignKey("role.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+    permission_key: Mapped[str] = mapped_column(
+        ForeignKey("permission.key", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+
+class UserRole(Base):
+    """Eine Rolle an einer Person. Die feste Rolle ``user`` steht hier nie.
+
+    Sie gilt jeder angemeldeten Person, und eine Zeile je Konto wäre eine
+    Zeile, die nichts sagt.
+    """
+
+    __tablename__ = "user_role"
+
+    user_sub: Mapped[str] = mapped_column(String(255), primary_key=True, index=True)
+    role_id: Mapped[str] = mapped_column(
+        ForeignKey("role.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+    granted_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now)
 
 
 class Owned(Base):

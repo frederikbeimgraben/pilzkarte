@@ -38,3 +38,15 @@ def test_the_defaults_point_at_var() -> None:
 
 def test_the_version_comes_from_the_file() -> None:
     assert read_version() == VERSION
+
+
+def test_the_admin_group_has_a_default() -> None:
+    # Ohne sie wäre nach dem ersten Deploy niemand da, der Rollen vergibt.
+    assert get_settings().admin_group == "pilze-admins"
+
+
+def test_the_admin_group_comes_from_the_environment(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("PILZE_ADMIN_GROUP", "pilze-chefinnen")
+    get_settings.cache_clear()
+
+    assert get_settings().admin_group == "pilze-chefinnen"

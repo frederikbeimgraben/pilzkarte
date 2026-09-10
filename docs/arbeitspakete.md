@@ -308,7 +308,7 @@ Statt einer festen Rolle `admin` eine kleine Rechteverwaltung.
 - Rechte je Bereich: Arten (Profile ändern, Bilder hochladen, Bilder
   freigeben, Arten anlegen), Oberfläche (Texte ändern), Zugang (Rollen
   verwalten, Rollen vergeben).
-- Endpunkte unter `/api/rollen`, `/api/rechte`, `/api/personen`. Jede
+- Endpunkte unter `/api/roles`, `/api/permissions`, `/api/people`. Jede
   Prüfung liegt im Backend, das Frontend blendet nur aus.
 - Der erste Admin kommt aus der Gruppe `pilze-admins` im Token, damit
   niemand ausgesperrt ist.

@@ -6,16 +6,34 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.db import engine
+from app.core.db import engine, session_factory
 from app.core.errors import register_error_handlers
 from app.core.settings import get_settings
 from app.core.version import VERSION
-from app.modules import combinations, finds, internal, marker, species, system, zones
+from app.modules import (
+    access,
+    combinations,
+    finds,
+    internal,
+    marker,
+    species,
+    system,
+    zones,
+)
+from app.modules.access.service import ensure_built_in_roles, sync_permissions
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI) -> AsyncGenerator[None]:
-    """Gibt die Verbindungen frei, wenn der Dienst endet."""
+    """Gleicht Rechte und feste Rollen ab, gibt die Verbindungen frei, wenn der Dienst endet.
+
+    Beides steht im Code. Der Abgleich beim Start erspart jedem neuen Recht
+    eine eigene Migration; die Migration legt dasselbe an, damit eine frisch
+    hochgezogene Datenbank auch vor dem ersten Start vollständig ist.
+    """
+    async with session_factory()() as session:
+        await sync_permissions(session)
+        await ensure_built_in_roles(session)
     yield
     await engine().dispose()
 
@@ -38,6 +56,7 @@ def build_app() -> FastAPI:
         allow_headers=["*"],
     )
     built.include_router(system.router, prefix="/api")
+    built.include_router(access.router, prefix="/api")
     built.include_router(species.router, prefix="/api")
     built.include_router(finds.router, prefix="/api")
     built.include_router(internal.router, prefix="/api")
