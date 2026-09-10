@@ -1,27 +1,56 @@
 name = "Samtfußrübling"
 lateinisch = "Flammulina velutipes"
 gruppe = "ruebling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["winter", "fruehling"]
-baeume = ["weide", "pappel", "buche"]
-speisewertHinweis = "Nur die Hüte, die Stiele bleiben zäh."
+jahreszeiten = ["herbst", "winter", "fruehling"]
+baeume = []
+speisewertHinweis = "Nur die Hüte verwenden. Die Stiele sind zäh und taugen höchstens als Pilzpulver."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Samtfussruebling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "2 bis 8 cm, honig- bis orangebraun, glatt, bei Nässe klebrig glänzend."
-lamellen = "Blassgelb, breit, am Stiel ausgebuchtet."
-stiel = "Zäh, hohl, oben gelb, nach unten schwarzbraun und samtig."
-fleisch = "Blassgelb, im Hut weich, im Stiel zäh."
+hut = "2 bis 9, selten bis 20 cm breit, gelbbraun bis honiggelb, schmierig und klebrig. Rand heller, jung eingebogen."
+lamellen = "Weißlich bis hellgelb, am Stiel ausgebuchtet angewachsen."
+stiel = "1 bis 10, selten bis 15 cm lang, 0,3 bis 1, selten bis 1,3 cm dick, weißfilzig, Spitze hell, Basis dunkelbraun. Zäh, faserig und gummiartig: zusammengedrückt federt er in die alte Form zurück. Immer ohne Ring, alt hohl."
+fleisch = "Weißlich bis hellgelb."
 geruch = "Angenehm pilzig."
-geschmack = "Mild."
+geschmack = "Angenehm pilzig und süßlich."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer an geschwächtem Laubholz, gern Weide, Pappel und Buche, in Büscheln. Fruchtet bei Frost."
-zeit = "Oktober bis April."
+vorkommen = "Folgezersetzer meist an Laubholz, sehr häufig."
+zeit = "Spätherbst bis Frühjahr, gern nach dem ersten Frost."
 
 [[verwechslungen]]
 name = "Gifthäubling"
-merkmal = "Mit Ring am Stiel, Sporenpulver rostbraun."
+merkmal = "Lamellen hellbraun bis zimtbraun, Sporenpulver rostbraun, Stiel weißsilbrig überfasert mit dünnem Ring, Geruch muffig nach faulendem Holz."
 essbar = "toedlichGiftig"
+slug = "gifthaeubling"
+
+[[verwechslungen]]
+name = "Geflecktblättriger Flämmling"
+merkmal = "Lamellen jung hellgelb, bald orange und rostfleckig, Fleisch orangegelb, Geschmack stark bitter, meist an Nadelholz."
+essbar = "giftig"
+slug = "geflecktblaettriger-flaemmling"
+
+[[verwechslungen]]
+name = "Samtschuppiger Tannenflämmling"
+merkmal = "Hut trocken, matt und schuppig, Lamellen gelb bis goldgelb, alt rostbraun, Geschmack bitterlich."
+essbar = "giftig"
+slug = "samtschuppiger-tannenflaemmling"
+
+[[verwechslungen]]
+name = "Rotbrauner Flämmling"
+merkmal = "Hut zimt- bis rotbraun und trocken, Lamellen zuerst leuchtend gelb, später rostbraun, Geschmack bitterlich."
+essbar = "giftig"
+slug = "rotbrauner-flaemmling"
+
+[[verwechslungen]]
+name = "Nadelschüppling"
+merkmal = "Hut zitronen- bis orangegelb mit Schüppchen, Lamellen gelb, Geschmack bitter, im Nadelwald."
+essbar = "giftig"
+slug = "nadelschueppling"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,32 +1,64 @@
 name = "Schildrötling"
 lateinisch = "Entoloma clypeatum"
 gruppe = "roetling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["fruehling"]
+jahreszeiten = ["fruehling", "sommer"]
 baeume = ["obstbaum"]
-speisewertHinweis = "Nur für Kenner der Gattung. Die meisten Rötlinge sind giftig."
+speisewertHinweis = "Roh sehr giftig, mindestens fünf bis zehn Minuten garen. Rötlinge sind schwer zu bestimmen und mit tödlich giftigen Arten zu verwechseln; nur für Kenner."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Schildroetling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "anilin"
+reaktion = "Im Fleisch negativ oder sehr schwach."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Im Fleisch negativ oder sehr schwach."
 
 [merkmale]
-hut = "4 bis 10 cm, graubraun, seidig faserig, mit stumpfem Buckel, bei Trockenheit hell ausblassend."
-lamellen = "Weißlich, dann fleischrosa, ausgebuchtet."
-stiel = "Weißlich, faserig, brüchig."
-fleisch = "Weiß, dünn."
-geruch = "Deutlich mehlig."
-geschmack = "Mehlig, mild."
+hut = "2 bis 9, selten bis 12 cm breit, graubraun, blassbraun, horngrau, sepia-, dunkel-, silbrig- oder olivbraun. Jung kegelig gewölbt, später ausgebreitet mit stumpfem Buckel, radial eingewachsen faserig, kaum ausblassend. Rand rissig wie bei den Risspilzen und lange eingebogen."
+lamellen = "Weißlich bis blassgrau, erst später rosa bis rosabräunlich, ausgebuchtet und mit Zähnchen angewachsen, mit Zwischenlamellen, Schneiden wellig und gekerbt."
+stiel = "2 bis 5, selten bis 6 cm lang, 0,5 bis 0,8, selten bis 1,2 cm dick, weißlich, feinfaserig, zylindrisch, längsgerieft, zur Basis teils verdreht und verjüngt."
+fleisch = "Weißlich bis etwas grau, fest und starr, im Scheitel dick. Insektenfraßgänge höchstens ockerlich, nie rotbraun wie beim Schlehenrötling."
+geruch = "Mehlig oder gurkenartig."
+geschmack = "Mild, mehlig oder gurkenartig."
 sporenpulver = "Rosa."
-vorkommen = "Bei Rosengewächsen: Schlehe, Weißdorn, Apfel und Birne, in Hecken und Streuobstwiesen."
-zeit = "April bis Juni."
+vorkommen = "Symbiosepilz bei Rosengewächsen, in Parks, auf Wiesen und Obstwiesen, an Waldrändern und grasigen Stellen, büschelig. Regional selten, in Deutschland auf der Vorwarnliste."
+zeit = "Frühjahr bis Frühsommer."
 
 [[verwechslungen]]
 name = "Riesenrötling"
-merkmal = "Viel größer, im Sommer und Herbst im Laubwald. Stark giftig."
-essbar = "giftig"
+merkmal = "Deutlich größer und kräftiger, Lamellen jung gelblich, Geruch unangenehm säuerlich mehlig, bei Eiche, Buche und Espe."
+essbar = "toedlichGiftig"
+slug = "riesenroetling"
+
+[[verwechslungen]]
+name = "Frühlingsrötling"
+merkmal = "Nur 1 bis 4 cm breit, Lamellen grau bis lilarötlich, Fleisch gelbbraun, Geruch und Geschmack nicht mehlig."
+essbar = "toedlichGiftig"
+slug = "fruehlingsroetling"
+
+[[verwechslungen]]
+name = "Ziegelroter Risspilz"
+merkmal = "Hut ziegelrot bis ockerbraun, Fleisch verfärbt sich rot, Geruch spermatisch."
+essbar = "toedlichGiftig"
+slug = "ziegelroter-risspilz"
+
+[[verwechslungen]]
+name = "Schlehenrötling"
+merkmal = "Hut sehr blass, Insektenfraßgänge laufen schnell orangebraun an, Fleisch verfärbt bei Verletzung braunrot bis safranfarben."
+essbar = "essbar"
+slug = "schlehenroetling"
 
 [[verwechslungen]]
 name = "Maipilz"
-merkmal = "Lamellen bleiben weiß, Sporenpulver weiß."
+merkmal = "Hut weiß bis cremeweiß und glatt, Lamellen bleiben weiß bis gelblich, Sporenpulver weiß, Geruch stark mehlig."
 essbar = "speisepilz"
+slug = "maipilz"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,26 +1,60 @@
 name = "Schafporling"
 lateinisch = "Albatrellus ovinus"
 gruppe = "porling"
-speisewert = "speisepilz"
+speisewert = "bedingtEssbar"
 geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
+speisewertHinweis = "Besonders geschützt. Roh löst er Unverträglichkeiten aus: durchgaren und Kostproben wieder ausspucken."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Schafporling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch ockergelb bis olivgelb."
 
 [merkmale]
-hut = "5 bis 15 cm, weiß bis cremefarben, im Alter gilbend, oft rissig, unregelmäßig gebuchtet."
-poren = "Weiß, sehr fein, am Stiel herablaufend, im Alter gelb."
-stiel = "Kurz, dick, weiß, oft seitlich."
-fleisch = "Weiß, fest, brüchig, gilbt beim Garen."
+hut = "3 bis 18, selten bis 30 cm breit, weiß, später gelblich, braungelb, graugelb oder schmutzig weiß, filzig, im Alter aufreißend."
+poren = "Weiß bis grünlich weißlich, rund, auf Druck gilbend."
+stiel = "Weißlich mit graubraunen bis dunkelbraunen Flecken, voll, unregelmäßig dick und keilförmig, meist viel länger als beim Semmelporling."
+fleisch = "Weiß, fest, brüchig, Druckstellen gilben leicht. Er wird im Alter langsamer bitter als der Semmelporling."
 geruch = "Angenehm pilzig."
-geschmack = "Mild, im Alter leicht bitter."
+geschmack = "Fast immer mild, erst im späten Alter vereinzelt bitterlich. Roh unverträglich."
 sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Fichte, in Bergwäldern auf Kalk, oft in Gruppen verwachsen."
-zeit = "August bis Oktober."
+vorkommen = "Im Mischwald, überwiegend bei Nadelbäumen und dort gern bei Fichte, auf kalkreichem, saurem und neutralem Boden. Wahrscheinlich Symbiosepilz, nach einigen Autoren auch Folgezersetzer. Tritt meist zusammen mit dem Semmelporling auf."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Weißer Knochenporling"
+merkmal = "Wächst an toten Lärchenstämmen und Strünken, Fleisch elastisch zäh und trocken sehr hart."
+essbar = "ungeniessbar"
+slug = "weisser-knochenporling"
+
+[[verwechslungen]]
+name = "Gelbgrüner Kammporling"
+merkmal = "Hut gelbgrün bis olivgrün, Geruch unangenehm stinkend, Geschmack bitter."
+essbar = "ungeniessbar"
+slug = "gelbgruener-kammporling"
 
 [[verwechslungen]]
 name = "Semmelporling"
-merkmal = "Poren gelblich, Fleisch bitterer. Ebenfalls essbar."
+merkmal = "Hut semmelgelb bis orangebraun, Stiel kürzer, schmeckt schnell bitterlich."
 essbar = "essbar"
+slug = "semmelporling"
+
+[[verwechslungen]]
+name = "Rötender Schafeuterporling"
+merkmal = "Hut fleischrosa bis rosa getönt, Druckstellen röten und gilben."
+essbar = "essbar"
+slug = "roetender-schafeuterporling"
+
+[[verwechslungen]]
+name = "Zitronenporling"
+merkmal = "Hut schnell zitronengelb, Fleisch im Schnitt langsam schwach rotbraun anlaufend."
+essbar = "essbar"
+slug = "zitronenporling"
 
 [[links]]
 titel = "123pilzsuche.de"
