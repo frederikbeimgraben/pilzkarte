@@ -1,1 +1,56 @@
-<app-platzhalter [titel]="'nav.konto' | t" />
+<app-page-header [titel]="'konto.titel' | t" [zurueck]="true" (zurueckKlick)="zurueck()" />
+
+<div class="konto">
+  <section class="konto__block">
+    <h2 class="konto__abschnitt">{{ 'konto.abschnitt.konto' | t }}</h2>
+    <app-card class="konto__karte">
+      <div class="konto__zeile">
+        @if (nutzer(); as person) {
+          <span class="konto__kreis" aria-hidden="true">{{ initiale(person) }}</span>
+          <span class="konto__stapel">
+            <span class="konto__name">{{ person.name }}</span>
+            <span class="konto__unter">{{ kontoUnter(person) }}</span>
+          </span>
+          <app-button variant="secondary" size="sm" (click)="abmelden()">
+            {{ 'konto.abmelden' | t }}
+          </app-button>
+        } @else {
+          <span class="konto__stapel">
+            <span class="konto__name">{{ 'konto.nichtAngemeldet' | t }}</span>
+            <span class="konto__unter">{{ 'konto.nichtAngemeldetUnter' | t }}</span>
+          </span>
+          <app-button variant="secondary" size="sm" (click)="anmelden()">
+            {{ 'konto.anmelden' | t }}
+          </app-button>
+        }
+      </div>
+    </app-card>
+  </section>
+
+  <section class="konto__block">
+    <h2 class="konto__abschnitt">{{ 'konto.abschnitt.darstellung' | t }}</h2>
+    <app-segmented
+      [optionen]="themen()"
+      [wert]="wahl()"
+      [beschriftung]="'theme.beschriftung' | t"
+      (wertChange)="waehleTheme($event)"
+    />
+  </section>
+
+  <section class="konto__block">
+    <h2 class="konto__abschnitt">{{ 'konto.abschnitt.offline' | t }}</h2>
+    <div class="konto__liste">
+      <app-list-row [titel]="'konto.offlineGebiete' | t" wert="0" />
+      <app-list-row [titel]="'konto.ausstehend' | t" wert="0" />
+    </div>
+  </section>
+
+  <section class="konto__block">
+    <h2 class="konto__abschnitt">{{ 'konto.abschnitt.ueber' | t }}</h2>
+    <div class="konto__liste">
+      <app-list-row [titel]="'konto.methode' | t" />
+      <app-list-row [titel]="'konto.quellen' | t" />
+      <app-list-row [titel]="'konto.version' | t" [wert]="version()" />
+    </div>
+  </section>
+</div>
