@@ -1,64 +1,74 @@
 """Vertrag der Marker."""
 
+from pydantic import Field
+
 from app.models import Marker
 from app.shared.schemas import (
-    BasisModell,
-    Breitengrad,
-    Farbe,
-    Laengengrad,
+    BaseSchema,
+    Color,
+    Latitude,
+    Longitude,
     Name,
-    Notiz,
-    Sichtbarkeit,
-    Zeitpunkt,
+    Note,
+    Timestamp,
+    Visibility,
 )
 
 
-class MarkerEingabe(BasisModell):
+class MarkerIn(BaseSchema):
     """Ein neuer Marker."""
 
     name: Name
-    lat: Breitengrad
-    lon: Laengengrad
-    farbe: Farbe = Farbe.GRUEN
-    notiz: Notiz | None = None
-    sichtbarkeit: Sichtbarkeit = Sichtbarkeit.PRIVAT
+    lat: Latitude
+    lon: Longitude
+    color: Color = Field(default=Color.GREEN, validation_alias="farbe", serialization_alias="farbe")
+    note: Note | None = Field(default=None, validation_alias="notiz", serialization_alias="notiz")
+    visibility: Visibility = Field(
+        default=Visibility.PRIVATE,
+        validation_alias="sichtbarkeit",
+        serialization_alias="sichtbarkeit",
+    )
 
 
-class MarkerAenderung(BasisModell):
+class MarkerPatch(BaseSchema):
     """Was sich an einem Marker aendern laesst. Weggelassene Felder bleiben."""
 
     name: Name | None = None
-    lat: Breitengrad | None = None
-    lon: Laengengrad | None = None
-    farbe: Farbe | None = None
-    notiz: Notiz | None = None
-    sichtbarkeit: Sichtbarkeit | None = None
+    lat: Latitude | None = None
+    lon: Longitude | None = None
+    color: Color | None = Field(default=None, validation_alias="farbe", serialization_alias="farbe")
+    note: Note | None = Field(default=None, validation_alias="notiz", serialization_alias="notiz")
+    visibility: Visibility | None = Field(
+        default=None, validation_alias="sichtbarkeit", serialization_alias="sichtbarkeit"
+    )
 
 
-class MarkerAus(BasisModell):
+class MarkerOut(BaseSchema):
     """Ein eigener Marker."""
 
     id: str
     name: str
     lat: float
     lon: float
-    farbe: Farbe
-    notiz: str | None
-    sichtbarkeit: Sichtbarkeit
-    erstellt_am: Zeitpunkt
-    geaendert_am: Zeitpunkt
+    color: Color = Field(validation_alias="farbe", serialization_alias="farbe")
+    note: str | None = Field(validation_alias="notiz", serialization_alias="notiz")
+    visibility: Visibility = Field(
+        validation_alias="sichtbarkeit", serialization_alias="sichtbarkeit"
+    )
+    created_at: Timestamp = Field(validation_alias="erstelltAm", serialization_alias="erstelltAm")
+    updated_at: Timestamp = Field(validation_alias="geaendertAm", serialization_alias="geaendertAm")
 
 
-def marker_aus(marker: Marker) -> MarkerAus:
+def marker_out(marker: Marker) -> MarkerOut:
     """Baut die Antwort zu einem Marker."""
-    return MarkerAus(
+    return MarkerOut(
         id=marker.id,
         name=marker.name,
         lat=marker.lat,
         lon=marker.lon,
-        farbe=marker.farbe,
-        notiz=marker.notiz,
-        sichtbarkeit=marker.sichtbarkeit,
-        erstellt_am=marker.erstellt_am,
-        geaendert_am=marker.geaendert_am,
+        color=marker.color,
+        note=marker.note,
+        visibility=marker.visibility,
+        created_at=marker.created_at,
+        updated_at=marker.updated_at,
     )

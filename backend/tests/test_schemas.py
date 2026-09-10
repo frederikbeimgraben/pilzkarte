@@ -5,62 +5,62 @@ from datetime import UTC, datetime
 import pytest
 from pydantic import BaseModel, ValidationError
 
-from app.shared.schemas import BasisModell, Woche, Zeitpunkt, zu_camel
+from app.shared.schemas import BaseSchema, Timestamp, Week, to_camel
 
 
-class Beispiel(BasisModell):
+class Example(BaseSchema):
     """Ein Modell mit zwei Woertern im Feldnamen."""
 
-    gefunden_am: Zeitpunkt
-    anzahl: int
+    found_at: Timestamp
+    count: int
 
 
-def test_feldnamen_werden_camel_case() -> None:
-    assert zu_camel("gefunden_am") == "gefundenAm"
-    assert zu_camel("origin") == "origin"
+def test_field_names_become_camel_case() -> None:
+    assert to_camel("found_at") == "foundAt"
+    assert to_camel("origin") == "origin"
 
 
-def test_json_traegt_camel_case() -> None:
-    modell = Beispiel(gefunden_am=datetime(2026, 9, 7, 8, 0, tzinfo=UTC), anzahl=3)
+def test_json_carries_camel_case() -> None:
+    model = Example(found_at=datetime(2026, 9, 7, 8, 0, tzinfo=UTC), count=3)
 
-    assert modell.model_dump(by_alias=True)["gefundenAm"]
-
-
-def test_alias_und_feldname_gehen_beide_hinein() -> None:
-    aus_alias = Beispiel.model_validate({"gefundenAm": "2026-09-07T08:00:00+02:00", "anzahl": 1})
-    aus_name = Beispiel.model_validate({"gefunden_am": "2026-09-07T08:00:00+02:00", "anzahl": 1})
-
-    assert aus_alias == aus_name
+    assert model.model_dump(by_alias=True)["foundAt"]
 
 
-def test_fremdes_feld_ist_ein_fehler() -> None:
+def test_alias_and_field_name_both_go_in() -> None:
+    from_alias = Example.model_validate({"foundAt": "2026-09-07T08:00:00+02:00", "count": 1})
+    from_name = Example.model_validate({"found_at": "2026-09-07T08:00:00+02:00", "count": 1})
+
+    assert from_alias == from_name
+
+
+def test_an_unknown_field_is_an_error() -> None:
     with pytest.raises(ValidationError):
-        Beispiel.model_validate(
-            {"gefundenAm": "2026-09-07T08:00:00+02:00", "anzahl": 1, "extra": 1},
+        Example.model_validate(
+            {"foundAt": "2026-09-07T08:00:00+02:00", "count": 1, "extra": 1},
         )
 
 
-def test_zeit_ohne_zone_ist_ein_fehler() -> None:
+def test_a_time_without_a_zone_is_an_error() -> None:
     with pytest.raises(ValidationError):
-        Beispiel.model_validate({"gefundenAm": "2026-09-07T08:00:00", "anzahl": 1})
+        Example.model_validate({"foundAt": "2026-09-07T08:00:00", "count": 1})
 
 
-def test_woche_nimmt_eine_echte_kalenderwoche() -> None:
-    woche = Woche.model_validate({"jahr": 2026, "woche": 40})
+def test_week_takes_a_real_calendar_week() -> None:
+    week = Week.model_validate({"jahr": 2026, "woche": 40})
 
-    assert (woche.jahr, woche.woche) == (2026, 40)
+    assert (week.year, week.week) == (2026, 40)
 
 
-@pytest.mark.parametrize(("jahr", "woche"), [(2025, 53), (2026, 0), (2026, 54)])
-def test_woche_weist_unmoegliche_wochen_ab(jahr: int, woche: int) -> None:
+@pytest.mark.parametrize(("year", "week"), [(2025, 53), (2026, 0), (2026, 54)])
+def test_week_rejects_impossible_weeks(year: int, week: int) -> None:
     # 2025 hat 52 Wochen, 2026 hat 53. Die Regel steckt in fromisocalendar.
     with pytest.raises(ValidationError):
-        Woche.model_validate({"jahr": jahr, "woche": woche})
+        Week.model_validate({"jahr": year, "woche": week})
 
 
-def test_lange_woche_gibt_es_im_richtigen_jahr() -> None:
-    assert Woche.model_validate({"jahr": 2026, "woche": 53}).woche == 53
+def test_the_long_week_exists_in_the_right_year() -> None:
+    assert Week.model_validate({"jahr": 2026, "woche": 53}).week == 53
 
 
-def test_basis_modell_bleibt_ein_pydantic_modell() -> None:
-    assert issubclass(BasisModell, BaseModel)
+def test_base_schema_stays_a_pydantic_model() -> None:
+    assert issubclass(BaseSchema, BaseModel)

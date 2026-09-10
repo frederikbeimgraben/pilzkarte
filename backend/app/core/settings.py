@@ -8,11 +8,11 @@ und passen zur Entwicklung auf dem eigenen Rechner.
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import field_validator
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-class Einstellungen(BaseSettings):
+class Settings(BaseSettings):
     """Die Werte, die der Dienst beim Start liest."""
 
     model_config = SettingsConfigDict(
@@ -23,7 +23,9 @@ class Einstellungen(BaseSettings):
     )
 
     db: str = "sqlite+aiosqlite:///./var/pilze.sqlite"
-    fotos: Path = Path("./var/fotos")
+    # Der Name der Variablen ist ein Vertrag zum NixOS-Modul. Er bleibt
+    # deutsch, auch wenn das Feld englisch heisst.
+    photos: Path = Field(default=Path("./var/fotos"), validation_alias="PILZE_FOTOS")
     maps: Path = Path("./var/maps")
     oidc_issuer: str = "https://sso.beimgraben.net/application/o/pilze/"
     oidc_client_id: str = "pilze"
@@ -31,10 +33,10 @@ class Einstellungen(BaseSettings):
 
     @field_validator("oidc_issuer")
     @classmethod
-    def _schraegstrich_am_ende(cls, wert: str) -> str:
+    def _trailing_slash(cls, value: str) -> str:
         # Discovery und JWKS haengen als Pfad direkt am Issuer. Fehlt der
         # Schraegstrich, zeigt die URL auf den Elternpfad.
-        return wert if wert.endswith("/") else wert + "/"
+        return value if value.endswith("/") else value + "/"
 
     @property
     def discovery_url(self) -> str:
@@ -48,6 +50,6 @@ class Einstellungen(BaseSettings):
 
 
 @lru_cache(maxsize=1)
-def einstellungen() -> Einstellungen:
+def get_settings() -> Settings:
     """Liefert die Einstellungen des Prozesses."""
-    return Einstellungen()
+    return Settings()

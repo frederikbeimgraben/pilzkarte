@@ -12,34 +12,34 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine,
 )
 
-from app.core.settings import einstellungen
+from app.core.settings import get_settings
 
-DATEI_PRAEFIX: Final = "sqlite+aiosqlite:///"
+FILE_PREFIX: Final = "sqlite+aiosqlite:///"
 
 
-def ordner_anlegen(url: str) -> None:
+def create_folder(url: str) -> None:
     """Legt den Ordner der SQLite-Datei an, falls er fehlt."""
-    if not url.startswith(DATEI_PRAEFIX):
+    if not url.startswith(FILE_PREFIX):
         return
     # Ohne den Ordner scheitert schon die Migration beim ersten Start.
-    Path(url.removeprefix(DATEI_PRAEFIX)).parent.mkdir(parents=True, exist_ok=True)
+    Path(url.removeprefix(FILE_PREFIX)).parent.mkdir(parents=True, exist_ok=True)
 
 
 @lru_cache(maxsize=1)
-def motor() -> AsyncEngine:
+def engine() -> AsyncEngine:
     """Liefert die Engine des Prozesses."""
-    url = einstellungen().db
-    ordner_anlegen(url)
+    url = get_settings().db
+    create_folder(url)
     return create_async_engine(url)
 
 
 @lru_cache(maxsize=1)
-def sitzungsfabrik() -> async_sessionmaker[AsyncSession]:
+def session_factory() -> async_sessionmaker[AsyncSession]:
     """Liefert die Sitzungsfabrik des Prozesses."""
-    return async_sessionmaker(motor(), expire_on_commit=False)
+    return async_sessionmaker(engine(), expire_on_commit=False)
 
 
-async def sitzung() -> AsyncGenerator[AsyncSession]:
+async def db_session() -> AsyncGenerator[AsyncSession]:
     """Dependency: eine Sitzung je Anfrage."""
-    async with sitzungsfabrik()() as offen:
-        yield offen
+    async with session_factory()() as open_ring:
+        yield open_ring

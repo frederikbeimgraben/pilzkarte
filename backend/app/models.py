@@ -10,35 +10,35 @@ from sqlalchemy import Enum as SaEnum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.types import TypeDecorator
 
-from app.shared.schemas import Farbe, Regel, Sichtbarkeit
+from app.shared.schemas import Color, Rule, Visibility
 
 # Eine UUID als Zeichenkette. Das Geraet vergibt sie schon offline, damit ein
 # Eintrag aus der Warteschlange dieselbe Kennung behaelt.
-KENNUNG_LAENGE: Final = 36
+ID_LENGTH: Final = 36
 
 
-def neue_kennung() -> str:
+def new_identifier() -> str:
     """Eine neue Objektkennung."""
     return str(uuid4())
 
 
-def jetzt() -> datetime:
+def utc_now() -> datetime:
     """Der aktuelle Zeitpunkt, immer mit Zeitzone."""
     return datetime.now(UTC)
 
 
-def _werte(aufzaehlung: type[Enum]) -> list[str]:
+def _values(enumeration: type[Enum]) -> list[str]:
     # Ohne das legt SQLAlchemy die Namen der Glieder ab. In der Spalte soll der
     # Wert stehen, den auch das JSON traegt.
-    return [str(glied.value) for glied in aufzaehlung]
+    return [str(member.value) for member in enumeration]
 
 
-def _enum_spalte(aufzaehlung: type[Enum]) -> SaEnum:
+def _enum_column(enumeration: type[Enum]) -> SaEnum:
     """Eine Aufzaehlung als Textspalte mit Pruefung, so wie SQLite sie kann."""
-    return SaEnum(aufzaehlung, native_enum=False, length=16, values_callable=_werte)
+    return SaEnum(enumeration, native_enum=False, length=16, values_callable=_values)
 
 
-class UtcZeit(TypeDecorator[datetime]):
+class UtcTime(TypeDecorator[datetime]):
     """Ein Zeitpunkt, der aus SQLite wieder mit Zeitzone herauskommt.
 
     SQLite hat keinen Zeittyp. Der Treiber gibt einen Zeitpunkt ohne Zeitzone
@@ -62,88 +62,95 @@ class Base(DeclarativeBase):
     """Gemeinsame Wurzel aller Tabellen."""
 
 
-class Nutzer(Base):
+class User(Base):
     """Ein Konto. Es entsteht beim ersten Zugriff, erkannt am ``sub`` des Tokens."""
 
     __tablename__ = "nutzer"
 
     sub: Mapped[str] = mapped_column(String(255), primary_key=True)
-    erstellt_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt)
+    created_at: Mapped[datetime] = mapped_column("erstellt_am", UtcTime, default=utc_now)
 
 
-class Eigentum(Base):
+class Owned(Base):
     """Was einem Konto gehoert: Kennung, Besitzer und die beiden Zeitpunkte.
 
     Der Besitzer ist der ``sub`` aus dem Token. Er kommt nie aus dem Koerper
-    einer Anfrage. Die Besitzerpruefung in ``app/shared/objekte.py`` haengt an
+    einer Anfrage. Die Besitzerpruefung in ``app/shared/objects.py`` haengt an
     dieser Stufe, damit sie fuer jedes eigene Objekt gilt.
     """
 
     __abstract__ = True
 
-    id: Mapped[str] = mapped_column(String(KENNUNG_LAENGE), primary_key=True, default=neue_kennung)
-    besitzer_sub: Mapped[str] = mapped_column(String(255), index=True)
-    erstellt_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt)
-    geaendert_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt, onupdate=jetzt)
+    id: Mapped[str] = mapped_column(String(ID_LENGTH), primary_key=True, default=new_identifier)
+    owner_sub: Mapped[str] = mapped_column("besitzer_sub", String(255), index=True)
+    created_at: Mapped[datetime] = mapped_column("erstellt_am", UtcTime, default=utc_now)
+    updated_at: Mapped[datetime] = mapped_column(
+        "geaendert_am", UtcTime, default=utc_now, onupdate=utc_now
+    )
 
 
-class Besitztum(Eigentum):
+class MapObject(Owned):
     """Was auf der Karte liegt: Fund, Marker und Zone tragen zusaetzlich diese Felder."""
 
     __abstract__ = True
 
-    sichtbarkeit: Mapped[Sichtbarkeit] = mapped_column(
-        _enum_spalte(Sichtbarkeit),
-        default=Sichtbarkeit.PRIVAT,
+    visibility: Mapped[Visibility] = mapped_column(
+        "sichtbarkeit",
+        _enum_column(Visibility),
+        default=Visibility.PRIVATE,
     )
-    notiz: Mapped[str | None] = mapped_column(Text, default=None)
+    note: Mapped[str | None] = mapped_column("notiz", Text, default=None)
 
 
-class Fund(Besitztum):
+class Find(MapObject):
     """Ein gemeldeter Fund: eine Art an einem Ort an einem Tag."""
 
     __tablename__ = "fund"
 
     # Der Anzeigename friert beim Speichern ein. Ein spaeterer Namenswechsel im
     # SSO soll einen geteilten Fund nicht rueckwirkend umschreiben.
-    besitzer_name: Mapped[str | None] = mapped_column(String(255), default=None)
-    art_slug: Mapped[str] = mapped_column(String(64), index=True)
+    owner_name: Mapped[str | None] = mapped_column("besitzer_name", String(255), default=None)
+    species_slug: Mapped[str] = mapped_column("art_slug", String(64), index=True)
     lat: Mapped[float] = mapped_column(Float)
     lon: Mapped[float] = mapped_column(Float)
-    datum: Mapped[date] = mapped_column(Date, index=True)
-    anzahl: Mapped[int | None] = mapped_column(default=None)
+    found_on: Mapped[date] = mapped_column("datum", Date, index=True)
+    count: Mapped[int | None] = mapped_column("anzahl", default=None)
     # Wer das setzt, gibt den genauen Fundort an die Kette weiter. Die Vorgabe
     # ist darum nein, und nur der Besitzer kann sie aendern.
     # Ohne Index: die Kette liest die Liste einmal je Lauf, und eine Spalte
     # mit zwei Werten hilft SQLite dabei nicht.
-    fuer_training: Mapped[bool] = mapped_column(Boolean, default=False, server_default=false())
+    for_training: Mapped[bool] = mapped_column(
+        "fuer_training", Boolean, default=False, server_default=false()
+    )
 
-    fotos: Mapped[list["Foto"]] = relationship(
-        back_populates="fund",
+    photos: Mapped[list["Photo"]] = relationship(
+        back_populates="find",
         cascade="all, delete-orphan",
         # Die Fundliste zeigt die Fotos mit. Ohne Vorladen liefe jeder Zugriff
         # in eine spaete Abfrage, die es unter asyncio nicht gibt.
         lazy="selectin",
-        order_by="Foto.erstellt_am",
+        order_by="Photo.created_at",
     )
 
 
-class Foto(Base):
+class Photo(Base):
     """Ein Bild zu einem Fund. Die Datei liegt unter ``PILZE_FOTOS``."""
 
     __tablename__ = "foto"
 
-    id: Mapped[str] = mapped_column(String(KENNUNG_LAENGE), primary_key=True, default=neue_kennung)
-    fund_id: Mapped[str] = mapped_column(ForeignKey("fund.id", ondelete="CASCADE"), index=True)
-    dateiname: Mapped[str] = mapped_column(String(64))
-    breite: Mapped[int] = mapped_column()
-    hoehe: Mapped[int] = mapped_column()
-    erstellt_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt)
+    id: Mapped[str] = mapped_column(String(ID_LENGTH), primary_key=True, default=new_identifier)
+    find_id: Mapped[str] = mapped_column(
+        "fund_id", ForeignKey("fund.id", ondelete="CASCADE"), index=True
+    )
+    filename: Mapped[str] = mapped_column("dateiname", String(64))
+    width: Mapped[int] = mapped_column("breite")
+    height: Mapped[int] = mapped_column("hoehe")
+    created_at: Mapped[datetime] = mapped_column("erstellt_am", UtcTime, default=utc_now)
 
-    fund: Mapped[Fund] = relationship(back_populates="fotos")
+    find: Mapped[Find] = relationship(back_populates="photos")
 
 
-class Marker(Besitztum):
+class Marker(MapObject):
     """Eine gemerkte Stelle auf der Karte."""
 
     __tablename__ = "marker"
@@ -151,10 +158,10 @@ class Marker(Besitztum):
     name: Mapped[str] = mapped_column(String(80))
     lat: Mapped[float] = mapped_column(Float)
     lon: Mapped[float] = mapped_column(Float)
-    farbe: Mapped[Farbe] = mapped_column(_enum_spalte(Farbe), default=Farbe.GRUEN)
+    color: Mapped[Color] = mapped_column("farbe", _enum_column(Color), default=Color.GREEN)
 
 
-class Zone(Besitztum):
+class Zone(MapObject):
     """Ein Revier als Flaeche. Die Karte gibt ihr einen Wert je Woche zurueck."""
 
     __tablename__ = "zone"
@@ -163,11 +170,11 @@ class Zone(Besitztum):
     # GeoJSON als Text. SQLite hat keinen Geometrietyp, und der Dienst rechnet
     # die Flaeche selbst.
     polygon: Mapped[str] = mapped_column(Text)
-    flaeche_ha: Mapped[float] = mapped_column(Float)
-    farbe: Mapped[Farbe] = mapped_column(_enum_spalte(Farbe), default=Farbe.GRUEN)
+    area_ha: Mapped[float] = mapped_column("flaeche_ha", Float)
+    color: Mapped[Color] = mapped_column("farbe", _enum_column(Color), default=Color.GREEN)
 
 
-class Kombination(Eigentum):
+class Combination(Owned):
     """Ein gespeicherter Faktor-Finder: eine Regel und ihre Faktoren.
 
     Die Faktoren liegen als GeoJSON-fremdes JSON in einer Textspalte. Sie sind
@@ -178,5 +185,5 @@ class Kombination(Eigentum):
     __tablename__ = "kombination"
 
     name: Mapped[str] = mapped_column(String(80))
-    regel: Mapped[Regel] = mapped_column(_enum_spalte(Regel), default=Regel.SCHNITT)
-    faktoren: Mapped[str] = mapped_column(Text)
+    rule: Mapped[Rule] = mapped_column("regel", _enum_column(Rule), default=Rule.INTERSECTION)
+    factors: Mapped[str] = mapped_column("faktoren", Text)

@@ -9,11 +9,11 @@ from typing import Final
 _PYPROJECT: Final = Path(__file__).resolve().parents[2] / "pyproject.toml"
 
 
-def version_lesen() -> str:
+def read_version() -> str:
     """Liest die Version aus der pyproject.toml."""
-    with _PYPROJECT.open("rb") as datei:
-        projekt = tomllib.load(datei)["project"]
-    return str(projekt["version"])
+    with _PYPROJECT.open("rb") as file:
+        project = tomllib.load(file)["project"]
+    return str(project["version"])
 
 
-VERSION: Final = version_lesen()
+VERSION: Final = read_version()

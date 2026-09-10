@@ -9,215 +9,215 @@ from fastapi import Depends, FastAPI
 
 from app.core import auth
 from app.core.auth import (
-    JwksSpeicher,
-    Nutzer,
-    aktueller_nutzer,
-    nutzer_aus_token,
-    nutzer_optional,
+    JwksCache,
+    User,
+    current_user,
+    optional_user,
+    user_from_token,
 )
-from app.core.errors import AnmeldungFehlt, fehlerbehandlung_registrieren
-from tests.conftest import ISSUER, FalscherIdp, ec_schluessel, kopfzeile, rsa_schluessel
+from app.core.errors import NotAuthenticated, register_error_handlers
+from tests.conftest import ISSUER, FakeIdp, auth_header, ec_key, rsa_key
 
 
-async def _geschuetzt(nutzer: Annotated[Nutzer, Depends(aktueller_nutzer)]) -> dict[str, str]:
-    return {"sub": nutzer.sub}
+async def _guarded(user: Annotated[User, Depends(current_user)]) -> dict[str, str]:
+    return {"sub": user.sub}
 
 
-async def _offen(
-    nutzer: Annotated[Nutzer | None, Depends(nutzer_optional)],
+async def _open(
+    user: Annotated[User | None, Depends(optional_user)],
 ) -> dict[str, str | None]:
-    return {"sub": nutzer.sub if nutzer else None}
+    return {"sub": user.sub if user else None}
 
 
-def app_mit_schutz() -> FastAPI:
+def app_with_guard() -> FastAPI:
     app = FastAPI()
-    app.add_api_route("/geschuetzt", _geschuetzt, methods=["GET"])
-    app.add_api_route("/offen", _offen, methods=["GET"])
-    fehlerbehandlung_registrieren(app)
+    app.add_api_route("/geschuetzt", _guarded, methods=["GET"])
+    app.add_api_route("/offen", _open, methods=["GET"])
+    register_error_handlers(app)
     return app
 
 
-def klient(app: FastAPI) -> httpx.AsyncClient:
+def client(app: FastAPI) -> httpx.AsyncClient:
     return httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test")
 
 
-async def test_gueltiges_token_liefert_die_person(idp: FalscherIdp) -> None:
-    nutzer = await nutzer_aus_token(idp.token())
+async def test_a_valid_token_yields_the_person(idp: FakeIdp) -> None:
+    user = await user_from_token(idp.token())
 
-    assert nutzer == Nutzer(sub="nutzer-1", email="pilz@example.test", name="Pilzsammlerin")
-
-
-async def test_token_ohne_email_und_name(idp: FalscherIdp) -> None:
-    nutzer = await nutzer_aus_token(idp.token(email=None, name=None))
-
-    assert nutzer.email is None
-    assert nutzer.name is None
+    assert user == User(sub="nutzer-1", email="pilz@example.test", name="Pilzsammlerin")
 
 
-async def test_es256_wird_akzeptiert(idp: FalscherIdp) -> None:
-    idp.drehen(ec_schluessel(), "ec-1", "ES256")
+async def test_a_token_without_email_and_name(idp: FakeIdp) -> None:
+    user = await user_from_token(idp.token(email=None, name=None))
 
-    nutzer = await nutzer_aus_token(idp.token())
-
-    assert nutzer.sub == "nutzer-1"
-
-
-async def test_falsche_aud(idp: FalscherIdp) -> None:
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token(aud="fremde-app"))
+    assert user.email is None
+    assert user.name is None
 
 
-async def test_falscher_iss(idp: FalscherIdp) -> None:
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token(iss="https://fremd.example.test/"))
+async def test_es256_is_accepted(idp: FakeIdp) -> None:
+    idp.rotate(ec_key(), "ec-1", "ES256")
+
+    user = await user_from_token(idp.token())
+
+    assert user.sub == "nutzer-1"
 
 
-async def test_abgelaufen(idp: FalscherIdp) -> None:
+async def test_wrong_audience(idp: FakeIdp) -> None:
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token(aud="fremde-app"))
+
+
+async def test_wrong_issuer(idp: FakeIdp) -> None:
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token(iss="https://fremd.example.test/"))
+
+
+async def test_expired_token(idp: FakeIdp) -> None:
     vorbei = datetime.now(UTC) - timedelta(hours=2)
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token(exp=int(vorbei.timestamp())))
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token(exp=int(vorbei.timestamp())))
 
 
-async def test_falsche_signatur(idp: FalscherIdp) -> None:
+async def test_wrong_signature(idp: FakeIdp) -> None:
     # Gleiche Kennung, anderer Schluessel: genau der Fall, den nur die Signatur faengt.
-    fremd = idp.token(schluessel=rsa_schluessel())
+    other = idp.token(key=rsa_key())
 
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(fremd)
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(other)
 
 
-async def test_ohne_exp(idp: FalscherIdp) -> None:
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token(exp=None))
+async def test_without_expiry(idp: FakeIdp) -> None:
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token(exp=None))
 
 
 @pytest.mark.usefixtures("idp")
-async def test_unlesbares_token() -> None:
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token("kein-token")
+async def test_an_unreadable_token() -> None:
+    with pytest.raises(NotAuthenticated):
+        await user_from_token("kein-token")
 
 
-async def test_token_ohne_kid(idp: FalscherIdp) -> None:
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token(ohne_kid=True))
+async def test_a_token_without_a_kid(idp: FakeIdp) -> None:
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token(ohne_kid=True))
 
 
-async def test_sub_ist_kein_text(idp: FalscherIdp) -> None:
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token(sub=42))
+async def test_sub_is_not_a_string(idp: FakeIdp) -> None:
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token(sub=42))
 
 
-async def test_unbekannter_kid_bleibt_unbekannt(idp: FalscherIdp) -> None:
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token(kid="gibt-es-nicht"))
+async def test_an_unknown_kid_stays_unknown(idp: FakeIdp) -> None:
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token(kid="gibt-es-nicht"))
 
 
-async def test_jwks_wird_nur_einmal_geholt(idp: FalscherIdp) -> None:
+async def test_jwks_is_fetched_only_once(idp: FakeIdp) -> None:
     token = idp.token()
 
-    await nutzer_aus_token(token)
-    aufrufe_danach = len(idp.aufrufe)
-    await nutzer_aus_token(token)
+    await user_from_token(token)
+    aufrufe_danach = len(idp.calls)
+    await user_from_token(token)
 
-    assert len(idp.aufrufe) == aufrufe_danach
-
-
-async def test_neuer_kid_laedt_nach(idp: FalscherIdp) -> None:
-    await nutzer_aus_token(idp.token())
-    vorher = len(idp.aufrufe)
-    idp.drehen(rsa_schluessel(), "schluessel-2")
-
-    nutzer = await nutzer_aus_token(idp.token())
-
-    assert nutzer.sub == "nutzer-1"
-    assert len(idp.aufrufe) > vorher
+    assert len(idp.calls) == aufrufe_danach
 
 
-async def test_abgelaufener_speicher_laedt_neu(idp: FalscherIdp) -> None:
-    speicher = JwksSpeicher(ttl=timedelta(0))
+async def test_a_new_kid_triggers_a_reload(idp: FakeIdp) -> None:
+    await user_from_token(idp.token())
+    vorher = len(idp.calls)
+    idp.rotate(rsa_key(), "schluessel-2")
 
-    await speicher.schluessel(idp.kid)
-    await speicher.schluessel(idp.kid)
+    user = await user_from_token(idp.token())
 
-    assert len([ruf for ruf in idp.aufrufe if ruf.endswith("jwks/")]) == 2
+    assert user.sub == "nutzer-1"
+    assert len(idp.calls) > vorher
 
 
-async def test_discovery_faellt_auf_jwks_zurueck(idp: FalscherIdp) -> None:
+async def test_a_stale_cache_reloads(idp: FakeIdp) -> None:
+    speicher = JwksCache(ttl=timedelta(0))
+
+    await speicher.key(idp.kid)
+    await speicher.key(idp.kid)
+
+    assert len([call for call in idp.calls if call.endswith("jwks/")]) == 2
+
+
+async def test_discovery_falls_back_to_jwks(idp: FakeIdp) -> None:
     idp.discovery = None
 
-    nutzer = await nutzer_aus_token(idp.token())
+    user = await user_from_token(idp.token())
 
-    assert nutzer.sub == "nutzer-1"
-    assert f"{ISSUER}jwks/" in idp.aufrufe
+    assert user.sub == "nutzer-1"
+    assert f"{ISSUER}jwks/" in idp.calls
 
 
-async def test_discovery_ohne_jwks_uri(idp: FalscherIdp) -> None:
+async def test_discovery_without_jwks_uri(idp: FakeIdp) -> None:
     idp.discovery = {"issuer": ISSUER}
 
-    nutzer = await nutzer_aus_token(idp.token())
+    user = await user_from_token(idp.token())
 
-    assert nutzer.sub == "nutzer-1"
+    assert user.sub == "nutzer-1"
 
 
-async def test_jwks_ohne_schluesselliste(idp: FalscherIdp) -> None:
+async def test_jwks_without_a_key_list(idp: FakeIdp) -> None:
     idp.jwks = ["kein", "objekt"]
 
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token())
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token())
 
 
-async def test_jwks_eintrag_ohne_objekt(idp: FalscherIdp) -> None:
-    liste: list[Any] = ["kein-objekt"]
-    idp.jwks = {"keys": liste}
+async def test_a_jwks_entry_that_is_no_object(idp: FakeIdp) -> None:
+    listing: list[Any] = ["kein-objekt"]
+    idp.jwks = {"keys": listing}
 
-    with pytest.raises(AnmeldungFehlt):
-        await nutzer_aus_token(idp.token())
-
-
-@pytest.mark.usefixtures("idp")
-async def test_geschuetzt_ohne_kopfzeile_ist_401() -> None:
-    async with klient(app_mit_schutz()) as ruf:
-        antwort = await ruf.get("/geschuetzt")
-
-    assert antwort.status_code == 401
-    assert antwort.headers["content-type"].startswith("application/problem+json")
-    assert antwort.headers["www-authenticate"] == "Bearer"
-    assert antwort.json()["code"] == "unauthorized"
-
-
-async def test_geschuetzt_mit_falschem_token_ist_401(idp: FalscherIdp) -> None:
-    async with klient(app_mit_schutz()) as ruf:
-        antwort = await ruf.get("/geschuetzt", headers=kopfzeile(idp.token(aud="fremde-app")))
-
-    assert antwort.status_code == 401
-    assert antwort.json()["title"] == "Nicht angemeldet"
-
-
-async def test_geschuetzt_mit_gueltigem_token(idp: FalscherIdp) -> None:
-    async with klient(app_mit_schutz()) as ruf:
-        antwort = await ruf.get("/geschuetzt", headers=kopfzeile(idp.token()))
-
-    assert antwort.status_code == 200
-    assert antwort.json() == {"sub": "nutzer-1"}
+    with pytest.raises(NotAuthenticated):
+        await user_from_token(idp.token())
 
 
 @pytest.mark.usefixtures("idp")
-async def test_offen_ohne_token_bleibt_anonym() -> None:
-    async with klient(app_mit_schutz()) as ruf:
-        antwort = await ruf.get("/offen")
+async def test_guarded_without_a_header_is_401() -> None:
+    async with client(app_with_guard()) as call:
+        response = await call.get("/geschuetzt")
 
-    assert antwort.status_code == 200
-    assert antwort.json() == {"sub": None}
-
-
-async def test_offen_mit_token_kennt_die_person(idp: FalscherIdp) -> None:
-    async with klient(app_mit_schutz()) as ruf:
-        antwort = await ruf.get("/offen", headers=kopfzeile(idp.token()))
-
-    assert antwort.json() == {"sub": "nutzer-1"}
+    assert response.status_code == 401
+    assert response.headers["content-type"].startswith("application/problem+json")
+    assert response.headers["www-authenticate"] == "Bearer"
+    assert response.json()["code"] == "unauthorized"
 
 
-async def test_netzklient_gilt_die_zeitgrenze() -> None:
+async def test_guarded_with_a_wrong_token_is_401(idp: FakeIdp) -> None:
+    async with client(app_with_guard()) as call:
+        response = await call.get("/geschuetzt", headers=auth_header(idp.token(aud="fremde-app")))
+
+    assert response.status_code == 401
+    assert response.json()["title"] == "Nicht angemeldet"
+
+
+async def test_guarded_with_a_valid_token(idp: FakeIdp) -> None:
+    async with client(app_with_guard()) as call:
+        response = await call.get("/geschuetzt", headers=auth_header(idp.token()))
+
+    assert response.status_code == 200
+    assert response.json() == {"sub": "nutzer-1"}
+
+
+@pytest.mark.usefixtures("idp")
+async def test_open_without_a_token_stays_anonymous() -> None:
+    async with client(app_with_guard()) as call:
+        response = await call.get("/offen")
+
+    assert response.status_code == 200
+    assert response.json() == {"sub": None}
+
+
+async def test_open_with_a_token_knows_the_person(idp: FakeIdp) -> None:
+    async with client(app_with_guard()) as call:
+        response = await call.get("/offen", headers=auth_header(idp.token()))
+
+    assert response.json() == {"sub": "nutzer-1"}
+
+
+async def test_the_net_client_carries_the_timeout() -> None:
     # Die einzige Stelle, an der das echte Netz haengt. Jeder andere Test ersetzt sie.
-    async with auth.netzklient() as klient_zum_netz:
-        assert klient_zum_netz.timeout.connect == auth.NETZ_ZEITGRENZE
+    async with auth.net_client() as klient_zum_netz:
+        assert klient_zum_netz.timeout.connect == auth.NET_TIMEOUT

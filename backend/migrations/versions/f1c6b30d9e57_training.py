@@ -14,12 +14,12 @@ down_revision: str | None = "e5b8c1f70a34"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
-TABELLE = "fund"
-SPALTE = "fuer_training"
+TABLE = "fund"
+COLUMN = "fuer_training"
 
 
-def _spalten(name: str) -> set[str]:
-    return {spalte["name"] for spalte in sa.inspect(op.get_bind()).get_columns(name)}
+def _columns(name: str) -> set[str]:
+    return {column["name"] for column in sa.inspect(op.get_bind()).get_columns(name)}
 
 
 def upgrade() -> None:
@@ -29,19 +29,19 @@ def upgrade() -> None:
     hat die Baseline die Spalte schon aus den Modellen gebaut, darum fragt
     dieser Schritt zuerst nach.
     """
-    if SPALTE in _spalten(TABELLE):
+    if COLUMN in _columns(TABLE):
         return
-    with op.batch_alter_table(TABELLE) as stapel:
-        stapel.add_column(
+    with op.batch_alter_table(TABLE) as batch:
+        batch.add_column(
             # Die bestehenden Funde hat niemand freigegeben. Ohne Vorgabe
             # bliebe die Spalte fuer sie leer und die Bedingung waere NULL.
-            sa.Column(SPALTE, sa.Boolean(), nullable=False, server_default=sa.false()),
+            sa.Column(COLUMN, sa.Boolean(), nullable=False, server_default=sa.false()),
         )
 
 
 def downgrade() -> None:
     """Nimmt die Spalte wieder weg."""
-    if SPALTE not in _spalten(TABELLE):
+    if COLUMN not in _columns(TABLE):
         return
-    with op.batch_alter_table(TABELLE) as stapel:
-        stapel.drop_column(SPALTE)
+    with op.batch_alter_table(TABLE) as batch:
+        batch.drop_column(COLUMN)

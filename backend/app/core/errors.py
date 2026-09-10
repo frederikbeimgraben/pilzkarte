@@ -17,9 +17,9 @@ from starlette.responses import JSONResponse
 
 _log: Final = logging.getLogger("pilze.fehler")
 
-MEDIENTYP: Final = "application/problem+json"
+MEDIA_TYPE: Final = "application/problem+json"
 
-TITEL: Final[Mapping[int, str]] = {
+TITLES: Final[Mapping[int, str]] = {
     400: "Fehlerhafte Anfrage",
     401: "Nicht angemeldet",
     403: "Nicht erlaubt",
@@ -44,7 +44,7 @@ CODE: Final[Mapping[int, str]] = {
 }
 
 
-class Feldfehler(BaseModel):
+class FieldError(BaseModel):
     """Ein einzelner Verstoss in der Eingabe."""
 
     field: str
@@ -59,74 +59,74 @@ class Problem(BaseModel):
     status: int
     code: str
     detail: str | None = None
-    errors: list[Feldfehler] | None = None
+    errors: list[FieldError] | None = None
 
 
-def code_fuer(status: int) -> str:
+def code_for(status: int) -> str:
     """Liefert den stabilen Fehlercode zu einem Status."""
     return CODE.get(status, "error")
 
 
-def titel_fuer(status: int) -> str:
+def title_for(status: int) -> str:
     """Liefert den lesbaren Titel zu einem Status."""
-    return TITEL.get(status, "Fehler")
+    return TITLES.get(status, "Fehler")
 
 
-class AppFehler(Exception):
+class AppError(Exception):
     """Ein Fehler, den die App selbst wirft."""
 
     status: ClassVar[int] = 500
-    kopfzeilen: ClassVar[Mapping[str, str]] = {}
+    headers: ClassVar[Mapping[str, str]] = {}
 
     def __init__(self, detail: str | None = None) -> None:
         self.detail = detail
-        super().__init__(detail or titel_fuer(type(self).status))
+        super().__init__(detail or title_for(type(self).status))
 
 
-class AnmeldungFehlt(AppFehler):
+class NotAuthenticated(AppError):
     """Das Token fehlt, ist abgelaufen oder traegt nicht."""
 
     status: ClassVar[int] = 401
     # Ohne diese Kopfzeile weiss ein Client nicht, welches Verfahren er braucht.
-    kopfzeilen: ClassVar[Mapping[str, str]] = {"WWW-Authenticate": "Bearer"}
+    headers: ClassVar[Mapping[str, str]] = {"WWW-Authenticate": "Bearer"}
 
 
-class NichtGefunden(AppFehler):
+class NotFound(AppError):
     """Das angefragte Objekt gibt es nicht, oder es gehoert einem anderen."""
 
     status: ClassVar[int] = 404
 
 
-class Ungueltig(AppFehler):
+class Invalid(AppError):
     """Die Eingabe passt zum Vertrag, aber nicht zu den Regeln der App."""
 
     status: ClassVar[int] = 422
 
 
-class MedientypFalsch(AppFehler):
+class UnsupportedMediaType(AppError):
     """Der Dienst nimmt diesen Medientyp nicht an."""
 
     status: ClassVar[int] = 415
 
 
-class Konflikt(AppFehler):
+class Conflict(AppError):
     """Der Zustand des Objekts laesst diesen Schritt nicht zu."""
 
     status: ClassVar[int] = 409
 
 
-def problem_antwort(
+def problem_response(
     status: int,
     *,
     detail: str | None = None,
-    errors: Sequence[Feldfehler] | None = None,
-    kopfzeilen: Mapping[str, str] | None = None,
+    errors: Sequence[FieldError] | None = None,
+    headers: Mapping[str, str] | None = None,
 ) -> JSONResponse:
     """Baut die problem+json-Antwort zu einem Status."""
-    code = code_fuer(status)
+    code = code_for(status)
     problem = Problem(
         type=f"urn:pilzkarte:fehler:{code}",
-        title=titel_fuer(status),
+        title=title_for(status),
         status=status,
         code=code,
         detail=detail,
@@ -135,55 +135,55 @@ def problem_antwort(
     return JSONResponse(
         status_code=status,
         content=problem.model_dump(exclude_none=True),
-        media_type=MEDIENTYP,
-        headers=dict(kopfzeilen) if kopfzeilen else None,
+        media_type=MEDIA_TYPE,
+        headers=dict(headers) if headers else None,
     )
 
 
-def _feldfehler(rohe: Sequence[Mapping[str, object]]) -> list[Feldfehler]:
-    fehler: list[Feldfehler] = []
-    for eintrag in rohe:
-        ort = cast("Sequence[object]", eintrag.get("loc", ()))
+def _field_errors(raw_errors: Sequence[Mapping[str, object]]) -> list[FieldError]:
+    error: list[FieldError] = []
+    for entry in raw_errors:
+        place = cast("Sequence[object]", entry.get("loc", ()))
         # Das erste Glied nennt nur die Quelle (body, query, path). Der Rest ist
         # der Weg zum Feld und das, was das Frontend anzeigen kann.
-        feld = ".".join(str(teil) for teil in list(ort)[1:]) or str(eintrag.get("type", "eingabe"))
-        fehler.append(Feldfehler(field=feld, message=str(eintrag.get("msg", ""))))
-    return fehler
+        field = ".".join(str(part) for part in list(place)[1:]) or str(entry.get("type", "eingabe"))
+        error.append(FieldError(field=field, message=str(entry.get("msg", ""))))
+    return error
 
 
-async def _app_fehler(_: Request, exc: Exception) -> Response:
-    fehler = cast("AppFehler", exc)
-    return problem_antwort(
-        type(fehler).status,
-        detail=fehler.detail,
-        kopfzeilen=type(fehler).kopfzeilen,
+async def _app_error(_: Request, exc: Exception) -> Response:
+    error = cast("AppError", exc)
+    return problem_response(
+        type(error).status,
+        detail=error.detail,
+        headers=type(error).headers,
     )
 
 
-async def _validierungsfehler(_: Request, exc: Exception) -> Response:
-    fehler = cast("RequestValidationError", exc)
-    rohe = cast("Sequence[Mapping[str, object]]", fehler.errors())
-    return problem_antwort(
+async def _validation_error(_: Request, exc: Exception) -> Response:
+    error = cast("RequestValidationError", exc)
+    raw_errors = cast("Sequence[Mapping[str, object]]", error.errors())
+    return problem_response(
         422,
         detail="Die Anfrage passt nicht zum Vertrag.",
-        errors=_feldfehler(rohe),
+        errors=_field_errors(raw_errors),
     )
 
 
-async def _http_fehler(_: Request, exc: Exception) -> Response:
-    fehler = cast("StarletteHTTPException", exc)
-    return problem_antwort(fehler.status_code, detail=fehler.detail, kopfzeilen=fehler.headers)
+async def _http_error(_: Request, exc: Exception) -> Response:
+    error = cast("StarletteHTTPException", exc)
+    return problem_response(error.status_code, detail=error.detail, headers=error.headers)
 
 
-async def _unbehandelt(_: Request, exc: Exception) -> Response:
+async def _unhandled(_: Request, exc: Exception) -> Response:
     # Die Ursache gehoert ins Journal, nicht in die Antwort.
     _log.exception("Unbehandelter Fehler", exc_info=exc)
-    return problem_antwort(500, detail="Der Dienst konnte die Anfrage nicht bearbeiten.")
+    return problem_response(500, detail="Der Dienst konnte die Anfrage nicht bearbeiten.")
 
 
-def fehlerbehandlung_registrieren(app: FastAPI) -> None:
+def register_error_handlers(app: FastAPI) -> None:
     """Haengt die Handler in die App. Danach ist jede Fehlerantwort problem+json."""
-    app.add_exception_handler(AppFehler, _app_fehler)
-    app.add_exception_handler(RequestValidationError, _validierungsfehler)
-    app.add_exception_handler(StarletteHTTPException, _http_fehler)
-    app.add_exception_handler(Exception, _unbehandelt)
+    app.add_exception_handler(AppError, _app_error)
+    app.add_exception_handler(RequestValidationError, _validation_error)
+    app.add_exception_handler(StarletteHTTPException, _http_error)
+    app.add_exception_handler(Exception, _unhandled)
