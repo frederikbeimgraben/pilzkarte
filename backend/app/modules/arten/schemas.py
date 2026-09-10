@@ -25,6 +25,9 @@ class Stufe(StrEnum):
     VORHERSAGE = "vorhersage"
     SAISON = "saison"
     PROFIL = "profil"
+    # Eine Art, die nur im Katalog steht, weil man eine sammelbare mit ihr
+    # verwechselt. Sie traegt keine Saisonkurve und keine Karte.
+    VERWECHSLUNG = "verwechslung"
 
 
 class Gruppe(StrEnum):
@@ -87,6 +90,22 @@ class Baumart(StrEnum):
     OBSTBAUM = "obstbaum"
 
 
+class Reagenz(StrEnum):
+    """Die Chemikalien, mit denen ein Bestimmer eine Farbreaktion auslöst."""
+
+    KOH = "koh"
+    NAOH = "naoh"
+    FESO4 = "feso4"
+    GUAJAK = "guajak"
+    MELZER = "melzer"
+    ANILIN = "anilin"
+    PHENOL = "phenol"
+    AMMONIAK = "ammoniak"
+    SULFOVANILLIN = "sulfovanillin"
+    FORMALIN = "formalin"
+    SCHAEFFER = "schaeffer"
+
+
 class Jahreszeit(StrEnum):
     """Wann eine Art fruchtet."""
 
@@ -130,6 +149,7 @@ class MerkmalSchluessel(StrEnum):
     GERUCH = "geruch"
     GESCHMACK = "geschmack"
     SPORENPULVER = "sporenpulver"
+    REAGENZIEN = "reagenzien"
     VORKOMMEN = "vorkommen"
     ZEIT = "zeit"
     SPEISEWERT = "speisewert"
@@ -142,11 +162,24 @@ type Tag = Stufe | Gruppe | Jahreszeit | Baumart
 
 
 class Verwechslung(BasisModell):
-    """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal."""
+    """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
 
-    name: str
-    merkmal: str
+    ``slug`` zeigt auf das eigene Profil der Art, wenn es eines gibt. Das
+    Frontend verlinkt darauf, damit man die Verwechslung nachschlagen kann,
+    statt sie nur genannt zu bekommen.
+    """
+
+    name: str = Field(min_length=1)
+    merkmal: str = Field(min_length=1)
     essbar: Essbarkeit
+    slug: str | None = None
+
+
+class Reagenzeintrag(BasisModell):
+    """Eine Chemikalie und die Farbe, die sie am Pilz hervorruft."""
+
+    reagenz: Reagenz
+    reaktion: str = Field(min_length=1)
 
 
 class Verweis(BasisModell):
@@ -156,6 +189,18 @@ class Verweis(BasisModell):
     url: str
 
 
+class Quelle(BasisModell):
+    """Woher die Angaben eines Profils stammen und wann sie geprueft wurden.
+
+    Die Texte sind selbst formuliert, die Fakten nicht selbst erfunden. Wer ein
+    Merkmal anzweifelt, findet unter ``url`` die Seite, gegen die es zuletzt
+    geprueft wurde.
+    """
+
+    url: str
+    geprueft_am: str = Field(pattern=r"^\d{4}-\d{2}-\d{2}$")
+
+
 class Profil(BasisModell):
     """Eine Datei unter ``daten/arten/<slug>.toml``.
 
@@ -163,19 +208,42 @@ class Profil(BasisModell):
     anders heisst als der Slug.
     """
 
-    name: str
-    lateinisch: str
+    name: str = Field(min_length=1)
+    lateinisch: str = Field(min_length=1)
     gruppe: Gruppe
     speisewert: Essbarkeit
     geschuetzt: bool
     jahreszeiten: list[Jahreszeit] = Field(min_length=1)
     baeume: list[Baumart]
+    sammelbar: bool = True
     karte: str | None = None
     speisewert_hinweis: str | None = None
     schutz_hinweis: str | None = None
+    # Pflicht, sobald alle Profile geprueft sind. Bis dahin darf ein noch
+    # ungeprueftes Profil die Quelle weglassen.
+    quelle: Quelle | None = None
+    reagenzien: list[Reagenzeintrag] = Field(default_factory=list["Reagenzeintrag"])
     merkmale: dict[MerkmalSchluessel, str]
     verwechslungen: list[Verwechslung] = Field(min_length=1)
     links: list[Verweis] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def _keine_karte_ohne_sammeln(self) -> "Profil":
+        # Eine Verwechslungsart traegt kein Modell. Ein Manifest waere ein
+        # Tippfehler, und die Stufe wuerde davon nicht vorhersage.
+        if not self.sammelbar and self.karte:
+            raise ValueError("Eine nicht sammelbare Art hat keine Karte.")
+        return self
+
+    @field_validator("merkmale")
+    @classmethod
+    def _keine_leere_zeile(cls, wert: dict[MerkmalSchluessel, str]) -> dict[MerkmalSchluessel, str]:
+        # Eine leere Zeile in der Merkmalstabelle sieht aus wie ein Fehler der
+        # App. Fehlt die Angabe, laesst man den Schluessel ganz weg.
+        leer = [schluessel for schluessel, text in wert.items() if not text.strip()]
+        if leer:
+            raise ValueError(f"Diese Merkmale sind leer: {', '.join(sorted(leer))}.")
+        return wert
 
     @field_validator("merkmale")
     @classmethod
@@ -197,9 +265,14 @@ class Profil(BasisModell):
     @field_validator("merkmale")
     @classmethod
     def _selbst_gesetzt(cls, wert: dict[MerkmalSchluessel, str]) -> dict[MerkmalSchluessel, str]:
-        # Speisewert und Schutz stellt der Dienst aus den Enums zusammen. Stuende
-        # beides auch als Text in der Datei, koennten die zwei auseinanderlaufen.
-        gesetzt = {MerkmalSchluessel.SPEISEWERT, MerkmalSchluessel.SCHUTZ} & set(wert)
+        # Speisewert, Schutz und Reagenzien stellt der Dienst aus den Enums
+        # zusammen. Stuenden sie auch als Text in der Datei, koennten Anzeige
+        # und Filterwert auseinanderlaufen.
+        gesetzt = {
+            MerkmalSchluessel.SPEISEWERT,
+            MerkmalSchluessel.SCHUTZ,
+            MerkmalSchluessel.REAGENZIEN,
+        } & set(wert)
         if gesetzt:
             raise ValueError(f"Diese Merkmale setzt der Dienst: {', '.join(sorted(gesetzt))}.")
         return wert
@@ -299,10 +372,11 @@ class ArtKurz(BasisModell):
     geschuetzt: bool
     speisewert: Essbarkeit
     karten_slug: str | None
+    sammelbar: bool
     vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
-    saison: SaisonKurz
+    saison: SaisonKurz | None
 
 
 class Art(BasisModell):
@@ -317,13 +391,14 @@ class Art(BasisModell):
     geschuetzt: bool
     speisewert: Essbarkeit
     karten_slug: str | None
+    sammelbar: bool
     vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
     merkmale: list[Merkmal]
     verwechslungen: list[Verwechslung]
     links: list[Verweis]
-    saison: SaisonKurve
+    saison: SaisonKurve | None
 
 
 class ArtenListe(BasisModell):
