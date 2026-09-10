@@ -1,0 +1,54 @@
+name = "Semmelporling"
+lateinisch = "Albatrellus confluens"
+gruppe = "porling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Roh unverträglich und rasch bitter. Nur ganz junge Fruchtkörper verwenden. In Deutschland gefährdet."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Semmelporling0804.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch lila verfärbend."
+
+[merkmale]
+hut = "3 bis 18, selten bis 30 cm breit, semmelgelb, orangebraun bis gelbrötlich, beim Trocknen ziegelrot, Oberfläche glatt und matt, Rand scharf eingebogen, alt aufreißend."
+poren = "Grünweißlich, später gelb bis orangelila mit gelbbraunen Flecken."
+stiel = "Weißlich, strunkartig, mehrere Stiele oft miteinander verwachsen."
+fleisch = "Weiß bis cremefarben, fest und brüchig."
+geruch = "Angenehm pilzig."
+geschmack = "Schnell bitterlich, nur ganz junge Exemplare mild."
+sporenpulver = "Weiß."
+vorkommen = "Meist im Nadelwald auf saurem Boden, vermutlich Symbiosepilz, nach anderen Autoren auch Folgezersetzer. Kann im Mischwald zusammen mit Schafporlingen auftreten. In Deutschland gefährdet."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Schafporling"
+merkmal = "Hut weißlich bis cremefarben, Fruchtkörper meist einzeln statt stark verwachsen, Fleisch mild."
+essbar = "bedingtEssbar"
+slug = "schafporling"
+
+[[verwechslungen]]
+name = "Rötender Schafeuterporling"
+merkmal = "Fleisch rötet bei Verletzung und im Alter."
+essbar = "speisepilz"
+slug = "roetender-schafeuterporling"
+
+[[verwechslungen]]
+name = "Weißer Knochenporling"
+merkmal = "Fruchtkörper weiß, Fleisch hart und zäh wie Kork."
+essbar = "ungeniessbar"
+slug = "weisser-knochenporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Semmelporling0804.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Semmel-Porling"

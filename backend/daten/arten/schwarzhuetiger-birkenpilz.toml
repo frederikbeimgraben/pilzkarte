@@ -1,0 +1,46 @@
+name = "Schwarzhütiger Birkenpilz"
+lateinisch = "Leccinum melaneum"
+gruppe = "raufussroehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+speisewertHinweis = "Guter Speisepilz, als Raufußröhrling aber besonders geschützt. Nur wenige Stücke für den Eigenbedarf nehmen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerBirkenpilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 10, selten bis 12 cm breit, dunkel schwarzbraun, dunkel rotbraun bis graubraun, feinsamtig, feucht etwas schmierig."
+roehren = "Weißlich, später grau bis schmutzig gelblich, wenig rostfleckig, im Alter sehr schwabbelig, leicht ablösbar, ausgebuchtet angewachsen."
+stiel = "Schmutzig weiß, nach oben grauend, mit schwarzbraunen Schuppen, Basis keulig und dunkler, oft schwarz."
+fleisch = "Weißlich, unter der Huthaut und der Stielrinde gelblich, in der Stielbasis faserig holzig."
+geruch = "Neutral."
+geschmack = "Mild."
+sporenpulver = "Braunoliv."
+vorkommen = "Symbiosepilz bei Birke. Selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Vielverfärbender Birkenpilz"
+merkmal = "Fleisch im Schnitt rosa, dann grau bis schwärzlich verfärbend."
+essbar = "speisepilz"
+slug = "vielverfaerbender-birkenpilz"
+
+[[verwechslungen]]
+name = "Rötender Birkenpilz"
+merkmal = "Fleisch im Schnitt deutlich rötend, vor allem im Stiel."
+essbar = "essbar"
+slug = "roetender-birkenpilz"
+
+[[verwechslungen]]
+name = "Hainbuchenröhrling"
+merkmal = "Hut ocker- bis graubraun und im Alter runzelig, bei Hainbuche, Fleisch rötend."
+essbar = "speisepilz"
+slug = "hainbuchenroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerBirkenpilz.htm"

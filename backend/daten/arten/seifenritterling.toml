@@ -1,0 +1,38 @@
+name = "Seifenritterling"
+lateinisch = "Tricholoma saponaceum"
+gruppe = "ritterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur leicht giftig, dazu bitter. Er verrät sich durch den Geruch nach Seifenlauge und das rötende Fleisch, vor allem an der Stielbasis."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SeifenritterlingGiftig1004.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 12, selten bis 15 cm breit, sehr vielgestaltig in Farbe und Form: grau, gelb, orangegelb, graubraun bis schwarzbraun, meist feinschuppig auf hellem Grund."
+lamellen = "Schmutzig weißlich bis gelblich, am Stiel ausgebuchtet und untermischt angewachsen."
+stiel = "Oft spindelig verdreht, schmutzig bräunlich bis gelblich."
+fleisch = "Weißlich bis gelblich, an verletzten Stellen meist rötend, besonders stark an der Stielbasis."
+geruch = "Nach Seifenlauge, teilweise geruchlos."
+geschmack = "Bitterlich, mehlig."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald, einzeln oder teils büschelig."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Schwarzschuppiger Erdritterling"
+merkmal = "Hut grauschwarz und wollig schuppig, Fleisch rötet nicht, Geruch mehlartig."
+essbar = "giftig"
+slug = "schwarzschuppiger-erdritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SeifenritterlingGiftig1004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Seifen-Ritterling"

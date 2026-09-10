@@ -1,0 +1,42 @@
+name = "Sklerotienporling"
+lateinisch = "Polyporus tuberaster"
+gruppe = "porling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur junge Fruchtkörper verwenden, ältere werden zäh. Der leicht bittere Geschmack verliert sich beim Zubereiten."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Sklerotienporling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Poren leicht gelblich."
+
+[merkmale]
+hut = "2 bis 6, selten bis 9 cm breit, meist kreisrund, bräunlich, blass ockerlich bis orangebraun, auf hellem weißlichem bis gelbem Grund mit dunkleren braunen Schuppen. Rand dünn, meist weißlich und bewimpert."
+poren = "Weißlich bis hell cremeweiß, eckig, herablaufend, 0,5 bis 1,5 Poren je Millimeter."
+stiel = "Weißlich, bräunlich bis gelbbraun, schuppig, überwiegend zentral. Basis oft filzig, aber nicht schwarz wie beim Schuppigen Porling."
+fleisch = "Weißlich, zäh."
+geruch = "Würzig, pilzig."
+geschmack = "Leicht bitterlich, das verliert sich beim Zubereiten."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer, teils Parasit, meist an umgefallenen und leicht verrotteten Laubholzästen und Stämmen, auch an abgestorbenen Bereichen am Baum. Löst Weißfäule aus."
+zeit = "Frühling bis Herbst."
+
+[[verwechslungen]]
+name = "Schuppiger Porling"
+merkmal = "Deutlich größer, Hut mit groben braunen Schuppen, Stielbasis schwarz."
+essbar = "bedingtEssbar"
+slug = "schuppiger-porling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Sklerotienporling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Sklerotien-Stielporling"

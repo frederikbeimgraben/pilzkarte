@@ -1,0 +1,50 @@
+name = "Schweinsohr"
+lateinisch = "Gomphus clavatus"
+gruppe = "leistling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Besonders geschützt und in Deutschland gefährdet. Nicht sammeln."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Schweinsohr.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "3 bis 12, selten bis 15 cm breit, violett, im Alter bräunlich, abgeplattet keulenförmig, später trichterförmig, glatt und kahl."
+leisten = "Oft kaum wahrnehmbar, fest mit dem Fleisch verbunden, lilabraun wie der Fruchtkörper."
+stiel = "Violett, im Alter bräunlich, kurz, zur Basis verjüngt."
+fleisch = "Weiß bis blass lila, marmoriert, dick und weich."
+geruch = "Neutral bis würzig, meist kaum charakteristisch."
+geschmack = "Mild."
+sporenpulver = "Ockergelb bis ockerbraun."
+vorkommen = "Symbiosepilz im Mischwald, kalkliebend. Regional meist selten, in Deutschland gefährdet."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Purpuroranger Afterleistling"
+merkmal = "Trichter orange bis rötlich, Oberfläche grob schuppig, ohne Violett."
+essbar = "giftig"
+slug = "purpuroranger-afterleistling"
+
+[[verwechslungen]]
+name = "Verbogener Leistling"
+merkmal = "Kleiner und dünnfleischig, Hut graubraun bis oliv, Leisten hell, ohne Violett."
+essbar = "speisepilz"
+slug = "verbogener-leistling"
+
+[[verwechslungen]]
+name = "Kupferroter Gelbfuß"
+merkmal = "Hut kupferrot bis orangebraun, Leisten weinrötlich, Stielbasis leuchtend gelb."
+essbar = "speisepilz"
+slug = "kupferroter-gelbfuss"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schweinsohr.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schweinsohr_(Pilz)"

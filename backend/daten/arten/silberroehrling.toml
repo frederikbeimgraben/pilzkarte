@@ -1,0 +1,50 @@
+name = "Silberröhrling"
+lateinisch = "Butyriboletus fechtneri"
+gruppe = "roehrling"
+speisewert = "essbar"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Laut Bundesartenschutzgesetz vollständig geschützt und in Deutschland stark gefährdet. Nicht sammeln."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Silberroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 15, selten bis 19 cm breit, milchkaffeebraun, silbergrau bis rotbraun, alt graubraun, seidig und trocken, ohne violette Farben, halbkugelig bis polsterförmig, Rand uneben."
+roehren = "Gelb, zitronengelb bis goldgelb, bei Verletzung blauend, etwas herablaufend."
+stiel = "Grund gelblich mit feinem weißem oder rosa Netz, Basis etwas rötlich, bauchig bis keulig."
+fleisch = "Gelblich mit blassblauem bis grünlichblauem Schimmer, im Schnitt lagunenblau verfärbend, in der Stielbasis rötlich. Nach einigen Stunden verblasst das Blau zu einem trüben Gelb."
+geruch = "Angenehm nussig, nach Marzipan."
+geschmack = "Mild, nussig."
+sporenpulver = "Braunoliv."
+vorkommen = "Symbiosepilz in Laub- und Auwäldern, gern bei Buche und Eiche, auf kalkreichem Boden. Selten und in Deutschland stark gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Wurzelnder Bitterröhrling"
+merkmal = "Hut grau bis graubraun, Geschmack bitter, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
+essbar = "giftig"
+slug = "wurzelnder-bitterroehrling"
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch sofort blauend, Geschmack bitter."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Königsröhrling"
+merkmal = "Hut rosa bis karminrot, Fleisch nur schwach blauend."
+essbar = "essbar"
+slug = "koenigsroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Silberroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Silber-Röhrling"

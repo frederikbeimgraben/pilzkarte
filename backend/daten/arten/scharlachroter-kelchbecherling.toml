@@ -1,0 +1,37 @@
+name = "Scharlachroter Kelchbecherling"
+lateinisch = "Sarcoscypha coccinea"
+gruppe = "becherling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["weide", "pappel"]
+speisewertHinweis = "Ohne Speisewert, 123pilze gibt die relative Wertigkeit 5. In Deutschland gefährdet, darum stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Prachtbecherling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "1 bis 7, selten bis 15 cm breit, kelch- bis schüsselförmig. Innenseite zinnoberrot, Außenseite blasser rötlich weiß und kleiig, der untere Teil ganz weiß und filzig haarig. An der Grenze von Ober- und Unterseite ein weißer Rand."
+stiel = "Weißlich bis gelblich, Spitze rötlich, kurz, manchmal etwas länger."
+fleisch = "Weißlich bis hell gelblich mit roter Innenschicht, dünn, wachsartig."
+geruch = "Neutral, unbedeutend."
+geschmack = "Neutral, mild."
+sporenpulver = "Weiß bis farblos."
+vorkommen = "Folgezersetzer an Laubholzästen und vergrabenem Holz, meist bei Erle, Weide und Espe, gern auf kalkreichem, sandigem Boden. In Deutschland gefährdet."
+zeit = "Winter bis Mai."
+
+[[verwechslungen]]
+name = "Linden-Kelchbecherling"
+merkmal = "Wächst an Linde, Innenseite etwas blasser rot."
+essbar = "ohneSpeisewert"
+slug = "linden-kelchbecherling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Prachtbecherling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Scharlachroter_Kelchbecherling"

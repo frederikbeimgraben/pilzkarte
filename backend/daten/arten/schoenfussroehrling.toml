@@ -1,0 +1,50 @@
+name = "Schönfußröhrling"
+lateinisch = "Caloboletus calopus"
+gruppe = "roehrling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Giftig und dazu bitter. Kennzeichen sind der lehmgraue samtige Hut, der zur Basis rote Stiel mit Netz und das sofort blauende Fleisch."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Schoenfussroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 12, selten bis 18 cm breit, lehmgrau bis tonfarben, trocken und samtig, unregelmäßig wellig, Rand überstehend."
+roehren = "Gelblich, auf Druck blauend, ausgebuchtet angewachsen, mit feinen Mündungen."
+stiel = "Leicht keulig und dickfüßig, Spitze gelblich, zur Basis rötlich werdend, mit weißem, gelbem bis braunrotem Netz. Basis braungelb mit rötlicher Zone, teils wurzelnd."
+fleisch = "Weißlich bis leicht gelblich, sofort leicht bis stark blauend, alt zur Basis etwas rötend."
+geruch = "Säuerlich unangenehm, etwas muffig mit Essignote, ähnlich einem Textmarker."
+geschmack = "Bitter, manchmal fast mild."
+sporenpulver = "Olivbraun bis ockeroliv."
+vorkommen = "Symbiosepilz im Mischwald, gern im Nadelwald, auf saurem, nährstoffarmem Boden."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Fleisch blaut nicht, Geschmack sehr bitter."
+essbar = "giftig"
+slug = "gallenroehrling"
+
+[[verwechslungen]]
+name = "Wurzelnder Bitterröhrling"
+merkmal = "Hut grau bis weißgrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
+essbar = "giftig"
+slug = "wurzelnder-bitterroehrling"
+
+[[verwechslungen]]
+name = "Satansröhrling"
+merkmal = "Hut weißlich bis hellgrau, Röhrenmündungen karminrot, Stiel bauchig mit rotem Netz."
+essbar = "giftig"
+slug = "satansroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Schoenfussroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schönfuß-Röhrling"
