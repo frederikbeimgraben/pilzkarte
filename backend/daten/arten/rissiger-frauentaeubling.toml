@@ -1,0 +1,58 @@
+name = "Rissiger Frauentäubling"
+lateinisch = "Russula cutefracta"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Guter Speisepilz. Er ist selten und steht in der Schweiz auf der Vorwarnliste."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RissigerFrauentaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Auf dem Stiel zuerst negativ, nach einiger Zeit schwach schmutzig gruen, vollstaendig gruen erst nach Stunden."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Positiv in 15 bis 30 Sekunden."
+
+[merkmale]
+hut = "3 bis 12, selten bis 14 cm breit, violett-lilafarben, olivgruen bis dunkel olivgruen, braun, blau oder lila, marmoriert fleckig. Huthaut meist glanzlos und rissig-gefeldert."
+lamellen = "Weiss, gerade angewachsen, oft gegabelt, biegsam und nicht brechend."
+stiel = "3 bis 10, selten bis 12 cm hoch und 1 bis 3, selten bis 4 cm dick, weiss, voll und fest, im Alter schwammig."
+fleisch = "Weiss, ohne Verfaerbung, bruechig."
+geruch = "Neutral."
+geschmack = "Mild, angenehm, nussartig."
+sporenpulver = "Weiss."
+vorkommen = "Symbiosepilz im Mischwald, im Bergland haeufiger im Nadelwald. Die Seite nennt keine Baumart. Selten."
+zeit = "Fruehsommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Gruengefelderter Taeubling"
+merkmal = "Hut grasgruen bis graugruen, Huthaut feldrig aufgerissen, Lamellen bruechig."
+essbar = "speisepilz"
+slug = "gruengefelderter-taeubling"
+
+[[verwechslungen]]
+name = "Olivfarbener Frauentaeubling"
+merkmal = "Huthaut glatt statt rissig, Hut einfarbig olivfarben."
+essbar = "speisepilz"
+slug = "olivfarbener-frauentaeubling"
+
+[[verwechslungen]]
+name = "Grasgruener Taeubling"
+merkmal = "Hut gleichmaessig grasgruen, Huthaut nicht gefeldert."
+essbar = "speisepilz"
+slug = "grasgruener-taeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RissigerFrauentaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Frauen-Täubling"

@@ -1,0 +1,39 @@
+name = "Runzelige Fingerhutverpel"
+lateinisch = "Verpa cerebriformis"
+gruppe = "morchel"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling"]
+baeume = []
+speisewertHinweis = "Roh giftig. Nur gut durchgegart verwenden und das Kochwasser weggiessen. Er ist selten und sollte besser stehen bleiben."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RunzeligeVerpel.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 3, selten bis 4 cm breit und 1 bis 5, selten bis 8 cm hoch, kastanienbraun bis rotbraun, stark hirnartig gerunzelt mit Querrillen und Rippen. Unterseite ockerlich weisslich, jung eifoermig."
+stiel = "Weisslich bis hellbraeunlich oder ockerbraeunlich, feinkoernig, oft braunkoernig genattert geschuppt, hohl."
+fleisch = "Weisslich, wachsartig, bruechig."
+geruch = "Unbedeutend."
+geschmack = "Neutral bis mild, roh giftig."
+sporenpulver = "Weiss."
+vorkommen = "Folgezersetzer in Auen und Flussauen. Selten, in der Schweiz potenziell gefaehrdet."
+zeit = "Fruehling, April bis Mai."
+
+[[verwechslungen]]
+name = "Kaeppchenmorchel"
+merkmal = "Hut glockig, glatt bis laengsrunzelig, nur am Scheitel mit dem Stiel verwachsen."
+essbar = "bedingtEssbar"
+slug = "kaeppchenmorchel"
+
+[[verwechslungen]]
+name = "Speisemorchel"
+merkmal = "Hut mit wabenartigen Gruben, Hut und Stiel sind zu einem durchgehenden Hohlraum verwachsen."
+essbar = "bedingtEssbar"
+slug = "speisemorchel"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RunzeligeVerpel.htm"

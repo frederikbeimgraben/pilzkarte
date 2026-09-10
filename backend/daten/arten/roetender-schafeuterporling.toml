@@ -1,0 +1,46 @@
+name = "Rötender Schafeuterporling"
+lateinisch = "Albatrellus subrubescens"
+gruppe = "porling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Roh unvertraeglich, deshalb gut durchgaren. Alte Fruchtkoerper koennen bitterlich werden."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RoetenderSchafporling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 18, selten bis 30 cm breit, weiss, spaeter gelblich, fleischrosa, rosa bis schmutzig weiss. Nach dem Reiben gelblich, teils etwas roetend, filzig, aufreissend, im Alter mit Schuppchen."
+poren = "Weiss bis gruenweisslich, gilbend, rundlich bis eckig."
+stiel = "Weisslich, bei Verletzung stark gilbend und etwas roetend, oft mit graubraunen, gelbbraunen bis orangeroten Flecken. Meist deutlich laenger als beim Semmelporling, voll, fein filzig, zur Basis verjuengt."
+fleisch = "Weiss, fest und bruechig, Druckstellen roetend und gilbend. Er wird im Alter langsamer bitterlich als der Semmelporling."
+geruch = "Angenehm pilzig."
+geschmack = "Fast nur mild, erst im hohen Alter vereinzelt bitterlich."
+sporenpulver = "Weiss, transparent."
+vorkommen = "Im Mischwald ueberwiegend bei Nadelbaeumen, vor allem Fichte, auf Nadelstreu oder nacktem Boden, haeufiger auf saurem oder neutralem Boden. Vermutlich Symbiosepilz, nach einigen Autoren auch Folgezersetzer."
+zeit = "Sommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Zitronenporling"
+merkmal = "Fleisch und Oberflaeche verfaerben zitronengelb, ohne zu roeten, bei Fichte auf kalkreichem Boden."
+essbar = "speisepilz"
+slug = "zitronenporling"
+
+[[verwechslungen]]
+name = "Schafporling"
+merkmal = "Hut weiss bis cremefarben, Fleisch gilbt nur und roetet nicht."
+essbar = "bedingtEssbar"
+slug = "schafporling"
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Hut semmelgelb bis orangebraun, Stiel deutlich kuerzer, im Alter schneller bitter."
+essbar = "speisepilz"
+slug = "semmelporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RoetenderSchafporling.htm"

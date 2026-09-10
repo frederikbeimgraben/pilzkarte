@@ -1,0 +1,38 @@
+name = "Rötender Erdritterling"
+lateinisch = "Tricholoma orirubens"
+gruppe = "ritterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Giftig und wie alle Erdritterlinge verdaechtig. Er ist an den bei Verletzung roetenden Lamellen und der blaugruenen bis rosaroten Stielbasis zu erkennen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RoetenderErd-Ritterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 8, selten bis 11 cm breit, braun bis graubraun und sehr variabel: heller Grund mit grauen bis schwaerzlichen feinen Schuppen, Mitte dunkler, leicht buckelig, Rand heller und etwas gilbend."
+lamellen = "Grauweisslich, ausgebuchtet angewachsen, etwas roetlich schimmernd, bei Verletzung roetend."
+stiel = "3 bis 7, selten bis 9 cm lang und 3 bis 8, selten bis 12 mm dick, weisslich mit dunklen Fasern, Basis blaugruen, rosarot bis eosinrot, mit weissem Myzel."
+fleisch = "Weisslich, blassgelb bis cremegelb, bei Verletzung spaeter roetlich verfaerbend, faserig. Hut- und Stielfleisch etwas abgesetzt."
+geruch = "Unauffaellig bis mehlig."
+geschmack = "Mehlig, mild."
+sporenpulver = "Weiss."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Buchen, auf kalkreichem Boden. Selten."
+zeit = "Normalerweise Herbst bis Spaetherbst, selten im Fruehling von April bis Juni."
+
+[[verwechslungen]]
+name = "Gilbender Erdritterling"
+merkmal = "Fleisch und Lamellen gilben, statt zu roeten, Stielbasis ohne blaugruene Toene."
+essbar = "giftig"
+slug = "gilbender-erdritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RoetenderErd-Ritterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Rötender_Erd-Ritterling"

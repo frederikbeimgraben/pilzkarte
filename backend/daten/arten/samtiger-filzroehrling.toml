@@ -1,0 +1,50 @@
+name = "Samtiger Filzröhrling"
+lateinisch = "Xerocomus lanatus"
+gruppe = "roehrling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Guter Speisepilz, in der Schweiz aber nicht marktfaehig."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SamtigerFilzroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Huthaut gruenblau."
+
+[merkmale]
+hut = "4 bis 9, selten bis 12 cm breit, graubraun bis rotbraun, filzig, unter der Huthaut leicht rosalich."
+roehren = "Chromgelb, gelegentlich leicht blauend, am Stiel ausgebuchtet."
+stiel = "Gelblich mit braeunlicher Netzzeichnung von der Mitte bis zur Spitze, lang, schlank und verdreht, im Mittelbereich braunfleckig. Basis verdickt und meist heller, darunter zugespitzt."
+fleisch = "Hellgelblich, leicht blauend, an der Basis gelblich bis gruenblau verfaerbend."
+geruch = "Leicht nach Schwefel, besonders beim Trocknen."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz im Laubwald, besonders gern bei Buchen und Eichen."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Brauner Filzroehrling"
+merkmal = "Stiel ohne Netzzeichnung, Hut olivbraun, Fleisch kaum blauend."
+essbar = "speisepilz"
+slug = "brauner-filzroehrling"
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Hut olivbraun bis gelbbraun und samtig, Stiel ohne Netz, unter der Huthaut nicht rosa."
+essbar = "speisepilz"
+slug = "ziegenlippe"
+
+[[verwechslungen]]
+name = "Rotfussroehrling"
+merkmal = "Stiel rot beflockt, Fleisch unter der Huthaut roetlich, Huthaut oft feldrig aufgerissen."
+essbar = "essbar"
+slug = "rotfussroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SamtigerFilzroehrling.htm"

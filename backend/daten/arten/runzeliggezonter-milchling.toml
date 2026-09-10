@@ -1,0 +1,40 @@
+name = "Runzeliggezonter Milchling"
+lateinisch = "Lactifluus rugatus"
+gruppe = "milchling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "kiefer"]
+speisewertHinweis = "Essbar, in Mitteleuropa aber kaum zu finden. Sehr alte Fruchtkoerper riechen fischartig und sind dann nicht mehr essbar."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RunzeligerMilchling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 10, selten bis 13 cm breit, orangebraun, rotbraun bis orangefuchsig, Mitte eingedrueckt, Rand runzelig und gezahnt, jung eingebogen, spaeter ausgebreitet."
+lamellen = "Weisslich, spaeter cremeweiss, dick, gegabelt, leicht herablaufend, bei Verletzung nicht braeunend."
+milch = "Weiss und mild."
+stiel = "Orangebraun, rotbraun bis orangefuchsig wie der Hut, aber meist heller, bereift."
+fleisch = "Weiss, leicht braeunend, fest und bruechig."
+geruch = "Schwach und fast neutral, etwas nach Artischocken. Nur sehr alt fischartig."
+geschmack = "Mild, angenehm pilzig, etwas nach Haselnuss."
+sporenpulver = "Cremeweiss."
+vorkommen = "Waermeliebender Symbiosepilz im Laubwald, gern in Kork- und Steineichenwaeldern, vereinzelt unter Pinien, auf kalkreichem Boden. Meist nur im Mittelmeerraum."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Milder Schwefelmilchling"
+merkmal = "Milch verfaerbt an der Luft schwefelgelb."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Rotbrauner Milchling"
+merkmal = "Nach etwa einer Minute extrem scharf, Geruch harzig, bei Nadelholz."
+essbar = "ungeniessbar"
+slug = "rotbrauner-milchling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RunzeligerMilchling.htm"

@@ -1,0 +1,54 @@
+name = "Ringloser Butterröhrling"
+lateinisch = "Suillus collinitus"
+gruppe = "schmierroehrling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "kiefer"]
+speisewertHinweis = "Essbar, aber ohne Wert. Die Schweiz fuehrt ihn als nicht marktfaehig, 123pilze gibt nur Wertigkeit 4."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RingloserButterpilz.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Lachsrosa verfaerbend."
+
+[merkmale]
+hut = "4 bis 12, selten bis 14 cm breit, braun, rotbraun bis kastanienbraun, eingewachsen faserig und glaenzend, feucht schleimig bis schmierig."
+roehren = "Gelb, am Stiel ausgebuchtet angewachsen."
+stiel = "Gelblich, ohne Ring, mit braeunlichen Puenktchen, Basis rosa."
+fleisch = "Gelblich, im Hut hellgelb, im Stiel dunkler gelb. Unter der Huthaut ist eine braune Faserung sichtbar."
+geruch = "Obstartig, saeuerlich."
+geschmack = "Mild-saeuerlich."
+sporenpulver = "Hellbraun bis ockerbraun."
+vorkommen = "Symbiosepilz an Waldraendern und in Parks unter Fichten und Kiefern, gern auf kalkreichem Boden. Im Mittelmeerraum unter der Aleppo-Kiefer."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Schmerling"
+merkmal = "Stielbasis nicht rosa, Stielspitze mit milchigen Droepfchen, unter der Huthaut ohne braune Faserung."
+essbar = "bedingtEssbar"
+slug = "koernchenroehrling"
+
+[[verwechslungen]]
+name = "Goldroehrling"
+merkmal = "Hut goldgelb bis ockergelb, Stiel mit haeutigem Ring, bei Laerche."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[verwechslungen]]
+name = "Sandroehrling"
+merkmal = "Huthaut trocken, matt und koernig filzig, Fleisch blauend."
+essbar = "speisepilz"
+slug = "sandroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RingloserButterpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Ringloser_Butterpilz"

@@ -1,0 +1,50 @@
+name = "Samtpfifferling"
+lateinisch = "Cantharellus friesii"
+gruppe = "leistling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Pfifferlinge sind besonders geschuetzt, diese Art steht zudem in Deutschland auf der Roten Liste. Nur kleine Mengen fuer den Eigenbedarf."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RoetlicherPfifferling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "1 bis 7, selten bis 9 cm breit, orange bis orangegelb, trichterfoermig, Oberflaeche samtig bis zottig, Rand wellig."
+leisten = "Gelblich, oft etwas weisslich oder hellgelb, weit herablaufend, gegabelt und mit Querverbindungen, faltenfoermig und aestig."
+stiel = "Gelblich, feinfilzig, Basis weisslich, voll."
+fleisch = "Weisslich bis blassgelb, duenn."
+geruch = "Obstartig fruchtig, pilzig suesslich."
+geschmack = "Teils leicht pfeffrig scharf."
+sporenpulver = "Hellgelb."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Buchen, auf kalkarmem Boden. Regional haeufig."
+zeit = "Fruehsommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Zitronengelber Raukopf"
+merkmal = "Echte, safrangelbe bis rostbraune Lamellen statt Leisten, Sporenpulver rostbraun."
+essbar = "toedlichGiftig"
+slug = "zitronengelber-raukopf"
+
+[[verwechslungen]]
+name = "Spitzgebuckelter Raukopf"
+merkmal = "Hut orangebraun mit spitzem Buckel, echte Lamellen, Sporenpulver rostbraun."
+essbar = "toedlichGiftig"
+slug = "spitzgebuckelter-raukopf"
+
+[[verwechslungen]]
+name = "Falscher Pfifferling"
+merkmal = "Echte, dicht stehende und gegabelte Lamellen, Fleisch weich, Hut mit dunklerer Mitte."
+essbar = "giftig"
+slug = "falscher-pfifferling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RoetlicherPfifferling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Samtiger_Pfifferling"

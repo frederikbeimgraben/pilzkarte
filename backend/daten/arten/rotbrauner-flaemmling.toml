@@ -1,0 +1,46 @@
+name = "Rotbrauner Flämmling"
+lateinisch = "Gymnopilus picreus"
+gruppe = "schueppling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Giftig. Der bitterliche Geschmack, die jung zitronengelben Lamellen und das gelbbraune Sporenpulver trennen ihn von essbaren Holzbewohnern."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RotbraunerFlaemmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 5, selten bis 7 cm breit, zimtbraun bis rotbraun, trocken verblassend."
+lamellen = "Zuerst zitronengelb bis leuchtend gelb, spaeter rostbraun, eng stehend, angewachsen, mit Zahn herablaufend, abloesend."
+stiel = "Jung hellbraun, spaeter dunkelbraun, bereift, laengsfaserig, roehrig, zur Spitze verjuengt."
+fleisch = "Hellbraun, duenn und waessrig."
+geruch = "Angenehm."
+geschmack = "Bitterlich."
+sporenpulver = "Gelbbraun."
+vorkommen = "Folgezersetzer an Totholz, Baumstuempfen und vergrabenem Holz auf Erde. Sehr selten, in der Schweiz stark gefaehrdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Gifthaeubling"
+merkmal = "Hut ockerbraun und hygrophan, Stiel mit weisslicher Ringzone und silbriger Laengsfaserung, Geruch mehlartig."
+essbar = "toedlichGiftig"
+slug = "gifthaeubling"
+
+[[verwechslungen]]
+name = "Geflecktblaettriger Flaemmling"
+merkmal = "Lamellen mit auffaelligen rostbraunen Flecken, Stiel heller und nicht dunkelbraun."
+essbar = "giftig"
+slug = "geflecktblaettriger-flaemmling"
+
+[[verwechslungen]]
+name = "Nadelschueppling"
+merkmal = "Hut gelb und schleimig, mit abstehenden Schuppchen, an Nadelholz."
+essbar = "giftig"
+slug = "nadelschueppling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RotbraunerFlaemmling.htm"
