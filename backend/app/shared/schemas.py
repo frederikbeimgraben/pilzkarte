@@ -59,6 +59,18 @@ class Sichtbarkeit(StrEnum):
     GETEILT = "geteilt"
 
 
+class Regel(StrEnum):
+    """Wie die Kombination ihre Faktoren verrechnet.
+
+    ``schnitt`` faerbt, wo jede Bedingung zutrifft. ``abgestuft`` zeigt das
+    geometrische Mittel der Erfuellungsgrade, so bleibt sichtbar, wo es knapp
+    ist. Die Spalte in ``models.py`` baut auf diesem Enum auf.
+    """
+
+    SCHNITT = "schnitt"
+    ABGESTUFT = "abgestuft"
+
+
 class Farbe(StrEnum):
     """Die sechs Farben aus den Mockups. Eine freie Farbwahl gibt es nicht."""
 

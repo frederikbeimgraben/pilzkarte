@@ -43,7 +43,9 @@ def test_upgrade_legt_das_schema_auf_leerer_datei_an(
 
     command.upgrade(konfiguration(), "head")
 
-    assert {"nutzer", "fund", "foto", "marker", "zone", "alembic_version"} <= tabellen(datei)
+    erwartet = {"nutzer", "fund", "foto", "marker", "zone", "kombination"}
+
+    assert erwartet | {"alembic_version"} <= tabellen(datei)
 
 
 def test_upgrade_laeuft_auch_auf_einer_bestehenden_datenbank(
@@ -63,4 +65,4 @@ def test_upgrade_laeuft_auch_auf_einer_bestehenden_datenbank(
     db.motor.cache_clear()
     command.upgrade(konfiguration(), "head")
 
-    assert {"nutzer", "fund", "foto", "marker", "zone"} <= tabellen(datei)
+    assert {"nutzer", "fund", "foto", "marker", "zone", "kombination"} <= tabellen(datei)
