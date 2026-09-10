@@ -1,0 +1,44 @@
+name = "Bleicher Schüppling"
+lateinisch = "Pholiota squarrosoides (agaricus squarrosoides)"
+gruppe = "schueppling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er schmeckt bitter. Geruch und helle Grundfarbe trennen ihn von den anderen Schüpplingen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BleicherSchueppling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 10, selten bis 15 cm breit, hellbraun bis gelbbraun auf sehr hellem, fast cremeweißem Grund, trocken, feucht schmierig, mit dunkleren, spitzen und sparrig abstehenden Schüppchen. Gewölbt bis halbkugelig, ohne Buckel, später etwas abgeflacht."
+lamellen = "Jung blass gelblich, später gelbbraun, ausgebuchtet angewachsen und mit Zahn herablaufend, sehr gedrängt stehend."
+stiel = "3 bis 9, selten bis 11 cm lang und 1 bis 2, selten bis 3 cm dick, hellbraun bis gelbbraun, voll und zylindrisch. Über der flüchtigen Ringzone cremeweiß, darunter blassgelb und dicht sparrig geschuppt, zur Basis dunkler. Oft mit mehreren Fruchtkörpern verwachsen."
+fleisch = "Weißlich, im Stiel graugelb, in der unteren Stielhälfte orangebraun."
+geruch = "Obstartig und würzig, etwas nach Fruchtbonbon, nicht rettichartig."
+geschmack = "Bitter."
+sporenpulver = "Rostbraun."
+vorkommen = "Folgezersetzer und Weißfäuleerreger an Totholz. Meist relativ selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Sparriger Schüppling"
+merkmal = "Kleiner, Hut strohgelb und trocken, Geruch und Geschmack rettichartig, gern an Laubholz und Obstbäumen."
+essbar = "giftig"
+slug = "sparriger-schueppling"
+
+[[verwechslungen]]
+name = "Hochthronender Schüppling"
+merkmal = "Schuppen angedrückt statt abstehend, Stiel schleimig, an Nadelbäumen."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Pinselschüppling"
+merkmal = "Hut gelblich und schleimig glänzend, Schuppen wie angedrückte Pinselstriche, Geschmack mild."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BleicherSchueppling.htm"

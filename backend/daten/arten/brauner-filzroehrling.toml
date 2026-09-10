@@ -1,0 +1,62 @@
+name = "Brauner Filzröhrling"
+lateinisch = "Xerocomus ferrugineus"
+gruppe = "roehrling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Auf der Positivliste der DGfM, in der Schweiz nicht marktfähig. Er ist einer der wenigen essbaren Röhrlinge mit Netzzeichnung am Stiel."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BraunerFilzroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Huthaut dunkelrot bis schwarz, Fleisch hellbraun."
+
+[[reagenzien]]
+reagenz = "naoh"
+reaktion = "Fleisch hellbraun."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Auf der Hutoberfläche blaugrün, später rötlichbraun."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Auf der Huthaut negativ bis leicht grau, im Fleisch negativ."
+
+[merkmale]
+hut = "4 bis 9, selten bis 12 cm breit, graubraun und filzig, unter der Huthaut leicht rosa."
+roehren = "Chromgelb, gelegentlich leicht blauend, am Stiel ausgebuchtet angewachsen."
+stiel = "5 bis 9, selten bis 11 cm lang und 1 bis 3, selten bis 4,5 cm dick, gelblich mit bräunlicher Netzzeichnung, lang, schlank und verdreht, etwas braunfleckig. Basis verdickt und meist heller, mit gelbem Basalmyzel."
+fleisch = "Hellgelblich, leicht blauend, fühlt sich klebrig an."
+geruch = "Neutral bis leicht angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz im Mischwald, besonders gern bei Fichte. Häufig."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Hut hell olivbraun bis olivocker, Stiel fast weiß und ohne Netzzeichnung."
+essbar = "speisepilz"
+slug = "ziegenlippe"
+
+[[verwechslungen]]
+name = "Samtiger Filzröhrling"
+merkmal = "Netz nur von der Stielmitte bis zur Spitze, Geruch leicht nach Schwefel, bei Buche und Eiche."
+essbar = "speisepilz"
+slug = "samtiger-filzroehrling"
+
+[[verwechslungen]]
+name = "Rotfußröhrling"
+merkmal = "Stiel rötlich punktiert und ohne Netz, unter der Huthaut rot."
+essbar = "essbar"
+slug = "rotfussroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BraunerFilzroehrling.htm"

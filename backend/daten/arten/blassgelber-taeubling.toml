@@ -1,0 +1,62 @@
+name = "Blassgelber Täubling"
+lateinisch = "Russula raoultii"
+gruppe = "taeubling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Er schmeckt scharf und wird gern für den milden Ockertäubling gehalten. Im Zweifel Sporen nehmen: Bei ihm ist das Pulver weiß, beim Ockertäubling gelblich."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BlassgelberTaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Fleisch hellrosa bis rosaorange."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Blaugrün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Weinbraun bis dunkel weinrot."
+
+[[reagenzien]]
+reagenz = "formalin"
+reaktion = "Auf der Stieloberfläche rosa."
+
+[[reagenzien]]
+reagenz = "anilin"
+reaktion = "Keine oder kaum eine Reaktion."
+
+[[reagenzien]]
+reagenz = "sulfovanillin"
+reaktion = "Keine oder kaum eine Reaktion."
+
+[merkmale]
+hut = "2 bis 5, selten bis 6 cm breit, jung zitronengelb, später blasser bis gelbocker, Rand heller. Kahl und etwas glänzend, Huthaut abziehbar."
+lamellen = "Weiß, später leicht cremefarben, am Stiel abgerundet angewachsen, etwas entfernt stehend, am Grund mit Querlamellen."
+stiel = "2 bis 6, selten bis 7 cm lang und 0,8 bis 1, selten bis 1,5 cm dick, weiß und keulig, rötlich bis ockerlich fleckend, an der Basis grauocker, relativ weich und bald hohl."
+fleisch = "Weiß, ohne Verfärbung."
+geruch = "Leicht obstartig und fruchtig."
+geschmack = "Scharf."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald auf gern saurem Boden, meist bei Laubbäumen wie Buche. In Deutschland in unbekanntem Ausmaß gefährdet."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Ockertäubling"
+merkmal = "Größer, Hut gelbocker bis olivocker, Geschmack höchstens leicht schärflich, Sporenpulver gelblich."
+essbar = "ohneSpeisewert"
+slug = "ockertaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BlassgelberTaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Blassgelber_Täubling"

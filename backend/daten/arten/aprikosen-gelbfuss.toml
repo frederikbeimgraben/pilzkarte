@@ -1,0 +1,50 @@
+name = "Aprikosen-Gelbfuß"
+lateinisch = "Chroogomphus fulmineus"
+gruppe = "gelbfuss"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer", "eiche"]
+speisewertHinweis = "Auf der Positivliste der DGfM und in der Schweiz marktfähig. Extrem selten, deshalb besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Aprikosen-Gelbfuss.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch lila verfärbend."
+
+[merkmale]
+hut = "2,5 bis 7, selten bis 9 cm breit, orangebraun, rosa bis violett, feucht schmierig, kahl und nicht filzig, jung mit Schleier."
+lamellen = "Jung purpurbraun, dazu gelborange und rotbraun, entfernt stehend, relativ weit herablaufend und leicht ablösbar."
+stiel = "4 bis 8 cm lang und 1 bis 1,5 cm dick, gelborange, orangebraun bis purpurrot, zur Spitze rosaviolett, bei Verletzung rötlich verfärbend. Mit hellerer orangefarbener Ringzone aus Schleierresten, voll, zur Basis leicht verjüngt."
+fleisch = "Gelborange, fest, bei Verletzung rötlich bis violettrosa verfärbend."
+geruch = "Unbedeutend."
+geschmack = "Mild."
+sporenpulver = "Olivschwarz, olivbraun bis violettschwarz."
+vorkommen = "Symbiosepilz in Mischwald und Kiefernwald, besonders dort, wo Eichen stehen. Extrem selten."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Spitzgebuckelter Raukopf"
+merkmal = "Hut braun bis orangerot mit spitzem Buckel, radialfaserig und rau, Lamellen zimtbraun, Geruch rettichartig."
+essbar = "toedlichGiftig"
+slug = "spitzgebuckelter-raukopf"
+
+[[verwechslungen]]
+name = "Kupferroter Gelbfuß"
+merkmal = "Hut braun, orangebraun bis graubraun ohne rosa und violette Töne, wächst unter Kiefern."
+essbar = "speisepilz"
+slug = "kupferroter-gelbfuss"
+
+[[verwechslungen]]
+name = "Schweinsohr"
+merkmal = "Violett, keulen- bis trichterförmig, mit Leisten statt Lamellen."
+essbar = "speisepilz"
+slug = "schweinsohr"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Aprikosen-Gelbfuss.htm"

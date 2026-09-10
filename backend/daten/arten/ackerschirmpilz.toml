@@ -1,0 +1,46 @@
+name = "Ackerschirmpilz"
+lateinisch = "Macrolepiota excoriata"
+gruppe = "schirmling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Bei allen Riesenschirmlingen muss der Ring am Stiel verschiebbar sein. Roh ist er unbekömmlich."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Ackerschirmpilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 11, selten bis 14 cm breit, grauweiß, graubraun, beige bis karamellbraun auf cremeweißem bis hellgelbem Grund. Jung glockig bis halbkugelig, später ausgebreitet, Mitte glatt und braun bleibend. Schüppchen sternförmig eingedrückt, Rand oft mit fetzigen Ringresten behangen."
+lamellen = "Weiß, alt mit rosa Reflexen, frei, dichtstehend und dünn. Schneiden fein bewimpert, im Alter etwas wellig oder gezahnt."
+stiel = "5 bis 13, selten bis 16 cm lang und 0,7 bis 1,5, selten bis 2 cm dick, weißlich bis leicht gelblich, alt bräunend. Ohne Natterung, von der Spitze bis zum Ring fein gerieft, alt hohl. Basis keulig knollig und oft wurzelartig verlängert. Ring weißlich, unten bräunend, schmal und verschiebbar."
+fleisch = "Im Hut weiß, im Stiel cremeweiß bis rosabräunlich, nur 0,5 bis 1 cm dick, faserig zäh, im Alter schwammig."
+geruch = "Pilzig."
+geschmack = "Mild und nussig, roh unbekömmlich."
+sporenpulver = "Weiß bis schwach hell cremerosa."
+vorkommen = "Folgezersetzer auf mageren, sandigen Böden an Waldrändern, auf Stoppeläckern, Grasplätzen, Wiesen, Viehweiden, Brachfeldern, in Parks und an Wegen. Sehr selten, in Deutschland gefährdet."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Jungfernschirmling"
+merkmal = "Hut mit wollig abstehenden Schüppchen, Fleisch läuft nie rötlich an, im Bergnadelwald auf saurem Boden."
+essbar = "giftig"
+slug = "jungfernschirmling"
+
+[[verwechslungen]]
+name = "Grünsporschirmling"
+merkmal = "Lamellen im Alter mit blaugrünem Hauch, wächst in Gewächshäusern, auf Kompost und warmem Substrat."
+essbar = "giftig"
+slug = "gruensporschirmling"
+
+[[verwechslungen]]
+name = "Parasol"
+merkmal = "Deutlich größer, Stiel mit dunkelbrauner Natterung."
+essbar = "bedingtEssbar"
+slug = "parasol"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Ackerschirmpilz.htm"

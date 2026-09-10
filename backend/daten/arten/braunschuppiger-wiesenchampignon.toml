@@ -1,0 +1,54 @@
+name = "Braunschuppiger Wiesenchampignon"
+lateinisch = "Agaricus moellerianus"
+gruppe = "champignon"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er wächst gern am Straßenrand und auf gedüngten Weiden. Solche Funde besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WiesenchampinonVAR.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Höchstens hell ockerlich, später hell olivbraun."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ. Seltene Unterarten reagieren positiv."
+
+[merkmale]
+hut = "5 bis 8, selten bis 12 cm breit, weiß, im Alter grau bis graubraun mit rosa Hauch, leicht gilbend, mit großen bräunlichen flach anliegenden Schuppen. Rand weißlich, weit überstehend, mit Velumresten behangen. Kleiner als der Schafchampignon."
+lamellen = "Rosa, später dunkelbraun, alt schokoladenbraun, lilabraun bis schwarz, frei."
+stiel = "Weiß, brüchig, zylindrisch, ohne Knolle. Der Ring ist weiß, einfach, hängend und meist verkümmert oder schnell vergänglich."
+fleisch = "Weiß, schwach bis mittelmäßig rötend, an der Basis leicht gilbend."
+geruch = "Pilzig und angenehm, kaum nach Anis, leicht marzipanartig."
+geschmack = "Mild und nussartig."
+sporenpulver = "Purpurbraun bis dunkelbraun."
+vorkommen = "Folgezersetzer auf Wiesen und Weiden, in Gärten, unter Hecken und am Straßenrand."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Falscher Wiesenegerling"
+merkmal = "Fleisch und Stielbasis kräftig gilbend, Geruch unangenehm nach Karbol oder Tinte."
+essbar = "giftig"
+slug = "falscher-wiesenegerling"
+
+[[verwechslungen]]
+name = "Übelriechender Egerling"
+merkmal = "Unangenehmer Geruch, kein Marzipanton."
+essbar = "ungeniessbar"
+slug = "uebelriechender-egerling"
+
+[[verwechslungen]]
+name = "Wiesenchampignon"
+merkmal = "Hut ohne die großen braunen Schuppen, rein weiß bis cremefarben."
+essbar = "speisepilz"
+slug = "wiesenchampignon"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WiesenchampinonVAR.htm"

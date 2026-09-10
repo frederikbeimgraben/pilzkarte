@@ -1,0 +1,46 @@
+name = "Becherförmiger Sägeblättling"
+lateinisch = "Neolentinus cyathiformis"
+gruppe = "seitling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Das Fleisch bleibt zäh und schmeckt bitterlich. Sehr selten und in Deutschland gefährdet."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BecherfoermigerSaegeblaettling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 11, selten bis 13 cm breit, ockerbraun bis hell rotbraun mit fuchsigbraunen Schuppen. Rand lange eingerollt, Mitte jung gebuckelt, später leicht bis stark trichterförmig."
+lamellen = "Cremebräunlich, schmal, weit herablaufend, Schneiden wellig und gesägt, gegabelt und aderig mit Querverbindungen."
+stiel = "Ockerbraun, feinschuppig bis filzig, zur Basis rotbraun und verdickt."
+fleisch = "Weißlich und zäh."
+geruch = "Unbedeutend bis leicht pilzig."
+geschmack = "Bitterlich."
+sporenpulver = "Cremegelblich."
+vorkommen = "Folgezersetzer und Braunfäuleerreger auf Laub- und Nadelholz, meist an verrotteten Strünken, büschelig. Sehr selten, in Deutschland gefährdet."
+zeit = "Frühling bis Herbst."
+
+[[verwechslungen]]
+name = "Schuppiger Sägeblättling"
+merkmal = "Hut mit rotbraunen Schuppen auf gelblichem Grund, Lamellenschneiden stark gesägt, Geruch nach Anis, an Nadelholz."
+essbar = "ungeniessbar"
+slug = "schuppiger-saegeblaettling"
+
+[[verwechslungen]]
+name = "Brauner Haarstielporling"
+merkmal = "Unterseite mit weißlichen Poren statt Lamellen, Stiel weißlich filzig."
+essbar = "ungeniessbar"
+slug = "brauner-haarstielporling"
+
+[[verwechslungen]]
+name = "Berindeter Seitling"
+merkmal = "Hut grau bis hellbraun, Stiel mit flüchtigem Ring, Lamellenschneiden nicht gesägt."
+essbar = "essbar"
+slug = "berindeter-seitling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BecherfoermigerSaegeblaettling.htm"

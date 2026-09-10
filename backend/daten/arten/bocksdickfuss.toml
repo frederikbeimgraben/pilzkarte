@@ -1,0 +1,44 @@
+name = "Bocksdickfuß"
+lateinisch = "Cortinarius camphoratus"
+gruppe = "schleierling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Der widerliche Geruch nach Ziegenbock, Schweißfüßen oder faulenden Kartoffeln macht ihn leicht kenntlich."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Bocksdickfuss105.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 9, selten bis 12 cm breit, helllila, lilablau bis weißlich, hygrophan, die Mitte wird gelbbraun."
+lamellen = "Lila bis zimtbraun, angewachsen."
+stiel = "Blasslila, mit rostbraunem Sporenpulver behaftet, Velum weißviolett, Basis etwas keulig."
+fleisch = "Weißlich bis blasslila, in der Stielbasis meist ockerlich, dick und fest."
+geruch = "Widerlich, nach Ziegenbock, Schweißfüßen, verbranntem Horn oder faulenden Kartoffeln."
+geschmack = "Unangenehm und widerlich."
+sporenpulver = "Gelbbräunlich."
+vorkommen = "Symbiosepilz im Nadelwald auf moosigem, feuchtem Boden. Häufig."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Violetter Rötelritterling"
+merkmal = "Lamellen rein lila und nie bräunlich, kein Sporenpulver am Stiel, Geruch parfümiert und fruchtig."
+essbar = "bedingtEssbar"
+slug = "violetter-roetelritterling"
+
+[[verwechslungen]]
+name = "Lilastieliger Rötelritterling"
+merkmal = "Hut grauviolett bis beigebräunlich, Lamellen weißlich lila, Geruch leicht fruchtig."
+essbar = "speisepilz"
+slug = "lilastieliger-roetelritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Bocksdickfuss105.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Bocks-Dickfuß"

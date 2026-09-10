@@ -1,0 +1,50 @@
+name = "Berindeter Seitling"
+lateinisch = "Pleurotus dryinus"
+gruppe = "seitling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche", "esche", "fichte", "tanne"]
+speisewertHinweis = "Nur junge Fruchtkörper taugen. Der Stielbereich bleibt zu zäh und gehört weg."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BerindeterSeitling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 15, selten bis 25 cm breit, grau bis hellbraun mit dunkelbräunlichen Schüppchen, etwas filzig. Rand jung mit Velumresten behangen."
+lamellen = "Weiß bis blassgelb, herablaufend, gegabelt und mit Querverbindungen."
+stiel = "Weißlich bis gelblich, mit flüchtigem Ring."
+fleisch = "Weißlich bis gelblich, zäh, die Randzone verfärbt gelblich."
+geruch = "Würzig, schwach pilzartig, etwas nach Porling, niemals mehlig."
+geschmack = "Mild, nussartig und angenehm."
+sporenpulver = "Weiß."
+vorkommen = "Parasit und Folgezersetzer an Laubholzstämmen, gern Eiche, Buche und Esche, außergewöhnlich an Fichte oder Tanne. Weißfäuleerreger, nur teilweise selten, in der Schweiz potenziell gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Schuppiger Porling"
+merkmal = "Hut mit konzentrisch angeordneten braunen Schuppen, Unterseite mit Poren, Stielbasis im Alter schwarz."
+essbar = "bedingtEssbar"
+slug = "schuppiger-porling"
+
+[[verwechslungen]]
+name = "Lungenseitling"
+merkmal = "Milchweiß bis cremeweiß, dünnfleischiger, Stiel ohne Ring."
+essbar = "bedingtEssbar"
+slug = "lungenseitling"
+
+[[verwechslungen]]
+name = "Rillstieliger Seitling"
+merkmal = "Stiel längsrillig, Lamellen bis zur Stielbasis herablaufend, Geruch mehlartig."
+essbar = "speisepilz"
+slug = "rillstieliger-seitling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BerindeterSeitling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Berindeter_Seitling"
