@@ -238,6 +238,14 @@ class Katalog:
         profil = self.profile.get(slug)
         return profil is None or profil.geschuetzt
 
+    def lateinisch(self, slug: str) -> str | None:
+        """Der wissenschaftliche Name einer Art, oder nichts fuer einen unbekannten Slug.
+
+        Die Kette kennt nur diesen Namen. Ein Slug sagt ihr nichts.
+        """
+        profil = self.profile.get(slug)
+        return None if profil is None else profil.lateinisch
+
     def art(self, slug: str) -> Art:
         """Eine Art mit Profil. Ein unbekannter Slug ist ein 404."""
         profil = self.profile.get(slug)

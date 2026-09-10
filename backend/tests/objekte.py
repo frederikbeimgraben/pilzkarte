@@ -71,7 +71,7 @@ def _profil(name: str, lateinisch: str, *, geschuetzt: bool) -> Profil:
     )
 
 
-def testkatalog() -> Katalog:
+def katalog_der_tests() -> Katalog:
     """Der Katalog der Tests: Steinpilz und Pfifferling geschuetzt, Parasol nicht."""
     zaehlung = Artenzaehlung(
         begehungen_mit_fund=900,

@@ -19,6 +19,7 @@ cd "$(dirname "$0")"
 
 JAHR=$(date +%Y)
 WOCHEN=${WOCHEN:-90}
+APP_FUNDE=${APP_FUNDE:-http://127.0.0.1:8111/api/intern/training-funde}
 LOG() { printf '%s  %s\n' "$(date +%H:%M:%S)" "$*"; }
 
 LOG "1/5 Wetter des laufenden Jahres holen"
@@ -42,6 +43,18 @@ python -u src/pilze/merge_weekly.py 2>&1 | tail -2
 LOG "3/5 neue Fundmeldungen"
 python -u src/pilze/gbif_fetch.py --out data/raw/gbif --start "$JAHR" --end "$JAHR" \
     --pause 0.5 2>&1 | tail -3
+# Die Funde, die jemand in der App fuer das Training freigegeben hat. Der
+# Endpunkt antwortet nur am Port des Rechners, nicht ueber den Vhost. Ohne
+# Backend gibt es sie nicht, und das ist kein Grund abzubrechen: die Kette
+# rechnet dann mit GBIF allein, so wie vorher.
+mkdir -p data/raw/app
+if curl -fsS --max-time 30 "$APP_FUNDE" -o data/raw/app/funde.json.neu; then
+  mv data/raw/app/funde.json.neu data/raw/app/funde.json
+  echo "  App-Funde: $(python -c 'import json,sys;print(len(json.load(open(sys.argv[1]))))' data/raw/app/funde.json)"
+else
+  rm -f data/raw/app/funde.json.neu
+  echo "  kein Backend unter $APP_FUNDE, weiter ohne App-Funde"
+fi
 python -u src/pilze/build_occurrences.py 2>&1 | tail -2
 
 LOG "4/5 Karten neu rendern"

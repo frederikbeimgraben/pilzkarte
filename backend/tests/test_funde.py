@@ -82,6 +82,8 @@ async def test_ein_fund_traegt_den_besitzer_aus_dem_token(
     assert gelesen.status_code == 200
     assert gelesen.json()["artSlug"] == "steinpilz"
     assert gelesen.json()["fotos"] == []
+    # Die Vorgabe ist nein: ein Fund geht nicht von allein in das Training.
+    assert gelesen.json()["fuerTraining"] is False
     # Der Besitzer verlaesst den Dienst nie.
     assert "besitzerSub" not in gelesen.json()
 
@@ -214,6 +216,22 @@ async def test_aendern_setzt_nur_die_gesendeten_felder(
     assert koerper["anzahl"] == 7
     assert koerper["sichtbarkeit"] == "geteilt"
     assert koerper["notiz"] == angelegt["notiz"]
+
+
+async def test_die_freigabe_fuer_das_training_laesst_sich_setzen_und_wieder_nehmen(
+    ruf: httpx.AsyncClient,
+    idp: FalscherIdp,
+) -> None:
+    async with ruf:
+        angelegt = await fund_anlegen(ruf, idp, fuerTraining=True)
+        zurueck = await ruf.patch(
+            f"/api/funde/{angelegt['id']}",
+            json={"fuerTraining": False},
+            headers=als(idp),
+        )
+
+    assert angelegt["fuerTraining"] is True
+    assert zurueck.json()["fuerTraining"] is False
 
 
 async def test_eine_notiz_laesst_sich_leeren(ruf: httpx.AsyncClient, idp: FalscherIdp) -> None:

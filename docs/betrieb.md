@@ -93,6 +93,16 @@ Artprofile liegen daneben als TOML unter `backend/daten/arten/`. Beides geht
 mit `deploy/backend.sh` auf den Server; ohne diese Dateien startet der Dienst
 nicht.
 
+In der Gegenrichtung holt `modell/update.sh` die Funde, die jemand in der App
+für das Training freigegeben hat: `GET /api/intern/training-funde` nach
+`modell/data/raw/app/funde.json`, gelesen von `build_occurrences.py`. Der
+Endpunkt braucht kein Token und antwortet **nur** direkt am Port
+(`http://127.0.0.1:8111`). Über den Vhost liefert er 404, weil Caddy dabei
+`X-Forwarded-For` setzt. Die Liste trägt den genauen Fundort und darf den
+Rechner darum nicht verlassen. Läuft das Backend nicht, geht `update.sh`
+weiter und rechnet mit GBIF allein. Die Adresse steht in `APP_FUNDE` und lässt
+sich für einen Testlauf überschreiben.
+
 ## Lokale Entwicklung
 
 - Umgebung: `nix develop` bringt beide Seiten mit, `nix develop .#backend` und
