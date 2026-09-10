@@ -34,22 +34,16 @@ vorkommen = "Symbiosepilz in Laub- und Auwäldern, gern bei Buche und Eiche, auf
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Wurzelnder Bitterröhrling"
-merkmal = "Hut grau bis graubraun, Geschmack bitter, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
-essbar = "giftig"
 slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis graubraun, Geschmack bitter, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch sofort blauend, Geschmack bitter."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch sofort blauend, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Königsröhrling"
-merkmal = "Hut rosa bis karminrot, Fleisch nur schwach blauend."
-essbar = "essbar"
 slug = "koenigsroehrling"
+unterschied = "Hut rosa bis karminrot, Fleisch nur schwach blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

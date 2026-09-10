@@ -33,22 +33,16 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buche."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Geschmack mild, Geruch mehlartig."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Geschmack mild, Geruch mehlartig."
 
 [[verwechslungen]]
-name = "Brennendscharfer Ritterling"
-merkmal = "Hut heller graubraun, Geschmack sofort brennend scharf, Lamellenschneiden schwärzen nicht."
-essbar = "giftig"
 slug = "brennendscharfer-ritterling"
+unterschied = "Hut heller graubraun, Geschmack sofort brennend scharf, Lamellenschneiden schwärzen nicht."
 
 [[verwechslungen]]
-name = "Rötender Erdritterling"
-merkmal = "Hut grau geschuppt, Fleisch und Lamellen röten bei Verletzung."
-essbar = "giftig"
 slug = "roetender-erdritterling"
+unterschied = "Hut grau geschuppt, Fleisch und Lamellen röten bei Verletzung."
 
 [[links]]
 titel = "123pilzsuche.de"

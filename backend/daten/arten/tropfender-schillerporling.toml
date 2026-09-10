@@ -33,21 +33,12 @@ vorkommen = "Folgezersetzer im Laubwald, meist an toten Eichen- oder Buchenstüm
 zeit = "Mehrjährig, ganzjährig zu finden."
 
 [[verwechslungen]]
-name = "Tannenfeuerschwamm"
-merkmal = "An Fichte und Tanne, Fleisch holzig hart, Poren graubräunlich, scheidet keine Tröpfchen aus."
-essbar = "ungeniessbar"
-
-[[verwechslungen]]
-name = "Eichenfeuerschwamm"
-merkmal = "An lebenden Eichen, Fruchtkörper holzig hart und oft von Algen grünlich, Poren gelblich rostbraun."
-essbar = "ungeniessbar"
 slug = "eichenfeuerschwamm"
+unterschied = "An lebenden Eichen, Fruchtkörper holzig hart und oft von Algen grünlich, Poren gelblich rostbraun."
 
 [[verwechslungen]]
-name = "Flacher Schillerporling"
-merkmal = "Fruchtkörper flach konsolen- bis fächerförmig, Oberfläche rauhaarig-filzig, Poren jung gelb und schillernd."
-essbar = "ungeniessbar"
 slug = "flacher-schillerporling"
+unterschied = "Fruchtkörper flach konsolen- bis fächerförmig, Oberfläche rauhaarig-filzig, Poren jung gelb und schillernd."
 
 [[links]]
 titel = "123pilzsuche.de"

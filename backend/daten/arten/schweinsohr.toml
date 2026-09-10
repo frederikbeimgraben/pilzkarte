@@ -36,22 +36,16 @@ vorkommen = "Symbiosepilz im Mischwald, kalkliebend. Regional meist selten, in D
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Purpuroranger Afterleistling"
-merkmal = "Trichter orange bis rötlich, Oberfläche grob schuppig, ohne Violett."
-essbar = "giftig"
 slug = "purpuroranger-afterleistling"
+unterschied = "Trichter orange bis rötlich, Oberfläche grob schuppig, ohne Violett."
 
 [[verwechslungen]]
-name = "Verbogener Leistling"
-merkmal = "Kleiner und dünnfleischig, Hut graubraun bis oliv, Leisten hell, ohne Violett."
-essbar = "essbar"
 slug = "verbogener-leistling"
+unterschied = "Kleiner und dünnfleischig, Hut graubraun bis oliv, Leisten hell, ohne Violett."
 
 [[verwechslungen]]
-name = "Kupferroter Gelbfuß"
-merkmal = "Hut kupferrot bis orangebraun, Leisten weinrötlich, Stielbasis leuchtend gelb."
-essbar = "essbar"
 slug = "kupferroter-gelbfuss"
+unterschied = "Hut kupferrot bis orangebraun, Leisten weinrötlich, Stielbasis leuchtend gelb."
 
 [[links]]
 titel = "123pilzsuche.de"

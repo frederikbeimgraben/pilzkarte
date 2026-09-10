@@ -31,10 +31,8 @@ vorkommen = "Symbiosepilz nur im sandigen Nadelwald. Selten, in Deutschland gef√
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Habichtspilz"
-merkmal = "Hut mit groben, dachziegelig aufgerichteten dunkelbraunen Schuppen, Geschmack mild bis leicht bitter, Stielbasis nicht schwarzblau."
-essbar = "essbar"
 slug = "habichtspilz"
+unterschied = "Hut mit groben, dachziegelig aufgerichteten dunkelbraunen Schuppen, Geschmack mild bis leicht bitter, Stielbasis nicht schwarzblau."
 
 [[links]]
 titel = "123pilzsuche.de"

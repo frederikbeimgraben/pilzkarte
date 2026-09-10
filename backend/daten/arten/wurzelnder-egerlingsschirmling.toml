@@ -30,16 +30,12 @@ vorkommen = "Folgezersetzer in Parks, Gärten, Wald und auf Wiesen."
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kegelhütiger Knollenblätterpilz"
-merkmal = "Basis mit gerandeter Knolle in häutiger Scheide, Huthaut färbt sich mit Kalilauge gelb."
-essbar = "toedlichGiftig"
 slug = "kegelhuetiger-knollenblaetterpilz"
+unterschied = "Basis mit gerandeter Knolle in häutiger Scheide, Huthaut färbt sich mit Kalilauge gelb."
 
 [[verwechslungen]]
-name = "Seidiger Egerlingsschirmling"
-merkmal = "Hut seidig grau bis graubraun, Stielbasis nicht wurzelnd."
-essbar = "giftig"
 slug = "seidiger-egerlingsschirmling"
+unterschied = "Hut seidig grau bis graubraun, Stielbasis nicht wurzelnd."
 
 [[links]]
 titel = "123pilzsuche.de"

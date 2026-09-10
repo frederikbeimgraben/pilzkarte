@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer an Nadelholz und Totholz, gern bei Lärche und Kiefe
 zeit = "Selten schon im Frühling, meist Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Becherförmiger Sägeblättling"
-merkmal = "Hut becherförmig vertieft, Schuppen schwächer, an Laubholz."
-essbar = "ungeniessbar"
 slug = "becherfoermiger-saegeblaettling"
+unterschied = "Hut becherförmig vertieft, Schuppen schwächer, an Laubholz."
 
 [[verwechslungen]]
-name = "Schuppiger Porling"
-merkmal = "Unterseite mit weiten Poren statt Lamellen, Stielbasis schwarz."
-essbar = "essbar"
 slug = "schuppiger-porling"
+unterschied = "Unterseite mit weiten Poren statt Lamellen, Stielbasis schwarz."
 
 [[verwechslungen]]
-name = "Sklerotienporling"
-merkmal = "Unterseite mit Poren statt Lamellen, kleiner, an Laubholz."
-essbar = "essbar"
 slug = "sklerotienporling"
+unterschied = "Unterseite mit Poren statt Lamellen, kleiner, an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

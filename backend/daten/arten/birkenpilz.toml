@@ -33,28 +33,20 @@ vorkommen = "Symbiosepilz bei Birke."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Rötender Birkenpilz"
-merkmal = "Fleisch läuft im Schnitt rosa bis korallenrot an."
-essbar = "essbar"
 slug = "roetender-birkenpilz"
+unterschied = "Fleisch läuft im Schnitt rosa bis korallenrot an."
 
 [[verwechslungen]]
-name = "Vielverfärbender Birkenpilz"
-merkmal = "Fleisch erst hellrosa, dann stark kornblumenblau."
-essbar = "essbar"
 slug = "vielverfaerbender-birkenpilz"
+unterschied = "Fleisch erst hellrosa, dann stark kornblumenblau."
 
 [[verwechslungen]]
-name = "Schwarzhütiger Birkenpilz"
-merkmal = "Hut dunkel schwarzbraun und feinsamtig, Stielbasis keulig und oft schwarz."
-essbar = "essbar"
 slug = "schwarzhuetiger-birkenpilz"
+unterschied = "Hut dunkel schwarzbraun und feinsamtig, Stielbasis keulig und oft schwarz."
 
 [[verwechslungen]]
-name = "Hainbuchenröhrling"
-merkmal = "Huthaut wie gehämmert runzelig, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila."
-essbar = "essbar"
 slug = "hainbuchenroehrling"
+unterschied = "Huthaut wie gehämmert runzelig, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -45,34 +45,24 @@ vorkommen = "Folgezersetzer im sauren Mischwald, meist Nadelwald, auf Nadelstreu
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Perlhuhnchampignon"
-merkmal = "Hut fein grau geschuppt, braun bis schwarzbraun, Lamellen blass rosa, später dunkelbraun bis schwarz."
-essbar = "giftig"
 slug = "perlhuhnchampignon"
+unterschied = "Hut fein grau geschuppt, braun bis schwarzbraun, Lamellen blass rosa, später dunkelbraun bis schwarz."
 
 [[verwechslungen]]
-name = "Rebhuhnegerling"
-merkmal = "Hut graubraun, rauchschwärzlich bis dunkelbraun, Lamellen lachsrosa, Stiel kahl und braunfleckig, Basis knollig."
-essbar = "giftig"
 slug = "rebhuhnegerling"
+unterschied = "Hut graubraun, rauchschwärzlich bis dunkelbraun, Lamellen lachsrosa, Stiel kahl und braunfleckig, Basis knollig."
 
 [[verwechslungen]]
-name = "Spitzschuppiger Schirmling"
-merkmal = "Hut fleischbraun mit braunen Stacheln auf cremefarbenem Grund, Lamellen weißlich bis gelblich und immer sehr eng stehend."
-essbar = "giftig"
 slug = "spitzschuppiger-schirmling"
+unterschied = "Hut fleischbraun mit braunen Stacheln auf cremefarbenem Grund, Lamellen weißlich bis gelblich und immer sehr eng stehend."
 
 [[verwechslungen]]
-name = "Großer Waldchampignon"
-merkmal = "Größer, Hut ockerbräunlich bis dunkelbraun mit rostbraunen Fasern, Lamellen rosa, im Alter dunkel rotbraun, Ring doppelrandig."
-essbar = "essbar"
 slug = "grosser-waldchampignon"
+unterschied = "Größer, Hut ockerbräunlich bis dunkelbraun mit rostbraunen Fasern, Lamellen rosa, im Alter dunkel rotbraun, Ring doppelrandig."
 
 [[verwechslungen]]
-name = "Kompostegerling"
-merkmal = "Größer, Hut braun bis gelbbraun und breitschuppig, Lamellen später lilabraun bis schwarzbraun, Stiel rotbraun auf hellem Grund."
-essbar = "essbar"
 slug = "kompostegerling"
+unterschied = "Größer, Hut braun bis gelbbraun und breitschuppig, Lamellen später lilabraun bis schwarzbraun, Stiel rotbraun auf hellem Grund."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -32,21 +32,12 @@ vorkommen = "Symbiosepilz im Laubwald, ohne genannten Wirtsbaum. Sehr selten."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa, Stiel mit grobem dunklem Netz, Geschmack sehr bitter."
-essbar = "giftig"
 slug = "gallenroehrling"
+unterschied = "Röhren jung weiß, bald rosa, Stiel mit grobem dunklem Netz, Geschmack sehr bitter."
 
 [[verwechslungen]]
-name = "Wurzelnder Bitterröhrling"
-merkmal = "Hut grau bis braungrau, Fleisch stark blauend, Geschmack bitter."
-essbar = "giftig"
 slug = "wurzelnder-bitterroehrling"
-
-[[verwechslungen]]
-name = "Birkensteinpilz"
-merkmal = "Hut hell lederbraun ohne gelbe Flecken, wächst bei Birke."
-essbar = "essbar"
+unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geschmack bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

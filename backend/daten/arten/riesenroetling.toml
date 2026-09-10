@@ -34,21 +34,12 @@ vorkommen = "Symbiosepilz bei Laubbäumen wie Eiche, Buche und Espe, gern auf le
 zeit = "Frühling bis Spätherbst, häufiger im Herbst."
 
 [[verwechslungen]]
-name = "Maipilz"
-merkmal = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch stark mehlig und angenehm, im Frühling."
-essbar = "essbar"
 slug = "maipilz"
+unterschied = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch stark mehlig und angenehm, im Frühling."
 
 [[verwechslungen]]
-name = "Würziger Tellerling"
-merkmal = "Deutlich kleiner, Hut braun und hygrophan, Geruch würzig mehlig."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Schlehenrötling"
-merkmal = "Kleiner und schlanker, Hut graubraun, an Schlehen- und Weißdornhecken im Frühling."
-essbar = "essbar"
 slug = "schlehenroetling"
+unterschied = "Kleiner und schlanker, Hut graubraun, an Schlehen- und Weißdornhecken im Frühling."
 
 [[links]]
 titel = "123pilzsuche.de"

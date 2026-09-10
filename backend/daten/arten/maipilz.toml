@@ -39,34 +39,24 @@ vorkommen = "Folgezersetzer auf Wiesen, in Parks, Laubwäldern und Auwald, bei E
 zeit = "Frühling bis Frühsommer."
 
 [[verwechslungen]]
-name = "Riesenrötling"
-merkmal = "Riecht ebenfalls mehlig, Lamellen jung gelblich, später rotocker bis rostgelb, Sporenpulver rosabraun. Erscheint meist erst ab August."
-essbar = "toedlichGiftig"
 slug = "riesenroetling"
+unterschied = "Riecht ebenfalls mehlig, Lamellen jung gelblich, später rotocker bis rostgelb, Sporenpulver rosabraun. Erscheint meist erst ab August."
 
 [[verwechslungen]]
-name = "Ziegelroter Risspilz"
-merkmal = "Hut radialfaserig aufreißend, gelb- bis ziegelrotbraun, Fleisch rötend, Geruch spermatisch oder obstartig ohne Mehlnote."
-essbar = "toedlichGiftig"
 slug = "ziegelroter-risspilz"
+unterschied = "Hut radialfaserig aufreißend, gelb- bis ziegelrotbraun, Fleisch rötend, Geruch spermatisch oder obstartig ohne Mehlnote."
 
 [[verwechslungen]]
-name = "Bleiweißer Trichterling"
-merkmal = "Kleiner und dünnfleischig, Hut weiß und glasig bereift, Lamellen herablaufend statt ausgebuchtet."
-essbar = "toedlichGiftig"
 slug = "bleiweisser-trichterling"
+unterschied = "Kleiner und dünnfleischig, Hut weiß und glasig bereift, Lamellen herablaufend statt ausgebuchtet."
 
 [[verwechslungen]]
-name = "Orangeroter Mairitterling"
-merkmal = "Hut mit rötlichem Unterton, Geruch schwächer und weniger angenehm, bei Lärche. Sehr selten."
-essbar = "ungeniessbar"
 slug = "orangeroter-mairitterling"
+unterschied = "Hut mit rötlichem Unterton, Geruch schwächer und weniger angenehm, bei Lärche. Sehr selten."
 
 [[verwechslungen]]
-name = "Mehlräsling"
-merkmal = "Lamellen laufen herab und werden rosa, Sporenpulver rosa."
-essbar = "sehrGuterSpeisepilz"
 slug = "mehlraesling"
+unterschied = "Lamellen laufen herab und werden rosa, Sporenpulver rosa."
 
 [[links]]
 titel = "123pilzsuche.de"

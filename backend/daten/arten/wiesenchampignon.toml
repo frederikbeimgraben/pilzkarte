@@ -40,34 +40,24 @@ vorkommen = "Folgezersetzer in Gärten, auf Wiesen und Weiden und in Maisfeldern
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Karbolegerling"
-merkmal = "Stielbasis läuft im Schnitt gelb an, Geruch nach Karbol oder Tinte, Hut weiß mit bräunlicher Mitte."
-essbar = "giftig"
 slug = "karbolegerling"
+unterschied = "Stielbasis läuft im Schnitt gelb an, Geruch nach Karbol oder Tinte, Hut weiß mit bräunlicher Mitte."
 
 [[verwechslungen]]
-name = "Übelriechender Egerling"
-merkmal = "Hut schmutzigbraun bis gelbbraun und braunschuppig, Lamellen graurosa, Stiel mit doppeltem Ring und braunfleckiger Basis."
-essbar = "ungeniessbar"
 slug = "uebelriechender-egerling"
+unterschied = "Hut schmutzigbraun bis gelbbraun und braunschuppig, Lamellen graurosa, Stiel mit doppeltem Ring und braunfleckiger Basis."
 
 [[verwechslungen]]
-name = "Schafchampignon"
-merkmal = "Größer, Hut weiß mit seidiger Haut, Lamellen jung grauweiß, Geruch nach Anis, Stiel gilbend und unter dem Ring körnig."
-essbar = "essbar"
 slug = "schafchampignon"
+unterschied = "Größer, Hut weiß mit seidiger Haut, Lamellen jung grauweiß, Geruch nach Anis, Stiel gilbend und unter dem Ring körnig."
 
 [[verwechslungen]]
-name = "Frühlingschampignon"
-merkmal = "Hut weiß bis gelblich und bei Berührung strohgelb verfärbend, Stiel gilbend, Spitze etwas rötlich."
-essbar = "essbar"
 slug = "fruehlingschampignon"
+unterschied = "Hut weiß bis gelblich und bei Berührung strohgelb verfärbend, Stiel gilbend, Spitze etwas rötlich."
 
 [[verwechslungen]]
-name = "Braunschuppiger Wiesenchampignon"
-merkmal = "Varietät des Wiesenchampignons, Hut braun schuppig, Ring ebenso verkümmert."
-essbar = "essbar"
 slug = "braunschuppiger-wiesenchampignon"
+unterschied = "Varietät des Wiesenchampignons, Hut braun schuppig, Ring ebenso verkümmert."
 
 [[links]]
 titel = "123pilzsuche.de"

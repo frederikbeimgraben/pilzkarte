@@ -39,34 +39,24 @@ vorkommen = "An Laubbäumen, parasitisch an kranken Bäumen, sonst Folgezersetze
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Sparriger Schüppling"
-merkmal = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivgelb bis olivbraun, Geruch rettichartig."
-essbar = "giftig"
 slug = "sparriger-schueppling"
+unterschied = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivgelb bis olivbraun, Geruch rettichartig."
 
 [[verwechslungen]]
-name = "Ringloser Hallimasch"
-merkmal = "Stiel ohne Ring, Hut kleiner und rotbraun, gern an Eiche."
-essbar = "bedingtEssbar"
 slug = "ringloser-hallimasch"
+unterschied = "Stiel ohne Ring, Hut kleiner und rotbraun, gern an Eiche."
 
 [[verwechslungen]]
-name = "Bleicher Schüppling"
-merkmal = "Hut cremeweiß bis hellbraun mit spitzen sparrigen Schüppchen, Lamellen gelbbraun, Geschmack bitter."
-essbar = "ungeniessbar"
 slug = "bleicher-schueppling"
+unterschied = "Hut cremeweiß bis hellbraun mit spitzen sparrigen Schüppchen, Lamellen gelbbraun, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Gemeiner Hallimasch"
-merkmal = "Hut rotbraun, Ring ohne goldgelben Rand, an Nadelholz."
-essbar = "bedingtEssbar"
 slug = "dunkler-hallimasch"
+unterschied = "Hut rotbraun, Ring ohne goldgelben Rand, an Nadelholz."
 
 [[verwechslungen]]
-name = "Honiggelber Hallimasch"
-merkmal = "Hut gelblich bis zitronengelb, Stiel mit gelbbeigen Flocken, besser verträglich."
-essbar = "bedingtEssbar"
 slug = "honiggelber-hallimasch"
+unterschied = "Hut gelblich bis zitronengelb, Stiel mit gelbbeigen Flocken, besser verträglich."
 
 [[links]]
 titel = "123pilzsuche.de"

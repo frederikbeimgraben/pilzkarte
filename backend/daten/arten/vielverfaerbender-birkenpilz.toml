@@ -35,16 +35,12 @@ vorkommen = "Symbiosepilz in Laub- und Mischwald, nur bei Birke, auf saurem Bode
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Hainbuchenröhrling"
-merkmal = "Bei Hainbuche und Hasel, Huthaut wie gehämmert, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila statt kornblumenblau."
-essbar = "essbar"
 slug = "hainbuchenroehrling"
+unterschied = "Bei Hainbuche und Hasel, Huthaut wie gehämmert, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila statt kornblumenblau."
 
 [[verwechslungen]]
-name = "Rötender Birkenpilz"
-merkmal = "Fleisch verfärbt rosa bis korallenrot und nicht blau, die unterste Stielbasis bleibt meist weiß."
-essbar = "essbar"
 slug = "roetender-birkenpilz"
+unterschied = "Fleisch verfärbt rosa bis korallenrot und nicht blau, die unterste Stielbasis bleibt meist weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

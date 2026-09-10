@@ -36,34 +36,24 @@ vorkommen = "Folgezersetzer in Parks, Gärten, auf Wiesen sowie an Waldwegen und
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Faltentintling"
-merkmal = "Hut grauweiß bis graubraun, gerieft und faltig, Lamellen angewachsen statt frei, Stielbasis mit scheidenartigem Wulst."
-essbar = "giftig"
 slug = "faltentintling"
+unterschied = "Hut grauweiß bis graubraun, gerieft und faltig, Lamellen angewachsen statt frei, Stielbasis mit scheidenartigem Wulst."
 
 [[verwechslungen]]
-name = "Spitzkegeliger Tintling"
-merkmal = "Hut grauweiß mit braunen Schuppen, gerieft, Scheitel stumpf zugespitzt, Stielbasis mit ringartigem Wulst."
-essbar = "giftig"
 slug = "spitzkegeliger-tintling"
+unterschied = "Hut grauweiß mit braunen Schuppen, gerieft, Scheitel stumpf zugespitzt, Stielbasis mit ringartigem Wulst."
 
 [[verwechslungen]]
-name = "Perlhuhn-Tintling"
-merkmal = "Hut ungerieft, mit abwischbaren grauweißen Schuppen, Stielbasis mit dunkelbraunem Mycel, Geruch unangenehm, wächst auf Holz."
-essbar = "ungeniessbar"
 slug = "perlhuhn-tintling"
+unterschied = "Hut ungerieft, mit abwischbaren grauweißen Schuppen, Stielbasis mit dunkelbraunem Mycel, Geruch unangenehm, wächst auf Holz."
 
 [[verwechslungen]]
-name = "Spechttintling"
-merkmal = "Hut braun mit weißen flockigen Schuppen, Stiel bis 25 cm lang und etwas genattert, Geruch muffig."
-essbar = "ungeniessbar"
 slug = "spechttintling"
+unterschied = "Hut braun mit weißen flockigen Schuppen, Stiel bis 25 cm lang und etwas genattert, Geruch muffig."
 
 [[verwechslungen]]
-name = "Flockiger Tintling"
-merkmal = "Hut graubraun bis ockerbräunlich mit weißlichen Velumflocken, Stielbasis oft mit Volva."
-essbar = "ungeniessbar"
 slug = "flockiger-tintling"
+unterschied = "Hut graubraun bis ockerbräunlich mit weißlichen Velumflocken, Stielbasis oft mit Volva."
 
 [[links]]
 titel = "123pilzsuche.de"

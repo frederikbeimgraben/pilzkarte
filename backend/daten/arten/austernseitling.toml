@@ -40,34 +40,24 @@ vorkommen = "Folgezersetzer an lebenden und abgestorbenen Laubbäumen, vor allem
 zeit = "Herbst bis Frühjahr. Er braucht einen Kältereiz und ist ab Mitte November häufig."
 
 [[verwechslungen]]
-name = "Ohrförmiger Seitling"
-merkmal = "Rein weiß, ohne Stiel, Lamellen sehr gedrängt."
-essbar = "toedlichGiftig"
 slug = "ohrfoermiger-seitling"
+unterschied = "Rein weiß, ohne Stiel, Lamellen sehr gedrängt."
 
 [[verwechslungen]]
-name = "Gelbstieliger Muschelseitling"
-merkmal = "Hut grünbraun bis schwarzbraun, Stiel ockergelb mit bräunlichen Schüppchen."
-essbar = "ungeniessbar"
 slug = "gelbstieliger-muschelseitling"
+unterschied = "Hut grünbraun bis schwarzbraun, Stiel ockergelb mit bräunlichen Schüppchen."
 
 [[verwechslungen]]
-name = "Rillstieliger Seitling"
-merkmal = "Lamellen queradrig und netzig verbunden, laufen bis zur Stielbasis."
-essbar = "essbar"
 slug = "rillstieliger-seitling"
+unterschied = "Lamellen queradrig und netzig verbunden, laufen bis zur Stielbasis."
 
 [[verwechslungen]]
-name = "Lungenseitling"
-merkmal = "Nie rein weiß, sondern milchweiß bis cremeweiß, dünnfleischiger, im Sommer."
-essbar = "essbar"
 slug = "lungenseitling"
+unterschied = "Nie rein weiß, sondern milchweiß bis cremeweiß, dünnfleischiger, im Sommer."
 
 [[verwechslungen]]
-name = "Berindeter Seitling"
-merkmal = "Hut mit dunklen Schüppchen, Stiel mit flüchtigem Ring."
-essbar = "essbar"
 slug = "berindeter-seitling"
+unterschied = "Hut mit dunklen Schüppchen, Stiel mit flüchtigem Ring."
 
 [[links]]
 titel = "123pilzsuche.de"

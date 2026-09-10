@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer an Totholz, meist auf Nadelholzstümpfen und dicken 
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rotbrauner Flämmling"
-merkmal = "Hut mehr rotbraun, Lamellen weniger deutlich rostfleckig."
-essbar = "giftig"
 slug = "rotbrauner-flaemmling"
+unterschied = "Hut mehr rotbraun, Lamellen weniger deutlich rostfleckig."
 
 [[verwechslungen]]
-name = "Grünblättriger Schwefelkopf"
-merkmal = "Lamellen jung schwefelgelb, später grünlich, wächst büschelig an Stümpfen."
-essbar = "giftig"
 slug = "gruenblaettriger-schwefelkopf"
+unterschied = "Lamellen jung schwefelgelb, später grünlich, wächst büschelig an Stümpfen."
 
 [[verwechslungen]]
-name = "Samtschuppiger Tannenflämmling"
-merkmal = "Hut samtig bis feinschuppig, an Nadelholz, ebenfalls bitter."
-essbar = "giftig"
 slug = "samtschuppiger-tannenflaemmling"
+unterschied = "Hut samtig bis feinschuppig, an Nadelholz, ebenfalls bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

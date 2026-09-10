@@ -32,10 +32,8 @@ vorkommen = "Folgezersetzer an Laubholzästen und vergrabenem Holz, meist bei Er
 zeit = "Winter bis Mai."
 
 [[verwechslungen]]
-name = "Linden-Kelchbecherling"
-merkmal = "Wächst an Linde, Innenseite etwas blasser rot."
-essbar = "essbar"
 slug = "linden-kelchbecherling"
+unterschied = "Wächst an Linde, Innenseite etwas blasser rot."
 
 [[links]]
 titel = "123pilzsuche.de"

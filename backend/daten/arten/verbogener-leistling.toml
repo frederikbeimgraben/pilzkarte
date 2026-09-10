@@ -34,10 +34,8 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buche."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Grauer Leistling"
-merkmal = "Hut schwarzgrau bis graubraun und feinschuppig, Leisten heller weißlichgrau, Geruch nach Pflaumen."
-essbar = "essbar"
 slug = "grauer-leistling"
+unterschied = "Hut schwarzgrau bis graubraun und feinschuppig, Leisten heller weißlichgrau, Geruch nach Pflaumen."
 
 [[links]]
 titel = "123pilzsuche.de"

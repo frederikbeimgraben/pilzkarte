@@ -30,16 +30,12 @@ vorkommen = "Folgezersetzer im Mischwald, gern an Brandstellen zwischen verkohlt
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Grauer Leistling"
-merkmal = "Leisten heller weißlich-grau und queraderig, Geruch fruchtig nach Pflaumen, im Buchenwald statt auf Brandstellen."
-essbar = "essbar"
 slug = "grauer-leistling"
+unterschied = "Leisten heller weißlich-grau und queraderig, Geruch fruchtig nach Pflaumen, im Buchenwald statt auf Brandstellen."
 
 [[verwechslungen]]
-name = "Verbogener Leistling"
-merkmal = "Nur 1 bis 3, selten 4 cm breit, lehmbraun bis graubraun, Leisten kaum erkennbar und gegabelt-aderig."
-essbar = "essbar"
 slug = "verbogener-leistling"
+unterschied = "Nur 1 bis 3, selten 4 cm breit, lehmbraun bis graubraun, Leisten kaum erkennbar und gegabelt-aderig."
 
 [[links]]
 titel = "123pilzsuche.de"

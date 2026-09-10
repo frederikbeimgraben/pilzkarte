@@ -34,34 +34,24 @@ vorkommen = "Folgezersetzer auf Rasen, Wiesen, in Parks und Gärten, an Waldrän
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Rinnigbereifter Trichterling"
-merkmal = "Hut weißlich und weiß bereift, Lamellen fast gerade angewachsen und sehr gedrängt, Stiel kurz und brüchig. Auf denselben Wiesen."
-essbar = "toedlichGiftig"
 slug = "rinnigbereifter-trichterling"
+unterschied = "Hut weißlich und weiß bereift, Lamellen fast gerade angewachsen und sehr gedrängt, Stiel kurz und brüchig. Auf denselben Wiesen."
 
 [[verwechslungen]]
-name = "Ziegelroter Risspilz"
-merkmal = "Hut radialfaserig aufreißend, ziegelrot bis ockerbraun, Lamellen später rötlich bis olivbraun, Fleisch rötend."
-essbar = "toedlichGiftig"
 slug = "ziegelroter-risspilz"
+unterschied = "Hut radialfaserig aufreißend, ziegelrot bis ockerbraun, Lamellen später rötlich bis olivbraun, Fleisch rötend."
 
 [[verwechslungen]]
-name = "Grünender Risspilz"
-merkmal = "Hut strohgelb bis grünlichbraun und radialrissig, Stiel von unten her blaugrün, Fleisch bei Verletzung grünend."
-essbar = "giftig"
 slug = "gruenender-risspilz"
+unterschied = "Hut strohgelb bis grünlichbraun und radialrissig, Stiel von unten her blaugrün, Fleisch bei Verletzung grünend."
 
 [[verwechslungen]]
-name = "Hügelschwindling"
-merkmal = "Geruch nach Zedernholz, zerrieben mehlig ranzig, nie nach Bittermandel. Geschmack unangenehm. Wächst in dichten Büscheln."
-essbar = "giftig"
 slug = "huegelschwindling"
+unterschied = "Geruch nach Zedernholz, zerrieben mehlig ranzig, nie nach Bittermandel. Geschmack unangenehm. Wächst in dichten Büscheln."
 
 [[verwechslungen]]
-name = "Brennender Rübling"
-merkmal = "Lamellen gelbbraun bis dottergelb, Stiel sehr dünn, Geschmack nach kurzer Zeit scharf pfefferig. Auf Laub- und Nadelstreu im Wald."
-essbar = "ungeniessbar"
 slug = "brennender-ruebling"
+unterschied = "Lamellen gelbbraun bis dottergelb, Stiel sehr dünn, Geschmack nach kurzer Zeit scharf pfefferig. Auf Laub- und Nadelstreu im Wald."
 
 [[links]]
 titel = "123pilzsuche.de"

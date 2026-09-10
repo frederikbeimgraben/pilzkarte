@@ -37,28 +37,20 @@ vorkommen = "Symbiosepilz in Mischwäldern, sehr häufig, oft in Massen."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Ellipsoidsporige Stoppelpilz"
-merkmal = "Deutlich kleiner, 2 bis 5, selten bis 6 cm breit, Hut gelborange bis terracottafarben."
-essbar = "essbar"
 slug = "ellipsoidsporige-stoppelpilz"
+unterschied = "Deutlich kleiner, 2 bis 5, selten bis 6 cm breit, Hut gelborange bis terracottafarben."
 
 [[verwechslungen]]
-name = "Genabelter Semmelstoppelpilz"
-merkmal = "Fast gleich, Stiel 2,5 bis 6 cm hoch. Sicher nur unter dem Mikroskop zu trennen, sehr selten."
-essbar = "essbar"
 slug = "genabelter-semmelstoppelpilz"
+unterschied = "Fast gleich, Stiel 2,5 bis 6 cm hoch. Sicher nur unter dem Mikroskop zu trennen, sehr selten."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Unterseite mit Poren statt Stoppeln, mehrere Stiele oft miteinander verwachsen."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Unterseite mit Poren statt Stoppeln, mehrere Stiele oft miteinander verwachsen."
 
 [[verwechslungen]]
-name = "Schafporling"
-merkmal = "Hut weiß, später gelblich, braun- bis graugelb, Unterseite mit Poren, Stiel mit graubraunen bis dunkelbraunen Flecken."
-essbar = "essbar"
 slug = "schafporling"
+unterschied = "Hut weiß, später gelblich, braun- bis graugelb, Unterseite mit Poren, Stiel mit graubraunen bis dunkelbraunen Flecken."
 
 [[links]]
 titel = "123pilzsuche.de"

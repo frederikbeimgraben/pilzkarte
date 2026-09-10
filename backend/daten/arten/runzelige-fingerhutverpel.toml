@@ -33,16 +33,12 @@ vorkommen = "Folgezersetzer in Auen und Flussauen. Selten, in der Schweiz potenz
 zeit = "Fruehling, April bis Mai."
 
 [[verwechslungen]]
-name = "Kaeppchenmorchel"
-merkmal = "Hut glockig, glatt bis laengsrunzelig, nur am Scheitel mit dem Stiel verwachsen."
-essbar = "essbar"
 slug = "kaeppchenmorchel"
+unterschied = "Hut glockig, glatt bis laengsrunzelig, nur am Scheitel mit dem Stiel verwachsen."
 
 [[verwechslungen]]
-name = "Speisemorchel"
-merkmal = "Hut mit wabenartigen Gruben, Hut und Stiel sind zu einem durchgehenden Hohlraum verwachsen."
-essbar = "essbar"
 slug = "speisemorchel"
+unterschied = "Hut mit wabenartigen Gruben, Hut und Stiel sind zu einem durchgehenden Hohlraum verwachsen."
 
 [[links]]
 titel = "123pilzsuche.de"

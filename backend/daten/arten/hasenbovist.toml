@@ -29,34 +29,24 @@ vorkommen = "Folgezersetzer auf Wiesen, Weiden, Rasen, in Hecken und Obstgärten
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Jung kugelig, im Schnitt aber mit Hut, Lamellen und Stiel angelegt, Basis in einer häutigen Scheide."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Jung kugelig, im Schnitt aber mit Hut, Lamellen und Stiel angelegt, Basis in einer häutigen Scheide."
 
 [[verwechslungen]]
-name = "Riesenbovist"
-merkmal = "Deutlich größer, kugelig, Haut glatt und lederartig, Geruch unangenehm."
-essbar = "essbar"
 slug = "riesenbovist"
+unterschied = "Deutlich größer, kugelig, Haut glatt und lederartig, Geruch unangenehm."
 
 [[verwechslungen]]
-name = "Flaschenstäubling"
-merkmal = "Kleiner, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen Stacheln besetzt."
-essbar = "essbar"
 slug = "flaschenbovist"
+unterschied = "Kleiner, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen Stacheln besetzt."
 
 [[verwechslungen]]
-name = "Beutelstäubling"
-merkmal = "Kleiner, bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun."
-essbar = "essbar"
 slug = "beutelstaeubling"
+unterschied = "Kleiner, bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun."
 
 [[verwechslungen]]
-name = "Wiesenstäubling"
-merkmal = "Kleiner, kugel- bis birnenförmig, Basis mit weißem Myzelfilz und kräftigen Strängen."
-essbar = "essbar"
 slug = "wiesenstaeubling"
+unterschied = "Kleiner, kugel- bis birnenförmig, Basis mit weißem Myzelfilz und kräftigen Strängen."
 
 [[links]]
 titel = "123pilzsuche.de"

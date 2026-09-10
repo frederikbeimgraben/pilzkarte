@@ -39,22 +39,16 @@ vorkommen = "Symbiosepilz in Mischwald und Kiefernwald, besonders dort, wo Eiche
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Spitzgebuckelter Raukopf"
-merkmal = "Hut braun bis orangerot mit spitzem Buckel, radialfaserig und rau, Lamellen zimtbraun, Geruch rettichartig."
-essbar = "toedlichGiftig"
 slug = "spitzgebuckelter-raukopf"
+unterschied = "Hut braun bis orangerot mit spitzem Buckel, radialfaserig und rau, Lamellen zimtbraun, Geruch rettichartig."
 
 [[verwechslungen]]
-name = "Kupferroter Gelbfuß"
-merkmal = "Hut braun, orangebraun bis graubraun ohne rosa und violette Töne, wächst unter Kiefern."
-essbar = "essbar"
 slug = "kupferroter-gelbfuss"
+unterschied = "Hut braun, orangebraun bis graubraun ohne rosa und violette Töne, wächst unter Kiefern."
 
 [[verwechslungen]]
-name = "Schweinsohr"
-merkmal = "Violett, keulen- bis trichterförmig, mit Leisten statt Lamellen."
-essbar = "essbar"
 slug = "schweinsohr"
+unterschied = "Violett, keulen- bis trichterförmig, mit Leisten statt Lamellen."
 
 [[links]]
 titel = "123pilzsuche.de"

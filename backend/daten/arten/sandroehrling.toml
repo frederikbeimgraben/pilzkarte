@@ -36,21 +36,12 @@ vorkommen = "Symbiosepilz der Kiefer auf saurem, sandigem Boden."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut olivbraun bis gelbbraun und samtig, Roehren grob und gelb, bei Laubbaeumen."
-essbar = "essbar"
 slug = "ziegenlippe"
+unterschied = "Hut olivbraun bis gelbbraun und samtig, Roehren grob und gelb, bei Laubbaeumen."
 
 [[verwechslungen]]
-name = "Rostroter Laerchenroehrling"
-merkmal = "Hut rostrot bis ziegelrot und schleimig, nur bei Laerche."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Kuhroehrling"
-merkmal = "Hut ockerbraun und schmierig, Roehren weitloecherig und herablaufend, Fleisch kaum blauend."
-essbar = "essbar"
 slug = "kuhroehrling"
+unterschied = "Hut ockerbraun und schmierig, Roehren weitloecherig und herablaufend, Fleisch kaum blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

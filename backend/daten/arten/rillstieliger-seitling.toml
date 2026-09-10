@@ -36,22 +36,16 @@ vorkommen = "Folgezersetzer an totem Laubholz, gern Weide, Ulme und Pappel. Selt
 zeit = "Frühjahr bis Spätherbst."
 
 [[verwechslungen]]
-name = "Ohrförmiger Seitling"
-merkmal = "Klein und ohrförmig, ohne echten Stiel, an Nadelholz."
-essbar = "toedlichGiftig"
 slug = "ohrfoermiger-seitling"
+unterschied = "Klein und ohrförmig, ohne echten Stiel, an Nadelholz."
 
 [[verwechslungen]]
-name = "Austernseitling"
-merkmal = "Hut muschelförmig und grau bis graubraun, Lamellen laufen nicht bis zur Stielbasis, im Winterhalbjahr."
-essbar = "guterSpeisepilz"
 slug = "austernseitling"
+unterschied = "Hut muschelförmig und grau bis graubraun, Lamellen laufen nicht bis zur Stielbasis, im Winterhalbjahr."
 
 [[verwechslungen]]
-name = "Lungenseitling"
-merkmal = "Hut weißlich bis cremefarben, Stiel sehr kurz und seitlich, ohne Längsrillen."
-essbar = "essbar"
 slug = "lungenseitling"
+unterschied = "Hut weißlich bis cremefarben, Stiel sehr kurz und seitlich, ohne Längsrillen."
 
 [[links]]
 titel = "123pilzsuche.de"

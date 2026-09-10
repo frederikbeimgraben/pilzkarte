@@ -42,22 +42,16 @@ vorkommen = "Folgezersetzer auf Wiesen und Weiden, in Gärten, unter Hecken und 
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Falscher Wiesenegerling"
-merkmal = "Fleisch und Stielbasis kräftig gilbend, Geruch unangenehm nach Karbol oder Tinte."
-essbar = "giftig"
 slug = "falscher-wiesenegerling"
+unterschied = "Fleisch und Stielbasis kräftig gilbend, Geruch unangenehm nach Karbol oder Tinte."
 
 [[verwechslungen]]
-name = "Übelriechender Egerling"
-merkmal = "Unangenehmer Geruch, kein Marzipanton."
-essbar = "ungeniessbar"
 slug = "uebelriechender-egerling"
+unterschied = "Unangenehmer Geruch, kein Marzipanton."
 
 [[verwechslungen]]
-name = "Wiesenchampignon"
-merkmal = "Hut ohne die großen braunen Schuppen, rein weiß bis cremefarben."
-essbar = "essbar"
 slug = "wiesenchampignon"
+unterschied = "Hut ohne die großen braunen Schuppen, rein weiß bis cremefarben."
 
 [[links]]
 titel = "123pilzsuche.de"

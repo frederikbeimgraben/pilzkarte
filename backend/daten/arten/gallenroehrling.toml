@@ -43,22 +43,16 @@ vorkommen = "Symbiosepilz von Nadelbäumen in Misch- und Nadelwald auf saurem Bo
 zeit = "Frühjahr bis Spätherbst."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
 
 [[verwechslungen]]
-name = "Wurzelnder Bitterröhrling"
-merkmal = "Hut grau bis weißgrau, Röhren gelb, Fleisch stark blauend, Geruch nach Tinte."
-essbar = "giftig"
 slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis weißgrau, Röhren gelb, Fleisch stark blauend, Geruch nach Tinte."
 
 [[verwechslungen]]
-name = "Steinpilz"
-merkmal = "Röhren weiß, dann gelb bis oliv, nie rosa, Netz am Stiel weiß, Geschmack mild und nussig."
-essbar = "essbar"
 slug = "steinpilz"
+unterschied = "Röhren weiß, dann gelb bis oliv, nie rosa, Netz am Stiel weiß, Geschmack mild und nussig."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -40,28 +40,20 @@ vorkommen = "Folgezersetzer auf mit Pferdemist gedüngten Wiesen, auf Kuhweiden 
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Lamellen bleiben weiß, Stiel mit häutigem Ring, Basis mit gerandeter Knolle in einer sackartigen Scheide."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Lamellen bleiben weiß, Stiel mit häutigem Ring, Basis mit gerandeter Knolle in einer sackartigen Scheide."
 
 [[verwechslungen]]
-name = "Karbolegerling"
-merkmal = "Stielbasis läuft im Schnitt kräftig gelb an, Geruch tintig bis karbolartig."
-essbar = "giftig"
 slug = "karbolegerling"
+unterschied = "Stielbasis läuft im Schnitt kräftig gelb an, Geruch tintig bis karbolartig."
 
 [[verwechslungen]]
-name = "Falscher Wiesenegerling"
-merkmal = "Stielbasis gilbt auf Druck, Lamellenschneiden fast schwarz, Geruch karbolartig."
-essbar = "giftig"
 slug = "falscher-wiesenegerling"
+unterschied = "Stielbasis gilbt auf Druck, Lamellenschneiden fast schwarz, Geruch karbolartig."
 
 [[verwechslungen]]
-name = "Wiesenchampignon"
-merkmal = "Kleiner, ohne Anisgeruch, Ring verkümmert, Stiel ohne Knolle, Fleisch rötet statt zu gilben."
-essbar = "essbar"
 slug = "wiesenchampignon"
+unterschied = "Kleiner, ohne Anisgeruch, Ring verkümmert, Stiel ohne Knolle, Fleisch rötet statt zu gilben."
 
 [[links]]
 titel = "123pilzsuche.de"

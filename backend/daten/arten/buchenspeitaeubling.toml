@@ -33,16 +33,12 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buche auf Laubstreu, bevorzugt k
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Birkenspeitäubling"
-merkmal = "Wächst bei Birke, Stiel oft mit rosa Ton, Hut heller."
-essbar = "giftig"
 slug = "birkenspeitaeubling"
+unterschied = "Wächst bei Birke, Stiel oft mit rosa Ton, Hut heller."
 
 [[verwechslungen]]
-name = "Kiefernspeitäubling"
-merkmal = "Wächst bei Kiefer auf saurem Boden, Hut blutrot und stärker ausblassend."
-essbar = "giftig"
 slug = "kiefernspeitaeubling"
+unterschied = "Wächst bei Kiefer auf saurem Boden, Hut blutrot und stärker ausblassend."
 
 [[links]]
 titel = "123pilzsuche.de"

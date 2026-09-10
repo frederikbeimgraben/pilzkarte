@@ -30,34 +30,24 @@ vorkommen = "Meist an Laubholz, vor allem Holunder, auch Birke und anderes Laubh
 zeit = "Ganzjährig, Schwerpunkt Winter und Frühjahr bei feuchtem Wetter."
 
 [[verwechslungen]]
-name = "Kleines Judasohr"
-merkmal = "Nur 0,5 bis 1, selten bis 2 cm breit, Oberseite mit weißlichem haarigem Filz, an Zitterpappel und Weide."
-essbar = "ungeniessbar"
 slug = "kleines-judasohr"
+unterschied = "Nur 0,5 bis 1, selten bis 2 cm breit, Oberseite mit weißlichem haarigem Filz, an Zitterpappel und Weide."
 
 [[verwechslungen]]
-name = "Gezonter Ohrlappenpilz"
-merkmal = "Oberseite striegelig filzig behaart und bunt gezont, Hütchen dachziegelig nebeneinander, Fleisch gegen das Licht undurchsichtig."
-essbar = "ungeniessbar"
 slug = "gezonter-ohrlappenpilz"
+unterschied = "Oberseite striegelig filzig behaart und bunt gezont, Hütchen dachziegelig nebeneinander, Fleisch gegen das Licht undurchsichtig."
 
 [[verwechslungen]]
-name = "Weißtannenfingerhut"
-merkmal = "Nur 0,5 bis 1,5, selten bis 2 cm breit, becher- bis fingerhutförmig, außen raukörnig, an Nadelholz."
-essbar = "ungeniessbar"
 slug = "weisstannenfingerhut"
+unterschied = "Nur 0,5 bis 1,5, selten bis 2 cm breit, becher- bis fingerhutförmig, außen raukörnig, an Nadelholz."
 
 [[verwechslungen]]
-name = "Kerbrandiger Napfbecherling"
-merkmal = "Schüsselförmig, hellbraun mit gekerbtem Rand, Fleisch brüchig statt gallertartig, wächst auf Erde."
-essbar = "ungeniessbar"
 slug = "kerbrandiger-napfbecherling"
+unterschied = "Schüsselförmig, hellbraun mit gekerbtem Rand, Fleisch brüchig statt gallertartig, wächst auf Erde."
 
 [[verwechslungen]]
-name = "Kreisel-Drüsling"
-merkmal = "Kreisel- bis becherförmig, haselnuss- bis kandisbraun, Fleisch weich und schwabbelig, meist an Weide."
-essbar = "essbar"
 slug = "kreisel-druesling"
+unterschied = "Kreisel- bis becherförmig, haselnuss- bis kandisbraun, Fleisch weich und schwabbelig, meist an Weide."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -35,22 +35,16 @@ vorkommen = "Folgezersetzer in Mischwald und Auwald, gern bei Pappeln und Espen 
 zeit = "Februar bis Juni, in kälteren Lagen nicht vor Anfang April."
 
 [[verwechslungen]]
-name = "Zipfellorchel"
-merkmal = "Hut zipfelmützenartig hoch gestülpt und aderig statt wabenartig, mit heller Verbindungsnaht."
-essbar = "toedlichGiftig"
 slug = "zipfellorchel"
+unterschied = "Hut zipfelmützenartig hoch gestülpt und aderig statt wabenartig, mit heller Verbindungsnaht."
 
 [[verwechslungen]]
-name = "Böhmische Morchel"
-merkmal = "Käppchen rundlich statt zugespitzt, runzelig labyrinthartig, nur an der Spitze flach mit dem Stiel verwachsen."
-essbar = "essbar"
 slug = "boehmische-verpel"
+unterschied = "Käppchen rundlich statt zugespitzt, runzelig labyrinthartig, nur an der Spitze flach mit dem Stiel verwachsen."
 
 [[verwechslungen]]
-name = "Spitzmorchel"
-merkmal = "Käppchen kammerig und mit dem Rand ganz am Stiel angewachsen, Fruchtkörper deutlich größer."
-essbar = "essbar"
 slug = "spitzmorchel"
+unterschied = "Käppchen kammerig und mit dem Rand ganz am Stiel angewachsen, Fruchtkörper deutlich größer."
 
 [[links]]
 titel = "123pilzsuche.de"

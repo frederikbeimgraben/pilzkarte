@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer im Nadelwald, auf Waldwiesen, Wiesen, Weiden, in Par
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Bleiweißer Trichterling"
-merkmal = "Klein, bis etwa 6 cm, reinweiß, Lamellen weit herablaufend, auf Wiesen und Rasen."
-essbar = "toedlichGiftig"
 slug = "bleiweisser-trichterling"
+unterschied = "Klein, bis etwa 6 cm, reinweiß, Lamellen weit herablaufend, auf Wiesen und Rasen."
 
 [[verwechslungen]]
-name = "Nebelkappe"
-merkmal = "Hut nebelgrau statt weiß, Geruch süßlich parfümiert, Lamellen leicht ablösbar."
-essbar = "giftig"
 slug = "nebelkappe"
+unterschied = "Hut nebelgrau statt weiß, Geruch süßlich parfümiert, Lamellen leicht ablösbar."
 
 [[verwechslungen]]
-name = "Riesentrichterling"
-merkmal = "Hut ockerbraun bis hellbraun und seidig glatt, Lamellen weit herablaufend, Stiel schlanker."
-essbar = "essbar"
 slug = "riesentrichterling"
+unterschied = "Hut ockerbraun bis hellbraun und seidig glatt, Lamellen weit herablaufend, Stiel schlanker."
 
 [[links]]
 titel = "123pilzsuche.de"

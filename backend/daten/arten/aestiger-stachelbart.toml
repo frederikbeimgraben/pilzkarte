@@ -33,28 +33,20 @@ vorkommen = "Folgezersetzer an Totholz von Laubbäumen, gern Buche, vereinzelt a
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Nördlicher Stachelseitling"
-merkmal = "Dachziegelig übereinanderstehende Hüte am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
-essbar = "ungeniessbar"
 slug = "noerdlicher-stachelseitling"
+unterschied = "Dachziegelig übereinanderstehende Hüte am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
 
 [[verwechslungen]]
-name = "Rasiges Stachelspitzchen"
-merkmal = "Nur ein bis drei Millimeter groß, einzelne weiße Stacheln auf dem Holz."
-essbar = "ungeniessbar"
 slug = "rasiges-stachelspitzchen"
+unterschied = "Nur ein bis drei Millimeter groß, einzelne weiße Stacheln auf dem Holz."
 
 [[verwechslungen]]
-name = "Igelstachelbart"
-merkmal = "Unverzweigt, ein Klumpen mit langen herabhängenden Stacheln."
-essbar = "essbar"
 slug = "igelstachelbart"
+unterschied = "Unverzweigt, ein Klumpen mit langen herabhängenden Stacheln."
 
 [[verwechslungen]]
-name = "Dorniger Stachelbart"
-merkmal = "Aus einzelnen dachziegeligen Hüten aufgebaut, gilbt bei Verletzung."
-essbar = "essbar"
 slug = "dorniger-stachelbart"
+unterschied = "Aus einzelnen dachziegeligen Hüten aufgebaut, gilbt bei Verletzung."
 
 [[links]]
 titel = "123pilzsuche.de"

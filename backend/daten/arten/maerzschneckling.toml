@@ -34,16 +34,12 @@ vorkommen = "Symbiosepilz im Mischwald, gern bei Tanne und Fichte, seltener bei 
 zeit = "Frühling."
 
 [[verwechslungen]]
-name = "Risspilzartiger Schneckling"
-merkmal = "Hut braunschuppig auf hellgrauem Grund, Rand fransig, Stiel ebenso braunschuppig."
-essbar = "ungeniessbar"
 slug = "risspilzartiger-schneckling"
+unterschied = "Hut braunschuppig auf hellgrauem Grund, Rand fransig, Stiel ebenso braunschuppig."
 
 [[verwechslungen]]
-name = "Großer Kiefernschneckling"
-merkmal = "Hut graubraun bis olivbraun mit stumpfem Buckel, Stiel schleimig mit Ringzone, bei Kiefer und erst im Spätsommer und Herbst."
-essbar = "essbar"
 slug = "grosser-kiefernschneckling"
+unterschied = "Hut graubraun bis olivbraun mit stumpfem Buckel, Stiel schleimig mit Ringzone, bei Kiefer und erst im Spätsommer und Herbst."
 
 [[links]]
 titel = "123pilzsuche.de"

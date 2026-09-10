@@ -30,10 +30,8 @@ vorkommen = "Symbiosepilz bei Laubbäumen, gern Pappel, Weide, Linde und Eiche, 
 zeit = "Frühling bis Sommer."
 
 [[verwechslungen]]
-name = "Nelkenschwindling"
-merkmal = "Hut ledergelb mit stumpfem Buckel, Lamellen blass creme und entfernt, Stiel zäh und verdrehbar, Sporenpulver weiß."
-essbar = "sehrGuterSpeisepilz"
 slug = "nelkenschwindling"
+unterschied = "Hut ledergelb mit stumpfem Buckel, Lamellen blass creme und entfernt, Stiel zäh und verdrehbar, Sporenpulver weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer auf alten toten Ästen und auf Holzabfällen, oft b�
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Flaschenstäubling"
-merkmal = "Blasse, spitzkegelige Stacheln, wächst aus Erde und nicht büschelig auf Holz."
-essbar = "essbar"
 slug = "flaschenbovist"
+unterschied = "Blasse, spitzkegelige Stacheln, wächst aus Erde und nicht büschelig auf Holz."
 
 [[verwechslungen]]
-name = "Bräunlicher Stäubling"
-merkmal = "Dunkelbraune weiche Stacheln, nach dem Abwaschen bleibt kein Netzmuster, am Boden im Nadelwald."
-essbar = "essbar"
 slug = "braeunlicher-staeubling"
+unterschied = "Dunkelbraune weiche Stacheln, nach dem Abwaschen bleibt kein Netzmuster, am Boden im Nadelwald."
 
 [[verwechslungen]]
-name = "Igelstäubling"
-merkmal = "Stacheln mit helleren Spitzen, nach dem Abwaschen bleibt ein deutliches Netzmuster."
-essbar = "essbar"
 slug = "igelstaeubling"
+unterschied = "Stacheln mit helleren Spitzen, nach dem Abwaschen bleibt ein deutliches Netzmuster."
 
 [[links]]
 titel = "123pilzsuche.de"

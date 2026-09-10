@@ -38,22 +38,16 @@ vorkommen = "Symbiosepilz im Laubwald, meist bei Eiche und Edelkastanie. Selten.
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack immer sehr bitter."
-essbar = "giftig"
 slug = "gallenroehrling"
+unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack immer sehr bitter."
 
 [[verwechslungen]]
-name = "Wurzelnder Bitterröhrling"
-merkmal = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Geschmack sehr bitter."
-essbar = "giftig"
 slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Geschmack sehr bitter."
 
 [[verwechslungen]]
-name = "Gelber Steinpilz"
-merkmal = "Röhren gelblich, Fleisch zitronengelb und leicht blauend, Stielbasis mit wurzelndem Anhängsel."
-essbar = "essbar"
 slug = "anhaengselroehrling"
+unterschied = "Röhren gelblich, Fleisch zitronengelb und leicht blauend, Stielbasis mit wurzelndem Anhängsel."
 
 [[links]]
 titel = "123pilzsuche.de"

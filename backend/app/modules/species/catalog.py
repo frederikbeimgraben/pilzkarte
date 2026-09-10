@@ -18,9 +18,11 @@ from app.core.errors import NotFound
 from app.modules.species.schemas import (
     WEEKS,
     Edibility,
+    Lookalike,
     Marketability,
     Profile,
     Reagent,
+    ResolvedLookalike,
     SeasonBrief,
     SeasonCurve,
     SeasonTable,
@@ -183,6 +185,32 @@ def read_profiles(folder: Path) -> dict[str, Profile]:
     return profiles
 
 
+def check_references(profiles: dict[str, Profile]) -> None:
+    """Prueft, dass jede Verwechslung auf ein Profil zeigt.
+
+    Ein Slug ohne Ziel ist ein Fehler beim Start und kein stiller Ausfall in
+    der Oberflaeche: das Frontend kann einen Verweis nicht aufloesen, den es
+    erst beim Antippen als kaputt erkennt.
+    """
+    missing = [
+        f"{slug} zeigt auf {lookalike.slug}"
+        for slug, profile in profiles.items()
+        for lookalike in profile.lookalikes
+        if lookalike.slug not in profiles
+    ]
+    if missing:
+        raise ValueError("Verwechslungen ohne Ziel: " + ", ".join(sorted(missing)))
+
+
+def build_affects(profiles: dict[str, Profile]) -> dict[str, list[str]]:
+    """Dreht die Verweise um: welche Arten nennen diese als Verwechslung."""
+    result: dict[str, list[str]] = {slug: [] for slug in profiles}
+    for slug, profile in profiles.items():
+        for lookalike in profile.lookalikes:
+            result[lookalike.slug].append(slug)
+    return {slug: sorted(sources) for slug, sources in result.items()}
+
+
 def read_season(file: Path) -> SeasonTable:
     """Liest die Saisontabelle, die die Kette erzeugt hat."""
     return SeasonTable.model_validate_json(file.read_text(encoding="utf-8"))
@@ -195,6 +223,7 @@ class Catalog:
     table: SeasonTable
     profiles: dict[str, Profile]
     maps: dict[str, str]
+    affects: dict[str, list[str]]
 
     def _counts(self, profile: Profile) -> SpeciesCounts:
         # Eine Art ohne Zeile in der Tabelle hat seit 2015 keine Begehung
@@ -318,6 +347,17 @@ class Catalog:
         profile = self.profiles.get(slug)
         return None if profile is None else profile.scientific
 
+    def _resolve(self, lookalike: Lookalike) -> ResolvedLookalike:
+        target = self.profiles[lookalike.slug]
+        return ResolvedLookalike(
+            slug=lookalike.slug,
+            name=target.name,
+            scientific=target.scientific,
+            difference=lookalike.difference,
+            edibility=target.edibility,
+            warning=target.warning,
+        )
+
     def species(self, slug: str) -> Species:
         """Eine Art mit Profil. Ein unbekannter Slug ist ein 404."""
         profile = self.profiles.get(slug)
@@ -365,7 +405,8 @@ class Catalog:
             visits_with_find=counts.visits_with_find,
             peak_week=peak_week_of(all_years) if profile.collectable else None,
             traits=build_traits(profile),
-            lookalikes=profile.lookalikes,
+            lookalikes=[self._resolve(lookalike) for lookalike in profile.lookalikes],
+            affects=self.affects.get(slug, []),
             links=profile.links,
             season=SeasonCurve(
                 all_years=all_years,
@@ -400,5 +441,11 @@ def find_maps(profiles: dict[str, Profile], maps: Path) -> dict[str, str]:
 def catalog(data: Path, maps: Path) -> Catalog:
     """Baut den Katalog aus den Dateien. Der Prozess liest sie einmal."""
     profiles = read_profiles(data / "arten")
+    check_references(profiles)
     table = read_season(data / "saison.json")
-    return Catalog(table=table, profiles=profiles, maps=find_maps(profiles, maps))
+    return Catalog(
+        table=table,
+        profiles=profiles,
+        maps=find_maps(profiles, maps),
+        affects=build_affects(profiles),
+    )

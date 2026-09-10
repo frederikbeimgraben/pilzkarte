@@ -41,22 +41,16 @@ vorkommen = "Folgezersetzer auf Wiesen, im Gebüsch, in Parkanlagen, gern auf St
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Übelriechender Egerling"
-merkmal = "Hut schmutzigbraun bis gelbbraun, Fleisch braunrosa anlaufend, Geruch widerlich fischartig statt karbolartig."
-essbar = "ungeniessbar"
 slug = "uebelriechender-egerling"
+unterschied = "Hut schmutzigbraun bis gelbbraun, Fleisch braunrosa anlaufend, Geruch widerlich fischartig statt karbolartig."
 
 [[verwechslungen]]
-name = "Wiesenchampignon"
-merkmal = "Stielbasis nicht knollig und nicht gelb verfärbend, Geruch angenehm pilzig."
-essbar = "essbar"
 slug = "wiesenchampignon"
+unterschied = "Stielbasis nicht knollig und nicht gelb verfärbend, Geruch angenehm pilzig."
 
 [[verwechslungen]]
-name = "Frühlingschampignon"
-merkmal = "Geruch mandel- bis anisartig, Hut mit seidigen gelbbraunen Radialfasern."
-essbar = "essbar"
 slug = "fruehlingschampignon"
+unterschied = "Geruch mandel- bis anisartig, Hut mit seidigen gelbbraunen Radialfasern."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -30,10 +30,8 @@ vorkommen = "Folgezersetzer meist an Laubholz."
 zeit = "Ganzjährig."
 
 [[verwechslungen]]
-name = "Eichenzunge"
-merkmal = "Zungenförmig an Eiche, Fleisch rotbraun marmoriert und saftig, Poren cremefarben."
-essbar = "essbar"
 slug = "eichenzunge"
+unterschied = "Zungenförmig an Eiche, Fleisch rotbraun marmoriert und saftig, Poren cremefarben."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -32,10 +32,8 @@ vorkommen = "Symbiosepilz unter Lärchen."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gelber Hohlfußröhrling"
-merkmal = "Hut kanariengelb statt rostbraun, Stiel gelbschuppig mit bräunlichen Längszonen."
-essbar = "essbar"
 slug = "gelber-hohlfussroehrling"
+unterschied = "Hut kanariengelb statt rostbraun, Stiel gelbschuppig mit bräunlichen Längszonen."
 
 [[links]]
 titel = "123pilzsuche.de"

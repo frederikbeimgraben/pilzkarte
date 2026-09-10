@@ -35,34 +35,24 @@ vorkommen = "Im Mischwald, überwiegend bei Nadelbäumen und dort gern bei Ficht
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißer Knochenporling"
-merkmal = "Wächst an toten Lärchenstämmen und Strünken, Fleisch elastisch zäh und trocken sehr hart."
-essbar = "ungeniessbar"
 slug = "weisser-knochenporling"
+unterschied = "Wächst an toten Lärchenstämmen und Strünken, Fleisch elastisch zäh und trocken sehr hart."
 
 [[verwechslungen]]
-name = "Gelbgrüner Kammporling"
-merkmal = "Hut gelbgrün bis olivgrün, Geruch unangenehm stinkend, Geschmack bitter."
-essbar = "ungeniessbar"
 slug = "gelbgruener-kammporling"
+unterschied = "Hut gelbgrün bis olivgrün, Geruch unangenehm stinkend, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Hut semmelgelb bis orangebraun, Stiel kürzer, schmeckt schnell bitterlich."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Hut semmelgelb bis orangebraun, Stiel kürzer, schmeckt schnell bitterlich."
 
 [[verwechslungen]]
-name = "Rötender Schafeuterporling"
-merkmal = "Hut fleischrosa bis rosa getönt, Druckstellen röten und gilben."
-essbar = "essbar"
 slug = "roetender-schafeuterporling"
+unterschied = "Hut fleischrosa bis rosa getönt, Druckstellen röten und gilben."
 
 [[verwechslungen]]
-name = "Zitronenporling"
-merkmal = "Hut schnell zitronengelb, Fleisch im Schnitt langsam schwach rotbraun anlaufend."
-essbar = "essbar"
 slug = "zitronenporling"
+unterschied = "Hut schnell zitronengelb, Fleisch im Schnitt langsam schwach rotbraun anlaufend."
 
 [[links]]
 titel = "123pilzsuche.de"

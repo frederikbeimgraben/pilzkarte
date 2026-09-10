@@ -37,10 +37,8 @@ vorkommen = "Symbiosepilz im Laubwald, nur bei Birke. Relativ selten."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Fuchsiger Scheidenstreifling"
-merkmal = "Hut fuchsig orangebraun statt gelb, Stiel ohne die deutliche Natterung."
-essbar = "essbar"
 slug = "fuchsiger-scheidenstreifling"
+unterschied = "Hut fuchsig orangebraun statt gelb, Stiel ohne die deutliche Natterung."
 
 [[links]]
 titel = "123pilzsuche.de"

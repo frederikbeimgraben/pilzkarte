@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer und Braunfäuleerreger auf Laub- und Nadelholz, meis
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Schuppiger Sägeblättling"
-merkmal = "Hut mit rotbraunen Schuppen auf gelblichem Grund, Lamellenschneiden stark gesägt, Geruch nach Anis, an Nadelholz."
-essbar = "essbar"
 slug = "schuppiger-saegeblaettling"
+unterschied = "Hut mit rotbraunen Schuppen auf gelblichem Grund, Lamellenschneiden stark gesägt, Geruch nach Anis, an Nadelholz."
 
 [[verwechslungen]]
-name = "Brauner Haarstielporling"
-merkmal = "Unterseite mit weißlichen Poren statt Lamellen, Stiel weißlich filzig."
-essbar = "ungeniessbar"
 slug = "brauner-haarstielporling"
+unterschied = "Unterseite mit weißlichen Poren statt Lamellen, Stiel weißlich filzig."
 
 [[verwechslungen]]
-name = "Berindeter Seitling"
-merkmal = "Hut grau bis hellbraun, Stiel mit flüchtigem Ring, Lamellenschneiden nicht gesägt."
-essbar = "essbar"
 slug = "berindeter-seitling"
+unterschied = "Hut grau bis hellbraun, Stiel mit flüchtigem Ring, Lamellenschneiden nicht gesägt."
 
 [[links]]
 titel = "123pilzsuche.de"

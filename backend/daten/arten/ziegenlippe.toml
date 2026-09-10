@@ -56,34 +56,24 @@ vorkommen = "Symbiosepilz im Mischwald, relativ häufig."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Brauner Filzröhrling"
-merkmal = "Stiel gelblich bis bräunlich mit Netzzeichnung statt fast weiß."
-essbar = "essbar"
 slug = "brauner-filzroehrling"
+unterschied = "Stiel gelblich bis bräunlich mit Netzzeichnung statt fast weiß."
 
 [[verwechslungen]]
-name = "Samtiger Filzröhrling"
-merkmal = "Hut auch rotbraun, Stiel mit Netz von der Mitte bis zur Spitze, Geruch nach Schwefel."
-essbar = "essbar"
 slug = "samtiger-filzroehrling"
+unterschied = "Hut auch rotbraun, Stiel mit Netz von der Mitte bis zur Spitze, Geruch nach Schwefel."
 
 [[verwechslungen]]
-name = "Rotfußröhrling"
-merkmal = "Hut später aufgerissen, Stiel rötlich punktiert, Röhren gelb bis olivgelb und etwas herablaufend."
-essbar = "essbar"
 slug = "rotfussroehrling"
+unterschied = "Hut später aufgerissen, Stiel rötlich punktiert, Röhren gelb bis olivgelb und etwas herablaufend."
 
 [[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Hut schleimig und schmierig, hellgelb bis orangerötlich, Röhren auf Druck rosalila fleckend, Stiel mit Ring."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Hut schleimig und schmierig, hellgelb bis orangerötlich, Röhren auf Druck rosalila fleckend, Stiel mit Ring."
 
 [[verwechslungen]]
-name = "Kuhröhrling"
-merkmal = "Hut bräunlich, schmierig, glatt und kahl, Röhren graugelb bis rotbraun, Stiel deutlich dünner."
-essbar = "essbar"
 slug = "kuhroehrling"
+unterschied = "Hut bräunlich, schmierig, glatt und kahl, Röhren graugelb bis rotbraun, Stiel deutlich dünner."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -35,21 +35,12 @@ vorkommen = "Symbiosepilz im Mischwald, bevorzugt bei Nadelholz wie Kiefer und F
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-name = "Maggipilz"
-merkmal = "Geruch stark nach Maggi oder Liebstoeckel, besonders beim Trocknen, Geschmack mild."
-essbar = "giftig"
 slug = "maggipilz"
+unterschied = "Geruch stark nach Maggi oder Liebstoeckel, besonders beim Trocknen, Geschmack mild."
 
 [[verwechslungen]]
-name = "Eichenmilchling"
-merkmal = "Bei Eiche, Hut mit undeutlichen dunkleren Zonen, Geruch oelig bis wanzenartig."
-essbar = "essbar"
 slug = "eichenmilchling"
-
-[[verwechslungen]]
-name = "Braunroter Milchling"
-merkmal = "Geschmack mild, Hut dunkler kastanien- bis weinbraun."
-essbar = "essbar"
+unterschied = "Bei Eiche, Hut mit undeutlichen dunkleren Zonen, Geruch oelig bis wanzenartig."
 
 [[links]]
 titel = "123pilzsuche.de"

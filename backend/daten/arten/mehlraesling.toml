@@ -41,10 +41,8 @@ vorkommen = "Im Mischwald. Die Seite führt ihn als Symbiosepilz, als Parasit un
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Bleiweißer Trichterling"
-merkmal = "Sporenpulver weiß bis leicht gelblich statt rosa, Geruch süßlich aromatisch ohne Mehlnote, dünnfleischiger und wässrig zäh."
-essbar = "toedlichGiftig"
 slug = "bleiweisser-trichterling"
+unterschied = "Sporenpulver weiß bis leicht gelblich statt rosa, Geruch süßlich aromatisch ohne Mehlnote, dünnfleischiger und wässrig zäh."
 
 [[links]]
 titel = "123pilzsuche.de"

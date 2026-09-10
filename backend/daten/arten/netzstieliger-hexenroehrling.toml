@@ -45,34 +45,24 @@ vorkommen = "Symbiosepilz in Laubwäldern und Parkanlagen, auf kalkhaltigem Bode
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kurznetziger Hexenröhrling"
-merkmal = "Netz nur im oberen Stielteil, im Alter zur Mitte hin verschoben, Stielfleisch stark weinrot, Röhrenboden orangerot."
-essbar = "bedingtEssbar"
 slug = "kurznetziger-hexenroehrling"
+unterschied = "Netz nur im oberen Stielteil, im Alter zur Mitte hin verschoben, Stielfleisch stark weinrot, Röhrenboden orangerot."
 
 [[verwechslungen]]
-name = "Satansröhrling"
-merkmal = "Hut weiß bis hellgrau oder grauoliv, Stielbasis dick knollig und rot, Fleisch nur schwach blauend, Geruch im Alter aasartig."
-essbar = "giftig"
 slug = "satansroehrling"
+unterschied = "Hut weiß bis hellgrau oder grauoliv, Stielbasis dick knollig und rot, Fleisch nur schwach blauend, Geruch im Alter aasartig."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Röhren gelblich statt rot, Hut lehmgrau und trocken samtig, Geschmack bitter."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Röhren gelblich statt rot, Hut lehmgrau und trocken samtig, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Blaufleckender Purpurröhrling"
-merkmal = "Hut purpurrot bis weinrosa und blau fleckend, Stielbasis karminrot, Fleisch sofort stark blauend."
-essbar = "giftig"
 slug = "blaufleckender-purpurroehrling"
+unterschied = "Hut purpurrot bis weinrosa und blau fleckend, Stielbasis karminrot, Fleisch sofort stark blauend."
 
 [[verwechslungen]]
-name = "Flockenstieliger Hexenröhrling"
-merkmal = "Stiel mit roten Flöckchen und ohne jedes Netz, Hut dunkelbraun, auf saurem Boden."
-essbar = "essbar"
 slug = "flockenstieliger-hexenroehrling"
+unterschied = "Stiel mit roten Flöckchen und ohne jedes Netz, Hut dunkelbraun, auf saurem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -41,16 +41,12 @@ vorkommen = "Folgezersetzer in Mischwald, Parks und Hecken, meist bei Laubbäume
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Mönchskopf"
-merkmal = "Deutlich größer, Hut bräunlich mit warzenartigem Buckel in der Mitte, Geruch süßlich nach Bittermandel."
-essbar = "essbar"
 slug = "moenchskopf"
+unterschied = "Deutlich größer, Hut bräunlich mit warzenartigem Buckel in der Mitte, Geruch süßlich nach Bittermandel."
 
 [[verwechslungen]]
-name = "Fuchsiger Röteltrichterling"
-merkmal = "Lamellen fuchsig bis ockergelb und gegabelt, Sporenpulver mit einem Hauch Rosa, Geruch nach frisch geschnittenem Gras."
-essbar = "essbar"
 slug = "fuchsiger-roetelritterling"
+unterschied = "Lamellen fuchsig bis ockergelb und gegabelt, Sporenpulver mit einem Hauch Rosa, Geruch nach frisch geschnittenem Gras."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -33,26 +33,20 @@ vorkommen = "Folgezersetzer im Laubwald, auf Wegen, an Wegrändern und in Parks,
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißstieliger Rötling"
-merkmal = "Lamellen laufen rosa an, Sporenpulver rosa, wächst nicht büschelig."
-essbar = "giftig"
+slug = "weissstieliger-roetling"
+unterschied = "Lamellen laufen rosa an, Sporenpulver rosa, wächst nicht büschelig."
 
 [[verwechslungen]]
-name = "Nebelkappe"
-merkmal = "Hut nebelgrau, Geruch auffallend süßlich, wächst in Reihen statt in Büscheln."
-essbar = "giftig"
 slug = "nebelkappe"
+unterschied = "Hut nebelgrau, Geruch auffallend süßlich, wächst in Reihen statt in Büscheln."
 
 [[verwechslungen]]
-name = "Panzerrasling"
-merkmal = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
-essbar = "essbar"
 slug = "panzerrasling"
+unterschied = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
 
 [[verwechslungen]]
-name = "Frostrasling"
-merkmal = "Hut aschgrau bis dunkel graubraun, Stiele meist einzeln nebeneinander und tief im Boden."
-essbar = "essbar"
+slug = "frostrasling"
+unterschied = "Hut aschgrau bis dunkel graubraun, Stiele meist einzeln nebeneinander und tief im Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

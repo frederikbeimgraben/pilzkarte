@@ -44,34 +44,24 @@ vorkommen = "Folgezersetzer im Mischwald, bildet Hexenringe. Sehr häufig."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Wohlriechender Trichterling"
-merkmal = "Hut karamell- bis graubraun, Lamellen grauweiß, deutlich kleiner."
-essbar = "giftig"
 slug = "wohlriechender-trichterling"
+unterschied = "Hut karamell- bis graubraun, Lamellen grauweiß, deutlich kleiner."
 
 [[verwechslungen]]
-name = "Purpuroranger Afterleistling"
-merkmal = "Hut braunorange bis purpurorange, Lamellen fleischrosa bis gelborange."
-essbar = "giftig"
 slug = "purpuroranger-afterleistling"
+unterschied = "Hut braunorange bis purpurorange, Lamellen fleischrosa bis gelborange."
 
 [[verwechslungen]]
-name = "Falscher Pfifferling"
-merkmal = "Hut leuchtend orange, Lamellen gelb bis orangegelb und vielfach gegabelt."
-essbar = "giftig"
 slug = "falscher-pfifferling"
+unterschied = "Hut leuchtend orange, Lamellen gelb bis orangegelb und vielfach gegabelt."
 
 [[verwechslungen]]
-name = "Mönchskopf"
-merkmal = "Viel größer, Hut mit stumpfem Buckel, Stiel kräftig und keulig."
-essbar = "essbar"
 slug = "moenchskopf"
+unterschied = "Viel größer, Hut mit stumpfem Buckel, Stiel kräftig und keulig."
 
 [[verwechslungen]]
-name = "Ockerbrauner Trichterling"
-merkmal = "Hut blass lederfarben bis cremeocker, Lamellen weiß bis creme."
-essbar = "essbar"
 slug = "ockerbrauner-trichterling"
+unterschied = "Hut blass lederfarben bis cremeocker, Lamellen weiß bis creme."
 
 [[links]]
 titel = "123pilzsuche.de"

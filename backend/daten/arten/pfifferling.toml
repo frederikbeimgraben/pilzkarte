@@ -38,34 +38,24 @@ vorkommen = "Symbiosepilz im Mischwald, regional oft sehr häufig."
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Zitronengelber Raukopf"
-merkmal = "Echte Lamellen statt Leisten, gelblich bis rostgelb, Hut trocken löwengelb bis fuchsrot, Stiel mit gelben Velumresten."
-essbar = "toedlichGiftig"
 slug = "zitronengelber-raukopf"
+unterschied = "Echte Lamellen statt Leisten, gelblich bis rostgelb, Hut trocken löwengelb bis fuchsrot, Stiel mit gelben Velumresten."
 
 [[verwechslungen]]
-name = "Falscher Pfifferling"
-merkmal = "Leuchtend orange, echte gegabelte Lamellen, die sich ablösen und verschieben lassen, Geschmack nicht pfefferig, auf Nadelstreu."
-essbar = "giftig"
 slug = "falscher-pfifferling"
+unterschied = "Leuchtend orange, echte gegabelte Lamellen, die sich ablösen und verschieben lassen, Geschmack nicht pfefferig, auf Nadelstreu."
 
 [[verwechslungen]]
-name = "Ölbaumtrichterling"
-merkmal = "An Laubholz, Lamellen leuchtend goldgelb mit vielen kurzen Zwischenlamellen und kaum gegabelt."
-essbar = "giftig"
 slug = "oelbaumtrichterling"
+unterschied = "An Laubholz, Lamellen leuchtend goldgelb mit vielen kurzen Zwischenlamellen und kaum gegabelt."
 
 [[verwechslungen]]
-name = "Brauner Afterleistling"
-merkmal = "Hut braun bis braunorange, Lamellen ablösbar, Stiel deutlich dicker als beim Falschen Pfifferling."
-essbar = "giftig"
 slug = "brauner-afterleistling"
+unterschied = "Hut braun bis braunorange, Lamellen ablösbar, Stiel deutlich dicker als beim Falschen Pfifferling."
 
 [[verwechslungen]]
-name = "Samtpfifferling"
-merkmal = "Hut orange, samtig bis zottig, Rand wellig, Geruch süßlich obstartig, bei Buche."
-essbar = "essbar"
 slug = "samtpfifferling"
+unterschied = "Hut orange, samtig bis zottig, Rand wellig, Geruch süßlich obstartig, bei Buche."
 
 [[links]]
 titel = "123pilzsuche.de"

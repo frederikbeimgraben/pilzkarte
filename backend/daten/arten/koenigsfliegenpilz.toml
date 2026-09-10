@@ -33,16 +33,12 @@ vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, auf saurem Boden."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Pantherpilz"
-merkmal = "Hut kastanien- bis graubraun mit rein weißen, gleichmäßig angeordneten Velumflocken, Stiel weiß mit abgesetzter Knolle, Fleisch unter der Huthaut nicht gelb."
-essbar = "toedlichGiftig"
 slug = "pantherpilz"
+unterschied = "Hut kastanien- bis graubraun mit rein weißen, gleichmäßig angeordneten Velumflocken, Stiel weiß mit abgesetzter Knolle, Fleisch unter der Huthaut nicht gelb."
 
 [[verwechslungen]]
-name = "Grauer Wulstling"
-merkmal = "Hut hellbräunlich bis schwarzbraun mit grauweißen Velumresten, Stiel weiß bis grauweiß, Geruch rettich- bis rübenartig."
-essbar = "essbar"
 slug = "grauer-wulstling"
+unterschied = "Hut hellbräunlich bis schwarzbraun mit grauweißen Velumresten, Stiel weiß bis grauweiß, Geruch rettich- bis rübenartig."
 
 [[links]]
 titel = "123pilzsuche.de"

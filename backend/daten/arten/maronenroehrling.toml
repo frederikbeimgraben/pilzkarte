@@ -54,34 +54,24 @@ vorkommen = "Symbiosepilz in Misch- und Nadelwäldern, gern auf saurem Boden."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, später rosa, Stiel mit braunem Netz. Schon ein kleines Stück Fleisch schmeckt sehr bitter."
-essbar = "giftig"
 slug = "gallenroehrling"
+unterschied = "Röhren jung weiß, später rosa, Stiel mit braunem Netz. Schon ein kleines Stück Fleisch schmeckt sehr bitter."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Hut lehmgrau und samtig, Stiel zur Basis rot mit Netz, Fleisch sofort blauend, Geruch säuerlich muffig."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot mit Netz, Fleisch sofort blauend, Geruch säuerlich muffig."
 
 [[verwechslungen]]
-name = "Steinpilz"
-merkmal = "Röhren weißlich bis gelbgrün und kaum blauend, Stiel mit weißem Netz."
-essbar = "essbar"
 slug = "steinpilz"
+unterschied = "Röhren weißlich bis gelbgrün und kaum blauend, Stiel mit weißem Netz."
 
 [[verwechslungen]]
-name = "Rotfußröhrling"
-merkmal = "Huthaut aufreißend, darunter eine rote Zone, Stiel rötlich punktiert, Fleisch nur stellenweise blauend."
-essbar = "essbar"
 slug = "rotfussroehrling"
+unterschied = "Huthaut aufreißend, darunter eine rote Zone, Stiel rötlich punktiert, Fleisch nur stellenweise blauend."
 
 [[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut wildlederartig filzig, Röhren jung leuchtend gelb und höchstens leicht blauend, Stiel fast weiß und schlank."
-essbar = "essbar"
 slug = "ziegenlippe"
+unterschied = "Hut wildlederartig filzig, Röhren jung leuchtend gelb und höchstens leicht blauend, Stiel fast weiß und schlank."
 
 [[links]]
 titel = "123pilzsuche.de"

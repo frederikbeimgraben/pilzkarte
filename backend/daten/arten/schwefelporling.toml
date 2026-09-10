@@ -37,34 +37,24 @@ vorkommen = "An Laubbäumen, in höheren Lagen auch bei Lärche. Parasit oder Fo
 zeit = "Mai bis September."
 
 [[verwechslungen]]
-name = "Zimtfarbener Weichporling"
-merkmal = "Fleisch dickfleischig, weich und zimtbraun bis rosabraun, nicht gelb."
-essbar = "toedlichGiftig"
 slug = "zimtfarbener-weichporling"
+unterschied = "Fleisch dickfleischig, weich und zimtbraun bis rosabraun, nicht gelb."
 
 [[verwechslungen]]
-name = "Duftender Goldporling"
-merkmal = "Liegt dem Holz flach auf, ohne abstehende Fächer, Myzel orangerot."
-essbar = "ungeniessbar"
 slug = "duftender-goldporling"
+unterschied = "Liegt dem Holz flach auf, ohne abstehende Fächer, Myzel orangerot."
 
 [[verwechslungen]]
-name = "Leuchtender Weichporling"
-merkmal = "Flach am Substrat angewachsen, Fleisch gelblich bis orangerot, jung weich und saftig."
-essbar = "ungeniessbar"
 slug = "leuchtender-weichporling"
+unterschied = "Flach am Substrat angewachsen, Fleisch gelblich bis orangerot, jung weich und saftig."
 
 [[verwechslungen]]
-name = "Riesenporling"
-merkmal = "Hut jung fast weiß, später hellbraun, Fleisch weiß und im Schnitt langsam braunschwarz anlaufend."
-essbar = "essbar"
 slug = "riesenporling"
+unterschied = "Hut jung fast weiß, später hellbraun, Fleisch weiß und im Schnitt langsam braunschwarz anlaufend."
 
 [[verwechslungen]]
-name = "Nadelholzschwefelporling"
-merkmal = "Sieht gleich aus, wächst aber an Nadelholz, meist Fichte und Tanne."
-essbar = "essbar"
 slug = "nadelholzschwefelporling"
+unterschied = "Sieht gleich aus, wächst aber an Nadelholz, meist Fichte und Tanne."
 
 [[links]]
 titel = "123pilzsuche.de"

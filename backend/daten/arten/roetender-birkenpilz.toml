@@ -36,16 +36,12 @@ vorkommen = "Symbiosepilz bei Birke. Extrem selten."
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-name = "Vielverfaerbender Birkenpilz"
-merkmal = "Fleisch im Schnitt erst rosa, dann grauschwarz, Stielbasis blaugruen."
-essbar = "essbar"
 slug = "vielverfaerbender-birkenpilz"
+unterschied = "Fleisch im Schnitt erst rosa, dann grauschwarz, Stielbasis blaugruen."
 
 [[verwechslungen]]
-name = "Hainbuchenroehrling"
-merkmal = "Bei Hainbuche und Hasel, Hut ockerbraun mit hammerschlagartig unebener Oberflaeche."
-essbar = "essbar"
 slug = "hainbuchenroehrling"
+unterschied = "Bei Hainbuche und Hasel, Hut ockerbraun mit hammerschlagartig unebener Oberflaeche."
 
 [[links]]
 titel = "123pilzsuche.de"

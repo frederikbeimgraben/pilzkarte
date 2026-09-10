@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer, teils parasitisch, auf Laubholz, gern zusammen mit 
 zeit = "Herbst bis Frühling."
 
 [[verwechslungen]]
-name = "Austernseitling"
-merkmal = "Stiel ohne gelbe Töne, die Lamellen laufen ohne Abgrenzung tief am Stiel herab."
-essbar = "guterSpeisepilz"
 slug = "austernseitling"
+unterschied = "Stiel ohne gelbe Töne, die Lamellen laufen ohne Abgrenzung tief am Stiel herab."
 
 [[verwechslungen]]
-name = "Rillstieliger Seitling"
-merkmal = "Stiel deutlich gerillt, Hut hell graubraun, Fleisch nicht bitter."
-essbar = "essbar"
 slug = "rillstieliger-seitling"
+unterschied = "Stiel deutlich gerillt, Hut hell graubraun, Fleisch nicht bitter."
 
 [[verwechslungen]]
-name = "Berindeter Seitling"
-merkmal = "Hut hellbraun und trocken, Stiel ohne gelbe Schüppchen."
-essbar = "essbar"
 slug = "berindeter-seitling"
+unterschied = "Hut hellbraun und trocken, Stiel ohne gelbe Schüppchen."
 
 [[links]]
 titel = "123pilzsuche.de"

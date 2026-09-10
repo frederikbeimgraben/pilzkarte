@@ -34,21 +34,12 @@ vorkommen = "Folgezersetzer im Laubwald, gern auf humus- und kalkreichem Boden."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Faltentintling"
-merkmal = "Hut grauweiß bis graubraun mit braunen Schuppen, ohne weiße Flocken, Stielbasis mit angedeutetem Ringwulst."
-essbar = "giftig"
 slug = "faltentintling"
+unterschied = "Hut grauweiß bis graubraun mit braunen Schuppen, ohne weiße Flocken, Stielbasis mit angedeutetem Ringwulst."
 
 [[verwechslungen]]
-name = "Flockiger Tintling"
-merkmal = "Deutlich kleiner, Hut graubraun mit weißlichen Velumflocken, Stielbasis verdickt und oft mit Volva."
-essbar = "ungeniessbar"
 slug = "flockiger-tintling"
-
-[[verwechslungen]]
-name = "Ringtintling"
-merkmal = "Stiel mit tief sitzendem, verschiebbarem Ring, wächst auf Mist und Dung."
-essbar = "essbar"
+unterschied = "Deutlich kleiner, Hut graubraun mit weißlichen Velumflocken, Stielbasis verdickt und oft mit Volva."
 
 [[links]]
 titel = "123pilzsuche.de"

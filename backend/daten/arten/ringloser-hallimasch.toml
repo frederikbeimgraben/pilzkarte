@@ -41,22 +41,16 @@ vorkommen = "Parasit und Folgezersetzer an Laubbaeumen, gern Eiche und Edelkasta
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-name = "Gemeiner Hallimasch"
-merkmal = "Stiel mit deutlichem haeutigem Ring, Hut graubraun und dunkel beschuppt."
-essbar = "bedingtEssbar"
 slug = "dunkler-hallimasch"
+unterschied = "Stiel mit deutlichem haeutigem Ring, Hut graubraun und dunkel beschuppt."
 
 [[verwechslungen]]
-name = "Honiggelber Hallimasch"
-merkmal = "Hut honiggelb, Stiel mit gelbflockigem Ring."
-essbar = "bedingtEssbar"
 slug = "honiggelber-hallimasch"
+unterschied = "Hut honiggelb, Stiel mit gelbflockigem Ring."
 
 [[verwechslungen]]
-name = "Gruenblaettriger Schwefelkopf"
-merkmal = "Lamellen jung schwefelgelb, spaeter gruenlich, Geschmack sehr bitter."
-essbar = "giftig"
 slug = "gruenblaettriger-schwefelkopf"
+unterschied = "Lamellen jung schwefelgelb, spaeter gruenlich, Geschmack sehr bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

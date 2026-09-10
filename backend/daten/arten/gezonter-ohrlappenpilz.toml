@@ -32,10 +32,8 @@ vorkommen = "Folgezersetzer und Weißfäuleerreger an Totholz von Laubbäumen, b
 zeit = "Ganzjährig."
 
 [[verwechslungen]]
-name = "Judasohr"
-merkmal = "Dünner und ohrförmig, gegen das Licht durchscheinend, Oberfläche nur fein filzig und nicht bunt gezont."
-essbar = "essbar"
 slug = "judasohr"
+unterschied = "Dünner und ohrförmig, gegen das Licht durchscheinend, Oberfläche nur fein filzig und nicht bunt gezont."
 
 [[links]]
 titel = "123pilzsuche.de"

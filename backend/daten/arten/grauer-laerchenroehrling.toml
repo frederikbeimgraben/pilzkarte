@@ -33,15 +33,8 @@ vorkommen = "Symbiosepilz bei Lärche auf kalkreichem Boden. Selten."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Rostroter Lärchenröhrling"
-merkmal = "Ebenfalls bei Lärche, aber mit gelben statt grauen Röhren, Hut rostrot bis rotbraun."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Bei Lärche, Hut goldgelb bis rostgelb, Röhren goldgelb, Stiel mit Ring."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Bei Lärche, Hut goldgelb bis rostgelb, Röhren goldgelb, Stiel mit Ring."
 
 [[links]]
 titel = "123pilzsuche.de"

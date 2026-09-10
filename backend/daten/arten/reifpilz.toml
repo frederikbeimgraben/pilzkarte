@@ -37,22 +37,16 @@ vorkommen = "Symbiosepilz im Nadelwald, gern unter Kiefern und Fichten, auf saur
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Kegelhütiger Knollenblätterpilz"
-merkmal = "Hut weißlich und seidig radialfaserig, Lamellen bleiben weiß, Stielbasis in einer häutigen Scheide, Sporenpulver weiß. Gleicher Standort und gleicher Boden."
-essbar = "toedlichGiftig"
 slug = "kegelhuetiger-knollenblaetterpilz"
+unterschied = "Hut weißlich und seidig radialfaserig, Lamellen bleiben weiß, Stielbasis in einer häutigen Scheide, Sporenpulver weiß. Gleicher Standort und gleicher Boden."
 
 [[verwechslungen]]
-name = "Giftchampignon"
-merkmal = "Hut olivgrün bis gelbgrün, Lamellen weiß und frei, Stielbasis in einer eierschaligen Volva, Sporenpulver weiß."
-essbar = "toedlichGiftig"
 slug = "giftchampignon"
+unterschied = "Hut olivgrün bis gelbgrün, Lamellen weiß und frei, Stielbasis in einer eierschaligen Volva, Sporenpulver weiß."
 
 [[verwechslungen]]
-name = "Zimtroter Gürtelfuß"
-merkmal = "Lamellen zimtrot bis rotbraun, Hut ohne Reifüberzug, Stiel wollig gegürtelt statt mit häutigem Ring, Geruch rettichartig."
-essbar = "ungeniessbar"
 slug = "zimtroter-guertelfuss"
+unterschied = "Lamellen zimtrot bis rotbraun, Hut ohne Reifüberzug, Stiel wollig gegürtelt statt mit häutigem Ring, Geruch rettichartig."
 
 [[links]]
 titel = "123pilzsuche.de"

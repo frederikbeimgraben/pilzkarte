@@ -44,16 +44,12 @@ vorkommen = "Symbiosepilz von Rosengewächsen, an Waldrändern, in Gärten und P
 zeit = "Frühling bis Sommer."
 
 [[verwechslungen]]
-name = "Riesenrötling"
-merkmal = "Deutlich größer, Hut gelblich grau, wächst im Laubwald und auf Wiesen, nicht büschelig unter Schlehen."
-essbar = "toedlichGiftig"
 slug = "riesenroetling"
+unterschied = "Deutlich größer, Hut gelblich grau, wächst im Laubwald und auf Wiesen, nicht büschelig unter Schlehen."
 
 [[verwechslungen]]
-name = "Maipilz"
-merkmal = "Lamellen bleiben weiß bis cremefarben, Sporenpulver weiß, Geruch stark mehlig."
-essbar = "essbar"
 slug = "maipilz"
+unterschied = "Lamellen bleiben weiß bis cremefarben, Sporenpulver weiß, Geruch stark mehlig."
 
 [[links]]
 titel = "123pilzsuche.de"

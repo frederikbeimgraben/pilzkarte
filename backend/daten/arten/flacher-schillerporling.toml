@@ -31,20 +31,8 @@ vorkommen = "An lebenden alten Laubbäumen, meist Eiche und Buche. Parasit und F
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Zottiger Schillerporling"
-merkmal = "Oberfläche zottig struppig behaart, Fruchtkörper dicker und jung saftig, im Alter schwarz."
-essbar = "ungeniessbar"
-
-[[verwechslungen]]
-name = "Tannenfeuerschwamm"
-merkmal = "Hart und holzig, mehrjährig, an Nadelholz."
-essbar = "ungeniessbar"
-
-[[verwechslungen]]
-name = "Eichenfeuerschwamm"
-merkmal = "Hart und holzig, mehrjährig, Oberfläche grau und rissig, an Eiche."
-essbar = "ungeniessbar"
 slug = "eichenfeuerschwamm"
+unterschied = "Hart und holzig, mehrjährig, Oberfläche grau und rissig, an Eiche."
 
 [[links]]
 titel = "123pilzsuche.de"

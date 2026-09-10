@@ -45,10 +45,8 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Eiche und Buche, auf kalkreichem
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Buchen-Schleimrübling"
-merkmal = "Hut weiß und stark schleimig, Stiel mit häutigem Ring, wächst an Totholz von Buche statt am Boden."
-essbar = "essbar"
 slug = "buchen-schleimruebling"
+unterschied = "Hut weiß und stark schleimig, Stiel mit häutigem Ring, wächst an Totholz von Buche statt am Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

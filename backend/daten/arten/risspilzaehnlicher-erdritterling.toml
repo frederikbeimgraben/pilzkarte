@@ -32,22 +32,16 @@ vorkommen = "Symbiosepilz mit verschiedenen Straeuchern in Mischwald, auf Wiesen
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Deutlich groesser und kraeftiger, Hut mit groben dunkelgrauen Schuppen auf hellem Grund, Lamellen mit gelblichen Tropfen."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Deutlich groesser und kraeftiger, Hut mit groben dunkelgrauen Schuppen auf hellem Grund, Lamellen mit gelblichen Tropfen."
 
 [[verwechslungen]]
-name = "Schwarzschuppiger Erdritterling"
-merkmal = "Hut mit groben, abstehenden schwarzen Schuppen."
-essbar = "giftig"
 slug = "schwarzschuppiger-erdritterling"
+unterschied = "Hut mit groben, abstehenden schwarzen Schuppen."
 
 [[verwechslungen]]
-name = "Seifenritterling"
-merkmal = "Geruch seifenartig, Fleisch bei Verletzung langsam roetend."
-essbar = "giftig"
 slug = "seifenritterling"
+unterschied = "Geruch seifenartig, Fleisch bei Verletzung langsam roetend."
 
 [[links]]
 titel = "123pilzsuche.de"

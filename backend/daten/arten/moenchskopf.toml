@@ -44,34 +44,24 @@ vorkommen = "Folgezersetzer im Mischwald, gern auf kalkreichem Boden, oft in Hex
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Bleiweißer Trichterling"
-merkmal = "Deutlich kleiner und dünnfleischig, Hut weiß und glasig bereift, ohne Buckel in der Mitte."
-essbar = "toedlichGiftig"
 slug = "bleiweisser-trichterling"
+unterschied = "Deutlich kleiner und dünnfleischig, Hut weiß und glasig bereift, ohne Buckel in der Mitte."
 
 [[verwechslungen]]
-name = "Nebelkappe"
-merkmal = "Hut graubraun bis weißgrau ohne Buckel, Geruch unangenehm süßlich nach Raps, Sporenpulver cremegelblich."
-essbar = "giftig"
 slug = "nebelkappe"
+unterschied = "Hut graubraun bis weißgrau ohne Buckel, Geruch unangenehm süßlich nach Raps, Sporenpulver cremegelblich."
 
 [[verwechslungen]]
-name = "Riesentrichterling"
-merkmal = "Hutmitte ohne Buckel, Rand nur wenig eingerollt, Hut seidig glatt."
-essbar = "essbar"
 slug = "riesentrichterling"
+unterschied = "Hutmitte ohne Buckel, Rand nur wenig eingerollt, Hut seidig glatt."
 
 [[verwechslungen]]
-name = "Riesenkrempentrichterling"
-merkmal = "Hut weiß bis blassocker, im Alter mit braunen Flecken und kreisförmigen Rissen, Geruch mehlig, Geschmack nussig."
-essbar = "essbar"
 slug = "riesenkrempentrichterling"
+unterschied = "Hut weiß bis blassocker, im Alter mit braunen Flecken und kreisförmigen Rissen, Geruch mehlig, Geschmack nussig."
 
 [[verwechslungen]]
-name = "Rillstieliger Weichritterling"
-merkmal = "Hut rotbraun bis kastanienbraun und stark ausblassend, Lamellen nur mit einem Zahn herablaufend, Stiel rillig gestreift."
-essbar = "minderwertig"
 slug = "rillstieliger-weichritterling"
+unterschied = "Hut rotbraun bis kastanienbraun und stark ausblassend, Lamellen nur mit einem Zahn herablaufend, Stiel rillig gestreift."
 
 [[links]]
 titel = "123pilzsuche.de"

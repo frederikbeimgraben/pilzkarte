@@ -33,16 +33,12 @@ vorkommen = "Folgezersetzer meist im Nadelwald, selten im Laubwald, oft im Hexen
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rinnigbereifter Trichterling"
-merkmal = "Hutrand weiß bereift mit konzentrisch angeordneten ockerlichen Flecken, Stiel kürzer, auf Wiesen, Feldern und an Wegrändern."
-essbar = "toedlichGiftig"
 slug = "rinnigbereifter-trichterling"
+unterschied = "Hutrand weiß bereift mit konzentrisch angeordneten ockerlichen Flecken, Stiel kürzer, auf Wiesen, Feldern und an Wegrändern."
 
 [[verwechslungen]]
-name = "Mehlräsling"
-merkmal = "Riecht und schmeckt stark nach Mehl und Gurke, Hut samtig bereift, Fleisch fest."
-essbar = "sehrGuterSpeisepilz"
 slug = "mehlraesling"
+unterschied = "Riecht und schmeckt stark nach Mehl und Gurke, Hut samtig bereift, Fleisch fest."
 
 [[links]]
 titel = "123pilzsuche.de"

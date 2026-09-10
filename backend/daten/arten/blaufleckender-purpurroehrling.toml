@@ -32,21 +32,12 @@ vorkommen = "Im Laubwald auf kalkreichem Boden. In der Schweiz verletzlich, in D
 zeit = "Frühsommer bis Spätsommer."
 
 [[verwechslungen]]
-name = "Blasshütiger Purpurröhrling"
-merkmal = "Huthaut weißlich bis olivgrau und nicht blauend, Fleisch blaut nur wenig im Hut und in der Stielspitze."
-essbar = "giftig"
-
-[[verwechslungen]]
-name = "Falscher Satansröhrling"
-merkmal = "Stiel kräftig rot mit rotem Netz, Geruch unbedeutend bis neutral."
-essbar = "giftig"
 slug = "falscher-satansroehrling"
+unterschied = "Stiel kräftig rot mit rotem Netz, Geruch unbedeutend bis neutral."
 
 [[verwechslungen]]
-name = "Kurznetziger Hexenröhrling"
-merkmal = "Netz wandert mit dem Alter in den unteren Stielbereich, Stielfleisch stark weinrot."
-essbar = "bedingtEssbar"
 slug = "kurznetziger-hexenroehrling"
+unterschied = "Netz wandert mit dem Alter in den unteren Stielbereich, Stielfleisch stark weinrot."
 
 [[links]]
 titel = "123pilzsuche.de"

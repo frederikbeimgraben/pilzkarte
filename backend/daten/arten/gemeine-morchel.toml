@@ -35,16 +35,12 @@ vorkommen = "Folgezersetzer in Auwäldern und Nadelwald-Auwäldern, in Gärten u
 zeit = "Frühling, Februar bis Juni."
 
 [[verwechslungen]]
-name = "Zipfellorchel"
-merkmal = "Hut zipfelig gelappt statt wabig gekammert, Rand frei und nicht mit dem Stiel verwachsen."
-essbar = "toedlichGiftig"
 slug = "zipfellorchel"
+unterschied = "Hut zipfelig gelappt statt wabig gekammert, Rand frei und nicht mit dem Stiel verwachsen."
 
 [[verwechslungen]]
-name = "Dickfüßige Morchel"
-merkmal = "Stiel auffällig dick und breit, der Hut wirkt dagegen klein."
-essbar = "essbar"
 slug = "dickfuessige-morchel"
+unterschied = "Stiel auffällig dick und breit, der Hut wirkt dagegen klein."
 
 [[links]]
 titel = "123pilzsuche.de"

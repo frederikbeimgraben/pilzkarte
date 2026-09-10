@@ -36,34 +36,24 @@ vorkommen = "Folgezersetzer an Laubholz, gern büschelig zusammenwachsend, löst
 zeit = "Frühjahr bis Sommer, Fruchtkörper sind ganzjährig zu finden."
 
 [[verwechslungen]]
-name = "Löwengelber Porling"
-merkmal = "Nur 3 bis 6 cm breit, Hut graugelb bis orange, kahl und ohne Schuppen."
-essbar = "ungeniessbar"
 slug = "loewengelber-porling"
+unterschied = "Nur 3 bis 6 cm breit, Hut graugelb bis orange, kahl und ohne Schuppen."
 
 [[verwechslungen]]
-name = "Schuppiger Sägeblättling"
-merkmal = "Lamellen statt Poren, Schneiden stark gesägt, wächst an Nadelholz."
-essbar = "essbar"
 slug = "schuppiger-saegeblaettling"
+unterschied = "Lamellen statt Poren, Schneiden stark gesägt, wächst an Nadelholz."
 
 [[verwechslungen]]
-name = "Sklerotienporling"
-merkmal = "Kleiner, Hutrand bewimpert, Stiel meist zentral, Basis filzig und nicht schwarz."
-essbar = "essbar"
 slug = "sklerotienporling"
+unterschied = "Kleiner, Hutrand bewimpert, Stiel meist zentral, Basis filzig und nicht schwarz."
 
 [[verwechslungen]]
-name = "Riesenporling"
-merkmal = "Viele fächerförmige Hüte an einem Strunk, Poren schwärzen auf Druck."
-essbar = "essbar"
 slug = "riesenporling"
+unterschied = "Viele fächerförmige Hüte an einem Strunk, Poren schwärzen auf Druck."
 
 [[verwechslungen]]
-name = "Berindeter Seitling"
-merkmal = "Lamellen statt Poren, herablaufend und gegabelt, Stiel mit flüchtigem Ring."
-essbar = "essbar"
 slug = "berindeter-seitling"
+unterschied = "Lamellen statt Poren, herablaufend und gegabelt, Stiel mit flüchtigem Ring."
 
 [[links]]
 titel = "123pilzsuche.de"

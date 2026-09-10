@@ -31,21 +31,12 @@ vorkommen = "Folgezersetzer an Waldwegen und in Gärten, liebt lehm- und kalkrei
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Faltentintling"
-merkmal = "Hut ohne spitzen Scheitel, Lamellen abgerundet angewachsen bis schmal angeheftet, Sporenpulver schwarzbraun."
-essbar = "giftig"
 slug = "faltentintling"
+unterschied = "Hut ohne spitzen Scheitel, Lamellen abgerundet angewachsen bis schmal angeheftet, Sporenpulver schwarzbraun."
 
 [[verwechslungen]]
-name = "Ringtintling"
-merkmal = "Stiel mit tief sitzendem, verschiebbarem Ring, Lamellen jung weiß mit fleischrötlichen Schneiden, wächst auf Mist und Dung."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Spechttintling"
-merkmal = "Hut braun mit weißen flockigen Schuppen, Geruch muffig bis teerartig."
-essbar = "ungeniessbar"
 slug = "spechttintling"
+unterschied = "Hut braun mit weißen flockigen Schuppen, Geruch muffig bis teerartig."
 
 [[links]]
 titel = "123pilzsuche.de"

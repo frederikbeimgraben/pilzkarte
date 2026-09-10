@@ -39,22 +39,16 @@ vorkommen = "Symbiosepilz im Mischwald, meist mit Laubbäumen, gern bei Buche, E
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Schafporling"
-merkmal = "Hut weißlich bis cremefarben ohne Grünton, Poren weiß, Fleisch weiß und mild."
-essbar = "essbar"
 slug = "schafporling"
+unterschied = "Hut weißlich bis cremefarben ohne Grünton, Poren weiß, Fleisch weiß und mild."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Hut semmelgelb bis orange, Fleisch mild, Poren gelblich."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Hut semmelgelb bis orange, Fleisch mild, Poren gelblich."
 
 [[verwechslungen]]
-name = "Zitronenporling"
-merkmal = "Hut zitronengelb bis cremefarben ohne Olivgrün, Fleisch mild."
-essbar = "essbar"
 slug = "zitronenporling"
+unterschied = "Hut zitronengelb bis cremefarben ohne Olivgrün, Fleisch mild."
 
 [[links]]
 titel = "123pilzsuche.de"

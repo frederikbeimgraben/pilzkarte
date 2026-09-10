@@ -34,22 +34,16 @@ vorkommen = "Symbiosepilz in Mischwäldern. Sehr häufig, oft als Massenpilz."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Genabelter Semmelstoppelpilz"
-merkmal = "Hut in der Mitte deutlich genabelt, blasser gefärbt."
-essbar = "essbar"
 slug = "genabelter-semmelstoppelpilz"
+unterschied = "Hut in der Mitte deutlich genabelt, blasser gefärbt."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Poren statt Stoppeln auf der Hutunterseite."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Poren statt Stoppeln auf der Hutunterseite."
 
 [[verwechslungen]]
-name = "Schafporling"
-merkmal = "Hut weißlich, Unterseite mit feinen Poren statt Stacheln."
-essbar = "essbar"
 slug = "schafporling"
+unterschied = "Hut weißlich, Unterseite mit feinen Poren statt Stacheln."
 
 [[links]]
 titel = "123pilzsuche.de"

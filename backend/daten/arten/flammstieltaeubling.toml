@@ -48,16 +48,12 @@ vorkommen = "Symbiosepilz in feuchten Nadelwäldern, oft im Moos saurer Bergwäl
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kiefernspeitäubling"
-merkmal = "Stiel rein weiß ohne rote Flammung, bei Kiefer."
-essbar = "giftig"
 slug = "kiefernspeitaeubling"
+unterschied = "Stiel rein weiß ohne rote Flammung, bei Kiefer."
 
 [[verwechslungen]]
-name = "Buchenspeitäubling"
-merkmal = "Stiel weiß, Hut heller rot, im Laubwald bei Buche."
-essbar = "giftig"
 slug = "buchenspeitaeubling"
+unterschied = "Stiel weiß, Hut heller rot, im Laubwald bei Buche."
 
 [[links]]
 titel = "123pilzsuche.de"

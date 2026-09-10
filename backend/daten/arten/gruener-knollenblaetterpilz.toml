@@ -37,22 +37,16 @@ vorkommen = "Symbiosepilz meist bei Laubbäumen wie Eiche und Buche, selten bei 
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Ganz weiß, Hut ohne Grün- oder Olivton."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Ganz weiß, Hut ohne Grün- oder Olivton."
 
 [[verwechslungen]]
-name = "Kegelhütiger Knollenblätterpilz"
-merkmal = "Hut weiß bis cremefarben und kegelig, Huthaut wird mit KOH gelb."
-essbar = "toedlichGiftig"
 slug = "kegelhuetiger-knollenblaetterpilz"
+unterschied = "Hut weiß bis cremefarben und kegelig, Huthaut wird mit KOH gelb."
 
 [[verwechslungen]]
-name = "Frauentäubling"
-merkmal = "Ohne Ring, ohne Knolle und ohne Scheide, Lamellen und Fleisch brüchig."
-essbar = "essbar"
 slug = "frauentaeubling"
+unterschied = "Ohne Ring, ohne Knolle und ohne Scheide, Lamellen und Fleisch brüchig."
 
 [[links]]
 titel = "123pilzsuche.de"

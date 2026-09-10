@@ -31,22 +31,16 @@ vorkommen = "In Gewächshäusern, botanischen Gärten, Treibhäusern und auf Kom
 zeit = "Die Seite nennt keine Jahreszeit."
 
 [[verwechslungen]]
-name = "Jungfernschirmling"
-merkmal = "Kleiner, Lamellen weiß bis blassrosa, Sporenpulver weiß."
-essbar = "giftig"
 slug = "jungfernschirmling"
+unterschied = "Kleiner, Lamellen weiß bis blassrosa, Sporenpulver weiß."
 
 [[verwechslungen]]
-name = "Gerandetknolliger Garten-Safranschirmling"
-merkmal = "Stielbasis mit gerandeter Knolle, Fleisch rötet kräftig, Sporenpulver weiß."
-essbar = "giftig"
 slug = "gerandetknolliger-garten-safranschirmling"
+unterschied = "Stielbasis mit gerandeter Knolle, Fleisch rötet kräftig, Sporenpulver weiß."
 
 [[verwechslungen]]
-name = "Büscheliger Egerlingsschirmling"
-merkmal = "Wächst büschelig, Sporenpulver weiß."
-essbar = "giftig"
 slug = "buescheliger-egerlingsschirmling"
+unterschied = "Wächst büschelig, Sporenpulver weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

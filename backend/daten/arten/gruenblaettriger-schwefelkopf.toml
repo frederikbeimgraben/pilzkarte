@@ -31,22 +31,16 @@ vorkommen = "Folgezersetzer an Laub- und Nadelholzstümpfen, Ästen und vergrabe
 zeit = "Ganzjährig."
 
 [[verwechslungen]]
-name = "Rotbrauner Flämmling"
-merkmal = "Hut rotbraun bis gelbbraun, Lamellen und Sporenpulver rostbraun, ohne Grünton."
-essbar = "giftig"
 slug = "rotbrauner-flaemmling"
+unterschied = "Hut rotbraun bis gelbbraun, Lamellen und Sporenpulver rostbraun, ohne Grünton."
 
 [[verwechslungen]]
-name = "Nadelschüppling"
-merkmal = "An Nadelholz, Hut gelb mit spitzen Schuppen, Lamellen ohne Grünton."
-essbar = "giftig"
 slug = "nadelschueppling"
+unterschied = "An Nadelholz, Hut gelb mit spitzen Schuppen, Lamellen ohne Grünton."
 
 [[verwechslungen]]
-name = "Stockschwämmchen"
-merkmal = "Hut zweifarbig ausblassend, Lamellen zimtbraun, Stiel unter dem Ring braun beschuppt, Geschmack mild."
-essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
+unterschied = "Hut zweifarbig ausblassend, Lamellen zimtbraun, Stiel unter dem Ring braun beschuppt, Geschmack mild."
 
 [[links]]
 titel = "123pilzsuche.de"

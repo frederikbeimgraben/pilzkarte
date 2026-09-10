@@ -32,16 +32,12 @@ vorkommen = "Symbiosepilz im Nadelwald, überwiegend bei Fichte, selten im Laubw
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Hut flach ausgebreitet statt spitzkegelig, Stiel nur mit angedrückten Velumschüppchen, Knolle gerandet."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Hut flach ausgebreitet statt spitzkegelig, Stiel nur mit angedrückten Velumschüppchen, Knolle gerandet."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Hut olivgrün, gelbgrün bis ocker statt weiß."
-essbar = "toedlichGiftig"
 slug = "gruener-knollenblaetterpilz"
+unterschied = "Hut olivgrün, gelbgrün bis ocker statt weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

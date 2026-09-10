@@ -33,21 +33,12 @@ vorkommen = "Folgezersetzer im Laubwald, meist an moderndem Buchenholz wie Äste
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Grauer Dachpilz"
-merkmal = "Hut blassgrau bis mausgrau, Stiel mit grünlich bläulichem Schein, enthält Psilocybin."
-essbar = "giftig"
 slug = "grauer-dachpilz"
+unterschied = "Hut blassgrau bis mausgrau, Stiel mit grünlich bläulichem Schein, enthält Psilocybin."
 
 [[verwechslungen]]
-name = "Seidiger Dachpilz"
-merkmal = "Scheitel mit dunkleren Faserschuppen, bei Trockenheit sparrig schuppig, Sporenpulver rostbraun."
-essbar = "essbar"
 slug = "seidiger-dachpilz"
-
-[[verwechslungen]]
-name = "Rußgrauer Dachpilz"
-merkmal = "Hut rußig grau bis weißlichgrau, Geruch süßlich nach Holunderblüten."
-essbar = "essbar"
+unterschied = "Scheitel mit dunkleren Faserschuppen, bei Trockenheit sparrig schuppig, Sporenpulver rostbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

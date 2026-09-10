@@ -39,10 +39,8 @@ vorkommen = "Symbiosepilz bei Birke, im Laubwald sowie in Parks und Gärten. Sel
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Kuhmaul"
-merkmal = "Lamellen dick, weit stehend und herablaufend, Hut graubraun und schleimig, Stielbasis innen leuchtend gelb."
-essbar = "essbar"
 slug = "kuhmaul"
+unterschied = "Lamellen dick, weit stehend und herablaufend, Hut graubraun und schleimig, Stielbasis innen leuchtend gelb."
 
 [[links]]
 titel = "123pilzsuche.de"

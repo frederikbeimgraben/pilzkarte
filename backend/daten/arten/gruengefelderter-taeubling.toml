@@ -51,28 +51,20 @@ vorkommen = "Symbiosepilz meist im Laubwald, gern bei Buche, Eiche und Hainbuche
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Hut gleichmäßig olivgrün ohne Felder, Lamellen frei, Stiel mit Ring und häutiger Scheide an der Knolle."
-essbar = "toedlichGiftig"
 slug = "gruener-knollenblaetterpilz"
+unterschied = "Hut gleichmäßig olivgrün ohne Felder, Lamellen frei, Stiel mit Ring und häutiger Scheide an der Knolle."
 
 [[verwechslungen]]
-name = "Frauentäubling"
-merkmal = "Huthaut glatt und nicht felderig aufgerissen, Farben von grün über braun bis lila, Lamellen biegsam und nicht brechend."
-essbar = "essbar"
 slug = "frauentaeubling"
+unterschied = "Huthaut glatt und nicht felderig aufgerissen, Farben von grün über braun bis lila, Lamellen biegsam und nicht brechend."
 
 [[verwechslungen]]
-name = "Rissiger Frauentäubling"
-merkmal = "Huthaut nur in der Mitte rissig, Farben oft violett bis lila, Lamellen biegsam."
-essbar = "essbar"
 slug = "rissiger-frauentaeubling"
+unterschied = "Huthaut nur in der Mitte rissig, Farben oft violett bis lila, Lamellen biegsam."
 
 [[verwechslungen]]
-name = "Grasgrüner Täubling"
-merkmal = "Hut graugrün bis grasgrün und feucht schmierig, ohne Felder, Stiel längsgerieft."
-essbar = "essbar"
 slug = "grasgruener-taeubling"
+unterschied = "Hut graugrün bis grasgrün und feucht schmierig, ohne Felder, Stiel längsgerieft."
 
 [[links]]
 titel = "123pilzsuche.de"

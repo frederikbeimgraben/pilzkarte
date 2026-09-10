@@ -34,22 +34,16 @@ vorkommen = "In Auwäldern, Parks und Gärten, an Waldrändern, auf Waldwiesen u
 zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai."
 
 [[verwechslungen]]
-name = "Zipfellorchel"
-merkmal = "Kappe sattelförmig gelappt statt wabig, Stiel längsrunzelig, nicht dick und klumpig."
-essbar = "toedlichGiftig"
 slug = "zipfellorchel"
+unterschied = "Kappe sattelförmig gelappt statt wabig, Stiel längsrunzelig, nicht dick und klumpig."
 
 [[verwechslungen]]
-name = "Speisemorchel"
-merkmal = "Kleiner, Stiel schlank und nicht klumpig verdickt."
-essbar = "essbar"
 slug = "speisemorchel"
+unterschied = "Kleiner, Stiel schlank und nicht klumpig verdickt."
 
 [[verwechslungen]]
-name = "Gemeine Morchel"
-merkmal = "Kappe rundlicher und dunkler, Stiel deutlich dünner."
-essbar = "essbar"
 slug = "gemeine-morchel"
+unterschied = "Kappe rundlicher und dunkler, Stiel deutlich dünner."
 
 [[links]]
 titel = "123pilzsuche.de"

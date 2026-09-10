@@ -36,34 +36,24 @@ vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, Kiefer und Weißtanne, 
 zeit = "Herbst bis Winter, nach den ersten Frösten."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Hut weiß mit silbergrauen bis schwarzbraunen Schüppchen, Lamellenschneiden jung tränend, Stielbasis keulig."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Hut weiß mit silbergrauen bis schwarzbraunen Schüppchen, Lamellenschneiden jung tränend, Stielbasis keulig."
 
 [[verwechslungen]]
-name = "Brennendscharfer Ritterling"
-merkmal = "Hut aschgrau und radial einreißend wie bei den Risspilzen, Geruch erdig, Geschmack extrem scharf und pfeffrig."
-essbar = "giftig"
 slug = "brennendscharfer-ritterling"
+unterschied = "Hut aschgrau und radial einreißend wie bei den Risspilzen, Geruch erdig, Geschmack extrem scharf und pfeffrig."
 
 [[verwechslungen]]
-name = "Schärflicher Ritterling"
-merkmal = "Hut graubraun und angedrückt schuppig, Stielbasis abrupt abgeplattet, Geschmack bitter und dann extrem scharf, bei Buche."
-essbar = "giftig"
 slug = "schaerflicher-ritterling"
+unterschied = "Hut graubraun und angedrückt schuppig, Stielbasis abrupt abgeplattet, Geschmack bitter und dann extrem scharf, bei Buche."
 
 [[verwechslungen]]
-name = "Schwarzschuppiger Erdritterling"
-merkmal = "Hut grauschwarz mit wolligen sparrigen Schüppchen, ohne schwarze Radialstreifen, Stiel trocken."
-essbar = "giftig"
 slug = "schwarzschuppiger-erdritterling"
+unterschied = "Hut grauschwarz mit wolligen sparrigen Schüppchen, ohne schwarze Radialstreifen, Stiel trocken."
 
 [[verwechslungen]]
-name = "Seifenritterling"
-merkmal = "Fleisch rötet an verletzten Stellen, besonders an der Stielbasis, Geruch nach Seifenlauge."
-essbar = "giftig"
 slug = "seifenritterling"
+unterschied = "Fleisch rötet an verletzten Stellen, besonders an der Stielbasis, Geruch nach Seifenlauge."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -57,10 +57,8 @@ vorkommen = "Symbiosepilz im Mischwald auf gern saurem Boden, meist bei Laubbäu
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Ockertäubling"
-merkmal = "Größer, Hut gelbocker bis olivocker, Geschmack höchstens leicht schärflich, Sporenpulver gelblich."
-essbar = "minderwertig"
 slug = "ockertaeubling"
+unterschied = "Größer, Hut gelbocker bis olivocker, Geschmack höchstens leicht schärflich, Sporenpulver gelblich."
 
 [[links]]
 titel = "123pilzsuche.de"

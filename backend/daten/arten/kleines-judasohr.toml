@@ -30,21 +30,12 @@ vorkommen = "Folgezersetzer an Laubholzästen in Auwald und Bruchwald, gern an Z
 zeit = "Herbst bis Winter."
 
 [[verwechslungen]]
-name = "Weißtannenfingerhut"
-merkmal = "Außen raukörnig und haselnussbraun bis graulila, innen weißlich mit rosa Hauch, an Nadelholz, gern Weißtanne."
-essbar = "ungeniessbar"
 slug = "weisstannenfingerhut"
+unterschied = "Außen raukörnig und haselnussbraun bis graulila, innen weißlich mit rosa Hauch, an Nadelholz, gern Weißtanne."
 
 [[verwechslungen]]
-name = "Gezonter Ohrlappenpilz"
-merkmal = "4 bis 12, selten bis 25 cm breit, dachziegelartig übereinander sitzend, Oberseite striegelig behaart und bunt gezont."
-essbar = "ungeniessbar"
 slug = "gezonter-ohrlappenpilz"
-
-[[verwechslungen]]
-name = "Blattartiger Zitterling"
-merkmal = "Wellig und blattartig gekräuselt, die ganze Oberfläche bildet Sporen."
-essbar = "essbar"
+unterschied = "4 bis 12, selten bis 25 cm breit, dachziegelartig übereinander sitzend, Oberseite striegelig behaart und bunt gezont."
 
 [[links]]
 titel = "123pilzsuche.de"

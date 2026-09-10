@@ -33,16 +33,12 @@ vorkommen = "Symbiosepilz im Misch- und Laubwald, selten im Nadelwald, gern bei 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Krause Glucke"
-merkmal = "Blumenkohlartig gekräuselt statt verästelt, am Wurzelgeflecht von Kiefern."
-essbar = "essbar"
 slug = "krause-glucke"
+unterschied = "Blumenkohlartig gekräuselt statt verästelt, am Wurzelgeflecht von Kiefern."
 
 [[verwechslungen]]
-name = "Breitblättrige Glucke"
-merkmal = "Hirnartig breit gekräuselte Lappen, an den Wurzeln von Laubbäumen."
-essbar = "essbar"
 slug = "breitblaettrige-glucke"
+unterschied = "Hirnartig breit gekräuselte Lappen, an den Wurzeln von Laubbäumen."
 
 [[links]]
 titel = "123pilzsuche.de"

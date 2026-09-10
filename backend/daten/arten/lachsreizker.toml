@@ -37,28 +37,20 @@ vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier überwiegend
 zeit = "Herbst bis Spätherbst."
 
 [[verwechslungen]]
-name = "Fichtenreizker"
-merkmal = "Hut mit kräftigen grünen Flecken vor allem in der Mitte, Stiel ohne Grübchen, bei Fichte."
-essbar = "essbar"
 slug = "fichtenreizker"
+unterschied = "Hut mit kräftigen grünen Flecken vor allem in der Mitte, Stiel ohne Grübchen, bei Fichte."
 
 [[verwechslungen]]
-name = "Edelreizker"
-merkmal = "Hut mit konzentrisch getropften Flecken, Milch kaum veränderlich, Stiel kurz und mit orangefarbenen Grübchen, bei Kiefer."
-essbar = "essbar"
 slug = "edelreizker"
+unterschied = "Hut mit konzentrisch getropften Flecken, Milch kaum veränderlich, Stiel kurz und mit orangefarbenen Grübchen, bei Kiefer."
 
 [[verwechslungen]]
-name = "Blaureizker"
-merkmal = "Hut graurosa bis rosa-lehmfarben, Grübchen am Stiel blassgrünlich, Milch erst nach 20 Minuten weinrötlich."
-essbar = "essbar"
 slug = "blaureizker"
+unterschied = "Hut graurosa bis rosa-lehmfarben, Grübchen am Stiel blassgrünlich, Milch erst nach 20 Minuten weinrötlich."
 
 [[verwechslungen]]
-name = "Weinroter Reizker"
-merkmal = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkel blutrot, Milch nach 20 Minuten grünend."
-essbar = "essbar"
 slug = "weinroter-reizker"
+unterschied = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkel blutrot, Milch nach 20 Minuten grünend."
 
 [[links]]
 titel = "123pilzsuche.de"

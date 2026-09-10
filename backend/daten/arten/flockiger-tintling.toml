@@ -32,16 +32,12 @@ vorkommen = "Folgezersetzer auf Holzlagerplätzen, an Wald- und Wegrändern, auf
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Faltentintling"
-merkmal = "Hut gerieft und faltig, Lamellen angewachsen, Stielbasis mit Ringwulst statt Volva."
-essbar = "giftig"
 slug = "faltentintling"
+unterschied = "Hut gerieft und faltig, Lamellen angewachsen, Stielbasis mit Ringwulst statt Volva."
 
 [[verwechslungen]]
-name = "Spechttintling"
-merkmal = "Hut mit groben braunen Velumschuppen auf hellem Grund, Stielbasis ohne Volva."
-essbar = "ungeniessbar"
 slug = "spechttintling"
+unterschied = "Hut mit groben braunen Velumschuppen auf hellem Grund, Stielbasis ohne Volva."
 
 [[links]]
 titel = "123pilzsuche.de"

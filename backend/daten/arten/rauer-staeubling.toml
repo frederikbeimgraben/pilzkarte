@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer an grasigen Waldwegen und im Nadelwald, gern in Kief
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Igelstäubling"
-merkmal = "Stacheln länger und braunspitzig, Fruchtkörper ohne die langen Myzelwurzeln."
-essbar = "essbar"
 slug = "igelstaeubling"
+unterschied = "Stacheln länger und braunspitzig, Fruchtkörper ohne die langen Myzelwurzeln."
 
 [[verwechslungen]]
-name = "Flaschenstäubling"
-merkmal = "Deutlich flaschen- bis birnenförmig mit langem Stielteil, Haut nur feinwarzig."
-essbar = "essbar"
 slug = "flaschenbovist"
+unterschied = "Deutlich flaschen- bis birnenförmig mit langem Stielteil, Haut nur feinwarzig."
 
 [[verwechslungen]]
-name = "Weißer Großstäubling"
-merkmal = "Viel größer, bis über 20 cm, Haut ohne pyramidenartige Stacheln."
-essbar = "essbar"
 slug = "weisser-grossstaeubling"
+unterschied = "Viel größer, bis über 20 cm, Haut ohne pyramidenartige Stacheln."
 
 [[links]]
 titel = "123pilzsuche.de"

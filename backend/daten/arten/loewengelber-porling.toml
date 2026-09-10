@@ -39,10 +39,8 @@ vorkommen = "Folgezersetzer an Laubholz, gern Buche."
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Schuppiger Porling"
-merkmal = "Viel größer, Hut mit groben braunen Schuppen, Poren weißlich und nur ein bis zwei je Millimeter."
-essbar = "essbar"
 slug = "schuppiger-porling"
+unterschied = "Viel größer, Hut mit groben braunen Schuppen, Poren weißlich und nur ein bis zwei je Millimeter."
 
 [[links]]
 titel = "123pilzsuche.de"

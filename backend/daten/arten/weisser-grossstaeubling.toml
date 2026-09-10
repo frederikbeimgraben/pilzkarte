@@ -29,22 +29,16 @@ vorkommen = "Folgezersetzer im Mischwald, in Hecken, Parks, Steppen und Heiden, 
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Jung ebenfalls ein weißes Ei; im Längsschnitt zeigen sich aber Hut, Lamellen und Stiel, die Basis steckt in einer häutigen Scheide."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Jung ebenfalls ein weißes Ei; im Längsschnitt zeigen sich aber Hut, Lamellen und Stiel, die Basis steckt in einer häutigen Scheide."
 
 [[verwechslungen]]
-name = "Hasenstäubling"
-merkmal = "Jung mit plattenartigen, spitzkegeligen Erhebungen, wächst auf Wiesen, Weiden und in Obstgärten."
-essbar = "essbar"
 slug = "hasenbovist"
+unterschied = "Jung mit plattenartigen, spitzkegeligen Erhebungen, wächst auf Wiesen, Weiden und in Obstgärten."
 
 [[verwechslungen]]
-name = "Riesenbovist"
-merkmal = "Viel größer, bis 50 und selten bis 150 cm breit, Haut glatt und lederartig, alt urinartig riechend."
-essbar = "essbar"
 slug = "riesenbovist"
+unterschied = "Viel größer, bis 50 und selten bis 150 cm breit, Haut glatt und lederartig, alt urinartig riechend."
 
 [[links]]
 titel = "123pilzsuche.de"

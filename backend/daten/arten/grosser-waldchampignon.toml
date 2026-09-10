@@ -40,16 +40,12 @@ vorkommen = "Folgezersetzer im Nadelwald."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Karbolegerling"
-merkmal = "Riecht nach Karbol oder Tinte, die Stielbasis gilbt beim Anschneiden stark chromgelb, das Fleisch rötet nicht."
-essbar = "giftig"
 slug = "karbolegerling"
+unterschied = "Riecht nach Karbol oder Tinte, die Stielbasis gilbt beim Anschneiden stark chromgelb, das Fleisch rötet nicht."
 
 [[verwechslungen]]
-name = "Riesenchampignon"
-merkmal = "Riecht nach Anis, das Fleisch gilbt statt zu röten."
-essbar = "essbar"
 slug = "riesenchampignon"
+unterschied = "Riecht nach Anis, das Fleisch gilbt statt zu röten."
 
 [[links]]
 titel = "123pilzsuche.de"

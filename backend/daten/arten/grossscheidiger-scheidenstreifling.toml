@@ -34,16 +34,12 @@ vorkommen = "Symbiosepilz im Mischwald, meist in Laubwäldern, gern an Waldränd
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Pantherpilz"
-merkmal = "Mit Ring am Stiel, Hutrand nur schwach gerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
-essbar = "toedlichGiftig"
 slug = "pantherpilz"
+unterschied = "Mit Ring am Stiel, Hutrand nur schwach gerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
 
 [[verwechslungen]]
-name = "Königsfliegenpilz"
-merkmal = "Mit Ring am Stiel, Hut braun mit weißen Flocken, Fleisch unter der Huthaut gelb."
-essbar = "giftig"
 slug = "koenigsfliegenpilz"
+unterschied = "Mit Ring am Stiel, Hut braun mit weißen Flocken, Fleisch unter der Huthaut gelb."
 
 [[links]]
 titel = "123pilzsuche.de"

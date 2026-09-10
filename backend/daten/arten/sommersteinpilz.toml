@@ -34,28 +34,20 @@ vorkommen = "Symbiosepilz im Mischwald, gern bei Eiche, Buche, Linde und Esskast
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
-essbar = "giftig"
 slug = "gallenroehrling"
+unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Fichtensteinpilz"
-merkmal = "Netz nur im oberen Stielteil, unter der Huthaut eine rotbräunliche Zone."
-essbar = "essbar"
 slug = "steinpilz"
+unterschied = "Netz nur im oberen Stielteil, unter der Huthaut eine rotbräunliche Zone."
 
 [[verwechslungen]]
-name = "Maronenröhrling"
-merkmal = "Hut glatt und feucht, Röhren gelblich bis grüngelb und auf Druck blaugrün, Stiel ohne Netz."
-essbar = "essbar"
 slug = "maronenroehrling"
+unterschied = "Hut glatt und feucht, Röhren gelblich bis grüngelb und auf Druck blaugrün, Stiel ohne Netz."
 
 [[verwechslungen]]
-name = "Schwarzhütiger Steinpilz"
-merkmal = "Hut kastanien- bis schwarzbraun oder hell bronzefarben, Stiel faserig rillig."
-essbar = "essbar"
 slug = "schwarzhuetiger-steinpilz"
+unterschied = "Hut kastanien- bis schwarzbraun oder hell bronzefarben, Stiel faserig rillig."
 
 [[links]]
 titel = "123pilzsuche.de"

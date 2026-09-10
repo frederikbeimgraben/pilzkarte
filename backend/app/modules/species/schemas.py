@@ -271,17 +271,35 @@ class TreeSource(BaseSchema):
 
 
 class Lookalike(BaseSchema):
-    """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
+    """Ein Verweis auf die Art, mit der man diese verwechselt.
 
-    ``slug`` zeigt auf das eigene Profil der Art, wenn es eines gibt. Das
-    Frontend verlinkt darauf, damit man die Verwechslung nachschlagen kann,
-    statt sie nur genannt zu bekommen.
+    Der Eintrag traegt nur den Slug und den Satz, der genau dieses Paar trennt.
+    Name, Speisewert und Warnung stehen im Profil, auf das der Slug zeigt.
+    Stuenden sie hier noch einmal, koennten die zwei Stellen auseinanderlaufen.
+
+    Der Satz gehoert zum Paar, nicht zur Art: dieselbe Art trennt sich von
+    einem Steinpilz an einem anderen Merkmal als von einem Maronenroehrling.
     """
 
-    name: str = Field(min_length=1)
-    trait: str = Field(validation_alias="merkmal", serialization_alias="merkmal", min_length=1)
-    edible: Edibility = Field(validation_alias="essbar", serialization_alias="essbar")
-    slug: str | None = None
+    slug: str = Field(min_length=1)
+    difference: str = Field(
+        validation_alias="unterschied", serialization_alias="unterschied", min_length=1
+    )
+
+
+class ResolvedLookalike(BaseSchema):
+    """Ein Verweis, wie die Antwort ihn ausliefert.
+
+    Der Dienst schlaegt das Profil des Ziels nach und legt seine Angaben dazu.
+    Das Frontend muss nichts nachladen, um eine Verwechslung zu zeigen.
+    """
+
+    slug: str
+    name: str
+    scientific: str = Field(validation_alias="lateinisch", serialization_alias="lateinisch")
+    difference: str = Field(validation_alias="unterschied", serialization_alias="unterschied")
+    edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
+    warning: str | None = Field(validation_alias="warnung", serialization_alias="warnung")
 
 
 class ReagentEntry(BaseSchema):
@@ -400,8 +418,12 @@ class Profile(BaseSchema):
         default_factory=list["ReagentEntry"],
     )
     traits: dict[TraitKey, str] = Field(validation_alias="merkmale", serialization_alias="merkmale")
+    # Eine Art ohne Verweis gibt es: 123pilzsuche nennt dort nur Arten ohne
+    # eigene Seite, und ein Verweis ins Leere waere schlechter als keiner.
     lookalikes: list[Lookalike] = Field(
-        validation_alias="verwechslungen", serialization_alias="verwechslungen", min_length=1
+        validation_alias="verwechslungen",
+        serialization_alias="verwechslungen",
+        default_factory=list["Lookalike"],
     )
     links: list[Link] = Field(min_length=1)
 
@@ -691,9 +713,12 @@ class Species(BaseSchema):
     )
     peak_week: int | None = Field(validation_alias="spitzeWoche", serialization_alias="spitzeWoche")
     traits: list[Trait] = Field(validation_alias="merkmale", serialization_alias="merkmale")
-    lookalikes: list[Lookalike] = Field(
+    lookalikes: list[ResolvedLookalike] = Field(
         validation_alias="verwechslungen", serialization_alias="verwechslungen"
     )
+    # Die Gegenrichtung: bei welchen Arten diese als Verwechslung steht. Die
+    # Seite eines Giftpilzes fuehrt damit zurueck zu dem, was man sammeln wollte.
+    affects: list[str] = Field(validation_alias="betrifft", serialization_alias="betrifft")
     links: list[Link]
     season: SeasonCurve | None = Field(validation_alias="saison", serialization_alias="saison")
 

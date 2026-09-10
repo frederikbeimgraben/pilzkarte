@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer auf Rasenflächen, Wiesen und Viehweiden."
 zeit = "Frühling ab April bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Junge Eier zeigen im Längsschnitt schon Hut, Lamellen und Stiel, Stäublinge sind innen gleichmäßig weiß."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Junge Eier zeigen im Längsschnitt schon Hut, Lamellen und Stiel, Stäublinge sind innen gleichmäßig weiß."
 
 [[verwechslungen]]
-name = "Riesenbovist"
-merkmal = "Weiß und rundlich, aber 10 bis 50 cm groß, ohne Stielteil."
-essbar = "essbar"
 slug = "riesenbovist"
+unterschied = "Weiß und rundlich, aber 10 bis 50 cm groß, ohne Stielteil."
 
 [[verwechslungen]]
-name = "Hasenstäubling"
-merkmal = "Größer, die Außenhaut reißt im Alter netzig felderig auf."
-essbar = "essbar"
 slug = "hasenbovist"
+unterschied = "Größer, die Außenhaut reißt im Alter netzig felderig auf."
 
 [[links]]
 titel = "123pilzsuche.de"

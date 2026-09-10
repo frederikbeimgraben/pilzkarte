@@ -21,9 +21,11 @@ from app.modules.species.catalog import (
     PROTECTED_TEXT,
     UNPROTECTED_TEXT,
     Catalog,
+    build_affects,
     build_tags,
     build_traits,
     catalog,
+    check_references,
     find_maps,
     forecast_planned,
     mean_per_week,
@@ -40,6 +42,7 @@ from app.modules.species.schemas import (
     WEEKS,
     Edibility,
     Frequency,
+    Lookalike,
     Profile,
     Range,
     Reagent,
@@ -84,9 +87,8 @@ vorkommen = "Im Wald."
 zeit = "Herbst."
 
 [[verwechslungen]]
-name = "Gallenroehrling"
-merkmal = "Bitter."
-essbar = "ungeniessbar"
+slug = "gallenroehrling"
+unterschied = "Bitter."
 
 [[links]]
 titel = "Wikipedia"
@@ -117,9 +119,8 @@ vorkommen = "Hecken."
 zeit = "Mai."
 
 [[verwechslungen]]
-name = "Ziegelroter Risspilz"
-merkmal = "Lamellen braeunlich."
-essbar = "toedlichGiftig"
+slug = "gallenroehrling"
+unterschied = "Roehren rosa, Geschmack bitter."
 
 [[links]]
 titel = "Wikipedia"
@@ -150,9 +151,8 @@ vorkommen = "Laubwald."
 zeit = "Sommer."
 
 [[verwechslungen]]
-name = "Andere Milchlinge"
-merkmal = "Kein Fischgeruch."
-essbar = "ungeniessbar"
+slug = "steinpilz"
+unterschied = "Mit Roehren statt Lamellen, ohne Milch."
 
 [[links]]
 titel = "Wikipedia"
@@ -194,10 +194,8 @@ vorkommen = "Bei Fichte."
 zeit = "Juni bis Oktober."
 
 [[verwechslungen]]
-name = "Steinpilz"
-merkmal = "Roehren bleiben weiss bis oliv, Netz weiss, Geschmack mild."
-essbar = "guterSpeisepilz"
 slug = "steinpilz"
+unterschied = "Roehren bleiben weiss bis oliv, Netz weiss, Geschmack mild."
 
 [[links]]
 titel = "123pilzsuche.de"
@@ -772,10 +770,12 @@ async def test_the_profile_answers_with_table_and_curve(app: FastAPI) -> None:
     assert body["merkmale"][0] == {"schluessel": "hut", "text": "Braun."}
     assert body["verwechslungen"] == [
         {
+            "slug": "gallenroehrling",
             "name": "Gallenroehrling",
-            "merkmal": "Bitter.",
-            "essbar": "ungeniessbar",
-            "slug": None,
+            "lateinisch": "Tylopilus felleus",
+            "unterschied": "Bitter.",
+            "speisewert": "ungeniessbar",
+            "warnung": None,
         }
     ]
     assert body["links"][0]["url"].startswith("https://")
@@ -815,7 +815,7 @@ async def test_the_listing_needs_no_token(app: FastAPI) -> None:
 def test_every_shipped_profile_is_valid() -> None:
     profiles = read_profiles(DATA / "arten")
 
-    assert len(profiles) == 309
+    assert len(profiles) == 311
     assert sum(1 for profile in profiles.values() if profile.collectable) == 85
 
 
@@ -922,11 +922,11 @@ def test_every_profile_names_its_source() -> None:
         assert profile.source.checked_on == "2026-09-10", slug
 
 
-def test_every_lookalike_carries_a_name_and_a_trait() -> None:
+def test_every_lookalike_carries_a_slug_and_a_difference() -> None:
     for slug, profile in read_profiles(DATA / "arten").items():
         for lookalike in profile.lookalikes:
-            assert lookalike.name.strip(), slug
-            assert lookalike.trait.strip(), slug
+            assert lookalike.slug.strip(), slug
+            assert lookalike.difference.strip(), slug
 
 
 def test_no_trait_and_no_note_is_empty() -> None:
@@ -939,24 +939,22 @@ def test_no_trait_and_no_note_is_empty() -> None:
             assert note is None or note.strip(), slug
 
 
-def test_every_lookalike_slug_points_at_a_profile() -> None:
+def test_every_lookalike_points_at_a_profile() -> None:
     profiles = read_profiles(DATA / "arten")
 
     for slug, profile in profiles.items():
         for lookalike in profile.lookalikes:
-            if lookalike.slug is not None:
-                assert lookalike.slug in profiles, f"{slug} zeigt auf {lookalike.slug}"
+            assert lookalike.slug in profiles, f"{slug} zeigt auf {lookalike.slug}"
 
 
-def test_the_edibility_of_a_lookalike_matches_its_profile() -> None:
-    # Sonst stuende dieselbe Art auf zwei Seiten mit zwei Urteilen.
-    profiles = read_profiles(DATA / "arten")
+def test_no_file_carries_a_name_or_edibility_in_a_lookalike() -> None:
+    # Der Umbau ist nur fertig, wenn die doppelten Felder wirklich weg sind.
+    allowed = {"slug", "unterschied"}
 
-    for slug, profile in profiles.items():
-        for lookalike in profile.lookalikes:
-            if lookalike.slug is not None:
-                target = profiles[lookalike.slug]
-                assert lookalike.edible == target.edibility, f"{slug} zu {lookalike.slug}"
+    for path in sorted((DATA / "arten").glob("*.toml")):
+        raw = tomllib.loads(path.read_text(encoding="utf-8"))
+        for lookalike in raw.get("verwechslungen", []):
+            assert set(lookalike) == allowed, f"{path.stem}: {sorted(lookalike)}"
 
 
 def test_the_collectable_species_stay_eightyfive() -> None:
@@ -1135,7 +1133,7 @@ async def test_the_real_listing_knows_all_threehundrednine() -> None:
     async with client(build_app()) as call:
         response = await call.get("/api/arten", params={"alle": "true"})
 
-    assert len(response.json()["arten"]) == 309
+    assert len(response.json()["arten"]) == 311
 
 
 # ------------------------------------------------- Baeume, Warnung, Reagenzien
@@ -1245,4 +1243,93 @@ async def test_the_profile_returns_marketability_and_measurements() -> None:
         "jahreszeiten",
         "baeume",
         "baeumeAusErfahrung",
+    }
+
+
+# ------------------------------------------------- Verweise statt Kopien
+
+
+def test_a_reference_without_a_target_is_caught_when_loading(data: Path) -> None:
+    profiles = read_profiles(data / "arten")
+    profiles["steinpilz"] = profiles["steinpilz"].model_copy(
+        update={"lookalikes": [Lookalike(slug="gibt-es-nicht", difference="x")]}
+    )
+
+    with pytest.raises(ValueError, match="gibt-es-nicht"):
+        check_references(profiles)
+
+
+def test_the_check_runs_when_the_catalog_is_built(data: Path, tmp_path: Path) -> None:
+    broken = tmp_path / "kaputt"
+    (broken / "arten").mkdir(parents=True)
+    for file in (data / "arten").glob("*.toml"):
+        (broken / "arten" / file.name).write_text(
+            file.read_text(encoding="utf-8").replace(
+                'slug = "gallenroehrling"', 'slug = "gibt-es-nicht"'
+            ),
+            encoding="utf-8",
+        )
+    (broken / "saison.json").write_text(
+        (data / "saison.json").read_text(encoding="utf-8"), encoding="utf-8"
+    )
+
+    with pytest.raises(ValueError, match="ohne Ziel"):
+        catalog(broken, tmp_path / "leer")
+
+
+def test_a_resolved_lookalike_shows_the_profile_of_its_target(built: Catalog) -> None:
+    reference = built.species("steinpilz").lookalikes[0]
+    target = built.species(reference.slug)
+
+    assert reference.name == target.name
+    assert reference.scientific == target.scientific
+    assert reference.edibility == target.edibility
+    assert reference.warning == target.warning
+
+
+def test_the_difference_belongs_to_the_pair(built: Catalog) -> None:
+    # Derselbe Gallenroehrling, zwei Arten, zwei Saetze.
+    from_boletus = built.species("steinpilz").lookalikes[0]
+    from_maipilz = built.species("maipilz").lookalikes[0]
+
+    assert from_boletus.slug == from_maipilz.slug
+    assert from_boletus.difference != from_maipilz.difference
+
+
+def test_the_reverse_direction_names_every_source(built: Catalog) -> None:
+    assert built.species("gallenroehrling").affects == ["maipilz", "steinpilz"]
+    assert built.species("braetling").affects == []
+
+
+def test_the_reverse_direction_is_computed_not_read(data: Path) -> None:
+    profiles = read_profiles(data / "arten")
+
+    assert build_affects(profiles)["steinpilz"] == ["braetling", "gallenroehrling"]
+
+
+def test_every_reverse_direction_matches_a_forward_one() -> None:
+    profiles = read_profiles(DATA / "arten")
+    affects = build_affects(profiles)
+
+    for slug, sources in affects.items():
+        for source in sources:
+            assert slug in [look.slug for look in profiles[source].lookalikes]
+    assert sum(len(sources) for sources in affects.values()) == sum(
+        len(profile.lookalikes) for profile in profiles.values()
+    )
+
+
+async def test_the_profile_answers_with_references_and_reverse_direction(app: FastAPI) -> None:
+    async with client(app) as call:
+        answer = await call.get("/api/arten/gallenroehrling")
+
+    body = answer.json()
+    assert body["betrifft"] == ["maipilz", "steinpilz"]
+    assert set(body["verwechslungen"][0]) == {
+        "slug",
+        "name",
+        "lateinisch",
+        "unterschied",
+        "speisewert",
+        "warnung",
     }

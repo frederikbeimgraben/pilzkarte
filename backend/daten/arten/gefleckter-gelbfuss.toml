@@ -34,10 +34,8 @@ vorkommen = "Symbiosepilz im Mischwald bei Lärche, gern auf sandigem Boden. Sel
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Aprikosen-Gelbfuß"
-merkmal = "Hut aprikosen- bis orangefarben, ohne die schwarzbraunen Druckflecken."
-essbar = "essbar"
 slug = "aprikosen-gelbfuss"
+unterschied = "Hut aprikosen- bis orangefarben, ohne die schwarzbraunen Druckflecken."
 
 [[links]]
 titel = "123pilzsuche.de"

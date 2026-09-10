@@ -45,10 +45,8 @@ vorkommen = "Symbiosepilz in feuchten Birkenwäldern, oft in höheren Lagen, ger
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Buchenspeitäubling"
-merkmal = "Hut zinnoberrot bis karminrot, Huthaut matt samtig und kaum abziehbar, bei Buche auf kalkhaltigem Boden."
-essbar = "giftig"
 slug = "buchenspeitaeubling"
+unterschied = "Hut zinnoberrot bis karminrot, Huthaut matt samtig und kaum abziehbar, bei Buche auf kalkhaltigem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -35,34 +35,24 @@ vorkommen = "Symbiosepilz in Laubwäldern bei Buche, Eiche und Hasel, vereinzelt
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Wurzelnder Bitterröhrling"
-merkmal = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte."
-essbar = "giftig"
 slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch blaut sofort."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch blaut sofort."
 
 [[verwechslungen]]
-name = "Falscher Anhängselröhrling"
-merkmal = "Röhren zitronengelb und nie blauend, Fleisch unter den Röhren schwefelgelb."
-essbar = "essbar"
 slug = "falscher-anhaengselroehrling"
+unterschied = "Röhren zitronengelb und nie blauend, Fleisch unter den Röhren schwefelgelb."
 
 [[verwechslungen]]
-name = "Königsröhrling"
-merkmal = "Hut blutrot bis purpurrot statt ockerbraun."
-essbar = "essbar"
 slug = "koenigsroehrling"
+unterschied = "Hut blutrot bis purpurrot statt ockerbraun."
 
 [[verwechslungen]]
-name = "Silberröhrling"
-merkmal = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau."
-essbar = "essbar"
 slug = "silberroehrling"
+unterschied = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -35,21 +35,12 @@ vorkommen = "Symbiosepilz im Mischwald, gern in Bergregionen, auf saurem grasige
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rotbrauner Milchling"
-merkmal = "Hut rotbraun bis ziegel-rotbraun mit kleinem Buckel, Geruch harzig, Schärfe erst nach etwa einer Minute."
-essbar = "essbar"
 slug = "rotbrauner-milchling"
+unterschied = "Hut rotbraun bis ziegel-rotbraun mit kleinem Buckel, Geruch harzig, Schärfe erst nach etwa einer Minute."
 
 [[verwechslungen]]
-name = "Braunroter Milchling"
-merkmal = "Milch lange mild und erst später bitterlich, Geruch würzig-anisartig, Lamellen gelblich bis orangegelb."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Runzeliggezonter Milchling"
-merkmal = "Milch weiß und mild, Hutrand runzelig und gezahnt, Geruch etwas nach Artischocken."
-essbar = "essbar"
 slug = "runzeliggezonter-milchling"
+unterschied = "Milch weiß und mild, Hutrand runzelig und gezahnt, Geruch etwas nach Artischocken."
 
 [[links]]
 titel = "123pilzsuche.de"

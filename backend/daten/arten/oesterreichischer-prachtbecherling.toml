@@ -33,16 +33,12 @@ vorkommen = "Folgezersetzer an Laubholzästen, gern in Auwäldern bei Erle, Weid
 zeit = "Winter bis Mai."
 
 [[verwechslungen]]
-name = "Linden-Kelchbecherling"
-merkmal = "Wächst an verrotteten Lindenzweigen, sonst kaum zu trennen."
-essbar = "essbar"
 slug = "linden-kelchbecherling"
+unterschied = "Wächst an verrotteten Lindenzweigen, sonst kaum zu trennen."
 
 [[verwechslungen]]
-name = "Scharlachroter Kelchbecherling"
-merkmal = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
-essbar = "essbar"
 slug = "scharlachroter-kelchbecherling"
+unterschied = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
 
 [[links]]
 titel = "123pilzsuche.de"

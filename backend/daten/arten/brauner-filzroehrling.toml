@@ -51,22 +51,16 @@ vorkommen = "Symbiosepilz im Mischwald, besonders gern bei Fichte. Häufig."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut hell olivbraun bis olivocker, Stiel fast weiß und ohne Netzzeichnung."
-essbar = "essbar"
 slug = "ziegenlippe"
+unterschied = "Hut hell olivbraun bis olivocker, Stiel fast weiß und ohne Netzzeichnung."
 
 [[verwechslungen]]
-name = "Samtiger Filzröhrling"
-merkmal = "Netz nur von der Stielmitte bis zur Spitze, Geruch leicht nach Schwefel, bei Buche und Eiche."
-essbar = "essbar"
 slug = "samtiger-filzroehrling"
+unterschied = "Netz nur von der Stielmitte bis zur Spitze, Geruch leicht nach Schwefel, bei Buche und Eiche."
 
 [[verwechslungen]]
-name = "Rotfußröhrling"
-merkmal = "Stiel rötlich punktiert und ohne Netz, unter der Huthaut rot."
-essbar = "essbar"
 slug = "rotfussroehrling"
+unterschied = "Stiel rötlich punktiert und ohne Netz, unter der Huthaut rot."
 
 [[links]]
 titel = "123pilzsuche.de"

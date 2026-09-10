@@ -36,16 +36,12 @@ vorkommen = "Folgezersetzer an eingegrabenen oder aufliegenden verrotteten Linde
 zeit = "Winter bis Mai."
 
 [[verwechslungen]]
-name = "Österreichischer Prachtbecherling"
-merkmal = "Wächst an Erle, Weide und Espe, die Haare der Außenseite sind korkenzieherartig gewunden."
-essbar = "essbar"
 slug = "oesterreichischer-prachtbecherling"
+unterschied = "Wächst an Erle, Weide und Espe, die Haare der Außenseite sind korkenzieherartig gewunden."
 
 [[verwechslungen]]
-name = "Scharlachroter Kelchbecherling"
-merkmal = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
-essbar = "essbar"
 slug = "scharlachroter-kelchbecherling"
+unterschied = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
 
 [[links]]
 titel = "123pilzsuche.de"

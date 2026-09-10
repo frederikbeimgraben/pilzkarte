@@ -31,10 +31,8 @@ vorkommen = "Folgezersetzer an Nadelholz, gern Weißtanne, Tanne oder Kiefer, se
 zeit = "Winter bis Frühjahr."
 
 [[verwechslungen]]
-name = "Kleines Judasohr"
-merkmal = "Gallertartig elastisch und ohrförmig, wächst an Laubholz."
-essbar = "ungeniessbar"
 slug = "kleines-judasohr"
+unterschied = "Gallertartig elastisch und ohrförmig, wächst an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

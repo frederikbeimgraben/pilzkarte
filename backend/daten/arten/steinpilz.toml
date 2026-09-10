@@ -41,34 +41,24 @@ vorkommen = "Symbiosepilz im Mischwald, gern bei Fichte, Tanne und Kiefer, selte
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
-essbar = "giftig"
 slug = "gallenroehrling"
+unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Maronenröhrling"
-merkmal = "Hut dunkel- bis hellbraun und feucht glatt, Röhren auf Druck blaugrün, Stiel ohne Netz."
-essbar = "essbar"
 slug = "maronenroehrling"
+unterschied = "Hut dunkel- bis hellbraun und feucht glatt, Röhren auf Druck blaugrün, Stiel ohne Netz."
 
 [[verwechslungen]]
-name = "Sommersteinpilz"
-merkmal = "Netz zieht sich über den ganzen Stiel, Fleisch unter der Huthaut weiß, Huthaut bei Trockenheit felderig rissig."
-essbar = "essbar"
 slug = "sommersteinpilz"
+unterschied = "Netz zieht sich über den ganzen Stiel, Fleisch unter der Huthaut weiß, Huthaut bei Trockenheit felderig rissig."
 
 [[verwechslungen]]
-name = "Kiefernsteinpilz"
-merkmal = "Hut rotbraun, weinrot bis purpurbraun, Stiel nuss- bis rotbräunlich."
-essbar = "essbar"
 slug = "kiefernsteinpilz"
+unterschied = "Hut rotbraun, weinrot bis purpurbraun, Stiel nuss- bis rotbräunlich."
 
 [[verwechslungen]]
-name = "Gelbfleckiger Steinpilz"
-merkmal = "Hut hell ockerbraun bis dottergelb, Röhren satt gelb und nicht blauend, Stiel dünner."
-essbar = "essbar"
 slug = "gelbfleckiger-steinpilz"
+unterschied = "Hut hell ockerbraun bis dottergelb, Röhren satt gelb und nicht blauend, Stiel dünner."
 
 [[links]]
 titel = "123pilzsuche.de"

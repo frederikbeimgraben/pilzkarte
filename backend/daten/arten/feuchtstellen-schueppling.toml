@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer im Mischwald, gern im Auwald bei Weiden, in Gräsern
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Hut ockerbraun und beim Abtrocknen verblassend, Stiel unter dem Ring weiß überfasert, Geruch mehlartig."
-essbar = "toedlichGiftig"
 slug = "gifthaeubling"
+unterschied = "Hut ockerbraun und beim Abtrocknen verblassend, Stiel unter dem Ring weiß überfasert, Geruch mehlartig."
 
 [[verwechslungen]]
-name = "Nadelschüppling"
-merkmal = "Wächst an Nadelholz, Hut gelblich und schuppig."
-essbar = "giftig"
 slug = "nadelschueppling"
+unterschied = "Wächst an Nadelholz, Hut gelblich und schuppig."
 
 [[verwechslungen]]
-name = "Stockschwämmchen"
-merkmal = "Wächst büschelig an Laubholzstümpfen, Stiel unter dem Ring dunkelbraun beschuppt."
-essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
+unterschied = "Wächst büschelig an Laubholzstümpfen, Stiel unter dem Ring dunkelbraun beschuppt."
 
 [[links]]
 titel = "123pilzsuche.de"

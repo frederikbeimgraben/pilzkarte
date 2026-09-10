@@ -44,34 +44,24 @@ vorkommen = "Folgezersetzer im Mischwald, gern in Hexenringen. Massenpilz im Sp�
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Riesenrötling"
-merkmal = "Lamellen jung gelblich, später rotocker und praktisch nie herablaufend, Geruch säuerlich mehlig, Sporenpulver rosabraun."
-essbar = "toedlichGiftig"
 slug = "riesenroetling"
+unterschied = "Lamellen jung gelblich, später rotocker und praktisch nie herablaufend, Geruch säuerlich mehlig, Sporenpulver rosabraun."
 
 [[verwechslungen]]
-name = "Graublättriger Trichterling"
-merkmal = "Deutlich kleiner, Hut milchkaffeebraun mit runzeligem Rand, Lamellen grauweiß bis graubraun."
-essbar = "ungeniessbar"
 slug = "graublaettriger-trichterling"
+unterschied = "Deutlich kleiner, Hut milchkaffeebraun mit runzeligem Rand, Lamellen grauweiß bis graubraun."
 
 [[verwechslungen]]
-name = "Mönchskopf"
-merkmal = "Hut bräunlich mit einem Buckel in der Mitte, Lamellen weit herablaufend, Stiel keulig."
-essbar = "essbar"
 slug = "moenchskopf"
+unterschied = "Hut bräunlich mit einem Buckel in der Mitte, Lamellen weit herablaufend, Stiel keulig."
 
 [[verwechslungen]]
-name = "Büschelrasling"
-merkmal = "Hut ledergelb bis orangebraun, wächst büschelig aus einem Strunk, Fleisch zäh und elastisch."
-essbar = "essbar"
 slug = "bueschliger-rasling"
+unterschied = "Hut ledergelb bis orangebraun, wächst büschelig aus einem Strunk, Fleisch zäh und elastisch."
 
 [[verwechslungen]]
-name = "Horngrauer Rötelritterling"
-merkmal = "Hut graubraun mit konzentrischen Wasserflecken, Lamellen später cremerosa, Geruch mehlartig statt parfümiert."
-essbar = "essbar"
 slug = "horngrauer-roetelritterling"
+unterschied = "Hut graubraun mit konzentrischen Wasserflecken, Lamellen später cremerosa, Geruch mehlartig statt parfümiert."
 
 [[links]]
 titel = "123pilzsuche.de"

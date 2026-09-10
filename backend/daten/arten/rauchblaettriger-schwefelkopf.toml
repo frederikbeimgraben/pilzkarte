@@ -36,22 +36,16 @@ vorkommen = "Folgezersetzer auf Nadelholzstümpfen, gern Kiefer, Fichte und Doug
 zeit = "Herbst bis Spätherbst, selten im Frühjahr."
 
 [[verwechslungen]]
-name = "Rotbrauner Flämmling"
-merkmal = "Lamellen und Sporenpulver rostbraun statt grau, Geschmack bitter."
-essbar = "giftig"
 slug = "rotbrauner-flaemmling"
+unterschied = "Lamellen und Sporenpulver rostbraun statt grau, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Nadelschüppling"
-merkmal = "Hut gelbbraun und schuppig, Lamellen bräunlich, Geschmack bitter."
-essbar = "giftig"
 slug = "nadelschueppling"
+unterschied = "Hut gelbbraun und schuppig, Lamellen bräunlich, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Stockschwämmchen"
-merkmal = "Hut zweifarbig hygrophan, Lamellen zimtbraun, Stiel unter dem Ring dunkelbraun beschuppt."
-essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
+unterschied = "Hut zweifarbig hygrophan, Lamellen zimtbraun, Stiel unter dem Ring dunkelbraun beschuppt."
 
 [[links]]
 titel = "123pilzsuche.de"

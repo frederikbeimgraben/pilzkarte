@@ -36,16 +36,12 @@ vorkommen = "Folgezersetzer, häufig in Rindenmulch, dazu in Auwäldern, Parks, 
 zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai, andernorts bis Juni."
 
 [[verwechslungen]]
-name = "Zipfellorchel"
-merkmal = "Hut 4 bis 11, selten bis 14 cm breit, bräunlich, aderig und zipfelmützenartig hoch gestellt, ohne Waben oder Kammern."
-essbar = "toedlichGiftig"
 slug = "zipfellorchel"
+unterschied = "Hut 4 bis 11, selten bis 14 cm breit, bräunlich, aderig und zipfelmützenartig hoch gestellt, ohne Waben oder Kammern."
 
 [[verwechslungen]]
-name = "Speisemorchel"
-merkmal = "Käppchen eiförmig mit runden Waben statt Längsrippen, gelb bis hellbraun."
-essbar = "essbar"
 slug = "speisemorchel"
+unterschied = "Käppchen eiförmig mit runden Waben statt Längsrippen, gelb bis hellbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

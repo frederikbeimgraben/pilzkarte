@@ -35,16 +35,12 @@ vorkommen = "Folgezersetzer in Auen und Flussauen. Selten."
 zeit = "Frühling, April bis Mai."
 
 [[verwechslungen]]
-name = "Runzelige Fingerhutverpel"
-merkmal = "Fruchtkörper längsrunzelig bis netzig gefaltet statt nur quergerillt."
-essbar = "essbar"
 slug = "runzelige-fingerhutverpel"
+unterschied = "Fruchtkörper längsrunzelig bis netzig gefaltet statt nur quergerillt."
 
 [[verwechslungen]]
-name = "Käppchenmorchel"
-merkmal = "Hut wabig gerippt und nur am Scheitel angewachsen, Rand frei abstehend."
-essbar = "essbar"
 slug = "kaeppchenmorchel"
+unterschied = "Hut wabig gerippt und nur am Scheitel angewachsen, Rand frei abstehend."
 
 [[links]]
 titel = "123pilzsuche.de"

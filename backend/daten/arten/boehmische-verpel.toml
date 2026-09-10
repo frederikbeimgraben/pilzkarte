@@ -35,34 +35,24 @@ vorkommen = "Folgezersetzer in Misch- und Auwald, gern in Rindenmulch, oft zusam
 zeit = "Februar bis Juni, in kälteren Lagen nicht vor Anfang April."
 
 [[verwechslungen]]
-name = "Runzelige Fingerhutverpel"
-merkmal = "Hut stark hirnartig gerunzelt, kastanien- bis rotbraun."
-essbar = "essbar"
 slug = "runzelige-fingerhutverpel"
+unterschied = "Hut stark hirnartig gerunzelt, kastanien- bis rotbraun."
 
 [[verwechslungen]]
-name = "Glatte Fingerhutverpel"
-merkmal = "Hut nur gerunzelt mit Querrillen, ohne hochgestellte Längsrillen."
-essbar = "essbar"
 slug = "glatte-fingerhutverpel"
+unterschied = "Hut nur gerunzelt mit Querrillen, ohne hochgestellte Längsrillen."
 
 [[verwechslungen]]
-name = "Käppchenmorchel"
-merkmal = "Stiel hohl, das Käppchen ist zu einem Drittel mit ihm verwachsen und meist zugespitzt."
-essbar = "essbar"
 slug = "kaeppchenmorchel"
+unterschied = "Stiel hohl, das Käppchen ist zu einem Drittel mit ihm verwachsen und meist zugespitzt."
 
 [[verwechslungen]]
-name = "Spitzmorchel"
-merkmal = "Käppchen mit Kammern und ganz am Stiel angewachsen."
-essbar = "essbar"
 slug = "spitzmorchel"
+unterschied = "Käppchen mit Kammern und ganz am Stiel angewachsen."
 
 [[verwechslungen]]
-name = "Speisemorchel"
-merkmal = "Käppchen wabenartig und ganz am Stiel angewachsen."
-essbar = "essbar"
 slug = "speisemorchel"
+unterschied = "Käppchen wabenartig und ganz am Stiel angewachsen."
 
 [[links]]
 titel = "123pilzsuche.de"

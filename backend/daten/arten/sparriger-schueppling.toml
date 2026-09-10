@@ -33,20 +33,8 @@ vorkommen = "Folgezersetzer und Weißfäuleerreger, gern an Laubholz und Obstbä
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Hochthronender Schüppling"
-merkmal = "Schuppen angedrückt statt abstehend und zonig verteilt, Stiel schleimig, an Nadelholz."
-essbar = "giftig"
-
-[[verwechslungen]]
-name = "Bleicher Schüppling"
-merkmal = "Grundfarbe cremeweiß bis sehr hellbraun, Geruch obstartig nach Fruchtbonbon, Geschmack bitter."
-essbar = "ungeniessbar"
 slug = "bleicher-schueppling"
-
-[[verwechslungen]]
-name = "Pinselschüppling"
-merkmal = "Hut gelblich und schleimig, mit anliegenden pinselartigen Schuppen, Geruch neutral."
-essbar = "ungeniessbar"
+unterschied = "Grundfarbe cremeweiß bis sehr hellbraun, Geruch obstartig nach Fruchtbonbon, Geschmack bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

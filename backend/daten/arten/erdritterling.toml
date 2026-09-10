@@ -33,34 +33,24 @@ vorkommen = "Symbiosepilz mit Nadelbäumen, gern Kiefer, Fichte, Tanne und Dougl
 zeit = "Frühsommer bis Spätherbst, im Herbst häufiger."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Hut weiß mit silbergrauen bis graubraunen Schuppen, Lamellen im Alter gelblich, Stiel keulig."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Hut weiß mit silbergrauen bis graubraunen Schuppen, Lamellen im Alter gelblich, Stiel keulig."
 
 [[verwechslungen]]
-name = "Gilbender Erdritterling"
-merkmal = "Lamellen gilben beim Reiben."
-essbar = "giftig"
 slug = "gilbender-erdritterling"
+unterschied = "Lamellen gilben beim Reiben."
 
 [[verwechslungen]]
-name = "Mausgrauer Erdritterling"
-merkmal = "Hut mausgrau bis aschgrau mit bläulichem Ton, Stiel jung mit weißem Haarschleier."
-essbar = "giftig"
 slug = "mausgrauer-erdritterling"
+unterschied = "Hut mausgrau bis aschgrau mit bläulichem Ton, Stiel jung mit weißem Haarschleier."
 
 [[verwechslungen]]
-name = "Rötender Erdritterling"
-merkmal = "Lamellen schimmern rötlich, Stiel mit dunklen Fasern."
-essbar = "giftig"
 slug = "roetender-erdritterling"
+unterschied = "Lamellen schimmern rötlich, Stiel mit dunklen Fasern."
 
 [[verwechslungen]]
-name = "Risspilzähnlicher Erdritterling"
-merkmal = "Hut lilabraun getönt, Lamellen mit Zwischenlamellen."
-essbar = "ungeniessbar"
 slug = "risspilzaehnlicher-erdritterling"
+unterschied = "Hut lilabraun getönt, Lamellen mit Zwischenlamellen."
 
 [[links]]
 titel = "123pilzsuche.de"

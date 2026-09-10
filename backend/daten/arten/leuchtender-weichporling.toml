@@ -32,22 +32,16 @@ vorkommen = "Folgezersetzer an Totholz und Bauholz, meist Nadelholz, gern Weißt
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Zimtfarbiger Weichporling"
-merkmal = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
-essbar = "toedlichGiftig"
 slug = "zimtfarbiger-weichporling"
+unterschied = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
 
 [[verwechslungen]]
-name = "Duftender Goldporling"
-merkmal = "Liegt dem Holz flach auf und wirkt, als bestehe er nur aus Röhren. Geruch nach Anis oder Aprikose."
-essbar = "ungeniessbar"
 slug = "duftender-goldporling"
+unterschied = "Liegt dem Holz flach auf und wirkt, als bestehe er nur aus Röhren. Geruch nach Anis oder Aprikose."
 
 [[verwechslungen]]
-name = "Schwefelporling"
-merkmal = "Hüte fächerförmig und dachziegelartig, gelb bis orange, Poren gelb, Geruch säuerlich obstartig."
-essbar = "essbar"
 slug = "schwefelporling"
+unterschied = "Hüte fächerförmig und dachziegelartig, gelb bis orange, Poren gelb, Geruch säuerlich obstartig."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -40,34 +40,24 @@ vorkommen = "Symbiosepilz im Mischwald, gern bei Fichte und Buche, auf saurem Bo
 zeit = "Frühling bis Spätherbst, oft schon ab April."
 
 [[verwechslungen]]
-name = "Ochsenröhrling"
-merkmal = "Hut goldgelb bis braungelb, Stielbasis stark verdickt."
-essbar = "bedingtEssbar"
 slug = "ochsenroehrling"
+unterschied = "Hut goldgelb bis braungelb, Stielbasis stark verdickt."
 
 [[verwechslungen]]
-name = "Blaufleckender Purpurröhrling"
-merkmal = "Hut purpurrot bis weinrosa, Stiel mit rötlichem Netz."
-essbar = "giftig"
 slug = "blaufleckender-purpurroehrling"
+unterschied = "Hut purpurrot bis weinrosa, Stiel mit rötlichem Netz."
 
 [[verwechslungen]]
-name = "Falscher Satansröhrling"
-merkmal = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz."
-essbar = "giftig"
 slug = "falscher-satansroehrling"
+unterschied = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz."
 
 [[verwechslungen]]
-name = "Büscheliger Hexenröhrling"
-merkmal = "Hut kupfer- bis granatrot, Stiel rötlich benetzt, wächst büschelig."
-essbar = "ungeniessbar"
 slug = "buescheliger-hexenroehrling"
+unterschied = "Hut kupfer- bis granatrot, Stiel rötlich benetzt, wächst büschelig."
 
 [[verwechslungen]]
-name = "Glattstieliger Hexenröhrling"
-merkmal = "Stiel ohne Flöckchen und ohne Netz, Röhrenmündungen gelborange."
-essbar = "essbar"
 slug = "glattstieliger-hexenroehrling"
+unterschied = "Stiel ohne Flöckchen und ohne Netz, Röhrenmündungen gelborange."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -36,21 +36,12 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Eiche und Buche. Selten."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Blasshütiger Purpurröhrling"
-merkmal = "Hut blass rosa bis lederfarben, Stiel mit deutlichem rotem Netz."
-essbar = "giftig"
-
-[[verwechslungen]]
-name = "Blaufleckender Purpurröhrling"
-merkmal = "Stiel mit rotem Netz, Hut auf Druck blaufleckend."
-essbar = "giftig"
 slug = "blaufleckender-purpurroehrling"
+unterschied = "Stiel mit rotem Netz, Hut auf Druck blaufleckend."
 
 [[verwechslungen]]
-name = "Falscher Satansröhrling"
-merkmal = "Hut blass rosa bis lederfarben, Stiel mit rotem Netz, alt unangenehm riechend."
-essbar = "giftig"
 slug = "falscher-satansroehrling"
+unterschied = "Hut blass rosa bis lederfarben, Stiel mit rotem Netz, alt unangenehm riechend."
 
 [[links]]
 titel = "123pilzsuche.de"

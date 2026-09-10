@@ -37,34 +37,24 @@ vorkommen = "Schwächeparasit und Folgezersetzer an Laubbäumen im Misch- und Au
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Zimtfarbiger Weichporling"
-merkmal = "Ohne Stiel, waagrecht vom Stamm abstehend, Poren und Fleisch zimtbraun bis rosabraun."
-essbar = "toedlichGiftig"
 slug = "zimtfarbiger-weichporling"
+unterschied = "Ohne Stiel, waagrecht vom Stamm abstehend, Poren und Fleisch zimtbraun bis rosabraun."
 
 [[verwechslungen]]
-name = "Tropfender Schillerporling"
-merkmal = "Hut hellbraun bis tabakbraun und bereift, jung mit hellbraunen Tröpfchen, Poren dunkelbraun, Fleisch rostbraun und korkig."
-essbar = "ungeniessbar"
 slug = "tropfender-schillerporling"
+unterschied = "Hut hellbraun bis tabakbraun und bereift, jung mit hellbraunen Tröpfchen, Poren dunkelbraun, Fleisch rostbraun und korkig."
 
 [[verwechslungen]]
-name = "Flacher Schillerporling"
-merkmal = "Fruchtkörper rostbraun, Oberfläche rauhaarig filzig, Poren jung gelb schillernd, Fleisch bräunlich."
-essbar = "ungeniessbar"
 slug = "flacher-schillerporling"
+unterschied = "Fruchtkörper rostbraun, Oberfläche rauhaarig filzig, Poren jung gelb schillernd, Fleisch bräunlich."
 
 [[verwechslungen]]
-name = "Eichenfeuerschwamm"
-merkmal = "Fruchtkörper kastanien- bis schwarzbraun, Fleisch holzig, fest und zäh, mehrjährig an lebenden Eichen."
-essbar = "ungeniessbar"
 slug = "eichenfeuerschwamm"
+unterschied = "Fruchtkörper kastanien- bis schwarzbraun, Fleisch holzig, fest und zäh, mehrjährig an lebenden Eichen."
 
 [[verwechslungen]]
-name = "Eichenzunge"
-merkmal = "Hut blass lederfarben bis ockerbraun, flockig körnig, auf Druck rotbraun, Fleisch später hart. Sehr selten."
-essbar = "essbar"
 slug = "eichenzunge"
+unterschied = "Hut blass lederfarben bis ockerbraun, flockig körnig, auf Druck rotbraun, Fleisch später hart. Sehr selten."
 
 [[links]]
 titel = "123pilzsuche.de"

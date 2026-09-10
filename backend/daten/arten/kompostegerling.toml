@@ -32,16 +32,12 @@ vorkommen = "Folgezersetzer in Parks und Gärten, auf Kompost, Müllhalden und n
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rebhuhnegerling"
-merkmal = "Hut graubraun bis rauchschwärzlich, Fleisch chromgelb an der Stielbasis, Geruch schwach karbolartig."
-essbar = "giftig"
 slug = "rebhuhnegerling"
+unterschied = "Hut graubraun bis rauchschwärzlich, Fleisch chromgelb an der Stielbasis, Geruch schwach karbolartig."
 
 [[verwechslungen]]
-name = "Übelriechender Egerling"
-merkmal = "Kleiner, 3 bis 9, selten 12 cm breit, Geruch widerlich stinkend und fischartig."
-essbar = "ungeniessbar"
 slug = "uebelriechender-egerling"
+unterschied = "Kleiner, 3 bis 9, selten 12 cm breit, Geruch widerlich stinkend und fischartig."
 
 [[links]]
 titel = "123pilzsuche.de"

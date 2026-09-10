@@ -34,10 +34,8 @@ vorkommen = "Bei Kiefer auf sandigem, saurem Boden. Wächst parasitisch auf dem 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Kuhmaul"
-merkmal = "Hut graubraun bis violettbraun und stark schleimig, Stielbasis leuchtend chromgelb, bei Fichte."
-essbar = "essbar"
 slug = "kuhmaul"
+unterschied = "Hut graubraun bis violettbraun und stark schleimig, Stielbasis leuchtend chromgelb, bei Fichte."
 
 [[links]]
 titel = "123pilzsuche.de"

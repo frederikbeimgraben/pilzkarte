@@ -38,21 +38,12 @@ vorkommen = "Symbiosepilz an Waldrändern und in Parks unter Fichte und Kiefer, 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Körnchenröhrling"
-merkmal = "Stiel oben mit milchigen Tröpfchen und Drüsenpunkten, Stielbasis nicht rosa."
-essbar = "essbar"
 slug = "koernchenroehrling"
+unterschied = "Stiel oben mit milchigen Tröpfchen und Drüsenpunkten, Stielbasis nicht rosa."
 
 [[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Bei Lärche, Hut gelb bis gelbbraun, Stiel mit Ring."
-essbar = "essbar"
 slug = "goldroehrling"
-
-[[verwechslungen]]
-name = "Weißbrauner Schmierröhrling"
-merkmal = "Hut weißlich bis hellbraun, Stielbasis ohne Rosaton."
-essbar = "essbar"
+unterschied = "Bei Lärche, Hut gelb bis gelbbraun, Stiel mit Ring."
 
 [[links]]
 titel = "123pilzsuche.de"

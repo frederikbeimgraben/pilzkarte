@@ -33,10 +33,8 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buchen, auf kalkreichem Boden. S
 zeit = "Normalerweise Herbst bis Spaetherbst, selten im Fruehling von April bis Juni."
 
 [[verwechslungen]]
-name = "Gilbender Erdritterling"
-merkmal = "Fleisch und Lamellen gilben, statt zu roeten, Stielbasis ohne blaugruene Toene."
-essbar = "giftig"
 slug = "gilbender-erdritterling"
+unterschied = "Fleisch und Lamellen gilben, statt zu roeten, Stielbasis ohne blaugruene Toene."
 
 [[links]]
 titel = "123pilzsuche.de"

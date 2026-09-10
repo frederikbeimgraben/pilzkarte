@@ -39,34 +39,24 @@ vorkommen = "Symbiosepilz im Laub- und Nadelwald, gern bei Heidelbeeren. Regiona
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Flämmiger Saftling"
-merkmal = "Nur 1 bis 2, selten bis 3 cm breit, Hut gelb, goldgelb bis orange, mit echten Lamellen statt Leisten."
-essbar = "giftig"
 slug = "flaemmiger-saftling"
+unterschied = "Nur 1 bis 2, selten bis 3 cm breit, Hut gelb, goldgelb bis orange, mit echten Lamellen statt Leisten."
 
 [[verwechslungen]]
-name = "Grüngelber Nabeling"
-merkmal = "1 bis 3, selten bis 4 cm breit, Hut gelb, olivgelb bis grüngelb, mit dicklichen gelben Lamellen."
-essbar = "ungeniessbar"
 slug = "gruengelber-nabeling"
+unterschied = "1 bis 3, selten bis 4 cm breit, Hut gelb, olivgelb bis grüngelb, mit dicklichen gelben Lamellen."
 
 [[verwechslungen]]
-name = "Mehltrichterling"
-merkmal = "Hut dunkelgrau bis graubraun und hellgrau bereift, mit grauen Lamellen, wächst in Wiesen."
-essbar = "ungeniessbar"
 slug = "mehltrichterling"
+unterschied = "Hut dunkelgrau bis graubraun und hellgrau bereift, mit grauen Lamellen, wächst in Wiesen."
 
 [[verwechslungen]]
-name = "Gelbstieliger Trompetenpfifferling"
-merkmal = "Stiel leuchtend gelb statt gelbbraun."
-essbar = "essbar"
 slug = "gelbstieliger-trompetenpfifferling"
+unterschied = "Stiel leuchtend gelb statt gelbbraun."
 
 [[verwechslungen]]
-name = "Schwärzender Leistling"
-merkmal = "Größer, Hut eidottergelb bis braungelb, Fleisch bei Verletzung und im Alter schwärzend."
-essbar = "essbar"
 slug = "schwaerzender-leistling"
+unterschied = "Größer, Hut eidottergelb bis braungelb, Fleisch bei Verletzung und im Alter schwärzend."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -32,10 +32,8 @@ vorkommen = "Im Mischwald, in Parks, auf grasigen Flächen, an Waldwegen und Wal
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Mönchskopf"
-merkmal = "Hut ockerbraun mit deutlichem Buckel, Lamellen weit herablaufend, Geruch süßlich parfümiert."
-essbar = "essbar"
 slug = "moenchskopf"
+unterschied = "Hut ockerbraun mit deutlichem Buckel, Lamellen weit herablaufend, Geruch süßlich parfümiert."
 
 [[links]]
 titel = "123pilzsuche.de"

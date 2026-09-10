@@ -37,16 +37,12 @@ vorkommen = "Folgezersetzer in Gärten, auf Wiesen, an Waldwegen, in Parks und a
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rebhuhnegerling"
-merkmal = "Hut graubraun bis rauchschwärzlich, Fleisch chromgelb und später braunrot anlaufend, Geruch karbolartig statt fischartig, Ring gerandet."
-essbar = "giftig"
 slug = "rebhuhnegerling"
+unterschied = "Hut graubraun bis rauchschwärzlich, Fleisch chromgelb und später braunrot anlaufend, Geruch karbolartig statt fischartig, Ring gerandet."
 
 [[verwechslungen]]
-name = "Wiesenchampignon"
-merkmal = "Hut weiß und glatt, Ring vergänglich, Stielbasis ohne Knolle, Geruch angenehm pilzig."
-essbar = "essbar"
 slug = "wiesenchampignon"
+unterschied = "Hut weiß und glatt, Ring vergänglich, Stielbasis ohne Knolle, Geruch angenehm pilzig."
 
 [[links]]
 titel = "123pilzsuche.de"

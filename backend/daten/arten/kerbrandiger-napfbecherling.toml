@@ -30,10 +30,8 @@ vorkommen = "Folgezersetzer auf Erde in Gärten und in Blumentöpfen."
 zeit = "Frühjahr bis Herbst."
 
 [[verwechslungen]]
-name = "Judasohr"
-merkmal = "Ohrförmig und gallertartig, wächst an Laubholz, meist an Holunder, nicht auf Erde."
-essbar = "essbar"
 slug = "judasohr"
+unterschied = "Ohrförmig und gallertartig, wächst an Laubholz, meist an Holunder, nicht auf Erde."
 
 [[links]]
 titel = "123pilzsuche.de"

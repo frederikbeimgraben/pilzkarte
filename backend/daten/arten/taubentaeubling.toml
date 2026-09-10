@@ -45,10 +45,8 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Birke, Buche und Eiche."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Frauentäubling"
-merkmal = "Lamellen biegsam und meist nicht brechend, Sporenpulver weiß statt hellgelb, Fleisch nicht rosaviolett verfärbend."
-essbar = "essbar"
 slug = "frauentaeubling"
+unterschied = "Lamellen biegsam und meist nicht brechend, Sporenpulver weiß statt hellgelb, Fleisch nicht rosaviolett verfärbend."
 
 [[links]]
 titel = "123pilzsuche.de"

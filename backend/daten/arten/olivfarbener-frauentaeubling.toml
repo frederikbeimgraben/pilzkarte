@@ -45,15 +45,8 @@ vorkommen = "Symbiosepilz im Mischwald."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Grüner Speisetäubling"
-merkmal = "Hut bronzebraun bis goldbraun ohne violette Flecken, Lamellen am Stiel zahlreich gegabelt."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Frauentäubling"
-merkmal = "Hut grün, braun, blau bis lila gemischt, ohne den reinen Olivton mit violetten Flecken."
-essbar = "essbar"
 slug = "frauentaeubling"
+unterschied = "Hut grün, braun, blau bis lila gemischt, ohne den reinen Olivton mit violetten Flecken."
 
 [[links]]
 titel = "123pilzsuche.de"

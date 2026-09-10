@@ -54,16 +54,12 @@ vorkommen = "Symbiosepilz im trockenen Mischwald, gern bei Kiefer, auf sandigem 
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Birkenspeitäubling"
-merkmal = "Hut blasser, weißlich bis rosenrot, Rand schwach kammartig gerieft, bei Birke auf feuchtem Boden."
-essbar = "giftig"
 slug = "birkenspeitaeubling"
+unterschied = "Hut blasser, weißlich bis rosenrot, Rand schwach kammartig gerieft, bei Birke auf feuchtem Boden."
 
 [[verwechslungen]]
-name = "Buchenspeitäubling"
-merkmal = "Huthaut matt-samtig und kaum abziehbar, stellenweise weißfleckig, bei Buche auf kalkhaltigem Boden."
-essbar = "giftig"
 slug = "buchenspeitaeubling"
+unterschied = "Huthaut matt-samtig und kaum abziehbar, stellenweise weißfleckig, bei Buche auf kalkhaltigem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

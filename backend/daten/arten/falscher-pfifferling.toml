@@ -37,22 +37,16 @@ vorkommen = "Folgezersetzer im Nadelwald auf Nadelstreu, seltener im Laubwald an
 zeit = "Sommer bis Winter."
 
 [[verwechslungen]]
-name = "Ölbaumtrichterling"
-merkmal = "Wächst büschelig an Laubholzstrünken, Hut orangebraun, Lamellen leuchten im Dunkeln schwach."
-essbar = "giftig"
 slug = "oelbaumtrichterling"
+unterschied = "Wächst büschelig an Laubholzstrünken, Hut orangebraun, Lamellen leuchten im Dunkeln schwach."
 
 [[verwechslungen]]
-name = "Brauner Afterleistling"
-merkmal = "Hut graubraun bis olivbraun statt leuchtend orange."
-essbar = "giftig"
 slug = "brauner-afterleistling"
+unterschied = "Hut graubraun bis olivbraun statt leuchtend orange."
 
 [[verwechslungen]]
-name = "Purpuroranger Afterleistling"
-merkmal = "Hut und Lamellen mit purpurnem bis rötlichem Ton."
-essbar = "giftig"
 slug = "purpuroranger-afterleistling"
+unterschied = "Hut und Lamellen mit purpurnem bis rötlichem Ton."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -48,10 +48,8 @@ vorkommen = "Symbiosepilz meist im Laubwald, auf saurem Boden. Regional sehr hä
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Ockertäubling"
-merkmal = "Hut hellgelb bis gelbocker, kahl und matt, Stiel weiß ohne Lilaton, Geschmack etwas bitterlich."
-essbar = "minderwertig"
 slug = "ockertaeubling"
+unterschied = "Hut hellgelb bis gelbocker, kahl und matt, Stiel weiß ohne Lilaton, Geschmack etwas bitterlich."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer im Nadelwald, auch in Bergnadelwäldern, gern auf sa
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Büscheliger Egerlingsschirmling"
-merkmal = "Fleisch stark gilbend und rötend, später weinrot, Stiel bei Verletzung intensiv gelb bis rotbraun, wächst büschelig auf Kompost und Rindenmulch."
-essbar = "giftig"
 slug = "buescheliger-egerlingsschirmling"
+unterschied = "Fleisch stark gilbend und rötend, später weinrot, Stiel bei Verletzung intensiv gelb bis rotbraun, wächst büschelig auf Kompost und Rindenmulch."
 
 [[verwechslungen]]
-name = "Parasol"
-merkmal = "Stiel mit dunkelbrauner Natterung, Hut bis 25, selten 30 cm breit, Geruch nussartig."
-essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
+unterschied = "Stiel mit dunkelbrauner Natterung, Hut bis 25, selten 30 cm breit, Geruch nussartig."
 
 [[verwechslungen]]
-name = "Safranschirmling"
-merkmal = "Fleisch bei Verletzung sofort safranrötlich anlaufend, Stielbasis verdickt aber ohne abgesetzte Knolle."
-essbar = "essbar"
 slug = "safranschirmling"
+unterschied = "Fleisch bei Verletzung sofort safranrötlich anlaufend, Stielbasis verdickt aber ohne abgesetzte Knolle."
 
 [[links]]
 titel = "123pilzsuche.de"

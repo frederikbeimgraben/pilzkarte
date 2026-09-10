@@ -32,22 +32,16 @@ vorkommen = "Folgezersetzer an totem Nadelholz, gern an verrottetem Holz von Fic
 zeit = "Ganzjährig."
 
 [[verwechslungen]]
-name = "Zimtfarbiger Weichporling"
-merkmal = "Zimtbraune bis rostbraune Farben statt Orange, ohne Anisgeruch."
-essbar = "toedlichGiftig"
 slug = "zimtfarbiger-weichporling"
+unterschied = "Zimtbraune bis rostbraune Farben statt Orange, ohne Anisgeruch."
 
 [[verwechslungen]]
-name = "Leuchtender Weichporling"
-merkmal = "Blasser gelborange, ohne den süßlichen Anisgeruch."
-essbar = "ungeniessbar"
 slug = "leuchtender-weichporling"
+unterschied = "Blasser gelborange, ohne den süßlichen Anisgeruch."
 
 [[verwechslungen]]
-name = "Schwefelporling"
-merkmal = "Bildet dachziegelige Konsolen mit Hutkante, wächst an Laubholz."
-essbar = "essbar"
 slug = "schwefelporling"
+unterschied = "Bildet dachziegelige Konsolen mit Hutkante, wächst an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"
