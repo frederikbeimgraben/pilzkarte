@@ -16,6 +16,7 @@ export { FactorRowComponent } from './factor-row/factor-row.component';
 export { FloatingButtonComponent, type SchwebeVariante } from './floating-button/floating-button.component';
 export { FormFieldComponent } from './form-field/form-field.component';
 export { HistogramComponent } from './histogram/histogram.component';
+export { InfoTextComponent } from './info-text/info-text.component';
 export { KeyValueRowComponent } from './key-value-table/key-value-row.component';
 export { KeyValueTableComponent } from './key-value-table/key-value-table.component';
 export { ListRowComponent } from './list-row/list-row.component';

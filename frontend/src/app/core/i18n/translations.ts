@@ -132,7 +132,6 @@ const de = {
   'fadenkreuz.beschriftung': 'Fundort',
 
   'saison.beschriftung': 'Saisonkurve',
-  'saison.geglaettet': 'geglättet über {wochen} Wochen',
 
   'histogramm.beschriftung': 'Verteilung',
 
@@ -202,8 +201,8 @@ const de = {
   'art.nichtGefunden': 'Diese Art steht nicht im Katalog.',
   'art.kurve.beschriftung':
     'Saisonkurve {name}, Anteil der Begehungen mit Fund je Kalenderwoche, Höchstwert {hoechstwert} %',
-  'art.kurve.laufend': '{jahr} bis KW {woche}',
-  'art.kurve.jahre': '{von} bis {bis}, Anteil der Begehungen mit Fund',
+  'art.kurve.laufend': 'Schätzung dieses Jahr',
+  'art.kurve.jahre': 'Mittelwert {von} bis {bis}',
   'art.kurve.achse': '{wert} %',
   'art.monat.jan': 'Jan',
   'art.monat.apr': 'Apr',
@@ -735,7 +734,6 @@ const en: Record<TranslationKey, string> = {
   'fadenkreuz.beschriftung': 'Find location',
 
   'saison.beschriftung': 'Season curve',
-  'saison.geglaettet': 'smoothed over {wochen} weeks',
 
   'histogramm.beschriftung': 'Distribution',
 
@@ -805,8 +803,8 @@ const en: Record<TranslationKey, string> = {
   'art.nichtGefunden': 'This species is not in the catalogue.',
   'art.kurve.beschriftung':
     'Season curve {name}, share of the visits with a find per calendar week, maximum {hoechstwert} %',
-  'art.kurve.laufend': '{jahr} to CW {woche}',
-  'art.kurve.jahre': '{von} to {bis}, share of the visits with a find',
+  'art.kurve.laufend': 'Estimate this year',
+  'art.kurve.jahre': 'Mean {von} to {bis}',
   'art.kurve.achse': '{wert} %',
   'art.monat.jan': 'Jan',
   'art.monat.apr': 'Apr',

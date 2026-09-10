@@ -138,33 +138,21 @@ describe('SeasonCurveComponent', () => {
     expect(Math.min(...hoehen)).toBeCloseTo(47.7, 1);
   });
 
-  it('nennt die Glättung neben der Legende', async () => {
+  it('nennt in der Legende die Reihen, nicht das Rechenverfahren', async () => {
     await render(SeasonCurveComponent, {
       inputs: {
         alleJahre: ALLE,
         laufendesJahr: LAUFEND,
         beschriftung: 'Saisonkurve',
         gross: true,
-        legendeLaufend: '2025 bis KW 39',
-        legendeJahre: '2015 bis 2024',
+        legendeLaufend: 'Schätzung dieses Jahr',
+        legendeJahre: 'Mittelwert 2015 bis 2025',
       },
     });
 
-    expect(screen.getByText('geglättet über 3 Wochen')).toBeInTheDocument();
-  });
-
-  it('schweigt über die Glättung, wenn keine stattfindet', async () => {
-    await render(SeasonCurveComponent, {
-      inputs: {
-        alleJahre: ALLE,
-        laufendesJahr: LAUFEND,
-        beschriftung: 'Saisonkurve',
-        gross: true,
-        glaettung: 1,
-        legendeLaufend: '2025 bis KW 39',
-      },
-    });
-
+    // „Geglättet über 3 Wochen“ sagt dem Sammler nichts über die Saison.
+    expect(screen.getByText('Schätzung dieses Jahr')).toBeInTheDocument();
+    expect(screen.getByText('Mittelwert 2015 bis 2025')).toBeInTheDocument();
     expect(screen.queryByText(/geglättet/)).toBeNull();
   });
 

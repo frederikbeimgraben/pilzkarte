@@ -103,8 +103,8 @@ describe('ArtComponent', () => {
   it('nennt zur Kurve die Jahre, die Wochen und den Höchstwert', async () => {
     const { container } = await aufbauen(STEINPILZ);
 
-    expect(screen.getByText('2025 bis KW 39')).toBeInTheDocument();
-    expect(screen.getByText('2015 bis 2024, Anteil der Begehungen mit Fund')).toBeInTheDocument();
+    expect(screen.getByText('Schätzung dieses Jahr')).toBeInTheDocument();
+    expect(screen.getByText('Mittelwert 2015 bis 2024')).toBeInTheDocument();
     expect(screen.getByText('32 %')).toBeInTheDocument();
     expect(screen.getByText('Jan')).toBeInTheDocument();
     expect(screen.getByText('Dez')).toBeInTheDocument();

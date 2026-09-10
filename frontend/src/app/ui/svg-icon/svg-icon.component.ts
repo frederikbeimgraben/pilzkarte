@@ -16,6 +16,8 @@ export type PiktogrammName =
   | 'zone'
   | 'suche'
   | 'warnung'
+  | 'info'
+  | 'leer'
   | 'links'
   | 'rechts'
   | 'abspielen';

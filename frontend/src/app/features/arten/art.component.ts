@@ -9,6 +9,8 @@ import type { TranslationKey } from '../../core/i18n/translations';
 import {
   ActionBarComponent,
   KeyValueRowComponent,
+  EmptyStateComponent,
+  InfoTextComponent,
   KeyValueTableComponent,
   LookalikeRowComponent,
   NoteComponent,
@@ -130,6 +132,8 @@ interface Ansicht {
     BadgeComponent,
     CardComponent,
     KeyValueRowComponent,
+    EmptyStateComponent,
+    InfoTextComponent,
     KeyValueTableComponent,
     LookalikeRowComponent,
     NoteComponent,

@@ -1,0 +1,20 @@
+// Ein Abstand, überall gleich: das Zeichen steht auf der Höhe der ersten Zeile
+// und nicht mittig zum ganzen Absatz.
+:host {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
+
+.hinweis__zeichen {
+  flex: 0 0 auto;
+  margin-block-start: 2px;
+  color: var(--color-info);
+}
+
+.hinweis__text {
+  min-inline-size: 0;
+}

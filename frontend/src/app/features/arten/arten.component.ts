@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { BadgeComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
-import { BAUMARTEN, type ArtKurz, type Tag } from '../../core/api/models';
+import type { ArtKurz, Tag } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import type { TranslationKey } from '../../core/i18n/translations';
@@ -28,6 +28,7 @@ import {
   ESSBARKEIT_BADGE,
   ESSBARKEIT_GEFAHR,
   ESSBARKEIT_TEXT,
+  GEFAEHRLICH,
   STUFE_BADGE,
   STUFE_RANG,
   TAG_TEXT,
@@ -203,42 +204,46 @@ export class ArtenComponent {
   }
 
   /**
-   * Die Marken einer Zeile: erst die Stufe, dann der Schutz, zuletzt der Baum
-   * oder die Jahreszeit. Die Zeile setzt bei einer aktiven Art selbst die Marke
-   * „aktiv“ davor, darum bleibt hier eine Marke weniger Platz.
+   * Die Marken einer Zeile, immer in derselben Reihenfolge: Stufe, Schutz,
+   * Speisewert, Symbiosepartner, Jahreszeit. Jede steht für einen Filter, nach
+   * dem man die Liste auch wirklich durchsuchen kann; vorher standen dort
+   * beliebige Tags, die nichts zu tun hatten.
+   *
+   * Der Speisewert erscheint nur, wo er warnt. „Essbar“ an jeder zweiten Zeile
+   * sagt nichts; „Tödlich giftig“ muss ins Auge springen.
    */
-  private zeile(art: ArtKurz, aktiv: boolean): Zeile {
+  private marken(art: ArtKurz): Marke[] {
     const marken: Marke[] = [
       { text: this.i18n.translate(TAG_TEXT[art.stufe]), variant: STUFE_BADGE[art.stufe] },
     ];
-    // Wer die Liste nach einem Giftpilz durchsucht, muss ihn sofort erkennen.
-    if (!art.sammelbar) {
+    if (art.geschuetzt) {
+      marken.push({ text: this.i18n.translate('arten.geschuetzt'), variant: 'warning' });
+    }
+    if (GEFAEHRLICH.includes(art.speisewert)) {
       marken.push({
         text: this.i18n.translate(ESSBARKEIT_TEXT[art.speisewert]),
         variant: ESSBARKEIT_BADGE[art.speisewert],
       });
     }
-    // Genug Funde für ein Modell, aber noch keine Karte: das ist eine eigene
-    // Nachricht und nicht dasselbe wie die Stufe.
-    if (art.vorhersageGeplant && !art.kartenSlug) {
-      marken.push({ text: this.i18n.translate('arten.vorhersageGeplant'), variant: 'info' });
+    // Der erste Baum ist der wichtigste: so stehen sie im Profil.
+    const baum = art.baeume.at(0) ?? art.baeumeAusErfahrung?.baeume.at(0);
+    if (baum) marken.push({ text: this.i18n.translate(TAG_TEXT[baum]), variant: 'neutral' });
+    const jahreszeit = art.jahreszeiten.at(0);
+    if (jahreszeit) {
+      marken.push({ text: this.i18n.translate(TAG_TEXT[jahreszeit]), variant: 'neutral' });
     }
-    if (art.geschuetzt) {
-      marken.push({ text: this.i18n.translate('arten.geschuetzt'), variant: 'warning' });
-    }
-    // Der Baum sagt mehr über den Fundort als die Jahreszeit, die schon in der
-    // Kurve steckt. Nur ohne Wirtsbaum tritt die Jahreszeit an seine Stelle.
-    const baeume: readonly Tag[] = BAUMARTEN;
-    const weiter =
-      art.tags.find((tag) => baeume.includes(tag)) ??
-      art.tags.find((tag) => tag !== art.stufe && tag !== art.gruppe);
-    if (weiter) marken.push({ text: this.i18n.translate(TAG_TEXT[weiter]), variant: 'neutral' });
+    return marken;
+  }
+
+  private zeile(art: ArtKurz, aktiv: boolean): Zeile {
+    // Die Zeile setzt bei einer aktiven Art selbst die Marke „aktiv“ davor,
+    // darum bleibt hier eine Marke weniger Platz.
     return {
       slug: art.slug,
       name: art.name,
       latein: art.lateinisch,
       aktiv,
-      marken: marken.slice(0, aktiv ? 2 : 3),
+      marken: this.marken(art).slice(0, aktiv ? 2 : 3),
       hatKurve: art.saison !== null,
       kurve: art.saison?.alleJahre ?? [],
       laufend: art.saison?.laufendesJahr ?? [],
