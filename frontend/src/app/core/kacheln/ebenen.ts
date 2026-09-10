@@ -6,6 +6,16 @@
  * ist die einzige Stelle, die das weiß.
  */
 
+/**
+ * Die Verteilung einer Quelle über Deutschland, vorgerechnet von der Kette
+ * (`modell/src/pilze/manifest.py`): 41 Kanten über die Skala, dazu 40 Anteile,
+ * die sich zu 1 summieren.
+ */
+export interface Histogramm {
+  klassen: readonly number[];
+  anteile: readonly number[];
+}
+
 /** Eine Eingabe-Ebene: Wald, Boden-pH, Niederschlag der letzten vier Wochen. */
 export interface Ebene {
   id: string;
@@ -25,6 +35,10 @@ export interface Ebene {
   vorhanden: ReadonlySet<string>;
   /** Wochenschlüssel der Form `2026W36`, aufsteigend. Leer bei fester Ebene. */
   wochen: readonly string[];
+  /** Die Verteilung einer festen Ebene. */
+  histogramm: Histogramm | null;
+  /** Je Woche eine Verteilung, bei einer Wochenebene. */
+  histogramme: ReadonlyMap<string, Histogramm>;
 }
 
 export interface EbenenManifest {
@@ -57,6 +71,27 @@ function leseVorhanden(roh: unknown): Set<string> {
   return menge;
 }
 
+export function leseHistogramm(roh: unknown): Histogramm | null {
+  if (!istObjekt(roh)) return null;
+  const klassen = Array.isArray(roh['klassen']) ? roh['klassen'] : [];
+  const anteile = Array.isArray(roh['anteile']) ? roh['anteile'] : [];
+  if (klassen.length !== anteile.length + 1 || anteile.length === 0) return null;
+  return {
+    klassen: klassen.map((wert) => zahl(wert)),
+    anteile: anteile.map((wert) => zahl(wert)),
+  };
+}
+
+function leseHistogramme(roh: unknown): Map<string, Histogramm> {
+  const alle = new Map<string, Histogramm>();
+  if (!istObjekt(roh)) return alle;
+  for (const [woche, wert] of Object.entries(roh)) {
+    const verteilung = leseHistogramm(wert);
+    if (verteilung) alle.set(woche, verteilung);
+  }
+  return alle;
+}
+
 function leseEbene(id: string, roh: unknown): Ebene | null {
   if (!istObjekt(roh) || typeof roh['tiles'] !== 'string') return null;
   const zooms = Array.isArray(roh['zooms']) ? roh['zooms'] : [];
@@ -73,6 +108,8 @@ function leseEbene(id: string, roh: unknown): Ebene | null {
     zoomBis: zahl(zooms[1], 8),
     vorhanden: leseVorhanden(roh['have']),
     wochen: wochen.filter((woche): woche is string => typeof woche === 'string'),
+    histogramm: leseHistogramm(roh['histogramm']),
+    histogramme: leseHistogramme(roh['histogramme']),
   };
 }
 
@@ -143,13 +180,52 @@ export function alsProzent(ebene: Ebene): boolean {
   return ebene.einheit === '' && ebene.low >= 0 && ebene.high <= 1;
 }
 
-/** Ein Wert der Ebene mit seiner Einheit, in der Sprache der Oberfläche. */
-export function formatiereWert(wert: number, ebene: Ebene, locale: string): string {
+/** Ein Wert der Ebene ohne Einheit, in der Sprache der Oberfläche. */
+export function formatiereZahl(wert: number, ebene: Ebene, locale: string): string {
   if (alsProzent(ebene)) {
-    return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(wert * 100)} %`;
+    return new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(wert * 100);
   }
-  const zahl = new Intl.NumberFormat(locale, {
+  return new Intl.NumberFormat(locale, {
     maximumFractionDigits: Math.abs(wert) >= 100 ? 0 : 1,
   }).format(wert);
-  return ebene.einheit === '' ? zahl : `${zahl} ${ebene.einheit}`;
+}
+
+/** Die Einheit, in der die Ebene misst. Ein Anteil liest sich als Prozent. */
+export function einheitVon(ebene: Ebene): string {
+  return alsProzent(ebene) ? '%' : ebene.einheit;
+}
+
+/** Ein Wert der Ebene mit seiner Einheit, in der Sprache der Oberfläche. */
+export function formatiereWert(wert: number, ebene: Ebene, locale: string): string {
+  const einheit = einheitVon(ebene);
+  const zahl = formatiereZahl(wert, ebene, locale);
+  return einheit === '' ? zahl : `${zahl} ${einheit}`;
+}
+
+/** Die Verteilung, die für eine Woche gilt. Eine feste Ebene hat nur eine. */
+export function histogrammFuer(ebene: Ebene, woche: string | null): Histogramm | null {
+  if (ebene.fest) return ebene.histogramm;
+  const gewaehlt = passendeWoche(ebene, woche);
+  return gewaehlt === null ? null : (ebene.histogramme.get(gewaehlt) ?? null);
+}
+
+/**
+ * Der Anteil der Fläche, auf dem ein Wert zwischen `von` und `bis` liegt.
+ *
+ * Eine Klasse, die nur zum Teil in der Spanne liegt, zählt anteilig: die
+ * Verteilung innerhalb einer Klasse ist unbekannt, gleichmäßig ist die
+ * ehrlichste Annahme. Die Anteile summieren sich zu 1, das Ergebnis also auch.
+ */
+export function anteilErfuellt(histogramm: Histogramm, von: number, bis: number): number {
+  let summe = 0;
+  for (let klasse = 0; klasse < histogramm.anteile.length; klasse++) {
+    const unten = histogramm.klassen[klasse];
+    const oben = histogramm.klassen[klasse + 1];
+    const breite = oben - unten;
+    if (breite <= 0) continue;
+    const teil = Math.min(oben, bis) - Math.max(unten, von);
+    if (teil <= 0) continue;
+    summe += histogramm.anteile[klasse] * Math.min(teil / breite, 1);
+  }
+  return Math.min(Math.max(summe, 0), 1);
 }

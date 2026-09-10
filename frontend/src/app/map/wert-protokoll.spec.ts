@@ -2,7 +2,7 @@ import { ArbeiterAttrappe } from '../testing/karte-attrappen';
 import { leseManifest } from '../core/kacheln/manifest';
 import { WertProtokoll, artQuelle, wertVorlage, zerlegeWertUrl } from './wert-protokoll';
 import { VORHERSAGE_RAMPE } from '../ui/ramp/rampe-farben';
-import type { FaerbeAuftrag, VorladeAuftrag } from './wert-nachrichten';
+import type { FaerbeAuftrag, KombiAuftrag, VorladeAuftrag } from './wert-nachrichten';
 
 const MANIFEST = leseManifest(
   {
@@ -112,5 +112,60 @@ describe('wert://', () => {
     wert.beende();
 
     expect(arbeiter.beendet).toBe(true);
+  });
+
+  it('fragt eine zusammengesetzte Quelle mit allen Teilen an', async () => {
+    const { wert, arbeiter } = protokoll();
+    const grenze = { von: 100, bis: 255, rand: 25 };
+    wert.meldeKombi({
+      id: 'kombi',
+      regel: 'schnitt',
+      farben: ['#004225'],
+      teile: [
+        { ordner: 'layers_kacheln/regen_4w/2025W40', grenze, vorhanden: MANIFEST.vorhanden },
+        { ordner: 'layers_kacheln/wald', grenze, vorhanden: MANIFEST.vorhanden },
+      ],
+    });
+    const bild = { breite: 256 } as unknown as ImageBitmap;
+
+    const lauf = wert.aufloesen('wert://kombi/a1b2c3d4/7/66/42');
+    const auftrag = arbeiter.auftraege[0] as KombiAuftrag;
+    arbeiter.antworte({ id: auftrag.id, bild });
+
+    expect(auftrag.typ).toBe('kombi');
+    expect(auftrag.regel).toBe('schnitt');
+    expect(auftrag.teile.map((teil) => teil.url)).toEqual([
+      '/layers_kacheln/regen_4w/2025W40/7/66/42.png',
+      '/layers_kacheln/wald/7/66/42.png',
+    ]);
+    await expect(lauf).resolves.toEqual({ data: bild });
+  });
+
+  it('lässt die Kombination leer, wo einem Teil die Kachel fehlt', async () => {
+    const { wert, arbeiter } = protokoll();
+    const grenze = { von: 1, bis: 255, rand: 25 };
+    wert.meldeKombi({
+      id: 'kombi',
+      regel: 'abgestuft',
+      farben: ['#0d0827'],
+      teile: [
+        { ordner: 'a', grenze, vorhanden: MANIFEST.vorhanden },
+        { ordner: 'b', grenze, vorhanden: new Set<string>() },
+      ],
+    });
+
+    const antwort = await wert.aufloesen('wert://kombi/a1b2c3d4/7/66/42');
+
+    expect((antwort.data as ArrayBuffer).byteLength).toBe(0);
+    expect(arbeiter.auftraege).toHaveLength(0);
+  });
+
+  it('lässt eine Kombination ohne Teile leer', async () => {
+    const { wert } = protokoll();
+    wert.meldeKombi({ id: 'kombi', regel: 'schnitt', farben: ['#004225'], teile: [] });
+
+    const antwort = await wert.aufloesen('wert://kombi/a1b2c3d4/7/66/42');
+
+    expect((antwort.data as ArrayBuffer).byteLength).toBe(0);
   });
 });

@@ -1,0 +1,26 @@
+.waehlen {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-block-size: 0;
+  padding: var(--pilz-gutter) var(--pilz-gutter) var(--space-4);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.waehlen__gruppe {
+  margin-block: var(--space-3) var(--space-1);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.waehlen__gruppe:first-child {
+  margin-block-start: 0;
+}
+
+.waehlen__zeile--aus {
+  opacity: 0.55;
+}

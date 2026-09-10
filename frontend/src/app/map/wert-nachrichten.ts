@@ -1,4 +1,4 @@
-import type { WertSkala } from './wert-farben';
+import type { KombiGrenze, KombiRegel, WertSkala } from './wert-farben';
 
 /** Was der Hauptfaden dem Färbe-Worker schickt und was zurückkommt. */
 
@@ -11,12 +11,26 @@ export interface FaerbeAuftrag {
   farben: readonly string[];
 }
 
+/** Ein Faktor der Kombination an dieser Kachel. */
+export interface KombiTeil {
+  url: string;
+  grenze: KombiGrenze;
+}
+
+export interface KombiAuftrag {
+  typ: 'kombi';
+  id: number;
+  teile: readonly KombiTeil[];
+  regel: KombiRegel;
+  farben: readonly string[];
+}
+
 export interface VorladeAuftrag {
   typ: 'vorladen';
   urls: readonly string[];
 }
 
-export type WertAuftrag = FaerbeAuftrag | VorladeAuftrag;
+export type WertAuftrag = FaerbeAuftrag | KombiAuftrag | VorladeAuftrag;
 
 /** `bild` ist `null`, wenn es die Kachel nicht gibt. Das ist kein Fehler. */
 export interface WertAntwort {

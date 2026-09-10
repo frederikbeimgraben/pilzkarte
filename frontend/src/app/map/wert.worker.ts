@@ -1,6 +1,21 @@
-import { baueLut, faerbe, skalenSchluessel, type WertSkala } from './wert-farben';
+import {
+  baueKombiLut,
+  baueLut,
+  faerbe,
+  kombiIndex,
+  kombiniere,
+  skalenSchluessel,
+  type KombiGrenze,
+  type WertSkala,
+} from './wert-farben';
 import { KachelSpeicher } from './wert-speicher';
-import type { FaerbeAuftrag, VorladeAuftrag, WertAntwort, WertAuftrag } from './wert-nachrichten';
+import type {
+  FaerbeAuftrag,
+  KombiAuftrag,
+  VorladeAuftrag,
+  WertAntwort,
+  WertAuftrag,
+} from './wert-nachrichten';
 
 /** 16 MB rohe Kacheln sind rund 500 Stück, also mehrere Wochen im Blickfeld. */
 const SPEICHER_GRENZE = 16 * 1024 * 1024;
@@ -16,11 +31,21 @@ interface WorkerBereich {
   addEventListener(typ: 'message', hoerer: (ereignis: MessageEvent<WertAuftrag>) => void): void;
 }
 
-function tabelle(skala: WertSkala, farben: readonly string[]): Uint8ClampedArray {
-  const schluessel = skalenSchluessel(skala, farben);
+/**
+ * Eine entpackte Kachel samt der Leinwand, aus der sie kommt. Das Ergebnis
+ * wird in dieselben Punkte geschrieben und auf dieselbe Leinwand gelegt; eine
+ * zweite wäre eine viertel Megabyte je Kachel umsonst.
+ */
+interface Kachel {
+  bild: ImageData;
+  leinwand: OffscreenCanvas;
+  stift: OffscreenCanvasRenderingContext2D;
+}
+
+function tabelle(schluessel: string, baue: () => Uint8ClampedArray): Uint8ClampedArray {
   let lut = tabellen.get(schluessel);
   if (!lut) {
-    lut = baueLut(skala, farben);
+    lut = baue();
     tabellen.set(schluessel, lut);
   }
   return lut;
@@ -41,11 +66,8 @@ async function hole(url: string): Promise<ArrayBuffer | null> {
   return inhalt;
 }
 
-export async function faerbeKachel(
-  url: string,
-  skala: WertSkala,
-  farben: readonly string[],
-): Promise<ImageBitmap | null> {
+/** Holt eine Kachel und packt sie aus. Der rote Kanal trägt das Byte. */
+async function entpacke(url: string): Promise<Kachel | null> {
   const inhalt = await hole(url);
   if (inhalt === null || inhalt.byteLength === 0) return null;
   const grau = await createImageBitmap(new Blob([inhalt], { type: 'image/png' }));
@@ -54,14 +76,64 @@ export async function faerbeKachel(
   if (!stift) return null;
   stift.drawImage(grau, 0, 0);
   grau.close();
-  const punkte = stift.getImageData(0, 0, leinwand.width, leinwand.height);
-  faerbe(punkte.data, tabelle(skala, farben));
-  stift.putImageData(punkte, 0, 0);
-  return leinwand.transferToImageBitmap();
+  return { bild: stift.getImageData(0, 0, leinwand.width, leinwand.height), leinwand, stift };
 }
 
-async function beantworte(bereich: WorkerBereich, auftrag: FaerbeAuftrag): Promise<void> {
-  const bild = await faerbeKachel(auftrag.url, auftrag.skala, auftrag.farben);
+/** Legt die fertigen Punkte zurück und gibt ein Bild, das MapLibre nimmt. */
+function zeichne(kachel: Kachel): ImageBitmap {
+  kachel.stift.putImageData(kachel.bild, 0, 0);
+  return kachel.leinwand.transferToImageBitmap();
+}
+
+export async function faerbeKachel(
+  url: string,
+  skala: WertSkala,
+  farben: readonly string[],
+): Promise<ImageBitmap | null> {
+  const kachel = await entpacke(url);
+  if (!kachel) return null;
+  faerbe(
+    kachel.bild.data,
+    tabelle(skalenSchluessel(skala, farben), () => baueLut(skala, farben)),
+  );
+  return zeichne(kachel);
+}
+
+/**
+ * Eine Kachel aus mehreren Quellen. Fehlt eine davon, bleibt die ganze Kachel
+ * leer: eine Aussage über eine Schnittmenge braucht jeden Teil.
+ */
+export async function kombiniereKachel(auftrag: KombiAuftrag): Promise<ImageBitmap | null> {
+  const geholt = await Promise.all(auftrag.teile.map((teil) => entpacke(teil.url)));
+  const kacheln = geholt.filter((kachel): kachel is Kachel => kachel !== null);
+  const erste = kacheln[0] as Kachel | undefined;
+  if (!erste || kacheln.length !== geholt.length) return null;
+  const grenzen: KombiGrenze[] = auftrag.teile.map((teil) => teil.grenze);
+  const lut = tabelle(`kombi|${auftrag.regel}|${auftrag.farben.join(',')}`, () =>
+    baueKombiLut(auftrag.farben, auftrag.regel),
+  );
+  // Das Ergebnis geht in die erste Kachel zurück. Ihre Bytes sind an dieser
+  // Stelle schon gelesen, das Überschreiben trifft also niemanden mehr.
+  const quellen = kacheln.map((kachel) => kachel.bild.data);
+  const ziel = erste.bild.data;
+  const bytes = new Array<number>(quellen.length);
+  for (let i = 0; i < ziel.length; i += 4) {
+    for (let teil = 0; teil < quellen.length; teil++) bytes[teil] = quellen[teil][i];
+    const wert = kombiniere(bytes, grenzen, auftrag.regel);
+    const eintrag = wert < 0 ? 0 : kombiIndex(wert) * 4;
+    ziel[i] = lut[eintrag];
+    ziel[i + 1] = lut[eintrag + 1];
+    ziel[i + 2] = lut[eintrag + 2];
+    ziel[i + 3] = lut[eintrag + 3];
+  }
+  return zeichne(erste);
+}
+
+async function beantworte(bereich: WorkerBereich, auftrag: FaerbeAuftrag | KombiAuftrag): Promise<void> {
+  const bild =
+    auftrag.typ === 'faerbe'
+      ? await faerbeKachel(auftrag.url, auftrag.skala, auftrag.farben)
+      : await kombiniereKachel(auftrag);
   bereich.postMessage({ id: auftrag.id, bild }, bild ? [bild] : []);
 }
 
@@ -73,7 +145,7 @@ async function lade(auftrag: VorladeAuftrag): Promise<void> {
 export function nimmAuftraege(bereich: WorkerBereich): void {
   bereich.addEventListener('message', (ereignis) => {
     const auftrag = ereignis.data;
-    void (auftrag.typ === 'faerbe' ? beantworte(bereich, auftrag) : lade(auftrag));
+    void (auftrag.typ === 'vorladen' ? lade(auftrag) : beantworte(bereich, auftrag));
   });
 }
 

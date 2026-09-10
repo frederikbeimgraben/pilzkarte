@@ -5,24 +5,28 @@
     [style.inset-inline-start]="vonAnteil()"
     [style.inset-inline-end]="'calc(100% - ' + bisAnteil() + ')'"
   ></span>
-  <input
-    class="schieber__griff"
-    type="range"
-    [attr.aria-label]="text('schieber.untereGrenze')"
-    [min]="min()"
-    [max]="max()"
-    [step]="schritt()"
-    [value]="von()"
-    (input)="beiVon($event)"
-  />
-  <input
-    class="schieber__griff"
-    type="range"
-    [attr.aria-label]="text('schieber.obereGrenze')"
-    [min]="min()"
-    [max]="max()"
-    [step]="schritt()"
-    [value]="bis()"
-    (input)="beiBis($event)"
-  />
+  @if (zeigtVon()) {
+    <input
+      class="schieber__griff"
+      type="range"
+      [attr.aria-label]="text('schieber.untereGrenze')"
+      [min]="min()"
+      [max]="max()"
+      [step]="schritt()"
+      [value]="von()"
+      (input)="beiVon($event)"
+    />
+  }
+  @if (zeigtBis()) {
+    <input
+      class="schieber__griff"
+      type="range"
+      [attr.aria-label]="text('schieber.obereGrenze')"
+      [min]="min()"
+      [max]="max()"
+      [step]="schritt()"
+      [value]="bis()"
+      (input)="beiBis($event)"
+    />
+  }
 </div>

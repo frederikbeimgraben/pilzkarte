@@ -96,3 +96,93 @@ export function faerbe(pixel: Uint8ClampedArray, lut: Uint8ClampedArray): void {
     pixel[i + 3] = lut[ziel + 3];
   }
 }
+
+/** Wie die Kombination gefärbt wird. */
+export type KombiRegel = 'schnitt' | 'abgestuft';
+
+/**
+ * Die Schnittmenge ist eine Maske, kein Wert: eine Farbe, halb deckend, damit
+ * der Wald darunter noch zu erkennen ist.
+ */
+export const SCHNITT_DECKKRAFT = 140;
+
+/**
+ * Wie weit außerhalb der Bedingung der Erfüllungsgrad auf null fällt: ein
+ * Zehntel der Skala der Ebene. Ohne diesen Rand wäre „abgestuft“ dasselbe wie
+ * die Schnittmenge, nur bunter; mit ihm bleibt sichtbar, wo es knapp ist.
+ */
+export const RAND_ANTEIL = 0.1;
+
+/** Ein Punkt, für den mindestens eine Quelle keine Daten hat. */
+export const LEERER_PUNKT = -1;
+
+/** Die Bedingung eines Faktors, schon in Bytes gerechnet. */
+export interface KombiGrenze {
+  von: number;
+  bis: number;
+  /** Breite des Randes in Bytes, über den der Grad auf null fällt. */
+  rand: number;
+}
+
+/** Der Erfüllungsgrad eines Faktors an einem Punkt, 0 bis 1. */
+export function erfuellungsgrad(byte: number, grenze: KombiGrenze): number {
+  if (byte >= grenze.von && byte <= grenze.bis) return 1;
+  const abstand = byte < grenze.von ? grenze.von - byte : byte - grenze.bis;
+  if (grenze.rand <= 0) return 0;
+  return Math.max(0, 1 - abstand / grenze.rand);
+}
+
+/**
+ * Das Ergebnis der Kombination an einem Punkt: 0 bis 1, oder {@link LEERER_PUNKT}.
+ *
+ * Fehlt einer Quelle der Punkt (Byte 0), bleibt der Punkt leer: eine Aussage
+ * über mehrere Bedingungen braucht jede davon. Die Schnittmenge kennt nur ganz
+ * oder gar nicht, „abgestuft“ nimmt das geometrische Mittel der Grade — es
+ * zieht einen einzelnen schlechten Faktor stärker herunter als das
+ * arithmetische, und genau das soll es.
+ */
+export function kombiniere(
+  bytes: readonly number[],
+  grenzen: readonly KombiGrenze[],
+  regel: KombiRegel,
+): number {
+  if (bytes.length === 0) return LEERER_PUNKT;
+  let produkt = 1;
+  for (let i = 0; i < bytes.length; i++) {
+    if (bytes[i] === 0) return LEERER_PUNKT;
+    const grad = erfuellungsgrad(bytes[i], grenzen[i]);
+    if (regel === 'schnitt') {
+      if (grad < 1) return 0;
+    } else {
+      if (grad === 0) return 0;
+      produkt *= grad;
+    }
+  }
+  return regel === 'schnitt' ? 1 : produkt ** (1 / bytes.length);
+}
+
+/**
+ * Die Tabelle, mit der ein Ergebnis zur Farbe wird. „Abgestuft“ liest sich wie
+ * eine Vorhersage über die volle Rampe: die Farbe sagt wie gut, die Deckkraft
+ * lässt schwache Stellen zurücktreten, statt das Land unter einem Schleier zu
+ * begraben.
+ */
+export function baueKombiLut(farben: readonly string[], regel: KombiRegel): Uint8ClampedArray {
+  if (regel === 'abgestuft') return baueLut({ art: 'wahrscheinlichkeit', top: 1 }, farben);
+  const lut = new Uint8ClampedArray(LUT_GROESSE);
+  const [r, g, b] = zuRgb(farben[0]);
+  for (let byte = 1; byte < 256; byte++) {
+    const ziel = byte * 4;
+    lut[ziel] = r;
+    lut[ziel + 1] = g;
+    lut[ziel + 2] = b;
+    lut[ziel + 3] = SCHNITT_DECKKRAFT;
+  }
+  return lut;
+}
+
+/** Der Eintrag der Tabelle, der zu einem Ergebnis gehört. */
+export function kombiIndex(wert: number): number {
+  if (wert <= 0) return 0;
+  return 1 + Math.round(Math.min(wert, 1) * 254);
+}

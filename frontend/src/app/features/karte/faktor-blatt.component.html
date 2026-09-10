@@ -1,0 +1,50 @@
+<app-sheet [beschriftung]="'faktor.titel' | t" [raste]="2" [modal]="true">
+  <app-sheet-head [titel]="ebene().label" [woche]="zeitbezug()" [pfeile]="false" />
+  <div class="faktor">
+    <app-segmented
+      [optionen]="bedingungen()"
+      [wert]="entwurf().bedingung"
+      [beschriftung]="'faktor.bedingung' | t"
+      (wertChange)="setzeBedingung($event)"
+    />
+
+    <div>
+      <h3 class="faktor__titel">{{ verteilungText() }}</h3>
+      @if (histogramm(); as verteilung) {
+        <app-histogram
+          [anteile]="verteilung.anteile"
+          [beschriftung]="verteilungText()"
+          [von]="vonAnteil()"
+          [bis]="bisAnteil()"
+        />
+      }
+      <app-range-slider
+        [min]="ebene().low"
+        [max]="ebene().high"
+        [schritt]="schritt()"
+        [von]="werte().von"
+        [bis]="werte().bis"
+        [griffe]="griffe()"
+        (vonChange)="setzeVon($event)"
+        (bisChange)="setzeBis($event)"
+      />
+      <div class="faktor__enden">
+        <span>{{ skalaVon() }}</span>
+        <span>{{ bedingung() }}</span>
+        <span>{{ skalaBis() }}</span>
+      </div>
+    </div>
+
+    <app-key-value-row [schluessel]="'faktor.bedingung' | t" [wert]="bedingung()" />
+
+    <app-note variante="unter">{{ anteilText() }}</app-note>
+  </div>
+  <app-action-bar
+    [haupt]="'faktor.uebernehmen' | t"
+    [gefahr]="'faktor.entfernen' | t"
+    [sekundaer]="'faktor.abbrechen' | t"
+    (hauptKlick)="uebernehmen.emit(entwurf())"
+    (gefahrKlick)="entfernen.emit(entwurf())"
+    (sekundaerKlick)="schliessen.emit()"
+  />
+</app-sheet>

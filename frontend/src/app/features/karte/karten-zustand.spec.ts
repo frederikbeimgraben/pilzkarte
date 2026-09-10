@@ -1,7 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { KartenZustand, STANDARD_ART, STANDARD_EBENE } from './karten-zustand';
 
-const LEER = { art: null, kw: null, darstellung: null, ebene: null, deckkraft: null };
+const LEER = {
+  art: null,
+  kw: null,
+  darstellung: null,
+  ebene: null,
+  deckkraft: null,
+  regel: null,
+  f: null,
+};
 
 describe('KartenZustand', () => {
   it('beginnt beim Steinpilz, der aktuellen Woche und der Vorhersage', () => {
@@ -15,6 +23,8 @@ describe('KartenZustand', () => {
       darstellung: 'vorhersage',
       ebene: null,
       deckkraft: 100,
+      regel: 'schnitt',
+      f: 'regen_4w:ge:80,temperatur:zw:8:16,buche:ge:0.3,hangneigung:le:15',
     });
   });
 
@@ -22,6 +32,7 @@ describe('KartenZustand', () => {
     const zustand = TestBed.inject(KartenZustand);
 
     zustand.uebernimm({
+      ...LEER,
       art: 'pfifferling',
       kw: '2025-40',
       darstellung: 'ebene',
@@ -29,7 +40,7 @@ describe('KartenZustand', () => {
       deckkraft: '70',
     });
 
-    expect(zustand.adresse()).toEqual({
+    expect(zustand.adresse()).toMatchObject({
       art: 'pfifferling',
       kw: '2025-40',
       darstellung: 'ebene',
@@ -72,5 +83,39 @@ describe('KartenZustand', () => {
 
     zustand.setzeHintergrund('satellit');
     expect(zustand.hintergrund()).toBe('dunkel');
+  });
+
+  it('liest Regel und Faktoren aus der Adresse und schreibt sie zurück', () => {
+    const zustand = TestBed.inject(KartenZustand);
+
+    zustand.uebernimm({
+      ...LEER,
+      darstellung: 'kombination',
+      regel: 'abgestuft',
+      f: 'regen_4w:ge:80,temperatur:zw:8:16,!buche:ge:0.3',
+    });
+
+    expect(zustand.regel()).toBe('abgestuft');
+    expect(zustand.faktoren()).toEqual([
+      { quelle: 'regen_4w', bedingung: 'ueber', von: 80, bis: 0, aktiv: true },
+      { quelle: 'temperatur', bedingung: 'zwischen', von: 8, bis: 16, aktiv: true },
+      { quelle: 'buche', bedingung: 'ueber', von: 0.3, bis: 0, aktiv: false },
+    ]);
+    expect(zustand.adresse().f).toBe('regen_4w:ge:80,temperatur:zw:8:16,!buche:ge:0.3');
+  });
+
+  it('behält die vier Faktoren des Konzepts, wenn die Adresse keine nennt', () => {
+    const zustand = TestBed.inject(KartenZustand);
+    zustand.uebernimm({ ...LEER, f: 'regen_4w:ge:80' });
+
+    zustand.uebernimm({ ...LEER, f: 'unsinn' });
+
+    expect(zustand.faktoren().map((faktor) => faktor.quelle)).toEqual([
+      'regen_4w',
+      'temperatur',
+      'buche',
+      'hangneigung',
+    ]);
+    expect(zustand.regel()).toBe('schnitt');
   });
 });

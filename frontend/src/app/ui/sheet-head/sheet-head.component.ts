@@ -4,6 +4,9 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 /**
  * Der Kopf des Blatts: Art, Woche, Pfeilgruppe und darunter die Zeitleiste.
+ *
+ * Kein `header`: das Blatt ist ein Dialog, und ein `header` darin zählte als
+ * zweite Kopfzeile der Seite. Zwei Blätter übereinander hätten dann zwei.
  * Die Zeitleiste wird projiziert, damit der Kopf nichts über die Wochen wissen
  * muss.
  */

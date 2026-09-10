@@ -1,7 +1,7 @@
 import { kachelPfad } from '../core/kacheln/kachel-pfade';
 import { kachelSchluessel } from '../core/kacheln/manifest';
 import { VORHERSAGE_RAMPE } from '../ui/ramp/rampe-farben';
-import type { WertSkala } from './wert-farben';
+import type { KombiGrenze, KombiRegel, WertSkala } from './wert-farben';
 import type { WertAntwort, WertAuftrag } from './wert-nachrichten';
 
 /**
@@ -23,6 +23,25 @@ export interface WertQuelle {
   skala: WertSkala;
   farben: readonly string[];
   vorhanden: ReadonlySet<string>;
+}
+
+/** Ein Faktor der Kombination: sein Kachelordner und seine Bedingung. */
+export interface KombiQuellenTeil {
+  ordner: string;
+  grenze: KombiGrenze;
+  vorhanden: ReadonlySet<string>;
+}
+
+/**
+ * Eine zusammengesetzte Quelle: mehrere Kacheln je Punkt, eine Antwort. Sie
+ * wird bei jeder Änderung neu angemeldet; der Ordner in der Adresse trägt die
+ * Kennung der Kombination, damit MapLibre alte Kacheln nicht weiterbenutzt.
+ */
+export interface KombiQuelle {
+  id: string;
+  regel: KombiRegel;
+  farben: readonly string[];
+  teile: readonly KombiQuellenTeil[];
 }
 
 /** Eine leere Antwort. MapLibre macht daraus eine durchsichtige Kachel. */
@@ -73,6 +92,7 @@ export function artQuelle(slug: string, top: number, vorhanden: ReadonlySet<stri
 export class WertProtokoll {
   private readonly arbeiter: FaerbeArbeiter;
   private readonly quellen = new Map<string, WertQuelle>();
+  private readonly kombis = new Map<string, KombiQuelle>();
   private readonly offen = new Map<number, (bild: ImageBitmap | null) => void>();
   private naechsteId = 0;
 
@@ -90,11 +110,18 @@ export class WertProtokoll {
     this.quellen.set(quelle.id, quelle);
   }
 
+  meldeKombi(quelle: KombiQuelle): void {
+    this.kombis.set(quelle.id, quelle);
+  }
+
   /** Die Funktion für `maplibregl.addProtocol('wert', …)`. */
   readonly aufloesen = async (url: string): Promise<{ data: ImageBitmap | ArrayBuffer }> => {
     const adresse = zerlegeWertUrl(url);
-    const quelle = adresse ? this.quellen.get(adresse.quelle) : undefined;
-    if (!adresse || !quelle?.vorhanden.has(kachelSchluessel(adresse.z, adresse.x, adresse.y))) {
+    if (!adresse) return { data: LEER };
+    const kombi = this.kombis.get(adresse.quelle);
+    if (kombi) return { data: (await this.frageKombi(kombi, adresse)) ?? LEER };
+    const quelle = this.quellen.get(adresse.quelle);
+    if (!quelle?.vorhanden.has(kachelSchluessel(adresse.z, adresse.x, adresse.y))) {
       return { data: LEER };
     }
     const bild = await this.frage(kachelPfad(adresse.ordner, adresse.z, adresse.x, adresse.y), quelle);
@@ -122,11 +149,43 @@ export class WertProtokoll {
     this.offen.clear();
   }
 
+  /**
+   * Alle Teile müssen die Kachel haben. Fehlt einer, gäbe es an diesem Punkt
+   * nichts zu schneiden, und die Kachel bleibt leer.
+   */
+  private frageKombi(quelle: KombiQuelle, adresse: WertAdresse): Promise<ImageBitmap | null> {
+    const schluessel = kachelSchluessel(adresse.z, adresse.x, adresse.y);
+    if (quelle.teile.length === 0 || !quelle.teile.every((teil) => teil.vorhanden.has(schluessel))) {
+      return Promise.resolve(null);
+    }
+    const teile = quelle.teile.map((teil) => ({
+      url: kachelPfad(teil.ordner, adresse.z, adresse.x, adresse.y),
+      grenze: teil.grenze,
+    }));
+    return this.beauftrage((id) => ({
+      typ: 'kombi',
+      id,
+      teile,
+      regel: quelle.regel,
+      farben: quelle.farben,
+    }));
+  }
+
   private frage(url: string, quelle: WertQuelle): Promise<ImageBitmap | null> {
+    return this.beauftrage((id) => ({
+      typ: 'faerbe',
+      id,
+      url,
+      skala: quelle.skala,
+      farben: quelle.farben,
+    }));
+  }
+
+  private beauftrage(baue: (id: number) => WertAuftrag): Promise<ImageBitmap | null> {
     const id = this.naechsteId++;
     return new Promise<ImageBitmap | null>((fertig) => {
       this.offen.set(id, fertig);
-      this.sende({ typ: 'faerbe', id, url, skala: quelle.skala, farben: quelle.farben });
+      this.sende(baue(id));
     });
   }
 

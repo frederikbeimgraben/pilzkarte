@@ -147,6 +147,10 @@ export const EBENEN_ROH = {
       tiles: 'layers_kacheln/regen_4w',
       zooms: [5, 7],
       have: { '7': ['66/42', '67/42'] },
+      histogramme: {
+        '2025W39': { klassen: [0, 50, 100, 151.9], anteile: [0.5, 0.3, 0.2] },
+        '2025W40': { klassen: [0, 50, 100, 151.9], anteile: [0.6, 0.3, 0.1] },
+      },
     },
     temperatur: {
       label: 'Mitteltemperatur der Woche',
@@ -168,6 +172,7 @@ export const EBENEN_ROH = {
       tiles: 'layers_kacheln/wald',
       zooms: [5, 8],
       have: { '7': ['66/42'] },
+      histogramm: { klassen: [0, 0.5, 1], anteile: [0.7, 0.3] },
     },
     boden_ph: {
       label: 'Boden-pH',
@@ -194,7 +199,15 @@ export const MANIFEST_ROH = {
   tiles: { zooms: [5, 8], have: { '7': ['66/42', '67/42'] } },
   weeks: [
     { year: 2025, week: 39, forecast: false, tiles: 'boletus_edulis_kacheln/2025W39', mean: 0.05, max: 0.3 },
-    { year: 2025, week: 40, forecast: false, tiles: 'boletus_edulis_kacheln/2025W40', mean: 0.1, max: 0.5 },
+    {
+      year: 2025,
+      week: 40,
+      forecast: false,
+      tiles: 'boletus_edulis_kacheln/2025W40',
+      mean: 0.1,
+      max: 0.5,
+      histogramm: { klassen: [0, 0.25, 0.5], anteile: [0.8, 0.2] },
+    },
     { year: 2025, week: 41, forecast: true, tiles: 'boletus_edulis_kacheln/2025W41', mean: 0.08, max: 0.4 },
   ],
 };
