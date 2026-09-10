@@ -40,7 +40,7 @@ from build_dataset import week_number
 from manifest import histogramm, schreibe
 from region_map import (COLORS, MODEL_CRS, REGION, TRAIN_CELL,
                         raster_ausrichten, render)
-from tiles import schreibe_kacheln, schreibe_kachelsaetze
+from tiles import schreibe_kacheln, write_tile_sets
 
 # name -> (source, column, label, unit)
 STATIC = {
@@ -71,14 +71,14 @@ WEEKLY = {
     "regen_4w":    ("pr_sum4", "Niederschlag der letzten 4 Wochen", "mm"),
     "regen_8w":    ("pr_sum8", "Niederschlag der letzten 8 Wochen", "mm"),
     "regen_anomalie": ("pr_sum4_anom", "Regen der letzten 4 Wochen gegen normal", "mm"),
-    "regen_tage_seit": ("regen_tage_seit", "Tage seit dem letzten Regen ueber 5 mm", "Tage"),
+    "regen_tage_seit": ("days_since_rain", "Tage seit dem letzten Regen ueber 5 mm", "Tage"),
     "temperatur":  ("tas", "Mitteltemperatur der Woche", "Grad"),
     "temperatur_min": ("tasmin", "Tiefsttemperatur der Woche", "Grad"),
     "temperatur_max": ("tasmax", "Hoechsttemperatur der Woche", "Grad"),
     "temperatur_2w": ("tas_mittel2", "Mitteltemperatur der letzten 2 Wochen", "Grad"),
     "temperatur_4w": ("tas_mittel4", "Mitteltemperatur der letzten 4 Wochen", "Grad"),
-    "frosttage":   ("frosttage", "Frosttage der Woche, unter 0 Grad", "Tage"),
-    "hitzetage":   ("hitzetage", "Hitzetage der Woche, ueber 25 Grad", "Tage"),
+    "frosttage":   ("frost_days", "Frosttage der Woche, unter 0 Grad", "Tage"),
+    "hitzetage":   ("heat_days", "Hitzetage der Woche, ueber 25 Grad", "Tage"),
     "luftfeuchte": ("hurs", "Luftfeuchte der Woche", "%"),
     "bodenfeuchte": ("paws", "Bodenwasser fuer Pflanzen, Mittel ueber vier Baumarten",
                      "% nFK"),
@@ -90,14 +90,14 @@ PAWS = ["paws_spruce", "paws_beech", "paws_oak", "paws_pine"]
 # hat sieben Tage, und die Tage seit dem letzten Regen sind bei 60 gekappt. Aus
 # Perzentilen haenge die Skala daran, welche Wochen gerade gerendert werden:
 # ein Sommerlauf allein zeigte null Frosttage und damit gar keine Spanne.
-FESTE_SPANNE = {
+FIXED_RANGE = {
     "regen_tage_seit": (0.0, 60.0),
     "frosttage": (0.0, 7.0),
     "hitzetage": (0.0, 7.0),
 }
 
 
-def schreibe_felder(felder, work: Path, bounds, step) -> Path:
+def write_fields(felder, work: Path, bounds, step) -> Path:
     """Scale fields into 0..1 and write them as the bands of one GeoTIFF.
 
     ``felder`` is a list of (field, low, high). One file with many bands lets
@@ -116,7 +116,7 @@ def schreibe_felder(felder, work: Path, bounds, step) -> Path:
     return source
 
 
-def schreibe_bilder(source: Path, targets: list[Path], work: Path) -> None:
+def write_images(source: Path, targets: list[Path], work: Path) -> None:
     """Draw one full image per band of the source."""
     merc = work / "layer3857.tif"
     subprocess.run(["gdalwarp", "-q", "-overwrite", "-t_srs", "EPSG:3857",
@@ -142,7 +142,7 @@ def wochenwetter(path: Path, cells: set[str], weeks: int) -> tuple[pd.DataFrame,
     the end is returned.
     """
     roh = ["cell", "iso_year", "iso_week", "pr", "tas", "tasmin", "tasmax", "hurs",
-           "regen_tage_seit", "frosttage", "hitzetage", *PAWS]
+           "days_since_rain", "frost_days", "heat_days", *PAWS]
     w = pd.read_parquet(path, columns=roh)
     w["cell"] = w["cell"].astype(str)
     w = w[w["cell"].isin(cells)].copy()
@@ -250,7 +250,7 @@ def main() -> None:
             values = grid[column].to_numpy(dtype="float32")
             low, high = np.nanpercentile(values, [2, 98])
             feld = to_field(values)
-            source = schreibe_felder([(feld, low, high)], work, bounds, args.step)
+            source = write_fields([(feld, low, high)], work, bounds, args.step)
             k = SKALA.get(name, 1.0)
             unten, oben = round(float(low) * k, 3), round(float(high) * k, 3)
             eintrag = {"label": label, "unit": unit, "static": True,
@@ -261,7 +261,7 @@ def main() -> None:
             if verteilung is not None:
                 eintrag["histogramm"] = verteilung
             if not args.no_image:
-                schreibe_bilder(source, [folder / f"{name}.png"], work)
+                write_images(source, [folder / f"{name}.png"], work)
                 eintrag["file"] = f"layers/{name}.png"
             if args.tiles:
                 gefuellt, _ = schreibe_kacheln(source, args.out / "layers_kacheln" / name,
@@ -284,8 +284,8 @@ def main() -> None:
         # 2,3 Millionen Zeichenketten.
         zellen = pd.Categorical(grid["cell"].to_numpy())
         for name, (column, label, unit) in WEEKLY.items():
-            if name in FESTE_SPANNE:
-                low, high = FESTE_SPANNE[name]
+            if name in FIXED_RANGE:
+                low, high = FIXED_RANGE[name]
             else:
                 # Eine Farbskala fuer alle Wochen, sonst saehe jede Woche gleich aus.
                 low, high = (float(v) for v in np.nanpercentile(wetter[column], [1, 99]))
@@ -324,12 +324,12 @@ def main() -> None:
                     eintrag["histogramme"][schluessel] = verteilung
                 eintrag["weeks"].append(schluessel)
                 felder.append((feld, eintrag["low"], eintrag["high"]))
-            source = schreibe_felder(felder, work, bounds, args.step)
+            source = write_fields(felder, work, bounds, args.step)
             if not args.no_image:
-                schreibe_bilder(source, [folder / f"{n}_{schluessel}.png" for n in namen],
+                write_images(source, [folder / f"{n}_{schluessel}.png" for n in namen],
                                 work)
             if args.tiles:
-                saetze = schreibe_kachelsaetze(
+                saetze = write_tile_sets(
                     source, [args.out / "layers_kacheln" / n / schluessel for n in namen],
                     [1.0] * len(namen), range(z0, z1 + 1), work, wgs_box)
                 if year == wochen[0][0] and week == wochen[0][1]:

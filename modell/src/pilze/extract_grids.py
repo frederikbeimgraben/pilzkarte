@@ -36,7 +36,7 @@ import xarray as xr
 from pyproj import Transformer
 
 sys.path.insert(0, str(Path(__file__).parent))
-from tagesmasse import schwellentage, tage_seit
+from day_measures import days_since, threshold_days
 
 # The cell size in meters. Set PILZE_CELL_SIZE to sweep the resolution.
 CELL_SIZE = int(os.environ.get("PILZE_CELL_SIZE", 5000))
@@ -59,14 +59,14 @@ BLOCK = 31  # days read at once
 
 
 # Ein Tagesmass, das keine Wochenreduktion ausdruecken kann, siehe
-# tagesmasse.py.
+# day_measures.py.
 # folder, variable, how to reduce a week, column, the day measure
 HYRAS_TAGE = [
-    ("precipitation", "pr", "last", "regen_tage_seit", lambda: tage_seit(5.0, 60)),
-    ("air_temperature_min", "tasmin", "sum", "frosttage",
-     lambda: schwellentage(0.0, ueber=False)),
-    ("air_temperature_max", "tasmax", "sum", "hitzetage",
-     lambda: schwellentage(25.0, ueber=True)),
+    ("precipitation", "pr", "last", "days_since_rain", lambda: days_since(5.0, 60)),
+    ("air_temperature_min", "tasmin", "sum", "frost_days",
+     lambda: threshold_days(0.0, above=False)),
+    ("air_temperature_max", "tasmax", "sum", "heat_days",
+     lambda: threshold_days(25.0, above=True)),
 ]
 
 
@@ -197,14 +197,14 @@ def main() -> None:
     jobs += [(f"data/raw/dwd/soil_moisture/{tree}", "paws", "mean", soil_map,
               f"paws_{tree}", None)
              for tree in TREE_SPECIES]
-    jobs += [(f"data/raw/dwd/hyras/{folder}", var, how, hyras_map, name, bau())
-             for folder, var, how, name, bau in HYRAS_TAGE]
+    jobs += [(f"data/raw/dwd/hyras/{folder}", var, how, hyras_map, name, build())
+             for folder, var, how, name, build in HYRAS_TAGE]
 
     checkpoints = args.out.parent / "weekly"
     checkpoints.mkdir(parents=True, exist_ok=True)
 
     collected: list[pd.Series] = []
-    for folder, var, how, mapping, name, tagesmass in jobs:
+    for folder, var, how, mapping, name, day_measure in jobs:
         cache = checkpoints / f"{name}.parquet"
         alt = None
         if cache.exists():
@@ -229,8 +229,8 @@ def main() -> None:
                 continue
             daily, dates = daily_cell_means(found[-1], var, mapping, n_cells,
                                             lookup, transformer)
-            if tagesmass is not None:
-                daily = tagesmass(daily)
+            if day_measure is not None:
+                daily = day_measure(daily)
             parts.append(weekly(daily, dates, how, cells, name))
         if not parts:
             print(f"{name}: no files, skipped")

@@ -483,10 +483,13 @@ ist jedes Mal derselbe: zu wenige Besuche fuer ein eigenes Modell.
          Maximum, und die Zahl der Frosttage steht in keinem davon.
          `tagesmasse.py` rechnet sie auf dem Tagesraster, `extract_grids.py`
          reduziert sie danach wie jede andere Groesse. Die drei Spalten
-         heissen `regen_tage_seit`, `frosttage` und `hitzetage` — kein
+         heissen `days_since_rain`, `frost_days` und `heat_days` — kein
          `_lag`, `_sum`, `_mean`, `_anom` oder `_ratio` im Namen, also nimmt
          `visit_model.py` sie nicht als Feature auf und das Training bleibt,
-         wie es ist. Das Nachrechnen ueber 2014 bis 2026 kostete gut zwei
+         wie es ist. Die Namen der Ebenen im Manifest bleiben deutsch wie die
+         22 bestehenden (`regen`, `wald`, `boden_ph`); sie stehen im Vertrag
+         zur App und im URL-Zustand einer Kombination, und den stellt R3 um,
+         nicht dieses Paket. Das Nachrechnen ueber 2014 bis 2026 kostete gut zwei
          Minuten je Groesse (Zeitstempel der Zwischenspeicher: 19:42:08,
          19:44:21, 19:46:13) und legte drei Dateien unter
          `data/interim/weekly/` an; danach zieht `update.sh` sie mit

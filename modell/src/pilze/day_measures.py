@@ -15,37 +15,37 @@ from collections.abc import Callable
 
 import numpy as np
 
-Tagesmass = Callable[[np.ndarray], np.ndarray]
+DayMeasure = Callable[[np.ndarray], np.ndarray]
 
 
-def schwellentage(schwelle: float, *, ueber: bool) -> Tagesmass:
+def threshold_days(threshold: float, *, above: bool) -> DayMeasure:
     """Mark every day that passes the threshold, so a week can sum them."""
-    def tagesmass(taeglich: np.ndarray) -> np.ndarray:
-        trifft = taeglich > schwelle if ueber else taeglich < schwelle
-        return np.where(np.isfinite(taeglich), trifft, np.nan).astype("float32")
-    return tagesmass
+    def measure(daily: np.ndarray) -> np.ndarray:
+        hits = daily > threshold if above else daily < threshold
+        return np.where(np.isfinite(daily), hits, np.nan).astype("float32")
+    return measure
 
 
-def tage_seit(schwelle: float, kappung: int) -> Tagesmass:
+def days_since(threshold: float, cap: int) -> DayMeasure:
     """Count the days since the last day above the threshold, per cell.
 
     The counter runs over the whole record, so the returned function keeps it
     between the year files it is called with. It starts at the cap: before the
     first day of the record nobody knows when it last rained.
     """
-    zaehler: np.ndarray | None = None
+    counter: np.ndarray | None = None
 
-    def tagesmass(taeglich: np.ndarray) -> np.ndarray:
-        nonlocal zaehler
-        if zaehler is None or zaehler.size != taeglich.shape[1]:
-            zaehler = np.full(taeglich.shape[1], float(kappung), dtype="float32")
-        out = np.empty_like(taeglich)
-        for tag in range(taeglich.shape[0]):
+    def measure(daily: np.ndarray) -> np.ndarray:
+        nonlocal counter
+        if counter is None or counter.size != daily.shape[1]:
+            counter = np.full(daily.shape[1], float(cap), dtype="float32")
+        out = np.empty_like(daily)
+        for day in range(daily.shape[0]):
             # Ein Tag ohne Wert darf den Zaehler nicht vergiften, sonst bliebe
             # die Zelle fuer immer NaN. Er zaehlt als trockener Tag und faellt
             # nur aus der Ausgabe.
-            zaehler = np.minimum(np.where(taeglich[tag] > schwelle, 0.0, zaehler + 1.0),
-                                 kappung)
-            out[tag] = np.where(np.isfinite(taeglich[tag]), zaehler, np.nan)
+            counter = np.minimum(np.where(daily[day] > threshold, 0.0, counter + 1.0),
+                                 cap)
+            out[day] = np.where(np.isfinite(daily[day]), counter, np.nan)
         return out
-    return tagesmass
+    return measure

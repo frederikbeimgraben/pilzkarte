@@ -47,13 +47,13 @@ def schreibe_kacheln(quelle: Path, ziel: Path, top: float, zooms: range,
                      arbeit: Path, wgs_box: tuple[float, float, float, float]
                      ) -> tuple[list[tuple[int, int, int]], int]:
     """Warp a one band field to every zoom level and write it below ``ziel``."""
-    return schreibe_kachelsaetze(quelle, [ziel], [top], zooms, arbeit, wgs_box)[0]
+    return write_tile_sets(quelle, [ziel], [top], zooms, arbeit, wgs_box)[0]
 
 
-def schreibe_kachelsaetze(quelle: Path, ziele: list[Path], tops: list[float],
-                          zooms: range, arbeit: Path,
-                          wgs_box: tuple[float, float, float, float]
-                          ) -> list[tuple[list[tuple[int, int, int]], int]]:
+def write_tile_sets(quelle: Path, targets: list[Path], tops: list[float],
+                    zooms: range, arbeit: Path,
+                    wgs_box: tuple[float, float, float, float]
+                    ) -> list[tuple[list[tuple[int, int, int]], int]]:
     """Cut every band of a source into its own tile tree.
 
     ``quelle`` is a GeoTIFF in any CRS with one band per tile tree, ``wgs_box``
@@ -75,8 +75,8 @@ def schreibe_kachelsaetze(quelle: Path, ziele: list[Path], tops: list[float],
     west, south = nach_merc.transform(wgs_box[0], wgs_box[1])
     east, north = nach_merc.transform(wgs_box[2], wgs_box[3])
 
-    gefuellt: list[list[tuple[int, int, int]]] = [[] for _ in ziele]
-    bytes_ = [0 for _ in ziele]
+    filled: list[list[tuple[int, int, int]]] = [[] for _ in targets]
+    written = [0 for _ in targets]
     for zoom in zooms:
         tx0, ty0, tx1, ty1 = kachelraster(west, south, east, north, zoom)
         box = kachelbox(tx0, ty0, tx1, ty1, zoom)
@@ -98,7 +98,7 @@ def schreibe_kachelsaetze(quelle: Path, ziele: list[Path], tops: list[float],
             check=True, capture_output=True)
 
         with rasterio.open(gewarpt) as src:
-            for band, (ziel, top) in enumerate(zip(ziele, tops), start=1):
+            for band, (target, top) in enumerate(zip(targets, tops), start=1):
                 feld = src.read(band)
                 gueltig = np.isfinite(feld)
                 stufe = np.where(gueltig,
@@ -111,10 +111,10 @@ def schreibe_kachelsaetze(quelle: Path, ziele: list[Path], tops: list[float],
                                   i * KACHEL:(i + 1) * KACHEL]
                         if not k.any():
                             continue
-                        ordner = ziel / str(zoom) / str(tx0 + i)
+                        ordner = target / str(zoom) / str(tx0 + i)
                         ordner.mkdir(parents=True, exist_ok=True)
                         datei = ordner / f"{ty0 + j}.png"
                         Image.fromarray(k, mode="L").save(datei, optimize=True)
-                        gefuellt[band - 1].append((zoom, tx0 + i, ty0 + j))
-                        bytes_[band - 1] += datei.stat().st_size
-    return list(zip(gefuellt, bytes_))
+                        filled[band - 1].append((zoom, tx0 + i, ty0 + j))
+                        written[band - 1] += datei.stat().st_size
+    return list(zip(filled, written))
