@@ -225,6 +225,19 @@ class Katalog:
             arten=arten,
         )
 
+    def hat(self, slug: str) -> bool:
+        """Sagt, ob der Slug im Katalog steht."""
+        return slug in self.profile
+
+    def ist_geschuetzt(self, slug: str) -> bool:
+        """Sagt, ob die Art besonders geschuetzt ist.
+
+        Ein unbekannter Slug gilt als geschuetzt. Ein Fundort geht so im
+        Zweifel grob heraus und nicht genau.
+        """
+        profil = self.profile.get(slug)
+        return profil is None or profil.geschuetzt
+
     def art(self, slug: str) -> Art:
         """Eine Art mit Profil. Ein unbekannter Slug ist ein 404."""
         profil = self.profile.get(slug)
