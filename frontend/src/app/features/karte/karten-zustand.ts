@@ -35,6 +35,31 @@ export interface KartenAdresse {
   f: string;
 }
 
+/** Die drei Arten von Objekt, die ein Blatt über der Karte zeigen kann. */
+export const OBJEKT_ARTEN = ['fund', 'marker', 'zone'] as const;
+export type ObjektArt = (typeof OBJEKT_ARTEN)[number];
+
+/** Welches Objekt gerade offen ist. In der Adresse steht `fund:<id>`. */
+export interface OffenesObjekt {
+  art: ObjektArt;
+  id: string;
+}
+
+/** Liest `fund:<id>` aus der Adresse. Alles andere zählt als „nichts offen“. */
+export function leseObjekt(wert: string | null): OffenesObjekt | null {
+  if (wert === null) return null;
+  const teiler = wert.indexOf(':');
+  const art = wert.slice(0, teiler);
+  const id = wert.slice(teiler + 1);
+  if (teiler < 0 || id === '' || !(OBJEKT_ARTEN as readonly string[]).includes(art)) return null;
+  return { art: art as ObjektArt, id };
+}
+
+/** Schreibt ein Objekt in die Form, die die Adresse trägt. */
+export function schreibeObjekt(objekt: OffenesObjekt): string {
+  return `${objekt.art}:${objekt.id}`;
+}
+
 function istArt(wert: string | null): wert is VorhersageSlug {
   return wert !== null && (VORHERSAGE_SLUGS as readonly string[]).includes(wert);
 }
@@ -73,6 +98,24 @@ export class KartenZustand {
   readonly vorhersageDarunter = signal(false);
   readonly raste = signal<Raste>(1);
 
+  /**
+   * Was außer der Vorhersage auf der Karte liegt. Der Ebenen-Knopf schaltet
+   * genau diese drei Signale; die Karte zeichnet, was sie erlauben.
+   */
+  readonly zeigeMarker = signal(true);
+  readonly zeigeZonen = signal(true);
+  readonly zeigeGeteilteFunde = signal(true);
+
+  /** Das Objekt-Blatt über der Karte, aus `?objekt=fund:<id>`. */
+  readonly objekt = signal<OffenesObjekt | null>(null);
+
+  /**
+   * Die Höhe des Blatts, das gerade über der Karte liegt (Melden, Objekt), in
+   * Punkten. Die Karte rechnet ihr Polster darauf, damit die Mitte unter dem
+   * Fadenkreuz liegt und nicht hinter dem Blatt.
+   */
+  readonly ueberlagerung = signal(0);
+
   readonly adresse = computed<KartenAdresse>(() => ({
     art: this.art(),
     kw: this.woche(),
@@ -92,6 +135,7 @@ export class KartenZustand {
     deckkraft: string | null;
     regel: string | null;
     f: string | null;
+    objekt: string | null;
   }): void {
     this.art.set(istArt(abfrage.art) ? abfrage.art : STANDARD_ART);
     this.woche.set(abfrage.kw !== null && WOCHEN_MUSTER.test(abfrage.kw) ? abfrage.kw : null);
@@ -104,6 +148,7 @@ export class KartenZustand {
     // eine leere Kombination hätte nichts zu zeigen.
     const faktoren = leseFaktoren(abfrage.f);
     this.faktoren.set(faktoren.length > 0 ? faktoren : STANDARD_FAKTOREN);
+    this.objekt.set(leseObjekt(abfrage.objekt));
   }
 
   setzeHintergrund(wahl: Hintergrund): void {

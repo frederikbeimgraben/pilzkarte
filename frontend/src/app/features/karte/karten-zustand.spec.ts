@@ -1,5 +1,11 @@
 import { TestBed } from '@angular/core/testing';
-import { KartenZustand, STANDARD_ART, STANDARD_EBENE } from './karten-zustand';
+import {
+  KartenZustand,
+  STANDARD_ART,
+  STANDARD_EBENE,
+  leseObjekt,
+  schreibeObjekt,
+} from './karten-zustand';
 
 const LEER = {
   art: null,
@@ -9,6 +15,7 @@ const LEER = {
   deckkraft: null,
   regel: null,
   f: null,
+  objekt: null,
 };
 
 describe('KartenZustand', () => {
@@ -117,5 +124,41 @@ describe('KartenZustand', () => {
       'hangneigung',
     ]);
     expect(zustand.regel()).toBe('schnitt');
+  });
+
+  it('liest das offene Objekt aus der Adresse', () => {
+    const zustand = TestBed.inject(KartenZustand);
+
+    zustand.uebernimm({ ...LEER, objekt: 'fund:abc' });
+
+    expect(zustand.objekt()).toEqual({ art: 'fund', id: 'abc' });
+  });
+
+  it('zeigt Marker, Zonen und geteilte Funde ohne Zutun', () => {
+    const zustand = TestBed.inject(KartenZustand);
+
+    expect(zustand.zeigeMarker()).toBe(true);
+    expect(zustand.zeigeZonen()).toBe(true);
+    expect(zustand.zeigeGeteilteFunde()).toBe(true);
+    expect(zustand.ueberlagerung()).toBe(0);
+  });
+});
+
+describe('Objekt in der Adresse', () => {
+  it('liest jede der drei Arten', () => {
+    expect(leseObjekt('fund:eins')).toEqual({ art: 'fund', id: 'eins' });
+    expect(leseObjekt('marker:zwei')).toEqual({ art: 'marker', id: 'zwei' });
+    expect(leseObjekt('zone:drei')).toEqual({ art: 'zone', id: 'drei' });
+  });
+
+  it('nimmt alles andere als „nichts offen“', () => {
+    expect(leseObjekt(null)).toBeNull();
+    expect(leseObjekt('fund')).toBeNull();
+    expect(leseObjekt('fund:')).toBeNull();
+    expect(leseObjekt('baum:eins')).toBeNull();
+  });
+
+  it('schreibt dieselbe Form zurück', () => {
+    expect(schreibeObjekt({ art: 'zone', id: 'drei' })).toBe('zone:drei');
   });
 });

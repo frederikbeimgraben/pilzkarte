@@ -1,7 +1,13 @@
 <div class="karte">
-  <div #flaeche class="karte__flaeche" role="region" [attr.aria-label]="'karte.beschriftung' | t"></div>
+  <div
+    #flaeche
+    appKartenObjekte
+    class="karte__flaeche"
+    role="region"
+    [attr.aria-label]="'karte.beschriftung' | t"
+  ></div>
 
-  @if (!nurFlaeche()) {
+  @if (!nurFlaeche() && !eintragen.dunkel() && zustand.objekt() === null) {
     <div class="karte__knoepfe">
       <app-floating-button
         icon="ebenen"
@@ -10,8 +16,21 @@
         (klick)="ebenenOffen.set(!ebenenOffen())"
       />
       <app-floating-button icon="ort" [beschriftung]="'karte.standort' | t" (klick)="zumStandort()" />
+      @if (!eintragen.laeuft()) {
+        <app-floating-button
+          icon="plus"
+          variante="primaer"
+          [beschriftung]="'eintragen.knopf' | t"
+          (klick)="eintragenOeffnen()"
+        />
+      }
     </div>
+  }
 
+  <app-objekt-blatt />
+  <app-eintragen />
+
+  @if (!ueberlagert()) {
     <div class="karte__blatt">
       <app-sheet
         [beschriftung]="'karte.blatt' | t"
@@ -85,6 +104,7 @@
         </div>
       </app-sheet>
     </div>
+  }
 
     @if (offenerFaktor(); as faktor) {
       @if (faktorEbene(); as quelle) {

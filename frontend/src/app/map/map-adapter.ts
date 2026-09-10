@@ -1,4 +1,11 @@
-import type { Map as MapLibreKarte, MapSourceDataEvent } from 'maplibre-gl';
+import type { FeatureCollection } from 'geojson';
+import type {
+  GeoJSONSource,
+  LayerSpecification,
+  Map as MapLibreKarte,
+  MapSourceDataEvent,
+  Subscription,
+} from 'maplibre-gl';
 import type { Ausschnitt } from './kachel-raster';
 
 /** Nur der Teil von MapLibre, den der Adapter braucht. */
@@ -57,6 +64,14 @@ export interface KartenOptionen {
 }
 
 /**
+ * Die eigenen Ebenen über der Vorhersage, von unten nach oben. Zonen liegen
+ * als Fläche unten, Punkte darüber, damit ein Fund in seiner Zone anklickbar
+ * bleibt.
+ */
+export const OBJEKT_EBENEN = ['zonen', 'geteilteFunde', 'marker', 'funde'] as const;
+export type ObjektEbene = (typeof OBJEKT_EBENEN)[number];
+
+/**
  * Was die Kartenseite von der Karte braucht. Die Seite kennt MapLibre nicht;
  * so bleibt sie ohne WebGL testbar.
  */
@@ -75,6 +90,18 @@ export interface MapAdapter {
   ausschnitt(): { zoom: number; ausschnitt: Ausschnitt } | null;
   beiBewegung(hoerer: () => void): void;
   zerstoere(): void;
+  /** Der Ort unter dem Fadenkreuz: die Mitte des freien Streifens. */
+  mitte(): readonly [number, number] | null;
+  /** Fährt zu einem Ort. Ohne Zoom bleibt die Stufe, wie sie ist. */
+  fliegeZu(zentrum: readonly [number, number], zoom?: number): void;
+  /** Legt die eigenen Objekte einer Ebene auf die Karte. */
+  zeigeObjekte(ebene: ObjektEbene, daten: FeatureCollection): void;
+  /** Nimmt eine Ebene von der Karte, ohne die anderen anzufassen. */
+  verbergeObjekte(ebene: ObjektEbene): void;
+  /** Ein Tipp auf ein Objekt. Die Kennung steht in `id` des Features. */
+  beiObjektAuswahl(hoerer: (ebene: ObjektEbene, id: string) => void): void;
+  /** Die rohe Karte für Terra Draw. `null`, solange sie nicht steht. */
+  rohkarte(): MapLibreKarte | null;
 }
 
 /** Nach dieser Zeit wird die neue Woche auch ohne alle Kacheln sichtbar. */
@@ -98,6 +125,75 @@ function ebeneName(rolle: Rolle, platz: 0 | 1): string {
   return `wert-${rolle}-${platz === 0 ? 'a' : 'b'}`;
 }
 
+/** Ein gerundeter Fund liegt irgendwo in dieser Masche, nicht auf dem Punkt. */
+const GERUNDET_RADIUS = 18;
+const PUNKT_RADIUS = 7;
+
+function quelleFuer(ebene: ObjektEbene): string {
+  return `objekte-${ebene}`;
+}
+
+/** Die Schichten einer Ebene, in der Reihenfolge, in der sie liegen. */
+function ebenenSchichten(ebene: ObjektEbene): string[] {
+  return ebene === 'zonen' ? ['objekte-zonen-flaeche', 'objekte-zonen-linie'] : [`objekte-${ebene}-punkt`];
+}
+
+/**
+ * Wie eine Ebene aussieht. Die Farbe steht am Feature, nicht in der Schicht:
+ * so trägt jede Zone und jeder Marker die gewählte der sechs Farben.
+ *
+ * Ein gerundeter geteilter Fund wird zum großen, blassen Kreis. Er behauptet
+ * damit keinen Punkt, den es so nicht gibt.
+ */
+function schichtenFuer(ebene: ObjektEbene): LayerSpecification[] {
+  const quelle = quelleFuer(ebene);
+  if (ebene === 'zonen') {
+    return [
+      {
+        id: 'objekte-zonen-flaeche',
+        type: 'fill',
+        source: quelle,
+        paint: { 'fill-color': ['get', 'farbe'], 'fill-opacity': 0.18 },
+      },
+      {
+        id: 'objekte-zonen-linie',
+        type: 'line',
+        source: quelle,
+        paint: { 'line-color': ['get', 'farbe'], 'line-width': 2 },
+      },
+    ];
+  }
+  if (ebene === 'geteilteFunde') {
+    return [
+      {
+        id: 'objekte-geteilteFunde-punkt',
+        type: 'circle',
+        source: quelle,
+        paint: {
+          'circle-radius': ['case', ['get', 'gerundet'], GERUNDET_RADIUS, PUNKT_RADIUS],
+          'circle-color': ['get', 'farbe'],
+          'circle-opacity': ['case', ['get', 'gerundet'], 0.25, 0.85],
+          'circle-stroke-width': ['case', ['get', 'gerundet'], 0, 2],
+          'circle-stroke-color': '#ffffff',
+        },
+      },
+    ];
+  }
+  return [
+    {
+      id: `objekte-${ebene}-punkt`,
+      type: 'circle',
+      source: quelle,
+      paint: {
+        'circle-radius': PUNKT_RADIUS,
+        'circle-color': ['get', 'farbe'],
+        'circle-stroke-width': 2,
+        'circle-stroke-color': '#ffffff',
+      },
+    },
+  ];
+}
+
 /**
  * MapLibre hinter der Schnittstelle.
  *
@@ -110,6 +206,11 @@ export class MapLibreAdapter implements MapAdapter {
   private protokollName: string | null = null;
   private karte: MapLibreKarte | null = null;
   private readonly staende = new Map<Rolle, RollenStand>(ROLLEN.map((rolle) => [rolle, neuerStand()]));
+  /** Was auf den eigenen Ebenen liegt. Ein Stilwechsel legt es von hier neu auf. */
+  private readonly objekte = new Map<ObjektEbene, FeatureCollection>();
+  /** Die Klick-Anmeldungen je Ebene. Ein Stilwechsel löst sie und meldet neu an. */
+  private readonly abos = new Map<ObjektEbene, Subscription[]>();
+  private auswahl: ((ebene: ObjektEbene, id: string) => void) | null = null;
 
   constructor(private readonly lade: () => Promise<MaplibreModul>) {}
 
@@ -167,6 +268,7 @@ export class MapLibreAdapter implements MapAdapter {
         stand.tausch = null;
         if (vorlage && raum) this.zeigeWert(rolle, vorlage, raum.grenzen, raum.zoomVon, raum.zoomBis);
       }
+      for (const [ebene, daten] of this.objekte) this.legeEbene(ebene, daten);
     });
   }
 
@@ -271,6 +373,8 @@ export class MapLibreAdapter implements MapAdapter {
     this.karte = null;
     this.modul = null;
     for (const rolle of ROLLEN) this.staende.set(rolle, neuerStand());
+    this.objekte.clear();
+    for (const ebene of this.abos.keys()) this.loeseAbos(ebene);
   }
 
   private stand(rolle: Rolle): RollenStand {
@@ -328,6 +432,74 @@ export class MapLibreAdapter implements MapAdapter {
     const tausch = stand.tausch;
     stand.tausch = null;
     tausch?.();
+  }
+
+  mitte(): readonly [number, number] | null {
+    const karte = this.karte;
+    if (!karte) return null;
+    // `getCenter` rechnet das Polster schon ein: die Mitte ist die Mitte des
+    // freien Streifens, also genau der Ort unter dem Fadenkreuz.
+    const mitte = karte.getCenter();
+    return [mitte.lng, mitte.lat];
+  }
+
+  fliegeZu(zentrum: readonly [number, number], zoom?: number): void {
+    this.karte?.easeTo({ center: [zentrum[0], zentrum[1]], zoom, duration: 400 });
+  }
+
+  zeigeObjekte(ebene: ObjektEbene, daten: FeatureCollection): void {
+    this.objekte.set(ebene, daten);
+    this.legeEbene(ebene, daten);
+  }
+
+  verbergeObjekte(ebene: ObjektEbene): void {
+    this.objekte.delete(ebene);
+    this.loeseAbos(ebene);
+    for (const id of ebenenSchichten(ebene)) this.entferne(id);
+    this.entferne(quelleFuer(ebene));
+  }
+
+  beiObjektAuswahl(hoerer: (ebene: ObjektEbene, id: string) => void): void {
+    this.auswahl = hoerer;
+  }
+
+  rohkarte(): MapLibreKarte | null {
+    return this.karte;
+  }
+
+  /**
+   * Schreibt die Daten in die Quelle der Ebene und legt Quelle und Schichten
+   * an, falls der Stil sie noch nicht trägt.
+   */
+  private legeEbene(ebene: ObjektEbene, daten: FeatureCollection): void {
+    const karte = this.karte;
+    if (!karte) return;
+    const quelle = quelleFuer(ebene);
+    const vorhanden = karte.getSource<GeoJSONSource>(quelle);
+    if (vorhanden) {
+      // `setData` gibt ein Versprechen zurück; niemand wartet darauf, weil die
+      // Karte selbst neu zeichnet, sobald die Quelle steht.
+      void vorhanden.setData(daten);
+      return;
+    }
+    this.loeseAbos(ebene);
+    karte.addSource(quelle, { type: 'geojson', data: daten });
+    const abos: Subscription[] = [];
+    for (const schicht of schichtenFuer(ebene)) {
+      karte.addLayer(schicht);
+      abos.push(
+        karte.on('click', schicht.id, (ereignis) => {
+          const kennung = ereignis.features?.[0]?.properties?.['id'] as string | undefined;
+          if (kennung !== undefined) this.auswahl?.(ebene, kennung);
+        }),
+      );
+    }
+    this.abos.set(ebene, abos);
+  }
+
+  private loeseAbos(ebene: ObjektEbene): void {
+    for (const abo of this.abos.get(ebene) ?? []) abo.unsubscribe();
+    this.abos.delete(ebene);
   }
 
   private entferne(id: string): void {

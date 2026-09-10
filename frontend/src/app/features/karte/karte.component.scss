@@ -76,6 +76,16 @@
   z-index: 4;
 }
 
+// Melden und Objekt liegen über allem: sie sind der Grund, warum die Karte
+// gerade da ist, und es ist immer nur eines von beiden offen.
+app-eintragen,
+app-objekt-blatt {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
 :host-context(.huelle--spalte) {
   .karte__knoepfe {
     inset-block-start: calc(var(--pilz-nav-hoehe) + 12px);

@@ -69,6 +69,11 @@ import { FaktorWaehlenComponent } from './faktor-waehlen.component';
 import { KombinationComponent } from './kombination.component';
 import { grenzeFuer, kodiereFaktoren, kombiSchluessel, ersetzeFaktor, type Faktor } from './faktoren';
 import { EbenenListeComponent } from './ebenen-liste.component';
+import { EintraegeZustand } from '../eintraege/eintraege.zustand';
+import { EintragenComponent } from '../eintragen/eintragen.component';
+import { EintragenZustand } from '../eintragen/eintragen.zustand';
+import { KartenObjekteDirective } from '../objekte/karten-objekte.directive';
+import { ObjektBlattComponent } from '../objekte/objekt-blatt.component';
 import { DARSTELLUNGEN, KartenZustand, STANDARD_EBENE } from './karten-zustand';
 
 /** Takt der Wiedergabe. 700 ms sind langsam genug, um eine Woche zu erkennen. */
@@ -104,9 +109,12 @@ export function ebenenQuelleId(ebene: Ebene): string {
     EbenenListeComponent,
     FaktorBlattComponent,
     FaktorWaehlenComponent,
+    EintragenComponent,
     KombinationComponent,
     FloatingButtonComponent,
+    KartenObjekteDirective,
     NoteComponent,
+    ObjektBlattComponent,
     RampComponent,
     SegmentedComponent,
     SheetComponent,
@@ -139,6 +147,8 @@ export class KarteComponent implements OnDestroy {
   readonly nurFlaeche = input(false);
 
   protected readonly zustand = inject(KartenZustand);
+  protected readonly eintragen = inject(EintragenZustand);
+  private readonly eintraege = inject(EintraegeZustand);
   protected readonly breit = this.ansicht.breit;
 
   /**
@@ -160,6 +170,14 @@ export class KarteComponent implements OnDestroy {
   /** Der Faktor, den der Screen `Faktor` gerade bearbeitet. */
   protected readonly offenerFaktor = signal<Faktor | null>(null);
   protected readonly waehltFaktor = signal(false);
+
+  /**
+   * Über der Karte liegt immer nur ein Blatt. Solange das Eintragen läuft oder
+   * ein Objekt offen ist, tritt das Blatt der Karte zurück.
+   */
+  protected readonly ueberlagert = computed(
+    () => this.eintragen.laeuft() || this.zustand.objekt() !== null,
+  );
 
   protected readonly zeigtEbene = computed(() => this.zustand.darstellung() === 'ebene');
   protected readonly zeigtKombination = computed(() => this.zustand.darstellung() === 'kombination');
@@ -317,6 +335,7 @@ export class KarteComponent implements OnDestroy {
         deckkraft: abfrage.get('deckkraft'),
         regel: abfrage.get('regel'),
         f: abfrage.get('f'),
+        objekt: abfrage.get('objekt'),
       });
     });
 
@@ -367,7 +386,15 @@ export class KarteComponent implements OnDestroy {
     effect(() => {
       const raste = this.zustand.raste();
       const breit = this.breit();
-      if (this.bereit()) this.adapter.setzePolster(this.polster(raste, breit));
+      const ueberlagert = this.zustand.ueberlagerung();
+      if (this.bereit()) this.adapter.setzePolster(this.polster(raste, breit, ueberlagert));
+    });
+
+    // Die eigenen Einträge folgen dem Konto: nach einer Anmeldung kommen sie,
+    // nach einer Abmeldung gehen sie. Was wartet, geht dann gleich mit hinaus.
+    effect(() => {
+      this.eintraege.angemeldet();
+      void this.ladeEintraege();
     });
 
     afterNextRender(() => {
@@ -476,6 +503,30 @@ export class KarteComponent implements OnDestroy {
 
   protected zuDenArten(): void {
     void this.router.navigate(['/arten']);
+  }
+
+  /**
+   * Der Plus-Knopf öffnet das Aktionsblatt (Artboard `KarteAktionen`). Andere
+   * Blätter gehen dabei zu: über der Karte liegt immer nur eines.
+   */
+  protected eintragenOeffnen(): void {
+    this.ebenenOffen.set(false);
+    this.waehltFaktor.set(false);
+    this.offenerFaktor.set(null);
+    this.eintragen.oeffne();
+  }
+
+  /** Die eigenen Einträge und danach, was noch auf dem Gerät wartet. */
+  private async ladeEintraege(): Promise<void> {
+    await this.eintraege.lade();
+    await this.eintraege.sendeWartende();
+  }
+
+  /** Geteilte Funde gelten für den Ausschnitt; ein Schwenk holt die neuen. */
+  private async ladeGeteilte(): Promise<void> {
+    const sicht = this.adapter.ausschnitt();
+    if (sicht === null) return;
+    await this.eintraege.ladeGeteilte(sicht.ausschnitt);
   }
 
   /** Zentriert die Karte auf den eigenen Standort. */
@@ -697,21 +748,29 @@ export class KarteComponent implements OnDestroy {
       protokoll: { name: 'wert', aufloesen: this.protokoll.aufloesen },
       kompakt: !this.breit(),
     });
-    this.adapter.passeEin(DEUTSCHLAND, this.polster(this.zustand.raste(), this.breit()));
+    this.adapter.passeEin(
+      DEUTSCHLAND,
+      this.polster(this.zustand.raste(), this.breit(), this.zustand.ueberlagerung()),
+    );
     this.adapter.beiBewegung(() => {
       this.ladeNachbarn();
+      void this.ladeGeteilte();
     });
     this.bereit.set(true);
+    void this.ladeGeteilte();
   }
 
   /**
    * Der freie Streifen der Karte. Die Karte rechnet ihre Mitte darauf, statt
    * hinter das Blatt zu zielen.
    */
-  private polster(raste: Raste, breit: boolean): Polster {
+  private polster(raste: Raste, breit: boolean, ueberlagert = 0): Polster {
     if (breit) return { top: 0, bottom: 0, left: 0, right: 0 };
     const hoehe = this.flaeche().nativeElement.clientHeight;
-    return { top: 0, bottom: Math.round(rasteInPx(RASTEN_STANDARD[raste], hoehe)), left: 0, right: 0 };
+    // Liegt ein Blatt über der Karte, gilt seine Höhe: sonst zielte die Mitte
+    // hinter das Blatt und das Fadenkreuz stünde woanders als der Ort.
+    const blatt = ueberlagert > 0 ? ueberlagert : rasteInPx(RASTEN_STANDARD[raste], hoehe);
+    return { top: 0, bottom: Math.round(blatt), left: 0, right: 0 };
   }
 
   private ladeNachbarn(): void {
