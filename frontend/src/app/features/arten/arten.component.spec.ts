@@ -44,7 +44,7 @@ describe('ArtenComponent', () => {
     const zeile = screen.getByRole('button', { name: /Steinpilz/ });
     expect(within(zeile).getByText('Boletus edulis')).toBeInTheDocument();
     expect(within(zeile).getByText('Vorhersage')).toBeInTheDocument();
-    expect(within(zeile).getByText('geschützt')).toBeInTheDocument();
+    expect(within(zeile).getByText('Geschützt')).toBeInTheDocument();
     expect(within(zeile).getByRole('img', { name: /Saisonkurve Steinpilz/ })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Speisemorchel/ })).toBeInTheDocument();
     await keineVerstoesse(container);
@@ -95,7 +95,7 @@ describe('ArtenComponent', () => {
 
     expect(screen.getByText('4 Arten')).toBeInTheDocument();
 
-    await userEvent.click(screen.getByRole('button', { name: 'mit Vorhersage' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Mit Vorhersage' }));
     aktualisiere();
 
     // Ohne diese Zahl wirkte der Chip tot: die Liste steht nach Stufe, oben
@@ -115,7 +115,7 @@ describe('ArtenComponent', () => {
   it('filtert über die Chips nach Stufe, Gruppe und Jahreszeit', async () => {
     const { aktualisiere } = await aufbauen();
 
-    await userEvent.click(screen.getByRole('button', { name: 'mit Vorhersage' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Mit Vorhersage' }));
     aktualisiere();
     expect(namen()).toEqual(['Maronenröhrling', 'Steinpilz']);
 
@@ -127,7 +127,7 @@ describe('ArtenComponent', () => {
     aktualisiere();
     expect(namen()).toEqual(['Maronenröhrling', 'Steinpilz', 'Semmelstoppelpilz']);
 
-    await userEvent.click(screen.getByRole('button', { name: 'alle' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Alle' }));
     aktualisiere();
     expect(namen()).toHaveLength(4);
   });
@@ -140,7 +140,7 @@ describe('ArtenComponent', () => {
 
     const zeile = screen.getByRole('button', { name: /Maronenröhrling/ });
     expect(zeile).toHaveAttribute('aria-current', 'true');
-    expect(within(zeile).getByText('aktiv')).toBeInTheDocument();
+    expect(within(zeile).getByText('Aktiv')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Steinpilz/ })).not.toHaveAttribute('aria-current');
   });
 
