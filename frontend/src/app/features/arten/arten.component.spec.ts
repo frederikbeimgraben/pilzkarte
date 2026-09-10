@@ -90,6 +90,19 @@ describe('ArtenComponent', () => {
     expect(namen()).toEqual(['Maronenröhrling']);
   });
 
+  it('nennt, wie viele Arten die Liste gerade zeigt', async () => {
+    const { aktualisiere } = await aufbauen();
+
+    expect(screen.getByText('4 Arten')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: 'mit Vorhersage' }));
+    aktualisiere();
+
+    // Ohne diese Zahl wirkte der Chip tot: die Liste steht nach Stufe, oben
+    // bleiben dieselben Zeilen stehen.
+    expect(screen.getByText('2 von 4 Arten')).toBeInTheDocument();
+  });
+
   it('zeigt einen Leerzustand, wenn nichts passt', async () => {
     const { aktualisiere } = await aufbauen();
 

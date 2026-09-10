@@ -19,3 +19,8 @@
   // einem Fenster. Gescrollt wird mit dem Daumen oder dem Rad.
   scrollbar-width: none;
 }
+
+// Die Zählzeile gehört zu den Filtern darüber, nicht zur Liste darunter.
+.arten__anzahl {
+  margin-block-start: -12px;
+}

@@ -14,6 +14,7 @@
     [beschriftung]="'arten.filter' | t"
     (wertChange)="waehleChip($event)"
   />
+  <app-note class="arten__anzahl">{{ anzahlText() }}</app-note>
   <app-card class="randlos">
     @if (zeilen().length === 0) {
       <app-note class="empty-state">{{ 'arten.leer' | t }}</app-note>
