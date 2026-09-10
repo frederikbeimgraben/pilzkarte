@@ -122,8 +122,9 @@ in `app/core/` oder `app/shared/`.
 ## CI
 
 `.github/workflows/ci.yml`: `be-lint`, `be-typecheck`, `be-test`, `fe-lint`,
-`fe-typecheck`, `fe-test`, `fe-build`. Alle sind Pflicht für einen Merge nach
-`main`.
+`fe-typecheck`, `fe-test`, `fe-build`. Dazu `mo-test`: die Tests der Kette
+unter `modell/tests` in der Shell aus `modell/flake.nix`. Alle sind Pflicht
+für einen Merge nach `main`.
 
 ## Befehle
 
