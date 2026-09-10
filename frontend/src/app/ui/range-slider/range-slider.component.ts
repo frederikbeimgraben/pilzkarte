@@ -2,8 +2,15 @@ import { ChangeDetectionStrategy, Component, computed, inject, input, output } f
 import { I18nService } from '../../core/i18n/i18n.service';
 
 /**
- * Zwei Griffe über einer Spur. Beide Griffe sind eigene Schieberegler des
- * Browsers, damit Tastatur und Hilfsmittel ohne eigenes Zutun stimmen.
+ * Welche Griffe die Spur trägt. `unten` und `oben` sind die Bedingungen „über“
+ * und „unter“: eine Grenze steht am Ende der Skala und lässt sich nicht ziehen.
+ */
+export type Griffe = 'beide' | 'unten' | 'oben';
+
+/**
+ * Ein oder zwei Griffe über einer Spur. Jeder Griff ist ein eigener
+ * Schieberegler des Browsers, damit Tastatur und Hilfsmittel ohne eigenes
+ * Zutun stimmen.
  */
 @Component({
   selector: 'app-range-slider',
@@ -19,12 +26,15 @@ export class RangeSliderComponent {
   readonly schritt = input(1);
   readonly von = input.required<number>();
   readonly bis = input.required<number>();
+  readonly griffe = input<Griffe>('beide');
 
   readonly vonChange = output<number>();
   readonly bisChange = output<number>();
 
   protected readonly vonAnteil = computed(() => this.anteil(this.von()));
   protected readonly bisAnteil = computed(() => this.anteil(this.bis()));
+  protected readonly zeigtVon = computed(() => this.griffe() !== 'oben');
+  protected readonly zeigtBis = computed(() => this.griffe() !== 'unten');
 
   protected text(schluessel: 'schieber.untereGrenze' | 'schieber.obereGrenze'): string {
     return this.i18n.translate(schluessel);

@@ -1,6 +1,8 @@
 import { Injectable, computed, signal } from '@angular/core';
 import { VORHERSAGE_SLUGS, type VorhersageSlug } from '../../core/kacheln/kachel-pfade';
 import { HINTERGRUENDE, hintergrundVerfuegbar, type Hintergrund } from '../../map/hintergrund';
+import type { KombiRegel } from '../../map/wert-farben';
+import { STANDARD_FAKTOREN, kodiereFaktoren, leseFaktoren, type Faktor } from './faktoren';
 import type { Raste } from '../../ui';
 
 /** Die drei Darstellungen des Blatts. Die Kombination kommt in B2. */
@@ -28,6 +30,9 @@ export interface KartenAdresse {
   ebene: string | null;
   /** Deckkraft der Wertebene in Prozent, damit die Adresse lesbar bleibt. */
   deckkraft: number;
+  regel: KombiRegel;
+  /** Die Faktoren in einem Wert, siehe `kodiereFaktoren`. */
+  f: string;
 }
 
 function istArt(wert: string | null): wert is VorhersageSlug {
@@ -62,6 +67,8 @@ export class KartenZustand {
   /** Deckkraft der Wertebene, 0 bis 1. */
   readonly deckkraft = signal(1);
   readonly hintergrund = signal<Hintergrund>('automatisch');
+  readonly regel = signal<KombiRegel>('schnitt');
+  readonly faktoren = signal<readonly Faktor[]>(STANDARD_FAKTOREN);
   /** In der Darstellung Ebene: die Vorhersage der Art bleibt darunter liegen. */
   readonly vorhersageDarunter = signal(false);
   readonly raste = signal<Raste>(1);
@@ -72,6 +79,8 @@ export class KartenZustand {
     darstellung: this.darstellung(),
     ebene: this.ebene(),
     deckkraft: Math.round(this.deckkraft() * 100),
+    regel: this.regel(),
+    f: kodiereFaktoren(this.faktoren()),
   }));
 
   /** Übernimmt die Abfragewerte einer Adresse. */
@@ -81,6 +90,8 @@ export class KartenZustand {
     darstellung: string | null;
     ebene: string | null;
     deckkraft: string | null;
+    regel: string | null;
+    f: string | null;
   }): void {
     this.art.set(istArt(abfrage.art) ? abfrage.art : STANDARD_ART);
     this.woche.set(abfrage.kw !== null && WOCHEN_MUSTER.test(abfrage.kw) ? abfrage.kw : null);
@@ -88,6 +99,11 @@ export class KartenZustand {
     this.ebene.set(abfrage.ebene !== null && EBENEN_MUSTER.test(abfrage.ebene) ? abfrage.ebene : null);
     const deckkraft = leseProzent(abfrage.deckkraft);
     if (deckkraft !== null) this.deckkraft.set(deckkraft);
+    this.regel.set(abfrage.regel === 'abgestuft' ? 'abgestuft' : 'schnitt');
+    // Ohne Faktoren in der Adresse bleiben die vier aus dem Konzept stehen;
+    // eine leere Kombination hätte nichts zu zeigen.
+    const faktoren = leseFaktoren(abfrage.f);
+    this.faktoren.set(faktoren.length > 0 ? faktoren : STANDARD_FAKTOREN);
   }
 
   setzeHintergrund(wahl: Hintergrund): void {

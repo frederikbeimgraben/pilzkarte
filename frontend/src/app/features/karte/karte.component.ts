@@ -23,10 +23,13 @@ import {
   ebenenWoche,
   findeEbene,
   formatiereWert,
+  histogrammFuer,
   passendeWoche,
   type Ebene,
   type EbenenManifest,
 } from '../../core/kacheln/ebenen';
+import { ebeneAusArt } from '../../core/kacheln/art-als-ebene';
+import { VORHERSAGE_SLUGS } from '../../core/kacheln/kachel-pfade';
 import {
   aktuelleWoche,
   balkenAnteile,
@@ -40,8 +43,9 @@ import { sichtbareKacheln } from '../../map/kachel-raster';
 import { DEUTSCHLAND, MAX_GRENZEN, ZOOM_MAX, ZOOM_MIN, stilFuer } from '../../map/hintergrund';
 import type { Polster } from '../../map/map-adapter';
 import { KARTE_ADAPTER, KARTE_ANBIETER, WERT_ARBEITER } from '../../map/karte.tokens';
-import { WertProtokoll, artQuelle, wertVorlage } from '../../map/wert-protokoll';
+import { WertProtokoll, artQuelle, wertVorlage, type KombiQuellenTeil } from '../../map/wert-protokoll';
 import { VORHERSAGE_RAMPE } from '../../ui/ramp/rampe-farben';
+import type { KombiRegel } from '../../map/wert-farben';
 import { ThemeService } from '../../core/theme/theme.service';
 import {
   FloatingButtonComponent,
@@ -58,6 +62,10 @@ import {
   type ZeitleisteWoche,
 } from '../../ui';
 import { EbenenBlattComponent } from './ebenen-blatt.component';
+import { FaktorBlattComponent } from './faktor-blatt.component';
+import { FaktorWaehlenComponent } from './faktor-waehlen.component';
+import { KombinationComponent } from './kombination.component';
+import { grenzeFuer, kodiereFaktoren, kombiSchluessel, ersetzeFaktor, type Faktor } from './faktoren';
 import { EbenenListeComponent } from './ebenen-liste.component';
 import { DARSTELLUNGEN, KartenZustand, STANDARD_EBENE } from './karten-zustand';
 
@@ -69,6 +77,12 @@ const VORLAUF = 2;
 
 /** Nach dem Standort-Knopf: nah genug für einen Waldweg. */
 const ZOOM_ORT = 11;
+
+/** Die Kennung der zusammengesetzten Quelle im Protokoll. */
+const KOMBI_QUELLE = 'kombi';
+
+/** British Racing Green, falls das Theme keine Farbe hergibt. */
+const SCHNITT_ERSATZ = '#004225';
 
 /** Die Kennung einer Ebene im Protokoll, damit sie nicht mit einer Art kollidiert. */
 export function ebenenQuelleId(ebene: Ebene): string {
@@ -86,6 +100,9 @@ export function ebenenQuelleId(ebene: Ebene): string {
   imports: [
     EbenenBlattComponent,
     EbenenListeComponent,
+    FaktorBlattComponent,
+    FaktorWaehlenComponent,
+    KombinationComponent,
     FloatingButtonComponent,
     NoteComponent,
     RampComponent,
@@ -120,10 +137,16 @@ export class KarteComponent implements OnDestroy {
   private readonly bereit = signal(false);
   private uhr: ReturnType<typeof setInterval> | null = null;
 
+  private readonly artEbenen = signal<ReadonlyMap<string, Ebene>>(new Map());
+
   protected readonly spielt = signal(false);
   protected readonly ebenenOffen = signal(false);
+  /** Der Faktor, den der Screen `Faktor` gerade bearbeitet. */
+  protected readonly offenerFaktor = signal<Faktor | null>(null);
+  protected readonly waehltFaktor = signal(false);
 
   protected readonly zeigtEbene = computed(() => this.zustand.darstellung() === 'ebene');
+  protected readonly zeigtKombination = computed(() => this.zustand.darstellung() === 'kombination');
 
   protected readonly woche = computed<ManifestWoche | null>(() => {
     const manifest = this.manifest();
@@ -152,6 +175,41 @@ export class KarteComponent implements OnDestroy {
     return passendeWoche(ebene, ebenenWoche(woche.jahr, woche.woche));
   });
 
+  /** Jede Quelle, die ein Faktor nennen kann: die Ebenen und die Arten. */
+  protected readonly faktorQuellen = computed<ReadonlyMap<string, Ebene>>(() => {
+    const alle = new Map<string, Ebene>(this.artEbenen());
+    for (const ebene of this.ebenen()?.ebenen ?? []) alle.set(ebene.id, ebene);
+    return alle;
+  });
+
+  protected readonly wochenSchluesselAktiv = computed(() => {
+    const woche = this.woche();
+    return woche ? ebenenWoche(woche.jahr, woche.woche) : null;
+  });
+
+  /** Die Quelle, die der Faktor-Screen gerade zeigt. */
+  protected readonly faktorEbene = computed<Ebene | null>(() => {
+    const faktor = this.offenerFaktor();
+    return faktor ? (this.faktorQuellen().get(faktor.quelle) ?? null) : null;
+  });
+
+  protected readonly faktorHistogramm = computed(() => {
+    const ebene = this.faktorEbene();
+    return ebene ? histogrammFuer(ebene, this.wochenSchluesselAktiv()) : null;
+  });
+
+  protected readonly faktorZeitbezug = computed(() => {
+    const ebene = this.faktorEbene();
+    if (!ebene) return '';
+    return ebene.fest ? this.i18n.translate('faktor.konstant') : this.wochenText();
+  });
+
+  protected readonly vergebeneQuellen = computed(
+    () => new Set(this.zustand.faktoren().map((faktor) => faktor.quelle)),
+  );
+
+  protected readonly artenAlsEbenen = computed(() => [...this.artEbenen().values()]);
+
   protected readonly leiste = computed<ZeitleisteWoche[]>(() => {
     const manifest = this.manifest();
     if (!manifest) return [];
@@ -167,9 +225,11 @@ export class KarteComponent implements OnDestroy {
   protected readonly artName = computed(() => this.i18n.translate(`art.${this.zustand.art()}`));
 
   /** Der Kopf nennt, was die Karte zeigt: die Art oder die Ebene. */
-  protected readonly kopfTitel = computed(() =>
-    this.zeigtEbene() ? (this.ebene()?.label ?? this.i18n.translate('darstellung.ebene')) : this.artName(),
-  );
+  protected readonly kopfTitel = computed(() => {
+    if (this.zeigtKombination()) return this.i18n.translate('darstellung.kombination');
+    if (this.zeigtEbene()) return this.ebene()?.label ?? this.i18n.translate('darstellung.ebene');
+    return this.artName();
+  });
 
   protected readonly wochenText = computed(() => {
     const woche = this.woche();
@@ -201,18 +261,21 @@ export class KarteComponent implements OnDestroy {
 
   protected readonly alleEbenen = computed(() => this.ebenen()?.ebenen ?? []);
 
-  protected readonly rampenTitel = computed(() =>
-    this.zeigtEbene() ? (this.ebene()?.label ?? '') : this.i18n.translate('karte.rampe'),
-  );
+  protected readonly rampenTitel = computed(() => {
+    if (this.zeigtKombination()) return this.i18n.translate('kombination.rampe');
+    return this.zeigtEbene() ? (this.ebene()?.label ?? '') : this.i18n.translate('karte.rampe');
+  });
 
   protected readonly rampeVon = computed(() => {
     const ebene = this.ebene();
+    if (this.zeigtKombination()) return this.i18n.translate('karte.rampeVon');
     if (!this.zeigtEbene()) return this.i18n.translate('karte.rampeVon');
     return ebene ? formatiereWert(ebene.low, ebene, this.i18n.locale()) : '';
   });
 
   protected readonly rampeBis = computed(() => {
     const ebene = this.ebene();
+    if (this.zeigtKombination()) return this.i18n.translate('karte.prozent', { wert: 100 });
     if (!this.zeigtEbene()) {
       return this.i18n.translate('karte.prozent', {
         wert: Math.round((this.manifest()?.top ?? 0) * 100),
@@ -235,6 +298,8 @@ export class KarteComponent implements OnDestroy {
         darstellung: abfrage.get('darstellung'),
         ebene: abfrage.get('ebene'),
         deckkraft: abfrage.get('deckkraft'),
+        regel: abfrage.get('regel'),
+        f: abfrage.get('f'),
       });
     });
 
@@ -243,6 +308,10 @@ export class KarteComponent implements OnDestroy {
     });
 
     void this.ladeEbenen();
+
+    effect(() => {
+      if (this.zeigtKombination()) void this.ladeArten();
+    });
 
     // Der Stil folgt der Wahl, sonst dem Theme. Erst wenn die Karte steht.
     effect(() => {
@@ -293,6 +362,42 @@ export class KarteComponent implements OnDestroy {
     const gewaehlt = DARSTELLUNGEN.find((darstellung) => darstellung === wert);
     if (!gewaehlt) return;
     this.zustand.darstellung.set(gewaehlt);
+    this.schreibeAdresse();
+  }
+
+  protected setzeRegel(regel: KombiRegel): void {
+    this.zustand.regel.set(regel);
+    this.schreibeAdresse();
+  }
+
+  protected schalteFaktor(wahl: { faktor: Faktor; aktiv: boolean }): void {
+    this.zustand.faktoren.set(ersetzeFaktor(this.zustand.faktoren(), { ...wahl.faktor, aktiv: wahl.aktiv }));
+    this.schreibeAdresse();
+  }
+
+  protected oeffneFaktor(faktor: Faktor): void {
+    this.offenerFaktor.set(faktor);
+  }
+
+  protected uebernimmFaktor(faktor: Faktor): void {
+    this.zustand.faktoren.set(ersetzeFaktor(this.zustand.faktoren(), faktor));
+    this.offenerFaktor.set(null);
+    this.schreibeAdresse();
+  }
+
+  protected entferneFaktor(faktor: Faktor): void {
+    this.zustand.faktoren.set(this.zustand.faktoren().filter((eintrag) => eintrag.quelle !== faktor.quelle));
+    this.offenerFaktor.set(null);
+    this.schreibeAdresse();
+  }
+
+  /** Eine neue Quelle beginnt mit der oberen Hälfte ihrer Skala. */
+  protected waehleQuelle(ebene: Ebene): void {
+    const mitte = ebene.low + (ebene.high - ebene.low) / 2;
+    const faktor: Faktor = { quelle: ebene.id, bedingung: 'ueber', von: mitte, bis: 0, aktiv: true };
+    this.zustand.faktoren.set(ersetzeFaktor(this.zustand.faktoren(), faktor));
+    this.waehltFaktor.set(false);
+    this.offenerFaktor.set(faktor);
     this.schreibeAdresse();
   }
 
@@ -380,6 +485,34 @@ export class KarteComponent implements OnDestroy {
     }
   }
 
+  /**
+   * Die Manifeste aller Vorhersage-Arten, damit eine Art als Faktor taugt.
+   * Erst wenn die Kombination aufgeht: elf Manifeste sind zusammen so groß wie
+   * eine Kachel, aber niemand braucht sie auf der Vorhersage.
+   */
+  private async ladeArten(): Promise<void> {
+    if (this.artEbenen().size > 0) return;
+    const geladen = await Promise.all(
+      VORHERSAGE_SLUGS.map(async (slug) => {
+        try {
+          return await this.manifeste.hole(slug);
+        } catch {
+          return null;
+        }
+      }),
+    );
+    const alle = new Map<string, Ebene>();
+    for (const manifest of geladen) {
+      if (manifest) alle.set(manifest.slug, ebeneAusArt(manifest, this.artNameVon(manifest.slug)));
+    }
+    this.artEbenen.set(alle);
+  }
+
+  private artNameVon(slug: string): string {
+    const bekannt = VORHERSAGE_SLUGS.find((eintrag) => eintrag === slug);
+    return bekannt ? this.i18n.translate(`art.${bekannt}`) : slug;
+  }
+
   private async ladeEbenen(): Promise<void> {
     try {
       this.ebenen.set(await this.ebenenDienst.hole());
@@ -413,7 +546,9 @@ export class KarteComponent implements OnDestroy {
   private legeVorhersage(): void {
     const manifest = this.manifest();
     const woche = this.woche();
-    const sichtbar = !this.zeigtEbene() || this.zustand.vorhersageDarunter();
+    // Die Kombination hängt an keiner Art; dort liegt keine Vorhersage darunter.
+    const sichtbar =
+      this.zustand.darstellung() === 'vorhersage' || (this.zeigtEbene() && this.zustand.vorhersageDarunter());
     if (!this.bereit() || !manifest || !woche) return;
     this.adapter.zeigeWert(
       'vorhersage',
@@ -425,22 +560,39 @@ export class KarteComponent implements OnDestroy {
     if (sichtbar) this.ladeNachbarn();
   }
 
+  /**
+   * Die obere Wertebene. Sie zeigt die Ebene, die Kombination oder, solange
+   * der Faktor-Screen offen ist, die Quelle dieses Faktors: was man einstellt,
+   * soll man auch sehen.
+   */
   private legeEbene(): void {
     const manifest = this.ebenen();
-    const ebene = this.ebene();
-    const woche = this.woche();
     if (!this.bereit()) return;
+    const inArbeit = this.faktorEbene();
+    if (inArbeit && manifest) {
+      this.legeQuelle(inArbeit, manifest);
+      return;
+    }
+    if (this.zeigtKombination()) {
+      this.legeKombination();
+      return;
+    }
+    const ebene = this.ebene();
     if (!this.zeigtEbene() || !manifest || !ebene) {
       this.adapter.zeigeWert('ebene', null, MAX_GRENZEN, ZOOM_MIN, ZOOM_MAX);
       return;
     }
+    this.legeQuelle(ebene, manifest);
+  }
+
+  private legeQuelle(ebene: Ebene, manifest: EbenenManifest): void {
     this.protokoll.melde({
       id: ebenenQuelleId(ebene),
       skala: { art: 'spanne', low: ebene.low, high: ebene.high },
       farben: VORHERSAGE_RAMPE,
       vorhanden: ebene.vorhanden,
     });
-    const ordner = ebenenOrdner(ebene, woche ? ebenenWoche(woche.jahr, woche.woche) : null);
+    const ordner = ebenenOrdner(ebene, this.wochenSchluesselAktiv());
     this.adapter.zeigeWert(
       'ebene',
       ordner === null ? null : wertVorlage(ebenenQuelleId(ebene), ordner),
@@ -448,6 +600,63 @@ export class KarteComponent implements OnDestroy {
       ebene.zoomVon,
       ebene.zoomBis,
     );
+  }
+
+  /**
+   * Die Kombination als eine zusammengesetzte Quelle. Der Schlüssel im Ordner
+   * ändert sich mit jeder Bedingung; sonst zeigte MapLibre die Kacheln der
+   * vorigen Regel weiter.
+   */
+  private legeKombination(): void {
+    const manifest = this.ebenen();
+    const quellen = this.faktorQuellen();
+    const woche = this.wochenSchluesselAktiv();
+    const teile: KombiQuellenTeil[] = [];
+    let zoomVon = ZOOM_MIN;
+    let zoomBis = ZOOM_MAX;
+    for (const faktor of this.zustand.faktoren()) {
+      const ebene = quellen.get(faktor.quelle);
+      if (!faktor.aktiv || !ebene) continue;
+      const ordner = ebenenOrdner(ebene, woche);
+      if (ordner === null) continue;
+      teile.push({ ordner, grenze: grenzeFuer(faktor, ebene), vorhanden: ebene.vorhanden });
+      zoomVon = Math.max(zoomVon, ebene.zoomVon);
+      zoomBis = Math.min(zoomBis, ebene.zoomBis);
+    }
+    if (!manifest || teile.length === 0 || zoomBis < zoomVon) {
+      this.adapter.zeigeWert('ebene', null, MAX_GRENZEN, ZOOM_MIN, ZOOM_MAX);
+      return;
+    }
+    const regel = this.zustand.regel();
+    this.protokoll.meldeKombi({
+      id: KOMBI_QUELLE,
+      regel,
+      farben: regel === 'schnitt' ? [this.schnittFarbe()] : VORHERSAGE_RAMPE,
+      teile,
+    });
+    const schluessel = kombiSchluessel([
+      regel,
+      kodiereFaktoren(this.zustand.faktoren()),
+      woche ?? 'fest',
+      this.theme.wirksam(),
+    ]);
+    this.adapter.zeigeWert(
+      'ebene',
+      wertVorlage(KOMBI_QUELLE, schluessel),
+      manifest.grenzen,
+      zoomVon,
+      zoomBis,
+    );
+  }
+
+  /**
+   * Die Farbe der Schnittmenge kommt aus dem Theme: der Worker malt Daten,
+   * aber diese eine Farbe ist die Primärfarbe der App und muss im dunklen
+   * Bild anders liegen als im hellen.
+   */
+  private schnittFarbe(): string {
+    const wert = getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim();
+    return /^#[0-9a-f]{6}$/i.test(wert) ? wert : SCHNITT_ERSATZ;
   }
 
   private async starteKarte(): Promise<void> {
@@ -518,6 +727,8 @@ export class KarteComponent implements OnDestroy {
         // Adresse stehen; sonst löschte der erste Schreibvorgang den Deep Link.
         ebene: this.zeigtEbene() ? (this.ebene()?.id ?? this.zustand.ebene()) : null,
         deckkraft: adresse.deckkraft === 100 ? null : adresse.deckkraft,
+        regel: this.zeigtKombination() ? adresse.regel : null,
+        f: this.zeigtKombination() ? adresse.f : null,
       },
       queryParamsHandling: 'merge',
       replaceUrl: true,

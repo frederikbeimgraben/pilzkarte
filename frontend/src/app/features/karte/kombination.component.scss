@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-block-size: 0;
+}
+
+.kombination__faktoren {
+  display: flex;
+  flex-direction: column;
+}
+
+// Die Aktionen sitzen unten im Blatt, nicht am Ende der Liste.
+.kombination__fuss {
+  margin-block-start: auto;
+}

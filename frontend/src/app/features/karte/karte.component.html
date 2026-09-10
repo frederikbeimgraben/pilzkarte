@@ -65,13 +65,65 @@
               <app-note>{{ 'ebene.keine' | t }}</app-note>
             }
           }
-          @default {
-            <app-note>{{ 'platzhalter.hinweis' | t }}</app-note>
+          @case ('kombination') {
+            @if (zustand.regel() === 'abgestuft') {
+              <app-ramp [beschriftung]="rampenTitel()" [von]="rampeVon()" [bis]="rampeBis()" />
+            }
+            <app-kombination
+              [faktoren]="zustand.faktoren()"
+              [quellen]="faktorQuellen()"
+              [regel]="zustand.regel()"
+              [wochenText]="wochenText()"
+              (regelChange)="setzeRegel($event)"
+              (aktivChange)="schalteFaktor($event)"
+              (faktorOeffnen)="oeffneFaktor($event)"
+              (hinzufuegen)="waehltFaktor.set(true)"
+            />
           }
         }
       </div>
     </app-sheet>
   </div>
+
+  @if (offenerFaktor(); as faktor) {
+    @if (faktorEbene(); as quelle) {
+      <button
+        class="karte__schleier"
+        type="button"
+        [attr.aria-label]="'faktor.abbrechen' | t"
+        (click)="offenerFaktor.set(null)"
+      ></button>
+      <div class="karte__blatt karte__blatt--ebenen">
+        <app-faktor-blatt
+          [faktor]="faktor"
+          [ebene]="quelle"
+          [histogramm]="faktorHistogramm()"
+          [zeitbezug]="faktorZeitbezug()"
+          (uebernehmen)="uebernimmFaktor($event)"
+          (entfernen)="entferneFaktor($event)"
+          (schliessen)="offenerFaktor.set(null)"
+        />
+      </div>
+    }
+  }
+
+  @if (waehltFaktor()) {
+    <button
+      class="karte__schleier"
+      type="button"
+      [attr.aria-label]="'faktor.abbrechen' | t"
+      (click)="waehltFaktor.set(false)"
+    ></button>
+    <div class="karte__blatt karte__blatt--ebenen">
+      <app-faktor-waehlen
+        [ebenen]="alleEbenen()"
+        [arten]="artenAlsEbenen()"
+        [vergeben]="vergebeneQuellen()"
+        (auswahl)="waehleQuelle($event)"
+        (schliessen)="waehltFaktor.set(false)"
+      />
+    </div>
+  }
 
   @if (ebenenOffen()) {
     <button

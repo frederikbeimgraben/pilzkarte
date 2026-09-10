@@ -47,6 +47,7 @@ describe('Manifest', () => {
       kachelPfad: 'boletus_edulis_kacheln/2026W01',
       mittel: 0.02,
       hoechst: 0.2,
+      histogramm: null,
     });
   });
 

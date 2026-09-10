@@ -6,6 +6,8 @@
  * ist die einzige Stelle, die das weiß; nach ihm heißt alles wie in der App.
  */
 
+import { leseHistogramm, type Histogramm } from './ebenen';
+
 /** Eine Woche der Art. `mittel` und `hoechst` sind Wahrscheinlichkeiten, 0 bis 1. */
 export interface ManifestWoche {
   jahr: number;
@@ -16,6 +18,8 @@ export interface ManifestWoche {
   kachelPfad: string;
   mittel: number;
   hoechst: number;
+  /** Die Verteilung der Woche über Deutschland, 0 bis `top`. */
+  histogramm: Histogramm | null;
 }
 
 /** Eine Art mit Vorhersage: Kacheln, Wochen und der Höchstwert der Rampe. */
@@ -67,6 +71,7 @@ function leseWoche(roh: unknown): ManifestWoche | null {
     kachelPfad: roh['tiles'],
     mittel: zahl(roh['mean']),
     hoechst: zahl(roh['max']),
+    histogramm: leseHistogramm(roh['histogramm']),
   };
 }
 

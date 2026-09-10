@@ -172,13 +172,113 @@ describe('KarteComponent', () => {
     expect(attrappe.stile.at(-1)).toContain('dark');
   });
 
-  it('zeigt zur Kombination noch keinen Inhalt', async () => {
-    const { stabil } = await karte();
-
-    await userEvent.click(screen.getByRole('tab', { name: 'Kombination' }));
+  it('zeigt die Kombination mit ihren vier Faktoren', async () => {
+    const { container, stabil } = await karte('/karte?darstellung=kombination');
     await stabil();
 
-    expect(screen.getByText('Dieser Bereich kommt in einem späteren Arbeitspaket.')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Kombination' })).toBeInTheDocument();
+    const faktoren = screen.getByRole('group', { name: 'Faktoren' });
+    expect(faktoren).toHaveTextContent('Niederschlag der letzten 4 Wochen');
+    expect(faktoren).toHaveTextContent('≥ 80 mm');
+    expect(faktoren).toHaveTextContent('8 bis 16 Grad');
+    expect(screen.getByText(/Wochenbezogene Faktoren beziehen sich auf KW 40 · 2025/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Speichern' })).toBeDisabled();
+    expect(screen.getByText('Speichern kommt mit dem Konto.')).toBeInTheDocument();
+    await keineVerstoesse(container);
+  });
+
+  it('legt die Kombination als eine Quelle auf die Karte', async () => {
+    const { attrappe, stabil } = await karte('/karte?darstellung=kombination');
+    await stabil();
+
+    expect(attrappe.vorlagen('ebene').at(-1)).toMatch(/^wert:\/\/kombi\/[0-9a-f]{8}\//);
+    expect(attrappe.vorlagenJeRolle.get('vorhersage')?.at(-1)).toBeNull();
+  });
+
+  it('wechselt die Regel und zeigt dann eine Rampe', async () => {
+    const { attrappe, stabil } = await karte('/karte?darstellung=kombination');
+    await stabil();
+    const vorher = attrappe.vorlagen('ebene').at(-1);
+
+    await userEvent.click(screen.getByRole('tab', { name: 'Abgestuft' }));
+    await stabil();
+
+    expect(TestBed.inject(Router).url).toContain('regel=abgestuft');
+    expect(attrappe.vorlagen('ebene').at(-1)).not.toBe(vorher);
+    expect(screen.getByRole('img', { name: /Erfüllung der Bedingungen/ })).toBeInTheDocument();
+  });
+
+  it('hakt einen Faktor ab und schreibt ihn so in die Adresse', async () => {
+    const { stabil } = await karte('/karte?darstellung=kombination');
+    await stabil();
+
+    await userEvent.click(screen.getAllByRole('checkbox')[0]);
+    await stabil();
+
+    expect(TestBed.inject(Router).url).toContain('!regen_4w');
+  });
+
+  it('öffnet den Faktor-Screen und zeigt dabei die Ebene selbst', async () => {
+    const { attrappe, container, stabil } = await karte('/karte?darstellung=kombination');
+    await stabil();
+
+    await userEvent.click(screen.getByRole('button', { name: '≥ 80 mm' }));
+    await stabil();
+
+    expect(screen.getByRole('dialog', { name: 'Faktor' })).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: /Verteilung über Deutschland/ })).toBeInTheDocument();
+    expect(
+      screen.getByText(/Die Bedingung ist auf \d+ % der Fläche Deutschlands erfüllt\./),
+    ).toBeInTheDocument();
+    expect(attrappe.vorlagen('ebene').at(-1)).toContain('ebene-regen_4w');
+    await keineVerstoesse(container);
+  });
+
+  it('übernimmt eine geänderte Bedingung', async () => {
+    const { stabil } = await karte('/karte?darstellung=kombination');
+    await stabil();
+    await userEvent.click(screen.getByRole('button', { name: '≥ 80 mm' }));
+    await stabil();
+
+    fireEvent.input(screen.getByRole('slider', { name: 'Untere Grenze' }), { target: { value: '40' } });
+    await stabil();
+    await userEvent.click(screen.getByRole('button', { name: 'Übernehmen' }));
+    await stabil();
+
+    expect(TestBed.inject(Router).url).toContain('regen_4w:ge:40');
+    expect(screen.getByRole('group', { name: 'Faktoren' })).toHaveTextContent('≥ 40 mm');
+  });
+
+  it('entfernt einen Faktor', async () => {
+    const { stabil } = await karte('/karte?darstellung=kombination');
+    await stabil();
+    await userEvent.click(screen.getByRole('button', { name: '≥ 80 mm' }));
+    await stabil();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Faktor entfernen' }));
+    await stabil();
+
+    expect(TestBed.inject(Router).url).not.toContain('regen_4w');
+    expect(screen.getByRole('group', { name: 'Faktoren' })).not.toHaveTextContent('Niederschlag');
+  });
+
+  it('bietet zum Hinzufügen die Ebenen und die Arten an', async () => {
+    const { stabil } = await karte('/karte?darstellung=kombination');
+    await stabil();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Faktor hinzufügen' }));
+    await stabil();
+
+    const liste = screen.getByRole('group', { name: 'Faktor hinzufügen' });
+    expect(liste).toHaveTextContent('Arten');
+    expect(liste).toHaveTextContent('Steinpilz');
+    expect(screen.getAllByText('schon dabei').length).toBeGreaterThan(0);
+
+    await userEvent.click(screen.getByRole('button', { name: /Boden-pH/ }));
+    await stabil();
+
+    expect(screen.getByRole('dialog', { name: 'Faktor' })).toBeInTheDocument();
+    expect(TestBed.inject(Router).url).toContain('boden_ph');
   });
 
   it('bleibt ohne Manifest bedienbar', async () => {
