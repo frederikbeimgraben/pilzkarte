@@ -32,7 +32,7 @@ describe('SpeciesRowComponent', () => {
 
     const knopf = screen.getByRole('button', { name: /Steinpilz/ });
     expect(knopf).toHaveAttribute('aria-current', 'true');
-    expect(screen.getByText('aktiv')).toBeInTheDocument();
+    expect(screen.getByText('Aktiv')).toBeInTheDocument();
   });
 
   it('nimmt den Fokus auf Zuruf an, damit Pfeiltasten durch die Liste wandern', async () => {
