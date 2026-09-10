@@ -383,6 +383,9 @@ export class KarteComponent implements OnDestroy {
   private async ladeEbenen(): Promise<void> {
     try {
       this.ebenen.set(await this.ebenenDienst.hole());
+      // Erst jetzt steht fest, welche Ebene gilt. Vorher trug die Adresse
+      // höchstens eine Kennung, jetzt trägt sie die aufgelöste Ebene.
+      this.schreibeAdresse();
     } catch {
       // Ohne `layers.json` bleibt die Darstellung Ebene leer. Vorhersage geht.
       this.ebenen.set(null);
@@ -511,7 +514,9 @@ export class KarteComponent implements OnDestroy {
         art: adresse.art,
         kw: woche ? wochenSchluessel(woche) : null,
         darstellung: adresse.darstellung === 'vorhersage' ? null : adresse.darstellung,
-        ebene: this.zeigtEbene() ? (this.ebene()?.id ?? null) : null,
+        // Solange die Ebenen noch nicht da sind, bleibt die Kennung aus der
+        // Adresse stehen; sonst löschte der erste Schreibvorgang den Deep Link.
+        ebene: this.zeigtEbene() ? (this.ebene()?.id ?? this.zustand.ebene()) : null,
         deckkraft: adresse.deckkraft === 100 ? null : adresse.deckkraft,
       },
       queryParamsHandling: 'merge',

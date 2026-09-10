@@ -326,9 +326,15 @@ export class MapLibreAdapter implements MapAdapter {
 
   /**
    * MapLibre zeigt den Hinweis zunächst offen. Am Telefon deckt er damit die
-   * halbe Karte; ein Tipp auf das i klappt ihn wieder auf.
+   * halbe Karte; ein Tipp auf das i klappt ihn auf.
+   *
+   * Die Klasse `maplibregl-compact` wird hier von Hand gesetzt: MapLibre setzt
+   * sie erst, wenn der Text da ist, und hängt dabei jedes Mal wieder das
+   * offene `-show` an. Steht sie schon, lässt es beide in Ruhe.
    */
   private klappeHinweisEin(wirt: HTMLElement): void {
-    wirt.querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
+    const hinweis = wirt.querySelector('.maplibregl-ctrl-attrib');
+    hinweis?.classList.add('maplibregl-compact');
+    hinweis?.classList.remove('maplibregl-compact-show');
   }
 }

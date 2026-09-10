@@ -4,6 +4,7 @@ import { fireEvent, render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { keineVerstoesse } from '../../testing/axe';
 import {
+  EBENEN_ROH,
   MANIFEST_ROH,
   karteMitAttrappen,
   manifestAntwort,
@@ -359,5 +360,32 @@ describe('KarteComponent', () => {
     await stabil();
 
     expect(TestBed.inject(ToastService).toasts().at(-1)?.message).toContain('Kein Standort');
+  });
+
+  it('behält die Ebene aus dem Deep Link, auch wenn `layers.json` später kommt', async () => {
+    vi.stubGlobal('fetch', (pfad: string) =>
+      pfad === '/layers.json'
+        ? new Promise<Response>((fertig) => {
+            setTimeout(() => {
+              fertig({ ok: true, status: 200, json: () => Promise.resolve(EBENEN_ROH) } as Response);
+            }, 20);
+          })
+        : Promise.resolve({
+            ok: true,
+            status: 200,
+            json: () => Promise.resolve(MANIFEST_ROH),
+          } as Response),
+    );
+    const { karte: attrappe } = karteMitAttrappen();
+    const { fixture, navigate } = await render(WirtComponent, { providers: [provideRouter(ROUTEN)] });
+
+    await navigate('/karte?darstellung=ebene&ebene=temperatur');
+    await new Promise((fertig) => setTimeout(fertig, 60));
+    await fixture.whenStable();
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    expect(TestBed.inject(Router).url).toContain('ebene=temperatur');
+    expect(attrappe.vorlagen('ebene').at(-1)).toContain('ebene-temperatur');
   });
 });

@@ -74,13 +74,24 @@ Zwei Punkte, die MapLibre anders macht, als man erwartet:
 
 ### `wert://`
 
-Eine Rasterquelle mit der Vorlage `wert://<art>/<wochenordner>/{z}/{x}/{y}`.
-Das Protokoll schlägt die Kachel im Manifest nach: was dort nicht steht, wird
-nie geholt und kommt leer zurück, ohne 404. Alles andere geht an einen Worker.
-Der holt das PNG (ein Byte je Punkt), färbt es über eine Nachschlagetabelle aus
-dem Höchstwert der Art und schickt ein `ImageBitmap` zurück. Die rohen Bytes
-bleiben im Worker, begrenzt auf 16 MB; die Nachbarwochen liegen so schon da,
-bevor jemand sie wählt.
+Eine Rasterquelle mit der Vorlage `wert://<quelle>/<ordner>/{z}/{x}/{y}`. Jede
+Quelle meldet sich einmal an, mit ihrer Skala, ihrer Rampe und der Liste der
+Kacheln, die Daten tragen: was dort fehlt, wird nie geholt und kommt leer
+zurück, ohne 404. Alles andere geht an einen Worker. Der holt das PNG (ein Byte
+je Punkt), färbt es über eine Nachschlagetabelle und schickt ein `ImageBitmap`
+zurück. Die rohen Bytes bleiben im Worker, begrenzt auf 16 MB; die
+Nachbarwochen liegen so schon da, bevor jemand sie wählt.
+
+Zwei Skalen gibt es. Eine Art trägt ihren Höchstwert `top`, färbt absolut und
+lässt die Deckkraft mit dem Wert laufen. Eine Eingabe-Ebene trägt ihre Spanne
+`low` bis `high` in ihrer Einheit, spannt die Rampe darüber und bleibt gleich
+deckend; sonst sähe ein niedriger pH aus wie fehlende Daten.
+
+### Rollen
+
+Zwei Wertebenen liegen übereinander: `vorhersage` unten, `ebene` darüber. Jede
+Rolle hat eigene Quellen, eine eigene Deckkraft und ihren eigenen Wechsel ohne
+Flackern.
 
 ## Werkstattseite
 

@@ -379,5 +379,6 @@ describe('MapLibreAdapter', () => {
     await a.starte(wirt, { ...OPTIONEN, kompakt: true });
 
     expect(hinweis.classList.contains('maplibregl-compact-show')).toBe(false);
+    expect(hinweis.classList.contains('maplibregl-compact')).toBe(true);
   });
 });
