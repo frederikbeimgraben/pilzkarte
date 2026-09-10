@@ -7,7 +7,9 @@ import {
   computed,
   effect,
   inject,
+  input,
   signal,
+  untracked,
   viewChild,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -129,8 +131,22 @@ export class KarteComponent implements OnDestroy {
   private readonly toasts = inject(ToastService);
   private readonly protokoll = new WertProtokoll(inject(WERT_ARBEITER));
 
+  /**
+   * Nur die Zeichenfläche, ohne Blatt und Knöpfe. So steht die Karte am
+   * Rechner neben einem anderen Reiter, ohne dessen Spalte zu belegen und ohne
+   * unsichtbare Ziele in die Tastaturreihenfolge zu hängen.
+   */
+  readonly nurFlaeche = input(false);
+
   protected readonly zustand = inject(KartenZustand);
   protected readonly breit = this.ansicht.breit;
+
+  /**
+   * Nur die Karte, die gerade der Reiter ist, schreibt und liest die Adresse.
+   * Sonst trüge der Reiter Arten die Abfragewerte der Karte, und ein Wechsel
+   * dorthin setzte die Karte auf ihre Vorgaben zurück.
+   */
+  protected readonly fuehrtAdresse = computed(() => !this.nurFlaeche());
 
   private readonly manifest = signal<ArtManifest | null>(null);
   private readonly ebenen = signal<EbenenManifest | null>(null);
@@ -292,6 +308,7 @@ export class KarteComponent implements OnDestroy {
     this.adapter.waermeAuf();
 
     this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe((abfrage) => {
+      if (!this.fuehrtAdresse()) return;
       this.zustand.uebernimm({
         art: abfrage.get('art'),
         kw: abfrage.get('kw'),
@@ -300,6 +317,16 @@ export class KarteComponent implements OnDestroy {
         deckkraft: abfrage.get('deckkraft'),
         regel: abfrage.get('regel'),
         f: abfrage.get('f'),
+      });
+    });
+
+    // Wird die Karte wieder zum Reiter, trägt die Adresse ihren Zustand erneut.
+    // Ein Link mit eigenen Werten bleibt unangetastet; den liest der Abschnitt
+    // darüber, und er käme sonst unter die Räder.
+    effect(() => {
+      if (!this.fuehrtAdresse()) return;
+      untracked(() => {
+        if (this.route.snapshot.queryParamMap.keys.length === 0) this.schreibeAdresse();
       });
     });
 
@@ -715,6 +742,7 @@ export class KarteComponent implements OnDestroy {
   }
 
   private schreibeAdresse(): void {
+    if (!this.fuehrtAdresse()) return;
     const woche = this.woche();
     const adresse = this.zustand.adresse();
     void this.router.navigate([], {

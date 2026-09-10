@@ -7,6 +7,7 @@ import { AnsichtDienst } from '../core/layout/ansicht.service';
 import { TranslatePipe } from '../core/i18n/translate.pipe';
 import { I18nService } from '../core/i18n/i18n.service';
 import { AvatarButtonComponent, BottomNavComponent, type NavEintrag } from '../ui';
+import { KarteComponent } from '../features/karte/karte.component';
 
 /** Die drei Reiter. Das Konto hängt am Avatar über der Karte, nicht an der Leiste. */
 const REITER: readonly {
@@ -20,13 +21,18 @@ const REITER: readonly {
 ];
 
 /**
- * Die Hülle um jeden Reiter: Navigation und der Avatar über der Karte.
- * Am Telefon steht die Leiste unten, ab 1024 px oben in der linken Spalte.
+ * Die Hülle um jeden Reiter: Navigation, Inhalt und der Avatar über der Karte.
+ *
+ * Am Telefon steht die Leiste unten und der Reiter füllt den Rest. Ab 1024 px
+ * trägt die linke Spalte Navigation und Reiterinhalt, rechts läuft die Karte.
+ * Sie hängt hier und nicht am Reiter Karte, damit sie beim Wechsel auf Arten
+ * oder Einträge stehen bleibt, statt neu zu laden. Auf den anderen Reitern
+ * zeigt sie nur ihre Fläche; das Blatt gehört dem Reiter Karte.
  */
 @Component({
   selector: 'app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AvatarButtonComponent, BottomNavComponent, RouterOutlet, TranslatePipe],
+  imports: [AvatarButtonComponent, BottomNavComponent, KarteComponent, RouterOutlet, TranslatePipe],
   templateUrl: './shell.component.html',
   styleUrl: './shell.component.scss',
 })

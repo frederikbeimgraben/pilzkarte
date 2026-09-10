@@ -24,6 +24,8 @@ export class KartenAttrappe implements MapAdapter {
   };
 
   gewaermt = 0;
+  /** Wie oft die Karte aufgebaut wurde. Ein zweites Mal hieße: neu geladen. */
+  gestartet = 0;
 
   waermeAuf(): void {
     this.gewaermt += 1;
@@ -31,6 +33,7 @@ export class KartenAttrappe implements MapAdapter {
 
   starte(_wirt: HTMLElement, optionen: KartenOptionen): Promise<void> {
     this.optionen = optionen;
+    this.gestartet += 1;
     return Promise.resolve();
   }
 
