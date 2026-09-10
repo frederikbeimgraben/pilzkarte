@@ -298,6 +298,13 @@ Gebiet als Rechteck oder Landkreis wählen, Kacheln bis Zoom 14 und
 Wertkacheln der gewählten Arten laden, in IndexedDB ablegen, Protokoll
 bedient erst lokal. Verwaltung unter Konto, Offline.
 
+Das Archiv baut `tools/pmtiles/bauen.sh` mit Planetiler aus dem
+Geofabrik-Extrakt für Deutschland, mit denselben Argumenten wie
+OpenFreeMap. So tragen die Kacheln das unveränderte OpenMapTiles-Schema,
+und die Stile „liberty“ und „dark“ passen offline wie online. OpenFreeMap
+selbst bietet nur den ganzen Planeten zum Herunterladen an, kein PMTiles
+und keinen Auszug.
+
 Abnahme:
 - Landkreis-Gebiet unter 40 MB, Fortschritt sichtbar, abbrechbar
 - Karte ohne Netz im Gebiet bis Zoom 14 vollständig
