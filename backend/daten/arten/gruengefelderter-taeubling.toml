@@ -4,24 +4,63 @@ gruppe = "taeubling"
 speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "eiche"]
-speisewertHinweis = "Vor dem Sammeln immer die Stielbasis freilegen: ein Täubling hat keine Scheide."
+baeume = ["buche", "eiche", "hainbuche"]
+speisewertHinweis = "Vor dem Einsammeln jeden Fruchtkörper mit der ganzen Stielbasis ausgraben: ein Täubling hat keine Scheide und keinen Ring."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GruengefelderterTaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Fleisch nur schwach rosa bis orangerosa, später rostbraun."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Grün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Weinbraun."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Rosa bis blaugrau."
 
 [merkmale]
-hut = "5 bis 15 cm, graugrün, die Huthaut reißt in kleine, felderige Schollen auf."
-lamellen = "Weiß, brüchig, ziemlich dicht."
-stiel = "Weiß, fest, kurz."
-fleisch = "Weiß, fest, im Alter mürbe."
-geruch = "Unauffällig."
-geschmack = "Mild, nussig."
-sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Buche und Eiche, wärmeliebend, auf besseren Böden."
-zeit = "Juli bis September."
+hut = "4 bis 15, selten bis 20 cm breit, ganz jung oft weißlich, dann grün, grasgrün, spangrün bis lagunenblau, nie violett. Kenntlich an den grünen Feldern, die felderig auf weißlichem bis blassgrünem Grund aufreißen, im Alter mit schmutzig gelben Rissen. Huthaut zur Hälfte abziehbar."
+lamellen = "Weiß, cremefarben, später gelblich, alt braunfleckig, jung eng stehend, ausgebuchtet angewachsen, an der Basis queradrig verbunden."
+stiel = "3 bis 10, selten bis 12 cm hoch, 1 bis 5, selten bis 6 cm dick, weiß, manchmal leicht bräunlich, unter den Lamellen weißlich bereift, auf Druck oft braun verfärbend, zylindrisch."
+fleisch = "Weiß, im Alter leicht bräunlich, fest, spröde und brüchig."
+geruch = "Neutral bis leicht mehlig, nussig, etwas marzipanartig, alt nach Käse."
+geschmack = "Mild."
+sporenpulver = "Weiß bis hellgelblich."
+vorkommen = "Symbiosepilz meist im Laubwald, gern bei Buche, Eiche und Hainbuche. Wächst auch nach längerer Trockenheit noch."
+zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
 name = "Grüner Knollenblätterpilz"
-merkmal = "Hut gleichmäßig olivgrün ohne Felder, mit Ring und Scheide am Stiel."
+merkmal = "Hut gleichmäßig olivgrün ohne Felder, Lamellen frei, Stiel mit Ring und häutiger Scheide an der Knolle."
 essbar = "toedlichGiftig"
+slug = "gruener-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Frauentäubling"
+merkmal = "Huthaut glatt und nicht felderig aufgerissen, Farben von grün über braun bis lila, Lamellen biegsam und nicht brechend."
+essbar = "speisepilz"
+slug = "frauentaeubling"
+
+[[verwechslungen]]
+name = "Rissiger Frauentäubling"
+merkmal = "Huthaut nur in der Mitte rissig, Farben oft violett bis lila, Lamellen biegsam."
+essbar = "essbar"
+slug = "rissiger-frauentaeubling"
+
+[[verwechslungen]]
+name = "Grasgrüner Täubling"
+merkmal = "Hut graugrün bis grasgrün und feucht schmierig, ohne Felder, Stiel längsgerieft."
+essbar = "essbar"
+slug = "grasgruener-taeubling"
 
 [[links]]
 titel = "123pilzsuche.de"

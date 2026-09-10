@@ -3,30 +3,54 @@ lateinisch = "Armillaria mellea"
 gruppe = "hallimasch"
 speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["eiche", "buche", "obstbaum"]
-speisewertHinweis = "Roh giftig. Nur die Hüte, mindestens 20 Minuten kochen, das Kochwasser weggießen. Auch dann verträgt ihn nicht jeder."
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Nur die Hüte, mindestens 20 Minuten abkochen und das Kochwasser weggießen. Nach Frost und bei alten Stücken steigt die Unverträglichkeit. Er ist besser verträglich als der Gemeine Hallimasch, aber auch ihn vertragen nicht alle."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/HoniggelberHallimasch.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "4 bis 12 cm, honiggelb bis olivgelb, in der Mitte mit feinen dunklen Schüppchen."
-lamellen = "Weißlich, im Alter rostfleckig, am Stiel etwas herablaufend."
-stiel = "Schlank, gelblich, mit dickem, gelb gesäumtem Ring, büschelig verwachsen."
-fleisch = "Weiß, faserig."
-geruch = "Kräftig pilzig, etwas säuerlich."
-geschmack = "Roh bitter und scharf."
+hut = "2 bis 12, selten bis 15 cm breit, gelblich, zitronengelb bis hellbraun, mit abwischbaren Schüppchen. Jung stumpfkegelig mit eingerolltem Rand, später abgeflacht und leicht gebuckelt, im Alter gerieft."
+lamellen = "Weißlich, cremeweiß, hellgelb bis hellbraun, später hell rostbraun, angewachsen und mit einem Zahn herablaufend, Schneiden wellig."
+stiel = "4 bis 11, selten bis 18 cm lang, 1,5 bis 2, selten bis 2,2 cm dick, weißlich, gelblich, später bräunlich, mit gelbbeigen bis gelbbraunen Flocken, längsfaserig und zäh. Mit dickem, gelblich bis gelbbraun gesäumtem Ring, darüber längsrillig, darunter meist genattert. Basis leicht verdickt."
+fleisch = "Weißlich bis hellgelb."
+geruch = "Muffig, seifig."
+geschmack = "Herb, kratzend, seifig."
 sporenpulver = "Weiß."
-vorkommen = "Parasit und Zersetzer an Laubholz, gern an Eiche, Buche und Obstbäumen, in großen Büscheln am Stammfuß."
-zeit = "August bis November."
-
-[[verwechslungen]]
-name = "Stockschwämmchen"
-merkmal = "Kleiner, Hut zweifarbig gezont, Sporenpulver rostbraun."
-essbar = "speisepilz"
+vorkommen = "Überwiegend an Laubbäumen, parasitisch oder als Folgezersetzer, Auslöser von Weißfäule. Meist in großen Büscheln."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Gifthäubling"
-merkmal = "Stiel unterhalb des Rings silbrig faserig, Geruch mehlig, an Nadelholz."
+merkmal = "Sporenpulver rostbraun, Lamellen zimtbraun, Stiel unter dem dünnen Ring weißsilbrig überfasert, meist einzeln an Nadelholz."
 essbar = "toedlichGiftig"
+slug = "gifthaeubling"
+
+[[verwechslungen]]
+name = "Grünblättriger Schwefelkopf"
+merkmal = "Lamellen grün bis grüngelb, Stiel mit Cortina statt Ring, Geschmack stark bitter."
+essbar = "giftig"
+slug = "gruenblaettriger-schwefelkopf"
+
+[[verwechslungen]]
+name = "Ringloser Hallimasch"
+merkmal = "Stiel ohne Ring, Hut rotbraun und kleiner, gern an Eiche."
+essbar = "giftig"
+slug = "ringloser-hallimasch"
+
+[[verwechslungen]]
+name = "Sparriger Schüppling"
+merkmal = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun, Geruch rettichartig."
+essbar = "giftig"
+slug = "sparriger-schueppling"
+
+[[verwechslungen]]
+name = "Gemeiner Hallimasch"
+merkmal = "Hut rotbraun statt gelblich, Stiel unter dem Ring mit weißen wolligen Schüppchen, an Nadelholz, schlechter verträglich."
+essbar = "bedingtEssbar"
+slug = "dunkler-hallimasch"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,25 +1,54 @@
 name = "Hasenbovist"
 lateinisch = "Lycoperdon utriforme"
 gruppe = "staeubling"
-speisewert = "bedingtEssbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-speisewertHinweis = "Nur jung mit weißem Inneren."
+speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden: zeigt der Schnitt Lamellenansätze, ist es ein junger Knollenblätterpilz."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Hasenstaubling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-fruchtkoerper = "6 bis 15 cm, kreiselförmig mit breitem Fuß, weiß bis graubraun, feldrig-schollig aufreißend."
-fleisch = "Jung weiß und fest, später olivbraun. Der Kopf zerfällt im Alter und lässt eine schüsselartige Basis stehen."
-geruch = "Jung angenehm."
-geschmack = "Mild."
-sporenpulver = "Olivbraun."
-vorkommen = "Zersetzer auf Magerrasen, Weiden und Dünen, auf sandigen Böden."
-zeit = "Juli bis Oktober."
+fruchtkoerper = "3 bis 16, selten bis 18 cm breit, weiß, später grau, ballon-, sack- oder kreiselförmig. Jung mit plattenartigen, etwas spitzkegeligen Erhebungen, die im Alter verschwinden."
+fleisch = "Zuerst weiß und schwammig, jung zweigeteilt, später gelbgrün, alt eine olivbraune pulverige Sporenmasse."
+geruch = "Angenehm."
+geschmack = "Mild und angenehm, im Alter unangenehm karbolartig."
+sporenpulver = "Olivbraun bis dunkelbraun."
+vorkommen = "Folgezersetzer auf Wiesen, Weiden, Rasen, in Hecken und Obstgärten, besonders in Gebirgslagen."
+zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Kartoffelbovist"
-merkmal = "Haut derb, innen früh schwarzviolett."
-essbar = "giftig"
+name = "Weißer Knollenblätterpilz"
+merkmal = "Jung kugelig, im Schnitt aber mit Hut, Lamellen und Stiel angelegt, Basis in einer häutigen Scheide."
+essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Riesenbovist"
+merkmal = "Deutlich größer, kugelig, Haut glatt und lederartig, Geruch unangenehm."
+essbar = "speisepilz"
+slug = "riesenbovist"
+
+[[verwechslungen]]
+name = "Flaschenstäubling"
+merkmal = "Kleiner, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen Stacheln besetzt."
+essbar = "speisepilz"
+slug = "flaschenbovist"
+
+[[verwechslungen]]
+name = "Beutelstäubling"
+merkmal = "Kleiner, bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun."
+essbar = "essbar"
+slug = "beutelstaeubling"
+
+[[verwechslungen]]
+name = "Wiesenstäubling"
+merkmal = "Kleiner, kugel- bis birnenförmig, Basis mit weißem Myzelfilz und kräftigen Strängen."
+essbar = "essbar"
+slug = "wiesenstaeubling"
 
 [[links]]
 titel = "123pilzsuche.de"

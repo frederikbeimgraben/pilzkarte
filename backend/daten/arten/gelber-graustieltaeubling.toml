@@ -4,23 +4,63 @@ gruppe = "taeubling"
 speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["birke"]
+baeume = ["birke", "pappel"]
+speisewertHinweis = "Sehr selten und in Deutschland gefährdet. Nur einzelne Fruchtkörper nehmen. Ritzt man den Stiel schon im Wald an, färbt sich die Stelle nach etwa 15 Minuten rötlich und nach ein bis zwei Stunden grau; das erspart die Kostprobe."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GeGraustiel.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Rosarot."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Weinrot, etwas rosa."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Grün."
+
+[[reagenzien]]
+reagenz = "formalin"
+reaktion = "Stieloberfläche rosa."
 
 [merkmale]
-hut = "4 bis 10 cm, leuchtend chromgelb, glatt, Huthaut halb abziehbar."
-lamellen = "Cremefarben, im Alter und auf Druck grau anlaufend."
-stiel = "Weiß, im Alter grau werdend."
-fleisch = "Weiß, an der Luft langsam grau."
-geruch = "Unauffällig."
-geschmack = "Mild."
-sporenpulver = "Blass ocker."
-vorkommen = "Mykorrhiza mit Birke, in Mooren und feuchten Birkenwäldern."
-zeit = "Juli bis Oktober."
+hut = "2 bis 8, selten bis 11 cm breit, gelb, chromgelb bis zitronengelb. Huthaut feucht glänzend und etwas schmierig, trocken matt, zur Hälfte abziehbar. Mitte später vertieft, Rand im Alter gerieft bis leicht gefurcht."
+lamellen = "Weißlich, oft mit gelblicher Schneide, später grauend."
+stiel = "2 bis 8, selten bis 11 cm lang, 1 bis 2, selten bis 3 cm dick, weiß, nach Berührung rötend und später graufleckig, hart und fest, voll."
+fleisch = "Weiß, bei Verletzung meist rötend, danach grauend bis schwärzend, fest."
+geruch = "Meist unbedeutend, schwach obstartig."
+geschmack = "Mild, leicht schärflich."
+sporenpulver = "Hellocker."
+vorkommen = "Symbiosepilz auf moorigem, saurem Boden im Laubwald, häufig bei Birke, vereinzelt bei Espe und Erle. In Deutschland gefährdet."
+zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gelber Ledertäubling"
-merkmal = "Geschmack scharf, Fleisch läuft nicht grau an."
-essbar = "ungeniessbar"
+name = "Blassgelber Täubling"
+merkmal = "Kleiner, Hut blasser gelbocker, Fleisch nicht verfärbend, Geschmack scharf."
+essbar = "giftig"
+slug = "blassgelber-taeubling"
+
+[[verwechslungen]]
+name = "Ockertäubling"
+merkmal = "Hut gelbocker, honiggelb bis rostrot und matt, Fleisch grauend ohne vorheriges Röten, Geschmack etwas bitterlich."
+essbar = "essbar"
+slug = "ockertaeubling"
+
+[[verwechslungen]]
+name = "Violettstieliger Pfirsichtäubling"
+merkmal = "Stiel später rosalila überhaucht und netzig warzig, Geruch im Alter heringsartig."
+essbar = "essbar"
+slug = "violettstieliger-pfirsichtaeubling"
+
+[[verwechslungen]]
+name = "Orangeroter Graustieltäubling"
+merkmal = "Hut gelborange, ziegelrot bis kupferfarben, im Nadelwald und Torfmoor."
+essbar = "essbar"
+slug = "orangeroter-graustieltaeubling"
 
 [[links]]
 titel = "123pilzsuche.de"

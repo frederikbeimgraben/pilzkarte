@@ -1,27 +1,68 @@
 name = "Goldröhrling"
 lateinisch = "Suillus grevillei"
 gruppe = "schmierroehrling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["laerche"]
-speisewertHinweis = "Huthaut abziehen, sonst wirkt er abführend."
+baeume = ["laerche", "douglasie", "kiefer"]
+speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen und den Schleim vom Hut abziehen. Wie alle Schmierröhrlinge löst er bei manchen Magen-Darm-Beschwerden aus."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Goldroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Hut grau, Fleisch erst rosa, dann blassblau, Poren bräunlich."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Hut grau, Fleisch erst rosa, dann blassblau, Poren rostrot."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Hut grauoliv, Fleisch blau bis olivblau, Poren bräunlich."
 
 [merkmale]
-hut = "4 bis 12 cm, leuchtend gold- bis rotgelb, glänzend schleimig."
-roehren = "Zitronengelb, fein, auf Druck rostbraun fleckend."
-stiel = "Gelb, mit weißlichem Ring, darüber genetzt, darunter rotbraun gefleckt."
-fleisch = "Gelb, im Schnitt schwach rosa anlaufend."
-geruch = "Unauffällig."
-geschmack = "Mild."
-sporenpulver = "Ockerbraun."
-vorkommen = "Streng an Lärche gebunden, in Parks, Alleen und Forsten."
-zeit = "Juni bis Oktober."
+hut = "3 bis 12, selten bis 15 cm breit, hellgelb, später orangerötlich, schleimig schmierig, Mitte oft etwas gebuckelt. Der gelbliche Schleim lässt sich feucht gut abziehen, die Haut selbst nur schwer. Junge Pilze sind ganz von einer häutigen Teilhülle umschlossen."
+roehren = "Gelb, später braungelb, auf Druck rosalila fleckend."
+stiel = "5 bis 10, selten bis 12 cm lang, 0,5 bis 2, selten bis 2,5 cm dick, gelb, ganz schmierig schleimig. Mit gelblichem Ring, darunter bräunlich gefasert, darüber gelblich wie die Röhren."
+fleisch = "Zitronengelb bis satt gelb, im Hut oft heller, weich, rosalila verfärbend, selten etwas blauend."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, säuerlich, roh fade, im Alter etwas muffig."
+sporenpulver = "Gelblich braun."
+vorkommen = "Symbiosepilz fast ausschließlich bei Lärche, extrem selten unter Douglasie oder Weymouthskiefer."
+zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Butterpilz"
-merkmal = "Hut braun statt goldgelb, bei Kiefer."
+name = "Dottergelber Klumpfuß"
+merkmal = "Lamellen statt Röhren, Stiel mit gerandeter Knolle und rostbraunem Sporenpulver, Geruch widerlich erdig."
+essbar = "toedlichGiftig"
+slug = "dottergelber-klumpfuss"
+
+[[verwechslungen]]
+name = "Gelber Hohlfußröhrling"
+merkmal = "Hut kanariengelb und bräunlich schuppig filzig, Stiel hohl, Röhren wabenartig und schwer vom Hut trennbar."
 essbar = "essbar"
+slug = "gelber-hohlfussroehrling"
+
+[[verwechslungen]]
+name = "Goldporiger Röhrling"
+merkmal = "Hut gelbrosa bis beigerosa, Röhren grobporig, Fleisch weiß mit rosaviolettem Ton, im Laubwald."
+essbar = "essbar"
+slug = "goldporiger-roehrling"
+
+[[verwechslungen]]
+name = "Kuhröhrling"
+merkmal = "Hut bräunlich, Röhren graugelb bis rotbraun mit weiten Mündungen, kein Ring, bei Kiefer."
+essbar = "essbar"
+slug = "kuhroehrling"
+
+[[verwechslungen]]
+name = "Elfenbeinröhrling"
+merkmal = "Hut weiß bis cremefarben, Stiel mit braunen harzigen Pünktchen, bei Zirbel- und Weymouthskiefer."
+essbar = "essbar"
+slug = "elfenbeinroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"
