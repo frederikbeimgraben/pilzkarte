@@ -130,6 +130,44 @@ For a local test the script also serves the map directory:
 
     python src/pilze/api.py --static reports/maps --port 8111
 
+## The input layers
+
+`input_layers.py` renders what the model was told, next to what it concluded.
+Fifteen static layers describe the place and are drawn once. Fifteen weekly
+layers describe the weather and follow the week slider. Every layer names its
+unit and the two ends of its scale, so the Faktor screen can put a value on a
+handle.
+
+The weather sits on 5 km cells, so weekly tiles stop at zoom 7. All of it
+comes from the DWD grids the chain already holds: HYRAS for rain, temperature
+and humidity, and the DWD soil moisture per tree species.
+
+| layer | what it says | unit |
+|---|---|---|
+| `regen`, `regen_2w`, `regen_4w`, `regen_8w` | rain of the week and of the last 2, 4 and 8 weeks | mm |
+| `regen_anomalie` | rain of the last 4 weeks against the normal of that cell and week | mm |
+| `regen_tage_seit` | days since the last day above 5 mm, capped at 60 | days |
+| `temperatur`, `temperatur_min`, `temperatur_max` | mean, lowest and highest of the week | °C |
+| `temperatur_2w`, `temperatur_4w` | mean of the last 2 and 4 weeks | °C |
+| `frosttage` | days of the week below 0 °C | days |
+| `hitzetage` | days of the week above 25 °C | days |
+| `luftfeuchte` | relative humidity of the week | % |
+| `bodenfeuchte` | plant available soil water, mean over spruce, beech, oak and pine | % of usable field capacity |
+
+Three of them are day questions that no weekly reduction answers: how many
+days had frost, how many were hot, and how long ago it last rained. The weekly
+table holds the sum, the mean, the minimum and the maximum of a week, and none
+of those is a count of days. `tagesmasse.py` answers them on the daily grid,
+and `extract_grids.py` reduces the result to weeks like every other variable.
+Every test runs on the cell mean of the day: a frost day of a 5 km cell is a
+day whose mean minimum was below zero.
+
+The scale of a layer comes from the 1st and the 99th percentile over every
+week that is rendered, so one colour ramp fits the whole year. Three layers
+take their scale from their definition instead: a week has seven days, and the
+days since the last rain stop at 60. A summer-only run would otherwise show no
+frost day and therefore no scale at all.
+
 ## The manifests
 
 Every rendered map writes a manifest next to its tiles: `<slug>.json` per

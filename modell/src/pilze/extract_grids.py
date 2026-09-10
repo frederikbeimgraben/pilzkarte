@@ -27,12 +27,16 @@ from __future__ import annotations
 import argparse
 import os
 import glob
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import xarray as xr
 from pyproj import Transformer
+
+sys.path.insert(0, str(Path(__file__).parent))
+from day_measures import days_since, threshold_days
 
 # The cell size in meters. Set PILZE_CELL_SIZE to sweep the resolution.
 CELL_SIZE = int(os.environ.get("PILZE_CELL_SIZE", 5000))
@@ -52,6 +56,18 @@ HYRAS_VARS = [
 TREE_SPECIES = ("spruce", "beech", "oak", "pine")
 
 BLOCK = 31  # days read at once
+
+
+# Ein Tagesmass, das keine Wochenreduktion ausdruecken kann, siehe
+# day_measures.py.
+# folder, variable, how to reduce a week, column, the day measure
+HYRAS_TAGE = [
+    ("precipitation", "pr", "last", "days_since_rain", lambda: days_since(5.0, 60)),
+    ("air_temperature_min", "tasmin", "sum", "frost_days",
+     lambda: threshold_days(0.0, above=False)),
+    ("air_temperature_max", "tasmax", "sum", "heat_days",
+     lambda: threshold_days(25.0, above=True)),
+]
 
 
 def pixel_cells(x: np.ndarray, y: np.ndarray, transformer: Transformer | None):
@@ -176,16 +192,19 @@ def main() -> None:
     soil_map = flat_map(*pixel_cells(sref.x.values, sref.y.values, to_model), lookup, n_cells)
     print(f"soil pixels inside cells: {(soil_map >= 0).sum()}")
 
-    jobs = [(f"data/raw/dwd/hyras/{folder}", var, how, hyras_map, var)
+    jobs = [(f"data/raw/dwd/hyras/{folder}", var, how, hyras_map, var, None)
             for folder, var, how in HYRAS_VARS]
-    jobs += [(f"data/raw/dwd/soil_moisture/{tree}", "paws", "mean", soil_map, f"paws_{tree}")
+    jobs += [(f"data/raw/dwd/soil_moisture/{tree}", "paws", "mean", soil_map,
+              f"paws_{tree}", None)
              for tree in TREE_SPECIES]
+    jobs += [(f"data/raw/dwd/hyras/{folder}", var, how, hyras_map, name, build())
+             for folder, var, how, name, build in HYRAS_TAGE]
 
     checkpoints = args.out.parent / "weekly"
     checkpoints.mkdir(parents=True, exist_ok=True)
 
     collected: list[pd.Series] = []
-    for folder, var, how, mapping, name in jobs:
+    for folder, var, how, mapping, name, day_measure in jobs:
         cache = checkpoints / f"{name}.parquet"
         alt = None
         if cache.exists():
@@ -210,6 +229,8 @@ def main() -> None:
                 continue
             daily, dates = daily_cell_means(found[-1], var, mapping, n_cells,
                                             lookup, transformer)
+            if day_measure is not None:
+                daily = day_measure(daily)
             parts.append(weekly(daily, dates, how, cells, name))
         if not parts:
             print(f"{name}: no files, skipped")

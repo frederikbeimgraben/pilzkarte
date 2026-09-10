@@ -472,6 +472,52 @@ ist jedes Mal derselbe: zu wenige Besuche fuer ein eigenes Modell.
          `layers.json` ueber 2 MB gross. `build_page.py` laesst die
          Histogramme aus der alten Seite heraus, `index.html` bleibt bei
          179 kB. `update.sh` bleibt unveraendert.
+   - [x] C3 Mehr Wochenebenen. **Gebaut 2026-09-10.** Acht neue Ebenen fuer
+         die Kombination, alle aus den DWD-Rastern, die schon auf der Platte
+         liegen: Tage seit dem letzten Regen ueber 5 mm (gekappt bei 60),
+         Hoechsttemperatur, Mitteltemperatur der letzten 2 und 4 Wochen,
+         Frosttage, Hitzetage, Luftfeuchte und Bodenfeuchte. Damit sind es 15
+         Wochenebenen und 15 feste.
+         Drei davon sind Fragen an den Tag, die keine Wochenreduktion
+         beantwortet: die Wochentabelle haelt Summe, Mittel, Minimum und
+         Maximum, und die Zahl der Frosttage steht in keinem davon.
+         `tagesmasse.py` rechnet sie auf dem Tagesraster, `extract_grids.py`
+         reduziert sie danach wie jede andere Groesse. Die drei Spalten
+         heissen `days_since_rain`, `frost_days` und `heat_days` — kein
+         `_lag`, `_sum`, `_mean`, `_anom` oder `_ratio` im Namen, also nimmt
+         `visit_model.py` sie nicht als Feature auf und das Training bleibt,
+         wie es ist. Die Namen der Ebenen im Manifest bleiben deutsch wie die
+         22 bestehenden (`regen`, `wald`, `boden_ph`); sie stehen im Vertrag
+         zur App und im URL-Zustand einer Kombination, und den stellt R3 um,
+         nicht dieses Paket. Das Nachrechnen ueber 2014 bis 2026 kostete gut zwei
+         Minuten je Groesse (Zeitstempel der Zwischenspeicher: 19:42:08,
+         19:44:21, 19:46:13) und legte drei Dateien unter
+         `data/interim/weekly/` an; danach zieht `update.sh` sie mit
+         `--refresh-from` wie alles andere nach. Auf den Server muessen die
+         drei Zwischenspeicher einmal mitgehen: dort liegt nur das laufende
+         und das Vorjahr an HYRAS, eine Groesse ohne Zwischenspeicher kaeme
+         also mit zu wenigen Zell-Wochen heraus und `merge_weekly.py` braeche
+         ab. `deploy_daten.sh` spiegelt `data/interim/weekly/` schon mit, es
+         genuegt also, ihn einmal laufen zu lassen.
+         Die Renderzeit war das Problem. Acht Ebenen mehr kosteten 66 Prozent
+         mehr, die Abnahme laesst 30 zu. Gemessen an zwei Wochen, CPU-Zeit mit
+         Kindprozessen, Median aus drei Laeufen: 7 Ebenen 55,1 s, 15 Ebenen
+         einzeln gewarpt 91,7 s. Der Start von gdalwarp ist das meiste davon
+         (ein Lauf 0,3 s, ein weiteres Band darin 0,04 s), also je Woche ein
+         Quellbild mit einem Band je Ebene und drei Laeufe fuer alle fuenfzehn:
+         **60,6 s, plus 10 Prozent.** Fuer den Montagslauf ueber 90 Wochen
+         heisst das 12 statt 15 Minuten, mit mehr als der doppelten Zahl an
+         Ebenen.
+         Die Artkacheln bleiben byteweise gleich (Gegenprobe: eine Woche
+         Steinpilz, 83 Kacheln). Die Wochenebenen weichen an 0,1 Prozent der
+         Punkte um eine von 255 Stufen ab, weil gdalwarp mit fuenfzehn
+         Baendern anders stueckelt — unter der Genauigkeit eines
+         5-km-Wetterfeldes auf 770-m-Punkten.
+         Offen als Folgeschritt: die Rampe je Ebene. Alle Ebenen teilen sich
+         heute die Farbrampe der Vorhersage und unterscheiden sich nur in
+         `low` und `high`. Fuer die Regenanomalie waere eine zweiseitige
+         Rampe richtig, fuer Frost- und Hitzetage eine mit acht Stufen. Das
+         ist eine Absprache mit dem Frontend, kein Alleingang der Kette.
    - [ ] Begehungstabelle als Parquet-Export für die Saisonkurve der App.
    - [ ] `src/pilze/api.py`, `build_page.py`, `web/`, `katalog.py` fallen
          weg, sobald die App den Reiter Arten und das Melden übernimmt.
