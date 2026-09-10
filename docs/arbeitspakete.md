@@ -295,6 +295,40 @@ Abnahme je Schritt:
 - Verhalten unverändert, alle Tests grün, Abdeckung wie vorher
 - Kommentare und Dokumente bleiben deutsch
 
+### G1 Texte in der Datenbank
+
+Die Oberfläche trägt heute ihre Texte im Code. Sie ziehen in die
+Datenbank um und werden mit einer Rolle bearbeitbar.
+
+- Tabelle `text` (Schlüssel, Sprache, Wert, geändert am, geändert von).
+  Eine Migration schreibt den Anfangsbestand aus dem heutigen Katalog,
+  beide Sprachen, und ist wiederholbar.
+- `GET /api/texte?sprache=de` liefert den ganzen Katalog, öffentlich, mit
+  ETag und langer Gültigkeit. `PUT /api/texte/{schluessel}` ändert einen
+  Text, nur mit der Rolle `admin`. `DELETE` setzt auf die Vorgabe zurück.
+- Die Rolle kommt aus dem Anspruch `groups` des Tokens. Die Gruppe heißt
+  `pilze-admins` und steht im NixOS-Blueprint von Authentik; der Name
+  steht in `PILZE_ADMIN_GRUPPE`.
+- Fehler und Meldungen des Backends nutzen dieselben Schlüssel.
+
+Abnahme:
+- Kein Text mehr fest im Code, geprüft mit einem Test über die Vorlagen
+- Ohne Anmeldung liest jeder, ohne die Rolle schreibt niemand (Test)
+- Migration auf leerer und auf bestehender Datenbank grün
+
+### G2 Texte bearbeiten
+
+Der Client lädt den Katalog beim Start vom Server und hält den
+mitgelieferten Bestand als Rückfall. Unter Konto steht für die Rolle
+`admin` ein Punkt „Texte": Liste aller Schlüssel nach Bereich, Suche,
+Anzeige beider Sprachen nebeneinander, Ändern, Zurücksetzen, Hinweis auf
+geänderte Einträge. Eine Änderung wirkt sofort in der Oberfläche.
+
+Abnahme:
+- Ohne Rolle ist der Punkt nicht sichtbar und die Route führt zurück
+- Offline zeigt die App den zuletzt geladenen Katalog
+- Ein geänderter Text erscheint nach dem Speichern ohne Neuladen
+
 ## Block 4, Offline und Feinschliff
 
 ### F1 Offline-Warteschlange und PWA

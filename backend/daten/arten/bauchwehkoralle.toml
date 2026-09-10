@@ -3,11 +3,11 @@ lateinisch = "Ramaria mairei"
 gruppe = "glucke"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Sie löst Magen-Darm-Beschwerden mit Durchfall aus, meist 30 bis 90 Minuten nach dem Essen. Korallen sind schwer zu trennen; von der Rosaspitzigen Koralle ist sie kaum sicher zu unterscheiden."
-marktfaehig = false
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Blasse Koralle", "Bauchweh-Ziegenbart", "Rosaliche Koralle"]
@@ -35,13 +35,13 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Krause Glucke"
 merkmal = "Blumenkohlartig gekräuselt statt verästelt, am Wurzelgeflecht von Kiefern."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "krause-glucke"
 
 [[verwechslungen]]
 name = "Breitblättrige Glucke"
 merkmal = "Hirnartig breit gekräuselte Lappen, an den Wurzeln von Laubbäumen."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "breitblaettrige-glucke"
 
 [[links]]

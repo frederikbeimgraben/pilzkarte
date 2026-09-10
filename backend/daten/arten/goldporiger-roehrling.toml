@@ -3,11 +3,11 @@ lateinisch = "Aureoboletus gentilis"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "kastanie"]
 speisewertHinweis = "Selten, in Deutschland gefährdet und in der Schweiz verletzlich. Besser stehen lassen."
-marktfaehig = false
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Goldporiger Pulverröhrling"]
@@ -35,7 +35,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Bei Lärche, Hut goldgelb und schleimig, Stiel mit Ring."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[verwechslungen]]
@@ -46,7 +46,7 @@ essbar = "essbar"
 [[verwechslungen]]
 name = "Ziegenlippe"
 merkmal = "Hut trocken samtig olivbraun, Röhren blassgelb und grobporig, Fleisch weißlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ziegenlippe"
 
 [[links]]

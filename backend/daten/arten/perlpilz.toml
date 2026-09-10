@@ -1,14 +1,19 @@
 name = "Perlpilz"
 lateinisch = "Amanita rubescens"
 gruppe = "wulstling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh giftig. Mindestens fünf Minuten garen, bis 90 °C Kerntemperatur erreicht sind. Nur junge Fruchtkörper nehmen, alte verderben schnell. Der stark geriefte Ring und das Röten sind Pflichtmerkmale; wer den Pantherpilz nicht sicher trennt, lässt ihn stehen."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Rötender Knollenblätterpilz", "Rötender Wulstling", "Perlen-Wulstling"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "fichte", "eiche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Perlpilz.htm"
@@ -62,7 +67,7 @@ slug = "koenigsfliegenpilz"
 [[verwechslungen]]
 name = "Grauer Wulstling"
 merkmal = "Der ganze Pilz ohne Rottöne, Geruch rüben- bis rettichartig, Knolle abgesetzt und ohne Söckchen."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "grauer-wulstling"
 
 [[links]]

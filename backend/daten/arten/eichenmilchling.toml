@@ -3,12 +3,12 @@ lateinisch = "Lactarius quietus"
 gruppe = "milchling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche"]
 speisewertHinweis = "Der Geruch nach Blattwanzen bleibt beim Garen erhalten. Als Speisepilz taugt er wenig."
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "sehrHaeufig"
 synonyme = ["Lactarius quieta", "Agaricus quietus", "Lactifluus quietus"]
 
@@ -36,7 +36,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Rotbrauner Milchling"
 merkmal = "Milch weiß und bleibend, Geschmack scharf, Geruch ohne Wanzennote."
-essbar = "ungeniessbar"
+essbar = "essbar"
 slug = "rotbrauner-milchling"
 
 [[links]]

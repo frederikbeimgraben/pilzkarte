@@ -2,7 +2,7 @@
 
 from typing import Annotated
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 
 from app.core.settings import Settings, get_settings
 from app.modules.species.catalog import DATA, Catalog, catalog
@@ -18,12 +18,29 @@ def current_catalog(
     return catalog(DATA, settings.maps)
 
 
-@router.get("", summary="Alle sammelbaren Arten")
+@router.get("", summary="Die sammelbaren Arten")
 async def species_list(
     catalog: Annotated[Catalog, Depends(current_catalog)],
+    *,
+    # Die Namen auf dem Draht bleiben deutsch, bis R3 den Vertrag umstellt.
+    collectable: Annotated[
+        bool,
+        Query(
+            alias="sammelbar",
+            description="true liefert die sammelbaren Arten, false die Verwechslungsarten.",
+        ),
+    ] = True,
+    all_groups: Annotated[
+        bool,
+        Query(alias="alle", description="Liefert beide Gruppen zusammen und schlaegt sammelbar."),
+    ] = False,
 ) -> SpeciesList:
-    """Liefert jede Art mit Stufe, Tags und der Saisonkurve aller Jahre."""
-    return catalog.listing()
+    """Liefert die Arten mit Stufe, Tags und der Saisonkurve aller Jahre.
+
+    Ohne Parameter kommen nur die sammelbaren Arten. Die Verwechslungsarten
+    gehoeren nicht in denselben Reiter wie die Speisepilze.
+    """
+    return catalog.listing(only_collectable=None if all_groups else collectable)
 
 
 @router.get("/{slug}", summary="Profil einer Art")

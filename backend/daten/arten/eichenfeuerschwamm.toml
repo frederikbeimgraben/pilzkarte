@@ -3,11 +3,11 @@ lateinisch = "Fomitiporia robusta"
 gruppe = "porling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["eiche", "buche", "kastanie"]
 speisewertHinweis = "Das Fleisch ist holzig, fest und zäh. Er lässt sich nicht essen."
-marktfaehig = false
 synonyme = ["Phellinus robustus", "Phellinus aestriplex", "Polyporus robustus", "Ochroporus robustus", "Fomes tuberosus"]
 
 [quelle]

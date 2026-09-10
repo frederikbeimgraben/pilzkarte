@@ -3,11 +3,11 @@ lateinisch = "Agaricus xanthodermus"
 gruppe = "champignon"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen am tinten- bis karbolartigen Geruch nach Phenol und an der starken Gelbfärbung der Stielbasis beim Anschneiden. Die Vergiftung ist nicht gefährlich, aber sehr unangenehm: meist Bauchschmerzen über einige Stunden, in Ausnahmefällen Schwindel und Sehstörungen. Bei jungen Stücken ist der Geruch oft nicht eindeutig; dann den Pilz stehen lassen."
-marktfaehig = false
 weitereNamen = ["Giftchampignon", "Tintenegerling", "Giftegerling", "Karbolchampignon"]
 
 [quelle]
@@ -49,13 +49,13 @@ slug = "uebelriechender-egerling"
 [[verwechslungen]]
 name = "Wiesenchampignon"
 merkmal = "Stielbasis nicht knollig und nicht gelb verfärbend, Geruch angenehm pilzig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "wiesenchampignon"
 
 [[verwechslungen]]
 name = "Frühlingschampignon"
 merkmal = "Geruch mandel- bis anisartig, Hut mit seidigen gelbbraunen Radialfasern."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fruehlingschampignon"
 
 [[links]]

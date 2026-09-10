@@ -1,13 +1,14 @@
 name = "Schafporling"
 lateinisch = "Albatrellus ovinus"
 gruppe = "porling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Besonders geschützt. Roh löst er Unverträglichkeiten aus: durchgaren und Kostproben wieder ausspucken."
-marktfaehig = true
-wertigkeit = 2
 weitereNamen = ["Schofferl", "Echter Schafporling", "Schafeuter", "Schafsporling"]
 synonyme = ["Scutiger ovinus", "Polyporus limonius", "Polyporus lutescens", "Caloporus ovinus", "Albatrellus albidus"]
 
@@ -48,19 +49,19 @@ slug = "gelbgruener-kammporling"
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Hut semmelgelb bis orangebraun, Stiel kürzer, schmeckt schnell bitterlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Rötender Schafeuterporling"
 merkmal = "Hut fleischrosa bis rosa getönt, Druckstellen röten und gilben."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "roetender-schafeuterporling"
 
 [[verwechslungen]]
 name = "Zitronenporling"
 merkmal = "Hut schnell zitronengelb, Fleisch im Schnitt langsam schwach rotbraun anlaufend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "zitronenporling"
 
 [[links]]

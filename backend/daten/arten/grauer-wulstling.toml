@@ -1,14 +1,14 @@
 name = "Grauer Wulstling"
 lateinisch = "Amanita spissa (zusammengefasste syn. amanita excelsa, amanita spissa var. valida, amanita spissa var. cariosa, amanita cariosa)"
 gruppe = "wulstling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Roh giftig. Er schmeckt muffig und herb, 123pilzsuche gibt ihm nur die Wertigkeit 4. Wegen der Ähnlichkeit mit dem tödlich giftigen Pantherpilz ist er kein Pilz für Anfänger."
-marktfaehig = false
-wertigkeit = 4
 weitereNamen = ["Hoher Wulstling", "Gedrungener Wulstling", "Eingesenkter Wulstling", "Schäler"]
 
 [quelle]

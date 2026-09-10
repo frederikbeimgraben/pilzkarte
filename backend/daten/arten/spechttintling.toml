@@ -3,11 +3,11 @@ lateinisch = "Coprinopsis picacea"
 gruppe = "tintling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungenießbar wegen des muffigen Geruchs und Geschmacks."
-marktfaehig = false
 weitereNamen = ["Elsterntintling"]
 synonyme = ["Coprinus picaceus", "Agaricus picaceus"]
 

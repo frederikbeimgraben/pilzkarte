@@ -1,13 +1,14 @@
 name = "Wiesenchampignon"
 lateinisch = "Agaricus campestris"
 gruppe = "champignon"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur Fruchtkörper mit rosa Lamellen nehmen; sind die Lamellen braun, ist der Pilz alt. Tödlich giftige Knollenblätterpilze haben nie rosa Lamellen. Läuft die Stielbasis gelb an oder riecht der Pilz nach Karbol oder Tinte, bleibt er stehen."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Maichampignon", "Feldegerling", "Wiesenegerling"]
 
 [quelle]
@@ -53,19 +54,19 @@ slug = "uebelriechender-egerling"
 [[verwechslungen]]
 name = "Schafchampignon"
 merkmal = "Größer, Hut weiß mit seidiger Haut, Lamellen jung grauweiß, Geruch nach Anis, Stiel gilbend und unter dem Ring körnig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schafchampignon"
 
 [[verwechslungen]]
 name = "Frühlingschampignon"
 merkmal = "Hut weiß bis gelblich und bei Berührung strohgelb verfärbend, Stiel gilbend, Spitze etwas rötlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fruehlingschampignon"
 
 [[verwechslungen]]
 name = "Braunschuppiger Wiesenchampignon"
 merkmal = "Varietät des Wiesenchampignons, Hut braun schuppig, Ring ebenso verkümmert."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "braunschuppiger-wiesenchampignon"
 
 [[links]]

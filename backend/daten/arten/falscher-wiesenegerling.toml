@@ -3,11 +3,11 @@ lateinisch = "Agaricus pseudopratensis (agaricus xanthoderma var. pseudopratensi
 gruppe = "champignon"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Er riecht unangenehm nach Karbol, Tinte oder Urin, nicht pilzig wie die Wiesenchampignons. Die Stielbasis gilbt auf Druck oder im Schnitt, manchmal nur schwach und später rötend. Riecht ein Champignon nicht nach Champignon, bleibt er stehen."
-marktfaehig = false
 gefaehrdung = "extremSelten"
 weitereNamen = ["Falscher Wiesen-Egerling", "Schmalberingter Karbol-Egerling", "Rötender Karbolegerling"]
 
@@ -48,13 +48,13 @@ slug = "uebelriechender-egerling"
 [[verwechslungen]]
 name = "Wiesenchampignon"
 merkmal = "Riecht angenehm pilzig, gilbt nicht, Ring einfach und dünn."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "wiesenchampignon"
 
 [[verwechslungen]]
 name = "Schafchampignon"
 merkmal = "Riecht nach Anis, gilbt nur an der Oberfläche, nicht an der Schnittstelle in der Stielbasis."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schafchampignon"
 
 [[links]]

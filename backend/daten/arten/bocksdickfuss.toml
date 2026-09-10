@@ -3,11 +3,11 @@ lateinisch = "Cortinarius camphoratus"
 gruppe = "schleierling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der widerliche Geruch nach Ziegenbock, Schweißfüßen oder faulenden Kartoffeln macht ihn leicht kenntlich."
-marktfaehig = false
 haeufigkeit = "haeufig"
 
 [quelle]
@@ -33,13 +33,13 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Violetter Rötelritterling"
 merkmal = "Lamellen rein lila und nie bräunlich, kein Sporenpulver am Stiel, Geruch parfümiert und fruchtig."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
 
 [[verwechslungen]]
 name = "Lilastieliger Rötelritterling"
 merkmal = "Hut grauviolett bis beigebräunlich, Lamellen weißlich lila, Geruch leicht fruchtig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lilastieliger-roetelritterling"
 
 [[links]]

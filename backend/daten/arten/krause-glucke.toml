@@ -1,13 +1,14 @@
 name = "Krause Glucke"
 lateinisch = "Sparassis crispa"
 gruppe = "glucke"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte"]
 speisewertHinweis = "Den Strunk nicht mitessen, er kann Übelkeit und Erbrechen auslösen. Im Alter wird sie bitterlich. Zum Putzen kurz in kochendes Wasser tauchen oder in Scheiben schneiden und wässern."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Fette Henne", "Bärenschädel"]
 
 [quelle]
@@ -44,7 +45,7 @@ slug = "weinbraunverfaerbende-koralle"
 [[verwechslungen]]
 name = "Breitblättrige Glucke"
 merkmal = "Lappen breiter und hirnartig, an Laubholz, beim Kochen Waschküchengeruch."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "breitblaettrige-glucke"
 
 [[verwechslungen]]
@@ -56,7 +57,7 @@ slug = "aestiger-stachelbart"
 [[verwechslungen]]
 name = "Gelbe Koralle"
 merkmal = "Gelb bis goldgelb, ästig verzweigt aus einem weißen Strunk, Astspitzen alt bitterlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gelbe-koralle"
 
 [[links]]

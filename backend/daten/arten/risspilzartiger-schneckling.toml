@@ -3,11 +3,11 @@ lateinisch = "Hygrophorus inocybiformis"
 gruppe = "schneckling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungeniessbar und in Europa sehr selten, deshalb stehen lassen."
-marktfaehig = false
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RisspilzartigerSchneckling.htm"

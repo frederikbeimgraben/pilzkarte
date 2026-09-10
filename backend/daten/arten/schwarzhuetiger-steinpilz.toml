@@ -1,16 +1,21 @@
 name = "Schwarzhütiger Steinpilz"
 lateinisch = "Boletus aereus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kastanie"]
 speisewertHinweis = "Besonders geschützt und selten. Wenn überhaupt, nur wenige Fruchtkörper für den Eigenbedarf."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 weitereNamen = ["Weißer Bronzeröhrling"]
 synonyme = ["Boletus edulis forma aereus", "Tubiporus edulis subsp. aereus"]
+
+[baeumeAusErfahrung]
+baeume = ["buche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerSteini.htm"
@@ -47,7 +52,7 @@ slug = "wurzelnder-bitterroehrling"
 [[verwechslungen]]
 name = "Gelber Steinpilz"
 merkmal = "Röhren gelblich, Fleisch zitronengelb und leicht blauend, Stielbasis mit wurzelndem Anhängsel."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "anhaengselroehrling"
 
 [[links]]

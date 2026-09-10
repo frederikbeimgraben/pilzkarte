@@ -3,11 +3,11 @@ lateinisch = "Urnula craterium"
 gruppe = "becherling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = []
 speisewertHinweis = "Ohne Speisewert, das Fleisch ist lederartig zäh. Sehr selten."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Schwarzer Tulpenkelch", "Schwarzer Tulpenpilz", "Urnenpilz", "Devil´s Urn"]
 synonyme = ["Sarcoscypha craterium", "Geopyxis craterium"]
@@ -34,7 +34,7 @@ zeit = "Winter bis Frühling, in der frostfreien Zeit."
 [[verwechslungen]]
 name = "Totentrompete"
 merkmal = "Trichterig bis röhrig durchbohrt, dünnfleischig und biegsam, Außenseite aschgrau bereift, im Herbst unter Buche und Eiche."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "totentrompete"
 
 [[links]]

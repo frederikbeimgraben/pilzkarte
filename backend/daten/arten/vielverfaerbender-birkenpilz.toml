@@ -1,14 +1,15 @@
 name = "Vielverfärbender Birkenpilz"
 lateinisch = "Leccinum variicolor"
 gruppe = "raufussroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 2
+marktfaehigSchweiz = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Besonders geschützt, sehr selten und in Deutschland gefährdet. Wenn überhaupt, nur wenige Fruchtkörper für den Eigenbedarf nehmen. Ältere Fruchtkörper werden schnell schwammig."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "sehrSelten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Vielfärbender Birkenpilz", "Verfärbender Raufußröhrling", "Blaufärbender Raufuß"]
@@ -36,7 +37,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Hainbuchenröhrling"
 merkmal = "Bei Hainbuche und Hasel, Huthaut wie gehämmert, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila statt kornblumenblau."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "hainbuchenroehrling"
 
 [[verwechslungen]]

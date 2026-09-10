@@ -1,13 +1,14 @@
 name = "Panzerrasling"
 lateinisch = "Lyophyllum decastes var. loricatum"
 gruppe = "rasling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Gepanzerter Rasling", "Erdzimmerling", "Erdzimmermandl", "Knorpeliger Knäuelrasling", "Büschelrasling", "Brauner Rasling"]
 
 [quelle]
@@ -33,7 +34,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Büschelrasling"
 merkmal = "Hut heller braun und ohne die knorpelige Panzerschicht, Fleisch unter der Huthaut nicht dunkel durchfärbt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "bueschliger-rasling"
 
 [[links]]

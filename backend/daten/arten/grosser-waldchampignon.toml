@@ -1,13 +1,14 @@
 name = "Großer Waldchampignon"
 lateinisch = "Agaricus langei"
 gruppe = "champignon"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Großer Blutegerling", "Grosser Blutchampignon"]
 
 [quelle]
@@ -47,7 +48,7 @@ slug = "karbolegerling"
 [[verwechslungen]]
 name = "Riesenchampignon"
 merkmal = "Riecht nach Anis, das Fleisch gilbt statt zu röten."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenchampignon"
 
 [[links]]

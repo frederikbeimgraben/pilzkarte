@@ -1,13 +1,14 @@
 name = "Körnchenröhrling"
 lateinisch = "Suillus granulatus"
 gruppe = "schmierroehrling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen und die schleimige Huthaut abziehen. Die DGfM nennt Magen-Darm-Beschwerden mit starkem Durchfall und mögliche Allergien; wer darauf reagiert, meidet alle Schmierröhrlinge."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Schmerling", "Schälpilz", "Rotzer", "Schalschwamm", "Rotzling", "Pimp", "Maschlurken", "Pimk"]
 synonyme = ["Boletus granulatus", "Ixocomus granulatus", "Boletus lactifluus", "Suillus lactifluus", "Boletus granulatus var. lactifluus", "Boletus granulatus var. heterosporus"]
@@ -37,25 +38,25 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Ringloser Butterpilz"
 merkmal = "Stielbasis rosa, unter der abgezogenen Huthaut bleibt eine braune Faserung sichtbar."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "ringloser-butterpilz"
 
 [[verwechslungen]]
 name = "Butterröhrling"
 merkmal = "Stiel mit braunviolettem Ring."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "butterpilz"
 
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Hut hellgelb, später orangerötlich, mit gelblichem Ring, Röhren auf Druck rosalila fleckend, bei Lärche."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[verwechslungen]]
 name = "Sandröhrling"
 merkmal = "Huthaut körnig filzig und matt, Röhren bräunlich bis rostgelb, Fleisch bei Verletzung blauend."
-essbar = "speisepilz"
+essbar = "sehrGuterSpeisepilz"
 slug = "sandroehrling"
 
 [[verwechslungen]]

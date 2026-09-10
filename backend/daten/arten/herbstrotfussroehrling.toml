@@ -3,11 +3,12 @@ lateinisch = "Xerocomellus pruinatus"
 gruppe = "roehrling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Herbstrotfuß", "Bereifter Rotfuß", "Stattlicher Rotfuß"]
 
@@ -52,7 +53,7 @@ slug = "rotfussroehrling"
 [[verwechslungen]]
 name = "Maronenröhrling"
 merkmal = "Hut kastanienbraun, Röhren gelb und auf Druck deutlich blauend, Stiel ohne rote Punkte."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "maronenroehrling"
 
 [[links]]

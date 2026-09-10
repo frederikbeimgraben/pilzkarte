@@ -3,13 +3,19 @@ lateinisch = "Clitocybe nebularis"
 gruppe = "trichterling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehigSchweiz = false
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+warnung = "123pilzsuche führt die Nebelkappe als giftig. Sie galt lange als Speisepilz; ein Teil der Sammler bekommt auch nach dem Garen Magen-Darm-Beschwerden."
 karte = "nebelkappe"
 speisewertHinweis = "123pilzsuche führt sie als giftig. Der Stoff Nebularin löst Magen-Darm-Beschwerden aus, auch nach dem Garen. In der Schweiz ist sie nicht marktfähig."
-marktfaehig = false
 weitereNamen = ["Herbstblattl", "Nebelgrauer Röteltrichterling", "Nebelgrauer Trichterling", "Graukappe", "Graukopf"]
 synonyme = ["Lepista nebularis", "Clitocybe pileolaris", "Gymnopus nebularis", "Clitocybe nebularis var. alba"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Herbstblattl.htm"
@@ -52,19 +58,19 @@ slug = "graublaettriger-trichterling"
 [[verwechslungen]]
 name = "Mönchskopf"
 merkmal = "Hut bräunlich mit einem Buckel in der Mitte, Lamellen weit herablaufend, Stiel keulig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "moenchskopf"
 
 [[verwechslungen]]
 name = "Büschelrasling"
 merkmal = "Hut ledergelb bis orangebraun, wächst büschelig aus einem Strunk, Fleisch zäh und elastisch."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "bueschliger-rasling"
 
 [[verwechslungen]]
 name = "Horngrauer Rötelritterling"
 merkmal = "Hut graubraun mit konzentrischen Wasserflecken, Lamellen später cremerosa, Geruch mehlartig statt parfümiert."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "horngrauer-roetelritterling"
 
 [[links]]

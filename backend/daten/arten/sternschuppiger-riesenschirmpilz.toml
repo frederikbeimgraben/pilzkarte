@@ -1,14 +1,15 @@
 name = "Sternschuppiger Riesenschirmpilz"
 lateinisch = "Macrolepiota fuliginosa"
 gruppe = "schirmling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Das Fleisch rötet nie; das trennt ihn vom Safranschirmling. Wie alle Riesenschirmlinge nur durchgegart essen."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Essbarer Gartenriesenschirmling"]
 synonyme = ["Macrolepiota rhodosperma", "Macrolepiota konradii", "Leucocoprinus fuliginosus"]
 
@@ -43,7 +44,7 @@ slug = "gruensporschirmling"
 [[verwechslungen]]
 name = "Parasol"
 merkmal = "Hutschuppen weich und wollig, nicht sternförmig aufreißend, Sporenpulver weiß."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
 
 [[verwechslungen]]

@@ -3,11 +3,11 @@ lateinisch = "Lactarius hysginus"
 gruppe = "milchling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Geschmack ist extrem scharf."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Fleischroter Milchling"]
@@ -37,7 +37,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Rotbrauner Milchling"
 merkmal = "Hut rotbraun bis ziegel-rotbraun mit kleinem Buckel, Geruch harzig, Schärfe erst nach etwa einer Minute."
-essbar = "ungeniessbar"
+essbar = "essbar"
 slug = "rotbrauner-milchling"
 
 [[verwechslungen]]

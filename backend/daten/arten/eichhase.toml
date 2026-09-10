@@ -1,14 +1,15 @@
 name = "Eichhase"
 lateinisch = "Polyporus umbellatus"
 gruppe = "porling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Jung sammeln, im Alter wird er bitter. Er ist überwiegend selten und kommt jährlich an derselben Stelle wieder, deshalb den Standort schonen."
-marktfaehig = true
-wertigkeit = 2
 weitereNamen = ["Ästiger Porling", "Ästiger Büschelporling"]
 synonyme = ["Dendropolyporus umbellatus"]
 
@@ -35,19 +36,19 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Klapperschwamm"
 merkmal = "Hüte breiter und zungenförmig, grau bis graubraun, in einem großen Büschel am Stammfuß."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "klapperschwamm"
 
 [[verwechslungen]]
 name = "Bergporling"
 merkmal = "Größere, fächerförmige Hüte, wächst an Nadelholz im Bergwald."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "bergporling"
 
 [[verwechslungen]]
 name = "Krause Glucke"
 merkmal = "Blattartig gekräuselt statt aus vielen kleinen Hüten, an Kiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "krause-glucke"
 
 [[links]]

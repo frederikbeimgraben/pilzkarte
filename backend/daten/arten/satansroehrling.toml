@@ -3,11 +3,11 @@ lateinisch = "Rubroboletus satanas"
 gruppe = "roehrling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Giftig. Er ist am weißlichen bis grauen Hut, an den karminroten Röhrenmündungen, am dicken bauchigen Stiel mit roter Netzzeichnung und am aasartigen Geruch alter Fruchtkörper zu erkennen."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Satanspilz", "Teufelspilz"]
 

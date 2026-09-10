@@ -1,14 +1,14 @@
 name = "Rosenroter Gelbfuß"
 lateinisch = "Gomphidius roseus"
 gruppe = "gelbfuss"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Selten. Er lebt parasitisch auf dem Myzel des Kuhröhrlings und steht darum immer neben ihm."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 weitereNamen = ["Rosenroter Gelbfuss", "Rosenroter Schmierling", "Rosa Schmierling"]
 synonyme = ["Agaricus glutinosus roseus"]
@@ -36,7 +36,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Kuhmaul"
 merkmal = "Hut graubraun bis violettbraun und stark schleimig, Stielbasis leuchtend chromgelb, bei Fichte."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kuhmaul"
 
 [[links]]

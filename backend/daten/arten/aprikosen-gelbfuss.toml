@@ -1,14 +1,15 @@
 name = "Aprikosen-Gelbfuß"
 lateinisch = "Chroogomphus fulmineus"
 gruppe = "gelbfuss"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "eiche"]
 speisewertHinweis = "Auf der Positivliste der DGfM und in der Schweiz marktfähig. Extrem selten, deshalb besser stehen lassen."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 synonyme = ["Chroogomphus rutilus var. fulmineus", "Gomphidius viscidus var. fulmineus", "Chroogomphus ochraceus subsp. fulmineus"]
 
@@ -46,13 +47,13 @@ slug = "spitzgebuckelter-raukopf"
 [[verwechslungen]]
 name = "Kupferroter Gelbfuß"
 merkmal = "Hut braun, orangebraun bis graubraun ohne rosa und violette Töne, wächst unter Kiefern."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kupferroter-gelbfuss"
 
 [[verwechslungen]]
 name = "Schweinsohr"
 merkmal = "Violett, keulen- bis trichterförmig, mit Leisten statt Lamellen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schweinsohr"
 
 [[links]]

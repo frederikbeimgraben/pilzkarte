@@ -3,11 +3,11 @@ lateinisch = "Entoloma vernum"
 gruppe = "roetling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Tödlich giftig. Er wächst von März bis Mai, wenn kaum Speisepilze da sind. Kennzeichen sind das rosabraune Sporenpulver, der gefurchte, zerbrechliche Stiel und der fehlende Mehlgeruch."
-marktfaehig = false
 haeufigkeit = "haeufig"
 weitereNamen = ["Gestreifter Frühlingsrötling", "Aprilrötling"]
 
@@ -35,7 +35,7 @@ zeit = "Frühling bis Frühsommer, nach der Schneeschmelze."
 [[verwechslungen]]
 name = "Schildrötling"
 merkmal = "Größer, Hut graubraun und seidig faserig, Geruch und Geschmack stark mehlartig."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schildroetling"
 
 [[links]]

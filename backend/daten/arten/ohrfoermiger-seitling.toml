@@ -3,11 +3,11 @@ lateinisch = "Pleurocybella porrigens (var. phyllotus porrigens, nothopanus porr
 gruppe = "seitling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "In Japan gab es mehrere Todesfälle, vor allem bei älteren Menschen mit Nierenschaden und Dialyse. Die Symptome ähneln einem Schlaganfall, dazu Fieber und Krampfanfälle. Vorsicht bei allen ungestielten weißen Seitlingen an Nadelholz."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Ohrförmiger Weißseitling", "Engelsflügel"]
 

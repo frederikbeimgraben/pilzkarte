@@ -1,13 +1,14 @@
 name = "Zitzen-Riesenschirmling"
 lateinisch = "Macrolepiota mastoidea"
 gruppe = "schirmling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nicht roh verwenden. Der Ring muss sich am Stiel verschieben lassen, sonst ist es kein Riesenschirmling; sitzt das Velum noch am Hutrand, löst man es mit den Fingern und prüft den Ring. Riesenschirmlinge aus Gärten und von Komposthaufen stehen lassen, dort wächst der Gift-Riesenschirmling. Auch kleine Schirmlinge ohne verschiebbaren Ring bleiben stehen."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Schlanker Riesenschirmling", "Zitzenwarziger Riesenschirmling", "Warzenschirmpilz", "Gedrungener Riesen-Zitzenschirmling", "Spitzgebuckelter Riesenschirmling"]
 
 [quelle]
@@ -45,19 +46,19 @@ slug = "gruensporschirmling"
 [[verwechslungen]]
 name = "Parasol"
 merkmal = "Deutlich größer, Stiel kräftig genattert, Doppelring stark ausgeprägt, Buckel meist nur stumpf."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
 
 [[verwechslungen]]
 name = "Sternschuppiger Riesenschirmpilz"
 merkmal = "Hut mit braunen, sternförmig aufreißenden Schuppen, Stiel fein braun genattert, Stielrinde rötend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "sternschuppiger-riesenschirmpilz"
 
 [[verwechslungen]]
 name = "Safranschirmling"
 merkmal = "Fleisch läuft safranrot an, Hut hellbraun bis olivbraun, Lamellen cremeweiß mit Zwischenlamellen."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "safranschirmling"
 
 [[links]]

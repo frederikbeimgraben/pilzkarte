@@ -1,13 +1,14 @@
 name = "Fuchsiger Scheidenstreifling"
 lateinisch = "Amanita fulva"
 gruppe = "wulstling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "birke"]
 speisewertHinweis = "Roh unverträglich. Nur für Sammler, die den Pantherpilz sicher trennen: jeden Fruchtkörper mit ganzer Stielbasis ausgraben und die Scheide prüfen."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Rotbrauner Scheidenstreifling", "Rotbrauner Streifling", "Gelbbräunlicher Scheidenstreifling"]
 
 [quelle]
@@ -59,19 +60,19 @@ slug = "isabellfarbige-wulstling"
 [[verwechslungen]]
 name = "Großscheidiger Scheidenstreifling"
 merkmal = "Hut braun bis lederbraun, Scheide auffallend groß."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grossscheidiger-scheidenstreifling"
 
 [[verwechslungen]]
 name = "Grauhäutiger Scheidenstreifling"
 merkmal = "Hut graubraun bis grauocker, Stiel graubraun genattert."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grauhaeutiger-scheidenstreifling"
 
 [[verwechslungen]]
 name = "Gelber Scheidenstreifling"
 merkmal = "Hut gelb bis orange, Stiel weiß genattert auf hellbraunem Grund."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gelber-scheidenstreifling"
 
 [[links]]

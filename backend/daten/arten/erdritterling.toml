@@ -3,10 +3,11 @@ lateinisch = "Tricholoma terreum"
 gruppe = "ritterling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte", "tanne", "douglasie"]
+warnung = "123pilzsuche führt den Erdritterling als tödlich giftig. Die grauen Ritterlinge sind untereinander kaum zu trennen, und einige schädigen die Muskulatur. Er steht hier, weil die Kette ihn zählt, nicht weil man ihn sammeln soll."
 speisewertHinweis = "123pilzsuche führt ihn als tödlich giftig. Er galt lange als Speisepilz; die grauen Ritterlinge sind untereinander kaum zu trennen und einige schädigen die Muskulatur. Stehen lassen."
-marktfaehig = true
 weitereNamen = ["Gemeiner Erdritterling", "Silber Erdritterling"]
 
 [quelle]

@@ -1,13 +1,14 @@
 name = "Frauentäubling"
 lateinisch = "Russula cyanoxantha"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Die biegsamen, nicht brechenden Lamellen sind sein sicherstes Merkmal."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Violettgrüner Frauentäubling", "Blautäubling", "Rissighütiger Frauentäubling", "Bläulicher Täubling", "Grüntäubling"]
 
@@ -56,25 +57,25 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Rissiger Frauentäubling"
 merkmal = "Huthaut in der Mitte deutlich rissig aufgesprungen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rissiger-frauentaeubling"
 
 [[verwechslungen]]
 name = "Olivfarbener Frauentäubling"
 merkmal = "Hut olivgrün mit violetten Flecken."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "olivfarbener-frauentaeubling"
 
 [[verwechslungen]]
 name = "Grüngefelderter Täubling"
 merkmal = "Huthaut reißt in felderige Schollen auf, Lamellen brüchig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gruengefelderter-taeubling"
 
 [[verwechslungen]]
 name = "Grasgrüner Täubling"
 merkmal = "Hut graugrün bis grasgrün, Lamellen brüchig, Stiel längsgerieft."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grasgruener-taeubling"
 
 [[verwechslungen]]

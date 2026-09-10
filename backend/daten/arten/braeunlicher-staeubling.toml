@@ -1,14 +1,14 @@
 name = "Bräunlicher Stäubling"
 lateinisch = "Lycoperdon umbrinum"
 gruppe = "staeubling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 6
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Gekocht schmeckt er sehr fade. Braune Stäublinge sind minderwertig, junge Fruchtkörper allenfalls Beikost."
-marktfaehig = false
-wertigkeit = 6
 weitereNamen = ["Brauner Stäubling", "Brauner Staubbovist"]
 synonyme = ["Lycoperdon umbrinum var. hirtum", "Lycoperdon hirtum", "Lycoperdon umbrinum var. curtisiiforme", "Lycoperdon umbrinum f. fissispinum", "Lycoperdon umbrinum var. hirsutum"]
 
@@ -31,7 +31,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Flaschenstäubling"
 merkmal = "Blasse, spitzkegelige Stacheln auf hellem Grund, Fruchtkörper deutlich keulig gestielt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "flaschenbovist"
 
 [[verwechslungen]]
@@ -43,7 +43,7 @@ slug = "birnenstaeubling"
 [[verwechslungen]]
 name = "Igelstäubling"
 merkmal = "Stacheln mit helleren Spitzen, nach dem Abwaschen bleibt ein deutliches Netzmuster."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "igelstaeubling"
 
 [[links]]

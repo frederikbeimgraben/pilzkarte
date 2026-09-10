@@ -1,13 +1,14 @@
 name = "Lilastieliger Rötelritterling"
 lateinisch = "Lepista personata"
 gruppe = "roetelritterling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = []
 speisewertHinweis = "Regional sehr selten und in Deutschland gefährdet. Nur wenige Fruchtkörper nehmen."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Maskierter Ritterling", "Maskierter Rötelritterling", "Fleischbräunlicher Rötelritterling"]
@@ -41,13 +42,13 @@ slug = "bocksdickfuss"
 [[verwechslungen]]
 name = "Violetter Rötelritterling"
 merkmal = "Auch der Hut ist lilaviolett, Geruch stärker parfümiert, im Laubwald."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
 
 [[verwechslungen]]
 name = "Lavendelfarbener Rötelritterling"
 merkmal = "Hut rötlichlila bis lavendelfarben, Lamellen lila, Stiel schlanker."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lavendelfarbener-roetelritterling"
 
 [[verwechslungen]]
@@ -59,7 +60,7 @@ slug = "schmutziger-roetelritterling"
 [[verwechslungen]]
 name = "Horngrauer Rötelritterling"
 merkmal = "Hut graubraun mit konzentrischen Wasserflecken, Geruch mehlartig statt parfümiert."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "horngrauer-roetelritterling"
 
 [[links]]

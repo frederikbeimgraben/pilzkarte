@@ -1,14 +1,19 @@
 name = "Mehlräsling"
 lateinisch = "Clitopilus prunulus"
 gruppe = "roetling"
-speisewert = "speisepilz"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur mit starkem Mehlgeruch und rosa Sporenabdruck nehmen. Fehlt eines von beiden, kann es ein tödlich giftiger weißer Trichterling sein."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Mehlpilz", "Großer Mehlräsling", "Moosling", "Großer Musseron", "Pflaumenpilz", "Pflaumen-Räsling", "Simmerling", "Pflaumen-Rässling"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MehlraeslingEssbar1004.htm"

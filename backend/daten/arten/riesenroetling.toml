@@ -3,11 +3,11 @@ lateinisch = "Entoloma sinuatum"
 gruppe = "roetling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["eiche", "buche", "pappel"]
 speisewertHinweis = "Zu erkennen am fleischrötlichen Sporenpulver, an den jung gelblichen und später rotocker bis rosaocker werdenden Lamellen, die am Stiel ausgebuchtet sind und praktisch nie herablaufen, und am unangenehm säuerlich-mehligen Geruch. Keine Kostversuche."
-marktfaehig = false
 weitereNamen = ["Stinkender Rötling"]
 synonyme = ["Rhodophyllus sinuatus", "Agaricus sinuatus", "Agaricus fertilis"]
 
@@ -36,7 +36,7 @@ zeit = "Frühling bis Spätherbst, häufiger im Herbst."
 [[verwechslungen]]
 name = "Maipilz"
 merkmal = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch stark mehlig und angenehm, im Frühling."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "maipilz"
 
 [[verwechslungen]]

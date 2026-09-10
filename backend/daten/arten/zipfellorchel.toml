@@ -3,11 +3,11 @@ lateinisch = "Discina fastigiata"
 gruppe = "morchel"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling"]
 baeume = ["pappel", "kiefer"]
 speisewertHinweis = "Tödlich giftig, roh in jedem Fall. Nicht kosten. Die zipfelmützenartig hochgestülpte Kappe wirkt wie aus zwei Teilen zusammengeklebt und hat eine helle Verbindungsnaht; Morcheln haben dagegen einen wabig gekammerten Hut."
-marktfaehig = false
 gefaehrdung = "extremSelten"
 synonyme = ["Gyromitra fastigiata", "Gyromitra fastigiata var. brunnea", "Gyromitra brunnea var. fastigiata", "Discina brunnea"]
 
@@ -33,7 +33,7 @@ zeit = "Frühjahr, März bis Mai."
 [[verwechslungen]]
 name = "Speisemorchel"
 merkmal = "Hut wabig gekammert statt zipfelig gestülpt, Hut und Stiel durchgehend hohl."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "speisemorchel"
 
 [[links]]

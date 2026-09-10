@@ -3,11 +3,11 @@ lateinisch = "Auriporia aurulenta"
 gruppe = "porling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "Er wächst flach auf dem Holz und besteht fast nur aus Röhren. Als Speisepilz kommt er nicht infrage. In Deutschland extrem selten, deshalb stehen lassen."
-marktfaehig = false
 haeufigkeit = "selten"
 gefaehrdung = "extremSelten"
 
@@ -46,7 +46,7 @@ slug = "leuchtender-weichporling"
 [[verwechslungen]]
 name = "Schwefelporling"
 merkmal = "Bildet dachziegelige Konsolen mit Hutkante, wächst an Laubholz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schwefelporling"
 
 [[links]]

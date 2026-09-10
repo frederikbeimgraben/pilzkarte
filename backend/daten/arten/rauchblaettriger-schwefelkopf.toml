@@ -1,13 +1,13 @@
 name = "Rauchblättriger Schwefelkopf"
 lateinisch = "Hypholoma capnoides"
 gruppe = "schueppling"
-speisewert = "speisepilz"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["herbst", "fruehling"]
 baeume = ["kiefer", "fichte", "douglasie"]
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Graublättriger Schwefelkopf"]
 
 [quelle]
@@ -50,7 +50,7 @@ slug = "nadelschueppling"
 [[verwechslungen]]
 name = "Stockschwämmchen"
 merkmal = "Hut zweifarbig hygrophan, Lamellen zimtbraun, Stiel unter dem Ring dunkelbraun beschuppt."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
 
 [[links]]

@@ -1,14 +1,15 @@
 name = "Steinpilz"
 lateinisch = "Boletus edulis"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne", "kiefer", "eiche", "hainbuche", "linde", "kastanie", "buche", "birke"]
 karte = "boletus_edulis"
 speisewertHinweis = "Bei einem Fund ohne oder mit kaum sichtbarem Netz am Stiel und mit gelblichen Röhren entscheidet eine Geschmacksprobe, ob ein bitterer Gallenröhrling vorliegt."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Steinpilze", "Herrenpilz", "Dobberniggl", "Fichtensteinpilz", "Gemeiner Steinpilz"]
 
 [quelle]
@@ -48,19 +49,19 @@ slug = "gallenroehrling"
 [[verwechslungen]]
 name = "Maronenröhrling"
 merkmal = "Hut dunkel- bis hellbraun und feucht glatt, Röhren auf Druck blaugrün, Stiel ohne Netz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "maronenroehrling"
 
 [[verwechslungen]]
 name = "Sommersteinpilz"
 merkmal = "Netz zieht sich über den ganzen Stiel, Fleisch unter der Huthaut weiß, Huthaut bei Trockenheit felderig rissig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "sommersteinpilz"
 
 [[verwechslungen]]
 name = "Kiefernsteinpilz"
 merkmal = "Hut rotbraun, weinrot bis purpurbraun, Stiel nuss- bis rotbräunlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kiefernsteinpilz"
 
 [[verwechslungen]]

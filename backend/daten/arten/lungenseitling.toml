@@ -1,13 +1,13 @@
 name = "Lungenseitling"
 lateinisch = "Pleurotus pulmonarius"
 gruppe = "seitling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche", "esche", "pappel", "birke"]
 speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen. Weiße Seitlinge ohne Stiel bleiben stehen."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "selten"
 weitereNamen = ["Löffelförmiger Seitling", "Cremeweißer Seitling", "Sommer-Austernseitling"]
 synonyme = ["Agaricus pulmonarius", "Pleurotus ostreatus var. pulmonarius", "Pleurotus populinus (nur bei espen + pappeln"]
@@ -51,13 +51,13 @@ slug = "rosenseitling"
 [[verwechslungen]]
 name = "Rillstieliger Seitling"
 merkmal = "Lamellen queradrig netzig verbunden und bis zur Stielbasis herablaufend, Stiel längsrillig, Geruch mehlartig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rillstieliger-seitling"
 
 [[verwechslungen]]
 name = "Austernseitling"
 merkmal = "Hut silbergrau bis graubraun statt cremeweiß, dickfleischiger. Er braucht einen Kältereiz und kommt erst im Winter."
-essbar = "bedingtEssbar"
+essbar = "guterSpeisepilz"
 slug = "austernseitling"
 
 [[links]]

@@ -3,11 +3,11 @@ lateinisch = "Cortinarius meinhardii"
 gruppe = "schleierling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "buche", "eiche"]
 speisewertHinweis = "Er ist wegen der Verwechslungsgefahr gefährlich. Zu erkennen an schwefelgelbem, schmierigem Hut mit rotbraunen Schuppen, chromgelbem Stiel mit gerandeter Knolle, rostbraunem Sporenpulver auf dem Stiel und dem widerlich erdigen Geruch."
-marktfaehig = false
 synonyme = ["Cortinarius splendens var. meinhardii", "Cortinarius vitellinus"]
 
 [quelle]
@@ -37,7 +37,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Röhren statt Lamellen, Stiel mit Ring und ohne gerandete Knolle, Geruch angenehm."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[links]]

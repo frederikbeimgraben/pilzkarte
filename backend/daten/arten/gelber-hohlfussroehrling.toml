@@ -3,12 +3,13 @@ lateinisch = "Suillus cavipes var. aereus"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
 speisewertHinweis = "In dieser gelben Form sehr selten. Die Schweiz führt ihn als nicht marktfähig."
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "sehrSelten"
 synonyme = ["Suillus cavipes f. aereus", "Boletinus cavipes f. aureus", "Boletinus cavipes var. aureus", "Boletus cavipes", "Suillus cavipes var. aureus", "Boletinus cavipes", "Boletinus cavipe", "Paxillus porosus"]
 
@@ -35,13 +36,13 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Stiel voll und mit häutigem Ring, Hut feucht schmierig statt filzig-schuppig."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[verwechslungen]]
 name = "Elfenbeinröhrling"
 merkmal = "Hut weißlich bis elfenbeinfarben, Stiel voll und ohne Ringzone."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "elfenbeinroehrling"
 
 [[verwechslungen]]

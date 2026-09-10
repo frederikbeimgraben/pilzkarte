@@ -3,12 +3,12 @@ lateinisch = "Hygrophorus gliocyclus"
 gruppe = "schneckling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in Deutschland stark gefährdet. Den Fund besser stehen lassen."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 synonyme = ["Hygrophorus ligatus"]
@@ -36,7 +36,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Olivgrauer Schneckling"
 merkmal = "Hut olivbraun bis graubraun mit dunklerer Mitte, Stiel unter der Ringzone dunkel genattert, bei Fichte."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "olivgrauer-schneckling"
 
 [[links]]

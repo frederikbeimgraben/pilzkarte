@@ -1,14 +1,14 @@
 name = "Riesenkrempentrichterling"
 lateinisch = "Leucopaxillus giganteus"
 gruppe = "trichterling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "In Deutschland auf der Roten Liste mit unbekanntem Gefährdungsausmaß. Maßvoll sammeln."
-marktfaehig = true
-wertigkeit = 2
 gefaehrdung = "unbekanntesAusmass"
 synonyme = ["Leucopaxillus candidus paxillus giganteus", "Aspropaxillus giganteus"]
 

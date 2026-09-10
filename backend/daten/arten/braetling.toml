@@ -1,14 +1,19 @@
 name = "Brätling"
 lateinisch = "Lactarius volemus"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Besonders geschützt. Der Fischgeruch verschwindet beim Garen."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Milchbrätling", "Birnenmilchling", "Süßling"]
+
+[baeumeAusErfahrung]
+baeume = ["hainbuche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Braetling2004.htm"
@@ -41,7 +46,7 @@ slug = "maggipilz"
 [[verwechslungen]]
 name = "Rotbrauner Milchling"
 merkmal = "Hut rotbraun mit kleinem Buckel, später trichterig, Milch spärlich."
-essbar = "ungeniessbar"
+essbar = "essbar"
 slug = "rotbrauner-milchling"
 
 [[verwechslungen]]

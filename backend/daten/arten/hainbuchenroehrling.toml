@@ -1,14 +1,15 @@
 name = "Hainbuchenröhrling"
 lateinisch = "Leccinellum pseudoscabrum"
 gruppe = "raufussroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["hainbuche", "hasel"]
 speisewertHinweis = "Als Raufußröhrling besonders geschützt, also nur für den Eigenbedarf sammeln. Das Fleisch wird beim Kochen schwarz."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Hainbuchenraufußröhrling"]
 synonyme = ["Leccinum pseudoscabrum", "Leccinum carpini", "Leccinum griseum", "Leccinellum carpini", "Boletus scaber var. carpini", "Boletus pseudoscaber"]
 

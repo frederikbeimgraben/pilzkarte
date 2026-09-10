@@ -3,10 +3,10 @@ lateinisch = "Climacodon septentrionalis"
 gruppe = "stachelbart"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 gefaehrdung = "vomAussterbenBedroht"
 

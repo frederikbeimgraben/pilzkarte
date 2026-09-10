@@ -1,14 +1,14 @@
 name = "Österreichischer Prachtbecherling"
 lateinisch = "Sarcoscypha austriaca"
 gruppe = "becherling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 5
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["weide", "pappel", "linde"]
 speisewertHinweis = "Ungiftig, aber ohne Wert für die Küche. 123pilzsuche gibt die Relative Wertigkeit 5."
-marktfaehig = false
-wertigkeit = 5
 weitereNamen = ["Blutroter Kelchbecherling", "Blutroter Prachtbecherling", "Österreichischer Kelchbecherling"]
 synonyme = ["Molliardiomyces coccineus", "Peziza austriaca", "Lachnea austriaca"]
 
@@ -35,13 +35,13 @@ zeit = "Winter bis Mai."
 [[verwechslungen]]
 name = "Linden-Kelchbecherling"
 merkmal = "Wächst an verrotteten Lindenzweigen, sonst kaum zu trennen."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "linden-kelchbecherling"
 
 [[verwechslungen]]
 name = "Scharlachroter Kelchbecherling"
 merkmal = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "scharlachroter-kelchbecherling"
 
 [[links]]

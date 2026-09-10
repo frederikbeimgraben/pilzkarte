@@ -1,14 +1,15 @@
 name = "Parasol"
 lateinisch = "Macrolepiota procera"
 gruppe = "schirmling"
-speisewert = "bedingtEssbar"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "parasol"
 speisewertHinweis = "Nicht roh essen. Ungenügend gegart löst er Magen-Darm-Beschwerden aus, deshalb gut durchgaren. Riesenschirmlinge vom Komposthaufen oder aus dem Garten stehen lassen, dort wächst der Gift-Riesenschirmling."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Riesenschirmling", "Riesenschirmpilz", "Paukenschläger", "Paukenschleger", "Gemeiner Riesenschirmling", "Gugermukken", "Schulmeisterpilz", "Eulchen"]
 
 [quelle]
@@ -42,25 +43,25 @@ slug = "jungfernschirmling"
 [[verwechslungen]]
 name = "Safranschirmling"
 merkmal = "Fleisch läuft bei Verletzung sofort rötlich an und wird später weinbraun, Stiel ohne Natterung, Basis mit gerandeter Knolle."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "safranschirmling"
 
 [[verwechslungen]]
 name = "Schlanker Riesenschirmling"
 merkmal = "Hut braunocker mit grob schollig abreißenden Schuppen und braunem Buckel, Natterung am Stiel nur schwach."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "zitzen-riesenschirmling"
 
 [[verwechslungen]]
 name = "Sternschuppiger Riesenschirmpilz"
 merkmal = "Hutschuppen kastanienbraun und sternförmig auseinanderlaufend, Mitte schwarzbraun und gebuckelt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "sternschuppiger-riesenschirmpilz"
 
 [[verwechslungen]]
 name = "Ackerschirmpilz"
 merkmal = "Stiel ohne Natterung, von der Spitze bis zum Ring fein gerieft, auf Äckern, Wiesen und Brachflächen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ackerschirmpilz"
 
 [[links]]

@@ -3,12 +3,12 @@ lateinisch = "Lactifluus rugatus"
 gruppe = "milchling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kiefer"]
 speisewertHinweis = "Essbar, in Mitteleuropa aber kaum zu finden. Sehr alte Fruchtkoerper riechen fischartig und sind dann nicht mehr essbar."
-marktfaehig = false
-wertigkeit = 4
 synonyme = ["Lactarius rugatus", "Lactarius hygrophoroides var. rugatus"]
 
 [quelle]
@@ -40,7 +40,7 @@ essbar = "essbar"
 [[verwechslungen]]
 name = "Rotbrauner Milchling"
 merkmal = "Nach etwa einer Minute extrem scharf, Geruch harzig, bei Nadelholz."
-essbar = "ungeniessbar"
+essbar = "essbar"
 slug = "rotbrauner-milchling"
 
 [[links]]

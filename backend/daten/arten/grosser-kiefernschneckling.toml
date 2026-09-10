@@ -3,12 +3,13 @@ lateinisch = "Hygrophorus latitabundus"
 gruppe = "schneckling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "In Deutschland gefährdet und sehr selten. Stehen lassen."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Grauweißer Schneckling", "Dunkler Kiefern-Schneckling"]
@@ -37,7 +38,7 @@ zeit = "Spätsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Märzschneckling"
 merkmal = "Hut aschgrau bis schwarzgrau marmoriert, im Vorfrühling am Schneerand."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "maerzschneckling"
 
 [[links]]

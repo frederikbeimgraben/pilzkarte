@@ -24,7 +24,6 @@ from app.modules.species.schemas import (
     SeasonBrief,
     SeasonCurve,
     SeasonTable,
-    Source,
     Species,
     SpeciesBrief,
     SpeciesCounts,
@@ -41,24 +40,17 @@ from app.shared.schemas import Week
 # eigener Pfad in der Umgebung waere ein weiterer Vertrag zum NixOS-Modul.
 DATA = Path(__file__).resolve().parents[3] / "daten"
 
-# Die Positivliste der DGfM entscheidet, was in den Handel darf. Sie steht als
-# PDF im Netz und traegt ihren eigenen Stand.
-MARKET_SOURCE = Source(
-    url="https://www.dgfm-ev.de/files/dokumente/PSV/2026-08-11_positivliste_speisepilze.pdf",
-    checked_on="2026-05-01",
-)
-
 FORECAST_THRESHOLD = 600
 SEASON_THRESHOLD = 60
 
 # Diese Texte stehen in der Merkmalstabelle der Artseite. Sie tragen darum
 # Umlaute, anders als die Bezeichner und Docstrings dieses Projekts.
 EDIBILITY_TEXT: dict[Edibility, str] = {
+    Edibility.EXCELLENT: "Sehr guter Speisepilz.",
     Edibility.CHOICE: "Guter Speisepilz.",
     Edibility.EDIBLE: "Essbar.",
-    Edibility.EDIBLE_WHEN_COOKED: "Nur gegart essbar.",
-    Edibility.NO_FOOD_VALUE: "Essbar, aber ohne Wert.",
-    Edibility.NOT_RECOMMENDED: "Wird nicht zum Essen empfohlen.",
+    Edibility.POOR: "Essbar, aber minderwertig.",
+    Edibility.EDIBLE_WHEN_COOKED: "Giftig, erst nach Vorbehandlung essbar.",
     Edibility.INEDIBLE: "Ungenie\u00dfbar.",
     Edibility.POISONOUS: "Giftig.",
     Edibility.DEADLY: "T\u00f6dlich giftig.",
@@ -83,6 +75,8 @@ REAGENT_TEXT: dict[Reagent, str] = {
     Reagent.AMMONIA: "Ammoniak",
     Reagent.SULFOVANILLIN: "Sulfovanillin",
     Reagent.FORMALIN: "Formalin",
+    Reagent.FECL3: "Eisen(III)-chlorid (FeCl\u2083)",
+    Reagent.WIELAND: "Wieland-Test",
     Reagent.SCHAEFFER: "Sch\u00e4ffer-Reaktion",
 }
 
@@ -170,8 +164,14 @@ def build_traits(profile: Profile) -> list[Trait]:
 
 
 def build_tags(profile: Profile, tier: Tier) -> list[Tag]:
-    """Die Chips einer Art: erst die Stufe, dann Gruppe, Jahreszeit und Baum."""
-    return [tier, profile.group, *profile.seasons, *profile.trees]
+    """Die Chips einer Art: erst die Stufe, dann Gruppe, Jahreszeit und Baum.
+
+    Beide Baumlisten zaehlen. Wer nach Fichte filtert, will die Art auch dann
+    sehen, wenn nur das eigene Sammeln den Baum kennt.
+    """
+    experience = profile.trees_from_experience.trees if profile.trees_from_experience else []
+    trees = list(dict.fromkeys([*profile.trees, *experience]))
+    return [tier, profile.group, *profile.seasons, *trees]
 
 
 def read_profiles(folder: Path) -> dict[str, Profile]:
@@ -232,10 +232,18 @@ class Catalog:
     def _visits_current_year(self) -> list[int]:
         return self.table.visits_per_week_current_year[: self.table.as_of_week]
 
-    def listing(self) -> SpeciesList:
-        """Alle Arten mit Stufe, Tags und der kleinen Kurve."""
+    def listing(self, *, only_collectable: bool | None = True) -> SpeciesList:
+        """Die Arten mit Stufe, Tags und der kleinen Kurve.
+
+        ``nur_sammelbare`` waehlt aus: ``True`` liefert die 85 sammelbaren,
+        ``False`` die Verwechslungsarten, ``None`` alle. Die Auswahl gehoert
+        hierher und nicht ins Frontend: der Reiter Arten zeigt sonst Giftpilze
+        zwischen den Speisepilzen.
+        """
         species: list[SpeciesBrief] = []
         for slug, profile in self.profiles.items():
+            if only_collectable is not None and profile.collectable is not only_collectable:
+                continue
             counts = self._counts(profile)
             all_years, current = self._series(profile)
             map_name = self.maps.get(slug)
@@ -257,8 +265,16 @@ class Catalog:
                     map_slug=map_name,
                     collectable=profile.collectable,
                     marketable=profile.marketable,
+                    marketable_switzerland=profile.marketable_switzerland,
                     rating=profile.rating,
                     frequency=profile.frequency,
+                    red_list=profile.red_list,
+                    warning=profile.warning,
+                    seasons=profile.seasons,
+                    trees=profile.trees,
+                    trees_from_experience=profile.trees_from_experience,
+                    other_names=profile.other_names,
+                    synonyms=profile.synonyms,
                     forecast_planned=forecast_planned(counts.visits_with_find),
                     visits_with_find=counts.visits_with_find,
                     peak_week=peak_week_of(all_years) if profile.collectable else None,
@@ -326,13 +342,24 @@ class Catalog:
             edibility=profile.edibility,
             map_slug=map_name,
             collectable=profile.collectable,
-            marketability=Marketability(marketable=profile.marketable, source=MARKET_SOURCE),
+            marketable=profile.marketable,
+            marketable_switzerland=profile.marketable_switzerland,
+            marketability=Marketability(
+                marketable=profile.marketable,
+                switzerland=profile.marketable_switzerland,
+                source=profile.source,
+            ),
             rating=profile.rating,
             frequency=profile.frequency,
             red_list=profile.red_list,
+            warning=profile.warning,
+            seasons=profile.seasons,
+            trees=profile.trees,
+            trees_from_experience=profile.trees_from_experience,
             other_names=profile.other_names,
             synonyms=profile.synonyms,
             measurements=profile.measurements,
+            reagents=profile.reagents,
             source=profile.source,
             forecast_planned=forecast_planned(counts.visits_with_find),
             visits_with_find=counts.visits_with_find,

@@ -3,12 +3,12 @@ lateinisch = "Hericium cirrhatum"
 gruppe = "stachelbart"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst", "winter"]
 baeume = ["buche", "birke"]
 speisewertHinweis = "In Deutschland und der Schweiz auf der Roten Liste und generell sehr selten. Den Fund besser stehen lassen."
-marktfaehig = false
-wertigkeit = 3
 gefaehrdung = "unbekanntesAusmass"
 synonyme = ["Creolophus cirrhatus", "Creolophus cirratus"]
 

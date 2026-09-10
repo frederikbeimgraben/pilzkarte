@@ -3,12 +3,13 @@ lateinisch = "Cantharellus cinereus"
 gruppe = "leistling"
 speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Nur wenig oder gar nichts mitnehmen."
-marktfaehig = true
-wertigkeit = 1
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Graue Kraterelle", "Grauer Pfifferling"]
 synonyme = ["Craterellus cinereus", "Pseudocraterellus cinereus", "Merulius cinereus"]
@@ -35,7 +36,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Verbogener Leistling"
 merkmal = "Kleiner und dünner, Hut graubraun bis olivbraun, Leisten gelblich bis grau."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "verbogener-leistling"
 
 [[verwechslungen]]

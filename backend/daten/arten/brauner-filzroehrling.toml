@@ -1,14 +1,14 @@
 name = "Brauner Filzröhrling"
 lateinisch = "Xerocomus ferrugineus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Auf der Positivliste der DGfM, in der Schweiz nicht marktfähig. Er ist einer der wenigen essbaren Röhrlinge mit Netzzeichnung am Stiel."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "haeufig"
 weitereNamen = ["Filziger Röhrling", "Braune Ziegenlippe"]
 
@@ -53,13 +53,13 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Ziegenlippe"
 merkmal = "Hut hell olivbraun bis olivocker, Stiel fast weiß und ohne Netzzeichnung."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ziegenlippe"
 
 [[verwechslungen]]
 name = "Samtiger Filzröhrling"
 merkmal = "Netz nur von der Stielmitte bis zur Spitze, Geruch leicht nach Schwefel, bei Buche und Eiche."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "samtiger-filzroehrling"
 
 [[verwechslungen]]

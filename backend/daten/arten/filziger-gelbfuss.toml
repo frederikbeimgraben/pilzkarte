@@ -1,14 +1,15 @@
 name = "Filziger Gelbfuß"
 lateinisch = "Chroogomphus helveticus"
 gruppe = "gelbfuss"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "Relativ selten. Nach einem trockenen Sommer und anschließendem Regen tritt er häufiger auf."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 synonyme = ["Gomphidus helveticus"]
 
@@ -47,7 +48,7 @@ slug = "spitzgebuckelter-raukopf"
 [[verwechslungen]]
 name = "Kupferroter Gelbfuß"
 merkmal = "Lamellen deutlicher herablaufend, Hut weniger filzig schuppig, wächst bei Kiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kupferroter-gelbfuss"
 
 [[links]]

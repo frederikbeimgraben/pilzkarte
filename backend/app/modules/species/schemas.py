@@ -80,6 +80,11 @@ class TreeSpecies(StrEnum):
     OAK = "eiche"
     BIRCH = "birke"
     ALDER = "erle"
+    BLACK_LOCUST = "robinie"
+    YEW = "eibe"
+    LABURNUM = "goldregen"
+    BILBERRY = "heidelbeere"
+    HOLM_OAK = "steineiche"
     HORNBEAM = "hainbuche"
     HAZEL = "hasel"
     POPLAR = "pappel"
@@ -128,6 +133,8 @@ class Reagent(StrEnum):
     AMMONIA = "ammoniak"
     SULFOVANILLIN = "sulfovanillin"
     FORMALIN = "formalin"
+    FECL3 = "fecl3"
+    WIELAND = "wieland"
     SCHAEFFER = "schaeffer"
 
 
@@ -141,13 +148,19 @@ class Season(StrEnum):
 
 
 class Edibility(StrEnum):
-    """Was mit einer Art in der Pfanne passieren darf."""
+    """Was mit einer Art in der Pfanne passieren darf.
 
-    CHOICE = "speisepilz"
+    Die Stufe kommt allein aus der Auszeichnung im Kopf der Quellseite und dem
+    Zusatz dahinter. Garzeiten, Rohgiftigkeit und Unvertraeglichkeiten stehen
+    im ``speisewertHinweis``: sie sagen, wie man die Art zubereitet, nicht ob
+    man sie essen darf.
+    """
+
+    EXCELLENT = "sehrGuterSpeisepilz"
+    CHOICE = "guterSpeisepilz"
     EDIBLE = "essbar"
+    POOR = "minderwertig"
     EDIBLE_WHEN_COOKED = "bedingtEssbar"
-    NO_FOOD_VALUE = "ohneSpeisewert"
-    NOT_RECOMMENDED = "nichtEmpfohlen"
     INEDIBLE = "ungeniessbar"
     POISONOUS = "giftig"
     DEADLY = "toedlichGiftig"
@@ -238,6 +251,25 @@ class Measurements(BaseSchema):
     )
 
 
+FROM_EXPERIENCE = "eigene Erfahrung"
+
+
+class TreeSource(BaseSchema):
+    """Baeume, die 123pilzsuche nicht nennt, das Projekt aber kennt.
+
+    Sie stehen getrennt von ``baeume``, damit man sieht, welche Angabe belegt
+    ist und welche aus dem eigenen Sammeln stammt. Die Chips der Artenliste
+    zeigen beide Listen zusammen.
+    """
+
+    trees: list[TreeSpecies] = Field(
+        validation_alias="baeume", serialization_alias="baeume", min_length=1
+    )
+    source: str = Field(
+        validation_alias="quelle", serialization_alias="quelle", pattern=f"^{FROM_EXPERIENCE}$"
+    )
+
+
 class Lookalike(BaseSchema):
     """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
 
@@ -304,12 +336,27 @@ class Profile(BaseSchema):
         validation_alias="jahreszeiten", serialization_alias="jahreszeiten", min_length=1
     )
     trees: list[TreeSpecies] = Field(validation_alias="baeume", serialization_alias="baeume")
+    trees_from_experience: TreeSource | None = Field(
+        default=None,
+        validation_alias="baeumeAusErfahrung",
+        serialization_alias="baeumeAusErfahrung",
+    )
+    # Eine Art, die in der Kette steht und trotzdem giftig ist, braucht auf der
+    # Artseite mehr als eine Enum-Stufe. Der Satz steht ueber der Tabelle.
+    warning: str | None = Field(
+        validation_alias="warnung", serialization_alias="warnung", default=None, min_length=1
+    )
     collectable: bool = Field(
         default=True, validation_alias="sammelbar", serialization_alias="sammelbar"
     )
     # Die Positivliste der DGfM. Nur was dort steht, darf in den Handel.
     marketable: bool = Field(
         default=False, validation_alias="marktfaehig", serialization_alias="marktfaehig"
+    )
+    marketable_switzerland: bool | None = Field(
+        default=None,
+        validation_alias="marktfaehigSchweiz",
+        serialization_alias="marktfaehigSchweiz",
     )
     # Die "Relative Wertigkeit" von 123pilzsuche: 1 ist die beste Stufe,
     # 6 die schwaechste. Die Seite nennt sie nicht fuer jede Art.
@@ -357,6 +404,15 @@ class Profile(BaseSchema):
         validation_alias="verwechslungen", serialization_alias="verwechslungen", min_length=1
     )
     links: list[Link] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def _poisonous_species_warn(self) -> "Profile":
+        # Wer eine giftige Art im Katalog der sammelbaren findet, muss den Grund
+        # sofort lesen und nicht erst in der Zeile Speisewert suchen.
+        poisonous = {Edibility.POISONOUS, Edibility.DEADLY}
+        if self.collectable and self.edibility in poisonous and not self.warning:
+            raise ValueError("Eine giftige sammelbare Art braucht eine Warnung.")
+        return self
 
     @model_validator(mode="after")
     def _no_map_without_collecting(self) -> "Profile":
@@ -519,9 +575,14 @@ class SeasonCurve(BaseSchema):
 
 
 class Marketability(BaseSchema):
-    """Ob die DGfM die Art auf ihrer Positivliste der Speisepilze fuehrt."""
+    """Was die Zeile "Relativer Speisewert" der Quellseite zum Handel sagt.
+
+    Sie nennt die Positivliste der DGfM und die Marktfaehigkeit in der Schweiz.
+    Die Zeile steht bei jeder Art und ist darum genauer als eine Gesamtliste.
+    """
 
     marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
+    switzerland: bool | None = Field(validation_alias="schweiz", serialization_alias="schweiz")
     source: Source = Field(validation_alias="quelle", serialization_alias="quelle")
 
 
@@ -546,10 +607,28 @@ class SpeciesBrief(BaseSchema):
     map_slug: str | None = Field(validation_alias="kartenSlug", serialization_alias="kartenSlug")
     collectable: bool = Field(validation_alias="sammelbar", serialization_alias="sammelbar")
     marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
+    marketable_switzerland: bool | None = Field(
+        validation_alias="marktfaehigSchweiz", serialization_alias="marktfaehigSchweiz"
+    )
     rating: int | None = Field(validation_alias="wertigkeit", serialization_alias="wertigkeit")
     frequency: Frequency | None = Field(
         validation_alias="haeufigkeit", serialization_alias="haeufigkeit"
     )
+    red_list: RedListStatus | None = Field(
+        validation_alias="gefaehrdung", serialization_alias="gefaehrdung"
+    )
+    warning: str | None = Field(validation_alias="warnung", serialization_alias="warnung")
+    seasons: list[Season] = Field(
+        validation_alias="jahreszeiten", serialization_alias="jahreszeiten"
+    )
+    trees: list[TreeSpecies] = Field(validation_alias="baeume", serialization_alias="baeume")
+    trees_from_experience: TreeSource | None = Field(
+        validation_alias="baeumeAusErfahrung", serialization_alias="baeumeAusErfahrung"
+    )
+    other_names: list[str] = Field(
+        validation_alias="weitereNamen", serialization_alias="weitereNamen"
+    )
+    synonyms: list[str] = Field(validation_alias="synonyme", serialization_alias="synonyme")
     forecast_planned: bool = Field(
         validation_alias="vorhersageGeplant", serialization_alias="vorhersageGeplant"
     )
@@ -573,6 +652,10 @@ class Species(BaseSchema):
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     map_slug: str | None = Field(validation_alias="kartenSlug", serialization_alias="kartenSlug")
     collectable: bool = Field(validation_alias="sammelbar", serialization_alias="sammelbar")
+    marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
+    marketable_switzerland: bool | None = Field(
+        validation_alias="marktfaehigSchweiz", serialization_alias="marktfaehigSchweiz"
+    )
     marketability: Marketability = Field(
         validation_alias="marktfaehigkeit", serialization_alias="marktfaehigkeit"
     )
@@ -583,11 +666,22 @@ class Species(BaseSchema):
     red_list: RedListStatus | None = Field(
         validation_alias="gefaehrdung", serialization_alias="gefaehrdung"
     )
+    warning: str | None = Field(validation_alias="warnung", serialization_alias="warnung")
+    seasons: list[Season] = Field(
+        validation_alias="jahreszeiten", serialization_alias="jahreszeiten"
+    )
+    trees: list[TreeSpecies] = Field(validation_alias="baeume", serialization_alias="baeume")
+    trees_from_experience: TreeSource | None = Field(
+        validation_alias="baeumeAusErfahrung", serialization_alias="baeumeAusErfahrung"
+    )
     other_names: list[str] = Field(
         validation_alias="weitereNamen", serialization_alias="weitereNamen"
     )
     synonyms: list[str] = Field(validation_alias="synonyme", serialization_alias="synonyme")
     measurements: Measurements = Field(validation_alias="masse", serialization_alias="masse")
+    reagents: list[ReagentEntry] = Field(
+        validation_alias="reagenzien", serialization_alias="reagenzien"
+    )
     source: Source = Field(validation_alias="quelle", serialization_alias="quelle")
     forecast_planned: bool = Field(
         validation_alias="vorhersageGeplant", serialization_alias="vorhersageGeplant"

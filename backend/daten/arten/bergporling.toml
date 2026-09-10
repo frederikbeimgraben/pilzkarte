@@ -1,14 +1,14 @@
 name = "Bergporling"
 lateinisch = "Bondarzewia mesenterica"
 gruppe = "porling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne"]
 speisewertHinweis = "Nur ganz junge Fruchtkörper sind essbar; sie werden schnell extrem scharf und dann ungeniessbar."
-marktfaehig = false
-wertigkeit = 4
 haeufigkeit = "haeufig"
 synonyme = ["Bondarzewia montana", "Grifola mesenterica", "Grifola montana", "Cladomeris montanus"]
 
@@ -43,19 +43,19 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Riesenporling"
 merkmal = "Poren auf Druck schwärzend, Fleisch im Schnitt langsam braunschwarz, gern an Buchenstümpfen."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "riesenporling"
 
 [[verwechslungen]]
 name = "Klapperschwamm"
 merkmal = "Graubraune halbierte Einzelhüte in Büscheln, im Wurzelbereich von Eiche und Kastanie."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "klapperschwamm"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Hut semmelgelb bis orangebraun, Poren grünweißlich, Fleisch fest und brüchig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[links]]

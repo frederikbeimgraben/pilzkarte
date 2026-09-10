@@ -3,11 +3,11 @@ lateinisch = "Tricholoma saponaceum"
 gruppe = "ritterling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur leicht giftig, dazu bitter. Er verrät sich durch den Geruch nach Seifenlauge und das rötende Fleisch, vor allem an der Stielbasis."
-marktfaehig = false
 weitereNamen = ["Waschküchenritterling", "Seifen-Ritterling"]
 synonyme = ["Gyrophila saponacea", "Agaricus fusiformis", "Agaricus atrovirens"]
 

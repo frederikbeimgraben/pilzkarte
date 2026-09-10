@@ -1,14 +1,18 @@
 name = "Riesenporling"
 lateinisch = "Meripilus giganteus"
 gruppe = "porling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne", "buche"]
 speisewertHinweis = "Nur ganz junge Fruchtkörper sind mild. Er wird schnell scharf und bitter und ist dann unbrauchbar."
-marktfaehig = false
-wertigkeit = 4
 synonyme = ["Agaricus aequivocus", "Flabellopilus giganteus", "Polyporus aequivocus", "Polypilus frondosus var. intybaceus", "Polypilus giganteus", "Grifola gigantea", "Grifola acanthoides"]
+
+[baeumeAusErfahrung]
+baeume = ["eiche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenporling.htm"
@@ -49,19 +53,19 @@ slug = "becherfoermiger-saegeblaettling"
 [[verwechslungen]]
 name = "Bergporling"
 merkmal = "Poren schwärzen auf Druck nicht, Geruch ganz jung etwas anisartig, Wurzelparasit an Weißtanne."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "bergporling"
 
 [[verwechslungen]]
 name = "Klapperschwamm"
 merkmal = "Graubraune Einzelhüte, rosettenartig verwachsen, Röhren schwärzen auf Druck nicht, am Wurzelbereich von Eiche."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "klapperschwamm"
 
 [[verwechslungen]]
 name = "Eichhase"
 merkmal = "Viele kleine Einzelhüte an einem verzweigten Strunk, Poren cremefarben bis hellbraun, am Fuß von Eichen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "eichhase"
 
 [[links]]

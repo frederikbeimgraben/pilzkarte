@@ -1,15 +1,19 @@
 name = "Safranschirmling"
 lateinisch = "Chlorophyllum rhacodes"
 gruppe = "schirmling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh unverträglich, gut durchgaren. Riesenschirmlinge aus Garten, Kompost oder Gewächshaus stehen lassen; dort wächst der giftige Gerandetknollige Garten-Safranschirmling."
-marktfaehig = false
-wertigkeit = 3
 weitereNamen = ["Keulenstieliger Garten-Safranschirmling", "Gemeiner Safranschirmling", "Gartenform des Safran-Schirmpilzes", "Safran-Riesenschirmpilz", "Safran-Riesenschirmling", "Rötender Schirmling"]
 synonyme = ["Macrolepiota rhacodes var. hortensis", "Macrolepiota bohemica", "Agaricus rachodes", "Chlorophyllum rhacodes sensu", "Lepiota rhacodes", "Leucocoprinus rhacodes", "Agaricus rhacodes var. candidus", "Lepiota procera var. rhacodes"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Safranschirmling.htm"
@@ -60,7 +64,7 @@ slug = "jungfernschirmling"
 [[verwechslungen]]
 name = "Parasol"
 merkmal = "Stiel deutlich dunkelbraun genattert, Fleisch rötet nicht, wächst im Wald."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
 
 [[links]]

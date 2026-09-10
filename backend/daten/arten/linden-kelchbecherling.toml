@@ -1,14 +1,14 @@
 name = "Linden-Kelchbecherling"
 lateinisch = "Sarcoscypha jurana"
 gruppe = "becherling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 5
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["linde"]
 speisewertHinweis = "Ungiftig, aber nicht schmackhaft. 123pilzsuche gibt die Relative Wertigkeit 5."
-marktfaehig = false
-wertigkeit = 5
 weitereNamen = ["Scharlachroter Linden-Kelchbecherling"]
 synonyme = ["Sarcoscypha coccinea var. jurana + sarcoscypha emarginata"]
 
@@ -38,13 +38,13 @@ zeit = "Winter bis Mai."
 [[verwechslungen]]
 name = "Österreichischer Prachtbecherling"
 merkmal = "Wächst an Erle, Weide und Espe, die Haare der Außenseite sind korkenzieherartig gewunden."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "oesterreichischer-prachtbecherling"
 
 [[verwechslungen]]
 name = "Scharlachroter Kelchbecherling"
 merkmal = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "scharlachroter-kelchbecherling"
 
 [[links]]

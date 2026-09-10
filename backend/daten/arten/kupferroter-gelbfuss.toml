@@ -1,13 +1,14 @@
 name = "Kupferroter Gelbfuß"
 lateinisch = "Chroogomphus rutilus"
 gruppe = "gelbfuss"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Beim Kochen wird er violettbraun und schmeckt parfümiert, ähnlich dem Violetten Rötelritterling."
-marktfaehig = false
-wertigkeit = 1
 synonyme = ["Chroogomphus britannicus", "Gomphidius rutilus forma testaceus", "Chroogomphus helveticus subsp. tatrensis", "Chroogomphus rutilus var. corallinus", "Chroogomphus rutilus subsp. alabamensis"]
 
 [quelle]
@@ -41,19 +42,19 @@ slug = "spitzgebuckelter-raukopf"
 [[verwechslungen]]
 name = "Filziger Gelbfuß"
 merkmal = "Hut filzig schuppig, Lamellen weniger weit herablaufend, bei Fichte."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "filziger-gelbfuss"
 
 [[verwechslungen]]
 name = "Schweinsohr"
 merkmal = "Trichterförmig, mit stumpfen Leisten statt Lamellen, ganz violett."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schweinsohr"
 
 [[verwechslungen]]
 name = "Aprikosen-Gelbfuß"
 merkmal = "Hut orangebraun, rosa bis violett, Stiel mit hellerer orangefarbener Ringzone."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "aprikosen-gelbfuss"
 
 [[links]]

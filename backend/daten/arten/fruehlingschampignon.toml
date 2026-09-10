@@ -1,14 +1,15 @@
 name = "Frühlingschampignon"
 lateinisch = "Agaricus altipes"
 gruppe = "champignon"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Sehr selten, in der Schweiz stark gefährdet."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Langstieliger Egerling", "Sommeregerling", "Sommerchampignon", "Frühlings-Egerling"]
 

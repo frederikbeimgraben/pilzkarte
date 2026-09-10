@@ -3,11 +3,11 @@ lateinisch = "Neolentinus cyathiformis"
 gruppe = "seitling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Das Fleisch bleibt zäh und schmeckt bitterlich. Sehr selten und in Deutschland gefährdet."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Trichterförmiger Sägeblättling"]
@@ -36,7 +36,7 @@ zeit = "Frühling bis Herbst."
 [[verwechslungen]]
 name = "Schuppiger Sägeblättling"
 merkmal = "Hut mit rotbraunen Schuppen auf gelblichem Grund, Lamellenschneiden stark gesägt, Geruch nach Anis, an Nadelholz."
-essbar = "ungeniessbar"
+essbar = "essbar"
 slug = "schuppiger-saegeblaettling"
 
 [[verwechslungen]]

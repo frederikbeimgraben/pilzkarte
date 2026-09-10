@@ -1,13 +1,14 @@
 name = "Märzschneckling"
 lateinisch = "Hygrophorus marzuolus"
 gruppe = "schneckling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling"]
 baeume = ["tanne", "fichte", "buche"]
 speisewertHinweis = "Besonders geschützt und in Deutschland stark gefährdet. Den Fund besser stehen lassen."
-marktfaehig = true
-wertigkeit = 1
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Märzellerling", "Schneepilz"]
 synonyme = ["Limacium camarophyllum subsp. marzuolum", "Agaricus marzuolus", "Clitocybe marzuolus"]

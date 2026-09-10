@@ -1,12 +1,12 @@
 name = "Klapperschwamm"
 lateinisch = "Grifola frondosa"
 gruppe = "porling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kastanie", "linde", "buche"]
 speisewertHinweis = "Nur jung essbar, im Alter wird er sehr zäh."
-marktfaehig = true
 weitereNamen = ["Maitake", "Spatelhütiger Porling", "Laubporling", "Kamm-Porling Graue Gans", "Gemeiner Klapperschwamm"]
 
 [quelle]
@@ -32,31 +32,31 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Eichhase"
 merkmal = "Viele kleine runde Porenpilze mit mittigem Stielchen an einem Strunk, Fruchtkörper heller und gesprenkelt bräunlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "eichhase"
 
 [[verwechslungen]]
 name = "Bergporling"
 merkmal = "Hüte braun und samtig, fächerförmig ineinander verwachsen, Geschmack jung mild und schnell extrem scharf, bei Weißtanne."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "bergporling"
 
 [[verwechslungen]]
 name = "Krause Glucke"
 merkmal = "Blumenkohlartig aus krausen Lappen, ohne Hüte und ohne Röhren, am Wurzelgeflecht von Kiefern."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "krause-glucke"
 
 [[verwechslungen]]
 name = "Breitblättrige Glucke"
 merkmal = "Hirnartig breit gekräuselt, ohne Hüte und ohne Röhren, beim Kochen Waschküchengeruch."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "breitblaettrige-glucke"
 
 [[verwechslungen]]
 name = "Riesenporling"
 merkmal = "Einzelhüte viel größer, Poren auf Druck und Fleisch im Schnitt schwärzend."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "riesenporling"
 
 [[links]]

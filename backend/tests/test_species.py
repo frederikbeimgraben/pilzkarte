@@ -21,6 +21,7 @@ from app.modules.species.catalog import (
     PROTECTED_TEXT,
     UNPROTECTED_TEXT,
     Catalog,
+    build_tags,
     build_traits,
     catalog,
     find_maps,
@@ -46,8 +47,11 @@ from app.modules.species.schemas import (
     RedListStatus,
     SeasonCurve,
     SeasonTable,
+    Species,
     Tier,
     TraitKey,
+    TreeSource,
+    TreeSpecies,
 )
 
 # Die drei Arten der Fixture: eine mit Karte und vielen Begehungen, eine
@@ -56,7 +60,7 @@ PENNY_BUN = """
 name = "Steinpilz"
 lateinisch = "Boletus edulis"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "guterSpeisepilz"
 geschuetzt = true
 jahreszeiten = ["herbst"]
 baeume = ["fichte", "buche"]
@@ -93,7 +97,7 @@ ST_GEORGES = """
 name = "Maipilz"
 lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
-speisewert = "speisepilz"
+speisewert = "guterSpeisepilz"
 geschuetzt = false
 jahreszeiten = ["fruehling"]
 baeume = []
@@ -126,7 +130,7 @@ SAFFRON_MILKCAP = """
 name = "Braetling"
 lateinisch = "Lactarius volemus"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "guterSpeisepilz"
 geschuetzt = true
 jahreszeiten = ["sommer"]
 baeume = ["buche"]
@@ -192,7 +196,7 @@ zeit = "Juni bis Oktober."
 [[verwechslungen]]
 name = "Steinpilz"
 merkmal = "Roehren bleiben weiss bis oliv, Netz weiss, Geschmack mild."
-essbar = "speisepilz"
+essbar = "guterSpeisepilz"
 slug = "steinpilz"
 
 [[links]]
@@ -332,7 +336,7 @@ def test_the_peak_week_is_missing_without_a_find() -> None:
 
 
 def test_the_listing_carries_every_species_by_name(built: Catalog) -> None:
-    listing = built.listing()
+    listing = built.listing(only_collectable=None)
 
     assert [species.name for species in listing.species] == [
         "Braetling",
@@ -352,7 +356,9 @@ def test_the_listing_names_as_of_years_and_denominator(built: Catalog) -> None:
 
 
 def test_tiers_come_from_map_and_table(built: Catalog) -> None:
-    levels = {species.slug: species.tier for species in built.listing().species}
+    levels = {
+        species.slug: species.tier for species in built.listing(only_collectable=None).species
+    }
 
     assert levels == {
         "steinpilz": Tier.FORECAST,
@@ -378,7 +384,10 @@ def test_without_a_manifest_the_species_stays_on_season(data: Path, tmp_path: Pa
 
 
 def test_forecast_planned_appears_in_listing_and_profile(built: Catalog) -> None:
-    planned = {species.slug: species.forecast_planned for species in built.listing().species}
+    planned = {
+        species.slug: species.forecast_planned
+        for species in built.listing(only_collectable=None).species
+    }
 
     assert planned == {
         "steinpilz": True,
@@ -484,7 +493,9 @@ def test_tags_start_with_the_tier(built: Catalog) -> None:
 
 
 def test_a_map_appears_only_with_a_manifest(built: Catalog) -> None:
-    maps = {species.slug: species.map_slug for species in built.listing().species}
+    maps = {
+        species.slug: species.map_slug for species in built.listing(only_collectable=None).species
+    }
 
     assert maps == {
         "steinpilz": "boletus_edulis",
@@ -519,7 +530,10 @@ def test_a_lookalike_species_carries_no_season_curve(built: Catalog) -> None:
 
 
 def test_collectable_species_carry_the_curve(built: Catalog) -> None:
-    collectable = {species.slug: species.collectable for species in built.listing().species}
+    collectable = {
+        species.slug: species.collectable
+        for species in built.listing(only_collectable=None).species
+    }
 
     assert collectable == {
         "steinpilz": True,
@@ -528,10 +542,14 @@ def test_collectable_species_carry_the_curve(built: Catalog) -> None:
         "gallenroehrling": False,
     }
     assert all(
-        species.season is not None for species in built.listing().species if species.collectable
+        species.season is not None
+        for species in built.listing(only_collectable=None).species
+        if species.collectable
     )
     assert all(
-        species.season is None for species in built.listing().species if not species.collectable
+        species.season is None
+        for species in built.listing(only_collectable=None).species
+        if not species.collectable
     )
 
 
@@ -722,8 +740,16 @@ async def test_the_listing_answers_in_camel_case(app: FastAPI) -> None:
         "kartenSlug",
         "sammelbar",
         "marktfaehig",
+        "marktfaehigSchweiz",
         "wertigkeit",
         "haeufigkeit",
+        "gefaehrdung",
+        "warnung",
+        "jahreszeiten",
+        "baeume",
+        "baeumeAusErfahrung",
+        "weitereNamen",
+        "synonyme",
         "vorhersageGeplant",
         "begehungenMitFund",
         "spitzeWoche",
@@ -941,7 +967,7 @@ def test_the_collectable_species_stay_eightyfive() -> None:
 
 def test_lookalike_species_carry_the_lookalike_tier(tmp_path: Path) -> None:
     built = catalog(DATA, _chain_maps(tmp_path / "maps"))
-    species = {species.slug: species for species in built.listing().species}
+    species = {species.slug: species for species in built.listing(only_collectable=None).species}
     profiles = read_profiles(DATA / "arten")
 
     for slug, profile in profiles.items():
@@ -993,10 +1019,11 @@ def test_marketable_follows_the_dgfm_positive_list(tmp_path: Path) -> None:
 
 
 def test_marketability_names_its_source(tmp_path: Path) -> None:
-    source = catalog(DATA, tmp_path).species("steinpilz").marketability.source
+    species = catalog(DATA, tmp_path).species("steinpilz")
 
-    assert source.url.startswith("https://www.dgfm-ev.de/")
-    assert source.checked_on == "2026-05-01"
+    # Die Zeile "Relativer Speisewert" steht auf der Artseite selbst.
+    assert species.marketability.source == species.source
+    assert species.marketability.source.url.startswith("https://www.123pilzsuche.de/")
 
 
 def test_the_measurements_come_from_the_source_page(tmp_path: Path) -> None:
@@ -1030,3 +1057,192 @@ async def test_the_profile_returns_the_numbers_of_the_source() -> None:
     assert body["masse"]["hutBreiteCm"] == {"von": 4.0, "bis": 20.0, "seltenBis": 25.0}
     assert "Herrenpilz" in body["weitereNamen"]
     assert body["quelle"]["url"].startswith("https://www.123pilzsuche.de/")
+
+
+# ------------------------------------------------- Auswahl und Vollstaendigkeit
+
+# Was in der Datei steht, geht auch hinaus. Wo ein Feld draussen anders heisst
+# oder in einer Zeile der Merkmalstabelle aufgeht, sagt es diese Zuordnung.
+PROFILE_FIELD_ON_THE_WIRE: dict[str, str | None] = {
+    "map_name": "map_slug",
+    "edibility_note": None,
+    "protection_note": None,
+}
+
+
+def test_every_field_of_the_file_reaches_the_response() -> None:
+    response_fields = set(Species.model_fields)
+
+    for field in Profile.model_fields:
+        target = PROFILE_FIELD_ON_THE_WIRE.get(field, field)
+        if target is None:
+            continue
+        assert target in response_fields, f"{field} fehlt in der Antwort"
+
+
+def test_the_mapping_names_only_fields_of_the_file() -> None:
+    assert set(PROFILE_FIELD_ON_THE_WIRE) <= set(Profile.model_fields)
+
+
+def test_the_listing_shows_only_collectable_ones_without_a_parameter(built: Catalog) -> None:
+    species = built.listing().species
+
+    assert [species.slug for species in species] == ["braetling", "maipilz", "steinpilz"]
+    assert all(species.collectable for species in species)
+
+
+def test_the_listing_shows_the_lookalike_species_on_request(built: Catalog) -> None:
+    species = built.listing(only_collectable=False).species
+
+    assert [species.slug for species in species] == ["gallenroehrling"]
+    assert not any(species.collectable for species in species)
+
+
+def test_the_listing_shows_all_on_request(built: Catalog) -> None:
+    assert len(built.listing(only_collectable=None).species) == 4
+
+
+async def test_the_endpoint_returns_the_collectable_ones_without_a_parameter(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get("/api/arten")
+
+    slugs = [species["slug"] for species in response.json()["arten"]]
+    assert slugs == ["braetling", "maipilz", "steinpilz"]
+
+
+async def test_the_endpoint_returns_the_others_with_collectable_false(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get("/api/arten", params={"sammelbar": "false"})
+
+    assert [species["slug"] for species in response.json()["arten"]] == ["gallenroehrling"]
+
+
+async def test_the_endpoint_returns_both_groups_with_all(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get("/api/arten", params={"alle": "true", "sammelbar": "false"})
+
+    assert len(response.json()["arten"]) == 4
+
+
+async def test_the_real_listing_shows_eightyfive_species() -> None:
+    async with client(build_app()) as call:
+        response = await call.get("/api/arten")
+
+    assert len(response.json()["arten"]) == 85
+
+
+async def test_the_real_listing_knows_all_threehundrednine() -> None:
+    async with client(build_app()) as call:
+        response = await call.get("/api/arten", params={"alle": "true"})
+
+    assert len(response.json()["arten"]) == 309
+
+
+# ------------------------------------------------- Baeume, Warnung, Reagenzien
+
+
+def test_trees_from_experience_stand_beside_the_documented_ones(tmp_path: Path) -> None:
+    species = catalog(DATA, tmp_path).species("maronenroehrling")
+
+    assert species.trees_from_experience is not None
+    assert species.trees_from_experience.source == "eigene Erfahrung"
+    assert TreeSpecies.SPRUCE in species.trees_from_experience.trees
+    assert TreeSpecies.SPRUCE not in species.trees
+
+
+def test_both_tree_lists_become_chips(tmp_path: Path) -> None:
+    species = catalog(DATA, tmp_path).species("maronenroehrling")
+
+    assert TreeSpecies.SPRUCE in species.tags
+
+
+def test_a_tree_appears_only_once_in_the_chips() -> None:
+    profile = Profile.model_validate(
+        {
+            **_profile_base(),
+            "baeume": ["fichte"],
+            "baeumeAusErfahrung": {"baeume": ["fichte", "buche"], "quelle": "eigene Erfahrung"},
+        }
+    )
+
+    assert build_tags(profile, Tier.SEASON).count(TreeSpecies.SPRUCE) == 1
+
+
+def test_trees_from_experience_need_their_source() -> None:
+    with pytest.raises(ValidationError):
+        TreeSource(trees=[TreeSpecies.SPRUCE], source="123pilzsuche")
+
+
+def test_trees_from_experience_are_never_empty() -> None:
+    with pytest.raises(ValidationError):
+        TreeSource(trees=[], source="eigene Erfahrung")
+
+
+def test_a_poisonous_collectable_species_needs_a_warning() -> None:
+    with pytest.raises(ValidationError, match="Warnung"):
+        Profile.model_validate({**_profile_base(), "speisewert": "giftig"})
+
+
+def test_a_poisonous_lookalike_species_needs_no_warning() -> None:
+    profile = Profile.model_validate(
+        {**_profile_base(), "speisewert": "toedlichGiftig", "sammelbar": False}
+    )
+
+    assert profile.warning is None
+
+
+def test_the_poisonous_species_of_the_chain_warn(tmp_path: Path) -> None:
+    built = catalog(DATA, tmp_path)
+    poisonous = {Edibility.POISONOUS, Edibility.DEADLY}
+
+    warned = [species.slug for species in built.listing().species if species.edibility in poisonous]
+    assert sorted(warned) == [
+        "erdritterling",
+        "nebelkappe",
+        "rosablaettriger-egerlingsschirmling",
+    ]
+    for slug in warned:
+        assert built.species(slug).warning
+
+
+def test_reagents_also_appear_as_their_own_field(built: Catalog) -> None:
+    species = built.species("gallenroehrling")
+
+    assert [entry.reagent for entry in species.reagents] == [Reagent.KOH, Reagent.MELZER]
+
+
+def test_the_new_reagents_and_trees_are_in_the_enum() -> None:
+    assert {Reagent.FECL3, Reagent.WIELAND} <= set(Reagent)
+    assert {
+        TreeSpecies.BLACK_LOCUST,
+        TreeSpecies.YEW,
+        TreeSpecies.LABURNUM,
+        TreeSpecies.BILBERRY,
+        TreeSpecies.HOLM_OAK,
+    } <= set(TreeSpecies)
+
+
+async def test_the_profile_returns_marketability_and_measurements() -> None:
+    async with client(build_app()) as call:
+        response = await call.get("/api/arten/steinpilz")
+
+    body = response.json()
+    assert body["marktfaehig"] is True
+    assert body["marktfaehigkeit"]["quelle"]["url"].startswith("https://www.123pilzsuche.de/")
+    assert body["marktfaehigSchweiz"] is True
+    assert body["baeume"]
+    assert set(body) >= {
+        "marktfaehig",
+        "wertigkeit",
+        "haeufigkeit",
+        "gefaehrdung",
+        "reagenzien",
+        "masse",
+        "weitereNamen",
+        "synonyme",
+        "sammelbar",
+        "warnung",
+        "jahreszeiten",
+        "baeume",
+        "baeumeAusErfahrung",
+    }

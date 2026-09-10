@@ -3,11 +3,12 @@ lateinisch = "Suillus cavipes"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
-marktfaehig = true
-wertigkeit = 3
 weitereNamen = ["Brauner Hohlfussröhrling"]
 
 [quelle]

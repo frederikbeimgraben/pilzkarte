@@ -1,13 +1,14 @@
 name = "Anhängselröhrling"
 lateinisch = "Butyriboletus appendiculatus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "hasel", "fichte"]
 speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Wenn überhaupt, nur einen Fruchtkörper für den Eigenbedarf."
-marktfaehig = true
-wertigkeit = 1
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Laubwald Anhängselröhrling", "Gelber Steinpilz", "Gelber Bronzeröhrling", "Gelber Steini"]
 
@@ -48,7 +49,7 @@ slug = "schoenfussroehrling"
 [[verwechslungen]]
 name = "Falscher Anhängselröhrling"
 merkmal = "Röhren zitronengelb und nie blauend, Fleisch unter den Röhren schwefelgelb."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "falscher-anhaengselroehrling"
 
 [[verwechslungen]]

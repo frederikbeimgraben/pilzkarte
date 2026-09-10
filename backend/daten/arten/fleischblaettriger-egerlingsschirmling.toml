@@ -3,11 +3,11 @@ lateinisch = "Leucoagaricus carneifolius"
 gruppe = "schirmling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er sieht jungen Egerlingen und Schirmlingen ähnlich. Sein Sporenpulver bleibt weiß, das des Rosablättrigen Egerlingsschirmlings wird am nächsten Tag rosa. Nicht verzehren."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Dichtblättriger Egerlingsschirmling", "Grauhütiger Egerlingsschirmpilz"]
 

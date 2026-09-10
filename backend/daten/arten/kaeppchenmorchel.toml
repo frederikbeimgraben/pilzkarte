@@ -1,14 +1,19 @@
 name = "Käppchenmorchel"
 lateinisch = "Mitrophora semilibera"
 gruppe = "morchel"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["pappel"]
 speisewertHinweis = "Roh giftig wie alle Morcheln. Gut durchgaren, sonst drohen Magen-Darm-Vergiftungen. Dazu kommt das Morchella-Syndrom mit Trunkenheitsgefühl, Zittern und Schwindel. Besonders geschützt, nur für den Eigenbedarf sammeln."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Halbfreie Morchel", "Glockenmorchel", "Mützenmorchel"]
+
+[baeumeAusErfahrung]
+baeume = ["esche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kaeppchen.htm"
@@ -38,13 +43,13 @@ slug = "zipfellorchel"
 [[verwechslungen]]
 name = "Böhmische Morchel"
 merkmal = "Käppchen rundlich statt zugespitzt, runzelig labyrinthartig, nur an der Spitze flach mit dem Stiel verwachsen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "boehmische-verpel"
 
 [[verwechslungen]]
 name = "Spitzmorchel"
 merkmal = "Käppchen kammerig und mit dem Rand ganz am Stiel angewachsen, Fruchtkörper deutlich größer."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "spitzmorchel"
 
 [[links]]

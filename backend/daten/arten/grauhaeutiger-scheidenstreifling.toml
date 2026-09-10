@@ -1,14 +1,14 @@
 name = "Grauhäutiger Scheidenstreifling"
 lateinisch = "Amanita submembranacea"
 gruppe = "wulstling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne", "laerche", "birke", "buche", "hasel"]
 speisewertHinweis = "Roh giftig, also keine Kostversuche. Er kann so grün aussehen wie der Grüne Knollenblätterpilz. Scheidenstreiflinge haben aber keinen Ring und einen stark gerieften Hutrand."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Grüngelber Scheidenstreifling", "Grüner Streifling", "Grünbrauner Streifling"]
 
 [quelle]

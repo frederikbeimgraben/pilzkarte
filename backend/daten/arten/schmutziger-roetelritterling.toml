@@ -3,12 +3,13 @@ lateinisch = "Lepista sordida"
 gruppe = "roetelritterling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["fichte"]
 speisewertHinweis = "Roh giftig, er zersetzt das Blut. Nur gut durchgegart essen."
-marktfaehig = true
-wertigkeit = 3
 weitereNamen = ["Fleischbrauner Rötelritterling"]
 synonyme = ["Lepista sordida var. lilacea", "Lepista sordida var. obscurata", "Rhodopaxillus sordidus forma obscuratus"]
 
@@ -41,13 +42,13 @@ slug = "bocksdickfuss"
 [[verwechslungen]]
 name = "Violetter Rötelritterling"
 merkmal = "Deutlich größer und kräftiger violett, Geruch stärker parfümiert."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
 
 [[verwechslungen]]
 name = "Lavendelfarbener Rötelritterling"
 merkmal = "Hut blass ockerbräunlich, nur Stiel und Lamellen mit Lila."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lavendelfarbener-roetelritterling"
 
 [[links]]

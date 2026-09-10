@@ -1,13 +1,13 @@
 name = "Nelkenschwindling"
 lateinisch = "Marasmius oreades"
 gruppe = "schwindling"
-speisewert = "bedingtEssbar"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh in größeren Mengen unbekömmlich, er gibt Blausäure ab. Beim Kochen und Trocknen verflüchtigt sie sich. Nur die Hüte nehmen, die Stiele sind zäh."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Feldschwindling", "Suppenpilz", "Hartbeindl", "Herbstmusseron", "Oreadenpilz"]
 synonyme = ["Collybia oreades", "Agaricus coriaceus", "Agaricus pseudomouceron", "Scorteus oreades"]

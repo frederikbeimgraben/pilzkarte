@@ -1,13 +1,14 @@
 name = "Goldröhrling"
 lateinisch = "Suillus grevillei"
 gruppe = "schmierroehrling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche", "douglasie", "kiefer"]
 speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen und den Schleim vom Hut abziehen. Wie alle Schmierröhrlinge löst er bei manchen Magen-Darm-Beschwerden aus."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Goldgelber Lärchenröhrling", "Schöner Röhrling", "Gelber Röhrling"]
 synonyme = ["Boletopsis elegans", "Suillus grevillei forma badius", "Ixocomus elegans forma badius", "Boletinus grevillei", "Suillus elegans", "Boletopsis annulatus"]
 
@@ -71,7 +72,7 @@ slug = "kuhroehrling"
 [[verwechslungen]]
 name = "Elfenbeinröhrling"
 merkmal = "Hut weiß bis cremefarben, Stiel mit braunen harzigen Pünktchen, bei Zirbel- und Weymouthskiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "elfenbeinroehrling"
 
 [[links]]

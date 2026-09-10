@@ -1,14 +1,18 @@
 name = "Stockschwämmchen"
 lateinisch = "Kuehneromyces mutabilis"
 gruppe = "schueppling"
-speisewert = "bedingtEssbar"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nicht roh essen. Nur für Sammler, die den tödlich giftigen Gifthäubling sicher trennen: jeden Fruchtkörper einzeln mit Stiel prüfen, nie ganze Büschel abschneiden. Das Stockschwämmchen hat unter dem häutigen Ring deutliche Schüppchen und riecht pilzig, der Gifthäubling ist dort seidig faserig und silbrig. Eine Pilzberatung gibt Stockschwämmchen ohne Stiel nicht frei. Die Stiele sind sehr zäh und taugen höchstens als Pilzpulver."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Echtes Stockschwämmchen", "Gemeines Stockschwämmchen"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "birke"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Stockschwaemmchen.htm"
@@ -63,7 +67,7 @@ slug = "glattstieliges-stockschwaemmchen"
 [[verwechslungen]]
 name = "Rauchblättriger Schwefelkopf"
 merkmal = "Hut ockerbraun bis gelbbraun und kahl, ohne Schüppchen, Lamellen grau bis graulila, nie gelb oder grün."
-essbar = "speisepilz"
+essbar = "sehrGuterSpeisepilz"
 slug = "rauchblaettriger-schwefelkopf"
 
 [[links]]

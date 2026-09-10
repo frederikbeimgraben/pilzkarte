@@ -1,15 +1,19 @@
 name = "Schuppiger Porling"
 lateinisch = "Cerioporus squamosus"
 gruppe = "porling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Nur jung essbar und dann relativ minderwertig. 123pilze gibt ihm die Relative Wertigkeit 4."
-marktfaehig = true
-wertigkeit = 4
 weitereNamen = ["Schuppiger Stielporling", "Schwarzfußporling", "Schuppiger Schwarzfußporling"]
 synonyme = ["Polyporus squamosus", "Bresadolia squamosa", "Polyporus squamosus forma rostkovii", "Polyporus westii", "Polyporellus squamosus forma rostkovii", "Polyporus squamosus forma michelii", "Polyporus retirugus"]
+
+[baeumeAusErfahrung]
+baeume = ["ahorn", "esche", "ulme"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchuppigerPorling.htm"
@@ -40,7 +44,7 @@ slug = "loewengelber-porling"
 [[verwechslungen]]
 name = "Schuppiger Sägeblättling"
 merkmal = "Lamellen statt Poren, Schneiden stark gesägt, wächst an Nadelholz."
-essbar = "ungeniessbar"
+essbar = "essbar"
 slug = "schuppiger-saegeblaettling"
 
 [[verwechslungen]]
@@ -52,7 +56,7 @@ slug = "sklerotienporling"
 [[verwechslungen]]
 name = "Riesenporling"
 merkmal = "Viele fächerförmige Hüte an einem Strunk, Poren schwärzen auf Druck."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "riesenporling"
 
 [[verwechslungen]]
