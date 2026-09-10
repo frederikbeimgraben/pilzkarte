@@ -3,7 +3,7 @@ export { ActionBarComponent } from './action-bar/action-bar.component';
 export { ActionRowComponent } from './action-sheet/action-row.component';
 export { ActionSheetComponent } from './action-sheet/action-sheet.component';
 export { AvatarButtonComponent } from './avatar-button/avatar-button.component';
-export { BottomNavComponent, type NavEintrag } from './bottom-nav/bottom-nav.component';
+export { BottomNavComponent, type NavEintrag, type NavVariante } from './bottom-nav/bottom-nav.component';
 export { ChipGroupComponent, type Chip } from './chip-group/chip-group.component';
 export {
   ColorSwatchesComponent,
@@ -21,11 +21,21 @@ export { ListRowComponent } from './list-row/list-row.component';
 export { MetricRowComponent } from './metric-row/metric-row.component';
 export { NoteComponent, type NoteVariante } from './note/note.component';
 export { PageHeaderComponent } from './page-header/page-header.component';
-export { RampComponent, VORHERSAGE_RAMPE } from './ramp/ramp.component';
+export { RampComponent } from './ramp/ramp.component';
+export { VORHERSAGE_RAMPE } from './ramp/rampe-farben';
 export { RangeSliderComponent } from './range-slider/range-slider.component';
 export { SeasonCurveComponent } from './season-curve/season-curve.component';
 export { SegmentedComponent, type SegmentOption } from './segmented/segmented.component';
-export { RASTEN_STANDARD, SheetComponent, type Raste } from './sheet/sheet.component';
+export {
+  KOPF_HOEHE,
+  RASTEN_STANDARD,
+  SheetComponent,
+  ZUG_SCHWELLE,
+  rasteFuerHoehe,
+  rasteInPx,
+  type Raste,
+  type RasteMass,
+} from './sheet/sheet.component';
 export { SheetHeadComponent } from './sheet-head/sheet-head.component';
 export { SpeciesRowComponent } from './species-row/species-row.component';
 export { SvgIconComponent, type PiktogrammName } from './svg-icon/svg-icon.component';

@@ -1,4 +1,4 @@
-<nav class="nav" [attr.aria-label]="beschriftung()">
+<nav class="nav" [class.nav--spalte]="variante() === 'spalte'" [attr.aria-label]="beschriftung()">
   @for (eintrag of eintraege(); track eintrag.pfad) {
     <a
       class="nav__eintrag"

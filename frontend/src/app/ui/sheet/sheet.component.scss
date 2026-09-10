@@ -1,12 +1,15 @@
 // Das Blatt sitzt am unteren Rand seines Wirts; die Raste ist ein Anteil
-// dieser Höhe. Ohne feste Wirtshöhe hätte der Anteil keinen Bezug.
+// dieser Höhe. Ohne feste Wirtshöhe hätte der Anteil keinen Bezug. Über dem
+// Blatt bleibt der Wirt durchlässig, sonst fasste er die Karte darunter ab.
 :host {
   display: flex;
   align-items: flex-end;
   block-size: 100%;
+  pointer-events: none;
 }
 
 .blatt {
+  pointer-events: auto;
   display: flex;
   flex-direction: column;
   inline-size: 100%;
@@ -18,6 +21,8 @@
 
 .blatt__griff {
   display: flex;
+  // Ohne dies griffe der Browser die senkrechte Geste selbst ab und scrollte.
+  touch-action: none;
   flex: none;
   align-items: center;
   justify-content: center;
@@ -49,4 +54,13 @@
   flex-direction: column;
   min-block-size: 0;
   overflow: hidden;
+}
+
+// Am Rechner ist das Blatt eine Spalte neben der Karte: keine Rasten, kein
+// Griff, und die abgerundete Kante läge dort in der Mitte des Bildes.
+.blatt--spalte {
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+  border-inline-end: var(--border-width) solid var(--color-border);
+  box-shadow: none;
 }

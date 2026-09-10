@@ -1,5 +1,5 @@
-<div class="leiste" role="group" [attr.aria-label]="beschriftung()">
-  @for (woche of angezeigt(); track woche.schluessel) {
+<div class="leiste" role="group" [attr.aria-label]="beschriftung()" (keydown)="beiTaste($event)">
+  @for (woche of angezeigt(); track woche.schluessel; let i = $index) {
     <app-week-button
       [jahr]="woche.jahr"
       [woche]="woche.woche"
@@ -7,6 +7,7 @@
       [prognose]="woche.prognose"
       [jahresmarke]="woche.jahresmarke"
       [aktiv]="istAktiv(woche)"
+      [imTabWeg]="i === aktivIndex()"
       (auswahl)="auswahl.emit(woche)"
     />
   }

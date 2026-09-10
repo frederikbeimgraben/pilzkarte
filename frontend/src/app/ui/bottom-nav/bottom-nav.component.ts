@@ -9,10 +9,12 @@ export interface NavEintrag {
   icon: PiktogrammName;
 }
 
+/** Unten am Telefon, oben in der Spalte am Rechner (Artboard `Desktop`). */
+export type NavVariante = 'unten' | 'spalte';
+
 /**
- * Die untere Navigation, 64 px hoch. Der aktive Reiter wird als Eingabe
- * gesetzt und nicht aus der Route geraten, damit die Leiste in jedem Umfeld
- * dasselbe zeigt.
+ * Die Navigation, 64 px hoch. Der aktive Reiter wird als Eingabe gesetzt und
+ * nicht aus der Route geraten, damit die Leiste in jedem Umfeld dasselbe zeigt.
  */
 @Component({
   selector: 'app-bottom-nav',
@@ -25,4 +27,5 @@ export class BottomNavComponent {
   readonly eintraege = input.required<readonly NavEintrag[]>();
   readonly aktiv = input<string | null>(null);
   readonly beschriftung = input.required<string>();
+  readonly variante = input<NavVariante>('unten');
 }

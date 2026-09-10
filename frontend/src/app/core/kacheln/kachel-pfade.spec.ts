@@ -8,7 +8,7 @@ describe('Kachelpfade', () => {
 
   it('baut Manifest, Kachel und Funde nach dem Muster des Renderings', () => {
     expect(manifestPfad('boletus_edulis')).toBe('/boletus_edulis.json');
-    expect(kachelPfad('boletus_edulis', 2026, 7, 9, 271, 176)).toBe(
+    expect(kachelPfad('boletus_edulis_kacheln/2026W07', 9, 271, 176)).toBe(
       '/boletus_edulis_kacheln/2026W07/9/271/176.png',
     );
     expect(fundePfad('pfifferling')).toBe('/funde/pfifferling.json');

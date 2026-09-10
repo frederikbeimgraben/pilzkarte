@@ -29,4 +29,13 @@ describe('BottomNavComponent', () => {
 
     expect(screen.getByRole('link', { name: 'Karte' })).not.toHaveAttribute('aria-current');
   });
+
+  it('steht am Rechner als Spalte', async () => {
+    const { container } = await render(BottomNavComponent, {
+      inputs: { eintraege: EINTRAEGE, aktiv: '/karte', beschriftung: 'Hauptbereiche', variante: 'spalte' },
+      providers: [provideRouter([])],
+    });
+
+    expect(container.querySelector('.nav--spalte')).not.toBeNull();
+  });
 });

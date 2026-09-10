@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  block-size: 100%;
+}
+
+.karte {
+  position: relative;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.karte__flaeche {
+  position: absolute;
+  inset: 0;
+}
+
+// Das Blatt sitzt am unteren Rand der Karte. Der Wirt spannt über die ganze
+// Karte, weil die Raste ein Anteil dieser Höhe ist.
+.karte__blatt {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.karte__inhalt {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-block-size: 0;
+  padding: var(--pilz-gutter) var(--pilz-gutter) var(--space-6);
+  overflow-y: auto;
+}
+
+// Am Rechner steht das Blatt links in der Spalte unter der Navigation, die
+// Karte füllt den Rest (Artboard `Desktop`).
+:host-context(.huelle--spalte) {
+  .karte__flaeche {
+    inset-inline-start: var(--pilz-spalte);
+  }
+
+  .karte__blatt {
+    inset-block-start: var(--pilz-nav-hoehe);
+    inline-size: var(--pilz-spalte);
+  }
+}

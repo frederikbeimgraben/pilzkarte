@@ -17,6 +17,12 @@ Object.defineProperty(window, 'matchMedia', {
   }),
 });
 
+// jsdom hat keine Darstellung und keinen Zeiger. Ohne diese Stummel bräche
+// jeder Baustein, der etwas in den Blick holt oder eine Geste fängt.
+Element.prototype.scrollIntoView = () => undefined;
+Element.prototype.setPointerCapture = () => undefined;
+Element.prototype.releasePointerCapture = () => undefined;
+
 // Die Tests prüfen die deutschen Texte. Ohne diese Vorgabe entschiede die
 // Sprache des Testbrowsers, welcher Katalog gilt. Beide Quellen der Sprache
 // werden gesetzt, damit auch ein gesperrter Speicher nichts verschiebt.

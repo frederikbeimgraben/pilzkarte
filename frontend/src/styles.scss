@@ -1,4 +1,7 @@
 @use '@stupa-makers/ui-kit/styles';
+// MapLibre setzt seine Bedienelemente selbst in den Baum der Karte. Die Stile
+// müssen darum global sein; eingekapselte Komponentenstile erreichen sie nicht.
+@use 'maplibre-gl/dist/maplibre-gl.css';
 @use 'styles/tokens';
 @use 'styles/kit-hilfsklassen';
 
@@ -9,4 +12,26 @@ body {
   height: 100%;
   overflow: hidden;
   overscroll-behavior: none;
+}
+
+// Der Urheberhinweis von MapLibre steht oben rechts über der Karte, weil unten
+// das Blatt liegt. Auf dem Telefon ist er breiter als der Bildschirm; ohne
+// Umbruch liefe sein Anfang aus dem Bild. Seine eigenen Farben sind fest hell,
+// darum die Tokens der App.
+.maplibregl-ctrl-attrib {
+  max-inline-size: min(72vw, 340px);
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+}
+
+.maplibregl-ctrl-attrib a {
+  color: var(--color-text-muted);
+}
+
+.maplibregl-ctrl-attrib-button {
+  background-color: var(--color-surface-sunken);
+}
+
+.maplibregl-ctrl-attrib-inner {
+  white-space: normal;
 }

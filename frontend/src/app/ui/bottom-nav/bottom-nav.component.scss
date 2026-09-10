@@ -25,3 +25,21 @@
   font-size: var(--fs-xs);
   font-weight: var(--fw-semibold);
 }
+
+// Am Rechner sitzt dieselbe Leiste oben in der Spalte. Der Balken unter dem
+// aktiven Reiter ersetzt dort den Rand, den unten die Gerätekante gibt.
+.nav--spalte {
+  padding: 10px 12px 0;
+  border-block-start: 0;
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.nav--spalte .nav__eintrag {
+  gap: var(--space-1);
+  padding-block: 6px 10px;
+  border-block-end: 2px solid transparent;
+}
+
+.nav--spalte .nav__eintrag--aktiv {
+  border-block-end-color: var(--color-accent);
+}

@@ -1,0 +1,20 @@
+<div class="huelle" [class.huelle--spalte]="breit()">
+  <app-bottom-nav
+    class="huelle__nav"
+    [eintraege]="eintraege()"
+    [aktiv]="aktiv()"
+    [beschriftung]="'nav.beschriftung' | t"
+    [variante]="breit() ? 'spalte' : 'unten'"
+  />
+  <main class="huelle__inhalt" [class.huelle__inhalt--unter]="breit() && !aufDerKarte()">
+    <router-outlet />
+  </main>
+  @if (aufDerKarte()) {
+    <app-avatar-button
+      class="huelle__avatar"
+      [name]="'konto.gast' | t"
+      [beschriftung]="'nav.konto' | t"
+      (klick)="zumKonto()"
+    />
+  }
+</div>

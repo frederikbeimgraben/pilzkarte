@@ -1,1 +1,42 @@
-<app-platzhalter [titel]="'nav.karte' | t" />
+<div class="karte">
+  <div #flaeche class="karte__flaeche" role="region" [attr.aria-label]="'karte.beschriftung' | t"></div>
+  <div class="karte__blatt">
+    <app-sheet
+      [beschriftung]="'karte.blatt' | t"
+      [raste]="zustand.raste()"
+      [spalte]="breit()"
+      (rasteChange)="setzeRaste($event)"
+    >
+      <app-sheet-head
+        [titel]="artName()"
+        [titelAlsLink]="true"
+        [woche]="wochenText()"
+        [hinweis]="prognoseHinweis()"
+        (titelKlick)="zuDenArten()"
+        (zurueck)="schritt(-1)"
+        (abspielen)="spielen()"
+        (vor)="schritt(1)"
+      >
+        <app-timeline
+          [wochen]="leiste()"
+          [aktiv]="woche()"
+          [beschriftung]="'zeitleiste.beschriftung' | t"
+          (auswahl)="waehleWoche($event)"
+        />
+      </app-sheet-head>
+      <div class="karte__inhalt">
+        <app-segmented
+          [optionen]="darstellungen()"
+          [wert]="zustand.darstellung()"
+          [beschriftung]="'darstellung.beschriftung' | t"
+          (wertChange)="setzeDarstellung($event)"
+        />
+        @if (zustand.darstellung() === 'vorhersage') {
+          <app-ramp [beschriftung]="'karte.rampe' | t" [von]="'karte.rampeVon' | t" [bis]="rampeBis()" />
+        } @else {
+          <app-note>{{ 'platzhalter.hinweis' | t }}</app-note>
+        }
+      </div>
+    </app-sheet>
+  </div>
+</div>
