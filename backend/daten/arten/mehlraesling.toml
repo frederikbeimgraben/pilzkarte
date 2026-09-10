@@ -4,24 +4,33 @@ gruppe = "roetling"
 speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "fichte"]
-speisewertHinweis = "Nur mit dem starken Mehlgeruch und dem rosa Sporenabdruck. Ohne beides stehen lassen."
+baeume = []
+speisewertHinweis = "Nur mit starkem Mehlgeruch und rosa Sporenabdruck nehmen. Fehlt eines von beiden, kann es ein tödlich giftiger weißer Trichterling sein."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/MehlraeslingEssbar1004.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut ohne Reaktion."
 
 [merkmale]
-hut = "3 bis 10 cm, weiß bis cremegrau, matt und wildlederartig, unregelmäßig gebuchtet, Rand lange eingerollt."
-lamellen = "Weiß, später blass rosa, weit herablaufend, leicht ablösbar."
-stiel = "Kurz, weiß, oft exzentrisch angesetzt."
-fleisch = "Weiß, weich."
-geruch = "Sehr stark nach frischem Mehl."
-geschmack = "Mehlig, mild."
-sporenpulver = "Rosa."
-vorkommen = "Mykorrhiza mit Buche und Fichte, an Wegrändern und auf Lichtungen. Gilt als Zeiger für Steinpilze am selben Ort."
-zeit = "Juli bis Oktober."
+hut = "2 bis 15, selten bis 20 cm breit, weiß, grauweiß bis braungrau, fein bereift und samtig. Mitte unregelmäßig vertieft, teils mit leichten Buckeln, Rand eingerollt und wellig mit brüchigen Kanten. Ein Fingerdruck bleibt oft sichtbar."
+lamellen = "Weiß mit leichtem Gelb- oder Rotton, angewachsen und herablaufend, biegsam und weich, mit verkürzten Zwischenlamellen, leicht verschiebbar und ablösbar."
+stiel = "2 bis 10, selten bis 18 cm lang, bis 1,5, selten bis 2 cm dick, weiß, dick, voll, Basis weißfilzig."
+fleisch = "Weiß, fest, zart und brüchig."
+geruch = "Stark mehlartig, bei Verletzung sehr stark gurkig, beim Abtrocknen eher käsig mehlig. Am besten wahrnehmbar, wenn man die Lamellen verschiebt."
+geschmack = "Stark mehlartig, mild."
+sporenpulver = "Rosa, rosabraun bis hell braunrosa."
+vorkommen = "Im Mischwald. Die Seite führt ihn als Symbiosepilz, als Parasit und vermutlich auch als Folgezersetzer. Er gilt als Zeiger für Steinpilze am selben Ort."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weiße Trichterlinge"
-merkmal = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch nicht mehlig. Mehrere Arten sind giftig."
-essbar = "giftig"
+name = "Bleiweißer Trichterling"
+merkmal = "Sporenpulver weiß bis leicht gelblich statt rosa, Geruch süßlich aromatisch ohne Mehlnote, dünnfleischiger und wässrig zäh."
+essbar = "toedlichGiftig"
+slug = "bleiweisser-trichterling"
 
 [[links]]
 titel = "123pilzsuche.de"

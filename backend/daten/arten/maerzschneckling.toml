@@ -3,24 +3,36 @@ lateinisch = "Hygrophorus marzuolus"
 gruppe = "schneckling"
 speisewert = "speisepilz"
 geschuetzt = true
-jahreszeiten = ["winter", "fruehling"]
+jahreszeiten = ["fruehling"]
 baeume = ["tanne", "fichte", "buche"]
+speisewertHinweis = "Besonders geschützt und in Deutschland stark gefährdet. Den Fund besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Maerzschneckling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "5 bis 12 cm, jung weißlich, bald aschgrau bis schwarzgrau marmoriert, unregelmäßig gebuchtet."
-lamellen = "Weiß, dann grau, dick, wachsartig, entfernt, herablaufend."
-stiel = "Kräftig, weiß bis grau, voll."
-fleisch = "Weiß, fest."
-geruch = "Unauffällig."
+hut = "3 bis 8, selten bis 12 cm breit, weißlich bis grauschwarz oder braunschwarz, zum Rand grauer, fleckig, klebrig, radial streifig und wellig gebogen. Die Huthaut färbt das Fleisch etwas durch."
+lamellen = "Weiß, später etwas grau, nicht verfärbend, weit stehend, angewachsen bis etwas herablaufend, gegabelt, mit Zwischenlamellen."
+stiel = "Weiß, später grauweiß, Spitze grau und leicht schuppig."
+fleisch = "Weiß bis grau, fest und dick."
+geruch = "Angenehm."
 geschmack = "Mild."
 sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Tanne, Fichte und Buche, in Bergwäldern. Wächst am Schneerand, oft halb unter der Streu verborgen."
-zeit = "Februar bis April."
+vorkommen = "Symbiosepilz im Mischwald, gern bei Tanne und Fichte, seltener bei Buche und anderen Laubbäumen, auf kalkreichem Boden. In Deutschland stark gefährdet und nur regional zu finden."
+zeit = "Frühling."
 
 [[verwechslungen]]
-name = "Graue Ritterlinge"
-merkmal = "Lamellen dünn und dicht, nicht wachsartig, später im Jahr."
-essbar = "giftig"
+name = "Risspilzartiger Schneckling"
+merkmal = "Hut braunschuppig auf hellgrauem Grund, Rand fransig, Stiel ebenso braunschuppig."
+essbar = "ungeniessbar"
+slug = "risspilzartiger-schneckling"
+
+[[verwechslungen]]
+name = "Großer Kiefernschneckling"
+merkmal = "Hut graubraun bis olivbraun mit stumpfem Buckel, Stiel schleimig mit Ringzone, bei Kiefer und erst im Spätsommer und Herbst."
+essbar = "essbar"
+slug = "grosser-kiefernschneckling"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,26 +1,52 @@
 name = "Lungenseitling"
 lateinisch = "Pleurotus pulmonarius"
 gruppe = "seitling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["sommer"]
-baeume = ["buche"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["buche", "esche", "pappel", "birke"]
+speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen. Weiße Seitlinge ohne Stiel bleiben stehen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Lungenseitling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut orange."
+
+[[reagenzien]]
+reagenz = "sulfovanillin"
+reaktion = "Magentarot."
 
 [merkmale]
-hut = "4 bis 12 cm, blass creme bis weißlich, dünnfleischiger und heller als der Austernseitling."
-lamellen = "Weiß, herablaufend, am Stiel oft netzig verbunden."
-stiel = "Kurz, seitlich bis fast mittig, deutlicher ausgeprägt als beim Austernseitling."
-fleisch = "Weiß, dünn."
-geruch = "Angenehm, etwas anisartig."
-geschmack = "Mild."
-sporenpulver = "Weißlich."
-vorkommen = "Zersetzer an Laubholz, vor allem Buche, im Sommer und Frühherbst."
-zeit = "Mai bis Oktober."
+hut = "4 bis 15, selten bis 20 cm breit, nie reinweiß, sondern milchweiß, elfenbeinweiß, cremeweiß, grauweiß bis hellbeige, fettig glänzend. Kleiner, zarter und dünnfleischiger als der Austernseitling. Rand lange eingerollt, später gewellt."
+lamellen = "Weißlich bis cremefarben, im Alter gilbend, gedrängt und untermischt, Schneiden glatt, am Stiel meist nur kurz herablaufend, selten mit aderigen Querverbindungen."
+stiel = "1 bis 4, selten bis 5 cm lang, 0,5 bis 1, selten bis 1,2 cm dick, weiß, meist kurz seitlich bis außermittig angesetzt, striegelig, Basis weißfilzig. Selten fehlt er ganz."
+fleisch = "Weiß, etwas wässrig, jung weich, alt zäh elastisch, zum Stiel korkig bis lederig. Bei Verletzung ohne Farbwechsel."
+geruch = "Angenehm pilzig, süßlich, anisartig oder neutral."
+geschmack = "Mild. Roh zersetzt er rote Blutkörperchen."
+sporenpulver = "Weiß, schmutzigweiß bis leicht cremefarben."
+vorkommen = "Folgezersetzer an Laubholz, gern Buche, Esche, Pappel und Birke. In Deutschland relativ häufig, im Bayerischen Wald mit vielen Fundstellen."
+zeit = "Frühling bis Herbst."
+
+[[verwechslungen]]
+name = "Rosenseitling"
+merkmal = "Hut und Lamellen gelblich bis rosenrot, Geruch beißend nitratartig. In Europa nur als Zuchtpilz."
+essbar = "essbar"
+slug = "rosenseitling"
+
+[[verwechslungen]]
+name = "Rillstieliger Seitling"
+merkmal = "Lamellen queradrig netzig verbunden und bis zur Stielbasis herablaufend, Stiel längsrillig, Geruch mehlartig."
+essbar = "essbar"
+slug = "rillstieliger-seitling"
 
 [[verwechslungen]]
 name = "Austernseitling"
-merkmal = "Dunkler grau, dickfleischiger, im Winter."
-essbar = "speisepilz"
+merkmal = "Hut silbergrau bis graubraun statt cremeweiß, dickfleischiger. Er braucht einen Kältereiz und kommt erst im Winter."
+essbar = "bedingtEssbar"
+slug = "austernseitling"
 
 [[links]]
 titel = "123pilzsuche.de"

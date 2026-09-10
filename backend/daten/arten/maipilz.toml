@@ -3,30 +3,54 @@ lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
 speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["fruehling"]
-baeume = ["hainbuche", "eiche"]
-speisewertHinweis = "Der Mehlgeruch ist das Hauptmerkmal. Ohne ihn stehen lassen."
+jahreszeiten = ["fruehling", "sommer"]
+baeume = ["pappel", "laerche"]
+speisewertHinweis = "Ohne den starken Mehlgeruch stehen lassen. Zur selben Zeit und am selben Ort wachsen tödlich giftige Risspilze."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "5 bis 12 cm, cremeweiß bis blass lederfarben, dickfleischig, Rand lange eingerollt."
-lamellen = "Weiß, sehr dicht und schmal, am Stiel ausgebuchtet."
-stiel = "Kräftig, weiß, voll, oft gebogen."
-fleisch = "Weiß, fest."
-geruch = "Stark nach frischem Mehl oder Gurke."
+hut = "3 bis 15, selten bis 20 cm breit, weiß, cremeweiß bis gelblich, matt, oft bereift fleckig. Rand jung eingerollt, im Alter von der Mitte her bräunlich schuppig. Form oft unregelmäßig verbogen."
+lamellen = "Weiß, später gelblich, schmal und sehr dicht, am Stiel ausgebuchtet angewachsen, manchmal mit einem Zahn herablaufend, mit vielen Zwischenlamellen."
+stiel = "5 bis 8, selten bis 10 cm lang, 1 bis 3, selten bis 4 cm dick, weißlich bis gelblich, kräftig, faserig, zur Basis oft leicht keulig. Nie ein Ring oder ein Rest davon."
+fleisch = "Weiß, teils gelblich bis gelbbraun, dick und fest, bei Verletzung ohne Verfärbung. Im Längsschnitt ist das Hutfleisch immer dicker als die Lamellen hoch sind."
+geruch = "Mehlig bis gurkenartig, am besten an zerdrücktem Fleisch zu prüfen."
 geschmack = "Mehlig, mild."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer an Waldrändern, in Hecken, unter Hainbuche und Eiche, auf Kalk. In Reihen und Ringen."
-zeit = "April bis Juni."
+vorkommen = "Folgezersetzer auf Wiesen, in Parks, Laubwäldern und Auwald, bei Espe und Pappel, nur vereinzelt bei Lärche, meist auf kalkreichem Boden. In Hexenringen, sehr häufig."
+zeit = "Frühling bis Frühsommer."
 
 [[verwechslungen]]
-name = "Ziegelroter Rißpilz"
-merkmal = "Hut faserig aufreißend, Lamellen bräunlich, gleiche Zeit und gleicher Ort. Tödlich giftig."
+name = "Riesenrötling"
+merkmal = "Riecht ebenfalls mehlig, Lamellen jung gelblich, später rotocker bis rostgelb, Sporenpulver rosabraun. Erscheint meist erst ab August."
 essbar = "toedlichGiftig"
+slug = "riesenroetling"
 
 [[verwechslungen]]
-name = "Frühlings-Trichterling"
-merkmal = "Lamellen herablaufend, Fleisch dünn."
-essbar = "giftig"
+name = "Ziegelroter Risspilz"
+merkmal = "Hut radialfaserig aufreißend, gelb- bis ziegelrotbraun, Fleisch rötend, Geruch spermatisch oder obstartig ohne Mehlnote."
+essbar = "toedlichGiftig"
+slug = "ziegelroter-risspilz"
+
+[[verwechslungen]]
+name = "Bleiweißer Trichterling"
+merkmal = "Kleiner und dünnfleischig, Hut weiß und glasig bereift, Lamellen herablaufend statt ausgebuchtet."
+essbar = "toedlichGiftig"
+slug = "bleiweisser-trichterling"
+
+[[verwechslungen]]
+name = "Orangeroter Mairitterling"
+merkmal = "Hut mit rötlichem Unterton, Geruch schwächer und weniger angenehm, bei Lärche. Sehr selten."
+essbar = "ungeniessbar"
+slug = "orangeroter-mairitterling"
+
+[[verwechslungen]]
+name = "Mehlräsling"
+merkmal = "Lamellen laufen herab und werden rosa, Sporenpulver rosa."
+essbar = "speisepilz"
+slug = "mehlraesling"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,32 +1,60 @@
 name = "Mönchskopf"
 lateinisch = "Infundibulicybe geotropa"
 gruppe = "trichterling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["buche", "fichte"]
-speisewertHinweis = "Nur die Hüte, die Stiele sind zäh."
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Alte Stiele sind wässrig und zäh und bleiben besser stehen. Unter den Trichterlingen stehen einige tödlich giftige Arten; nur mit sicherer Bestimmung sammeln."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/MoenchskopfEssbar1004.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Nur an frischen Fruchtkörpern, auf dem Hut olivgrün."
 
 [merkmale]
-hut = "8 bis 20 cm, blass lederfarben bis ockerbraun, tief trichterig mit einem stumpfen Buckel in der Mitte."
-lamellen = "Cremeweiß, dicht, weit am Stiel herablaufend."
-stiel = "Lang, kräftig, keulig verdickt, in Hutfarbe."
-fleisch = "Weiß, zäh und faserig, besonders im Stiel."
-geruch = "Angenehm, schwach süßlich."
-geschmack = "Mild."
+hut = "5 bis 20, selten bis 25 cm breit, bräunlich, feinfilzig, später kahl. In der Mitte ein Buckel, der oft nur mit den Fingern zu ertasten ist. Rand jung weit eingerollt und gekrempelt, alt unregelmäßig wellig."
+lamellen = "Weiß bis cremefarben, herablaufend, eng stehend."
+stiel = "6 bis 15, selten bis 17 cm lang, 1 bis 3, selten bis 4 cm dick, bräunlich wie der Hut, Basis keulig verdickt."
+fleisch = "Weißlich bis cremefarben, in der Hutmitte dick, in der Stielrinde bräunlich, außen ziemlich hart und innen weich, im Alter wässrig und zäh faserig."
+geruch = "Süßlich, etwas nach Lavendel, teils stechend alkalisch wie Bittermandel. Im Alter muffig mehlartig."
+geschmack = "Mild, jung nach längerem Kauen etwas bitterlich."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer in Laub- und Nadelwäldern, an Waldrändern und Hecken, in großen Hexenringen."
-zeit = "September bis November."
+vorkommen = "Folgezersetzer im Mischwald, gern auf kalkreichem Boden, oft in Hexenringen. Häufig."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Bleiweißer Trichterling"
-merkmal = "Deutlich kleiner, rein weiß, ohne Buckel."
-essbar = "giftig"
+merkmal = "Deutlich kleiner und dünnfleischig, Hut weiß und glasig bereift, ohne Buckel in der Mitte."
+essbar = "toedlichGiftig"
+slug = "bleiweisser-trichterling"
 
 [[verwechslungen]]
 name = "Nebelkappe"
-merkmal = "Hut grau, Lamellen kaum herablaufend, Geruch süßlich dumpf."
-essbar = "nichtEmpfohlen"
+merkmal = "Hut graubraun bis weißgrau ohne Buckel, Geruch unangenehm süßlich nach Raps, Sporenpulver cremegelblich."
+essbar = "giftig"
+slug = "nebelkappe"
+
+[[verwechslungen]]
+name = "Riesentrichterling"
+merkmal = "Hutmitte ohne Buckel, Rand nur wenig eingerollt, Hut seidig glatt."
+essbar = "essbar"
+slug = "riesentrichterling"
+
+[[verwechslungen]]
+name = "Riesenkrempentrichterling"
+merkmal = "Hut weiß bis blassocker, im Alter mit braunen Flecken und kreisförmigen Rissen, Geruch mehlig, Geschmack nussig."
+essbar = "essbar"
+slug = "riesenkrempentrichterling"
+
+[[verwechslungen]]
+name = "Rillstieliger Weichritterling"
+merkmal = "Hut rotbraun bis kastanienbraun und stark ausblassend, Lamellen nur mit einem Zahn herablaufend, Stiel rillig gestreift."
+essbar = "essbar"
+slug = "rillstieliger-weichritterling"
 
 [[links]]
 titel = "123pilzsuche.de"
