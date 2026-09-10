@@ -136,6 +136,10 @@ in `app/core/` oder `app/shared/`.
 - Fundorte von Steinpilz und Pfifferling gehen nie exakt in eine öffentliche Antwort. Geteilte Funde geschützter Arten auf 5 km gerundet.
 - Fotos: höchstens drei je Fund, 1600 px, EXIF und GPS entfernt, JPEG oder WebP.
 - Doku, Docstrings, Commits in kurzen, aktiven Sätzen. Ein Gedanke je Satz.
+- **Deutsch wird deutsch geschrieben.** Umlaute und Eszett stehen als
+  Umlaute und Eszett, auch in Commit-Nachrichten, PR-Texten und
+  Kommentaren. Kein `ue` für `ü`, kein `ss` für `ß`. Bezeichner sind
+  ohnehin englisch und tragen keine Umlaute.
 
 ## CI
 
