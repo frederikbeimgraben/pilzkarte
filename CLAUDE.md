@@ -106,6 +106,11 @@ in `app/core/` oder `app/shared/`.
   überstehen. Die Adresse wird nicht geschrieben. Ein tiefer Link wird beim
   ersten Laden einmal übernommen und danach aus der Adresse entfernt.
 - TDD. Test zuerst, dann der kleinste Code, dann aufräumen. Kein `skip` ohne Grund.
+- **Kein Text steht fest im Code.** Jede Zeichenkette, die eine Person
+  liest, ist ein Schlüssel. Der Text dazu liegt in der Datenbank und lässt
+  sich mit der Rolle `admin` in der Oberfläche ändern. Die Migration setzt
+  den Anfangsbestand, der Client hält ihn als Rückfall für den ersten Start
+  und für offline.
 - **Bezeichner sind englisch, ausnahmslos.** Klassen, Komponenten,
   Selektoren, Methoden, Variablen, Dateinamen, CSS-Klassen, Testnamen,
   Feldnamen im Vertrag, Spalten in der Datenbank, i18n-Schlüssel. Deutsch
