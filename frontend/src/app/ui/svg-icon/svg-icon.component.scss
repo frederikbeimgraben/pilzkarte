@@ -11,7 +11,7 @@ svg {
 }
 
 // Die Pfeile der Kopfzeile sind Flächen, keine Striche.
-svg.gefuellt {
+svg.filled {
   fill: currentColor;
   stroke: none;
 }

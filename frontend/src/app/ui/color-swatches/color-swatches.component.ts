@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 /** Eine wählbare Farbe für Zone oder Marker. */
-export interface Farbfeld {
-  wert: string;
+export interface ColorSwatch {
+  value: string;
   label: string;
 }
 
@@ -10,7 +10,7 @@ export interface Farbfeld {
  * Die sechs Farben aus dem Artboard `Zone`. Der enge Typ ist kein Schmuck:
  * MapLibre und Terra Draw nehmen nur echte Hex-Werte an.
  */
-export const OBJEKT_FARBEN: readonly `#${string}`[] = [
+export const OBJECT_COLORS: readonly `#${string}`[] = [
   '#004225',
   '#8c6820',
   '#185468',
@@ -30,9 +30,9 @@ export const OBJEKT_FARBEN: readonly `#${string}`[] = [
   styleUrl: './color-swatches.component.scss',
 })
 export class ColorSwatchesComponent {
-  readonly farben = input.required<readonly Farbfeld[]>();
-  readonly wert = input.required<string>();
-  readonly beschriftung = input.required<string>();
+  readonly colors = input.required<readonly ColorSwatch[]>();
+  readonly value = input.required<string>();
+  readonly label = input.required<string>();
 
-  readonly wertChange = output<string>();
+  readonly valueChange = output<string>();
 }

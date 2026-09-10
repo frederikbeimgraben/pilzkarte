@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { ButtonComponent } from '@stupa-makers/ui-kit';
 import { NoteComponent } from '../note/note.component';
-import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.component';
+import { SvgIconComponent, type IconName } from '../svg-icon/svg-icon.component';
 
 /**
  * Die Aktionsleiste am unteren Rand eines Blatts oder einer Objektseite.
@@ -17,20 +17,20 @@ import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.comp
   styleUrl: './action-bar.component.scss',
 })
 export class ActionBarComponent {
-  readonly haupt = input<string>();
-  readonly hauptIcon = input<PiktogrammName>();
-  readonly hauptDeaktiviert = input(false);
+  readonly primary = input<string>();
+  readonly mainIcon = input<IconName>();
+  readonly mainDisabled = input(false);
   /** Steht die Hauptaktion nicht offen, sagt diese Zeile darunter, warum. */
-  readonly unter = input<string>();
-  readonly sekundaer = input<string>();
+  readonly subline = input<string>();
+  readonly secondary = input<string>();
   /** Die linke der beiden Nebenaktionen, wenn keine Gefahr im Spiel ist. */
-  readonly zweite = input<string>();
-  readonly gefahr = input<string>();
-  readonly geist = input<string>();
+  readonly second = input<string>();
+  readonly danger = input<string>();
+  readonly ghost = input<string>();
 
-  readonly hauptKlick = output();
-  readonly sekundaerKlick = output();
-  readonly zweiteKlick = output();
-  readonly gefahrKlick = output();
-  readonly geistKlick = output();
+  readonly mainClick = output();
+  readonly secondaryClick = output();
+  readonly secondClick = output();
+  readonly dangerClick = output();
+  readonly ghostClick = output();
 }

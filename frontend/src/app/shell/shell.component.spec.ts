@@ -3,40 +3,40 @@ import { DeferBlockBehavior, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
 import { AuthService } from '../core/auth';
-import { AnsichtDienst } from '../core/layout/ansicht.service';
-import { KartenRouteComponent } from '../features/karte/karten-route.component';
-import { ManagerAttrappe, authAnbieter, oidcNutzer } from '../testing/auth-attrappe';
-import { karteMitAttrappen, manifestAntwort, type KartenAttrappe } from '../testing/karte-attrappen';
-import { keineVerstoesse } from '../testing/axe';
+import { ViewportService } from '../core/layout/viewport.service';
+import { MapRouteComponent } from '../features/map/map-route.component';
+import { ManagerDouble, authProvider, oidcUser } from '../testing/auth-double';
+import { mapWithDoubles, answerManifest, type MapAdapterDouble } from '../testing/map-doubles';
+import { noViolations } from '../testing/axe';
 import { ShellComponent } from './shell.component';
 
 @Component({
-  selector: 'app-seite',
+  selector: 'app-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<h1>Seite</h1>',
 })
-class SeiteComponent {}
+class PageComponent {}
 
-const ROUTEN = [
-  { path: 'karte', component: SeiteComponent },
-  { path: 'arten', component: SeiteComponent },
-  { path: 'eintraege', component: SeiteComponent },
-  { path: 'konto', component: SeiteComponent },
+const ROUTES = [
+  { path: 'karte', component: PageComponent },
+  { path: 'arten', component: PageComponent },
+  { path: 'eintraege', component: PageComponent },
+  { path: 'konto', component: PageComponent },
   { path: '', pathMatch: 'full' as const, redirectTo: 'karte' },
 ];
 
 /** Je Test eine eigene Attrappe, sonst trüge eine Anmeldung in den nächsten. */
-async function huelle() {
-  const manager = new ManagerAttrappe();
-  const ergebnis = await render(ShellComponent, {
-    providers: [provideRouter(ROUTEN), ...authAnbieter(manager)],
+async function shell() {
+  const manager = new ManagerDouble();
+  const result = await render(ShellComponent, {
+    providers: [provideRouter(ROUTES), ...authProvider(manager)],
   });
-  return { ...ergebnis, manager };
+  return { ...result, manager };
 }
 
 describe('ShellComponent', () => {
   it('zeigt die drei Reiter und den Avatar über der Karte', async () => {
-    const { container, navigate } = await huelle();
+    const { container, navigate } = await shell();
     await navigate('/karte');
 
     expect(screen.getByRole('navigation', { name: 'Hauptbereiche' })).toBeInTheDocument();
@@ -45,11 +45,11 @@ describe('ShellComponent', () => {
     }
     expect(screen.getByRole('link', { name: 'Karte' })).toHaveAttribute('aria-current', 'page');
     expect(screen.getByRole('button', { name: 'Konto' })).toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('markiert den Reiter auch bei einer Adresse mit Abfrage', async () => {
-    const { navigate } = await huelle();
+    const { navigate } = await shell();
 
     await navigate('/karte?art=pfifferling&kw=2025-40');
 
@@ -57,7 +57,7 @@ describe('ShellComponent', () => {
   });
 
   it('zeigt den Avatar nur über der Karte', async () => {
-    const { navigate } = await huelle();
+    const { navigate } = await shell();
 
     await navigate('/arten');
 
@@ -66,18 +66,18 @@ describe('ShellComponent', () => {
   });
 
   it('trägt der Avatar angemeldet den ersten Buchstaben des Namens', async () => {
-    const { navigate, detectChanges, manager } = await huelle();
+    const { navigate, detectChanges, manager } = await shell();
     await navigate('/karte');
-    manager.still = oidcNutzer();
+    manager.still = oidcUser();
 
-    await TestBed.inject(AuthService).stilleErneuerung();
+    await TestBed.inject(AuthService).silentRenew();
     detectChanges();
 
     expect(screen.getByRole('button', { name: 'Konto von Frederik' })).toHaveTextContent('F');
   });
 
   it('führt der Avatar zum Konto', async () => {
-    const { navigate, fixture } = await huelle();
+    const { navigate, fixture } = await shell();
     await navigate('/karte');
 
     screen.getByRole('button', { name: 'Konto' }).click();
@@ -88,43 +88,43 @@ describe('ShellComponent', () => {
 });
 
 /** Am Rechner steht die Karte in der Hülle; die Route liefert dort nichts. */
-const BREITE_ROUTEN = [
-  { path: 'karte', component: KartenRouteComponent },
-  { path: 'arten', component: SeiteComponent },
-  { path: 'eintraege', component: SeiteComponent },
+const WIDE_ROUTES = [
+  { path: 'karte', component: MapRouteComponent },
+  { path: 'arten', component: PageComponent },
+  { path: 'eintraege', component: PageComponent },
   { path: '', pathMatch: 'full' as const, redirectTo: 'karte' },
 ];
 
-async function breiteHuelle(): Promise<{
-  attrappe: KartenAttrappe;
-  navigate: (pfad: string) => Promise<boolean>;
+async function wideShell(): Promise<{
+  double: MapAdapterDouble;
+  navigate: (path: string) => Promise<boolean>;
   detectChanges: () => void;
   container: Element;
 }> {
-  manifestAntwort();
-  const { karte: attrappe } = karteMitAttrappen();
+  answerManifest();
+  const { map: double } = mapWithDoubles();
   const { navigate, detectChanges, container, fixture } = await render(ShellComponent, {
     // Die Karte hängt in einem `@defer`-Block, damit sie am Telefon nicht im
     // ersten Bündel liegt. Im Test soll er laufen wie im Browser.
     deferBlockBehavior: DeferBlockBehavior.Playthrough,
     providers: [
-      provideRouter(BREITE_ROUTEN),
-      ...authAnbieter(new ManagerAttrappe()),
-      { provide: AnsichtDienst, useValue: { breit: signal(true) } },
+      provideRouter(WIDE_ROUTES),
+      ...authProvider(new ManagerDouble()),
+      { provide: ViewportService, useValue: { wide: signal(true) } },
     ],
   });
   await navigate('/karte');
   await fixture.whenStable();
   detectChanges();
-  return { attrappe, navigate, detectChanges, container };
+  return { double, navigate, detectChanges, container };
 }
 
 describe('ShellComponent am Rechner', () => {
   it('stellt die Karte neben die Spalte und lässt sie beim Reiterwechsel stehen', async () => {
-    const { attrappe, navigate, detectChanges, container } = await breiteHuelle();
+    const { double, navigate, detectChanges, container } = await wideShell();
 
-    expect(attrappe.gestartet).toBe(1);
-    expect(container.querySelector('.karte__blatt')).not.toBeNull();
+    expect(double.started).toBe(1);
+    expect(container.querySelector('.map__sheet')).not.toBeNull();
 
     await navigate('/arten');
     detectChanges();
@@ -132,20 +132,20 @@ describe('ShellComponent am Rechner', () => {
     detectChanges();
 
     // Kein zweiter Aufbau heißt: kein Neuladen der Kacheln, kein zweiter Adapter.
-    expect(attrappe.gestartet).toBe(1);
-    expect(attrappe.zerstoert).toBe(false);
+    expect(double.started).toBe(1);
+    expect(double.destroyed).toBe(false);
     expect(screen.getByRole('region', { name: 'Karte von Deutschland' })).toBeInTheDocument();
   });
 
   it('zeigt das Blatt nur auf dem Reiter Karte', async () => {
-    const { navigate, detectChanges, container } = await breiteHuelle();
+    const { navigate, detectChanges, container } = await wideShell();
 
     await navigate('/arten');
     detectChanges();
 
     // Auf einem anderen Reiter gehört die Spalte diesem Reiter. Das Blatt wäre
     // dort verdeckt und läge trotzdem in der Tastaturreihenfolge.
-    expect(container.querySelector('.karte__blatt')).toBeNull();
-    expect(container.querySelector('.karte__knoepfe')).toBeNull();
+    expect(container.querySelector('.map__sheet')).toBeNull();
+    expect(container.querySelector('.map__buttons')).toBeNull();
   });
 });

@@ -25,34 +25,34 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
 })
 export class WeekButtonComponent {
   private readonly i18n = inject(I18nService);
-  private readonly knopf = viewChild.required<ElementRef<HTMLButtonElement>>('knopf');
+  private readonly button = viewChild.required<ElementRef<HTMLButtonElement>>('button');
 
   readonly jahr = input.required<number>();
   readonly woche = input.required<number>();
   /** Balkenhöhe, 0 bis 1. */
-  readonly anteil = input(0);
-  readonly prognose = input(false);
-  readonly aktiv = input(false);
+  readonly share = input(0);
+  readonly forecast = input(false);
+  readonly active = input(false);
   /** Die erste Woche eines Jahres trägt die Jahreszahl über sich. */
-  readonly jahresmarke = input(false);
+  readonly yearMark = input(false);
   /** Nur eine Woche der Leiste liegt im Tabulator-Weg; die Pfeile führen weiter. */
-  readonly imTabWeg = input(true);
+  readonly inTabOrder = input(true);
   /** Gesperrt, solange die Darstellung keine Woche kennt. */
-  readonly gesperrt = input(false);
+  readonly locked = input(false);
 
-  readonly auswahl = output();
+  readonly chosen = output();
 
-  protected readonly balken = computed(() => `${Math.round(Math.min(Math.max(this.anteil(), 0), 1) * 100)}%`);
+  protected readonly bars = computed(() => `${Math.round(Math.min(Math.max(this.share(), 0), 1) * 100)}%`);
 
   /** Holt die Woche in den Blick und, wenn gewünscht, in den Fokus. */
-  zeige(mitFokus: boolean): void {
-    const element = this.knopf().nativeElement;
+  show(withFocus: boolean): void {
+    const element = this.button().nativeElement;
     element.scrollIntoView({ block: 'nearest', inline: 'center' });
-    if (mitFokus) element.focus();
+    if (withFocus) element.focus();
   }
 
-  protected beschriftung(): string {
+  protected label(): string {
     const text = this.i18n.translate('zeitleiste.woche', { woche: this.woche(), jahr: this.jahr() });
-    return this.prognose() ? `${text} · ${this.i18n.translate('zeitleiste.prognose')}` : text;
+    return this.forecast() ? `${text} · ${this.i18n.translate('zeitleiste.prognose')}` : text;
   }
 }

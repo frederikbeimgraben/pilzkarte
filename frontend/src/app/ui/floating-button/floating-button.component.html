@@ -1,9 +1,9 @@
 <button
-  class="schwebe"
+  class="floating"
   type="button"
-  [class.schwebe--primaer]="variante() === 'primaer'"
-  [attr.aria-label]="beschriftung()"
-  (click)="klick.emit()"
+  [class.floating--primary]="variant() === 'primaer'"
+  [attr.aria-label]="label()"
+  (click)="pressed.emit()"
 >
-  <app-svg-icon [name]="icon()" [groesse]="24" />
+  <app-svg-icon [name]="icon()" [size]="24" />
 </button>

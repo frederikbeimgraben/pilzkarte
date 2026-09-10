@@ -1,0 +1,15 @@
+@if (map.object() !== null) {
+  <div class="object">
+    <app-sheet appSheetHeight class="object__sheet" [label]="sheetName()" [detents]="detents">
+      @if (find(); as entry) {
+        <app-find-sheet [find]="entry" (showOnMap)="showOnMap($event)" (closed)="close()" />
+      } @else if (marker(); as entry) {
+        <app-marker-sheet [marker]="entry" (showOnMap)="showOnMap($event)" (closed)="close()" />
+      } @else if (zone(); as entry) {
+        <app-zone-sheet [zone]="entry" (showOnMap)="showOnMap($event)" (closed)="close()" />
+      } @else if (missing()) {
+        <app-note class="empty-state">{{ 'objekt.nichtGefunden' | t }}</app-note>
+      }
+    </app-sheet>
+  </div>
+}

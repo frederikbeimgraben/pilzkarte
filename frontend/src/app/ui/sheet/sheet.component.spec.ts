@@ -1,85 +1,85 @@
 import { Component } from '@angular/core';
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { keineVerstoesse } from '../../testing/axe';
-import { RASTEN_STANDARD, SheetComponent, rasteFuerHoehe, rasteInPx } from './sheet.component';
+import { noViolations } from '../../testing/axe';
+import { DETENTS_DEFAULT, SheetComponent, detentForHeight, detentInPx } from './sheet.component';
 
 @Component({
   imports: [SheetComponent],
   template: `
-    <app-sheet beschriftung="Steinpilz" [raste]="1" [modal]="true" [griffTipp]="true">
+    <app-sheet label="Steinpilz" [detent]="1" [modal]="true" [handleHint]="true">
       <button type="button">erste</button>
       <button type="button">zweite</button>
     </app-sheet>
   `,
 })
-class WirtComponent {}
+class HostComponent {}
 
 /** jsdom misst nichts; das Blatt braucht aber eine Höhe, um zu rasten. */
-function miss(wirt: HTMLElement, wirtHoehe: number, blattHoehe: number): void {
-  Object.defineProperty(wirt, 'clientHeight', { value: wirtHoehe, configurable: true });
-  const blatt = wirt.querySelector('.blatt');
-  if (blatt) Object.defineProperty(blatt, 'clientHeight', { value: blattHoehe, configurable: true });
+function miss(host: HTMLElement, hostHeight: number, sheetHeight: number): void {
+  Object.defineProperty(host, 'clientHeight', { value: hostHeight, configurable: true });
+  const sheet = host.querySelector('.sheet');
+  if (sheet) Object.defineProperty(sheet, 'clientHeight', { value: sheetHeight, configurable: true });
 }
 
-function zieh(griff: HTMLElement, hoehen: readonly number[]): void {
-  const typen = ['pointerdown', 'pointermove', 'pointerup'];
-  hoehen.forEach((clientY, i) => {
-    griff.dispatchEvent(new MouseEvent(typen[Math.min(i, 2)], { bubbles: true, clientY }));
+function drag(handle: HTMLElement, sizes: readonly number[]): void {
+  const kinds = ['pointerdown', 'pointermove', 'pointerup'];
+  sizes.forEach((clientY, i) => {
+    handle.dispatchEvent(new MouseEvent(kinds[Math.min(i, 2)], { bubbles: true, clientY }));
   });
 }
 
 describe('SheetComponent', () => {
   it('ist ein Dialog mit Griff und Inhalt', async () => {
     const { container } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Steinpilz', griffTipp: true },
+      inputs: { label: 'Steinpilz', handleHint: true },
     });
 
     expect(screen.getByRole('dialog', { name: 'Steinpilz' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Blatt greifen' })).toBeInTheDocument();
     expect(screen.getByText(/Tippen wechselt die Raste/)).toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('geht beim Tipp auf den Griff zur nächsten Raste und wieder von vorn', async () => {
     const { fixture } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Steinpilz', raste: 2 },
+      inputs: { label: 'Steinpilz', detent: 2 },
     });
-    const gerufen: number[] = [];
-    fixture.componentInstance.rasteChange.subscribe((raste) => gerufen.push(raste));
+    const calls: number[] = [];
+    fixture.componentInstance.detentChange.subscribe((detent) => calls.push(detent));
 
     await userEvent.click(screen.getByRole('button', { name: 'Blatt greifen' }));
 
-    expect(gerufen).toEqual([0]);
+    expect(calls).toEqual([0]);
   });
 
   it('setzt die Höhe der gewählten Raste', async () => {
     const { container } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Steinpilz', raste: 2, rasten: [0.1, 0.5, 0.9] },
+      inputs: { label: 'Steinpilz', detent: 2, detents: [0.1, 0.5, 0.9] },
     });
 
-    expect(container.querySelector<HTMLElement>('.blatt')?.style.blockSize).toBe('90%');
+    expect(container.querySelector<HTMLElement>('.sheet')?.style.blockSize).toBe('90%');
   });
 
   it('hält den Tabulator im modalen Blatt', async () => {
-    await render(WirtComponent);
-    const erste = screen.getByRole('button', { name: 'erste' });
-    const zweite = screen.getByRole('button', { name: 'zweite' });
+    await render(HostComponent);
+    const first = screen.getByRole('button', { name: 'erste' });
+    const second = screen.getByRole('button', { name: 'zweite' });
 
-    zweite.focus();
+    second.focus();
     await userEvent.tab();
 
-    expect(document.activeElement).not.toBe(zweite);
-    erste.focus();
+    expect(document.activeElement).not.toBe(second);
+    first.focus();
     await userEvent.tab({ shift: true });
 
-    expect(document.activeElement).not.toBe(erste);
+    expect(document.activeElement).not.toBe(first);
   });
 
   it('lässt den Tabulator im nicht modalen Blatt laufen', async () => {
-    const { container } = await render(SheetComponent, { inputs: { beschriftung: 'Steinpilz' } });
-    const griff = screen.getByRole('button', { name: 'Blatt greifen' });
-    griff.focus();
+    const { container } = await render(SheetComponent, { inputs: { label: 'Steinpilz' } });
+    const handle = screen.getByRole('button', { name: 'Blatt greifen' });
+    handle.focus();
 
     await userEvent.tab();
 
@@ -88,86 +88,86 @@ describe('SheetComponent', () => {
 
   it('steht am Rechner als Spalte ohne Griff', async () => {
     const { container } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Steinpilz', spalte: true },
+      inputs: { label: 'Steinpilz', column: true },
     });
 
     expect(screen.queryByRole('button', { name: 'Blatt greifen' })).not.toBeInTheDocument();
-    expect(container.querySelector<HTMLElement>('.blatt')?.style.blockSize).toBe('100%');
+    expect(container.querySelector<HTMLElement>('.sheet')?.style.blockSize).toBe('100%');
   });
 
   it('stellt die Raste mit den Pfeiltasten ein und hält an den Enden', async () => {
     const { fixture } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Steinpilz', raste: 2 },
+      inputs: { label: 'Steinpilz', detent: 2 },
     });
-    const gerufen: number[] = [];
-    fixture.componentInstance.rasteChange.subscribe((raste) => gerufen.push(raste));
+    const calls: number[] = [];
+    fixture.componentInstance.detentChange.subscribe((detent) => calls.push(detent));
     screen.getByRole('button', { name: 'Blatt greifen' }).focus();
 
     await userEvent.keyboard('{ArrowUp}');
     await userEvent.keyboard('{ArrowDown}');
     await userEvent.keyboard('{Enter}');
 
-    expect(gerufen).toEqual([1, 0]);
+    expect(calls).toEqual([1, 0]);
   });
 
   it('geht beim Zug am Griff auf die nächstgelegene Raste und lässt den Tipp aus', async () => {
     const { fixture } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Steinpilz', raste: 1 },
+      inputs: { label: 'Steinpilz', detent: 1 },
     });
-    const gerufen: number[] = [];
-    fixture.componentInstance.rasteChange.subscribe((raste) => gerufen.push(raste));
-    const griff = screen.getByRole('button', { name: 'Blatt greifen' });
+    const calls: number[] = [];
+    fixture.componentInstance.detentChange.subscribe((detent) => calls.push(detent));
+    const handle = screen.getByRole('button', { name: 'Blatt greifen' });
     miss(fixture.nativeElement as HTMLElement, 800, 320);
 
-    zieh(griff, [500, 100, 100]);
-    griff.click();
+    drag(handle, [500, 100, 100]);
+    handle.click();
 
-    expect(gerufen).toEqual([2]);
+    expect(calls).toEqual([2]);
   });
 
   it('lässt ein Wackeln die Raste in Ruhe', async () => {
     const { fixture } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Steinpilz', raste: 1 },
+      inputs: { label: 'Steinpilz', detent: 1 },
     });
-    const gerufen: number[] = [];
-    fixture.componentInstance.rasteChange.subscribe((raste) => gerufen.push(raste));
-    const griff = screen.getByRole('button', { name: 'Blatt greifen' });
+    const calls: number[] = [];
+    fixture.componentInstance.detentChange.subscribe((detent) => calls.push(detent));
+    const handle = screen.getByRole('button', { name: 'Blatt greifen' });
     miss(fixture.nativeElement as HTMLElement, 800, 320);
 
-    zieh(griff, [500, 495, 494]);
+    drag(handle, [500, 495, 494]);
 
-    expect(gerufen).toEqual([]);
+    expect(calls).toEqual([]);
   });
 });
 
 describe('Raste Inhalt', () => {
   it('lässt den Inhalt die Höhe des Blatts bestimmen', async () => {
     const { container } = await render(SheetComponent, {
-      inputs: { beschriftung: 'Fundort festlegen', rasten: ['inhalt', 'inhalt', 'inhalt'] as const },
+      inputs: { label: 'Fundort festlegen', detents: ['inhalt', 'inhalt', 'inhalt'] as const },
     });
 
-    expect(container.querySelector('.blatt')).toHaveStyle({ 'block-size': 'auto' });
+    expect(container.querySelector('.sheet')).toHaveStyle({ 'block-size': 'auto' });
   });
 });
 
 describe('Rasten', () => {
   it('rechnet Anteil und feste Höhe in Punkte um', () => {
-    expect(rasteInPx(0.4, 800)).toBe(320);
-    expect(rasteInPx('152px', 800)).toBe(152);
-    expect(RASTEN_STANDARD[0]).toBe('152px');
+    expect(detentInPx(0.4, 800)).toBe(320);
+    expect(detentInPx('152px', 800)).toBe(152);
+    expect(DETENTS_DEFAULT[0]).toBe('152px');
   });
 
   it('nimmt für die Raste „Inhalt“ die gemessene Höhe', () => {
-    expect(rasteInPx('inhalt', 800, 240)).toBe(240);
-    expect(rasteInPx('inhalt', 800)).toBe(0);
+    expect(detentInPx('inhalt', 800, 240)).toBe(240);
+    expect(detentInPx('inhalt', 800)).toBe(0);
   });
 
   it('nimmt die nächstgelegene Raste, erst ab der Schwelle', () => {
-    const hoehen: [number, number, number] = [152, 320, 720];
+    const sizes: [number, number, number] = [152, 320, 720];
 
-    expect(rasteFuerHoehe(hoehen, 1, 700)).toBe(2);
-    expect(rasteFuerHoehe(hoehen, 1, 160)).toBe(0);
-    expect(rasteFuerHoehe(hoehen, 1, 330)).toBe(1);
-    expect(rasteFuerHoehe(hoehen, 0, 300)).toBe(1);
+    expect(detentForHeight(sizes, 1, 700)).toBe(2);
+    expect(detentForHeight(sizes, 1, 160)).toBe(0);
+    expect(detentForHeight(sizes, 1, 330)).toBe(1);
+    expect(detentForHeight(sizes, 0, 300)).toBe(1);
   });
 });

@@ -1,0 +1,180 @@
+@if (state.running()) {
+  <div class="addEntry">
+    @if (state.dark()) {
+      <div class="addentry__scrim"></div>
+    }
+    @if (state.showsCrosshair()) {
+      <div class="addentry__crosshair" [style.inset-block-end.px]="overlayHeight()">
+        <app-crosshair [label]="'fadenkreuz.beschriftung' | t" />
+      </div>
+    }
+    @switch (state.step()) {
+      @case ('aktionen') {
+        <app-sheet
+          appSheetHeight
+          class="addentry__sheet"
+          [label]="'eintragen.blatt' | t"
+          [detents]="detentsContent"
+          [modal]="true"
+        >
+          <app-action-sheet [titel]="'eintragen.titel' | t">
+            <app-action-row
+              icon="funde"
+              [titel]="'eintragen.fund' | t"
+              [subline]="'eintragen.fundUnter' | t"
+              (chosen)="startFind()"
+            />
+            <app-action-row
+              icon="ort"
+              [titel]="'eintragen.marker' | t"
+              [subline]="'eintragen.markerUnter' | t"
+              (chosen)="startMarker()"
+            />
+            <app-action-row
+              icon="zone"
+              [titel]="'eintragen.zone' | t"
+              [subline]="'eintragen.zoneUnter' | t"
+              (chosen)="startZone()"
+            />
+          </app-action-sheet>
+          <app-action-bar [ghost]="'eintragen.abbrechen' | t" (ghostClick)="cancel()" />
+        </app-sheet>
+      }
+      @case ('fundOrt') {
+        <app-sheet
+          appSheetHeight
+          class="addentry__sheet"
+          [label]="'melden.ortTitel' | t"
+          [detents]="detentsContent"
+        >
+          <div class="addentry__brief">
+            <h2 class="addentry__title">{{ 'melden.ortTitel' | t }}</h2>
+            <app-note variant="unter">{{ 'melden.ortAnleitung' | t }}</app-note>
+          </div>
+          <app-action-bar
+            [primary]="'melden.ortUebernehmen' | t"
+            [ghost]="'eintragen.abbrechen' | t"
+            (mainClick)="adoptLocation()"
+            (ghostClick)="cancel()"
+          />
+        </app-sheet>
+      }
+      @case ('markerOrt') {
+        <app-sheet
+          appSheetHeight
+          class="addentry__sheet"
+          [label]="'marker.ortTitel' | t"
+          [detents]="detentsContent"
+        >
+          <div class="addentry__brief">
+            <h2 class="addentry__title">{{ 'marker.ortTitel' | t }}</h2>
+            <app-note variant="unter">{{ 'marker.ortAnleitung' | t }}</app-note>
+          </div>
+          <app-action-bar
+            [primary]="'marker.ortUebernehmen' | t"
+            [ghost]="'eintragen.abbrechen' | t"
+            (mainClick)="adoptLocation()"
+            (ghostClick)="cancel()"
+          />
+        </app-sheet>
+      }
+      @case ('zoneZeichnen') {
+        <app-sheet
+          appSheetHeight
+          class="addentry__sheet"
+          [label]="'zone.zeichnenTitel' | t"
+          [detents]="detentsContent"
+        >
+          <div class="addentry__brief">
+            <h2 class="addentry__title">{{ 'zone.zeichnenTitel' | t }}</h2>
+            <app-note variant="unter">{{ drawInstructions() }}</app-note>
+          </div>
+          <app-action-bar
+            [primary]="'zone.eckpunktSetzen' | t"
+            [second]="'zone.letztenEntfernen' | t"
+            [secondary]="'zone.abschliessen' | t"
+            [ghost]="'eintragen.abbrechen' | t"
+            (mainClick)="addCorner()"
+            (secondClick)="removeCorner()"
+            (secondaryClick)="closeZone()"
+            (ghostClick)="cancel()"
+          />
+        </app-sheet>
+      }
+      @case ('fundFormular') {
+        <app-sheet
+          appSheetHeight
+          class="addentry__sheet"
+          [label]="'melden.blatt' | t"
+          [detents]="detentsForm"
+          [modal]="true"
+        >
+          <app-find-form
+            [location]="state.location()!"
+            [titel]="'melden.titel' | t"
+            [mainText]="'eintragen.speichern' | t"
+            [busy]="saving()"
+            (submitted)="saveFind($event)"
+            (cancelled)="cancel()"
+          />
+        </app-sheet>
+      }
+      @case ('markerFormular') {
+        <app-sheet
+          appSheetHeight
+          class="addentry__sheet"
+          [label]="'marker.blatt' | t"
+          [detents]="detentsForm"
+          [modal]="true"
+        >
+          <div class="addentry__content">
+            <h2 class="addentry__title">{{ 'marker.titel' | t }}</h2>
+            <app-object-form
+              [nameLabel]="'marker.name' | t"
+              [namePlaceholder]="'marker.namePlatzhalter' | t"
+              [nameMissingText]="'marker.nameFehlt' | t"
+            />
+            <app-note>{{ 'melden.hinweis' | t }}</app-note>
+          </div>
+          <app-action-bar
+            [primary]="'eintragen.speichern' | t"
+            [mainDisabled]="saving()"
+            [ghost]="'eintragen.abbrechen' | t"
+            (mainClick)="saveMarker()"
+            (ghostClick)="cancel()"
+          />
+        </app-sheet>
+      }
+      @case ('zoneFormular') {
+        <app-sheet
+          appSheetHeight
+          class="addentry__sheet"
+          [label]="'zone.blatt' | t"
+          [detents]="detentsForm"
+          [modal]="true"
+        >
+          <div class="addentry__content">
+            <div class="addentry__head">
+              <h2 class="addentry__title">{{ 'zone.titel' | t }}</h2>
+              <app-note variant="unter">{{ areaText() }}</app-note>
+            </div>
+            <app-object-form
+              [nameLabel]="'zone.name' | t"
+              [namePlaceholder]="'zone.namePlatzhalter' | t"
+              [nameMissingText]="'zone.nameFehlt' | t"
+              (valuesChange)="onZoneValues($event)"
+            />
+            <app-note>{{ 'melden.hinweis' | t }}</app-note>
+          </div>
+          <app-action-bar
+            [primary]="'eintragen.speichern' | t"
+            [mainDisabled]="saving()"
+            [ghost]="'eintragen.abbrechen' | t"
+            (mainClick)="saveZone()"
+            (ghostClick)="cancel()"
+          />
+        </app-sheet>
+      }
+    }
+  </div>
+}

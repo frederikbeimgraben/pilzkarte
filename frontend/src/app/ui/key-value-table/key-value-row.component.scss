@@ -22,7 +22,7 @@
   border-block-end: 0;
 }
 
-.tz__schluessel {
+.tz__key {
   max-inline-size: 145px;
   font-weight: var(--fw-semibold);
   color: var(--color-text-muted);
@@ -31,17 +31,17 @@
 
 // Der Wert läuft als Fließtext; ein Badge darin bricht mit um, statt den Text
 // zu quetschen.
-.tz__wert {
+.tz__value {
   min-inline-size: 0;
   color: var(--color-text);
   overflow-wrap: anywhere;
 }
 
-.tz__schluessel--link {
+.tz__key--link {
   color: var(--color-primary);
   text-decoration: none;
 }
 
-.tz__schluessel--link:hover {
+.tz__key--link:hover {
   text-decoration: underline;
 }

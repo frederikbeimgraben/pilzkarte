@@ -1,0 +1,29 @@
+<div class="photos">
+  @for (preview of previews(); track preview.url) {
+    <div class="photos__image">
+      <img class="photos__preview" [src]="preview.url" [alt]="preview.label" />
+      <button
+        class="photos__away"
+        type="button"
+        [attr.aria-label]="preview.remove"
+        (click)="remove(preview.file)"
+      >
+        <app-svg-icon name="zu" [size]="14" />
+      </button>
+    </div>
+  }
+  @if (!full()) {
+    <label class="photos__new">
+      <app-svg-icon name="plus" [size]="20" />
+      <span class="sr-only">{{ 'melden.fotoHinzufuegen' | t }}</span>
+      <input
+        class="sr-only"
+        type="file"
+        accept="image/jpeg,image/webp"
+        capture="environment"
+        multiple
+        (change)="onPick($event)"
+      />
+    </label>
+  }
+</div>

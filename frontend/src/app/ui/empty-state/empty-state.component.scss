@@ -8,11 +8,11 @@
   text-align: center;
 }
 
-.leer__bild {
+.empty__image {
   color: var(--color-border-strong);
 }
 
-.leer__text {
+.empty__text {
   max-inline-size: 32ch;
   margin: 0;
   font-size: var(--fs-sm);
@@ -20,6 +20,6 @@
   color: var(--color-text-muted);
 }
 
-.leer__knopf {
-  min-block-size: var(--pilz-feld-hoehe);
+.empty__button {
+  min-block-size: var(--pilz-field-height);
 }

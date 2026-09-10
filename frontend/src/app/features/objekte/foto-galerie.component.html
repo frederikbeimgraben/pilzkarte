@@ -1,7 +1,0 @@
-@if (bilder().length > 0) {
-  <div class="galerie">
-    @for (bild of bilder(); track bild.id) {
-      <img class="galerie__bild" [src]="bild.url" [alt]="bild.beschriftung" />
-    }
-  </div>
-}

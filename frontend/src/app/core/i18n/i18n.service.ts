@@ -1,12 +1,12 @@
 import { Injectable, computed, signal } from '@angular/core';
 import { CATALOG, DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale, type TranslationKey } from './translations';
 
-const SPEICHER_SCHLUESSEL = 'pilzkarte.sprache';
+const STORAGE_KEY = 'pilzkarte.sprache';
 
 /** Deutsch, Englisch oder das, was der Browser sagt. */
-export type SprachWahl = Locale | 'system';
+export type LanguageChoice = Locale | 'system';
 
-export const SPRACH_WAHLEN: readonly SprachWahl[] = ['de', 'en', 'system'];
+export const LANGUAGE_CHOICES: readonly LanguageChoice[] = ['de', 'en', 'system'];
 
 /**
  * Die Sprache der Oberfläche als Signal.
@@ -19,12 +19,12 @@ export const SPRACH_WAHLEN: readonly SprachWahl[] = ['de', 'en', 'system'];
  */
 @Injectable({ providedIn: 'root' })
 export class I18nService {
-  private readonly _wahl = signal<SprachWahl>(this.lies() ?? 'system');
+  private readonly _choice = signal<LanguageChoice>(this.read() ?? 'system');
 
-  readonly wahl = this._wahl.asReadonly();
+  readonly choice = this._choice.asReadonly();
   readonly locale = computed<Locale>(() => {
-    const wahl = this._wahl();
-    return wahl === 'system' ? this.browserSprache() : wahl;
+    const choice = this._choice();
+    return choice === 'system' ? this.browserLanguage() : choice;
   });
   readonly locales = SUPPORTED_LOCALES;
 
@@ -32,63 +32,63 @@ export class I18nService {
   readonly dictionary = computed(() => CATALOG[this.locale()]);
 
   constructor() {
-    this.wende();
+    this.flip();
   }
 
-  setWahl(wahl: SprachWahl): void {
-    if (!SPRACH_WAHLEN.includes(wahl)) return;
-    this._wahl.set(wahl);
-    this.speichere(wahl);
-    this.wende();
+  setChoice(choice: LanguageChoice): void {
+    if (!LANGUAGE_CHOICES.includes(choice)) return;
+    this._choice.set(choice);
+    this.save(choice);
+    this.flip();
   }
 
   setLocale(locale: Locale): void {
-    this.setWahl(locale);
+    this.setChoice(locale);
   }
 
   /** Übersetzt einen Schlüssel. `{name}` im Text wird aus `params` gefüllt. */
   translate(key: TranslationKey, params?: Record<string, string | number>): string {
     const text = CATALOG[this.locale()][key] || CATALOG[DEFAULT_LOCALE][key];
-    return params ? this.fuelle(text, params) : text;
+    return params ? this.fill(text, params) : text;
   }
 
-  private fuelle(text: string, params: Record<string, string | number>): string {
-    return text.replace(/\{(\w+)\}/g, (treffer, name: string) =>
-      name in params ? String(params[name]) : treffer,
+  private fill(text: string, params: Record<string, string | number>): string {
+    return text.replace(/\{(\w+)\}/g, (matches, name: string) =>
+      name in params ? String(params[name]) : matches,
     );
   }
 
   /** Das Dokument trägt die Sprache, für Vorleser und für die Silbentrennung. */
-  private wende(): void {
+  private flip(): void {
     document.documentElement.lang = this.locale();
   }
 
-  private browserSprache(): Locale {
+  private browserLanguage(): Locale {
     const browser = navigator.language.slice(0, 2).toLowerCase();
-    return this.istLocale(browser) ? browser : DEFAULT_LOCALE;
+    return this.isLocale(browser) ? browser : DEFAULT_LOCALE;
   }
 
-  private istLocale(wert: string): wert is Locale {
-    return (SUPPORTED_LOCALES as readonly string[]).includes(wert);
+  private isLocale(value: string): value is Locale {
+    return (SUPPORTED_LOCALES as readonly string[]).includes(value);
   }
 
-  private istWahl(wert: string): wert is SprachWahl {
-    return (SPRACH_WAHLEN as readonly string[]).includes(wert);
+  private isChoice(value: string): value is LanguageChoice {
+    return (LANGUAGE_CHOICES as readonly string[]).includes(value);
   }
 
-  private lies(): SprachWahl | null {
+  private read(): LanguageChoice | null {
     try {
-      const wert = localStorage.getItem(SPEICHER_SCHLUESSEL);
-      return wert !== null && this.istWahl(wert) ? wert : null;
+      const value = localStorage.getItem(STORAGE_KEY);
+      return value !== null && this.isChoice(value) ? value : null;
     } catch {
       // Der Browser kann den Speicher sperren. Dann führt die Browsersprache.
       return null;
     }
   }
 
-  private speichere(wahl: SprachWahl): void {
+  private save(choice: LanguageChoice): void {
     try {
-      localStorage.setItem(SPEICHER_SCHLUESSEL, wahl);
+      localStorage.setItem(STORAGE_KEY, choice);
     } catch {
       // Ohne Speicher bleibt die Wahl nur für diese Sitzung.
     }

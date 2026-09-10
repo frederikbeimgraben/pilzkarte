@@ -1,0 +1,50 @@
+<app-sheet [label]="'faktor.titel' | t" [detent]="2" [modal]="true">
+  <app-sheet-head [titel]="layer().label" [woche]="timeScope()" [arrows]="false" />
+  <div class="factor">
+    <app-segmented
+      [options]="conditions()"
+      [value]="draft().condition"
+      [label]="'faktor.bedingung' | t"
+      (valueChange)="setCondition($event)"
+    />
+
+    <div>
+      <h3 class="factor__title">{{ distributionText() }}</h3>
+      @if (histogramm(); as distribution) {
+        <app-histogram
+          [anteile]="distribution.anteile"
+          [label]="distributionText()"
+          [von]="fromShare()"
+          [bis]="toShare()"
+        />
+      }
+      <app-range-slider
+        [min]="layer().low"
+        [max]="layer().high"
+        [step]="step()"
+        [von]="values().von"
+        [bis]="values().bis"
+        [handles]="handles()"
+        (fromChange)="setFrom($event)"
+        (toChange)="setTo($event)"
+      />
+      <div class="factor__ends">
+        <span>{{ scaleFrom() }}</span>
+        <span>{{ condition() }}</span>
+        <span>{{ scaleTo() }}</span>
+      </div>
+    </div>
+
+    <app-key-value-row [schluessel]="'faktor.bedingung' | t" [value]="condition()" />
+
+    <app-note variant="unter">{{ shareText() }}</app-note>
+  </div>
+  <app-action-bar
+    [primary]="'faktor.uebernehmen' | t"
+    [danger]="'faktor.entfernen' | t"
+    [secondary]="'faktor.abbrechen' | t"
+    (mainClick)="apply.emit(draft())"
+    (dangerClick)="remove.emit(draft())"
+    (secondaryClick)="closed.emit()"
+  />
+</app-sheet>

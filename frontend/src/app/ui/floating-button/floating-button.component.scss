@@ -2,21 +2,21 @@
   display: inline-flex;
 }
 
-.schwebe {
+.floating {
   display: flex;
   align-items: center;
   justify-content: center;
-  inline-size: var(--pilz-schwebe-groesse);
-  block-size: var(--pilz-schwebe-groesse);
+  inline-size: var(--pilz-floating-size);
+  block-size: var(--pilz-floating-size);
   color: var(--color-text);
   cursor: pointer;
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
-  border-radius: var(--pilz-schwebe-radius);
+  border-radius: var(--pilz-floating-radius);
   box-shadow: var(--shadow-lg);
 }
 
-.schwebe--primaer {
+.floating--primary {
   color: var(--color-on-primary);
   background: var(--color-primary);
   border-color: var(--color-primary);

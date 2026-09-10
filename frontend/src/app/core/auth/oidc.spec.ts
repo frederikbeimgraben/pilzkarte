@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { USER_MANAGER_FABRIK } from './oidc';
+import { USER_MANAGER_FACTORY } from './oidc';
 
 /** Der WebStorageStateStore stellt jedem Schlüssel `oidc.` voran. */
-function oidcSchluessel(speicher: Storage): string[] {
-  return Object.keys(speicher).filter((schluessel) => schluessel.startsWith('oidc.'));
+function oidcSchluessel(cache: Storage): string[] {
+  return Object.keys(cache).filter((schluessel) => schluessel.startsWith('oidc.'));
 }
 
 describe('USER_MANAGER_FABRIK', () => {
@@ -13,9 +13,9 @@ describe('USER_MANAGER_FABRIK', () => {
 
   it('hält Token nur im Speicher und den PKCE-Wert in der Sitzung', async () => {
     TestBed.resetTestingModule();
-    const fabrik = TestBed.inject(USER_MANAGER_FABRIK);
+    const factory = TestBed.inject(USER_MANAGER_FACTORY);
 
-    const manager = await fabrik({
+    const manager = await factory({
       authority: 'https://sso.beimgraben.net/application/o/pilze/',
       client_id: 'pilze',
       redirect_uri: 'http://localhost:4200/anmeldung',

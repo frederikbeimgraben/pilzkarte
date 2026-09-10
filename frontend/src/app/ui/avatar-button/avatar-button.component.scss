@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  inline-size: var(--pilz-avatar-groesse);
-  block-size: var(--pilz-avatar-groesse);
+  inline-size: var(--pilz-avatar-size);
+  block-size: var(--pilz-avatar-size);
   font-weight: var(--fw-semibold);
   color: var(--color-primary);
   cursor: pointer;

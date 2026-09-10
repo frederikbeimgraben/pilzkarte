@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { VORHERSAGE_RAMPE } from './rampe-farben';
+import { FORECAST_RAMP } from './ramp-colors';
 
 /** Legende einer Darstellung: Beschriftung, Farbverlauf, beide Enden. */
 @Component({
@@ -9,8 +9,8 @@ import { VORHERSAGE_RAMPE } from './rampe-farben';
   styleUrl: './ramp.component.scss',
 })
 export class RampComponent {
-  readonly beschriftung = input.required<string>();
+  readonly label = input.required<string>();
   readonly von = input.required<string>();
   readonly bis = input.required<string>();
-  readonly farben = input<readonly string[]>(VORHERSAGE_RAMPE);
+  readonly colors = input<readonly string[]>(FORECAST_RAMP);
 }

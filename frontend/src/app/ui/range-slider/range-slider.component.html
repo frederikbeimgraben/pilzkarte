@@ -1,30 +1,30 @@
-<div class="schieber">
-  <span class="schieber__spur"></span>
+<div class="rangeslider">
+  <span class="rangeslider__track"></span>
   <span
-    class="schieber__gewaehlt"
-    [style.inset-inline-start]="vonAnteil()"
-    [style.inset-inline-end]="'calc(100% - ' + bisAnteil() + ')'"
+    class="rangeslider__chosen"
+    [style.inset-inline-start]="fromShare()"
+    [style.inset-inline-end]="'calc(100% - ' + toShare() + ')'"
   ></span>
-  @if (zeigtVon()) {
+  @if (showsFrom()) {
     <input
-      class="schieber__griff"
+      class="rangeslider__handle"
       type="range"
       [attr.aria-label]="text('schieber.untereGrenze')"
       [min]="min()"
       [max]="max()"
-      [step]="schritt()"
+      [step]="step()"
       [value]="von()"
       (input)="beiVon($event)"
     />
   }
-  @if (zeigtBis()) {
+  @if (showsTo()) {
     <input
-      class="schieber__griff"
+      class="rangeslider__handle"
       type="range"
       [attr.aria-label]="text('schieber.obereGrenze')"
       [min]="min()"
       [max]="max()"
-      [step]="schritt()"
+      [step]="step()"
       [value]="bis()"
       (input)="beiBis($event)"
     />

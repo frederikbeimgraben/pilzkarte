@@ -2,30 +2,30 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import type { User, UserManager } from 'oidc-client-ts';
 import { ConfigService } from '../config/config.service';
-import { USER_MANAGER_FABRIK } from './oidc';
+import { USER_MANAGER_FACTORY } from './oidc';
 
 /** Die angemeldete Person, so wie sie im ID-Token steht. */
-export interface AngemeldeterNutzer {
+export interface SignedInUser {
   sub: string;
   name: string;
   email: string;
 }
 
 /** Rückkehr vom SSO. Steht in `docs/sso-authentik.md` als Redirect URI. */
-export const ANMELDUNG_PFAD = '/anmeldung';
+export const SIGN_IN_PATH = '/anmeldung';
 
 /** Rückkehr der stillen Erneuerung, im iframe. */
-export const STILL_PFAD = '/anmeldung/still';
+export const SILENT_PATH = '/anmeldung/still';
 
 /** Ohne `offline_access` gäbe es kein Refresh-Token und keine stille Erneuerung. */
 const SCOPE = 'openid email profile offline_access';
 
 /** Ein Abmelden gilt für den Tab, sonst holte die stille Erneuerung die Sitzung zurück. */
-const ABGEMELDET_SCHLUESSEL = 'pilzkarte.abgemeldet';
+const SIGNED_OUT_KEY = 'pilzkarte.abgemeldet';
 
 /** Was im OIDC-`state` über den Umweg zum SSO mitreist. */
-interface AnmeldeZustand {
-  zurueck: string;
+interface SignInState {
+  back: string;
 }
 
 /**
@@ -39,25 +39,25 @@ interface AnmeldeZustand {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private readonly config = inject(ConfigService);
-  private readonly fabrik = inject(USER_MANAGER_FABRIK);
+  private readonly factory = inject(USER_MANAGER_FACTORY);
   private readonly router = inject(Router);
 
   private manager: Promise<UserManager | null> | null = null;
-  private erneuerung: Promise<string | null> | null = null;
+  private renewal: Promise<string | null> | null = null;
   /** Wer auf die Antwort des Anmelde-Blatts wartet. */
-  private wartende: ((angemeldet: boolean) => void)[] = [];
+  private pendingEntries: ((signedIn: boolean) => void)[] = [];
 
-  private readonly _nutzer = signal<AngemeldeterNutzer | null>(null);
+  private readonly _user = signal<SignedInUser | null>(null);
   private readonly _token = signal<string | null>(null);
-  private readonly _laedtSchon = signal(false);
-  private readonly _blattOffen = signal(false);
+  private readonly _busy = signal(false);
+  private readonly _sheetOpen = signal(false);
 
-  readonly nutzer = this._nutzer.asReadonly();
+  readonly user = this._user.asReadonly();
   /** Wahr, solange eine Anmeldung oder eine Erneuerung läuft. */
-  readonly laedtSchon = this._laedtSchon.asReadonly();
+  readonly busy = this._busy.asReadonly();
   /** Das Anmelde-Blatt liegt über der Karte. */
-  readonly blattOffen = this._blattOffen.asReadonly();
-  readonly angemeldet = computed(() => this._nutzer() !== null);
+  readonly sheetOpen = this._sheetOpen.asReadonly();
+  readonly signedIn = computed(() => this._user() !== null);
 
   /** Das Access-Token der laufenden Sitzung, ohne Netzweg. */
   token(): string | null {
@@ -68,30 +68,30 @@ export class AuthService {
    * Holt eine Sitzung zurück, die beim SSO noch steht. Läuft beim Start im
    * Hintergrund; ein Fehler heißt nur: niemand ist angemeldet.
    */
-  async sitzungWiederherstellen(): Promise<void> {
+  async restoreSession(): Promise<void> {
     // Auf den Callback-Routen führt die Route selbst; eine zweite stille
     // Anfrage daneben verbrauchte denselben Zustand ein zweites Mal.
-    if (location.pathname.startsWith(ANMELDUNG_PFAD) || this.abgemeldet()) return;
-    await this.stilleErneuerung();
+    if (location.pathname.startsWith(SIGN_IN_PATH) || this.signedOut()) return;
+    await this.silentRenew();
   }
 
   /**
-   * Führt zum SSO. Die Seite verlässt die App und kehrt auf {@link ANMELDUNG_PFAD}
+   * Führt zum SSO. Die Seite verlässt die App und kehrt auf {@link SIGN_IN_PATH}
    * zurück, von dort auf `zurueck`.
    */
-  async anmelden(zurueck = this.router.url): Promise<void> {
-    const manager = await this.managerHolen();
+  async signIn(back = this.router.url): Promise<void> {
+    const manager = await this.getManager();
     if (manager === null) return;
-    this.merkeAbmeldung(false);
-    this._laedtSchon.set(true);
-    const zustand: AnmeldeZustand = { zurueck };
+    this.rememberSignOut(false);
+    this._busy.set(true);
+    const state: SignInState = { back };
     try {
-      await manager.signinRedirect({ state: zustand });
-    } catch (fehler) {
+      await manager.signinRedirect({ state: state });
+    } catch (failure) {
       // Kommt die Umleitung nicht zustande, bleibt die App bedienbar, statt
       // mit einem laufenden Ladezustand stehen zu bleiben.
-      this._laedtSchon.set(false);
-      throw fehler;
+      this._busy.set(false);
+      throw failure;
     }
   }
 
@@ -99,22 +99,22 @@ export class AuthService {
    * Verarbeitet die Rückkehr vom SSO und liefert die Route, auf der die
    * Anmeldung begonnen hat.
    */
-  async anmeldungAbschliessen(): Promise<string> {
-    const manager = await this.managerHolen();
+  async completeSignIn(): Promise<string> {
+    const manager = await this.getManager();
     if (manager === null) return '/';
-    this._laedtSchon.set(true);
+    this._busy.set(true);
     try {
-      const nutzer = await manager.signinRedirectCallback();
-      this.uebernimm(nutzer);
-      return this.zielAus(nutzer.state);
+      const user = await manager.signinRedirectCallback();
+      this.adopt(user);
+      return this.targetFrom(user.state);
     } finally {
-      this._laedtSchon.set(false);
+      this._busy.set(false);
     }
   }
 
   /** Der iframe der stillen Erneuerung meldet sich hier beim Fenster zurück. */
-  async stillenCallbackVerarbeiten(): Promise<void> {
-    const manager = await this.managerHolen();
+  async handleSilentCallback(): Promise<void> {
+    const manager = await this.getManager();
     await manager?.signinSilentCallback();
   }
 
@@ -122,12 +122,12 @@ export class AuthService {
    * Erneuert das Token still. Mehrere Aufrufer teilen sich einen Versuch,
    * sonst öffnete jede 401 einen eigenen iframe.
    */
-  async stilleErneuerung(): Promise<string | null> {
-    this.erneuerung ??= this.erneuere();
+  async silentRenew(): Promise<string | null> {
+    this.renewal ??= this.renew();
     try {
-      return await this.erneuerung;
+      return await this.renewal;
     } finally {
-      this.erneuerung = null;
+      this.renewal = null;
     }
   }
 
@@ -137,11 +137,11 @@ export class AuthService {
    * Die Merkung verhindert, dass die stille Erneuerung sofort zurückholt, was
    * gerade abgemeldet wurde.
    */
-  async abmelden(): Promise<void> {
-    const manager = await this.managerHolen();
+  async signOut(): Promise<void> {
+    const manager = await this.getManager();
     await manager?.removeUser();
-    this.merkeAbmeldung(true);
-    this.uebernimm(null);
+    this.rememberSignOut(true);
+    this.adopt(null);
   }
 
   /**
@@ -149,37 +149,37 @@ export class AuthService {
    * angemeldet ist, bekommt sofort `true`. Sonst öffnet das Anmelde-Blatt:
    * „Später“ antwortet mit `false`, der Weg zum SSO verlässt die Seite.
    */
-  async anmeldungAnfordern(): Promise<boolean> {
-    if (this.angemeldet()) return true;
-    this._blattOffen.set(true);
-    return new Promise<boolean>((antworte) => this.wartende.push(antworte));
+  async requestSignIn(): Promise<boolean> {
+    if (this.signedIn()) return true;
+    this._sheetOpen.set(true);
+    return new Promise<boolean>((answer) => this.pendingEntries.push(answer));
   }
 
   /** Das Anmelde-Blatt: „Später anmelden, Eintrag lokal behalten“. */
-  spaeter(): void {
-    this._blattOffen.set(false);
-    this.antworte(false);
+  later(): void {
+    this._sheetOpen.set(false);
+    this.answer(false);
   }
 
-  private async erneuere(): Promise<string | null> {
-    const manager = await this.managerHolen();
+  private async renew(): Promise<string | null> {
+    const manager = await this.getManager();
     if (manager === null) return null;
-    this._laedtSchon.set(true);
+    this._busy.set(true);
     try {
-      const nutzer = await manager.signinSilent();
-      this.uebernimm(nutzer);
+      const user = await manager.signinSilent();
+      this.adopt(user);
       return this._token();
     } catch {
       // Keine Sitzung mehr beim SSO. Das ist der Normalfall beim Start.
-      this.uebernimm(null);
+      this.adopt(null);
       return null;
     } finally {
-      this._laedtSchon.set(false);
+      this._busy.set(false);
     }
   }
 
-  private managerHolen(): Promise<UserManager | null> {
-    this.manager ??= this.baue();
+  private getManager(): Promise<UserManager | null> {
+    this.manager ??= this.create();
     return this.manager;
   }
 
@@ -187,15 +187,15 @@ export class AuthService {
    * Ohne Konfiguration gibt es keinen Issuer und damit keine Anmeldung. Das
    * ist kein Fehler: die Karte läuft auch dann.
    */
-  private async baue(): Promise<UserManager | null> {
-    const konfig = this.config.konfiguration();
-    if (konfig === null || konfig.oidcIssuer === '') return null;
-    const manager = await this.fabrik({
-      authority: konfig.oidcIssuer,
-      client_id: konfig.oidcClientId,
-      redirect_uri: `${konfig.origin}${ANMELDUNG_PFAD}`,
-      silent_redirect_uri: `${konfig.origin}${STILL_PFAD}`,
-      post_logout_redirect_uri: konfig.origin,
+  private async create(): Promise<UserManager | null> {
+    const config = this.config.configuration();
+    if (config === null || config.oidcIssuer === '') return null;
+    const manager = await this.factory({
+      authority: config.oidcIssuer,
+      client_id: config.oidcClientId,
+      redirect_uri: `${config.origin}${SIGN_IN_PATH}`,
+      silent_redirect_uri: `${config.origin}${SILENT_PATH}`,
+      post_logout_redirect_uri: config.origin,
       response_type: 'code',
       scope: SCOPE,
       automaticSilentRenew: true,
@@ -203,61 +203,61 @@ export class AuthService {
       // UserInfo-Endpunkt brächte dieselben Werte.
       loadUserInfo: false,
     });
-    manager.events.addUserLoaded((nutzer: User) => {
-      this.uebernimm(nutzer);
+    manager.events.addUserLoaded((user: User) => {
+      this.adopt(user);
     });
     manager.events.addUserUnloaded(() => {
-      this.uebernimm(null);
+      this.adopt(null);
     });
     return manager;
   }
 
   /** Ein abgelaufenes Token zählt wie keines: der nächste Schritt erneuert. */
-  private uebernimm(nutzer: User | null): void {
-    if (nutzer === null || nutzer.expired === true) {
-      this._nutzer.set(null);
+  private adopt(user: User | null): void {
+    if (user === null || user.expired === true) {
+      this._user.set(null);
       this._token.set(null);
       return;
     }
-    const profil = nutzer.profile;
-    this._nutzer.set({
-      sub: profil.sub,
-      name: profil.name ?? profil.preferred_username ?? profil.email ?? profil.sub,
-      email: profil.email ?? '',
+    const profile = user.profile;
+    this._user.set({
+      sub: profile.sub,
+      name: profile.name ?? profile.preferred_username ?? profile.email ?? profile.sub,
+      email: profile.email ?? '',
     });
-    this._token.set(nutzer.access_token);
-    this._blattOffen.set(false);
-    this.antworte(true);
+    this._token.set(user.access_token);
+    this._sheetOpen.set(false);
+    this.answer(true);
   }
 
-  private antworte(angemeldet: boolean): void {
-    const wartende = this.wartende;
-    this.wartende = [];
-    for (const antworte of wartende) antworte(angemeldet);
+  private answer(signedIn: boolean): void {
+    const pendingEntries = this.pendingEntries;
+    this.pendingEntries = [];
+    for (const answer of pendingEntries) answer(signedIn);
   }
 
-  private zielAus(zustand: unknown): string {
-    if (typeof zustand === 'object' && zustand !== null && 'zurueck' in zustand) {
-      const zurueck = (zustand as AnmeldeZustand).zurueck;
+  private targetFrom(state: unknown): string {
+    if (typeof state === 'object' && state !== null && 'back' in state) {
+      const back = (state as SignInState).back;
       // Nur eigene Wege: eine fremde URL im Zustand führte die App aus der App.
-      if (typeof zurueck === 'string' && zurueck.startsWith('/') && !zurueck.startsWith('//')) return zurueck;
+      if (typeof back === 'string' && back.startsWith('/') && !back.startsWith('//')) return back;
     }
     return '/';
   }
 
-  private abgemeldet(): boolean {
+  private signedOut(): boolean {
     try {
-      return sessionStorage.getItem(ABGEMELDET_SCHLUESSEL) === 'ja';
+      return sessionStorage.getItem(SIGNED_OUT_KEY) === 'ja';
     } catch {
       // Gesperrter Speicher heißt: der Tab weiß nichts von einem Abmelden.
       return false;
     }
   }
 
-  private merkeAbmeldung(abgemeldet: boolean): void {
+  private rememberSignOut(signedOut: boolean): void {
     try {
-      if (abgemeldet) sessionStorage.setItem(ABGEMELDET_SCHLUESSEL, 'ja');
-      else sessionStorage.removeItem(ABGEMELDET_SCHLUESSEL);
+      if (signedOut) sessionStorage.setItem(SIGNED_OUT_KEY, 'ja');
+      else sessionStorage.removeItem(SIGNED_OUT_KEY);
     } catch {
       // Ohne Speicher gilt das Abmelden nur bis zum nächsten Reload.
     }

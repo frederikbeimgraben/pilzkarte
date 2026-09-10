@@ -1,0 +1,7 @@
+@use 'object-sheet';
+
+:host {
+  display: contents;
+}
+
+@include object-sheet.object-sheet;

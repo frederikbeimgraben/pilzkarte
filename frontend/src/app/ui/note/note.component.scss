@@ -2,17 +2,17 @@
   display: block;
 }
 
-.notiz {
+.note {
   font-size: 13px;
   line-height: 1.45;
   color: var(--color-text-muted);
 }
 
-.notiz--unter {
+.note--subline {
   font-size: var(--fs-sm);
   line-height: var(--lh-normal);
 }
 
-.notiz--kursiv {
+.note--italic {
   font-style: italic;
 }

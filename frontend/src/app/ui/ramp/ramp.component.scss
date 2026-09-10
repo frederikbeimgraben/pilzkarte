@@ -1,21 +1,21 @@
-.rampe__beschriftung {
+.ramp__label {
   margin-block-end: 10px;
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
 }
 
-.rampe {
+.ramp {
   display: flex;
   block-size: var(--space-3);
   overflow: hidden;
   border-radius: 6px;
 }
 
-.rampe__stufe {
+.ramp__step {
   flex: 1;
 }
 
-.rampe__enden {
+.ramp__ends {
   display: flex;
   justify-content: space-between;
   margin-block-start: 6px;

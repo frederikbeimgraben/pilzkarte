@@ -4,11 +4,11 @@ import { provideRouter } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
 import { App } from './app';
 import { routes } from './app.routes';
-import { karteMitAttrappen, manifestAntwort } from './testing/karte-attrappen';
+import { mapWithDoubles, answerManifest } from './testing/map-doubles';
 
 async function app() {
-  manifestAntwort();
-  karteMitAttrappen();
+  answerManifest();
+  mapWithDoubles();
   // Die Hülle hängt über den Avatar am Konto und damit an der API; im Test
   // antwortet dort niemand.
   return render(App, {
@@ -28,12 +28,12 @@ describe('App', () => {
   it('führt jeden Reiter auf seine Seite', async () => {
     const { navigate } = await app();
 
-    for (const [pfad, titel] of [
+    for (const [path, titel] of [
       ['/arten', 'Arten'],
       ['/eintraege', 'Einträge'],
       ['/konto', 'Konto'],
     ]) {
-      await navigate(pfad);
+      await navigate(path);
       // Die Kopfleiste der Seite ist die einzige H1; „Konto“ steht auf dem
       // Konto-Screen auch als Abschnitt darunter.
       expect(await screen.findByRole('heading', { name: titel, level: 1 })).toBeInTheDocument();

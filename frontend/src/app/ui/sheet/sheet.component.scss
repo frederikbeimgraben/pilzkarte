@@ -8,7 +8,7 @@
   pointer-events: none;
 }
 
-.blatt {
+.sheet {
   pointer-events: auto;
   display: flex;
   flex-direction: column;
@@ -19,39 +19,39 @@
   background: var(--color-surface);
   border-start-start-radius: var(--radius-xl);
   border-start-end-radius: var(--radius-xl);
-  box-shadow: var(--pilz-blatt-schatten);
+  box-shadow: var(--pilz-sheet-schatten);
 }
 
-.blatt__griff {
+.sheet__handle {
   display: flex;
   // Ohne dies griffe der Browser die senkrechte Geste selbst ab und scrollte.
   touch-action: none;
   flex: none;
   align-items: center;
   justify-content: center;
-  block-size: var(--pilz-griff-hoehe);
+  block-size: var(--pilz-handle-height);
   padding: 0;
   background: none;
   border: 0;
   cursor: pointer;
 }
 
-.blatt__griff-strich {
+.sheet__handle-line {
   display: block;
-  inline-size: var(--pilz-griff-breite);
+  inline-size: var(--pilz-handle-width);
   block-size: 4px;
   background: var(--color-border);
   border-radius: 2px;
 }
 
-.blatt__tipp {
+.sheet__hint {
   margin-block-end: var(--space-1);
   font-size: var(--fs-xs);
   color: var(--color-text-muted);
   text-align: center;
 }
 
-.blatt__inhalt {
+.sheet__content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -61,7 +61,7 @@
 
 // Am Rechner ist das Blatt eine Spalte neben der Karte: keine Rasten, kein
 // Griff, und die abgerundete Kante läge dort in der Mitte des Bildes.
-.blatt--spalte {
+.sheet--column {
   border-start-start-radius: 0;
   border-start-end-radius: 0;
   border-inline-end: var(--border-width) solid var(--color-border);

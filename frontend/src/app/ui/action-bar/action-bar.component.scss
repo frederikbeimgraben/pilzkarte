@@ -1,4 +1,4 @@
-.fuss {
+.footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -8,7 +8,7 @@
   border-block-start: var(--border-width) solid var(--color-border);
 }
 
-.fuss__reihe {
+.footer__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3);
@@ -17,7 +17,7 @@
 // Zwei Nebenaktionen teilen sich 390 px. Ohne dies wüchse ein langer Text wie
 // „Letzten Punkt entfernen“ aus dem Blatt heraus, statt zu kürzen; der
 // schmalere Innenabstand lässt ihn meist ganz stehen.
-.fuss__reihe > * {
+.footer__row > * {
   --space-5: var(--space-3);
 
   min-inline-size: 0;
@@ -28,14 +28,14 @@
 // wirkt die Hauptaktion gedrungen: das Kit rechnet ihn für eine Zeile ohne
 // Symbol.
 app-button {
-  min-block-size: var(--pilz-feld-hoehe);
+  min-block-size: var(--pilz-field-height);
 }
 
-.fuss__haupt {
-  min-block-size: var(--pilz-aktion-hoehe);
+.footer__main {
+  min-block-size: var(--pilz-action-height);
 }
 
-.fuss__haupt .btn {
+.footer__main .btn {
   block-size: 100%;
   padding-inline: var(--space-5);
 }
@@ -43,13 +43,13 @@ app-button {
 // Gefahr ist im Mockup ein roter Rand auf heller Fläche, nicht eine rote
 // Fläche. Die zweite Variante des Kits trifft das, sobald ihre beiden Tokens
 // auf die Gefahrfarbe zeigen.
-.fuss__gefahr {
+.footer__danger {
   --color-border-strong: var(--color-danger);
   --color-text: var(--color-danger);
 }
 
 // Die Unterzeile erklaert eine abgeschaltete Hauptaktion und steht darum
 // mittig darunter, nicht am linken Rand wie ein Absatz.
-.fuss__unter {
+.footer__sub {
   text-align: center;
 }

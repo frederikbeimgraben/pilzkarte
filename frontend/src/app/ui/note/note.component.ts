@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 /** `notiz` ist der kleine Fließtext, `unter` die Unterzeile einer Zeile. */
-export type NoteVariante = 'notiz' | 'unter';
+export type NoteVariant = 'notiz' | 'unter';
 
 /** Erklärender Text in gedämpfter Farbe. */
 @Component({
@@ -11,7 +11,7 @@ export type NoteVariante = 'notiz' | 'unter';
   styleUrl: './note.component.scss',
 })
 export class NoteComponent {
-  readonly variante = input<NoteVariante>('notiz');
+  readonly variant = input<NoteVariant>('notiz');
   /** Kursiv, wie der lateinische Name einer Art. */
-  readonly kursiv = input(false);
+  readonly italic = input(false);
 }

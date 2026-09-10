@@ -1,25 +1,25 @@
-<div class="huelle" [class.huelle--spalte]="breit()">
-  @if (breit()) {
-    @defer (when breit()) {
-      <app-karte class="huelle__karte" [nurFlaeche]="!aufDerKarte()" />
+<div class="shell" [class.shell--column]="wide()">
+  @if (wide()) {
+    @defer (when wide()) {
+      <app-map class="shell__map" [surfaceOnly]="!onTheMap()" />
     }
   }
   <app-bottom-nav
-    class="huelle__nav"
+    class="shell__nav"
     [eintraege]="eintraege()"
-    [aktiv]="aktiv()"
-    [beschriftung]="'nav.beschriftung' | t"
-    [variante]="breit() ? 'spalte' : 'unten'"
+    [active]="active()"
+    [label]="'nav.beschriftung' | t"
+    [variant]="wide() ? 'spalte' : 'unten'"
   />
-  <main class="huelle__inhalt" [class.huelle__inhalt--aus]="breit() && aufDerKarte()">
+  <main class="shell__content" [class.shell__content--off]="wide() && onTheMap()">
     <router-outlet />
   </main>
-  @if (aufDerKarte() || breit()) {
+  @if (onTheMap() || wide()) {
     <app-avatar-button
-      class="huelle__avatar"
+      class="shell__avatar"
       [name]="avatarName()"
-      [beschriftung]="avatarBeschriftung()"
-      (klick)="zumKonto()"
+      [label]="avatarLabel()"
+      (pressed)="toAccount()"
     />
   }
 </div>

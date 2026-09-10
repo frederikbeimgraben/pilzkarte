@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.component';
+import { SvgIconComponent, type IconName } from '../svg-icon/svg-icon.component';
 
 /** Hell steht über der Karte, primär ist die Hauptaktion. */
-export type SchwebeVariante = 'hell' | 'primaer';
+export type FloatingVariant = 'hell' | 'primaer';
 
 /** Ein schwebender Knopf über der Karte: 48 px, Radius 14. */
 @Component({
@@ -13,9 +13,9 @@ export type SchwebeVariante = 'hell' | 'primaer';
   styleUrl: './floating-button.component.scss',
 })
 export class FloatingButtonComponent {
-  readonly icon = input.required<PiktogrammName>();
-  readonly beschriftung = input.required<string>();
-  readonly variante = input<SchwebeVariante>('hell');
+  readonly icon = input.required<IconName>();
+  readonly label = input.required<string>();
+  readonly variant = input<FloatingVariant>('hell');
 
-  readonly klick = output();
+  readonly pressed = output();
 }

@@ -26,8 +26,8 @@ export const appConfig: ApplicationConfig = {
       // Erst die Konfiguration: ohne Issuer und Client ID gibt es keine
       // Anmeldung. Die Sitzung kommt danach im Hintergrund, damit der Chunk
       // von oidc-client-ts und der iframe den ersten Frame nicht aufhalten.
-      await inject(ConfigService).laden();
-      void auth.sitzungWiederherstellen();
+      await inject(ConfigService).load();
+      void auth.restoreSession();
     }),
   ],
 };

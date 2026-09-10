@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { render, screen } from '@testing-library/angular';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { KeyValueRowComponent } from './key-value-row.component';
 import { KeyValueTableComponent } from './key-value-table.component';
 
@@ -8,30 +8,30 @@ import { KeyValueTableComponent } from './key-value-table.component';
   imports: [KeyValueTableComponent, KeyValueRowComponent],
   template: `
     <app-key-value-table>
-      <app-key-value-row schluessel="Hut" wert="6 bis 25 cm" />
+      <app-key-value-row schluessel="Hut" value="6 bis 25 cm" />
       <app-key-value-row schluessel="Speisewert"><span>Speisepilz</span></app-key-value-row>
     </app-key-value-table>
   `,
 })
-class WirtComponent {}
+class HostComponent {}
 
 /** Die gerechneten Stile eines Elements, das es geben muss. */
-function stilVon(element: Element | null): CSSStyleDeclaration {
+function styleOf(element: Element | null): CSSStyleDeclaration {
   if (element === null) throw new Error('Das Element steht nicht im Baum.');
   return getComputedStyle(element);
 }
 
 describe('KeyValueTableComponent', () => {
   it('zeigt Schlüssel und Wert je Zeile', async () => {
-    const { container } = await render(WirtComponent);
+    const { container } = await render(HostComponent);
 
     expect(screen.getByText('Hut')).toBeInTheDocument();
     expect(screen.getByText('6 bis 25 cm')).toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('nimmt einen reichen Wert als Inhalt an', async () => {
-    await render(WirtComponent);
+    await render(HostComponent);
 
     expect(screen.getByText('Speisepilz')).toBeInTheDocument();
   });
@@ -42,15 +42,15 @@ describe('KeyValueTableComponent', () => {
     // die den Umbruch erzwingt und die Spalte begrenzt.
     const { container } = await render(
       `<app-key-value-row schluessel="Ölbaumtrichterling XXXXXX"
-         wert="Leuchtet im Dunkeln, Lamellen laufen am Stiel herab, wächst büschelig an Wurzeln von Ölbaum und Eiche. Giftig." />`,
+         value="Leuchtet im Dunkeln, Lamellen laufen am Stiel herab, wächst büschelig an Wurzeln von Ölbaum und Eiche. Giftig." />`,
       { imports: [KeyValueRowComponent] },
     );
 
-    const stile = stilVon(container.querySelector('app-key-value-row'));
-    const schluessel = stilVon(container.querySelector('.tz__schluessel'));
+    const styles = styleOf(container.querySelector('app-key-value-row'));
+    const schluessel = styleOf(container.querySelector('.tz__key'));
 
-    expect(stile.gridTemplateColumns).toBe('minmax(104px, max-content) minmax(0, 1fr)');
-    expect(stile.alignItems).toBe('start');
+    expect(styles.gridTemplateColumns).toBe('minmax(104px, max-content) minmax(0, 1fr)');
+    expect(styles.alignItems).toBe('start');
     expect(schluessel.maxInlineSize).toBe('145px');
     expect(schluessel.overflowWrap).toBe('anywhere');
   });

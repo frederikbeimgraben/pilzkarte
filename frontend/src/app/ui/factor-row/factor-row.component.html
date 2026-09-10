@@ -1,14 +1,14 @@
 <app-checkbox
-  class="faktor__schalter"
-  [id]="feldId"
-  [ngModel]="aktiv()"
-  (ngModelChange)="aktivChange.emit($event)"
+  class="factor__switches"
+  [id]="fieldId"
+  [ngModel]="active()"
+  (ngModelChange)="activeChange.emit($event)"
 >
-  <span class="faktor__stapel">
-    <span class="faktor__name">{{ name() }}</span>
-    @if (unter()) {
-      <span class="faktor__unter">{{ unter() }}</span>
+  <span class="factor__stack">
+    <span class="factor__name">{{ name() }}</span>
+    @if (subline()) {
+      <span class="factor__sub">{{ subline() }}</span>
     }
   </span>
 </app-checkbox>
-<button class="faktor__bedingung" type="button" (click)="bedingungKlick.emit()">{{ bedingung() }}</button>
+<button class="factor__condition" type="button" (click)="conditionClick.emit()">{{ condition() }}</button>

@@ -4,22 +4,22 @@
 // Abstände kommen aus dem ui-kit; hier stehen nur die Maße, die das Kit nicht
 // kennt, weil es keine mobile Kartenoberfläche baut.
 :root {
-  --pilz-nav-hoehe: 64px;
-  --pilz-spalte: 400px;
-  --pilz-kopfleiste-hoehe: 64px;
+  --pilz-nav-height: 64px;
+  --pilz-column: 400px;
+  --pilz-pageheader-height: 64px;
   --pilz-gutter: 16px;
-  --pilz-griff-hoehe: 24px;
-  --pilz-griff-breite: 40px;
-  --pilz-feld-hoehe: 44px;
-  --pilz-aktion-hoehe: 48px;
-  --pilz-chip-hoehe: 40px;
-  --pilz-woche-breite: 48px;
-  --pilz-woche-hoehe: 56px;
-  --pilz-schwebe-groesse: 48px;
-  --pilz-schwebe-radius: 14px;
-  --pilz-farbfeld-groesse: 36px;
-  --pilz-farbfeld-radius: 10px;
-  --pilz-avatar-groesse: 40px;
-  --pilz-piktogramm-groesse: 22px;
-  --pilz-blatt-schatten: var(--shadow-lg);
+  --pilz-handle-height: 24px;
+  --pilz-handle-width: 40px;
+  --pilz-field-height: 44px;
+  --pilz-action-height: 48px;
+  --pilz-chip-height: 40px;
+  --pilz-week-width: 48px;
+  --pilz-week-height: 56px;
+  --pilz-floating-size: 48px;
+  --pilz-floating-radius: 14px;
+  --pilz-swatch-size: 36px;
+  --pilz-swatch-radius: 10px;
+  --pilz-avatar-size: 40px;
+  --pilz-icon-size: 22px;
+  --pilz-sheet-schatten: var(--shadow-lg);
 }

@@ -1,0 +1,124 @@
+@if (viewport(); as viewport) {
+  <app-page-header [titel]="viewport.name" [back]="true" (backClick)="back()" />
+  <div class="species">
+    <div class="species__head">
+      <app-note variant="unter" [italic]="true">{{ viewport.subtitle }}</app-note>
+      <div class="species__badges">
+        @for (badge of viewport.badges; track badge.text) {
+          <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
+        }
+      </div>
+    </div>
+
+    @if (viewport.warnung; as warnung) {
+      <p class="species__warnung">
+        <app-svg-icon name="warnung" [size]="20" [label]="'art.warnung.beschriftung' | t" />
+        {{ warnung }}
+      </p>
+    }
+
+    @if (!viewport.sammelbar) {
+      <app-info-text>{{ 'art.nichtSammelbar' | t }}</app-info-text>
+    }
+
+    @if (viewport.sammelbar) {
+      <section>
+        <h2 class="species__section">{{ 'art.saison' | t }}</h2>
+        @if (viewport.hasCurve && viewport.saison; as saison) {
+          <app-season-curve
+            [large]="true"
+            [alleJahre]="saison.alleJahre"
+            [laufendesJahr]="saison.laufendesJahr"
+            [visitsAllYears]="saison.begehungenJeWocheAlleJahre"
+            [visitsCurrentYearSeries]="saison.begehungenJeWocheLaufendesJahr"
+            [axis]="viewport.axis"
+            [months]="viewport.months"
+            [legendCurrent]="viewport.legendCurrent"
+            [legendYears]="viewport.legendYears"
+            [label]="viewport.label"
+          />
+        } @else {
+          <app-info-text>{{ 'art.keineKurve' | t }}</app-info-text>
+        }
+      </section>
+    }
+
+    <section>
+      <h2 class="species__section">{{ 'art.merkmale' | t }}</h2>
+      <app-card class="flush">
+        <app-key-value-table>
+          @for (row of viewport.merkmale; track row.schluessel) {
+            <app-key-value-row [schluessel]="row.schluessel" [value]="row.text">
+              @if (row.badge; as badge) {
+                <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
+              }
+              @if (row.wertigkeit; as levels) {
+                <span class="species__scale" role="img" [attr.aria-label]="levels.label">
+                  @for (stufe of levels.levels; track stufe) {
+                    <i class="species__step" [class.species__step--erreicht]="stufe === levels.value"></i>
+                  }
+                </span>
+                <span class="species__scaleText">{{ levels.text }}</span>
+              }
+            </app-key-value-row>
+          }
+        </app-key-value-table>
+      </app-card>
+    </section>
+
+    @if (viewport.reagenzien.length) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.reagenzien' | t }}</h2>
+        <app-card class="flush">
+          <app-key-value-table>
+            @for (row of viewport.reagenzien; track row.reagenz) {
+              <app-key-value-row [schluessel]="row.reagenz" [value]="row.reaktion" />
+            }
+          </app-key-value-table>
+        </app-card>
+      </section>
+    }
+
+    <section>
+      <h2 class="species__section">{{ 'art.verwechslung' | t }}</h2>
+      <app-card class="flush">
+        @for (row of viewport.verwechslungen; track row.name) {
+          <app-lookalike-row
+            [name]="row.name"
+            [latin]="row.lateinisch"
+            [difference]="row.merkmal"
+            [route]="row.route"
+            (click)="toLookalike(row)"
+          >
+            @if (row.badge; as badge) {
+              <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
+            }
+          </app-lookalike-row>
+        }
+      </app-card>
+    </section>
+
+    <app-note class="species__sources">
+      {{ 'art.weiterfuehrend' | t }}
+      @for (link of viewport.links; track link.url; let letzter = $last) {
+        <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.titel }}</a
+        >{{ letzter ? '.' : ',' }}
+      }
+      {{ viewport.geprueft }}
+    </app-note>
+  </div>
+  @if (viewport.sammelbar) {
+    <app-action-bar
+      [primary]="'art.aufKarte' | t"
+      mainIcon="karte"
+      [mainDisabled]="!viewport.kartenSlug"
+      [subline]="viewport.kartenSlug ? undefined : ('art.keineVorhersage' | t)"
+      (mainClick)="onMap()"
+    />
+  } @else {
+    <app-action-bar [secondary]="rueckweg()" (secondaryClick)="zumUrsprung()" />
+  }
+} @else if (unknown()) {
+  <app-page-header [titel]="'nav.arten' | t" [back]="true" (backClick)="back()" />
+  <app-empty-state [text]="'art.nichtGefunden' | t" />
+}

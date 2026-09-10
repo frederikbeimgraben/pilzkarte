@@ -11,22 +11,22 @@ import { ChangeDetectionStrategy, Component, computed, input, output } from '@an
   styleUrl: './slider.component.scss',
 })
 export class SliderComponent {
-  readonly beschriftung = input.required<string>();
-  readonly wert = input.required<number>();
+  readonly label = input.required<string>();
+  readonly value = input.required<number>();
   readonly min = input(0);
   readonly max = input(100);
-  readonly schritt = input(1);
+  readonly step = input(1);
   /** Der Wert in Worten, etwa „70 %“. Er steht rechts neben der Beschriftung. */
-  readonly wertText = input<string>();
+  readonly valueText = input<string>();
 
-  readonly wertChange = output<number>();
+  readonly valueChange = output<number>();
 
-  protected readonly anteil = computed(() => {
-    const spanne = this.max() - this.min() || 1;
-    return `${((this.wert() - this.min()) / spanne) * 100}%`;
+  protected readonly share = computed(() => {
+    const span = this.max() - this.min() || 1;
+    return `${((this.value() - this.min()) / span) * 100}%`;
   });
 
-  protected beiEingabe(ereignis: Event): void {
-    this.wertChange.emit(Number((ereignis.target as HTMLInputElement).value));
+  protected onInput(event: Event): void {
+    this.valueChange.emit(Number((event.target as HTMLInputElement).value));
   }
 }

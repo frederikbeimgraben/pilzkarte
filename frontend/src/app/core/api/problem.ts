@@ -17,11 +17,11 @@ export interface ProblemDetail {
  * erneuert, es half nicht, und das Anmelde-Blatt fragt gerade nach. Ein Toast
  * daneben wäre Lärm, darum schweigt der ApiClient bei diesem Code.
  */
-export const ANMELDUNG_NOETIG = 'anmeldung_noetig';
+export const SIGN_IN_REQUIRED = 'anmeldung_noetig';
 
 /** Prüft, ob ein Antwortkörper wirklich ein problem+json ist. */
-export function istProblemDetail(wert: unknown): wert is ProblemDetail {
-  if (typeof wert !== 'object' || wert === null) return false;
-  const kandidat = wert as Partial<ProblemDetail>;
-  return typeof kandidat.title === 'string' && typeof kandidat.status === 'number';
+export function isProblemDetail(value: unknown): value is ProblemDetail {
+  if (typeof value !== 'object' || value === null) return false;
+  const candidate = value as Partial<ProblemDetail>;
+  return typeof candidate.title === 'string' && typeof candidate.status === 'number';
 }

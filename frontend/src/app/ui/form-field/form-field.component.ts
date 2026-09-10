@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
-import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.component';
+import { SvgIconComponent, type IconName } from '../svg-icon/svg-icon.component';
 
-let naechsteNummer = 0;
+let nextNumber = 0;
 
 /**
  * Ein Feld im Formular: Beschriftung und darunter der Kasten. Zeigt das Feld
@@ -21,31 +21,31 @@ let naechsteNummer = 0;
 })
 export class FormFieldComponent {
   readonly label = input.required<string>();
-  readonly wert = input<string>('');
-  readonly platzhalter = input<string>('');
-  readonly mehrzeilig = input(false);
+  readonly value = input<string>('');
+  readonly placeholder = input<string>('');
+  readonly multiline = input(false);
   /**
    * Die Art des Feldes. `date` und `number` geben am Telefon die passende
    * Tastatur und den Datumswähler des Systems, statt beides nachzubauen.
    */
-  readonly typ = input<'text' | 'number' | 'date'>('text');
+  readonly kind = input<'text' | 'number' | 'date'>('text');
   /** Ein Feld, das nur zeigt und beim Tippen eine Auswahl öffnet. */
-  readonly nurAnzeige = input(false);
+  readonly readOnly = input(false);
   /** Ein Piktogramm vor der Eingabe, wie die Lupe im Suchfeld. */
-  readonly icon = input<PiktogrammName>();
+  readonly icon = input<IconName>();
   /**
    * Versteckt die Beschriftung, ohne sie wegzulassen. Das Suchfeld der
    * Mockups trägt keine sichtbare Beschriftung, ein Screenreader braucht sie.
    */
-  readonly labelVerstecken = input(false);
+  readonly hideLabel = input(false);
 
-  readonly wertChange = output<string>();
-  readonly anzeigeKlick = output();
+  readonly valueChange = output<string>();
+  readonly displayClick = output();
 
-  protected readonly feldId = `app-feld-${naechsteNummer++}`;
-  protected readonly leer = computed(() => this.wert().length === 0);
+  protected readonly fieldId = `app-feld-${nextNumber++}`;
+  protected readonly empty = computed(() => this.value().length === 0);
 
-  protected beiEingabe(ereignis: Event): void {
-    this.wertChange.emit((ereignis.target as HTMLInputElement | HTMLTextAreaElement).value);
+  protected onInput(event: Event): void {
+    this.valueChange.emit((event.target as HTMLInputElement | HTMLTextAreaElement).value);
   }
 }

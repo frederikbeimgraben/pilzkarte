@@ -11,5 +11,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   styleUrl: './crosshair.component.scss',
 })
 export class CrosshairComponent {
-  readonly beschriftung = input.required<string>();
+  readonly label = input.required<string>();
 }

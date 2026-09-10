@@ -14,11 +14,11 @@ export class PageHeaderComponent {
   private readonly i18n = inject(I18nService);
 
   readonly titel = input.required<string>();
-  readonly zurueck = input(false);
+  readonly back = input(false);
 
-  readonly zurueckKlick = output();
+  readonly backClick = output();
 
-  protected zurueckText(): string {
+  protected backText(): string {
     return this.i18n.translate('kopfleiste.zurueck');
   }
 }

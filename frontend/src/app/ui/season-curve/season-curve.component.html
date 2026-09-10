@@ -1,37 +1,31 @@
-<div class="funke__buehne" [class.funke__buehne--gross]="gross()">
+<div class="spark__stage" [class.spark__stage--large]="large()">
   <svg
-    class="funke"
-    [attr.viewBox]="'0 0 ' + zeichnung().breite + ' ' + zeichnung().hoehe"
+    class="spark"
+    [attr.viewBox]="'0 0 ' + drawing().breite + ' ' + drawing().hoehe"
     preserveAspectRatio="none"
     role="img"
-    [attr.aria-label]="beschriftung()"
+    [attr.aria-label]="label()"
   >
-    @if (zeichnung().duenn.length) {
+    @if (drawing().thin.length) {
       <defs>
         <!-- Grauwerte statt Farben: die Maske steuert Deckkraft, nicht das Thema. -->
         <mask
-          [attr.id]="maskeId"
+          [attr.id]="maskId"
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"
-          [attr.width]="zeichnung().breite"
-          [attr.height]="zeichnung().hoehe"
+          [attr.width]="drawing().breite"
+          [attr.height]="drawing().hoehe"
           color-interpolation="sRGB"
         >
-          <rect
-            x="0"
-            y="0"
-            [attr.width]="zeichnung().breite"
-            [attr.height]="zeichnung().hoehe"
-            fill="#ffffff"
-          />
-          @for (streifen of zeichnung().duenn; track streifen.x) {
+          <rect x="0" y="0" [attr.width]="drawing().breite" [attr.height]="drawing().hoehe" fill="#ffffff" />
+          @for (strip of drawing().thin; track strip.x) {
             <rect
-              class="funke__duenn"
-              [attr.x]="streifen.x"
+              class="spark__thin"
+              [attr.x]="strip.x"
               y="0"
-              [attr.width]="streifen.breite"
-              [attr.height]="zeichnung().hoehe"
+              [attr.width]="strip.breite"
+              [attr.height]="drawing().hoehe"
               fill="#8c8c8c"
             />
           }
@@ -39,56 +33,52 @@
       </defs>
     }
     <line
-      class="funke__grund"
+      class="spark__base"
       x1="0"
-      [attr.y1]="zeichnung().hoehe - 0.5"
-      [attr.x2]="zeichnung().breite"
-      [attr.y2]="zeichnung().hoehe - 0.5"
+      [attr.y1]="drawing().hoehe - 0.5"
+      [attr.x2]="drawing().breite"
+      [attr.y2]="drawing().hoehe - 0.5"
     />
-    @for (marke of zeichnung().marken; track marke) {
+    @for (badge of drawing().badges; track badge) {
       <line
-        class="funke__marke"
-        [attr.x1]="marke"
-        [attr.y1]="zeichnung().hoehe - 5"
-        [attr.x2]="marke"
-        [attr.y2]="zeichnung().hoehe"
+        class="spark__badge"
+        [attr.x1]="badge"
+        [attr.y1]="drawing().hoehe - 5"
+        [attr.x2]="badge"
+        [attr.y2]="drawing().hoehe"
       />
     }
-    <g [attr.mask]="zeichnung().duenn.length ? 'url(#' + maskeId + ')' : null">
-      <path class="funke__alle" [attr.d]="zeichnung().alleJahre" />
-      @if (zeichnung().hatLaufend) {
-        <path class="funke__laufend-flaeche" [attr.d]="zeichnung().laufendFlaeche" />
-        <path class="funke__laufend" [attr.d]="zeichnung().laufendLinie" />
+    <g [attr.mask]="drawing().thin.length ? 'url(#' + maskId + ')' : null">
+      <path class="spark__all" [attr.d]="drawing().alleJahre" />
+      @if (drawing().hasCurrent) {
+        <path class="spark__current-surface" [attr.d]="drawing().currentArea" />
+        <path class="spark__current" [attr.d]="drawing().currentLine" />
       }
     </g>
   </svg>
-  @if (achse()) {
-    <span class="funke__achse">{{ achse() }}</span>
+  @if (axis()) {
+    <span class="spark__axis">{{ axis() }}</span>
   }
-  @if (zeichnung().hatLaufend) {
-    <span
-      class="funke__ende"
-      [style.left.%]="zeichnung().endeLinks"
-      [style.top.%]="zeichnung().endeOben"
-    ></span>
+  @if (drawing().hasCurrent) {
+    <span class="spark__end" [style.left.%]="drawing().endLeft" [style.top.%]="drawing().endTop"></span>
   }
 </div>
-@if (monatsmarken().length) {
-  <div class="funke__monate">
-    @for (marke of monatsmarken(); track marke.text; let erster = $first; let letzter = $last) {
+@if (monthMarks().length) {
+  <div class="spark__months">
+    @for (badge of monthMarks(); track badge.text; let erster = $first; let letzter = $last) {
       <span
-        class="funke__monat"
-        [class.funke__monat--erster]="erster"
-        [class.funke__monat--letzter]="letzter"
-        [style.left.%]="marke.links"
-        >{{ marke.text }}</span
+        class="spark__month"
+        [class.spark__month--first]="erster"
+        [class.spark__month--last]="letzter"
+        [style.left.%]="badge.links"
+        >{{ badge.text }}</span
       >
     }
   </div>
 }
-@if (legendeLaufend() || legendeJahre()) {
-  <div class="funke__legende">
-    <span><i class="funke__muster funke__muster--linie"></i>{{ legendeLaufend() }}</span>
-    <span><i class="funke__muster funke__muster--flaeche"></i>{{ legendeJahre() }}</span>
+@if (legendCurrent() || legendYears()) {
+  <div class="spark__legend">
+    <span><i class="spark__pattern spark__pattern--line"></i>{{ legendCurrent() }}</span>
+    <span><i class="spark__pattern spark__pattern--surface"></i>{{ legendYears() }}</span>
   </div>
 }

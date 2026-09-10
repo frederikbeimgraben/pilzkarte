@@ -12,7 +12,7 @@ import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 /** Die drei Rasten des Blatts, von unten nach oben. */
-export type Raste = 0 | 1 | 2;
+export type Detent = 0 | 1 | 2;
 
 /**
  * Eine Raste ist ein Anteil der Wirtshöhe (0 bis 1), eine feste Höhe oder
@@ -23,42 +23,42 @@ export type Raste = 0 | 1 | 2;
  * und eine Fußleiste tragen (Anmelden, Fundort, Aktionen), stünden mit einem
  * Anteil entweder gequetscht oder mit Leerraum zwischen Text und Knöpfen da.
  */
-export type RasteMass = number | `${number}px` | 'inhalt';
+export type DetentSize = number | `${number}px` | 'inhalt';
 
 /** Griff, Kopfzeile und Zeitleiste, wie sie das Artboard `KarteEingeklappt` zeigt. */
-export const KOPF_HOEHE = '152px';
+export const HEAD_HEIGHT = '152px';
 
 /** Aus den Artboards `KarteEingeklappt` (Kopf), `Main` (halb) und `Zone` (voll). */
-export const RASTEN_STANDARD: readonly [RasteMass, RasteMass, RasteMass] = [KOPF_HOEHE, 0.4, 0.9];
+export const DETENTS_DEFAULT: readonly [DetentSize, DetentSize, DetentSize] = [HEAD_HEIGHT, 0.4, 0.9];
 
 /** Erst ab dieser Bewegung in px zählt ein Zug als Zug und nicht als Tipp. */
-export const ZUG_SCHWELLE = 24;
+export const DRAG_THRESHOLD = 24;
 
 /**
  * Welche Raste eine Zugbewegung trifft: die nächstgelegene zur erreichten Höhe.
  * Unter der Schwelle bleibt die alte Raste, damit ein Wackeln nichts verstellt.
  */
-export function rasteFuerHoehe(
-  hoehen: readonly [number, number, number],
-  jetzt: Raste,
+export function detentForHeight(
+  sizes: readonly [number, number, number],
+  jetzt: Detent,
   hoehe: number,
-  schwelle = ZUG_SCHWELLE,
-): Raste {
-  if (Math.abs(hoehe - hoehen[jetzt]) < schwelle) return jetzt;
-  let beste: Raste = jetzt;
-  for (const raste of [0, 1, 2] as const) {
-    if (Math.abs(hoehen[raste] - hoehe) < Math.abs(hoehen[beste] - hoehe)) beste = raste;
+  threshold = DRAG_THRESHOLD,
+): Detent {
+  if (Math.abs(hoehe - sizes[jetzt]) < threshold) return jetzt;
+  let best: Detent = jetzt;
+  for (const detent of [0, 1, 2] as const) {
+    if (Math.abs(sizes[detent] - hoehe) < Math.abs(sizes[best] - hoehe)) best = detent;
   }
-  return beste;
+  return best;
 }
 
 /**
  * Rechnet ein Rastenmaß in Punkte um. `inhalt` kennt seine Höhe erst nach dem
  * Zeichnen; der Aufrufer reicht sie als `gemessen` herein.
  */
-export function rasteInPx(mass: RasteMass, wirtHoehe: number, gemessen = 0): number {
-  if (mass === 'inhalt') return gemessen;
-  return typeof mass === 'number' ? mass * wirtHoehe : Number.parseFloat(mass);
+export function detentInPx(mass: DetentSize, hostHeight: number, measured = 0): number {
+  if (mass === 'inhalt') return measured;
+  return typeof mass === 'number' ? mass * hostHeight : Number.parseFloat(mass);
 }
 
 /**
@@ -75,113 +75,113 @@ export function rasteInPx(mass: RasteMass, wirtHoehe: number, gemessen = 0): num
   styleUrl: './sheet.component.scss',
 })
 export class SheetComponent {
-  private readonly wirt = inject<ElementRef<HTMLElement>>(ElementRef);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly i18n = inject(I18nService);
 
-  readonly beschriftung = input.required<string>();
-  readonly raste = input<Raste>(1);
-  readonly rasten = input<readonly [RasteMass, RasteMass, RasteMass]>(RASTEN_STANDARD);
+  readonly label = input.required<string>();
+  readonly detent = input<Detent>(1);
+  readonly detents = input<readonly [DetentSize, DetentSize, DetentSize]>(DETENTS_DEFAULT);
   /** Ein Blatt, das die Karte sperrt (Melden, Anmelden), fängt den Fokus. */
   readonly modal = input(false);
   /** Der Griff-Tipp nennt die Bedienung, solange sie nicht offensichtlich ist. */
-  readonly griffTipp = input(false);
+  readonly handleHint = input(false);
   /** Am Rechner steht das Blatt als volle Spalte neben der Karte. */
-  readonly spalte = input(false);
+  readonly column = input(false);
 
-  readonly rasteChange = output<Raste>();
+  readonly detentChange = output<Detent>();
 
   /** Während eines Zugs führt der Finger, nicht die Raste. */
-  private readonly gezogen = signal<number | null>(null);
-  private zug: { zeiger: number; von: number; hoehe: number; bewegt: boolean } | null = null;
+  private readonly dragged = signal<number | null>(null);
+  private drag: { pointer: number; von: number; hoehe: number; moved: boolean } | null = null;
 
   protected readonly hoehe = computed(() => {
-    if (this.spalte()) return '100%';
-    const gezogen = this.gezogen();
-    if (gezogen !== null) return `${gezogen}px`;
-    const mass = this.rasten()[this.raste()];
+    if (this.column()) return '100%';
+    const dragged = this.dragged();
+    if (dragged !== null) return `${dragged}px`;
+    const mass = this.detents()[this.detent()];
     if (mass === 'inhalt') return 'auto';
     return typeof mass === 'number' ? `${mass * 100}%` : mass;
   });
 
-  protected griffText(): string {
+  protected handleText(): string {
     return this.i18n.translate('sheet.griff');
   }
 
-  protected naechsteRaste(): void {
-    if (this.zug?.bewegt) return;
-    this.rasteChange.emit(((this.raste() + 1) % 3) as Raste);
+  protected nextDetent(): void {
+    if (this.drag?.moved) return;
+    this.detentChange.emit(((this.detent() + 1) % 3) as Detent);
   }
 
-  protected beiGriffTaste(ereignis: KeyboardEvent): void {
-    const schritt = ereignis.key === 'ArrowUp' ? 1 : ereignis.key === 'ArrowDown' ? -1 : 0;
-    if (schritt === 0) return;
-    ereignis.preventDefault();
-    const ziel = Math.min(2, Math.max(0, this.raste() + schritt)) as Raste;
-    if (ziel !== this.raste()) this.rasteChange.emit(ziel);
+  protected onHandleKey(event: KeyboardEvent): void {
+    const step = event.key === 'ArrowUp' ? 1 : event.key === 'ArrowDown' ? -1 : 0;
+    if (step === 0) return;
+    event.preventDefault();
+    const target = Math.min(2, Math.max(0, this.detent() + step)) as Detent;
+    if (target !== this.detent()) this.detentChange.emit(target);
   }
 
-  protected beiZeigerAb(ereignis: PointerEvent): void {
-    if (this.spalte()) return;
-    this.zug = { zeiger: ereignis.pointerId, von: ereignis.clientY, hoehe: this.blattHoehe(), bewegt: false };
-    (ereignis.currentTarget as HTMLElement).setPointerCapture(ereignis.pointerId);
+  protected onPointerDown(event: PointerEvent): void {
+    if (this.column()) return;
+    this.drag = { pointer: event.pointerId, von: event.clientY, hoehe: this.sheetHeight(), moved: false };
+    (event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
   }
 
-  protected beiZeigerZug(ereignis: PointerEvent): void {
-    const zug = this.zug;
-    if (zug?.zeiger !== ereignis.pointerId) return;
-    const hoehe = zug.hoehe + (zug.von - ereignis.clientY);
-    if (Math.abs(zug.von - ereignis.clientY) > 4) zug.bewegt = true;
-    this.gezogen.set(Math.min(Math.max(hoehe, 0), this.wirtHoehe()));
+  protected onPointerMove(event: PointerEvent): void {
+    const drag = this.drag;
+    if (drag?.pointer !== event.pointerId) return;
+    const hoehe = drag.hoehe + (drag.von - event.clientY);
+    if (Math.abs(drag.von - event.clientY) > 4) drag.moved = true;
+    this.dragged.set(Math.min(Math.max(hoehe, 0), this.hostHeight()));
   }
 
-  protected beiZeigerAuf(ereignis: PointerEvent): void {
-    const zug = this.zug;
-    if (zug?.zeiger !== ereignis.pointerId) return;
-    const hoehe = this.gezogen() ?? zug.hoehe;
-    this.gezogen.set(null);
-    if (zug.bewegt) {
-      const ziel = rasteFuerHoehe(this.hoehenInPx(), this.raste(), hoehe);
-      if (ziel !== this.raste()) this.rasteChange.emit(ziel);
+  protected onPointerUp(event: PointerEvent): void {
+    const drag = this.drag;
+    if (drag?.pointer !== event.pointerId) return;
+    const hoehe = this.dragged() ?? drag.hoehe;
+    this.dragged.set(null);
+    if (drag.moved) {
+      const target = detentForHeight(this.sizesInPx(), this.detent(), hoehe);
+      if (target !== this.detent()) this.detentChange.emit(target);
     }
     // Der Klick folgt gleich nach; `naechsteRaste` fragt darum noch nach `bewegt`.
-    setTimeout(() => (this.zug = null));
+    setTimeout(() => (this.drag = null));
   }
 
   /** Im modalen Blatt bleibt der Tabulator im Blatt. */
-  protected beiTaste(ereignis: KeyboardEvent): void {
-    if (!this.modal() || ereignis.key !== 'Tab') return;
-    const ziele = this.fokussierbare();
-    if (ziele.length === 0) return;
-    const erstes = ziele[0];
-    const letztes = ziele[ziele.length - 1];
-    const aktiv = document.activeElement;
-    if (ereignis.shiftKey && aktiv === erstes) {
-      letztes.focus();
-      ereignis.preventDefault();
-    } else if (!ereignis.shiftKey && aktiv === letztes) {
-      erstes.focus();
-      ereignis.preventDefault();
+  protected onKey(event: KeyboardEvent): void {
+    if (!this.modal() || event.key !== 'Tab') return;
+    const targets = this.focusable();
+    if (targets.length === 0) return;
+    const first = targets[0];
+    const last = targets[targets.length - 1];
+    const active = document.activeElement;
+    if (event.shiftKey && active === first) {
+      last.focus();
+      event.preventDefault();
+    } else if (!event.shiftKey && active === last) {
+      first.focus();
+      event.preventDefault();
     }
   }
 
-  private wirtHoehe(): number {
-    return this.wirt.nativeElement.clientHeight || 0;
+  private hostHeight(): number {
+    return this.host.nativeElement.clientHeight || 0;
   }
 
-  private blattHoehe(): number {
-    return this.wirt.nativeElement.querySelector('.blatt')?.clientHeight ?? 0;
+  private sheetHeight(): number {
+    return this.host.nativeElement.querySelector('.sheet')?.clientHeight ?? 0;
   }
 
-  private hoehenInPx(): [number, number, number] {
-    const wirt = this.wirtHoehe();
-    const gemessen = this.blattHoehe();
-    const [a, b, c] = this.rasten();
-    return [rasteInPx(a, wirt, gemessen), rasteInPx(b, wirt, gemessen), rasteInPx(c, wirt, gemessen)];
+  private sizesInPx(): [number, number, number] {
+    const host = this.hostHeight();
+    const measured = this.sheetHeight();
+    const [a, b, c] = this.detents();
+    return [detentInPx(a, host, measured), detentInPx(b, host, measured), detentInPx(c, host, measured)];
   }
 
-  private fokussierbare(): HTMLElement[] {
-    const auswahl =
+  private focusable(): HTMLElement[] {
+    const chosen =
       'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
-    return Array.from(this.wirt.nativeElement.querySelectorAll<HTMLElement>(auswahl));
+    return Array.from(this.host.nativeElement.querySelectorAll<HTMLElement>(chosen));
   }
 }

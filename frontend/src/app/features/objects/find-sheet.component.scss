@@ -1,0 +1,44 @@
+:host {
+  display: contents;
+}
+
+.findsheet {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-block-size: 0;
+  padding: var(--space-1) var(--pilz-gutter) var(--space-6);
+  overflow-y: auto;
+}
+
+.findsheet__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+// 24 px Titel und 15 px Fließtext stehen so im Artboard `Fund`.
+.findsheet__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.findsheet__sub {
+  margin: var(--space-1) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.findsheet__note {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.findsheet__dialogfooter {
+  inline-size: 100%;
+}

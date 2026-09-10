@@ -1,25 +1,25 @@
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { FormFieldComponent } from './form-field.component';
 
 describe('FormFieldComponent', () => {
   it('verbindet Beschriftung und einzeiliges Feld', async () => {
     const { container, fixture } = await render(FormFieldComponent, {
-      inputs: { label: 'Notiz', platzhalter: 'optional' },
+      inputs: { label: 'Notiz', placeholder: 'optional' },
     });
-    const eingaben: string[] = [];
-    fixture.componentInstance.wertChange.subscribe((wert) => eingaben.push(wert));
+    const inputs: string[] = [];
+    fixture.componentInstance.valueChange.subscribe((value) => inputs.push(value));
 
     await userEvent.type(screen.getByLabelText('Notiz'), 'ab');
 
-    expect(eingaben.at(-1)).toBe('ab');
-    await keineVerstoesse(container);
+    expect(inputs.at(-1)).toBe('ab');
+    await noViolations(container);
   });
 
   it('nimmt mehrzeilige Eingaben an', async () => {
     const { container } = await render(FormFieldComponent, {
-      inputs: { label: 'Notiz', mehrzeilig: true, wert: 'Nordhang' },
+      inputs: { label: 'Notiz', multiline: true, value: 'Nordhang' },
     });
 
     expect(screen.getByLabelText('Notiz')).toHaveValue('Nordhang');
@@ -28,47 +28,47 @@ describe('FormFieldComponent', () => {
 
   it('öffnet als reines Anzeigefeld eine Auswahl', async () => {
     const { container, fixture } = await render(FormFieldComponent, {
-      inputs: { label: 'Art', wert: 'Steinpilz', nurAnzeige: true },
+      inputs: { label: 'Art', value: 'Steinpilz', readOnly: true },
     });
-    let gerufen = 0;
-    fixture.componentInstance.anzeigeKlick.subscribe(() => (gerufen += 1));
+    let calls = 0;
+    fixture.componentInstance.displayClick.subscribe(() => (calls += 1));
 
     await userEvent.click(screen.getByRole('button', { name: 'Steinpilz' }));
 
-    expect(gerufen).toBe(1);
-    await keineVerstoesse(container);
+    expect(calls).toBe(1);
+    await noViolations(container);
   });
 
   it('stellt ein Suchfeld mit Lupe und versteckter Beschriftung', async () => {
     const { container, fixture } = await render(FormFieldComponent, {
-      inputs: { label: 'Art suchen', platzhalter: 'Art suchen', icon: 'suche', labelVerstecken: true },
+      inputs: { label: 'Art suchen', placeholder: 'Art suchen', icon: 'suche', hideLabel: true },
     });
-    const eingaben: string[] = [];
-    fixture.componentInstance.wertChange.subscribe((wert) => eingaben.push(wert));
+    const inputs: string[] = [];
+    fixture.componentInstance.valueChange.subscribe((value) => inputs.push(value));
 
     await userEvent.type(screen.getByLabelText('Art suchen'), 'Stein');
 
-    expect(eingaben.at(-1)).toBe('Stein');
-    expect(container.querySelector('.feld__label')).toHaveClass('sr-only');
-    expect(container.querySelector('.feld__icon')).not.toBeNull();
-    await keineVerstoesse(container);
+    expect(inputs.at(-1)).toBe('Stein');
+    expect(container.querySelector('.field__label')).toHaveClass('sr-only');
+    expect(container.querySelector('.field__icon')).not.toBeNull();
+    await noViolations(container);
   });
 
   it('zeigt im leeren Anzeigefeld den Platzhalter', async () => {
     await render(FormFieldComponent, {
-      inputs: { label: 'Anzahl', platzhalter: 'optional', nurAnzeige: true },
+      inputs: { label: 'Anzahl', placeholder: 'optional', readOnly: true },
     });
 
     expect(screen.getByRole('button', { name: 'optional' })).toBeInTheDocument();
   });
   it('nimmt Datum und Zahl als eigene Art des Feldes', async () => {
     const { container, rerender } = await render(FormFieldComponent, {
-      inputs: { label: 'Datum', typ: 'date' as const, wert: '2026-09-06' },
+      inputs: { label: 'Datum', kind: 'date' as const, value: '2026-09-06' },
     });
 
     expect(container.querySelector('input')).toHaveAttribute('type', 'date');
 
-    await rerender({ inputs: { label: 'Anzahl', typ: 'number' as const, wert: '3' } });
+    await rerender({ inputs: { label: 'Anzahl', kind: 'number' as const, value: '3' } });
 
     expect(container.querySelector('input')).toHaveAttribute('type', 'number');
   });

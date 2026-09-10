@@ -4,9 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { ToastService } from '@stupa-makers/ui-kit';
 import { throwError } from 'rxjs';
 import { ApiClient } from './api-client';
-import { ANMELDUNG_NOETIG, type ProblemDetail } from './problem';
+import { SIGN_IN_REQUIRED, type ProblemDetail } from './problem';
 
-function aufbauen(): { api: ApiClient; http: HttpTestingController; toasts: ToastService } {
+function build(): { api: ApiClient; http: HttpTestingController; toasts: ToastService } {
   TestBed.configureTestingModule({ providers: [provideHttpClient(), provideHttpClientTesting()] });
   return {
     api: TestBed.inject(ApiClient),
@@ -17,31 +17,31 @@ function aufbauen(): { api: ApiClient; http: HttpTestingController; toasts: Toas
 
 describe('ApiClient', () => {
   it('ruft die eigene API unter /api', () => {
-    const { api, http } = aufbauen();
-    let gelesen: { version: string } | null = null;
+    const { api, http } = build();
+    let got: { version: string } | null = null;
 
-    api.get<{ version: string }>('/config').subscribe((wert) => (gelesen = wert));
+    api.get<{ version: string }>('/config').subscribe((value) => (got = value));
     http.expectOne('/api/config').flush({ version: '2026-09-09' });
 
-    expect(gelesen).toEqual({ version: '2026-09-09' });
+    expect(got).toEqual({ version: '2026-09-09' });
     http.verify();
   });
 
   it('hängt nur gesetzte Abfragewerte an', () => {
-    const { api, http } = aufbauen();
+    const { api, http } = build();
 
-    api.get('/funde', { art: 'steinpilz', kw: 40, geteilt: true, seite: undefined }).subscribe();
+    api.get('/funde', { art: 'steinpilz', kw: 40, geteilt: true, page: undefined }).subscribe();
 
-    const anfrage = http.expectOne((r) => r.url === '/api/funde');
-    expect(anfrage.request.params.get('art')).toBe('steinpilz');
-    expect(anfrage.request.params.get('kw')).toBe('40');
-    expect(anfrage.request.params.get('geteilt')).toBe('true');
-    expect(anfrage.request.params.has('seite')).toBe(false);
-    anfrage.flush([]);
+    const request = http.expectOne((r) => r.url === '/api/funde');
+    expect(request.request.params.get('art')).toBe('steinpilz');
+    expect(request.request.params.get('kw')).toBe('40');
+    expect(request.request.params.get('geteilt')).toBe('true');
+    expect(request.request.params.has('seite')).toBe(false);
+    request.flush([]);
   });
 
   it('schreibt, ändert und löscht', () => {
-    const { api, http } = aufbauen();
+    const { api, http } = build();
 
     api.post('/funde', { art: 'steinpilz' }).subscribe();
     expect(http.expectOne('/api/funde').request.body).toEqual({ art: 'steinpilz' });
@@ -57,42 +57,42 @@ describe('ApiClient', () => {
   });
 
   it('reicht ein problem+json weiter und zeigt es als Toast', () => {
-    const { api, http, toasts } = aufbauen();
+    const { api, http, toasts } = build();
     const problem: ProblemDetail = {
       type: 'about:blank',
       title: 'Nicht gefunden',
       status: 404,
       detail: 'Der Fund gehört jemand anderem.',
     };
-    const gefangen: ProblemDetail[] = [];
+    const caught: ProblemDetail[] = [];
 
-    api.get('/funde/1').subscribe({ error: (fehler: ProblemDetail) => gefangen.push(fehler) });
+    api.get('/funde/1').subscribe({ error: (failure: ProblemDetail) => caught.push(failure) });
     http.expectOne('/api/funde/1').flush(problem, { status: 404, statusText: 'Not Found' });
 
-    expect(gefangen[0]).toEqual(problem);
+    expect(caught[0]).toEqual(problem);
     expect(toasts.toasts()[0].message).toBe('Der Fund gehört jemand anderem.');
   });
 
   it('macht aus einem Abbruch ohne Antwort ein Problem', () => {
-    const { api, http, toasts } = aufbauen();
-    const gefangen: ProblemDetail[] = [];
+    const { api, http, toasts } = build();
+    const caught: ProblemDetail[] = [];
 
-    api.get('/config').subscribe({ error: (fehler: ProblemDetail) => gefangen.push(fehler) });
+    api.get('/config').subscribe({ error: (failure: ProblemDetail) => caught.push(failure) });
     http.expectOne('/api/config').error(new ProgressEvent('error'), { status: 0 });
 
-    expect(gefangen[0].title).toBe('Keine Verbindung zum Server.');
+    expect(caught[0].title).toBe('Keine Verbindung zum Server.');
     expect(toasts.toasts()[0].message).toBe('Keine Verbindung zum Server.');
   });
 
   it('macht aus einer Antwort ohne problem+json einen allgemeinen Fehler', () => {
-    const { api, http } = aufbauen();
-    const gefangen: ProblemDetail[] = [];
+    const { api, http } = build();
+    const caught: ProblemDetail[] = [];
 
-    api.get('/config').subscribe({ error: (fehler: ProblemDetail) => gefangen.push(fehler) });
+    api.get('/config').subscribe({ error: (failure: ProblemDetail) => caught.push(failure) });
     http.expectOne('/api/config').flush('kaputt', { status: 500, statusText: 'Server Error' });
 
-    expect(gefangen[0].title).toBe('Unbekannter Fehler.');
-    expect(gefangen[0].status).toBe(500);
+    expect(caught[0].title).toBe('Unbekannter Fehler.');
+    expect(caught[0].status).toBe(500);
   });
 
   it('schweigt, wenn das Anmelde-Blatt schon fragt', () => {
@@ -100,7 +100,7 @@ describe('ApiClient', () => {
       type: 'about:blank',
       title: 'Nicht angemeldet',
       status: 401,
-      code: ANMELDUNG_NOETIG,
+      code: SIGN_IN_REQUIRED,
     };
     // So wirft der authInterceptor: kein HttpErrorResponse, sondern ein
     // fertiges Problem. Der Aufrufer soll es sehen, ohne dass ein Toast
@@ -114,23 +114,23 @@ describe('ApiClient', () => {
     });
     const api = TestBed.inject(ApiClient);
     const toasts = TestBed.inject(ToastService);
-    const gefangen: ProblemDetail[] = [];
+    const caught: ProblemDetail[] = [];
 
-    api.get('/funde').subscribe({ error: (fehler: ProblemDetail) => gefangen.push(fehler) });
+    api.get('/funde').subscribe({ error: (failure: ProblemDetail) => caught.push(failure) });
 
-    expect(gefangen[0]).toEqual(problem);
+    expect(caught[0]).toEqual(problem);
     expect(toasts.toasts()).toHaveLength(0);
   });
 
   it('fängt auch einen Fehler, der keine HTTP-Antwort ist', () => {
-    const { api, http } = aufbauen();
-    const gefangen: ProblemDetail[] = [];
+    const { api, http } = build();
+    const caught: ProblemDetail[] = [];
 
-    api.get('/config').subscribe({ error: (fehler: ProblemDetail) => gefangen.push(fehler) });
-    const anfrage = http.expectOne('/api/config');
-    anfrage.event({ type: 0 } as never);
-    anfrage.flush('kaputt', { status: 500, statusText: 'Server Error' });
+    api.get('/config').subscribe({ error: (failure: ProblemDetail) => caught.push(failure) });
+    const request = http.expectOne('/api/config');
+    request.event({ type: 0 } as never);
+    request.flush('kaputt', { status: 500, statusText: 'Server Error' });
 
-    expect(gefangen[0].title).toBe('Unbekannter Fehler.');
+    expect(caught[0].title).toBe('Unbekannter Fehler.');
   });
 });

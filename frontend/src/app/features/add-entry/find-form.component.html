@@ -1,0 +1,72 @@
+@if (speciesPickerOpen()) {
+  <div class="report__content">
+    <h2 class="report__title">{{ 'melden.artWaehlen' | t }}</h2>
+    <app-species-picker [selected]="selectedSpecies()?.slug ?? null" (chosen)="selectSpecies($event)" />
+  </div>
+  <app-action-bar [ghost]="'eintragen.abbrechen' | t" (ghostClick)="speciesPickerOpen.set(false)" />
+} @else {
+  <div class="report__content">
+    <div class="report__head">
+      <h2 class="report__title">{{ titel() }}</h2>
+      <app-note variant="unter">{{ locationLine() }}</app-note>
+    </div>
+    <app-form-field
+      [label]="'melden.art' | t"
+      [value]="speciesName()"
+      [placeholder]="'melden.artWaehlen' | t"
+      [readOnly]="true"
+      (displayClick)="speciesPickerOpen.set(true)"
+    />
+    <div class="report__pair">
+      <app-form-field
+        kind="date"
+        [label]="'melden.datum' | t"
+        [value]="datum()"
+        (valueChange)="setDate($event)"
+      />
+      <app-form-field
+        kind="number"
+        [label]="'melden.anzahl' | t"
+        [placeholder]="'melden.optional' | t"
+        [value]="anzahl()"
+        (valueChange)="setCount($event)"
+      />
+    </div>
+    <app-form-field
+      [label]="'melden.notiz' | t"
+      [multiline]="true"
+      [placeholder]="'melden.optional' | t"
+      [value]="notiz()"
+      (valueChange)="setNote($event)"
+    />
+    @if (withPhotos()) {
+      <div>
+        <p class="report__label">{{ 'melden.fotos' | t }}</p>
+        <app-photo-picker [files]="fotos()" (filesChange)="fotos.set($event)" />
+      </div>
+    }
+    <div>
+      <p class="report__label">{{ 'sichtbarkeit.beschriftung' | t }}</p>
+      <app-segmented
+        [options]="segmente()"
+        [value]="sichtbarkeit()"
+        [label]="'sichtbarkeit.beschriftung' | t"
+        (valueChange)="setVisibility($event)"
+      />
+    </div>
+    <div class="report__release">
+      <app-checkbox [ngModel]="fuerTraining()" (ngModelChange)="setTraining($event)">{{
+        'melden.training' | t
+      }}</app-checkbox>
+      <app-note variant="unter">{{ 'melden.trainingUnter' | t }}</app-note>
+    </div>
+    <app-note>{{ 'melden.hinweis' | t }}</app-note>
+  </div>
+  <app-action-bar
+    [primary]="mainText()"
+    [mainDisabled]="busy()"
+    [ghost]="'eintragen.abbrechen' | t"
+    (mainClick)="submit()"
+    (ghostClick)="cancelled.emit()"
+  />
+}

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 /** Die Piktogramme der Mockups. Strich auf 24er-Raster, Pfeile auf 12er. */
-export type PiktogrammName =
+export type IconName =
   | 'karte'
   | 'arten'
   | 'funde'
@@ -23,7 +23,7 @@ export type PiktogrammName =
   | 'abspielen';
 
 /** Die drei gefüllten Pfeile der Kopfzeile sitzen auf einem 12er-Raster. */
-const GEFUELLT: readonly PiktogrammName[] = ['links', 'rechts', 'abspielen'];
+const FILLED: readonly IconName[] = ['links', 'rechts', 'abspielen'];
 
 /**
  * Ein Piktogramm aus `docs/mockups/bauen.py`. Ohne Beschriftung ist es
@@ -37,12 +37,12 @@ const GEFUELLT: readonly PiktogrammName[] = ['links', 'rechts', 'abspielen'];
   styleUrl: './svg-icon.component.scss',
 })
 export class SvgIconComponent {
-  readonly name = input.required<PiktogrammName>();
-  readonly beschriftung = input<string>();
-  readonly groesse = input<number>(22);
+  readonly name = input.required<IconName>();
+  readonly label = input<string>();
+  readonly size = input<number>(22);
 
-  protected readonly gefuellt = computed(() => GEFUELLT.includes(this.name()));
-  protected readonly viewBox = computed(() => (this.gefuellt() ? '0 0 12 12' : '0 0 24 24'));
-  protected readonly rolle = computed(() => (this.beschriftung() ? 'img' : null));
-  protected readonly versteckt = computed(() => (this.beschriftung() ? null : true));
+  protected readonly filled = computed(() => FILLED.includes(this.name()));
+  protected readonly viewBox = computed(() => (this.filled() ? '0 0 12 12' : '0 0 24 24'));
+  protected readonly role = computed(() => (this.label() ? 'img' : null));
+  protected readonly hidden = computed(() => (this.label() ? null : true));
 }

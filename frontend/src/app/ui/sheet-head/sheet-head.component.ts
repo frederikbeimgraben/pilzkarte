@@ -22,15 +22,15 @@ export class SheetHeadComponent {
 
   readonly titel = input.required<string>();
   /** Die Art führt zur Artenliste, „Kombination“ und „Faktor“ nicht. */
-  readonly titelAlsLink = input(false);
+  readonly titleAsLink = input(false);
   readonly woche = input<string>();
   /** Steht rechts neben der Woche, in Gefahrfarbe, etwa „· Prognose“. */
-  readonly hinweis = input<string>();
-  readonly pfeile = input(true);
+  readonly hint = input<string>();
+  readonly arrows = input(true);
 
-  readonly titelKlick = output();
-  readonly zurueck = output();
-  readonly abspielen = output();
+  readonly titleClick = output();
+  readonly back = output();
+  readonly playback = output();
   readonly vor = output();
 
   protected text(schluessel: 'zeitleiste.zurueck' | 'zeitleiste.abspielen' | 'zeitleiste.vor'): string {

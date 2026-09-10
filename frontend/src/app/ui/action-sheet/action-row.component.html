@@ -1,9 +1,9 @@
-<button class="reihe" type="button" (click)="auswahl.emit()">
-  <span class="reihe__kachel"><app-svg-icon [name]="icon()" [groesse]="22" /></span>
-  <span class="reihe__stapel">
-    <span class="reihe__titel">{{ titel() }}</span>
-    @if (unter()) {
-      <span class="reihe__unter">{{ unter() }}</span>
+<button class="series" type="button" (click)="chosen.emit()">
+  <span class="row__tile"><app-svg-icon [name]="icon()" [size]="22" /></span>
+  <span class="row__stack">
+    <span class="row__title">{{ titel() }}</span>
+    @if (subline()) {
+      <span class="row__sub">{{ subline() }}</span>
     }
   </span>
 </button>

@@ -1,12 +1,12 @@
 import { Injectable, computed, signal } from '@angular/core';
 
-export type ThemeWahl = 'hell' | 'dunkel' | 'system';
-export type ThemeWirksam = 'hell' | 'dunkel';
+export type ThemeChoice = 'hell' | 'dunkel' | 'system';
+export type EffectiveTheme = 'hell' | 'dunkel';
 
-const SPEICHER_SCHLUESSEL = 'pilzkarte.theme';
+const STORAGE_KEY = 'pilzkarte.theme';
 
 /** Das ui-kit erwartet `data-theme="light|dark"` auf `<html>`. */
-const ALS_ATTRIBUT: Record<ThemeWirksam, string> = { hell: 'light', dunkel: 'dark' };
+const AS_ATTRIBUTE: Record<EffectiveTheme, string> = { hell: 'light', dunkel: 'dark' };
 
 /**
  * Hell, dunkel oder System. Die Wahl wird gespeichert und beim Start wieder
@@ -15,52 +15,52 @@ const ALS_ATTRIBUT: Record<ThemeWirksam, string> = { hell: 'light', dunkel: 'dar
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
   private readonly medium = matchMedia('(prefers-color-scheme: dark)');
-  private readonly _wahl = signal<ThemeWahl>(this.lies());
-  private readonly _systemDunkel = signal(this.medium.matches);
+  private readonly _choice = signal<ThemeChoice>(this.read());
+  private readonly _systemDark = signal(this.medium.matches);
 
-  readonly wahl = this._wahl.asReadonly();
+  readonly choice = this._choice.asReadonly();
 
   /** Das Theme, das gerade sichtbar ist. */
-  readonly wirksam = computed<ThemeWirksam>(() => {
-    const wahl = this._wahl();
-    if (wahl === 'system') return this._systemDunkel() ? 'dunkel' : 'hell';
-    return wahl;
+  readonly effective = computed<EffectiveTheme>(() => {
+    const choice = this._choice();
+    if (choice === 'system') return this._systemDark() ? 'dunkel' : 'hell';
+    return choice;
   });
 
   /** Einmal beim Start rufen: hängt den Systemhorcher ein und färbt die Seite. */
   init(): void {
-    this.medium.addEventListener('change', this.beiSystemwechsel);
-    this.wende();
+    this.medium.addEventListener('change', this.onSystemChange);
+    this.flip();
   }
 
-  setWahl(wahl: ThemeWahl): void {
-    this._wahl.set(wahl);
-    this.speichere(wahl);
-    this.wende();
+  setChoice(choice: ThemeChoice): void {
+    this._choice.set(choice);
+    this.save(choice);
+    this.flip();
   }
 
-  private readonly beiSystemwechsel = (ereignis: MediaQueryListEvent): void => {
-    this._systemDunkel.set(ereignis.matches);
-    if (this._wahl() === 'system') this.wende();
+  private readonly onSystemChange = (event: MediaQueryListEvent): void => {
+    this._systemDark.set(event.matches);
+    if (this._choice() === 'system') this.flip();
   };
 
-  private wende(): void {
-    document.documentElement.setAttribute('data-theme', ALS_ATTRIBUT[this.wirksam()]);
+  private flip(): void {
+    document.documentElement.setAttribute('data-theme', AS_ATTRIBUTE[this.effective()]);
   }
 
-  private lies(): ThemeWahl {
+  private read(): ThemeChoice {
     try {
-      const wert = localStorage.getItem(SPEICHER_SCHLUESSEL);
-      if (wert === 'hell' || wert === 'dunkel' || wert === 'system') return wert;
+      const value = localStorage.getItem(STORAGE_KEY);
+      if (value === 'hell' || value === 'dunkel' || value === 'system') return value;
     } catch {
       // Gesperrter Speicher ist kein Fehler, dann führt das System.
     }
     return 'system';
   }
 
-  private speichere(wahl: ThemeWahl): void {
+  private save(choice: ThemeChoice): void {
     try {
-      localStorage.setItem(SPEICHER_SCHLUESSEL, wahl);
+      localStorage.setItem(STORAGE_KEY, choice);
     } catch {
       // Ohne Speicher gilt die Wahl nur für diese Sitzung.
     }

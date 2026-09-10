@@ -1,0 +1,46 @@
+// 72 px und Radius 8 stehen so im Artboard `MeldenFormular`.
+.photos {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.photos__image {
+  position: relative;
+  inline-size: 72px;
+  block-size: 72px;
+}
+
+.photos__preview {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.photos__away {
+  position: absolute;
+  inset-block-start: -6px;
+  inset-inline-end: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 24px;
+  block-size: 24px;
+  color: var(--color-surface);
+  background: var(--color-text);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.photos__new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 72px;
+  block-size: 72px;
+  color: var(--color-text-muted);
+  border: var(--border-width) dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}

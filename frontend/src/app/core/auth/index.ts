@@ -1,3 +1,3 @@
 export { authInterceptor } from './auth.interceptor';
-export { ANMELDUNG_PFAD, AuthService, STILL_PFAD, type AngemeldeterNutzer } from './auth.service';
-export { USER_MANAGER_FABRIK, type UserManagerFabrik } from './oidc';
+export { SIGN_IN_PATH, AuthService, SILENT_PATH, type SignedInUser } from './auth.service';
+export { USER_MANAGER_FACTORY, type UserManagerFactory } from './oidc';

@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/angular';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { SvgIconComponent } from './svg-icon.component';
 
 describe('SvgIconComponent', () => {
   it('zeichnet ein beschriftetes Piktogramm als Bild', async () => {
     const { container } = await render(SvgIconComponent, {
-      inputs: { name: 'karte', beschriftung: 'Karte' },
+      inputs: { name: 'karte', label: 'Karte' },
     });
 
     expect(screen.getByRole('img', { name: 'Karte' })).toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('versteckt ein Piktogramm ohne Beschriftung vor Hilfsmitteln', async () => {

@@ -1,0 +1,347 @@
+<ng-template #galerie let-field>
+  <div class="gallery">
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.bottomNav' | t }}</p>
+      <app-bottom-nav
+        [eintraege]="navEintraege"
+        active="/karte"
+        [label]="text('nav.beschriftung') + ' · ' + field"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.sheetHead' | t }}</p>
+      <app-sheet-head
+        [titel]="text('beispiel.steinpilz')"
+        [titleAsLink]="true"
+        [woche]="text('beispiel.woche')"
+      >
+        <app-timeline
+          [wochen]="wochen"
+          [active]="activeWeek()"
+          [label]="text('zeitleiste.beschriftung')"
+          (chosen)="activeWeek.set({ jahr: $event.jahr, woche: $event.woche })"
+        />
+      </app-sheet-head>
+      <app-note>{{ 'bausteine.timeline' | t }}</app-note>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.sheet' | t }}</p>
+      <div class="gallery__stage">
+        <app-sheet
+          [label]="text('beispiel.steinpilz')"
+          [detent]="detent()"
+          [handleHint]="true"
+          (detentChange)="detent.set($event)"
+        >
+          <app-ramp
+            class="gallery__gap"
+            [label]="text('beispiel.rampe')"
+            [von]="text('beispiel.rampeVon')"
+            [bis]="text('beispiel.rampeBis')"
+          />
+        </app-sheet>
+      </div>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.segmented' | t }}</p>
+      <app-segmented
+        [options]="viewModes"
+        [value]="viewMode()"
+        [label]="text('beispiel.darstellung.vorhersage')"
+        (valueChange)="viewMode.set($event)"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.chipGroup' | t }}</p>
+      <app-chip-group
+        [chips]="chips"
+        [value]="chip()"
+        [label]="text('beispiel.artenTitel')"
+        (valueChange)="chip.set($event)"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.listRow' | t }}</p>
+      <app-list-row [titel]="text('beispiel.pfifferling')" [subline]="text('beispiel.fund.pfifferlingMeta')">
+        <span lead class="gallery__dot"></span>
+        <app-badge trail variant="warning">{{ 'beispiel.badge.ausstehend' | t }}</app-badge>
+      </app-list-row>
+      <app-list-row [titel]="text('beispiel.steinpilz')" [subline]="text('beispiel.fund.steinpilzMeta')">
+        <span lead class="gallery__dot"></span>
+        <app-badge trail variant="success">{{ 'beispiel.badge.gemeldet' | t }}</app-badge>
+      </app-list-row>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.badge' | t }}</p>
+      <div class="gallery__row">
+        <app-badge>{{ 'beispiel.badge.neutral' | t }}</app-badge>
+        <app-badge variant="primary">{{ 'beispiel.badge.primaer' | t }}</app-badge>
+        <app-badge variant="warning">{{ 'beispiel.badge.geschuetzt' | t }}</app-badge>
+        <app-badge variant="info">{{ 'beispiel.badge.prognose' | t }}</app-badge>
+        <app-badge variant="success">{{ 'beispiel.badge.gespeichert' | t }}</app-badge>
+      </div>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.actionBar' | t }}</p>
+      <app-action-bar
+        [primary]="text('beispiel.aktion.speichern')"
+        [secondary]="text('beispiel.aktion.bearbeiten')"
+        [danger]="text('beispiel.aktion.loeschen')"
+        [ghost]="text('beispiel.aktion.abbrechen')"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.actionSheet' | t }}</p>
+      <app-action-sheet [titel]="text('beispiel.aktion.eintragen')">
+        <app-action-row
+          icon="funde"
+          [titel]="text('beispiel.aktion.fundMelden')"
+          [subline]="text('beispiel.aktion.fundMeldenUnter')"
+        />
+        <app-action-row
+          icon="ort"
+          [titel]="text('beispiel.aktion.markerSetzen')"
+          [subline]="text('beispiel.aktion.markerSetzenUnter')"
+        />
+        <app-action-row
+          icon="zone"
+          [titel]="text('beispiel.aktion.zoneZeichnen')"
+          [subline]="text('beispiel.aktion.zoneZeichnenUnter')"
+        />
+      </app-action-sheet>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.floatingButton' | t }}</p>
+      <div class="gallery__row">
+        <app-floating-button icon="ebenen" [label]="text('beispiel.ebenen')" />
+        <app-floating-button icon="ort" [label]="text('beispiel.standort')" />
+        <app-floating-button icon="plus" variant="primaer" [label]="text('beispiel.melden')" />
+      </div>
+      <app-note>{{ 'bausteine.floatingButtonNotiz' | t }}</app-note>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.pageHeader' | t }}</p>
+      <app-page-header [titel]="text('beispiel.artenTitel')" [back]="true" />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.keyValueTable' | t }}</p>
+      <app-key-value-table>
+        <app-key-value-row
+          [schluessel]="text('beispiel.merkmal.hut')"
+          [value]="text('beispiel.merkmal.hutWert')"
+        />
+        <app-key-value-row
+          [schluessel]="text('beispiel.merkmal.roehren')"
+          [value]="text('beispiel.merkmal.roehrenWert')"
+        />
+        <app-key-value-row
+          [schluessel]="text('beispiel.merkmal.stiel')"
+          [value]="text('beispiel.merkmal.stielWert')"
+        />
+      </app-key-value-table>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.metricRow' | t }}</p>
+      <app-metric-row
+        [label]="text('beispiel.metrik.vorhersage')"
+        [subline]="text('beispiel.metrik.vorhersageUnter')"
+        [value]="text('beispiel.metrik.vorhersageWert')"
+      />
+      <app-metric-row
+        [label]="text('beispiel.metrik.funde')"
+        [subline]="text('beispiel.metrik.fundeUnter')"
+        [value]="text('beispiel.metrik.fundeWert')"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.seasonCurve' | t }}</p>
+      <app-season-curve
+        [alleJahre]="alleJahre"
+        [laufendesJahr]="laufendesJahr"
+        [large]="true"
+        [axis]="text('beispiel.kurve.achse')"
+        [legendCurrent]="text('beispiel.kurve.laufend')"
+        [legendYears]="text('beispiel.kurve.jahre')"
+        [label]="text('saison.beschriftung')"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.ramp' | t }}</p>
+      <app-ramp
+        [label]="text('beispiel.rampe')"
+        [von]="text('beispiel.rampeVon')"
+        [bis]="text('beispiel.rampeBis')"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.factorRow' | t }}</p>
+      <app-factor-row
+        [name]="text('beispiel.faktor.niederschlag')"
+        [subline]="text('beispiel.faktor.niederschlagUnter')"
+        [condition]="text('beispiel.faktor.niederschlagBedingung')"
+        [active]="factorActive()"
+        (activeChange)="factorActive.set($event)"
+      />
+      <app-factor-row
+        [name]="text('beispiel.faktor.buche')"
+        [subline]="text('beispiel.faktor.bucheUnter')"
+        [condition]="text('beispiel.faktor.bucheBedingung')"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.histogram' | t }}</p>
+      <app-histogram
+        [anteile]="histogramm"
+        [label]="text('beispiel.histogramm')"
+        [von]="von() / 240"
+        [bis]="bis() / 240"
+      />
+      <app-range-slider
+        [min]="0"
+        [max]="240"
+        [von]="von()"
+        [bis]="bis()"
+        (fromChange)="von.set($event)"
+        (toChange)="bis.set($event)"
+      />
+      <div class="gallery__ends">
+        <span>{{ 'beispiel.histogrammVon' | t }}</span>
+        <span>{{ 'beispiel.histogrammMitte' | t }}</span>
+        <span>{{ 'beispiel.histogrammBis' | t }}</span>
+      </div>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.colorSwatches' | t }}</p>
+      <app-color-swatches
+        [colors]="colors"
+        [value]="farbe()"
+        [label]="text('farben.beschriftung')"
+        (valueChange)="farbe.set($event)"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.formField' | t }}</p>
+      <app-form-field
+        [label]="text('beispiel.feld.art')"
+        [value]="text('beispiel.steinpilz')"
+        [readOnly]="true"
+      />
+      <app-form-field
+        class="gallery__gap"
+        [label]="text('beispiel.feld.notiz')"
+        [placeholder]="text('beispiel.feld.notizPlatzhalter')"
+        [value]="noteValue()"
+        [multiline]="true"
+        (valueChange)="noteValue.set($event)"
+      />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.speciesRow' | t }}</p>
+      <app-species-row
+        [name]="text('beispiel.steinpilz')"
+        [latin]="text('beispiel.steinpilzLatein')"
+        [active]="true"
+      >
+        <app-season-curve
+          curve
+          [alleJahre]="alleJahre"
+          [laufendesJahr]="laufendesJahr"
+          [label]="text('saison.beschriftung')"
+        />
+        <ng-container tags>
+          <app-badge variant="primary">{{ 'beispiel.tag.vorhersage' | t }}</app-badge>
+          <app-badge variant="warning">{{ 'beispiel.tag.geschuetzt' | t }}</app-badge>
+        </ng-container>
+      </app-species-row>
+      <app-species-row [name]="text('beispiel.birkenpilz')" [latin]="text('beispiel.birkenpilzLatein')">
+        <app-season-curve
+          curve
+          [alleJahre]="alleJahre"
+          [laufendesJahr]="laufendesJahr"
+          [label]="text('saison.beschriftung')"
+        />
+        <ng-container tags>
+          <app-badge variant="primary">{{ 'beispiel.tag.vorhersage' | t }}</app-badge>
+        </ng-container>
+      </app-species-row>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.avatarButton' | t }}</p>
+      <div class="gallery__row">
+        <app-avatar-button [name]="text('beispiel.avatar')" [label]="text('nav.konto')" />
+        <app-crosshair [label]="text('fadenkreuz.beschriftung')" />
+      </div>
+      <app-note>{{ 'bausteine.crosshair' | t }}</app-note>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.note' | t }}</p>
+      <app-note>{{ 'beispiel.notiz' | t }}</app-note>
+      <app-note variant="unter">{{ 'beispiel.notizUnter' | t }}</app-note>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.svgIcon' | t }}</p>
+      <div class="gallery__row">
+        <app-svg-icon name="karte" />
+        <app-svg-icon name="arten" />
+        <app-svg-icon name="funde" />
+        <app-svg-icon name="mehr" />
+        <app-svg-icon name="plus" />
+        <app-svg-icon name="ort" />
+        <app-svg-icon name="ebenen" />
+        <app-svg-icon name="zurueck" />
+        <app-svg-icon name="zu" />
+        <app-svg-icon name="haken" />
+        <app-svg-icon name="zone" />
+        <app-svg-icon name="suche" />
+        <app-svg-icon name="links" />
+        <app-svg-icon name="abspielen" />
+        <app-svg-icon name="rechts" />
+      </div>
+    </app-card>
+  </div>
+</ng-template>
+
+<div class="workshop">
+  <header class="workshop__head">
+    <h1>{{ 'bausteine.titel' | t }}</h1>
+    <p class="workshop__hint">{{ 'bausteine.hinweis' | t }}</p>
+  </header>
+  <div class="workshop__fields">
+    <section class="workshop__field" #light>
+      <h2 class="workshop__fieldtitle">{{ 'bausteine.hell' | t }}</h2>
+      <ng-container
+        [ngTemplateOutlet]="galerie"
+        [ngTemplateOutletContext]="{ $implicit: text('bausteine.hell') }"
+      />
+    </section>
+    <section class="workshop__field" #dark>
+      <h2 class="workshop__fieldtitle">{{ 'bausteine.dunkel' | t }}</h2>
+      <ng-container
+        [ngTemplateOutlet]="galerie"
+        [ngTemplateOutletContext]="{ $implicit: text('bausteine.dunkel') }"
+      />
+    </section>
+  </div>
+</div>

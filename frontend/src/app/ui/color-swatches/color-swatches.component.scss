@@ -1,17 +1,17 @@
-.farben {
+.colors {
   display: flex;
   gap: var(--space-3);
 }
 
-.farben__feld {
-  inline-size: var(--pilz-farbfeld-groesse);
-  block-size: var(--pilz-farbfeld-groesse);
+.colors__field {
+  inline-size: var(--pilz-swatch-size);
+  block-size: var(--pilz-swatch-size);
   cursor: pointer;
   border: 0;
-  border-radius: var(--pilz-farbfeld-radius);
+  border-radius: var(--pilz-swatch-radius);
 }
 
-.farben__feld--gewaehlt {
+.colors__field--selected {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }

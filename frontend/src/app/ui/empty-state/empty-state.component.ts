@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { ButtonComponent } from '@stupa-makers/ui-kit';
-import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.component';
+import { SvgIconComponent, type IconName } from '../svg-icon/svg-icon.component';
 
 /**
  * Der Leerzustand einer Liste: ein Bild, darunter ein Satz, darunter die
@@ -20,7 +20,7 @@ import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.comp
 export class EmptyStateComponent {
   readonly text = input.required<string>();
   /** Das Bild über dem Satz. Ohne Angabe steht dort der leere Korb. */
-  readonly icon = input<PiktogrammName>('leer');
+  readonly icon = input<IconName>('leer');
   /** Die Beschriftung des Knopfs. Ohne sie bleibt der Leerzustand ein Satz. */
   readonly action = input<string>();
 

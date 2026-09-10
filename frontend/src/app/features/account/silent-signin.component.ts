@@ -1,0 +1,19 @@
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AuthService } from '../../core/auth';
+
+/**
+ * Die Rückkehr der stillen Erneuerung. Diese Route lädt nur im iframe, meldet
+ * das Ergebnis an das Fenster darüber und zeigt darum nichts.
+ */
+@Component({
+  selector: 'app-silent-signin',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '',
+})
+export class SilentSignInComponent {
+  private readonly auth = inject(AuthService);
+
+  constructor() {
+    void this.auth.handleSilentCallback();
+  }
+}

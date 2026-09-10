@@ -1,37 +1,42 @@
-<label class="feld__label" [class.sr-only]="labelVerstecken()" [attr.for]="nurAnzeige() ? null : feldId">{{
+<label class="field__label" [class.sr-only]="hideLabel()" [attr.for]="readOnly() ? null : fieldId">{{
   label()
 }}</label>
-@if (nurAnzeige()) {
-  <button class="feld feld--knopf" type="button" [class.feld--leer]="leer()" (click)="anzeigeKlick.emit()">
-    {{ leer() ? platzhalter() : wert() }}
+@if (readOnly()) {
+  <button
+    class="field field--button"
+    type="button"
+    [class.field--empty]="empty()"
+    (click)="displayClick.emit()"
+  >
+    {{ empty() ? placeholder() : value() }}
   </button>
-} @else if (mehrzeilig()) {
+} @else if (multiline()) {
   <textarea
-    class="feld feld--mehrzeilig"
-    [id]="feldId"
-    [value]="wert()"
-    [attr.placeholder]="platzhalter() || null"
-    (input)="beiEingabe($event)"
+    class="field field--multiline"
+    [id]="fieldId"
+    [value]="value()"
+    [attr.placeholder]="placeholder() || null"
+    (input)="onInput($event)"
   ></textarea>
 } @else if (icon()) {
-  <span class="feld feld--icon">
-    <app-svg-icon class="feld__icon" [name]="icon()!" [groesse]="18" />
+  <span class="field field--icon">
+    <app-svg-icon class="field__icon" [name]="icon()!" [size]="18" />
     <input
-      class="feld__eingabe"
+      class="field__input"
       type="text"
-      [id]="feldId"
-      [value]="wert()"
-      [attr.placeholder]="platzhalter() || null"
-      (input)="beiEingabe($event)"
+      [id]="fieldId"
+      [value]="value()"
+      [attr.placeholder]="placeholder() || null"
+      (input)="onInput($event)"
     />
   </span>
 } @else {
   <input
-    class="feld"
-    [type]="typ()"
-    [id]="feldId"
-    [value]="wert()"
-    [attr.placeholder]="platzhalter() || null"
-    (input)="beiEingabe($event)"
+    class="field"
+    [type]="kind()"
+    [id]="fieldId"
+    [value]="value()"
+    [attr.placeholder]="placeholder() || null"
+    (input)="onInput($event)"
   />
 }

@@ -2,18 +2,18 @@
   display: block;
 }
 
-.feld__label {
+.field__label {
   display: block;
   margin-block-end: var(--space-2);
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
 }
 
-.feld {
+.field {
   display: flex;
   align-items: center;
   inline-size: 100%;
-  block-size: var(--pilz-feld-hoehe);
+  block-size: var(--pilz-field-height);
   padding-inline: var(--pilz-gutter);
   font: inherit;
   font-size: var(--fs-md);
@@ -21,35 +21,35 @@
   text-align: start;
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border-strong);
-  border-radius: var(--pilz-farbfeld-radius);
+  border-radius: var(--pilz-swatch-radius);
 }
 
-.feld--knopf {
+.field--button {
   cursor: pointer;
 }
 
-.feld--leer {
+.field--empty {
   color: var(--color-text-muted);
 }
 
-.feld--mehrzeilig {
+.field--multiline {
   block-size: 80px;
   padding-block-start: 10px;
   resize: none;
 }
 
-.feld--icon {
+.field--icon {
   gap: 10px;
 }
 
-.feld__icon {
+.field__icon {
   flex: none;
   color: var(--color-text-muted);
 }
 
 // Der Rahmen gehört dem Kasten, nicht der Eingabe darin. Sonst stünden zwei
 // Rahmen ineinander und der Fokus säße am falschen Rand.
-.feld__eingabe {
+.field__input {
   flex: 1;
   min-inline-size: 0;
   padding: 0;
@@ -61,12 +61,12 @@
   outline: none;
 }
 
-.feld--icon:focus-within {
+.field--icon:focus-within {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
 }
 
-.feld::placeholder,
-.feld__eingabe::placeholder {
+.field::placeholder,
+.field__input::placeholder {
   color: var(--color-text-muted);
 }

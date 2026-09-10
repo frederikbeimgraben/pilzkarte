@@ -1,14 +1,14 @@
-import { istProblemDetail } from './problem';
+import { isProblemDetail } from './problem';
 
 describe('istProblemDetail', () => {
   it('erkennt einen Fehlerkörper nach RFC 9457', () => {
-    expect(istProblemDetail({ type: 'about:blank', title: 'Nicht gefunden', status: 404 })).toBe(true);
+    expect(isProblemDetail({ type: 'about:blank', title: 'Nicht gefunden', status: 404 })).toBe(true);
   });
 
   it('weist alles andere ab', () => {
-    expect(istProblemDetail(null)).toBe(false);
-    expect(istProblemDetail('Fehler')).toBe(false);
-    expect(istProblemDetail({ detail: 'Not Found' })).toBe(false);
-    expect(istProblemDetail({ title: 'Nicht gefunden' })).toBe(false);
+    expect(isProblemDetail(null)).toBe(false);
+    expect(isProblemDetail('Fehler')).toBe(false);
+    expect(isProblemDetail({ detail: 'Not Found' })).toBe(false);
+    expect(isProblemDetail({ title: 'Nicht gefunden' })).toBe(false);
   });
 });

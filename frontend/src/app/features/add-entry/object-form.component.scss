@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.object__label {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}

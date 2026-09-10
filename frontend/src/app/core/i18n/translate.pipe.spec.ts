@@ -8,11 +8,11 @@ import { TranslatePipe } from './translate.pipe';
   imports: [TranslatePipe],
   template: '<p>{{ "nav.arten" | t }}</p>',
 })
-class WirtComponent {}
+class HostComponent {}
 
 describe('TranslatePipe', () => {
   it('übersetzt und folgt einem Sprachwechsel', async () => {
-    const { fixture } = await render(WirtComponent);
+    const { fixture } = await render(HostComponent);
 
     expect(screen.getByText('Arten')).toBeInTheDocument();
 

@@ -9,9 +9,9 @@ import { ChangeDetectionStrategy, Component, computed, input, output } from '@an
 })
 export class AvatarButtonComponent {
   readonly name = input.required<string>();
-  readonly beschriftung = input.required<string>();
+  readonly label = input.required<string>();
 
-  readonly klick = output();
+  readonly pressed = output();
 
   protected readonly initiale = computed(() => this.name().trim().charAt(0).toUpperCase());
 }

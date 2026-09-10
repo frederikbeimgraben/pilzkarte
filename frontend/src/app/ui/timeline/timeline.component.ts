@@ -10,15 +10,15 @@ import {
 import { WeekButtonComponent } from './week-button.component';
 
 /** Eine Woche des Manifests. `anteil` ist `mean` geteilt durch den Höchstwert. */
-export interface ZeitleisteWoche {
+export interface TimelineWeek {
   jahr: number;
   woche: number;
-  anteil: number;
-  prognose: boolean;
+  share: number;
+  forecast: boolean;
 }
 
-interface AngezeigteWoche extends ZeitleisteWoche {
-  jahresmarke: boolean;
+interface ShownWeek extends TimelineWeek {
+  yearMark: boolean;
   schluessel: string;
 }
 
@@ -36,31 +36,31 @@ interface AngezeigteWoche extends ZeitleisteWoche {
   styleUrl: './timeline.component.scss',
 })
 export class TimelineComponent {
-  private readonly knoepfe = viewChildren(WeekButtonComponent);
+  private readonly buttons = viewChildren(WeekButtonComponent);
 
-  readonly wochen = input.required<readonly ZeitleisteWoche[]>();
-  readonly aktiv = input<{ jahr: number; woche: number } | null>(null);
-  readonly beschriftung = input.required<string>();
+  readonly wochen = input.required<readonly TimelineWeek[]>();
+  readonly active = input<{ jahr: number; woche: number } | null>(null);
+  readonly label = input.required<string>();
   /**
    * Gedämpft und ohne Wahl. Eine feste Ebene gilt für alle Wochen; die Leiste
    * bleibt sichtbar, damit die Zeit greifbar bleibt, nimmt aber nichts an.
    */
-  readonly gedaempft = input(false);
+  readonly dimmed = input(false);
 
-  readonly auswahl = output<ZeitleisteWoche>();
+  readonly chosen = output<TimelineWeek>();
 
-  protected readonly angezeigt = computed<AngezeigteWoche[]>(() =>
+  protected readonly shown = computed<ShownWeek[]>(() =>
     this.wochen().map((woche, i, alle) => ({
       ...woche,
-      jahresmarke: i > 0 && alle[i - 1].jahr !== woche.jahr,
+      yearMark: i > 0 && alle[i - 1].jahr !== woche.jahr,
       schluessel: `${woche.jahr}-${woche.woche}`,
     })),
   );
 
-  protected readonly aktivIndex = computed(() => {
-    const aktiv = this.aktiv();
-    if (!aktiv) return 0;
-    const index = this.wochen().findIndex((w) => w.jahr === aktiv.jahr && w.woche === aktiv.woche);
+  protected readonly activeIndex = computed(() => {
+    const active = this.active();
+    if (!active) return 0;
+    const index = this.wochen().findIndex((w) => w.jahr === active.jahr && w.woche === active.woche);
     return index < 0 ? 0 : index;
   });
 
@@ -68,32 +68,32 @@ export class TimelineComponent {
     // Die gewählte Woche muss sichtbar sein, auch wenn sie über einen Deep Link
     // oder die Pfeile im Kopf gesetzt wurde und weit außerhalb liegt.
     effect(() => {
-      const knopf = this.knoepfe()[this.aktivIndex()] as WeekButtonComponent | undefined;
-      knopf?.zeige(false);
+      const button = this.buttons()[this.activeIndex()] as WeekButtonComponent | undefined;
+      button?.show(false);
     });
   }
 
-  protected istAktiv(woche: ZeitleisteWoche): boolean {
-    const aktiv = this.aktiv();
-    return aktiv !== null && aktiv.jahr === woche.jahr && aktiv.woche === woche.woche;
+  protected isActive(woche: TimelineWeek): boolean {
+    const active = this.active();
+    return active !== null && active.jahr === woche.jahr && active.woche === woche.woche;
   }
 
-  protected beiTaste(ereignis: KeyboardEvent): void {
+  protected onKey(event: KeyboardEvent): void {
     const wochen = this.wochen();
-    if (this.gedaempft() || wochen.length === 0) return;
-    const ziel = this.zielIndex(ereignis.key, wochen.length);
-    if (ziel === null) return;
-    ereignis.preventDefault();
-    this.auswahl.emit(wochen[ziel]);
-    (this.knoepfe()[ziel] as WeekButtonComponent | undefined)?.zeige(true);
+    if (this.dimmed() || wochen.length === 0) return;
+    const target = this.targetIndex(event.key, wochen.length);
+    if (target === null) return;
+    event.preventDefault();
+    this.chosen.emit(wochen[target]);
+    (this.buttons()[target] as WeekButtonComponent | undefined)?.show(true);
   }
 
-  private zielIndex(taste: string, anzahl: number): number | null {
-    const jetzt = this.aktivIndex();
-    if (taste === 'ArrowRight') return Math.min(anzahl - 1, jetzt + 1);
-    if (taste === 'ArrowLeft') return Math.max(0, jetzt - 1);
-    if (taste === 'Home') return 0;
-    if (taste === 'End') return anzahl - 1;
+  private targetIndex(key: string, anzahl: number): number | null {
+    const jetzt = this.activeIndex();
+    if (key === 'ArrowRight') return Math.min(anzahl - 1, jetzt + 1);
+    if (key === 'ArrowLeft') return Math.max(0, jetzt - 1);
+    if (key === 'Home') return 0;
+    if (key === 'End') return anzahl - 1;
     return null;
   }
 }

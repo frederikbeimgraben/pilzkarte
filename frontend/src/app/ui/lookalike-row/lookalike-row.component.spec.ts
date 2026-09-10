@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { LookalikeRowComponent } from './lookalike-row.component';
 
 @Component({
@@ -18,7 +18,7 @@ import { LookalikeRowComponent } from './lookalike-row.component';
     <app-lookalike-row name="Sommersteinpilz" difference="Netz über den ganzen Stiel." />
   `,
 })
-class WirtComponent {}
+class HostComponent {}
 
 /** Die gerechneten Stile eines Elements, das es geben muss. */
 function styleOf(element: Element | null): CSSStyleDeclaration {
@@ -28,7 +28,7 @@ function styleOf(element: Element | null): CSSStyleDeclaration {
 
 describe('LookalikeRowComponent', () => {
   it('zeigt Name, lateinischen Namen, Unterschied und Marke', async () => {
-    const { container } = await render(WirtComponent, { providers: [provideRouter([])] });
+    const { container } = await render(HostComponent, { providers: [provideRouter([])] });
 
     expect(screen.getByRole('link', { name: 'Ölbaumtrichterling' })).toHaveAttribute(
       'href',
@@ -36,24 +36,24 @@ describe('LookalikeRowComponent', () => {
     );
     expect(screen.getByText('Omphalotus olearius')).toBeInTheDocument();
     expect(screen.getByText('Giftig')).toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('lässt den Namen Text, wenn es kein eigenes Profil gibt', async () => {
-    await render(WirtComponent, { providers: [provideRouter([])] });
+    await render(HostComponent, { providers: [provideRouter([])] });
 
     expect(screen.queryByRole('link', { name: 'Sommersteinpilz' })).not.toBeInTheDocument();
     expect(screen.getByText('Sommersteinpilz')).toBeInTheDocument();
   });
 
   it('stellt die Marke unter den Text, nicht in den Fluss', async () => {
-    const { container } = await render(WirtComponent, { providers: [provideRouter([])] });
+    const { container } = await render(HostComponent, { providers: [provideRouter([])] });
 
     // Im Textfluss sprang die Marke je nach Länge in dieselbe oder die nächste
     // Zeile, und der Abstand darüber wechselte von Zeile zu Zeile.
-    const wert = styleOf(container.querySelector('.verwechslung__wert'));
-    expect(wert.flexDirection).toBe('column');
-    expect(wert.alignItems).toBe('flex-start');
-    expect(styleOf(container.querySelector('.verwechslung__marke')).marginBlockStart).toBe('var(--space-2)');
+    const value = styleOf(container.querySelector('.lookalike__value'));
+    expect(value.flexDirection).toBe('column');
+    expect(value.alignItems).toBe('flex-start');
+    expect(styleOf(container.querySelector('.lookalike__badge')).marginBlockStart).toBe('var(--space-2)');
   });
 });
