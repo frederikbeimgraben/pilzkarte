@@ -1,0 +1,45 @@
+name = "Feuchtstellen-Schüppling"
+lateinisch = "Pholiota conissans"
+gruppe = "schueppling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["weide"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Feuchtstellenschueppling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 5, selten bis 7 cm breit, kastanienbraun bis gelbocker, Mitte rötlich ocker, Rand gelbocker, kahl bis eingewachsen faserig, jung mit wolligen Velumresten, im Alter rissig wie bei einem Risspilz, feucht schmierig."
+lamellen = "Hell cremegelb, später zimtbraun, alt dunkel purpurbraun, ausgebuchtet angewachsen, dünn und gedrängt."
+stiel = "3 bis 9, selten bis 12 cm lang, 0,4 bis 1,2, selten bis 1,7 cm dick, hell creme, Mitte und Basis rötlich braun, faserig schuppig, mit flüchtigen Schleierresten."
+fleisch = "Hellgelb, wässrig, dünn und faserig."
+geruch = "Unbedeutend bis grasig."
+geschmack = "Mild."
+sporenpulver = "Haselnussbraun."
+vorkommen = "Folgezersetzer im Mischwald, gern im Auwald bei Weiden, in Gräsern, im Gebüsch und an vergrabenem verrottetem Holz, an sumpfigen, moosig feuchten Stellen. Oft büschelig, selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Hut ockerbraun und beim Abtrocknen verblassend, Stiel unter dem Ring weiß überfasert, Geruch mehlartig."
+essbar = "toedlichGiftig"
+slug = "gifthaeubling"
+
+[[verwechslungen]]
+name = "Nadelschüppling"
+merkmal = "Wächst an Nadelholz, Hut gelblich und schuppig."
+essbar = "giftig"
+slug = "nadelschueppling"
+
+[[verwechslungen]]
+name = "Stockschwämmchen"
+merkmal = "Wächst büschelig an Laubholzstümpfen, Stiel unter dem Ring dunkelbraun beschuppt."
+essbar = "bedingtEssbar"
+slug = "stockschwaemmchen"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Feuchtstellenschueppling.htm"

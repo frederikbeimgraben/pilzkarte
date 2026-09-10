@@ -1,0 +1,56 @@
+name = "Flammstieltäubling"
+lateinisch = "Russula rhodopus"
+gruppe = "taeubling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Brennend scharf und bitter. In Deutschland gefährdet."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Flammstiel.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Fleisch orangerosa."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Dunkelgrün bis fast schwarz."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Weinbraun."
+
+[merkmale]
+hut = "4 bis 10, selten bis 13 cm breit, blut- bis kirschrot, Mitte meist dunkler, selten cremefarben bis gelb. Die Haut lässt sich zu zwei Dritteln abziehen, feucht glänzend und schmierig. Rand glatt, lange eingerollt und unregelmäßig gelappt."
+lamellen = "Weiß, im Alter gelblich, ziemlich gedrängt, mit vielen kürzeren Zwischenlamellen."
+stiel = "2 bis 7, selten bis 8 cm lang, 0,6 bis 1,5, selten bis 2,5 cm dick, weiß mit roter Flammung, hart und voll, Basis gelblich fleckend."
+fleisch = "Weiß, fest und brüchig, später weich, unter der Huthaut rosenrot, alt leicht gelblich."
+geruch = "Schwach obstartig."
+geschmack = "Brennend scharf und bitter."
+sporenpulver = "Hellocker bis cremefarben."
+vorkommen = "Symbiosepilz in feuchten Nadelwäldern, oft im Moos saurer Bergwälder, gern bei Fichte. Sehr selten, in Deutschland gefährdet."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Kiefernspeitäubling"
+merkmal = "Stiel rein weiß ohne rote Flammung, bei Kiefer."
+essbar = "giftig"
+slug = "kiefernspeitaeubling"
+
+[[verwechslungen]]
+name = "Buchenspeitäubling"
+merkmal = "Stiel weiß, Hut heller rot, im Laubwald bei Buche."
+essbar = "giftig"
+slug = "buchenspeitaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Flammstiel.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Flammenstiel-Täubling"

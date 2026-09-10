@@ -1,0 +1,46 @@
+name = "Fichtenrotkappe"
+lateinisch = "Leccinum piceinum"
+gruppe = "raufussroehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Raufußröhrlinge sind in Deutschland besonders geschützt. Die Art ist sehr selten; nur wenige Fruchtkörper für den Eigenbedarf nehmen oder den Fund stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FichtenRotkappe.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 18, selten bis 21 cm breit, braunrot bis orangebraun, feinfilzig, Huthaut am Rand überstehend und eingerollt."
+roehren = "Weißlich grau, graubraun bis gelbbraun, leicht ablösbar."
+stiel = "6 bis 20, selten bis 22 cm hoch, 1 bis 4, selten bis 5 cm dick, weißlich mit schwarzen faserigen Schüppchen, zur Spitze weniger geschuppt."
+fleisch = "Weiß, dann rötlich, später violett verfärbend."
+geruch = "Angenehm, frisch etwas obstartig."
+geschmack = "Mild, säuerlich."
+sporenpulver = "Gelbbraun."
+vorkommen = "Symbiosepilz bei Fichte, gern zwischen Heidelbeeren. Allgemein sehr selten, in Tschechien häufiger."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Birkenrotkappe"
+merkmal = "Stielschuppen jung weiß bis hellbraun, bei Birke."
+essbar = "bedingtEssbar"
+slug = "birken-rotkappe"
+
+[[verwechslungen]]
+name = "Espenrotkappe"
+merkmal = "Hut orangerot, Stielschuppen erst weiß, dann rotbraun, bei Espe und Pappel."
+essbar = "speisepilz"
+slug = "espen-rotkappe"
+
+[[verwechslungen]]
+name = "Eichenrotkappe"
+merkmal = "Hut ziegelrot bis orangebraun, Stielschuppen rotbraun, bei Eiche."
+essbar = "speisepilz"
+slug = "eichenrotkappe"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FichtenRotkappe.htm"

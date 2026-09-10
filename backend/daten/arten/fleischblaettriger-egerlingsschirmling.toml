@@ -1,0 +1,40 @@
+name = "Fleischblättriger Egerlingsschirmling"
+lateinisch = "Leucoagaricus carneifolius"
+gruppe = "schirmling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er sieht jungen Egerlingen und Schirmlingen ähnlich. Sein Sporenpulver bleibt weiß, das des Rosablättrigen Egerlingsschirmlings wird am nächsten Tag rosa. Nicht verzehren."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FleischblaettrigeEgerlingsschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 11, selten bis 14 cm breit, schmutzig weiß, cremefarben bis sehr hellbraun oder ockerbraun, seidig, jung matt. Beim Aufschirmen reißt die Huthaut schuppenartig in feine bräunliche Felder auf und fleckt gelbbräunlich. Rand meist heller und nur jung überhängend, alt nach oben gebogen, Mitte teils leicht gebuckelt."
+lamellen = "Weiß bis gelb oder gelbbraun, im Alter leicht rosa bis orangerot, frei, dicht, unregelmäßig untermischt und bauchig."
+stiel = "Weiß, cremeweiß bis gelb, hohl, Basis knollig verdickt. Ring schmal und häutig, nach oben abziehbar. Die Spitze lässt sich leicht vom Hutfleisch trennen."
+fleisch = "Gelb, im Hut heller bis weißlich."
+geruch = "Neutral bis angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer in Parks, Gärten und Wäldern, auf Wiesen und an Gebüschrändern, gern an lichten sonnigen Stellen auf kalkreichem Boden. Sehr selten."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Seidiger Egerlingsschirmling"
+merkmal = "Hut rein weiß und seidig, Lamellen bleiben weiß bis blass rosa."
+essbar = "giftig"
+slug = "seidiger-egerlingsschirmling"
+
+[[verwechslungen]]
+name = "Wurzelnder Egerlingsschirmling"
+merkmal = "Stielbasis wurzelnd verlängert, Sporen deutlich größer."
+essbar = "ungeniessbar"
+slug = "wurzelnder-egerlingsschirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FleischblaettrigeEgerlingsschirmling.htm"

@@ -1,0 +1,34 @@
+name = "Gallenstacheling"
+lateinisch = "Sarcodon scabrosus"
+gruppe = "stachelpilz"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Extrem scharf und bitter, der unangenehme Geschmack hält lange an."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Gallenstacheling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 12, selten bis 15 cm breit, bräunlich bis dunkelbraun, braunschuppig, jung filzig, uneben."
+stacheln = "Hell graubraun bis fuchsigbraun, mit weißlichen Spitzen, angewachsen und herablaufend."
+stiel = "Bräunlich, jung mit feinen dunkleren Pusteln bedeckt, fleckig, Basis etwas bläulich bis grünlich verfärbend."
+fleisch = "Weißlich, in der Basis schwarzblau bis schwarz."
+geruch = "Angenehm, neutral."
+geschmack = "Extrem scharf und bitterlich, lang anhaltend unangenehm."
+sporenpulver = "Braun."
+vorkommen = "Symbiosepilz nur im sandigen Nadelwald. Selten, in Deutschland gefährdet, in Tschechien häufiger."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Habichtspilz"
+merkmal = "Hut mit groben, dachziegelig aufgerichteten dunkelbraunen Schuppen, Geschmack mild bis leicht bitter, Stielbasis nicht schwarzblau."
+essbar = "bedingtEssbar"
+slug = "habichtspilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Gallenstacheling.htm"

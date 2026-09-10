@@ -1,0 +1,43 @@
+name = "Flacher Schillerporling"
+lateinisch = "Inonotus cuticularis"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FlacherSchillerporling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "5 bis 15, selten bis 35 cm breit, rostbraun bis gelbbraun, alt fast schwarzbraun, am Rand heller. Flach konsolen- bis fächerförmig, meist waagerecht vom Holz abstehend, weich, schwammig bis weichkorkig, Oberfläche rauhaarig und filzig."
+poren = "Gelb, graugelb bis gelbbraun, jung schillernd, später rostbraun, sehr fein, jung auf Druck etwas bräunend."
+stiel = "Fehlt. Der Fruchtkörper wächst konsolenförmig am Substrat an, etwa zwei bis fünf Stück je Quadratmeter."
+fleisch = "Bräunlich."
+geruch = "Neutral bis angenehm pilzartig."
+geschmack = "Mild, aromatisch pilzartig."
+sporenpulver = "Gelbbraun bis zimtbraun."
+vorkommen = "An lebenden alten Laubbäumen, meist Eiche und Buche. Parasit und Folgezersetzer, löst Weißfäule aus. Meist selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Zottiger Schillerporling"
+merkmal = "Oberfläche zottig struppig behaart, Fruchtkörper dicker und jung saftig, im Alter schwarz."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Tannenfeuerschwamm"
+merkmal = "Hart und holzig, mehrjährig, an Nadelholz."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Eichenfeuerschwamm"
+merkmal = "Hart und holzig, mehrjährig, Oberfläche grau und rissig, an Eiche."
+essbar = "ungeniessbar"
+slug = "eichenfeuerschwamm"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FlacherSchillerporling.htm"

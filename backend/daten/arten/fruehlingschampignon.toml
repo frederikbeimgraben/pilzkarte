@@ -1,0 +1,34 @@
+name = "Frühlingschampignon"
+lateinisch = "Agaricus altipes"
+gruppe = "champignon"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer"]
+baeume = []
+speisewertHinweis = "Sehr selten, in der Schweiz stark gefährdet."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Fruehlingsegerling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 11, selten bis 13 cm breit, weiß bis gelblich, bei Berührung strohgelb verfärbend, mit seidigen angedrückten gelbbraunen Radialfasern. Rand hell, bisweilen rosa durchscheinend."
+lamellen = "Rosa, später dunkelbraun, frei, am Stiel verschmälert."
+stiel = "Weißlich bis gelbrosa, zur Spitze etwas rötlich, bei Verletzung gilbend, sehr lang, zylindrisch und nach oben verjüngt. Ring weiß, einfach und dünn. Die Spitze lässt sich leicht vom Hutfleisch trennen."
+fleisch = "Weiß, im Schnitt hell rosa."
+geruch = "Etwas mandel- bis anisartig."
+geschmack = "Mild, nussig."
+sporenpulver = "Dunkelbraun bis purpurbraun."
+vorkommen = "Folgezersetzer im Mischwald, in Parks, an Waldrändern und Wegen. Sehr selten."
+zeit = "Frühjahr bis Sommer."
+
+[[verwechslungen]]
+name = "Karbolegerling"
+merkmal = "Riecht nach Karbol oder Tinte, Stielbasis im Schnitt kräftig chromgelb."
+essbar = "giftig"
+slug = "karbolegerling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Fruehlingsegerling.htm"

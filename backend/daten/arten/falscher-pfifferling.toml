@@ -1,0 +1,54 @@
+name = "Falscher Pfifferling"
+lateinisch = "Hygrophoropsis aurantiaca"
+gruppe = "leistling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst", "winter"]
+baeume = []
+speisewertHinweis = "Erst in größeren Mengen magen-darm-giftig, einzelne Fruchtkörper gelten als harmlos. Empfindliche Personen lassen ihn stehen. Er schmeckt mild, echte Pfifferlinge schmecken pfefferig scharf; sein Hut fühlt sich zwischen zwei Fingern weich und wässrig an."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FalscherPfifferling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut negativ bis leicht rötlich."
+
+[merkmale]
+hut = "2 bis 12, selten bis 15 cm breit, leuchtend orange, feinfilzig, Rand lange eingerollt."
+lamellen = "Gelb bis orangegelb, herablaufend, vielfach gegabelt, dicht untereinander, ablösbar und leicht verschiebbar. Bei den Leistlingen sind die Leisten fest mit dem Fleisch verwachsen und nur selten gegabelt."
+stiel = "2 bis 10, selten bis 15 cm lang, 5 bis 10, selten bis 15 mm dick, orangegelb bis braunorange, vereinzelt weißlich, biegsam, knorpelig weich, meist hohl und zäh."
+fleisch = "Weißlich, hellgelb bis orangegelb, dünn, weich, biegsam und schwammig."
+geruch = "Säuerlich bis krautartig, nach Totholz, selten neutral."
+geschmack = "Mild, etwas moderig, nach totem Holz."
+sporenpulver = "Hellgelb."
+vorkommen = "Folgezersetzer im Nadelwald auf Nadelstreu, seltener im Laubwald an Strünken oder vergrabenem Holz."
+zeit = "Sommer bis Winter."
+
+[[verwechslungen]]
+name = "Ölbaumtrichterling"
+merkmal = "Wächst büschelig an Laubholzstrünken, Hut orangebraun, Lamellen leuchten im Dunkeln schwach."
+essbar = "giftig"
+slug = "oelbaumtrichterling"
+
+[[verwechslungen]]
+name = "Brauner Afterleistling"
+merkmal = "Hut graubraun bis olivbraun statt leuchtend orange."
+essbar = "giftig"
+slug = "brauner-afterleistling"
+
+[[verwechslungen]]
+name = "Purpuroranger Afterleistling"
+merkmal = "Hut und Lamellen mit purpurnem bis rötlichem Ton."
+essbar = "giftig"
+slug = "purpuroranger-afterleistling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FalscherPfifferling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Falscher_Pfifferling"

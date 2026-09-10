@@ -1,0 +1,48 @@
+name = "Filziger Gelbfuß"
+lateinisch = "Chroogomphus helveticus"
+gruppe = "gelbfuss"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "kiefer"]
+speisewertHinweis = "Relativ selten. Nach einem trockenen Sommer und anschließendem Regen tritt er häufiger auf."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FilzigerGelbfuss.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch weinrot verfärbend."
+
+[merkmale]
+hut = "2,5 bis 8, selten bis 10 cm breit, orangebraun, filzig schuppig, feucht schmierig, jung mit Schleier. Der Rand ist lange eingerollt und meist mit Velumresten behaftet. Eine Varietät hat eine abstehend wollig filzige Oberfläche."
+lamellen = "Gelborange bis rotbraun, etwas herablaufend, aber weniger weit als beim Kupferroten Gelbfuß, dicklich, entfernt stehend, weich und leicht ablösbar."
+stiel = "6 bis 8, selten bis 12 cm hoch, 0,6 bis 1,5, selten bis 2 cm dick, lebhaft orangegelb, bei Verletzung rötend, voll und fest, sehr lang gezogen und tief im Moos steckend."
+fleisch = "Gelborange, fest, bei Verletzung rötend."
+geruch = "Fruchtig, etwas parfümiert."
+geschmack = "Mild, etwas parfümiert."
+sporenpulver = "Olivschwarz bis violettschwarz."
+vorkommen = "Symbiosepilz unter Fichten, vereinzelt unter zweinadeligen Kiefern."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Spitzgebuckelter Raukopf"
+merkmal = "Hut orangebraun und spitz gebuckelt, Lamellen zimtbraun, Sporenpulver rostbraun. Zerstört mit langer Verzögerung die Nieren."
+essbar = "toedlichGiftig"
+slug = "spitzgebuckelter-raukopf"
+
+[[verwechslungen]]
+name = "Kupferroter Gelbfuß"
+merkmal = "Lamellen deutlicher herablaufend, Hut weniger filzig schuppig, wächst bei Kiefer."
+essbar = "speisepilz"
+slug = "kupferroter-gelbfuss"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FilzigerGelbfuss.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Filziger_Gelbfuß"

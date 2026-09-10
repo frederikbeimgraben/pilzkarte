@@ -1,0 +1,54 @@
+name = "Falscher Wiesenegerling"
+lateinisch = "Agaricus pseudopratensis (agaricus xanthoderma var. pseudopratensis)"
+gruppe = "champignon"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer"]
+baeume = []
+speisewertHinweis = "Er riecht unangenehm nach Karbol, Tinte oder Urin, nicht pilzig wie die Wiesenchampignons. Die Stielbasis gilbt auf Druck oder im Schnitt, manchmal nur schwach und später rötend. Riecht ein Champignon nicht nach Champignon, bleibt er stehen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FalscherWiesenegerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Gelb verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ bis leicht kartonbraun."
+
+[merkmale]
+hut = "3 bis 14, selten bis 18 cm breit, weiß, alt graubraun bis gelbbraun, beim Reiben gelblich verfärbend. Jung halbkugelig bis konvex, im Alter abgeflacht."
+lamellen = "Rosa, dann rotbraun violett, alt braun bis braunschwarz, frei und gedrängt, Schneiden fast schwarz."
+stiel = "Weiß und glatt, mit weißem hängendem Ring, der teils vergeht. Der Ring hat einen doppelten, teils bräunlichen Rand. Basis manchmal leicht verdickt, jung voll, später hohl. Die Spitze lässt sich leicht vom Hutfleisch trennen."
+fleisch = "Im Hut weiß bis grauweiß, in der Stielspitze rosabraun, in der Basis und bei Verletzung gelblich, später bräunend bis rotbraun."
+geruch = "Unangenehm tintenartig, nach Karbol oder Urin, nicht pilzig."
+geschmack = "Mild, widerlich und muffig."
+sporenpulver = "Purpurbraun, fast schwarz."
+vorkommen = "Folgezersetzer auf Wiesen und in Parkanlagen, seltener im Misch- und Nadelwald, auf sauren, gern sandigen Böden. In Deutschland extrem selten."
+zeit = "Frühling bis Sommer."
+
+[[verwechslungen]]
+name = "Übelriechender Egerling"
+merkmal = "Riecht ebenfalls nach Karbol, Stielbasis im Schnitt kräftig chromgelb."
+essbar = "ungeniessbar"
+slug = "uebelriechender-egerling"
+
+[[verwechslungen]]
+name = "Wiesenchampignon"
+merkmal = "Riecht angenehm pilzig, gilbt nicht, Ring einfach und dünn."
+essbar = "speisepilz"
+slug = "wiesenchampignon"
+
+[[verwechslungen]]
+name = "Schafchampignon"
+merkmal = "Riecht nach Anis, gilbt nur an der Oberfläche, nicht an der Schnittstelle in der Stielbasis."
+essbar = "speisepilz"
+slug = "schafchampignon"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FalscherWiesenegerling.htm"
