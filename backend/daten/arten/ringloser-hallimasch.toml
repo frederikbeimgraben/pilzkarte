@@ -1,0 +1,62 @@
+name = "Ringloser Hallimasch"
+lateinisch = "Desarmillaria tabescens"
+gruppe = "hallimasch"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "kastanie"]
+speisewertHinweis = "Roh giftig, nur nach besonderer Vorbehandlung essbar. Die DGfM meldet haeufig Magen-Darm-Beschwerden. Er ist sehr selten und steht in Deutschland auf der Roten Liste."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+gefaehrdung = "unbekanntesAusmass"
+synonyme = ["Armillaria tabescens", "Agaricus tabescens"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RingloserHallimasch.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut ohne Reaktion."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielDickeCm = { von = 1.5, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 6.0, bis = 10.0 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
+
+[merkmale]
+hut = "2 bis 6, selten bis 7 cm breit, rotbraun, mit abwischbaren braunen bis braunweisslichen Schuppchen. Rand blasser, meist etwas gerieft und verbogen."
+lamellen = "Weisslich bis cremeweiss, spaeter hell rotbraun, mit Zahn herablaufend, Schneiden wellig."
+stiel = "2 bis 8, selten bis 10 cm lang und 1,5 bis 2, selten bis 3 cm dick, weisslich bis braeunlich, an Basis und Spitze heller, laengsfaserig mit feinen Rillen, zaeh, mit etwas braunen Schuppchen. Ohne Ring."
+fleisch = "Weisslich, waessrig braeunlich, beim Durchschneiden ohne Verfaerbung."
+geruch = "Pilzig bis muffig, selten kohlartig."
+geschmack = "Herb, kratzend und seifig wie bei den anderen Hallimasch-Arten."
+sporenpulver = "Weiss."
+vorkommen = "Parasit und Folgezersetzer an Laubbaeumen, gern Eiche und Edelkastanie. Sehr selten."
+zeit = "Sommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Gemeiner Hallimasch"
+merkmal = "Stiel mit deutlichem haeutigem Ring, Hut graubraun und dunkel beschuppt."
+essbar = "bedingtEssbar"
+slug = "dunkler-hallimasch"
+
+[[verwechslungen]]
+name = "Honiggelber Hallimasch"
+merkmal = "Hut honiggelb, Stiel mit gelbflockigem Ring."
+essbar = "bedingtEssbar"
+slug = "honiggelber-hallimasch"
+
+[[verwechslungen]]
+name = "Gruenblaettriger Schwefelkopf"
+merkmal = "Lamellen jung schwefelgelb, spaeter gruenlich, Geschmack sehr bitter."
+essbar = "giftig"
+slug = "gruenblaettriger-schwefelkopf"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RingloserHallimasch.htm"

@@ -1,0 +1,48 @@
+name = "Faltentintling"
+lateinisch = "Coprinopsis atramentaria"
+gruppe = "tintling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er enthält Coprin. Zusammen mit Alkohol löst er eine Acetaldehyd-Reaktion aus, auch noch Tage nach der Mahlzeit. 123pilzsuche rät grundsätzlich vom Verzehr ab."
+marktfaehig = false
+weitereNamen = ["Grauer Faltentintling", "Knotentintling"]
+synonyme = ["Coprinus atramentarius", "Agaricus atramentarius"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Faltentintling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+stielLaengeCm = { von = 4.0, bis = 14.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 1.8 }
+sporenLaengeUm = { von = 6.5, bis = 10.5 }
+sporenBreiteUm = { von = 4.0, bis = 6.5 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 11 cm breit, grauweiß bis graubraun, mit braunen Schuppen, gerieft und faltig."
+lamellen = "Weißlich bis grau, bald schwarz zerfließend, abgerundet angewachsen bis schmal angeheftet. Beim Schopftintling sind sie frei."
+stiel = "4 bis 14, selten bis 16 cm lang, 1 bis 1,5, selten bis 1,8 cm dick, weiß, Basis gelbbraun, hohl und faserig. Zur Basis verdickt, mit einem scheidenartig angedeuteten Ring. Wegen dieser Ringwulst heißt er auch Knotentintling."
+fleisch = "Weiß, dünn, weich, schnell schwarz zerfließend."
+geruch = "Neutral, etwas pilzig."
+geschmack = "Mild, angenehm."
+sporenpulver = "Schwarzbraun."
+vorkommen = "An Waldwegen und in Gärten."
+zeit = "Frühjahr bis Spätherbst."
+
+[[verwechslungen]]
+name = "Spitzkegeliger Tintling"
+merkmal = "Deutlich kleiner, Hut spitzkegelig und stark gerieft, Stielbasis ohne Ringwulst."
+essbar = "giftig"
+slug = "spitzkegeliger-tintling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Faltentintling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Falten-Tintling"

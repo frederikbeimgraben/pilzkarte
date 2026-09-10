@@ -3,30 +3,54 @@ lateinisch = "Boletus pinophilus"
 gruppe = "roehrling"
 speisewert = "speisepilz"
 geschuetzt = true
-jahreszeiten = ["fruehling", "herbst"]
-baeume = ["kiefer", "fichte"]
-schutzHinweis = "Die Verordnung nennt Boletus edulis und Boletus aereus. Diese App behandelt die nahen Verwandten gleich, weil sie im Wald kaum zu trennen sind."
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer", "tanne", "fichte"]
+schutzHinweis = "Die Verordnung nennt Boletus edulis und Boletus aereus. Dieses Projekt behandelt den Kiefernsteinpilz gleich, weil er im Wald kaum von ihnen zu trennen ist."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Kiefernsteini", "Steinpilze", "Herrenpilz", "Dobberniggl", "Gemeiner Steinpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Kiefernsteinpilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 25.0, seltenBis = 30.0 }
 
 [merkmale]
-hut = "8 bis 20 cm, dunkel rotbraun bis kupferfarben, oft höckerig und leicht bereift."
-roehren = "Weiß, dann gelblich bis oliv, am Stiel ausgebuchtet."
-stiel = "Dick, bauchig, rötlich überhaucht, mit rotbraunem Netz im oberen Teil."
-fleisch = "Weiß, fest, unter der Huthaut weinrötlich."
-geruch = "Angenehm pilzig."
-geschmack = "Mild, nussig."
+hut = "4 bis 25, selten bis 30 cm breit, rotbraun, weinrot bis purpurbraun, der Rand lange eingerollt und meist heller. Jung halbkugelig, knubbelig runzelig, weißlich grau bereift und feinsamtig, später polsterförmig, kahler und meist uneben bis grubig. Bei feuchtem Wetter leicht klebrig."
+roehren = "Zuerst weißlich bis schmutzig gelblich, später olivgrün, am Stiel ausgebuchtet angewachsen. Auf Druck ohne Verfärbung."
+stiel = "5 bis 15 cm lang und bis 6 cm dick, bräunlich, hellbraun, rotbräunlich bis nussbraun, mit weißem Netz. Jung dickbäuchig knollig und oft fast so breit wie lang, später etwas gestreckt, an der Basis meist dicklich."
+fleisch = "Weiß, nicht verfärbend, unter der Huthaut mit einer kurzen rotbräunlichen Zone."
+geruch = "Angenehm, etwas pilzig."
+geschmack = "Mild, nussig und typisch steinpilzartig."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Kiefer, seltener Fichte, auf sauren Sandböden und in Bergwäldern."
-zeit = "Mai bis Juni und wieder September bis Oktober."
+vorkommen = "Symbiosepilz meist bei Kiefer, nur gelegentlich bei Weißtanne und Fichte. Wo die Wälder mit Stickstoff gedüngt wurden, fehlt er fast ganz."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, bald rosa. Netz am Stiel dunkel und grob. Schon ein Krümel schmeckt bitter."
-essbar = "ungeniessbar"
+merkmal = "Röhren jung weiß, dann rosa, Netz am Stiel braun. Schon ein kleines Stück Fleisch schmeckt sehr bitter."
+essbar = "giftig"
+slug = "gallenroehrling"
 
 [[verwechslungen]]
-name = "Steinpilz"
-merkmal = "Hut heller und gleichmäßiger braun, Netz weiß statt rotbraun."
+name = "Fichtensteinpilz"
+merkmal = "Hut wildlederbraun bis haselnussbraun statt rotbraun, Rand weiß, Netz am Stiel weiß und erst im Alter bräunlich."
 essbar = "speisepilz"
+slug = "steinpilz"
+
+[[verwechslungen]]
+name = "Sommersteinpilz"
+merkmal = "Hut hell lederbraun bis milchkaffeebraun, Fleisch unter der Huthaut weiß ohne Rottöne, Netz am Stiel stark erhaben."
+essbar = "speisepilz"
+slug = "sommersteinpilz"
+
+[[verwechslungen]]
+name = "Maronenröhrling"
+merkmal = "Röhren auf Druck blaugrün, Stiel längsfaserig und ohne Netz."
+essbar = "bedingtEssbar"
+slug = "maronenroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

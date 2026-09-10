@@ -1,0 +1,53 @@
+name = "Buchenspeitäubling"
+lateinisch = "Russula nobilis"
+gruppe = "taeubling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Der extrem scharfe Geschmack verrät ihn. Ein winziges Stück auf die Zunge legen und wieder ausspucken reicht zum Prüfen. Er löst Magen- und Darmbeschwerden aus."
+marktfaehig = false
+haeufigkeit = "haeufig"
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BuchenspeitaublingGiftig1004.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 11.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 6.5, bis = 9.5 }
+sporenBreiteUm = { von = 5.2, bis = 7.0 }
+
+[merkmale]
+hut = "3 bis 9, selten bis 10 cm breit, rötlich, zinnoberrot bis karminrot, stellenweise weißfleckig. Huthaut matt samtig, kaum abziehbar, darunter rosa. Mitte bleicht aus, Rand im Alter etwas gerieft."
+lamellen = "Weiß, im Alter gelblich, zerbrechlich, ausgebuchtet angewachsen, viele gegabelt, jung gedrängt."
+stiel = "3 bis 9, selten bis 11 cm hoch und 1 bis 3 cm dick, weiß, fest, brüchig, ohne rötliche Töne."
+fleisch = "Weiß, fest und spröde, unter der Huthaut rosa, neigt zum Gilben."
+geruch = "Leicht obstartig, trocken honigartig."
+geschmack = "Extrem scharf."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Buche auf Laubstreu, bevorzugt kalkhaltigen Boden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Birkenspeitäubling"
+merkmal = "Wächst bei Birke, Stiel oft mit rosa Ton, Hut heller."
+essbar = "giftig"
+slug = "birkenspeitaeubling"
+
+[[verwechslungen]]
+name = "Kiefernspeitäubling"
+merkmal = "Wächst bei Kiefer auf saurem Boden, Hut blutrot und stärker ausblassend."
+essbar = "giftig"
+slug = "kiefernspeitaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BuchenspeitaublingGiftig1004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Buchen-Spei-Täubling"

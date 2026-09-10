@@ -25,6 +25,9 @@ class Tier(StrEnum):
     FORECAST = "vorhersage"
     SEASON = "saison"
     PROFILE = "profil"
+    # Eine Art, die nur im Katalog steht, weil man eine sammelbare mit ihr
+    # verwechselt. Sie traegt keine Saisonkurve und keine Karte.
+    LOOKALIKE = "verwechslung"
 
 
 class Group(StrEnum):
@@ -72,10 +75,13 @@ class TreeSpecies(StrEnum):
     PINE = "kiefer"
     FIR = "tanne"
     LARCH = "laerche"
+    DOUGLAS_FIR = "douglasie"
     BEECH = "buche"
     OAK = "eiche"
     BIRCH = "birke"
+    ALDER = "erle"
     HORNBEAM = "hainbuche"
+    HAZEL = "hasel"
     POPLAR = "pappel"
     WILLOW = "weide"
     LIME = "linde"
@@ -85,6 +91,44 @@ class TreeSpecies(StrEnum):
     CHESTNUT = "kastanie"
     ELDER = "holunder"
     FRUIT_TREE = "obstbaum"
+
+
+class Frequency(StrEnum):
+    """Wie oft man die Art findet, laut ihrer Quellseite."""
+
+    VERY_COMMON = "sehrHaeufig"
+    COMMON = "haeufig"
+    SCATTERED = "zerstreut"
+    RARE = "selten"
+    VERY_RARE = "sehrSelten"
+
+
+class RedListStatus(StrEnum):
+    """Die Stufe der Roten Liste Deutschlands, wenn die Quellseite eine nennt."""
+
+    CRITICALLY_ENDANGERED = "vomAussterbenBedroht"
+    ENDANGERED = "starkGefaehrdet"
+    VULNERABLE = "gefaehrdet"
+    UNKNOWN_EXTENT = "unbekanntesAusmass"
+    EXTREMELY_RARE = "extremSelten"
+    NEAR_THREATENED = "vorwarnliste"
+    DATA_DEFICIENT = "datenUnzureichend"
+
+
+class Reagent(StrEnum):
+    """Die Chemikalien, mit denen ein Bestimmer eine Farbreaktion auslöst."""
+
+    KOH = "koh"
+    NAOH = "naoh"
+    FESO4 = "feso4"
+    GUAIAC = "guajak"
+    MELZER = "melzer"
+    ANILINE = "anilin"
+    PHENOL = "phenol"
+    AMMONIA = "ammoniak"
+    SULFOVANILLIN = "sulfovanillin"
+    FORMALIN = "formalin"
+    SCHAEFFER = "schaeffer"
 
 
 class Season(StrEnum):
@@ -130,6 +174,7 @@ class TraitKey(StrEnum):
     SMELL = "geruch"
     TASTE = "geschmack"
     SPORE_PRINT = "sporenpulver"
+    REAGENTS = "reagenzien"
     HABITAT = "vorkommen"
     SEASON = "zeit"
     EDIBILITY = "speisewert"
@@ -141,12 +186,77 @@ class TraitKey(StrEnum):
 type Tag = Tier | Group | Season | TreeSpecies
 
 
-class Lookalike(BaseSchema):
-    """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal."""
+class Range(BaseSchema):
+    """Ein Messbereich, so wie 123pilzsuche ihn schreibt: 4 bis 20, selten bis 25."""
 
-    name: str
-    trait: str = Field(validation_alias="merkmal", serialization_alias="merkmal")
+    start: float = Field(validation_alias="von", serialization_alias="von", gt=0)
+    end: float = Field(validation_alias="bis", serialization_alias="bis", gt=0)
+    rare_until: float | None = Field(
+        validation_alias="seltenBis", serialization_alias="seltenBis", default=None, gt=0
+    )
+
+    @model_validator(mode="after")
+    def _order(self) -> "Range":
+        if self.start > self.end:
+            raise ValueError("Der untere Wert einer Spanne liegt ueber dem oberen.")
+        if self.rare_until is not None and self.rare_until < self.end:
+            raise ValueError("Der Ausnahmewert liegt unter dem oberen Wert.")
+        return self
+
+
+class Measurements(BaseSchema):
+    """Die Zahlen, die die Quellseite nennt. Was sie nicht nennt, bleibt leer.
+
+    Huete werden in Zentimetern breit gemessen, Sporen in Mikrometern. Ein Pilz
+    hat entweder einen Hut oder einen Fruchtkoerper, nie beides.
+    """
+
+    cap_width_cm: Range | None = Field(
+        default=None, validation_alias="hutBreiteCm", serialization_alias="hutBreiteCm"
+    )
+    fruitbody_width_cm: Range | None = Field(
+        default=None,
+        validation_alias="fruchtkoerperBreiteCm",
+        serialization_alias="fruchtkoerperBreiteCm",
+    )
+    fruitbody_height_cm: Range | None = Field(
+        default=None,
+        validation_alias="fruchtkoerperHoeheCm",
+        serialization_alias="fruchtkoerperHoeheCm",
+    )
+    stem_length_cm: Range | None = Field(
+        default=None, validation_alias="stielLaengeCm", serialization_alias="stielLaengeCm"
+    )
+    stem_thickness_cm: Range | None = Field(
+        default=None, validation_alias="stielDickeCm", serialization_alias="stielDickeCm"
+    )
+    spore_length_um: Range | None = Field(
+        default=None, validation_alias="sporenLaengeUm", serialization_alias="sporenLaengeUm"
+    )
+    spore_width_um: Range | None = Field(
+        default=None, validation_alias="sporenBreiteUm", serialization_alias="sporenBreiteUm"
+    )
+
+
+class Lookalike(BaseSchema):
+    """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
+
+    ``slug`` zeigt auf das eigene Profil der Art, wenn es eines gibt. Das
+    Frontend verlinkt darauf, damit man die Verwechslung nachschlagen kann,
+    statt sie nur genannt zu bekommen.
+    """
+
+    name: str = Field(min_length=1)
+    trait: str = Field(validation_alias="merkmal", serialization_alias="merkmal", min_length=1)
     edible: Edibility = Field(validation_alias="essbar", serialization_alias="essbar")
+    slug: str | None = None
+
+
+class ReagentEntry(BaseSchema):
+    """Eine Chemikalie und die Farbe, die sie am Pilz hervorruft."""
+
+    reagent: Reagent = Field(validation_alias="reagenz", serialization_alias="reagenz")
+    reaction: str = Field(validation_alias="reaktion", serialization_alias="reaktion", min_length=1)
 
 
 class Link(BaseSchema):
@@ -156,6 +266,26 @@ class Link(BaseSchema):
     url: str
 
 
+BEST_RATING = 1
+WEAKEST_RATING = 6
+
+
+class Source(BaseSchema):
+    """Woher die Angaben eines Profils stammen und wann sie geprueft wurden.
+
+    Die Texte sind selbst formuliert, die Fakten nicht selbst erfunden. Wer ein
+    Merkmal anzweifelt, findet unter ``url`` die Seite, gegen die es zuletzt
+    geprueft wurde.
+    """
+
+    url: str
+    checked_on: str = Field(
+        validation_alias="geprueftAm",
+        serialization_alias="geprueftAm",
+        pattern=r"^\d{4}-\d{2}-\d{2}$",
+    )
+
+
 class Profile(BaseSchema):
     """Eine Datei unter ``daten/arten/<slug>.toml``.
 
@@ -163,8 +293,10 @@ class Profile(BaseSchema):
     anders heisst als der Slug.
     """
 
-    name: str
-    scientific: str = Field(validation_alias="lateinisch", serialization_alias="lateinisch")
+    name: str = Field(min_length=1)
+    scientific: str = Field(
+        validation_alias="lateinisch", serialization_alias="lateinisch", min_length=1
+    )
     group: Group = Field(validation_alias="gruppe", serialization_alias="gruppe")
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     protected: bool = Field(validation_alias="geschuetzt", serialization_alias="geschuetzt")
@@ -172,6 +304,39 @@ class Profile(BaseSchema):
         validation_alias="jahreszeiten", serialization_alias="jahreszeiten", min_length=1
     )
     trees: list[TreeSpecies] = Field(validation_alias="baeume", serialization_alias="baeume")
+    collectable: bool = Field(
+        default=True, validation_alias="sammelbar", serialization_alias="sammelbar"
+    )
+    # Die Positivliste der DGfM. Nur was dort steht, darf in den Handel.
+    marketable: bool = Field(
+        default=False, validation_alias="marktfaehig", serialization_alias="marktfaehig"
+    )
+    # Die "Relative Wertigkeit" von 123pilzsuche: 1 ist die beste Stufe,
+    # 6 die schwaechste. Die Seite nennt sie nicht fuer jede Art.
+    rating: int | None = Field(
+        validation_alias="wertigkeit",
+        serialization_alias="wertigkeit",
+        default=None,
+        ge=BEST_RATING,
+        le=WEAKEST_RATING,
+    )
+    frequency: Frequency | None = Field(
+        default=None, validation_alias="haeufigkeit", serialization_alias="haeufigkeit"
+    )
+    red_list: RedListStatus | None = Field(
+        default=None, validation_alias="gefaehrdung", serialization_alias="gefaehrdung"
+    )
+    other_names: list[str] = Field(
+        validation_alias="weitereNamen",
+        serialization_alias="weitereNamen",
+        default_factory=list[str],
+    )
+    synonyms: list[str] = Field(
+        validation_alias="synonyme", serialization_alias="synonyme", default_factory=list[str]
+    )
+    measurements: Measurements = Field(
+        validation_alias="masse", serialization_alias="masse", default_factory=Measurements
+    )
     map_name: str | None = Field(
         default=None, validation_alias="karte", serialization_alias="karte"
     )
@@ -181,11 +346,35 @@ class Profile(BaseSchema):
     protection_note: str | None = Field(
         default=None, validation_alias="schutzHinweis", serialization_alias="schutzHinweis"
     )
+    source: Source = Field(validation_alias="quelle", serialization_alias="quelle")
+    reagents: list[ReagentEntry] = Field(
+        validation_alias="reagenzien",
+        serialization_alias="reagenzien",
+        default_factory=list["ReagentEntry"],
+    )
     traits: dict[TraitKey, str] = Field(validation_alias="merkmale", serialization_alias="merkmale")
     lookalikes: list[Lookalike] = Field(
         validation_alias="verwechslungen", serialization_alias="verwechslungen", min_length=1
     )
     links: list[Link] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def _no_map_without_collecting(self) -> "Profile":
+        # Eine Verwechslungsart traegt kein Modell. Ein Manifest waere ein
+        # Tippfehler, und die Stufe wuerde davon nicht vorhersage.
+        if not self.collectable and self.map_name:
+            raise ValueError("Eine nicht sammelbare Art hat keine Karte.")
+        return self
+
+    @field_validator("traits")
+    @classmethod
+    def _no_empty_row(cls, value: dict[TraitKey, str]) -> dict[TraitKey, str]:
+        # Eine leere Zeile in der Merkmalstabelle sieht aus wie ein Fehler der
+        # App. Fehlt die Angabe, laesst man den Schluessel ganz weg.
+        empty = [key for key, text in value.items() if not text.strip()]
+        if empty:
+            raise ValueError(f"Diese Merkmale sind leer: {', '.join(sorted(empty))}.")
+        return value
 
     @field_validator("traits")
     @classmethod
@@ -207,9 +396,14 @@ class Profile(BaseSchema):
     @field_validator("traits")
     @classmethod
     def _set_by_service(cls, value: dict[TraitKey, str]) -> dict[TraitKey, str]:
-        # Speisewert und Schutz stellt der Dienst aus den Enums zusammen. Stuende
-        # beides auch als Text in der Datei, koennten die zwei auseinanderlaufen.
-        used = {TraitKey.EDIBILITY, TraitKey.PROTECTION} & set(value)
+        # Speisewert, Schutz und Reagenzien stellt der Dienst aus den Enums
+        # zusammen. Stuenden sie auch als Text in der Datei, koennten Anzeige
+        # und Filterwert auseinanderlaufen.
+        used = {
+            TraitKey.EDIBILITY,
+            TraitKey.PROTECTION,
+            TraitKey.REAGENTS,
+        } & set(value)
         if used:
             raise ValueError(f"Diese Merkmale setzt der Dienst: {', '.join(sorted(used))}.")
         return value
@@ -324,6 +518,13 @@ class SeasonCurve(BaseSchema):
     )
 
 
+class Marketability(BaseSchema):
+    """Ob die DGfM die Art auf ihrer Positivliste der Speisepilze fuehrt."""
+
+    marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
+    source: Source = Field(validation_alias="quelle", serialization_alias="quelle")
+
+
 class Trait(BaseSchema):
     """Eine Zeile der Merkmalstabelle."""
 
@@ -343,6 +544,12 @@ class SpeciesBrief(BaseSchema):
     protected: bool = Field(validation_alias="geschuetzt", serialization_alias="geschuetzt")
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     map_slug: str | None = Field(validation_alias="kartenSlug", serialization_alias="kartenSlug")
+    collectable: bool = Field(validation_alias="sammelbar", serialization_alias="sammelbar")
+    marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
+    rating: int | None = Field(validation_alias="wertigkeit", serialization_alias="wertigkeit")
+    frequency: Frequency | None = Field(
+        validation_alias="haeufigkeit", serialization_alias="haeufigkeit"
+    )
     forecast_planned: bool = Field(
         validation_alias="vorhersageGeplant", serialization_alias="vorhersageGeplant"
     )
@@ -350,7 +557,7 @@ class SpeciesBrief(BaseSchema):
         validation_alias="begehungenMitFund", serialization_alias="begehungenMitFund"
     )
     peak_week: int | None = Field(validation_alias="spitzeWoche", serialization_alias="spitzeWoche")
-    season: SeasonBrief = Field(validation_alias="saison", serialization_alias="saison")
+    season: SeasonBrief | None = Field(validation_alias="saison", serialization_alias="saison")
 
 
 class Species(BaseSchema):
@@ -365,6 +572,23 @@ class Species(BaseSchema):
     protected: bool = Field(validation_alias="geschuetzt", serialization_alias="geschuetzt")
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     map_slug: str | None = Field(validation_alias="kartenSlug", serialization_alias="kartenSlug")
+    collectable: bool = Field(validation_alias="sammelbar", serialization_alias="sammelbar")
+    marketability: Marketability = Field(
+        validation_alias="marktfaehigkeit", serialization_alias="marktfaehigkeit"
+    )
+    rating: int | None = Field(validation_alias="wertigkeit", serialization_alias="wertigkeit")
+    frequency: Frequency | None = Field(
+        validation_alias="haeufigkeit", serialization_alias="haeufigkeit"
+    )
+    red_list: RedListStatus | None = Field(
+        validation_alias="gefaehrdung", serialization_alias="gefaehrdung"
+    )
+    other_names: list[str] = Field(
+        validation_alias="weitereNamen", serialization_alias="weitereNamen"
+    )
+    synonyms: list[str] = Field(validation_alias="synonyme", serialization_alias="synonyme")
+    measurements: Measurements = Field(validation_alias="masse", serialization_alias="masse")
+    source: Source = Field(validation_alias="quelle", serialization_alias="quelle")
     forecast_planned: bool = Field(
         validation_alias="vorhersageGeplant", serialization_alias="vorhersageGeplant"
     )
@@ -377,7 +601,7 @@ class Species(BaseSchema):
         validation_alias="verwechslungen", serialization_alias="verwechslungen"
     )
     links: list[Link]
-    season: SeasonCurve = Field(validation_alias="saison", serialization_alias="saison")
+    season: SeasonCurve | None = Field(validation_alias="saison", serialization_alias="saison")
 
 
 class SpeciesList(BaseSchema):

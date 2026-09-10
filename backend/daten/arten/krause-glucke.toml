@@ -4,22 +4,60 @@ gruppe = "glucke"
 speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["kiefer"]
-speisewertHinweis = "Gründlich waschen, in den Lappen sitzt Sand und Nadelstreu."
+baeume = ["kiefer", "fichte"]
+speisewertHinweis = "Den Strunk nicht mitessen, er kann Übelkeit und Erbrechen auslösen. Im Alter wird sie bitterlich. Zum Putzen kurz in kochendes Wasser tauchen oder in Scheiben schneiden und wässern."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Fette Henne", "Bärenschädel"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/KrauseGlucke.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 6.0, bis = 30.0, seltenBis = 50.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.5 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
-fruchtkoerper = "10 bis 40 cm, ein rundlicher Ballen aus vielen krausen, bandförmigen Lappen, cremeweiß bis ockergelb, im Alter braun."
-fleisch = "Weiß, elastisch, zäh."
-geruch = "Angenehm würzig, nussig."
-geschmack = "Mild, nussig."
-sporenpulver = "Weiß bis blassgelb."
-vorkommen = "Parasit am Wurzelhals alter Kiefern, seltener anderer Nadelbäume. Kommt am selben Baum viele Jahre wieder."
-zeit = "August bis Oktober."
+fruchtkoerper = "6 bis 30, selten bis 50 cm breit, weißlich bis gelblich, später dunkler. Blumenkohlartig krause Struktur mit vielen breiten Verästelungen, elastisch, zäh und brüchig."
+stiel = "Ein weißlicher Strunk, der am Boden aus dem Wurzelgeflecht eines Baumes entspringt."
+fleisch = "Weiß bis hellgelb, elastisch, zäh, gummiartig, brüchig, jung marmoriert."
+geruch = "Angenehm aromatisch, süßlich, teils etwas nach Haselnüssen."
+geschmack = "Mild, im Alter bitterlich."
+sporenpulver = "Farblos bis weiß."
+vorkommen = "Parasit und Folgezersetzer am Wurzelgeflecht von Kiefern, seltener an anderem Nadelholz wie Fichte."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Bauchwehkoralle"
+merkmal = "Korallenartig verzweigt statt kraus gelappt, Astspitzen mit lilarötlichen Zähnchen, Druckstellen braun bis rot."
+essbar = "giftig"
+slug = "bauchwehkoralle"
+
+[[verwechslungen]]
+name = "Weinbraunverfärbende Koralle"
+merkmal = "Korallenartig verzweigt, Fleisch an der Luft schnell rotbraun bis schwarzbraun, Geschmack stark bitter."
+essbar = "ungeniessbar"
+slug = "weinbraunverfaerbende-koralle"
 
 [[verwechslungen]]
 name = "Breitblättrige Glucke"
-merkmal = "Lappen breiter und flacher, an Laubholz und Tanne. Ebenso essbar."
+merkmal = "Lappen breiter und hirnartig, an Laubholz, beim Kochen Waschküchengeruch."
+essbar = "ohneSpeisewert"
+slug = "breitblaettrige-glucke"
+
+[[verwechslungen]]
+name = "Ästiger Stachelbart"
+merkmal = "Weiß, mit aufwärts gerichteten Ästen und Stacheln, an Totholz von Laubbäumen."
 essbar = "essbar"
+slug = "aestiger-stachelbart"
+
+[[verwechslungen]]
+name = "Gelbe Koralle"
+merkmal = "Gelb bis goldgelb, ästig verzweigt aus einem weißen Strunk, Astspitzen alt bitterlich."
+essbar = "speisepilz"
+slug = "gelbe-koralle"
 
 [[links]]
 titel = "123pilzsuche.de"

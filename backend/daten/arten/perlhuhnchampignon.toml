@@ -1,0 +1,52 @@
+name = "Perlhuhnchampignon"
+lateinisch = "Agaricus moelleri"
+gruppe = "champignon"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Zu erkennen an dem tintigen, karbolartigen Geruch nach Phenol, Jodoform oder faulem Stroh und am Gilben des Fleisches, vor allem an der Stielbasis. Der Hut ist grau bis schwarzbraun geschuppt wie ein Perlhuhngefieder. Nicht essen."
+marktfaehig = false
+weitereNamen = ["Perlhuhnegerling"]
+synonyme = ["Agaricus meleagris", "Agaricus praeclaresquamosus", "Agaricus placomyces var. meleagris", "Agaricus xanthodermus var. obscuratus", "Psalliota meleagris var. obscurata"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Perhuhnegerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Gelb."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
+
+[merkmale]
+hut = "4 bis 11, selten bis 13 cm breit, fein grau bis braun oder schwarzbraun geschuppt auf weißem bis hellgelbem Grund, an ein Perlhuhngefieder erinnernd. Scheitel dunkler und nicht flockig."
+lamellen = "Blassrosa, später dunkelbraun bis schwarz, frei, Schneiden oft punktiert und gezähnelt."
+stiel = "3 bis 12, selten bis 15 cm lang, 1 bis 3, selten bis 3,5 cm dick, weißlich bis gelblich, braunfleckig, hell bräunlich überfasert. Spitze leicht vom Hutfleisch abtrennbar. Ring gerandet und hängend, mit zweiter Schicht, unterseits punktweise braun gerandet."
+fleisch = "Weiß, gilbend vor allem an der Stielbasis, später braun anlaufend, dick."
+geruch = "Tintenartig, karbolartig nach Phenol, nach Jodoform, Schweiß oder faulem Stroh."
+geschmack = "Mild."
+sporenpulver = "Purpurbraun."
+vorkommen = "Folgezersetzer in Parkanlagen und im Mischwald, gern auf kalkreichem sandigem Boden."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rebhuhnegerling"
+merkmal = "Scheitel mit faserigen Schuppen, zum Rand hin rotbraun schuppig, Geruch nur schwach karbolartig."
+essbar = "giftig"
+slug = "rebhuhnegerling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Perhuhnegerling.htm"

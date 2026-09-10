@@ -1,0 +1,62 @@
+name = "Gifthäubling"
+lateinisch = "Galerina marginata"
+gruppe = "schleierling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Tödlich giftig, 100 bis 150 Gramm sind absolut tödlich und schon eine Kostprobe kann schwere Organschäden verursachen. Vom Stockschwämmchen trennt ihn der weiß-silbrig überfaserte Stiel ohne braune Schüppchen und der muffige Geruch nach faulendem Holz. Zur Bestimmung ist immer der Stiel nötig."
+marktfaehig = false
+weitereNamen = ["Nadelholzhäubling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Gifthaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut rot bis mattrot."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Ohne Reaktion."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Ohne Reaktion."
+
+[[reagenzien]]
+reagenz = "melzer"
+reaktion = "Sporenpulver färbt sich dunkel."
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.5 }
+stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.5 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
+
+[merkmale]
+hut = "1 bis 6, selten bis 7,5 cm breit, hellbraun, gelbbraun bis dunkelbraun, hygrophan, größtenteils mit Buckel, teils spitz gebuckelt. Rand glatt bis durchscheinend gerieft."
+lamellen = "Hellbraun, gelbbraun bis zimtbraun, angeheftet bis leicht herablaufend, schmal und gedrängt, Schneiden heller."
+stiel = "2 bis 7, selten bis 9 cm lang und 3 bis 8, selten bis 18 mm dick. Haselnussbraun, gelbbraun bis schwarzbraun, weiß-silbrig bis hellflockig überfasert, größtenteils hohl, Spitze meist heller, Basis oft weißfilzig. Ring bräunlich, dünn und vergänglich, oft nur angedeutet."
+fleisch = "Bräunlich, gelbbraun bis rostbraun, im Hut gelblich, zur Basis dunkler braun, dünn."
+geruch = "Muffig und widerlich, an verfaulendes Holz erinnernd, meist etwas mehlartig oder leicht rettichartig."
+geschmack = "Mild bis widerlich holzartig. Niemals probieren."
+sporenpulver = "Rostbraun, rostocker bis zimtbraun."
+vorkommen = "Folgezersetzer an Baumstümpfen und vergrabenem Holz, größtenteils bei Nadelhölzern, inzwischen auch auf Laubbaumstümpfen gemeinsam mit dem Stockschwämmchen. Einzeln bis gesellig."
+zeit = "Winterende bis Spätherbst."
+
+[[verwechslungen]]
+name = "Stockschwämmchen"
+merkmal = "Stiel unterhalb des Rings braun geschuppt statt weiß-silbrig überfasert, Geruch angenehm pilzig."
+essbar = "bedingtEssbar"
+slug = "stockschwaemmchen"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Gifthaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Gift-Häubling"

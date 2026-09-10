@@ -1,0 +1,60 @@
+name = "Schwärzender Leistling"
+lateinisch = "Cantharellus melanoxeros"
+gruppe = "leistling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche"]
+speisewertHinweis = "Als Pfifferling besonders geschützt, sehr selten und in Deutschland gefährdet. Stehen lassen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Gelbvioletter Pfifferling", "Schwärzender Pfifferling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchwaerzenderLeistling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 14.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 9.0, bis = 12.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.0 }
+
+[merkmale]
+hut = "2 bis 14, selten bis 16 cm breit, eidottergelb bis braungelb mit einem Hauch Violett, später ausblassend, jung flaumig behaart. Mitte stark trichterförmig eingedellt, Rand verbogen."
+leisten = "Hell gelblich bis eidottergelb, breit und dick, mehrfach gegabelt, queraderig verbunden, stark herablaufend."
+stiel = "Leuchtend gelb bis zitronengelb, Basis verjüngt."
+fleisch = "Blassgelb bis weißlich, hart, fest und elastisch, bei Verletzung und im Alter schwärzend."
+geruch = "Obstartig, fruchtartig."
+geschmack = "Mild, etwas schärflich pfeffrig, süßlich angenehm."
+sporenpulver = "Cremefarben."
+vorkommen = "Symbiosepilz im Laubwald bei Eiche und Buche, gern auf Lehmboden, gesellig. Sehr selten, in Deutschland gefährdet."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Flämmiger Saftling"
+merkmal = "Kleiner, Hut orangerot, mit wachsartigen Lamellen statt dicker Leisten, auf Wiesen."
+essbar = "giftig"
+slug = "flaemmiger-saftling"
+
+[[verwechslungen]]
+name = "Trompetenpfifferling"
+merkmal = "Hut braun und trichterig durchbohrt, Leisten grau, Stiel hohl und gelb, Fleisch schwärzt nicht."
+essbar = "speisepilz"
+slug = "trompetenpfifferling"
+
+[[verwechslungen]]
+name = "Starkriechender Pfifferling"
+merkmal = "Unterseite fast glatt bis nur schwach faltig und orangegelb, Fleisch schwärzt nicht."
+essbar = "speisepilz"
+slug = "gelbstieliger-trompetenpfifferling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchwaerzenderLeistling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schwärzende_Kraterelle"

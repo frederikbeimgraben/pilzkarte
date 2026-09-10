@@ -5,27 +5,60 @@ speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+speisewertHinweis = "Nicht roh verwenden. Der Ring muss sich am Stiel verschieben lassen, sonst ist es kein Riesenschirmling; sitzt das Velum noch am Hutrand, löst man es mit den Fingern und prüft den Ring. Riesenschirmlinge aus Gärten und von Komposthaufen stehen lassen, dort wächst der Gift-Riesenschirmling. Auch kleine Schirmlinge ohne verschiebbaren Ring bleiben stehen."
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Schlanker Riesenschirmling", "Zitzenwarziger Riesenschirmling", "Warzenschirmpilz", "Gedrungener Riesen-Zitzenschirmling", "Spitzgebuckelter Riesenschirmling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchlankerRiesenschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 19.0 }
+sporenLaengeUm = { von = 13.0, bis = 14.0 }
+sporenBreiteUm = { von = 7.4, bis = 8.0 }
 
 [merkmale]
-hut = "6 bis 15 cm, blass beige, fein schuppig, mit einem scharf abgesetzten spitzen Buckel in der Mitte."
-lamellen = "Weiß, frei, dicht."
-stiel = "Schlank, hohl, nur schwach genattert, mit verschiebbarem Ring."
-fleisch = "Weiß, bleibt weiß."
-geruch = "Angenehm."
-geschmack = "Mild."
+hut = "4 bis 15, selten bis 19 cm breit, braunocker, jung eiförmig glockig, mit braunem zitzenartigem Buckel. Grob schollig und braunschuppig, die Schuppen reißen auf."
+lamellen = "Weiß, frei, weich."
+stiel = "Weißlich bis hellbräunlich, schlank, zäh und faserig, mit verschiebbarem Ring. Natterung und doppelrandiger Ring sind schwächer ausgeprägt als bei Parasol und Sternschuppigem Riesenschirmpilz. Jung ist die Basis wie ein breiter Teller, mit zunehmender Größe baut sich der Teller ab."
+fleisch = "Weiß, weich, nicht rötend, höchstens minimal in der Stielrinde beim Abbrechen."
+geruch = "Angenehm nussartig bis etwas marzipanartig."
+geschmack = "Angenehm mild."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer in lichten Laubwäldern, an Waldrändern und auf Magerrasen, gern auf Kalk."
-zeit = "Juli bis Oktober."
+vorkommen = "Folgezersetzer in Mischwäldern, Parks, Gärten und Heiden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Jungfernschirmling"
+merkmal = "Hut hellbraun mit gezonten, weichen, wolligen, abstehenden Schuppen, Lamellen weiß und leicht gilbend."
+essbar = "giftig"
+slug = "jungfernschirmling"
+
+[[verwechslungen]]
+name = "Grünsporschirmling"
+merkmal = "Hut weiß und wollig, jung mit hellbrauner landkartenartiger Zeichnung, Lamellen im Alter grünlich."
+essbar = "giftig"
+slug = "gruensporschirmling"
 
 [[verwechslungen]]
 name = "Parasol"
-merkmal = "Größer, Stiel deutlich genattert, Buckel stumpf."
-essbar = "speisepilz"
+merkmal = "Deutlich größer, Stiel kräftig genattert, Doppelring stark ausgeprägt, Buckel meist nur stumpf."
+essbar = "bedingtEssbar"
+slug = "parasol"
 
 [[verwechslungen]]
-name = "Kleine Schirmlinge"
-merkmal = "Hut unter 10 cm, Ring nicht verschiebbar."
-essbar = "toedlichGiftig"
+name = "Sternschuppiger Riesenschirmpilz"
+merkmal = "Hut mit braunen, sternförmig aufreißenden Schuppen, Stiel fein braun genattert, Stielrinde rötend."
+essbar = "speisepilz"
+slug = "sternschuppiger-riesenschirmpilz"
+
+[[verwechslungen]]
+name = "Safranschirmling"
+merkmal = "Fleisch läuft safranrot an, Hut hellbraun bis olivbraun, Lamellen cremeweiß mit Zwischenlamellen."
+essbar = "bedingtEssbar"
+slug = "safranschirmling"
 
 [[links]]
 titel = "123pilzsuche.de"

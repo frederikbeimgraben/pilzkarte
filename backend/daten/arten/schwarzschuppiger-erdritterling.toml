@@ -1,0 +1,59 @@
+name = "Schwarzschuppiger Erdritterling"
+lateinisch = "Tricholoma atrosquamosum"
+gruppe = "ritterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Wird als giftig geführt, weil Erdritterlinge im Verdacht stehen, die Muskeln zu zersetzen. Er ist am grauschwarz schuppigen Hut, an den dunkler punktierten Lamellenschneiden und am mehlartigen Geruch zu erkennen."
+marktfaehig = false
+weitereNamen = ["Schwarzschuppiger Ritterling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchwarzschuppigerRitterlingEssbar.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 7.5, seltenBis = 8.5 }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0 }
+sporenLaengeUm = { von = 5.5, bis = 8.2 }
+sporenBreiteUm = { von = 3.5, bis = 5.1 }
+
+[merkmale]
+hut = "4 bis 8, selten bis 10 cm breit, grauschwarz bis schwarzbraun, mit wolligen, sparrigen, dunklen Schüppchen, die sich auflösen. Rand heller, kein Velum erkennbar."
+lamellen = "Grauweiß bis etwas gelblich, alt mit rostbraunen Flecken, ausgebuchtet angewachsen, Schneiden glatt und dunkler punktiert."
+stiel = "3 bis 7,5, selten bis 8,5 cm lang und 1 bis 1,5, selten 2 cm dick, weißlich bis grauweiß, etwas heller als der Hut, schwarzbraun bis schwärzlich fein geschuppt, längsfaserig. Basis schwach verdickt und leicht spindelig, Myzel weiß."
+fleisch = "Weißlich, cremeweiß bis blassgrau, in der Stielspitze grau marmoriert, im Hutbereich oft dunkler, nicht gilbend."
+geruch = "Unbedeutend bis mehlartig, alt mehlartig ranzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald, häufiger bei Nadelbäumen."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Tigerritterling"
+merkmal = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Lamellen oft mit Tröpfchen, Geruch mehlig."
+essbar = "toedlichGiftig"
+slug = "tigerritterling"
+
+[[verwechslungen]]
+name = "Gilbender Erdritterling"
+merkmal = "Fleisch und Stielbasis gilben deutlich, Geruch unangenehm."
+essbar = "giftig"
+slug = "gilbender-erdritterling"
+
+[[verwechslungen]]
+name = "Seifenritterling"
+merkmal = "Fleisch rötet an verletzten Stellen, besonders an der Stielbasis, Geruch nach Seifenlauge."
+essbar = "giftig"
+slug = "seifenritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchwarzschuppigerRitterlingEssbar.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schwarzschuppiger_Erd-Ritterling"

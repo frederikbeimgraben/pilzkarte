@@ -1,0 +1,40 @@
+name = "Risspilzartiger Schneckling"
+lateinisch = "Hygrophorus inocybiformis"
+gruppe = "schneckling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Ungeniessbar und in Europa sehr selten, deshalb stehen lassen."
+marktfaehig = false
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RisspilzartigerSchneckling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
+
+[merkmale]
+hut = "3 bis 7, selten bis 9 cm breit, braunschuppig auf hellgrauem Grund, Rand fransig."
+lamellen = "Weiss, schmutzigweiss bis grauweiss, duenn und weich, breit angewachsen und leicht herablaufend."
+stiel = "Braunschuppig auf weissem Grund, zur Spitze und am Uebergang zu den Lamellen weisslich."
+fleisch = "Weissgrau."
+geruch = "Unbedeutend."
+geschmack = "Mild."
+sporenpulver = "Weiss."
+vorkommen = "Symbiosepilz im Mischwald an grasigen, feuchten und moosigen Stellen. Die Seite nennt keine Baumart."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Grosser Kiefernschneckling"
+merkmal = "Groesser, Hut olivbraun und schleimig, bei Kiefern."
+essbar = "essbar"
+slug = "grosser-kiefernschneckling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RisspilzartigerSchneckling.htm"

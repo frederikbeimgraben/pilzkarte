@@ -25,6 +25,7 @@ from app.modules.species.schemas import (
     Profile,
     Season,
     SeasonTable,
+    Source,
     SpeciesCounts,
     TraitKey,
     TreeSpecies,
@@ -78,6 +79,10 @@ def _profile(name: str, scientific: str, *, protected: bool) -> Profile:
         protected=protected,
         seasons=[Season.AUTUMN],
         trees=[TreeSpecies.SPRUCE],
+        source=Source(
+            url="https://www.123pilzsuche.de/daten/details/Steinpilze.htm",
+            checked_on="2026-09-10",
+        ),
         traits={
             TraitKey.FLESH: "Weiss.",
             TraitKey.SMELL: "Pilzig.",
@@ -113,7 +118,7 @@ def catalog_for_tests() -> Catalog:
     )
     return Catalog(
         table=table,
-        profile={
+        profiles={
             "steinpilz": _profile("Steinpilz", "Boletus edulis", protected=True),
             "pfifferling": _profile("Pfifferling", "Cantharellus cibarius", protected=True),
             "parasol": _profile("Parasol", "Macrolepiota procera", protected=False),

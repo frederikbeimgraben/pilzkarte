@@ -1,26 +1,64 @@
 name = "Espen-Rotkappe"
 lateinisch = "Leccinum aurantiacum"
 gruppe = "raufussroehrling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = true
-jahreszeiten = ["sommer", "herbst"]
-baeume = ["pappel", "eiche"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["pappel"]
+speisewertHinweis = "Fleisch wird beim Kochen schwarz. In Deutschland gefährdet."
+marktfaehig = false
+wertigkeit = 1
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Espenrotkappe", "Weißstielige Rotkappe", "Rothäubchen", "Pappelrotkappe", "Rothaut-Röhrling"]
+synonyme = ["Leccinum quercinum", "Leccinum rufum", "Leccinum albostipitatum", "Leccinum populinum"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Espenrotkappe.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "formalin"
+reaktion = "Schmutzig rosenrot, später braunviolett."
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Fleisch graugrünlich."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 19.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 13.0, bis = 18.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
-hut = "6 bis 20 cm, orangerot bis ziegelrot, feinfilzig."
-roehren = "Weißlich bis cremefarben, auf Druck bräunend."
-stiel = "Weiß mit rötlich braunen Schüppchen, die erst im Alter dunkeln."
-fleisch = "Weiß, im Schnitt weinrot, dann grauschwarz."
-geruch = "Unauffällig pilzig."
-geschmack = "Mild."
-sporenpulver = "Ockerbraun."
-vorkommen = "Mykorrhiza mit Espe und Pappel, auch bei Eiche, auf besseren Böden."
-zeit = "Juli bis Oktober."
+hut = "4 bis 19, selten bis 22 cm breit, braunrot bis orangebraun, feinfilzig. Die Huthaut steht im Alter am Rand über."
+roehren = "Weißlich bis grauweiß, später olivgrün, leicht ablösbar, stark schwammig."
+stiel = "6 bis 20, selten bis 22 cm hoch, jung weißlich, später mit orangebraunen Schüppchen, nicht mit schwärzlichen wie bei der Birken-Rotkappe. Auf Druck rötlich, dann graulila bis grünblau, besonders an der Basis."
+fleisch = "Weiß, im Schnitt graulila, beim Kochen schwärzend."
+geruch = "Pilzig."
+geschmack = "Mild und angenehm."
+sporenpulver = "Oliv- bis ockerbraun."
+vorkommen = "Symbiosepilz bei Espe und Zitterpappel. In Deutschland auf der Roten Liste."
+zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
 name = "Birken-Rotkappe"
-merkmal = "Schüppchen schwarz, Stielbasis blaugrün, bei Birke."
-essbar = "essbar"
+merkmal = "Stielschuppen schwärzlich statt orangebraun, bei Birke."
+essbar = "bedingtEssbar"
+slug = "birken-rotkappe"
+
+[[verwechslungen]]
+name = "Fichtenrotkappe"
+merkmal = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
+essbar = "speisepilz"
+slug = "fichtenrotkappe"
+
+[[verwechslungen]]
+name = "Fuchsrotkappe"
+merkmal = "Hut fuchsrot bis rotbraun und samtig, Fleisch am Stiel rosa bis braun."
+essbar = "speisepilz"
+slug = "fuchsrotkappe"
 
 [[links]]
 titel = "123pilzsuche.de"

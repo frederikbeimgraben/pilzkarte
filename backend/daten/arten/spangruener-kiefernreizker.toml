@@ -1,0 +1,60 @@
+name = "Spangrüner Kiefernreizker"
+lateinisch = "Lactarius semisanguifluus"
+gruppe = "milchling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Sehr selten und in Deutschland gefährdet (Rote Liste 3). Das Fleisch schmeckt herb bis bitterlich."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GemeinerReizker.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 8.0, bis = 10.0 }
+sporenBreiteUm = { von = 7.0, bis = 8.0 }
+
+[merkmale]
+hut = "3 bis 11, selten bis 13 cm breit, orange bis ockerorange, später mit grünlichen Flecken, deutlich gezont. Mitte eingedrückt."
+lamellen = "Orangeocker bis blassorange mit dunkelgrünem bis blaugrünem Schimmer, angewachsen, manchmal herablaufend."
+milch = "Orangerot, später weinrot bis dunkelrot."
+stiel = "Gelblich bis rötlich, hohl, mit flachen dunkleren Grübchen."
+fleisch = "Weißlich bis gelblich, später grünlich blau, im Stielrand rötlich, fest, innen wattig, später hohl."
+geruch = "Obstartig."
+geschmack = "Herb, bitterlich."
+sporenpulver = "Blass ockerlich."
+vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier bei Kiefer. Sehr selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Edelreizker"
+merkmal = "Milch karottenrot bis orangerot und kaum veränderlich, Geschmack mild nach Weißkraut."
+essbar = "speisepilz"
+slug = "edelreizker"
+
+[[verwechslungen]]
+name = "Fichtenreizker"
+merkmal = "Bei Fichte, Stiel ohne Grübchen, Milch karottenrot und erst nach etwa 15 Minuten weinrot."
+essbar = "speisepilz"
+slug = "fichtenreizker"
+
+[[verwechslungen]]
+name = "Lachsreizker"
+merkmal = "Überwiegend bei Weißtanne, Hut genabelt bis trichterförmig, Milch karottenrot bis orange."
+essbar = "speisepilz"
+slug = "lachsreizker"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GemeinerReizker.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Spangrüner_Kiefern-Reizker"

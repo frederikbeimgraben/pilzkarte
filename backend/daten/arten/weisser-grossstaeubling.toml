@@ -1,0 +1,50 @@
+name = "Weißer Großstäubling"
+lateinisch = "Calvatia candida"
+gruppe = "staeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur essbar, solange das Innere rein weiß ist; später wird es gelb und ungenießbar. Jeden Fruchtkörper aufschneiden, um junge Knollenblätterpilze auszuschließen."
+marktfaehig = false
+wertigkeit = 2
+synonyme = ["Langermannia candida", "Lycoperdon candidum", "Aussereuropäische form: calvatia craniiformis"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WeisserGrossstaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0 }
+
+[merkmale]
+fruchtkoerper = "3 bis 9, selten bis 11 cm breit, weiß bis grauweiß, später gelblich, netzartig fleckig bis wellig vertieft, teils mit stielartigem Teil und kugeligem Kopf."
+fleisch = "Innen zuerst weiß, später gelb, alt gelbbraun. Der Stielteil ist weiß bis grauweiß, später gelblich, ocker bis ockerbraun."
+geruch = "Angenehm, pilzig."
+geschmack = "Mild, angenehm."
+sporenpulver = "Olivbraun bis gelbbraun."
+vorkommen = "Folgezersetzer im Mischwald, in Hecken, Parks, Steppen und Heiden, wärmeliebend. Häufiger im Mittelmeerraum, in Europa sonst extrem selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Weißer Knollenblätterpilz"
+merkmal = "Jung ebenfalls ein weißes Ei; im Längsschnitt zeigen sich aber Hut, Lamellen und Stiel, die Basis steckt in einer häutigen Scheide."
+essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Hasenstäubling"
+merkmal = "Jung mit plattenartigen, spitzkegeligen Erhebungen, wächst auf Wiesen, Weiden und in Obstgärten."
+essbar = "speisepilz"
+slug = "hasenbovist"
+
+[[verwechslungen]]
+name = "Riesenbovist"
+merkmal = "Viel größer, bis 50 und selten bis 150 cm breit, Haut glatt und lederartig, alt urinartig riechend."
+essbar = "speisepilz"
+slug = "riesenbovist"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WeisserGrossstaeubling.htm"

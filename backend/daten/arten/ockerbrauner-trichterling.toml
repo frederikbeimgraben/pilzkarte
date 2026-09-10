@@ -1,0 +1,60 @@
+name = "Ockerbrauner Trichterling"
+lateinisch = "Infundibulicybe gibba"
+gruppe = "trichterling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "In südlichen Ländern gibt es den sehr giftigen Wohlriechenden Trichterling, der nach Jasmin riecht. Auf den Geruch achten."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "haeufig"
+weitereNamen = ["Ockertrichterling"]
+synonyme = ["Clitocybe gibba", "Agaricus gibbus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Ockertrichter.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch wässrig braun."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 11.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
+stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.2 }
+sporenLaengeUm = { von = 5.0, bis = 9.0 }
+sporenBreiteUm = { von = 3.5, bis = 6.0 }
+
+[merkmale]
+hut = "2 bis 9, selten bis 11 cm breit, hellbraun, blass lederfarben bis cremeocker, trichterförmig, jung meist mit kleinem stumpfem Buckel. Alt wellig gerieft und schwach ausblassend."
+lamellen = "Weiß bis creme, herablaufend, mit Zwischenlamellen."
+stiel = "3 bis 8, selten bis 9 cm lang, 0,8 bis 1, selten bis 1,2 cm dick, hellbraun bis cremefarben, fein weißlich überfasert, elastisch und zäh, alt hohl. Basis teils etwas verdickt und vom Myzel filzig."
+fleisch = "Weiß, später gelbbraun, weich, zäh und faserig."
+geruch = "Angenehm pilzig süßlich, mandelartig, etwas stechend alkalisch."
+geschmack = "Mild."
+sporenpulver = "Weiß, höchstens mit einem Hauch Hellgelb."
+vorkommen = "Folgezersetzer in Mischwald, Parks und Hecken, meist bei Laubbäumen. Häufig."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Mönchskopf"
+merkmal = "Deutlich größer, Hut bräunlich mit warzenartigem Buckel in der Mitte, Geruch süßlich nach Bittermandel."
+essbar = "speisepilz"
+slug = "moenchskopf"
+
+[[verwechslungen]]
+name = "Fuchsiger Röteltrichterling"
+merkmal = "Lamellen fuchsig bis ockergelb und gegabelt, Sporenpulver mit einem Hauch Rosa, Geruch nach frisch geschnittenem Gras."
+essbar = "essbar"
+slug = "fuchsiger-roetelritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Ockertrichter.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Ockerbrauner_Trichterling"

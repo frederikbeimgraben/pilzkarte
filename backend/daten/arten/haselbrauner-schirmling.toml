@@ -1,0 +1,42 @@
+name = "Haselbrauner Schirmling"
+lateinisch = "Lepiota kuehneri"
+gruppe = "schirmling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Tödlich giftig, wie alle kleinen Schirmlinge verdächtig. Keine Kostprobe: schon das Kosten kann Organe schädigen."
+marktfaehig = false
+weitereNamen = ["Rosabrauner Schirmling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Haselbrauner.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 6.0, bis = 7.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
+
+[merkmale]
+hut = "1 bis 7, selten bis 8 cm breit, hell- bis rotbraun, mit dunkelbraun bis rotbraun gezonten Schüppchen. Die Huthaut reißt beim Aufschirmen auf."
+lamellen = "Weißlich, später gelblich, frei."
+stiel = "2 bis 6, selten bis 7 cm lang, blass rosa, meist hohl, unterhalb der Ringzone wollig faserig, an der Basis mit einer braun genatterten Gürtelzone."
+fleisch = "Weiß."
+geruch = "Süßlich, angenehm."
+geschmack = "Nicht kosten."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer im Mischwald, überwiegend im Nadelwald, vereinzelt im Laubwald."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Safranschirmling"
+merkmal = "Viel größer, Hut über 8 cm mit groben aufgerissenen Schuppen, Fleisch rötet safranrot, Ring dick und verschiebbar."
+essbar = "bedingtEssbar"
+slug = "safranschirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Haselbrauner.htm"

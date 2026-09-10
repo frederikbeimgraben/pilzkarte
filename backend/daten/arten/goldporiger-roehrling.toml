@@ -1,0 +1,54 @@
+name = "Goldporiger Röhrling"
+lateinisch = "Aureoboletus gentilis"
+gruppe = "schmierroehrling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche", "kastanie"]
+speisewertHinweis = "Selten, in Deutschland gefährdet und in der Schweiz verletzlich. Besser stehen lassen."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Goldporiger Pulverröhrling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GoldporigerRoehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 15.0, bis = 17.0 }
+sporenBreiteUm = { von = 4.1, bis = 7.1 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 9 cm breit, gelbrosa, rosabraun bis beigerosa. Feucht schmierig bis schleimig, trocken oft etwas bereift. Rand steht etwas über, Huthaut teilweise abziehbar."
+roehren = "Goldgelb bis zitronengelb, jung mit Guttationstropfen, im Alter dunkler gelb bis gelbbraun und rostfleckig, grobporig."
+stiel = "Gelb bis ockerbraun, braun fleckend, klebrig bis schleimig, Basis rotbraun."
+fleisch = "Weiß, etwas rosaviolett, unter der Huthaut stärker rosa, nicht blauend."
+geruch = "Obstartig."
+geschmack = "Leicht säuerlich."
+sporenpulver = "Olivgelb."
+vorkommen = "Symbiosepilz im Laubwald bei Buche, Eiche und Esskastanie, wärmeliebend. Selten, in Deutschland gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Bei Lärche, Hut goldgelb und schleimig, Stiel mit Ring."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[verwechslungen]]
+name = "Mährischer Filzröhrling"
+merkmal = "Hut trocken und samtig filzig, olivbraun bis ockerbraun, Röhren blassgelb."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Ziegenlippe"
+merkmal = "Hut trocken samtig olivbraun, Röhren blassgelb und grobporig, Fleisch weißlich."
+essbar = "speisepilz"
+slug = "ziegenlippe"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GoldporigerRoehrling.htm"

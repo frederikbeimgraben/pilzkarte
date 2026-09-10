@@ -1,27 +1,66 @@
 name = "Lilastieliger Rötelritterling"
 lateinisch = "Lepista personata"
 gruppe = "roetelritterling"
-speisewert = "bedingtEssbar"
+speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["herbst"]
+jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = []
-speisewertHinweis = "Roh giftig. Gut durchgaren."
+speisewertHinweis = "Regional sehr selten und in Deutschland gefährdet. Nur wenige Fruchtkörper nehmen."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Maskierter Ritterling", "Maskierter Rötelritterling", "Fleischbräunlicher Rötelritterling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/LilastieligerRoetelritterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
-hut = "6 bis 15 cm, blass graubraun bis ockerfarben, matt, Rand lange eingerollt."
-lamellen = "Weißlich bis blassocker, dicht, ausgebuchtet, leicht ablösbar."
-stiel = "Kräftig, deutlich violett und faserig, oft bereift."
-fleisch = "Weiß, fest."
-geruch = "Angenehm, aromatisch."
-geschmack = "Mild."
-sporenpulver = "Blass rosa."
-vorkommen = "Zersetzer auf Wiesen, Weiden und an Wegrändern, gern auf Kalk, in Hexenringen."
-zeit = "September bis November."
+hut = "4 bis 12, selten bis 15 cm breit, grauviolett, beigebräunlich, graubräunlich bis graublau, nie ganz braun ohne rotviolette Töne. Hygrophan, Huthaut glatt und leicht bereift, manchmal etwas fleckend, Rand lange eingerollt, später scharfkantig."
+lamellen = "Weißlich lila bis blass violettblau, am Stiel ausgebuchtet angewachsen, leicht ablösbar."
+stiel = "Blass blaulila bis rötlichlila, etwas überfasert, kahl, voll. Basis verdickt und manchmal etwas gilbend."
+fleisch = "Weißlich lila bis hellgrau, alt graubraun, im Zentrum lange weiß bleibend."
+geruch = "Leicht fruchtig, parfümiert, nicht so kräftig wie beim Violetten Rötelritterling."
+geschmack = "Mild, leicht süßlich."
+sporenpulver = "Blassrosa."
+vorkommen = "Folgezersetzer auf Wiesen und Weiden, in Laubwäldern und Parkanlagen, meist gesellig in Reihen oder Hexenringen. In Deutschland gefährdet."
+zeit = "Herbst bis Winteranfang, selten im Frühling."
+
+[[verwechslungen]]
+name = "Bocksdickfuß"
+merkmal = "Geruch widerlich nach Ziegenbock und Schweißfüßen, Lamellen laufen zimtbraun an, Stiel mit rostbraunem Sporenpulver behaftet."
+essbar = "giftig"
+slug = "bocksdickfuss"
 
 [[verwechslungen]]
 name = "Violetter Rötelritterling"
-merkmal = "Auch der Hut ist violett, im Wald statt auf der Wiese."
+merkmal = "Auch der Hut ist lilaviolett, Geruch stärker parfümiert, im Laubwald."
 essbar = "bedingtEssbar"
+slug = "violetter-roetelritterling"
+
+[[verwechslungen]]
+name = "Lavendelfarbener Rötelritterling"
+merkmal = "Hut rötlichlila bis lavendelfarben, Lamellen lila, Stiel schlanker."
+essbar = "speisepilz"
+slug = "lavendelfarbener-roetelritterling"
+
+[[verwechslungen]]
+name = "Schmutziger Rötelritterling"
+merkmal = "Deutlich kleiner, Lamellen schmutzig weiß bis graurosa und etwas herablaufend."
+essbar = "essbar"
+slug = "schmutziger-roetelritterling"
+
+[[verwechslungen]]
+name = "Horngrauer Rötelritterling"
+merkmal = "Hut graubraun mit konzentrischen Wasserflecken, Geruch mehlartig statt parfümiert."
+essbar = "ohneSpeisewert"
+slug = "horngrauer-roetelritterling"
 
 [[links]]
 titel = "123pilzsuche.de"

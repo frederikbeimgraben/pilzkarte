@@ -1,0 +1,59 @@
+name = "Schärflicher Ritterling"
+lateinisch = "Tricholoma sciodes"
+gruppe = "ritterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Giftig. Kennzeichen sind der graubraune, wie bei einem Risspilz radial einreißende Hut, die alt schwärzenden Lamellenschneiden und der nach kurzem Kauen brennend scharfe Geschmack."
+marktfaehig = false
+synonyme = ["Tricholoma virgatum var. sciodes", "Tricholoma sciodes var. sciodes", "Agaricus murinaceus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchaerflicherRitterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.5 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.5 }
+
+[merkmale]
+hut = "4 bis 8, selten bis 10 cm breit, graubraun, radialfaserig und angedrückt schuppig, radial einreißend, gebuckelt, später abgeflacht. Mitte deutlich dunkler als der lange herabgebogene Rand."
+lamellen = "Weißlich mit leichtem rosa Reflex, am Stiel ausgebuchtet angewachsen, Schneiden alt etwas wellig gekerbt und schwärzend."
+stiel = "5 bis 10, selten bis 12 cm lang und 1 bis 2, selten 2,5 cm dick, grauweiß, eingewachsen faserig, alt hohl, Basis abrupt abgeplattet."
+fleisch = "Weiß bis grauweiß."
+geruch = "Erdig."
+geschmack = "Bitter, nach kurzer Zeit extrem scharf."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Buche."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Tigerritterling"
+merkmal = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Geschmack mild, Geruch mehlartig."
+essbar = "toedlichGiftig"
+slug = "tigerritterling"
+
+[[verwechslungen]]
+name = "Brennendscharfer Ritterling"
+merkmal = "Hut heller graubraun, Geschmack sofort brennend scharf, Lamellenschneiden schwärzen nicht."
+essbar = "giftig"
+slug = "brennendscharfer-ritterling"
+
+[[verwechslungen]]
+name = "Rötender Erdritterling"
+merkmal = "Hut grau geschuppt, Fleisch und Lamellen röten bei Verletzung."
+essbar = "giftig"
+slug = "roetender-erdritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchaerflicherRitterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Schärflicher_Ritterling"

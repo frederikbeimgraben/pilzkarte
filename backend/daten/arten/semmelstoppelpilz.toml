@@ -4,24 +4,56 @@ gruppe = "stoppelpilz"
 speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "fichte", "eiche"]
-speisewertHinweis = "Ältere Stücke werden bitter. Stacheln vor dem Garen abstreifen."
+baeume = []
+speisewertHinweis = "Alle mild schmeckenden weißen und gelben Stoppelpilze sind essbar, eine Verwechslung untereinander ist unbedenklich. Sehr lange Stoppeln über drei Millimeter machen den Pilz bitter."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Rostgelber Semmelstoppelpilz", "Semmelgelber Stacheling", "Rotgelber Semmelstoppelpilz", "Orangeroter Stoppelpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 4.6, bis = 10.0 }
+sporenBreiteUm = { von = 4.9, bis = 7.8 }
 
 [merkmale]
-hut = "4 bis 15 cm, semmelgelb bis blass cremefarben, matt, unregelmäßig gebuchtet."
-stacheln = "Unterseite mit weichen, weißlichen Stacheln, die leicht abstreifbar sind und am Stiel herablaufen."
-stiel = "Kurz, dick, weißlich, oft seitlich angesetzt."
-fleisch = "Weiß, brüchig, im Alter etwas gilbend."
-geruch = "Angenehm pilzig."
-geschmack = "Mild, im Alter leicht bitter."
+hut = "4 bis 20, selten bis 25 cm breit, jung weißlich gelb bis semmelgelb, später dunkler gelblich. Rand lange eingerollt."
+stacheln = "Weiß bis hellorange, im Alter gelblich, kegelig und relativ weit auseinanderstehend, am Stiel etwas herablaufend."
+stiel = "Weißlich bis hellgelb, auf Druck gilbend."
+fleisch = "Gelblichweiß, creme- bis hellorange, fest und etwas brüchig, läuft bei Verletzung gelbrosa bis braun an."
+geruch = "Angenehm, nach Orangenblütenwasser."
+geschmack = "Mild, alt bitterlich wie getrocknete Haferflocken und beim längeren Kauen etwas schärflich."
 sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Buche, Eiche und Fichte, in der Streu, oft in Reihen und Ringen."
-zeit = "August bis November."
+vorkommen = "Symbiosepilz in Mischwäldern, sehr häufig, oft in Massen."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Rotgelber Stoppelpilz"
-merkmal = "Kleiner, Hut kräftiger orangerot, Stacheln laufen kaum herab."
+name = "Ellipsoidsporige Stoppelpilz"
+merkmal = "Deutlich kleiner, 2 bis 5, selten bis 6 cm breit, Hut gelborange bis terracottafarben."
 essbar = "speisepilz"
+slug = "ellipsoidsporige-stoppelpilz"
+
+[[verwechslungen]]
+name = "Genabelter Semmelstoppelpilz"
+merkmal = "Fast gleich, Stiel 2,5 bis 6 cm hoch. Sicher nur unter dem Mikroskop zu trennen, sehr selten."
+essbar = "speisepilz"
+slug = "genabelter-semmelstoppelpilz"
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Unterseite mit Poren statt Stoppeln, mehrere Stiele oft miteinander verwachsen."
+essbar = "speisepilz"
+slug = "semmelporling"
+
+[[verwechslungen]]
+name = "Schafporling"
+merkmal = "Hut weiß, später gelblich, braun- bis graugelb, Unterseite mit Poren, Stiel mit graubraunen bis dunkelbraunen Flecken."
+essbar = "bedingtEssbar"
+slug = "schafporling"
 
 [[links]]
 titel = "123pilzsuche.de"

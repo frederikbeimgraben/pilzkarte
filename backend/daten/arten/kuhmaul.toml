@@ -1,27 +1,64 @@
 name = "Kuhmaul"
 lateinisch = "Gomphidius glutinosus"
 gruppe = "gelbfuss"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
-speisewertHinweis = "Die schleimige Huthaut abziehen. Der Pilz färbt das Gericht schwarz."
+speisewertHinweis = "Die schleimige Huthaut schon im Wald abziehen. Sonst färbt der Pilz im Korb die Berührungsstellen an Pfifferlingen schwarz; das ist nicht giftig, sieht aber unappetitlich aus."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Großer Gelbfuß", "Großer Schmierling", "Großer Keilpilz", "Großer Schleimpilz", "Rotzer", "Rotznase", "Schafsnase"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Kuhmaul.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0 }
+sporenLaengeUm = { von = 17.5, bis = 21.5 }
+sporenBreiteUm = { von = 5.8, bis = 7.1 }
 
 [merkmale]
-hut = "4 bis 12 cm, graubraun bis violettbraun, stark schleimig, im Alter schwarz fleckend."
-lamellen = "Weißlich, dick, entfernt, weit herablaufend, im Alter schwarzgrau."
-stiel = "Weiß, an der Basis leuchtend chromgelb, mit schleimiger Ringzone."
-fleisch = "Weiß, in der Stielbasis gelb."
-geruch = "Unauffällig."
+hut = "3 bis 15, selten bis 20 cm breit, braun, violett bis blau, stark schmierig und schleimig, oft mit schwarzbraunen Flecken. Die Huthaut lässt sich leicht abziehen."
+lamellen = "Jung weißlich, später grau bis graubraun, dick, wachsartig, herablaufend, leicht ablösbar. Jung von einer Schleimschicht überzogen."
+stiel = "Weißlich, zur Spitze abnehmend gelblich, Basis kanariengelb, sehr schleimig."
+fleisch = "Weißlich, alt grau, unter der Huthaut bräunlich, in der Stielbasis kanariengelb."
+geruch = "Neutral."
 geschmack = "Mild."
-sporenpulver = "Schwarz."
-vorkommen = "Bei Fichte, oft in Gesellschaft von Schmierröhrlingen, auf sauren Böden."
-zeit = "Juli bis Oktober."
+sporenpulver = "Schwarzbraun."
+vorkommen = "Symbiosepilz im Nadelwald bei Fichte, auf saurem Boden."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rosenroter Gelbfuß"
+merkmal = "Hut rosenrot und samtig, nur schmierig statt schleimig, bei Kiefer auf dem Myzel des Kuhröhrlings."
+essbar = "speisepilz"
+slug = "rosenroter-gelbfuss"
+
+[[verwechslungen]]
+name = "Gefleckter Gelbfuß"
+merkmal = "Hut hell zimtbraun mit dunkler Mitte, Stiel auf weißem Grund rotbraun gefleckt, Fleisch im Schnitt rötend, bei Lärche."
+essbar = "essbar"
+slug = "gefleckter-gelbfuss"
+
+[[verwechslungen]]
+name = "Gelbgestiefelter Schleimkopf"
+merkmal = "Lamellen cremegrau bis ockerbraun, Stiel mit braunfuchsigen Velumbändern und knolliger Basis, bei Birke."
+essbar = "essbar"
+slug = "gelbgestiefelter-schleimkopf"
 
 [[verwechslungen]]
 name = "Kupferroter Gelbfuß"
-merkmal = "Hut kupferrot, bei Kiefer."
-essbar = "essbar"
+merkmal = "Lamellen und Fleisch gelborange, bei Verletzung rötend, bei Kiefer."
+essbar = "speisepilz"
+slug = "kupferroter-gelbfuss"
+
+[[verwechslungen]]
+name = "Aprikosen-Gelbfuß"
+merkmal = "Hut orangebraun, rosa bis violett, Lamellen jung purpurbraun, Stiel mit orangefarbener Ringzone."
+essbar = "speisepilz"
+slug = "aprikosen-gelbfuss"
 
 [[links]]
 titel = "123pilzsuche.de"

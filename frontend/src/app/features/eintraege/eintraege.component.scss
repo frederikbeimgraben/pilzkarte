@@ -4,14 +4,27 @@
   block-size: 100%;
 }
 
+// Dasselbe Raster wie die Reiter Arten und Konto: 20 px oben, 20 px zwischen
+// Titelzeile, Chips und Liste.
 .eintraege {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: 20px;
   min-block-size: 0;
-  padding: var(--space-5) var(--pilz-gutter);
+  padding: 20px var(--pilz-gutter);
   overflow-y: auto;
+  scrollbar-width: none;
+}
+
+// Der Leerzustand ist Text, kein Kasten: er steht linksbündig im Textmaß der
+// Liste, 24 px unter den Chips.
+.eintraege__leer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-block-start: 4px;
 }
 
 // Der Punkt vor der Zeile trägt die Farbe des Objekts; 12 px stehen so im

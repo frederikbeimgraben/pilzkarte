@@ -1,0 +1,47 @@
+name = "Grauhäutiger Scheidenstreifling"
+lateinisch = "Amanita submembranacea"
+gruppe = "wulstling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "tanne", "laerche", "birke", "buche", "hasel"]
+speisewertHinweis = "Roh giftig, also keine Kostversuche. Er kann so grün aussehen wie der Grüne Knollenblätterpilz. Scheidenstreiflinge haben aber keinen Ring und einen stark gerieften Hutrand."
+marktfaehig = false
+wertigkeit = 2
+weitereNamen = ["Grüngelber Scheidenstreifling", "Grüner Streifling", "Grünbrauner Streifling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GrauhautigerSS.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 14.0 }
+sporenLaengeUm = { von = 8.3, bis = 14.5 }
+sporenBreiteUm = { von = 7.2, bis = 13.0 }
+
+[merkmale]
+hut = "3 bis 10, selten bis 13 cm breit, graubraun, rötlichbraun, braunoliv, grauocker bis olivgrün, oft mit grauen Hüllresten. Rand blasser und auf etwa einem Drittel des Radius stark gerieft. Flach ausgebreitet, aber immer mit kleinem Buckel."
+lamellen = "Weiß, frei bis fein angewachsen."
+stiel = "5 bis 12, selten bis 14 cm lang und 5 bis 12, selten bis 15 mm dick, weiß bis graubraun genattert, flockig, nach oben verjüngt, im Alter hohl. Volva grauweiß, später grau, gleichmäßig zylindrisch."
+fleisch = "Weiß bis leicht gelblich."
+geruch = "Unbedeutend, neutral."
+geschmack = "Mild. Roh giftig, keine Kostversuche."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald bei Heidelbeere, meist bei Nadelbäumen wie Fichte, Tanne und Lärche, seltener bei Birke, Buche und Hasel. Gern auf saurem Boden."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Pantherpilz"
+merkmal = "Mit Ring am Stiel und knolliger Basis, Hut braun mit weißen Flocken."
+essbar = "toedlichGiftig"
+slug = "pantherpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GrauhautigerSS.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Grauhäutiger_Scheidenstreifling"

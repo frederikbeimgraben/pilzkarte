@@ -1,0 +1,54 @@
+name = "Orangeroter Mairitterling"
+lateinisch = "Calocybe graveolens"
+gruppe = "ritterling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer"]
+baeume = ["laerche"]
+speisewertHinweis = "Sehr selten und kaum bekannt. Er riecht schwächer und weniger angenehm als der Maipilz."
+marktfaehig = false
+weitereNamen = ["Starkriechender Schönkopf", "Starkriechender Maipilz"]
+synonyme = ["Calocybe gambosa f. graveolens", "Gyrophila graveolens"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/OrangerMairitterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 6.0 }
+sporenLaengeUm = { von = 5.0, bis = 6.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 10 cm breit, zuerst rotbraun, cremeockerbraun bis ockerorange, später schmutzig weiß bis gelblich, fast immer mit rötlichem Unterton. Huthaut glatt, Rand jung eingerollt, manchmal ausbleichend, alt von der Mitte her bräunlich schuppig."
+lamellen = "Weiß, später gelblich, sehr dicht stehend, ausgebuchtet angewachsen, manchmal mit Zahn etwas herablaufend."
+stiel = "3 bis 6 cm lang, weißlich bis gelblich, zylindrisch, faserig."
+fleisch = "Weiß, teils etwas gelblich, dick, fest, faserig, bei Verletzung ohne Verfärbung."
+geruch = "Mehlig bis gurkenartig, schwächer und weniger angenehm als beim Maipilz."
+geschmack = "Mehlig, mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer auf Wiesen und in Parks, gern bei Lärche. Gesellig in Hexenringen, sehr selten."
+zeit = "Frühling bis Frühsommer."
+
+[[verwechslungen]]
+name = "Riesenrötling"
+merkmal = "Lamellen jung gelblich und später rotocker, Sporenpulver fleischrötlich, Geruch unangenehm säuerlich."
+essbar = "toedlichGiftig"
+slug = "riesenroetling"
+
+[[verwechslungen]]
+name = "Ziegelroter Risspilz"
+merkmal = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Lamellen und Sporenpulver braun."
+essbar = "toedlichGiftig"
+slug = "ziegelroter-risspilz"
+
+[[verwechslungen]]
+name = "Wurzelnder Schönkopf"
+merkmal = "Stiel mit langer wurzelnder Basis, Fruchtkörper im Sommer und Herbst."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/OrangerMairitterling.htm"

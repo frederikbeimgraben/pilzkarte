@@ -1,0 +1,53 @@
+name = "Zitronengelber Raukopf"
+lateinisch = "Cortinarius limonius"
+gruppe = "schleierling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Tödlich giftig, niemals probieren: die Inhaltsstoffe können Nieren und Leber schädigen. Er ist der einzige Raukopf mit ausbleichender Huthaut und hat einen zitronengelben Stiel mit gelben Velumresten."
+marktfaehig = false
+weitereNamen = ["Löwengelber Raukopf"]
+synonyme = ["Agaricus limonius", "Cortinarius callisteus sensu", "Gomphos limonius", "Telamonia limonia", "Flammula limonia", "Cortinarius luteus", "Cortinarius limonius f. hydrolimonius"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/ZitronengelberRaukopf.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Hut blutrot verfärbend."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 4.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 9.0 }
+sporenBreiteUm = { von = 5.6, bis = 7.0 }
+
+[merkmale]
+hut = "2 bis 6, selten bis 8 cm breit, gelblich, rot, rotbraun bis fuchsrot, trocken löwengelb, kahl, hygrophan, ohne spitzen Buckel. Rand etwas nach unten gelappt und mit gelblichem Velum behangen."
+lamellen = "Gelblich bis gelborange, später rostgelb bis braungelb vom Sporenpulver, dickbauchig."
+stiel = "4 bis 7, selten bis 9 cm lang, 4 bis 11, selten bis 16 mm dick, gelblich bis zitronengelb, mit gelben Velumresten, meist ohne deutlichen Gürtel, voll und fest. Basis dunkler orangebraun und schuppig."
+fleisch = "Gelblich, gelbrot bis hell gelborange, an der Stielbasis dunkelgelb, fest."
+geruch = "Unbedeutend, eventuell leicht obstartig."
+geschmack = "Mild, aber niemals kosten."
+sporenpulver = "Rostbraun."
+vorkommen = "Symbiosepilz im moosigen, feuchten Nadelwald, gern bei Fichte auf sauren, mageren Böden, gern bei Torfmoosen und Heidelbeeren."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Spitzgebuckelter Raukopf"
+merkmal = "Hut nicht hygrophan, mit deutlichem spitzem Buckel, filzig schuppig."
+essbar = "toedlichGiftig"
+slug = "spitzgebuckelter-raukopf"
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Röhren statt Lamellen, Stiel mit Ring, wächst bei Lärche."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/ZitronengelberRaukopf.htm"

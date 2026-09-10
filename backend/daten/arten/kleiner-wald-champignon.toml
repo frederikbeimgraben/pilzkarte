@@ -1,0 +1,63 @@
+name = "Kleiner Wald-Champignon"
+lateinisch = "Agaricus sylvaticus"
+gruppe = "champignon"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nicht roh verzehren, das kann unverträglich sein."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Waldegerling", "Waldchampignon", "Kleiner Blutegerling"]
+synonyme = ["Psalliota silvatica var. pallida", "Agaricus haemorrhoidarius forma fagetorum", "Agaricus silvaticus var. vinosobrunneus", "Psalliota sanguinaria", "Agaricus silvaticus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Waldegerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Nicht oder kaum verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 4.4, bis = 6.5 }
+sporenBreiteUm = { von = 2.9, bis = 4.3 }
+
+[merkmale]
+hut = "4 bis 8, selten bis 10 cm breit, Grundfarbe weiß bis gelb, mit hellbräunlichen, rot- bis dunkelbraunen Schuppen. Zum Rand hin sind die Schuppen meist größer und stehen weiter auseinander."
+lamellen = "Jung cremegrau, später blassrosa, graurosa bis graubraun, im Alter braun, frei, sehr gedrängt."
+stiel = "Weißlich bis rosa, vom Rand ausgehend rötlich verfärbend. Ring weiß, 1 bis 2 cm breit, dünnhäutig und hängend, oft mit doppelter Randzone, nach oben abziehbar, oberseits schwach gerieft."
+fleisch = "Weiß, bei Verletzung gelborange, später blutrot verfärbend."
+geruch = "Pilzig, angenehm, leicht fruchtig."
+geschmack = "Mild und süßlich."
+sporenpulver = "Dunkelbraun bis purpurbraun."
+vorkommen = "Folgezersetzer im sauren Mischwald, meist Nadelwald, auf Nadelstreu."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Perlhuhnchampignon"
+merkmal = "Hut fein grau bis schwarzbraun geschuppt wie Perlhuhngefieder, Fleisch an der Stielbasis gilbend, Geruch tinten- bis karbolartig."
+essbar = "giftig"
+slug = "perlhuhnchampignon"
+
+[[verwechslungen]]
+name = "Rebhuhnegerling"
+merkmal = "Hut graubraun bis rauchschwärzlich, Stielbasis knollig und bei Verletzung gilbend, Geruch schwach karbolartig."
+essbar = "giftig"
+slug = "rebhuhnegerling"
+
+[[verwechslungen]]
+name = "Spitzschuppiger Schirmling"
+merkmal = "Lamellen weißlich und sehr eng stehend, Sporenpulver weiß, Geruch stechend und gasartig."
+essbar = "giftig"
+slug = "spitzschuppiger-schirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Waldegerling.htm"

@@ -1,0 +1,59 @@
+name = "Riesenkrempentrichterling"
+lateinisch = "Leucopaxillus giganteus"
+gruppe = "trichterling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "In Deutschland auf der Roten Liste mit unbekanntem Gefährdungsausmaß. Maßvoll sammeln."
+marktfaehig = true
+wertigkeit = 2
+gefaehrdung = "unbekanntesAusmass"
+synonyme = ["Leucopaxillus candidus paxillus giganteus", "Aspropaxillus giganteus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Krempentrichterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 40.0 }
+sporenLaengeUm = { von = 5.9, bis = 8.5 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
+
+[merkmale]
+hut = "4 bis 30, selten bis 40 cm breit, weiß, grau, cremeweiß, elfenbeinweiß, hellbraun bis blassocker, im Alter mit braunen Flecken und kreisförmigen Rissen. Oberfläche glatt, ledersamtig bis feinfilzig, alt bereift. Huthaut abziehbar, Form konvex bis trichterförmig, Rand gerollt."
+lamellen = "Weiß bis cremefarben, dicht stehend, mit vielen Zwischenlamellen, zum Stiel gegabelt, angewachsen und meist etwas herablaufend, leicht ablösbar."
+stiel = "Weiß, später ockerlich, fest, Basis meist verdickt und mit weißem Myzelfilz fest im Boden verwachsen."
+fleisch = "Weiß, alt gelblich, dick und fest."
+geruch = "Mehlig und pilzig, meist nicht unangenehm."
+geschmack = "Mild, nussig."
+sporenpulver = "Weiß bis hell cremefarben."
+vorkommen = "Folgezersetzer im Nadelwald, auf Waldwiesen, Wiesen, Weiden, in Parks und Gärten. Bildet Hexenringe."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Bleiweißer Trichterling"
+merkmal = "Klein, bis etwa 6 cm, reinweiß, Lamellen weit herablaufend, auf Wiesen und Rasen."
+essbar = "toedlichGiftig"
+slug = "bleiweisser-trichterling"
+
+[[verwechslungen]]
+name = "Nebelkappe"
+merkmal = "Hut nebelgrau statt weiß, Geruch süßlich parfümiert, Lamellen leicht ablösbar."
+essbar = "giftig"
+slug = "nebelkappe"
+
+[[verwechslungen]]
+name = "Riesentrichterling"
+merkmal = "Hut ockerbraun bis hellbraun und seidig glatt, Lamellen weit herablaufend, Stiel schlanker."
+essbar = "essbar"
+slug = "riesentrichterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Krempentrichterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Riesen-Krempentrichterling"

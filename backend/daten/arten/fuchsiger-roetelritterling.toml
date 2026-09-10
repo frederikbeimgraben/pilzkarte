@@ -1,27 +1,72 @@
 name = "Fuchsiger Rötelritterling"
 lateinisch = "Lepista flaccida"
 gruppe = "trichterling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["fichte", "buche"]
-speisewertHinweis = "Essbar, aber zäh und ohne Wert. Wird leicht mit giftigen Trichterlingen verwechselt."
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Die DGfM nennt einen ungeklärten Fall mit muscarinartigen Beschwerden. Zäh und ohne großen Wert; wer ihn nicht sicher von giftigen Trichterlingen trennt, lässt ihn stehen."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Fuchsiger Röteltrichterling", "Fuchsiger Trichterling"]
+synonyme = ["Agaricus flaccidus", "Clitocybe flaccida"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FuchsigerRoeteltrichterling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut gelb, am Stiel zitronengelb, an der Stielbasis gelblich orange bis bräunlich."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0 }
+sporenLaengeUm = { von = 3.0, bis = 4.5 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
-hut = "3 bis 9 cm, fuchsig orangebraun, trichterig, dünnfleischig, Rand wellig."
-lamellen = "Blass ockerfarben, sehr dicht, weit herablaufend, leicht ablösbar."
-stiel = "Dünn, zäh, in Hutfarbe, Basis filzig."
-fleisch = "Dünn, wässrig, blass."
-geruch = "Schwach säuerlich."
-geschmack = "Mild bis leicht bitter."
-sporenpulver = "Cremeweiß bis blass rosa."
-vorkommen = "Zersetzer in der Nadel- und Laubstreu, in Reihen und dichten Hexenringen."
-zeit = "September bis Dezember."
+hut = "3 bis 10, selten bis 13 cm breit, bräunlich, haselnuss- bis gelbbraun, glatt und fettig anzufassen, beim Abtrocknen ausblassend, trichterförmig. Rand lange eingerollt."
+lamellen = "Weißlich, fuchsig bis ockergelb, gegabelt, dicht stehend, herablaufend, leicht ablösbar."
+stiel = "3 bis 6, selten bis 8 cm lang, bräunlich, weißlich überfasert, Basis mit weißem Myzelfilz."
+fleisch = "Blassgelb bis cremefarben, dünn, zäh, faserig und elastisch."
+geruch = "Süß-säuerlich, nach frisch geschnittenem Gras."
+geschmack = "Säuerlich, mild, selten leicht bitterlich."
+sporenpulver = "Weißlich bis cremeweiß, oft mit einem Hauch rosa."
+vorkommen = "Folgezersetzer im Mischwald, bildet Hexenringe. Sehr häufig."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Wohlriechender Trichterling"
+merkmal = "Hut karamell- bis graubraun, Lamellen grauweiß, deutlich kleiner."
+essbar = "giftig"
+slug = "wohlriechender-trichterling"
+
+[[verwechslungen]]
+name = "Purpuroranger Afterleistling"
+merkmal = "Hut braunorange bis purpurorange, Lamellen fleischrosa bis gelborange."
+essbar = "giftig"
+slug = "purpuroranger-afterleistling"
+
+[[verwechslungen]]
+name = "Falscher Pfifferling"
+merkmal = "Hut leuchtend orange, Lamellen gelb bis orangegelb und vielfach gegabelt."
+essbar = "giftig"
+slug = "falscher-pfifferling"
+
+[[verwechslungen]]
+name = "Mönchskopf"
+merkmal = "Viel größer, Hut mit stumpfem Buckel, Stiel kräftig und keulig."
+essbar = "speisepilz"
+slug = "moenchskopf"
 
 [[verwechslungen]]
 name = "Ockerbrauner Trichterling"
-merkmal = "Lamellen weiß, nicht ablösbar. Nicht zum Essen."
-essbar = "giftig"
+merkmal = "Hut blass lederfarben bis cremeocker, Lamellen weiß bis creme."
+essbar = "speisepilz"
+slug = "ockerbrauner-trichterling"
 
 [[links]]
 titel = "123pilzsuche.de"

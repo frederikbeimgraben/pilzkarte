@@ -43,18 +43,18 @@ $mass: 0.97;
   }
 }
 
+// Die Reiterleiste fehlt hier mit Absicht: ihre Tipp-Fläche ist eine Pille um
+// das Symbol und keine volle Zeile. Sie steht in `bottom-nav`.
 .artzeile,
 .zeile--knopf,
-.reihe,
-.nav__eintrag {
+.reihe {
   @include ton;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .artzeile,
   .zeile--knopf,
-  .reihe,
-  .nav__eintrag {
+  .reihe {
     transition: none;
   }
 }

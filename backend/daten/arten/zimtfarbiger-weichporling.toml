@@ -1,0 +1,44 @@
+name = "Zimtfarbiger Weichporling"
+lateinisch = "Hapalopilus rutilans"
+gruppe = "porling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = []
+speisewertHinweis = "Tödlich giftig. Zweiter Name des Zimtfarbenen Weichporlings. Zu erkennen am durchgehend zimt- bis rosabraunen weichen Fleisch und an den gleichfarbigen Poren an Laubholz."
+marktfaehig = false
+synonyme = ["Hapalopilus nidulans"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/ZimtfarbenerWeichporling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+sporenLaengeUm = { von = 3.4, bis = 5.1 }
+sporenBreiteUm = { von = 1.9, bis = 3.2 }
+
+[merkmale]
+fruchtkoerper = "3 bis 10, selten bis 30 cm breit, tellerförmig vom Holz abstehend, jung gelbockerlich bis hell rotbraun, später zimtbraun bis rosabraun, trocken ledergelblich. Der Rand bleibt lange gebogen."
+poren = "Zimtbraun, rosabraun bis gelbbraun."
+stiel = "Kein Stiel, der Fruchtkörper steht waagrecht vom Stamm ab."
+fleisch = "Zimtbraun bis rosabraun, weich, dickfleischig, fasernd."
+geruch = "Pilzartig."
+geschmack = "Mild."
+sporenpulver = "Weißlich bis hellbräunlich."
+vorkommen = "Folgezersetzer meist an Laubholz."
+zeit = "Ganzjährig."
+
+[[verwechslungen]]
+name = "Eichenzunge"
+merkmal = "Zungenförmig an Eiche, Fleisch rotbraun marmoriert und saftig, Poren cremefarben."
+essbar = "ohneSpeisewert"
+slug = "eichenzunge"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/ZimtfarbenerWeichporling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Zimtfarbener_Weichporling"

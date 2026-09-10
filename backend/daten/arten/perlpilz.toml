@@ -4,29 +4,66 @@ gruppe = "wulstling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche", "fichte", "eiche"]
-speisewertHinweis = "Roh giftig. Gut durchgaren. Nur für Sammler, die den Pantherpilz sicher trennen: das Röten des Fleisches ist das entscheidende Merkmal."
+baeume = []
+speisewertHinweis = "Roh giftig. Mindestens fünf Minuten garen, bis 90 °C Kerntemperatur erreicht sind. Nur junge Fruchtkörper nehmen, alte verderben schnell. Der stark geriefte Ring und das Röten sind Pflichtmerkmale; wer den Pantherpilz nicht sicher trennt, lässt ihn stehen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Rötender Knollenblätterpilz", "Rötender Wulstling", "Perlen-Wulstling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Perlpilz.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut ohne Verfärbung."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 18.0 }
+stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 20.0 }
+sporenLaengeUm = { von = 6.0, bis = 12.5 }
+sporenBreiteUm = { von = 4.0, bis = 9.0 }
 
 [merkmale]
-hut = "5 bis 15 cm, fleischrosa bis graubraun, mit blassen, mehligen Flocken bedeckt."
-lamellen = "Weiß, frei, an der Schneide oft rötlich fleckend."
-stiel = "Weiß bis rosa, mit gerieftem hängendem Ring, Basis knollig, ohne Scheide, mit rötlichen Gürteln."
-fleisch = "Weiß, im Schnitt und an Fraßstellen deutlich weinrot anlaufend."
-geruch = "Unauffällig."
-geschmack = "Mild. Roh nicht kosten."
+hut = "3 bis 12, selten bis 18 cm breit, rotbraun, fleischrötlich, braunrot, gelblich bis hell violettbraun, mit grauen und leicht abwischbaren Schüppchen. Huthaut abziehbar."
+lamellen = "Weiß, im Alter rötlich fleckend, überwiegend frei, Schneiden feinstflockig."
+stiel = "5 bis 15, selten bis 20 cm lang, 1 bis 4, selten bis 6 cm dick, weißlich bis hell braunrosa. Knolle rübenförmig mit Warzengürtel, oft etwas wurzelnd, ohne Scheide. Ring weiß, gelb bis rosa, häutig, herabhängend und stark gerieft."
+fleisch = "Weiß, unter der Huthaut rotbraun, an Druckstellen und Schneckenfraßstellen rötend, zart und weich."
+geruch = "Neutral."
+geschmack = "Mild, später etwas kratzend, roh giftig."
 sporenpulver = "Weiß."
-vorkommen = "Mykorrhiza mit Buche, Eiche und Fichte, auf sauren Böden, sehr häufig."
-zeit = "Juni bis Oktober."
+vorkommen = "Symbiosepilz im Mischwald, bei Nadel- und Laubbäumen."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Pantherpilz"
-merkmal = "Flocken rein weiß, Ring ungerieft, Stielbasis mit scharf gerandeter Knolle und Gürteln. Fleisch rötet nicht."
+merkmal = "Hut mit rein weißen, gleichmäßig angeordneten Flöckchen, Fleisch rötet nie, Knolle abgesetzt mit Söckchen, Ring nicht gerieft."
+essbar = "toedlichGiftig"
+slug = "pantherpilz"
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Hut olivgrün bis gelbgrün, Fleisch unveränderlich, Stielbasis in einer häutigen Volva."
+essbar = "toedlichGiftig"
+slug = "gruener-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Rauer Wulstling"
+merkmal = "Velumreste am Hut und der Warzengürtel am Stiel sind gelblich, Fleisch rötet nicht."
 essbar = "giftig"
+slug = "rauer-wulstling"
+
+[[verwechslungen]]
+name = "Königsfliegenpilz"
+merkmal = "Hut braun bis gelbbraun mit gelblichen Flocken, Fleisch unter der Huthaut gelb bis gelbgrün, Basis mit Söckchen."
+essbar = "giftig"
+slug = "koenigsfliegenpilz"
 
 [[verwechslungen]]
 name = "Grauer Wulstling"
-merkmal = "Grau, Fleisch rötet nicht, Geruch nach Rettich."
-essbar = "bedingtEssbar"
+merkmal = "Der ganze Pilz ohne Rottöne, Geruch rüben- bis rettichartig, Knolle abgesetzt und ohne Söckchen."
+essbar = "ohneSpeisewert"
+slug = "grauer-wulstling"
 
 [[links]]
 titel = "123pilzsuche.de"

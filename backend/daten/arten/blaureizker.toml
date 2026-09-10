@@ -1,0 +1,60 @@
+name = "Blaureizker"
+lateinisch = "Lactarius quieticolor"
+gruppe = "milchling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Sehr selten und in der Schweiz stark gefährdet. Wenn überhaupt, nur wenige Fruchtkörper nehmen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Wechselblauer Edelreizker", "Blaumilch-Kiefernreizker", "Brauner Kiefern-Blutreizker"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BlauerReizker.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 8.0, bis = 9.0 }
+sporenBreiteUm = { von = 6.0, bis = 8.0 }
+
+[merkmale]
+hut = "4 bis 9, selten bis 12 cm breit, orange, grauorange, graurosa, rosa-lehmfarben, ziegelfarben bis braunrot, dunkler und blaugrün gezont, oft weißlich bereift. Jung gewölbt und genabelt, später trichterförmig, Rand weißlich und lange eingebogen."
+lamellen = "Orangeocker bis blassocker, herablaufend, später grünlich, weinrot bis violett verfärbend."
+milch = "Orange, erst nach etwa 20 Minuten weinrötlich bis grünlich verfärbend."
+stiel = "Außen blass lachsfarben bis rosagrau mit blass grünlichen Grübchen, innen weißlich bis blass cremefarben, wattig, später hohl."
+fleisch = "Orangerot, gelblichbraun bis bräunlich weinrot, bei Verletzung korallen- bis orangerot, später grünlich, weinrötlich bis violett. Fest und brüchig."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, etwas bitterlich."
+sporenpulver = "Blass rosa-ockergelb."
+vorkommen = "Symbiosepilz bei Kiefern auf saurem Boden. Sehr selten, in der Schweiz stark gefährdet."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Spangrüner Kiefernreizker"
+merkmal = "Milch orangerot und bald weinrot bis dunkelrot, Geschmack herb und bitterlich, Stiel mit flachen dunklen Grübchen."
+essbar = "speisepilz"
+slug = "spangruener-kiefernreizker"
+
+[[verwechslungen]]
+name = "Fichtenreizker"
+merkmal = "Hut feucht stark schleimig und grünfleckig, Stiel ohne Grübchen, bei Fichte."
+essbar = "speisepilz"
+slug = "fichtenreizker"
+
+[[verwechslungen]]
+name = "Lachsreizker"
+merkmal = "Stiel mit rötlichen bis orangeroten Grübchen, bei Weißtanne."
+essbar = "speisepilz"
+slug = "lachsreizker"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BlauerReizker.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Wechselblauer_Edel-Reizker"

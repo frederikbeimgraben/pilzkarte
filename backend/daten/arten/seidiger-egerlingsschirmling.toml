@@ -1,0 +1,41 @@
+name = "Seidiger Egerlingsschirmling"
+lateinisch = "Leucoagaricus holosericeus"
+gruppe = "schirmling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Giftig. Alle Egerlingsschirmlinge gelten als verdächtig."
+marktfaehig = false
+weitereNamen = ["Reinseidiger Egerlingsschirmpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SeidigerEgerlingsschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 7.5, bis = 10.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
+
+[merkmale]
+hut = "3 bis 9, selten bis 12 cm breit, weiß bis cremefarben, seidig, teils rosa getönt. Der Scheitel ist oft gelblich oder dunkler und reißt ab."
+lamellen = "Weiß, frei, sehr dicht stehend, mit feinem Collar, nicht verfärbend."
+stiel = "Weiß bis cremeweiß, mit schmalem vergänglichem Ring, Basis knollig verdickt, bald hohl."
+fleisch = "Weiß, bei Berührung leicht gilbend, später grauend, längsfaserig."
+geruch = "Neutral."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer in Parks, Gärten, Wäldern, auf Wiesen und Ruderalstellen."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Rosablättriger Egerlingsschirmling"
+merkmal = "Lamellen laufen im Alter rosa an, Hut rein weiß und glatt."
+essbar = "giftig"
+slug = "rosablaettriger-egerlingsschirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SeidigerEgerlingsschirmling.htm"

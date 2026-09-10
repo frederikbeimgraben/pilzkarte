@@ -4,29 +4,63 @@ gruppe = "roetelritterling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["herbst", "winter"]
-baeume = ["buche", "fichte"]
-speisewertHinweis = "Roh giftig. Mindestens 15 Minuten durchgaren."
+baeume = []
+speisewertHinweis = "Roh giftig. Er zersetzt rote Blutkörperchen und enthält Blausäure. Immer gut durchgaren oder trocknen, dann zerfällt die Blausäure."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Nackter Rötelritterling", "Violetter Röteltrichterling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/VioletterRoetelritterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 4.0, bis = 13.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
-hut = "5 bis 15 cm, violett bis lilabraun, im Alter ausblassend, glatt, Rand eingerollt."
-lamellen = "Violett, dicht, am Stiel ausgebuchtet, leicht ablösbar."
-stiel = "Violett, faserig, Basis mit lila Myzelfilz."
-fleisch = "Blass violett, weich."
-geruch = "Angenehm, parfümiert nach Orangenschale."
-geschmack = "Mild."
-sporenpulver = "Blass rosa."
-vorkommen = "Zersetzer in der Streu von Laub- und Nadelwäldern, in Hecken und auf Komposten, oft in Reihen."
-zeit = "September bis Dezember."
+hut = "4 bis 18, selten bis 22 cm breit, lilaviolett bis rosaviolett, alt bräunlich bis fleischlila, Mitte etwas violettbraun. Matt bis leicht glänzend, hygrophan, Huthaut kahl und glatt, Rand lange eingerollt."
+lamellen = "Lila bis blaulila, nie bräunlich, am Stiel ausgebuchtet angewachsen, leicht ablösbar und vom Fleisch verschiebbar."
+stiel = "4 bis 13, selten bis 16 cm lang, 1 bis 3, selten 4 cm dick, kahl, blass lila, flockig weiß bereift, leicht faserig, wattig voll. Basis oft keulig verdickt."
+fleisch = "Lila bis weißlich lila, im Zentrum weiß, zum Stielrand hin mehr violett, alt gelbbraun."
+geruch = "Parfümiert, fruchtig, angenehm würzig, selten etwas rettichartig. In der Hand zerkrümelt und angewärmt erinnert er an Multivitaminsaft."
+geschmack = "Mild, nussig, pilzig. Roh giftig."
+sporenpulver = "Blassrosa bis zartrosa."
+vorkommen = "Folgezersetzer von verrottetem Laub im Mischwald, gern im Laubwald. Oft zusammen mit Nebelkappen."
+zeit = "Herbst bis Winteranfang. Die Fruchtkörper kommen oft erst nach einem Temperatursturz und stehen bis in den Dezember."
 
 [[verwechslungen]]
-name = "Violetter Schleierling"
-merkmal = "Lamellen jung von einem spinnwebigen Schleier bedeckt, Sporenpulver rostbraun."
-essbar = "ungeniessbar"
+name = "Bocksdickfuß"
+merkmal = "Lamellen lila, im Alter zimtbraun, Stiel mit rostbraunen Sporenpulverresten und weißviolettem Velum."
+essbar = "giftig"
+slug = "bocksdickfuss"
+
+[[verwechslungen]]
+name = "Nebelkappe"
+merkmal = "Hut graubraun bis weißgrau und etwas radialfaserig, Lamellen weißlich bis cremegelb und herablaufend."
+essbar = "giftig"
+slug = "nebelkappe"
 
 [[verwechslungen]]
 name = "Lilastieliger Rötelritterling"
-merkmal = "Hut blass ockerbraun, nur der Stiel violett."
-essbar = "bedingtEssbar"
+merkmal = "Hut grauviolett bis graubräunlich statt lilaviolett, Lamellen nur weißlich lila."
+essbar = "speisepilz"
+slug = "lilastieliger-roetelritterling"
+
+[[verwechslungen]]
+name = "Lavendelfarbener Rötelritterling"
+merkmal = "Hut rötlichlila bis lavendelfarben, ebenfalls hygrophan."
+essbar = "speisepilz"
+slug = "lavendelfarbener-roetelritterling"
+
+[[verwechslungen]]
+name = "Schmutziger Rötelritterling"
+merkmal = "Kleinster der Rötelritterlinge, Lamellen schmutzig weiß bis graurosa, Geruch beim Anwärmen staubartig."
+essbar = "essbar"
+slug = "schmutziger-roetelritterling"
 
 [[links]]
 titel = "123pilzsuche.de"

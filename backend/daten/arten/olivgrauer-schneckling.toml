@@ -1,0 +1,55 @@
+name = "Olivgrauer Schneckling"
+lateinisch = "Hygrophorus mesotephrus"
+gruppe = "schneckling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Sehr selten und in Deutschland gefährdet, in manchen Regionen fast ausgestorben. Den Fund besser stehen lassen."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Graubrauner Schleimstiel-Schneckling", "Olivbrauner Schneckling"]
+synonyme = ["Limacium mesotephrum", "Limacium arbustivum var. mesotephrum"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/OlivgrauerSchneckling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "An der Stielbasis orangerot bis orangegelb."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Im Fleisch keine Reaktion."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+stielDickeCm = { von = 1.0, bis = 1.2, seltenBis = 1.5 }
+sporenLaengeUm = { von = 6.5, bis = 11.0 }
+sporenBreiteUm = { von = 3.5, bis = 7.0 }
+
+[merkmale]
+hut = "2 bis 6, selten bis 8 cm breit, dunkelbraun, graubraun bis olivgrau, Rand heller. Schmierig bis schleimig."
+lamellen = "Weiß, leicht herablaufend, weich und wachsartig."
+stiel = "5 bis 12, selten bis 15 cm lang, 1 bis 1,2, selten bis 1,5 cm dick, graubräunlich, meist genattert, Spitze hell, schmierig bis schleimig, zur Basis meist dunkler olivgrau."
+fleisch = "Weiß."
+geruch = "Neutral."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Eiche und Buche, auf kalkreichem Boden. Sehr selten, in Deutschland gefährdet."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Buchen-Schleimrübling"
+merkmal = "Hut weiß und stark schleimig, Stiel mit häutigem Ring, wächst an Totholz von Buche statt am Boden."
+essbar = "ohneSpeisewert"
+slug = "buchen-schleimruebling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/OlivgrauerSchneckling.htm"

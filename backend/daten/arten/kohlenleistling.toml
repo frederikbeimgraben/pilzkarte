@@ -1,0 +1,46 @@
+name = "Kohlenleistling"
+lateinisch = "Faerberia carbonaria"
+gruppe = "leistling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+marktfaehig = false
+haeufigkeit = "selten"
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Kohlenleistling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.0, bis = 10.5 }
+sporenBreiteUm = { von = 4.5, bis = 5.0 }
+
+[merkmale]
+hut = "1 bis 4, selten bis 6 cm breit, grauschwarz bis schwarzbraun, der Rand dunkler. Mitte trichterförmig genabelt."
+lamellen = "Grauweiß, am Stiel herablaufend, eng stehend."
+stiel = "Schmutzig grauweiß, später braun, faserig."
+fleisch = "Graubraun, dünn."
+geruch = "Unbedeutend."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer im Mischwald, gern an Brandstellen zwischen verkohltem Holz. Selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Grauer Leistling"
+merkmal = "Leisten heller weißlich-grau und queraderig, Geruch fruchtig nach Pflaumen, im Buchenwald statt auf Brandstellen."
+essbar = "essbar"
+slug = "grauer-leistling"
+
+[[verwechslungen]]
+name = "Verbogener Leistling"
+merkmal = "Nur 1 bis 3, selten 4 cm breit, lehmbraun bis graubraun, Leisten kaum erkennbar und gegabelt-aderig."
+essbar = "speisepilz"
+slug = "verbogener-leistling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Kohlenleistling.htm"

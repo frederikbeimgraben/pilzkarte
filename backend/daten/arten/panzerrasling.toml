@@ -1,0 +1,41 @@
+name = "Panzerrasling"
+lateinisch = "Lyophyllum decastes var. loricatum"
+gruppe = "rasling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Gepanzerter Rasling", "Erdzimmerling", "Erdzimmermandl", "Knorpeliger Knäuelrasling", "Büschelrasling", "Brauner Rasling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/PanzerRasling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 6.0, bis = 7.5 }
+sporenBreiteUm = { von = 5.0, bis = 5.5 }
+
+[merkmale]
+hut = "1 bis 8, selten bis 11 cm breit, dunkelbraun, olivumbrabraun, olivschwarz, kastanienbraun, schwarzbraun bis rußbraun, jung leicht radialfaserig. Huthaut kahl, mit einer dicken knorpeligen Schicht wie gepanzert. Rand lange eingerollt."
+lamellen = "Weiß bis gelblich oder cremefarben, nahe am Stiel oft mit fleischfarbenem Hauch, breit angewachsen."
+stiel = "Weißlich, hellbraun bis gelbbraun, längsfaserig, Spitze mehlig weißlich, Basis wurzelnd."
+fleisch = "Weiß bis grauweiß, unter der Huthaut stark bräunlich durchfärbt, knorpelig, zäh und elastisch, alt bräunlich wässrig."
+geruch = "Neutral bis obstartig süßlich."
+geschmack = "Mild, angenehm, süßlich."
+sporenpulver = "Rein weiß."
+vorkommen = "Folgezersetzer auf grasigen Wegen, an Wegrändern und in Parks, kalkliebend. Meist büschelig aus einem Strunk."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Büschelrasling"
+merkmal = "Hut heller braun und ohne die knorpelige Panzerschicht, Fleisch unter der Huthaut nicht dunkel durchfärbt."
+essbar = "speisepilz"
+slug = "bueschliger-rasling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/PanzerRasling.htm"

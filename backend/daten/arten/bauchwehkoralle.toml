@@ -1,0 +1,53 @@
+name = "Bauchwehkoralle"
+lateinisch = "Ramaria mairei"
+gruppe = "glucke"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Sie löst Magen-Darm-Beschwerden mit Durchfall aus, meist 30 bis 90 Minuten nach dem Essen. Korallen sind schwer zu trennen; von der Rosaspitzigen Koralle ist sie kaum sicher zu unterscheiden."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Blasse Koralle", "Bauchweh-Ziegenbart", "Rosaliche Koralle"]
+synonyme = ["Ramaria pallida", "Ramaria roseola", "Clavaria pallida"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BauchwehkoralleGiftig1004.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
+sporenLaengeUm = { von = 9.0, bis = 12.0 }
+sporenBreiteUm = { von = 4.4, bis = 6.5 }
+
+[merkmale]
+fruchtkoerper = "3 bis 15, selten bis 22 cm breit, milchkaffeebraun, hellgelblich, lilarötlich, fleischrötlich bis rosa, längsrunzelig. Die Endästchen tragen stumpfe Zähnchen und sind lilarötlich bis fleischrötlich getönt."
+stiel = "Strunk kurz, weißlich, gelblich bis rosarötlich."
+fleisch = "Weiß, fest, Druckstellen braun und rot fleckend."
+geruch = "Säuerlich und seifig, im Alter etwas nach Maggi."
+geschmack = "Mild, alt leicht bitter."
+sporenpulver = "Blassgelb."
+vorkommen = "Symbiosepilz im Misch- und Laubwald, selten im Nadelwald, gern bei Buche auf kalkreichem Boden. Relativ selten, in Deutschland gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Krause Glucke"
+merkmal = "Blumenkohlartig gekräuselt statt verästelt, am Wurzelgeflecht von Kiefern."
+essbar = "speisepilz"
+slug = "krause-glucke"
+
+[[verwechslungen]]
+name = "Breitblättrige Glucke"
+merkmal = "Hirnartig breit gekräuselte Lappen, an den Wurzeln von Laubbäumen."
+essbar = "ohneSpeisewert"
+slug = "breitblaettrige-glucke"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BauchwehkoralleGiftig1004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Bauchweh-Koralle"

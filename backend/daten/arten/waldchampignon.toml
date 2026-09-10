@@ -1,31 +1,73 @@
 name = "Waldchampignon"
 lateinisch = "Agaricus sylvaticus"
 gruppe = "champignon"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["fichte"]
+baeume = []
+speisewertHinweis = "Nicht roh essen, roh ist er möglicherweise unverträglich. Durchgaren, und früh sammeln, denn er wird schnell madig. Riecht ein Champignon nach Karbol, Tinte oder Fisch, oder gilbt er an der Stielbasis ohne Anisgeruch, bleibt er stehen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Waldegerling", "Kleiner Blutegerling"]
+synonyme = ["Psalliota silvatica var. pallida", "Agaricus haemorrhoidarius forma fagetorum", "Agaricus silvaticus var. vinosobrunneus", "Psalliota sanguinaria", "Agaricus silvaticus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Waldegerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Nicht oder kaum verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 4.4, bis = 6.5 }
+sporenBreiteUm = { von = 2.9, bis = 4.3 }
 
 [merkmale]
-hut = "5 bis 12 cm, mit braunen, faserigen Schuppen auf hellem Grund."
-lamellen = "Jung blassrosa, dann dunkelbraun, frei."
-stiel = "Schlank, weiß, mit hängendem Ring, Basis leicht knollig."
-fleisch = "Weiß, im Schnitt deutlich blutrot anlaufend."
-geruch = "Angenehm pilzig."
-geschmack = "Mild."
-sporenpulver = "Purpurbraun."
-vorkommen = "Zersetzer in Nadelwäldern, gern bei Fichte und an Ameisenhaufen."
-zeit = "Juli bis Oktober."
-
-[[verwechslungen]]
-name = "Karbolchampignon"
-merkmal = "Stielbasis chromgelb, Geruch nach Karbol."
-essbar = "giftig"
+hut = "4 bis 8, selten bis 10 cm breit, Grundfarbe weiß bis gelb, mit braunen Schuppen von hellbräunlich über rot- bis dunkelbraun. Zum Rand hin werden die Schuppen meist größer und stehen weiter auseinander."
+lamellen = "Jung cremegrau, später blassrosa, graurosa bis graubraun, im Alter braun, frei und sehr gedrängt."
+stiel = "Weißlich bis rosa, vom Rand ausgehend rötlich verfärbend, die Spitze löst sich leicht vom Hutfleisch. Ring weiß, 1 bis 2 cm breit, dünnhäutig und hängend, oft mit doppelter Randzone, nach oben abziehbar, oberseits schwach gerieft."
+fleisch = "Weiß, bei Verletzung gelborange, später blutrot verfärbend."
+geruch = "Pilzig, angenehm, leicht fruchtig."
+geschmack = "Mild, süßlich."
+sporenpulver = "Dunkelbraun bis purpurbraun."
+vorkommen = "Folgezersetzer im sauren Mischwald, meist Nadelwald, auf Nadelstreu."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
 name = "Perlhuhnchampignon"
-merkmal = "Fleisch rötet ebenfalls, Hut mit dunkleren Punkten. Ebenso essbar."
+merkmal = "Hut fein grau geschuppt, braun bis schwarzbraun, Lamellen blass rosa, später dunkelbraun bis schwarz."
+essbar = "giftig"
+slug = "perlhuhnchampignon"
+
+[[verwechslungen]]
+name = "Rebhuhnegerling"
+merkmal = "Hut graubraun, rauchschwärzlich bis dunkelbraun, Lamellen lachsrosa, Stiel kahl und braunfleckig, Basis knollig."
+essbar = "giftig"
+slug = "rebhuhnegerling"
+
+[[verwechslungen]]
+name = "Spitzschuppiger Schirmling"
+merkmal = "Hut fleischbraun mit braunen Stacheln auf cremefarbenem Grund, Lamellen weißlich bis gelblich und immer sehr eng stehend."
+essbar = "giftig"
+slug = "spitzschuppiger-schirmling"
+
+[[verwechslungen]]
+name = "Großer Waldchampignon"
+merkmal = "Größer, Hut ockerbräunlich bis dunkelbraun mit rostbraunen Fasern, Lamellen rosa, im Alter dunkel rotbraun, Ring doppelrandig."
+essbar = "speisepilz"
+slug = "grosser-waldchampignon"
+
+[[verwechslungen]]
+name = "Kompostegerling"
+merkmal = "Größer, Hut braun bis gelbbraun und breitschuppig, Lamellen später lilabraun bis schwarzbraun, Stiel rotbraun auf hellem Grund."
 essbar = "essbar"
+slug = "kompostegerling"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,28 +1,63 @@
 name = "Lachsreizker"
 lateinisch = "Lactarius salmonicolor"
 gruppe = "milchling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["herbst"]
 baeume = ["tanne"]
 karte = "reizker"
+speisewertHinweis = "Schmeckt etwas bitterlich. Der rote Farbstoff färbt den Urin bis zum nächsten Tag, das ist harmlos."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Weißtannenreizker"]
+synonyme = ["Lactarius salmoneus", "Lactarius subsalmoneus", "Lactarius thyinos", "Lactarius salmonicolor f. brigantiacus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Lachsreizker.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 8.0, bis = 10.0 }
+sporenBreiteUm = { von = 6.5, bis = 7.5 }
 
 [merkmale]
-hut = "5 bis 15 cm, lachsorange, kaum gezont, glatt, Rand lange eingerollt."
-lamellen = "Lachsfarben, dicht, herablaufend, kaum grünend."
-milch = "Orange, läuft nach längerer Zeit weinrot an."
-stiel = "Kräftig, orange, oft mit blassen Gruben."
-fleisch = "Blass orange, fest."
-geruch = "Fruchtig."
-geschmack = "Mild bis bitterlich."
-sporenpulver = "Blass ocker."
-vorkommen = "Mykorrhiza mit Weißtanne, in Bergwäldern des Südens und Südwestens."
-zeit = "August bis Oktober."
+hut = "4 bis 10, selten bis 15 cm breit, orange, weißlich bereift, genabelt bis trichterförmig, meist deutlich gezont. Haut schleimig schmierig, Rand scharf."
+lamellen = "Orange bis orangeocker, brüchig."
+milch = "Karottenrot bis orange, später weinrot."
+stiel = "4 bis 9, selten bis 12 cm lang, 1 bis 4, selten bis 5 cm breit, orange, weißlich bereift, mit rötlichen bis orangeroten Grübchen, hohl."
+fleisch = "Weißlich, durch die Milch orange bis rötlich, brüchig."
+geruch = "Süßlich, obstartig."
+geschmack = "Etwas bitterlich."
+sporenpulver = "Blassocker."
+vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier überwiegend bei Weißtanne. Überwiegend häufig zu finden."
+zeit = "Herbst bis Spätherbst."
 
 [[verwechslungen]]
 name = "Fichtenreizker"
-merkmal = "Kleiner, grünt stark, bei Fichte."
-essbar = "essbar"
+merkmal = "Hut mit kräftigen grünen Flecken vor allem in der Mitte, Stiel ohne Grübchen, bei Fichte."
+essbar = "speisepilz"
+slug = "fichtenreizker"
+
+[[verwechslungen]]
+name = "Edelreizker"
+merkmal = "Hut mit konzentrisch getropften Flecken, Milch kaum veränderlich, Stiel kurz und mit orangefarbenen Grübchen, bei Kiefer."
+essbar = "speisepilz"
+slug = "edelreizker"
+
+[[verwechslungen]]
+name = "Blaureizker"
+merkmal = "Hut graurosa bis rosa-lehmfarben, Grübchen am Stiel blassgrünlich, Milch erst nach 20 Minuten weinrötlich."
+essbar = "speisepilz"
+slug = "blaureizker"
+
+[[verwechslungen]]
+name = "Weinroter Reizker"
+merkmal = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkel blutrot, Milch nach 20 Minuten grünend."
+essbar = "speisepilz"
+slug = "weinroter-reizker"
 
 [[links]]
 titel = "123pilzsuche.de"

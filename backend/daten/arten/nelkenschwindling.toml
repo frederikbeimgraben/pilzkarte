@@ -1,32 +1,67 @@
 name = "Nelkenschwindling"
 lateinisch = "Marasmius oreades"
 gruppe = "schwindling"
-speisewert = "speisepilz"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
-speisewertHinweis = "Nur die Hüte, die Stiele sind zäh. Auf Wiesen wachsen giftige Trichterlinge daneben."
+speisewertHinweis = "Roh in größeren Mengen unbekömmlich, er gibt Blausäure ab. Beim Kochen und Trocknen verflüchtigt sie sich. Nur die Hüte nehmen, die Stiele sind zäh."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Feldschwindling", "Suppenpilz", "Hartbeindl", "Herbstmusseron", "Oreadenpilz"]
+synonyme = ["Collybia oreades", "Agaricus coriaceus", "Agaricus pseudomouceron", "Scorteus oreades"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Nelkenschwindling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.8 }
+sporenBreiteUm = { von = 4.0, bis = 6.2 }
 
 [merkmale]
-hut = "2 bis 5 cm, ledergelb bis blass beige, mit stumpfem Buckel, bei Trockenheit blass, bei Nässe dunkler."
-lamellen = "Blass creme, breit, entfernt stehend, am Stiel frei."
-stiel = "Dünn, sehr zäh, lässt sich verdrehen ohne zu brechen."
-fleisch = "Blass, dünn, ledrig."
-geruch = "Kräftig, nach Bittermandel."
-geschmack = "Mild, süßlich."
+hut = "1 bis 6, selten bis 7 cm breit, hellbraun bis ocker-rotbraun, gebuckelt, Rand etwas gerieft und beim Abtrocknen ausblassend."
+lamellen = "Weißlich, hellbraun, gelbbraun bis gelblich, ausgebuchtet angeheftet, meist weit entfernt stehend, mit Zwischenlamellen und mit Querlamellen am Grund."
+stiel = "3 bis 7, selten bis 9 cm lang, 2 bis 5, selten bis 6 mm dick, hellbraun, zur Basis dunkler, Spitze heller. Starr, zäh, elastisch und knorpelig."
+fleisch = "Weißlich bis cremefarben, faserig und zäh."
+geruch = "Nach Bittermandel und Blausäure, dazu nach Sägespänen und Gewürznelken, etwas stechend alkalisch, dennoch angenehm pilzig."
+geschmack = "Mild, würzig, angenehm pilzig."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer auf Rasen, Wiesen und Weiden, in auffälligen Hexenringen."
-zeit = "Mai bis November."
+vorkommen = "Folgezersetzer auf Rasen, Wiesen, in Parks und Gärten, an Waldrändern und Waldwegen, oft in Hexenringen. Das Gras um das Myzel wird auffallend grün. Sehr häufig."
+zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
 name = "Rinnigbereifter Trichterling"
-merkmal = "Lamellen weiß und herablaufend, Stiel brüchig. Auf denselben Wiesen. Giftig."
-essbar = "giftig"
+merkmal = "Hut weißlich und weiß bereift, Lamellen fast gerade angewachsen und sehr gedrängt, Stiel kurz und brüchig. Auf denselben Wiesen."
+essbar = "toedlichGiftig"
+slug = "rinnigbereifter-trichterling"
 
 [[verwechslungen]]
-name = "Feldtrichterling"
-merkmal = "Hut weißlich bereift, Lamellen herablaufend."
+name = "Ziegelroter Risspilz"
+merkmal = "Hut radialfaserig aufreißend, ziegelrot bis ockerbraun, Lamellen später rötlich bis olivbraun, Fleisch rötend."
+essbar = "toedlichGiftig"
+slug = "ziegelroter-risspilz"
+
+[[verwechslungen]]
+name = "Grünender Risspilz"
+merkmal = "Hut strohgelb bis grünlichbraun und radialrissig, Stiel von unten her blaugrün, Fleisch bei Verletzung grünend."
 essbar = "giftig"
+slug = "gruenender-risspilz"
+
+[[verwechslungen]]
+name = "Hügelschwindling"
+merkmal = "Geruch nach Zedernholz, zerrieben mehlig ranzig, nie nach Bittermandel. Geschmack unangenehm. Wächst in dichten Büscheln."
+essbar = "giftig"
+slug = "huegelschwindling"
+
+[[verwechslungen]]
+name = "Brennender Rübling"
+merkmal = "Lamellen gelbbraun bis dottergelb, Stiel sehr dünn, Geschmack nach kurzer Zeit scharf pfefferig. Auf Laub- und Nadelstreu im Wald."
+essbar = "ungeniessbar"
+slug = "brennender-ruebling"
 
 [[links]]
 titel = "123pilzsuche.de"

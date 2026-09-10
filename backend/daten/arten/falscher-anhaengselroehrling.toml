@@ -1,0 +1,62 @@
+name = "Falscher Anhängselröhrling"
+lateinisch = "Butyriboletus subappendiculatus"
+gruppe = "roehrling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Selten und wärmeliebend, in der Schweiz auf der Roten Liste. Wenn überhaupt, nur einzelne Fruchtkörper nehmen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Nadelwald Anhängselröhrling", "Gelber Steinpilz"]
+synonyme = ["Boletus subappendiculatus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FalschAnhaengselroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Im Fruchtfleisch keine oder nur eine schwache Braunreaktion."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 19.0 }
+
+[merkmale]
+hut = "4 bis 16, selten bis 19 cm breit, ockerbraun, kastanienbraun bis braunorange, meist trocken und filzig. Im Alter reißt die Huthaut auf."
+roehren = "Hellgelb bis zitronengelb, ausgebuchtet angewachsen, nicht blauend."
+stiel = "Gelblich mit hellgelbem Netz, Basis bräunend, an der Stielwurzel oft ein Wurmfortsatz."
+fleisch = "Weiß, hellgelb bis zitronengelb, unter den Röhren schwefelgelb, am Rand manchmal rosalich, nie blauend."
+geruch = "Neutral bis angenehm, nicht pilzig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz im Nadelwald, größtenteils bei Fichte, gern auf saurem Boden, wärmeliebend. Selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Wurzelnder Bitterröhrling"
+merkmal = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Tinte, Geschmack bitter."
+essbar = "giftig"
+slug = "wurzelnder-bitterroehrling"
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Steinpilz"
+merkmal = "Röhren weiß, dann gelb bis oliv, Netz am Stiel weiß, Fleisch weiß und nicht zitronengelb."
+essbar = "speisepilz"
+slug = "steinpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/FalschAnhaengselroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Nadelwald-Anhängsel-Röhrling"

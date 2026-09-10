@@ -1,0 +1,60 @@
+name = "Olivfarbener Frauentäubling"
+lateinisch = "Russula cyanoxantha var. peltereaui"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+marktfaehig = false
+wertigkeit = 1
+synonyme = ["Russula peltereaui", "Russula cyanoxantha forma peltereaui", "Russula cyanoxantha f. peltereaui"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/OlivfarbenerFrauentaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Graugrün, auf dem Stiel zuerst negativ, dann schwach schmutzig grün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Umbrabraun bis tief blutrot."
+
+[[reagenzien]]
+reagenz = "anilin"
+reaktion = "Trüb blutrot."
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 13.0, seltenBis = 16.0 }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 6.4, bis = 9.5 }
+sporenBreiteUm = { von = 5.0, bis = 6.7 }
+
+[merkmale]
+hut = "6 bis 13, selten bis 16 cm breit, olivgrün mit violetten Flecken, Mitte meist dunkler und niedergedrückt. Huthaut schmierig und glänzend, Rand etwas höckerig gerieft."
+lamellen = "Weiß, manchmal mit einem Hauch Grün, gerade angewachsen, mit vielen Zwischenlamellen, oft aderig verbunden. Sie sind biegsam und brechen nicht."
+stiel = "3 bis 14, selten bis 16 cm hoch, 1 bis 4, selten bis 5 cm dick, weiß, alt etwas gelblich oder bräunlich fleckig, voll bis markig hohl."
+fleisch = "Weiß, dick und fest, an der Luft höchstens etwas grauend, brüchig."
+geruch = "Neutral."
+geschmack = "Mild, angenehm."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Grüner Speisetäubling"
+merkmal = "Hut bronzebraun bis goldbraun ohne violette Flecken, Lamellen am Stiel zahlreich gegabelt."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Frauentäubling"
+merkmal = "Hut grün, braun, blau bis lila gemischt, ohne den reinen Olivton mit violetten Flecken."
+essbar = "speisepilz"
+slug = "frauentaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/OlivfarbenerFrauentaeubling.htm"

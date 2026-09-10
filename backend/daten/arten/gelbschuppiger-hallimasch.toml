@@ -3,25 +3,65 @@ lateinisch = "Armillaria gallica"
 gruppe = "hallimasch"
 speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
-baeume = ["buche", "eiche"]
-speisewertHinweis = "Roh giftig und geringwertig. Nur Hüte, lange kochen."
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Nur die Hüte, mindestens 20 Minuten abkochen und das Kochwasser weggießen. Nach Frost und bei alten Stücken steigt die Unverträglichkeit. Auch dann vertragen ihn nicht alle."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "haeufig"
+weitereNamen = ["Fleischfarbener Hallimasch", "Dunkler Laubholzhallimasch"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/FleischfarbeneHallimarsch.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielDickeCm = { von = 1.5, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
 
 [merkmale]
-hut = "3 bis 10 cm, ocker- bis fleischbraun, mit feinen gelblichen Schüppchen in der Mitte."
-lamellen = "Weißlich, später bräunlich fleckend, kurz herablaufend."
-stiel = "Zur Basis deutlich keulig verdickt, mit vergänglichem, gelbflockigem Ring."
-fleisch = "Weiß, faserig."
-geruch = "Pilzig."
-geschmack = "Roh scharf."
+hut = "2 bis 10, selten bis 13 cm breit, haselnussbraun, gelbbraun bis rotbraun, mit abwischbaren grauen, braunen bis goldbraunen Schüppchen. Am Rand hängen Reste eines gelblichen Velums."
+lamellen = "Weißlich, später hellbraun und nachdunkelnd, angewachsen und mit einem Zahn herablaufend."
+stiel = "2 bis 8, selten bis 10 cm lang, 1,5 bis 2, selten bis 3 cm dick, weißlich bis bräunlich, Spitze heller, längsfaserig und zäh. Mit dickem Ring, dessen unterer Rand goldgelb ist; darunter abwischbare braune und goldgelbe Schüppchen."
+fleisch = "Weißlich."
+geruch = "Pilzig, oft etwas erdig muffig."
+geschmack = "Herb, kratzend, seifig."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer an vergrabenem Laubholz, meist einzeln oder in kleinen Gruppen aus dem Boden, nicht in großen Büscheln."
-zeit = "August bis November."
+vorkommen = "An Laubbäumen, parasitisch an kranken Bäumen, sonst Folgezersetzer. Meist büschelig in Gruppen. Häufig."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Sporenpulver rostbraun, Stiel silbrig faserig."
-essbar = "toedlichGiftig"
+name = "Sparriger Schüppling"
+merkmal = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivgelb bis olivbraun, Geruch rettichartig."
+essbar = "giftig"
+slug = "sparriger-schueppling"
+
+[[verwechslungen]]
+name = "Ringloser Hallimasch"
+merkmal = "Stiel ohne Ring, Hut kleiner und rotbraun, gern an Eiche."
+essbar = "bedingtEssbar"
+slug = "ringloser-hallimasch"
+
+[[verwechslungen]]
+name = "Bleicher Schüppling"
+merkmal = "Hut cremeweiß bis hellbraun mit spitzen sparrigen Schüppchen, Lamellen gelbbraun, Geschmack bitter."
+essbar = "ungeniessbar"
+slug = "bleicher-schueppling"
+
+[[verwechslungen]]
+name = "Gemeiner Hallimasch"
+merkmal = "Hut rotbraun, Ring ohne goldgelben Rand, an Nadelholz."
+essbar = "bedingtEssbar"
+slug = "dunkler-hallimasch"
+
+[[verwechslungen]]
+name = "Honiggelber Hallimasch"
+merkmal = "Hut gelblich bis zitronengelb, Stiel mit gelbbeigen Flocken, besser verträglich."
+essbar = "bedingtEssbar"
+slug = "honiggelber-hallimasch"
 
 [[links]]
 titel = "123pilzsuche.de"

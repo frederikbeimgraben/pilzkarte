@@ -1,0 +1,55 @@
+name = "Schmutziger Rötelritterling"
+lateinisch = "Lepista sordida"
+gruppe = "roetelritterling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = ["fichte"]
+speisewertHinweis = "Roh giftig, er zersetzt das Blut. Nur gut durchgegart essen."
+marktfaehig = true
+wertigkeit = 3
+weitereNamen = ["Fleischbrauner Rötelritterling"]
+synonyme = ["Lepista sordida var. lilacea", "Lepista sordida var. obscurata", "Rhodopaxillus sordidus forma obscuratus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SchmutzigerRoetelritterling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 6.0, bis = 11.0 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
+
+[merkmale]
+hut = "2 bis 6, selten bis 7 cm breit, der kleinste Rötelritterling, blass bis stark lila oder rosaviolett, hygrophan und beim Trocknen heller werdend, Haut glatt, Rand lange eingerollt."
+lamellen = "Schmutzig weiß, graurosa bis blass lila, am Stiel ausgebuchtet angewachsen bis herablaufend, leicht ablösbar, Schneiden fein gekerbt und gleichfarbig."
+stiel = "Kahl, blass blaulila bis rötlich lila, Oberfläche etwas weißlich überfasert."
+fleisch = "Helllila bis hellgrau, im Zentrum weiß, im Alter bräunlich."
+geruch = "Leicht parfümiert, etwas pilzig bis nussartig, schwächer als beim Violetten Rötelritterling. Bei feuchtem Wetter den Fruchtkörper in der Hand zerkrümeln und anwärmen: dann fast unauffällig, teils etwas staubartig. Alte Stücke riechen unangenehm bis fischig."
+geschmack = "Mild, dumpf, eventuell etwas süßlich."
+sporenpulver = "Blassrosa."
+vorkommen = "Folgezersetzer auf Wiesen, in Mischwäldern und Fichtenwäldern sowie auf Kompost, einzeln oder büschelig."
+zeit = "Frühling bis Winteranfang."
+
+[[verwechslungen]]
+name = "Bocksdickfuß"
+merkmal = "Riecht stark nach Ziegenbock, Lamellen und Sporenpulver rostbraun."
+essbar = "giftig"
+slug = "bocksdickfuss"
+
+[[verwechslungen]]
+name = "Violetter Rötelritterling"
+merkmal = "Deutlich größer und kräftiger violett, Geruch stärker parfümiert."
+essbar = "bedingtEssbar"
+slug = "violetter-roetelritterling"
+
+[[verwechslungen]]
+name = "Lavendelfarbener Rötelritterling"
+merkmal = "Hut blass ockerbräunlich, nur Stiel und Lamellen mit Lila."
+essbar = "speisepilz"
+slug = "lavendelfarbener-roetelritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SchmutzigerRoetelritterling.htm"

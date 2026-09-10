@@ -1,0 +1,57 @@
+name = "Blaufleckender Purpurröhrling"
+lateinisch = "Imperator rhodopurpureus"
+gruppe = "roehrling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer"]
+baeume = []
+speisewertHinweis = "Er hat schon Unverträglichkeitsreaktionen ausgelöst und ist roh giftig. Zu erkennen an der blauenden Huthaut, dem roten Netz am Stiel und dem im Alter aasartigen Geruch."
+marktfaehig = false
+gefaehrdung = "extremSelten"
+weitereNamen = ["Dunkler Purpurröhrling", "Weinroter Purpurröhrling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BlaufleckenderPurpurroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 12.0, seltenBis = 18.0 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
+
+[merkmale]
+hut = "6 bis 12, selten bis 18 cm breit, purpurrot, weinrosa, altrosa bis primelgelb auf gelblichem oder rosa Grund, oft bunt blaukörnig fleckend. Die Oberfläche blaut, Schneckenfraßstellen sind weinrot oder blau. Polsterförmig, samthaarig, filzig und körnig schuppig."
+roehren = "Jung gelb bis gelborange, später purpurrot bis blutrot, auf Druck stark blauend. Röhrenboden gelb, am Stiel ausgebuchtet angewachsen und fast frei wirkend."
+stiel = "Gelblich mit rötlichem Netz, Spitze gelb, auf Druck schnell blauend, zur Basis zunehmend karminrot bis himbeerrot."
+fleisch = "Hellblau, später chromgelb, schnell stark blauend, alt schwammig."
+geruch = "Jung säuerlich und angenehm, später aasartig und unangenehm stinkend."
+geschmack = "Mild, roh giftig und unverträglich."
+sporenpulver = "Rosabraun."
+vorkommen = "Im Laubwald auf kalkreichem Boden. In der Schweiz verletzlich, in Deutschland extrem selten."
+zeit = "Frühsommer bis Spätsommer."
+
+[[verwechslungen]]
+name = "Blasshütiger Purpurröhrling"
+merkmal = "Huthaut weißlich bis olivgrau und nicht blauend, Fleisch blaut nur wenig im Hut und in der Stielspitze."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Falscher Satansröhrling"
+merkmal = "Stiel kräftig rot mit rotem Netz, Geruch unbedeutend bis neutral."
+essbar = "giftig"
+slug = "falscher-satansroehrling"
+
+[[verwechslungen]]
+name = "Kurznetziger Hexenröhrling"
+merkmal = "Netz wandert mit dem Alter in den unteren Stielbereich, Stielfleisch stark weinrot."
+essbar = "bedingtEssbar"
+slug = "kurznetziger-hexenroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BlaufleckenderPurpurroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Blaufleckender_Purpur-Röhrling"

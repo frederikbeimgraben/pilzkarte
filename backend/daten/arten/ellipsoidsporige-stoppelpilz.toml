@@ -1,0 +1,55 @@
+name = "Ellipsoidsporige Stoppelpilz"
+lateinisch = "Ellipsoidsporige Stoppelpilz"
+gruppe = "stoppelpilz"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Jung sammeln. Alte Stücke werden bitter und beim längeren Kauen etwas scharf."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Kleinwüchsiger Semmelstoppelpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/EllipsoidsporigeStoppelpilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.0, bis = 11.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.8 }
+
+[merkmale]
+hut = "2 bis 5, selten bis 6 cm breit, gelborange bis terrakottafarben, Rand lange eingerollt. Deutlich kleiner als der Semmelstoppelpilz."
+stacheln = "Weiß bis hellorange, im Alter gelblich, kegelig und relativ weit auseinander stehend, am Stiel etwas herablaufend."
+stiel = "Weißlich bis hellgelb, auf Druck gilbend."
+fleisch = "Gelblichweiß, creme bis hellorange, fest und etwas brüchig, läuft bei Verletzung gelbrosa bis braun an."
+geruch = "Angenehm, nach Orangenblütenwasser."
+geschmack = "Mild, alt bitterlich wie getrocknete Haferflocken und bei längerem Kauen etwas scharf."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz in Mischwäldern. Sehr häufig, oft als Massenpilz."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Genabelter Semmelstoppelpilz"
+merkmal = "Hut in der Mitte deutlich genabelt, blasser gefärbt."
+essbar = "speisepilz"
+slug = "genabelter-semmelstoppelpilz"
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Poren statt Stoppeln auf der Hutunterseite."
+essbar = "speisepilz"
+slug = "semmelporling"
+
+[[verwechslungen]]
+name = "Schafporling"
+merkmal = "Hut weißlich, Unterseite mit feinen Poren statt Stacheln."
+essbar = "bedingtEssbar"
+slug = "schafporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/EllipsoidsporigeStoppelpilz.htm"

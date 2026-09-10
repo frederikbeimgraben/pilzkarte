@@ -3,31 +3,66 @@ lateinisch = "Neoboletus erythropus"
 gruppe = "roehrling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["sommer", "herbst"]
-baeume = ["fichte", "tanne", "buche"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["fichte", "buche"]
 karte = "hexen_flock"
-speisewertHinweis = "Roh giftig. Mindestens 15 Minuten durchgaren."
+speisewertHinweis = "Roh unverträglich. Gut durchgaren."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Flocki", "Zigeuner", "Hexenpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Flocki.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 5.0, bis = 15.0 }
+stielDickeCm = { von = 2.0, bis = 5.0 }
+sporenLaengeUm = { von = 12.0, bis = 18.0 }
+sporenBreiteUm = { von = 4.5, bis = 6.5 }
 
 [merkmale]
-hut = "6 bis 20 cm, dunkel- bis olivbraun, samtig matt, Rand jung eingerollt."
-roehren = "Röhren gelb, die Mündungen orange bis blutrot. Auf Druck sofort tiefblau."
-stiel = "Gelb, dicht mit feinen roten Flöckchen besetzt, ohne Netz."
-fleisch = "Gelb, im Schnitt augenblicklich dunkelblau."
-geruch = "Angenehm pilzig."
-geschmack = "Mild. Roh nicht kosten."
+hut = "4 bis 20, selten bis 25 cm breit, dunkelbraun, teils gelb gescheckt oder mit olivem Ton, samtig, feucht leicht klebrig. Halbkugelig bis polsterförmig. Nach Schneckenfraß erscheint darunter Rötliches."
+roehren = "Röhrenmündungen rot, Röhrenboden gelb, am Stiel ausgebuchtet angewachsen. Ganz junge Pilze können noch gelbe Röhren haben."
+stiel = "5 bis 15 cm lang, 2 bis 5 cm dick, mit rötlichen Flöckchen auf gelbem Grund, ohne Netz."
+fleisch = "Gelb, im Schnitt sofort schwarzblau, nach Stunden graugelb."
+geruch = "Angenehm pilzartig."
+geschmack = "Mild."
 sporenpulver = "Olivbraun."
-vorkommen = "Mykorrhiza mit Fichte, Tanne und Buche, auf sauren Böden, in Nadel- und Mischwäldern."
-zeit = "Juni bis Oktober, oft schon vor dem Steinpilz."
+vorkommen = "Symbiosepilz im Mischwald, gern bei Fichte und Buche, auf saurem Boden. Meist sehr häufig."
+zeit = "Frühling bis Spätherbst, oft schon ab April."
 
 [[verwechslungen]]
-name = "Netzstieliger Hexenröhrling"
-merkmal = "Stiel mit rotem Netz statt Flöckchen, auf Kalk."
+name = "Ochsenröhrling"
+merkmal = "Hut goldgelb bis braungelb, Stielbasis stark verdickt."
 essbar = "bedingtEssbar"
+slug = "ochsenroehrling"
 
 [[verwechslungen]]
-name = "Satansröhrling"
-merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
+name = "Blaufleckender Purpurröhrling"
+merkmal = "Hut purpurrot bis weinrosa, Stiel mit rötlichem Netz."
 essbar = "giftig"
+slug = "blaufleckender-purpurroehrling"
+
+[[verwechslungen]]
+name = "Falscher Satansröhrling"
+merkmal = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz."
+essbar = "giftig"
+slug = "falscher-satansroehrling"
+
+[[verwechslungen]]
+name = "Büscheliger Hexenröhrling"
+merkmal = "Hut kupfer- bis granatrot, Stiel rötlich benetzt, wächst büschelig."
+essbar = "ungeniessbar"
+slug = "buescheliger-hexenroehrling"
+
+[[verwechslungen]]
+name = "Glattstieliger Hexenröhrling"
+merkmal = "Stiel ohne Flöckchen und ohne Netz, Röhrenmündungen gelborange."
+essbar = "essbar"
+slug = "glattstieliger-hexenroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

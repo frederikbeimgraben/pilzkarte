@@ -1,0 +1,54 @@
+name = "Tropfender Schillerporling"
+lateinisch = "Pseudoinonotus dryadeus"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = ["eiche", "buche"]
+speisewertHinweis = "Ungenießbar, weil das Fleisch korkig und zäh ist."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "unbekanntesAusmass"
+synonyme = ["Inonotus dryadeus", "Boletus dryadeus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/TropfenderSchillerporling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 8.0, bis = 20.0, seltenBis = 30.0 }
+sporenLaengeUm = { von = 7.5, bis = 8.5 }
+sporenBreiteUm = { von = 5.5, bis = 6.5 }
+
+[merkmale]
+hut = "8 bis 20, selten bis 30 cm breit, hellbraun, tabakbraun bis gelbbraun, gewölbt und rundlich, manchmal dachziegelartig. Oberfläche bereift, jung mit hellbraunen Tröpfchen."
+poren = "Klein und rundlich, weißlich bereift, Röhren dunkelbraun und mehrschichtig."
+stiel = "Fehlt, der Fruchtkörper liegt dem Substrat auf."
+fleisch = "Dunkel rostbraun, schwammig bis korkig und faserig."
+geruch = "Neutral."
+geschmack = "Unbedeutend."
+sporenpulver = "Hellbraun."
+vorkommen = "Folgezersetzer im Laubwald, meist an toten Eichen- oder Buchenstümpfen und -stämmen. Selten, in Deutschland gefährdet."
+zeit = "Mehrjährig, ganzjährig zu finden."
+
+[[verwechslungen]]
+name = "Tannenfeuerschwamm"
+merkmal = "An Fichte und Tanne, Fleisch holzig hart, Poren graubräunlich, scheidet keine Tröpfchen aus."
+essbar = "ungeniessbar"
+
+[[verwechslungen]]
+name = "Eichenfeuerschwamm"
+merkmal = "An lebenden Eichen, Fruchtkörper holzig hart und oft von Algen grünlich, Poren gelblich rostbraun."
+essbar = "ungeniessbar"
+slug = "eichenfeuerschwamm"
+
+[[verwechslungen]]
+name = "Flacher Schillerporling"
+merkmal = "Fruchtkörper flach konsolen- bis fächerförmig, Oberfläche rauhaarig-filzig, Poren jung gelb und schillernd."
+essbar = "ungeniessbar"
+slug = "flacher-schillerporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/TropfenderSchillerporling.htm"

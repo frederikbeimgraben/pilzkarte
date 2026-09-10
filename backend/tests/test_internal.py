@@ -84,7 +84,7 @@ async def test_a_species_outside_the_catalog_drops_out(
         _ = await create_find(call, idp, fuerTraining=True)
         # Der Katalog verliert die Art, der Fund bleibt in der Datenbank.
         shortened = catalog_for_tests()
-        del shortened.profile["steinpilz"]
+        del shortened.profiles["steinpilz"]
         object_app.dependency_overrides[current_catalog] = lambda: shortened
         response = await call.get(PATH)
 

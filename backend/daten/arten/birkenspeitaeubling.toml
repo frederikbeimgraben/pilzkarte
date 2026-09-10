@@ -1,0 +1,59 @@
+name = "Birkenspeitäubling"
+lateinisch = "Russula betularum"
+gruppe = "taeubling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+speisewertHinweis = "Der extrem scharfe Geschmack verrät ihn. Speitäublinge reizen Magen und Darm, vor allem roh und in größerer Menge."
+marktfaehig = false
+synonyme = ["Russula emetica var. betularum"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Birkenspeitaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Fleisch rosa bis orange."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Langsam und schwach graugrün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Rosa."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
+stielDickeCm = { von = 1.0, bis = 1.8, seltenBis = 2.3 }
+sporenLaengeUm = { von = 7.9, bis = 11.5 }
+sporenBreiteUm = { von = 7.4, bis = 8.5 }
+
+[merkmale]
+hut = "4 bis 8, selten bis 12 cm breit, weißlich, blass rosa, rötlich bis rosenrot, kräftige Rottöne fast nie. Mitte oft blass gelblich bis ocker, Rand schwach kammartig gerieft. Die Huthaut lässt sich ganz abziehen."
+lamellen = "Weiß, teils mit cremefarbenem Schimmer, sehr zerbrechlich, ausgebuchtet angewachsen, Schneiden etwas gesägt."
+stiel = "3 bis 8, selten bis 9 cm lang und 1 bis 1,8, selten bis 2,3 cm dick, weiß und sehr brüchig."
+fleisch = "Weiß, spröde und brüchig."
+geruch = "Leicht obstartig."
+geschmack = "Extrem scharf."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz in feuchten Birkenwäldern, oft in höheren Lagen, gern bei Torfmoos auf feuchtem Boden."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Buchenspeitäubling"
+merkmal = "Hut zinnoberrot bis karminrot, Huthaut matt samtig und kaum abziehbar, bei Buche auf kalkhaltigem Boden."
+essbar = "giftig"
+slug = "buchenspeitaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Birkenspeitaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Birken-Spei-Täubling"

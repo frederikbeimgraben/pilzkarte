@@ -1,0 +1,46 @@
+name = "Wurzelnder Egerlingsschirmling"
+lateinisch = "Leucoagaricus barssii"
+gruppe = "schirmling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+marktfaehig = false
+weitereNamen = ["Wurzelnder Egerlingsschirmpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WurzelnderEgerlingsschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 7.5, bis = 9.0 }
+sporenBreiteUm = { von = 4.5, bis = 5.5 }
+
+[merkmale]
+hut = "3 bis 11, selten bis 16 cm breit, weiß, hellbraun bis cremefarben, seidig filzig, die Haut wollig filzig, Rand federig, Mitte teils gebuckelt oder eingedrückt."
+lamellen = "Weiß bis hell cremefarben, frei."
+stiel = "Weiß, Basis verdickt und darunter verschmälert wurzelnd, alt etwas bräunend. Die Spitze lässt sich leicht vom Hutfleisch trennen. Ring weiß, schmal häutig, doppelrandig, unten gezahnt und abziehbar."
+fleisch = "Weiß."
+geruch = "Neutral, etwas pilzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer in Parks, Gärten, Wald und auf Wiesen."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Kegelhütiger Knollenblätterpilz"
+merkmal = "Basis mit gerandeter Knolle in häutiger Scheide, Huthaut färbt sich mit Kalilauge gelb."
+essbar = "toedlichGiftig"
+slug = "kegelhuetiger-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Seidiger Egerlingsschirmling"
+merkmal = "Hut seidig grau bis graubraun, Stielbasis nicht wurzelnd."
+essbar = "giftig"
+slug = "seidiger-egerlingsschirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WurzelnderEgerlingsschirmling.htm"

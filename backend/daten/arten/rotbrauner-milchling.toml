@@ -1,0 +1,60 @@
+name = "Rotbrauner Milchling"
+lateinisch = "Lactarius rufus"
+gruppe = "milchling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer", "fichte", "birke", "buche"]
+speisewertHinweis = "Ungeniessbar durch die extreme Schaerfe, die erst nach etwa einer Minute einsetzt. Bei empfindlichen Personen kann er Lippenblaeschen ausloesen, deshalb nur sehr vorsichtig kosten."
+marktfaehig = false
+weitereNamen = ["Paprikapilz", "Braunroter Milchling"]
+synonyme = ["Lactarius mollis", "Lactifluus rufus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RotbraunerMilchling2004.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+stielDickeCm = { von = 0.6, bis = 1.3, seltenBis = 1.6 }
+sporenLaengeUm = { von = 6.8, bis = 9.5 }
+sporenBreiteUm = { von = 5.2, bis = 7.4 }
+
+[merkmale]
+hut = "2 bis 9, selten bis 12 cm breit, rotbraun, kastanienbraun bis ziegelrotbraun, meist mit kleinem Buckel, spaeter abgeflacht und trichterfoermig. Rand eingerollt und meist heller, Haut manchmal blass bereift und uneben."
+lamellen = "Jung cremefarbig, spaeter ockerlich fleischroetlich, leicht bogig, Schneiden glatt."
+milch = "Weiss, ohne Verfaerbung."
+stiel = "2 bis 7, selten bis 9 cm lang und 0,6 bis 1,3, selten bis 1,6 cm dick, jung weisslich mit rosa bis rotbraunem Ton, spaeter zunehmend rotbraun bis ziegelrotbraun und heller als der Hut, im Alter hohl."
+fleisch = "Blass bis rotbraeunlich, in der Stielrinde rotbraun."
+geruch = "Harzig."
+geschmack = "Zuerst mild, nach etwa einer Minute extrem scharf."
+sporenpulver = "Cremeweiss mit leichtem lachsrosa Ton."
+vorkommen = "Symbiosepilz im Mischwald, bevorzugt bei Nadelholz wie Kiefer und Fichte, seltener bei Birke und Buche, gern an moosigen Stellen."
+zeit = "Sommer bis Spaetherbst."
+
+[[verwechslungen]]
+name = "Maggipilz"
+merkmal = "Geruch stark nach Maggi oder Liebstoeckel, besonders beim Trocknen, Geschmack mild."
+essbar = "giftig"
+slug = "maggipilz"
+
+[[verwechslungen]]
+name = "Eichenmilchling"
+merkmal = "Bei Eiche, Hut mit undeutlichen dunkleren Zonen, Geruch oelig bis wanzenartig."
+essbar = "essbar"
+slug = "eichenmilchling"
+
+[[verwechslungen]]
+name = "Braunroter Milchling"
+merkmal = "Geschmack mild, Hut dunkler kastanien- bis weinbraun."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RotbraunerMilchling2004.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Rotbrauner_Milchling"

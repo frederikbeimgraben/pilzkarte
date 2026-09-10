@@ -1,0 +1,54 @@
+name = "Falscher Satansröhrling"
+lateinisch = "Imperator luteocupreus"
+gruppe = "roehrling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche", "kastanie"]
+speisewertHinweis = "Roh giftig und unverträglich. Er trägt purpurrote bis blutrote Röhren, einen kräftig roten Stiel mit rotem Netz und chromgelbes Fleisch, das sofort stark blaut. Dem Satansröhrling sehr ähnlich."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Gelbhütiger Purpurröhrling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GelbhuetigerPurpurroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 12.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 10.5, bis = 14.5 }
+sporenBreiteUm = { von = 4.5, bis = 6.0 }
+
+[merkmale]
+hut = "6 bis 12, selten bis 15 cm breit, purpurrosa, gold-, orange- bis rostgelb, rosabraun körnig auf gelblichem Grund, auf Druck blauend. Rand oft gelblich fleckend und lange eingerollt, Schneckenfraßstellen gelblich weinrot."
+roehren = "Purpurrot bis blutrot, auf Druck stark blauend."
+stiel = "5 bis 10, selten bis 12 cm lang, 1,5 bis 5,5, selten bis 6 cm dick, kräftig rot mit rotem Netz, an Schneckenfraßstellen hellgelb bis chromgelb."
+fleisch = "Chromgelb, schnell und stark blauend."
+geruch = "Unbedeutend, neutral."
+geschmack = "Mild, roh giftig und unverträglich."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz in Laub- und Nadelwald, gern bei Rotbuche, Kastanie und Eiche. Sehr selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Blasshütiger Purpurröhrling"
+merkmal = "Hut blass grauweiß bis lehmfarben, ohne Purpurrosa und Goldgelb."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Blaufleckender Purpurröhrling"
+merkmal = "Hut heller, auf Druck fleckig blauend."
+essbar = "giftig"
+slug = "blaufleckender-purpurroehrling"
+
+[[verwechslungen]]
+name = "Flockenstieliger Hexenröhrling"
+merkmal = "Stiel ohne Netz, nur rot geflockt, Hut dunkelbraun."
+essbar = "bedingtEssbar"
+slug = "flockenstieliger-hexenroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GelbhuetigerPurpurroehrling.htm"

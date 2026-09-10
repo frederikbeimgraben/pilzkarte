@@ -1,0 +1,58 @@
+name = "Mediterraner Röhrling"
+lateinisch = "Suillus mediterraneensis"
+gruppe = "schmierroehrling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["herbst", "winter", "fruehling"]
+baeume = ["kiefer"]
+marktfaehig = false
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Mediterraner Körnchenröhrling", "Mittelmeer Körnchenröhrling"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/MediterranerKoernchen.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 12.0 }
+stielDickeCm = { von = 1.3, bis = 2.7 }
+sporenLaengeUm = { von = 9.0, bis = 12.0 }
+sporenBreiteUm = { von = 4.0, bis = 4.8 }
+
+[merkmale]
+hut = "3 bis 10, selten bis 13 cm breit, gelbbraun, haselnussbraun bis olivbraun, schmierig klebrig, Haut zu drei Vierteln abziehbar, Mitte leicht gebuckelt."
+roehren = "Weißlich bis gelblich, später gelbgrün, gelbbraun oder oliv, oft mit gelben Tröpfchen benetzt, kurz und nicht voneinander trennbar."
+stiel = "3 bis 8, selten bis 12 cm lang, 1,3 bis 2,7 cm dick, weißlich bis chromgelb mit braunen Drüsenpunkten, robust. Basis leicht verdickt und gern rosaviolett, Myzelfäden rosa."
+fleisch = "Zuerst weißlich bis cremegelb, schnell gelb, alt chromgelb, weich."
+geruch = "Fruchtig, obstartig, angenehm."
+geschmack = "Angenehm süßlich."
+sporenpulver = "Ockerlich, olivbraun bis olivgelb."
+vorkommen = "Symbiosepilz auf meist kalkreichem Boden in Nadelwäldern, bei Kiefern wie Aleppokiefer, Pinie und See-Kiefer, dazu bei Zypressen. Im Mittelmeerraum sehr häufig."
+zeit = "Herbst bis Frühjahr."
+
+[[verwechslungen]]
+name = "Elfenbeinröhrling"
+merkmal = "Hut weiß bis cremefarben, Röhren weiß, bei fünfnadeligen Kiefern wie Zirbe und Weymouthskiefer."
+essbar = "speisepilz"
+slug = "elfenbeinroehrling"
+
+[[verwechslungen]]
+name = "Ringloser Butterpilz"
+merkmal = "Hut braun bis kastanienbraun, Röhren gelb, Stielbasis rosa, bei Fichte und Kiefer."
+essbar = "ohneSpeisewert"
+slug = "ringloser-butterpilz"
+
+[[verwechslungen]]
+name = "Weißbrauner Schmierröhrling"
+merkmal = "Jung elfenbeinweiß, alt schokoladenbraun, Stiel mit jung rötlichen, alt braunen Drüsenkörnchen."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/MediterranerKoernchen.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Mediterraner_Röhrling"

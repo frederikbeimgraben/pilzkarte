@@ -1,0 +1,55 @@
+name = "Rebhuhnegerling"
+lateinisch = "Agaricus phaeolepidotus"
+gruppe = "champignon"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Zu erkennen am schwach tintigen, karbolartigen Geruch nach Phenol und faulem Stroh und an der Stielbasis, die bei Verletzung chromgelb gilbt und später braunrot wird. Nicht essen."
+marktfaehig = false
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Rebhuhnchampignon"]
+synonyme = ["Psalliota phaeolepidota"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Rebhuhnegerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Gelb."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
+
+[merkmale]
+hut = "3 bis 9, selten bis 12 cm breit, graubraun, rauchschwärzlich bis dunkelbraun, mit faserigen Schuppen, Scheitel bräunlich und dunkler, zum Rand hin rotbraun schuppig. Rand bei Verletzung gelblich anlaufend."
+lamellen = "Lachsrosa, später dunkelbraun bis schwarzbraun, frei, Schneiden manchmal punktiert und gezähnelt."
+stiel = "Weißlich, kahl, braunfleckig, Basis knollig und bei Verletzung gilbend, später bräunend. Spitze leicht vom Hutfleisch abtrennbar. Ring gerandet, mit scharfer umlaufender Kante, unterseits meist braun punktiert und mit einer zweiten schmalen zahnradförmigen Schicht."
+fleisch = "Weiß, oft nur schwach gilbend, an der Stielbasis chromgelb und später braunrot."
+geruch = "Oft nur schwach tintenartig, karbolartig nach Phenol, nach faulem Stroh."
+geschmack = "Mild."
+sporenpulver = "Purpurbraun."
+vorkommen = "Folgezersetzer in Parks und im Mischwald, gern bei Laubbäumen."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Waldchampignon"
+merkmal = "Fleisch bei Verletzung gelborange und später blutrot, Geruch angenehm pilzig und leicht fruchtig."
+essbar = "bedingtEssbar"
+slug = "waldchampignon"
+
+[[verwechslungen]]
+name = "Riesenchampignon"
+merkmal = "Deutlich größer, Geruch anisartig nach Bittermandeln, Ring breit und dick."
+essbar = "speisepilz"
+slug = "riesenchampignon"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Rebhuhnegerling.htm"

@@ -18,10 +18,13 @@ from app.core.errors import NotFound
 from app.modules.species.schemas import (
     WEEKS,
     Edibility,
+    Marketability,
     Profile,
+    Reagent,
     SeasonBrief,
     SeasonCurve,
     SeasonTable,
+    Source,
     Species,
     SpeciesBrief,
     SpeciesCounts,
@@ -37,6 +40,13 @@ from app.shared.schemas import Week
 # Der Ordner liegt neben ``app`` und wird mit dem Backend ausgeliefert. Ein
 # eigener Pfad in der Umgebung waere ein weiterer Vertrag zum NixOS-Modul.
 DATA = Path(__file__).resolve().parents[3] / "daten"
+
+# Die Positivliste der DGfM entscheidet, was in den Handel darf. Sie steht als
+# PDF im Netz und traegt ihren eigenen Stand.
+MARKET_SOURCE = Source(
+    url="https://www.dgfm-ev.de/files/dokumente/PSV/2026-08-11_positivliste_speisepilze.pdf",
+    checked_on="2026-05-01",
+)
 
 FORECAST_THRESHOLD = 600
 SEASON_THRESHOLD = 60
@@ -62,14 +72,33 @@ UNPROTECTED_TEXT = (
     "Nicht besonders gesch\u00fctzt. Es gelten die Regeln des Landes und des Waldbesitzers."
 )
 
+REAGENT_TEXT: dict[Reagent, str] = {
+    Reagent.KOH: "Kalilauge (KOH)",
+    Reagent.NAOH: "Natronlauge (NaOH)",
+    Reagent.FESO4: "Eisensulfat (FeSO\u2084)",
+    Reagent.GUAIAC: "Guajak",
+    Reagent.MELZER: "Melzers Reagenz",
+    Reagent.ANILINE: "Anilin",
+    Reagent.PHENOL: "Phenol",
+    Reagent.AMMONIA: "Ammoniak",
+    Reagent.SULFOVANILLIN: "Sulfovanillin",
+    Reagent.FORMALIN: "Formalin",
+    Reagent.SCHAEFFER: "Sch\u00e4ffer-Reaktion",
+}
 
-def tier_for(visits_with_find: int, *, has_map: bool) -> Tier:
+
+def tier_for(visits_with_find: int, *, has_map: bool, collectable: bool = True) -> Tier:
     """Die Stufe einer Art: was die App zu ihr zeigen kann, heute.
 
     ``vorhersage`` heisst, dass eine Karte da ist. Die Datenlage allein reicht
     nicht: 23 Arten tragen ein Modell, gerendert sind erst 13. Der Chip "mit
     Vorhersage" zeigte sonst zehn Arten ohne Karte.
+
+    ``verwechslung`` traegt eine Art, die niemand sammelt. Sie steht im Katalog,
+    weil eine sammelbare Art ihr aehnlich sieht.
     """
+    if not collectable:
+        return Tier.LOOKALIKE
     if has_map:
         return Tier.FORECAST
     if visits_with_find >= SEASON_THRESHOLD:
@@ -133,6 +162,10 @@ def build_traits(profile: Profile) -> list[Trait]:
     if profile.protection_note:
         protection = f"{protection} {profile.protection_note}"
     lines[TraitKey.PROTECTION] = protection
+    if profile.reagents:
+        lines[TraitKey.REAGENTS] = " ".join(
+            f"{REAGENT_TEXT[entry.reagent]}: {entry.reaction}" for entry in profile.reagents
+        )
     return [Trait(key=key, text=lines[key]) for key in TraitKey if key in lines]
 
 
@@ -143,11 +176,11 @@ def build_tags(profile: Profile, tier: Tier) -> list[Tag]:
 
 def read_profiles(folder: Path) -> dict[str, Profile]:
     """Liest jede Profildatei des Ordners. Der Dateiname ist der Slug."""
-    profile: dict[str, Profile] = {}
+    profiles: dict[str, Profile] = {}
     for file in sorted(folder.glob("*.toml")):
         raw_bytes = tomllib.loads(file.read_text(encoding="utf-8"))
-        profile[file.stem] = Profile.model_validate(raw_bytes)
-    return profile
+        profiles[file.stem] = Profile.model_validate(raw_bytes)
+    return profiles
 
 
 def read_season(file: Path) -> SeasonTable:
@@ -160,7 +193,7 @@ class Catalog:
     """Alle Arten, einmal aus den Dateien gebaut und danach nur noch gelesen."""
 
     table: SeasonTable
-    profile: dict[str, Profile]
+    profiles: dict[str, Profile]
     maps: dict[str, str]
 
     def _counts(self, profile: Profile) -> SpeciesCounts:
@@ -202,11 +235,15 @@ class Catalog:
     def listing(self) -> SpeciesList:
         """Alle Arten mit Stufe, Tags und der kleinen Kurve."""
         species: list[SpeciesBrief] = []
-        for slug, profile in self.profile.items():
+        for slug, profile in self.profiles.items():
             counts = self._counts(profile)
             all_years, current = self._series(profile)
             map_name = self.maps.get(slug)
-            tier = tier_for(counts.visits_with_find, has_map=map_name is not None)
+            tier = tier_for(
+                counts.visits_with_find,
+                has_map=map_name is not None,
+                collectable=profile.collectable,
+            )
             species.append(
                 SpeciesBrief(
                     slug=slug,
@@ -218,14 +255,20 @@ class Catalog:
                     protected=profile.protected,
                     edibility=profile.edibility,
                     map_slug=map_name,
+                    collectable=profile.collectable,
+                    marketable=profile.marketable,
+                    rating=profile.rating,
+                    frequency=profile.frequency,
                     forecast_planned=forecast_planned(counts.visits_with_find),
                     visits_with_find=counts.visits_with_find,
-                    peak_week=peak_week_of(all_years),
+                    peak_week=peak_week_of(all_years) if profile.collectable else None,
                     season=SeasonBrief(
                         all_years=all_years,
                         current_year=current,
                         maximum=max([*all_years, *current]),
-                    ),
+                    )
+                    if profile.collectable
+                    else None,
                 )
             )
         species.sort(key=lambda species: species.name)
@@ -240,7 +283,7 @@ class Catalog:
 
     def has(self, slug: str) -> bool:
         """Sagt, ob der Slug im Katalog steht."""
-        return slug in self.profile
+        return slug in self.profiles
 
     def is_protected(self, slug: str) -> bool:
         """Sagt, ob die Art besonders geschuetzt ist.
@@ -248,7 +291,7 @@ class Catalog:
         Ein unbekannter Slug gilt als geschuetzt. Ein Fundort geht so im
         Zweifel grob heraus und nicht genau.
         """
-        profile = self.profile.get(slug)
+        profile = self.profiles.get(slug)
         return profile is None or profile.protected
 
     def scientific(self, slug: str) -> str | None:
@@ -256,18 +299,22 @@ class Catalog:
 
         Die Kette kennt nur diesen Namen. Ein Slug sagt ihr nichts.
         """
-        profile = self.profile.get(slug)
+        profile = self.profiles.get(slug)
         return None if profile is None else profile.scientific
 
     def species(self, slug: str) -> Species:
         """Eine Art mit Profil. Ein unbekannter Slug ist ein 404."""
-        profile = self.profile.get(slug)
+        profile = self.profiles.get(slug)
         if profile is None:
             raise NotFound(f"Die Art {slug} steht nicht im Katalog.")
         counts = self._counts(profile)
         all_years, current = self._series(profile)
         map_name = self.maps.get(slug)
-        tier = tier_for(counts.visits_with_find, has_map=map_name is not None)
+        tier = tier_for(
+            counts.visits_with_find,
+            has_map=map_name is not None,
+            collectable=profile.collectable,
+        )
         return Species(
             slug=slug,
             name=profile.name,
@@ -278,9 +325,18 @@ class Catalog:
             protected=profile.protected,
             edibility=profile.edibility,
             map_slug=map_name,
+            collectable=profile.collectable,
+            marketability=Marketability(marketable=profile.marketable, source=MARKET_SOURCE),
+            rating=profile.rating,
+            frequency=profile.frequency,
+            red_list=profile.red_list,
+            other_names=profile.other_names,
+            synonyms=profile.synonyms,
+            measurements=profile.measurements,
+            source=profile.source,
             forecast_planned=forecast_planned(counts.visits_with_find),
             visits_with_find=counts.visits_with_find,
-            peak_week=peak_week_of(all_years),
+            peak_week=peak_week_of(all_years) if profile.collectable else None,
             traits=build_traits(profile),
             lookalikes=profile.lookalikes,
             links=profile.links,
@@ -293,7 +349,9 @@ class Catalog:
                 visits=sum(self.table.visits_per_week),
                 visits_per_week_all_years=self._visits_all_years,
                 visits_per_week_current_year=self._visits_current_year,
-            ),
+            )
+            if profile.collectable
+            else None,
         )
 
 
@@ -314,6 +372,6 @@ def find_maps(profiles: dict[str, Profile], maps: Path) -> dict[str, str]:
 @lru_cache(maxsize=4)
 def catalog(data: Path, maps: Path) -> Catalog:
     """Baut den Katalog aus den Dateien. Der Prozess liest sie einmal."""
-    profile = read_profiles(data / "arten")
+    profiles = read_profiles(data / "arten")
     table = read_season(data / "saison.json")
-    return Catalog(table=table, profile=profile, maps=find_maps(profile, maps))
+    return Catalog(table=table, profiles=profiles, maps=find_maps(profiles, maps))

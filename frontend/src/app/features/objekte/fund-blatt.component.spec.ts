@@ -79,7 +79,7 @@ describe('FundBlattComponent', () => {
 
     expect(screen.getByRole('heading', { name: 'Steinpilz' })).toBeInTheDocument();
     expect(screen.getByText('6. September 2026 · 3 Stück · Frederik')).toBeInTheDocument();
-    expect(screen.getByText('geteilt')).toBeInTheDocument();
+    expect(screen.getByText('Geteilt')).toBeInTheDocument();
     expect(screen.getByText(FUND.notiz ?? '')).toBeInTheDocument();
     await keineVerstoesse(aufbau.container);
   });

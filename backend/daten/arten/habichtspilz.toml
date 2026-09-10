@@ -3,25 +3,40 @@ lateinisch = "Sarcodon imbricatus"
 gruppe = "stachelpilz"
 speisewert = "bedingtEssbar"
 geschuetzt = false
-jahreszeiten = ["herbst"]
+jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
-speisewertHinweis = "Nur jung. Ältere Stücke sind bitter. Wird als Würzpilz getrocknet."
+speisewertHinweis = "Nur junge Fruchtkörper. Im Alter wird er bitter und ist dann ungenießbar; eine Geschmacksprobe klärt das. Gelegentlich kommen Magen-Darm-Beschwerden vor. Gut zum Trocknen als Würzpilz."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "haeufig"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Habichtsstacheling", "Rehpilz"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Habichtspilz.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 15.0, seltenBis = 30.0 }
+sporenLaengeUm = { von = 5.0, bis = 8.5 }
+sporenBreiteUm = { von = 5.0, bis = 7.5 }
 
 [merkmale]
-hut = "8 bis 20 cm, graubraun, mit groben, dachziegelartig abstehenden dunklen Schuppen, in der Mitte vertieft."
-stacheln = "Unterseite mit grauen, herablaufenden Stacheln, die im Alter dunkeln."
-stiel = "Kurz, dick, graubraun."
-fleisch = "Weißlich bis grau, fest, im Alter zäh."
-geruch = "Würzig, im Alter unangenehm."
-geschmack = "Mild, im Alter bitter."
-sporenpulver = "Braun."
-vorkommen = "Mykorrhiza mit Fichte, in Bergwäldern und auf Sandböden, in Trupps."
-zeit = "August bis Oktober."
+hut = "6 bis 15, selten bis 30 cm breit, grauweißlich, braunweißlich bis hellbraun, dunkelbraun gefeldert, mit groben aufgerichteten Schuppen."
+stacheln = "Weißbraun, brüchig, wenig herablaufend."
+stiel = "Graubraun, Basis keulig."
+fleisch = "Weißlich bis schmutzig weiß, später hell graubraun, zäh und fest."
+geruch = "Würzig."
+geschmack = "Mild, im Alter bitterlich."
+sporenpulver = "Dunkelbraun."
+vorkommen = "Symbiosepilz, gern im Nadelwald, auch in Parks und Gärten. Die Form bei Kiefer wird als eigene Art abgetrennt. Regional häufig, in Deutschland gefährdet."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kiefernhabichtspilz"
-merkmal = "Schuppen feiner, bei Kiefer."
-essbar = "bedingtEssbar"
+name = "Gallenstacheling"
+merkmal = "Hut dunkelbraun und feiner braunschuppig, Stielbasis bläulich grünlich, Fleisch dort schwarzblau, Geschmack extrem scharf und bitter."
+essbar = "ungeniessbar"
+slug = "gallenstacheling"
 
 [[links]]
 titel = "123pilzsuche.de"

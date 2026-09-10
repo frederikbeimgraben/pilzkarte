@@ -1,0 +1,56 @@
+name = "Wurzelnder Bitterröhrling"
+lateinisch = "Caloboletus radicans"
+gruppe = "roehrling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "linde", "buche"]
+speisewertHinweis = "Extrem bitter, Magen-Darm-Beschwerden sind laut DGfM nicht ausgeschlossen. Zu erkennen am grauen bis grauweißen Hut, an den zitronengelben Röhren, am stark blauenden Fleisch und am Geruch nach Maggi oder Tinte."
+marktfaehig = false
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Bitterschwamm"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WurzelnderBitterroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 20.0, seltenBis = 25.0 }
+
+[merkmale]
+hut = "6 bis 20, selten bis 25 cm breit, grau, grauweiß bis braungrau, gefleckt, polsterförmig."
+roehren = "Gelblich, jung leuchtend zitronen- bis chromgelb, im Alter olivgelb. Druckstellen verfärben intensiv lagunenblau."
+stiel = "Gelblich mit gelbbräunlichem Netz, auf Druck rötlich oder braunrot fleckend. Basis wurzelartig verlängert und zugespitzt, etwas rosa bis rötlich."
+fleisch = "Blass gelblich, stark blauend, die Blaufärbung kann abgeschwächt sein oder ganz fehlen. Später bräunend oder marmoriert rötend, schwammig."
+geruch = "Unangenehm, etwas nach Maggi oder Tinte."
+geschmack = "Sehr bitter, vereinzelt etwas schärflich."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz in Laubwald, Parks und Gärten, meist bei Eiche, Linde und Buche, gern auf kalkreichem Boden. In Deutschland in unbekanntem Ausmaß gefährdet."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau und samtig, Stiel zur Basis karminrot, Fleisch blaut sofort, Geruch nicht nach Maggi."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Gallenröhrling"
+merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem dunklem Netz, Fleisch blaut nicht."
+essbar = "giftig"
+slug = "gallenroehrling"
+
+[[verwechslungen]]
+name = "Brauner Filzröhrling"
+merkmal = "Hut braun und samtig filzig, Stiel ohne Netz, Geschmack mild."
+essbar = "speisepilz"
+slug = "brauner-filzroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WurzelnderBitterroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Wurzelnder_Bitter-Röhrling"

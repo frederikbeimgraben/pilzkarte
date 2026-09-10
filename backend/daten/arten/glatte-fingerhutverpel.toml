@@ -1,0 +1,55 @@
+name = "Glatte Fingerhutverpel"
+lateinisch = "Verpa conica"
+gruppe = "morchel"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling"]
+baeume = []
+speisewertHinweis = "Roh giftig, nur gut durchgegart. Die Angaben zur Essbarkeit gehen auseinander, deshalb besser stehen lassen. In der Schweiz potenziell gefährdet, in Deutschland in unbekanntem Ausmaß gefährdet."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "selten"
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Fingerhutverpel", "Glockenverpel", "Fingerhutmorchel"]
+synonyme = ["Verpa digit aliformis", "Monka conica"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Verpel.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
+fruchtkoerperHoeheCm = { von = 1.0, bis = 5.0, seltenBis = 8.0 }
+sporenLaengeUm = { von = 28.0, bis = 34.0 }
+sporenBreiteUm = { von = 15.0, bis = 19.0 }
+
+[merkmale]
+fruchtkoerper = "2 bis 3, selten bis 4 cm breit und 1 bis 5, selten bis 8 cm hoch. Hellbraun, gelbbraun, rotbraun bis orangebraun, gerunzelt, mit Querrillen und Rippen. Unterseite ockerlich weißlich, jung eiförmig."
+stiel = "Weißlich bis hellbräunlich oder ockerbräunlich, feinkörnig und hohl."
+fleisch = "Weißlich, wachsartig, brüchig."
+geruch = "Unbedeutend."
+geschmack = "Neutral und mild, roh giftig."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer in Auen und Flussauen. Selten."
+zeit = "Frühling, April bis Mai."
+
+[[verwechslungen]]
+name = "Runzelige Fingerhutverpel"
+merkmal = "Fruchtkörper längsrunzelig bis netzig gefaltet statt nur quergerillt."
+essbar = "giftig"
+slug = "runzelige-fingerhutverpel"
+
+[[verwechslungen]]
+name = "Käppchenmorchel"
+merkmal = "Hut wabig gerippt und nur am Scheitel angewachsen, Rand frei abstehend."
+essbar = "bedingtEssbar"
+slug = "kaeppchenmorchel"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Verpel.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Fingerhut-Verpel"

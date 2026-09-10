@@ -1,0 +1,45 @@
+name = "Dottergelber Klumpfuß"
+lateinisch = "Cortinarius meinhardii"
+gruppe = "schleierling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "buche", "eiche"]
+speisewertHinweis = "Er ist wegen der Verwechslungsgefahr gefährlich. Zu erkennen an schwefelgelbem, schmierigem Hut mit rotbraunen Schuppen, chromgelbem Stiel mit gerandeter Knolle, rostbraunem Sporenpulver auf dem Stiel und dem widerlich erdigen Geruch."
+marktfaehig = false
+synonyme = ["Cortinarius splendens var. meinhardii", "Cortinarius vitellinus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/DottergelberKlumpfuss.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Im Fleisch olivbraun. Der ähnliche Schöngelbe Klumpfuß wird dunkel rotbraun."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 8.6, bis = 10.5 }
+sporenBreiteUm = { von = 5.3, bis = 6.4 }
+
+[merkmale]
+hut = "3 bis 10, selten bis 13 cm breit, schwefelgelb mit rotbraunen Schuppen, Huthaut schmierig bis schleimig."
+lamellen = "Kanariengelb, olivgelb bis braungelb, am Stiel ausgebuchtet angewachsen."
+stiel = "Chromgelb, mit rostbraunem Sporenpulver bestäubt, mit zwiebelartiger, gerandeter Knolle."
+fleisch = "Hellgelb, zitronengelb bis dottergelb, im Hut nicht heller als im Stiel."
+geruch = "Widerlich, erdig, streng und unangenehm, nicht mehlig."
+geschmack = "Mild."
+sporenpulver = "Rostbraun."
+vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, auch bei Buche und Eiche, gern auf kalkreichem Boden."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Röhren statt Lamellen, Stiel mit Ring und ohne gerandete Knolle, Geruch angenehm."
+essbar = "bedingtEssbar"
+slug = "goldroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/DottergelberKlumpfuss.htm"
