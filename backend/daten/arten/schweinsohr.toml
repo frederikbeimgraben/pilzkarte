@@ -1,14 +1,15 @@
 name = "Schweinsohr"
 lateinisch = "Gomphus clavatus"
 gruppe = "leistling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Besonders geschützt und in Deutschland gefährdet. Nicht sammeln."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Purpurleistling"]
@@ -43,13 +44,13 @@ slug = "purpuroranger-afterleistling"
 [[verwechslungen]]
 name = "Verbogener Leistling"
 merkmal = "Kleiner und dünnfleischig, Hut graubraun bis oliv, Leisten hell, ohne Violett."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "verbogener-leistling"
 
 [[verwechslungen]]
 name = "Kupferroter Gelbfuß"
 merkmal = "Hut kupferrot bis orangebraun, Leisten weinrötlich, Stielbasis leuchtend gelb."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kupferroter-gelbfuss"
 
 [[links]]

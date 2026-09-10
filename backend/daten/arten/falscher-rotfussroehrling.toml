@@ -3,12 +3,13 @@ lateinisch = "Xerocomellus porosporus"
 gruppe = "roehrling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "In Europa selten, in der Schweiz verletzlich. Kein Sammelpilz."
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "selten"
 weitereNamen = ["Falscher Rotfuß", "Düsterner Rotfußröhrling"]
 synonyme = ["Boletus porosporus", "Xerocomus porosporus", "Boletus porosporus var. americanus"]
@@ -42,7 +43,7 @@ slug = "schoenfussroehrling"
 [[verwechslungen]]
 name = "Maronenröhrling"
 merkmal = "Hut kastanienbraun, Röhren gelb und auf Druck blau, Stiel ohne rote Punkte."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "maronenroehrling"
 
 [[verwechslungen]]

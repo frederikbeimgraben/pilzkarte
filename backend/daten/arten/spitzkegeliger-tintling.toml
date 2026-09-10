@@ -3,11 +3,11 @@ lateinisch = "Coprinopsis acuminata"
 gruppe = "tintling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Stark giftig. Zu erkennen am stumpf spitzen, dunkleren Hutscheitel, den braunen Schuppen auf grauweißem Grund und der ringartigen Wulst an der verdickten Stielbasis."
-marktfaehig = false
 synonyme = ["Coprinus acuminatus", "Coprinus atramentarius var. acuminatus"]
 
 [quelle]

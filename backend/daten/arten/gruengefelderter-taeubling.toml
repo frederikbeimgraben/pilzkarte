@@ -1,13 +1,14 @@
 name = "Grüngefelderter Täubling"
 lateinisch = "Russula virescens"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "hainbuche"]
 speisewertHinweis = "Vor dem Einsammeln jeden Fruchtkörper mit der ganzen Stielbasis ausgraben: ein Täubling hat keine Scheide und keinen Ring."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Feldriger Täubling", "Grünschuppiger Täubling"]
 synonyme = ["Agaricus virescens", "Russula virescens var. albidocitrina", "Russula virescens f. erythrocephala", "Russula viridirubrolimbata", "Russula erythrocephala"]
 
@@ -58,19 +59,19 @@ slug = "gruener-knollenblaetterpilz"
 [[verwechslungen]]
 name = "Frauentäubling"
 merkmal = "Huthaut glatt und nicht felderig aufgerissen, Farben von grün über braun bis lila, Lamellen biegsam und nicht brechend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "frauentaeubling"
 
 [[verwechslungen]]
 name = "Rissiger Frauentäubling"
 merkmal = "Huthaut nur in der Mitte rissig, Farben oft violett bis lila, Lamellen biegsam."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rissiger-frauentaeubling"
 
 [[verwechslungen]]
 name = "Grasgrüner Täubling"
 merkmal = "Hut graugrün bis grasgrün und feucht schmierig, ohne Felder, Stiel längsgerieft."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grasgruener-taeubling"
 
 [[links]]

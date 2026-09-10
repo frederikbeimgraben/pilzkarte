@@ -1,13 +1,14 @@
 name = "Hasenbovist"
 lateinisch = "Lycoperdon utriforme"
 gruppe = "staeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden: zeigt der Schnitt Lamellenansätze, ist es ein junger Knollenblätterpilz."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Hasenstäubling"]
 synonyme = ["Handkea utriformis", "Calvatia utriformis", "Calvatia caelata", "Lycoperdon sinclairii"]
 
@@ -36,19 +37,19 @@ slug = "weisser-knollenblaetterpilz"
 [[verwechslungen]]
 name = "Riesenbovist"
 merkmal = "Deutlich größer, kugelig, Haut glatt und lederartig, Geruch unangenehm."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenbovist"
 
 [[verwechslungen]]
 name = "Flaschenstäubling"
 merkmal = "Kleiner, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen Stacheln besetzt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "flaschenbovist"
 
 [[verwechslungen]]
 name = "Beutelstäubling"
 merkmal = "Kleiner, bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "beutelstaeubling"
 
 [[verwechslungen]]

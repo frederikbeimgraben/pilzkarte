@@ -3,11 +3,11 @@ lateinisch = "Omphalotus olearius"
 gruppe = "trichterling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kastanie"]
 speisewertHinweis = "Sehr giftig. Er verursacht heftige Brechdurchfälle nach 15 Minuten bis 4 Stunden, meist durch Iludin; Leberschäden sind nicht ausgeschlossen. Er hat echte, ablösbare Lamellen statt Leisten, und Myzel und Lamellen leuchten nachts."
-marktfaehig = false
 haeufigkeit = "haeufig"
 weitereNamen = ["Ölbaumpilz", "Orangefarbener Ölbaumtrichterling", "Dunkler Ölbaumtrichterling"]
 synonyme = ["Omphalotus illudens"]
@@ -56,7 +56,7 @@ slug = "fuchsiger-roetelritterling"
 [[verwechslungen]]
 name = "Samtpfifferling"
 merkmal = "Kleiner, mit gelblichen, weit herablaufenden Leisten statt Lamellen, Hut samtig zottig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "samtpfifferling"
 
 [[links]]

@@ -1,14 +1,14 @@
 name = "Grossscheidiger Scheidenstreifling"
 lateinisch = "Amanita magnivolvata"
 gruppe = "wulstling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh giftig, also keine Kostversuche. Selten, in der Schweiz auf der Roten Liste."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "selten"
 weitereNamen = ["Grossscheidiger Streifling"]
 

@@ -1,14 +1,15 @@
 name = "Verbogener Leistling"
 lateinisch = "Pseudocraterellus undulatus"
 gruppe = "leistling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Nicht selten, aber wegen der kleinen, dunklen Fruchtkörper schwer zu finden."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "selten"
 weitereNamen = ["Krause Kraterelle", "Vollstieliger Leistling", "Krauser Leistling"]
 

@@ -1,14 +1,15 @@
 name = "Violettstieliger Pfirsichtäubling"
 lateinisch = "Russula violeipes (russula amoena var. violeipes, russula violeipes f. citrina)"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ältere Fruchtkörper riechen heringsartig; dann besser stehen lassen."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Violettstieliger Brätlingstäubling"]
 
@@ -49,7 +50,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Ockertäubling"
 merkmal = "Hut hellgelb bis gelbocker, kahl und matt, Stiel weiß ohne Lilaton, Geschmack etwas bitterlich."
-essbar = "ohneSpeisewert"
+essbar = "minderwertig"
 slug = "ockertaeubling"
 
 [[links]]

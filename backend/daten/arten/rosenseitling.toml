@@ -3,12 +3,12 @@ lateinisch = "Pleurotus djamor"
 gruppe = "seitling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
 speisewertHinweis = "Essbar. In Mitteleuropa ist er nur als Zuchtpilz zu erwarten."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Rosenroter Seitling", "Rosa Seitling", "Rosafarbener Seitling"]
 
 [quelle]
@@ -34,19 +34,19 @@ zeit = "Ganzjaehrig."
 [[verwechslungen]]
 name = "Schweinsohr"
 merkmal = "Trichterfoermig mit derben herablaufenden Leisten statt Lamellen, am Boden im Nadelwald."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schweinsohr"
 
 [[verwechslungen]]
 name = "Lungenseitling"
 merkmal = "Hut milchweiss bis cremeweiss und duennfleischig, im Sommer an Laubholz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "lungenseitling"
 
 [[verwechslungen]]
 name = "Rillstieliger Seitling"
 merkmal = "Stiel deutlich ausgepraegt und rillig, Lamellen queradrig verbunden."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rillstieliger-seitling"
 
 [[links]]

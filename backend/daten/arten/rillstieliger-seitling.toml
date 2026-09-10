@@ -1,14 +1,14 @@
 name = "Rillstieliger Seitling"
 lateinisch = "Pleurotus cornucopiae"
 gruppe = "seitling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["weide", "ulme", "pappel"]
 speisewertHinweis = "Roh enthält er Hämolysine und zersetzt rote Blutkörperchen. Nur durchgegart essen."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 weitereNamen = ["Verzweigter Austernseitling"]
 synonyme = ["Pleurotus ostreatus var. cornucopiae", "Crepidotus cornucopiae", "Pocillaria cornucopioides"]
@@ -44,13 +44,13 @@ slug = "ohrfoermiger-seitling"
 [[verwechslungen]]
 name = "Austernseitling"
 merkmal = "Hut muschelförmig und grau bis graubraun, Lamellen laufen nicht bis zur Stielbasis, im Winterhalbjahr."
-essbar = "bedingtEssbar"
+essbar = "guterSpeisepilz"
 slug = "austernseitling"
 
 [[verwechslungen]]
 name = "Lungenseitling"
 merkmal = "Hut weißlich bis cremefarben, Stiel sehr kurz und seitlich, ohne Längsrillen."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "lungenseitling"
 
 [[links]]

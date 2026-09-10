@@ -3,11 +3,11 @@ lateinisch = "Osteina obducta"
 gruppe = "porling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
 speisewertHinweis = "Ungenießbar, weil das Fleisch zäh ist und trocken steinhart wird. Vermutlich ungiftig."
-marktfaehig = false
 gefaehrdung = "extremSelten"
 synonyme = ["Grifola ossea", "Oligoporus obductus", "Grifola obducta", "Scutiger osseus", "Polypilus osseus"]
 

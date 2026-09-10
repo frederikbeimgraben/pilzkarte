@@ -1,16 +1,21 @@
 name = "Espen-Rotkappe"
 lateinisch = "Leccinum aurantiacum"
 gruppe = "raufussroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["pappel"]
 speisewertHinweis = "Fleisch wird beim Kochen schwarz. In Deutschland gefährdet."
-marktfaehig = false
-wertigkeit = 1
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Espenrotkappe", "Weißstielige Rotkappe", "Rothäubchen", "Pappelrotkappe", "Rothaut-Röhrling"]
 synonyme = ["Leccinum quercinum", "Leccinum rufum", "Leccinum albostipitatum", "Leccinum populinum"]
+
+[baeumeAusErfahrung]
+baeume = ["eiche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Espenrotkappe.htm"
@@ -45,19 +50,19 @@ zeit = "Frühling bis Spätherbst."
 [[verwechslungen]]
 name = "Birken-Rotkappe"
 merkmal = "Stielschuppen schwärzlich statt orangebraun, bei Birke."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "birken-rotkappe"
 
 [[verwechslungen]]
 name = "Fichtenrotkappe"
 merkmal = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenrotkappe"
 
 [[verwechslungen]]
 name = "Fuchsrotkappe"
 merkmal = "Hut fuchsrot bis rotbraun und samtig, Fleisch am Stiel rosa bis braun."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fuchsrotkappe"
 
 [[links]]

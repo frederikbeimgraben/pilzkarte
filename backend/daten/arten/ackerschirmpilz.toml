@@ -1,14 +1,14 @@
 name = "Ackerschirmpilz"
 lateinisch = "Macrolepiota excoriata"
 gruppe = "schirmling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Bei allen Riesenschirmlingen muss der Ring am Stiel verschiebbar sein. Roh ist er unbekömmlich."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Ackerriesenschirmpilz", "Geschundener Schirmling", "Ackerschirmling"]
@@ -49,7 +49,7 @@ slug = "gruensporschirmling"
 [[verwechslungen]]
 name = "Parasol"
 merkmal = "Deutlich größer, Stiel mit dunkelbrauner Natterung."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
 
 [[links]]

@@ -1,14 +1,14 @@
 name = "Schuppiger Sägeblättling"
 lateinisch = "Neolentinus lepideus"
 gruppe = "seitling"
-speisewert = "ungeniessbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["laerche", "kiefer"]
 speisewertHinweis = "Ungenießbar, weil das Fleisch rasch zäh wird. Nur ganz junge Fruchtkörper gelten als essbar."
-marktfaehig = false
-wertigkeit = 4
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchuppigerSaegeblaettling.htm"
@@ -41,7 +41,7 @@ slug = "becherfoermiger-saegeblaettling"
 [[verwechslungen]]
 name = "Schuppiger Porling"
 merkmal = "Unterseite mit weiten Poren statt Lamellen, Stielbasis schwarz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schuppiger-porling"
 
 [[verwechslungen]]

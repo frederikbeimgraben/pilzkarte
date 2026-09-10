@@ -3,11 +3,11 @@ lateinisch = "Clitocybe maxima (infundibulicybe geotropa var. maxima)"
 gruppe = "trichterling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "haeufig"
 synonyme = ["Clitocybe maxima", "Infundibulicybe geotropa", "Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe geotropa var. minor", "Clitocybe maxima sensu"]
 
@@ -36,13 +36,13 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Mönchskopf"
 merkmal = "Hut mit deutlich fühlbarem Buckel in der Mitte, sonst sehr ähnlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "moenchskopf"
 
 [[verwechslungen]]
 name = "Riesenkrempentrichterling"
 merkmal = "Hut weiß bis cremeweiß, Rand krempenartig gerollt, Stiel kurz und dick."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenkrempentrichterling"
 
 [[verwechslungen]]

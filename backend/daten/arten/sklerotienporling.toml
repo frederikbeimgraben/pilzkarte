@@ -3,12 +3,12 @@ lateinisch = "Polyporus tuberaster"
 gruppe = "porling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur junge Fruchtkörper verwenden, ältere werden zäh. Der leicht bittere Geschmack verliert sich beim Zubereiten."
-marktfaehig = true
-wertigkeit = 3
 weitereNamen = ["Kleiner Schuppenporling"]
 
 [quelle]
@@ -38,7 +38,7 @@ zeit = "Frühling bis Herbst."
 [[verwechslungen]]
 name = "Schuppiger Porling"
 merkmal = "Deutlich größer, Hut mit groben braunen Schuppen, Stielbasis schwarz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schuppiger-porling"
 
 [[links]]

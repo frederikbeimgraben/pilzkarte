@@ -3,12 +3,12 @@ lateinisch = "Cortinarius triumphans"
 gruppe = "schleierling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "In Deutschland gefährdet (Rote Liste 3), in der Schweiz verletzlich. Besser stehen lassen."
-marktfaehig = true
-wertigkeit = 4
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Gelbfußschleimkopf", "Gelbgegürtelter Schleimkopf"]
@@ -41,7 +41,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Kuhmaul"
 merkmal = "Lamellen dick, weit stehend und herablaufend, Hut graubraun und schleimig, Stielbasis innen leuchtend gelb."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kuhmaul"
 
 [[links]]

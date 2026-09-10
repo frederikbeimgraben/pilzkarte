@@ -1,15 +1,20 @@
 name = "Rotgelber Stoppelpilz"
 lateinisch = "Hydnum rufescens"
 gruppe = "stoppelpilz"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Sind die Stoppeln länger als drei Millimeter, schmeckt er oft etwas bitter. Die Größe des Fruchtkörpers sagt darüber nichts aus."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Semmelstoppelpilz", "Rostgelber Semmelstoppelpilz", "Semmelgelber Stacheling", "Rotgelber Semmelstoppelpilz", "Orangeroter Stoppelpilz"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte", "buche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
@@ -34,25 +39,25 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Ellipsoidsporige Stoppelpilz"
 merkmal = "Nur 2 bis 5 cm breit, Hut gelborange bis terrakottafarben."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ellipsoidsporige-stoppelpilz"
 
 [[verwechslungen]]
 name = "Genabelter Semmelstoppelpilz"
 merkmal = "Hutmitte genabelt und vertieft, extrem selten."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "genabelter-semmelstoppelpilz"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Poren statt Stoppeln, Hut semmelgelb bis orangebraun, schmeckt schnell bitterlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Schafporling"
 merkmal = "Poren statt Stoppeln, Hut weiß bis schmutzig weiß, Stiel mit graubraunen Flecken."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schafporling"
 
 [[links]]

@@ -3,11 +3,11 @@ lateinisch = "Russula raoultii"
 gruppe = "taeubling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Er schmeckt scharf und wird gern für den milden Ockertäubling gehalten. Im Zweifel Sporen nehmen: Bei ihm ist das Pulver weiß, beim Ockertäubling gelblich."
-marktfaehig = false
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Weißblättriger Ockertäubling"]
 synonyme = ["Russula ochroleuca var. raoultii", "Russula emetica f. raoultii", "Russula fragilis var. nivea sensu", "Russula fragilis var. raoultii", "Russula raoultii var. meridionalis"]
@@ -59,7 +59,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Ockertäubling"
 merkmal = "Größer, Hut gelbocker bis olivocker, Geschmack höchstens leicht schärflich, Sporenpulver gelblich."
-essbar = "ohneSpeisewert"
+essbar = "minderwertig"
 slug = "ockertaeubling"
 
 [[links]]

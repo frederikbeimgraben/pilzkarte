@@ -3,11 +3,11 @@ lateinisch = "Inocybe lanuginosa"
 gruppe = "schleierling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Tödlich giftig, wie alle Risspilze mindestens verdächtig. Kennzeichen sind der wollig-filzige braune Hut mit fransig überstehendem Rand, der erdig-spermatische Geruch und das tabakbraune Sporenpulver."
-marktfaehig = false
 synonyme = ["Astrosporina lanuginosa", "Agaricus lanuginosus", "Inocybe lanuginosa var. lanuginosa"]
 
 [quelle]

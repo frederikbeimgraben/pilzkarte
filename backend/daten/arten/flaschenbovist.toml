@@ -1,14 +1,15 @@
 name = "Flaschenbovist"
 lateinisch = "Lycoperdon perlatum"
 gruppe = "staeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "flaschenbovist"
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden."
-marktfaehig = true
-wertigkeit = 2
 weitereNamen = ["Flaschenstäubling", "Warzen-Stäubling", "Würziger Staubbuff", "Warziger Staubbuff", "Nonnefürzli", "Judenfurzpilz", "Fohenfist"]
 synonyme = ["Lycoperdon perlatum var. perlatum", "Lycoperdon gemmatum var. perlatum", "Lycoperdon gemmatum"]
 
@@ -40,13 +41,13 @@ slug = "birnenstaeubling"
 [[verwechslungen]]
 name = "Bräunlicher Stäubling"
 merkmal = "Birnenförmig, bräunlich, mit dunkelbraunen Stacheln."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "braeunlicher-staeubling"
 
 [[verwechslungen]]
 name = "Igelstäubling"
 merkmal = "Stacheln stehen in Gruppen zusammengeneigt, Spitzen weißlich."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "igelstaeubling"
 
 [[verwechslungen]]
@@ -58,7 +59,7 @@ slug = "rauer-staeubling"
 [[verwechslungen]]
 name = "Beutelstäubling"
 merkmal = "Bis 25 cm hoch, Außenhaut fällt großflächig ab, Fleisch alt purpurbraun."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "beutelstaeubling"
 
 [[links]]

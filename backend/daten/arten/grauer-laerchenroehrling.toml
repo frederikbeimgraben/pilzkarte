@@ -1,14 +1,14 @@
 name = "Grauer Lärchenröhrling"
 lateinisch = "Suillus viscidus"
 gruppe = "schmierroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
 speisewertHinweis = "Von der DGfM als Speisepilz geführt. Er ist selten, deshalb nur wenig mitnehmen."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "selten"
 synonyme = ["Suillus laricinus", "Suillus aeruginascens"]
 
@@ -40,7 +40,7 @@ essbar = "essbar"
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Bei Lärche, Hut goldgelb bis rostgelb, Röhren goldgelb, Stiel mit Ring."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[links]]

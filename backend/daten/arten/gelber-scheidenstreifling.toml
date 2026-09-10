@@ -1,14 +1,14 @@
 name = "Gelber Scheidenstreifling"
 lateinisch = "Amanita contui"
 gruppe = "wulstling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Roh giftig, nur durchgegart essen. Er hat wie alle Scheidenstreiflinge keinen Ring, deshalb ist die Scheide an der Basis stets freizulegen und mit den Knollenblätterpilzen zu vergleichen."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "selten"
 synonyme = ["Amanita flavescens", "Amanitopsis flavescens", "Amanitopsis vaginata var. flavescens"]
 
@@ -39,7 +39,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Fuchsiger Scheidenstreifling"
 merkmal = "Hut fuchsig orangebraun statt gelb, Stiel ohne die deutliche Natterung."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "fuchsiger-scheidenstreifling"
 
 [[links]]

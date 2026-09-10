@@ -3,11 +3,11 @@ lateinisch = "Coprinopsis strossmayeri"
 gruppe = "tintling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als ungenießbar und verdächtig. Nicht essen."
-marktfaehig = false
 synonyme = ["Coprinus strossmayeri"]
 
 [quelle]

@@ -1,14 +1,15 @@
 name = "Rissiger Frauentäubling"
 lateinisch = "Russula cutefracta"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Guter Speisepilz. Er ist selten und steht in der Schweiz auf der Vorwarnliste."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "selten"
 weitereNamen = ["Rissiger Zinnober-Täubling", "Risshütiger Frauentäubling", "Rissiger Papageientäubling"]
 synonyme = ["Russula cyanoxantha var. cutefracta"]
@@ -46,19 +47,19 @@ zeit = "Fruehsommer bis Spaetherbst."
 [[verwechslungen]]
 name = "Gruengefelderter Taeubling"
 merkmal = "Hut grasgruen bis graugruen, Huthaut feldrig aufgerissen, Lamellen bruechig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gruengefelderter-taeubling"
 
 [[verwechslungen]]
 name = "Olivfarbener Frauentaeubling"
 merkmal = "Huthaut glatt statt rissig, Hut einfarbig olivfarben."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "olivfarbener-frauentaeubling"
 
 [[verwechslungen]]
 name = "Grasgruener Taeubling"
 merkmal = "Hut gleichmaessig grasgruen, Huthaut nicht gefeldert."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grasgruener-taeubling"
 
 [[links]]

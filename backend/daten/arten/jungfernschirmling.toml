@@ -3,11 +3,11 @@ lateinisch = "Leucoagaricus nympharum"
 gruppe = "schirmling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er verursacht möglicherweise Magen-Darm-Störungen. Zu erkennen am Fleisch, das bei Verletzung nicht rötet, sondern höchstens im Alter etwas grau wird, und am Stiel ohne Natterung."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Jungfern Riesenschirmling"]
 synonyme = ["Macrolepiota puellaris", "Macrolepiota nympharum"]
@@ -41,13 +41,13 @@ slug = "buescheliger-egerlingsschirmling"
 [[verwechslungen]]
 name = "Parasol"
 merkmal = "Stiel mit dunkelbrauner Natterung, Hut bis 25, selten 30 cm breit, Geruch nussartig."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
 
 [[verwechslungen]]
 name = "Safranschirmling"
 merkmal = "Fleisch bei Verletzung sofort safranrötlich anlaufend, Stielbasis verdickt aber ohne abgesetzte Knolle."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "safranschirmling"
 
 [[links]]

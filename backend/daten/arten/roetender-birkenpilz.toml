@@ -3,12 +3,13 @@ lateinisch = "Leccinum oxydabile"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 3
+marktfaehigSchweiz = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Raufussroehrlinge sind besonders geschuetzt, diese Art ist zudem extrem selten. Nur kleine Mengen fuer den Eigenbedarf oder den Fund stehen lassen."
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "sehrSelten"
 synonyme = ["Leccinum scabrum var. oxydabile", "Krombholzia oxydabilis", "Krombholzia scabra f. oxydabilis", "Boletus scaber var. oxydabilis", "Boletus scaber f. oxydabilis"]
 
@@ -37,13 +38,13 @@ zeit = "Sommer bis Spaetherbst."
 [[verwechslungen]]
 name = "Vielverfaerbender Birkenpilz"
 merkmal = "Fleisch im Schnitt erst rosa, dann grauschwarz, Stielbasis blaugruen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "vielverfaerbender-birkenpilz"
 
 [[verwechslungen]]
 name = "Hainbuchenroehrling"
 merkmal = "Bei Hainbuche und Hasel, Hut ockerbraun mit hammerschlagartig unebener Oberflaeche."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "hainbuchenroehrling"
 
 [[links]]

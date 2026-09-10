@@ -1,14 +1,15 @@
 name = "Falscher Anhängselröhrling"
 lateinisch = "Butyriboletus subappendiculatus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Selten und wärmeliebend, in der Schweiz auf der Roten Liste. Wenn überhaupt, nur einzelne Fruchtkörper nehmen."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "selten"
 weitereNamen = ["Nadelwald Anhängselröhrling", "Gelber Steinpilz"]
 synonyme = ["Boletus subappendiculatus"]
@@ -50,7 +51,7 @@ slug = "schoenfussroehrling"
 [[verwechslungen]]
 name = "Steinpilz"
 merkmal = "Röhren weiß, dann gelb bis oliv, Netz am Stiel weiß, Fleisch weiß und nicht zitronengelb."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "steinpilz"
 
 [[links]]

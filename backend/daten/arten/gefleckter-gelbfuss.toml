@@ -3,12 +3,12 @@ lateinisch = "Gomphidius maculatus"
 gruppe = "gelbfuss"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
 speisewertHinweis = "Selten. In der Schweiz auf der Roten Liste als potenziell gefährdet geführt."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 weitereNamen = ["Fleckender Lärchenschmierling", "Fleckender Lärchen-Schmierling", "Fleckender Gelbfuß", "Fleckender Schmierling"]
 synonyme = ["Gomphidius gracilis"]
@@ -36,7 +36,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Aprikosen-Gelbfuß"
 merkmal = "Hut aprikosen- bis orangefarben, ohne die schwarzbraunen Druckflecken."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "aprikosen-gelbfuss"
 
 [[links]]

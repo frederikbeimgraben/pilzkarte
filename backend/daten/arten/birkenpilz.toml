@@ -1,14 +1,15 @@
 name = "Birkenpilz"
 lateinisch = "Leccinum scabrum"
 gruppe = "raufussroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 karte = "birkenpilz"
 speisewertHinweis = "Jung sammeln. Im Alter wird das Fleisch schwammig."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Gemeiner Birkenpilz", "Langhaxen", "Graugrüner Birkenpilz"]
 
 [quelle]
@@ -40,19 +41,19 @@ slug = "roetender-birkenpilz"
 [[verwechslungen]]
 name = "Vielverfärbender Birkenpilz"
 merkmal = "Fleisch erst hellrosa, dann stark kornblumenblau."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "vielverfaerbender-birkenpilz"
 
 [[verwechslungen]]
 name = "Schwarzhütiger Birkenpilz"
 merkmal = "Hut dunkel schwarzbraun und feinsamtig, Stielbasis keulig und oft schwarz."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schwarzhuetiger-birkenpilz"
 
 [[verwechslungen]]
 name = "Hainbuchenröhrling"
 merkmal = "Huthaut wie gehämmert runzelig, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "hainbuchenroehrling"
 
 [[links]]

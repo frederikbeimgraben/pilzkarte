@@ -1,14 +1,15 @@
 name = "Fichtenreizker"
 lateinisch = "Lactarius deterrimus"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 karte = "reizker"
 speisewertHinweis = "Schmeckt bitterlich und leicht scharf, geringer als der Edelreizker."
-marktfaehig = true
-wertigkeit = 2
 weitereNamen = ["Nadelwaldreizker"]
 synonyme = ["Lactarius deliciosus var. deterrimus"]
 
@@ -37,25 +38,25 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Edelreizker"
 merkmal = "Milch bleibt karottenrot, Stiel mit orangefarbenen Grübchen, bei Kiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "edelreizker"
 
 [[verwechslungen]]
 name = "Lachsreizker"
 merkmal = "Hut genabelt bis trichterförmig, bei Tanne."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lachsreizker"
 
 [[verwechslungen]]
 name = "Blaureizker"
 merkmal = "Hut graurosa bis rosa-lehmfarben, Lamellen laufen grünlich bis weinrot an."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "blaureizker"
 
 [[verwechslungen]]
 name = "Weinroter Reizker"
 merkmal = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkelbraun."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "weinroter-reizker"
 
 [[links]]

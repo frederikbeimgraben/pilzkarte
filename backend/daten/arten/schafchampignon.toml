@@ -1,13 +1,14 @@
 name = "Schafchampignon"
 lateinisch = "Agaricus arvensis"
 gruppe = "champignon"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Anis-Egerlinge gilben nur an der Oberfläche. Gilbt die Stielbasis im Schnitt kräftig und riecht der Pilz nach Karbol, ist es ein Karbolegerling."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Schaf-Champignon", "Weißer Anisegerling", "Ackerblätterling", "Schaf-Egerling", "Weißer Anis-Champignon"]
 
 [quelle]
@@ -59,7 +60,7 @@ slug = "falscher-wiesenegerling"
 [[verwechslungen]]
 name = "Wiesenchampignon"
 merkmal = "Kleiner, ohne Anisgeruch, Ring verkümmert, Stiel ohne Knolle, Fleisch rötet statt zu gilben."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "wiesenchampignon"
 
 [[links]]

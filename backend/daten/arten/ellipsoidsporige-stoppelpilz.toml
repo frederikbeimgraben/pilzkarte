@@ -1,14 +1,15 @@
 name = "Ellipsoidsporige Stoppelpilz"
 lateinisch = "Ellipsoidsporige Stoppelpilz"
 gruppe = "stoppelpilz"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Jung sammeln. Alte Stücke werden bitter und beim längeren Kauen etwas scharf."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Kleinwüchsiger Semmelstoppelpilz"]
 
@@ -35,19 +36,19 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Genabelter Semmelstoppelpilz"
 merkmal = "Hut in der Mitte deutlich genabelt, blasser gefärbt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "genabelter-semmelstoppelpilz"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Poren statt Stoppeln auf der Hutunterseite."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Schafporling"
 merkmal = "Hut weißlich, Unterseite mit feinen Poren statt Stacheln."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schafporling"
 
 [[links]]

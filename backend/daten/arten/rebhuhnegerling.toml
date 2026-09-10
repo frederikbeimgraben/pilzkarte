@@ -3,11 +3,11 @@ lateinisch = "Agaricus phaeolepidotus"
 gruppe = "champignon"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen am schwach tintigen, karbolartigen Geruch nach Phenol und faulem Stroh und an der Stielbasis, die bei Verletzung chromgelb gilbt und später braunrot wird. Nicht essen."
-marktfaehig = false
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Rebhuhnchampignon"]
 synonyme = ["Psalliota phaeolepidota"]
@@ -41,13 +41,13 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Waldchampignon"
 merkmal = "Fleisch bei Verletzung gelborange und später blutrot, Geruch angenehm pilzig und leicht fruchtig."
-essbar = "bedingtEssbar"
+essbar = "guterSpeisepilz"
 slug = "waldchampignon"
 
 [[verwechslungen]]
 name = "Riesenchampignon"
 merkmal = "Deutlich größer, Geruch anisartig nach Bittermandeln, Ring breit und dick."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenchampignon"
 
 [[links]]

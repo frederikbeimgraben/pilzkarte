@@ -1,14 +1,15 @@
 name = "Ringloser Butterröhrling"
 lateinisch = "Suillus collinitus"
 gruppe = "schmierroehrling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehigSchweiz = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "Essbar, aber ohne Wert. Die Schweiz fuehrt ihn als nicht marktfaehig, 123pilze gibt nur Wertigkeit 4."
-marktfaehig = false
-wertigkeit = 4
 weitereNamen = ["Ringloser Butterpilz", "Ringloser Butter-Röhrling", "Rosafüßiger Körnchen-Röhrling"]
 synonyme = ["Suillus fluryi"]
 
@@ -39,19 +40,19 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Schmerling"
 merkmal = "Stielbasis nicht rosa, Stielspitze mit milchigen Droepfchen, unter der Huthaut ohne braune Faserung."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "koernchenroehrling"
 
 [[verwechslungen]]
 name = "Goldroehrling"
 merkmal = "Hut goldgelb bis ockergelb, Stiel mit haeutigem Ring, bei Laerche."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[verwechslungen]]
 name = "Sandroehrling"
 merkmal = "Huthaut trocken, matt und koernig filzig, Fleisch blauend."
-essbar = "speisepilz"
+essbar = "sehrGuterSpeisepilz"
 slug = "sandroehrling"
 
 [[links]]

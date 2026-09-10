@@ -3,11 +3,11 @@ lateinisch = "Hericium coralloides"
 gruppe = "stachelbart"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "tanne"]
 speisewertHinweis = "Selten und in Deutschland auf der Roten Liste. Kleine Mengen nehmen oder den Fund stehen lassen."
-marktfaehig = true
-wertigkeit = 3
 haeufigkeit = "selten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Buchenstachelbart", "Eiskoralle", "Bartkoralle"]
@@ -47,7 +47,7 @@ slug = "rasiges-stachelspitzchen"
 [[verwechslungen]]
 name = "Igelstachelbart"
 merkmal = "Unverzweigt, ein Klumpen mit langen herabhängenden Stacheln."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "igelstachelbart"
 
 [[verwechslungen]]

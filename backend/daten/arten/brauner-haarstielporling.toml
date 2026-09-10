@@ -3,11 +3,11 @@ lateinisch = "Jahnoporus hirtus"
 gruppe = "porling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Er schmeckt schärflich bis bitterlich. In Deutschland vom Aussterben bedroht und deshalb stehen zu lassen."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 gefaehrdung = "vomAussterbenBedroht"
 synonyme = ["Piptoporus hirtus", "Polyporus lucienqueletii", "Cerioporus lucienqueletii", "Polyporus hirtus", "Albatrellus hirtus", "Favolus hirtus", "Polyporellus hirtus", "Polyporus hispidellus"]
@@ -35,19 +35,19 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Bergporling"
 merkmal = "Hut braun und samtig, Fächer aus einem gemeinsamen Strunk, Geschmack schnell extrem scharf, an Weißtanne."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "bergporling"
 
 [[verwechslungen]]
 name = "Riesenporling"
 merkmal = "Poren auf Druck schwärzend, Fleisch im Schnitt braunschwarz, an Laubholzstümpfen."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "riesenporling"
 
 [[verwechslungen]]
 name = "Schuppiger Porling"
 merkmal = "Hut mit konzentrisch angeordneten braunen Schuppen, Stiel seitlich und im Alter mit schwarzer Basis, an Laubholz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schuppiger-porling"
 
 [[links]]

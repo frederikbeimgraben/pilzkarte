@@ -1,14 +1,15 @@
 name = "Sandröhrling"
 lateinisch = "Suillus variegatus"
 gruppe = "schmierroehrling"
-speisewert = "speisepilz"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Guter Speisepilz, in der Schweiz aber nicht marktfaehig."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Hirsepilz"]
 synonyme = ["Boletus variegatus", "Versipellis variegata", "Suillus variegatus f. rubescens", "Boletus aureus", "Boletus squalidus", "Boletopsis squalida", "Ixocomus variegatus", "Suillus squalidus"]
 
@@ -37,7 +38,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Ziegenlippe"
 merkmal = "Hut olivbraun bis gelbbraun und samtig, Roehren grob und gelb, bei Laubbaeumen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ziegenlippe"
 
 [[verwechslungen]]

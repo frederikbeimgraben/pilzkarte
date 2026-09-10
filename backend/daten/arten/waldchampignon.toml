@@ -1,15 +1,20 @@
 name = "Waldchampignon"
 lateinisch = "Agaricus sylvaticus"
 gruppe = "champignon"
-speisewert = "bedingtEssbar"
+speisewert = "guterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nicht roh essen, roh ist er möglicherweise unverträglich. Durchgaren, und früh sammeln, denn er wird schnell madig. Riecht ein Champignon nach Karbol, Tinte oder Fisch, oder gilbt er an der Stielbasis ohne Anisgeruch, bleibt er stehen."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Waldegerling", "Kleiner Blutegerling"]
 synonyme = ["Psalliota silvatica var. pallida", "Agaricus haemorrhoidarius forma fagetorum", "Agaricus silvaticus var. vinosobrunneus", "Psalliota sanguinaria", "Agaricus silvaticus"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Waldegerling.htm"
@@ -60,7 +65,7 @@ slug = "spitzschuppiger-schirmling"
 [[verwechslungen]]
 name = "Großer Waldchampignon"
 merkmal = "Größer, Hut ockerbräunlich bis dunkelbraun mit rostbraunen Fasern, Lamellen rosa, im Alter dunkel rotbraun, Ring doppelrandig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grosser-waldchampignon"
 
 [[verwechslungen]]

@@ -3,10 +3,10 @@ lateinisch = "Mucronella calva"
 gruppe = "stachelpilz"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter"]
 baeume = ["kiefer", "fichte", "tanne"]
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Rasiges Pfriempilzchen"]
 
@@ -30,7 +30,7 @@ zeit = "Herbst bis Winter."
 [[verwechslungen]]
 name = "Igelstachelbart"
 merkmal = "Großer weißer Klumpen mit langen herabhängenden Stacheln, an Laubholz."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "igelstachelbart"
 
 [[links]]

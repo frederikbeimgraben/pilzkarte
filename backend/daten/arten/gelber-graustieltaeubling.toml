@@ -1,13 +1,14 @@
 name = "Gelber Graustieltäubling"
 lateinisch = "Russula claroflava"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke", "pappel"]
 speisewertHinweis = "Sehr selten und in Deutschland gefährdet. Nur einzelne Fruchtkörper nehmen. Ritzt man den Stiel schon im Wald an, färbt sich die Stelle nach etwa 15 Minuten rötlich und nach ein bis zwei Stunden grau; das erspart die Kostprobe."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 
@@ -58,19 +59,19 @@ slug = "blassgelber-taeubling"
 [[verwechslungen]]
 name = "Ockertäubling"
 merkmal = "Hut gelbocker, honiggelb bis rostrot und matt, Fleisch grauend ohne vorheriges Röten, Geschmack etwas bitterlich."
-essbar = "ohneSpeisewert"
+essbar = "minderwertig"
 slug = "ockertaeubling"
 
 [[verwechslungen]]
 name = "Violettstieliger Pfirsichtäubling"
 merkmal = "Stiel später rosalila überhaucht und netzig warzig, Geruch im Alter heringsartig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "violettstieliger-pfirsichtaeubling"
 
 [[verwechslungen]]
 name = "Orangeroter Graustieltäubling"
 merkmal = "Hut gelborange, ziegelrot bis kupferfarben, im Nadelwald und Torfmoor."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "orangeroter-graustieltaeubling"
 
 [[links]]

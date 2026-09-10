@@ -1,16 +1,21 @@
 name = "Mönchskopf"
 lateinisch = "Infundibulicybe geotropa"
 gruppe = "trichterling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Alte Stiele sind wässrig und zäh und bleiben besser stehen. Unter den Trichterlingen stehen einige tödlich giftige Arten; nur mit sicherer Bestimmung sammeln."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "haeufig"
 weitereNamen = ["Falber Riesentrichterling"]
 synonyme = ["Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe maxima sensu", "Infundibulicybe geotropa var. maxima", "Clitocybe geotropa var. minor"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MoenchskopfEssbar1004.htm"
@@ -59,13 +64,13 @@ slug = "riesentrichterling"
 [[verwechslungen]]
 name = "Riesenkrempentrichterling"
 merkmal = "Hut weiß bis blassocker, im Alter mit braunen Flecken und kreisförmigen Rissen, Geruch mehlig, Geschmack nussig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenkrempentrichterling"
 
 [[verwechslungen]]
 name = "Rillstieliger Weichritterling"
 merkmal = "Hut rotbraun bis kastanienbraun und stark ausblassend, Lamellen nur mit einem Zahn herablaufend, Stiel rillig gestreift."
-essbar = "essbar"
+essbar = "minderwertig"
 slug = "rillstieliger-weichritterling"
 
 [[links]]

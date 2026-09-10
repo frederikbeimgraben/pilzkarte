@@ -1,14 +1,15 @@
 name = "Kiefernrotkappe"
 lateinisch = "Leccinum vulpinum"
 gruppe = "raufussroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Roh stark unverträglich, nur durchgegart essen. In Deutschland stark gefährdet und als Raufußröhrling besonders geschützt, deshalb höchstens für den Eigenbedarf sammeln."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Fuchsrotkappe", "Föhrenrotkappe", "Fuchsröhrling"]
@@ -37,19 +38,19 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Fichtenrotkappe"
 merkmal = "Stiel mit schwarzen faserigen Schüppchen, bei Fichte und Heidelbeere."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenrotkappe"
 
 [[verwechslungen]]
 name = "Birkenrotkappe"
 merkmal = "Stiel mit schwärzlichen Schüppchen, Fleisch violettgrau und schwach blauend, bei Birke."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "birken-rotkappe"
 
 [[verwechslungen]]
 name = "Espenrotkappe"
 merkmal = "Stielschüppchen orangebraun statt schwarz, bei Espe und Zitterpappel."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "espen-rotkappe"
 
 [[links]]

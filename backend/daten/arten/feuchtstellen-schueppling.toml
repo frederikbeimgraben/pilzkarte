@@ -3,10 +3,10 @@ lateinisch = "Pholiota conissans"
 gruppe = "schueppling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["weide"]
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Feuchtstellen Schüppling", "Weidenschüppling", "Weißbehangener Schüppling", "Feuchtstellenschüppling"]
 synonyme = ["Pholiota graminis", "Pholiota inaurata", "Hypholoma graminis", "Flammula graminis", "Flammula muricella", "Dryophila muricella var. graminis"]
@@ -48,7 +48,7 @@ slug = "nadelschueppling"
 [[verwechslungen]]
 name = "Stockschwämmchen"
 merkmal = "Wächst büschelig an Laubholzstümpfen, Stiel unter dem Ring dunkelbraun beschuppt."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
 
 [[links]]

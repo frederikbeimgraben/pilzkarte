@@ -1,14 +1,15 @@
 name = "Schwarzhütiger Birkenpilz"
 lateinisch = "Leccinum melaneum"
 gruppe = "raufussroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 2
+marktfaehigSchweiz = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Guter Speisepilz, als Raufußröhrling aber besonders geschützt. Nur wenige Stücke für den Eigenbedarf nehmen."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "selten"
 weitereNamen = ["Schwärzlicher Birkenpilz"]
 synonyme = ["Leccinum scabrum var. melaneum", "Krombholzia scabra f. melanea", "Krombholziella melanea", "Boletus melaneus", "Boletus scaber var. melaneus"]
@@ -36,7 +37,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Vielverfärbender Birkenpilz"
 merkmal = "Fleisch im Schnitt rosa, dann grau bis schwärzlich verfärbend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "vielverfaerbender-birkenpilz"
 
 [[verwechslungen]]
@@ -48,7 +49,7 @@ slug = "roetender-birkenpilz"
 [[verwechslungen]]
 name = "Hainbuchenröhrling"
 merkmal = "Hut ocker- bis graubraun und im Alter runzelig, bei Hainbuche, Fleisch rötend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "hainbuchenroehrling"
 
 [[links]]

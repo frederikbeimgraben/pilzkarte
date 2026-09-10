@@ -1,13 +1,14 @@
 name = "Edelreizker"
 lateinisch = "Lactarius deliciosus"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 karte = "reizker"
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Echter Reizker", "Kiefernreizker", "Kiefern Blutreizker", "Röstling", "Karottenmilchling", "Rizke", "Kiefernblut-Reizker", "Reske"]
 
 [quelle]
@@ -36,19 +37,19 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Fichtenreizker"
 merkmal = "Milch wird nach etwa 15 Minuten weinrot, Stiel ohne Grübchen, bei Fichte."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenreizker"
 
 [[verwechslungen]]
 name = "Lachsreizker"
 merkmal = "Hut genabelt bis trichterförmig, bei Tanne."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lachsreizker"
 
 [[verwechslungen]]
 name = "Spangrüner Kiefernreizker"
 merkmal = "Lamellen mit deutlich blaugrünen Tönen, Stielgrübchen flach."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "spangruener-kiefernreizker"
 
 [[links]]

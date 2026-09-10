@@ -1,13 +1,14 @@
 name = "Orangeroter Graustieltäubling"
 lateinisch = "Russula decolorans"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "tanne", "fichte"]
-marktfaehig = true
-wertigkeit = 1
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OrangGraustieltaeub.htm"
@@ -49,7 +50,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Gelber Graustieltäubling"
 merkmal = "Hut rein chromgelb bis zitronengelb, nicht orangerot. Auf moorigem saurem Boden bei Birke."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gelber-graustieltaeubling"
 
 [[links]]

@@ -3,11 +3,11 @@ lateinisch = "Panellus serotinus"
 gruppe = "seitling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = []
 speisewertHinweis = "Fleisch zäh, Geschmack oft bitterlich."
-marktfaehig = false
 weitereNamen = ["Gelbstieliger Zwergknäueling", "Später Seitling", "Gelber Muscheling", "Mukitake"]
 
 [quelle]
@@ -35,13 +35,13 @@ zeit = "Herbst bis Frühling."
 [[verwechslungen]]
 name = "Austernseitling"
 merkmal = "Stiel ohne gelbe Töne, die Lamellen laufen ohne Abgrenzung tief am Stiel herab."
-essbar = "bedingtEssbar"
+essbar = "guterSpeisepilz"
 slug = "austernseitling"
 
 [[verwechslungen]]
 name = "Rillstieliger Seitling"
 merkmal = "Stiel deutlich gerillt, Hut hell graubraun, Fleisch nicht bitter."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rillstieliger-seitling"
 
 [[verwechslungen]]

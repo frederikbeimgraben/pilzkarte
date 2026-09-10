@@ -3,12 +3,12 @@ lateinisch = "Entoloma sepium"
 gruppe = "roetling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["obstbaum"]
 speisewertHinweis = "Nur etwas für Kenner, denn mehrere Rötlinge sind giftig und der Riesenrötling gilt als tödlich giftig. In Deutschland auf der Vorwarnliste."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "selten"
 weitereNamen = ["Blasser Pflaumen-Rötling", "Blassbrauner Schlehenrötling", "Blasser Rötling"]
 synonyme = ["Rhodophyllus sepius", "Agaricus sepius", "Entoloma saundersii sensu", "Entoloma clypeatum var. sepium"]
@@ -52,7 +52,7 @@ slug = "riesenroetling"
 [[verwechslungen]]
 name = "Maipilz"
 merkmal = "Lamellen bleiben weiß bis cremefarben, Sporenpulver weiß, Geruch stark mehlig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "maipilz"
 
 [[links]]

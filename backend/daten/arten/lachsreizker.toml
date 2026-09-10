@@ -1,14 +1,15 @@
 name = "Lachsreizker"
 lateinisch = "Lactarius salmonicolor"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["herbst"]
 baeume = ["tanne"]
 karte = "reizker"
 speisewertHinweis = "Schmeckt etwas bitterlich. Der rote Farbstoff färbt den Urin bis zum nächsten Tag, das ist harmlos."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Weißtannenreizker"]
 synonyme = ["Lactarius salmoneus", "Lactarius subsalmoneus", "Lactarius thyinos", "Lactarius salmonicolor f. brigantiacus"]
 
@@ -38,25 +39,25 @@ zeit = "Herbst bis Spätherbst."
 [[verwechslungen]]
 name = "Fichtenreizker"
 merkmal = "Hut mit kräftigen grünen Flecken vor allem in der Mitte, Stiel ohne Grübchen, bei Fichte."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenreizker"
 
 [[verwechslungen]]
 name = "Edelreizker"
 merkmal = "Hut mit konzentrisch getropften Flecken, Milch kaum veränderlich, Stiel kurz und mit orangefarbenen Grübchen, bei Kiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "edelreizker"
 
 [[verwechslungen]]
 name = "Blaureizker"
 merkmal = "Hut graurosa bis rosa-lehmfarben, Grübchen am Stiel blassgrünlich, Milch erst nach 20 Minuten weinrötlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "blaureizker"
 
 [[verwechslungen]]
 name = "Weinroter Reizker"
 merkmal = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkel blutrot, Milch nach 20 Minuten grünend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "weinroter-reizker"
 
 [[links]]

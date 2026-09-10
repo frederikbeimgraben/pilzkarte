@@ -1,14 +1,15 @@
 name = "Runzelige Fingerhutverpel"
 lateinisch = "Verpa cerebriformis"
 gruppe = "morchel"
-speisewert = "giftig"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Nur gut durchgegart verwenden und das Kochwasser weggiessen. Er ist selten und sollte besser stehen bleiben."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "selten"
 synonyme = ["Verpa conica var. cerebriformis"]
 
@@ -34,13 +35,13 @@ zeit = "Fruehling, April bis Mai."
 [[verwechslungen]]
 name = "Kaeppchenmorchel"
 merkmal = "Hut glockig, glatt bis laengsrunzelig, nur am Scheitel mit dem Stiel verwachsen."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "kaeppchenmorchel"
 
 [[verwechslungen]]
 name = "Speisemorchel"
 merkmal = "Hut mit wabenartigen Gruben, Hut und Stiel sind zu einem durchgehenden Hohlraum verwachsen."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "speisemorchel"
 
 [[links]]

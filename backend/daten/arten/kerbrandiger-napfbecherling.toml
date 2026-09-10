@@ -3,10 +3,10 @@ lateinisch = "Tarzetta cupularis"
 gruppe = "becherling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
-marktfaehig = false
 weitereNamen = ["Napfförmiger Kelchbecherling"]
 synonyme = ["Pustulina cupularis", "Tarzetta cupularis var. velata"]
 
@@ -32,7 +32,7 @@ zeit = "Frühjahr bis Herbst."
 [[verwechslungen]]
 name = "Judasohr"
 merkmal = "Ohrförmig und gallertartig, wächst an Laubholz, meist an Holunder, nicht auf Erde."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "judasohr"
 
 [[links]]

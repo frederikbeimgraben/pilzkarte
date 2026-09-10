@@ -3,11 +3,11 @@ lateinisch = "Galerina marginata"
 gruppe = "schleierling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Tödlich giftig, 100 bis 150 Gramm sind absolut tödlich und schon eine Kostprobe kann schwere Organschäden verursachen. Vom Stockschwämmchen trennt ihn der weiß-silbrig überfaserte Stiel ohne braune Schüppchen und der muffige Geruch nach faulendem Holz. Zur Bestimmung ist immer der Stiel nötig."
-marktfaehig = false
 weitereNamen = ["Nadelholzhäubling"]
 
 [quelle]
@@ -50,7 +50,7 @@ zeit = "Winterende bis Spätherbst."
 [[verwechslungen]]
 name = "Stockschwämmchen"
 merkmal = "Stiel unterhalb des Rings braun geschuppt statt weiß-silbrig überfasert, Geruch angenehm pilzig."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
 
 [[links]]

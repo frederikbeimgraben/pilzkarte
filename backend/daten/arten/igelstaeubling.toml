@@ -1,14 +1,14 @@
 name = "Igelstäubling"
 lateinisch = "Lycoperdon echinatum"
 gruppe = "staeubling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 6
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilze gibt ihm die Relative Wertigkeit 6."
-marktfaehig = false
-wertigkeit = 6
 synonyme = ["Lycoperdon gemmatum var. echinatum", "Utraria echinata", "Lycoperdon hoylei", "Lycoperdum echinatum sensu"]
 
 [quelle]
@@ -31,7 +31,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Flaschenstäubling"
 merkmal = "Keulig bis birnenförmig mit stielartigem Teil, Stacheln blass und pyramidenartig, ohne bleibendes Netzmuster."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "flaschenbovist"
 
 [[verwechslungen]]
@@ -43,7 +43,7 @@ slug = "birnenstaeubling"
 [[verwechslungen]]
 name = "Bräunlicher Stäubling"
 merkmal = "Stachelspitzen braun statt weißlich, Stacheln leicht abwischbar, danach kein Netzmuster."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "braeunlicher-staeubling"
 
 [[links]]

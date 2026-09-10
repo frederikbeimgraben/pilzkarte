@@ -1,14 +1,19 @@
 name = "Austernseitling"
 lateinisch = "Pleurotus ostreatus"
 gruppe = "seitling"
-speisewert = "bedingtEssbar"
+speisewert = "guterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Austernpilz", "Kalbfleischpilz", "Buchenschwamm", "Drehling", "Austernschwamm", "Eichhännchen", "Muschelpilz", "Sommerauster"]
+
+[baeumeAusErfahrung]
+baeume = ["pappel", "weide"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Austernseitling1105.htm"
@@ -49,13 +54,13 @@ slug = "gelbstieliger-muschelseitling"
 [[verwechslungen]]
 name = "Rillstieliger Seitling"
 merkmal = "Lamellen queradrig und netzig verbunden, laufen bis zur Stielbasis."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rillstieliger-seitling"
 
 [[verwechslungen]]
 name = "Lungenseitling"
 merkmal = "Nie rein weiß, sondern milchweiß bis cremeweiß, dünnfleischiger, im Sommer."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "lungenseitling"
 
 [[verwechslungen]]

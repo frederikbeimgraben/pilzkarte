@@ -3,11 +3,11 @@ lateinisch = "Agaricus maleolens"
 gruppe = "champignon"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungenießbar wegen des widerlich fischartigen Geruchs."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Übelriechender Champignon"]
 synonyme = ["Psalliota ingrata", "Agaricus ingratus", "Agaricus bernardii syn. maleolens", "Agaricus ingratus syn. maleolens", "Agaricus ingratus var. maleolens"]
@@ -45,7 +45,7 @@ slug = "rebhuhnegerling"
 [[verwechslungen]]
 name = "Wiesenchampignon"
 merkmal = "Hut weiß und glatt, Ring vergänglich, Stielbasis ohne Knolle, Geruch angenehm pilzig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "wiesenchampignon"
 
 [[links]]

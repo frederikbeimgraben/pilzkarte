@@ -3,10 +3,11 @@ lateinisch = "Leucoagaricus leucothites"
 gruppe = "schirmling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
+warnung = "123pilzsuche führt den Rosablättrigen Egerlingsschirmling als giftig. Dazu kommt die Verwechslung mit weißen Knollenblätterpilzen, die tödlich endet."
 speisewertHinweis = "Die DGfM meldet häufig Magen-Darm-Beschwerden. Er galt früher als essbar. Wegen der Verwechslung mit Knollenblätterpilzen ganz meiden."
-marktfaehig = false
 weitereNamen = ["Rosablättriger Egerlingsschirmpilz", "Gemeiner Egerlingsschirmling"]
 
 [quelle]

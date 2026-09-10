@@ -3,11 +3,11 @@ lateinisch = "Inocybe aeruginascens"
 gruppe = "schleierling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["pappel", "weide", "linde", "eiche"]
 speisewertHinweis = "Giftig und halluzinogen. Das Grünen an Stiel und Fleisch ist das sicherste Merkmal."
-marktfaehig = false
 weitereNamen = ["Grünlichverfärbender Risspilz"]
 
 [quelle]
@@ -32,7 +32,7 @@ zeit = "Frühling bis Sommer."
 [[verwechslungen]]
 name = "Nelkenschwindling"
 merkmal = "Hut ledergelb mit stumpfem Buckel, Lamellen blass creme und entfernt, Stiel zäh und verdrehbar, Sporenpulver weiß."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "nelkenschwindling"
 
 [[links]]

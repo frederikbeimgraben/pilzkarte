@@ -2,7 +2,7 @@
 
 from typing import Annotated
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 
 from app.core.settings import Einstellungen, einstellungen
 from app.modules.arten.katalog import DATEN, Katalog, katalog
@@ -18,12 +18,25 @@ def aktueller_katalog(
     return katalog(DATEN, werte.maps)
 
 
-@router.get("", summary="Alle sammelbaren Arten")
+@router.get("", summary="Die sammelbaren Arten")
 async def arten_liste(
     gewaehlt: Annotated[Katalog, Depends(aktueller_katalog)],
+    *,
+    sammelbar: Annotated[
+        bool,
+        Query(description="true liefert die sammelbaren Arten, false die Verwechslungsarten."),
+    ] = True,
+    alle: Annotated[
+        bool,
+        Query(description="Liefert beide Gruppen zusammen und schlaegt sammelbar."),
+    ] = False,
 ) -> ArtenListe:
-    """Liefert jede Art mit Stufe, Tags und der Saisonkurve aller Jahre."""
-    return gewaehlt.liste()
+    """Liefert die Arten mit Stufe, Tags und der Saisonkurve aller Jahre.
+
+    Ohne Parameter kommen nur die sammelbaren Arten. Die Verwechslungsarten
+    gehoeren nicht in denselben Reiter wie die Speisepilze.
+    """
+    return gewaehlt.liste(nur_sammelbare=None if alle else sammelbar)
 
 
 @router.get("/{slug}", summary="Profil einer Art")

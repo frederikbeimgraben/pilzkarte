@@ -1,14 +1,15 @@
 name = "Böhmische Verpel"
 lateinisch = "Verpa bohemica"
 gruppe = "morchel"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["pappel", "weide"]
 speisewertHinweis = "Roh giftig wie alle Morcheln. Durchgaren. Riecht der Fund fischartig, ist er verdorben."
 schutzHinweis = "Die Verordnung nennt die Morcheln (Morchella). Die Verpeln stehen nicht darin, werden aber leicht mit ihnen verwechselt."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Runzelverpel", "Böhmische Morchel"]
@@ -36,31 +37,31 @@ zeit = "Februar bis Juni, in kälteren Lagen nicht vor Anfang April."
 [[verwechslungen]]
 name = "Runzelige Fingerhutverpel"
 merkmal = "Hut stark hirnartig gerunzelt, kastanien- bis rotbraun."
-essbar = "giftig"
+essbar = "essbar"
 slug = "runzelige-fingerhutverpel"
 
 [[verwechslungen]]
 name = "Glatte Fingerhutverpel"
 merkmal = "Hut nur gerunzelt mit Querrillen, ohne hochgestellte Längsrillen."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "glatte-fingerhutverpel"
 
 [[verwechslungen]]
 name = "Käppchenmorchel"
 merkmal = "Stiel hohl, das Käppchen ist zu einem Drittel mit ihm verwachsen und meist zugespitzt."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "kaeppchenmorchel"
 
 [[verwechslungen]]
 name = "Spitzmorchel"
 merkmal = "Käppchen mit Kammern und ganz am Stiel angewachsen."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "spitzmorchel"
 
 [[verwechslungen]]
 name = "Speisemorchel"
 merkmal = "Käppchen wabenartig und ganz am Stiel angewachsen."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "speisemorchel"
 
 [[links]]

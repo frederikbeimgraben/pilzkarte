@@ -3,11 +3,11 @@ lateinisch = "Caloboletus radicans"
 gruppe = "roehrling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "linde", "buche"]
 speisewertHinweis = "Extrem bitter, Magen-Darm-Beschwerden sind laut DGfM nicht ausgeschlossen. Zu erkennen am grauen bis grauweißen Hut, an den zitronengelben Röhren, am stark blauenden Fleisch und am Geruch nach Maggi oder Tinte."
-marktfaehig = false
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Bitterschwamm"]
 
@@ -44,7 +44,7 @@ slug = "gallenroehrling"
 [[verwechslungen]]
 name = "Brauner Filzröhrling"
 merkmal = "Hut braun und samtig filzig, Stiel ohne Netz, Geschmack mild."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "brauner-filzroehrling"
 
 [[links]]

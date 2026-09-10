@@ -3,11 +3,12 @@ lateinisch = "Suillus bovinus"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Etwas säuerlich, guter Mischpilz und Trockenpilz. Beim Kochen läuft das Fleisch rosa bis leicht violett an."
-marktfaehig = true
-wertigkeit = 3
 weitereNamen = ["Kuhpilz"]
 synonyme = ["Mariaella bovina", "Ixocomus bovinus", "Boletus bovinus"]
 
@@ -35,13 +36,13 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Erlengrübling"
 merkmal = "Hut gelblich bis olivgelb mit grübchenartig vertiefter Oberfläche, Röhren auf Druck grünblau, nur bei Erle."
-essbar = "giftig"
+essbar = "bedingtEssbar"
 slug = "erlengruebling"
 
 [[verwechslungen]]
 name = "Sandröhrling"
 merkmal = "Röhren fein und eng statt grob und eckig, Stielfleisch gelblich und blauend, Basis meist keulig verdickt."
-essbar = "speisepilz"
+essbar = "sehrGuterSpeisepilz"
 slug = "sandroehrling"
 
 [[verwechslungen]]
@@ -53,13 +54,13 @@ slug = "hohlfussroehrling"
 [[verwechslungen]]
 name = "Schmerling"
 merkmal = "Röhren zitronengelb und jung milchig tropfend, Stiel bräunlich punktiert."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "koernchenroehrling"
 
 [[verwechslungen]]
 name = "Ziegenlippe"
 merkmal = "Hut wildlederartig filzig, Röhren jung leuchtend gelb, Stiel fast weiß, lang und schlank."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ziegenlippe"
 
 [[links]]

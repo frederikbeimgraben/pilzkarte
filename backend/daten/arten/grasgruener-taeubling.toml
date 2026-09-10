@@ -1,14 +1,14 @@
 name = "Grasgrüner Täubling"
 lateinisch = "Russula aeruginea"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer", "birke"]
 speisewertHinweis = "Bei grünen Täublingen mit weichen Lamellen ist besondere Vorsicht nötig, denn der Grüne Knollenblätterpilz kann ebenso grün sein. Auf Ring, Scheide und Knolle achten."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Grasgrüner Birkentäubling"]
 synonyme = ["Russula furcata", "Russula graminicolor"]
 
@@ -67,13 +67,13 @@ slug = "gruener-knollenblaetterpilz"
 [[verwechslungen]]
 name = "Violettstieliger Pfirsichtäubling"
 merkmal = "Hut ockergelb bis pfirsichfarben, Stiel violett überhaucht."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "violettstieliger-pfirsichtaeubling"
 
 [[verwechslungen]]
 name = "Frauentäubling"
 merkmal = "Hut bunt gemischt aus Grün, Violett, Grau und Rosa, Lamellen deutlich brüchig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "frauentaeubling"
 
 [[links]]

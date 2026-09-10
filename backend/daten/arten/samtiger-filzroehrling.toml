@@ -1,14 +1,14 @@
 name = "Samtiger Filzröhrling"
 lateinisch = "Xerocomus lanatus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Guter Speisepilz, in der Schweiz aber nicht marktfaehig."
-marktfaehig = false
-wertigkeit = 2
 synonyme = ["Boletus lanatus", "Boletus subtomentosus"]
 
 [quelle]
@@ -38,13 +38,13 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Brauner Filzroehrling"
 merkmal = "Stiel ohne Netzzeichnung, Hut olivbraun, Fleisch kaum blauend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "brauner-filzroehrling"
 
 [[verwechslungen]]
 name = "Ziegenlippe"
 merkmal = "Hut olivbraun bis gelbbraun und samtig, Stiel ohne Netz, unter der Huthaut nicht rosa."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ziegenlippe"
 
 [[verwechslungen]]

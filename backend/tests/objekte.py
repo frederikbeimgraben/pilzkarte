@@ -54,7 +54,7 @@ def _profil(name: str, lateinisch: str, *, geschuetzt: bool) -> Profil:
         name=name,
         lateinisch=lateinisch,
         gruppe=Gruppe.ROEHRLING,
-        speisewert=Essbarkeit.SPEISEPILZ,
+        speisewert=Essbarkeit.GUTER_SPEISEPILZ,
         geschuetzt=geschuetzt,
         jahreszeiten=[Jahreszeit.HERBST],
         baeume=[Baumart.FICHTE],

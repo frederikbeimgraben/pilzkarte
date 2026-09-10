@@ -1,14 +1,14 @@
 name = "Buchen-Schleimrübling"
 lateinisch = "Mucidula mucida"
 gruppe = "schleimruebling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 karte = "schleimruebling"
 speisewertHinweis = "Essbar, aber ohne Wert. Die Huthaut lässt sich gummiartig abziehen."
-marktfaehig = false
-wertigkeit = 4
 weitereNamen = ["Beringter Schleimrübling", "Buchenschleimrübling"]
 synonyme = ["Oudemansiella mucida", "Agaricus mucidus"]
 
@@ -49,13 +49,13 @@ slug = "weisser-dachpilz"
 [[verwechslungen]]
 name = "Seidiger Dachpilz"
 merkmal = "Hut elfenbeinweiß mit dunklerem Scheitel, Lamellen später rotbraun, ohne Ring."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "seidiger-dachpilz"
 
 [[verwechslungen]]
 name = "Olivgrauer Schneckling"
 merkmal = "Hut dunkelbraun bis olivgrau, Stiel genattert, Lamellen wachsartig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "olivgrauer-schneckling"
 
 [[verwechslungen]]

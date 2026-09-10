@@ -1,14 +1,19 @@
 name = "Sommersteinpilz"
 lateinisch = "Boletus reticulatus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "linde", "kastanie"]
 schutzHinweis = "Die Verordnung nennt Boletus edulis, Boletus aereus und Boletus appendiculatus, nicht aber Boletus reticulatus. Dieses Projekt behandelt ihn gleich."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Eichensteinpilz", "Herrenpilz", "Schwarzer Steinpilz", "Steini"]
+
+[baeumeAusErfahrung]
+baeume = ["hainbuche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sommersteinpilz2004.htm"
@@ -37,19 +42,19 @@ slug = "gallenroehrling"
 [[verwechslungen]]
 name = "Fichtensteinpilz"
 merkmal = "Netz nur im oberen Stielteil, unter der Huthaut eine rotbräunliche Zone."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "steinpilz"
 
 [[verwechslungen]]
 name = "Maronenröhrling"
 merkmal = "Hut glatt und feucht, Röhren gelblich bis grüngelb und auf Druck blaugrün, Stiel ohne Netz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "maronenroehrling"
 
 [[verwechslungen]]
 name = "Schwarzhütiger Steinpilz"
 merkmal = "Hut kastanien- bis schwarzbraun oder hell bronzefarben, Stiel faserig rillig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schwarzhuetiger-steinpilz"
 
 [[links]]

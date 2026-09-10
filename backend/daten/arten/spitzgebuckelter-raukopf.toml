@@ -3,11 +3,11 @@ lateinisch = "Cortinarius rubellus"
 gruppe = "schleierling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Enthält Orellanin und schädigt Nieren und Leber; niemals probieren. Zu erkennen am spitz gebuckelten rotbraunen Hut, den zimtbraunen Lamellen und dem genatterten Stiel ohne echten Ring. Er wächst bei Fichte, oft zwischen Trompetenpfifferlingen."
-marktfaehig = false
 weitereNamen = ["Spitzbuckeliger Raukopf", "Prächtiger Schleierling", "Spitzgebuckelter Orangeschleierling", "Spitzkegeliger Raukopf"]
 
 [quelle]

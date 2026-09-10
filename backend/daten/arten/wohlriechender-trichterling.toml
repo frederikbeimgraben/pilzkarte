@@ -3,11 +3,11 @@ lateinisch = "Clitocybe obsoleta"
 gruppe = "trichterling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Giftig. Zu erkennen am aufdringlich anis- bis fenchelartigen Geruch, am hygrophanen graubraunen Hut mit eingedrückter Mitte und am knorpelig-elastischen, oft breitgedrückten Stiel."
-marktfaehig = false
 weitereNamen = ["Fleischbräunlicher Anistrichterling"]
 synonyme = ["Omphalia obsoleta", "Agaricus obsoletus"]
 

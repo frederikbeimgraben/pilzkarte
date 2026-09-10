@@ -3,11 +3,11 @@ lateinisch = "Auricularia mesenterica"
 gruppe = "ohrlappenpilz"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["esche", "pappel", "buche", "birke"]
 speisewertHinweis = "Fleisch trocken hart und hornartig, ohne Speisewert."
-marktfaehig = false
 weitereNamen = ["Falsches Judasohr"]
 synonyme = ["Merulioporia violacea", "Stereum mesentericum", "Meruliopsis violacea", "Exidia gemmata f. violacea", "Tremella corrugata", "Auricularia lobata"]
 
@@ -34,7 +34,7 @@ zeit = "Ganzjährig."
 [[verwechslungen]]
 name = "Judasohr"
 merkmal = "Dünner und ohrförmig, gegen das Licht durchscheinend, Oberfläche nur fein filzig und nicht bunt gezont."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "judasohr"
 
 [[links]]

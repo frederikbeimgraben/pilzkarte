@@ -1,14 +1,14 @@
 name = "Blaureizker"
 lateinisch = "Lactarius quieticolor"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in der Schweiz stark gefährdet. Wenn überhaupt, nur wenige Fruchtkörper nehmen."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Wechselblauer Edelreizker", "Blaumilch-Kiefernreizker", "Brauner Kiefern-Blutreizker"]
 
@@ -36,19 +36,19 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Spangrüner Kiefernreizker"
 merkmal = "Milch orangerot und bald weinrot bis dunkelrot, Geschmack herb und bitterlich, Stiel mit flachen dunklen Grübchen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "spangruener-kiefernreizker"
 
 [[verwechslungen]]
 name = "Fichtenreizker"
 merkmal = "Hut feucht stark schleimig und grünfleckig, Stiel ohne Grübchen, bei Fichte."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenreizker"
 
 [[verwechslungen]]
 name = "Lachsreizker"
 merkmal = "Stiel mit rötlichen bis orangeroten Grübchen, bei Weißtanne."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lachsreizker"
 
 [[links]]

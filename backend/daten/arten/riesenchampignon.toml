@@ -1,13 +1,14 @@
 name = "Riesenchampignon"
 lateinisch = "Agaricus augustus"
 gruppe = "champignon"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Gilbende Champignons reichern Cadmium an, einige Mykologen raten deshalb von großen Mengen ab. Riecht ein Champignon nach Karbol, Tinte oder Medizinschrank, gehört er nicht in den Korb."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Braunschuppiger Riesenegerling"]
 synonyme = ["Agaricus augustus var. perrarus", "Psalliota subrufescens"]
 
@@ -60,13 +61,13 @@ slug = "rebhuhnegerling"
 [[verwechslungen]]
 name = "Großer Waldchampignon"
 merkmal = "Fleisch verfärbt sich im Schnitt sofort blutrot, Geruch nicht anisartig, im Nadelwald."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grosser-waldchampignon"
 
 [[verwechslungen]]
 name = "Kleiner Wald-Champignon"
 merkmal = "Deutlich kleiner, Fleisch bei Verletzung gelborange und später blutrot, im sauren Nadelwald."
-essbar = "speisepilz"
+essbar = "guterSpeisepilz"
 slug = "kleiner-wald-champignon"
 
 [[links]]

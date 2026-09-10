@@ -1,14 +1,14 @@
 name = "Eichenzunge"
 lateinisch = "Piptoporus quercinus"
 gruppe = "porling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 4
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche"]
 speisewertHinweis = "Nur ganz jung weich, sonst hart. Die Wertigkeit liegt bei 4. In Deutschland vom Aussterben bedroht, deshalb stehen lassen."
-marktfaehig = false
-wertigkeit = 4
 haeufigkeit = "sehrSelten"
 gefaehrdung = "vomAussterbenBedroht"
 weitereNamen = ["Eichenzungenporling"]

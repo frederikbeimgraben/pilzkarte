@@ -3,11 +3,11 @@ lateinisch = "Tricholoma scalpturatum = gilbender erdritterling + tricholoma sca
 gruppe = "ritterling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Kenntlich an den beim Reiben gilbenden Lamellen und am ranzig mehligen Geruch. Die Gilbung bleibt oft aus, deshalb ist er schwer zu bestimmen und von den giftigen Erdritterlingen kaum sicher zu trennen."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Gilbernder Erdritterling", "Silbergrauer Erdritterling"]
 

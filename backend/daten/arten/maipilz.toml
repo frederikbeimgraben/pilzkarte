@@ -1,15 +1,20 @@
 name = "Maipilz"
 lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["pappel", "laerche"]
 speisewertHinweis = "Ohne den starken Mehlgeruch stehen lassen. Zur selben Zeit und am selben Ort wachsen tödlich giftige Risspilze."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Mairitterling", "Georgsritterling", "Gelber Schönkopf", "Maischönkopf", "Huf-Ritterling Mairitterling", "Maiblattl", "Huf-Ritterling"]
+
+[baeumeAusErfahrung]
+baeume = ["hainbuche", "eiche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
@@ -60,7 +65,7 @@ slug = "orangeroter-mairitterling"
 [[verwechslungen]]
 name = "Mehlräsling"
 merkmal = "Lamellen laufen herab und werden rosa, Sporenpulver rosa."
-essbar = "speisepilz"
+essbar = "sehrGuterSpeisepilz"
 slug = "mehlraesling"
 
 [[links]]

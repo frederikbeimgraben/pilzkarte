@@ -3,11 +3,11 @@ lateinisch = "Chrysomphalina grossula"
 gruppe = "trichterling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter"]
 baeume = []
 speisewertHinweis = "Kann bei empfindlichen Personen Magen-Darm-Störungen auslösen, die schnell wieder vergehen."
-marktfaehig = false
 weitereNamen = ["Gelbgrüner Ellerling", "Olivgelber Nabeling", "Gelbgrüner Nabeling", "Gelboliver Ellerling"]
 
 [quelle]
@@ -33,13 +33,13 @@ zeit = "Herbst bis Winter."
 [[verwechslungen]]
 name = "Gelbstieliger Trompetenpfifferling"
 merkmal = "Hut braun bis graubraun, Stiel leuchtend gelb, Unterseite mit Leisten statt Lamellen, wächst am Boden."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gelbstieliger-trompetenpfifferling"
 
 [[verwechslungen]]
 name = "Trompetenpfifferling"
 merkmal = "Hut graubraun und trichterig, Unterseite mit graulila Leisten, wächst am Boden."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "trompetenpfifferling"
 
 [[links]]

@@ -1,14 +1,15 @@
 name = "Schopftintling"
 lateinisch = "Coprinus comatus"
 gruppe = "tintling"
-speisewert = "bedingtEssbar"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 karte = "schopftintling"
 speisewertHinweis = "Roh etwas unverträglich. Nur junge, ganz weiße Fruchtkörper nehmen und rasch verarbeiten; rötliche oder schwarze Teile sind nicht mehr brauchbar."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Spargelpilz", "Schopfpilz", "Tintenpilz", "Porzellantintling"]
 synonyme = ["Coprinus porcellanus", "Coprinus ovatus", "Coprinus comatus var. caprimammillatus", "Coprinus comatus var. ovatus", "Agaricus porcellanus"]
 

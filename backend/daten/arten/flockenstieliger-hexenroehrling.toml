@@ -1,16 +1,21 @@
 name = "Flockenstieliger Hexenröhrling"
 lateinisch = "Neoboletus erythropus"
 gruppe = "roehrling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["fichte", "buche"]
 karte = "hexen_flock"
 speisewertHinweis = "Roh unverträglich. Gut durchgaren."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Flocki", "Zigeuner", "Hexenpilz"]
+
+[baeumeAusErfahrung]
+baeume = ["tanne"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flocki.htm"

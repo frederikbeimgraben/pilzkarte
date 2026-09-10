@@ -1,14 +1,15 @@
 name = "Genabelter Semmelstoppelpilz"
 lateinisch = "Hydnum umbilicatum"
 gruppe = "stoppelpilz"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Extrem selten, deshalb besser stehen lassen. Alte Fruchtkörper werden bitter."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "sehrSelten"
 synonyme = ["Dentinum umbilicatum"]
 
@@ -36,19 +37,19 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Ellipsoidsporiger Stoppelpilz"
 merkmal = "Hutmitte nicht genabelt, Stacheln dichter stehend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ellipsoidsporige-stoppelpilz"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Unterseite mit Poren statt mit Stacheln."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Schafporling"
 merkmal = "Hut weißlich, Unterseite mit feinen weißen Poren."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schafporling"
 
 [[links]]

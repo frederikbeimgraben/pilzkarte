@@ -1,16 +1,21 @@
 name = "Pfifferling"
 lateinisch = "Cantharellus cibarius"
 gruppe = "leistling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 karte = "pfifferling"
 speisewertHinweis = "Besonders geschützt. Nur kleine Mengen für den Eigenbedarf sammeln."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Eierschwamm", "Rehgeiserl", "Reherl", "Gemeiner Pfifferling", "Eierleistling", "Eierpilz"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte", "buche", "eiche", "kiefer"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Pfiffi.htm"
@@ -59,7 +64,7 @@ slug = "brauner-afterleistling"
 [[verwechslungen]]
 name = "Samtpfifferling"
 merkmal = "Hut orange, samtig bis zottig, Rand wellig, Geruch süßlich obstartig, bei Buche."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "samtpfifferling"
 
 [[links]]

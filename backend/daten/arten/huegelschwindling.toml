@@ -3,11 +3,11 @@ lateinisch = "Marasmius collinus"
 gruppe = "schwindling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als leicht giftig. Er unterscheidet sich vom Nelkenschwindling durch den Geruch: nach Zedernholz und zwischen den Fingern mehlig-ranzig, nie nach Bittermandeln, dazu ein ekelhaft ranziger Geschmack."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 synonyme = ["Agaricus collinus", "Gymnopus collinus", "Collybia collina"]
 

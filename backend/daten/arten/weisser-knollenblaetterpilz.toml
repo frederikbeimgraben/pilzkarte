@@ -3,11 +3,11 @@ lateinisch = "Amanita phalloides var. alba"
 gruppe = "wulstling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche", "eiche", "esche"]
 speisewertHinweis = "Tödlich giftig, schon ein Fruchtkörper schädigt die Leber. Niemals kosten. Zu erkennen an weißen freien Lamellen, ungerieftem Hutrand, häutigem hängendem Ring und der zwiebeligen Knolle in einer häutigen, sackartigen Scheide."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Weißer Grüner Knollenblätterpilz", "Weißhütiger Knollenblätterpilz"]
 
