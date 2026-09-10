@@ -5,28 +5,60 @@ speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-speisewertHinweis = "Nur Fruchtkörper mit rosa oder braunen Lamellen. Weiße Lamellen heißen stehen lassen."
+speisewertHinweis = "Nur Fruchtkörper mit rosa Lamellen nehmen; sind die Lamellen braun, ist der Pilz alt. Tödlich giftige Knollenblätterpilze haben nie rosa Lamellen. Läuft die Stielbasis gelb an oder riecht der Pilz nach Karbol oder Tinte, bleibt er stehen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Wiesenchampinon.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Nicht oder kaum verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Fast immer negativ. Seltene Unterarten reagieren positiv."
 
 [merkmale]
-hut = "4 bis 10 cm, weiß, glatt bis fein schuppig, jung halbkugelig."
-lamellen = "Jung rosa, dann schokoladenbraun, frei stehend, nie weiß bleibend."
-stiel = "Kurz, weiß, mit schmalem, vergänglichem Ring, ohne Scheide."
-fleisch = "Weiß, im Schnitt schwach rosa."
-geruch = "Angenehm nach Champignon."
-geschmack = "Mild."
-sporenpulver = "Purpurbraun."
-vorkommen = "Zersetzer auf gedüngten Wiesen und Weiden, oft in Hexenringen."
-zeit = "Juni bis Oktober."
+hut = "4 bis 13, selten bis 16 cm breit, kleiner als der Schafchampignon. Haut weiß, alt grau bis graubraun, jung feinschuppig und über den Hutrand hinaus abziehbar. Alt von der Mitte her mit bräunlichen, flach anliegenden Schuppen. Rand meist weißlich und mit Velumresten behangen."
+lamellen = "Rosa bis fleischrosa, später dunkelbraun, alt schokoladenbraun, frei."
+stiel = "Weiß, brüchig, ohne Knolle und nicht verdickt. Die Spitze löst sich leicht vom Hutfleisch. Ring weiß, einfach und hängend, meist verkümmert und schnell vergänglich."
+fleisch = "Weiß, teils gar nicht verfärbend, sonst an der Stielspitze oder im Stiel schwach bis mittelmäßig rötend, an der Basis leicht gelblich."
+geruch = "Pilzig, angenehm, kein oder kaum wahrnehmbarer Anisgeruch."
+geschmack = "Mild, nussartig."
+sporenpulver = "Purpurbraun, dunkelbraun bis schokoladenbraun."
+vorkommen = "Folgezersetzer in Gärten, auf Wiesen und Weiden und in Maisfeldern, selten auf Güllewiesen. Oft in Hexenringen."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
-essbar = "toedlichGiftig"
-
-[[verwechslungen]]
-name = "Karbolchampignon"
-merkmal = "Stielbasis im Schnitt chromgelb, Geruch nach Tinte oder Karbol."
+name = "Karbolegerling"
+merkmal = "Stielbasis läuft im Schnitt gelb an, Geruch nach Karbol oder Tinte, Hut weiß mit bräunlicher Mitte."
 essbar = "giftig"
+slug = "karbolegerling"
+
+[[verwechslungen]]
+name = "Übelriechender Egerling"
+merkmal = "Hut schmutzigbraun bis gelbbraun und braunschuppig, Lamellen graurosa, Stiel mit doppeltem Ring und braunfleckiger Basis."
+essbar = "ungeniessbar"
+slug = "uebelriechender-egerling"
+
+[[verwechslungen]]
+name = "Schafchampignon"
+merkmal = "Größer, Hut weiß mit seidiger Haut, Lamellen jung grauweiß, Geruch nach Anis, Stiel gilbend und unter dem Ring körnig."
+essbar = "speisepilz"
+slug = "schafchampignon"
+
+[[verwechslungen]]
+name = "Frühlingschampignon"
+merkmal = "Hut weiß bis gelblich und bei Berührung strohgelb verfärbend, Stiel gilbend, Spitze etwas rötlich."
+essbar = "essbar"
+slug = "fruehlingschampignon"
+
+[[verwechslungen]]
+name = "Braunschuppiger Wiesenchampignon"
+merkmal = "Varietät des Wiesenchampignons, Hut braun schuppig, Ring ebenso verkümmert."
+essbar = "essbar"
+slug = "braunschuppiger-wiesenchampignon"
 
 [[links]]
 titel = "123pilzsuche.de"
