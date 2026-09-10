@@ -5,7 +5,19 @@ from enum import Enum
 from typing import Final
 from uuid import uuid4
 
-from sqlalchemy import Boolean, Date, DateTime, Dialect, Float, ForeignKey, String, Text, false
+from sqlalchemy import (
+    Boolean,
+    Date,
+    DateTime,
+    Dialect,
+    Float,
+    ForeignKey,
+    Integer,
+    String,
+    Text,
+    UniqueConstraint,
+    false,
+)
 from sqlalchemy import Enum as SaEnum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.types import TypeDecorator
@@ -139,6 +151,24 @@ class UserRole(Base):
         primary_key=True,
     )
     granted_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now)
+
+
+class Term(Base):
+    """Ein Begriff aus einem verwalteten Katalog: Geruch, Geschmack, Baumart.
+
+    Diese Werte stehen nicht als Enum im Code. Die Verwaltung muss sie
+    erweitern koennen, und ein neuer Geruch soll eine Zeile sein, kein Deploy.
+    Der Slug steht in den Profilen, der Name nur hier.
+    """
+
+    __tablename__ = "begriff"
+    __table_args__ = (UniqueConstraint("art", "slug", name="uq_begriff_art_slug"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    kind: Mapped[str] = mapped_column("art", String(32), index=True)
+    slug: Mapped[str] = mapped_column(String(64))
+    name: Mapped[str] = mapped_column(String(120))
+    position: Mapped[int] = mapped_column("reihenfolge", Integer, default=0)
 
 
 class Owned(Base):
