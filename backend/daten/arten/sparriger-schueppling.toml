@@ -1,0 +1,48 @@
+name = "Sparriger Schüppling"
+lateinisch = "Pholiota squarrosa"
+gruppe = "schueppling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["obstbaum", "fichte"]
+speisewertHinweis = "Verursacht gelegentlich Magen-Darm-Beschwerden; vom Verzehr wird abgeraten. Zu erkennen an den abstehenden sparrigen Schuppen auf Hut und Stiel und am rettichartigen Geruch."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SparrigerSchueppling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "1 bis 5, selten bis 10 cm breit, strohgelb, trocken, mit abstehenden sparrigen Schüppchen auf gelbbraunem bis hellbraunem Grund."
+lamellen = "Jung blass olivgelb, später olivbraun, ausgebuchtet und breit angewachsen."
+stiel = "2 bis 18, selten bis 25 cm lang, 0,6 bis 4, selten bis 5 cm dick, hellbraun, über der Ringzone kahl, darunter mit rotbraunen Schuppen, zur Basis dunkler."
+fleisch = "Weißlich bis blassgelb, dick, hart, faserig."
+geruch = "Rettichartig, rübenartig, angenehm."
+geschmack = "Rübenartig, rettichartig."
+sporenpulver = "Rostbraun."
+vorkommen = "Folgezersetzer und Weißfäuleerreger, gern an Laubholz und Obstbäumen, seltener an Nadelholz wie Fichte."
+zeit = "Spätsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Hochthronender Schüppling"
+merkmal = "Schuppen angedrückt statt abstehend und zonig verteilt, Stiel schleimig, an Nadelholz."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Bleicher Schüppling"
+merkmal = "Grundfarbe cremeweiß bis sehr hellbraun, Geruch obstartig nach Fruchtbonbon, Geschmack bitter."
+essbar = "ungeniessbar"
+slug = "bleicher-schueppling"
+
+[[verwechslungen]]
+name = "Pinselschüppling"
+merkmal = "Hut gelblich und schleimig, mit anliegenden pinselartigen Schuppen, Geruch neutral."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SparrigerSchueppling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Sparriger_Schüppling"

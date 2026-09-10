@@ -1,0 +1,44 @@
+name = "Vielverfärbender Birkenpilz"
+lateinisch = "Leccinum variicolor"
+gruppe = "raufussroehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke"]
+speisewertHinweis = "Besonders geschützt, sehr selten und in Deutschland gefährdet. Wenn überhaupt, nur wenige Fruchtkörper für den Eigenbedarf nehmen. Ältere Fruchtkörper werden schnell schwammig."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/VerfaerbenderBirkenpilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 12, selten bis 16 cm breit, braungrau, schwarzbraun, mausgrau, ocker marmoriert, oft gefleckt, halbkugelig bis polsterförmig, feucht schmierig. Huthaut nur leicht überstehend."
+roehren = "Bis etwa 1,4 cm lang, weißlich, cremebeige bis hellrosa, später gelblich bis schmutzig cremefarben, olivbraun, alt graubraun, leicht vom Hutfleisch lösbar."
+stiel = "Mit tabakbraunen bis schwarzbraunen Schüppchen auf hellem Grund, nach oben verjüngt, an der Basis bei Verletzung blaugrün verfärbend."
+fleisch = "Weißlich, später cremefarben, bei Verletzung zuerst hellrosa, dann stark blau bis kornblumenblau, beim Kochen schwarz, jung fest, später schnell schwammig und wässrig."
+geruch = "Pilzig."
+geschmack = "Mild, angenehm."
+sporenpulver = "Olivbraun bis ockerbraun."
+vorkommen = "Symbiosepilz in Laub- und Mischwald, nur bei Birke, auf saurem Boden, nie auf kalkreichem. Sehr selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Hainbuchenröhrling"
+merkmal = "Bei Hainbuche und Hasel, Huthaut wie gehämmert, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila statt kornblumenblau."
+essbar = "speisepilz"
+slug = "hainbuchenroehrling"
+
+[[verwechslungen]]
+name = "Rötender Birkenpilz"
+merkmal = "Fleisch verfärbt rosa bis korallenrot und nicht blau, die unterste Stielbasis bleibt meist weiß."
+essbar = "essbar"
+slug = "roetender-birkenpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/VerfaerbenderBirkenpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Vielverfärbender_Birkenpilz"

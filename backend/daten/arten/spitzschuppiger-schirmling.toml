@@ -1,0 +1,38 @@
+name = "Spitzschuppiger Schirmling"
+lateinisch = "Echinoderma asperum"
+gruppe = "schirmling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Stark giftig. Zu erkennen an den braunen, spitzen Stacheln auf cremefarbenem Grund, dem hängenden, nicht verschiebbaren Ring und dem stechend gasartigen Geruch."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SpitzschuppigerSchirmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 15, selten bis 17 cm breit, fleischbraun, mit braunen Stacheln auf cremefarbenem Grund, im Alter abflachend."
+lamellen = "Weißlich, gelblich, später hellbräunlich, frei, sehr eng stehend, oft gegabelt, Schneiden wellig."
+stiel = "5 bis 11, selten bis 14 cm lang, 1 bis 3, selten bis 4 cm dick, weißlich bis bräunlich, mit hängendem, nicht verschiebbarem Ring, darunter bräunlich wollig-flockig, Basis knollig und braun-warzig, mit weißlichem Myzel etwas wurzelnd."
+fleisch = "Weißlich."
+geruch = "Stechend, gasartig, unangenehm, teils leicht mehlartig."
+geschmack = "Unbedeutend bis mild, teils etwas unangenehm."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer in Gärten, an Wegrändern und auf Schutt, gern auf kalkreichem Boden, einzeln oder gesellig, häufig."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Riesenchampignon"
+merkmal = "Hut mit braunen Schuppen statt Stacheln, Lamellen blassrosa und später braun, Sporenpulver purpurbraun, Geruch anisartig."
+essbar = "speisepilz"
+slug = "riesenchampignon"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SpitzschuppigerSchirmling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Spitzschuppiger_Stachel-Schirmling"

@@ -1,0 +1,51 @@
+name = "Weinroter Reizker"
+lateinisch = "Lactarius sanguifluus"
+gruppe = "milchling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Sehr selten und in Deutschland stark gefährdet (Rote Liste 2). Den Fund besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WeinroterReizker.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 12, selten bis 16 cm breit, orange bis beige-orangebräunlich, grünblau bis lagunenblau fleckend, weißlich bereift, gezont. Jung gewölbt und genabelt, später trichterförmig, etwas schmierig."
+lamellen = "Orangeocker, blassocker bis rötlichbraun, bei Verletzung dunkel blutrot, alt grünfleckig, sehr eng stehend, ausgebuchtet angewachsen bis herablaufend."
+milch = "Blutrot bis weinrot, nach etwa 20 Minuten grün verfärbend."
+stiel = "Auf weinrotem Grund weißlich bereift, wasserfleckig und mit Grübchen. Innen wattig, später hohl, bei Verletzung rötend."
+fleisch = "Blassbeige, hellorange bis cremegelb, fest, brüchig."
+geruch = "Angenehm pilzig, dabei etwas obstartig."
+geschmack = "Mild, leicht schärflich."
+sporenpulver = "Hell ockergelb."
+vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier bei Kiefer. Häufiger im Mittelmeerraum, bei uns sehr selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Spangrüner Kiefernreizker"
+merkmal = "Milch orangerot und erst später weinrot, Fleisch weißlich bis gelblich, Geschmack herb und bitterlich."
+essbar = "speisepilz"
+slug = "spangruener-kiefernreizker"
+
+[[verwechslungen]]
+name = "Fichtenreizker"
+merkmal = "Bei Fichte, Stiel ohne Grübchen und ohne weinroten Grund, Milch karottenrot und erst nach etwa 15 Minuten weinrot."
+essbar = "speisepilz"
+slug = "fichtenreizker"
+
+[[verwechslungen]]
+name = "Lachsreizker"
+merkmal = "Überwiegend bei Weißtanne, Stiel orange mit rötlichen Grübchen, Milch karottenrot bis orange."
+essbar = "speisepilz"
+slug = "lachsreizker"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WeinroterReizker.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Weinroter_Kiefern-Reizker"

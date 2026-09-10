@@ -1,0 +1,50 @@
+name = "Sparriger Risspilz"
+lateinisch = "Inocybe hystrix"
+gruppe = "schleierling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Tödlich giftig; wie alle Risspilze mindestens verdächtig. Zu erkennen an den braunen, dornartigen Schuppen auf Hut und Stiel, dem fransigen Hutrand und dem moderig-spermatischen Geruch."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SparrigerRisspilz.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut sofort violettgrau."
+
+[merkmale]
+hut = "1 bis 4, selten bis 6 cm breit, braune, dornartige, spitze Schuppen auf beige-ockerfarbenem Grund. Huthaut steht am Rand über, Rand fransig."
+lamellen = "Von hellgrau und mausgrau über hellbraun bis gelbbraun und graubraun, breit angewachsen."
+stiel = "Wie der Hut mit braunen, dornartigen, spitzen Schuppen auf beige-ockerfarbenem Grund."
+fleisch = "Schmutzig weißlich mit einem gelblichen Ton."
+geruch = "Moderig, spermatisch."
+geschmack = "Mild."
+sporenpulver = "Braun bis tabakbraun."
+vorkommen = "Symbiosepilz im Mischwald, gern auf kalkreichem Boden. Bäume nennt die Quelle nicht."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Wolliger Risspilz"
+merkmal = "Hut wollig-filzig, nicht sparrig-stachelig, Schneiden weißlich bewimpert. Ebenfalls tödlich giftig."
+essbar = "toedlichGiftig"
+slug = "wolliger-risspilz"
+
+[[verwechslungen]]
+name = "Sparriger Schüppling"
+merkmal = "Lamellen olivgelb bis olivbraun, Sporenpulver rostbraun, Geruch rettichartig, wächst büschelig an Holz."
+essbar = "giftig"
+slug = "sparriger-schueppling"
+
+[[verwechslungen]]
+name = "Gemeiner Hallimasch"
+merkmal = "Wächst büschelig an Holz, Stiel mit dickem Ring, Sporenpulver weiß."
+essbar = "bedingtEssbar"
+slug = "dunkler-hallimasch"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SparrigerRisspilz.htm"

@@ -1,0 +1,49 @@
+name = "Taubentäubling"
+lateinisch = "Russula grisea"
+gruppe = "taeubling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["birke", "buche", "eiche"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Taubentaebling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Blaugrün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Hellrosa."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Positiv."
+
+[merkmale]
+hut = "4 bis 11, selten bis 14 cm breit, schwarzoliv, schwarzgrau, hell blaugrün, olivgrau, graulila, purpurviolett, eisengrau bis violettgrau, alt gelblich. Mitte alt vertieft und meist dunkler, Rand gerieft, bei Feuchtigkeit glänzend und schmierig."
+lamellen = "Jung weiß, alt cremefarben, sehr brüchig, einzelne gegabelt, eng stehend, Schneiden glatt, alt rostfleckig."
+stiel = "3 bis 9, selten bis 10 cm hoch, 1 bis 2, selten bis 3 cm dick, weiß, glatt, im Alter mit bräunlichen, gelblichen oder rosabraunen Flecken, Basis etwas verjüngt."
+fleisch = "Weiß, zart und brüchig; unter der Huthaut und an Schneckenfraßstellen verfärbt es rosaviolett."
+geruch = "Angenehm, unspezifisch."
+geschmack = "Mild."
+sporenpulver = "Hellgelb bis cremegelblich."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Birke, Buche und Eiche."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Frauentäubling"
+merkmal = "Lamellen biegsam und meist nicht brechend, Sporenpulver weiß statt hellgelb, Fleisch nicht rosaviolett verfärbend."
+essbar = "speisepilz"
+slug = "frauentaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Taubentaebling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Tauben-Täubling"

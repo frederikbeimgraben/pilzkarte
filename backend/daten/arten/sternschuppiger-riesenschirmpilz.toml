@@ -1,0 +1,45 @@
+name = "Sternschuppiger Riesenschirmpilz"
+lateinisch = "Macrolepiota fuliginosa"
+gruppe = "schirmling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Das Fleisch rötet nie; das trennt ihn vom Safranschirmling. Wie alle Riesenschirmlinge nur durchgegart essen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SternschuppigerRiesenschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 10, selten bis 15 cm breit, mit braunen bis kastanienbraunen, sternförmig auseinanderlaufenden Schuppen auf weißlichem Grund. Mitte schwarzbraun und gebuckelt, jung in Paukenschlägerform."
+lamellen = "Weißlich bis cremefarben, bei Sporenreife oft rosa überhaucht oder rosa gefleckt, gedrängt stehend, frei, weich."
+stiel = "5 bis 25, selten bis 35 cm lang, 1 bis 6, selten bis 8 cm dick, fein braun genattert auf hellem Grund, später dunkelbraun bis rotbraun, Basis heller und zwiebelknollig, faserig-zäh. Ring oben weißlich, unten bräunlich, mit doppeltem Rand, am Stiel verschiebbar."
+fleisch = "Weiß, rötet nie; an Schneckenfraßstellen und in der Stielrinde teils leichtes Röten."
+geruch = "Unbedeutend bis neutral, mitunter leicht fruchtig."
+geschmack = "Mild, leicht säuerlich."
+sporenpulver = "Blass rosa."
+vorkommen = "Folgezersetzer in Wäldern, Parks, auf Wiesen, in Gärten und Heiden sowie am Waldrand."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Grünsporschirmling"
+merkmal = "Lamellen im Alter grünlich, Sporenpulver grünlich, wächst in Gewächshäusern, auf Komposthaufen und in warmen Lagen."
+essbar = "giftig"
+slug = "gruensporschirmling"
+
+[[verwechslungen]]
+name = "Parasol"
+merkmal = "Hutschuppen weich und wollig, nicht sternförmig aufreißend, Sporenpulver weiß."
+essbar = "bedingtEssbar"
+slug = "parasol"
+
+[[verwechslungen]]
+name = "Rußbrauner Riesenschirmpilz"
+merkmal = "Sehr ähnlich gebaut, Sporenpulver weiß statt blass rosa."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SternschuppigerRiesenschirmling.htm"

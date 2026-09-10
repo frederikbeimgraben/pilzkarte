@@ -1,0 +1,46 @@
+name = "Violettstieliger Pfirsichtäubling"
+lateinisch = "Russula violeipes (russula amoena var. violeipes, russula violeipes f. citrina)"
+gruppe = "taeubling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Ältere Fruchtkörper riechen heringsartig; dann besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/ViolettstieligerPfirsichtaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Rosa."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Dunkelgrün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Langsam weinbraun bis purpurschokoladenbraun."
+
+[merkmale]
+hut = "2 bis 8, selten bis 10 cm breit, gelb, zitronengelb, grüngelb bis gelbviolett, später violettbraun, rotbraun oder grünrosa. Huthaut gummi- bis wachsartig, manchmal bereift, leicht abziehbar. Rand im Alter oft herabgebogen."
+lamellen = "Weiß, später gelblich bis cremefarben, brüchig; bei feuchtem Wetter relativ weich."
+stiel = "3 bis 14, selten bis 16 cm hoch, 1 bis 2, selten bis 3 cm dick, zuerst weiß, später rosalila bis lila überhaucht, zylindrisch, etwas abgeplattet, mit netzig verbundenen Warzen, Basis zugespitzt mit kleiner Myzelwurzel."
+fleisch = "Weiß, hart und spröde brüchig."
+geruch = "Jung obstartig, im Alter heringsartig."
+geschmack = "Angenehm mild."
+sporenpulver = "Blassgelb."
+vorkommen = "Symbiosepilz meist im Laubwald, auf saurem Boden. Regional sehr häufig."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Ockertäubling"
+merkmal = "Hut hellgelb bis gelbocker, kahl und matt, Stiel weiß ohne Lilaton, Geschmack etwas bitterlich."
+essbar = "ohneSpeisewert"
+slug = "ockertaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/ViolettstieligerPfirsichtaeubling.htm"

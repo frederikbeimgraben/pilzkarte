@@ -1,0 +1,42 @@
+name = "Spitzgebuckelter Raukopf"
+lateinisch = "Cortinarius rubellus"
+gruppe = "schleierling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Enthält Orellanin und schädigt Nieren und Leber; niemals probieren. Zu erkennen am spitz gebuckelten rotbraunen Hut, den zimtbraunen Lamellen und dem genatterten Stiel ohne echten Ring. Er wächst bei Fichte, oft zwischen Trompetenpfifferlingen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/SpitzbuckligeRauhkopf.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Hutoberfläche braunschwarz bis schwarz."
+
+[merkmale]
+hut = "3 bis 6, selten bis 9 cm breit, braun, rotbraun bis orangerot, meist leicht spitz gebuckelt, radialfaserig, feinschuppig, rau wirkend."
+lamellen = "Zimtbraun, dick und breit, ausgebuchtet angeheftet und manchmal mit einem Zahn etwas herablaufend. Zwischenlamellen vorhanden."
+stiel = "5,5 bis 11, selten bis 13 cm lang, 0,5 bis 1,6, selten bis 2 cm dick, rostbraun, ohne Ringzone, aber meist durch Schleierreste genattert, voll, faserig, fein samtig, Basis leicht verdickt."
+fleisch = "Gelblichbraun, gelbrötlich bis rostbraun, in der Stielbasis orangebraun, faserig."
+geruch = "Leicht rettichartig."
+geschmack = "Mild, leicht rettichartig. Niemals probieren."
+sporenpulver = "Rostbraun."
+vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, in Mooren und auf saurem Boden, oft zwischen Trompetenpfifferlingen."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Zitronengelber Raukopf"
+merkmal = "Hut hygrophan und ausbleichend, Lamellen und Fleisch gelblich bis zitronengelb, Stiel mit gelben Velumresten. Ebenfalls tödlich giftig."
+essbar = "toedlichGiftig"
+slug = "zitronengelber-raukopf"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/SpitzbuckligeRauhkopf.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Spitzgebuckelter_Raukopf"

@@ -1,0 +1,45 @@
+name = "Weißer Dachpilz"
+lateinisch = "Pluteus pellitus"
+gruppe = "roetling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche"]
+speisewertHinweis = "Sehr selten; in der Schweiz stark gefährdet. Besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WeisserDachpilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 8, selten bis 10 cm breit, weiß, alt rosabraun, etwas klebrig und glänzend, trocken seidenartig, eingewachsen faserig, glatt."
+lamellen = "Weiß, alt blassrosa bis fleischrot, frei, gedrängt stehend, ziemlich breit."
+stiel = "Weiß, etwas braunfaserig, fest, ausgestopft, brüchig, Basis verdickt und gebogen. Spitze leicht vom Hutfleisch abtrennbar."
+fleisch = "Weiß, weich und brüchig."
+geruch = "Meist unbedeutend, sonst leicht rettichartig, erdig oder etwas süßlich."
+geschmack = "Pilzartig, mild."
+sporenpulver = "Rosa bis rosabraun."
+vorkommen = "Folgezersetzer im Laubwald, meist an moderndem Buchenholz wie Ästen und Strünken. Sehr selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Grauer Dachpilz"
+merkmal = "Hut blassgrau bis mausgrau, Stiel mit grünlich bläulichem Schein, enthält Psilocybin."
+essbar = "giftig"
+slug = "grauer-dachpilz"
+
+[[verwechslungen]]
+name = "Seidiger Dachpilz"
+merkmal = "Scheitel mit dunkleren Faserschuppen, bei Trockenheit sparrig schuppig, Sporenpulver rostbraun."
+essbar = "ohneSpeisewert"
+slug = "seidiger-dachpilz"
+
+[[verwechslungen]]
+name = "Rußgrauer Dachpilz"
+merkmal = "Hut rußig grau bis weißlichgrau, Geruch süßlich nach Holunderblüten."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WeisserDachpilz.htm"

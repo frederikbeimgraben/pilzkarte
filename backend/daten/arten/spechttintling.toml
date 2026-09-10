@@ -1,0 +1,49 @@
+name = "Spechttintling"
+lateinisch = "Coprinopsis picacea"
+gruppe = "tintling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Ungenießbar wegen des muffigen Geruchs und Geschmacks."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Spechttintling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "1 bis 4, selten bis 8 cm breit, braun, mit weißen flockigen Schuppen besetzt. Im Alter rollt sich der Rand nach oben und der Pilz zerfließt schwarz."
+lamellen = "Schmutzig weiß bis grauweiß, später rosa und schließlich schwarz tintenartig zerfließend, Schneiden leicht flockig."
+stiel = "10 bis 15, selten bis 25 cm lang, 1 bis 3, selten bis 4 cm dick, weißlich, etwas schuppig genattert, feinfaserig, zerbrechlich, hohl, nach oben verjüngt."
+fleisch = "Weiß, dünn, schwarz zerfließend."
+geruch = "Muffig, im Alter teerähnlich oder nach Mottenpulver."
+geschmack = "Muffig, unangenehm."
+sporenpulver = "Schwarz."
+vorkommen = "Folgezersetzer im Laubwald, gern auf humus- und kalkreichem Boden."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Faltentintling"
+merkmal = "Hut grauweiß bis graubraun mit braunen Schuppen, ohne weiße Flocken, Stielbasis mit angedeutetem Ringwulst."
+essbar = "giftig"
+slug = "faltentintling"
+
+[[verwechslungen]]
+name = "Flockiger Tintling"
+merkmal = "Deutlich kleiner, Hut graubraun mit weißlichen Velumflocken, Stielbasis verdickt und oft mit Volva."
+essbar = "ungeniessbar"
+slug = "flockiger-tintling"
+
+[[verwechslungen]]
+name = "Ringtintling"
+merkmal = "Stiel mit tief sitzendem, verschiebbarem Ring, wächst auf Mist und Dung."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Spechttintling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Specht-Tintling"

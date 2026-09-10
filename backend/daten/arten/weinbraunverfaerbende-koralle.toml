@@ -1,0 +1,32 @@
+name = "Weinbraunverfärbende Koralle"
+lateinisch = "Ramaria bataillei"
+gruppe = "stachelbart"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "buche"]
+speisewertHinweis = "Ungenießbar wegen des stark bitterlichen Geschmacks."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WeinbrauneKoralle.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "5 bis 15 cm hoch, 5 bis 13, selten bis 15 cm breit, schmutzig braun, rosabraun, lachsfarben, lilagraubraun bis weinbraun oder rötlich verfärbend, alt grauende Äste. Büschelig aus einem Strunk, Spitzen geweihförmig."
+fleisch = "Weißlich bis schmutzig cremegelb und brüchig; an der Luft verfärbt es rasch rotbraun bis schwarzbraun."
+geruch = "Leicht pilzig."
+geschmack = "Stark bitterlich."
+sporenpulver = "Gelbockerlich bis cremeockerlich."
+vorkommen = "Symbiosepilz im Mischwald, in Bergnadelwäldern unter Fichte und in Buchenwäldern unter Buche, auf kalkreichem Boden. Selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Bauchwehkoralle"
+merkmal = "Astspitzen mit stumpfen Zähnchen, Fleisch weiß und nur an Druckstellen braun- bis rotfleckig, Geruch säuerlich seifig."
+essbar = "giftig"
+slug = "bauchwehkoralle"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WeinbrauneKoralle.htm"

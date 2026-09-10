@@ -1,0 +1,38 @@
+name = "Tigerritterling"
+lateinisch = "Tricholoma pardinum"
+gruppe = "ritterling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Schon Kostproben verursachen Bauchschmerzen. Zu erkennen an den silbergrauen bis schwarzbraunen Schüppchen auf weißem Hut, den jung tränenden Lamellenschneiden, der oft kupferrötlich gefleckten Stielbasis und dem mehlartigen Geruch."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Tigerritterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 11, selten bis 16 cm breit, weiß mit silbergrauen, graubraunen bis schwarzbraunen Schüppchen, Rand lange eingerollt."
+lamellen = "Weißlich, später etwas gelblich, breit, mäßig dicht stehend, am Stiel ausgebuchtet angewachsen, Schneiden rissig, jung tränend, alt bräunend."
+stiel = "5 bis 8, selten bis 9 cm lang, 1 bis 4, selten bis 5 cm dick, weißlich gelblich bis creme, Basis keulig, oft kupferrötlich gefleckt, fest und vollfleischig, Spitze gern mit Tröpfchen."
+fleisch = "Weiß, sehr dick."
+geruch = "Mehlartig."
+geschmack = "Mild und mehlig, aber giftig."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald, meist Laubwald, selten Nadelwald, gern auf kalkreichem Boden, regional häufig."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Rötender Erdritterling"
+merkmal = "Kleiner, Lamellen und Fleisch röten bei Verletzung, Stielbasis blaugrün bis rosarot."
+essbar = "giftig"
+slug = "roetender-erdritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Tigerritterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Tiger-Ritterling"
