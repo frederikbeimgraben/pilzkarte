@@ -1,37 +1,57 @@
 name = "Parasol"
 lateinisch = "Macrolepiota procera"
 gruppe = "schirmling"
-speisewert = "speisepilz"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "parasol"
+speisewertHinweis = "Nicht roh essen. Ungenügend gegart löst er Magen-Darm-Beschwerden aus, deshalb gut durchgaren. Riesenschirmlinge vom Komposthaufen oder aus dem Garten stehen lassen, dort wächst der Gift-Riesenschirmling."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Parasol.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "10 bis 30 cm, jung wie ein Paukenschlegel geschlossen, dann flach mit Buckel. Grober brauner Schuppenbelag auf hellem Grund."
-lamellen = "Weiß, frei, dicht, weich."
-stiel = "15 bis 40 cm, dünn, hohl, mit brauner Natterung wie Schlangenhaut, Basis knollig, Ring dick und verschiebbar."
-fleisch = "Weiß, bleibt beim Anschnitt weiß."
-geruch = "Angenehm nussig."
-geschmack = "Mild."
+hut = "3 bis 25, selten bis 30 cm breit, hellbraun, mit gezonten, weichen, wolligen Schüppchen. Rand behangen."
+lamellen = "Weiß, frei, weich."
+stiel = "6 bis 30, selten bis 40 cm lang, 2 bis 7, selten bis 9 cm dick, weißlich bis hellbräunlich mit dunkelbrauner Natterung, schlank, zäh, faserig. Bei jungen Pilzen ist die Basis wie ein breiter Teller, der sich mit dem Wachstum abbaut. Ring wollig weißlich, doppelrandig und am Stiel verschiebbar."
+fleisch = "Hellbraun bis gelbbraun, weich, im Stiel faserig und weiß."
+geruch = "Angenehm nussartig."
+geschmack = "Angenehm nussartig, mild."
 sporenpulver = "Weiß."
-vorkommen = "Zersetzer auf Wiesen, Weiden, an Waldrändern und in lichten Wäldern. Kein Wirtsbaum."
-zeit = "Juli bis Oktober."
+vorkommen = "Folgezersetzer in Mischwäldern, an Waldrändern, auf Waldwegen und in Heiden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Jungfernschirmling"
+merkmal = "Stiel ohne Natterung, Lamellen gilben leicht, Fleisch rötet nicht. Im Nadelwald auf saurem Boden."
+essbar = "giftig"
+slug = "jungfernschirmling"
 
 [[verwechslungen]]
 name = "Safranschirmling"
-merkmal = "Stiel glatt ohne Natterung, Fleisch rötet im Schnitt."
+merkmal = "Fleisch läuft bei Verletzung sofort rötlich an und wird später weinbraun, Stiel ohne Natterung, Basis mit gerandeter Knolle."
+essbar = "essbar"
+slug = "safranschirmling"
+
+[[verwechslungen]]
+name = "Schlanker Riesenschirmling"
+merkmal = "Hut braunocker mit grob schollig abreißenden Schuppen und braunem Buckel, Natterung am Stiel nur schwach."
 essbar = "bedingtEssbar"
+slug = "zitzen-riesenschirmling"
 
 [[verwechslungen]]
-name = "Gift-Riesenschirmling"
-merkmal = "Stiel glatt, Fleisch rötet stark, Stielbasis gerandet knollig, meist in Gärten und Komposten."
-essbar = "giftig"
+name = "Sternschuppiger Riesenschirmpilz"
+merkmal = "Hutschuppen kastanienbraun und sternförmig auseinanderlaufend, Mitte schwarzbraun und gebuckelt."
+essbar = "essbar"
+slug = "sternschuppiger-riesenschirmpilz"
 
 [[verwechslungen]]
-name = "Kleine Schirmlinge"
-merkmal = "Hut unter 10 cm, Stiel nicht genattert. Mehrere Arten sind tödlich giftig."
-essbar = "toedlichGiftig"
+name = "Ackerschirmpilz"
+merkmal = "Stiel ohne Natterung, von der Spitze bis zum Ring fein gerieft, auf Äckern, Wiesen und Brachflächen."
+essbar = "essbar"
+slug = "ackerschirmpilz"
 
 [[links]]
 titel = "123pilzsuche.de"

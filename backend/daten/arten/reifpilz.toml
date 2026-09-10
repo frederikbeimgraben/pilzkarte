@@ -4,29 +4,41 @@ gruppe = "schleierling"
 speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["fichte", "kiefer", "birke"]
-speisewertHinweis = "Der einzige Schleierling, den diese App zum Sammeln nennt. Der feste häutige Ring und der weiße Reif trennen ihn."
+baeume = ["kiefer", "fichte"]
+speisewertHinweis = "Er ist häufig von Maden befallen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/ReifpilzEssbar1004.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "5 bis 12 cm, ockergelb bis semmelfarben, in der Mitte mit einem weißen, reifartigen Belag, radial runzelig."
-lamellen = "Blass ocker, dann rostbraun, dicht, ausgebuchtet."
-stiel = "Weißlich, mit einem festen, häutigen Ring, darüber bereift."
-fleisch = "Weiß, fest."
+hut = "3 bis 10, selten bis 15 cm breit, violett-hellbraun, graubraun, rosabraun, umbrabraun, gelb-, orange- bis beigebraun, meist mit weißem oder hell violettem Reifüberzug. Haut uneben."
+lamellen = "Blassrötlich bis blassbeige, später ocker, angeheftet angewachsen, Schneiden gekerbt und wellig."
+stiel = "Hellbraun bis hellviolett, alt etwas gilbend, faserig, voll, mit häutigem Ring. Basis meist knollig verdickt."
+fleisch = "Weißlich, fest, alt wässrig und weich."
 geruch = "Angenehm pilzig."
 geschmack = "Mild."
-sporenpulver = "Rostbraun."
-vorkommen = "Mykorrhiza mit Fichte, Kiefer und Birke, auf sauren Böden, in Heidelbeer- und Moorwäldern."
-zeit = "Juli bis Oktober."
+sporenpulver = "Zimtbraun, ockerbraun bis rostbraun."
+vorkommen = "Symbiosepilz im Nadelwald, gern unter Kiefern und Fichten, auf sauren und sandigen Böden."
+zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Spitzgebuckelter Rauhkopf"
-merkmal = "Hut rotbraun mit spitzem Buckel, Lamellen zimtbraun, ohne häutigen Ring. Tödlich giftig."
+name = "Kegelhütiger Knollenblätterpilz"
+merkmal = "Hut weißlich und seidig radialfaserig, Lamellen bleiben weiß, Stielbasis in einer häutigen Scheide, Sporenpulver weiß. Gleicher Standort und gleicher Boden."
 essbar = "toedlichGiftig"
+slug = "kegelhuetiger-knollenblaetterpilz"
 
 [[verwechslungen]]
-name = "Pantherpilz"
-merkmal = "Sporenpulver weiß, Stielbasis gerandet knollig."
-essbar = "giftig"
+name = "Giftchampignon"
+merkmal = "Hut olivgrün bis gelbgrün, Lamellen weiß und frei, Stielbasis in einer eierschaligen Volva, Sporenpulver weiß."
+essbar = "toedlichGiftig"
+slug = "giftchampignon"
+
+[[verwechslungen]]
+name = "Zimtroter Gürtelfuß"
+merkmal = "Lamellen zimtrot bis rotbraun, Hut ohne Reifüberzug, Stiel wollig gegürtelt statt mit häutigem Ring, Geruch rettichartig."
+essbar = "ungeniessbar"
+slug = "zimtroter-guertelfuss"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,32 +1,56 @@
 name = "Rosablättriger Egerlingsschirmling"
 lateinisch = "Leucoagaricus leucothites"
 gruppe = "schirmling"
-speisewert = "essbar"
+speisewert = "giftig"
 geschuetzt = false
-jahreszeiten = ["sommer", "herbst"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
-speisewertHinweis = "Nur für Sammler, die den Knollenblätterpilz sicher ausschließen. Immer die Stielbasis ausgraben."
+speisewertHinweis = "Die DGfM meldet häufig Magen-Darm-Beschwerden. Er galt früher als essbar. Wegen der Verwechslung mit Knollenblätterpilzen ganz meiden."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RosablaettrigerEggerling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "4 bis 10 cm, rein weiß bis cremefarben, glatt, seidig, jung halbkugelig."
-lamellen = "Weiß, im Alter blass rosa, frei stehend."
-stiel = "Weiß, glatt, mit häutigem Ring, Basis leicht verdickt, ohne Scheide."
-fleisch = "Weiß, unveränderlich."
-geruch = "Unauffällig pilzig."
+hut = "3 bis 11, selten bis 15 cm breit, weiß bis cremefarben, seidig, Rand überhängend. Scheibe im Alter oft blassocker und stumpf gebuckelt."
+lamellen = "Weiß, später blass fleischfarben, alt rosa, frei, dicht stehend, Schneiden heller und fein gezahnt."
+stiel = "6 bis 7, selten bis 9 cm lang, 1 bis 2, selten bis 2,5 cm dick, cremeweiß, von der Basis her hohl werdend, Basis knollig verdickt, aber nie in einer Scheide. Ring weiß, schmal häutig, nach oben abziehbar."
+fleisch = "Weiß, in der Hutmitte dick, zum Rand dünner, nicht gilbend."
+geruch = "Neutral bis angenehm pilzartig."
 geschmack = "Mild."
-sporenpulver = "Weiß."
-vorkommen = "Zersetzer auf Wiesen, Rasen, an Wegrändern und in Gärten."
-zeit = "Juli bis Oktober."
+sporenpulver = "Zuerst weiß, im Abwurf am nächsten Tag rosa."
+vorkommen = "Folgezersetzer in Parks, Gärten, Wäldern und auf Wiesen, oft zwischen Wiesenchampignons."
+zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Lamellen bleiben weiß, häutiger Ring, Stielbasis in einer häutigen Scheide. Jeder weiße Lamellenpilz mit Ring und Scheide bleibt stehen."
+name = "Weißer Knollenblätterpilz"
+merkmal = "Stielbasis in einer häutigen sackartigen Scheide, Lamellen bleiben weiß, Sporenpulver weiß. Nur bei Bäumen."
 essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
 
 [[verwechslungen]]
-name = "Champignons"
-merkmal = "Lamellen werden schokoladenbraun, nicht nur blass rosa."
-essbar = "speisepilz"
+name = "Kegelhütiger Knollenblätterpilz"
+merkmal = "Hut spitzkegelig gebuckelt, Basis in einer eierschalenartigen Scheide, Lamellen bleiben weiß. Nur bei Bäumen."
+essbar = "toedlichGiftig"
+slug = "kegelhuetiger-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Seidiger Egerlingsschirmling"
+merkmal = "Lamellen bleiben weiß und stehen an einem feinen Collar, Fleisch gilbt bei Berührung und graut später, Sporenpulver weiß."
+essbar = "giftig"
+slug = "seidiger-egerlingsschirmling"
+
+[[verwechslungen]]
+name = "Fleischblättriger Egerlingsschirmling"
+merkmal = "Lamellen gelb bis gelbbraun, im Alter rot bis orangerot, Fleisch gelb."
+essbar = "giftig"
+slug = "fleischblaettriger-egerlingsschirmling"
+
+[[verwechslungen]]
+name = "Wurzelnder Egerlingsschirmling"
+merkmal = "Hut wollig filzig mit federigem Rand, Stielbasis verschmälert und wurzelnd, Lamellen bleiben weiß."
+essbar = "ungeniessbar"
+slug = "wurzelnder-egerlingsschirmling"
 
 [[links]]
 titel = "123pilzsuche.de"

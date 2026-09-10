@@ -3,30 +3,55 @@ lateinisch = "Cantharellus cibarius"
 gruppe = "leistling"
 speisewert = "speisepilz"
 geschuetzt = true
-jahreszeiten = ["sommer", "herbst"]
-baeume = ["fichte", "buche", "eiche", "kiefer"]
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
 karte = "pfifferling"
+speisewertHinweis = "Besonders geschützt. Nur kleine Mengen für den Eigenbedarf sammeln."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Pfiffi.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "2 bis 10 cm, dottergelb, jung gewölbt, später trichterig mit welligem Rand."
-leisten = "Gegabelte, stumpfe Leisten statt echter Lamellen, weit am Stiel herablaufend, in derselben Farbe wie der Hut."
-stiel = "Voll, fest, nach unten verjüngt, ohne Ring."
-fleisch = "Weißlich bis blassgelb, faserig, sehr fest."
-geruch = "Fruchtig, nach Aprikose."
-geschmack = "Mild, im Nachgeschmack pfeffrig scharf."
-sporenpulver = "Blass ockergelb."
-vorkommen = "Mykorrhiza mit Fichte, Buche, Eiche und Kiefer. Auf sauren, moosigen Böden, oft an Hängen und unter Heidelbeere."
-zeit = "Juni bis Oktober."
+hut = "2 bis 8, selten bis 10 cm breit, blassgelb, dottergelb bis zitronengelb, trichterförmig."
+leisten = "Weit am Stiel herablaufend, gegabelt und aderig verbunden. Sie sind fest mit dem Fleisch verwachsen und lassen sich nicht abschieben."
+stiel = "Gelb, fest, voll."
+fleisch = "Weißlich bis blassgelb."
+geruch = "Aromatisch, obstartig, frisch pilzig."
+geschmack = "Aromatisch, leicht schärflich, pfefferig."
+sporenpulver = "Hellgelb."
+vorkommen = "Symbiosepilz im Mischwald, regional oft sehr häufig."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Zitronengelber Raukopf"
+merkmal = "Echte Lamellen statt Leisten, gelblich bis rostgelb, Hut trocken löwengelb bis fuchsrot, Stiel mit gelben Velumresten."
+essbar = "toedlichGiftig"
+slug = "zitronengelber-raukopf"
 
 [[verwechslungen]]
 name = "Falscher Pfifferling"
-merkmal = "Orange statt dottergelb, echte dünne Lamellen, weiches Fleisch."
-essbar = "ohneSpeisewert"
+merkmal = "Leuchtend orange, echte gegabelte Lamellen, die sich ablösen und verschieben lassen, Geschmack nicht pfefferig, auf Nadelstreu."
+essbar = "giftig"
+slug = "falscher-pfifferling"
 
 [[verwechslungen]]
 name = "Ölbaumtrichterling"
-merkmal = "Büschelig an Holz, echte Lamellen, größer. Im Süden."
+merkmal = "An Laubholz, Lamellen leuchtend goldgelb mit vielen kurzen Zwischenlamellen und kaum gegabelt."
 essbar = "giftig"
+slug = "oelbaumtrichterling"
+
+[[verwechslungen]]
+name = "Brauner Afterleistling"
+merkmal = "Hut braun bis braunorange, Lamellen ablösbar, Stiel deutlich dicker als beim Falschen Pfifferling."
+essbar = "giftig"
+slug = "brauner-afterleistling"
+
+[[verwechslungen]]
+name = "Samtpfifferling"
+merkmal = "Hut orange, samtig bis zottig, Rand wellig, Geruch süßlich obstartig, bei Buche."
+essbar = "essbar"
+slug = "samtpfifferling"
 
 [[links]]
 titel = "123pilzsuche.de"

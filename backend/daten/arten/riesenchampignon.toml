@@ -5,22 +5,60 @@ speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+speisewertHinweis = "Gilbende Champignons reichern Cadmium an, einige Mykologen raten deshalb von großen Mengen ab. Riecht ein Champignon nach Karbol, Tinte oder Medizinschrank, gehört er nicht in den Korb."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Riesenchampignon.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Gelb verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Knallig rot."
 
 [merkmale]
-hut = "10 bis 25 cm, ockerbraun, dicht mit feinen braunen Schuppen bedeckt."
-lamellen = "Jung blassgrau, dann rosa, zuletzt dunkelbraun, frei."
-stiel = "Kräftig, weiß, unter dem großen Ring schuppig, gilbt bei Berührung."
-fleisch = "Weiß, gilbt langsam."
-geruch = "Kräftig nach Bittermandel oder Anis."
-geschmack = "Mild, nussig."
-sporenpulver = "Purpurbraun."
-vorkommen = "Zersetzer in Parks, Gärten, an Waldwegen und unter Hecken, gern auf nährstoffreichem Boden."
-zeit = "Juli bis Oktober."
+hut = "7 bis 20, selten bis 35 cm breit, mit braunen Schuppen auf weißlichem, gelblichem oder hell bräunlichem Grund, auf Druck gilbend."
+lamellen = "Blassrosa bis graurosa, etwas gilbend, im Alter braun, frei."
+stiel = "Bräunlich, Spitze weißlich, unterhalb des Rings braunschuppig und gilbend. Ring weißlich, unterseits bräunlich bis gelbbraun, breit und dick."
+fleisch = "Weiß, leicht gilbend."
+geruch = "Anisartig, nach Bittermandeln und Weihnachtsplätzchen."
+geschmack = "Mild, nussartig."
+sporenpulver = "Purpurbraun bis tief schokoladenbraun."
+vorkommen = "Folgezersetzer im Mischwald und in Parks, auf humusreichem Boden."
+zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Karbolchampignon"
-merkmal = "Kleiner, Stielbasis chromgelb, Geruch nach Karbol."
+name = "Spitzschuppiger Schirmling"
+merkmal = "Lamellen bleiben weißlich bis hellbräunlich und werden nie rosa, Ring nicht verschiebbar, Geruch stechend gasartig."
 essbar = "giftig"
+slug = "spitzschuppiger-schirmling"
+
+[[verwechslungen]]
+name = "Perlhuhnchampignon"
+merkmal = "Hut fein grau bis schwarzbraun geschuppt, Geruch nach Karbol oder Tinte, Stielbasis stark gilbend."
+essbar = "giftig"
+slug = "perlhuhnchampignon"
+
+[[verwechslungen]]
+name = "Rebhuhnegerling"
+merkmal = "Hut graubraun bis rauchschwärzlich mit faserigen Schuppen, Geruch schwach karbolartig, Stielbasis chromgelb, dann braunrot."
+essbar = "giftig"
+slug = "rebhuhnegerling"
+
+[[verwechslungen]]
+name = "Großer Waldchampignon"
+merkmal = "Fleisch verfärbt sich im Schnitt sofort blutrot, Geruch nicht anisartig, im Nadelwald."
+essbar = "essbar"
+slug = "grosser-waldchampignon"
+
+[[verwechslungen]]
+name = "Kleiner Wald-Champignon"
+merkmal = "Deutlich kleiner, Fleisch bei Verletzung gelborange und später blutrot, im sauren Nadelwald."
+essbar = "essbar"
+slug = "kleiner-wald-champignon"
 
 [[links]]
 titel = "123pilzsuche.de"
