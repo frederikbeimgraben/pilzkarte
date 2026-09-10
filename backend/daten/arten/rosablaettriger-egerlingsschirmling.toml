@@ -33,34 +33,24 @@ vorkommen = "Folgezersetzer in Parks, Gärten, Wäldern und auf Wiesen, oft zwis
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Stielbasis in einer häutigen sackartigen Scheide, Lamellen bleiben weiß, Sporenpulver weiß. Nur bei Bäumen."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Stielbasis in einer häutigen sackartigen Scheide, Lamellen bleiben weiß, Sporenpulver weiß. Nur bei Bäumen."
 
 [[verwechslungen]]
-name = "Kegelhütiger Knollenblätterpilz"
-merkmal = "Hut spitzkegelig gebuckelt, Basis in einer eierschalenartigen Scheide, Lamellen bleiben weiß. Nur bei Bäumen."
-essbar = "toedlichGiftig"
 slug = "kegelhuetiger-knollenblaetterpilz"
+unterschied = "Hut spitzkegelig gebuckelt, Basis in einer eierschalenartigen Scheide, Lamellen bleiben weiß. Nur bei Bäumen."
 
 [[verwechslungen]]
-name = "Seidiger Egerlingsschirmling"
-merkmal = "Lamellen bleiben weiß und stehen an einem feinen Collar, Fleisch gilbt bei Berührung und graut später, Sporenpulver weiß."
-essbar = "giftig"
 slug = "seidiger-egerlingsschirmling"
+unterschied = "Lamellen bleiben weiß und stehen an einem feinen Collar, Fleisch gilbt bei Berührung und graut später, Sporenpulver weiß."
 
 [[verwechslungen]]
-name = "Fleischblättriger Egerlingsschirmling"
-merkmal = "Lamellen gelb bis gelbbraun, im Alter rot bis orangerot, Fleisch gelb."
-essbar = "giftig"
 slug = "fleischblaettriger-egerlingsschirmling"
+unterschied = "Lamellen gelb bis gelbbraun, im Alter rot bis orangerot, Fleisch gelb."
 
 [[verwechslungen]]
-name = "Wurzelnder Egerlingsschirmling"
-merkmal = "Hut wollig filzig mit federigem Rand, Stielbasis verschmälert und wurzelnd, Lamellen bleiben weiß."
-essbar = "ungeniessbar"
 slug = "wurzelnder-egerlingsschirmling"
+unterschied = "Hut wollig filzig mit federigem Rand, Stielbasis verschmälert und wurzelnd, Lamellen bleiben weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

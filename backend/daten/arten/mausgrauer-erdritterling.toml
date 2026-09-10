@@ -29,16 +29,12 @@ vorkommen = "Nadelwald und Parks mit Nadelbäumen, gern bei Kiefer, auch auf Dü
 zeit = "Spätsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Größer und dickfleischiger, Hut weiß mit grauen bis schwarzbraunen Schüppchen, Lamellenschneiden jung tränend, Geruch mehlartig."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Größer und dickfleischiger, Hut weiß mit grauen bis schwarzbraunen Schüppchen, Lamellenschneiden jung tränend, Geruch mehlartig."
 
 [[verwechslungen]]
-name = "Gilbender Erdritterling"
-merkmal = "Lamellen gilben beim Reiben, Fleisch gilbt im Alter, Geruch ranzig mehlig."
-essbar = "giftig"
 slug = "gilbender-erdritterling"
+unterschied = "Lamellen gilben beim Reiben, Fleisch gilbt im Alter, Geruch ranzig mehlig."
 
 [[links]]
 titel = "123pilzsuche.de"

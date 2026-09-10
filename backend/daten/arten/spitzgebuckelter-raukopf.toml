@@ -36,10 +36,8 @@ vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, in Mooren und auf saure
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Zitronengelber Raukopf"
-merkmal = "Hut hygrophan und ausbleichend, Lamellen und Fleisch gelblich bis zitronengelb, Stiel mit gelben Velumresten. Ebenfalls tödlich giftig."
-essbar = "toedlichGiftig"
 slug = "zitronengelber-raukopf"
+unterschied = "Hut hygrophan und ausbleichend, Lamellen und Fleisch gelblich bis zitronengelb, Stiel mit gelben Velumresten. Ebenfalls tödlich giftig."
 
 [[links]]
 titel = "123pilzsuche.de"

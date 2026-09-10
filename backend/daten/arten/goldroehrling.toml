@@ -46,34 +46,24 @@ vorkommen = "Symbiosepilz fast ausschließlich bei Lärche, extrem selten unter 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Dottergelber Klumpfuß"
-merkmal = "Lamellen statt Röhren, Stiel mit gerandeter Knolle und rostbraunem Sporenpulver, Geruch widerlich erdig."
-essbar = "toedlichGiftig"
 slug = "dottergelber-klumpfuss"
+unterschied = "Lamellen statt Röhren, Stiel mit gerandeter Knolle und rostbraunem Sporenpulver, Geruch widerlich erdig."
 
 [[verwechslungen]]
-name = "Gelber Hohlfußröhrling"
-merkmal = "Hut kanariengelb und bräunlich schuppig filzig, Stiel hohl, Röhren wabenartig und schwer vom Hut trennbar."
-essbar = "essbar"
 slug = "gelber-hohlfussroehrling"
+unterschied = "Hut kanariengelb und bräunlich schuppig filzig, Stiel hohl, Röhren wabenartig und schwer vom Hut trennbar."
 
 [[verwechslungen]]
-name = "Goldporiger Röhrling"
-merkmal = "Hut gelbrosa bis beigerosa, Röhren grobporig, Fleisch weiß mit rosaviolettem Ton, im Laubwald."
-essbar = "essbar"
 slug = "goldporiger-roehrling"
+unterschied = "Hut gelbrosa bis beigerosa, Röhren grobporig, Fleisch weiß mit rosaviolettem Ton, im Laubwald."
 
 [[verwechslungen]]
-name = "Kuhröhrling"
-merkmal = "Hut bräunlich, Röhren graugelb bis rotbraun mit weiten Mündungen, kein Ring, bei Kiefer."
-essbar = "essbar"
 slug = "kuhroehrling"
+unterschied = "Hut bräunlich, Röhren graugelb bis rotbraun mit weiten Mündungen, kein Ring, bei Kiefer."
 
 [[verwechslungen]]
-name = "Elfenbeinröhrling"
-merkmal = "Hut weiß bis cremefarben, Stiel mit braunen harzigen Pünktchen, bei Zirbel- und Weymouthskiefer."
-essbar = "essbar"
 slug = "elfenbeinroehrling"
+unterschied = "Hut weiß bis cremefarben, Stiel mit braunen harzigen Pünktchen, bei Zirbel- und Weymouthskiefer."
 
 [[links]]
 titel = "123pilzsuche.de"

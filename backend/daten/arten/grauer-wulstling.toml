@@ -33,16 +33,12 @@ vorkommen = "Symbiosepilz, bevorzugt in sauren Mischwäldern, gern bei Fichte."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Pantherpilz"
-merkmal = "Hutrand gerieft, Ring ungerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
-essbar = "toedlichGiftig"
 slug = "pantherpilz"
+unterschied = "Hutrand gerieft, Ring ungerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
 
 [[verwechslungen]]
-name = "Königsfliegenpilz"
-merkmal = "Hut braun mit weißen Flocken, Fleisch unter der Huthaut gelb, Knolle mit warzigen Gürteln."
-essbar = "giftig"
 slug = "koenigsfliegenpilz"
+unterschied = "Hut braun mit weißen Flocken, Fleisch unter der Huthaut gelb, Knolle mit warzigen Gürteln."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -31,34 +31,24 @@ vorkommen = "Parasit und Folgezersetzer am Wurzelgeflecht von Kiefern, seltener 
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Bauchwehkoralle"
-merkmal = "Korallenartig verzweigt statt kraus gelappt, Astspitzen mit lilarötlichen Zähnchen, Druckstellen braun bis rot."
-essbar = "giftig"
 slug = "bauchwehkoralle"
+unterschied = "Korallenartig verzweigt statt kraus gelappt, Astspitzen mit lilarötlichen Zähnchen, Druckstellen braun bis rot."
 
 [[verwechslungen]]
-name = "Weinbraunverfärbende Koralle"
-merkmal = "Korallenartig verzweigt, Fleisch an der Luft schnell rotbraun bis schwarzbraun, Geschmack stark bitter."
-essbar = "ungeniessbar"
 slug = "weinbraunverfaerbende-koralle"
+unterschied = "Korallenartig verzweigt, Fleisch an der Luft schnell rotbraun bis schwarzbraun, Geschmack stark bitter."
 
 [[verwechslungen]]
-name = "Breitblättrige Glucke"
-merkmal = "Lappen breiter und hirnartig, an Laubholz, beim Kochen Waschküchengeruch."
-essbar = "essbar"
 slug = "breitblaettrige-glucke"
+unterschied = "Lappen breiter und hirnartig, an Laubholz, beim Kochen Waschküchengeruch."
 
 [[verwechslungen]]
-name = "Ästiger Stachelbart"
-merkmal = "Weiß, mit aufwärts gerichteten Ästen und Stacheln, an Totholz von Laubbäumen."
-essbar = "essbar"
 slug = "aestiger-stachelbart"
+unterschied = "Weiß, mit aufwärts gerichteten Ästen und Stacheln, an Totholz von Laubbäumen."
 
 [[verwechslungen]]
-name = "Gelbe Koralle"
-merkmal = "Gelb bis goldgelb, ästig verzweigt aus einem weißen Strunk, Astspitzen alt bitterlich."
-essbar = "essbar"
 slug = "gelbe-koralle"
+unterschied = "Gelb bis goldgelb, ästig verzweigt aus einem weißen Strunk, Astspitzen alt bitterlich."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -35,28 +35,20 @@ vorkommen = "Symbiosepilz bei Birke, in Deutschland häufig."
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Fichtenrotkappe"
-merkmal = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
-essbar = "essbar"
 slug = "fichtenrotkappe"
+unterschied = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
 
 [[verwechslungen]]
-name = "Eichenrotkappe"
-merkmal = "Stielschuppen rötlich bis rotgrau auf weißem Grund, Huthaut meist verkürzt."
-essbar = "essbar"
 slug = "eichenrotkappe"
+unterschied = "Stielschuppen rötlich bis rotgrau auf weißem Grund, Huthaut meist verkürzt."
 
 [[verwechslungen]]
-name = "Espenrotkappe"
-merkmal = "Stielschuppen jung weißlich, später orangebraun, Fleisch graulila."
-essbar = "essbar"
 slug = "espen-rotkappe"
+unterschied = "Stielschuppen jung weißlich, später orangebraun, Fleisch graulila."
 
 [[verwechslungen]]
-name = "Kiefernrotkappe"
-merkmal = "Hut fuchsrot bis rotbraun und samtig, Schuppen erst hellbraun, dann rötlich."
-essbar = "essbar"
 slug = "kiefernrotkappe"
+unterschied = "Hut fuchsrot bis rotbraun und samtig, Schuppen erst hellbraun, dann rötlich."
 
 [[links]]
 titel = "123pilzsuche.de"

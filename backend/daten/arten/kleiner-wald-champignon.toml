@@ -42,22 +42,16 @@ vorkommen = "Folgezersetzer im sauren Mischwald, meist Nadelwald, auf Nadelstreu
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Perlhuhnchampignon"
-merkmal = "Hut fein grau bis schwarzbraun geschuppt wie Perlhuhngefieder, Fleisch an der Stielbasis gilbend, Geruch tinten- bis karbolartig."
-essbar = "giftig"
 slug = "perlhuhnchampignon"
+unterschied = "Hut fein grau bis schwarzbraun geschuppt wie Perlhuhngefieder, Fleisch an der Stielbasis gilbend, Geruch tinten- bis karbolartig."
 
 [[verwechslungen]]
-name = "Rebhuhnegerling"
-merkmal = "Hut graubraun bis rauchschwärzlich, Stielbasis knollig und bei Verletzung gilbend, Geruch schwach karbolartig."
-essbar = "giftig"
 slug = "rebhuhnegerling"
+unterschied = "Hut graubraun bis rauchschwärzlich, Stielbasis knollig und bei Verletzung gilbend, Geruch schwach karbolartig."
 
 [[verwechslungen]]
-name = "Spitzschuppiger Schirmling"
-merkmal = "Lamellen weißlich und sehr eng stehend, Sporenpulver weiß, Geruch stechend und gasartig."
-essbar = "giftig"
 slug = "spitzschuppiger-schirmling"
+unterschied = "Lamellen weißlich und sehr eng stehend, Sporenpulver weiß, Geruch stechend und gasartig."
 
 [[links]]
 titel = "123pilzsuche.de"

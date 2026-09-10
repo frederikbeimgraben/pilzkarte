@@ -40,22 +40,16 @@ vorkommen = "Folgezersetzer auf Wiesen und in Parkanlagen, seltener im Misch- un
 zeit = "Frühling bis Sommer."
 
 [[verwechslungen]]
-name = "Übelriechender Egerling"
-merkmal = "Riecht ebenfalls nach Karbol, Stielbasis im Schnitt kräftig chromgelb."
-essbar = "ungeniessbar"
 slug = "uebelriechender-egerling"
+unterschied = "Riecht ebenfalls nach Karbol, Stielbasis im Schnitt kräftig chromgelb."
 
 [[verwechslungen]]
-name = "Wiesenchampignon"
-merkmal = "Riecht angenehm pilzig, gilbt nicht, Ring einfach und dünn."
-essbar = "essbar"
 slug = "wiesenchampignon"
+unterschied = "Riecht angenehm pilzig, gilbt nicht, Ring einfach und dünn."
 
 [[verwechslungen]]
-name = "Schafchampignon"
-merkmal = "Riecht nach Anis, gilbt nur an der Oberfläche, nicht an der Schnittstelle in der Stielbasis."
-essbar = "essbar"
 slug = "schafchampignon"
+unterschied = "Riecht nach Anis, gilbt nur an der Oberfläche, nicht an der Schnittstelle in der Stielbasis."
 
 [[links]]
 titel = "123pilzsuche.de"

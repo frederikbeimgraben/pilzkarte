@@ -34,22 +34,16 @@ vorkommen = "Symbiosepilz im Laubwald bei Eiche und Buche, gern auf Lehmboden, g
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Flämmiger Saftling"
-merkmal = "Kleiner, Hut orangerot, mit wachsartigen Lamellen statt dicker Leisten, auf Wiesen."
-essbar = "giftig"
 slug = "flaemmiger-saftling"
+unterschied = "Kleiner, Hut orangerot, mit wachsartigen Lamellen statt dicker Leisten, auf Wiesen."
 
 [[verwechslungen]]
-name = "Trompetenpfifferling"
-merkmal = "Hut braun und trichterig durchbohrt, Leisten grau, Stiel hohl und gelb, Fleisch schwärzt nicht."
-essbar = "essbar"
 slug = "trompetenpfifferling"
+unterschied = "Hut braun und trichterig durchbohrt, Leisten grau, Stiel hohl und gelb, Fleisch schwärzt nicht."
 
 [[verwechslungen]]
-name = "Starkriechender Pfifferling"
-merkmal = "Unterseite fast glatt bis nur schwach faltig und orangegelb, Fleisch schwärzt nicht."
-essbar = "essbar"
 slug = "gelbstieliger-trompetenpfifferling"
+unterschied = "Unterseite fast glatt bis nur schwach faltig und orangegelb, Fleisch schwärzt nicht."
 
 [[links]]
 titel = "123pilzsuche.de"

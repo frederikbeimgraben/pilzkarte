@@ -34,22 +34,16 @@ vorkommen = "Am Fuß von Laubbäumen, meist Eiche, seltener Buche. Parasitisch u
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Klapperschwamm"
-merkmal = "Hüte breiter und zungenförmig, grau bis graubraun, in einem großen Büschel am Stammfuß."
-essbar = "essbar"
 slug = "klapperschwamm"
+unterschied = "Hüte breiter und zungenförmig, grau bis graubraun, in einem großen Büschel am Stammfuß."
 
 [[verwechslungen]]
-name = "Bergporling"
-merkmal = "Größere, fächerförmige Hüte, wächst an Nadelholz im Bergwald."
-essbar = "essbar"
 slug = "bergporling"
+unterschied = "Größere, fächerförmige Hüte, wächst an Nadelholz im Bergwald."
 
 [[verwechslungen]]
-name = "Krause Glucke"
-merkmal = "Blattartig gekräuselt statt aus vielen kleinen Hüten, an Kiefer."
-essbar = "essbar"
 slug = "krause-glucke"
+unterschied = "Blattartig gekräuselt statt aus vielen kleinen Hüten, an Kiefer."
 
 [[links]]
 titel = "123pilzsuche.de"

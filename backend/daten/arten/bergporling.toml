@@ -41,22 +41,16 @@ vorkommen = "Wurzelparasit im Nadelwald, gern an Weißtanne. In Tschechien und i
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Riesenporling"
-merkmal = "Poren auf Druck schwärzend, Fleisch im Schnitt langsam braunschwarz, gern an Buchenstümpfen."
-essbar = "essbar"
 slug = "riesenporling"
+unterschied = "Poren auf Druck schwärzend, Fleisch im Schnitt langsam braunschwarz, gern an Buchenstümpfen."
 
 [[verwechslungen]]
-name = "Klapperschwamm"
-merkmal = "Graubraune halbierte Einzelhüte in Büscheln, im Wurzelbereich von Eiche und Kastanie."
-essbar = "essbar"
 slug = "klapperschwamm"
+unterschied = "Graubraune halbierte Einzelhüte in Büscheln, im Wurzelbereich von Eiche und Kastanie."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Hut semmelgelb bis orangebraun, Poren grünweißlich, Fleisch fest und brüchig."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Hut semmelgelb bis orangebraun, Poren grünweißlich, Fleisch fest und brüchig."
 
 [[links]]
 titel = "123pilzsuche.de"

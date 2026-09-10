@@ -39,16 +39,12 @@ vorkommen = "Folgezersetzer in Parks und im Mischwald, gern bei Laubbäumen."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Waldchampignon"
-merkmal = "Fleisch bei Verletzung gelborange und später blutrot, Geruch angenehm pilzig und leicht fruchtig."
-essbar = "guterSpeisepilz"
 slug = "waldchampignon"
+unterschied = "Fleisch bei Verletzung gelborange und später blutrot, Geruch angenehm pilzig und leicht fruchtig."
 
 [[verwechslungen]]
-name = "Riesenchampignon"
-merkmal = "Deutlich größer, Geruch anisartig nach Bittermandeln, Ring breit und dick."
-essbar = "essbar"
 slug = "riesenchampignon"
+unterschied = "Deutlich größer, Geruch anisartig nach Bittermandeln, Ring breit und dick."
 
 [[links]]
 titel = "123pilzsuche.de"

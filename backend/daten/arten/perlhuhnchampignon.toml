@@ -42,10 +42,8 @@ vorkommen = "Folgezersetzer in Parkanlagen und im Mischwald, gern auf kalkreiche
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rebhuhnegerling"
-merkmal = "Scheitel mit faserigen Schuppen, zum Rand hin rotbraun schuppig, Geruch nur schwach karbolartig."
-essbar = "giftig"
 slug = "rebhuhnegerling"
+unterschied = "Scheitel mit faserigen Schuppen, zum Rand hin rotbraun schuppig, Geruch nur schwach karbolartig."
 
 [[links]]
 titel = "123pilzsuche.de"

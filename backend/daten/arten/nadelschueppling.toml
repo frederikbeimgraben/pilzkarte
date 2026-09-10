@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer im Nadelwald, meist am Boden auf Nadelholz, seltener
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Hut hellbraun bis dunkelbraun und meist gebuckelt, Stiel silbrig überfasert mit dünnem, vergänglichem Ring, Sporenpulver rostbraun, Geruch muffig mehlig."
-essbar = "toedlichGiftig"
 slug = "gifthaeubling"
+unterschied = "Hut hellbraun bis dunkelbraun und meist gebuckelt, Stiel silbrig überfasert mit dünnem, vergänglichem Ring, Sporenpulver rostbraun, Geruch muffig mehlig."
 
 [[verwechslungen]]
-name = "Samtschuppiger Tannenflämmling"
-merkmal = "Hut gelbfuchsig mit trockener, schuppiger Oberfläche, Lamellen mit rostbraunen Flecken, an Tanne und Kiefer."
-essbar = "giftig"
 slug = "samtschuppiger-tannenflaemmling"
+unterschied = "Hut gelbfuchsig mit trockener, schuppiger Oberfläche, Lamellen mit rostbraunen Flecken, an Tanne und Kiefer."
 
 [[verwechslungen]]
-name = "Grünblättriger Schwefelkopf"
-merkmal = "Lamellen grün bis grüngelb, Sporenpulver purpurbraun, Geschmack stark bitter."
-essbar = "giftig"
 slug = "gruenblaettriger-schwefelkopf"
+unterschied = "Lamellen grün bis grüngelb, Sporenpulver purpurbraun, Geschmack stark bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

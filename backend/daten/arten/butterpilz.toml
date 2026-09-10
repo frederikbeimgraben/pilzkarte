@@ -30,28 +30,20 @@ vorkommen = "Symbiosepilz bei Kiefer."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Ringloser Butterröhrling"
-merkmal = "Ohne Ring am Stiel, Stielbasis rosa."
-essbar = "essbar"
 slug = "ringloser-butterroehrling"
+unterschied = "Ohne Ring am Stiel, Stielbasis rosa."
 
 [[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Hut hellgelb bis orangerötlich, bei Lärche."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Hut hellgelb bis orangerötlich, bei Lärche."
 
 [[verwechslungen]]
-name = "Körnchenröhrling"
-merkmal = "Ohne Ring, Stiel dicht gekörnelt, Röhren jung milchig tropfend."
-essbar = "essbar"
 slug = "koernchenroehrling"
+unterschied = "Ohne Ring, Stiel dicht gekörnelt, Röhren jung milchig tropfend."
 
 [[verwechslungen]]
-name = "Grauer Lärchenröhrling"
-merkmal = "Hut olivgrau bis gelbgrau, Röhren grau, bei Lärche."
-essbar = "essbar"
 slug = "grauer-laerchenroehrling"
+unterschied = "Hut olivgrau bis gelbgrau, Röhren grau, bei Lärche."
 
 [[links]]
 titel = "123pilzsuche.de"

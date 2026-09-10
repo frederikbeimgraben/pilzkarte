@@ -39,34 +39,24 @@ vorkommen = "Folgezersetzer meist an Laubholz, sehr häufig."
 zeit = "Spätherbst bis Frühjahr, gern nach dem ersten Frost."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Lamellen hellbraun bis zimtbraun, Sporenpulver rostbraun, Stiel weißsilbrig überfasert mit dünnem Ring, Geruch muffig nach faulendem Holz."
-essbar = "toedlichGiftig"
 slug = "gifthaeubling"
+unterschied = "Lamellen hellbraun bis zimtbraun, Sporenpulver rostbraun, Stiel weißsilbrig überfasert mit dünnem Ring, Geruch muffig nach faulendem Holz."
 
 [[verwechslungen]]
-name = "Geflecktblättriger Flämmling"
-merkmal = "Lamellen jung hellgelb, bald orange und rostfleckig, Fleisch orangegelb, Geschmack stark bitter, meist an Nadelholz."
-essbar = "giftig"
 slug = "geflecktblaettriger-flaemmling"
+unterschied = "Lamellen jung hellgelb, bald orange und rostfleckig, Fleisch orangegelb, Geschmack stark bitter, meist an Nadelholz."
 
 [[verwechslungen]]
-name = "Samtschuppiger Tannenflämmling"
-merkmal = "Hut trocken, matt und schuppig, Lamellen gelb bis goldgelb, alt rostbraun, Geschmack bitterlich."
-essbar = "giftig"
 slug = "samtschuppiger-tannenflaemmling"
+unterschied = "Hut trocken, matt und schuppig, Lamellen gelb bis goldgelb, alt rostbraun, Geschmack bitterlich."
 
 [[verwechslungen]]
-name = "Rotbrauner Flämmling"
-merkmal = "Hut zimt- bis rotbraun und trocken, Lamellen zuerst leuchtend gelb, später rostbraun, Geschmack bitterlich."
-essbar = "giftig"
 slug = "rotbrauner-flaemmling"
+unterschied = "Hut zimt- bis rotbraun und trocken, Lamellen zuerst leuchtend gelb, später rostbraun, Geschmack bitterlich."
 
 [[verwechslungen]]
-name = "Nadelschüppling"
-merkmal = "Hut zitronen- bis orangegelb mit Schüppchen, Lamellen gelb, Geschmack bitter, im Nadelwald."
-essbar = "giftig"
 slug = "nadelschueppling"
+unterschied = "Hut zitronen- bis orangegelb mit Schüppchen, Lamellen gelb, Geschmack bitter, im Nadelwald."
 
 [[links]]
 titel = "123pilzsuche.de"

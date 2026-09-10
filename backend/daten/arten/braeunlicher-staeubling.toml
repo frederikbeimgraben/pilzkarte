@@ -29,22 +29,16 @@ vorkommen = "Folgezersetzer im Nadelwald, selten im Laubwald, gern bei Fichte. A
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Flaschenstäubling"
-merkmal = "Blasse, spitzkegelige Stacheln auf hellem Grund, Fruchtkörper deutlich keulig gestielt."
-essbar = "essbar"
 slug = "flaschenbovist"
+unterschied = "Blasse, spitzkegelige Stacheln auf hellem Grund, Fruchtkörper deutlich keulig gestielt."
 
 [[verwechslungen]]
-name = "Birnenstäubling"
-merkmal = "Büschelig auf Holz, mit dunkelbraunen kleiigen Körnchen, Geruch gasartig."
-essbar = "essbar"
 slug = "birnenstaeubling"
+unterschied = "Büschelig auf Holz, mit dunkelbraunen kleiigen Körnchen, Geruch gasartig."
 
 [[verwechslungen]]
-name = "Igelstäubling"
-merkmal = "Stacheln mit helleren Spitzen, nach dem Abwaschen bleibt ein deutliches Netzmuster."
-essbar = "essbar"
 slug = "igelstaeubling"
+unterschied = "Stacheln mit helleren Spitzen, nach dem Abwaschen bleibt ein deutliches Netzmuster."
 
 [[links]]
 titel = "123pilzsuche.de"

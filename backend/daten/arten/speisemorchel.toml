@@ -36,22 +36,16 @@ vorkommen = "In Auwäldern, Parks, Gärten, an Waldrändern, auf Waldwiesen und 
 zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai."
 
 [[verwechslungen]]
-name = "Gemeine Morchel"
-merkmal = "Kleiner, 2 bis 6, selten bis 8 cm breit, hellbraun, graubraun bis rußbraun mit rostfarbenen Flecken."
-essbar = "essbar"
 slug = "gemeine-morchel"
+unterschied = "Kleiner, 2 bis 6, selten bis 8 cm breit, hellbraun, graubraun bis rußbraun mit rostfarbenen Flecken."
 
 [[verwechslungen]]
-name = "Dickfüßige Morchel"
-merkmal = "Stiel klumpig dick und längs gefurcht, sonst gleich."
-essbar = "essbar"
 slug = "dickfuessige-morchel"
+unterschied = "Stiel klumpig dick und längs gefurcht, sonst gleich."
 
 [[verwechslungen]]
-name = "Spitzmorchel"
-merkmal = "Käppchen zugespitzt, olivbeige bis graubraun, mit Längsrippen und Kammern statt runder Waben."
-essbar = "essbar"
 slug = "spitzmorchel"
+unterschied = "Käppchen zugespitzt, olivbeige bis graubraun, mit Längsrippen und Kammern statt runder Waben."
 
 [[links]]
 titel = "123pilzsuche.de"

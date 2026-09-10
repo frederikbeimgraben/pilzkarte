@@ -33,21 +33,12 @@ vorkommen = "Symbiosepilz in Laub- und Nadelwald, gern bei Rotbuche, Kastanie un
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Blasshütiger Purpurröhrling"
-merkmal = "Hut blass grauweiß bis lehmfarben, ohne Purpurrosa und Goldgelb."
-essbar = "giftig"
-
-[[verwechslungen]]
-name = "Blaufleckender Purpurröhrling"
-merkmal = "Hut heller, auf Druck fleckig blauend."
-essbar = "giftig"
 slug = "blaufleckender-purpurroehrling"
+unterschied = "Hut heller, auf Druck fleckig blauend."
 
 [[verwechslungen]]
-name = "Flockenstieliger Hexenröhrling"
-merkmal = "Stiel ohne Netz, nur rot geflockt, Hut dunkelbraun."
-essbar = "essbar"
 slug = "flockenstieliger-hexenroehrling"
+unterschied = "Stiel ohne Netz, nur rot geflockt, Hut dunkelbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

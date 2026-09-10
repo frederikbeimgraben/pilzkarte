@@ -34,34 +34,24 @@ vorkommen = "Folgezersetzer auf Wiesen und Weiden, in Laubwäldern und Parkanlag
 zeit = "Herbst bis Winteranfang, selten im Frühling."
 
 [[verwechslungen]]
-name = "Bocksdickfuß"
-merkmal = "Geruch widerlich nach Ziegenbock und Schweißfüßen, Lamellen laufen zimtbraun an, Stiel mit rostbraunem Sporenpulver behaftet."
-essbar = "giftig"
 slug = "bocksdickfuss"
+unterschied = "Geruch widerlich nach Ziegenbock und Schweißfüßen, Lamellen laufen zimtbraun an, Stiel mit rostbraunem Sporenpulver behaftet."
 
 [[verwechslungen]]
-name = "Violetter Rötelritterling"
-merkmal = "Auch der Hut ist lilaviolett, Geruch stärker parfümiert, im Laubwald."
-essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
+unterschied = "Auch der Hut ist lilaviolett, Geruch stärker parfümiert, im Laubwald."
 
 [[verwechslungen]]
-name = "Lavendelfarbener Rötelritterling"
-merkmal = "Hut rötlichlila bis lavendelfarben, Lamellen lila, Stiel schlanker."
-essbar = "essbar"
 slug = "lavendelfarbener-roetelritterling"
+unterschied = "Hut rötlichlila bis lavendelfarben, Lamellen lila, Stiel schlanker."
 
 [[verwechslungen]]
-name = "Schmutziger Rötelritterling"
-merkmal = "Deutlich kleiner, Lamellen schmutzig weiß bis graurosa und etwas herablaufend."
-essbar = "essbar"
 slug = "schmutziger-roetelritterling"
+unterschied = "Deutlich kleiner, Lamellen schmutzig weiß bis graurosa und etwas herablaufend."
 
 [[verwechslungen]]
-name = "Horngrauer Rötelritterling"
-merkmal = "Hut graubraun mit konzentrischen Wasserflecken, Geruch mehlartig statt parfümiert."
-essbar = "essbar"
 slug = "horngrauer-roetelritterling"
+unterschied = "Hut graubraun mit konzentrischen Wasserflecken, Geruch mehlartig statt parfümiert."
 
 [[links]]
 titel = "123pilzsuche.de"

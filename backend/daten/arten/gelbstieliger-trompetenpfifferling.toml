@@ -41,16 +41,12 @@ vorkommen = "Symbiosepilz im Mischwald. Selten, in Deutschland gefährdet."
 zeit = "Herbst bis Spätherbst."
 
 [[verwechslungen]]
-name = "Schwärzender Leistling"
-merkmal = "Leisten breit, dick und mehrfach gegabelt, Fleisch bei Verletzung und im Alter schwärzend, im Laubwald bei Eiche und Buche."
-essbar = "essbar"
 slug = "schwaerzender-leistling"
+unterschied = "Leisten breit, dick und mehrfach gegabelt, Fleisch bei Verletzung und im Alter schwärzend, im Laubwald bei Eiche und Buche."
 
 [[verwechslungen]]
-name = "Trompetenpfifferling"
-merkmal = "Leisten deutlich ausgeprägt und graugelb, Stiel nur gelblich bis gelbbraun statt leuchtend gelb."
-essbar = "essbar"
 slug = "trompetenpfifferling"
+unterschied = "Leisten deutlich ausgeprägt und graugelb, Stiel nur gelblich bis gelbbraun statt leuchtend gelb."
 
 [[links]]
 titel = "123pilzsuche.de"

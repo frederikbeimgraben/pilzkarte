@@ -36,22 +36,16 @@ vorkommen = "Symbiosepilz im Nadelwald bei Kiefer und Föhre. Sehr selten, in De
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Fichtenrotkappe"
-merkmal = "Stielschuppen von Anfang an schwarz, Fleisch später violett, bei Fichte."
-essbar = "essbar"
 slug = "fichtenrotkappe"
+unterschied = "Stielschuppen von Anfang an schwarz, Fleisch später violett, bei Fichte."
 
 [[verwechslungen]]
-name = "Birkenrotkappe"
-merkmal = "Stielschuppen jung weiß, bei Birke."
-essbar = "essbar"
 slug = "birken-rotkappe"
+unterschied = "Stielschuppen jung weiß, bei Birke."
 
 [[verwechslungen]]
-name = "Espenrotkappe"
-merkmal = "Hut orangerot, bei Espe und Pappel."
-essbar = "essbar"
 slug = "espen-rotkappe"
+unterschied = "Hut orangerot, bei Espe und Pappel."
 
 [[links]]
 titel = "123pilzsuche.de"

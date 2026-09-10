@@ -33,15 +33,8 @@ vorkommen = "Waermeliebender Symbiosepilz im Laubwald, gern in Kork- und Steinei
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Milder Schwefelmilchling"
-merkmal = "Milch verfaerbt an der Luft schwefelgelb."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Rotbrauner Milchling"
-merkmal = "Nach etwa einer Minute extrem scharf, Geruch harzig, bei Nadelholz."
-essbar = "essbar"
 slug = "rotbrauner-milchling"
+unterschied = "Nach etwa einer Minute extrem scharf, Geruch harzig, bei Nadelholz."
 
 [[links]]
 titel = "123pilzsuche.de"

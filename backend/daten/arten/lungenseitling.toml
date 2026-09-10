@@ -43,22 +43,16 @@ vorkommen = "Folgezersetzer an Laubholz, gern Buche, Esche, Pappel und Birke. In
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Rosenseitling"
-merkmal = "Hut und Lamellen gelblich bis rosenrot, Geruch beißend nitratartig. In Europa nur als Zuchtpilz."
-essbar = "essbar"
 slug = "rosenseitling"
+unterschied = "Hut und Lamellen gelblich bis rosenrot, Geruch beißend nitratartig. In Europa nur als Zuchtpilz."
 
 [[verwechslungen]]
-name = "Rillstieliger Seitling"
-merkmal = "Lamellen queradrig netzig verbunden und bis zur Stielbasis herablaufend, Stiel längsrillig, Geruch mehlartig."
-essbar = "essbar"
 slug = "rillstieliger-seitling"
+unterschied = "Lamellen queradrig netzig verbunden und bis zur Stielbasis herablaufend, Stiel längsrillig, Geruch mehlartig."
 
 [[verwechslungen]]
-name = "Austernseitling"
-merkmal = "Hut silbergrau bis graubraun statt cremeweiß, dickfleischiger. Er braucht einen Kältereiz und kommt erst im Winter."
-essbar = "guterSpeisepilz"
 slug = "austernseitling"
+unterschied = "Hut silbergrau bis graubraun statt cremeweiß, dickfleischiger. Er braucht einen Kältereiz und kommt erst im Winter."
 
 [[links]]
 titel = "123pilzsuche.de"

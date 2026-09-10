@@ -36,22 +36,16 @@ vorkommen = "Symbiosepilz bei Fichte, gern zwischen Heidelbeeren. Allgemein sehr
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Birkenrotkappe"
-merkmal = "Stielschuppen jung weiß bis hellbraun, bei Birke."
-essbar = "essbar"
 slug = "birken-rotkappe"
+unterschied = "Stielschuppen jung weiß bis hellbraun, bei Birke."
 
 [[verwechslungen]]
-name = "Espenrotkappe"
-merkmal = "Hut orangerot, Stielschuppen erst weiß, dann rotbraun, bei Espe und Pappel."
-essbar = "essbar"
 slug = "espen-rotkappe"
+unterschied = "Hut orangerot, Stielschuppen erst weiß, dann rotbraun, bei Espe und Pappel."
 
 [[verwechslungen]]
-name = "Eichenrotkappe"
-merkmal = "Hut ziegelrot bis orangebraun, Stielschuppen rotbraun, bei Eiche."
-essbar = "essbar"
 slug = "eichenrotkappe"
+unterschied = "Hut ziegelrot bis orangebraun, Stielschuppen rotbraun, bei Eiche."
 
 [[links]]
 titel = "123pilzsuche.de"

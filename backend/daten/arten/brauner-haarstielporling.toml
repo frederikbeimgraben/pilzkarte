@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer meist im Nadelwald, gern an totem Fichtenholz, oft a
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Bergporling"
-merkmal = "Hut braun und samtig, Fächer aus einem gemeinsamen Strunk, Geschmack schnell extrem scharf, an Weißtanne."
-essbar = "essbar"
 slug = "bergporling"
+unterschied = "Hut braun und samtig, Fächer aus einem gemeinsamen Strunk, Geschmack schnell extrem scharf, an Weißtanne."
 
 [[verwechslungen]]
-name = "Riesenporling"
-merkmal = "Poren auf Druck schwärzend, Fleisch im Schnitt braunschwarz, an Laubholzstümpfen."
-essbar = "essbar"
 slug = "riesenporling"
+unterschied = "Poren auf Druck schwärzend, Fleisch im Schnitt braunschwarz, an Laubholzstümpfen."
 
 [[verwechslungen]]
-name = "Schuppiger Porling"
-merkmal = "Hut mit konzentrisch angeordneten braunen Schuppen, Stiel seitlich und im Alter mit schwarzer Basis, an Laubholz."
-essbar = "essbar"
 slug = "schuppiger-porling"
+unterschied = "Hut mit konzentrisch angeordneten braunen Schuppen, Stiel seitlich und im Alter mit schwarzer Basis, an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

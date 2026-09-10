@@ -39,22 +39,16 @@ vorkommen = "Meist im Nadelwald auf saurem Boden, vermutlich Symbiosepilz, nach 
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Schafporling"
-merkmal = "Hut weißlich bis cremefarben, Fruchtkörper meist einzeln statt stark verwachsen, Fleisch mild."
-essbar = "essbar"
 slug = "schafporling"
+unterschied = "Hut weißlich bis cremefarben, Fruchtkörper meist einzeln statt stark verwachsen, Fleisch mild."
 
 [[verwechslungen]]
-name = "Rötender Schafeuterporling"
-merkmal = "Fleisch rötet bei Verletzung und im Alter."
-essbar = "essbar"
 slug = "roetender-schafeuterporling"
+unterschied = "Fleisch rötet bei Verletzung und im Alter."
 
 [[verwechslungen]]
-name = "Weißer Knochenporling"
-merkmal = "Fruchtkörper weiß, Fleisch hart und zäh wie Kork."
-essbar = "ungeniessbar"
 slug = "weisser-knochenporling"
+unterschied = "Fruchtkörper weiß, Fleisch hart und zäh wie Kork."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,0 +1,44 @@
+name = "Weißstieliger Rötling"
+lateinisch = "Entoloma lividoalbum"
+gruppe = "roetling"
+speisewert = "giftig"
+geschuetzt = false
+marktfaehig = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "123pilzsuche führt ihn als giftig und verdächtig. Der mehlige Geruch verleitet dazu, ihn für einen Speisepilz zu halten."
+weitereNamen = ["Weißgrauer Rötling", "Herbstschildrötling"]
+synonyme = ["Rhodophyllus lividoalbus"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Weisstieligerroetling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 8.0, bis = 10.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.0 }
+
+[merkmale]
+hut = "3 bis 8, selten bis 10 cm breit, graubraun bis gelbbraun, glatt und matt, von der Mitte zum Rand ausbleichend. Mitte gebuckelt, oft zugleich eingedellt, Rand wellig."
+lamellen = "Jung weißlich, durch das Sporenpulver später rosa, ausgebuchtet angewachsen und mit einem Zahn herablaufend, gegabelt, Schneiden uneben und gezahnt."
+stiel = "Weiß, faserig, voll bis ausgestopft."
+fleisch = "Weiß."
+geruch = "Mehlig."
+geschmack = "Mild, mehlig."
+sporenpulver = "Rosa."
+vorkommen = "Symbiosepilz in Mischwäldern, Parks und auf Wiesen."
+zeit = "Frühling bis Herbst."
+
+[[verwechslungen]]
+slug = "bueschliger-rasling"
+unterschied = "Lamellen bleiben weißlich, Sporenpulver ist reinweiß, und er wächst büschelig aus einem Strunk."
+
+[[verwechslungen]]
+slug = "schildroetling"
+unterschied = "Im Frühjahr bei Rosengewächsen in Hecken und Streuobstwiesen, Hut seidig faserig."
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Weisstieligerroetling.htm"

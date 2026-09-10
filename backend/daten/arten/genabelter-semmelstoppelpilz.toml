@@ -35,22 +35,16 @@ vorkommen = "Symbiosepilz in Mischwäldern. Extrem selten."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Ellipsoidsporiger Stoppelpilz"
-merkmal = "Hutmitte nicht genabelt, Stacheln dichter stehend."
-essbar = "essbar"
 slug = "ellipsoidsporige-stoppelpilz"
+unterschied = "Hutmitte nicht genabelt, Stacheln dichter stehend."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Unterseite mit Poren statt mit Stacheln."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Unterseite mit Poren statt mit Stacheln."
 
 [[verwechslungen]]
-name = "Schafporling"
-merkmal = "Hut weißlich, Unterseite mit feinen weißen Poren."
-essbar = "essbar"
 slug = "schafporling"
+unterschied = "Hut weißlich, Unterseite mit feinen weißen Poren."
 
 [[links]]
 titel = "123pilzsuche.de"

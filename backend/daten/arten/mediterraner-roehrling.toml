@@ -33,21 +33,12 @@ vorkommen = "Symbiosepilz auf meist kalkreichem Boden in Nadelwäldern, bei Kief
 zeit = "Herbst bis Frühjahr."
 
 [[verwechslungen]]
-name = "Elfenbeinröhrling"
-merkmal = "Hut weiß bis cremefarben, Röhren weiß, bei fünfnadeligen Kiefern wie Zirbe und Weymouthskiefer."
-essbar = "essbar"
 slug = "elfenbeinroehrling"
+unterschied = "Hut weiß bis cremefarben, Röhren weiß, bei fünfnadeligen Kiefern wie Zirbe und Weymouthskiefer."
 
 [[verwechslungen]]
-name = "Ringloser Butterpilz"
-merkmal = "Hut braun bis kastanienbraun, Röhren gelb, Stielbasis rosa, bei Fichte und Kiefer."
-essbar = "essbar"
 slug = "ringloser-butterpilz"
-
-[[verwechslungen]]
-name = "Weißbrauner Schmierröhrling"
-merkmal = "Jung elfenbeinweiß, alt schokoladenbraun, Stiel mit jung rötlichen, alt braunen Drüsenkörnchen."
-essbar = "essbar"
+unterschied = "Hut braun bis kastanienbraun, Röhren gelb, Stielbasis rosa, bei Fichte und Kiefer."
 
 [[links]]
 titel = "123pilzsuche.de"

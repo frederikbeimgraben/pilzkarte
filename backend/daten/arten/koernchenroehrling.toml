@@ -36,34 +36,24 @@ vorkommen = "Symbiosepilz bei Kiefer, auf kalkhaltigem oder saurem Boden, oft zu
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Ringloser Butterpilz"
-merkmal = "Stielbasis rosa, unter der abgezogenen Huthaut bleibt eine braune Faserung sichtbar."
-essbar = "essbar"
 slug = "ringloser-butterpilz"
+unterschied = "Stielbasis rosa, unter der abgezogenen Huthaut bleibt eine braune Faserung sichtbar."
 
 [[verwechslungen]]
-name = "Butterröhrling"
-merkmal = "Stiel mit braunviolettem Ring."
-essbar = "essbar"
 slug = "butterpilz"
+unterschied = "Stiel mit braunviolettem Ring."
 
 [[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Hut hellgelb, später orangerötlich, mit gelblichem Ring, Röhren auf Druck rosalila fleckend, bei Lärche."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Hut hellgelb, später orangerötlich, mit gelblichem Ring, Röhren auf Druck rosalila fleckend, bei Lärche."
 
 [[verwechslungen]]
-name = "Sandröhrling"
-merkmal = "Huthaut körnig filzig und matt, Röhren bräunlich bis rostgelb, Fleisch bei Verletzung blauend."
-essbar = "sehrGuterSpeisepilz"
 slug = "sandroehrling"
+unterschied = "Huthaut körnig filzig und matt, Röhren bräunlich bis rostgelb, Fleisch bei Verletzung blauend."
 
 [[verwechslungen]]
-name = "Mediterraner Röhrling"
-merkmal = "Röhren oft mit gelben Tröpfchen, Stielbasis rosaviolett, Myzelfäden rosa."
-essbar = "essbar"
 slug = "mediterraner-roehrling"
+unterschied = "Röhren oft mit gelben Tröpfchen, Stielbasis rosaviolett, Myzelfäden rosa."
 
 [[links]]
 titel = "123pilzsuche.de"

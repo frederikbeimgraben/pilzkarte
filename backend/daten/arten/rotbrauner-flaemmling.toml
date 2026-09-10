@@ -33,22 +33,16 @@ vorkommen = "Folgezersetzer an Totholz, Baumstuempfen und vergrabenem Holz auf E
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gifthaeubling"
-merkmal = "Hut ockerbraun und hygrophan, Stiel mit weisslicher Ringzone und silbriger Laengsfaserung, Geruch mehlartig."
-essbar = "toedlichGiftig"
 slug = "gifthaeubling"
+unterschied = "Hut ockerbraun und hygrophan, Stiel mit weisslicher Ringzone und silbriger Laengsfaserung, Geruch mehlartig."
 
 [[verwechslungen]]
-name = "Geflecktblaettriger Flaemmling"
-merkmal = "Lamellen mit auffaelligen rostbraunen Flecken, Stiel heller und nicht dunkelbraun."
-essbar = "giftig"
 slug = "geflecktblaettriger-flaemmling"
+unterschied = "Lamellen mit auffaelligen rostbraunen Flecken, Stiel heller und nicht dunkelbraun."
 
 [[verwechslungen]]
-name = "Nadelschueppling"
-merkmal = "Hut gelb und schleimig, mit abstehenden Schuppchen, an Nadelholz."
-essbar = "giftig"
 slug = "nadelschueppling"
+unterschied = "Hut gelb und schleimig, mit abstehenden Schuppchen, an Nadelholz."
 
 [[links]]
 titel = "123pilzsuche.de"

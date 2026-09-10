@@ -35,10 +35,8 @@ vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, auch bei Buche und Eich
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Röhren statt Lamellen, Stiel mit Ring und ohne gerandete Knolle, Geruch angenehm."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Röhren statt Lamellen, Stiel mit Ring und ohne gerandete Knolle, Geruch angenehm."
 
 [[links]]
 titel = "123pilzsuche.de"

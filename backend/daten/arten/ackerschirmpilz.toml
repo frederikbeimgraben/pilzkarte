@@ -35,22 +35,16 @@ vorkommen = "Folgezersetzer auf mageren, sandigen Böden an Waldrändern, auf St
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Jungfernschirmling"
-merkmal = "Hut mit wollig abstehenden Schüppchen, Fleisch läuft nie rötlich an, im Bergnadelwald auf saurem Boden."
-essbar = "giftig"
 slug = "jungfernschirmling"
+unterschied = "Hut mit wollig abstehenden Schüppchen, Fleisch läuft nie rötlich an, im Bergnadelwald auf saurem Boden."
 
 [[verwechslungen]]
-name = "Grünsporschirmling"
-merkmal = "Lamellen im Alter mit blaugrünem Hauch, wächst in Gewächshäusern, auf Kompost und warmem Substrat."
-essbar = "giftig"
 slug = "gruensporschirmling"
+unterschied = "Lamellen im Alter mit blaugrünem Hauch, wächst in Gewächshäusern, auf Kompost und warmem Substrat."
 
 [[verwechslungen]]
-name = "Parasol"
-merkmal = "Deutlich größer, Stiel mit dunkelbrauner Natterung."
-essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
+unterschied = "Deutlich größer, Stiel mit dunkelbrauner Natterung."
 
 [[links]]
 titel = "123pilzsuche.de"

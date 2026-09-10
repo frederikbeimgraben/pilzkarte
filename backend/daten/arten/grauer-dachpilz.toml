@@ -33,20 +33,8 @@ vorkommen = "Folgezersetzer auf totem Laubholz, gern Buche, Erle und Weide."
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Seidiger Dachpilz"
-merkmal = "Hut heller und seidig, Stiel ohne grünlichen Schein. Ohne Mikroskop oft kaum zu trennen."
-essbar = "essbar"
 slug = "seidiger-dachpilz"
-
-[[verwechslungen]]
-name = "Rehbrauner Dachpilz"
-merkmal = "Hut rehbraun und faserig, Stiel ohne grünen Ton. Sehr häufig an Laubholz."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Großer Scheidling"
-merkmal = "Mit häutiger Scheide an der Stielbasis, wächst auf Streu, Humus oder Erde."
-essbar = "essbar"
+unterschied = "Hut heller und seidig, Stiel ohne grünlichen Schein. Ohne Mikroskop oft kaum zu trennen."
 
 [[links]]
 titel = "123pilzsuche.de"

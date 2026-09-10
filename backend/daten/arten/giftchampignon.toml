@@ -37,16 +37,12 @@ vorkommen = "Symbiosepilz meist bei Laubbäumen, vor allem Eiche und Buche, selt
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Hut rein weiß statt grünlich, sonst gleich gebaut und ebenso tödlich."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Hut rein weiß statt grünlich, sonst gleich gebaut und ebenso tödlich."
 
 [[verwechslungen]]
-name = "Frauentäubling"
-merkmal = "Fleisch spröde, Lamellen brechen, ohne Ring und ohne Volva."
-essbar = "essbar"
 slug = "frauentaeubling"
+unterschied = "Fleisch spröde, Lamellen brechen, ohne Ring und ohne Volva."
 
 [[links]]
 titel = "123pilzsuche.de"

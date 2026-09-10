@@ -33,16 +33,12 @@ vorkommen = "Folgezersetzer an pflanzlichen Abfaellen auf Wiesen, Feldern, in Pa
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-name = "Bleiweisser Trichterling"
-merkmal = "Hut rein weiss und mehlig bereift, ohne konzentrische Zonen."
-essbar = "toedlichGiftig"
 slug = "bleiweisser-trichterling"
+unterschied = "Hut rein weiss und mehlig bereift, ohne konzentrische Zonen."
 
 [[verwechslungen]]
-name = "Mehlraesling"
-merkmal = "Stark mehlartiger Geruch und Geschmack, Lamellen weit herablaufend, Sporenpulver blass rosa."
-essbar = "sehrGuterSpeisepilz"
 slug = "mehlraesling"
+unterschied = "Stark mehlartiger Geruch und Geschmack, Lamellen weit herablaufend, Sporenpulver blass rosa."
 
 [[links]]
 titel = "123pilzsuche.de"

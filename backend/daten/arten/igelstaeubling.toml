@@ -29,22 +29,16 @@ vorkommen = "Folgezersetzer, meist im Laubwald, gern auf kalkreichem Boden."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Flaschenstäubling"
-merkmal = "Keulig bis birnenförmig mit stielartigem Teil, Stacheln blass und pyramidenartig, ohne bleibendes Netzmuster."
-essbar = "essbar"
 slug = "flaschenbovist"
+unterschied = "Keulig bis birnenförmig mit stielartigem Teil, Stacheln blass und pyramidenartig, ohne bleibendes Netzmuster."
 
 [[verwechslungen]]
-name = "Birnenstäubling"
-merkmal = "Mit dunkelbraunen kleiigen Warzen statt Stacheln, wächst büschelig auf altem Holz."
-essbar = "essbar"
 slug = "birnenstaeubling"
+unterschied = "Mit dunkelbraunen kleiigen Warzen statt Stacheln, wächst büschelig auf altem Holz."
 
 [[verwechslungen]]
-name = "Bräunlicher Stäubling"
-merkmal = "Stachelspitzen braun statt weißlich, Stacheln leicht abwischbar, danach kein Netzmuster."
-essbar = "essbar"
 slug = "braeunlicher-staeubling"
+unterschied = "Stachelspitzen braun statt weißlich, Stacheln leicht abwischbar, danach kein Netzmuster."
 
 [[links]]
 titel = "123pilzsuche.de"

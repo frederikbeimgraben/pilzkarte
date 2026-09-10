@@ -34,22 +34,16 @@ vorkommen = "Im Mischwald ueberwiegend bei Nadelbaeumen, vor allem Fichte, auf N
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-name = "Zitronenporling"
-merkmal = "Fleisch und Oberflaeche verfaerben zitronengelb, ohne zu roeten, bei Fichte auf kalkreichem Boden."
-essbar = "essbar"
 slug = "zitronenporling"
+unterschied = "Fleisch und Oberflaeche verfaerben zitronengelb, ohne zu roeten, bei Fichte auf kalkreichem Boden."
 
 [[verwechslungen]]
-name = "Schafporling"
-merkmal = "Hut weiss bis cremefarben, Fleisch gilbt nur und roetet nicht."
-essbar = "essbar"
 slug = "schafporling"
+unterschied = "Hut weiss bis cremefarben, Fleisch gilbt nur und roetet nicht."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Hut semmelgelb bis orangebraun, Stiel deutlich kuerzer, im Alter schneller bitter."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Hut semmelgelb bis orangebraun, Stiel deutlich kuerzer, im Alter schneller bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

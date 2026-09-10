@@ -34,10 +34,8 @@ vorkommen = "Symbiosepilz nur unter Eichen. Sehr häufig."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Rotbrauner Milchling"
-merkmal = "Milch weiß und bleibend, Geschmack scharf, Geruch ohne Wanzennote."
-essbar = "essbar"
 slug = "rotbrauner-milchling"
+unterschied = "Milch weiß und bleibend, Geschmack scharf, Geruch ohne Wanzennote."
 
 [[links]]
 titel = "123pilzsuche.de"

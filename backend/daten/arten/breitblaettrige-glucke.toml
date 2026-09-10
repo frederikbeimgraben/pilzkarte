@@ -34,22 +34,16 @@ vorkommen = "Am Wurzelgeflecht von Laubbäumen, gern Eiche, seltener an Nadelhol
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Bauchwehkoralle"
-merkmal = "Korallenartig verzweigt statt gekräuselt, Äste mit rötlichen Spitzen."
-essbar = "giftig"
 slug = "bauchwehkoralle"
+unterschied = "Korallenartig verzweigt statt gekräuselt, Äste mit rötlichen Spitzen."
 
 [[verwechslungen]]
-name = "Krause Glucke"
-merkmal = "Schmalere, stärker gekrauste Lappen, wächst an Kiefer statt an Laubholz."
-essbar = "essbar"
 slug = "krause-glucke"
+unterschied = "Schmalere, stärker gekrauste Lappen, wächst an Kiefer statt an Laubholz."
 
 [[verwechslungen]]
-name = "Gelbe Koralle"
-merkmal = "Aufrechte, gegabelte Äste von einem Strunk, nicht blattartig gekräuselt."
-essbar = "essbar"
 slug = "gelbe-koralle"
+unterschied = "Aufrechte, gegabelte Äste von einem Strunk, nicht blattartig gekräuselt."
 
 [[links]]
 titel = "123pilzsuche.de"

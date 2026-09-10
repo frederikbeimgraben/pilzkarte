@@ -39,10 +39,8 @@ vorkommen = "Symbiosepilz bei Laubbäumen, gern Buche, Hasel, Eiche und Birke, v
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Hut olivgrün bis gelbgrün und nicht gerieft, Stielbasis mit häutiger eierschaliger Volva."
-essbar = "toedlichGiftig"
 slug = "gruener-knollenblaetterpilz"
+unterschied = "Hut olivgrün bis gelbgrün und nicht gerieft, Stielbasis mit häutiger eierschaliger Volva."
 
 [[links]]
 titel = "123pilzsuche.de"

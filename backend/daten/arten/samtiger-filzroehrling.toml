@@ -36,22 +36,16 @@ vorkommen = "Symbiosepilz im Laubwald, besonders gern bei Buchen und Eichen."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Brauner Filzroehrling"
-merkmal = "Stiel ohne Netzzeichnung, Hut olivbraun, Fleisch kaum blauend."
-essbar = "essbar"
 slug = "brauner-filzroehrling"
+unterschied = "Stiel ohne Netzzeichnung, Hut olivbraun, Fleisch kaum blauend."
 
 [[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut olivbraun bis gelbbraun und samtig, Stiel ohne Netz, unter der Huthaut nicht rosa."
-essbar = "essbar"
 slug = "ziegenlippe"
+unterschied = "Hut olivbraun bis gelbbraun und samtig, Stiel ohne Netz, unter der Huthaut nicht rosa."
 
 [[verwechslungen]]
-name = "Rotfussroehrling"
-merkmal = "Stiel rot beflockt, Fleisch unter der Huthaut roetlich, Huthaut oft feldrig aufgerissen."
-essbar = "essbar"
 slug = "rotfussroehrling"
+unterschied = "Stiel rot beflockt, Fleisch unter der Huthaut roetlich, Huthaut oft feldrig aufgerissen."
 
 [[links]]
 titel = "123pilzsuche.de"

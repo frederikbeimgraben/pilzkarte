@@ -33,34 +33,24 @@ vorkommen = "Folgezersetzer im Mischwald, aus der Erde, selten aus verrottetem T
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Birnenstäubling"
-merkmal = "Kugelig, bräunlich, Geruch unangenehm gasartig."
-essbar = "essbar"
 slug = "birnenstaeubling"
+unterschied = "Kugelig, bräunlich, Geruch unangenehm gasartig."
 
 [[verwechslungen]]
-name = "Bräunlicher Stäubling"
-merkmal = "Birnenförmig, bräunlich, mit dunkelbraunen Stacheln."
-essbar = "essbar"
 slug = "braeunlicher-staeubling"
+unterschied = "Birnenförmig, bräunlich, mit dunkelbraunen Stacheln."
 
 [[verwechslungen]]
-name = "Igelstäubling"
-merkmal = "Stacheln stehen in Gruppen zusammengeneigt, Spitzen weißlich."
-essbar = "essbar"
 slug = "igelstaeubling"
+unterschied = "Stacheln stehen in Gruppen zusammengeneigt, Spitzen weißlich."
 
 [[verwechslungen]]
-name = "Rauer Stäubling"
-merkmal = "Weißlich, kugelig, zur Basis zugespitzt, mit langen Myzelsträngen."
-essbar = "essbar"
 slug = "rauer-staeubling"
+unterschied = "Weißlich, kugelig, zur Basis zugespitzt, mit langen Myzelsträngen."
 
 [[verwechslungen]]
-name = "Beutelstäubling"
-merkmal = "Bis 25 cm hoch, Außenhaut fällt großflächig ab, Fleisch alt purpurbraun."
-essbar = "essbar"
 slug = "beutelstaeubling"
+unterschied = "Bis 25 cm hoch, Außenhaut fällt großflächig ab, Fleisch alt purpurbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

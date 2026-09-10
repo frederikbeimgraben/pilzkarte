@@ -32,10 +32,8 @@ vorkommen = "Folgezersetzer im Mischwald, überwiegend im Nadelwald, vereinzelt 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Safranschirmling"
-merkmal = "Viel größer, Hut über 8 cm mit groben aufgerissenen Schuppen, Fleisch rötet safranrot, Ring dick und verschiebbar."
-essbar = "essbar"
 slug = "safranschirmling"
+unterschied = "Viel größer, Hut über 8 cm mit groben aufgerissenen Schuppen, Fleisch rötet safranrot, Ring dick und verschiebbar."
 
 [[links]]
 titel = "123pilzsuche.de"

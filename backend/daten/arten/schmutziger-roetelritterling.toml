@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer auf Wiesen, in Mischwäldern und Fichtenwäldern sow
 zeit = "Frühling bis Winteranfang."
 
 [[verwechslungen]]
-name = "Bocksdickfuß"
-merkmal = "Riecht stark nach Ziegenbock, Lamellen und Sporenpulver rostbraun."
-essbar = "giftig"
 slug = "bocksdickfuss"
+unterschied = "Riecht stark nach Ziegenbock, Lamellen und Sporenpulver rostbraun."
 
 [[verwechslungen]]
-name = "Violetter Rötelritterling"
-merkmal = "Deutlich größer und kräftiger violett, Geruch stärker parfümiert."
-essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
+unterschied = "Deutlich größer und kräftiger violett, Geruch stärker parfümiert."
 
 [[verwechslungen]]
-name = "Lavendelfarbener Rötelritterling"
-merkmal = "Hut blass ockerbräunlich, nur Stiel und Lamellen mit Lila."
-essbar = "essbar"
 slug = "lavendelfarbener-roetelritterling"
+unterschied = "Hut blass ockerbräunlich, nur Stiel und Lamellen mit Lila."
 
 [[links]]
 titel = "123pilzsuche.de"

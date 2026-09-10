@@ -34,22 +34,16 @@ vorkommen = "Symbiosepilz bei Kiefern auf saurem Boden. Sehr selten, in der Schw
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Spangrüner Kiefernreizker"
-merkmal = "Milch orangerot und bald weinrot bis dunkelrot, Geschmack herb und bitterlich, Stiel mit flachen dunklen Grübchen."
-essbar = "essbar"
 slug = "spangruener-kiefernreizker"
+unterschied = "Milch orangerot und bald weinrot bis dunkelrot, Geschmack herb und bitterlich, Stiel mit flachen dunklen Grübchen."
 
 [[verwechslungen]]
-name = "Fichtenreizker"
-merkmal = "Hut feucht stark schleimig und grünfleckig, Stiel ohne Grübchen, bei Fichte."
-essbar = "essbar"
 slug = "fichtenreizker"
+unterschied = "Hut feucht stark schleimig und grünfleckig, Stiel ohne Grübchen, bei Fichte."
 
 [[verwechslungen]]
-name = "Lachsreizker"
-merkmal = "Stiel mit rötlichen bis orangeroten Grübchen, bei Weißtanne."
-essbar = "essbar"
 slug = "lachsreizker"
+unterschied = "Stiel mit rötlichen bis orangeroten Grübchen, bei Weißtanne."
 
 [[links]]
 titel = "123pilzsuche.de"

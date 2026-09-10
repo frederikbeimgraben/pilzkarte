@@ -36,10 +36,8 @@ vorkommen = "Folgezersetzer, teils Parasit, meist an umgefallenen und leicht ver
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Schuppiger Porling"
-merkmal = "Deutlich größer, Hut mit groben braunen Schuppen, Stielbasis schwarz."
-essbar = "essbar"
 slug = "schuppiger-porling"
+unterschied = "Deutlich größer, Hut mit groben braunen Schuppen, Stielbasis schwarz."
 
 [[links]]
 titel = "123pilzsuche.de"

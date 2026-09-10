@@ -36,21 +36,12 @@ vorkommen = "Folgezersetzer in Wäldern, Parks, auf Wiesen, in Gärten und Heide
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Grünsporschirmling"
-merkmal = "Lamellen im Alter grünlich, Sporenpulver grünlich, wächst in Gewächshäusern, auf Komposthaufen und in warmen Lagen."
-essbar = "giftig"
 slug = "gruensporschirmling"
+unterschied = "Lamellen im Alter grünlich, Sporenpulver grünlich, wächst in Gewächshäusern, auf Komposthaufen und in warmen Lagen."
 
 [[verwechslungen]]
-name = "Parasol"
-merkmal = "Hutschuppen weich und wollig, nicht sternförmig aufreißend, Sporenpulver weiß."
-essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
-
-[[verwechslungen]]
-name = "Rußbrauner Riesenschirmpilz"
-merkmal = "Sehr ähnlich gebaut, Sporenpulver weiß statt blass rosa."
-essbar = "essbar"
+unterschied = "Hutschuppen weich und wollig, nicht sternförmig aufreißend, Sporenpulver weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

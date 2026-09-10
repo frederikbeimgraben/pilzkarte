@@ -31,10 +31,8 @@ vorkommen = "Symbiosepilz im Mischwald, in Bergnadelwäldern unter Fichte und in
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Bauchwehkoralle"
-merkmal = "Astspitzen mit stumpfen Zähnchen, Fleisch weiß und nur an Druckstellen braun- bis rotfleckig, Geruch säuerlich seifig."
-essbar = "giftig"
 slug = "bauchwehkoralle"
+unterschied = "Astspitzen mit stumpfen Zähnchen, Fleisch weiß und nur an Druckstellen braun- bis rotfleckig, Geruch säuerlich seifig."
 
 [[links]]
 titel = "123pilzsuche.de"

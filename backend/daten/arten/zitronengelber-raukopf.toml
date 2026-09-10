@@ -37,16 +37,12 @@ vorkommen = "Symbiosepilz im moosigen, feuchten Nadelwald, gern bei Fichte auf s
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Spitzgebuckelter Raukopf"
-merkmal = "Hut nicht hygrophan, mit deutlichem spitzem Buckel, filzig schuppig."
-essbar = "toedlichGiftig"
 slug = "spitzgebuckelter-raukopf"
+unterschied = "Hut nicht hygrophan, mit deutlichem spitzem Buckel, filzig schuppig."
 
 [[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Röhren statt Lamellen, Stiel mit Ring, wächst bei Lärche."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Röhren statt Lamellen, Stiel mit Ring, wächst bei Lärche."
 
 [[links]]
 titel = "123pilzsuche.de"

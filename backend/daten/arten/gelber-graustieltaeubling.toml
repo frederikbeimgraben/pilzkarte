@@ -51,28 +51,20 @@ vorkommen = "Symbiosepilz auf moorigem, saurem Boden im Laubwald, häufig bei Bi
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Blassgelber Täubling"
-merkmal = "Kleiner, Hut blasser gelbocker, Fleisch nicht verfärbend, Geschmack scharf."
-essbar = "giftig"
 slug = "blassgelber-taeubling"
+unterschied = "Kleiner, Hut blasser gelbocker, Fleisch nicht verfärbend, Geschmack scharf."
 
 [[verwechslungen]]
-name = "Ockertäubling"
-merkmal = "Hut gelbocker, honiggelb bis rostrot und matt, Fleisch grauend ohne vorheriges Röten, Geschmack etwas bitterlich."
-essbar = "minderwertig"
 slug = "ockertaeubling"
+unterschied = "Hut gelbocker, honiggelb bis rostrot und matt, Fleisch grauend ohne vorheriges Röten, Geschmack etwas bitterlich."
 
 [[verwechslungen]]
-name = "Violettstieliger Pfirsichtäubling"
-merkmal = "Stiel später rosalila überhaucht und netzig warzig, Geruch im Alter heringsartig."
-essbar = "essbar"
 slug = "violettstieliger-pfirsichtaeubling"
+unterschied = "Stiel später rosalila überhaucht und netzig warzig, Geruch im Alter heringsartig."
 
 [[verwechslungen]]
-name = "Orangeroter Graustieltäubling"
-merkmal = "Hut gelborange, ziegelrot bis kupferfarben, im Nadelwald und Torfmoor."
-essbar = "essbar"
 slug = "orangeroter-graustieltaeubling"
+unterschied = "Hut gelborange, ziegelrot bis kupferfarben, im Nadelwald und Torfmoor."
 
 [[links]]
 titel = "123pilzsuche.de"

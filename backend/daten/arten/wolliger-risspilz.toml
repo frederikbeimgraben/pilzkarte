@@ -29,10 +29,8 @@ vorkommen = "Symbiosepilz im Mischwald, gern im feuchten Nadelwald, auf verrotte
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gemeiner Hallimasch"
-merkmal = "Wächst büschelig an Holz, hat einen Ring am Stiel und weißliche bis cremefarbene Lamellen."
-essbar = "bedingtEssbar"
 slug = "dunkler-hallimasch"
+unterschied = "Wächst büschelig an Holz, hat einen Ring am Stiel und weißliche bis cremefarbene Lamellen."
 
 [[links]]
 titel = "123pilzsuche.de"

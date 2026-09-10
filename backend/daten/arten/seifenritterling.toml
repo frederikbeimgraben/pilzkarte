@@ -32,10 +32,8 @@ vorkommen = "Symbiosepilz im Mischwald, einzeln oder teils büschelig."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Schwarzschuppiger Erdritterling"
-merkmal = "Hut grauschwarz und wollig schuppig, Fleisch rötet nicht, Geruch mehlartig."
-essbar = "giftig"
 slug = "schwarzschuppiger-erdritterling"
+unterschied = "Hut grauschwarz und wollig schuppig, Fleisch rötet nicht, Geruch mehlartig."
 
 [[links]]
 titel = "123pilzsuche.de"

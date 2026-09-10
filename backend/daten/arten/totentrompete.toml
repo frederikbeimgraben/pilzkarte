@@ -40,28 +40,20 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Eiche und Buche, kalkliebend. Se
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kohlenleistling"
-merkmal = "1 bis 4, selten bis 6 cm breit, Unterseite mit grauweißen, eng stehenden Lamellen statt fast glatter Leisten."
-essbar = "ungeniessbar"
 slug = "kohlenleistling"
+unterschied = "1 bis 4, selten bis 6 cm breit, Unterseite mit grauweißen, eng stehenden Lamellen statt fast glatter Leisten."
 
 [[verwechslungen]]
-name = "Schwarzer Kelchpilz"
-merkmal = "Kelchförmig, ohne Leisten, Fleisch braun und fleischig lederartig, Stiel nach unten verjüngt."
-essbar = "ungeniessbar"
 slug = "schwarzer-kelchpilz"
+unterschied = "Kelchförmig, ohne Leisten, Fleisch braun und fleischig lederartig, Stiel nach unten verjüngt."
 
 [[verwechslungen]]
-name = "Grauer Leistling"
-merkmal = "Hut schwarzgrau bis graubraun und feinschuppig, Rand wellig, Fleisch schmutzig weißlich bis grau."
-essbar = "essbar"
 slug = "grauer-leistling"
+unterschied = "Hut schwarzgrau bis graubraun und feinschuppig, Rand wellig, Fleisch schmutzig weißlich bis grau."
 
 [[verwechslungen]]
-name = "Verbogener Leistling"
-merkmal = "Viel kleiner, 1 bis 3, selten bis 4 cm breit, Hut lehmbraun bis gelbbraun, Fleisch blassgrau."
-essbar = "essbar"
 slug = "verbogener-leistling"
+unterschied = "Viel kleiner, 1 bis 3, selten bis 4 cm breit, Hut lehmbraun bis gelbbraun, Fleisch blassgrau."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -35,34 +35,24 @@ vorkommen = "Folgezersetzer auf Wiesen, in Parks und an Waldrändern."
 zeit = "Frühling bis Sommer."
 
 [[verwechslungen]]
-name = "Weißer Knollenblätterpilz"
-merkmal = "Jung kugelig, im Schnitt aber schon mit Hut- und Lamellenansatz, Basis in einer häutigen sackartigen Scheide."
-essbar = "toedlichGiftig"
 slug = "weisser-knollenblaetterpilz"
+unterschied = "Jung kugelig, im Schnitt aber schon mit Hut- und Lamellenansatz, Basis in einer häutigen sackartigen Scheide."
 
 [[verwechslungen]]
-name = "Hasenstäubling"
-merkmal = "Nur 3 bis 16 cm breit, jung mit plattenartigen Erhebungen, auf Wiesen und Weiden, gern in Gebirgslagen."
-essbar = "essbar"
 slug = "hasenbovist"
+unterschied = "Nur 3 bis 16 cm breit, jung mit plattenartigen Erhebungen, auf Wiesen und Weiden, gern in Gebirgslagen."
 
 [[verwechslungen]]
-name = "Flaschenstäubling"
-merkmal = "Klein, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen pyramidenartigen Stacheln."
-essbar = "essbar"
 slug = "flaschenbovist"
+unterschied = "Klein, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen pyramidenartigen Stacheln."
 
 [[verwechslungen]]
-name = "Weißer Großstäubling"
-merkmal = "3 bis 9 cm breit, Oberfläche netzartig fleckig bis hirnartig gewunden, oft mit Stielteil."
-essbar = "essbar"
 slug = "weisser-grossstaeubling"
+unterschied = "3 bis 9 cm breit, Oberfläche netzartig fleckig bis hirnartig gewunden, oft mit Stielteil."
 
 [[verwechslungen]]
-name = "Beutelstäubling"
-merkmal = "Bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun bis lilabraun."
-essbar = "essbar"
 slug = "beutelstaeubling"
+unterschied = "Bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun bis lilabraun."
 
 [[links]]
 titel = "123pilzsuche.de"

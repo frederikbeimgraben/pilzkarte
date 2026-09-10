@@ -48,10 +48,8 @@ vorkommen = "Symbiosepilz im Nadelwald und in Torfmooren, gern bei Kiefer, Tanne
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Gelber Graustieltäubling"
-merkmal = "Hut rein chromgelb bis zitronengelb, nicht orangerot. Auf moorigem saurem Boden bei Birke."
-essbar = "essbar"
 slug = "gelber-graustieltaeubling"
+unterschied = "Hut rein chromgelb bis zitronengelb, nicht orangerot. Auf moorigem saurem Boden bei Birke."
 
 [[links]]
 titel = "123pilzsuche.de"

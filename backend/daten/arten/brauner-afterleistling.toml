@@ -32,22 +32,16 @@ vorkommen = "Folgezersetzer im Laubwald an Strünken oder an vergrabenem Holz. S
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Falscher Pfifferling"
-merkmal = "Hut leuchtend orange statt braun, Stiel dünner, im Nadelwald auf Nadelstreu."
-essbar = "giftig"
 slug = "falscher-pfifferling"
+unterschied = "Hut leuchtend orange statt braun, Stiel dünner, im Nadelwald auf Nadelstreu."
 
 [[verwechslungen]]
-name = "Ölbaumtrichterling"
-merkmal = "Lamellen leuchtend goldgelb und kaum gegabelt, an Laubholz, bei uns fast nur im Mittelmeerraum."
-essbar = "giftig"
 slug = "oelbaumtrichterling"
+unterschied = "Lamellen leuchtend goldgelb und kaum gegabelt, an Laubholz, bei uns fast nur im Mittelmeerraum."
 
 [[verwechslungen]]
-name = "Purpuroranger Afterleistling"
-merkmal = "Kleiner, Lamellen weißlich bis fleischrosa und marmoriert, auf kalkhaltigem Boden im Nadel- und Mischwald."
-essbar = "giftig"
 slug = "purpuroranger-afterleistling"
+unterschied = "Kleiner, Lamellen weißlich bis fleischrosa und marmoriert, auf kalkhaltigem Boden im Nadel- und Mischwald."
 
 [[links]]
 titel = "123pilzsuche.de"

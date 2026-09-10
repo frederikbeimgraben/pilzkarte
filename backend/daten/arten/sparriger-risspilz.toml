@@ -35,22 +35,16 @@ vorkommen = "Symbiosepilz im Mischwald, gern auf kalkreichem Boden. Bäume nennt
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Wolliger Risspilz"
-merkmal = "Hut wollig-filzig, nicht sparrig-stachelig, Schneiden weißlich bewimpert. Ebenfalls tödlich giftig."
-essbar = "toedlichGiftig"
 slug = "wolliger-risspilz"
+unterschied = "Hut wollig-filzig, nicht sparrig-stachelig, Schneiden weißlich bewimpert. Ebenfalls tödlich giftig."
 
 [[verwechslungen]]
-name = "Sparriger Schüppling"
-merkmal = "Lamellen olivgelb bis olivbraun, Sporenpulver rostbraun, Geruch rettichartig, wächst büschelig an Holz."
-essbar = "giftig"
 slug = "sparriger-schueppling"
+unterschied = "Lamellen olivgelb bis olivbraun, Sporenpulver rostbraun, Geruch rettichartig, wächst büschelig an Holz."
 
 [[verwechslungen]]
-name = "Gemeiner Hallimasch"
-merkmal = "Wächst büschelig an Holz, Stiel mit dickem Ring, Sporenpulver weiß."
-essbar = "bedingtEssbar"
 slug = "dunkler-hallimasch"
+unterschied = "Wächst büschelig an Holz, Stiel mit dickem Ring, Sporenpulver weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

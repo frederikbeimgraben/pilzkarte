@@ -36,10 +36,8 @@ vorkommen = "Symbiosepilz bei Kiefer, auf kalkreichem Boden, in Wäldern, Parks,
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Märzschneckling"
-merkmal = "Hut aschgrau bis schwarzgrau marmoriert, im Vorfrühling am Schneerand."
-essbar = "essbar"
 slug = "maerzschneckling"
+unterschied = "Hut aschgrau bis schwarzgrau marmoriert, im Vorfrühling am Schneerand."
 
 [[links]]
 titel = "123pilzsuche.de"

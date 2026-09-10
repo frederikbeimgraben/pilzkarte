@@ -41,34 +41,24 @@ vorkommen = "Symbiosepilz im Mischwald, bei Nadel- und Laubbäumen."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Pantherpilz"
-merkmal = "Hut mit rein weißen, gleichmäßig angeordneten Flöckchen, Fleisch rötet nie, Knolle abgesetzt mit Söckchen, Ring nicht gerieft."
-essbar = "toedlichGiftig"
 slug = "pantherpilz"
+unterschied = "Hut mit rein weißen, gleichmäßig angeordneten Flöckchen, Fleisch rötet nie, Knolle abgesetzt mit Söckchen, Ring nicht gerieft."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Hut olivgrün bis gelbgrün, Fleisch unveränderlich, Stielbasis in einer häutigen Volva."
-essbar = "toedlichGiftig"
 slug = "gruener-knollenblaetterpilz"
+unterschied = "Hut olivgrün bis gelbgrün, Fleisch unveränderlich, Stielbasis in einer häutigen Volva."
 
 [[verwechslungen]]
-name = "Rauer Wulstling"
-merkmal = "Velumreste am Hut und der Warzengürtel am Stiel sind gelblich, Fleisch rötet nicht."
-essbar = "giftig"
 slug = "rauer-wulstling"
+unterschied = "Velumreste am Hut und der Warzengürtel am Stiel sind gelblich, Fleisch rötet nicht."
 
 [[verwechslungen]]
-name = "Königsfliegenpilz"
-merkmal = "Hut braun bis gelbbraun mit gelblichen Flocken, Fleisch unter der Huthaut gelb bis gelbgrün, Basis mit Söckchen."
-essbar = "giftig"
 slug = "koenigsfliegenpilz"
+unterschied = "Hut braun bis gelbbraun mit gelblichen Flocken, Fleisch unter der Huthaut gelb bis gelbgrün, Basis mit Söckchen."
 
 [[verwechslungen]]
-name = "Grauer Wulstling"
-merkmal = "Der ganze Pilz ohne Rottöne, Geruch rüben- bis rettichartig, Knolle abgesetzt und ohne Söckchen."
-essbar = "essbar"
 slug = "grauer-wulstling"
+unterschied = "Der ganze Pilz ohne Rottöne, Geruch rüben- bis rettichartig, Knolle abgesetzt und ohne Söckchen."
 
 [[links]]
 titel = "123pilzsuche.de"

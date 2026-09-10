@@ -32,34 +32,24 @@ vorkommen = "Folgezersetzer in Mischwäldern, Parks, Gärten und Heiden."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Jungfernschirmling"
-merkmal = "Hut hellbraun mit gezonten, weichen, wolligen, abstehenden Schuppen, Lamellen weiß und leicht gilbend."
-essbar = "giftig"
 slug = "jungfernschirmling"
+unterschied = "Hut hellbraun mit gezonten, weichen, wolligen, abstehenden Schuppen, Lamellen weiß und leicht gilbend."
 
 [[verwechslungen]]
-name = "Grünsporschirmling"
-merkmal = "Hut weiß und wollig, jung mit hellbrauner landkartenartiger Zeichnung, Lamellen im Alter grünlich."
-essbar = "giftig"
 slug = "gruensporschirmling"
+unterschied = "Hut weiß und wollig, jung mit hellbrauner landkartenartiger Zeichnung, Lamellen im Alter grünlich."
 
 [[verwechslungen]]
-name = "Parasol"
-merkmal = "Deutlich größer, Stiel kräftig genattert, Doppelring stark ausgeprägt, Buckel meist nur stumpf."
-essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
+unterschied = "Deutlich größer, Stiel kräftig genattert, Doppelring stark ausgeprägt, Buckel meist nur stumpf."
 
 [[verwechslungen]]
-name = "Sternschuppiger Riesenschirmpilz"
-merkmal = "Hut mit braunen, sternförmig aufreißenden Schuppen, Stiel fein braun genattert, Stielrinde rötend."
-essbar = "essbar"
 slug = "sternschuppiger-riesenschirmpilz"
+unterschied = "Hut mit braunen, sternförmig aufreißenden Schuppen, Stiel fein braun genattert, Stielrinde rötend."
 
 [[verwechslungen]]
-name = "Safranschirmling"
-merkmal = "Fleisch läuft safranrot an, Hut hellbraun bis olivbraun, Lamellen cremeweiß mit Zwischenlamellen."
-essbar = "essbar"
 slug = "safranschirmling"
+unterschied = "Fleisch läuft safranrot an, Hut hellbraun bis olivbraun, Lamellen cremeweiß mit Zwischenlamellen."
 
 [[links]]
 titel = "123pilzsuche.de"

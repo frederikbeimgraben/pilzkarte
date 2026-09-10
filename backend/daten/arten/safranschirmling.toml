@@ -38,34 +38,24 @@ vorkommen = "Folgezersetzer in Gärten, Heiden und an Waldrändern, in der Regel
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Haselbrauner Schirmling"
-merkmal = "Klein, nur 1 bis 7 cm breit, Ring nicht verschiebbar, Stielbasis mit brauner genatterter Gürtelzone."
-essbar = "toedlichGiftig"
 slug = "haselbrauner-schirmling"
+unterschied = "Klein, nur 1 bis 7 cm breit, Ring nicht verschiebbar, Stielbasis mit brauner genatterter Gürtelzone."
 
 [[verwechslungen]]
-name = "Gerandetknolliger Garten-Safranschirmling"
-merkmal = "Ring einfach statt doppelt, Knolle deutlich abgesetzt und gerandet, wächst auf Kompost und in Gewächshäusern."
-essbar = "giftig"
 slug = "gerandetknolliger-garten-safranschirmling"
+unterschied = "Ring einfach statt doppelt, Knolle deutlich abgesetzt und gerandet, wächst auf Kompost und in Gewächshäusern."
 
 [[verwechslungen]]
-name = "Büscheliger Egerlingsschirmling"
-merkmal = "Ring nicht verschiebbar, Stiel und Fleisch verfärben bei Verletzung stark gelb."
-essbar = "giftig"
 slug = "buescheliger-egerlingsschirmling"
+unterschied = "Ring nicht verschiebbar, Stiel und Fleisch verfärben bei Verletzung stark gelb."
 
 [[verwechslungen]]
-name = "Jungfernschirmling"
-merkmal = "Fleisch läuft bei Verletzung nicht rot an, höchstens im Alter etwas grauend, im Nadelwald."
-essbar = "giftig"
 slug = "jungfernschirmling"
+unterschied = "Fleisch läuft bei Verletzung nicht rot an, höchstens im Alter etwas grauend, im Nadelwald."
 
 [[verwechslungen]]
-name = "Parasol"
-merkmal = "Stiel deutlich dunkelbraun genattert, Fleisch rötet nicht, wächst im Wald."
-essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
+unterschied = "Stiel deutlich dunkelbraun genattert, Fleisch rötet nicht, wächst im Wald."
 
 [[links]]
 titel = "123pilzsuche.de"

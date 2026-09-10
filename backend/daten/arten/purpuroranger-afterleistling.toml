@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer in Nadel- und Mischwäldern auf vergrabenem Holz, au
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Falscher Pfifferling"
-merkmal = "Hut gleichmäßig orangegelb ohne Purpurton, Lamellen orange und dicht gegabelt, an Nadelholz."
-essbar = "giftig"
 slug = "falscher-pfifferling"
+unterschied = "Hut gleichmäßig orangegelb ohne Purpurton, Lamellen orange und dicht gegabelt, an Nadelholz."
 
 [[verwechslungen]]
-name = "Ölbaumtrichterling"
-merkmal = "Deutlich größer, orangebraun, büschelig an Laubholzstümpfen, Lamellen im Dunkeln leuchtend."
-essbar = "giftig"
 slug = "oelbaumtrichterling"
+unterschied = "Deutlich größer, orangebraun, büschelig an Laubholzstümpfen, Lamellen im Dunkeln leuchtend."
 
 [[verwechslungen]]
-name = "Wohlriechender Trichterling"
-merkmal = "Hut graugrün bis blaugrün, Geruch stark anisartig."
-essbar = "giftig"
 slug = "wohlriechender-trichterling"
+unterschied = "Hut graugrün bis blaugrün, Geruch stark anisartig."
 
 [[links]]
 titel = "123pilzsuche.de"

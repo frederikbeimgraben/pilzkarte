@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer im Laub- und Nadelwald, meist gesellig in Hexenringe
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Mönchskopf"
-merkmal = "Hut mit deutlich fühlbarem Buckel in der Mitte, sonst sehr ähnlich."
-essbar = "essbar"
 slug = "moenchskopf"
+unterschied = "Hut mit deutlich fühlbarem Buckel in der Mitte, sonst sehr ähnlich."
 
 [[verwechslungen]]
-name = "Riesenkrempentrichterling"
-merkmal = "Hut weiß bis cremeweiß, Rand krempenartig gerollt, Stiel kurz und dick."
-essbar = "essbar"
 slug = "riesenkrempentrichterling"
+unterschied = "Hut weiß bis cremeweiß, Rand krempenartig gerollt, Stiel kurz und dick."
 
 [[verwechslungen]]
-name = "Fuchsiger Röteltrichterling"
-merkmal = "Hut fuchsig orangebraun, Sporenpulver blassrosa, Lamellen nicht so weit herablaufend."
-essbar = "essbar"
 slug = "fuchsiger-roetelritterling"
+unterschied = "Hut fuchsig orangebraun, Sporenpulver blassrosa, Lamellen nicht so weit herablaufend."
 
 [[links]]
 titel = "123pilzsuche.de"

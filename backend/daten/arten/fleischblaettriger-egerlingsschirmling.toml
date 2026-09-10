@@ -32,16 +32,12 @@ vorkommen = "Folgezersetzer in Parks, Gärten und Wäldern, auf Wiesen und an Ge
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Seidiger Egerlingsschirmling"
-merkmal = "Hut rein weiß und seidig, Lamellen bleiben weiß bis blass rosa."
-essbar = "giftig"
 slug = "seidiger-egerlingsschirmling"
+unterschied = "Hut rein weiß und seidig, Lamellen bleiben weiß bis blass rosa."
 
 [[verwechslungen]]
-name = "Wurzelnder Egerlingsschirmling"
-merkmal = "Stielbasis wurzelnd verlängert, Sporen deutlich größer."
-essbar = "ungeniessbar"
 slug = "wurzelnder-egerlingsschirmling"
+unterschied = "Stielbasis wurzelnd verlängert, Sporen deutlich größer."
 
 [[links]]
 titel = "123pilzsuche.de"

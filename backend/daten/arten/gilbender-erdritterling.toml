@@ -33,22 +33,16 @@ vorkommen = "Symbiosepilz mit verschiedenen Sträuchern, im Mischwald, auf Wiese
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Hut mit grauen, tigerartig angeordneten Schuppen, Lamellen nicht gilbend."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Hut mit grauen, tigerartig angeordneten Schuppen, Lamellen nicht gilbend."
 
 [[verwechslungen]]
-name = "Seifenritterling"
-merkmal = "Geruch nach Kernseife, Fleisch bei Verletzung rötend."
-essbar = "giftig"
 slug = "seifenritterling"
+unterschied = "Geruch nach Kernseife, Fleisch bei Verletzung rötend."
 
 [[verwechslungen]]
-name = "Mausgrauer Erdritterling"
-merkmal = "Hut mausgrau und faserig, Lamellen nicht gilbend."
-essbar = "giftig"
 slug = "mausgrauer-erdritterling"
+unterschied = "Hut mausgrau und faserig, Lamellen nicht gilbend."
 
 [[links]]
 titel = "123pilzsuche.de"

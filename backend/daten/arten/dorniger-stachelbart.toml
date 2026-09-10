@@ -32,10 +32,8 @@ vorkommen = "Folgezersetzer an Totholz von Laubbäumen, gern Buche und Birke, l�
 zeit = "Spätsommer bis Winter, sporadisch schon ab Juni."
 
 [[verwechslungen]]
-name = "Nördlicher Stachelseitling"
-merkmal = "Hüte dachziegelig übereinander am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
-essbar = "ungeniessbar"
 slug = "noerdlicher-stachelseitling"
+unterschied = "Hüte dachziegelig übereinander am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
 
 [[links]]
 titel = "123pilzsuche.de"

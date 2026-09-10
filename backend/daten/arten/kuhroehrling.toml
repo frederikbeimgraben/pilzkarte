@@ -34,34 +34,24 @@ vorkommen = "Symbiosepilz bei Kiefer, gern auf sandigem, nährstoffarmem Boden, 
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Erlengrübling"
-merkmal = "Hut gelblich bis olivgelb mit grübchenartig vertiefter Oberfläche, Röhren auf Druck grünblau, nur bei Erle."
-essbar = "bedingtEssbar"
 slug = "erlengruebling"
+unterschied = "Hut gelblich bis olivgelb mit grübchenartig vertiefter Oberfläche, Röhren auf Druck grünblau, nur bei Erle."
 
 [[verwechslungen]]
-name = "Sandröhrling"
-merkmal = "Röhren fein und eng statt grob und eckig, Stielfleisch gelblich und blauend, Basis meist keulig verdickt."
-essbar = "sehrGuterSpeisepilz"
 slug = "sandroehrling"
+unterschied = "Röhren fein und eng statt grob und eckig, Stielfleisch gelblich und blauend, Basis meist keulig verdickt."
 
 [[verwechslungen]]
-name = "Hohlfußröhrling"
-merkmal = "Hut schuppig filzig und rostbraun, Stiel hohl mit angedeuteter Ringzone, bei Lärche."
-essbar = "essbar"
 slug = "hohlfussroehrling"
+unterschied = "Hut schuppig filzig und rostbraun, Stiel hohl mit angedeuteter Ringzone, bei Lärche."
 
 [[verwechslungen]]
-name = "Schmerling"
-merkmal = "Röhren zitronengelb und jung milchig tropfend, Stiel bräunlich punktiert."
-essbar = "essbar"
 slug = "koernchenroehrling"
+unterschied = "Röhren zitronengelb und jung milchig tropfend, Stiel bräunlich punktiert."
 
 [[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut wildlederartig filzig, Röhren jung leuchtend gelb, Stiel fast weiß, lang und schlank."
-essbar = "essbar"
 slug = "ziegenlippe"
+unterschied = "Hut wildlederartig filzig, Röhren jung leuchtend gelb, Stiel fast weiß, lang und schlank."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer in Wäldern, Gärten und Parks, auf nackter trockene
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Österreichischer Prachtbecherling"
-merkmal = "Innenseite zinnoberrot statt orange, Außenseite filzig haarig, meist mit kurzem Stiel, von Winter bis Mai."
-essbar = "essbar"
 slug = "oesterreichischer-prachtbecherling"
+unterschied = "Innenseite zinnoberrot statt orange, Außenseite filzig haarig, meist mit kurzem Stiel, von Winter bis Mai."
 
 [[verwechslungen]]
-name = "Scharlachroter Kelchbecherling"
-merkmal = "Innenseite zinnoberrot, unterer Teil ganz weiß und filzig haarig, an Laubholzästen von Winter bis Mai."
-essbar = "essbar"
 slug = "scharlachroter-kelchbecherling"
+unterschied = "Innenseite zinnoberrot, unterer Teil ganz weiß und filzig haarig, an Laubholzästen von Winter bis Mai."
 
 [[verwechslungen]]
-name = "Linden-Kelchbecherling"
-merkmal = "Innenseite zinnober- bis karminrot, an vergrabenen Lindenzweigen und anderem Laubholz, von Winter bis Mai."
-essbar = "essbar"
 slug = "linden-kelchbecherling"
+unterschied = "Innenseite zinnober- bis karminrot, an vergrabenen Lindenzweigen und anderem Laubholz, von Winter bis Mai."
 
 [[links]]
 titel = "123pilzsuche.de"

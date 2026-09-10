@@ -34,21 +34,12 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Rotbuche und Eiche, auf kalkreic
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Hut lehmgrau bis tonfarben und samtig, Stiel zur Basis rötlich, Fleisch sofort blauend, Geschmack bitter."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau bis tonfarben und samtig, Stiel zur Basis rötlich, Fleisch sofort blauend, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Blauender Königsröhrling"
-merkmal = "Fleisch im Hut- und Röhrenbereich deutlich blauend, Hut mehr braunrot bis himbeerrosa."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Silberröhrling"
-merkmal = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau, Geruch nach Marzipan."
-essbar = "essbar"
 slug = "silberroehrling"
+unterschied = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau, Geruch nach Marzipan."
 
 [[links]]
 titel = "123pilzsuche.de"

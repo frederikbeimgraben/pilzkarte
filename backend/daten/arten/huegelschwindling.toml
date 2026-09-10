@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer in Parks, Gärten, auf Rasen und Wiesen, an Waldrän
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Ziegelroter Risspilz"
-merkmal = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Fleisch rot verfärbend, Sporenpulver dunkelbraun."
-essbar = "toedlichGiftig"
 slug = "ziegelroter-risspilz"
+unterschied = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Fleisch rot verfärbend, Sporenpulver dunkelbraun."
 
 [[verwechslungen]]
-name = "Grünender Risspilz"
-merkmal = "Stiel von unten nach oben blaugrün, Fleisch bei Verletzung grün bis blaugrün, Sporenpulver lehmbraun."
-essbar = "giftig"
 slug = "gruenender-risspilz"
+unterschied = "Stiel von unten nach oben blaugrün, Fleisch bei Verletzung grün bis blaugrün, Sporenpulver lehmbraun."
 
 [[verwechslungen]]
-name = "Brennender Rübling"
-merkmal = "Lamellen gelbbraun bis dottergelb und entfernt stehend, Geschmack nach kurzer Zeit scharf bis pfefferig."
-essbar = "ungeniessbar"
 slug = "brennender-ruebling"
+unterschied = "Lamellen gelbbraun bis dottergelb und entfernt stehend, Geschmack nach kurzer Zeit scharf bis pfefferig."
 
 [[links]]
 titel = "123pilzsuche.de"

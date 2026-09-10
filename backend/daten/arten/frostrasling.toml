@@ -1,0 +1,50 @@
+name = "Frostrasling"
+lateinisch = "Lyophyllum decastes var. fumosum"
+gruppe = "rasling"
+speisewert = "essbar"
+geschuetzt = false
+marktfaehig = true
+marktfaehigSchweiz = true
+wertigkeit = 1
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Der leicht bitterliche Geschmack verliert sich beim Garen."
+weitereNamen = ["Geselliger Ritterling", "Brauner Rasling", "Buchele"]
+synonyme = ["Lyophyllum fumosum"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Frostrasling.htm"
+geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 6.0, seltenBis = 8.0 }
+sporenLaengeUm = { von = 5.4, bis = 6.5 }
+sporenBreiteUm = { von = 5.4, bis = 6.4 }
+
+[merkmale]
+hut = "4 bis 6, selten bis 8 cm breit, dunkel graubraun, weißgrau bis aschgrau, trocken glänzend, Mitte eingedrückt oder gebuckelt. Jung mit leichter Radialfaserung, Huthaut gummiartig elastisch und teils abziehbar."
+lamellen = "Weißlich bis grau, im Alter aschgrau, breit angewachsen, abtrennbar, manchmal aderig verbunden."
+stiel = "Weißlich bis blassbraun, längsfaserig, Spitze bereift. Die Stiele stehen meist einzeln nebeneinander und stecken tief in der Erde."
+fleisch = "Weißlich bis hellgrau, fest, zäh und elastisch, im Hut dickfleischig."
+geruch = "Neutral."
+geschmack = "Mild, etwas bitterlich."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer auf Wegen, an Wegrändern und in Parks, gern an Distelwurzeln. Meist büschelig aus einem Strunk."
+zeit = "Spätsommer bis Spätherbst."
+
+[[verwechslungen]]
+slug = "weissstieliger-roetling"
+unterschied = "Lamellen laufen rosa an, Sporenpulver ist rosa, Geruch mehlig. Giftig."
+
+[[verwechslungen]]
+slug = "nebelkappe"
+unterschied = "Hut nebelgrau, Geruch auffallend süßlich, wächst in Reihen statt in Büscheln."
+
+[[verwechslungen]]
+slug = "panzerrasling"
+unterschied = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Frostrasling.htm"

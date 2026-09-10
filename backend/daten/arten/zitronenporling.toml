@@ -34,22 +34,16 @@ vorkommen = "In Nadel- und Mischwäldern auf Nadelstreu oder nacktem Boden, gern
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Weißer Knochenporling"
-merkmal = "Bleibt weiß bis cremefarben, Fleisch trocken steinhart, wächst an Lärchenholz."
-essbar = "ungeniessbar"
 slug = "weisser-knochenporling"
+unterschied = "Bleibt weiß bis cremefarben, Fleisch trocken steinhart, wächst an Lärchenholz."
 
 [[verwechslungen]]
-name = "Rötender Schafeuterporling"
-merkmal = "Hut weißlich bis ockerlich, Fleisch rötet deutlich, Poren gilben nicht zitronengelb."
-essbar = "essbar"
 slug = "roetender-schafeuterporling"
+unterschied = "Hut weißlich bis ockerlich, Fleisch rötet deutlich, Poren gilben nicht zitronengelb."
 
 [[verwechslungen]]
-name = "Semmelporling"
-merkmal = "Hut semmelgelb bis blass orange ohne Zitronengelb, Fruchtkörper oft miteinander verwachsen."
-essbar = "essbar"
 slug = "semmelporling"
+unterschied = "Hut semmelgelb bis blass orange ohne Zitronengelb, Fruchtkörper oft miteinander verwachsen."
 
 [[links]]
 titel = "123pilzsuche.de"

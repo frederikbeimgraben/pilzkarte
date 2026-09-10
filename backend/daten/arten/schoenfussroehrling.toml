@@ -31,22 +31,16 @@ vorkommen = "Symbiosepilz im Mischwald, gern im Nadelwald, auf saurem, nährstof
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Fleisch blaut nicht, Geschmack sehr bitter."
-essbar = "giftig"
 slug = "gallenroehrling"
+unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Fleisch blaut nicht, Geschmack sehr bitter."
 
 [[verwechslungen]]
-name = "Wurzelnder Bitterröhrling"
-merkmal = "Hut grau bis weißgrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
-essbar = "giftig"
 slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis weißgrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
 
 [[verwechslungen]]
-name = "Satansröhrling"
-merkmal = "Hut weißlich bis hellgrau, Röhrenmündungen karminrot, Stiel bauchig mit rotem Netz."
-essbar = "giftig"
 slug = "satansroehrling"
+unterschied = "Hut weißlich bis hellgrau, Röhrenmündungen karminrot, Stiel bauchig mit rotem Netz."
 
 [[links]]
 titel = "123pilzsuche.de"

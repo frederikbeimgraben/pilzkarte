@@ -30,22 +30,16 @@ vorkommen = "Symbiosepilz in Laubwald, Parks und Gärten, meist bei Eiche, Linde
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Hut lehmgrau und samtig, Stiel zur Basis karminrot, Fleisch blaut sofort, Geruch nicht nach Maggi."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis karminrot, Fleisch blaut sofort, Geruch nicht nach Maggi."
 
 [[verwechslungen]]
-name = "Gallenröhrling"
-merkmal = "Röhren jung weiß, später rosa, Stiel mit grobem dunklem Netz, Fleisch blaut nicht."
-essbar = "giftig"
 slug = "gallenroehrling"
+unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem dunklem Netz, Fleisch blaut nicht."
 
 [[verwechslungen]]
-name = "Brauner Filzröhrling"
-merkmal = "Hut braun und samtig filzig, Stiel ohne Netz, Geschmack mild."
-essbar = "essbar"
 slug = "brauner-filzroehrling"
+unterschied = "Hut braun und samtig filzig, Stiel ohne Netz, Geschmack mild."
 
 [[links]]
 titel = "123pilzsuche.de"

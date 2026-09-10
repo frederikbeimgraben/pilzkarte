@@ -57,10 +57,8 @@ vorkommen = "Symbiosepilz in Mischwald, überwiegend im Nadelwald, vereinzelt be
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Blassgelber Täubling"
-merkmal = "Kleiner, Hut jung zitronengelb, Stiel keulig und schnell hohl, Geschmack scharf."
-essbar = "giftig"
 slug = "blassgelber-taeubling"
+unterschied = "Kleiner, Hut jung zitronengelb, Stiel keulig und schnell hohl, Geschmack scharf."
 
 [[links]]
 titel = "123pilzsuche.de"

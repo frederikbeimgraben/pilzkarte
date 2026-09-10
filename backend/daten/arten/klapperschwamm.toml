@@ -30,34 +30,24 @@ vorkommen = "Parasit und Folgezersetzer im Wurzelbereich von Eiche und Kastanie,
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Eichhase"
-merkmal = "Viele kleine runde Porenpilze mit mittigem Stielchen an einem Strunk, Fruchtkörper heller und gesprenkelt bräunlich."
-essbar = "essbar"
 slug = "eichhase"
+unterschied = "Viele kleine runde Porenpilze mit mittigem Stielchen an einem Strunk, Fruchtkörper heller und gesprenkelt bräunlich."
 
 [[verwechslungen]]
-name = "Bergporling"
-merkmal = "Hüte braun und samtig, fächerförmig ineinander verwachsen, Geschmack jung mild und schnell extrem scharf, bei Weißtanne."
-essbar = "essbar"
 slug = "bergporling"
+unterschied = "Hüte braun und samtig, fächerförmig ineinander verwachsen, Geschmack jung mild und schnell extrem scharf, bei Weißtanne."
 
 [[verwechslungen]]
-name = "Krause Glucke"
-merkmal = "Blumenkohlartig aus krausen Lappen, ohne Hüte und ohne Röhren, am Wurzelgeflecht von Kiefern."
-essbar = "essbar"
 slug = "krause-glucke"
+unterschied = "Blumenkohlartig aus krausen Lappen, ohne Hüte und ohne Röhren, am Wurzelgeflecht von Kiefern."
 
 [[verwechslungen]]
-name = "Breitblättrige Glucke"
-merkmal = "Hirnartig breit gekräuselt, ohne Hüte und ohne Röhren, beim Kochen Waschküchengeruch."
-essbar = "essbar"
 slug = "breitblaettrige-glucke"
+unterschied = "Hirnartig breit gekräuselt, ohne Hüte und ohne Röhren, beim Kochen Waschküchengeruch."
 
 [[verwechslungen]]
-name = "Riesenporling"
-merkmal = "Einzelhüte viel größer, Poren auf Druck und Fleisch im Schnitt schwärzend."
-essbar = "essbar"
 slug = "riesenporling"
+unterschied = "Einzelhüte viel größer, Poren auf Druck und Fleisch im Schnitt schwärzend."
 
 [[links]]
 titel = "123pilzsuche.de"

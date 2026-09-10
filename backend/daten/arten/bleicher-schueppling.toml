@@ -33,20 +33,8 @@ vorkommen = "Folgezersetzer und Weißfäuleerreger an Totholz. Meist relativ sel
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Sparriger Schüppling"
-merkmal = "Kleiner, Hut strohgelb und trocken, Geruch und Geschmack rettichartig, gern an Laubholz und Obstbäumen."
-essbar = "giftig"
 slug = "sparriger-schueppling"
-
-[[verwechslungen]]
-name = "Hochthronender Schüppling"
-merkmal = "Schuppen angedrückt statt abstehend, Stiel schleimig, an Nadelbäumen."
-essbar = "giftig"
-
-[[verwechslungen]]
-name = "Pinselschüppling"
-merkmal = "Hut gelblich und schleimig glänzend, Schuppen wie angedrückte Pinselstriche, Geschmack mild."
-essbar = "ungeniessbar"
+unterschied = "Kleiner, Hut strohgelb und trocken, Geruch und Geschmack rettichartig, gern an Laubholz und Obstbäumen."
 
 [[links]]
 titel = "123pilzsuche.de"

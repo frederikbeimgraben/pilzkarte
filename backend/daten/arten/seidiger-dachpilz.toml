@@ -39,21 +39,12 @@ vorkommen = "Folgezersetzer auf totem Laubholz von Rosskastanie, Linde, Birke un
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Grauer Dachpilz"
-merkmal = "Hut grau bis graubraun, ohne die weißliche Grundfarbe."
-essbar = "giftig"
 slug = "grauer-dachpilz"
+unterschied = "Hut grau bis graubraun, ohne die weißliche Grundfarbe."
 
 [[verwechslungen]]
-name = "Weißer Dachpilz"
-merkmal = "Ganz weiß, Hut ohne dunklere Faserschuppen, kleiner."
-essbar = "essbar"
 slug = "weisser-dachpilz"
-
-[[verwechslungen]]
-name = "Rußgrauer Dachpilz"
-merkmal = "Hut rußgrau bis schwärzlich und radialfaserig."
-essbar = "essbar"
+unterschied = "Ganz weiß, Hut ohne dunklere Faserschuppen, kleiner."
 
 [[links]]
 titel = "123pilzsuche.de"

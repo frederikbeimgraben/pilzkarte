@@ -59,22 +59,16 @@ vorkommen = "Symbiosepilz im Mischwald, gern im Nadelwald unter Fichte oder Kief
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Mit häutigem Ring, zwiebelknolliger Basis und Volva, Lamellen weich und nicht brüchig."
-essbar = "toedlichGiftig"
 slug = "gruener-knollenblaetterpilz"
+unterschied = "Mit häutigem Ring, zwiebelknolliger Basis und Volva, Lamellen weich und nicht brüchig."
 
 [[verwechslungen]]
-name = "Violettstieliger Pfirsichtäubling"
-merkmal = "Hut ockergelb bis pfirsichfarben, Stiel violett überhaucht."
-essbar = "essbar"
 slug = "violettstieliger-pfirsichtaeubling"
+unterschied = "Hut ockergelb bis pfirsichfarben, Stiel violett überhaucht."
 
 [[verwechslungen]]
-name = "Frauentäubling"
-merkmal = "Hut bunt gemischt aus Grün, Violett, Grau und Rosa, Lamellen deutlich brüchig."
-essbar = "essbar"
 slug = "frauentaeubling"
+unterschied = "Hut bunt gemischt aus Grün, Violett, Grau und Rosa, Lamellen deutlich brüchig."
 
 [[links]]
 titel = "123pilzsuche.de"

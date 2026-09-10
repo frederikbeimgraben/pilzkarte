@@ -35,16 +35,12 @@ vorkommen = "Symbiosepilz im Mischwald bei Laub- und Nadelbäumen, gern bei Eich
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Königsfliegenpilz"
-merkmal = "Hut braun mit ockerfarbenen Velumresten, deutlich größer, Stiel mit gerandeter Knolle."
-essbar = "giftig"
 slug = "koenigsfliegenpilz"
+unterschied = "Hut braun mit ockerfarbenen Velumresten, deutlich größer, Stiel mit gerandeter Knolle."
 
 [[verwechslungen]]
-name = "Grauer Wulstling"
-merkmal = "Velumreste grau statt gelb, Ring rein weiß, Geruch rettichartig."
-essbar = "essbar"
 slug = "grauer-wulstling"
+unterschied = "Velumreste grau statt gelb, Ring rein weiß, Geruch rettichartig."
 
 [[links]]
 titel = "123pilzsuche.de"

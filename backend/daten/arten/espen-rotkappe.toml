@@ -48,22 +48,16 @@ vorkommen = "Symbiosepilz bei Espe und Zitterpappel. In Deutschland auf der Rote
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Birken-Rotkappe"
-merkmal = "Stielschuppen schwärzlich statt orangebraun, bei Birke."
-essbar = "essbar"
 slug = "birken-rotkappe"
+unterschied = "Stielschuppen schwärzlich statt orangebraun, bei Birke."
 
 [[verwechslungen]]
-name = "Fichtenrotkappe"
-merkmal = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
-essbar = "essbar"
 slug = "fichtenrotkappe"
+unterschied = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
 
 [[verwechslungen]]
-name = "Fuchsrotkappe"
-merkmal = "Hut fuchsrot bis rotbraun und samtig, Fleisch am Stiel rosa bis braun."
-essbar = "essbar"
 slug = "fuchsrotkappe"
+unterschied = "Hut fuchsrot bis rotbraun und samtig, Fleisch am Stiel rosa bis braun."
 
 [[links]]
 titel = "123pilzsuche.de"

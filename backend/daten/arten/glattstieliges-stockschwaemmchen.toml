@@ -31,21 +31,12 @@ vorkommen = "Folgezersetzer an totem Laubholz, an Stümpfen, Ästen und Holzabf�
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Geruch muffig nach faulendem Holz, Sporenpulver rostbraun, meist an Nadelholz."
-essbar = "toedlichGiftig"
 slug = "gifthaeubling"
+unterschied = "Geruch muffig nach faulendem Holz, Sporenpulver rostbraun, meist an Nadelholz."
 
 [[verwechslungen]]
-name = "Stockschwämmchen"
-merkmal = "Stiel unterhalb der Ringzone braun geschuppt, mit deutlicherem Ring."
-essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
-
-[[verwechslungen]]
-name = "Japanisches Stockschwämmchen"
-merkmal = "Hut kräftiger gefärbt, Stiel unter dem Ring deutlich schuppig."
-essbar = "essbar"
+unterschied = "Stiel unterhalb der Ringzone braun geschuppt, mit deutlicherem Ring."
 
 [[links]]
 titel = "123pilzsuche.de"

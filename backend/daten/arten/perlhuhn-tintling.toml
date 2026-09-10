@@ -31,10 +31,8 @@ vorkommen = "Folgezersetzer auf Totholz, vergrabenem Holz oder verrotteten Baumw
 zeit = "Frühjahr bis Spätherbst."
 
 [[verwechslungen]]
-name = "Faltentintling"
-merkmal = "Hut grau und stark längsgefaltet, ohne sparrige Schuppen, Stielbasis ohne braunes Myzelpolster."
-essbar = "giftig"
 slug = "faltentintling"
+unterschied = "Hut grau und stark längsgefaltet, ohne sparrige Schuppen, Stielbasis ohne braunes Myzelpolster."
 
 [[links]]
 titel = "123pilzsuche.de"

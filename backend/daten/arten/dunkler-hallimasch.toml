@@ -36,34 +36,24 @@ vorkommen = "An Nadelholzresten in Wäldern, Gärten und Parks. Parasit an krank
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Sparriger Risspilz"
-merkmal = "Hut mit braunen, dornartigen, spitzen Schuppen, Lamellen grau bis graubraun, Sporenpulver braun."
-essbar = "toedlichGiftig"
 slug = "sparriger-risspilz"
+unterschied = "Hut mit braunen, dornartigen, spitzen Schuppen, Lamellen grau bis graubraun, Sporenpulver braun."
 
 [[verwechslungen]]
-name = "Wolliger Risspilz"
-merkmal = "Hut braun bis orangebraun, wollig filzig, nicht sparrig, Lamellen graubraun bis rostbraun."
-essbar = "toedlichGiftig"
 slug = "wolliger-risspilz"
+unterschied = "Hut braun bis orangebraun, wollig filzig, nicht sparrig, Lamellen graubraun bis rostbraun."
 
 [[verwechslungen]]
-name = "Sparriger Schüppling"
-merkmal = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun."
-essbar = "giftig"
 slug = "sparriger-schueppling"
+unterschied = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun."
 
 [[verwechslungen]]
-name = "Honiggelber Hallimasch"
-merkmal = "Hut gelblich bis zitronengelb, an Laubholz."
-essbar = "bedingtEssbar"
 slug = "honiggelber-hallimasch"
+unterschied = "Hut gelblich bis zitronengelb, an Laubholz."
 
 [[verwechslungen]]
-name = "Gelbschuppiger Hallimasch"
-merkmal = "Hut haselnussbraun mit grauen Schüppchen, Stielbasis keulig, meist einzeln aus dem Boden."
-essbar = "bedingtEssbar"
 slug = "gelbschuppiger-hallimasch"
+unterschied = "Hut haselnussbraun mit grauen Schüppchen, Stielbasis keulig, meist einzeln aus dem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

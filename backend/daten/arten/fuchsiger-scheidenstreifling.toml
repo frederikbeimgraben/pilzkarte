@@ -46,34 +46,24 @@ vorkommen = "Symbiosepilz im Mischwald, meist Nadelwald, auf moorigen Böden."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Pantherpilz"
-merkmal = "Hut mit weißen Flocken, Stiel mit Ring und gerandeter Knolle."
-essbar = "toedlichGiftig"
 slug = "pantherpilz"
+unterschied = "Hut mit weißen Flocken, Stiel mit Ring und gerandeter Knolle."
 
 [[verwechslungen]]
-name = "Isabellfarbiger Wulstling"
-merkmal = "Hut cremeweiß bis isabellfarben, Stiel rübenartig verdickt."
-essbar = "giftig"
 slug = "isabellfarbige-wulstling"
+unterschied = "Hut cremeweiß bis isabellfarben, Stiel rübenartig verdickt."
 
 [[verwechslungen]]
-name = "Großscheidiger Scheidenstreifling"
-merkmal = "Hut braun bis lederbraun, Scheide auffallend groß."
-essbar = "essbar"
 slug = "grossscheidiger-scheidenstreifling"
+unterschied = "Hut braun bis lederbraun, Scheide auffallend groß."
 
 [[verwechslungen]]
-name = "Grauhäutiger Scheidenstreifling"
-merkmal = "Hut graubraun bis grauocker, Stiel graubraun genattert."
-essbar = "essbar"
 slug = "grauhaeutiger-scheidenstreifling"
+unterschied = "Hut graubraun bis grauocker, Stiel graubraun genattert."
 
 [[verwechslungen]]
-name = "Gelber Scheidenstreifling"
-merkmal = "Hut gelb bis orange, Stiel weiß genattert auf hellbraunem Grund."
-essbar = "essbar"
 slug = "gelber-scheidenstreifling"
+unterschied = "Hut gelb bis orange, Stiel weiß genattert auf hellbraunem Grund."
 
 [[links]]
 titel = "123pilzsuche.de"

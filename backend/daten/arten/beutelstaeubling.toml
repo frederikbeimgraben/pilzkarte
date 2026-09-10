@@ -30,22 +30,16 @@ vorkommen = "Folgezersetzer im Mischwald, auf Wiesen und Weiden sowie in Hecken.
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Hasenstäubling"
-merkmal = "Ballon-, sack- oder kreiselförmig und meist viel größer, ohne abgesetzten Stielteil, auf Wiesen und Weiden."
-essbar = "essbar"
 slug = "hasenbovist"
+unterschied = "Ballon-, sack- oder kreiselförmig und meist viel größer, ohne abgesetzten Stielteil, auf Wiesen und Weiden."
 
 [[verwechslungen]]
-name = "Flaschenstäubling"
-merkmal = "Kleiner und keulig, mit blassen pyramidenartigen Stacheln besetzt."
-essbar = "essbar"
 slug = "flaschenbovist"
+unterschied = "Kleiner und keulig, mit blassen pyramidenartigen Stacheln besetzt."
 
 [[verwechslungen]]
-name = "Riesenbovist"
-merkmal = "Kugelig und bis über 50 cm breit, Haut glatt und lederartig, ohne Stielteil."
-essbar = "essbar"
 slug = "riesenbovist"
+unterschied = "Kugelig und bis über 50 cm breit, Haut glatt und lederartig, ohne Stielteil."
 
 [[links]]
 titel = "123pilzsuche.de"

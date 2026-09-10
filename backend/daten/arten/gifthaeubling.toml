@@ -48,10 +48,8 @@ vorkommen = "Folgezersetzer an Baumstümpfen und vergrabenem Holz, größtenteil
 zeit = "Winterende bis Spätherbst."
 
 [[verwechslungen]]
-name = "Stockschwämmchen"
-merkmal = "Stiel unterhalb des Rings braun geschuppt statt weiß-silbrig überfasert, Geruch angenehm pilzig."
-essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
+unterschied = "Stiel unterhalb des Rings braun geschuppt statt weiß-silbrig überfasert, Geruch angenehm pilzig."
 
 [[links]]
 titel = "123pilzsuche.de"

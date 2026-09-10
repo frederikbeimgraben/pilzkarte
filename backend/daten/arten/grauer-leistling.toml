@@ -34,16 +34,12 @@ vorkommen = "Symbiosepilz im Laubwald, gern im Buchenwald. In Deutschland gefäh
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Verbogener Leistling"
-merkmal = "Kleiner und dünner, Hut graubraun bis olivbraun, Leisten gelblich bis grau."
-essbar = "essbar"
 slug = "verbogener-leistling"
+unterschied = "Kleiner und dünner, Hut graubraun bis olivbraun, Leisten gelblich bis grau."
 
 [[verwechslungen]]
-name = "Kohlenleistling"
-merkmal = "Wächst auf Brandstellen, Fruchtkörper klein und graubraun."
-essbar = "ungeniessbar"
 slug = "kohlenleistling"
+unterschied = "Wächst auf Brandstellen, Fruchtkörper klein und graubraun."
 
 [[links]]
 titel = "123pilzsuche.de"

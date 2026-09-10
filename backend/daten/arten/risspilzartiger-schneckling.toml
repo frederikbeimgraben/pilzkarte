@@ -30,10 +30,8 @@ vorkommen = "Symbiosepilz im Mischwald an grasigen, feuchten und moosigen Stelle
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Grosser Kiefernschneckling"
-merkmal = "Groesser, Hut olivbraun und schleimig, bei Kiefern."
-essbar = "essbar"
 slug = "grosser-kiefernschneckling"
+unterschied = "Groesser, Hut olivbraun und schleimig, bei Kiefern."
 
 [[links]]
 titel = "123pilzsuche.de"

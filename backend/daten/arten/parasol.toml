@@ -35,34 +35,24 @@ vorkommen = "Folgezersetzer in Mischwäldern, an Waldrändern, auf Waldwegen und
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Jungfernschirmling"
-merkmal = "Stiel ohne Natterung, Lamellen gilben leicht, Fleisch rötet nicht. Im Nadelwald auf saurem Boden."
-essbar = "giftig"
 slug = "jungfernschirmling"
+unterschied = "Stiel ohne Natterung, Lamellen gilben leicht, Fleisch rötet nicht. Im Nadelwald auf saurem Boden."
 
 [[verwechslungen]]
-name = "Safranschirmling"
-merkmal = "Fleisch läuft bei Verletzung sofort rötlich an und wird später weinbraun, Stiel ohne Natterung, Basis mit gerandeter Knolle."
-essbar = "essbar"
 slug = "safranschirmling"
+unterschied = "Fleisch läuft bei Verletzung sofort rötlich an und wird später weinbraun, Stiel ohne Natterung, Basis mit gerandeter Knolle."
 
 [[verwechslungen]]
-name = "Schlanker Riesenschirmling"
-merkmal = "Hut braunocker mit grob schollig abreißenden Schuppen und braunem Buckel, Natterung am Stiel nur schwach."
-essbar = "essbar"
 slug = "zitzen-riesenschirmling"
+unterschied = "Hut braunocker mit grob schollig abreißenden Schuppen und braunem Buckel, Natterung am Stiel nur schwach."
 
 [[verwechslungen]]
-name = "Sternschuppiger Riesenschirmpilz"
-merkmal = "Hutschuppen kastanienbraun und sternförmig auseinanderlaufend, Mitte schwarzbraun und gebuckelt."
-essbar = "essbar"
 slug = "sternschuppiger-riesenschirmpilz"
+unterschied = "Hutschuppen kastanienbraun und sternförmig auseinanderlaufend, Mitte schwarzbraun und gebuckelt."
 
 [[verwechslungen]]
-name = "Ackerschirmpilz"
-merkmal = "Stiel ohne Natterung, von der Spitze bis zum Ring fein gerieft, auf Äckern, Wiesen und Brachflächen."
-essbar = "essbar"
 slug = "ackerschirmpilz"
+unterschied = "Stiel ohne Natterung, von der Spitze bis zum Ring fein gerieft, auf Äckern, Wiesen und Brachflächen."
 
 [[links]]
 titel = "123pilzsuche.de"

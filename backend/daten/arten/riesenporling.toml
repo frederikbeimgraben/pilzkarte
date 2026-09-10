@@ -39,34 +39,24 @@ vorkommen = "Folgezersetzer im Mischwald, im Nadelwald gern an Weißtanne, im La
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Brauner Haarstielporling"
-merkmal = "Hut samtig kurzhaarig mit verklebten Haarbüscheln, dünnfleischig, zentral gestielt, Poren schwärzen nicht."
-essbar = "ungeniessbar"
 slug = "brauner-haarstielporling"
+unterschied = "Hut samtig kurzhaarig mit verklebten Haarbüscheln, dünnfleischig, zentral gestielt, Poren schwärzen nicht."
 
 [[verwechslungen]]
-name = "Becherförmiger Sägeblättling"
-merkmal = "Mit Lamellen statt Poren, Schneiden gesägt und wellig, Geschmack bitterlich."
-essbar = "ungeniessbar"
 slug = "becherfoermiger-saegeblaettling"
+unterschied = "Mit Lamellen statt Poren, Schneiden gesägt und wellig, Geschmack bitterlich."
 
 [[verwechslungen]]
-name = "Bergporling"
-merkmal = "Poren schwärzen auf Druck nicht, Geruch ganz jung etwas anisartig, Wurzelparasit an Weißtanne."
-essbar = "essbar"
 slug = "bergporling"
+unterschied = "Poren schwärzen auf Druck nicht, Geruch ganz jung etwas anisartig, Wurzelparasit an Weißtanne."
 
 [[verwechslungen]]
-name = "Klapperschwamm"
-merkmal = "Graubraune Einzelhüte, rosettenartig verwachsen, Röhren schwärzen auf Druck nicht, am Wurzelbereich von Eiche."
-essbar = "essbar"
 slug = "klapperschwamm"
+unterschied = "Graubraune Einzelhüte, rosettenartig verwachsen, Röhren schwärzen auf Druck nicht, am Wurzelbereich von Eiche."
 
 [[verwechslungen]]
-name = "Eichhase"
-merkmal = "Viele kleine Einzelhüte an einem verzweigten Strunk, Poren cremefarben bis hellbraun, am Fuß von Eichen."
-essbar = "essbar"
 slug = "eichhase"
+unterschied = "Viele kleine Einzelhüte an einem verzweigten Strunk, Poren cremefarben bis hellbraun, am Fuß von Eichen."
 
 [[links]]
 titel = "123pilzsuche.de"

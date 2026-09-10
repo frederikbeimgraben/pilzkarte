@@ -52,34 +52,24 @@ vorkommen = "Symbiosepilz im Mischwald, sehr häufig."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Stiel mit weißem, gelbem bis braunrotem Netz, Fleisch sofort stark blauend, Geschmack bitter."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Stiel mit weißem, gelbem bis braunrotem Netz, Fleisch sofort stark blauend, Geschmack bitter."
 
 [[verwechslungen]]
-name = "Maronenröhrling"
-merkmal = "Hut glatt und feucht schmierig, Röhren auf Druck blaugrün, ohne Rotfärbung unter der Huthaut."
-essbar = "essbar"
 slug = "maronenroehrling"
+unterschied = "Hut glatt und feucht schmierig, Röhren auf Druck blaugrün, ohne Rotfärbung unter der Huthaut."
 
 [[verwechslungen]]
-name = "Herbstrotfußröhrling"
-merkmal = "Stiel dicker und fester, Fleisch auffallend gelb, Röhren kaum blauend, im Oktober und November."
-essbar = "essbar"
 slug = "herbstrotfussroehrling"
+unterschied = "Stiel dicker und fester, Fleisch auffallend gelb, Röhren kaum blauend, im Oktober und November."
 
 [[verwechslungen]]
-name = "Falscher Rotfußröhrling"
-merkmal = "Stiel zur Basis schwärzlich und kaum rot punktiert, Rotfärbung unter der Huthaut nur schwach."
-essbar = "essbar"
 slug = "falscher-rotfussroehrling"
+unterschied = "Stiel zur Basis schwärzlich und kaum rot punktiert, Rotfärbung unter der Huthaut nur schwach."
 
 [[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut graubraun bis olivocker und wildlederartig filzig, Stiel fast weiß und ohne rote Punkte."
-essbar = "essbar"
 slug = "ziegenlippe"
+unterschied = "Hut graubraun bis olivocker und wildlederartig filzig, Stiel fast weiß und ohne rote Punkte."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -32,34 +32,24 @@ vorkommen = "Symbiosepilz im Nadelwald bei Fichte, auf saurem Boden."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rosenroter Gelbfuß"
-merkmal = "Hut rosenrot und samtig, nur schmierig statt schleimig, bei Kiefer auf dem Myzel des Kuhröhrlings."
-essbar = "essbar"
 slug = "rosenroter-gelbfuss"
+unterschied = "Hut rosenrot und samtig, nur schmierig statt schleimig, bei Kiefer auf dem Myzel des Kuhröhrlings."
 
 [[verwechslungen]]
-name = "Gefleckter Gelbfuß"
-merkmal = "Hut hell zimtbraun mit dunkler Mitte, Stiel auf weißem Grund rotbraun gefleckt, Fleisch im Schnitt rötend, bei Lärche."
-essbar = "essbar"
 slug = "gefleckter-gelbfuss"
+unterschied = "Hut hell zimtbraun mit dunkler Mitte, Stiel auf weißem Grund rotbraun gefleckt, Fleisch im Schnitt rötend, bei Lärche."
 
 [[verwechslungen]]
-name = "Gelbgestiefelter Schleimkopf"
-merkmal = "Lamellen cremegrau bis ockerbraun, Stiel mit braunfuchsigen Velumbändern und knolliger Basis, bei Birke."
-essbar = "essbar"
 slug = "gelbgestiefelter-schleimkopf"
+unterschied = "Lamellen cremegrau bis ockerbraun, Stiel mit braunfuchsigen Velumbändern und knolliger Basis, bei Birke."
 
 [[verwechslungen]]
-name = "Kupferroter Gelbfuß"
-merkmal = "Lamellen und Fleisch gelborange, bei Verletzung rötend, bei Kiefer."
-essbar = "essbar"
 slug = "kupferroter-gelbfuss"
+unterschied = "Lamellen und Fleisch gelborange, bei Verletzung rötend, bei Kiefer."
 
 [[verwechslungen]]
-name = "Aprikosen-Gelbfuß"
-merkmal = "Hut orangebraun, rosa bis violett, Lamellen jung purpurbraun, Stiel mit orangefarbener Ringzone."
-essbar = "essbar"
 slug = "aprikosen-gelbfuss"
+unterschied = "Hut orangebraun, rosa bis violett, Lamellen jung purpurbraun, Stiel mit orangefarbener Ringzone."
 
 [[links]]
 titel = "123pilzsuche.de"

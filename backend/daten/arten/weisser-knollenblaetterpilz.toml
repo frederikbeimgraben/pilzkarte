@@ -37,22 +37,16 @@ vorkommen = "Symbiosepilz in Mischwald, Parkanlagen und Gärten, überwiegend be
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kegelhütiger Knollenblätterpilz"
-merkmal = "Hut kegelig gebuckelt, Huthaut färbt sich mit Kalilauge gelb."
-essbar = "toedlichGiftig"
 slug = "kegelhuetiger-knollenblaetterpilz"
+unterschied = "Hut kegelig gebuckelt, Huthaut färbt sich mit Kalilauge gelb."
 
 [[verwechslungen]]
-name = "Grüner Knollenblätterpilz"
-merkmal = "Hut grünlich, oliv bis gelbgrün statt rein weißlich."
-essbar = "toedlichGiftig"
 slug = "gruener-knollenblaetterpilz"
+unterschied = "Hut grünlich, oliv bis gelbgrün statt rein weißlich."
 
 [[verwechslungen]]
-name = "Riesenrötling"
-merkmal = "Lamellen im Alter rosa vom Sporenpulver, ohne Ring und ohne Scheide an der Basis."
-essbar = "toedlichGiftig"
 slug = "riesenroetling"
+unterschied = "Lamellen im Alter rosa vom Sporenpulver, ohne Ring und ohne Scheide an der Basis."
 
 [[links]]
 titel = "123pilzsuche.de"

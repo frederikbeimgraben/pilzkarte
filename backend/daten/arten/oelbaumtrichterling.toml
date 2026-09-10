@@ -42,22 +42,16 @@ vorkommen = "Parasit oder Folgezersetzer an Laubholz, an Ölbaum, Eiche, Edelkas
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Falscher Pfifferling"
-merkmal = "Hut feinfilzig, Lamellen ablösbar und viele gegabelt, Fleisch dünn und biegsam, auf Nadelstreu."
-essbar = "giftig"
 slug = "falscher-pfifferling"
+unterschied = "Hut feinfilzig, Lamellen ablösbar und viele gegabelt, Fleisch dünn und biegsam, auf Nadelstreu."
 
 [[verwechslungen]]
-name = "Fuchsiger Röteltrichterling"
-merkmal = "Hut haselnussbraun statt orange, Lamellen weißlich bis fuchsig, Geruch nach frisch geschnittenem Gras."
-essbar = "essbar"
 slug = "fuchsiger-roetelritterling"
+unterschied = "Hut haselnussbraun statt orange, Lamellen weißlich bis fuchsig, Geruch nach frisch geschnittenem Gras."
 
 [[verwechslungen]]
-name = "Samtpfifferling"
-merkmal = "Kleiner, mit gelblichen, weit herablaufenden Leisten statt Lamellen, Hut samtig zottig."
-essbar = "essbar"
 slug = "samtpfifferling"
+unterschied = "Kleiner, mit gelblichen, weit herablaufenden Leisten statt Lamellen, Hut samtig zottig."
 
 [[links]]
 titel = "123pilzsuche.de"

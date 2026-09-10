@@ -35,10 +35,8 @@ vorkommen = "Meist parasitisch an Eichen, seltener folgezersetzend, löst Braunf
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Zimtfarbiger Weichporling"
-merkmal = "Zimtbraune Farbtöne, Fleisch weich und saftig, wächst meist an Nadelholz."
-essbar = "toedlichGiftig"
 slug = "zimtfarbiger-weichporling"
+unterschied = "Zimtbraune Farbtöne, Fleisch weich und saftig, wächst meist an Nadelholz."
 
 [[links]]
 titel = "123pilzsuche.de"

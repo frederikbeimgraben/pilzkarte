@@ -31,16 +31,12 @@ vorkommen = "Symbiosepilz im Nadelwald auf moosigem, feuchtem Boden. Häufig."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Violetter Rötelritterling"
-merkmal = "Lamellen rein lila und nie bräunlich, kein Sporenpulver am Stiel, Geruch parfümiert und fruchtig."
-essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
+unterschied = "Lamellen rein lila und nie bräunlich, kein Sporenpulver am Stiel, Geruch parfümiert und fruchtig."
 
 [[verwechslungen]]
-name = "Lilastieliger Rötelritterling"
-merkmal = "Hut grauviolett bis beigebräunlich, Lamellen weißlich lila, Geruch leicht fruchtig."
-essbar = "essbar"
 slug = "lilastieliger-roetelritterling"
+unterschied = "Hut grauviolett bis beigebräunlich, Lamellen weißlich lila, Geruch leicht fruchtig."
 
 [[links]]
 titel = "123pilzsuche.de"

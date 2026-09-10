@@ -31,10 +31,8 @@ vorkommen = "Folgezersetzer in Parks, Gärten, Wäldern, auf Wiesen und Ruderals
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Rosablättriger Egerlingsschirmling"
-merkmal = "Lamellen laufen im Alter rosa an, Hut rein weiß und glatt."
-essbar = "giftig"
 slug = "rosablaettriger-egerlingsschirmling"
+unterschied = "Lamellen laufen im Alter rosa an, Hut rein weiß und glatt."
 
 [[links]]
 titel = "123pilzsuche.de"

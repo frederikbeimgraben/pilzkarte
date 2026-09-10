@@ -34,22 +34,16 @@ vorkommen = "Parasit und Folgezersetzer an Laubholzstämmen, gern Eiche, Buche u
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Schuppiger Porling"
-merkmal = "Hut mit konzentrisch angeordneten braunen Schuppen, Unterseite mit Poren, Stielbasis im Alter schwarz."
-essbar = "essbar"
 slug = "schuppiger-porling"
+unterschied = "Hut mit konzentrisch angeordneten braunen Schuppen, Unterseite mit Poren, Stielbasis im Alter schwarz."
 
 [[verwechslungen]]
-name = "Lungenseitling"
-merkmal = "Milchweiß bis cremeweiß, dünnfleischiger, Stiel ohne Ring."
-essbar = "essbar"
 slug = "lungenseitling"
+unterschied = "Milchweiß bis cremeweiß, dünnfleischiger, Stiel ohne Ring."
 
 [[verwechslungen]]
-name = "Rillstieliger Seitling"
-merkmal = "Stiel längsrillig, Lamellen bis zur Stielbasis herablaufend, Geruch mehlartig."
-essbar = "essbar"
 slug = "rillstieliger-seitling"
+unterschied = "Stiel längsrillig, Lamellen bis zur Stielbasis herablaufend, Geruch mehlartig."
 
 [[links]]
 titel = "123pilzsuche.de"

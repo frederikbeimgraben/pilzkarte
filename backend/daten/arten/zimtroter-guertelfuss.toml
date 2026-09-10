@@ -30,10 +30,8 @@ vorkommen = "Symbiosepilz im Mischwald, gern im Nadelwald bei Fichte oder Tanne,
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Reifpilz"
-merkmal = "Hut mit weißem Reifüberzug, Stiel mit häutigem Ring statt wolliger Gürtelung."
-essbar = "essbar"
 slug = "reifpilz"
+unterschied = "Hut mit weißem Reifüberzug, Stiel mit häutigem Ring statt wolliger Gürtelung."
 
 [[links]]
 titel = "123pilzsuche.de"

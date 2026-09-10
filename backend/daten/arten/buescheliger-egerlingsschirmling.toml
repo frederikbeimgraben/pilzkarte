@@ -34,22 +34,16 @@ vorkommen = "Folgezersetzer in Parks und Gärten, auf Kompost und Rindenmulch. S
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Karbolegerling"
-merkmal = "Lamellen rosa, dann schokoladenbraun, Stielbasis chromgelb, Geruch nach Karbol."
-essbar = "giftig"
 slug = "karbolegerling"
+unterschied = "Lamellen rosa, dann schokoladenbraun, Stielbasis chromgelb, Geruch nach Karbol."
 
 [[verwechslungen]]
-name = "Gerandetknolliger Garten-Safranschirmling"
-merkmal = "Stiel mit gerandeter Knolle, Fleisch rötet ohne den starken Gelbton."
-essbar = "giftig"
 slug = "gerandetknolliger-garten-safranschirmling"
+unterschied = "Stiel mit gerandeter Knolle, Fleisch rötet ohne den starken Gelbton."
 
 [[verwechslungen]]
-name = "Safranschirmling"
-merkmal = "Stielbasis knollig ohne Rand, Fleisch rötet safranrot, ohne kräftiges Gilben."
-essbar = "essbar"
 slug = "safranschirmling"
+unterschied = "Stielbasis knollig ohne Rand, Fleisch rötet safranrot, ohne kräftiges Gilben."
 
 [[links]]
 titel = "123pilzsuche.de"

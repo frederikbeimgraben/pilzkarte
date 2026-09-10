@@ -41,34 +41,24 @@ vorkommen = "Folgezersetzer an totem Laubholz, an Stümpfen und Ästen, über 70
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Stiel unter dem Ring nicht schuppig, sondern seidig faserig und silbrig, Ring dünn und faserig."
-essbar = "toedlichGiftig"
 slug = "gifthaeubling"
+unterschied = "Stiel unter dem Ring nicht schuppig, sondern seidig faserig und silbrig, Ring dünn und faserig."
 
 [[verwechslungen]]
-name = "Grünblättriger Schwefelkopf"
-merkmal = "Hut kahl, gelb bis schwefelgelb oder grünlich, Lamellen grün bis grüngelb, alt olivbräunlich."
-essbar = "giftig"
 slug = "gruenblaettriger-schwefelkopf"
+unterschied = "Hut kahl, gelb bis schwefelgelb oder grünlich, Lamellen grün bis grüngelb, alt olivbräunlich."
 
 [[verwechslungen]]
-name = "Feuchtstellen-Schüppling"
-merkmal = "Hut kastanienbraun bis gelbocker, Lamellen hell cremegelb, später zimtbraun, alt dunkel purpurbraun."
-essbar = "ungeniessbar"
 slug = "feuchtstellen-schueppling"
+unterschied = "Hut kastanienbraun bis gelbocker, Lamellen hell cremegelb, später zimtbraun, alt dunkel purpurbraun."
 
 [[verwechslungen]]
-name = "Glattstieliges Stockschwämmchen"
-merkmal = "Kleiner, 1 bis 3, selten bis 5 cm breit, Stiel dunkelbraun bis schwarzbraun und glatt, nur selten mit Schüppchen."
-essbar = "ungeniessbar"
 slug = "glattstieliges-stockschwaemmchen"
+unterschied = "Kleiner, 1 bis 3, selten bis 5 cm breit, Stiel dunkelbraun bis schwarzbraun und glatt, nur selten mit Schüppchen."
 
 [[verwechslungen]]
-name = "Rauchblättriger Schwefelkopf"
-merkmal = "Hut ockerbraun bis gelbbraun und kahl, ohne Schüppchen, Lamellen grau bis graulila, nie gelb oder grün."
-essbar = "sehrGuterSpeisepilz"
 slug = "rauchblaettriger-schwefelkopf"
+unterschied = "Hut ockerbraun bis gelbbraun und kahl, ohne Schüppchen, Lamellen grau bis graulila, nie gelb oder grün."
 
 [[links]]
 titel = "123pilzsuche.de"

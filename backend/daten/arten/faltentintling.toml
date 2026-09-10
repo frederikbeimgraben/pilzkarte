@@ -34,10 +34,8 @@ vorkommen = "An Waldwegen und in Gärten."
 zeit = "Frühjahr bis Spätherbst."
 
 [[verwechslungen]]
-name = "Spitzkegeliger Tintling"
-merkmal = "Deutlich kleiner, Hut spitzkegelig und stark gerieft, Stielbasis ohne Ringwulst."
-essbar = "giftig"
 slug = "spitzkegeliger-tintling"
+unterschied = "Deutlich kleiner, Hut spitzkegelig und stark gerieft, Stielbasis ohne Ringwulst."
 
 [[links]]
 titel = "123pilzsuche.de"

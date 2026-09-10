@@ -35,22 +35,16 @@ vorkommen = "Symbiosepilz im Mischwald. In Europa selten."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Schönfußröhrling"
-merkmal = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
-essbar = "giftig"
 slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
 
 [[verwechslungen]]
-name = "Maronenröhrling"
-merkmal = "Hut kastanienbraun, Röhren gelb und auf Druck blau, Stiel ohne rote Punkte."
-essbar = "essbar"
 slug = "maronenroehrling"
+unterschied = "Hut kastanienbraun, Röhren gelb und auf Druck blau, Stiel ohne rote Punkte."
 
 [[verwechslungen]]
-name = "Herbstrotfußröhrling"
-merkmal = "Stiel deutlich rot punktiert, unter der Huthaut eine kräftig rote Schicht."
-essbar = "essbar"
 slug = "herbstrotfussroehrling"
+unterschied = "Stiel deutlich rot punktiert, unter der Huthaut eine kräftig rote Schicht."
 
 [[links]]
 titel = "123pilzsuche.de"

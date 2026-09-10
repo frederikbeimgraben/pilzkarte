@@ -34,28 +34,20 @@ vorkommen = "Symbiosepilz unter Kiefern, vereinzelt parasitisch an Myzelien von 
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Spitzgebuckelter Raukopf"
-merkmal = "Hut meist spitz gebuckelt, radialfaserig und rau, Lamellen zimtbraun und nur angeheftet, Stiel rostbraun genattert."
-essbar = "toedlichGiftig"
 slug = "spitzgebuckelter-raukopf"
+unterschied = "Hut meist spitz gebuckelt, radialfaserig und rau, Lamellen zimtbraun und nur angeheftet, Stiel rostbraun genattert."
 
 [[verwechslungen]]
-name = "Filziger Gelbfuß"
-merkmal = "Hut filzig schuppig, Lamellen weniger weit herablaufend, bei Fichte."
-essbar = "essbar"
 slug = "filziger-gelbfuss"
+unterschied = "Hut filzig schuppig, Lamellen weniger weit herablaufend, bei Fichte."
 
 [[verwechslungen]]
-name = "Schweinsohr"
-merkmal = "Trichterförmig, mit stumpfen Leisten statt Lamellen, ganz violett."
-essbar = "essbar"
 slug = "schweinsohr"
+unterschied = "Trichterförmig, mit stumpfen Leisten statt Lamellen, ganz violett."
 
 [[verwechslungen]]
-name = "Aprikosen-Gelbfuß"
-merkmal = "Hut orangebraun, rosa bis violett, Stiel mit hellerer orangefarbener Ringzone."
-essbar = "essbar"
 slug = "aprikosen-gelbfuss"
+unterschied = "Hut orangebraun, rosa bis violett, Stiel mit hellerer orangefarbener Ringzone."
 
 [[links]]
 titel = "123pilzsuche.de"

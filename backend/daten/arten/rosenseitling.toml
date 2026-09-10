@@ -32,22 +32,16 @@ vorkommen = "Folgezersetzer und Weissfaeuleerreger in Tropen und Subtropen an Pa
 zeit = "Ganzjaehrig."
 
 [[verwechslungen]]
-name = "Schweinsohr"
-merkmal = "Trichterfoermig mit derben herablaufenden Leisten statt Lamellen, am Boden im Nadelwald."
-essbar = "essbar"
 slug = "schweinsohr"
+unterschied = "Trichterfoermig mit derben herablaufenden Leisten statt Lamellen, am Boden im Nadelwald."
 
 [[verwechslungen]]
-name = "Lungenseitling"
-merkmal = "Hut milchweiss bis cremeweiss und duennfleischig, im Sommer an Laubholz."
-essbar = "essbar"
 slug = "lungenseitling"
+unterschied = "Hut milchweiss bis cremeweiss und duennfleischig, im Sommer an Laubholz."
 
 [[verwechslungen]]
-name = "Rillstieliger Seitling"
-merkmal = "Stiel deutlich ausgepraegt und rillig, Lamellen queradrig verbunden."
-essbar = "essbar"
 slug = "rillstieliger-seitling"
+unterschied = "Stiel deutlich ausgepraegt und rillig, Lamellen queradrig verbunden."
 
 [[links]]
 titel = "123pilzsuche.de"

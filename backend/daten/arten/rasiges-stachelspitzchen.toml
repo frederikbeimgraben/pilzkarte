@@ -28,10 +28,8 @@ vorkommen = "Folgezersetzer an Nadelholz, meist Kieferntotholz, seltener an Fich
 zeit = "Herbst bis Winter."
 
 [[verwechslungen]]
-name = "Igelstachelbart"
-merkmal = "Großer weißer Klumpen mit langen herabhängenden Stacheln, an Laubholz."
-essbar = "essbar"
 slug = "igelstachelbart"
+unterschied = "Großer weißer Klumpen mit langen herabhängenden Stacheln, an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

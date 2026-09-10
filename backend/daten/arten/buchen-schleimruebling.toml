@@ -35,34 +35,24 @@ vorkommen = "Folgezersetzer an Totholz von Laubbäumen, meist Buche, selten Eich
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Grauer Dachpilz"
-merkmal = "Hut grau bis graubraun, Lamellen erst weiß, dann rosa, frei. Kein Ring am Stiel."
-essbar = "giftig"
 slug = "grauer-dachpilz"
+unterschied = "Hut grau bis graubraun, Lamellen erst weiß, dann rosa, frei. Kein Ring am Stiel."
 
 [[verwechslungen]]
-name = "Weißer Dachpilz"
-merkmal = "Hut weiß, im Alter rosabraun, Lamellen werden fleischrot, ohne Ring."
-essbar = "essbar"
 slug = "weisser-dachpilz"
+unterschied = "Hut weiß, im Alter rosabraun, Lamellen werden fleischrot, ohne Ring."
 
 [[verwechslungen]]
-name = "Seidiger Dachpilz"
-merkmal = "Hut elfenbeinweiß mit dunklerem Scheitel, Lamellen später rotbraun, ohne Ring."
-essbar = "essbar"
 slug = "seidiger-dachpilz"
+unterschied = "Hut elfenbeinweiß mit dunklerem Scheitel, Lamellen später rotbraun, ohne Ring."
 
 [[verwechslungen]]
-name = "Olivgrauer Schneckling"
-merkmal = "Hut dunkelbraun bis olivgrau, Stiel genattert, Lamellen wachsartig."
-essbar = "essbar"
 slug = "olivgrauer-schneckling"
+unterschied = "Hut dunkelbraun bis olivgrau, Stiel genattert, Lamellen wachsartig."
 
 [[verwechslungen]]
-name = "Schleimigberingter Schneckling"
-merkmal = "Lamellen sehr weit auseinander, Stielbasis keulig, an Nadelholz."
-essbar = "essbar"
 slug = "schleimigberingter-schneckling"
+unterschied = "Lamellen sehr weit auseinander, Stielbasis keulig, an Nadelholz."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -33,22 +33,16 @@ vorkommen = "Nadelwald, sporadisch bei Laubholz, auf saurem Boden. Sehr selten, 
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Hut mit dunklen, tigerartig angeordneten Schuppen, Fleisch mild, Geruch mehlartig."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Hut mit dunklen, tigerartig angeordneten Schuppen, Fleisch mild, Geruch mehlartig."
 
 [[verwechslungen]]
-name = "Schärflicher Ritterling"
-merkmal = "Nur schwach scharf, Hut mit feineren Fasern ohne spitzen Buckel."
-essbar = "giftig"
 slug = "schaerflicher-ritterling"
+unterschied = "Nur schwach scharf, Hut mit feineren Fasern ohne spitzen Buckel."
 
 [[verwechslungen]]
-name = "Rötender Erdritterling"
-merkmal = "Fleisch läuft im Schnitt rötlich an, Geschmack mild."
-essbar = "giftig"
 slug = "roetender-erdritterling"
+unterschied = "Fleisch läuft im Schnitt rötlich an, Geschmack mild."
 
 [[links]]
 titel = "123pilzsuche.de"

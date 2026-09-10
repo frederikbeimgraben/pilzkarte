@@ -37,21 +37,12 @@ vorkommen = "Symbiosepilz im Laubwald, gern im Auwald, fast nur bei Erlen. Sehr 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Kuhröhrling"
-merkmal = "Röhren weiter und nicht so fein, Hut ohne Grübchen, wächst bei Kiefer."
-essbar = "essbar"
 slug = "kuhroehrling"
+unterschied = "Röhren weiter und nicht so fein, Hut ohne Grübchen, wächst bei Kiefer."
 
 [[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut trocken und samtig statt grübchenartig, Röhren angewachsen statt herablaufend."
-essbar = "essbar"
 slug = "ziegenlippe"
-
-[[verwechslungen]]
-name = "Rostroter Lärchenröhrling"
-merkmal = "Hut rostrot und schmierig, bei Lärche, Röhren nicht so kurz."
-essbar = "essbar"
+unterschied = "Hut trocken und samtig statt grübchenartig, Röhren angewachsen statt herablaufend."
 
 [[links]]
 titel = "123pilzsuche.de"

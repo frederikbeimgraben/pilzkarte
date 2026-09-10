@@ -31,10 +31,8 @@ vorkommen = "Im Auwald, gern bei Pappel, an morschen Stümpfen, Totholz, Holzabf
 zeit = "Frühjahr, März bis Mai."
 
 [[verwechslungen]]
-name = "Speisemorchel"
-merkmal = "Hut wabig gekammert statt zipfelig gestülpt, Hut und Stiel durchgehend hohl."
-essbar = "essbar"
 slug = "speisemorchel"
+unterschied = "Hut wabig gekammert statt zipfelig gestülpt, Hut und Stiel durchgehend hohl."
 
 [[links]]
 titel = "123pilzsuche.de"

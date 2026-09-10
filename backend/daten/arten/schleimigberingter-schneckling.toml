@@ -34,10 +34,8 @@ vorkommen = "Symbiosepilz im Nadelwald bei Kiefer. Sehr selten, in Deutschland s
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Olivgrauer Schneckling"
-merkmal = "Hut olivbraun bis graubraun mit dunklerer Mitte, Stiel unter der Ringzone dunkel genattert, bei Fichte."
-essbar = "essbar"
 slug = "olivgrauer-schneckling"
+unterschied = "Hut olivbraun bis graubraun mit dunklerer Mitte, Stiel unter der Ringzone dunkel genattert, bei Fichte."
 
 [[links]]
 titel = "123pilzsuche.de"

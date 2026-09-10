@@ -33,10 +33,8 @@ vorkommen = "Auf Wiesen und Bergwiesen, in moosigen Wäldern, in feuchtem Torfmo
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Trompetenpfifferling"
-merkmal = "Hut graubraun und trichterig durchbohrt, Unterseite mit Leisten statt Lamellen, Stiel gelb und hohl."
-essbar = "essbar"
 slug = "trompetenpfifferling"
+unterschied = "Hut graubraun und trichterig durchbohrt, Unterseite mit Leisten statt Lamellen, Stiel gelb und hohl."
 
 [[links]]
 titel = "123pilzsuche.de"

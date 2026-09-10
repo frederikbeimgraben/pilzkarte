@@ -33,10 +33,8 @@ vorkommen = "In Laubwald, Parks, an Waldwegen und auf Ruderalflächen, gern bei 
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Maipilz"
-merkmal = "Lamellen bleiben weiß, Geruch stark mehlartig, Fleisch verfärbt sich nicht rot."
-essbar = "essbar"
 slug = "maipilz"
+unterschied = "Lamellen bleiben weiß, Geruch stark mehlartig, Fleisch verfärbt sich nicht rot."
 
 [[links]]
 titel = "123pilzsuche.de"

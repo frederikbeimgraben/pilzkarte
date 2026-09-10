@@ -34,22 +34,16 @@ vorkommen = "Symbiosepilz im Mischwald, häufiger bei Nadelbäumen."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Tigerritterling"
-merkmal = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Lamellen oft mit Tröpfchen, Geruch mehlig."
-essbar = "toedlichGiftig"
 slug = "tigerritterling"
+unterschied = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Lamellen oft mit Tröpfchen, Geruch mehlig."
 
 [[verwechslungen]]
-name = "Gilbender Erdritterling"
-merkmal = "Fleisch und Stielbasis gilben deutlich, Geruch unangenehm."
-essbar = "giftig"
 slug = "gilbender-erdritterling"
+unterschied = "Fleisch und Stielbasis gilben deutlich, Geruch unangenehm."
 
 [[verwechslungen]]
-name = "Seifenritterling"
-merkmal = "Fleisch rötet an verletzten Stellen, besonders an der Stielbasis, Geruch nach Seifenlauge."
-essbar = "giftig"
 slug = "seifenritterling"
+unterschied = "Fleisch rötet an verletzten Stellen, besonders an der Stielbasis, Geruch nach Seifenlauge."
 
 [[links]]
 titel = "123pilzsuche.de"

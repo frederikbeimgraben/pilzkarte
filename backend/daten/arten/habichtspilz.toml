@@ -34,10 +34,8 @@ vorkommen = "Symbiosepilz, gern im Nadelwald, auch in Parks und Gärten. Die For
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gallenstacheling"
-merkmal = "Hut dunkelbraun und feiner braunschuppig, Stielbasis bläulich grünlich, Fleisch dort schwarzblau, Geschmack extrem scharf und bitter."
-essbar = "ungeniessbar"
 slug = "gallenstacheling"
+unterschied = "Hut dunkelbraun und feiner braunschuppig, Stielbasis bläulich grünlich, Fleisch dort schwarzblau, Geschmack extrem scharf und bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

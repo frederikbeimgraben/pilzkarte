@@ -70,7 +70,7 @@ def polygon(ring: list[list[float]] | None = None) -> dict[str, Any]:
     return {"type": "Polygon", "coordinates": [ring if ring is not None else ZONE_RING]}
 
 
-def _profile(name: str, scientific: str, *, protected: bool) -> Profile:
+def _profile(name: str, scientific: str, *, protected: bool, reference: str = "parasol") -> Profile:
     return Profile(
         name=name,
         scientific=scientific,
@@ -90,7 +90,7 @@ def _profile(name: str, scientific: str, *, protected: bool) -> Profile:
             TraitKey.HABITAT: "Im Wald.",
             TraitKey.SEASON: "Herbst.",
         },
-        lookalikes=[Lookalike(name="Gallenroehrling", trait="Bitter.", edible=Edibility.INEDIBLE)],
+        lookalikes=[Lookalike(slug=reference, difference="Ohne Roehren, mit Ring.")],
         links=[Link(title="Wikipedia", url="https://de.wikipedia.org/wiki/Pilze")],
     )
 
@@ -121,11 +121,18 @@ def catalog_for_tests() -> Catalog:
         profiles={
             "steinpilz": _profile("Steinpilz", "Boletus edulis", protected=True),
             "pfifferling": _profile("Pfifferling", "Cantharellus cibarius", protected=True),
-            "parasol": _profile("Parasol", "Macrolepiota procera", protected=False),
+            "parasol": _profile(
+                "Parasol", "Macrolepiota procera", protected=False, reference="steinpilz"
+            ),
         },
         # Nur der Steinpilz hat eine Wertkarte. Der Parasol belegt den Fall
         # "Art im Katalog, aber ohne Vorhersage".
         maps={"steinpilz": "boletus_edulis"},
+        affects={
+            "parasol": ["pfifferling", "steinpilz"],
+            "steinpilz": ["parasol"],
+            "pfifferling": [],
+        },
     )
 
 

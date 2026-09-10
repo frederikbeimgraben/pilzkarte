@@ -34,10 +34,8 @@ vorkommen = "Folgezersetzer im Mischwald, in Parks, an Waldrändern und Wegen. S
 zeit = "Frühjahr bis Sommer."
 
 [[verwechslungen]]
-name = "Karbolegerling"
-merkmal = "Riecht nach Karbol oder Tinte, Stielbasis im Schnitt kräftig chromgelb."
-essbar = "giftig"
 slug = "karbolegerling"
+unterschied = "Riecht nach Karbol oder Tinte, Stielbasis im Schnitt kräftig chromgelb."
 
 [[links]]
 titel = "123pilzsuche.de"

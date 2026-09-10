@@ -37,22 +37,16 @@ vorkommen = "Symbiosepilz im Laubwald, überwiegend bei Eiche, selten bei Buche,
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Fichtenrotkappe"
-merkmal = "Stielschuppen schwarz, wächst bei Nadelbäumen."
-essbar = "essbar"
 slug = "fichtenrotkappe"
+unterschied = "Stielschuppen schwarz, wächst bei Nadelbäumen."
 
 [[verwechslungen]]
-name = "Kiefernrotkappe"
-merkmal = "Hut fuchsrot und samtig, Schuppen erst hellbraun, dann rötlich, bei Kiefer."
-essbar = "essbar"
 slug = "kiefernrotkappe"
+unterschied = "Hut fuchsrot und samtig, Schuppen erst hellbraun, dann rötlich, bei Kiefer."
 
 [[verwechslungen]]
-name = "Birkenrotkappe"
-merkmal = "Stielschuppen schwärzlich statt rötlich, wächst bei Birke."
-essbar = "essbar"
 slug = "birken-rotkappe"
+unterschied = "Stielschuppen schwärzlich statt rötlich, wächst bei Birke."
 
 [[links]]
 titel = "123pilzsuche.de"

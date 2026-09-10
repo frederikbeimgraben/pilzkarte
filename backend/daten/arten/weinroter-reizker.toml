@@ -37,22 +37,16 @@ vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier bei Kiefer. 
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Spangrüner Kiefernreizker"
-merkmal = "Milch orangerot und erst später weinrot, Fleisch weißlich bis gelblich, Geschmack herb und bitterlich."
-essbar = "essbar"
 slug = "spangruener-kiefernreizker"
+unterschied = "Milch orangerot und erst später weinrot, Fleisch weißlich bis gelblich, Geschmack herb und bitterlich."
 
 [[verwechslungen]]
-name = "Fichtenreizker"
-merkmal = "Bei Fichte, Stiel ohne Grübchen und ohne weinroten Grund, Milch karottenrot und erst nach etwa 15 Minuten weinrot."
-essbar = "essbar"
 slug = "fichtenreizker"
+unterschied = "Bei Fichte, Stiel ohne Grübchen und ohne weinroten Grund, Milch karottenrot und erst nach etwa 15 Minuten weinrot."
 
 [[verwechslungen]]
-name = "Lachsreizker"
-merkmal = "Überwiegend bei Weißtanne, Stiel orange mit rötlichen Grübchen, Milch karottenrot bis orange."
-essbar = "essbar"
 slug = "lachsreizker"
+unterschied = "Überwiegend bei Weißtanne, Stiel orange mit rötlichen Grübchen, Milch karottenrot bis orange."
 
 [[links]]
 titel = "123pilzsuche.de"

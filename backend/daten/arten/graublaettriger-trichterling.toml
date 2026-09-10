@@ -31,10 +31,8 @@ vorkommen = "Folgezersetzer im Mischwald auf kalkreichem Boden."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Nebelkappe"
-merkmal = "Deutlich größer, Hut grau und wie bereift, Geruch stark mehlig-süßlich, Lamellen weißlich."
-essbar = "giftig"
 slug = "nebelkappe"
+unterschied = "Deutlich größer, Hut grau und wie bereift, Geruch stark mehlig-süßlich, Lamellen weißlich."
 
 [[links]]
 titel = "123pilzsuche.de"

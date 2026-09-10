@@ -36,10 +36,8 @@ vorkommen = "Symbiosepilz in Mischwald, häufig in moorigen Nadelwäldern, gern 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Eichenmilchling"
-merkmal = "Milch weiß und beim Trocknen grünlichgelb, Fleisch auf Druck weinbraun, Geruch nach Blattwanzen, nur bei Eiche."
-essbar = "essbar"
 slug = "eichenmilchling"
+unterschied = "Milch weiß und beim Trocknen grünlichgelb, Fleisch auf Druck weinbraun, Geruch nach Blattwanzen, nur bei Eiche."
 
 [[links]]
 titel = "123pilzsuche.de"

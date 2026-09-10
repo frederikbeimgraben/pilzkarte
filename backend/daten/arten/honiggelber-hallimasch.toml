@@ -37,34 +37,24 @@ vorkommen = "Überwiegend an Laubbäumen, parasitisch oder als Folgezersetzer, A
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Gifthäubling"
-merkmal = "Sporenpulver rostbraun, Lamellen zimtbraun, Stiel unter dem dünnen Ring weißsilbrig überfasert, meist einzeln an Nadelholz."
-essbar = "toedlichGiftig"
 slug = "gifthaeubling"
+unterschied = "Sporenpulver rostbraun, Lamellen zimtbraun, Stiel unter dem dünnen Ring weißsilbrig überfasert, meist einzeln an Nadelholz."
 
 [[verwechslungen]]
-name = "Grünblättriger Schwefelkopf"
-merkmal = "Lamellen grün bis grüngelb, Stiel mit Cortina statt Ring, Geschmack stark bitter."
-essbar = "giftig"
 slug = "gruenblaettriger-schwefelkopf"
+unterschied = "Lamellen grün bis grüngelb, Stiel mit Cortina statt Ring, Geschmack stark bitter."
 
 [[verwechslungen]]
-name = "Ringloser Hallimasch"
-merkmal = "Stiel ohne Ring, Hut rotbraun und kleiner, gern an Eiche."
-essbar = "bedingtEssbar"
 slug = "ringloser-hallimasch"
+unterschied = "Stiel ohne Ring, Hut rotbraun und kleiner, gern an Eiche."
 
 [[verwechslungen]]
-name = "Sparriger Schüppling"
-merkmal = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun, Geruch rettichartig."
-essbar = "giftig"
 slug = "sparriger-schueppling"
+unterschied = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun, Geruch rettichartig."
 
 [[verwechslungen]]
-name = "Gemeiner Hallimasch"
-merkmal = "Hut rotbraun statt gelblich, Stiel unter dem Ring mit weißen wolligen Schüppchen, an Nadelholz, schlechter verträglich."
-essbar = "bedingtEssbar"
 slug = "dunkler-hallimasch"
+unterschied = "Hut rotbraun statt gelblich, Stiel unter dem Ring mit weißen wolligen Schüppchen, an Nadelholz, schlechter verträglich."
 
 [[links]]
 titel = "123pilzsuche.de"

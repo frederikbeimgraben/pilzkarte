@@ -36,10 +36,8 @@ vorkommen = "Symbiosepilz im Laubwald, meist unter Hainbuche, seltener bei Hasel
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Rötender Birkenpilz"
-merkmal = "Bei Birke, Huthaut glatt statt gehämmert, Fleisch rötet und wird nicht schwarz."
-essbar = "essbar"
 slug = "roetender-birkenpilz"
+unterschied = "Bei Birke, Huthaut glatt statt gehämmert, Fleisch rötet und wird nicht schwarz."
 
 [[links]]
 titel = "123pilzsuche.de"

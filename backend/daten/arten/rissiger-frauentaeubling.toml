@@ -45,22 +45,16 @@ vorkommen = "Symbiosepilz im Mischwald, im Bergland haeufiger im Nadelwald. Die 
 zeit = "Fruehsommer bis Spaetherbst."
 
 [[verwechslungen]]
-name = "Gruengefelderter Taeubling"
-merkmal = "Hut grasgruen bis graugruen, Huthaut feldrig aufgerissen, Lamellen bruechig."
-essbar = "essbar"
 slug = "gruengefelderter-taeubling"
+unterschied = "Hut grasgruen bis graugruen, Huthaut feldrig aufgerissen, Lamellen bruechig."
 
 [[verwechslungen]]
-name = "Olivfarbener Frauentaeubling"
-merkmal = "Huthaut glatt statt rissig, Hut einfarbig olivfarben."
-essbar = "essbar"
 slug = "olivfarbener-frauentaeubling"
+unterschied = "Huthaut glatt statt rissig, Hut einfarbig olivfarben."
 
 [[verwechslungen]]
-name = "Grasgruener Taeubling"
-merkmal = "Hut gleichmaessig grasgruen, Huthaut nicht gefeldert."
-essbar = "essbar"
 slug = "grasgruener-taeubling"
+unterschied = "Hut gleichmaessig grasgruen, Huthaut nicht gefeldert."
 
 [[links]]
 titel = "123pilzsuche.de"

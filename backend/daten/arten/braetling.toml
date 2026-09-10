@@ -38,34 +38,24 @@ vorkommen = "Symbiosepilz im Mischwald. In Deutschland stark zurückgegangen."
 zeit = "Frühsommer bis Herbstanfang, nur selten später."
 
 [[verwechslungen]]
-name = "Maggipilz"
-merkmal = "Geruch stark nach Maggi, Lamellen hellgelb ockerlich und herablaufend, Stiel sehr brüchig."
-essbar = "giftig"
 slug = "maggipilz"
+unterschied = "Geruch stark nach Maggi, Lamellen hellgelb ockerlich und herablaufend, Stiel sehr brüchig."
 
 [[verwechslungen]]
-name = "Rotbrauner Milchling"
-merkmal = "Hut rotbraun mit kleinem Buckel, später trichterig, Milch spärlich."
-essbar = "essbar"
 slug = "rotbrauner-milchling"
+unterschied = "Hut rotbraun mit kleinem Buckel, später trichterig, Milch spärlich."
 
 [[verwechslungen]]
-name = "Kuhroter Milchling"
-merkmal = "Hut fleischrosa bis purpurbraun, Mitte genabelt, Stiel oft mit dunkleren Gruben."
-essbar = "ungeniessbar"
 slug = "kuhroter-milchling"
+unterschied = "Hut fleischrosa bis purpurbraun, Mitte genabelt, Stiel oft mit dunkleren Gruben."
 
 [[verwechslungen]]
-name = "Runzeliggezonter Milchling"
-merkmal = "Hutrand runzelig und gezahnt, Lamellen weißlich und bei Verletzung nicht bräunend."
-essbar = "essbar"
 slug = "runzeliggezonter-milchling"
+unterschied = "Hutrand runzelig und gezahnt, Lamellen weißlich und bei Verletzung nicht bräunend."
 
 [[verwechslungen]]
-name = "Eichenmilchling"
-merkmal = "Hut dunkler gezont, Fleisch auf Druck weinbraun."
-essbar = "essbar"
 slug = "eichenmilchling"
+unterschied = "Hut dunkler gezont, Fleisch auf Druck weinbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

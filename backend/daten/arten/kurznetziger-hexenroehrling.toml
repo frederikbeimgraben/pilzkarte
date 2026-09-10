@@ -32,22 +32,16 @@ vorkommen = "Symbiosepilz in Laubwäldern und Parkanlagen, wärmeliebend. Zum Bo
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-name = "Blaufleckender Purpurröhrling"
-merkmal = "Hut purpurrot bis weinrosa und blau fleckend, Röhren später purpurrot, Fleisch schnell stark blauend, alt aasartiger Geruch."
-essbar = "giftig"
 slug = "blaufleckender-purpurroehrling"
+unterschied = "Hut purpurrot bis weinrosa und blau fleckend, Röhren später purpurrot, Fleisch schnell stark blauend, alt aasartiger Geruch."
 
 [[verwechslungen]]
-name = "Falscher Satansröhrling"
-merkmal = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz, Fleisch chromgelb."
-essbar = "giftig"
 slug = "falscher-satansroehrling"
+unterschied = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz, Fleisch chromgelb."
 
 [[verwechslungen]]
-name = "Glattstieliger Hexenröhrling"
-merkmal = "Stiel ohne Netz, nur rillig labyrinthisch, Hut ohne Olivton."
-essbar = "essbar"
 slug = "glattstieliger-hexenroehrling"
+unterschied = "Stiel ohne Netz, nur rillig labyrinthisch, Hut ohne Olivton."
 
 [[links]]
 titel = "123pilzsuche.de"

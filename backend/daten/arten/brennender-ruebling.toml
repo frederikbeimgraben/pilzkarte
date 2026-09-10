@@ -34,10 +34,8 @@ vorkommen = "Folgezersetzer im Mischwald auf Blatt- und Nadelstreu, häufig."
 zeit = "Spätfrühling bis Herbst."
 
 [[verwechslungen]]
-name = "Nelkenschwindling"
-merkmal = "Hut ledergelb bis hellbraun, Lamellen weißlich und entfernt, Stiel zäh und hornartig, Geschmack bleibt mild."
-essbar = "sehrGuterSpeisepilz"
 slug = "nelkenschwindling"
+unterschied = "Hut ledergelb bis hellbraun, Lamellen weißlich und entfernt, Stiel zäh und hornartig, Geschmack bleibt mild."
 
 [[links]]
 titel = "123pilzsuche.de"

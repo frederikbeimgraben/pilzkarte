@@ -31,10 +31,8 @@ vorkommen = "Parasit an Laubbäumen, erzeugt Weißfäule. Sehr selten, in Deutsc
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Dorniger Stachelbart"
-merkmal = "Aus einzelnen, unregelmäßig gelappten weißen Hüten aufgebaut, Fleisch weich und bei Verletzung gilbend, Geruch angenehm."
-essbar = "essbar"
 slug = "dorniger-stachelbart"
+unterschied = "Aus einzelnen, unregelmäßig gelappten weißen Hüten aufgebaut, Fleisch weich und bei Verletzung gilbend, Geruch angenehm."
 
 [[links]]
 titel = "123pilzsuche.de"

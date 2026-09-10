@@ -30,22 +30,16 @@ vorkommen = "An Nadelholz, meist Fichte und Tanne, in höheren Lagen auch Lärch
 zeit = "Die Fruchtkörper sind einjährig; die Seite nennt keine Monate."
 
 [[verwechslungen]]
-name = "Zimtfarbener Weichporling"
-merkmal = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
-essbar = "toedlichGiftig"
 slug = "zimtfarbener-weichporling"
+unterschied = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
 
 [[verwechslungen]]
-name = "Duftender Goldporling"
-merkmal = "Liegt dem Holz flach auf, orange bis blutrot, Geruch nach Anis oder Aprikose."
-essbar = "ungeniessbar"
 slug = "duftender-goldporling"
+unterschied = "Liegt dem Holz flach auf, orange bis blutrot, Geruch nach Anis oder Aprikose."
 
 [[verwechslungen]]
-name = "Leuchtender Weichporling"
-merkmal = "Oberfläche filzig und orangerot, Fleisch mit KOH weinrot."
-essbar = "ungeniessbar"
 slug = "leuchtender-weichporling"
+unterschied = "Oberfläche filzig und orangerot, Fleisch mit KOH weinrot."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -33,21 +33,12 @@ vorkommen = "Folgezersetzer auf Wiesen und in Parks, gern bei Lärche. Gesellig 
 zeit = "Frühling bis Frühsommer."
 
 [[verwechslungen]]
-name = "Riesenrötling"
-merkmal = "Lamellen jung gelblich und später rotocker, Sporenpulver fleischrötlich, Geruch unangenehm säuerlich."
-essbar = "toedlichGiftig"
 slug = "riesenroetling"
+unterschied = "Lamellen jung gelblich und später rotocker, Sporenpulver fleischrötlich, Geruch unangenehm säuerlich."
 
 [[verwechslungen]]
-name = "Ziegelroter Risspilz"
-merkmal = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Lamellen und Sporenpulver braun."
-essbar = "toedlichGiftig"
 slug = "ziegelroter-risspilz"
-
-[[verwechslungen]]
-name = "Wurzelnder Schönkopf"
-merkmal = "Stiel mit langer wurzelnder Basis, Fruchtkörper im Sommer und Herbst."
-essbar = "essbar"
+unterschied = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Lamellen und Sporenpulver braun."
 
 [[links]]
 titel = "123pilzsuche.de"

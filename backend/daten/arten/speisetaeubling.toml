@@ -52,28 +52,20 @@ vorkommen = "Symbiosepilz im Mischwald, gern im sauren Laub- oder Nadelwald bei 
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-name = "Kiefernspeitäubling"
-merkmal = "Hut blut- bis kirschrot, alt mattrot, Stiel weiß ohne Rottöne."
-essbar = "giftig"
 slug = "kiefernspeitaeubling"
+unterschied = "Hut blut- bis kirschrot, alt mattrot, Stiel weiß ohne Rottöne."
 
 [[verwechslungen]]
-name = "Birkenspeitäubling"
-merkmal = "Hut weißlich, blass rosa bis rosenrot, Lamellen sehr zerbrechlich, Stiel weiß und brüchig."
-essbar = "giftig"
 slug = "birkenspeitaeubling"
+unterschied = "Hut weißlich, blass rosa bis rosenrot, Lamellen sehr zerbrechlich, Stiel weiß und brüchig."
 
 [[verwechslungen]]
-name = "Buchenspeitäubling"
-merkmal = "Hut zinnoberrot bis karminrot, Lamellen weiß, im Alter gelblich, ausgebuchtet angewachsen."
-essbar = "giftig"
 slug = "buchenspeitaeubling"
+unterschied = "Hut zinnoberrot bis karminrot, Lamellen weiß, im Alter gelblich, ausgebuchtet angewachsen."
 
 [[verwechslungen]]
-name = "Flammstieltäubling"
-merkmal = "Hut blut- bis kirschrot, Stiel weiß und rot geflammt."
-essbar = "ungeniessbar"
 slug = "flammstieltaeubling"
+unterschied = "Hut blut- bis kirschrot, Stiel weiß und rot geflammt."
 
 [[links]]
 titel = "123pilzsuche.de"

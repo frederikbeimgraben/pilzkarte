@@ -32,10 +32,8 @@ vorkommen = "Folgezersetzer an Totholzästen von Nadelholz. Selten."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Berindeter Seitling"
-merkmal = "Hut grau bis hellbraun mit dunklen Schüppchen, mit Stiel und flüchtigem Ring, meist an Laubholz."
-essbar = "essbar"
 slug = "berindeter-seitling"
+unterschied = "Hut grau bis hellbraun mit dunklen Schüppchen, mit Stiel und flüchtigem Ring, meist an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

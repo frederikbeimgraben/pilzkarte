@@ -32,22 +32,16 @@ vorkommen = "Folgezersetzer in Parks, auf Wiesen, an Waldrändern und Waldwegen.
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Bocksdickfuß"
-merkmal = "Hut helllila bis lilablau, Stiel mit rostbraunen Sporenpulverresten, Geruch widerlich nach Ziegenbock."
-essbar = "giftig"
 slug = "bocksdickfuss"
+unterschied = "Hut helllila bis lilablau, Stiel mit rostbraunen Sporenpulverresten, Geruch widerlich nach Ziegenbock."
 
 [[verwechslungen]]
-name = "Seifenritterling"
-merkmal = "Fleisch an verletzten Stellen rötend, besonders an der Stielbasis, Geruch nach Seifenlauge, Sporenpulver weiß."
-essbar = "giftig"
 slug = "seifenritterling"
+unterschied = "Fleisch an verletzten Stellen rötend, besonders an der Stielbasis, Geruch nach Seifenlauge, Sporenpulver weiß."
 
 [[verwechslungen]]
-name = "Violetter Rötelritterling"
-merkmal = "Hut lilaviolett, Lamellen lila bis blaulila, Geruch parfümiert und fruchtig."
-essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
+unterschied = "Hut lilaviolett, Lamellen lila bis blaulila, Geruch parfümiert und fruchtig."
 
 [[links]]
 titel = "123pilzsuche.de"

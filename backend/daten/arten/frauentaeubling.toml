@@ -55,34 +55,24 @@ vorkommen = "Symbiosepilz im Mischwald, regional sehr häufig."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Rissiger Frauentäubling"
-merkmal = "Huthaut in der Mitte deutlich rissig aufgesprungen."
-essbar = "essbar"
 slug = "rissiger-frauentaeubling"
+unterschied = "Huthaut in der Mitte deutlich rissig aufgesprungen."
 
 [[verwechslungen]]
-name = "Olivfarbener Frauentäubling"
-merkmal = "Hut olivgrün mit violetten Flecken."
-essbar = "essbar"
 slug = "olivfarbener-frauentaeubling"
+unterschied = "Hut olivgrün mit violetten Flecken."
 
 [[verwechslungen]]
-name = "Grüngefelderter Täubling"
-merkmal = "Huthaut reißt in felderige Schollen auf, Lamellen brüchig."
-essbar = "essbar"
 slug = "gruengefelderter-taeubling"
+unterschied = "Huthaut reißt in felderige Schollen auf, Lamellen brüchig."
 
 [[verwechslungen]]
-name = "Grasgrüner Täubling"
-merkmal = "Hut graugrün bis grasgrün, Lamellen brüchig, Stiel längsgerieft."
-essbar = "essbar"
 slug = "grasgruener-taeubling"
+unterschied = "Hut graugrün bis grasgrün, Lamellen brüchig, Stiel längsgerieft."
 
 [[verwechslungen]]
-name = "Taubentäubling"
-merkmal = "Hut schwarzoliv bis olivgrau, Lamellen sehr brüchig."
-essbar = "essbar"
 slug = "taubentaeubling"
+unterschied = "Hut schwarzoliv bis olivgrau, Lamellen sehr brüchig."
 
 [[links]]
 titel = "123pilzsuche.de"

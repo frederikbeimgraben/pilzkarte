@@ -34,10 +34,8 @@ vorkommen = "Folgezersetzer in Gärten, an Wegrändern und auf Schutt, gern auf 
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Riesenchampignon"
-merkmal = "Hut mit braunen Schuppen statt Stacheln, Lamellen blassrosa und später braun, Sporenpulver purpurbraun, Geruch anisartig."
-essbar = "essbar"
 slug = "riesenchampignon"
+unterschied = "Hut mit braunen Schuppen statt Stacheln, Lamellen blassrosa und später braun, Sporenpulver purpurbraun, Geruch anisartig."
 
 [[links]]
 titel = "123pilzsuche.de"

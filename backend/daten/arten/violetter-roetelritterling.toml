@@ -38,34 +38,24 @@ vorkommen = "Folgezersetzer von verrottetem Laub im Mischwald, gern im Laubwald.
 zeit = "Herbst bis Winteranfang. Die Fruchtkörper kommen oft erst nach einem Temperatursturz und stehen bis in den Dezember."
 
 [[verwechslungen]]
-name = "Bocksdickfuß"
-merkmal = "Lamellen lila, im Alter zimtbraun, Stiel mit rostbraunen Sporenpulverresten und weißviolettem Velum."
-essbar = "giftig"
 slug = "bocksdickfuss"
+unterschied = "Lamellen lila, im Alter zimtbraun, Stiel mit rostbraunen Sporenpulverresten und weißviolettem Velum."
 
 [[verwechslungen]]
-name = "Nebelkappe"
-merkmal = "Hut graubraun bis weißgrau und etwas radialfaserig, Lamellen weißlich bis cremegelb und herablaufend."
-essbar = "giftig"
 slug = "nebelkappe"
+unterschied = "Hut graubraun bis weißgrau und etwas radialfaserig, Lamellen weißlich bis cremegelb und herablaufend."
 
 [[verwechslungen]]
-name = "Lilastieliger Rötelritterling"
-merkmal = "Hut grauviolett bis graubräunlich statt lilaviolett, Lamellen nur weißlich lila."
-essbar = "essbar"
 slug = "lilastieliger-roetelritterling"
+unterschied = "Hut grauviolett bis graubräunlich statt lilaviolett, Lamellen nur weißlich lila."
 
 [[verwechslungen]]
-name = "Lavendelfarbener Rötelritterling"
-merkmal = "Hut rötlichlila bis lavendelfarben, ebenfalls hygrophan."
-essbar = "essbar"
 slug = "lavendelfarbener-roetelritterling"
+unterschied = "Hut rötlichlila bis lavendelfarben, ebenfalls hygrophan."
 
 [[verwechslungen]]
-name = "Schmutziger Rötelritterling"
-merkmal = "Kleinster der Rötelritterlinge, Lamellen schmutzig weiß bis graurosa, Geruch beim Anwärmen staubartig."
-essbar = "essbar"
 slug = "schmutziger-roetelritterling"
+unterschied = "Kleinster der Rötelritterlinge, Lamellen schmutzig weiß bis graurosa, Geruch beim Anwärmen staubartig."
 
 [[links]]
 titel = "123pilzsuche.de"

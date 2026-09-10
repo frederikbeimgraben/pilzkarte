@@ -33,21 +33,12 @@ vorkommen = "Folgezersetzer auf Komposthaufen und wärmeerzeugendem Substrat, h�
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Grünsporschirmling"
-merkmal = "Lamellen im Alter grünlich, Sporenpulver grün, Fleisch nur schwach rötend."
-essbar = "giftig"
 slug = "gruensporschirmling"
+unterschied = "Lamellen im Alter grünlich, Sporenpulver grün, Fleisch nur schwach rötend."
 
 [[verwechslungen]]
-name = "Parasol"
-merkmal = "Stiel deutlich genattert, Ring doppelt, Fleisch kaum rötend."
-essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
-
-[[verwechslungen]]
-name = "Olivbrauner Safranschirmling"
-merkmal = "Stielbasis ohne tellerartig gerandete Knolle, wächst im Wald."
-essbar = "essbar"
+unterschied = "Stiel deutlich genattert, Ring doppelt, Fleisch kaum rötend."
 
 [[links]]
 titel = "123pilzsuche.de"

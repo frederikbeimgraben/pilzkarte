@@ -33,21 +33,12 @@ vorkommen = "Symbiosepilz im Laubwald bei Buche, Eiche und Esskastanie, wärmeli
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Goldröhrling"
-merkmal = "Bei Lärche, Hut goldgelb und schleimig, Stiel mit Ring."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Bei Lärche, Hut goldgelb und schleimig, Stiel mit Ring."
 
 [[verwechslungen]]
-name = "Mährischer Filzröhrling"
-merkmal = "Hut trocken und samtig filzig, olivbraun bis ockerbraun, Röhren blassgelb."
-essbar = "essbar"
-
-[[verwechslungen]]
-name = "Ziegenlippe"
-merkmal = "Hut trocken samtig olivbraun, Röhren blassgelb und grobporig, Fleisch weißlich."
-essbar = "essbar"
 slug = "ziegenlippe"
+unterschied = "Hut trocken samtig olivbraun, Röhren blassgelb und grobporig, Fleisch weißlich."
 
 [[links]]
 titel = "123pilzsuche.de"

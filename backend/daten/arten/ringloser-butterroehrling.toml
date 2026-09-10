@@ -38,22 +38,16 @@ vorkommen = "Symbiosepilz an Waldraendern und in Parks unter Fichten und Kiefern
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-name = "Schmerling"
-merkmal = "Stielbasis nicht rosa, Stielspitze mit milchigen Droepfchen, unter der Huthaut ohne braune Faserung."
-essbar = "essbar"
 slug = "koernchenroehrling"
+unterschied = "Stielbasis nicht rosa, Stielspitze mit milchigen Droepfchen, unter der Huthaut ohne braune Faserung."
 
 [[verwechslungen]]
-name = "Goldroehrling"
-merkmal = "Hut goldgelb bis ockergelb, Stiel mit haeutigem Ring, bei Laerche."
-essbar = "essbar"
 slug = "goldroehrling"
+unterschied = "Hut goldgelb bis ockergelb, Stiel mit haeutigem Ring, bei Laerche."
 
 [[verwechslungen]]
-name = "Sandroehrling"
-merkmal = "Huthaut trocken, matt und koernig filzig, Fleisch blauend."
-essbar = "sehrGuterSpeisepilz"
 slug = "sandroehrling"
+unterschied = "Huthaut trocken, matt und koernig filzig, Fleisch blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

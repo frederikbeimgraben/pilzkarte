@@ -32,10 +32,8 @@ vorkommen = "Folgezersetzer auf grasigen Wegen, an Wegrändern und in Parks, kal
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Büschelrasling"
-merkmal = "Hut heller braun und ohne die knorpelige Panzerschicht, Fleisch unter der Huthaut nicht dunkel durchfärbt."
-essbar = "essbar"
 slug = "bueschliger-rasling"
+unterschied = "Hut heller braun und ohne die knorpelige Panzerschicht, Fleisch unter der Huthaut nicht dunkel durchfärbt."
 
 [[links]]
 titel = "123pilzsuche.de"
