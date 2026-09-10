@@ -30,6 +30,7 @@ from app.modules.arten.katalog import (
     saison_lesen,
     spitze_woche_fuer,
     stufe_fuer,
+    vorhersage_geplant,
 )
 from app.modules.arten.router import aktueller_katalog
 from app.modules.arten.schemas import (
@@ -218,12 +219,28 @@ def klient(app: FastAPI) -> httpx.AsyncClient:
         (59, Stufe.PROFIL),
         (60, Stufe.SAISON),
         (599, Stufe.SAISON),
-        (600, Stufe.VORHERSAGE),
-        (5000, Stufe.VORHERSAGE),
+        # Ohne Karte bleibt auch eine Art mit Modell auf der Stufe Saison.
+        (600, Stufe.SAISON),
+        (5000, Stufe.SAISON),
     ],
 )
-def test_stufe_haengt_an_den_begehungen(begehungen: int, erwartet: Stufe) -> None:
-    assert stufe_fuer(begehungen) == erwartet
+def test_stufe_ohne_karte_haengt_an_den_begehungen(begehungen: int, erwartet: Stufe) -> None:
+    assert stufe_fuer(begehungen, hat_karte=False) == erwartet
+
+
+@pytest.mark.parametrize("begehungen", [0, 59, 600, 5000])
+def test_eine_karte_macht_die_stufe_vorhersage(begehungen: int) -> None:
+    assert stufe_fuer(begehungen, hat_karte=True) == Stufe.VORHERSAGE
+
+
+@pytest.mark.parametrize("begehungen", [0, 59, 599])
+def test_unter_der_schwelle_ist_keine_vorhersage_geplant(begehungen: int) -> None:
+    assert vorhersage_geplant(begehungen) is False
+
+
+@pytest.mark.parametrize("begehungen", [600, 5000])
+def test_ab_der_schwelle_ist_eine_vorhersage_geplant(begehungen: int) -> None:
+    assert vorhersage_geplant(begehungen) is True
 
 
 def test_anteil_rechnet_prozent_und_meidet_die_null() -> None:
@@ -256,7 +273,7 @@ def test_liste_nennt_stand_jahre_und_nenner(gebaut: Katalog) -> None:
     assert liste.begehungen == 700
 
 
-def test_stufen_kommen_aus_der_tabelle(gebaut: Katalog) -> None:
+def test_stufen_kommen_aus_karte_und_tabelle(gebaut: Katalog) -> None:
     stufen = {art.slug: art.stufe for art in gebaut.liste().arten}
 
     assert stufen == {
@@ -264,6 +281,40 @@ def test_stufen_kommen_aus_der_tabelle(gebaut: Katalog) -> None:
         "maipilz": Stufe.SAISON,
         "braetling": Stufe.PROFIL,
     }
+
+
+def test_ohne_manifest_bleibt_die_art_auf_saison(daten: Path, tmp_path: Path) -> None:
+    leer = tmp_path / "ungerendert"
+    leer.mkdir()
+    gebaut = katalog(daten, leer)
+
+    steinpilz = gebaut.art("steinpilz")
+
+    # 700 Begehungen mit Fund, aber kein Manifest: das Modell traegt, die
+    # Karte fehlt. Der Chip "mit Vorhersage" darf die Art darum nicht zeigen.
+    assert steinpilz.begehungen_mit_fund == 700
+    assert steinpilz.karten_slug is None
+    assert steinpilz.stufe == Stufe.SAISON
+    assert steinpilz.vorhersage_geplant is True
+
+
+def test_vorhersage_geplant_steht_in_liste_und_profil(gebaut: Katalog) -> None:
+    geplant = {art.slug: art.vorhersage_geplant for art in gebaut.liste().arten}
+
+    assert geplant == {"steinpilz": True, "maipilz": False, "braetling": False}
+    assert gebaut.art("steinpilz").vorhersage_geplant is True
+
+
+def test_die_stufe_folgt_der_karte_auch_ohne_begehungen(daten: Path, tmp_path: Path) -> None:
+    maps = tmp_path / "frisch"
+    maps.mkdir()
+    (maps / "braetling.json").write_text("{}", encoding="utf-8")
+    gebaut = katalog(daten, maps)
+
+    braetling = gebaut.art("braetling")
+
+    assert braetling.stufe == Stufe.VORHERSAGE
+    assert braetling.vorhersage_geplant is False
 
 
 def test_art_ohne_zeile_in_der_tabelle_bleibt_leer(gebaut: Katalog) -> None:
@@ -490,6 +541,7 @@ async def test_liste_antwortet_in_camel_case(app: FastAPI) -> None:
         "geschuetzt",
         "speisewert",
         "kartenSlug",
+        "vorhersageGeplant",
         "begehungenMitFund",
         "spitzeWoche",
         "saison",
@@ -559,13 +611,56 @@ def test_jede_art_der_kette_hat_ein_profil() -> None:
     assert {profil.lateinisch for profil in profile.values()} == set(tabelle.arten)
 
 
-def test_die_stufen_verteilen_sich_wie_dokumentiert(tmp_path: Path) -> None:
-    gebaut = katalog(DATEN, tmp_path)
+def _maps_der_kette(ziel: Path) -> Path:
+    """Legt die Manifeste an, die die Kette heute gerendert hat.
+
+    Die echten Manifeste liegen unter ``PILZE_MAPS`` und nicht im Git. Welche
+    es gibt, sagt das Feld ``karte`` der Profile: es steht genau dort, wo die
+    Kette schon eine Karte abgelegt hat.
+    """
+    ziel.mkdir(parents=True, exist_ok=True)
+    for profil in profile_lesen(DATEN / "arten").values():
+        if profil.karte:
+            (ziel / f"{profil.karte}.json").write_text("{}", encoding="utf-8")
+    return ziel
+
+
+def test_die_stufen_folgen_den_gerenderten_karten(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, _maps_der_kette(tmp_path / "maps"))
     stufen = [art.stufe for art in gebaut.liste().arten]
 
-    assert stufen.count(Stufe.VORHERSAGE) == 23
-    assert stufen.count(Stufe.SAISON) == 42
+    assert stufen.count(Stufe.VORHERSAGE) == 13
+    assert stufen.count(Stufe.SAISON) == 52
     assert stufen.count(Stufe.PROFIL) == 20
+
+
+def test_die_dreizehn_arten_mit_karte_stehen_namentlich_fest(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, _maps_der_kette(tmp_path / "maps"))
+    mit_karte = sorted(art.slug for art in gebaut.liste().arten if art.stufe == Stufe.VORHERSAGE)
+
+    assert mit_karte == [
+        "birkenpilz",
+        "buchen-schleimruebling",
+        "edelreizker",
+        "fichtenreizker",
+        "flaschenbovist",
+        "flockenstieliger-hexenroehrling",
+        "lachsreizker",
+        "nebelkappe",
+        "netzstieliger-hexenroehrling",
+        "parasol",
+        "pfifferling",
+        "schopftintling",
+        "steinpilz",
+    ]
+
+
+def test_dreiundzwanzig_arten_tragen_ein_modell(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, tmp_path)
+
+    # Die Zahl aus konzept.html: 600 Begehungen mit Fund seit 2015. Sie haengt
+    # nicht daran, ob die Kette die Karte schon gerendert hat.
+    assert sum(1 for art in gebaut.liste().arten if art.vorhersage_geplant) == 23
 
 
 def test_jedes_profil_verlinkt_zwei_quellen() -> None:

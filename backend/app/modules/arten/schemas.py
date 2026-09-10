@@ -299,6 +299,7 @@ class ArtKurz(BasisModell):
     geschuetzt: bool
     speisewert: Essbarkeit
     karten_slug: str | None
+    vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
     saison: SaisonKurz
@@ -316,6 +317,7 @@ class Art(BasisModell):
     geschuetzt: bool
     speisewert: Essbarkeit
     karten_slug: str | None
+    vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
     merkmale: list[Merkmal]
