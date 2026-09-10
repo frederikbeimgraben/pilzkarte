@@ -1,49 +1,49 @@
-<div class="kopf">
-  <div class="kopf__zeile">
-    <p class="kopf__titel">
-      @if (titelAlsLink()) {
-        <button class="kopf__art kopf__art--link" type="button" (click)="titelKlick.emit()">
+<div class="head">
+  <div class="head__row">
+    <p class="head__title">
+      @if (titleAsLink()) {
+        <button class="head__species head__species--link" type="button" (click)="titleClick.emit()">
           {{ titel() }}
         </button>
       } @else {
-        <span class="kopf__art">{{ titel() }}</span>
+        <span class="head__species">{{ titel() }}</span>
       }
       @if (woche()) {
-        <span class="kopf__trenner" aria-hidden="true">·</span>
-        <span class="kopf__woche">{{ woche() }}</span>
+        <span class="head__divider" aria-hidden="true">·</span>
+        <span class="head__week">{{ woche() }}</span>
       }
-      @if (hinweis()) {
-        <span class="kopf__hinweis">{{ hinweis() }}</span>
+      @if (hint()) {
+        <span class="head__hint">{{ hint() }}</span>
       }
     </p>
-    @if (pfeile()) {
-      <div class="kopf__pfeile">
+    @if (arrows()) {
+      <div class="head__arrows">
         <button
-          class="kopf__pfeil"
+          class="head__arrow"
           type="button"
           [attr.aria-label]="text('zeitleiste.zurueck')"
-          (click)="zurueck.emit()"
+          (click)="back.emit()"
         >
-          <app-svg-icon name="links" [groesse]="12" />
+          <app-svg-icon name="links" [size]="12" />
         </button>
         <button
-          class="kopf__pfeil"
+          class="head__arrow"
           type="button"
           [attr.aria-label]="text('zeitleiste.abspielen')"
-          (click)="abspielen.emit()"
+          (click)="playback.emit()"
         >
-          <app-svg-icon name="abspielen" [groesse]="12" />
+          <app-svg-icon name="abspielen" [size]="12" />
         </button>
         <button
-          class="kopf__pfeil"
+          class="head__arrow"
           type="button"
           [attr.aria-label]="text('zeitleiste.vor')"
           (click)="vor.emit()"
         >
-          <app-svg-icon name="rechts" [groesse]="12" />
+          <app-svg-icon name="rechts" [size]="12" />
         </button>
       </div>
     }
   </div>
-  <div class="kopf__leiste"><ng-content /></div>
+  <div class="head__bar"><ng-content /></div>
 </div>

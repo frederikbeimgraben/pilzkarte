@@ -1,0 +1,58 @@
+@if (editing()) {
+  <app-find-form
+    [location]="location()"
+    [start]="find()"
+    [withPhotos]="false"
+    [titel]="'fund.bearbeiten' | t"
+    [mainText]="'eintragen.speichern' | t"
+    [busy]="busy()"
+    (submitted)="save($event)"
+    (cancelled)="editing.set(false)"
+  />
+} @else {
+  <div class="findsheet">
+    <div>
+      <div class="findsheet__head">
+        <h2 class="findsheet__title">{{ speciesName() }}</h2>
+        @if (geteilt()) {
+          <app-badge variant="success">{{ 'eintraege.badge.geteilt' | t }}</app-badge>
+        }
+      </div>
+      <p class="findsheet__sub">{{ subline() }}</p>
+    </div>
+    <app-photo-gallery [findId]="find().id" [fotos]="find().fotos" />
+    @if (find().notiz) {
+      <p class="findsheet__note">{{ find().notiz }}</p>
+    }
+    @if (valueText(); as value) {
+      <app-card class="flush">
+        <app-metric-row [label]="'fund.vorhersage' | t" [subline]="valueScope()" [value]="value" />
+      </app-card>
+    }
+  </div>
+  <app-action-bar
+    mainIcon="karte"
+    [primary]="'fund.aufDerKarte' | t"
+    [secondary]="'fund.bearbeiten' | t"
+    [danger]="'fund.loeschen' | t"
+    (mainClick)="showOnMap.emit(location())"
+    (secondaryClick)="editing.set(true)"
+    (dangerClick)="deleteAsk.set(true)"
+  />
+}
+<app-dialog
+  [open]="deleteAsk()"
+  [title]="'fund.loeschenFrage' | t"
+  [closeLabel]="'objekt.schliessen' | t"
+  (closed)="deleteAsk.set(false)"
+>
+  <app-note>{{ 'fund.loeschenText' | t }}</app-note>
+  <div dialog-footer class="findsheet__dialogfooter">
+    <app-action-bar
+      [danger]="'objekt.loeschen' | t"
+      [secondary]="'objekt.abbrechen' | t"
+      (dangerClick)="remove()"
+      (secondaryClick)="deleteAsk.set(false)"
+    />
+  </div>
+</app-dialog>

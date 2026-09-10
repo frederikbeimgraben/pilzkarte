@@ -1,14 +1,14 @@
-<div class="seg" role="tablist" [attr.aria-label]="beschriftung()">
-  @for (option of optionen(); track option.wert; let i = $index) {
+<div class="seg" role="tablist" [attr.aria-label]="label()">
+  @for (option of options(); track option.value; let i = $index) {
     <button
-      class="seg__wahl"
+      class="seg__choice"
       type="button"
       role="tab"
-      [class.seg__wahl--aktiv]="option.wert === wert()"
-      [attr.aria-selected]="option.wert === wert()"
-      [attr.tabindex]="option.wert === wert() ? 0 : -1"
-      (click)="wertChange.emit(option.wert)"
-      (keydown)="beiTaste($event, i)"
+      [class.seg__choice--active]="option.value === value()"
+      [attr.aria-selected]="option.value === value()"
+      [attr.tabindex]="option.value === value() ? 0 : -1"
+      (click)="valueChange.emit(option.value)"
+      (keydown)="onKey($event, i)"
     >
       {{ option.label }}
     </button>

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
-interface Balken {
+interface Bar {
   x: number;
   y: number;
   breite: number;
   hoehe: number;
-  drin: boolean;
+  inside: boolean;
 }
 
 /**
@@ -21,7 +21,7 @@ interface Balken {
 })
 export class HistogramComponent {
   readonly anteile = input.required<readonly number[]>();
-  readonly beschriftung = input.required<string>();
+  readonly label = input.required<string>();
   /** Untere und obere Grenze der Bedingung, je 0 bis 1. */
   readonly von = input(0);
   readonly bis = input(1);
@@ -29,20 +29,20 @@ export class HistogramComponent {
   protected readonly breite = 326;
   protected readonly hoehe = 64;
 
-  protected readonly balken = computed<Balken[]>(() => {
+  protected readonly bars = computed<Bar[]>(() => {
     const anteile = this.anteile();
     const anzahl = anteile.length || 1;
     const top = Math.max(...anteile, Number.EPSILON);
-    const schritt = this.breite / anzahl;
-    return anteile.map((wert, i) => {
-      const hoehe = (wert / top) * (this.hoehe - 4);
-      const lage = i / anzahl;
+    const step = this.breite / anzahl;
+    return anteile.map((value, i) => {
+      const hoehe = (value / top) * (this.hoehe - 4);
+      const position = i / anzahl;
       return {
-        x: lage * this.breite,
+        x: position * this.breite,
         y: this.hoehe - hoehe,
-        breite: Math.max(schritt - 1.5, 0.5),
+        breite: Math.max(step - 1.5, 0.5),
         hoehe,
-        drin: lage >= this.von() && lage <= this.bis(),
+        inside: position >= this.von() && position <= this.bis(),
       };
     });
   });

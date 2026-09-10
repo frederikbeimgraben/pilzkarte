@@ -1,0 +1,61 @@
+<div class="objectsheet">
+  <div class="objectsheet__head">
+    <h2 class="objectsheet__title">{{ zone().name }}</h2>
+    <p class="objectsheet__sub">{{ subline() }}</p>
+  </div>
+  @if (editingCorners()) {
+    <app-note>{{ 'zone.eckpunkteHinweis' | t }}</app-note>
+  } @else {
+    @if (forecastRow(); as row) {
+      <app-card class="flush">
+        <app-key-value-table>
+          <app-metric-row [label]="row.label" [subline]="'zone.vorhersageUnter' | t" [value]="row.value" />
+          <app-metric-row [label]="'zone.funde' | t" [subline]="'zone.fundeUnter' | t" [value]="row.finds" />
+        </app-key-value-table>
+      </app-card>
+    } @else {
+      <app-note>{{ 'zone.wertFehlt' | t }}</app-note>
+    }
+    <app-object-form
+      [withoutName]="true"
+      [start]="start()"
+      [nameLabel]="'zone.name' | t"
+      [namePlaceholder]="'zone.namePlatzhalter' | t"
+      [nameMissingText]="'zone.nameFehlt' | t"
+    />
+  }
+</div>
+@if (editingCorners()) {
+  <app-action-bar
+    [primary]="'zone.eckpunkteFertig' | t"
+    [ghost]="'objekt.abbrechen' | t"
+    (mainClick)="applyCorners()"
+    (ghostClick)="cancelCorners()"
+  />
+} @else {
+  <app-action-bar
+    [primary]="'eintragen.speichern' | t"
+    [mainDisabled]="busy()"
+    [secondary]="'zone.eckpunkteBearbeiten' | t"
+    [danger]="'zone.loeschen' | t"
+    (mainClick)="save()"
+    (secondaryClick)="editCorners()"
+    (dangerClick)="deleteAsk.set(true)"
+  />
+}
+<app-dialog
+  [open]="deleteAsk()"
+  [title]="'zone.loeschenFrage' | t"
+  [closeLabel]="'objekt.schliessen' | t"
+  (closed)="deleteAsk.set(false)"
+>
+  <app-note>{{ 'zone.loeschenText' | t }}</app-note>
+  <div dialog-footer class="objectsheet__dialogfooter">
+    <app-action-bar
+      [danger]="'objekt.loeschen' | t"
+      [secondary]="'objekt.abbrechen' | t"
+      (dangerClick)="remove()"
+      (secondaryClick)="deleteAsk.set(false)"
+    />
+  </div>
+</app-dialog>

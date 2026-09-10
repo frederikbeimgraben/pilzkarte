@@ -1,0 +1,63 @@
+<app-page-header [titel]="'konto.titel' | t" [back]="true" (backClick)="back()" />
+
+<div class="account">
+  <section class="account__block">
+    <h2 class="account__section">{{ 'konto.abschnitt.konto' | t }}</h2>
+    <app-card class="account__map">
+      <div class="account__row">
+        @if (user(); as person) {
+          <span class="account__circle" aria-hidden="true">{{ initiale(person) }}</span>
+          <span class="account__stack">
+            <span class="account__name">{{ person.name }}</span>
+            <span class="account__sub">{{ accountSubline(person) }}</span>
+          </span>
+          <app-button variant="secondary" size="sm" (click)="signOut()">
+            {{ 'konto.abmelden' | t }}
+          </app-button>
+        } @else {
+          <span class="account__stack">
+            <span class="account__name">{{ 'konto.nichtAngemeldet' | t }}</span>
+            <span class="account__sub">{{ 'konto.nichtAngemeldetUnter' | t }}</span>
+          </span>
+          <app-button variant="secondary" size="sm" (click)="signIn()">
+            {{ 'konto.anmelden' | t }}
+          </app-button>
+        }
+      </div>
+    </app-card>
+  </section>
+
+  <section class="account__block">
+    <h2 class="account__section">{{ 'konto.abschnitt.darstellung' | t }}</h2>
+    <app-segmented
+      [options]="themes()"
+      [value]="choice()"
+      [label]="'theme.beschriftung' | t"
+      (valueChange)="selectTheme($event)"
+    />
+    <h3 class="account__subsection">{{ 'sprache.beschriftung' | t }}</h3>
+    <app-segmented
+      [options]="languages()"
+      [value]="languageChoice()"
+      [label]="'sprache.beschriftung' | t"
+      (valueChange)="selectLanguage($event)"
+    />
+  </section>
+
+  <section class="account__block">
+    <h2 class="account__section">{{ 'konto.abschnitt.offline' | t }}</h2>
+    <div class="account__list">
+      <app-list-row [titel]="'konto.offlineGebiete' | t" value="0" />
+      <app-list-row [titel]="'konto.ausstehend' | t" value="0" />
+    </div>
+  </section>
+
+  <section class="account__block">
+    <h2 class="account__section">{{ 'konto.abschnitt.ueber' | t }}</h2>
+    <div class="account__list">
+      <app-list-row [titel]="'konto.methode' | t" />
+      <app-list-row [titel]="'konto.quellen' | t" />
+      <app-list-row [titel]="'konto.version' | t" [value]="version()" />
+    </div>
+  </section>
+</div>

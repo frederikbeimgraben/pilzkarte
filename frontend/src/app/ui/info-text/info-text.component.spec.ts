@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/angular';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { InfoTextComponent } from './info-text.component';
 
 describe('InfoTextComponent', () => {
@@ -10,7 +10,7 @@ describe('InfoTextComponent', () => {
 
     expect(screen.getByText('Diese Art wird nicht gesammelt.')).toBeInTheDocument();
     // Das Zeichen trägt keine Bedeutung: der Satz daneben sagt alles.
-    expect(container.querySelector('.hinweis__zeichen svg')).toHaveAttribute('aria-hidden', 'true');
-    await keineVerstoesse(container);
+    expect(container.querySelector('.hint__mark svg')).toHaveAttribute('aria-hidden', 'true');
+    await noViolations(container);
   });
 });

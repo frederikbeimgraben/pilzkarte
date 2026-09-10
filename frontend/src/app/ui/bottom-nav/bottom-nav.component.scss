@@ -4,13 +4,13 @@ $dauer: 150ms;
 
 .nav {
   display: flex;
-  block-size: var(--pilz-nav-hoehe);
+  block-size: var(--pilz-nav-height);
   padding: 6px 8px 8px;
   background: var(--color-surface);
   border-block-start: var(--border-width) solid var(--color-border);
 }
 
-.nav__eintrag {
+.nav__entry {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -22,7 +22,7 @@ $dauer: 150ms;
   transition: color $dauer ease-out;
 }
 
-.nav__eintrag--aktiv {
+.nav__entry--active {
   color: var(--color-primary);
 }
 
@@ -38,7 +38,7 @@ $dauer: 150ms;
   transition: background-color $dauer ease-out;
 }
 
-.nav__eintrag:active .nav__pill {
+.nav__entry:active .nav__pill {
   background: var(--color-surface-sunken);
 }
 
@@ -54,7 +54,7 @@ $dauer: 150ms;
     transition: transform $dauer ease-out;
   }
 
-  .nav__eintrag:active .nav__pill app-svg-icon {
+  .nav__entry:active .nav__pill app-svg-icon {
     transform: scale(0.94);
   }
 }
@@ -62,7 +62,7 @@ $dauer: 150ms;
 // Wer weniger Bewegung will, bekommt die Tönung ohne Überblendung. Sie ist
 // Rückmeldung, keine Bewegung.
 @media (prefers-reduced-motion: reduce) {
-  .nav__eintrag,
+  .nav__entry,
   .nav__pill {
     transition: none;
   }
@@ -70,13 +70,13 @@ $dauer: 150ms;
 
 // Am Rechner sitzt dieselbe Leiste oben in der Spalte. Der Balken unter dem
 // aktiven Reiter ersetzt dort den Rand, den unten die Gerätekante gibt.
-.nav--spalte {
+.nav--column {
   padding: 10px 12px 0;
   border-block-start: 0;
   border-block-end: var(--border-width) solid var(--color-border);
 }
 
-.nav--spalte .nav__eintrag {
+.nav--column .nav__entry {
   gap: 2px;
   padding-block: 2px 8px;
   border-block-end: 2px solid transparent;
@@ -85,12 +85,12 @@ $dauer: 150ms;
     border-color $dauer ease-out;
 }
 
-.nav--spalte .nav__eintrag--aktiv {
+.nav--column .nav__entry--active {
   border-block-end-color: var(--color-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav--spalte .nav__eintrag {
+  .nav--column .nav__entry {
     transition: none;
   }
 }

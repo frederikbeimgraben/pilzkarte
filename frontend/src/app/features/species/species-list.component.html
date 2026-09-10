@@ -1,0 +1,49 @@
+<app-page-header [titel]="'nav.arten' | t" />
+<div class="species">
+  <app-form-field
+    icon="suche"
+    [label]="'arten.suche' | t"
+    [hideLabel]="true"
+    [placeholder]="'arten.suche' | t"
+    [value]="search()"
+    (valueChange)="search.set($event)"
+  />
+  <app-chip-group
+    [chips]="chips()"
+    [value]="chip()"
+    [label]="'arten.filter' | t"
+    (valueChange)="selectChip($event)"
+  />
+  <app-note class="species__count">{{ countText() }}</app-note>
+  @if (rows().length === 0) {
+    <app-empty-state icon="suche" [text]="'arten.leer' | t" />
+  } @else {
+    <app-card class="flush">
+      @for (row of rows(); track row.slug; let i = $index) {
+        <app-species-row
+          [name]="row.name"
+          [latin]="row.latin"
+          [active]="row.active"
+          (chosen)="open(row.slug)"
+          (keydown)="onKey($event, i)"
+        >
+          @if (row.hasCurve) {
+            <app-season-curve
+              curve
+              [alleJahre]="row.curve"
+              [laufendesJahr]="row.current"
+              [visitsAllYears]="begehungen()"
+              [visitsCurrentYearSeries]="visitsCurrentYear()"
+              [label]="row.label"
+            />
+          }
+          <ng-container tags>
+            @for (badge of row.badges; track badge.text) {
+              <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
+            }
+          </ng-container>
+        </app-species-row>
+      }
+    </app-card>
+  }
+</div>

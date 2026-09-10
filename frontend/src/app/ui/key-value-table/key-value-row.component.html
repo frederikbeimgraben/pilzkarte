@@ -1,11 +1,11 @@
-@if (keyRoute(); as ziel) {
-  <a class="tz__schluessel tz__schluessel--link" [routerLink]="ziel">{{ schluessel() }}</a>
+@if (keyRoute(); as target) {
+  <a class="tz__key tz__key--link" [routerLink]="target">{{ schluessel() }}</a>
 } @else {
-  <span class="tz__schluessel">{{ schluessel() }}</span>
+  <span class="tz__key">{{ schluessel() }}</span>
 }
-<span class="tz__wert">
-  @if (wert()) {
-    {{ wert() }}
+<span class="tz__value">
+  @if (value()) {
+    {{ value() }}
   }
   <ng-content />
 </span>

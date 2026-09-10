@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.component';
+import { SvgIconComponent, type IconName } from '../svg-icon/svg-icon.component';
 
 /** Eine Zeile im Plus-Menü: Kachel mit Piktogramm, Titel und Unterzeile. */
 @Component({
@@ -10,9 +10,9 @@ import { SvgIconComponent, type PiktogrammName } from '../svg-icon/svg-icon.comp
   styleUrl: './action-row.component.scss',
 })
 export class ActionRowComponent {
-  readonly icon = input.required<PiktogrammName>();
+  readonly icon = input.required<IconName>();
   readonly titel = input.required<string>();
-  readonly unter = input<string>();
+  readonly subline = input<string>();
 
-  readonly auswahl = output();
+  readonly chosen = output();
 }

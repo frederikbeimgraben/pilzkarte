@@ -2,14 +2,14 @@ import type { FeatureCollection } from 'geojson';
 import type {
   GeoJSONSource,
   LayerSpecification,
-  Map as MapLibreKarte,
+  Map as MapLibreMap,
   MapSourceDataEvent,
   Subscription,
 } from 'maplibre-gl';
-import type { Ausschnitt } from './kachel-raster';
+import type { Viewbox } from './tile-grid';
 
 /** Nur der Teil von MapLibre, den der Adapter braucht. */
-export type MaplibreModul = Pick<
+export type MaplibreModule = Pick<
   typeof import('maplibre-gl'),
   'Map' | 'AttributionControl' | 'addProtocol' | 'removeProtocol' | 'setWorkerUrl'
 >;
@@ -24,21 +24,21 @@ export type MaplibreModul = Pick<
  * des MIME-Typs ab, und die Karte bleibt leer. Die Datei wird darum als Asset
  * ausgeliefert (`angular.json`) und hier benannt.
  */
-export const WORKER_PFAD = '/assets/maplibre/maplibre-gl-worker.mjs';
+export const WORKER_PATH = '/assets/maplibre/maplibre-gl-worker.mjs';
 
 /** Südwest- und Nordostecke als [Länge, Breite]. */
-export type Grenzen = readonly [readonly [number, number], readonly [number, number]];
+export type Bounds = readonly [readonly [number, number], readonly [number, number]];
 
 /**
  * Zwei Wertebenen liegen übereinander: die Vorhersage unten, die Eingabe-Ebene
  * darüber. Jede Rolle hat eigene Quellen und eine eigene Deckkraft.
  */
-export type Rolle = 'vorhersage' | 'ebene';
+export type Role = 'vorhersage' | 'ebene';
 
-export const ROLLEN: readonly Rolle[] = ['vorhersage', 'ebene'];
+export const ROLES: readonly Role[] = ['vorhersage', 'ebene'];
 
 /** Der freie Streifen der Karte: was Blatt, Navigation und Kopf verdecken. */
-export interface Polster {
+export interface Padding {
   top: number;
   bottom: number;
   left: number;
@@ -46,21 +46,21 @@ export interface Polster {
 }
 
 /** Ein eigenes Protokoll, das MapLibre kennen muss, bevor die erste Kachel fällt. */
-export interface Protokoll {
+export interface Protocol {
   name: string;
-  aufloesen: (url: string) => Promise<{ data: ImageBitmap | ArrayBuffer }>;
+  resolve: (url: string) => Promise<{ data: ImageBitmap | ArrayBuffer }>;
 }
 
-export interface KartenOptionen {
-  stil: string;
-  zentrum: readonly [number, number];
+export interface MapOptions {
+  style: string;
+  centerPoint: readonly [number, number];
   zoom: number;
   minZoom: number;
   maxZoom: number;
-  maxGrenzen: Grenzen;
-  protokoll: Protokoll;
+  maxBounds: Bounds;
+  protocol: Protocol;
   /** Am Telefon steht der Urheberhinweis eingeklappt, sonst deckte er die Karte. */
-  kompakt: boolean;
+  compact: boolean;
 }
 
 /**
@@ -68,8 +68,8 @@ export interface KartenOptionen {
  * als Fläche unten, Punkte darüber, damit ein Fund in seiner Zone anklickbar
  * bleibt.
  */
-export const OBJEKT_EBENEN = ['zonen', 'geteilteFunde', 'marker', 'funde'] as const;
-export type ObjektEbene = (typeof OBJEKT_EBENEN)[number];
+export const OBJECT_LAYERS = ['zonen', 'geteilteFunde', 'marker', 'funde'] as const;
+export type ObjectLayer = (typeof OBJECT_LAYERS)[number];
 
 /**
  * Was die Kartenseite von der Karte braucht. Die Seite kennt MapLibre nicht;
@@ -77,65 +77,65 @@ export type ObjektEbene = (typeof OBJEKT_EBENEN)[number];
  */
 export interface MapAdapter {
   /** Holt MapLibre schon, bevor die Karte gebraucht wird. */
-  waermeAuf(): void;
-  starte(wirt: HTMLElement, optionen: KartenOptionen): Promise<void>;
-  setzeStil(stil: string): void;
+  warmUp(): void;
+  start(host: HTMLElement, options: MapOptions): Promise<void>;
+  setStyle(style: string): void;
   /** Legt die Kacheln einer Rolle auf die Karte, ohne Flackern. `null` räumt sie ab. */
-  zeigeWert(rolle: Rolle, vorlage: string | null, grenzen: Grenzen, zoomVon: number, zoomBis: number): void;
+  showValue(role: Role, template: string | null, bounds: Bounds, zoomVon: number, zoomBis: number): void;
   /** Deckkraft einer Rolle, 0 bis 1. */
-  setzeDeckkraft(rolle: Rolle, wert: number): void;
-  passeEin(grenzen: Grenzen, polster: Polster): void;
-  setzePolster(polster: Polster): void;
-  zentriere(punkt: readonly [number, number], zoom: number): void;
-  ausschnitt(): { zoom: number; ausschnitt: Ausschnitt } | null;
-  beiBewegung(hoerer: () => void): void;
-  zerstoere(): void;
+  setOpacity(role: Role, value: number): void;
+  fitBounds(bounds: Bounds, padding: Padding): void;
+  setPadding(padding: Padding): void;
+  centerOn(point: readonly [number, number], zoom: number): void;
+  extent(): { zoom: number; extent: Viewbox } | null;
+  onMove(handler: () => void): void;
+  destroy(): void;
   /** Der Ort unter dem Fadenkreuz: die Mitte des freien Streifens. */
-  mitte(): readonly [number, number] | null;
+  center(): readonly [number, number] | null;
   /** Fährt zu einem Ort. Ohne Zoom bleibt die Stufe, wie sie ist. */
-  fliegeZu(zentrum: readonly [number, number], zoom?: number): void;
+  flyTo(centerPoint: readonly [number, number], zoom?: number): void;
   /** Legt die eigenen Objekte einer Ebene auf die Karte. */
-  zeigeObjekte(ebene: ObjektEbene, daten: FeatureCollection): void;
+  showObjects(layer: ObjectLayer, data: FeatureCollection): void;
   /** Nimmt eine Ebene von der Karte, ohne die anderen anzufassen. */
-  verbergeObjekte(ebene: ObjektEbene): void;
+  hideObjects(layer: ObjectLayer): void;
   /** Ein Tipp auf ein Objekt. Die Kennung steht in `id` des Features. */
-  beiObjektAuswahl(hoerer: (ebene: ObjektEbene, id: string) => void): void;
+  onObjectSelect(handler: (layer: ObjectLayer, id: string) => void): void;
   /** Die rohe Karte für Terra Draw. `null`, solange sie nicht steht. */
-  rohkarte(): MapLibreKarte | null;
+  rawMap(): MapLibreMap | null;
 }
 
 /** Nach dieser Zeit wird die neue Woche auch ohne alle Kacheln sichtbar. */
-const TAUSCH_FRIST = 1500;
+const SWAP_DEADLINE = 1500;
 
 /** Der Zustand einer Rolle: welche Quelle liegt, welche wartet. */
-interface RollenStand {
-  aktiv: 0 | 1;
-  vorlage: string | null;
-  raum: { grenzen: Grenzen; zoomVon: number; zoomBis: number } | null;
-  tausch: (() => void) | null;
-  deckkraft: number;
+interface RoleState {
+  active: 0 | 1;
+  template: string | null;
+  space: { bounds: Bounds; zoomVon: number; zoomBis: number } | null;
+  swap: (() => void) | null;
+  opacity: number;
 }
 
-function neuerStand(): RollenStand {
-  return { aktiv: 0, vorlage: null, raum: null, tausch: null, deckkraft: 1 };
+function newRoleState(): RoleState {
+  return { active: 0, template: null, space: null, swap: null, opacity: 1 };
 }
 
 /** Die beiden Ebenen-Namen einer Rolle. Sie wechseln sich beim Nachladen ab. */
-function ebeneName(rolle: Rolle, platz: 0 | 1): string {
-  return `wert-${rolle}-${platz === 0 ? 'a' : 'b'}`;
+function layerName(role: Role, space: 0 | 1): string {
+  return `wert-${role}-${space === 0 ? 'a' : 'b'}`;
 }
 
 /** Ein gerundeter Fund liegt irgendwo in dieser Masche, nicht auf dem Punkt. */
-const GERUNDET_RADIUS = 18;
-const PUNKT_RADIUS = 7;
+const ROUNDED_RADIUS = 18;
+const POINT_RADIUS = 7;
 
-function quelleFuer(ebene: ObjektEbene): string {
-  return `objekte-${ebene}`;
+function sourceFor(layer: ObjectLayer): string {
+  return `objekte-${layer}`;
 }
 
 /** Die Schichten einer Ebene, in der Reihenfolge, in der sie liegen. */
-function ebenenSchichten(ebene: ObjektEbene): string[] {
-  return ebene === 'zonen' ? ['objekte-zonen-flaeche', 'objekte-zonen-linie'] : [`objekte-${ebene}-punkt`];
+function layerPaintLayers(layer: ObjectLayer): string[] {
+  return layer === 'zonen' ? ['objekte-zonen-flaeche', 'objekte-zonen-linie'] : [`objekte-${layer}-punkt`];
 }
 
 /**
@@ -145,32 +145,32 @@ function ebenenSchichten(ebene: ObjektEbene): string[] {
  * Ein gerundeter geteilter Fund wird zum großen, blassen Kreis. Er behauptet
  * damit keinen Punkt, den es so nicht gibt.
  */
-function schichtenFuer(ebene: ObjektEbene): LayerSpecification[] {
-  const quelle = quelleFuer(ebene);
-  if (ebene === 'zonen') {
+function paintLayersFor(layer: ObjectLayer): LayerSpecification[] {
+  const source = sourceFor(layer);
+  if (layer === 'zonen') {
     return [
       {
         id: 'objekte-zonen-flaeche',
         type: 'fill',
-        source: quelle,
+        source: source,
         paint: { 'fill-color': ['get', 'farbe'], 'fill-opacity': 0.18 },
       },
       {
         id: 'objekte-zonen-linie',
         type: 'line',
-        source: quelle,
+        source: source,
         paint: { 'line-color': ['get', 'farbe'], 'line-width': 2 },
       },
     ];
   }
-  if (ebene === 'geteilteFunde') {
+  if (layer === 'geteilteFunde') {
     return [
       {
         id: 'objekte-geteilteFunde-punkt',
         type: 'circle',
-        source: quelle,
+        source: source,
         paint: {
-          'circle-radius': ['case', ['get', 'gerundet'], GERUNDET_RADIUS, PUNKT_RADIUS],
+          'circle-radius': ['case', ['get', 'gerundet'], ROUNDED_RADIUS, POINT_RADIUS],
           'circle-color': ['get', 'farbe'],
           'circle-opacity': ['case', ['get', 'gerundet'], 0.25, 0.85],
           'circle-stroke-width': ['case', ['get', 'gerundet'], 0, 2],
@@ -181,11 +181,11 @@ function schichtenFuer(ebene: ObjektEbene): LayerSpecification[] {
   }
   return [
     {
-      id: `objekte-${ebene}-punkt`,
+      id: `objekte-${layer}-punkt`,
       type: 'circle',
-      source: quelle,
+      source: source,
       paint: {
-        'circle-radius': PUNKT_RADIUS,
+        'circle-radius': POINT_RADIUS,
         'circle-color': ['get', 'farbe'],
         'circle-stroke-width': 2,
         'circle-stroke-color': '#ffffff',
@@ -202,200 +202,200 @@ function schichtenFuer(ebene: ObjektEbene): LayerSpecification[] {
  * sind. Ein Tausch an einer Quelle würde die Karte kurz leer zeigen.
  */
 export class MapLibreAdapter implements MapAdapter {
-  private modul: MaplibreModul | null = null;
-  private protokollName: string | null = null;
-  private karte: MapLibreKarte | null = null;
-  private readonly staende = new Map<Rolle, RollenStand>(ROLLEN.map((rolle) => [rolle, neuerStand()]));
+  private module: MaplibreModule | null = null;
+  private protocolName: string | null = null;
+  private map: MapLibreMap | null = null;
+  private readonly states = new Map<Role, RoleState>(ROLES.map((role) => [role, newRoleState()]));
   /** Was auf den eigenen Ebenen liegt. Ein Stilwechsel legt es von hier neu auf. */
-  private readonly objekte = new Map<ObjektEbene, FeatureCollection>();
+  private readonly objects = new Map<ObjectLayer, FeatureCollection>();
   /** Die Klick-Anmeldungen je Ebene. Ein Stilwechsel löst sie und meldet neu an. */
-  private readonly abos = new Map<ObjektEbene, Subscription[]>();
-  private auswahl: ((ebene: ObjektEbene, id: string) => void) | null = null;
+  private readonly abos = new Map<ObjectLayer, Subscription[]>();
+  private chosen: ((layer: ObjectLayer, id: string) => void) | null = null;
 
-  constructor(private readonly lade: () => Promise<MaplibreModul>) {}
+  constructor(private readonly load: () => Promise<MaplibreModule>) {}
 
-  waermeAuf(): void {
+  warmUp(): void {
     // Der Modullader gibt beim zweiten Aufruf dasselbe Versprechen zurück; ein
     // früher Anstoß kostet darum nichts und spart den Weg über den ersten Rahmen.
-    void this.lade();
+    void this.load();
   }
 
-  async starte(wirt: HTMLElement, optionen: KartenOptionen): Promise<void> {
-    const modul = await this.lade();
-    this.modul = modul;
-    modul.setWorkerUrl(WORKER_PFAD);
+  async start(host: HTMLElement, options: MapOptions): Promise<void> {
+    const module = await this.load();
+    this.module = module;
+    module.setWorkerUrl(WORKER_PATH);
     // Das Protokoll steht vor der Karte, sonst fiele die erste Kachel ins Leere.
-    modul.addProtocol(optionen.protokoll.name, (anfrage) => optionen.protokoll.aufloesen(anfrage.url));
-    this.protokollName = optionen.protokoll.name;
-    this.karte = new modul.Map({
-      container: wirt,
-      style: optionen.stil,
-      center: [optionen.zentrum[0], optionen.zentrum[1]],
-      zoom: optionen.zoom,
-      minZoom: optionen.minZoom,
-      maxZoom: optionen.maxZoom,
-      maxBounds: optionen.maxGrenzen as [[number, number], [number, number]],
+    module.addProtocol(options.protocol.name, (request) => options.protocol.resolve(request.url));
+    this.protocolName = options.protocol.name;
+    this.map = new module.Map({
+      container: host,
+      style: options.style,
+      center: [options.centerPoint[0], options.centerPoint[1]],
+      zoom: options.zoom,
+      minZoom: options.minZoom,
+      maxZoom: options.maxZoom,
+      maxBounds: options.maxBounds as [[number, number], [number, number]],
       // Der Hinweis steht oben rechts, nicht wie sonst unten: unten liegt das
       // Blatt darüber, und ein verdeckter Hinweis wäre keiner. Den Text liefert
       // der Stil von OpenFreeMap selbst; ein zweiter eigener stünde doppelt da.
       attributionControl: false,
     });
-    this.karte.addControl(new modul.AttributionControl({ compact: optionen.kompakt }), 'top-right');
-    if (optionen.kompakt) this.klappeHinweisEin(wirt);
+    this.map.addControl(new module.AttributionControl({ compact: options.compact }), 'top-right');
+    if (options.compact) this.collapseAttribution(host);
     // Eine Quelle vor dem Stil wirft. `style.load` ist das erste Ereignis, nach
     // dem der Stil steht; `load` wartet zusätzlich auf jede Kachel und bleibt
     // über einer langsamen Leitung lange aus.
-    await new Promise<void>((fertig) => {
-      this.karte?.once('style.load', () => {
-        fertig();
+    await new Promise<void>((done) => {
+      this.map?.once('style.load', () => {
+        done();
       });
     });
   }
 
-  setzeStil(stil: string): void {
-    const karte = this.karte;
-    if (!karte) return;
-    karte.setStyle(stil);
+  setStyle(style: string): void {
+    const map = this.map;
+    if (!map) return;
+    map.setStyle(style);
     // Ein neuer Stil wirft alle eigenen Quellen weg. Sie kommen zurück, sobald
     // der Stil steht, sonst wären Vorhersage und Ebene nach dem Wechsel fort.
-    karte.once('style.load', () => {
-      for (const rolle of ROLLEN) {
-        const stand = this.stand(rolle);
-        const vorlage = stand.vorlage;
-        const raum = stand.raum;
-        stand.aktiv = 0;
-        stand.vorlage = null;
-        stand.tausch = null;
-        if (vorlage && raum) this.zeigeWert(rolle, vorlage, raum.grenzen, raum.zoomVon, raum.zoomBis);
+    map.once('style.load', () => {
+      for (const role of ROLES) {
+        const state = this.state(role);
+        const template = state.template;
+        const space = state.space;
+        state.active = 0;
+        state.template = null;
+        state.swap = null;
+        if (template && space) this.showValue(role, template, space.bounds, space.zoomVon, space.zoomBis);
       }
-      for (const [ebene, daten] of this.objekte) this.legeEbene(ebene, daten);
+      for (const [layer, data] of this.objects) this.addObjectLayer(layer, data);
     });
   }
 
-  zeigeWert(rolle: Rolle, vorlage: string | null, grenzen: Grenzen, zoomVon: number, zoomBis: number): void {
-    const karte = this.karte;
-    const stand = this.stand(rolle);
-    if (!karte || vorlage === stand.vorlage) return;
+  showValue(role: Role, template: string | null, bounds: Bounds, zoomVon: number, zoomBis: number): void {
+    const map = this.map;
+    const state = this.state(role);
+    if (!map || template === state.template) return;
     // Ein noch offener Tausch wird zuerst zu Ende gebracht, sonst lägen drei
     // Wochen übereinander und keine wäre sichtbar.
-    this.schliesseTausch(rolle);
-    const alt = ebeneName(rolle, stand.aktiv);
-    const neu = ebeneName(rolle, stand.aktiv === 0 ? 1 : 0);
-    stand.vorlage = vorlage;
-    if (vorlage === null) {
-      this.entferne(alt);
-      this.entferne(neu);
-      stand.raum = null;
+    this.finishSwap(role);
+    const alt = layerName(role, state.active);
+    const next = layerName(role, state.active === 0 ? 1 : 0);
+    state.template = template;
+    if (template === null) {
+      this.remove(alt);
+      this.remove(next);
+      state.space = null;
       return;
     }
-    stand.raum = { grenzen, zoomVon, zoomBis };
-    this.entferne(neu);
-    karte.addSource(neu, {
+    state.space = { bounds, zoomVon, zoomBis };
+    this.remove(next);
+    map.addSource(next, {
       type: 'raster',
-      tiles: [vorlage],
+      tiles: [template],
       tileSize: 256,
       minzoom: zoomVon,
       maxzoom: zoomBis,
-      bounds: [grenzen[0][0], grenzen[0][1], grenzen[1][0], grenzen[1][1]],
+      bounds: [bounds[0][0], bounds[0][1], bounds[1][0], bounds[1][1]],
       attribution: '',
     });
-    karte.addLayer(
+    map.addLayer(
       {
-        id: neu,
+        id: next,
         type: 'raster',
-        source: neu,
+        source: next,
         paint: {
-          'raster-opacity': karte.getLayer(alt) ? 0 : stand.deckkraft,
+          'raster-opacity': map.getLayer(alt) ? 0 : state.opacity,
           // Ohne diese beiden Nullen blendet MapLibre über 300 ms ein. Die alte
           // Woche ist da schon weg, und dazwischen bliebe die Karte leer.
           'raster-opacity-transition': { duration: 0, delay: 0 },
           'raster-fade-duration': 0,
         },
       },
-      this.ueber(rolle),
+      this.ueber(role),
     );
-    stand.aktiv = stand.aktiv === 0 ? 1 : 0;
-    if (!karte.getLayer(alt)) return;
-    this.tauscheNachLaden(karte, rolle, alt, neu);
+    state.active = state.active === 0 ? 1 : 0;
+    if (!map.getLayer(alt)) return;
+    this.swapAfterLoad(map, role, alt, next);
   }
 
-  setzeDeckkraft(rolle: Rolle, wert: number): void {
-    const stand = this.stand(rolle);
-    stand.deckkraft = Math.min(Math.max(wert, 0), 1);
-    const karte = this.karte;
-    if (!karte || stand.vorlage === null) return;
+  setOpacity(role: Role, value: number): void {
+    const state = this.state(role);
+    state.opacity = Math.min(Math.max(value, 0), 1);
+    const map = this.map;
+    if (!map || state.template === null) return;
     // Nur die sichtbare Ebene: die wartende steht auf 0 und käme sonst zu früh.
-    const sichtbar = ebeneName(rolle, stand.aktiv);
-    if (karte.getLayer(sichtbar)) karte.setPaintProperty(sichtbar, 'raster-opacity', stand.deckkraft);
+    const visible = layerName(role, state.active);
+    if (map.getLayer(visible)) map.setPaintProperty(visible, 'raster-opacity', state.opacity);
   }
 
-  passeEin(grenzen: Grenzen, polster: Polster): void {
-    const karte = this.karte;
-    if (!karte) return;
+  fitBounds(bounds: Bounds, padding: Padding): void {
+    const map = this.map;
+    if (!map) return;
     // Das Polster gehört an die Karte, nicht an den Aufruf: `fitBounds` zöge es
     // sonst zweimal ab, einmal beim Rechnen und einmal beim Zeichnen.
-    karte.setPadding(polster);
-    karte.fitBounds(grenzen as [[number, number], [number, number]], { duration: 0 });
+    map.setPadding(padding);
+    map.fitBounds(bounds as [[number, number], [number, number]], { duration: 0 });
   }
 
-  setzePolster(polster: Polster): void {
-    this.karte?.easeTo({ padding: polster, duration: 220 });
+  setPadding(padding: Padding): void {
+    this.map?.easeTo({ padding: padding, duration: 220 });
   }
 
-  zentriere(punkt: readonly [number, number], zoom: number): void {
-    this.karte?.easeTo({ center: [punkt[0], punkt[1]], zoom, duration: 600 });
+  centerOn(point: readonly [number, number], zoom: number): void {
+    this.map?.easeTo({ center: [point[0], point[1]], zoom, duration: 600 });
   }
 
-  ausschnitt(): { zoom: number; ausschnitt: Ausschnitt } | null {
-    const karte = this.karte;
-    if (!karte) return null;
-    const grenzen = karte.getBounds();
+  extent(): { zoom: number; extent: Viewbox } | null {
+    const map = this.map;
+    if (!map) return null;
+    const bounds = map.getBounds();
     return {
-      zoom: karte.getZoom(),
-      ausschnitt: {
-        west: grenzen.getWest(),
-        sued: grenzen.getSouth(),
-        ost: grenzen.getEast(),
-        nord: grenzen.getNorth(),
+      zoom: map.getZoom(),
+      extent: {
+        west: bounds.getWest(),
+        south: bounds.getSouth(),
+        ost: bounds.getEast(),
+        nord: bounds.getNorth(),
       },
     };
   }
 
-  beiBewegung(hoerer: () => void): void {
-    this.karte?.on('moveend', hoerer);
+  onMove(handler: () => void): void {
+    this.map?.on('moveend', handler);
   }
 
-  zerstoere(): void {
-    for (const rolle of ROLLEN) this.schliesseTausch(rolle);
-    if (this.protokollName) this.modul?.removeProtocol(this.protokollName);
-    this.protokollName = null;
-    this.karte?.remove();
-    this.karte = null;
-    this.modul = null;
-    for (const rolle of ROLLEN) this.staende.set(rolle, neuerStand());
-    this.objekte.clear();
-    for (const ebene of this.abos.keys()) this.loeseAbos(ebene);
+  destroy(): void {
+    for (const role of ROLES) this.finishSwap(role);
+    if (this.protocolName) this.module?.removeProtocol(this.protocolName);
+    this.protocolName = null;
+    this.map?.remove();
+    this.map = null;
+    this.module = null;
+    for (const role of ROLES) this.states.set(role, newRoleState());
+    this.objects.clear();
+    for (const layer of this.abos.keys()) this.unsubscribeAll(layer);
   }
 
-  private stand(rolle: Rolle): RollenStand {
-    let stand = this.staende.get(rolle);
-    if (!stand) {
-      stand = neuerStand();
-      this.staende.set(rolle, stand);
+  private state(role: Role): RoleState {
+    let state = this.states.get(role);
+    if (!state) {
+      state = newRoleState();
+      this.states.set(role, state);
     }
-    return stand;
+    return state;
   }
 
   /**
    * Vor welcher Ebene die neue liegt. Die Vorhersage gehört unter die
    * Eingabe-Ebene, sonst verdeckte sie die Ebene, die man gerade lesen will.
    */
-  private ueber(rolle: Rolle): string | undefined {
-    const karte = this.karte;
-    if (rolle !== 'vorhersage' || !karte) return undefined;
-    for (const platz of [0, 1] as const) {
-      const name = ebeneName('ebene', platz);
-      if (karte.getLayer(name)) return name;
+  private ueber(role: Role): string | undefined {
+    const map = this.map;
+    if (role !== 'vorhersage' || !map) return undefined;
+    for (const space of [0, 1] as const) {
+      const name = layerName('ebene', space);
+      if (map.getLayer(name)) return name;
     }
     return undefined;
   }
@@ -405,108 +405,108 @@ export class MapLibreAdapter implements MapAdapter {
    * weg. Die Frist ist die Notbremse: fehlt eine Kachel dauerhaft, bliebe die
    * neue Woche sonst für immer unsichtbar.
    */
-  private tauscheNachLaden(karte: MapLibreKarte, rolle: Rolle, alt: string, neu: string): void {
-    const stand = this.stand(rolle);
-    const fertig = (): void => {
-      clearTimeout(frist);
-      karte.off('sourcedata', beiDaten);
-      stand.tausch = null;
-      karte.setPaintProperty(neu, 'raster-opacity', stand.deckkraft);
-      this.entferne(alt);
+  private swapAfterLoad(map: MapLibreMap, role: Role, alt: string, next: string): void {
+    const state = this.state(role);
+    const done = (): void => {
+      clearTimeout(deadline);
+      map.off('sourcedata', onData);
+      state.swap = null;
+      map.setPaintProperty(next, 'raster-opacity', state.opacity);
+      this.remove(alt);
     };
-    const beiDaten = (ereignis: MapSourceDataEvent): void => {
+    const onData = (event: MapSourceDataEvent): void => {
       // Die Meldungen zur Quelle selbst („Beschreibung gelesen“, „sichtbar
       // geschaltet“) kommen, bevor die erste Kachel angefragt ist. Auf sie zu
       // hören hieße, die alte Woche vor der neuen wegzunehmen.
-      if (ereignis.sourceId !== neu) return;
-      if (ereignis.sourceDataType === 'metadata' || ereignis.sourceDataType === 'visibility') return;
-      if (ereignis.isSourceLoaded) fertig();
+      if (event.sourceId !== next) return;
+      if (event.sourceDataType === 'metadata' || event.sourceDataType === 'visibility') return;
+      if (event.isSourceLoaded) done();
     };
-    const frist = setTimeout(fertig, TAUSCH_FRIST);
-    stand.tausch = fertig;
-    karte.on('sourcedata', beiDaten);
+    const deadline = setTimeout(done, SWAP_DEADLINE);
+    state.swap = done;
+    map.on('sourcedata', onData);
   }
 
-  private schliesseTausch(rolle: Rolle): void {
-    const stand = this.stand(rolle);
-    const tausch = stand.tausch;
-    stand.tausch = null;
-    tausch?.();
+  private finishSwap(role: Role): void {
+    const state = this.state(role);
+    const swap = state.swap;
+    state.swap = null;
+    swap?.();
   }
 
-  mitte(): readonly [number, number] | null {
-    const karte = this.karte;
-    if (!karte) return null;
+  center(): readonly [number, number] | null {
+    const map = this.map;
+    if (!map) return null;
     // `getCenter` rechnet das Polster schon ein: die Mitte ist die Mitte des
     // freien Streifens, also genau der Ort unter dem Fadenkreuz.
-    const mitte = karte.getCenter();
-    return [mitte.lng, mitte.lat];
+    const center = map.getCenter();
+    return [center.lng, center.lat];
   }
 
-  fliegeZu(zentrum: readonly [number, number], zoom?: number): void {
-    this.karte?.easeTo({ center: [zentrum[0], zentrum[1]], zoom, duration: 400 });
+  flyTo(centerPoint: readonly [number, number], zoom?: number): void {
+    this.map?.easeTo({ center: [centerPoint[0], centerPoint[1]], zoom, duration: 400 });
   }
 
-  zeigeObjekte(ebene: ObjektEbene, daten: FeatureCollection): void {
-    this.objekte.set(ebene, daten);
-    this.legeEbene(ebene, daten);
+  showObjects(layer: ObjectLayer, data: FeatureCollection): void {
+    this.objects.set(layer, data);
+    this.addObjectLayer(layer, data);
   }
 
-  verbergeObjekte(ebene: ObjektEbene): void {
-    this.objekte.delete(ebene);
-    this.loeseAbos(ebene);
-    for (const id of ebenenSchichten(ebene)) this.entferne(id);
-    this.entferne(quelleFuer(ebene));
+  hideObjects(layer: ObjectLayer): void {
+    this.objects.delete(layer);
+    this.unsubscribeAll(layer);
+    for (const id of layerPaintLayers(layer)) this.remove(id);
+    this.remove(sourceFor(layer));
   }
 
-  beiObjektAuswahl(hoerer: (ebene: ObjektEbene, id: string) => void): void {
-    this.auswahl = hoerer;
+  onObjectSelect(handler: (layer: ObjectLayer, id: string) => void): void {
+    this.chosen = handler;
   }
 
-  rohkarte(): MapLibreKarte | null {
-    return this.karte;
+  rawMap(): MapLibreMap | null {
+    return this.map;
   }
 
   /**
    * Schreibt die Daten in die Quelle der Ebene und legt Quelle und Schichten
    * an, falls der Stil sie noch nicht trägt.
    */
-  private legeEbene(ebene: ObjektEbene, daten: FeatureCollection): void {
-    const karte = this.karte;
-    if (!karte) return;
-    const quelle = quelleFuer(ebene);
-    const vorhanden = karte.getSource<GeoJSONSource>(quelle);
-    if (vorhanden) {
+  private addObjectLayer(layer: ObjectLayer, data: FeatureCollection): void {
+    const map = this.map;
+    if (!map) return;
+    const source = sourceFor(layer);
+    const existing = map.getSource<GeoJSONSource>(source);
+    if (existing) {
       // `setData` gibt ein Versprechen zurück; niemand wartet darauf, weil die
       // Karte selbst neu zeichnet, sobald die Quelle steht.
-      void vorhanden.setData(daten);
+      void existing.setData(data);
       return;
     }
-    this.loeseAbos(ebene);
-    karte.addSource(quelle, { type: 'geojson', data: daten });
+    this.unsubscribeAll(layer);
+    map.addSource(source, { type: 'geojson', data: data });
     const abos: Subscription[] = [];
-    for (const schicht of schichtenFuer(ebene)) {
-      karte.addLayer(schicht);
+    for (const paintLayer of paintLayersFor(layer)) {
+      map.addLayer(paintLayer);
       abos.push(
-        karte.on('click', schicht.id, (ereignis) => {
-          const kennung = ereignis.features?.[0]?.properties?.['id'] as string | undefined;
-          if (kennung !== undefined) this.auswahl?.(ebene, kennung);
+        map.on('click', paintLayer.id, (event) => {
+          const id = event.features?.[0]?.properties?.['id'] as string | undefined;
+          if (id !== undefined) this.chosen?.(layer, id);
         }),
       );
     }
-    this.abos.set(ebene, abos);
+    this.abos.set(layer, abos);
   }
 
-  private loeseAbos(ebene: ObjektEbene): void {
-    for (const abo of this.abos.get(ebene) ?? []) abo.unsubscribe();
-    this.abos.delete(ebene);
+  private unsubscribeAll(layer: ObjectLayer): void {
+    for (const abo of this.abos.get(layer) ?? []) abo.unsubscribe();
+    this.abos.delete(layer);
   }
 
-  private entferne(id: string): void {
-    const karte = this.karte;
-    if (!karte) return;
-    if (karte.getLayer(id)) karte.removeLayer(id);
-    if (karte.getSource(id)) karte.removeSource(id);
+  private remove(id: string): void {
+    const map = this.map;
+    if (!map) return;
+    if (map.getLayer(id)) map.removeLayer(id);
+    if (map.getSource(id)) map.removeSource(id);
   }
 
   /**
@@ -517,9 +517,9 @@ export class MapLibreAdapter implements MapAdapter {
    * sie erst, wenn der Text da ist, und hängt dabei jedes Mal wieder das
    * offene `-show` an. Steht sie schon, lässt es beide in Ruhe.
    */
-  private klappeHinweisEin(wirt: HTMLElement): void {
-    const hinweis = wirt.querySelector('.maplibregl-ctrl-attrib');
-    hinweis?.classList.add('maplibregl-compact');
-    hinweis?.classList.remove('maplibregl-compact-show');
+  private collapseAttribution(host: HTMLElement): void {
+    const hint = host.querySelector('.maplibregl-ctrl-attrib');
+    hint?.classList.add('maplibregl-compact');
+    hint?.classList.remove('maplibregl-compact-show');
   }
 }

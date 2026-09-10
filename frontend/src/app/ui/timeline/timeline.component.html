@@ -1,21 +1,21 @@
 <div
-  class="leiste"
+  class="bar"
   role="group"
-  [class.leiste--gedaempft]="gedaempft()"
-  [attr.aria-label]="beschriftung()"
-  (keydown)="beiTaste($event)"
+  [class.bar--dimmed]="dimmed()"
+  [attr.aria-label]="label()"
+  (keydown)="onKey($event)"
 >
-  @for (woche of angezeigt(); track woche.schluessel; let i = $index) {
+  @for (woche of shown(); track woche.schluessel; let i = $index) {
     <app-week-button
       [jahr]="woche.jahr"
       [woche]="woche.woche"
-      [anteil]="woche.anteil"
-      [prognose]="woche.prognose"
-      [jahresmarke]="woche.jahresmarke"
-      [aktiv]="istAktiv(woche)"
-      [gesperrt]="gedaempft()"
-      [imTabWeg]="i === aktivIndex()"
-      (auswahl)="auswahl.emit(woche)"
+      [share]="woche.share"
+      [forecast]="woche.forecast"
+      [yearMark]="woche.yearMark"
+      [active]="isActive(woche)"
+      [locked]="dimmed()"
+      [inTabOrder]="i === activeIndex()"
+      (chosen)="chosen.emit(woche)"
     />
   }
 </div>

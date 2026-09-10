@@ -1,132 +1,132 @@
 import type { FeatureCollection } from 'geojson';
-import { MapLibreAdapter, WORKER_PFAD, type KartenOptionen, type MaplibreModul } from './map-adapter';
+import { MapLibreAdapter, WORKER_PATH, type MapOptions, type MaplibreModule } from './map-adapter';
 
-interface Ereignis {
-  typ: string;
-  hoerer: (nutzlast: unknown) => void;
+interface Handler {
+  kind: string;
+  handler: (payload: unknown) => void;
 }
 
 /** Eine MapLibre-Karte ohne WebGL, so weit der Adapter sie anfasst. */
-class KarteAttrappe {
-  static letzte: KarteAttrappe | null = null;
-  readonly quellen = new Map<string, object>();
-  readonly ebenen = new Map<string, object>();
-  readonly deckkraft = new Map<string, number>();
-  readonly hoerer: Ereignis[] = [];
-  einmal = new Map<string, () => void>();
-  stile: string[] = [];
-  eingepasst: unknown[] = [];
-  bewegt: unknown[] = [];
-  entfernt = false;
-  quelleFertig = true;
+class MapDouble {
+  static last: MapDouble | null = null;
+  readonly sources = new Map<string, object>();
+  readonly layers = new Map<string, object>();
+  readonly opacity = new Map<string, number>();
+  readonly handler: Handler[] = [];
+  onceHandlers = new Map<string, () => void>();
+  styles: string[] = [];
+  fitted: unknown[] = [];
+  moved: unknown[] = [];
+  removed = false;
+  sourceReady = true;
 
-  constructor(readonly optionen: Record<string, unknown>) {
-    KarteAttrappe.letzte = this;
+  constructor(readonly options: Record<string, unknown>) {
+    MapDouble.last = this;
   }
 
-  setStyle(stil: string): void {
-    this.stile.push(stil);
+  setStyle(style: string): void {
+    this.styles.push(style);
   }
 
-  kontrollen: { steuerung: unknown; ort: string }[] = [];
+  controls: { control: unknown; location: string }[] = [];
 
-  once(typ: string, hoerer: () => void): void {
-    this.einmal.set(typ, hoerer);
+  once(kind: string, handler: () => void): void {
+    this.onceHandlers.set(kind, handler);
     // Die echte Karte meldet `style.load`, sobald der Stil steht.
-    if (typ === 'style.load' && !this.stile.length) hoerer();
+    if (kind === 'style.load' && !this.styles.length) handler();
   }
 
-  addControl(steuerung: unknown, ort: string): void {
-    this.kontrollen.push({ steuerung, ort });
+  addControl(control: unknown, location: string): void {
+    this.controls.push({ control, location });
   }
 
   /** Die zweite Form meldet auf eine Schicht an und gibt ein Abo zurück. */
-  on(typ: string, zweites: unknown, drittes?: (nutzlast: unknown) => void): { unsubscribe: () => void } {
-    const hoerer = (drittes ?? zweites) as (nutzlast: unknown) => void;
-    const schicht = drittes ? (zweites as string) : null;
-    const eintrag = { typ: schicht === null ? typ : `${typ}:${schicht}`, hoerer };
-    this.hoerer.push(eintrag);
+  on(kind: string, second: unknown, third?: (payload: unknown) => void): { unsubscribe: () => void } {
+    const handler = (third ?? second) as (payload: unknown) => void;
+    const paintLayer = third ? (second as string) : null;
+    const entry = { kind: paintLayer === null ? kind : `${kind}:${paintLayer}`, handler };
+    this.handler.push(entry);
     return {
       unsubscribe: () => {
-        const index = this.hoerer.indexOf(eintrag);
-        if (index >= 0) this.hoerer.splice(index, 1);
+        const index = this.handler.indexOf(entry);
+        if (index >= 0) this.handler.splice(index, 1);
       },
     };
   }
 
   /** Stellt einen Tipp auf eine Schicht nach. */
-  tippe(schicht: string, id: string): void {
-    for (const eintrag of [...this.hoerer]) {
-      if (eintrag.typ === `click:${schicht}`) eintrag.hoerer({ features: [{ properties: { id } }] });
+  tap(paintLayer: string, id: string): void {
+    for (const entry of [...this.handler]) {
+      if (entry.kind === `click:${paintLayer}`) entry.handler({ features: [{ properties: { id } }] });
     }
   }
 
-  off(typ: string, hoerer: (nutzlast: unknown) => void): void {
-    const index = this.hoerer.findIndex((e) => e.typ === typ && e.hoerer === hoerer);
-    if (index >= 0) this.hoerer.splice(index, 1);
+  off(kind: string, handler: (payload: unknown) => void): void {
+    const index = this.handler.findIndex((e) => e.kind === kind && e.handler === handler);
+    if (index >= 0) this.handler.splice(index, 1);
   }
 
-  loese(typ: string, quelle = 'wert-vorhersage-a'): void {
-    const nutzlast = { sourceId: quelle, sourceDataType: 'content', isSourceLoaded: this.quelleFertig };
-    for (const eintrag of [...this.hoerer]) if (eintrag.typ === typ) eintrag.hoerer(nutzlast);
+  settle(kind: string, source = 'wert-vorhersage-a'): void {
+    const payload = { sourceId: source, sourceDataType: 'content', isSourceLoaded: this.sourceReady };
+    for (const entry of [...this.handler]) if (entry.kind === kind) entry.handler(payload);
   }
 
-  addSource(id: string, quelle: { type?: string; data?: unknown }): void {
+  addSource(id: string, source: { type?: string; data?: unknown }): void {
     // Eine GeoJSON-Quelle nimmt später neue Daten an; eine Rasterquelle nicht.
-    const gespeichert: { data?: unknown; setData?: (daten: unknown) => Promise<void> } = { ...quelle };
-    if (quelle.type === 'geojson') {
-      gespeichert.setData = (daten: unknown) => {
-        gespeichert.data = daten;
+    const saved: { data?: unknown; setData?: (data: unknown) => Promise<void> } = { ...source };
+    if (source.type === 'geojson') {
+      saved.setData = (data: unknown) => {
+        saved.data = data;
         return Promise.resolve();
       };
     }
-    this.quellen.set(id, gespeichert);
+    this.sources.set(id, saved);
   }
 
-  readonly vorGelegt = new Map<string, string | undefined>();
+  readonly placedBefore = new Map<string, string | undefined>();
 
-  addLayer(ebene: { id: string; paint: Record<string, number> }, vor?: string): void {
-    this.ebenen.set(ebene.id, ebene);
-    this.deckkraft.set(ebene.id, ebene.paint['raster-opacity']);
-    this.vorGelegt.set(ebene.id, vor);
+  addLayer(layer: { id: string; paint: Record<string, number> }, vor?: string): void {
+    this.layers.set(layer.id, layer);
+    this.opacity.set(layer.id, layer.paint['raster-opacity']);
+    this.placedBefore.set(layer.id, vor);
   }
 
   getSource(id: string): object | undefined {
-    return this.quellen.get(id);
+    return this.sources.get(id);
   }
 
   getLayer(id: string): object | undefined {
-    return this.ebenen.get(id);
+    return this.layers.get(id);
   }
 
   removeLayer(id: string): void {
-    this.ebenen.delete(id);
+    this.layers.delete(id);
   }
 
   removeSource(id: string): void {
-    this.quellen.delete(id);
+    this.sources.delete(id);
   }
 
-  setPaintProperty(id: string, _name: string, wert: number): void {
-    this.deckkraft.set(id, wert);
+  setPaintProperty(id: string, _name: string, value: number): void {
+    this.opacity.set(id, value);
   }
 
   isSourceLoaded(): boolean {
-    return this.quelleFertig;
+    return this.sourceReady;
   }
 
-  polster: unknown[] = [];
+  padding: unknown[] = [];
 
-  setPadding(polster: unknown): void {
-    this.polster.push(polster);
+  setPadding(padding: unknown): void {
+    this.padding.push(padding);
   }
 
-  fitBounds(grenzen: unknown, optionen: unknown): void {
-    this.eingepasst.push({ grenzen, optionen });
+  fitBounds(bounds: unknown, options: unknown): void {
+    this.fitted.push({ bounds, options });
   }
 
-  easeTo(optionen: unknown): void {
-    this.bewegt.push(optionen);
+  easeTo(options: unknown): void {
+    this.moved.push(options);
   }
 
   getCenter(): { lng: number; lat: number } {
@@ -142,17 +142,17 @@ class KarteAttrappe {
   }
 
   remove(): void {
-    this.entfernt = true;
+    this.removed = true;
   }
 }
 
 /** Der Urheberhinweis; der Adapter fragt ihn nichts, er setzt ihn nur. */
-class HinweisAttrappe {
-  constructor(readonly optionen: unknown) {}
+class AttributionDouble {
+  constructor(readonly options: unknown) {}
 }
 
 /** Eine Sammlung mit genau einem Punkt, so wie die Karte sie bekommt. */
-function sammlung(id: string): FeatureCollection {
+function collection(id: string): FeatureCollection {
   return {
     type: 'FeatureCollection',
     features: [
@@ -166,372 +166,372 @@ function sammlung(id: string): FeatureCollection {
   };
 }
 
-const OPTIONEN: KartenOptionen = {
-  stil: 'hell',
-  zentrum: [10.4, 51.2],
+const OPTIONEN: MapOptions = {
+  style: 'hell',
+  centerPoint: [10.4, 51.2],
   zoom: 5,
   minZoom: 5,
   maxZoom: 14,
-  maxGrenzen: [
+  maxBounds: [
     [4, 46],
     [16, 56],
   ],
-  protokoll: { name: 'wert', aufloesen: () => Promise.resolve({ data: new ArrayBuffer(0) }) },
-  kompakt: false,
+  protocol: { name: 'wert', resolve: () => Promise.resolve({ data: new ArrayBuffer(0) }) },
+  compact: false,
 };
 
-function modul(): {
-  modul: MaplibreModul;
-  angemeldet: string[];
-  abgemeldet: string[];
-  arbeiter: string[];
+function module(): {
+  module: MaplibreModule;
+  signedIn: string[];
+  signedOut: string[];
+  worker: string[];
 } {
-  const angemeldet: string[] = [];
-  const abgemeldet: string[] = [];
-  const arbeiter: string[] = [];
+  const signedIn: string[] = [];
+  const signedOut: string[] = [];
+  const worker: string[] = [];
   return {
-    angemeldet,
-    abgemeldet,
-    arbeiter,
-    modul: {
-      setWorkerUrl: (pfad: string) => arbeiter.push(pfad),
-      Map: KarteAttrappe as unknown as MaplibreModul['Map'],
-      AttributionControl: HinweisAttrappe as unknown as MaplibreModul['AttributionControl'],
-      addProtocol: (name: string) => angemeldet.push(name),
-      removeProtocol: (name: string) => abgemeldet.push(name),
+    signedIn,
+    signedOut,
+    worker,
+    module: {
+      setWorkerUrl: (path: string) => worker.push(path),
+      Map: MapDouble as unknown as MaplibreModule['Map'],
+      AttributionControl: AttributionDouble as unknown as MaplibreModule['AttributionControl'],
+      addProtocol: (name: string) => signedIn.push(name),
+      removeProtocol: (name: string) => signedOut.push(name),
     },
   };
 }
 
 async function adapter(): Promise<{
   adapter: MapLibreAdapter;
-  karte: KarteAttrappe;
-  angemeldet: string[];
-  abgemeldet: string[];
-  arbeiter: string[];
+  map: MapDouble;
+  signedIn: string[];
+  signedOut: string[];
+  worker: string[];
 }> {
-  const { modul: m, angemeldet, abgemeldet, arbeiter } = modul();
+  const { module: m, signedIn, signedOut, worker } = module();
   const adapter = new MapLibreAdapter(() => Promise.resolve(m));
-  await adapter.starte(document.createElement('div'), OPTIONEN);
-  const karte = KarteAttrappe.letzte;
-  if (!karte) throw new Error('Der Adapter hat keine Karte gebaut.');
-  return { adapter, karte, angemeldet, abgemeldet, arbeiter };
+  await adapter.start(document.createElement('div'), OPTIONEN);
+  const map = MapDouble.last;
+  if (!map) throw new Error('Der Adapter hat keine Karte gebaut.');
+  return { adapter, map, signedIn, signedOut, worker };
 }
 
 describe('MapLibreAdapter', () => {
   it('nennt den Worker-Pfad und meldet das Protokoll an, bevor die Karte entsteht', async () => {
-    const { karte, angemeldet, arbeiter } = await adapter();
+    const { map, signedIn, worker } = await adapter();
 
-    expect(arbeiter).toEqual([WORKER_PFAD]);
-    expect(WORKER_PFAD.startsWith('/assets/')).toBe(true);
-    expect(angemeldet).toEqual(['wert']);
-    expect(karte.optionen['minZoom']).toBe(5);
-    expect(karte.optionen['maxBounds']).toEqual(OPTIONEN.maxGrenzen);
-    expect(karte.optionen['attributionControl']).toBe(false);
-    expect(karte.kontrollen[0].ort).toBe('top-right');
+    expect(worker).toEqual([WORKER_PATH]);
+    expect(WORKER_PATH.startsWith('/assets/')).toBe(true);
+    expect(signedIn).toEqual(['wert']);
+    expect(map.options['minZoom']).toBe(5);
+    expect(map.options['maxBounds']).toEqual(OPTIONEN.maxBounds);
+    expect(map.options['attributionControl']).toBe(false);
+    expect(map.controls[0].location).toBe('top-right');
   });
 
   it('legt die erste Woche sofort sichtbar auf die Karte', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    expect(karte.deckkraft.get('wert-vorhersage-b')).toBe(1);
-    expect(karte.quellen.has('wert-vorhersage-b')).toBe(true);
+    expect(map.opacity.get('wert-vorhersage-b')).toBe(1);
+    expect(map.sources.has('wert-vorhersage-b')).toBe(true);
   });
 
   it('blendet die zweite Woche erst ein, wenn ihre Kacheln da sind', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-    karte.quelleFertig = false;
+    const { adapter: a, map } = await adapter();
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
+    map.sourceReady = false;
 
-    a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.showValue('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
-    expect(karte.ebenen.has('wert-vorhersage-b')).toBe(true);
+    expect(map.opacity.get('wert-vorhersage-a')).toBe(0);
+    expect(map.layers.has('wert-vorhersage-b')).toBe(true);
 
-    karte.loese('sourcedata');
+    map.settle('sourcedata');
 
-    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
+    expect(map.opacity.get('wert-vorhersage-a')).toBe(0);
 
-    karte.quelleFertig = true;
-    karte.loese('sourcedata', 'wert-vorhersage-b');
+    map.sourceReady = true;
+    map.settle('sourcedata', 'wert-vorhersage-b');
 
-    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
+    expect(map.opacity.get('wert-vorhersage-a')).toBe(0);
 
-    karte.loese('sourcedata');
+    map.settle('sourcedata');
 
-    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(1);
-    expect(karte.ebenen.has('wert-vorhersage-b')).toBe(false);
-    expect(karte.quellen.has('wert-vorhersage-b')).toBe(false);
+    expect(map.opacity.get('wert-vorhersage-a')).toBe(1);
+    expect(map.layers.has('wert-vorhersage-b')).toBe(false);
+    expect(map.sources.has('wert-vorhersage-b')).toBe(false);
   });
 
   it('zeigt die neue Woche auch dann, wenn eine Kachel ausbleibt', async () => {
     vi.useFakeTimers();
     try {
-      const { adapter: a, karte } = await adapter();
-      a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-      karte.quelleFertig = false;
+      const { adapter: a, map } = await adapter();
+      a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
+      map.sourceReady = false;
 
-      a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+      a.showValue('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
       vi.advanceTimersByTime(1500);
 
-      expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(1);
-      expect(karte.ebenen.has('wert-vorhersage-b')).toBe(false);
+      expect(map.opacity.get('wert-vorhersage-a')).toBe(1);
+      expect(map.layers.has('wert-vorhersage-b')).toBe(false);
     } finally {
       vi.useRealTimers();
     }
   });
 
   it('bringt einen offenen Tausch zu Ende, bevor die dritte Woche kommt', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-    karte.quelleFertig = false;
-    a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    const { adapter: a, map } = await adapter();
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
+    map.sourceReady = false;
+    a.showValue('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    a.zeigeWert('vorhersage', 'wert://art/w42/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.showValue('vorhersage', 'wert://art/w42/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    expect(karte.ebenen.size).toBe(2);
-    expect([...karte.deckkraft.values()].some((wert) => wert === 1)).toBe(true);
+    expect(map.layers.size).toBe(2);
+    expect([...map.opacity.values()].some((value) => value === 1)).toBe(true);
   });
 
   it('legt dieselbe Woche nicht zweimal auf', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    expect(karte.quellen.size).toBe(1);
+    expect(map.sources.size).toBe(1);
   });
 
   it('legt die Wertkacheln nach einem Stilwechsel wieder auf', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-    karte.quellen.clear();
-    karte.ebenen.clear();
+    const { adapter: a, map } = await adapter();
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
+    map.sources.clear();
+    map.layers.clear();
 
-    a.setzeStil('dunkel');
-    karte.einmal.get('style.load')?.();
+    a.setStyle('dunkel');
+    map.onceHandlers.get('style.load')?.();
 
-    expect(karte.stile).toEqual(['dunkel']);
-    expect(karte.quellen.has('wert-vorhersage-b')).toBe(true);
+    expect(map.styles).toEqual(['dunkel']);
+    expect(map.sources.has('wert-vorhersage-b')).toBe(true);
   });
 
   it('passt ein, polstert und liest den Ausschnitt', async () => {
-    const { adapter: a, karte } = await adapter();
-    const polster = { top: 0, bottom: 300, left: 0, right: 0 };
+    const { adapter: a, map } = await adapter();
+    const padding = { top: 0, bottom: 300, left: 0, right: 0 };
 
-    a.passeEin(OPTIONEN.maxGrenzen, polster);
-    a.setzePolster(polster);
+    a.fitBounds(OPTIONEN.maxBounds, padding);
+    a.setPadding(padding);
 
-    expect(karte.polster[0]).toEqual(polster);
-    expect(karte.eingepasst[0]).toEqual({ grenzen: OPTIONEN.maxGrenzen, optionen: { duration: 0 } });
-    expect(karte.bewegt[0]).toEqual({ padding: polster, duration: 220 });
-    expect(a.ausschnitt()).toEqual({
+    expect(map.padding[0]).toEqual(padding);
+    expect(map.fitted[0]).toEqual({ bounds: OPTIONEN.maxBounds, options: { duration: 0 } });
+    expect(map.moved[0]).toEqual({ padding: padding, duration: 220 });
+    expect(a.extent()).toEqual({
       zoom: 7,
-      ausschnitt: { west: 9, sued: 50, ost: 11, nord: 52 },
+      extent: { west: 9, south: 50, ost: 11, nord: 52 },
     });
   });
 
   it('meldet Bewegungen weiter', async () => {
-    const { adapter: a, karte } = await adapter();
-    let gerufen = 0;
+    const { adapter: a, map } = await adapter();
+    let calls = 0;
 
-    a.beiBewegung(() => (gerufen += 1));
-    karte.loese('moveend');
+    a.onMove(() => (calls += 1));
+    map.settle('moveend');
 
-    expect(gerufen).toBe(1);
+    expect(calls).toBe(1);
   });
 
   it('räumt Karte und Protokoll weg', async () => {
-    const { adapter: a, karte, abgemeldet } = await adapter();
+    const { adapter: a, map, signedOut } = await adapter();
 
-    a.zerstoere();
+    a.destroy();
 
-    expect(karte.entfernt).toBe(true);
-    expect(abgemeldet).toEqual(['wert']);
-    expect(a.ausschnitt()).toBeNull();
+    expect(map.removed).toBe(true);
+    expect(signedOut).toEqual(['wert']);
+    expect(a.extent()).toBeNull();
   });
 
   it('nennt die Mitte des freien Streifens als Ort unter dem Fadenkreuz', async () => {
     const { adapter: a } = await adapter();
 
-    expect(a.mitte()).toEqual([9.05, 48.52]);
+    expect(a.center()).toEqual([9.05, 48.52]);
   });
 
   it('fährt zu einem Ort', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.fliegeZu([9.1, 48.6], 13);
+    a.flyTo([9.1, 48.6], 13);
 
-    expect(karte.bewegt.at(-1)).toMatchObject({ center: [9.1, 48.6], zoom: 13 });
+    expect(map.moved.at(-1)).toMatchObject({ center: [9.1, 48.6], zoom: 13 });
   });
 
   it('legt Zonen als Fläche und Linie in ihrer Farbe auf die Karte', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.zeigeObjekte('zonen', sammlung('zone-eins'));
+    a.showObjects('zonen', collection('zone-eins'));
 
-    expect(karte.quellen.has('objekte-zonen')).toBe(true);
-    expect(karte.ebenen.has('objekte-zonen-flaeche')).toBe(true);
-    expect(karte.ebenen.has('objekte-zonen-linie')).toBe(true);
+    expect(map.sources.has('objekte-zonen')).toBe(true);
+    expect(map.layers.has('objekte-zonen-flaeche')).toBe(true);
+    expect(map.layers.has('objekte-zonen-linie')).toBe(true);
   });
 
   it('macht aus einem gerundeten geteilten Fund einen großen blassen Kreis', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.zeigeObjekte('geteilteFunde', sammlung('geteilt-eins'));
+    a.showObjects('geteilteFunde', collection('geteilt-eins'));
 
-    const schicht = karte.ebenen.get('objekte-geteilteFunde-punkt') as {
+    const paintLayer = map.layers.get('objekte-geteilteFunde-punkt') as {
       paint: Record<string, unknown>;
     };
-    expect(schicht.paint['circle-radius']).toEqual(['case', ['get', 'gerundet'], 18, 7]);
+    expect(paintLayer.paint['circle-radius']).toEqual(['case', ['get', 'gerundet'], 18, 7]);
   });
 
   it('schreibt neue Daten in eine Quelle, die schon steht', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.zeigeObjekte('marker', sammlung('marker-eins'));
-    a.zeigeObjekte('marker', sammlung('marker-zwei'));
+    a.showObjects('marker', collection('marker-eins'));
+    a.showObjects('marker', collection('marker-zwei'));
 
-    const quelle = karte.quellen.get('objekte-marker') as { data: { features: { id: string }[] } };
-    expect(quelle.data.features[0].id).toBe('marker-zwei');
-    expect(karte.ebenen.size).toBe(1);
+    const source = map.sources.get('objekte-marker') as { data: { features: { id: string }[] } };
+    expect(source.data.features[0].id).toBe('marker-zwei');
+    expect(map.layers.size).toBe(1);
   });
 
   it('meldet die Kennung des angetippten Objekts', async () => {
-    const { adapter: a, karte } = await adapter();
-    const getippt: string[] = [];
-    a.beiObjektAuswahl((_ebene, id) => getippt.push(id));
-    a.zeigeObjekte('funde', sammlung('fund-eins'));
+    const { adapter: a, map } = await adapter();
+    const tapped: string[] = [];
+    a.onObjectSelect((_layer, id) => tapped.push(id));
+    a.showObjects('funde', collection('fund-eins'));
 
-    karte.tippe('objekte-funde-punkt', 'fund-eins');
+    map.tap('objekte-funde-punkt', 'fund-eins');
     // Ein Punkt ohne Kennung öffnet nichts.
-    for (const eintrag of karte.hoerer) {
-      if (eintrag.typ === 'click:objekte-funde-punkt') eintrag.hoerer({ features: [] });
+    for (const entry of map.handler) {
+      if (entry.kind === 'click:objekte-funde-punkt') entry.handler({ features: [] });
     }
 
-    expect(getippt).toEqual(['fund-eins']);
+    expect(tapped).toEqual(['fund-eins']);
   });
 
   it('nimmt eine Ebene samt ihrer Anmeldung wieder weg', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeObjekte('marker', sammlung('marker-eins'));
+    const { adapter: a, map } = await adapter();
+    a.showObjects('marker', collection('marker-eins'));
 
-    a.verbergeObjekte('marker');
+    a.hideObjects('marker');
 
-    expect(karte.quellen.has('objekte-marker')).toBe(false);
-    expect(karte.hoerer.some((eintrag) => eintrag.typ.startsWith('click:'))).toBe(false);
+    expect(map.sources.has('objekte-marker')).toBe(false);
+    expect(map.handler.some((entry) => entry.kind.startsWith('click:'))).toBe(false);
   });
 
   it('legt die Objekte nach einem Stilwechsel neu auf', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeObjekte('marker', sammlung('marker-eins'));
+    const { adapter: a, map } = await adapter();
+    a.showObjects('marker', collection('marker-eins'));
 
-    a.setzeStil('dunkel');
-    karte.quellen.clear();
-    karte.ebenen.clear();
-    karte.einmal.get('style.load')?.();
+    a.setStyle('dunkel');
+    map.sources.clear();
+    map.layers.clear();
+    map.onceHandlers.get('style.load')?.();
 
-    expect(karte.quellen.has('objekte-marker')).toBe(true);
+    expect(map.sources.has('objekte-marker')).toBe(true);
   });
 
   it('gibt die rohe Karte für Terra Draw her', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    expect(a.rohkarte()).toBe(karte);
+    expect(a.rawMap()).toBe(map);
 
-    a.zerstoere();
+    a.destroy();
 
-    expect(a.rohkarte()).toBeNull();
-    expect(a.mitte()).toBeNull();
+    expect(a.rawMap()).toBeNull();
+    expect(a.center()).toBeNull();
   });
 
   it('bleibt still, solange keine Karte da ist', () => {
-    const a = new MapLibreAdapter(() => Promise.resolve(modul().modul));
+    const a = new MapLibreAdapter(() => Promise.resolve(module().module));
 
-    a.setzeStil('hell');
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-    a.passeEin(OPTIONEN.maxGrenzen, { top: 0, bottom: 0, left: 0, right: 0 });
-    a.setzePolster({ top: 0, bottom: 0, left: 0, right: 0 });
-    a.beiBewegung(() => undefined);
-    a.fliegeZu([9, 48]);
-    a.zeigeObjekte('marker', sammlung('marker-eins'));
-    a.verbergeObjekte('marker');
-    a.zerstoere();
+    a.setStyle('hell');
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
+    a.fitBounds(OPTIONEN.maxBounds, { top: 0, bottom: 0, left: 0, right: 0 });
+    a.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
+    a.onMove(() => undefined);
+    a.flyTo([9, 48]);
+    a.showObjects('marker', collection('marker-eins'));
+    a.hideObjects('marker');
+    a.destroy();
 
-    expect(a.ausschnitt()).toBeNull();
+    expect(a.extent()).toBeNull();
   });
 
   it('legt die Vorhersage unter die Ebene', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.zeigeWert('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    a.showValue('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    expect(karte.ebenen.has('wert-ebene-b')).toBe(true);
-    expect(karte.ebenen.has('wert-vorhersage-b')).toBe(true);
-    expect(karte.vorGelegt.get('wert-vorhersage-b')).toBe('wert-ebene-b');
-    expect(karte.vorGelegt.get('wert-ebene-b')).toBeUndefined();
+    expect(map.layers.has('wert-ebene-b')).toBe(true);
+    expect(map.layers.has('wert-vorhersage-b')).toBe(true);
+    expect(map.placedBefore.get('wert-vorhersage-b')).toBe('wert-ebene-b');
+    expect(map.placedBefore.get('wert-ebene-b')).toBeUndefined();
   });
 
   it('räumt eine Rolle ab, wenn sie nichts mehr zeigt', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeWert('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    const { adapter: a, map } = await adapter();
+    a.showValue('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    a.zeigeWert('ebene', null, OPTIONEN.maxGrenzen, 5, 8);
+    a.showValue('ebene', null, OPTIONEN.maxBounds, 5, 8);
 
-    expect(karte.ebenen.size).toBe(0);
-    expect(karte.quellen.size).toBe(0);
+    expect(map.layers.size).toBe(0);
+    expect(map.sources.size).toBe(0);
   });
 
   it('setzt die Deckkraft nur auf der sichtbaren Ebene einer Rolle', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeWert('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    const { adapter: a, map } = await adapter();
+    a.showValue('vorhersage', 'wert://art/w40/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    a.setzeDeckkraft('vorhersage', 0.4);
+    a.setOpacity('vorhersage', 0.4);
 
-    expect(karte.deckkraft.get('wert-vorhersage-b')).toBeCloseTo(0.4);
+    expect(map.opacity.get('wert-vorhersage-b')).toBeCloseTo(0.4);
 
-    karte.quelleFertig = false;
-    a.zeigeWert('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    map.sourceReady = false;
+    a.showValue('vorhersage', 'wert://art/w41/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    expect(karte.deckkraft.get('wert-vorhersage-a')).toBe(0);
+    expect(map.opacity.get('wert-vorhersage-a')).toBe(0);
 
-    karte.quelleFertig = true;
-    karte.loese('sourcedata', 'wert-vorhersage-a');
+    map.sourceReady = true;
+    map.settle('sourcedata', 'wert-vorhersage-a');
 
-    expect(karte.deckkraft.get('wert-vorhersage-a')).toBeCloseTo(0.4);
+    expect(map.opacity.get('wert-vorhersage-a')).toBeCloseTo(0.4);
   });
 
   it('hält die Deckkraft zwischen null und voll', async () => {
-    const { adapter: a, karte } = await adapter();
-    a.zeigeWert('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxGrenzen, 5, 8);
+    const { adapter: a, map } = await adapter();
+    a.showValue('ebene', 'wert://ebene-wald/f/{z}/{x}/{y}', OPTIONEN.maxBounds, 5, 8);
 
-    a.setzeDeckkraft('ebene', 3);
+    a.setOpacity('ebene', 3);
 
-    expect(karte.deckkraft.get('wert-ebene-b')).toBe(1);
+    expect(map.opacity.get('wert-ebene-b')).toBe(1);
   });
 
   it('zentriert auf einen Punkt', async () => {
-    const { adapter: a, karte } = await adapter();
+    const { adapter: a, map } = await adapter();
 
-    a.zentriere([9.1, 48.8], 11);
+    a.centerOn([9.1, 48.8], 11);
 
-    expect(karte.bewegt.at(-1)).toEqual({ center: [9.1, 48.8], zoom: 11, duration: 600 });
+    expect(map.moved.at(-1)).toEqual({ center: [9.1, 48.8], zoom: 11, duration: 600 });
   });
 
   it('klappt den Urheberhinweis am Telefon ein', async () => {
-    const { modul: m } = modul();
-    const wirt = document.createElement('div');
-    const hinweis = document.createElement('div');
-    hinweis.className = 'maplibregl-ctrl-attrib maplibregl-compact-show';
-    wirt.append(hinweis);
+    const { module: m } = module();
+    const host = document.createElement('div');
+    const hint = document.createElement('div');
+    hint.className = 'maplibregl-ctrl-attrib maplibregl-compact-show';
+    host.append(hint);
     const a = new MapLibreAdapter(() => Promise.resolve(m));
 
-    await a.starte(wirt, { ...OPTIONEN, kompakt: true });
+    await a.start(host, { ...OPTIONEN, compact: true });
 
-    expect(hinweis.classList.contains('maplibregl-compact-show')).toBe(false);
-    expect(hinweis.classList.contains('maplibregl-compact')).toBe(true);
+    expect(hint.classList.contains('maplibregl-compact-show')).toBe(false);
+    expect(hint.classList.contains('maplibregl-compact')).toBe(true);
   });
 });

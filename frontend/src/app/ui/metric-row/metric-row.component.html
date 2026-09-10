@@ -1,7 +1,7 @@
-<span class="metrik__stapel">
-  <span class="metrik__beschriftung">{{ beschriftung() }}</span>
-  @if (unter()) {
-    <span class="metrik__unter">{{ unter() }}</span>
+<span class="metric__stack">
+  <span class="metric__label">{{ label() }}</span>
+  @if (subline()) {
+    <span class="metric__sub">{{ subline() }}</span>
   }
 </span>
-<b class="metrik__wert">{{ wert() }}</b>
+<b class="metric__value">{{ value() }}</b>

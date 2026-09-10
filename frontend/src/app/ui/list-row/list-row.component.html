@@ -1,31 +1,31 @@
-<ng-template #inhalt>
-  <span class="zeile__vorn"><ng-content select="[vorn]" /></span>
-  <span class="zeile__stapel">
-    <span class="zeile__titel">{{ titel() }}</span>
-    @if (unter()) {
-      <span class="zeile__unter">{{ unter() }}</span>
+<ng-template #content>
+  <span class="row__lead"><ng-content select="[lead]" /></span>
+  <span class="row__stack">
+    <span class="row__title">{{ titel() }}</span>
+    @if (subline()) {
+      <span class="row__sub">{{ subline() }}</span>
     }
     @if (notiz()) {
-      <span class="zeile__notiz">{{ notiz() }}</span>
+      <span class="row__note">{{ notiz() }}</span>
     }
   </span>
-  @if (wert()) {
-    <span class="zeile__wert">{{ wert() }}</span>
+  @if (value()) {
+    <span class="row__value">{{ value() }}</span>
   }
-  <span class="zeile__hinten"><ng-content select="[hinten]" /></span>
+  <span class="row__trail"><ng-content select="[trail]" /></span>
 </ng-template>
 
-@if (anklickbar()) {
+@if (clickable()) {
   <button
-    class="zeile zeile--knopf"
+    class="row row--button"
     type="button"
-    [attr.aria-pressed]="gewaehlt() ? true : null"
-    (click)="auswahl.emit()"
+    [attr.aria-pressed]="selected() ? true : null"
+    (click)="chosen.emit()"
   >
-    <ng-container [ngTemplateOutlet]="inhalt" />
+    <ng-container [ngTemplateOutlet]="content" />
   </button>
 } @else {
-  <div class="zeile">
-    <ng-container [ngTemplateOutlet]="inhalt" />
+  <div class="row">
+    <ng-container [ngTemplateOutlet]="content" />
   </div>
 }

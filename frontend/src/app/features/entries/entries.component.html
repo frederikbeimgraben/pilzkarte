@@ -1,0 +1,39 @@
+<app-page-header [titel]="'eintraege.titel' | t">
+  <app-button variant="primary" (click)="addEntry()">
+    <app-svg-icon name="plus" [size]="16" />
+    {{ 'eintragen.knopf' | t }}
+  </app-button>
+</app-page-header>
+<div class="entries">
+  <app-chip-group
+    [chips]="chips()"
+    [value]="chip()"
+    [label]="'eintraege.filter' | t"
+    (valueChange)="selectChip($event)"
+  />
+  @if (rows().length === 0) {
+    <app-empty-state
+      icon="funde"
+      [text]="emptyText() | t"
+      [action]="needsSignIn() ? ('konto.anmelden' | t) : undefined"
+      (actionClick)="signIn()"
+    />
+  } @else {
+    <app-card class="flush">
+      @for (row of rows(); track row.schluessel) {
+        <app-list-row
+          [titel]="row.titel"
+          [subline]="row.subline"
+          [notiz]="row.notiz"
+          [clickable]="row.object !== null"
+          (chosen)="open(row)"
+        >
+          <span lead class="entries__dot" [style.background]="row.farbe"></span>
+          @if (row.badge; as badge) {
+            <app-badge trail [variant]="badge.variant">{{ badge.text }}</app-badge>
+          }
+        </app-list-row>
+      }
+    </app-card>
+  }
+</div>

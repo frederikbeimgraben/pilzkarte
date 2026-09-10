@@ -1,0 +1,18 @@
+@if (pending()) {
+  <div class="signIn">
+    <div class="signin__scrim"></div>
+    <app-sheet class="signin__sheet" [label]="'anmelden.blatt' | t" [modal]="true" [detents]="detents">
+      <div class="signin__content">
+        <h2 class="signin__title">{{ 'anmelden.titel' | t }}</h2>
+        <p class="signin__text">{{ 'anmelden.text' | t }}</p>
+      </div>
+      <app-action-bar
+        #footer
+        [primary]="'anmelden.knopf' | t"
+        [ghost]="'anmelden.spaeter' | t"
+        (mainClick)="signIn()"
+        (ghostClick)="later()"
+      />
+    </app-sheet>
+  </div>
+}

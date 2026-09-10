@@ -1,14 +1,14 @@
-.kopfleiste {
+.pageheader {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  block-size: var(--pilz-kopfleiste-hoehe);
+  block-size: var(--pilz-pageheader-height);
   padding-inline: var(--space-5);
   background: var(--color-surface);
   border-block-end: var(--border-width) solid var(--color-border);
 }
 
-.kopfleiste__zurueck {
+.pageheader__back {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,32 +21,32 @@
   border-radius: var(--radius-md);
 }
 
-.kopfleiste__titel {
+.pageheader__title {
   font-size: var(--fs-xl);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--tracking-tight);
 }
 
-.kopfleiste__aktionen {
+.pageheader__actions {
   margin-inline-start: auto;
 }
 
-.kopfleiste__aktionen:empty {
+.pageheader__actions:empty {
   display: none;
 }
 
 // Am Rechner steht die Kopfzeile in einer 400-px-Spalte. Die Maße der Mockups
 // sind für das Telefon gedacht; hier nehmen sie zu viel Höhe.
 @media (min-width: 1024px) {
-  .kopfleiste {
+  .pageheader {
     block-size: 56px;
   }
 
-  .kopfleiste__titel {
+  .pageheader__title {
     font-size: 20px;
   }
 
-  .kopfleiste__aktionen app-button {
-    min-block-size: var(--pilz-feld-hoehe);
+  .pageheader__actions app-button {
+    min-block-size: var(--pilz-field-height);
   }
 }

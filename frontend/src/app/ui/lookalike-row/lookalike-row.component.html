@@ -1,12 +1,12 @@
-@if (route(); as ziel) {
-  <a class="verwechslung__name verwechslung__name--link" [routerLink]="ziel">{{ name() }}</a>
+@if (route(); as target) {
+  <a class="lookalike__name lookalike__name--link" [routerLink]="target">{{ name() }}</a>
 } @else {
-  <span class="verwechslung__name">{{ name() }}</span>
+  <span class="lookalike__name">{{ name() }}</span>
 }
-<span class="verwechslung__wert">
+<span class="lookalike__value">
   @if (latin(); as lateinisch) {
-    <span class="verwechslung__latein">{{ lateinisch }}</span>
+    <span class="lookalike__latin">{{ lateinisch }}</span>
   }
-  <span class="verwechslung__text">{{ difference() }}</span>
-  <span class="verwechslung__marke"><ng-content /></span>
+  <span class="lookalike__text">{{ difference() }}</span>
+  <span class="lookalike__badge"><ng-content /></span>
 </span>

@@ -1,0 +1,43 @@
+// Der Schleier liegt über der ganzen App: Er sperrt die Karte, solange die
+// Frage offen ist. Der Wert stammt aus dem Artboard `Anmelden`.
+.signIn {
+  position: fixed;
+  z-index: var(--z-dialog);
+  inset: 0;
+}
+
+.signin__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 18 10 / 55%);
+}
+
+.signin__sheet {
+  position: absolute;
+  inset: 0;
+}
+
+.signin__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-block-size: 0;
+  padding: var(--space-1) var(--pilz-gutter) var(--space-6);
+  overflow: hidden;
+}
+
+// 24 px und 15 px stehen so im Artboard `Anmelden`. Zwischen den Stufen des
+// Kits liegt nichts, was sie trifft.
+.signin__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.signin__text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+}

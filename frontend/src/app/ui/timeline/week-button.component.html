@@ -1,21 +1,19 @@
 <button
-  #knopf
-  class="woche"
+  #button
+  class="week"
   type="button"
-  [class.woche--aktiv]="aktiv()"
-  [class.woche--prognose]="prognose()"
-  [attr.aria-label]="beschriftung()"
-  [attr.aria-pressed]="aktiv()"
-  [attr.tabindex]="imTabWeg() ? 0 : -1"
-  [disabled]="gesperrt()"
-  (click)="auswahl.emit()"
+  [class.week--active]="active()"
+  [class.week--forecast]="forecast()"
+  [attr.aria-label]="label()"
+  [attr.aria-pressed]="active()"
+  [attr.tabindex]="inTabOrder() ? 0 : -1"
+  [disabled]="locked()"
+  (click)="chosen.emit()"
 >
-  @if (jahresmarke()) {
-    <span class="woche__jahr" aria-hidden="true">{{ jahr() }}</span>
+  @if (yearMark()) {
+    <span class="week__year" aria-hidden="true">{{ jahr() }}</span>
   }
-  <span class="woche__kw" aria-hidden="true">{{ 'zeitleiste.kw' | t }}</span>
-  <span class="woche__zahl" aria-hidden="true">{{ woche() }}</span>
-  <span class="woche__spur" aria-hidden="true"
-    ><i class="woche__balken" [style.inline-size]="balken()"></i
-  ></span>
+  <span class="week__kw" aria-hidden="true">{{ 'zeitleiste.kw' | t }}</span>
+  <span class="week__number" aria-hidden="true">{{ woche() }}</span>
+  <span class="week__track" aria-hidden="true"><i class="week__bar" [style.inline-size]="bars()"></i></span>
 </button>

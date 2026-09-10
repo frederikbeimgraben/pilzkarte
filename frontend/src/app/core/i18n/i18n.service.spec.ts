@@ -6,19 +6,19 @@ import { CATALOG, SUPPORTED_LOCALES } from './translations';
  * Ein frischer Dienst je Test. Die Sprache wird beim Bauen gelesen; ohne
  * Schnitt trüge die Wahl aus dem vorigen Test in den nächsten.
  */
-function dienst(): I18nService {
+function service(): I18nService {
   TestBed.resetTestingModule();
   return TestBed.inject(I18nService);
 }
 
 describe('I18nService', () => {
   it('führt Deutsch als Leitsprache', () => {
-    expect(dienst().translate('nav.karte')).toBe('Karte');
+    expect(service().translate('nav.karte')).toBe('Karte');
     expect(document.documentElement.lang).toBe('de');
   });
 
   it('wechselt die Sprache und merkt sie sich', () => {
-    const i18n = dienst();
+    const i18n = service();
 
     i18n.setLocale('en');
 
@@ -29,7 +29,7 @@ describe('I18nService', () => {
   });
 
   it('lehnt eine unbekannte Sprache ab', () => {
-    const i18n = dienst();
+    const i18n = service();
 
     i18n.setLocale('fr' as 'de');
 
@@ -37,7 +37,7 @@ describe('I18nService', () => {
   });
 
   it('füllt Platzhalter und lässt unbekannte stehen', () => {
-    const i18n = dienst();
+    const i18n = service();
 
     expect(i18n.translate('zeitleiste.woche', { woche: 40, jahr: 2025 })).toBe('KW 40 · 2025');
     expect(i18n.translate('zeitleiste.woche', { woche: 40 })).toBe('KW 40 · {jahr}');
@@ -46,16 +46,16 @@ describe('I18nService', () => {
   it('nimmt die gespeicherte Sprache beim Start', () => {
     localStorage.setItem('pilzkarte.sprache', 'en');
 
-    expect(dienst().locale()).toBe('en');
+    expect(service().locale()).toBe('en');
   });
 
   it('folgt unter „System“ dem Browser und merkt sich die Wahl', () => {
-    const i18n = dienst();
+    const i18n = service();
 
-    i18n.setWahl('system');
+    i18n.setChoice('system');
 
     // Der Testbrowser steht auf de-DE, siehe `test-setup.ts`.
-    expect(i18n.wahl()).toBe('system');
+    expect(i18n.choice()).toBe('system');
     expect(i18n.locale()).toBe('de');
     expect(localStorage.getItem('pilzkarte.sprache')).toBe('system');
   });
@@ -66,45 +66,45 @@ describe('I18nService', () => {
 
     // Ein englischer Browser machte aus der App sonst eine halb übersetzte
     // Seite: die Oberfläche englisch, der Artenkatalog deutsch.
-    expect(dienst().locale()).toBe('de');
+    expect(service().locale()).toBe('de');
   });
 
   it('lehnt eine unbekannte Wahl ab', () => {
-    const i18n = dienst();
+    const i18n = service();
 
-    i18n.setWahl('fr' as 'de');
+    i18n.setChoice('fr' as 'de');
 
-    expect(i18n.wahl()).toBe('de');
+    expect(i18n.choice()).toBe('de');
   });
 
   it('fällt ohne gespeicherte Wahl auf die Browsersprache', () => {
     localStorage.clear();
     vi.spyOn(navigator, 'language', 'get').mockReturnValue('en-GB');
 
-    expect(dienst().locale()).toBe('en');
+    expect(service().locale()).toBe('en');
   });
 
   it('fällt bei unbekannter Browsersprache auf Deutsch', () => {
     localStorage.clear();
     vi.spyOn(navigator, 'language', 'get').mockReturnValue('fr-FR');
 
-    expect(dienst().locale()).toBe('de');
+    expect(service().locale()).toBe('de');
   });
 
   it('kommt ohne Speicher aus', () => {
-    const lesen = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+    const read = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
       throw new Error('gesperrt');
     });
-    const schreiben = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+    const write = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
       throw new Error('gesperrt');
     });
 
-    const i18n = dienst();
+    const i18n = service();
     i18n.setLocale('en');
 
     expect(i18n.locale()).toBe('en');
-    lesen.mockRestore();
-    schreiben.mockRestore();
+    read.mockRestore();
+    write.mockRestore();
   });
 
   it('kennt jeden Schlüssel in beiden Katalogen', () => {
@@ -112,8 +112,8 @@ describe('I18nService', () => {
 
     for (const locale of SUPPORTED_LOCALES) {
       expect(Object.keys(CATALOG[locale])).toHaveLength(schluessel.length);
-      for (const eintrag of schluessel) {
-        expect(CATALOG[locale][eintrag as keyof typeof CATALOG.de]).not.toBe('');
+      for (const entry of schluessel) {
+        expect(CATALOG[locale][entry as keyof typeof CATALOG.de]).not.toBe('');
       }
     }
   });

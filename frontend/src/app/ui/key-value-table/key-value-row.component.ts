@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 })
 export class KeyValueRowComponent {
   readonly schluessel = input.required<string>();
-  readonly wert = input<string>();
+  readonly value = input<string>();
   /**
    * Führt der Schlüssel weiter, steht er als Verweis. Die Verwechslungstabelle
    * zeigt damit auf das Profil des Partners.

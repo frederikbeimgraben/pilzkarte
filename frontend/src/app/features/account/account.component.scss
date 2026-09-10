@@ -1,0 +1,90 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+// Der Inhalt scrollt, die Kopfleiste bleibt. Maße aus `docs/mockups/bauen.py`,
+// Klasse `.scroll` im Artboard `Mehr`.
+.account {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--pilz-gutter);
+  padding: 20px var(--pilz-gutter);
+  overflow-y: auto;
+  // Wie auf den anderen Listenseiten: die App füllt das Gerät, ein Balken am
+  // Rand gehörte zu einem Fenster.
+  scrollbar-width: none;
+}
+
+// Die Abschnittsüberschrift der Mockups, Klasse `.h2`.
+.account__section {
+  margin: 0 0 4px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+// Die Konto-Karte sitzt enger als eine Karte des Kits: 12 px hoch, 14 px
+// seitlich. Der Innenabstand steckt dort als `var(--space-5)`; ihn zu setzen
+// ist derselbe Weg wie `randlos` in den Hilfsklassen.
+.account__map {
+  --space-5: 12px 14px;
+}
+
+.account__row {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.account__circle {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--pilz-avatar-size);
+  block-size: var(--pilz-avatar-size);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  border-radius: 50%;
+}
+
+.account__stack {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+  min-inline-size: 0;
+}
+
+.account__name {
+  font-size: 15px;
+  font-weight: var(--fw-semibold);
+}
+
+.account__sub {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.account__list {
+  display: flex;
+  flex-direction: column;
+}
+
+// Die zweite Wahl im selben Abschnitt braucht eine eigene Zeile, sonst stünden
+// zwei Schalter ohne Beschriftung untereinander.
+.account__subsection {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+}

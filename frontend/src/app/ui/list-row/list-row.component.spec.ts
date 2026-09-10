@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { ListRowComponent } from './list-row.component';
 
 describe('ListRowComponent', () => {
@@ -8,9 +8,9 @@ describe('ListRowComponent', () => {
     const { container } = await render(ListRowComponent, {
       inputs: {
         titel: 'Pfifferling',
-        unter: 'Heute · 2 Stück · Frederik',
+        subline: 'Heute · 2 Stück · Frederik',
         notiz: 'unter Fichten am Hang',
-        wert: '84 MB',
+        value: '84 MB',
       },
     });
 
@@ -18,19 +18,19 @@ describe('ListRowComponent', () => {
     expect(screen.getByText('Heute · 2 Stück · Frederik')).toBeInTheDocument();
     expect(screen.getByText('unter Fichten am Hang')).toBeInTheDocument();
     expect(screen.getByText('84 MB')).toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('wird zur Schaltfläche, wenn die Zeile anklickbar ist', async () => {
     const { fixture } = await render(ListRowComponent, {
-      inputs: { titel: 'Steinpilz', anklickbar: true },
+      inputs: { titel: 'Steinpilz', clickable: true },
     });
-    let gerufen = 0;
-    fixture.componentInstance.auswahl.subscribe(() => (gerufen += 1));
+    let calls = 0;
+    fixture.componentInstance.chosen.subscribe(() => (calls += 1));
 
     await userEvent.click(screen.getByRole('button', { name: 'Steinpilz' }));
 
-    expect(gerufen).toBe(1);
+    expect(calls).toBe(1);
   });
 
   it('bleibt ohne Schaltfläche, solange die Zeile nichts öffnet', async () => {

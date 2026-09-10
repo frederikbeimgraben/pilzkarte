@@ -1,15 +1,15 @@
-<div class="farben" role="radiogroup" [attr.aria-label]="beschriftung()">
-  @for (farbe of farben(); track farbe.wert) {
+<div class="colors" role="radiogroup" [attr.aria-label]="label()">
+  @for (farbe of colors(); track farbe.value) {
     <button
-      class="farben__feld"
+      class="colors__field"
       type="button"
       role="radio"
-      [class.farben__feld--gewaehlt]="farbe.wert === wert()"
-      [attr.aria-checked]="farbe.wert === wert()"
+      [class.colors__field--selected]="farbe.value === value()"
+      [attr.aria-checked]="farbe.value === value()"
       [attr.aria-label]="farbe.label"
-      [attr.tabindex]="farbe.wert === wert() ? 0 : -1"
-      [style.background]="farbe.wert"
-      (click)="wertChange.emit(farbe.wert)"
+      [attr.tabindex]="farbe.value === value() ? 0 : -1"
+      [style.background]="farbe.value"
+      (click)="valueChange.emit(farbe.value)"
     ></button>
   }
 </div>

@@ -7,7 +7,7 @@
   border-block-end: 0;
 }
 
-.reihe {
+.series {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -21,31 +21,31 @@
   border: 0;
 }
 
-.reihe__kachel {
+.row__tile {
   display: flex;
   flex: none;
   align-items: center;
   justify-content: center;
-  inline-size: var(--pilz-feld-hoehe);
-  block-size: var(--pilz-feld-hoehe);
+  inline-size: var(--pilz-field-height);
+  block-size: var(--pilz-field-height);
   color: var(--color-primary);
   background: var(--color-primary-subtle);
   border-radius: var(--radius-lg);
 }
 
-.reihe__stapel {
+.row__stack {
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-inline-size: 0;
 }
 
-.reihe__titel {
+.row__title {
   font-size: var(--fs-md);
   font-weight: var(--fw-semibold);
 }
 
-.reihe__unter {
+.row__sub {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
 }

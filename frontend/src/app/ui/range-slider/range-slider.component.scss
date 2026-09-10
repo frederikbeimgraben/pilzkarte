@@ -1,28 +1,28 @@
-.schieber {
+.rangeslider {
   position: relative;
   block-size: 28px;
 }
 
-.schieber__spur,
-.schieber__gewaehlt {
+.rangeslider__track,
+.rangeslider__chosen {
   position: absolute;
   inset-block-start: 12px;
   block-size: 4px;
   border-radius: 2px;
 }
 
-.schieber__spur {
+.rangeslider__track {
   inset-inline: 0;
   background: var(--color-border);
 }
 
-.schieber__gewaehlt {
+.rangeslider__chosen {
   background: var(--color-primary);
 }
 
 // Beide Regler liegen übereinander. Nur die Griffe nehmen Zeiger an, sonst
 // finge der obere Regler jeden Klick ab.
-.schieber__griff {
+.rangeslider__handle {
   position: absolute;
   inset-inline: 0;
   inset-block-start: 0;
@@ -34,7 +34,7 @@
   background: none;
 }
 
-.schieber__griff::-webkit-slider-thumb {
+.rangeslider__handle::-webkit-slider-thumb {
   inline-size: 24px;
   block-size: 24px;
   pointer-events: auto;
@@ -45,7 +45,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.schieber__griff::-moz-range-thumb {
+.rangeslider__handle::-moz-range-thumb {
   inline-size: 24px;
   block-size: 24px;
   pointer-events: auto;

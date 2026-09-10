@@ -3,14 +3,14 @@
   flex: none;
 }
 
-.woche {
+.week {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  inline-size: var(--pilz-woche-breite);
-  block-size: var(--pilz-woche-hoehe);
+  inline-size: var(--pilz-week-width);
+  block-size: var(--pilz-week-height);
   color: var(--color-text-muted);
   cursor: pointer;
   background: var(--color-surface);
@@ -18,21 +18,21 @@
   border-radius: var(--radius-md);
 }
 
-.woche--aktiv {
+.week--active {
   background: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.woche--aktiv .woche__kw,
-.woche--aktiv .woche__zahl {
+.week--active .week__kw,
+.week--active .week__number {
   color: var(--color-on-primary);
 }
 
-.woche--prognose {
+.week--forecast {
   border-style: dashed;
 }
 
-.woche__jahr {
+.week__year {
   position: absolute;
   inset-block-start: 3px;
   font-size: 8px;
@@ -40,18 +40,18 @@
   color: var(--color-accent);
 }
 
-.woche__kw {
+.week__kw {
   font-size: 10px;
   letter-spacing: 0.06em;
 }
 
-.woche__zahl {
+.week__number {
   font-size: var(--fs-sm);
   font-variant-numeric: tabular-nums;
   color: var(--color-text);
 }
 
-.woche__spur {
+.week__track {
   position: absolute;
   inset-block-end: 6px;
   inset-inline: 8px;
@@ -60,7 +60,7 @@
   border-radius: 2px;
 }
 
-.woche__balken {
+.week__bar {
   display: block;
   block-size: 100%;
   background: var(--color-accent);

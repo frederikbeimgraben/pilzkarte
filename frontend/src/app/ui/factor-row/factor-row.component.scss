@@ -11,30 +11,30 @@
   border-block-end: 0;
 }
 
-.faktor__schalter {
+.factor__switches {
   display: block;
   min-inline-size: 0;
 }
 
-.faktor__stapel {
+.factor__stack {
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-inline-size: 0;
 }
 
-.faktor__name {
+.factor__name {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
   color: var(--color-text);
 }
 
-.faktor__unter {
+.factor__sub {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
 }
 
-.faktor__bedingung {
+.factor__condition {
   display: flex;
   align-items: center;
   block-size: var(--control-height);

@@ -11,26 +11,26 @@
   border-block-end: 0;
 }
 
-.metrik__stapel {
+.metric__stack {
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-inline-size: 0;
 }
 
-.metrik__beschriftung {
+.metric__label {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
   color: var(--color-text);
 }
 
-.metrik__unter {
+.metric__sub {
   font-size: 13px;
   line-height: 1.45;
   color: var(--color-text-muted);
 }
 
-.metrik__wert {
+.metric__value {
   font-size: var(--fs-lg);
   font-variant-numeric: tabular-nums;
 }

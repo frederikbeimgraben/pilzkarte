@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 import { FormsModule } from '@angular/forms';
 import { CheckboxComponent } from '@stupa-makers/ui-kit';
 
-let naechsteNummer = 0;
+let nextNumber = 0;
 
 /**
  * Ein Faktor der Kombination: an oder aus, Name mit Bezug und rechts die
@@ -18,12 +18,12 @@ let naechsteNummer = 0;
 })
 export class FactorRowComponent {
   readonly name = input.required<string>();
-  readonly unter = input<string>();
-  readonly bedingung = input.required<string>();
-  readonly aktiv = input(false);
+  readonly subline = input<string>();
+  readonly condition = input.required<string>();
+  readonly active = input(false);
 
-  readonly aktivChange = output<boolean>();
-  readonly bedingungKlick = output();
+  readonly activeChange = output<boolean>();
+  readonly conditionClick = output();
 
-  protected readonly feldId = `app-factor-${naechsteNummer++}`;
+  protected readonly fieldId = `app-factor-${nextNumber++}`;
 }

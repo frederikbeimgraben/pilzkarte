@@ -1,22 +1,22 @@
-<div class="chips" [class.chips--zurueck]="zurueckMoeglich()" [class.chips--vor]="vorMoeglich()">
+<div class="chips" [class.chips--back]="zurueckMoeglich()" [class.chips--next]="vorMoeglich()">
   @if (zurueckMoeglich()) {
     <button
-      class="chips__knopf chips__knopf--zurueck"
+      class="chips__button chips__button--back"
       type="button"
-      [attr.aria-label]="zurueckText()"
+      [attr.aria-label]="backText()"
       (click)="schiebe(-1)"
     >
-      <app-svg-icon name="zurueck" [groesse]="16" />
+      <app-svg-icon name="zurueck" [size]="16" />
     </button>
   }
-  <div #reihe class="chips__reihe" role="group" [attr.aria-label]="beschriftung()" (scroll)="pruefe()">
-    @for (chip of chips(); track chip.wert) {
+  <div #series class="chips__row" role="group" [attr.aria-label]="label()" (scroll)="validate()">
+    @for (chip of chips(); track chip.value) {
       <button
         class="chip"
         type="button"
-        [class.chip--aktiv]="chip.wert === wert()"
-        [attr.aria-pressed]="chip.wert === wert()"
-        (click)="wertChange.emit(chip.wert)"
+        [class.chip--active]="chip.value === value()"
+        [attr.aria-pressed]="chip.value === value()"
+        (click)="valueChange.emit(chip.value)"
       >
         {{ chip.label }}
       </button>
@@ -24,12 +24,12 @@
   </div>
   @if (vorMoeglich()) {
     <button
-      class="chips__knopf chips__knopf--vor"
+      class="chips__button chips__button--next"
       type="button"
       [attr.aria-label]="vorText()"
       (click)="schiebe(1)"
     >
-      <app-svg-icon name="vor" [groesse]="16" />
+      <app-svg-icon name="vor" [size]="16" />
     </button>
   }
 </div>

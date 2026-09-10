@@ -3,21 +3,21 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { AuthService } from '../core/auth';
-import { AnsichtDienst } from '../core/layout/ansicht.service';
+import { ViewportService } from '../core/layout/viewport.service';
 import { TranslatePipe } from '../core/i18n/translate.pipe';
 import { I18nService } from '../core/i18n/i18n.service';
-import { AvatarButtonComponent, BottomNavComponent, type NavEintrag } from '../ui';
-import { KarteComponent } from '../features/karte/karte.component';
+import { AvatarButtonComponent, BottomNavComponent, type NavItem } from '../ui';
+import { MapComponent } from '../features/map/map.component';
 
 /** Die drei Reiter. Das Konto hängt am Avatar über der Karte, nicht an der Leiste. */
-const REITER: readonly {
-  pfad: string;
+const TABS: readonly {
+  path: string;
   schluessel: 'nav.karte' | 'nav.arten' | 'nav.eintraege';
-  icon: NavEintrag['icon'];
+  icon: NavItem['icon'];
 }[] = [
-  { pfad: '/karte', schluessel: 'nav.karte', icon: 'karte' },
-  { pfad: '/arten', schluessel: 'nav.arten', icon: 'arten' },
-  { pfad: '/eintraege', schluessel: 'nav.eintraege', icon: 'funde' },
+  { path: '/karte', schluessel: 'nav.karte', icon: 'karte' },
+  { path: '/arten', schluessel: 'nav.arten', icon: 'arten' },
+  { path: '/eintraege', schluessel: 'nav.eintraege', icon: 'funde' },
 ];
 
 /**
@@ -32,52 +32,50 @@ const REITER: readonly {
 @Component({
   selector: 'app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AvatarButtonComponent, BottomNavComponent, KarteComponent, RouterOutlet, TranslatePipe],
+  imports: [AvatarButtonComponent, BottomNavComponent, MapComponent, RouterOutlet, TranslatePipe],
   templateUrl: './shell.component.html',
   styleUrl: './shell.component.scss',
 })
 export class ShellComponent {
   private readonly router = inject(Router);
   private readonly i18n = inject(I18nService);
-  private readonly ansicht = inject(AnsichtDienst);
+  private readonly viewport = inject(ViewportService);
   private readonly auth = inject(AuthService);
 
   private readonly adresse = toSignal(
     this.router.events.pipe(
-      filter((ereignis) => ereignis instanceof NavigationEnd),
+      filter((event) => event instanceof NavigationEnd),
       map(() => this.router.url),
     ),
     { initialValue: this.router.url },
   );
 
-  protected readonly breit = this.ansicht.breit;
+  protected readonly wide = this.viewport.wide;
 
   /** Der erste Abschnitt der Adresse, ohne Abfrage: `/karte?art=…` → `/karte`. */
-  protected readonly aktiv = computed(() => `/${this.adresse().split(/[?#/]/)[1] || 'karte'}`);
+  protected readonly active = computed(() => `/${this.adresse().split(/[?#/]/)[1] || 'karte'}`);
 
-  protected readonly aufDerKarte = computed(() => this.aktiv() === '/karte');
+  protected readonly onTheMap = computed(() => this.active() === '/karte');
 
   /** Angemeldet trägt der Kreis den ersten Buchstaben des Namens, sonst „G“. */
-  protected readonly avatarName = computed(
-    () => this.auth.nutzer()?.name ?? this.i18n.translate('konto.gast'),
-  );
+  protected readonly avatarName = computed(() => this.auth.user()?.name ?? this.i18n.translate('konto.gast'));
 
-  protected readonly avatarBeschriftung = computed(() => {
-    const person = this.auth.nutzer();
+  protected readonly avatarLabel = computed(() => {
+    const person = this.auth.user();
     return person === null
       ? this.i18n.translate('nav.konto')
       : this.i18n.translate('konto.avatarAngemeldet', { name: person.name });
   });
 
-  protected readonly eintraege = computed<NavEintrag[]>(() =>
-    REITER.map((reiter) => ({
-      pfad: reiter.pfad,
-      label: this.i18n.translate(reiter.schluessel),
-      icon: reiter.icon,
+  protected readonly eintraege = computed<NavItem[]>(() =>
+    TABS.map((tab) => ({
+      path: tab.path,
+      label: this.i18n.translate(tab.schluessel),
+      icon: tab.icon,
     })),
   );
 
-  protected zumKonto(): void {
+  protected toAccount(): void {
     void this.router.navigate(['/konto']);
   }
 }

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { EmptyStateComponent } from './empty-state.component';
 
 describe('EmptyStateComponent', () => {
@@ -10,9 +10,9 @@ describe('EmptyStateComponent', () => {
     });
 
     expect(screen.getByText('Keine Art passt zur Suche.')).toBeInTheDocument();
-    expect(container.querySelector('.leer__bild svg')).not.toBeNull();
+    expect(container.querySelector('.empty__image svg')).not.toBeNull();
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('nimmt ein eigenes Bild an', async () => {
@@ -20,7 +20,7 @@ describe('EmptyStateComponent', () => {
       inputs: { text: 'Noch kein Fund.', icon: 'funde' },
     });
 
-    expect(container.querySelector('.leer__bild')).not.toBeNull();
+    expect(container.querySelector('.empty__image')).not.toBeNull();
   });
 
   it('stellt Bild, Satz und Handlung in dieser Reihenfolge', async () => {
@@ -29,21 +29,21 @@ describe('EmptyStateComponent', () => {
     });
 
     // `querySelectorAll` gibt die Reihenfolge im Baum zurück.
-    const reihenfolge = [...container.querySelectorAll('.leer__bild, .leer__text, .leer__knopf')].map(
-      (teil) => teil.className.split(' ').find((klasse) => klasse.startsWith('leer__')),
+    const order = [...container.querySelectorAll('.empty__image, .empty__text, .empty__button')].map((part) =>
+      part.className.split(' ').find((cssClass) => cssClass.startsWith('empty__')),
     );
-    expect(reihenfolge).toEqual(['leer__bild', 'leer__text', 'leer__knopf']);
+    expect(order).toEqual(['empty__image', 'empty__text', 'empty__button']);
   });
 
   it('führt mit einem Knopf hinaus', async () => {
     const { fixture } = await render(EmptyStateComponent, {
       inputs: { text: 'Eigene Einträge stehen im Konto.', action: 'Anmelden' },
     });
-    let gerufen = 0;
-    fixture.componentInstance.actionClick.subscribe(() => (gerufen += 1));
+    let calls = 0;
+    fixture.componentInstance.actionClick.subscribe(() => (calls += 1));
 
     await userEvent.click(screen.getByRole('button', { name: 'Anmelden' }));
 
-    expect(gerufen).toBe(1);
+    expect(calls).toBe(1);
   });
 });

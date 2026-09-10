@@ -1,0 +1,60 @@
+// Der Tipp-Effekt aller Bausteine an einer Stelle.
+//
+// Am Telefon fehlt der Zeigerwechsel, den ein Rechner beim Überfahren gibt.
+// Ohne Rückmeldung wirkt ein Knopf tot, bis die neue Seite steht. Ein kurzes
+// Einsinken sagt sofort: getroffen.
+//
+// Die Regeln stehen hier und nicht in den einzelnen Bausteinen, weil sie sonst
+// zwölfmal dieselbe Zeit trügen und beim nächsten Baustein vergessen würden.
+// Sie greifen auf die Klassen der Bausteine und auf den Knopf des Kits.
+$dauer: 120ms;
+$mass: 0.97;
+
+@mixin druck {
+  transition: transform $dauer ease-out;
+
+  &:active {
+    transform: scale($mass);
+  }
+}
+
+// Reihen sinken nicht ein, sie tönen sich: eine Zeile, die schrumpft, zöge die
+// Liste darunter mit.
+@mixin ton {
+  transition: background-color $dauer ease-out;
+
+  &:active {
+    background: var(--color-surface-sunken);
+  }
+}
+
+// Wer weniger Bewegung will, bekommt keine. Die Tönung bleibt: sie ist
+// Rückmeldung, keine Bewegung.
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .chip,
+  .floating,
+  .week,
+  .seg__choice,
+  .colors__field,
+  .avatar,
+  .field--button {
+    @include druck;
+  }
+}
+
+// Die Reiterleiste fehlt hier mit Absicht: ihre Tipp-Fläche ist eine Pille um
+// das Symbol und keine volle Zeile. Sie steht in `bottom-nav`.
+.speciesrow,
+.row--button,
+.series {
+  @include ton;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speciesrow,
+  .row--button,
+  .series {
+    transition: none;
+  }
+}

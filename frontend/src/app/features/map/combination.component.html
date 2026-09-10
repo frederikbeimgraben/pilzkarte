@@ -1,0 +1,34 @@
+<app-segmented
+  [options]="rules()"
+  [value]="rule()"
+  [label]="'kombination.regel' | t"
+  (valueChange)="setRule($event)"
+/>
+
+<app-note variant="unter">{{ hint() }}</app-note>
+
+@if (rows().length > 0) {
+  <div class="combination__factors" role="group" [attr.aria-label]="'kombination.faktoren' | t">
+    @for (row of rows(); track row.factor.source) {
+      <app-factor-row
+        [name]="row.name"
+        [subline]="row.subline"
+        [condition]="row.condition"
+        [active]="row.factor.active"
+        (activeChange)="activeChange.emit({ factor: row.factor, active: $event })"
+        (conditionClick)="openFactor.emit(row.factor)"
+      />
+    }
+  </div>
+} @else {
+  <app-note>{{ 'kombination.leer' | t }}</app-note>
+}
+
+<app-action-bar
+  class="combination__footer"
+  [primary]="'kombination.speichern' | t"
+  [mainDisabled]="true"
+  [subline]="'kombination.speichernSpaeter' | t"
+  [secondary]="'kombination.hinzufuegen' | t"
+  (secondaryClick)="add.emit()"
+/>

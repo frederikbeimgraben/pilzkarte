@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+}
+
+// Dasselbe Raster wie die Reiter Arten und Konto: 20 px oben, 20 px zwischen
+// Titelzeile, Chips und Liste.
+.entries {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 20px;
+  min-block-size: 0;
+  padding: 20px var(--pilz-gutter);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+// Der Punkt vor der Zeile trägt die Farbe des Objekts; 12 px stehen so im
+// Artboard `Funde`.
+.entries__dot {
+  display: block;
+  inline-size: 12px;
+  block-size: 12px;
+  margin-block-start: 5px;
+  border-radius: 50%;
+}

@@ -25,20 +25,20 @@ import { I18nService } from '../../core/i18n/i18n.service';
 })
 export class SpeciesRowComponent {
   private readonly i18n = inject(I18nService);
-  private readonly knopf = viewChild.required<ElementRef<HTMLButtonElement>>('knopf');
+  private readonly button = viewChild.required<ElementRef<HTMLButtonElement>>('button');
 
   readonly name = input.required<string>();
-  readonly latein = input.required<string>();
-  readonly aktiv = input(false);
+  readonly latin = input.required<string>();
+  readonly active = input(false);
 
-  readonly auswahl = output();
+  readonly chosen = output();
 
   /** Setzt den Fokus auf die Zeile. Die Liste wandert damit per Pfeiltaste. */
-  fokussiere(): void {
-    this.knopf().nativeElement.focus();
+  focus(): void {
+    this.button().nativeElement.focus();
   }
 
-  protected aktivText(): string {
+  protected activeText(): string {
     return this.i18n.translate('arten.aktiv');
   }
 }

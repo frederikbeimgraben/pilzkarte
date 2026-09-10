@@ -1,0 +1,25 @@
+<div class="speciespicker">
+  <app-form-field
+    icon="suche"
+    [label]="'melden.artSuche' | t"
+    [hideLabel]="true"
+    [placeholder]="'melden.artSuche' | t"
+    [value]="search()"
+    (valueChange)="search.set($event)"
+  />
+  <div class="speciespicker__list" role="list" [attr.aria-label]="'melden.artWaehlen' | t">
+    @for (art of matches(); track art.slug) {
+      <app-list-row
+        role="listitem"
+        [titel]="art.name"
+        [subline]="art.lateinisch"
+        [clickable]="true"
+        [value]="art.slug === selected() ? ('melden.gewaehlt' | t) : ''"
+        (chosen)="chosen.emit(art)"
+      />
+    }
+    @if (matches().length === 0) {
+      <p class="empty-state">{{ 'arten.leer' | t }}</p>
+    }
+  </div>
+</div>

@@ -1,14 +1,9 @@
-<header class="kopfleiste">
-  @if (zurueck()) {
-    <button
-      class="kopfleiste__zurueck"
-      type="button"
-      [attr.aria-label]="zurueckText()"
-      (click)="zurueckKlick.emit()"
-    >
-      <app-svg-icon name="zurueck" [groesse]="20" />
+<header class="pageheader">
+  @if (back()) {
+    <button class="pageheader__back" type="button" [attr.aria-label]="backText()" (click)="backClick.emit()">
+      <app-svg-icon name="zurueck" [size]="20" />
     </button>
   }
-  <h1 class="kopfleiste__titel">{{ titel() }}</h1>
-  <div class="kopfleiste__aktionen"><ng-content /></div>
+  <h1 class="pageheader__title">{{ titel() }}</h1>
+  <div class="pageheader__actions"><ng-content /></div>
 </header>

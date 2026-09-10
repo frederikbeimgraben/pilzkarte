@@ -1,0 +1,33 @@
+@if (!withoutName()) {
+  <app-form-field
+    [label]="nameLabel()"
+    [placeholder]="namePlaceholder()"
+    [value]="nameValue()"
+    (valueChange)="setName($event)"
+  />
+}
+<div>
+  <p class="object__label">{{ 'farben.beschriftung' | t }}</p>
+  <app-color-swatches
+    [colors]="colors()"
+    [value]="colorHexValue()"
+    [label]="'farben.beschriftung' | t"
+    (valueChange)="setColor($event)"
+  />
+</div>
+<div>
+  <p class="object__label">{{ 'sichtbarkeit.beschriftung' | t }}</p>
+  <app-segmented
+    [options]="segmente()"
+    [value]="visibilityValue()"
+    [label]="'sichtbarkeit.beschriftung' | t"
+    (valueChange)="setVisibility($event)"
+  />
+</div>
+<app-form-field
+  [label]="'melden.notiz' | t"
+  [multiline]="true"
+  [placeholder]="'melden.optional' | t"
+  [value]="noteValue()"
+  (valueChange)="setNote($event)"
+/>

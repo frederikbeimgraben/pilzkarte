@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   styleUrl: './metric-row.component.scss',
 })
 export class MetricRowComponent {
-  readonly beschriftung = input.required<string>();
-  readonly unter = input<string>();
-  readonly wert = input.required<string>();
+  readonly label = input.required<string>();
+  readonly subline = input<string>();
+  readonly value = input.required<string>();
 }

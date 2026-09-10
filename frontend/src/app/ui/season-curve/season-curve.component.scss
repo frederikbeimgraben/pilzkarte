@@ -3,26 +3,26 @@
 }
 
 // Die Zeichenfläche und alles, was auf ihr sitzt, aber nicht verzerren darf.
-.funke__buehne {
+.spark__stage {
   position: relative;
   inline-size: 96px;
   block-size: 40px;
 }
 
-.funke__buehne--gross {
+.spark__stage--large {
   inline-size: 100%;
   block-size: 72px;
 }
 
 // `preserveAspectRatio="none"`: die Kurve folgt der Breite des Wirts, damit
 // Woche und Marke darunter auf derselben Stelle liegen.
-.funke {
+.spark {
   display: block;
   inline-size: 100%;
   block-size: 100%;
 }
 
-.funke__achse {
+.spark__axis {
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: 2px;
@@ -33,7 +33,7 @@
 
 // Der Endpunkt des laufenden Jahres. Im verzerrten SVG wäre aus dem Kreis eine
 // Ellipse geworden.
-.funke__ende {
+.spark__end {
   position: absolute;
   inline-size: 4px;
   block-size: 4px;
@@ -42,32 +42,32 @@
   transform: translate(-50%, -50%);
 }
 
-.funke__buehne--gross .funke__ende {
+.spark__stage--large .spark__end {
   inline-size: 6px;
   block-size: 6px;
 }
 
-.funke__grund {
+.spark__base {
   stroke: var(--color-border);
   vector-effect: non-scaling-stroke;
 }
 
-.funke__marke {
+.spark__badge {
   stroke: var(--color-border-strong);
   vector-effect: non-scaling-stroke;
 }
 
-.funke__alle {
+.spark__all {
   fill: var(--color-accent);
   opacity: 0.3;
 }
 
-.funke__laufend-flaeche {
+.spark__current-surface {
   fill: var(--color-primary);
   opacity: 0.12;
 }
 
-.funke__laufend {
+.spark__current {
   fill: none;
   stroke: var(--color-primary);
   stroke-width: 1.5;
@@ -75,11 +75,11 @@
   vector-effect: non-scaling-stroke;
 }
 
-.funke__buehne--gross .funke__laufend {
+.spark__stage--large .spark__current {
   stroke-width: 2;
 }
 
-.funke__legende {
+.spark__legend {
   display: flex;
   gap: var(--space-3);
   justify-content: space-between;
@@ -88,7 +88,7 @@
   color: var(--color-text-muted);
 }
 
-.funke__monate {
+.spark__months {
   position: relative;
   block-size: 19px;
   margin-block-start: 6px;
@@ -97,7 +97,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-.funke__monat {
+.spark__month {
   position: absolute;
   inset-block-start: 0;
   white-space: nowrap;
@@ -105,35 +105,35 @@
 }
 
 // Die äußeren Marken rücken nach innen, sonst stünden sie halb außerhalb.
-.funke__monat--erster {
+.spark__month--first {
   transform: none;
 }
 
-.funke__monat--letzter {
+.spark__month--last {
   transform: translateX(-100%);
 }
 
 // Die Jahreszahl des laufenden Jahres bricht nicht um; die längere Erklärung
 // der Fläche daneben darf es.
-.funke__legende span:first-child {
+.spark__legend span:first-child {
   flex: none;
   white-space: nowrap;
 }
 
-.funke__muster {
+.spark__pattern {
   display: inline-block;
   margin-inline-end: 6px;
   vertical-align: middle;
   border-radius: 2px;
 }
 
-.funke__muster--linie {
+.spark__pattern--line {
   inline-size: 14px;
   block-size: 3px;
   background: var(--color-primary);
 }
 
-.funke__muster--flaeche {
+.spark__pattern--surface {
   inline-size: 14px;
   block-size: 10px;
   background: var(--color-accent);

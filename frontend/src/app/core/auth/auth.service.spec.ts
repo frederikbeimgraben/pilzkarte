@@ -1,19 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { ManagerAttrappe, authAnbieter, oidcNutzer } from '../../testing/auth-attrappe';
+import { ManagerDouble, authProvider, oidcUser } from '../../testing/auth-double';
 import { AuthService } from './auth.service';
 
-interface Aufbau {
+interface Setup {
   auth: AuthService;
-  manager: ManagerAttrappe;
+  manager: ManagerDouble;
 }
 
 /** Ein frischer Dienst je Aufruf: mehrere Fälle in einem Test brauchen ihn. */
-function aufbauen(konfiguriert = true): Aufbau {
+function build(configured = true): Setup {
   TestBed.resetTestingModule();
-  const manager = new ManagerAttrappe();
+  const manager = new ManagerDouble();
   TestBed.configureTestingModule({
-    providers: [provideRouter([]), ...authAnbieter(manager, konfiguriert ? undefined : null)],
+    providers: [provideRouter([]), ...authProvider(manager, configured ? undefined : null)],
   });
   return { auth: TestBed.inject(AuthService), manager };
 }
@@ -25,12 +25,12 @@ describe('AuthService', () => {
   });
 
   it('baut den Manager aus der Konfiguration des Backends', async () => {
-    const { auth, manager } = aufbauen();
-    manager.still = oidcNutzer();
+    const { auth, manager } = build();
+    manager.still = oidcUser();
 
-    await auth.stilleErneuerung();
+    await auth.silentRenew();
 
-    expect(manager.einstellungen).toMatchObject({
+    expect(manager.settings).toMatchObject({
       authority: 'https://sso.beimgraben.net/application/o/pilze/',
       client_id: 'pilze',
       redirect_uri: 'http://localhost:4200/anmeldung',
@@ -42,189 +42,189 @@ describe('AuthService', () => {
   });
 
   it('bleibt ohne Konfiguration stumm, damit die Karte weiterläuft', async () => {
-    const { auth, manager } = aufbauen(false);
+    const { auth, manager } = build(false);
 
-    await auth.anmelden('/karte');
-    await auth.stillenCallbackVerarbeiten();
-    await auth.abmelden();
+    await auth.signIn('/karte');
+    await auth.handleSilentCallback();
+    await auth.signOut();
 
-    expect(await auth.stilleErneuerung()).toBeNull();
-    expect(await auth.anmeldungAbschliessen()).toBe('/');
-    expect(manager.einstellungen).toBeNull();
-    expect(auth.angemeldet()).toBe(false);
+    expect(await auth.silentRenew()).toBeNull();
+    expect(await auth.completeSignIn()).toBe('/');
+    expect(manager.settings).toBeNull();
+    expect(auth.signedIn()).toBe(false);
   });
 
   it('merkt sich die Route und führt zum SSO', async () => {
-    const { auth, manager } = aufbauen();
+    const { auth, manager } = build();
 
-    await auth.anmelden('/eintraege');
+    await auth.signIn('/eintraege');
 
-    expect(manager.umleitungen).toEqual([{ zurueck: '/eintraege' }]);
-    expect(auth.laedtSchon()).toBe(true);
+    expect(manager.redirects).toEqual([{ back: '/eintraege' }]);
+    expect(auth.busy()).toBe(true);
   });
 
   it('bleibt bedienbar, wenn die Umleitung scheitert', async () => {
-    const { auth, manager } = aufbauen();
-    manager.redirectFehler = new Error('kein Netz');
+    const { auth, manager } = build();
+    manager.redirectError = new Error('kein Netz');
 
-    await expect(auth.anmelden('/karte')).rejects.toThrow('kein Netz');
+    await expect(auth.signIn('/karte')).rejects.toThrow('kein Netz');
 
-    expect(auth.laedtSchon()).toBe(false);
+    expect(auth.busy()).toBe(false);
   });
 
   it('übernimmt nach dem Callback Person und Token und kehrt zurück', async () => {
-    const { auth, manager } = aufbauen();
-    manager.rueckkehr = oidcNutzer({ zustand: { zurueck: '/arten/steinpilz' } });
+    const { auth, manager } = build();
+    manager.returnValue = oidcUser({ state: { back: '/arten/steinpilz' } });
 
-    const ziel = await auth.anmeldungAbschliessen();
+    const target = await auth.completeSignIn();
 
-    expect(ziel).toBe('/arten/steinpilz');
-    expect(auth.angemeldet()).toBe(true);
-    expect(auth.nutzer()).toEqual({
+    expect(target).toBe('/arten/steinpilz');
+    expect(auth.signedIn()).toBe(true);
+    expect(auth.user()).toEqual({
       sub: 'sub-eins',
       name: 'Frederik',
       email: 'frederik@beimgraben.net',
     });
     expect(auth.token()).toBe('token-eins');
-    expect(auth.laedtSchon()).toBe(false);
+    expect(auth.busy()).toBe(false);
   });
 
   it('führt nach dem Callback nur auf eigene Wege', async () => {
-    for (const zustand of [
-      { zurueck: '//fremde.example/weg' },
-      { zurueck: 'https://fremde.example' },
-      { zurueck: 42 },
-      { anderes: '/karte' },
+    for (const state of [
+      { back: '//fremde.example/weg' },
+      { back: 'https://fremde.example' },
+      { back: 42 },
+      { other: '/karte' },
       'nur Text',
       null,
     ]) {
-      const { auth, manager } = aufbauen();
-      manager.rueckkehr = oidcNutzer({ zustand });
+      const { auth, manager } = build();
+      manager.returnValue = oidcUser({ state });
 
-      expect(await auth.anmeldungAbschliessen()).toBe('/');
+      expect(await auth.completeSignIn()).toBe('/');
     }
   });
 
   it('reicht einen gescheiterten Callback weiter', async () => {
-    const { auth, manager } = aufbauen();
-    manager.rueckkehr = new Error('Code schon eingelöst');
+    const { auth, manager } = build();
+    manager.returnValue = new Error('Code schon eingelöst');
 
-    await expect(auth.anmeldungAbschliessen()).rejects.toThrow('Code schon eingelöst');
-    expect(auth.laedtSchon()).toBe(false);
+    await expect(auth.completeSignIn()).rejects.toThrow('Code schon eingelöst');
+    expect(auth.busy()).toBe(false);
   });
 
   it('meldet den stillen Callback an das Fenster darüber', async () => {
-    const { auth, manager } = aufbauen();
+    const { auth, manager } = build();
 
-    await auth.stillenCallbackVerarbeiten();
+    await auth.handleSilentCallback();
 
-    expect(manager.stilleCallbacks).toBe(1);
+    expect(manager.silentCallbacks).toBe(1);
   });
 
   it('teilt sich einen stillen Versuch, statt je Anfrage einen zu öffnen', async () => {
-    const { auth, manager } = aufbauen();
-    manager.still = oidcNutzer({ token: 'token-neu' });
+    const { auth, manager } = build();
+    manager.still = oidcUser({ token: 'token-neu' });
 
-    const [erste, zweite] = await Promise.all([auth.stilleErneuerung(), auth.stilleErneuerung()]);
+    const [first, second] = await Promise.all([auth.silentRenew(), auth.silentRenew()]);
 
-    expect([erste, zweite]).toEqual(['token-neu', 'token-neu']);
-    expect(manager.stilleVersuche).toBe(1);
+    expect([first, second]).toEqual(['token-neu', 'token-neu']);
+    expect(manager.silentAttempts).toBe(1);
   });
 
   it('meldet ab, wenn die stille Erneuerung scheitert', async () => {
-    const { auth, manager } = aufbauen();
-    manager.rueckkehr = oidcNutzer();
-    await auth.anmeldungAbschliessen();
+    const { auth, manager } = build();
+    manager.returnValue = oidcUser();
+    await auth.completeSignIn();
     manager.still = new Error('keine Sitzung');
 
-    expect(await auth.stilleErneuerung()).toBeNull();
-    expect(auth.angemeldet()).toBe(false);
-    expect(auth.laedtSchon()).toBe(false);
+    expect(await auth.silentRenew()).toBeNull();
+    expect(auth.signedIn()).toBe(false);
+    expect(auth.busy()).toBe(false);
   });
 
   it('nimmt ein abgelaufenes Token nicht an', async () => {
-    const { auth, manager } = aufbauen();
-    manager.still = oidcNutzer({ abgelaufen: true });
+    const { auth, manager } = build();
+    manager.still = oidcUser({ abgelaufen: true });
 
-    expect(await auth.stilleErneuerung()).toBeNull();
-    expect(auth.angemeldet()).toBe(false);
+    expect(await auth.silentRenew()).toBeNull();
+    expect(auth.signedIn()).toBe(false);
   });
 
   it('folgt den Ereignissen des Managers', async () => {
-    const { auth, manager } = aufbauen();
+    const { auth, manager } = build();
     manager.still = null;
-    await auth.stilleErneuerung();
+    await auth.silentRenew();
 
-    manager.meldeGeladen(oidcNutzer({ token: 'token-zwei' }));
+    manager.emitLoaded(oidcUser({ token: 'token-zwei' }));
     expect(auth.token()).toBe('token-zwei');
 
-    manager.meldeEntladen();
-    expect(auth.angemeldet()).toBe(false);
+    manager.emitUnloaded();
+    expect(auth.signedIn()).toBe(false);
   });
 
   it('nimmt den Namen aus dem Token, sonst was da ist', async () => {
-    const faelle = [
-      { werte: { name: undefined, nutzername: 'frederik' }, name: 'frederik' },
-      { werte: { name: undefined, email: 'post@example.org' }, name: 'post@example.org' },
-      { werte: { name: undefined, email: undefined }, name: 'sub-eins' },
+    const cases = [
+      { values: { name: undefined, username: 'frederik' }, name: 'frederik' },
+      { values: { name: undefined, email: 'post@example.org' }, name: 'post@example.org' },
+      { values: { name: undefined, email: undefined }, name: 'sub-eins' },
     ];
-    for (const fall of faelle) {
-      const { auth, manager } = aufbauen();
-      manager.still = oidcNutzer(fall.werte);
+    for (const fall of cases) {
+      const { auth, manager } = build();
+      manager.still = oidcUser(fall.values);
 
-      await auth.stilleErneuerung();
+      await auth.silentRenew();
 
-      expect(auth.nutzer()?.name).toBe(fall.name);
+      expect(auth.user()?.name).toBe(fall.name);
     }
   });
 
   it('lässt die E-Mail leer, wenn das Token keine trägt', async () => {
-    const { auth, manager } = aufbauen();
-    manager.still = oidcNutzer({ email: undefined });
+    const { auth, manager } = build();
+    manager.still = oidcUser({ email: undefined });
 
-    await auth.stilleErneuerung();
+    await auth.silentRenew();
 
-    expect(auth.nutzer()?.email).toBe('');
+    expect(auth.user()?.email).toBe('');
   });
 
   it('holt beim Start eine Sitzung zurück, die beim SSO noch steht', async () => {
-    const { auth, manager } = aufbauen();
-    manager.still = oidcNutzer();
+    const { auth, manager } = build();
+    manager.still = oidcUser();
 
-    await auth.sitzungWiederherstellen();
+    await auth.restoreSession();
 
-    expect(auth.angemeldet()).toBe(true);
+    expect(auth.signedIn()).toBe(true);
   });
 
   it('hält sich auf den Callback-Routen heraus', async () => {
-    const { auth, manager } = aufbauen();
-    manager.still = oidcNutzer();
+    const { auth, manager } = build();
+    manager.still = oidcUser();
     history.replaceState({}, '', '/anmeldung/still');
 
-    await auth.sitzungWiederherstellen();
+    await auth.restoreSession();
 
-    expect(manager.stilleVersuche).toBe(0);
+    expect(manager.silentAttempts).toBe(0);
   });
 
   it('holt nach dem Abmelden nichts zurück', async () => {
-    const { auth, manager } = aufbauen();
-    manager.rueckkehr = oidcNutzer();
-    await auth.anmeldungAbschliessen();
+    const { auth, manager } = build();
+    manager.returnValue = oidcUser();
+    await auth.completeSignIn();
 
-    await auth.abmelden();
-    expect(manager.entfernt).toBe(1);
-    expect(auth.angemeldet()).toBe(false);
+    await auth.signOut();
+    expect(manager.removed).toBe(1);
+    expect(auth.signedIn()).toBe(false);
 
-    manager.still = oidcNutzer();
-    await auth.sitzungWiederherstellen();
-    expect(manager.stilleVersuche).toBe(0);
+    manager.still = oidcUser();
+    await auth.restoreSession();
+    expect(manager.silentAttempts).toBe(0);
   });
 
   it('vergisst das Abmelden, sobald eine Anmeldung beginnt', async () => {
-    const { auth } = aufbauen();
-    await auth.abmelden();
+    const { auth } = build();
+    await auth.signOut();
 
-    await auth.anmelden('/karte');
+    await auth.signIn('/karte');
 
     expect(sessionStorage.getItem('pilzkarte.abgemeldet')).toBeNull();
   });
@@ -236,46 +236,46 @@ describe('AuthService', () => {
     vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
       throw new Error('gesperrt');
     });
-    const { auth, manager } = aufbauen();
-    manager.still = oidcNutzer();
+    const { auth, manager } = build();
+    manager.still = oidcUser();
 
-    await auth.abmelden();
-    await auth.sitzungWiederherstellen();
+    await auth.signOut();
+    await auth.restoreSession();
 
-    expect(manager.stilleVersuche).toBe(1);
+    expect(manager.silentAttempts).toBe(1);
   });
 
   describe('anmeldungAnfordern', () => {
     it('lässt eine angemeldete Person sofort durch', async () => {
-      const { auth, manager } = aufbauen();
-      manager.rueckkehr = oidcNutzer();
-      await auth.anmeldungAbschliessen();
+      const { auth, manager } = build();
+      manager.returnValue = oidcUser();
+      await auth.completeSignIn();
 
-      expect(await auth.anmeldungAnfordern()).toBe(true);
-      expect(auth.blattOffen()).toBe(false);
+      expect(await auth.requestSignIn()).toBe(true);
+      expect(auth.sheetOpen()).toBe(false);
     });
 
     it('öffnet das Blatt und antwortet mit „später“', async () => {
-      const { auth } = aufbauen();
+      const { auth } = build();
 
-      const frage = auth.anmeldungAnfordern();
-      expect(auth.blattOffen()).toBe(true);
+      const ask = auth.requestSignIn();
+      expect(auth.sheetOpen()).toBe(true);
 
-      auth.spaeter();
+      auth.later();
 
-      expect(await frage).toBe(false);
-      expect(auth.blattOffen()).toBe(false);
+      expect(await ask).toBe(false);
+      expect(auth.sheetOpen()).toBe(false);
     });
 
     it('antwortet allen Wartenden, sobald die Anmeldung steht', async () => {
-      const { auth, manager } = aufbauen();
-      const fragen = [auth.anmeldungAnfordern(), auth.anmeldungAnfordern()];
-      manager.rueckkehr = oidcNutzer();
+      const { auth, manager } = build();
+      const ask = [auth.requestSignIn(), auth.requestSignIn()];
+      manager.returnValue = oidcUser();
 
-      await auth.anmeldungAbschliessen();
+      await auth.completeSignIn();
 
-      expect(await Promise.all(fragen)).toEqual([true, true]);
-      expect(auth.blattOffen()).toBe(false);
+      expect(await Promise.all(ask)).toEqual([true, true]);
+      expect(auth.sheetOpen()).toBe(false);
     });
   });
 });

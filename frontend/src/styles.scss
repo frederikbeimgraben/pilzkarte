@@ -3,9 +3,9 @@
 // müssen darum global sein; eingekapselte Komponentenstile erreichen sie nicht.
 @use 'maplibre-gl/dist/maplibre-gl.css';
 @use 'styles/tokens';
-@use 'styles/kit-hilfsklassen';
-@use 'app/ui/tipp';
-@use 'app/ui/knopf';
+@use 'styles/kit-helpers';
+@use 'app/ui/hint';
+@use 'app/ui/button';
 
 // Die App füllt das Gerät und scrollt nur innerhalb ihrer Flächen. Ein
 // Seitenscroll würde das Blatt und die Navigation vom Rand lösen.

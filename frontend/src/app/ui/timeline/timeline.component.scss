@@ -1,4 +1,4 @@
-.leiste {
+.bar {
   display: flex;
   gap: 6px;
   padding-block: 10px 2px;
@@ -11,6 +11,6 @@
 
 // Eine feste Ebene hat keine Woche. Die Leiste bleibt stehen, damit die Zeit
 // greifbar bleibt, tritt aber zurück.
-.leiste--gedaempft {
+.bar--dimmed {
   opacity: 0.45;
 }

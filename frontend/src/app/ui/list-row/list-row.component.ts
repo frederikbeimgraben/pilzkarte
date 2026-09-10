@@ -15,12 +15,12 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 })
 export class ListRowComponent {
   readonly titel = input.required<string>();
-  readonly unter = input<string>();
+  readonly subline = input<string>();
   readonly notiz = input<string>();
-  readonly wert = input<string>();
-  readonly anklickbar = input(false);
+  readonly value = input<string>();
+  readonly clickable = input(false);
   /** Eine Zeile, die eine Wahl trägt, meldet sich als gedrückt. */
-  readonly gewaehlt = input(false);
+  readonly selected = input(false);
 
-  readonly auswahl = output();
+  readonly chosen = output();
 }

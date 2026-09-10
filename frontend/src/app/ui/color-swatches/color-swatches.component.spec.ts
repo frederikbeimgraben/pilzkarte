@@ -1,33 +1,33 @@
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { keineVerstoesse } from '../../testing/axe';
-import { ColorSwatchesComponent, OBJEKT_FARBEN, type Farbfeld } from './color-swatches.component';
+import { noViolations } from '../../testing/axe';
+import { ColorSwatchesComponent, OBJECT_COLORS, type ColorSwatch } from './color-swatches.component';
 
-const FARBEN: Farbfeld[] = [
-  { wert: OBJEKT_FARBEN[0], label: 'Grün' },
-  { wert: OBJEKT_FARBEN[1], label: 'Bronze' },
+const COLORS: ColorSwatch[] = [
+  { value: OBJECT_COLORS[0], label: 'Grün' },
+  { value: OBJECT_COLORS[1], label: 'Bronze' },
 ];
 
 describe('ColorSwatchesComponent', () => {
   it('führt die Farben als Auswahlgruppe', async () => {
     const { container } = await render(ColorSwatchesComponent, {
-      inputs: { farben: FARBEN, wert: OBJEKT_FARBEN[0], beschriftung: 'Farbe' },
+      inputs: { colors: COLORS, value: OBJECT_COLORS[0], label: 'Farbe' },
     });
 
     expect(screen.getByRole('radiogroup', { name: 'Farbe' })).toBeInTheDocument();
     expect(screen.getByRole('radio', { name: 'Grün' })).toHaveAttribute('aria-checked', 'true');
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('meldet die gewählte Farbe', async () => {
     const { fixture } = await render(ColorSwatchesComponent, {
-      inputs: { farben: FARBEN, wert: OBJEKT_FARBEN[0], beschriftung: 'Farbe' },
+      inputs: { colors: COLORS, value: OBJECT_COLORS[0], label: 'Farbe' },
     });
-    const gewaehlt: string[] = [];
-    fixture.componentInstance.wertChange.subscribe((wert) => gewaehlt.push(wert));
+    const selected: string[] = [];
+    fixture.componentInstance.valueChange.subscribe((value) => selected.push(value));
 
     await userEvent.click(screen.getByRole('radio', { name: 'Bronze' }));
 
-    expect(gewaehlt).toEqual([OBJEKT_FARBEN[1]]);
+    expect(selected).toEqual([OBJECT_COLORS[1]]);
   });
 });

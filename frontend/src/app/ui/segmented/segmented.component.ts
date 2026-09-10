@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 
 /** Eine Wahl im Segmented. */
 export interface SegmentOption {
-  wert: string;
+  value: string;
   label: string;
 }
 
@@ -17,18 +17,18 @@ export interface SegmentOption {
   styleUrl: './segmented.component.scss',
 })
 export class SegmentedComponent {
-  readonly optionen = input.required<readonly SegmentOption[]>();
-  readonly wert = input.required<string>();
-  readonly beschriftung = input.required<string>();
+  readonly options = input.required<readonly SegmentOption[]>();
+  readonly value = input.required<string>();
+  readonly label = input.required<string>();
 
-  readonly wertChange = output<string>();
+  readonly valueChange = output<string>();
 
-  protected beiTaste(ereignis: KeyboardEvent, index: number): void {
-    const schritt = ereignis.key === 'ArrowRight' ? 1 : ereignis.key === 'ArrowLeft' ? -1 : 0;
-    if (schritt === 0) return;
-    const optionen = this.optionen();
-    const ziel = (index + schritt + optionen.length) % optionen.length;
-    ereignis.preventDefault();
-    this.wertChange.emit(optionen[ziel].wert);
+  protected onKey(event: KeyboardEvent, index: number): void {
+    const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+    if (step === 0) return;
+    const options = this.options();
+    const target = (index + step + options.length) % options.length;
+    event.preventDefault();
+    this.valueChange.emit(options[target].value);
   }
 }

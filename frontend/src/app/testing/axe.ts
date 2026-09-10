@@ -5,17 +5,17 @@ import axe from 'axe-core';
  * Sprache des Dokuments) gelten für einen einzelnen Baustein nicht; sie werden
  * auf der Seite geprüft, die ihn einsetzt.
  */
-export async function keineVerstoesse(element: Element): Promise<void> {
-  const ergebnis = await axe.run(element, {
+export async function noViolations(element: Element): Promise<void> {
+  const result = await axe.run(element, {
     rules: {
       region: { enabled: false },
       'page-has-heading-one': { enabled: false },
       'landmark-one-main': { enabled: false },
     },
   });
-  if (ergebnis.violations.length > 0) {
-    const text = ergebnis.violations
-      .map((verstoss) => `${verstoss.id}: ${verstoss.help} (${String(verstoss.nodes.length)})`)
+  if (result.violations.length > 0) {
+    const text = result.violations
+      .map((violation) => `${violation.id}: ${violation.help} (${String(violation.nodes.length)})`)
       .join('\n');
     throw new Error(`axe hat Verstöße gefunden:\n${text}`);
   }

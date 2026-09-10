@@ -1,21 +1,21 @@
-<p class="regler__kopf">
-  <span class="regler__beschriftung">{{ beschriftung() }}</span>
-  @if (wertText()) {
-    <span class="regler__wert">{{ wertText() }}</span>
+<p class="slider__head">
+  <span class="slider__label">{{ label() }}</span>
+  @if (valueText()) {
+    <span class="slider__value">{{ valueText() }}</span>
   }
 </p>
-<div class="regler">
-  <span class="regler__spur"></span>
-  <span class="regler__gewaehlt" [style.inline-size]="anteil()"></span>
+<div class="slider">
+  <span class="slider__track"></span>
+  <span class="slider__chosen" [style.inline-size]="share()"></span>
   <input
-    class="regler__griff"
+    class="slider__handle"
     type="range"
-    [attr.aria-label]="beschriftung()"
-    [attr.aria-valuetext]="wertText()"
+    [attr.aria-label]="label()"
+    [attr.aria-valuetext]="valueText()"
     [min]="min()"
     [max]="max()"
-    [step]="schritt()"
-    [value]="wert()"
-    (input)="beiEingabe($event)"
+    [step]="step()"
+    [value]="value()"
+    (input)="onInput($event)"
   />
 </div>

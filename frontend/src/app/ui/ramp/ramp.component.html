@@ -1,10 +1,10 @@
-<p class="rampe__beschriftung">{{ beschriftung() }}</p>
-<div class="rampe" role="img" [attr.aria-label]="beschriftung() + ': ' + von() + ' – ' + bis()">
-  @for (farbe of farben(); track farbe) {
-    <i class="rampe__stufe" [style.background]="farbe"></i>
+<p class="ramp__label">{{ label() }}</p>
+<div class="ramp" role="img" [attr.aria-label]="label() + ': ' + von() + ' – ' + bis()">
+  @for (farbe of colors(); track farbe) {
+    <i class="ramp__step" [style.background]="farbe"></i>
   }
 </div>
-<div class="rampe__enden">
+<div class="ramp__ends">
   <span>{{ von() }}</span>
   <span>{{ bis() }}</span>
 </div>

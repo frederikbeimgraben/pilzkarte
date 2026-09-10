@@ -1,0 +1,177 @@
+<div class="map">
+  <div
+    #surface
+    appMapObjects
+    class="map__canvas"
+    role="region"
+    [attr.aria-label]="'karte.beschriftung' | t"
+  ></div>
+
+  @if (!surfaceOnly()) {
+    @if (!addEntry.dark() && state.object() === null) {
+      <div class="map__buttons">
+        <app-floating-button
+          icon="ebenen"
+          [label]="'ebenenKnopf.titel' | t"
+          [variant]="layersSheetOpen() ? 'primaer' : 'hell'"
+          (pressed)="layersSheetOpen.set(!layersSheetOpen())"
+        />
+        <app-floating-button icon="ort" [label]="'karte.standort' | t" (pressed)="toMyLocation()" />
+        @if (!addEntry.running()) {
+          <app-floating-button
+            icon="plus"
+            variant="primaer"
+            [label]="'eintragen.knopf' | t"
+            (pressed)="openAddEntry()"
+          />
+        }
+      </div>
+    }
+
+    <app-object-sheet />
+    <app-add-entry />
+
+    @if (!overlaid()) {
+      <div class="map__sheet">
+        <app-sheet
+          [label]="'karte.blatt' | t"
+          [detent]="state.detent()"
+          [column]="wide()"
+          (detentChange)="setDetent($event)"
+        >
+          <app-sheet-head
+            [titel]="headTitle()"
+            [titleAsLink]="!showsLayer()"
+            [woche]="weekText()"
+            [hint]="forecastHint()"
+            (titleClick)="toSpecies()"
+            (back)="step(-1)"
+            (playback)="togglePlay()"
+            (vor)="step(1)"
+          >
+            <app-timeline
+              [wochen]="bar()"
+              [active]="woche()"
+              [dimmed]="fixedLayer()"
+              [label]="'zeitleiste.beschriftung' | t"
+              (chosen)="selectWeek($event)"
+            />
+            @if (layerHint()) {
+              <app-note variant="unter">{{ layerHint() }}</app-note>
+            }
+          </app-sheet-head>
+
+          <div class="map__content">
+            <app-segmented
+              [options]="viewModes()"
+              [value]="state.viewMode()"
+              [label]="'darstellung.beschriftung' | t"
+              (valueChange)="setView($event)"
+            />
+
+            @switch (state.viewMode()) {
+              @case ('vorhersage') {
+                <app-ramp [label]="rampTitle()" [von]="rampFrom()" [bis]="rampTo()" />
+              }
+              @case ('ebene') {
+                @if (layer(); as selected) {
+                  <app-ramp [label]="rampTitle()" [von]="rampFrom()" [bis]="rampTo()" />
+                  <app-layer-list
+                    [layers]="allLayers()"
+                    [selected]="selected.id"
+                    [label]="'ebene.beschriftung' | t"
+                    (chosen)="selectLayer($event)"
+                  />
+                } @else {
+                  <app-note>{{ 'ebene.keine' | t }}</app-note>
+                }
+              }
+              @case ('kombination') {
+                @if (state.rule() === 'abgestuft') {
+                  <app-ramp [label]="rampTitle()" [von]="rampFrom()" [bis]="rampTo()" />
+                }
+                <app-combination
+                  [factors]="state.factors()"
+                  [sources]="factorSources()"
+                  [rule]="state.rule()"
+                  [weekText]="weekText()"
+                  (ruleChange)="setRule($event)"
+                  (activeChange)="toggleFactor($event)"
+                  (openFactor)="openFactor($event)"
+                  (add)="pickingFactor.set(true)"
+                />
+              }
+            }
+          </div>
+        </app-sheet>
+      </div>
+    }
+
+    @if (openFactorValue(); as factor) {
+      @if (factorLayer(); as source) {
+        <button
+          class="map__scrim"
+          type="button"
+          [attr.aria-label]="'faktor.abbrechen' | t"
+          (click)="openFactorValue.set(null)"
+        ></button>
+        <div class="map__sheet map__sheet--layers">
+          <app-factor-sheet
+            [factor]="factor"
+            [layer]="source"
+            [histogramm]="factorHistogram()"
+            [timeScope]="factorTimeScope()"
+            (apply)="applyFactor($event)"
+            (remove)="removeFactor($event)"
+            (closed)="openFactorValue.set(null)"
+          />
+        </div>
+      }
+    }
+
+    @if (pickingFactor()) {
+      <button
+        class="map__scrim"
+        type="button"
+        [attr.aria-label]="'faktor.abbrechen' | t"
+        (click)="pickingFactor.set(false)"
+      ></button>
+      <div class="map__sheet map__sheet--layers">
+        <app-factor-picker
+          [layers]="allLayers()"
+          [arten]="speciesAsLayers()"
+          [assigned]="usedSources()"
+          (chosen)="selectSource($event)"
+          (closed)="pickingFactor.set(false)"
+        />
+      </div>
+    }
+
+    @if (layersSheetOpen()) {
+      <button
+        class="map__scrim"
+        type="button"
+        [attr.aria-label]="'ebenenKnopf.schliessen' | t"
+        (click)="layersSheetOpen.set(false)"
+      ></button>
+      <div class="map__sheet map__sheet--layers">
+        <app-layers-sheet
+          [background]="state.background()"
+          [opacity]="state.opacity()"
+          [showsLayer]="showsLayer()"
+          [forecastBelow]="state.forecastBelow()"
+          [showMarkers]="state.showMarkers()"
+          [showZones]="state.showZones()"
+          [showSharedFinds]="state.showSharedFinds()"
+          (backgroundChange)="state.setBackground($event)"
+          (opacityChange)="setOpacity($event)"
+          (forecastBelowChange)="state.forecastBelow.set($event)"
+          (showMarkersChange)="state.showMarkers.set($event)"
+          (showZonesChange)="state.showZones.set($event)"
+          (showSharedFindsChange)="state.showSharedFinds.set($event)"
+          (closed)="layersSheetOpen.set(false)"
+        />
+      </div>
+    }
+  }
+</div>

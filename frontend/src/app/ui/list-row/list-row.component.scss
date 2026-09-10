@@ -7,7 +7,7 @@
   border-block-end: 0;
 }
 
-.zeile {
+.row {
   display: flex;
   align-items: flex-start;
   gap: 14px;
@@ -16,7 +16,7 @@
   text-align: start;
 }
 
-.zeile--knopf {
+.row--button {
   font: inherit;
   color: inherit;
   cursor: pointer;
@@ -24,17 +24,17 @@
   border: 0;
 }
 
-.zeile__vorn:empty,
-.zeile__hinten:empty {
+.row__lead:empty,
+.row__trail:empty {
   display: none;
 }
 
-.zeile__vorn {
+.row__lead {
   flex: none;
   margin-block-start: 5px;
 }
 
-.zeile__stapel {
+.row__stack {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -42,28 +42,28 @@
   min-inline-size: 0;
 }
 
-.zeile__titel {
+.row__title {
   font-size: var(--fs-md);
   font-weight: var(--fw-semibold);
 }
 
-.zeile__unter {
+.row__sub {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
 }
 
-.zeile__notiz {
+.row__note {
   font-size: var(--fs-sm);
   color: var(--color-text);
 }
 
-.zeile__wert {
+.row__value {
   flex: none;
   align-self: center;
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
 }
 
-.zeile__hinten {
+.row__trail {
   flex: none;
 }

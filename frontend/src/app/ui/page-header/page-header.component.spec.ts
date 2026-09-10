@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { keineVerstoesse } from '../../testing/axe';
+import { noViolations } from '../../testing/axe';
 import { PageHeaderComponent } from './page-header.component';
 
 describe('PageHeaderComponent', () => {
@@ -9,18 +9,18 @@ describe('PageHeaderComponent', () => {
 
     expect(screen.getByRole('heading', { name: 'Arten' })).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Zurück' })).not.toBeInTheDocument();
-    await keineVerstoesse(container);
+    await noViolations(container);
   });
 
   it('meldet den Zurück-Knopf, wenn die Seite einen hat', async () => {
     const { fixture } = await render(PageHeaderComponent, {
-      inputs: { titel: 'Steinpilz', zurueck: true },
+      inputs: { titel: 'Steinpilz', back: true },
     });
-    let gerufen = 0;
-    fixture.componentInstance.zurueckKlick.subscribe(() => (gerufen += 1));
+    let calls = 0;
+    fixture.componentInstance.backClick.subscribe(() => (calls += 1));
 
     await userEvent.click(screen.getByRole('button', { name: 'Zurück' }));
 
-    expect(gerufen).toBe(1);
+    expect(calls).toBe(1);
   });
 });

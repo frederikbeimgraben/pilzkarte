@@ -1,0 +1,38 @@
+<div class="objectsheet">
+  <div class="objectsheet__head">
+    <h2 class="objectsheet__title">{{ marker().name }}</h2>
+    <p class="objectsheet__sub">{{ subline() }}</p>
+  </div>
+  <app-object-form
+    [withoutName]="true"
+    [start]="start()"
+    [nameLabel]="'marker.name' | t"
+    [namePlaceholder]="'marker.namePlatzhalter' | t"
+    [nameMissingText]="'marker.nameFehlt' | t"
+  />
+</div>
+<app-action-bar
+  [primary]="'eintragen.speichern' | t"
+  [mainDisabled]="busy()"
+  [secondary]="'fund.aufDerKarte' | t"
+  [danger]="'marker.loeschen' | t"
+  (mainClick)="save()"
+  (secondaryClick)="showOnMap.emit(location())"
+  (dangerClick)="deleteAsk.set(true)"
+/>
+<app-dialog
+  [open]="deleteAsk()"
+  [title]="'marker.loeschenFrage' | t"
+  [closeLabel]="'objekt.schliessen' | t"
+  (closed)="deleteAsk.set(false)"
+>
+  <app-note>{{ 'marker.loeschenText' | t }}</app-note>
+  <div dialog-footer class="objectsheet__dialogfooter">
+    <app-action-bar
+      [danger]="'objekt.loeschen' | t"
+      [secondary]="'objekt.abbrechen' | t"
+      (dangerClick)="remove()"
+      (secondaryClick)="deleteAsk.set(false)"
+    />
+  </div>
+</app-dialog>

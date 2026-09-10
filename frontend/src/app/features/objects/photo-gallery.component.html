@@ -1,0 +1,7 @@
+@if (images().length > 0) {
+  <div class="gallery">
+    @for (shot of images(); track shot.id) {
+      <img class="gallery__image" [src]="shot.url" [alt]="shot.label" />
+    }
+  </div>
+}

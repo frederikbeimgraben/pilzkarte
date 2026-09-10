@@ -10,42 +10,43 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'karte' },
   {
     path: 'karte',
-    loadComponent: () =>
-      import('./features/karte/karten-route.component').then((m) => m.KartenRouteComponent),
+    loadComponent: () => import('./features/map/map-route.component').then((m) => m.MapRouteComponent),
   },
   {
     path: 'arten',
-    loadComponent: () => import('./features/arten/arten.component').then((m) => m.ArtenComponent),
+    loadComponent: () =>
+      import('./features/species/species-list.component').then((m) => m.SpeciesListComponent),
   },
   {
     path: 'arten/:slug',
-    loadComponent: () => import('./features/arten/art.component').then((m) => m.ArtComponent),
+    loadComponent: () => import('./features/species/species.component').then((m) => m.SpeciesComponent),
   },
   {
     path: 'eintraege',
-    loadComponent: () => import('./features/eintraege/eintraege.component').then((m) => m.EintraegeComponent),
+    loadComponent: () => import('./features/entries/entries.component').then((m) => m.EntriesComponent),
   },
   {
     path: 'konto',
-    loadComponent: () => import('./features/konto/konto.component').then((m) => m.KontoComponent),
+    loadComponent: () => import('./features/account/account.component').then((m) => m.AccountComponent),
   },
   // Die stille Route steht vor der Anmeldung: sonst nähme diese den ersten
   // Abschnitt und der Rest des Weges fände keine Route mehr.
   {
     path: 'anmeldung/still',
     loadComponent: () =>
-      import('./features/konto/stille-anmeldung.component').then((m) => m.StilleAnmeldungComponent),
+      import('./features/account/silent-signin.component').then((m) => m.SilentSignInComponent),
   },
   {
     path: 'anmeldung',
-    loadComponent: () => import('./features/konto/anmeldung.component').then((m) => m.AnmeldungComponent),
+    loadComponent: () =>
+      import('./features/account/signin-callback.component').then((m) => m.SignInCallbackComponent),
   },
   ...(isDevMode()
     ? [
         {
           path: 'bausteine',
           loadComponent: () =>
-            import('./dev/bausteine/bausteine.component').then((m) => m.BausteineComponent),
+            import('./dev/building-blocks/building-blocks.component').then((m) => m.BuildingBlocksComponent),
         },
       ]
     : []),

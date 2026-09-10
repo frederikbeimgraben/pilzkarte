@@ -1,11 +1,11 @@
 <svg
   [attr.viewBox]="viewBox()"
-  [attr.width]="groesse()"
-  [attr.height]="groesse()"
-  [attr.role]="rolle()"
-  [attr.aria-label]="beschriftung() ?? null"
-  [attr.aria-hidden]="versteckt()"
-  [class.gefuellt]="gefuellt()"
+  [attr.width]="size()"
+  [attr.height]="size()"
+  [attr.role]="role()"
+  [attr.aria-label]="label() ?? null"
+  [attr.aria-hidden]="hidden()"
+  [class.filled]="filled()"
 >
   @switch (name()) {
     @case ('karte') {

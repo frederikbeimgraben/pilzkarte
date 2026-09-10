@@ -1,60 +1,60 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 /** Die Marken auf der Grundlinie stehen am Anfang der Monate Jan, Mär, … Nov. */
-const MONATSMARKEN = [0, 9, 18, 27, 36, 44] as const;
+const MONTH_MARKS = [0, 9, 18, 27, 36, 44] as const;
 
 /** Der Anteil des stärksten Wertes, unter dem eine Woche als dünn gilt. */
-const DUENN_UNTER = 0.25;
+const THIN_BELOW = 0.25;
 
 /**
  * Zentriertes gleitendes Mittel. Am Rand zählen die Nachbarn, die es gibt,
  * sonst zöge eine gedachte Null die erste und die letzte Woche nach unten.
  */
-export function glaette(reihe: readonly number[], fenster: number): readonly number[] {
-  if (fenster <= 1) return reihe;
-  const halb = Math.floor(fenster / 2);
-  return reihe.map((_, i) => {
-    const von = Math.max(0, i - halb);
-    const bis = Math.min(reihe.length - 1, i + halb);
-    let summe = 0;
-    for (let k = von; k <= bis; k++) summe += reihe[k];
-    return summe / (bis - von + 1);
+export function smooth(series: readonly number[], windowSize: number): readonly number[] {
+  if (windowSize <= 1) return series;
+  const half = Math.floor(windowSize / 2);
+  return series.map((_, i) => {
+    const von = Math.max(0, i - half);
+    const bis = Math.min(series.length - 1, i + half);
+    let sum = 0;
+    for (let k = von; k <= bis; k++) sum += series[k];
+    return sum / (bis - von + 1);
   });
 }
 
-let naechsteNummer = 0;
+let nextNumber = 0;
 
 /** Ein Streifen über einer Woche, die auf wenigen Begehungen ruht. */
-interface Streifen {
+interface Strip {
   x: number;
   breite: number;
 }
 
 /** Eine Monatsmarke unter der Kurve: der Name und die Woche, in der er beginnt. */
-export interface Monatsmarke {
+export interface MonthMark {
   text: string;
   woche: number;
 }
 
 /** Eine gesetzte Monatsmarke: Anteil der Breite, auf dem sie sitzt. */
-interface GesetzteMarke {
+interface PlacedMark {
   text: string;
   links: number;
 }
 
-interface Zeichnung {
+interface Drawing {
   breite: number;
   hoehe: number;
   alleJahre: string;
-  laufendFlaeche: string;
-  laufendLinie: string;
-  hatLaufend: boolean;
-  marken: number[];
+  currentArea: string;
+  currentLine: string;
+  hasCurrent: boolean;
+  badges: number[];
   /** Der Endpunkt als Anteil der Fläche, in Prozent. Er steht neben dem SVG,
    * weil die verzerrte Zeichenfläche aus einem Kreis eine Ellipse machte. */
-  endeLinks: number;
-  endeOben: number;
-  duenn: Streifen[];
+  endLeft: number;
+  endTop: number;
+  thin: Strip[];
 }
 
 /**
@@ -86,53 +86,53 @@ interface Zeichnung {
 export class SeasonCurveComponent {
   readonly alleJahre = input.required<readonly number[]>();
   readonly laufendesJahr = input.required<readonly number[]>();
-  readonly beschriftung = input.required<string>();
-  readonly gross = input(false);
+  readonly label = input.required<string>();
+  readonly large = input(false);
   /** Der Höchstwert der Achse, oben links in die Kurve geschrieben. */
-  readonly achse = input<string>();
+  readonly axis = input<string>();
   /** Die Monatsnamen unter der Grundlinie, jeder auf seiner Woche. */
-  readonly monate = input<readonly Monatsmarke[]>([]);
-  readonly legendeLaufend = input<string>();
-  readonly legendeJahre = input<string>();
+  readonly months = input<readonly MonthMark[]>([]);
+  readonly legendCurrent = input<string>();
+  readonly legendYears = input<string>();
   /** Der Nenner der Fläche: Begehungen je Kalenderwoche über alle Jahre. */
-  readonly begehungenAlleJahre = input<readonly number[]>([]);
+  readonly visitsAllYears = input<readonly number[]>([]);
   /** Der Nenner der Linie: Begehungen je Kalenderwoche im laufenden Jahr. */
-  readonly begehungenLaufendesJahr = input<readonly number[]>([]);
+  readonly visitsCurrentYearSeries = input<readonly number[]>([]);
   /** Breite des gleitenden Mittels in Wochen. 1 zeichnet die Rohwerte. */
-  readonly glaettung = input(3);
+  readonly smoothing = input(3);
 
-  protected readonly maskeId = `funke-dicht-${naechsteNummer++}`;
-  protected readonly zeichnung = computed<Zeichnung>(() => this.rechne());
+  protected readonly maskId = `funke-dicht-${nextNumber++}`;
+  protected readonly drawing = computed<Drawing>(() => this.compute());
 
-  private rechne(): Zeichnung {
-    const gross = this.gross();
-    const breite = gross ? 330 : 88;
-    const hoehe = gross ? 72 : 36;
-    const fenster = this.glaettung();
-    const alle = glaette(this.alleJahre(), fenster);
-    const laufend = glaette(this.laufendesJahr(), fenster);
+  private compute(): Drawing {
+    const large = this.large();
+    const breite = large ? 330 : 88;
+    const hoehe = large ? 72 : 36;
+    const windowSize = this.smoothing();
+    const alle = smooth(this.alleJahre(), windowSize);
+    const current = smooth(this.laufendesJahr(), windowSize);
     // Der Höchstwert kommt aus den Rohdaten, nicht aus der geglätteten Reihe.
     // Sonst stiege die Kurve über die Zahl an der Achse hinaus.
     // Ein Höchstwert von 0 teilte durch null; darum die kleinste Zahl als Boden.
     const top = Math.max(...this.alleJahre(), ...this.laufendesJahr(), Number.EPSILON);
-    const punkt = (i: number, wert: number): [number, number] => [
+    const point = (i: number, value: number): [number, number] => [
       (i / 51) * breite,
-      hoehe - 3 - (wert / top) * (hoehe - 8),
+      hoehe - 3 - (value / top) * (hoehe - 8),
     ];
-    const alleP = alle.map((wert, i) => punkt(i, wert));
-    const laufendP = laufend.map((wert, i) => punkt(i, wert));
-    const letzte = laufendP.at(-1) ?? [0, hoehe];
+    const alleP = alle.map((value, i) => point(i, value));
+    const currentP = current.map((value, i) => point(i, value));
+    const last = currentP.at(-1) ?? [0, hoehe];
     return {
       breite,
       hoehe,
       alleJahre: `M0,${hoehe} ${alleP.map(([x, y]) => `L${x.toFixed(1)},${y.toFixed(1)}`).join(' ')} L${breite},${hoehe} Z`,
-      laufendFlaeche: `M0,${hoehe} ${laufendP.map(([x, y]) => `L${x.toFixed(1)},${y.toFixed(1)}`).join(' ')} L${letzte[0].toFixed(1)},${hoehe} Z`,
-      laufendLinie: `M${laufendP.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' L')}`,
-      hatLaufend: laufendP.length > 0,
-      marken: MONATSMARKEN.map((k) => (k / 51) * breite),
-      endeLinks: (letzte[0] / breite) * 100,
-      endeOben: (letzte[1] / hoehe) * 100,
-      duenn: this.duenneWochen(breite),
+      currentArea: `M0,${hoehe} ${currentP.map(([x, y]) => `L${x.toFixed(1)},${y.toFixed(1)}`).join(' ')} L${last[0].toFixed(1)},${hoehe} Z`,
+      currentLine: `M${currentP.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' L')}`,
+      hasCurrent: currentP.length > 0,
+      badges: MONTH_MARKS.map((k) => (k / 51) * breite),
+      endLeft: (last[0] / breite) * 100,
+      endTop: (last[1] / hoehe) * 100,
+      thin: this.thinWeeks(breite),
     };
   }
 
@@ -141,10 +141,10 @@ export class SeasonCurveComponent {
    * Woche 52 ganz rechts. Als Anteil, damit die Marke bei jeder Breite unter
    * ihrer Woche steht.
    */
-  protected readonly monatsmarken = computed<GesetzteMarke[]>(() =>
-    this.monate().map((marke) => ({
-      text: marke.text,
-      links: ((marke.woche - 1) / 51) * 100,
+  protected readonly monthMarks = computed<PlacedMark[]>(() =>
+    this.months().map((badge) => ({
+      text: badge.text,
+      links: ((badge.woche - 1) / 51) * 100,
     })),
   );
 
@@ -153,20 +153,20 @@ export class SeasonCurveComponent {
    * Begehungen ruht. Jede Reihe misst sich an ihrer eigenen stärksten Woche,
    * weil das laufende Jahr naturgemäß weniger Begehungen trägt als zehn Jahre.
    */
-  private duenneWochen(breite: number): Streifen[] {
-    const reihen = [this.begehungenAlleJahre(), this.begehungenLaufendesJahr()].filter(
-      (reihe) => reihe.length > 0,
+  private thinWeeks(breite: number): Strip[] {
+    const rows = [this.visitsAllYears(), this.visitsCurrentYearSeries()].filter(
+      (series) => series.length > 0,
     );
-    if (reihen.length === 0) return [];
-    const schwellen = reihen.map((reihe) => Math.max(...reihe) * DUENN_UNTER);
-    const schritt = breite / 51;
-    const streifen: Streifen[] = [];
-    for (let i = 0; i < Math.max(...reihen.map((reihe) => reihe.length)); i++) {
-      const duenn = reihen.some((reihe, r) => i < reihe.length && reihe[i] < schwellen[r]);
-      if (!duenn) continue;
-      const x = Math.max(0, (i - 0.5) * schritt);
-      streifen.push({ x, breite: Math.min(breite, (i + 0.5) * schritt) - x });
+    if (rows.length === 0) return [];
+    const thresholds = rows.map((series) => Math.max(...series) * THIN_BELOW);
+    const step = breite / 51;
+    const strip: Strip[] = [];
+    for (let i = 0; i < Math.max(...rows.map((series) => series.length)); i++) {
+      const thin = rows.some((series, r) => i < series.length && series[i] < thresholds[r]);
+      if (!thin) continue;
+      const x = Math.max(0, (i - 0.5) * step);
+      strip.push({ x, breite: Math.min(breite, (i + 0.5) * step) - x });
     }
-    return streifen;
+    return strip;
   }
 }

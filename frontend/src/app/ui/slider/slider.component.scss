@@ -1,45 +1,45 @@
-.regler__kopf {
+.slider__head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   margin-block-end: var(--space-2);
 }
 
-.regler__beschriftung {
+.slider__label {
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
 }
 
-.regler__wert {
+.slider__value {
   font-size: 13px;
   font-variant-numeric: tabular-nums;
   color: var(--color-text-muted);
 }
 
-.regler {
+.slider {
   position: relative;
   block-size: 28px;
 }
 
-.regler__spur,
-.regler__gewaehlt {
+.slider__track,
+.slider__chosen {
   position: absolute;
   inset-block-start: 12px;
   block-size: 4px;
   border-radius: 2px;
 }
 
-.regler__spur {
+.slider__track {
   inset-inline: 0;
   background: var(--color-border);
 }
 
-.regler__gewaehlt {
+.slider__chosen {
   inset-inline-start: 0;
   background: var(--color-primary);
 }
 
-.regler__griff {
+.slider__handle {
   position: absolute;
   inset-block-start: 0;
   inset-inline: 0;
@@ -50,7 +50,7 @@
   background: none;
 }
 
-.regler__griff::-webkit-slider-thumb {
+.slider__handle::-webkit-slider-thumb {
   inline-size: 24px;
   block-size: 24px;
   appearance: none;
@@ -60,7 +60,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.regler__griff::-moz-range-thumb {
+.slider__handle::-moz-range-thumb {
   inline-size: 24px;
   block-size: 24px;
   background: var(--color-surface);

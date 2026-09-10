@@ -15,12 +15,12 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 /** Ein Filter-Chip. */
 export interface Chip {
-  wert: string;
+  value: string;
   label: string;
 }
 
 /** So viel schiebt ein Knopf: fast eine Breite, ein Chip bleibt als Anker stehen. */
-const SCHRITT = 0.8;
+const STEP = 0.8;
 
 /**
  * Die waagerechte Chip-Reihe über Listen. Genau ein Chip ist gewählt; ein
@@ -40,30 +40,30 @@ const SCHRITT = 0.8;
 })
 export class ChipGroupComponent {
   private readonly i18n = inject(I18nService);
-  private readonly reihe = viewChild.required<ElementRef<HTMLElement>>('reihe');
+  private readonly series = viewChild.required<ElementRef<HTMLElement>>('series');
 
   readonly chips = input.required<readonly Chip[]>();
-  readonly wert = input.required<string>();
-  readonly beschriftung = input.required<string>();
+  readonly value = input.required<string>();
+  readonly label = input.required<string>();
 
-  readonly wertChange = output<string>();
+  readonly valueChange = output<string>();
 
   protected readonly zurueckMoeglich = signal(false);
   protected readonly vorMoeglich = signal(false);
 
   constructor() {
     afterNextRender(() => {
-      this.pruefe();
+      this.validate();
     });
   }
 
   /** Wird das Fenster schmaler, passt plötzlich weniger in die Reihe. */
   @HostListener('window:resize')
-  protected beiGroessenwechsel(): void {
-    this.pruefe();
+  protected onResize(): void {
+    this.validate();
   }
 
-  protected zurueckText(): string {
+  protected backText(): string {
     return this.i18n.translate('chips.zurueck');
   }
 
@@ -71,16 +71,16 @@ export class ChipGroupComponent {
     return this.i18n.translate('chips.vor');
   }
 
-  protected schiebe(richtung: 1 | -1): void {
-    const reihe = this.reihe().nativeElement;
-    reihe.scrollBy({ left: richtung * reihe.clientWidth * SCHRITT, behavior: 'smooth' });
+  protected schiebe(direction: 1 | -1): void {
+    const series = this.series().nativeElement;
+    series.scrollBy({ left: direction * series.clientWidth * STEP, behavior: 'smooth' });
   }
 
   /** Nach jedem Scrollen und beim Aufbau: was steht links, was rechts noch aus. */
-  protected pruefe(): void {
-    const reihe = this.reihe().nativeElement;
-    const rest = reihe.scrollWidth - reihe.clientWidth - reihe.scrollLeft;
-    this.zurueckMoeglich.set(reihe.scrollLeft > 1);
+  protected validate(): void {
+    const series = this.series().nativeElement;
+    const rest = series.scrollWidth - series.clientWidth - series.scrollLeft;
+    this.zurueckMoeglich.set(series.scrollLeft > 1);
     this.vorMoeglich.set(rest > 1);
   }
 }

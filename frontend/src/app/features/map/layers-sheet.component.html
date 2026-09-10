@@ -1,0 +1,51 @@
+<app-sheet [label]="'ebenenKnopf.titel' | t" [detent]="2" [modal]="true">
+  <div class="layers-sheet">
+    <section class="layers-sheet__part">
+      <h3 class="layers-sheet__title">{{ 'ebenenKnopf.hintergrund' | t }}</h3>
+      @for (choice of choices(); track choice.value) {
+        <app-list-row
+          [titel]="choice.label"
+          [subline]="choice.subline"
+          [clickable]="choice.available"
+          [selected]="choice.value === background()"
+          [class.layers-sheet__row--active]="choice.value === background()"
+          [class.layers-sheet__row--off]="!choice.available"
+          (chosen)="backgroundChange.emit(choice.value)"
+        />
+      }
+    </section>
+
+    <section class="layers-sheet__part">
+      <app-slider
+        [label]="'ebenenKnopf.deckkraft' | t"
+        [value]="percent()"
+        [valueText]="percentText()"
+        (valueChange)="onOpacity($event)"
+      />
+    </section>
+
+    @if (showsLayer()) {
+      <section class="layers-sheet__part">
+        <app-checkbox [ngModel]="forecastBelow()" (ngModelChange)="forecastBelowChange.emit($event)">{{
+          'ebenenKnopf.vorhersageDarunter' | t
+        }}</app-checkbox>
+      </section>
+    }
+
+    <section class="layers-sheet__part">
+      <h3 class="layers-sheet__title">{{ 'ebenenKnopf.eigenes' | t }}</h3>
+      <div class="layers-sheet__switches">
+        <app-checkbox [ngModel]="showMarkers()" (ngModelChange)="showMarkersChange.emit($event)">{{
+          'ebenenKnopf.marker' | t
+        }}</app-checkbox>
+        <app-checkbox [ngModel]="showZones()" (ngModelChange)="showZonesChange.emit($event)">{{
+          'ebenenKnopf.zonen' | t
+        }}</app-checkbox>
+        <app-checkbox [ngModel]="showSharedFinds()" (ngModelChange)="showSharedFindsChange.emit($event)">{{
+          'ebenenKnopf.geteilteFunde' | t
+        }}</app-checkbox>
+      </div>
+    </section>
+  </div>
+  <app-action-bar [primary]="'ebenenKnopf.fertig' | t" (mainClick)="closed.emit()" />
+</app-sheet>
