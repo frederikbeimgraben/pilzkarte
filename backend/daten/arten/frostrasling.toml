@@ -18,9 +18,32 @@ url = "https://www.123pilzsuche.de/daten/details/Frostrasling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 6.0, seltenBis = 8.0 }
-sporenLaengeUm = { von = 5.4, bis = 6.5 }
-sporenBreiteUm = { von = 5.4, bis = 6.4 }
+hutBreiteCm = { von = 4.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.4, bis = 6.5, einheit = "um" }
+sporenBreiteUm = { von = 5.4, bis = 6.4, einheit = "um" }
+
+[zeitraum]
+vonMonat = 8
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "hellgrau", hex = "#c0c0c0" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild, etwas bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 6, selten bis 8 cm breit, dunkel graubraun, weißgrau bis aschgrau, trocken glänzend, Mitte eingedrückt oder gebuckelt. Jung mit leichter Radialfaserung, Huthaut gummiartig elastisch und teils abziehbar."

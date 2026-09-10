@@ -16,10 +16,31 @@ url = "https://www.123pilzsuche.de/daten/details/WeinbrauneKoralle.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 15.0 }
-fruchtkoerperHoeheCm = { von = 5.0, bis = 15.0 }
-sporenLaengeUm = { von = 10.0, bis = 17.2 }
-sporenBreiteUm = { von = 4.0, bis = 6.2 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 15.0, einheit = "cm" }
+fruchtkoerperHoeheCm = { von = 5.0, bis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 17.2, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }]
+
+[geruch]
+tags = ["pilzig"]
+text = "Leicht pilzig."
+
+[geschmack]
+tags = ["bitter"]
+text = "Stark bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 15 cm hoch, 5 bis 13, selten bis 15 cm breit, schmutzig braun, rosabraun, lachsfarben, lilagraubraun bis weinbraun oder rötlich verfärbend, alt grauende Äste. Büschelig aus einem Strunk, Spitzen geweihförmig."

@@ -17,9 +17,37 @@ url = "https://www.123pilzsuche.de/daten/details/GoldporigerRoehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 15.0, bis = 17.0 }
-sporenBreiteUm = { von = 4.1, bis = 7.1 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 15.0, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 4.1, bis = 7.1, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "beige", hex = "#d9c9a3" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "zitronengelb", hex = "#f2e14c" }, { name = "goldgelb", hex = "#e2b13a" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["obstartig"]
+text = "Obstartig."
+
+[geschmack]
+tags = ["saeuerlich"]
+text = "Leicht säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 9 cm breit, gelbrosa, rosabraun bis beigerosa. Feucht schmierig bis schleimig, trocken oft etwas bereift. Rand steht etwas über, Huthaut teilweise abziehbar."

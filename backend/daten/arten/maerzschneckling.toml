@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/Maerzschneckling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 6.0, bis = 9.5 }
-sporenBreiteUm = { von = 4.0, bis = 6.5 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.5, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 5
+
+[farben]
+hut = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 12 cm breit, weißlich bis grauschwarz oder braunschwarz, zum Rand grauer, fleckig, klebrig, radial streifig und wellig gebogen. Die Huthaut färbt das Fleisch etwas durch."

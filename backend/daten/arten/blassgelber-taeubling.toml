@@ -41,9 +41,32 @@ reagenz = "sulfovanillin"
 reaktion = "Keine oder kaum eine Reaktion."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
-stielLaengeCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
-stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.5 }
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
+stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.5, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "fruchtig"]
+text = "Leicht obstartig und fruchtig."
+
+[geschmack]
+tags = ["scharf"]
+text = "Scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, jung zitronengelb, später blasser bis gelbocker, Rand heller. Kahl und etwas glänzend, Huthaut abziehbar."

@@ -18,11 +18,39 @@ url = "https://www.123pilzsuche.de/daten/details/Glatthexe.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 25.0 }
-stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5 }
-sporenLaengeUm = { von = 8.8, bis = 15.2 }
-sporenBreiteUm = { von = 4.4, bis = 7.5 }
+hutBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 25.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5, einheit = "cm" }
+sporenLaengeUm = { von = 8.8, bis = 15.2, einheit = "um" }
+sporenBreiteUm = { von = 4.4, bis = 7.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "braunrot", hex = "#7d3324" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }, { name = "oliv", hex = "#6b7a3a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "olivgrün", hex = "#6f8438" }, { name = "orangerot", hex = "#df5a25" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["pilzig", "angenehm", "unauffaellig"]
+text = "Angenehm pilzig bis unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 15, selten bis 25 cm breit, sehr verschieden gefärbt: braun, rötlich, kupfer-karminrot, lebhaft orange, rubin-, granat- bis braunrot, aber ohne Olivton. Samtig, alt kahl, auf Druck blauend."

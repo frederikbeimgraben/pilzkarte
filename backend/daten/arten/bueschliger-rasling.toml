@@ -16,10 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/BraunerRasling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 6.0, bis = 7.0 }
-sporenBreiteUm = { von = 3.5, bis = 4.0 }
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 8
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangebraun", hex = "#c86e28" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["mehlig", "unauffaellig"]
+text = "Neutral bis etwas mehlartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild und angenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 9, selten bis 13 cm breit, ledergelb, blass braungrau bis orangebraun, leicht gebuckelt oder in der Mitte eingedrückt, jung mit feiner Radialfaserung. Rand wellig eingerollt, Huthaut gummiartig elastisch bis knorpelig."

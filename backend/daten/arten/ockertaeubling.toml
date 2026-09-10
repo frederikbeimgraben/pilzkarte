@@ -41,9 +41,32 @@ reagenz = "koh"
 reaktion = "An der Stielbasis rot, feuerrot bis rostrot. Markantes Merkmal."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "honiggelb", hex = "#d9a441" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "oliv", hex = "#6b7a3a" }, { name = "grün", hex = "#4f8a3a" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["obstartig", "wuerzig"]
+text = "Obstartig, würzig."
+
+[geschmack]
+tags = ["mild", "bitter", "scharf"]
+text = "Mild, manchmal leicht schärflich und etwas bitterlich, aber nicht brennend scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 12 cm breit, hellgelb, gelbocker, honiggelb, olivocker, grünocker oder rostrot, kahl und matt, nur feucht etwas glänzend. Huthaut bis zur Hälfte abziehbar, Rand glatt bis schwach gerieft, im Alter leicht trichterförmig."

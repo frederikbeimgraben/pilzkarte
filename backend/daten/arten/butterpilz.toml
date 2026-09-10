@@ -14,9 +14,36 @@ url = "https://www.123pilzsuche.de/daten/details/Butterroehring.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 3.0, bis = 3.5 }
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 3.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "zitronengelb", hex = "#f2e14c" }]
+stiel = [{ name = "violett", hex = "#6b4a8a" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "oliv", hex = "#6b7a3a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["obstartig"]
+text = "Obstartig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild bis säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, braun, glänzend, sehr schleimig und schmierig, Rand dunkler."

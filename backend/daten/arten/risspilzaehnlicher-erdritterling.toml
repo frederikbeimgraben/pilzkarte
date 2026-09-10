@@ -15,10 +15,37 @@ url = "https://www.123pilzsuche.de/daten/details/RisspilzErdritterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 4.5, bis = 7.0 }
-sporenBreiteUm = { von = 2.7, bis = 4.5 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.5, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 2.7, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "silbergrau", hex = "#b8bcc0" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }]
+sporenlager = [{ name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig"]
+text = "Nach Mehl, manchmal nur schwach."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 10 cm breit, hell silbergrau, graubraun bis lilabraun, trocken, filzig und schuppig, mit kleinem spitzem Buckel. Rand etwas eingebogen und uneben, ohne auffaelliges Velum."

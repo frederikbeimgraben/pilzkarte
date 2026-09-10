@@ -16,10 +16,33 @@ url = "https://www.123pilzsuche.de/daten/details/LavendelRoetelritterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0 }
-stielLaengeCm = { von = 6.0, bis = 10.0 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 1
+
+[farben]
+hut = [{ name = "lila", hex = "#8a5fa8" }]
+sporenlager = [{ name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "beige", hex = "#d9c9a3" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[geruch]
+tags = ["wuerzig", "angenehm"]
+text = "Parfümiert, angenehm würzig, fast wie beim Violetten Rötelritterling."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild, nussig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 16 cm breit, rötlichlila bis lavendelfarben, beim Trocknen heller werdend. Huthaut kahl und glatt, Rand lange eingerollt."

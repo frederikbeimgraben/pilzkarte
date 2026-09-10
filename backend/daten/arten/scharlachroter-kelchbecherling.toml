@@ -17,9 +17,31 @@ url = "https://www.123pilzsuche.de/daten/details/Prachtbecherling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 24.0, bis = 35.0 }
-sporenBreiteUm = { von = 10.0, bis = 14.0 }
+fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 24.0, bis = 35.0, einheit = "um" }
+sporenBreiteUm = { von = 10.0, bis = 14.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 12
+bisMonat = 5
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral, unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Neutral, mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "1 bis 7, selten bis 15 cm breit, kelch- bis schüsselförmig. Innenseite zinnoberrot, Außenseite blasser rötlich weiß und kleiig, der untere Teil ganz weiß und filzig haarig. An der Grenze von Ober- und Unterseite ein weißer Rand."

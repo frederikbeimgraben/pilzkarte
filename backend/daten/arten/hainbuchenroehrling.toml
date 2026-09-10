@@ -18,11 +18,34 @@ url = "https://www.123pilzsuche.de/daten/details/Hainbuchenroehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
-stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.4 }
-sporenLaengeUm = { von = 16.0, bis = 28.0 }
-sporenBreiteUm = { von = 4.0, bis = 7.0 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 12.0, seltenBis = 14.0, einheit = "cm" }
+stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.4, einheit = "cm" }
+sporenLaengeUm = { von = 16.0, bis = 28.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "hellbraun", hex = "#a97c50" }, { name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild, pilzig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 13 cm breit, kastanienbraun, hellbraun bis olivgelb. Die Haut wirkt gehämmert und runzelig, alt felderig rissig. Rand jung eingebogen, alt verkürzt, dann quellen die Röhren hervor."

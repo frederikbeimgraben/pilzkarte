@@ -17,10 +17,38 @@ url = "https://www.123pilzsuche.de/daten/details/Koenigesroehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 12.0, bis = 17.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "purpurrot", hex = "#8e2f4a" }, { name = "blutrot", hex = "#8e1f1f" }, { name = "oliv", hex = "#6b7a3a" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "goldgelb", hex = "#e2b13a" }, { name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig"]
+text = "Pilzig, im Alter leicht nach Medizinschrank."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nussartig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 20 cm breit, blutrot, purpurrot, kirschrot, rosarot bis oliv, trocken, glatt bis feinfilzig-schorfig oder samtig. Alt mit Falten und Gruben."

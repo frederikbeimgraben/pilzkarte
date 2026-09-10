@@ -25,9 +25,37 @@ reagenz = "schaeffer"
 reaktion = "Knallig rot."
 
 [masse]
-hutBreiteCm = { von = 7.0, bis = 20.0, seltenBis = 35.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.5 }
-sporenBreiteUm = { von = 4.3, bis = 7.0 }
+hutBreiteCm = { von = 7.0, bis = 20.0, seltenBis = 35.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 4.3, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "purpurbraun", hex = "#5f3346" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["anisartig", "bittermandel"]
+text = "Anisartig, nach Bittermandeln und Weihnachtsplätzchen."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nussartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "7 bis 20, selten bis 35 cm breit, mit braunen Schuppen auf weißlichem, gelblichem oder hell bräunlichem Grund, auf Druck gilbend."

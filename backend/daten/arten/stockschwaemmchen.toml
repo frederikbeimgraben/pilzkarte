@@ -23,11 +23,38 @@ reagenz = "koh"
 reaktion = "Ohne Reaktion auf dem Hut."
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 10.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 1.0, bis = 10.0, seltenBis = 15.0 }
-stielDickeCm = { von = 0.3, bis = 1.2, seltenBis = 1.8 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 3.0, bis = 6.0 }
+hutBreiteCm = { von = 1.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 1.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 0.3, bis = 1.2, seltenBis = 1.8, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "hellbraun", hex = "#a97c50" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "hellbraun", hex = "#a97c50" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["wuerzig", "pilzig", "angenehm"]
+text = "Angenehm pilzig, würzig."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild, nussig, würzig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 10, selten bis 15 cm breit, hellbraun, dunkelbraun bis haselnussbraun, von der Mitte her ausbleichend, meist mit kleinen braunen bis graubraunen Schüppchen."

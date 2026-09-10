@@ -23,11 +23,36 @@ reagenz = "koh"
 reaktion = "Auf dem Hut ohne Reaktion."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
-stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-stielDickeCm = { von = 1.5, bis = 2.0, seltenBis = 3.0 }
-sporenLaengeUm = { von = 6.0, bis = 10.0 }
-sporenBreiteUm = { von = 4.0, bis = 7.0 }
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielDickeCm = { von = 1.5, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["muffig", "pilzig"]
+text = "Pilzig bis muffig, selten kohlartig."
+
+[geschmack]
+tags = ["herb", "kratzend"]
+text = "Herb, kratzend und seifig wie bei den anderen Hallimasch-Arten."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 6, selten bis 7 cm breit, rotbraun, mit abwischbaren braunen bis braunweisslichen Schuppchen. Rand blasser, meist etwas gerieft und verbogen."

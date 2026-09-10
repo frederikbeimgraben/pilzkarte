@@ -16,9 +16,35 @@ url = "https://www.123pilzsuche.de/daten/details/Rosenseitling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 6.0, bis = 9.0 }
-sporenBreiteUm = { von = 1.5, bis = 3.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 1.5, bis = 3.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 1
+bisMonat = 12
+
+[farben]
+hut = [{ name = "hellgrau", hex = "#c0c0c0" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "hellgrau", hex = "#c0c0c0" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "hellbraun", hex = "#a97c50" }, { name = "beige", hex = "#d9c9a3" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = []
+text = "Beissend, nitratartig oder nach Blausaeure und Mandeln."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, gelblich bis rosafarben, rosenrot, hellgrau oder rosabraun, samtig filzig."

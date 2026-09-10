@@ -36,11 +36,39 @@ reagenz = "melzer"
 reaktion = "In den Lamellen blau."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 25.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
-stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 10.0, bis = 15.0 }
-sporenBreiteUm = { von = 4.0, bis = 6.0 }
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 25.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 15.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "olivbraun", hex = "#6e6435" }, { name = "hellbraun", hex = "#a97c50" }]
+sporenlager = [{ name = "blaugrün", hex = "#2f7f7a" }, { name = "grüngelb", hex = "#9fb02f" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["saeuerlich", "pilzig", "angenehm"]
+text = "Angenehm pilzig, schwach säuerlich."
+
+[geschmack]
+tags = ["pilzig", "nussig"]
+text = "Nussig, pilzig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 15, selten bis 25 cm breit, dunkel- bis hellbraun oder olivbraun, glatt, matt und feinsamtig, feucht schmierig und glänzend."

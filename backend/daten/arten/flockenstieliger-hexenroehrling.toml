@@ -22,11 +22,39 @@ url = "https://www.123pilzsuche.de/daten/details/Flocki.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
-stielLaengeCm = { von = 5.0, bis = 15.0 }
-stielDickeCm = { von = 2.0, bis = 5.0 }
-sporenLaengeUm = { von = 12.0, bis = 18.0 }
-sporenBreiteUm = { von = 4.5, bis = 6.5 }
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 2.0, bis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 18.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm pilzartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, dunkelbraun, teils gelb gescheckt oder mit olivem Ton, samtig, feucht leicht klebrig. Halbkugelig bis polsterförmig. Nach Schneckenfraß erscheint darunter Rötliches."

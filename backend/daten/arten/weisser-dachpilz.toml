@@ -17,9 +17,32 @@ url = "https://www.123pilzsuche.de/daten/details/WeisserDachpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 5.0, bis = 8.0 }
-sporenBreiteUm = { von = 4.0, bis = 6.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[geruch]
+tags = ["rettichartig", "suesslich", "erdartig", "unauffaellig"]
+text = "Meist unbedeutend, sonst leicht rettichartig, erdig oder etwas süßlich."
+
+[geschmack]
+tags = ["mild"]
+text = "Pilzartig, mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, weiß, alt rosabraun, etwas klebrig und glänzend, trocken seidenartig, eingewachsen faserig, glatt."

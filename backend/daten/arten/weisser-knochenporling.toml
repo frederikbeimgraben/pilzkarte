@@ -16,9 +16,32 @@ url = "https://www.123pilzsuche.de/daten/details/Knochenporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 9.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 5.5, bis = 6.3 }
-sporenBreiteUm = { von = 1.9, bis = 2.3 }
+hutBreiteCm = { von = 5.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 6.3, einheit = "um" }
+sporenBreiteUm = { von = 1.9, bis = 2.3, einheit = "um" }
+
+[farben]
+hut = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["bitter"]
+text = "Unbedeutend bis etwas bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 9, selten bis 11 cm breit, weiß, gelblich bis cremefarben, kahl. Mehrere unterschiedlich geformte Hüte wachsen zusammen und wirken oft wie halbiert."

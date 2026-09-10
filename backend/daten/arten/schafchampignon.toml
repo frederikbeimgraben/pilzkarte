@@ -24,9 +24,37 @@ reagenz = "schaeffer"
 reaktion = "Positiv: orange, rotorange bis dunkel purpurrot."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 4.5, bis = 5.5 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "purpurbraun", hex = "#5f3346" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["anisartig"]
+text = "Anis- und mandelartig."
+
+[geschmack]
+tags = ["mild", "pilzig", "nussig"]
+text = "Mild, pilzig, nussig, etwas anisartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, weiß, abgeflacht und fleischig, Huthaut seidig und etwas flockig feinschuppig. Rand eingerollt."

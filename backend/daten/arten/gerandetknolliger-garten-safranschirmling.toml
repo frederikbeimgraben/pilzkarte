@@ -15,11 +15,38 @@ url = "https://www.123pilzsuche.de/daten/details/Gartenschirmling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 26.0 }
-stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 9.0, bis = 15.0 }
-sporenBreiteUm = { von = 6.0, bis = 9.5 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 26.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 15.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 9.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weinrot", hex = "#7b2436" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["unangenehm", "angenehm", "unauffaellig"]
+text = "Unbedeutend bis unangenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, unbedeutend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, schmutzig weiß bis braun, cremeweißlich bis hellocker, mit gezonten, weichen, wolligen, abstehenden braunen Schüppchen, die sternförmig aufreißen und zur Mitte hin dichter stehen. Rand flockig und meist fetzig behangen. Jung eiförmig, später halbkugelig."

@@ -16,11 +16,34 @@ url = "https://www.123pilzsuche.de/daten/details/Spechttintling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 8.0 }
-stielLaengeCm = { von = 10.0, bis = 15.0, seltenBis = 25.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 14.0, bis = 18.5 }
-sporenBreiteUm = { von = 10.0, bis = 13.0 }
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 8.0, einheit = "cm" }
+stielLaengeCm = { von = 10.0, bis = 15.0, seltenBis = 25.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 14.0, bis = 18.5, einheit = "um" }
+sporenBreiteUm = { von = 10.0, bis = 13.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "schwarz", hex = "#1a1a1a" }]
+
+[geruch]
+tags = ["muffig"]
+text = "Muffig, im Alter teerähnlich oder nach Mottenpulver."
+
+[geschmack]
+tags = ["unangenehm"]
+text = "Muffig, unangenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 4, selten bis 8 cm breit, braun, mit weißen flockigen Schuppen besetzt. Im Alter rollt sich der Rand nach oben und der Pilz zerfließt schwarz."

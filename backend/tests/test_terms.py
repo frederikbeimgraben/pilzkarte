@@ -12,6 +12,7 @@ from sqlalchemy import select
 from app.core.db import session_factory
 from app.main import build_app
 from app.models import Term
+from app.modules.species.catalog import DATA, read_profiles
 from app.modules.terms.schemas import TermKind
 
 
@@ -66,3 +67,21 @@ async def test_no_kind_holds_a_slug_twice(migrated: None) -> None:  # noqa: ARG0
         rows = (await session.execute(select(Term.kind, Term.slug))).all()
 
     assert len(rows) == len(set(rows))
+
+
+async def test_every_tag_of_every_profile_exists_in_the_catalog(migrated: None) -> None:  # noqa: ARG001
+    """Die Profile nennen Slugs. Steht einer nicht im Katalog, zeigt er ins Leere."""
+    async with session_factory()() as session:
+        rows = (await session.execute(select(Term.kind, Term.slug))).all()
+    known = {(kind, slug) for kind, slug in rows}
+
+    for slug, profile in read_profiles(DATA / "arten").items():
+        for tag in profile.smell.tags:
+            assert (TermKind.SMELL, tag) in known, f"{slug}: Geruch {tag}"
+        for tag in profile.taste.tags:
+            assert (TermKind.TASTE, tag) in known, f"{slug}: Geschmack {tag}"
+        trees = list(profile.trees)
+        if profile.trees_from_experience:
+            trees += profile.trees_from_experience.trees
+        for tree in trees:
+            assert (TermKind.TREE, tree) in known, f"{slug}: Baum {tree}"

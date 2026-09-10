@@ -18,9 +18,32 @@ url = "https://www.123pilzsuche.de/daten/details/KrausenKantarelle.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 7.0, bis = 8.7 }
-sporenBreiteUm = { von = 3.3, bis = 4.5 }
+hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 8.7, einheit = "um" }
+sporenBreiteUm = { von = 3.3, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "angenehm"]
+text = "Angenehm obstartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 3, selten bis 4 cm breit, lehmbraun, graubraun bis gelbbraun, trichterförmig. Rand gelblich, gewellt und uneben gerippt."

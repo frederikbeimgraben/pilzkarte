@@ -18,11 +18,39 @@ url = "https://www.123pilzsuche.de/daten/details/SternschuppigerRiesenschirmling
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 5.0, bis = 25.0, seltenBis = 35.0 }
-stielDickeCm = { von = 1.0, bis = 6.0, seltenBis = 8.0 }
-sporenLaengeUm = { von = 10.0, bis = 17.0 }
-sporenBreiteUm = { von = 8.0, bis = 11.0 }
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 25.0, seltenBis = 35.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 8.0, bis = 11.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["fruchtig", "unauffaellig"]
+text = "Unbedeutend bis neutral, mitunter leicht fruchtig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild, leicht säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 10, selten bis 15 cm breit, mit braunen bis kastanienbraunen, sternförmig auseinanderlaufenden Schuppen auf weißlichem Grund. Mitte schwarzbraun und gebuckelt, jung in Paukenschlägerform."

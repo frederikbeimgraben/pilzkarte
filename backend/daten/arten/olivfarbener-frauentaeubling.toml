@@ -27,11 +27,34 @@ reagenz = "anilin"
 reaktion = "Trüb blutrot."
 
 [masse]
-hutBreiteCm = { von = 6.0, bis = 13.0, seltenBis = 16.0 }
-stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 6.4, bis = 9.5 }
-sporenBreiteUm = { von = 5.0, bis = 6.7 }
+hutBreiteCm = { von = 6.0, bis = 13.0, seltenBis = 16.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.4, bis = 9.5, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.7, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "olivgrün", hex = "#6f8438" }, { name = "violett", hex = "#6b4a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grün", hex = "#4f8a3a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, angenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "6 bis 13, selten bis 16 cm breit, olivgrün mit violetten Flecken, Mitte meist dunkler und niedergedrückt. Huthaut schmierig und glänzend, Rand etwas höckerig gerieft."

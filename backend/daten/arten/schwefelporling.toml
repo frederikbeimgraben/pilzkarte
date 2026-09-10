@@ -21,9 +21,31 @@ reagenz = "koh"
 reaktion = "Ohne Reaktion auf Fleisch, Poren und Hut."
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 30.0, seltenBis = 50.0 }
-sporenLaengeUm = { von = 5.5, bis = 7.0 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 30.0, seltenBis = 50.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 5
+bisMonat = 9
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "saeuerlich", "pilzig"]
+text = "Aromatisch, säuerlich, pilzig, obstartig."
+
+[geschmack]
+tags = ["mild", "saeuerlich", "bitter"]
+text = "Säuerlich, alt nach Käse. An Hartholz wie Buche und Eiche oft bitterlich, an Weide und Birke immer mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 30, selten bis 50 cm breit, orange, hellgelb, gelbbraun bis blass gelblich, alt weiß. Fächerförmig und dachziegelartig übereinander, samtig."

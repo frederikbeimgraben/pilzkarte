@@ -34,11 +34,39 @@ reagenz = "anilin"
 reaktion = "Lamellen gelb bis zitronengelb."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 3.0, bis = 11.0, seltenBis = 12.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 5.5, bis = 8.5 }
-sporenBreiteUm = { von = 4.7, bis = 6.5 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 11.0, seltenBis = 12.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 8.5, einheit = "um" }
+sporenBreiteUm = { von = 4.7, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "purpurbraun", hex = "#5f3346" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "grün", hex = "#4f8a3a" }, { name = "lila", hex = "#8a5fa8" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild, nussig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, bräunlich, fleischfarben, weinbraun, graulila, haselnuss-, stein- oder purpurbraun, kaum bunt und dabei ausblassend, selten grün. Die Huthaut deckt die Lamellen nicht ganz, diese stehen am Rand etwas vor. Sie lässt sich zu etwa einem Drittel abziehen."

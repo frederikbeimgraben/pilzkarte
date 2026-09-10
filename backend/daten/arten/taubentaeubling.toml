@@ -28,10 +28,33 @@ reagenz = "ammoniak"
 reaktion = "Positiv."
 
 [masse]
-stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 10.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
-sporenLaengeUm = { von = 6.5, bis = 9.2 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 10.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.5, bis = 9.2, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "blaugrün", hex = "#2f7f7a" }, { name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["fischartig", "angenehm"]
+text = "Angenehm, unspezifisch."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 11, selten bis 14 cm breit, schwarzoliv, schwarzgrau, hell blaugrün, olivgrau, graulila, purpurviolett, eisengrau bis violettgrau, alt gelblich. Mitte alt vertieft und meist dunkler, Rand gerieft, bei Feuchtigkeit glänzend und schmierig."

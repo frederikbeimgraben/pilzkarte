@@ -17,11 +17,39 @@ url = "https://www.123pilzsuche.de/daten/details/Birkenrotkappe2004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 22.0 }
-stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 12.0, bis = 16.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 22.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "braunrot", hex = "#7d3324" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "blaugrün", hex = "#2f7f7a" }, { name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild und angenehm."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 20, selten bis 22 cm breit, braunrot bis orangegelb, feinfilzig, dickfleischig, trocken, bei Nässe schmierig und klebrig. Die Huthaut steht am Rand über."

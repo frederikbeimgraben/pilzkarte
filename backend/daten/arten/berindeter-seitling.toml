@@ -18,9 +18,36 @@ url = "https://www.123pilzsuche.de/daten/details/BerindeterSeitling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 9.0, bis = 15.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 15.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["wuerzig"]
+text = "Würzig, schwach pilzartig, etwas nach Porling, niemals mehlig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nussartig und angenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 25 cm breit, grau bis hellbraun mit dunkelbräunlichen Schüppchen, etwas filzig. Rand jung mit Velumresten behangen."

@@ -18,11 +18,38 @@ url = "https://www.123pilzsuche.de/daten/details/RillstieligerSeitling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 11.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 9.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
-sporenLaengeUm = { von = 7.0, bis = 11.8 }
-sporenBreiteUm = { von = 3.4, bis = 5.0 }
+hutBreiteCm = { von = 2.0, bis = 11.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 11.8, einheit = "um" }
+sporenBreiteUm = { von = 3.4, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "lila", hex = "#8a5fa8" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["anisartig", "mehlig", "spermatisch"]
+text = "Mehlartig, oft mit Aniskomponente, teils leicht spermatisch."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild und mehlartig. Roh blutzersetzend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 11, selten bis 15 cm breit, hellbraun, graubraun, gelbbraun bis blass gelbgrau, im Alter fuchsigbraun. Anfangs etwas flockig, bald kahl, trichterförmig, Rand gebogen, oft eingerissen und wellig."

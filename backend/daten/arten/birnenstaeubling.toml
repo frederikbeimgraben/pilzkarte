@@ -22,7 +22,28 @@ reagenz = "koh"
 reaktion = "Auf der Oberfläche ohne Reaktion."
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "grüngelb", hex = "#9fb02f" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[geruch]
+tags = ["unangenehm", "angenehm"]
+text = "Unangenehm gasartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "2 bis 6, selten bis 8 cm breit, kugelig bis birnenförmig und kopfig gestielt, bräunlich, selten mit Lilaton, mit dunkelbraunen kleiigen bis flockigen Warzen. Oben mit Sporenöffnung, Basisteil steril und stark im Substrat wurzelnd. Oft büschelig."

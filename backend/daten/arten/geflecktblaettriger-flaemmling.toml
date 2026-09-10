@@ -15,11 +15,38 @@ url = "https://www.123pilzsuche.de/daten/details/GefleckterFlaemmling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 12.0 }
-stielDickeCm = { von = 0.4, bis = 0.9, seltenBis = 1.2 }
-sporenLaengeUm = { von = 6.0, bis = 8.5 }
-sporenBreiteUm = { von = 3.7, bis = 5.5 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
+stielDickeCm = { von = 0.4, bis = 0.9, seltenBis = 1.2, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.5, einheit = "um" }
+sporenBreiteUm = { von = 3.7, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "orangegelb", hex = "#e9a32c" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "gelbbraun", hex = "#a3813f" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Nicht unangenehm, holzig."
+
+[geschmack]
+tags = ["bitter"]
+text = "Stark bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 12 cm breit, einzelne auch unter 2 oder über 12 cm, sehr größenvariabel. Gelbfuchsig, gelbbraun, fuchsigorange bis zimtbraun, kahl und matt. Rand kann gerieft sein und ist meist heller gelblich-orange."

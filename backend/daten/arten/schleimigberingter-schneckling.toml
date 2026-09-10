@@ -18,9 +18,36 @@ url = "https://www.123pilzsuche.de/daten/details/SchleimigberingterSchneck.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 8.5, bis = 10.0 }
-sporenBreiteUm = { von = 4.5, bis = 6.0 }
+hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.5, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "orangegelb", hex = "#e9a32c" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 7, selten bis 9 cm breit, weiß bis weißlich gelb, im Alter ockergelblich, meist mit gelber Scheibe, ganz jung vereinzelt strohgelb bis orangegelb, schleimig schmierig. Rand lange eingerollt, alt gewellt und dünner."

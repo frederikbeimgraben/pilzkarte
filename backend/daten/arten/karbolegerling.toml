@@ -23,11 +23,34 @@ reagenz = "schaeffer"
 reaktion = "Negativ, selten etwas kartonbraun."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 14.0, seltenBis = 18.0 }
-stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5 }
-sporenLaengeUm = { von = 4.5, bis = 6.5 }
-sporenBreiteUm = { von = 3.0, bis = 4.5 }
+hutBreiteCm = { von = 3.0, bis = 14.0, seltenBis = 18.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5, einheit = "cm" }
+sporenLaengeUm = { von = 4.5, bis = 6.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "purpurbraun", hex = "#5f3346" }]
+
+[geruch]
+tags = ["karbolartig", "unangenehm", "angenehm"]
+text = "Unangenehm tintenartig und karbolartig nach Phenol, urinartig, nicht pilzartig wie bei den Wiesenchampignons. Beim Kochen verstärkt er sich."
+
+[geschmack]
+tags = ["mild", "unangenehm"]
+text = "Mild, dabei widerlich, unangenehm und muffig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 14, selten bis 18 cm breit, weiß, alt graubraun bis gelbbraun, Mitte mit bräunlichen schuppigen Zonen. Beim Reiben gelblich verfärbend. Jung halbkugelig bis konvex, im Alter abgeflacht."

@@ -33,11 +33,39 @@ reagenz = "formalin"
 reaktion = "Stieloberfläche rosa."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
-stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
-sporenLaengeUm = { von = 8.0, bis = 12.0 }
-sporenBreiteUm = { von = 7.5, bis = 10.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 7.5, bis = 10.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "chromgelb", hex = "#e5b820" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }, { name = "schwarz", hex = "#1a1a1a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["obstartig", "unauffaellig"]
+text = "Meist unbedeutend, schwach obstartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, leicht schärflich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 11 cm breit, gelb, chromgelb bis zitronengelb. Huthaut feucht glänzend und etwas schmierig, trocken matt, zur Hälfte abziehbar. Mitte später vertieft, Rand im Alter gerieft bis leicht gefurcht."

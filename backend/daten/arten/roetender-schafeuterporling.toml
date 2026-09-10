@@ -18,9 +18,34 @@ url = "https://www.123pilzsuche.de/daten/details/RoetenderSchafporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0 }
-sporenLaengeUm = { von = 3.5, bis = 5.0 }
-sporenBreiteUm = { von = 2.5, bis = 3.5 }
+hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.5, bis = 5.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 3.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "fleischrosa", hex = "#e7b9a8" }, { name = "gelb", hex = "#e8c33a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "orangerot", hex = "#df5a25" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Fast nur mild, erst im hohen Alter vereinzelt bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 18, selten bis 30 cm breit, weiss, spaeter gelblich, fleischrosa, rosa bis schmutzig weiss. Nach dem Reiben gelblich, teils etwas roetend, filzig, aufreissend, im Alter mit Schuppchen."

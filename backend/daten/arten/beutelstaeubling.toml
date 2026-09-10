@@ -18,7 +18,28 @@ url = "https://www.123pilzsuche.de/daten/details/Beutelstaeubling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "purpurbraun", hex = "#5f3346" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "purpurbraun", hex = "#5f3346" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild und angenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 9, selten bis 11 cm breit und bis 25 cm hoch, aus Stiel und kugeligem Kopfteil aufgebaut. Außenhaut zuerst weiß bis grauweiß mit spitzen, leicht ablösbaren Warzen, später gelblich bis ockerfarben und glatt mit feinkörniger Hülle. Der untere bauchig zylindrische Teil ist steril und bekommt bald eine faltige Haut. Ausgewachsen mörser-, stößel- oder birnenförmig."

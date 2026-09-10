@@ -19,9 +19,37 @@ url = "https://www.123pilzsuche.de/daten/details/RotfussFalsch.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 12.0, bis = 15.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.0 }
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 15.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "beige", hex = "#d9c9a3" }, { name = "braun", hex = "#7a5230" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["obstartig", "pilzig", "unauffaellig"]
+text = "Neutral, leicht pilzig obstartig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild, etwas säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, braun, beigebraun bis nussbraun, filzig, im Alter aufgerissen. Die rote Schicht zwischen Huthaut und Fleisch ist schwächer ausgeprägt als bei den anderen Rotfußarten."

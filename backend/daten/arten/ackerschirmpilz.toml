@@ -18,10 +18,38 @@ url = "https://www.123pilzsuche.de/daten/details/Ackerschirmpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 14.0 }
-stielDickeCm = { von = 0.7, bis = 1.5, seltenBis = 2.0 }
-sporenLaengeUm = { von = 12.0, bis = 15.0 }
-sporenBreiteUm = { von = 8.0, bis = 9.0 }
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 14.0, einheit = "cm" }
+stielDickeCm = { von = 0.7, bis = 1.5, seltenBis = 2.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 15.0, einheit = "um" }
+sporenBreiteUm = { von = 8.0, bis = 9.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "cremeweiß", hex = "#f5efdc" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig"]
+text = "Pilzig."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild und nussig, roh unbekömmlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 11, selten bis 14 cm breit, grauweiß, graubraun, beige bis karamellbraun auf cremeweißem bis hellgelbem Grund. Jung glockig bis halbkugelig, später ausgebreitet, Mitte glatt und braun bleibend. Schüppchen sternförmig eingedrückt, Rand oft mit fetzigen Ringresten behangen."

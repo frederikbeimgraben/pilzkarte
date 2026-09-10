@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/KuhroterMilchling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 7.0, bis = 9.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.0 }
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "purpurbraun", hex = "#5f3346" }, { name = "fleischrosa", hex = "#e7b9a8" }]
+sporenlager = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "blassgelb", hex = "#efe3a0" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "blassocker", hex = "#dcc48a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["obstartig", "maggiartig"]
+text = "Obstartig, nach Zichorien und Maggi, ähnlich dem Kampfermilchling."
+
+[geschmack]
+tags = ["scharf"]
+text = "Extrem scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, fleischrosa, bräunlich, kastanienbraun bis purpurbraun. Mitte eingedrückt bis genabelt oder trichterförmig, Haut abziehbar, Rand lange eingebogen."

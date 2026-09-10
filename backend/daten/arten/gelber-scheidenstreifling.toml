@@ -21,9 +21,32 @@ reagenz = "phenol"
 reaktion = "Stielfleisch dunkel weinrot."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 8.4, bis = 17.6 }
-sporenBreiteUm = { von = 7.4, bis = 14.1 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.4, bis = 17.6, einheit = "um" }
+sporenBreiteUm = { von = 7.4, bis = 14.1, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend, neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 11 cm breit, gelb bis orange, Mitte dunkler, Rand heller und auf etwa einem Drittel des Radius stark gerieft. Oberfläche glatt, bei alten Exemplaren Huthaut zweischichtig."

@@ -15,11 +15,34 @@ url = "https://www.123pilzsuche.de/daten/details/GrauerDachpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
-stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.1 }
-sporenLaengeUm = { von = 7.0, bis = 10.5 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.1, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "grau", hex = "#8a8a8a" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[geruch]
+tags = ["rettichartig", "unauffaellig"]
+text = "Neutral, eventuell leicht rettichartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 11 cm breit, blassgrau, mausgrau, graugrün bis hellbraun. Huthaut seidig und feinschuppig."

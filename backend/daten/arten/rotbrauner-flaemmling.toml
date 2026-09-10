@@ -17,9 +17,36 @@ url = "https://www.123pilzsuche.de/daten/details/RotbraunerFlaemmling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 4.5, bis = 6.0 }
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "hellbraun", hex = "#a97c50" }]
+fleisch = [{ name = "hellbraun", hex = "#a97c50" }]
+sporenpulver = [{ name = "gelbbraun", hex = "#a3813f" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm."
+
+[geschmack]
+tags = ["bitter"]
+text = "Bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 5, selten bis 7 cm breit, zimtbraun bis rotbraun, trocken verblassend."

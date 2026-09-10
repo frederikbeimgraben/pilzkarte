@@ -16,9 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/RillstieligerWeichritterling.ht
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 8.0, bis = 10.1 }
-sporenBreiteUm = { von = 4.6, bis = 6.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 10.1, einheit = "um" }
+sporenBreiteUm = { von = 4.6, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "rotbraun", hex = "#8b4a2b" }]
+sporenlager = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig", "muffig", "unangenehm", "pilzig", "angenehm"]
+text = "Mehr oder weniger mehlig und angenehm pilzig, im Alter unangenehm muffig. Die mehlige Note fehlt manchmal."
+
+[geschmack]
+tags = ["mild", "pilzig", "mehlig"]
+text = "Mild, mehlartig bis angenehm pilzig. Die mehlige Note fehlt manchmal."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, rotbraun, graubraun bis kastanienbraun, Mitte meist dunkler, Rand heller, später vollständig ausbleichend. Kahl, Zentrum eingedrückt und gebuckelt, Rand lange eingebogen."

@@ -17,9 +17,37 @@ url = "https://www.123pilzsuche.de/daten/details/Birkenpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 26.0 }
-sporenLaengeUm = { von = 13.0, bis = 18.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.0 }
+hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 26.0, einheit = "cm" }
+sporenLaengeUm = { von = 13.0, bis = 18.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "gelbbraun", hex = "#a3813f" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "unauffaellig"]
+text = "Neutral, allenfalls schwach pilzig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild, etwas säuerlich."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 16, selten bis 26 cm breit, grau-, gelb- bis rotbraun, bei Nässe schmierig, jung halbkugelig, später abflachend."

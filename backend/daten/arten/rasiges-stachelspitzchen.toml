@@ -15,8 +15,29 @@ url = "https://www.123pilzsuche.de/daten/details/RasigesStachelpilzchen.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-sporenLaengeUm = { von = 5.0, bis = 7.0 }
-sporenBreiteUm = { von = 2.5, bis = 3.5 }
+sporenLaengeUm = { von = 5.0, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 3.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 2
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = []
+text = "Unbedeutend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "1 bis 2, selten bis 3 mm lang, weiß, später milchkaffeefarben bis ocker, stachelförmig, in dichten Rasen."

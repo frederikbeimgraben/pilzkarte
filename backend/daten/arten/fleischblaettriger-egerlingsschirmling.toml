@@ -16,9 +16,32 @@ url = "https://www.123pilzsuche.de/daten/details/FleischblaettrigeEgerlingsschir
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 14.0 }
-sporenLaengeUm = { von = 6.4, bis = 9.6 }
-sporenBreiteUm = { von = 4.4, bis = 6.5 }
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 14.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.4, bis = 9.6, einheit = "um" }
+sporenBreiteUm = { von = 4.4, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "orangerot", hex = "#df5a25" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["pilzig", "angenehm", "unauffaellig"]
+text = "Neutral bis angenehm pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 11, selten bis 14 cm breit, schmutzig weiß, cremefarben bis sehr hellbraun oder ockerbraun, seidig, jung matt. Beim Aufschirmen reißt die Huthaut schuppenartig in feine bräunliche Felder auf und fleckt gelbbräunlich. Rand meist heller und nur jung überhängend, alt nach oben gebogen, Mitte teils leicht gebuckelt."

@@ -15,10 +15,33 @@ url = "https://www.123pilzsuche.de/daten/details/KegelhuetigerKnollenblaetterpil
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 14.0, seltenBis = 18.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 6.6, bis = 13.0 }
-sporenBreiteUm = { von = 6.0, bis = 13.0 }
+hutBreiteCm = { von = 4.0, bis = 14.0, seltenBis = 18.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.6, bis = 13.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 13.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["rettichartig", "suesslich", "honigartig", "muffig", "unangenehm", "angenehm"]
+text = "Leicht rettichartig, unangenehm süßlich nach Kunsthonig, teils muffig, alt nach Tierkäfig und verrottendem Fleisch."
+
+[geschmack]
+tags = ["mild", "unangenehm"]
+text = "Mild, angenehm bis unangenehm. Niemals kosten, es droht Leberschädigung."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 14, selten bis 18 cm breit, weißlich, selten hell rotbräunlich, nicht gerieft, seidig-radialfaserig. Jung halbkugelig, später spitzkegelig gebuckelt, alt abgeflacht. Haut wie Kuchenstücke abziehbar, feucht etwas schmierig-klebrig, teils mit Velumresten."

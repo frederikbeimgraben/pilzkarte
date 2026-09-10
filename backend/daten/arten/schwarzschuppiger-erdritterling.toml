@@ -16,11 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/SchwarzschuppigerRitterlingEssb
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 3.0, bis = 7.5, seltenBis = 8.5 }
-stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0 }
-sporenLaengeUm = { von = 5.5, bis = 8.2 }
-sporenBreiteUm = { von = 3.5, bis = 5.1 }
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 7.5, seltenBis = 8.5, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 8.2, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.1, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["mehlig", "unauffaellig"]
+text = "Unbedeutend bis mehlartig, alt mehlartig ranzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 8, selten bis 10 cm breit, grauschwarz bis schwarzbraun, mit wolligen, sparrigen, dunklen Schüppchen, die sich auflösen. Rand heller, kein Velum erkennbar."

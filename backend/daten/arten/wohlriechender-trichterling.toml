@@ -16,10 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/FleischAnistrichterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
-stielLaengeCm = { von = 1.0, bis = 3.5, seltenBis = 5.0 }
-sporenLaengeUm = { von = 5.5, bis = 7.5 }
-sporenBreiteUm = { von = 3.0, bis = 4.0 }
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+stielLaengeCm = { von = 1.0, bis = 3.5, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 7.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "beige", hex = "#d9c9a3" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "hellbraun", hex = "#a97c50" }, { name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["anisartig", "suesslich"]
+text = "Aufdringlich anisartig, fenchelartig, süßlich."
+
+[geschmack]
+tags = ["mild", "suesslich"]
+text = "Mild, süßlich, etwas ranzig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 6, selten bis 8 cm breit, caramelbraun, graubraun, graubeige bis fleischbräunlich, hygrophan, Mitte eingedrückt und alt genabelt, speckig glänzend. Rand lange wellig nach unten gebogen und leicht durchscheinend gerieft."

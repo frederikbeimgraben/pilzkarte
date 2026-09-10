@@ -19,9 +19,32 @@ url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerBirkenpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 11.0, bis = 17.0 }
-sporenBreiteUm = { von = 4.0, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 11.0, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "rotbraun", hex = "#8b4a2b" }, { name = "schwarzbraun", hex = "#3a2a1c" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }, { name = "oliv", hex = "#6b7a3a" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 10, selten bis 12 cm breit, dunkel schwarzbraun, dunkel rotbraun bis graubraun, feinsamtig, feucht etwas schmierig."

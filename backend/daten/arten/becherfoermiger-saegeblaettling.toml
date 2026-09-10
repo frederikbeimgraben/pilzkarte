@@ -18,9 +18,36 @@ url = "https://www.123pilzsuche.de/daten/details/BecherfoermigerSaegeblaettling.
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 10.0, bis = 16.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["pilzig", "unauffaellig"]
+text = "Unbedeutend bis leicht pilzig."
+
+[geschmack]
+tags = ["bitter"]
+text = "Bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, ockerbraun bis hell rotbraun mit fuchsigbraunen Schuppen. Rand lange eingerollt, Mitte jung gebuckelt, später leicht bis stark trichterförmig."

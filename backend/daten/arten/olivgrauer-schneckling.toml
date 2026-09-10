@@ -27,11 +27,38 @@ reagenz = "ammoniak"
 reaktion = "Im Fleisch keine Reaktion."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
-stielDickeCm = { von = 1.0, bis = 1.2, seltenBis = 1.5 }
-sporenLaengeUm = { von = 6.5, bis = 11.0 }
-sporenBreiteUm = { von = 3.5, bis = 7.0 }
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 1.2, seltenBis = 1.5, einheit = "cm" }
+sporenLaengeUm = { von = 6.5, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "grau", hex = "#8a8a8a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "grau", hex = "#8a8a8a" }, { name = "oliv", hex = "#6b7a3a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 6, selten bis 8 cm breit, dunkelbraun, graubraun bis olivgrau, Rand heller. Schmierig bis schleimig."

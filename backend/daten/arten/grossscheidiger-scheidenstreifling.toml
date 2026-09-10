@@ -17,10 +17,33 @@ url = "https://www.123pilzsuche.de/daten/details/GrossscheidigerStreifling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 14.0 }
-sporenLaengeUm = { von = 9.0, bis = 17.7 }
-sporenBreiteUm = { von = 7.2, bis = 15.6 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 14.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 17.7, einheit = "um" }
+sporenBreiteUm = { von = 7.2, bis = 15.6, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "olivbraun", hex = "#6e6435" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend, neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild. Roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 20 cm breit, braun, jung helloliv, alt grau, lederbraun bis olivbraun. Trocken, glänzend, ausbleichend, ohne Hüllreste, auf etwa einem Drittel des Radius stark gerieft. Jung eiförmig-glockig, alt ausgebreitet und gebuckelt."

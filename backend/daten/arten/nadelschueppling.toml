@@ -17,9 +17,35 @@ url = "https://www.123pilzsuche.de/daten/details/Nadelschueppling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 4.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 6.0, bis = 9.5 }
-sporenBreiteUm = { von = 4.0, bis = 5.5 }
+hutBreiteCm = { von = 2.0, bis = 4.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.5, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "zitronengelb", hex = "#f2e14c" }, { name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "oliv", hex = "#6b7a3a" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Holzig, nicht unangenehm."
+
+[geschmack]
+tags = ["bitter"]
+text = "Bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 4, selten bis 6 cm breit, zitronengelb, orangegelb bis dunkelgelb, Scheitel fuchsigbraun bis rostbraun, mit Schüppchen besetzt, Rand lange gewölbt. Unter UV-Licht leuchtet er gelblich bis grünlich."

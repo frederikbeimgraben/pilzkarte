@@ -18,11 +18,34 @@ url = "https://www.123pilzsuche.de/daten/details/Schwarzfaserigerritterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 6.0, bis = 9.0, seltenBis = 11.0 }
-stielDickeCm = { von = 2.0, bis = 3.0 }
-sporenLaengeUm = { von = 5.0, bis = 7.0 }
-sporenBreiteUm = { von = 3.0, bis = 6.0 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+stielDickeCm = { von = 2.0, bis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 2
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "dunkelgrau", hex = "#4f4f4f" }, { name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+stiel = [{ name = "grüngelb", hex = "#9fb02f" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["mehlig", "gurkenartig"]
+text = "Frisch leicht melonen- und gurkenartig, etwas mehlig."
+
+[geschmack]
+tags = ["mehlig"]
+text = "Mehlig, beim längeren Kauen melonenartig oder nach Austern."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, dunkelgrau bis graubraun mit schwarzen Radialstreifen, teils mit gelbem oder violettem Einschlag. Schmierig und klebrig, trocken glänzend. Jung halbkugelig bis glockig, später gewölbt bis flach oder stumpf gebuckelt."

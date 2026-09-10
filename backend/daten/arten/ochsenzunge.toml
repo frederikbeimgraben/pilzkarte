@@ -21,9 +21,35 @@ url = "https://www.123pilzsuche.de/daten/details/LeberreischlingOchsenzunge.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 25.0, seltenBis = 35.0 }
-sporenLaengeUm = { von = 3.5, bis = 5.0 }
-sporenBreiteUm = { von = 2.5, bis = 3.5 }
+hutBreiteCm = { von = 5.0, bis = 25.0, seltenBis = 35.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.5, bis = 5.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 3.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weinrot", hex = "#7b2436" }, { name = "blutrot", hex = "#8e1f1f" }, { name = "braunrot", hex = "#7d3324" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "blassgelb", hex = "#efe3a0" }]
+sporenpulver = [{ name = "hellbraun", hex = "#a97c50" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild, säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 25, selten bis 35 cm breit und 6 bis 8, selten bis 9 cm dick, rötlich, beigerot bis blutrot, alt weinrot bis dunkel braunrot, radial gestreift, mit weißlichem Rand an der Zuwachsstelle. Unreif tritt ein rotes schleimig harziges Sekret aus. Haut leicht abziehbar. Zungen- bis konsolenförmig, oft mehrere übereinander."

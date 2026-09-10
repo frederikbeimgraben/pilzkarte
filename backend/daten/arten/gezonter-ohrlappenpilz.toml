@@ -16,9 +16,35 @@ url = "https://www.123pilzsuche.de/daten/details/GezonterOhrlappenpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 12.0, bis = 18.0 }
-sporenBreiteUm = { von = 4.0, bis = 7.0 }
+fruchtkoerperBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 18.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 1
+bisMonat = 12
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "hellbraun", hex = "#a97c50" }, { name = "violett", hex = "#6b4a8a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "violett", hex = "#6b4a8a" }, { name = "beige", hex = "#d9c9a3" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = []
+text = "Unbedeutend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "Die einzelnen Hütchen 4 bis 12, im Verbund bis 25 cm breit, graubraun bis hellbraun, striegelig-filzig behaart und in verschiedenen Brauntönen bunt gezont. Sie sitzen versetzt nebeneinander und wirken oft violett getönt."

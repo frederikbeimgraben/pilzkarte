@@ -15,9 +15,36 @@ url = "https://www.123pilzsuche.de/daten/details/GlattstielStockschwamm.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 6.0, bis = 7.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "hellbraun", hex = "#a97c50" }, { name = "beige", hex = "#d9c9a3" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = []
+text = "Schwach pilzartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 3, selten bis 5 cm breit, hellbraun, dunkelbraun, haselnussbraun, dattelbraun bis gelbbraun, Mitte ausbleichend. Meist mit kleinen braunen bis graubraunen Schüppchen besetzt."

@@ -19,9 +19,37 @@ url = "https://www.123pilzsuche.de/daten/details/VerfaerbenderBirkenpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0 }
-sporenLaengeUm = { von = 13.0, bis = 16.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.3 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
+sporenLaengeUm = { von = 13.0, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.3, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "olivbraun", hex = "#6e6435" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "cremefarben", hex = "#f0e6c8" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "blaugrün", hex = "#2f7f7a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["pilzig"]
+text = "Pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, angenehm."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 16 cm breit, braungrau, schwarzbraun, mausgrau, ocker marmoriert, oft gefleckt, halbkugelig bis polsterförmig, feucht schmierig. Huthaut nur leicht überstehend."

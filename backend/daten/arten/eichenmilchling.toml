@@ -17,9 +17,36 @@ url = "https://www.123pilzsuche.de/daten/details/Eichenmilchling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 8.0, bis = 9.0 }
-sporenBreiteUm = { von = 7.0, bis = 7.5 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 7.0, bis = 7.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "orangebraun", hex = "#c86e28" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "orangebraun", hex = "#c86e28" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = []
+text = "Nach Blattwanzen."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild, leicht bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 11 cm breit, rotbraun, orangebraun bis haselnussbraun, teils dunkler gezont mit helleren bereiften Zonen. Mitte eingedrückt, Rand jung eingerollt."

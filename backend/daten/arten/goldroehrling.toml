@@ -29,10 +29,38 @@ reagenz = "feso4"
 reaktion = "Hut grauoliv, Fleisch blau bis olivblau, Poren bräunlich."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 7.0, bis = 11.0 }
-sporenBreiteUm = { von = 2.5, bis = 4.5 }
+hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild, säuerlich, roh fade, im Alter etwas muffig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 12, selten bis 15 cm breit, hellgelb, später orangerötlich, schleimig schmierig, Mitte oft etwas gebuckelt. Der gelbliche Schleim lässt sich feucht gut abziehen, die Haut selbst nur schwer. Junge Pilze sind ganz von einer häutigen Teilhülle umschlossen."

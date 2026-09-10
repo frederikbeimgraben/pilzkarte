@@ -15,11 +15,38 @@ url = "https://www.123pilzsuche.de/daten/details/SchaerflicherRitterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.5 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.5 }
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.5, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "schwarz", hex = "#1a1a1a" }]
+
+[geruch]
+tags = ["erdartig"]
+text = "Erdig."
+
+[geschmack]
+tags = ["bitter", "scharf"]
+text = "Bitter, nach kurzer Zeit extrem scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 8, selten bis 10 cm breit, graubraun, radialfaserig und angedrückt schuppig, radial einreißend, gebuckelt, später abgeflacht. Mitte deutlich dunkler als der lange herabgebogene Rand."

@@ -18,9 +18,37 @@ reagenz = "koh"
 reaktion = "Fleisch rasch gelb, später orange bis rot."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 3.5, bis = 4.5 }
-sporenBreiteUm = { von = 3.0, bis = 4.0 }
+hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.5, bis = 4.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "zitronengelb", hex = "#f2e14c" }, { name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nussartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 18, selten bis 20 cm breit, jung weißlich, schnell zitronengelb, später gilbend, alt und getrocknet orange bis ockerbraun. Oberfläche glatt und matt, im Alter braunschuppig aufreißend, Rand scharf eingebogen. Jung mit graubrauner bis grauvioletter Marmorierung."

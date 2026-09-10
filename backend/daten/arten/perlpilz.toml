@@ -24,10 +24,38 @@ reagenz = "koh"
 reaktion = "Auf dem Hut ohne Verfärbung."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 18.0 }
-stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 6.0, bis = 12.5 }
-sporenBreiteUm = { von = 4.0, bis = 9.0 }
+hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 18.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 12.5, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 9.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "braunrot", hex = "#7d3324" }, { name = "violett", hex = "#6b4a8a" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild", "kratzend"]
+text = "Mild, später etwas kratzend, roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 12, selten bis 18 cm breit, rotbraun, fleischrötlich, braunrot, gelblich bis hell violettbraun, mit grauen und leicht abwischbaren Schüppchen. Huthaut abziehbar."

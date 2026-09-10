@@ -15,11 +15,34 @@ url = "https://www.123pilzsuche.de/daten/details/BuchenspeitaublingGiftig1004.ht
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 11.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
-sporenLaengeUm = { von = 6.5, bis = 9.5 }
-sporenBreiteUm = { von = 5.2, bis = 7.0 }
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.5, bis = 9.5, einheit = "um" }
+sporenBreiteUm = { von = 5.2, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "honigartig"]
+text = "Leicht obstartig, trocken honigartig."
+
+[geschmack]
+tags = ["scharf"]
+text = "Extrem scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 9, selten bis 10 cm breit, rötlich, zinnoberrot bis karminrot, stellenweise weißfleckig. Huthaut matt samtig, kaum abziehbar, darunter rosa. Mitte bleicht aus, Rand im Alter etwas gerieft."

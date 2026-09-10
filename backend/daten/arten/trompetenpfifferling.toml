@@ -22,10 +22,33 @@ url = "https://www.123pilzsuche.de/daten/details/Trompetenpfifferlinge.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
-stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 16.0 }
-sporenLaengeUm = { von = 9.0, bis = 11.0 }
-sporenBreiteUm = { von = 6.0, bis = 8.0 }
+hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 16.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "fruchtig"]
+text = "Schwach obstartig, fruchtig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 7, selten bis 9 cm breit, gelbbraun, in der Mitte gefurcht und radial wellig."

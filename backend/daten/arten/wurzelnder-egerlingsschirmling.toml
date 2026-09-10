@@ -14,9 +14,36 @@ url = "https://www.123pilzsuche.de/daten/details/WurzelnderEgerlingsschirmling.h
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 16.0 }
-sporenLaengeUm = { von = 7.5, bis = 9.0 }
-sporenBreiteUm = { von = 4.5, bis = 5.5 }
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 16.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.5, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["pilzig", "unauffaellig"]
+text = "Neutral, etwas pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 11, selten bis 16 cm breit, weiß, hellbraun bis cremefarben, seidig filzig, die Haut wollig filzig, Rand federig, Mitte teils gebuckelt oder eingedrückt."

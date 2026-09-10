@@ -17,9 +17,30 @@ url = "https://www.123pilzsuche.de/daten/details/Kreiseldruesling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 1.0, bis = 9.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 10.0, bis = 17.0 }
-sporenBreiteUm = { von = 2.5, bis = 5.2 }
+fruchtkoerperBreiteCm = { von = 1.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 5.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 1
+bisMonat = 12
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unangenehm", "angenehm", "unauffaellig"]
+text = "Neutral bis leicht unangenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild bis geschmacklos, gallertartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "1 bis 9, selten bis 12 cm breit, haselnussbraun, kandisbraun, kastanienbraun, gelb bis schwarzbraun, gallertartig. Zuerst kopfig gestielt und scheibenförmig oder gewölbt, später kreisel- bis leicht becherförmig und flach ausgebreitet. Oberseite jung glatt, später runzlig-uneben, Rand scharf wie abgeschnitten und oberhalb kerbig gerieft, Unterseite körnig-warzig. Fast nie ohrförmig, wächst einzeln und verschmilzt nicht."

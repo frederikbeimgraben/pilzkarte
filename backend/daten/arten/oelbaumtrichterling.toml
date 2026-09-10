@@ -25,10 +25,37 @@ reagenz = "ammoniak"
 reaktion = "Hut grün."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 17.0 }
-sporenLaengeUm = { von = 4.0, bis = 7.0 }
-sporenBreiteUm = { von = 3.5, bis = 6.5 }
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 17.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.0, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "goldgelb", hex = "#e2b13a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unangenehm", "angenehm", "unauffaellig"]
+text = "Nach Nadelholz, neutral bis unangenehm."
+
+[geschmack]
+tags = ["mild", "unangenehm"]
+text = "Mild, unangenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 11, selten bis 13 cm breit, leuchtend orange, orangegelb bis fuchsigbraun, jung leicht gebuckelt, später trichterförmig vertieft, Rand lange eingerollt."

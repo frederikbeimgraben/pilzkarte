@@ -15,9 +15,29 @@ url = "https://www.123pilzsuche.de/daten/details/KleinesJudasohr.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 0.5, bis = 1.0, seltenBis = 2.0 }
-sporenLaengeUm = { von = 9.0, bis = 12.0 }
-sporenBreiteUm = { von = 2.4, bis = 3.0 }
+hutBreiteCm = { von = 0.5, bis = 1.0, seltenBis = 2.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 2.4, bis = 3.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 2
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "grün", hex = "#4f8a3a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["herb"]
+text = "Unbedeutend bis herb."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "0,5 bis 1, selten bis 2 cm breit, becher- bis schalenförmig oder konvex. Oberseite mit weißlichem haarigem Filz, im Alter durch Algen grünlich, Rand eingerollt. Unterseite fleischbraun bis ockerbraun und aderig gefaltet."

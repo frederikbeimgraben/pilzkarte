@@ -16,11 +16,34 @@ url = "https://www.123pilzsuche.de/daten/details/RotbraunerMilchling2004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-stielDickeCm = { von = 0.6, bis = 1.3, seltenBis = 1.6 }
-sporenLaengeUm = { von = 6.8, bis = 9.5 }
-sporenBreiteUm = { von = 5.2, bis = 7.4 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+stielDickeCm = { von = 0.6, bis = 1.3, seltenBis = 1.6, einheit = "cm" }
+sporenLaengeUm = { von = 6.8, bis = 9.5, einheit = "um" }
+sporenBreiteUm = { von = 5.2, bis = 7.4, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "rotbraun", hex = "#8b4a2b" }]
+sporenlager = [{ name = "ocker", hex = "#c8963c" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "rosa", hex = "#e8a0b0" }]
+
+[geruch]
+tags = []
+text = "Harzig."
+
+[geschmack]
+tags = ["mild", "scharf"]
+text = "Zuerst mild, nach etwa einer Minute extrem scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 12 cm breit, rotbraun, kastanienbraun bis ziegelrotbraun, meist mit kleinem Buckel, spaeter abgeflacht und trichterfoermig. Rand eingerollt und meist heller, Haut manchmal blass bereift und uneben."

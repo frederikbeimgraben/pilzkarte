@@ -21,11 +21,34 @@ url = "https://www.123pilzsuche.de/daten/details/Samtfussruebling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 1.0, bis = 10.0, seltenBis = 15.0 }
-stielDickeCm = { von = 0.3, bis = 1.0, seltenBis = 1.3 }
-sporenLaengeUm = { von = 6.0, bis = 9.5 }
-sporenBreiteUm = { von = 3.0, bis = 4.5 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 1.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 0.3, bis = 1.0, seltenBis = 1.3, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 10
+bisMonat = 5
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "honiggelb", hex = "#d9a441" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["pilzig", "suesslich"]
+text = "Angenehm pilzig und süßlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 20 cm breit, gelbbraun bis honiggelb, schmierig und klebrig. Rand heller, jung eingebogen."

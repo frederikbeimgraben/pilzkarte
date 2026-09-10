@@ -20,9 +20,36 @@ url = "https://www.123pilzsuche.de/daten/details/GrosserKiefernschneckling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 9.0, bis = 14.0 }
-sporenBreiteUm = { von = 6.0, bis = 8.0 }
+hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 14.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 8
+bisMonat = 11
+
+[farben]
+hut = [{ name = "olivbraun", hex = "#6e6435" }, { name = "graubraun", hex = "#7d6f5e" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "olivbraun", hex = "#6e6435" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["fruchtig", "angenehm"]
+text = "Angenehm, aromatisch fruchtig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 10, selten bis 12 cm breit, graubraun bis olivbraun, Mitte dunkler mit stumpfem Buckel. Haut schleimig und glänzend, Rand lange eingerollt."

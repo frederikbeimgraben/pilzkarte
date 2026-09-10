@@ -16,10 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/BleiweisserTrichterling2004.htm
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 14.0 }
-stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 3.2, bis = 5.0 }
-sporenBreiteUm = { von = 2.5, bis = 4.0 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 14.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.2, bis = 5.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["fruchtig", "suesslich", "muffig", "pilzig"]
+text = "Pilzig und süßlich aromatisch, schwach fruchtig bis parfümiert, alt muffig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, etwas ranzig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 14 cm breit, flach gewölbt oder leicht gebuckelt, weiß und schimmelartig glasig bereift."

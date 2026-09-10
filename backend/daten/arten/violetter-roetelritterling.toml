@@ -20,11 +20,38 @@ url = "https://www.123pilzsuche.de/daten/details/VioletterRoetelritterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 22.0 }
-stielLaengeCm = { von = 4.0, bis = 13.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 22.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 13.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 1
+
+[farben]
+hut = [{ name = "violett", hex = "#6b4a8a" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["rettichartig", "fruchtig", "wuerzig", "angenehm"]
+text = "Parfümiert, fruchtig, angenehm würzig, selten etwas rettichartig. In der Hand zerkrümelt und angewärmt erinnert er an Multivitaminsaft."
+
+[geschmack]
+tags = ["mild", "pilzig", "nussig"]
+text = "Mild, nussig, pilzig. Roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 18, selten bis 22 cm breit, lilaviolett bis rosaviolett, alt bräunlich bis fleischlila, Mitte etwas violettbraun. Matt bis leicht glänzend, hygrophan, Huthaut kahl und glatt, Rand lange eingerollt."

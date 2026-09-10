@@ -17,10 +17,37 @@ url = "https://www.123pilzsuche.de/daten/details/Kuhroehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 4.0, bis = 6.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 7.0, bis = 11.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 6.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "olivgrün", hex = "#6f8438" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["obstartig", "pilzig", "angenehm"]
+text = "Pilzig angenehm, leicht obstartig."
+
+[geschmack]
+tags = ["mild", "suesslich", "saeuerlich", "bitter"]
+text = "Säuerlich bis süßlich, meist mild, selten mit einem Hauch Bitternote, die beim Garen vergeht."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 12, selten bis 15 cm breit, bräunlich, glatt, kahl und ledrig, feucht schmierig, trocken glänzend. Halbkugelig bis polsterförmig oder gebuckelt, Rand scharfkantig und wellig verbogen."

@@ -17,10 +17,33 @@ url = "https://www.123pilzsuche.de/daten/details/BrennenderRuebling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 19.0 }
-sporenLaengeUm = { von = 7.5, bis = 11.2 }
-sporenBreiteUm = { von = 2.7, bis = 4.4 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 19.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.5, bis = 11.2, einheit = "um" }
+sporenBreiteUm = { von = 2.7, bis = 4.4, einheit = "um" }
+
+[zeitraum]
+vonMonat = 5
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig, junge Stücke leicht nach Essig. Zum Prüfen die Lamellen quetschen."
+
+[geschmack]
+tags = ["mild", "scharf"]
+text = "Zuerst mild, nach einiger Zeit scharf und pfefferig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, braun bis gelblich, oft mit einem Buckel in der Mitte. Zieht man den Stiel ab, bleibt ein Loch im Hut."

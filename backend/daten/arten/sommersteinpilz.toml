@@ -20,7 +20,30 @@ url = "https://www.123pilzsuche.de/daten/details/Sommersteinpilz2004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 22.0, seltenBis = 28.0 }
+hutBreiteCm = { von = 4.0, bis = 22.0, seltenBis = 28.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "olivgrün", hex = "#6f8438" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[geruch]
+tags = []
+text = "Nussig, der typische Steinpilzgeruch."
+
+[geschmack]
+tags = ["mild", "pilzig", "nussig"]
+text = "Mild, pilzig, nussig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 22, selten bis 28 cm breit, hell lederbraun, ockerbraun, blass bräunlich, milchkaffee- bis haselnussbraun, Huthaut oft uneben. Jung halbkugelig und fest geschlossen, später polsterförmig bis flach. Matt, feinfilzig bis samtig und trocken, bei Nässe feucht, aber nie schleimig. Bei Trockenheit reißt die Huthaut felderig auf und lässt in den Rissen das weiße Fleisch sehen."

@@ -21,9 +21,36 @@ url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 4.6, bis = 10.0 }
-sporenBreiteUm = { von = 4.9, bis = 7.8 }
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.6, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.9, bis = 7.8, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm, nach Orangenblütenwasser."
+
+[geschmack]
+tags = ["mild", "bitter", "scharf"]
+text = "Mild. Alte Stücke werden bitterlich, erinnern an getrocknete Haferflocken und schmecken beim längeren Kauen etwas scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, jung weißlich gelb bis semmelgelb, später dunkler gelblich. Rand lange eingerollt."

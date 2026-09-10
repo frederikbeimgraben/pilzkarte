@@ -19,9 +19,32 @@ reagenz = "koh"
 reaktion = "Im Fleisch olivbraun. Der ähnliche Schöngelbe Klumpfuß wird dunkel rotbraun."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 8.6, bis = 10.5 }
-sporenBreiteUm = { von = 5.3, bis = 6.4 }
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.6, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 5.3, bis = 6.4, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "schwefelgelb", hex = "#e3d13a" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "oliv", hex = "#6b7a3a" }]
+stiel = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "chromgelb", hex = "#e5b820" }]
+fleisch = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "rostbraun", hex = "#8a4b23" }]
+
+[geruch]
+tags = ["erdartig", "unangenehm", "angenehm"]
+text = "Widerlich, erdig, streng und unangenehm, nicht mehlig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, schwefelgelb mit rotbraunen Schuppen, Huthaut schmierig bis schleimig."

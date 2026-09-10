@@ -25,11 +25,34 @@ reagenz = "guajak"
 reaktion = "Im Fleisch negativ oder sehr schwach."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
-stielDickeCm = { von = 0.5, bis = 0.8, seltenBis = 1.2 }
-sporenLaengeUm = { von = 7.7, bis = 10.1 }
-sporenBreiteUm = { von = 6.6, bis = 8.8 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+stielDickeCm = { von = 0.5, bis = 0.8, seltenBis = 1.2, einheit = "cm" }
+sporenLaengeUm = { von = 7.7, bis = 10.1, einheit = "um" }
+sporenBreiteUm = { von = 6.6, bis = 8.8, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 7
+
+[farben]
+hut = [{ name = "olivbraun", hex = "#6e6435" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "rosa", hex = "#e8a0b0" }]
+
+[geruch]
+tags = ["mehlig", "gurkenartig"]
+text = "Mehlig oder gurkenartig."
+
+[geschmack]
+tags = ["mild", "mehlig"]
+text = "Mild, mehlig oder gurkenartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 12 cm breit, graubraun, blassbraun, horngrau, sepia-, dunkel-, silbrig- oder olivbraun. Jung kegelig gewölbt, später ausgebreitet mit stumpfem Buckel, radial eingewachsen faserig, kaum ausblassend. Rand rissig wie bei den Risspilzen und lange eingebogen."

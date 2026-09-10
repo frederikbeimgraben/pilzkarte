@@ -20,11 +20,39 @@ url = "https://www.123pilzsuche.de/daten/details/Safranschirmling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 6.0, bis = 22.0, seltenBis = 25.0 }
-stielDickeCm = { von = 1.0, bis = 6.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 10.0, bis = 14.0 }
-sporenBreiteUm = { von = 5.0, bis = 8.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 22.0, seltenBis = 25.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 14.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "ocker", hex = "#c8963c" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }, { name = "braun", hex = "#7a5230" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = []
+text = "Angenehm pilzartig. Roh unverträglich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, auf cremefarbenem bis hell ockerlichem Grund grob bräunlich geschuppt, zur Mitte hin dichter. Schuppen weich, wollig und abstehend, Rand flockig fransig. Jung eiförmig, später halbkugelig."

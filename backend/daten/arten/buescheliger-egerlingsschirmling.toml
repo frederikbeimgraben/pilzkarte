@@ -17,10 +17,38 @@ url = "https://www.123pilzsuche.de/daten/details/BuscheliegerEgerlingsschirmling
 geprueftAm = "2026-09-10"
 
 [masse]
-stielLaengeCm = { von = 6.0, bis = 18.0, seltenBis = 21.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 9.0, bis = 11.0 }
-sporenBreiteUm = { von = 6.0, bis = 7.0 }
+stielLaengeCm = { von = 6.0, bis = 18.0, seltenBis = 21.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "weinrot", hex = "#7b2436" }, { name = "weiß", hex = "#ffffff" }, { name = "orange", hex = "#e08a2e" }]
+sporenpulver = [{ name = "cremeweiß", hex = "#f5efdc" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }, { name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig"]
+text = "Pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 25 cm breit, weiß mit konzentrisch angeordneten braunen bis rotbraunen Schüppchen, oft schon jung gilbend. Mitte glatt und gebuckelt, Rand gekerbt."

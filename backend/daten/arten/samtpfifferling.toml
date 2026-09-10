@@ -19,9 +19,32 @@ url = "https://www.123pilzsuche.de/daten/details/RoetlicherPfifferling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 8.0, bis = 10.5 }
-sporenBreiteUm = { von = 4.0, bis = 7.0 }
+hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "blassgelb", hex = "#efe3a0" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["obstartig", "fruchtig", "pilzig"]
+text = "Obstartig fruchtig, pilzig suesslich."
+
+[geschmack]
+tags = ["scharf"]
+text = "Teils leicht pfeffrig scharf."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 7, selten bis 9 cm breit, orange bis orangegelb, trichterfoermig, Oberflaeche samtig bis zottig, Rand wellig."

@@ -17,9 +17,37 @@ url = "https://www.123pilzsuche.de/daten/details/Krempentrichterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 40.0 }
-sporenLaengeUm = { von = 5.9, bis = 8.5 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 40.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.9, bis = 8.5, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "cremeweiß", hex = "#f5efdc" }, { name = "blassocker", hex = "#dcc48a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig", "pilzig", "angenehm"]
+text = "Mehlig und pilzig, meist nicht unangenehm."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild, nussig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 30, selten bis 40 cm breit, weiß, grau, cremeweiß, elfenbeinweiß, hellbraun bis blassocker, im Alter mit braunen Flecken und kreisförmigen Rissen. Oberfläche glatt, ledersamtig bis feinfilzig, alt bereift. Huthaut abziehbar, Form konvex bis trichterförmig, Rand gerollt."

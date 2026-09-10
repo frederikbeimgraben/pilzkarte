@@ -31,10 +31,37 @@ reagenz = "melzer"
 reaktion = "Sporenpulver färbt sich dunkel."
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.5 }
-stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.5 }
-sporenBreiteUm = { von = 4.0, bis = 6.0 }
+hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.5, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 2
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["mehlig", "rettichartig", "muffig", "unangenehm"]
+text = "Muffig und widerlich, an verfaulendes Holz erinnernd, meist etwas mehlartig oder leicht rettichartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild bis widerlich holzartig. Niemals probieren."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 6, selten bis 7,5 cm breit, hellbraun, gelbbraun bis dunkelbraun, hygrophan, größtenteils mit Buckel, teils spitz gebuckelt. Rand glatt bis durchscheinend gerieft."

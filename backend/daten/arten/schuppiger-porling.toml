@@ -20,9 +20,37 @@ url = "https://www.123pilzsuche.de/daten/details/SchuppigerPorling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 40.0 }
-sporenLaengeUm = { von = 7.8, bis = 17.0 }
-sporenBreiteUm = { von = 3.6, bis = 6.0 }
+hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 40.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.8, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 3.6, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 8
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig", "gurkenartig", "honigartig"]
+text = "Gurkenartig, mehlig, honigartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, mehl- bis nussartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 25, selten bis 40 cm breit, blassbraun bis weißlich hellgelb, konzentrisch mit erst hellbraunen, im Alter dunkelbraunen Schuppen besetzt, normalerweise ohne Wimpern am Rand. Rand lange eingerollt."

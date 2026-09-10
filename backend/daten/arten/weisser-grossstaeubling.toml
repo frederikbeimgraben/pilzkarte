@@ -17,7 +17,28 @@ url = "https://www.123pilzsuche.de/daten/details/WeisserGrossstaeubling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "gelbbraun", hex = "#a3813f" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm, pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, angenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 9, selten bis 11 cm breit, weiß bis grauweiß, später gelblich, netzartig fleckig bis wellig vertieft, teils mit stielartigem Teil und kugeligem Kopf."

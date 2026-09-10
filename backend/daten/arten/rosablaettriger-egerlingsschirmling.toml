@@ -15,11 +15,39 @@ url = "https://www.123pilzsuche.de/daten/details/RosablaettrigerEggerling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 6.0, bis = 7.0, seltenBis = 9.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.5 }
-sporenLaengeUm = { von = 7.0, bis = 9.8 }
-sporenBreiteUm = { von = 4.8, bis = 6.1 }
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.5, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 9.8, einheit = "um" }
+sporenBreiteUm = { von = 4.8, bis = 6.1, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "blassocker", hex = "#dcc48a" }, { name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["angenehm", "unauffaellig"]
+text = "Neutral bis angenehm pilzartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 11, selten bis 15 cm breit, weiß bis cremefarben, seidig, Rand überhängend. Scheibe im Alter oft blassocker und stumpf gebuckelt."

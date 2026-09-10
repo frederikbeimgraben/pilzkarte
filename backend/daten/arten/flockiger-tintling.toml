@@ -16,9 +16,32 @@ url = "https://www.123pilzsuche.de/daten/details/FlockigerTintling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 9.5, bis = 17.5 }
-sporenBreiteUm = { von = 5.0, bis = 10.0 }
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.5, bis = 17.5, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 10.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "schwarz", hex = "#1a1a1a" }]
+
+[geruch]
+tags = ["pilzig", "unauffaellig"]
+text = "Unbedeutend bis leicht pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, graubraun bis blass ockerbräunlich, mit weißlichen Velumflocken, die bei feuchtem Wetter schnell vergehen, jung mit grauockerfarbener Mitte. Zuerst eiförmig, dann glockig spitzkegelig, alt schirmartig ausgebreitet."

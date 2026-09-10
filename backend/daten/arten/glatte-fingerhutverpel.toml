@@ -19,10 +19,32 @@ url = "https://www.123pilzsuche.de/daten/details/Verpel.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
-fruchtkoerperHoeheCm = { von = 1.0, bis = 5.0, seltenBis = 8.0 }
-sporenLaengeUm = { von = 28.0, bis = 34.0 }
-sporenBreiteUm = { von = 15.0, bis = 19.0 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+fruchtkoerperHoeheCm = { von = 1.0, bis = 5.0, seltenBis = 8.0, einheit = "cm" }
+sporenLaengeUm = { von = 28.0, bis = 34.0, einheit = "um" }
+sporenBreiteUm = { von = 15.0, bis = 19.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 4
+bisMonat = 5
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "orangebraun", hex = "#c86e28" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Neutral und mild, roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "2 bis 3, selten bis 4 cm breit und 1 bis 5, selten bis 8 cm hoch. Hellbraun, gelbbraun, rotbraun bis orangebraun, gerunzelt, mit Querrillen und Rippen. Unterseite ockerlich weißlich, jung eiförmig."

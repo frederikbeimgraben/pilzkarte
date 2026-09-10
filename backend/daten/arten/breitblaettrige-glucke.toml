@@ -19,9 +19,31 @@ url = "https://www.123pilzsuche.de/daten/details/BreitblaettrigeKrauseGlucke2004
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 6.0, bis = 30.0, seltenBis = 100.0 }
-sporenLaengeUm = { von = 4.5, bis = 7.0 }
-sporenBreiteUm = { von = 3.0, bis = 4.5 }
+fruchtkoerperBreiteCm = { von = 6.0, bis = 30.0, seltenBis = 100.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.5, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "blassocker", hex = "#dcc48a" }, { name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm aromatisch pilzartig, beim Kochen nach Waschküche."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild, alt bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "6 bis 30, selten bis 100 cm breit, hirnartig und schwammartig breit gekräuselt, zuerst weißlich, später gelblich, die Spitzen heller. Die Lappen sind breiter als bei der Krausen Glucke."

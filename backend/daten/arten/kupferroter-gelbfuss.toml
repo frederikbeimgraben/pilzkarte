@@ -16,11 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/KupferroterGelbfuss.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.5, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 6.0, bis = 8.0, seltenBis = 12.0 }
-stielDickeCm = { von = 0.6, bis = 1.5, seltenBis = 2.0 }
-sporenLaengeUm = { von = 17.0, bis = 23.0 }
-sporenBreiteUm = { von = 5.5, bis = 7.0 }
+hutBreiteCm = { von = 2.5, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
+stielDickeCm = { von = 0.6, bis = 1.5, seltenBis = 2.0, einheit = "cm" }
+sporenLaengeUm = { von = 17.0, bis = 23.0, einheit = "um" }
+sporenBreiteUm = { von = 5.5, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "orangebraun", hex = "#c86e28" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "purpurbraun", hex = "#5f3346" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "oliv", hex = "#6b7a3a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2,5 bis 8, selten bis 10 cm breit, braun, orangebraun bis graubraun, feucht schmierig, kahl und nicht filzig, jung mit Schleier."

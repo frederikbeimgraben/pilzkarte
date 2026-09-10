@@ -19,9 +19,31 @@ url = "https://www.123pilzsuche.de/daten/details/Eichenzunge.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 25.0, seltenBis = 30.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 3.0, bis = 4.0 }
+hutBreiteCm = { von = 5.0, bis = 25.0, seltenBis = 30.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "orangebraun", hex = "#c86e28" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }]
+sporenpulver = [{ name = "hellbraun", hex = "#a97c50" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild und säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 25, selten bis 30 cm breit, blass lederfarben, ockerbraun, gelbbraun bis orangebraun, alt schwarzbraun, flockig körnig, zungenförmig, teils mit weißlichem Rand. Auf Druck rotbraun verfärbend."

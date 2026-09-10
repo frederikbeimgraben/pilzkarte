@@ -15,11 +15,39 @@ url = "https://www.123pilzsuche.de/daten/details/SchuppigerSaegeblaettling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 16.0 }
-stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 15.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 8.5, bis = 11.2 }
-sporenBreiteUm = { von = 3.2, bis = 4.2 }
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 16.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.5, bis = 11.2, einheit = "um" }
+sporenBreiteUm = { von = 3.2, bis = 4.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "rotbraun", hex = "#8b4a2b" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["anisartig", "obstartig", "pilzig"]
+text = "Nach Anis, pilzig, nach Perubalsam oder gärendem Obst."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild, pilzig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 16 cm breit, auf gelblichem Grund mit rotbraunen bis kastanienbraunen Schuppen, die von der Mitte zum Rand stehen. Rand lange eingerollt und scharfkantig."

@@ -16,9 +16,36 @@ url = "https://www.123pilzsuche.de/daten/details/SchlankerRiesenschirmling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 19.0 }
-sporenLaengeUm = { von = 13.0, bis = 14.0 }
-sporenBreiteUm = { von = 7.4, bis = 8.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 19.0, einheit = "cm" }
+sporenLaengeUm = { von = 13.0, bis = 14.0, einheit = "um" }
+sporenBreiteUm = { von = 7.4, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+
+[geruch]
+tags = ["bittermandel", "angenehm"]
+text = "Angenehm nussartig bis etwas marzipanartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Angenehm mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 19 cm breit, braunocker, jung eiförmig glockig, mit braunem zitzenartigem Buckel. Grob schollig und braunschuppig, die Schuppen reißen auf."

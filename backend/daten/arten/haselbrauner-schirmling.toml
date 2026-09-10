@@ -15,10 +15,33 @@ url = "https://www.123pilzsuche.de/daten/details/Haselbrauner.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 8.0 }
-stielLaengeCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 6.0, bis = 7.0 }
-sporenBreiteUm = { von = 3.0, bis = 4.0 }
+hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 8.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "rotbraun", hex = "#8b4a2b" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["suesslich", "angenehm"]
+text = "Süßlich, angenehm."
+
+[geschmack]
+tags = []
+text = "Nicht kosten."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 7, selten bis 8 cm breit, hell- bis rotbraun, mit dunkelbraun bis rotbraun gezonten Schüppchen. Die Huthaut reißt beim Aufschirmen auf."

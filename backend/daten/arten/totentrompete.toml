@@ -22,11 +22,34 @@ url = "https://www.123pilzsuche.de/daten/details/Totentrompete.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
-stielLaengeCm = { von = 3.0, bis = 11.0, seltenBis = 13.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 11.0, bis = 14.0 }
-sporenBreiteUm = { von = 7.0, bis = 9.0 }
+hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 11.0, bis = 14.0, einheit = "um" }
+sporenBreiteUm = { von = 7.0, bis = 9.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["fruchtig", "suesslich", "angenehm"]
+text = "Angenehm fruchtig aromatisch, etwas süßlich."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 6, selten bis 8 cm breit, grauschwarz, braunschwarz bis gelbbraun, trichterförmig genabelt, dünnfleischig, bräunlich feinkörnig bereift."

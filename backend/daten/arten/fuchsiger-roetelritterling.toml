@@ -26,11 +26,38 @@ reagenz = "koh"
 reaktion = "Auf dem Hut gelb, am Stiel zitronengelb, an der Stielbasis gelblich orange bis bräunlich."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
-stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0 }
-sporenLaengeUm = { von = 3.0, bis = 4.5 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.0, bis = 4.5, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }]
+sporenlager = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "cremefarben", hex = "#f0e6c8" }]
+sporenpulver = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["saeuerlich"]
+text = "Süß-säuerlich, nach frisch geschnittenem Gras."
+
+[geschmack]
+tags = ["mild", "saeuerlich", "bitter"]
+text = "Säuerlich, mild, selten leicht bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, bräunlich, haselnuss- bis gelbbraun, glatt und fettig anzufassen, beim Abtrocknen ausblassend, trichterförmig. Rand lange eingerollt."

@@ -18,10 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/GelbflockigerWulstling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 7.5, bis = 12.0 }
-sporenBreiteUm = { von = 4.5, bis = 7.5 }
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.5, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 7.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+
+[geruch]
+tags = ["angenehm", "unauffaellig"]
+text = "Neutral bis angenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild. Keine Kostversuche."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, gelblich, braungelb bis lehmgrau, mit grauen und gelblichen flockigen Velumresten."

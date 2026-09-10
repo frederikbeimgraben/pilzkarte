@@ -16,11 +16,34 @@ url = "https://www.123pilzsuche.de/daten/details/Faltentintling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-stielLaengeCm = { von = 4.0, bis = 14.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 1.8 }
-sporenLaengeUm = { von = 6.5, bis = 10.5 }
-sporenBreiteUm = { von = 4.0, bis = 6.5 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 1.8, einheit = "cm" }
+sporenLaengeUm = { von = 6.5, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "schwarzbraun", hex = "#3a2a1c" }]
+
+[geruch]
+tags = ["pilzig", "unauffaellig"]
+text = "Neutral, etwas pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, angenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 11 cm breit, grauweiß bis graubraun, mit braunen Schuppen, gerieft und faltig."

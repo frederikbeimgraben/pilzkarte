@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/GefleckterGelbfuss.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 18.8, bis = 23.2 }
-sporenBreiteUm = { von = 5.8, bis = 7.6 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 18.8, bis = 23.2, einheit = "um" }
+sporenBreiteUm = { von = 5.8, bis = 7.6, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "braunrot", hex = "#7d3324" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "schwarzbraun", hex = "#3a2a1c" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 11 cm breit, hellbraun, hell zimtbraun bis fleischbraun mit dunklerer Mitte. Haut schmierig und abziehbar, oft mit bernsteinfarbenen schleimigen Tropfen. Druckstellen verfärben schwarzbraun."
