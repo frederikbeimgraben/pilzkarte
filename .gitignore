@@ -24,3 +24,6 @@ modell/data
 modell/reports
 modell/models
 modell/.venv/
+
+# Angular-Cache, wenn ng aus der Wurzel gestartet wird
+.angular/

@@ -13,6 +13,13 @@ SSH="ssh -i $SCHLUESSEL -o IdentitiesOnly=yes"
 
 [ -f backend/app/main.py ] || { echo "kein Backend unter backend/app"; exit 1; }
 echo "spiegle Backend nach $ZIEL:app/backend"
+# rsync legt keine Elternordner an, und app/ gehoert keinem der Deploys der
+# Kette. Ein leeres Geruest davor macht den ersten Lauf auf einem frischen
+# Server moeglich und kostet danach nichts.
+GERUEST=$(mktemp -d)
+mkdir -p "$GERUEST/app/backend"
+rsync -a -e "$SSH" "$GERUEST/app" "$ZIEL":
+rm -rf "$GERUEST"
 rsync -a --delete --info=stats2 \
   --exclude 'tests/' --exclude '.venv/' --exclude '__pycache__/' --exclude '.pytest_cache/' \
   --exclude '.ruff_cache/' --exclude 'var/' --exclude '.env' --exclude 'deploy.stamp' \
