@@ -111,6 +111,19 @@ export class ArtenComponent {
     return gefiltert.map((art) => this.zeile(art, art.slug === aktiv));
   });
 
+  /**
+   * Wie viele Arten die Liste gerade zeigt. Ohne diese Zeile wirkte ein Chip
+   * wie tot: die Liste steht nach Stufe, die ersten Zeilen bleiben dieselben,
+   * und dass aus 85 Arten 23 wurden, sieht man erst nach langem Scrollen.
+   */
+  protected readonly anzahlText = computed(() => {
+    const gesamt = this.zustand.liste()?.arten.length ?? 0;
+    const gefiltert = this.zeilen().length;
+    return gefiltert === gesamt
+      ? this.i18n.translate('arten.anzahlAlle', { gesamt })
+      : this.i18n.translate('arten.anzahlGefiltert', { gefiltert, gesamt });
+  });
+
   constructor() {
     this.zustand.ladeListe();
   }

@@ -79,3 +79,12 @@
   display: flex;
   flex-direction: column;
 }
+
+// Die zweite Wahl im selben Abschnitt braucht eine eigene Zeile, sonst stünden
+// zwei Schalter ohne Beschriftung untereinander.
+.konto__unterabschnitt {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+}

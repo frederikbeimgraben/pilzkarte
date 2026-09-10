@@ -1,7 +1,11 @@
+// Die Spalte ist 104 px breit und wächst mit einem langen Schlüssel mit, aber
+// nicht über 145 px: das sind 40 Prozent der Zeile am Telefon. Ein Prozentwert
+// stünde hier im Kreis, weil die Spur ihn erst messen müsste.
 :host {
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
+  grid-template-columns: minmax(104px, max-content) minmax(0, 1fr);
   column-gap: var(--space-3);
+  align-items: start;
   padding: 10px 14px;
   font-size: var(--fs-sm);
   line-height: 1.45;
@@ -19,10 +23,16 @@
 }
 
 .tz__schluessel {
+  max-inline-size: 145px;
   font-weight: var(--fw-semibold);
   color: var(--color-text-muted);
+  overflow-wrap: anywhere;
 }
 
+// Der Wert läuft als Fließtext; ein Badge darin bricht mit um, statt den Text
+// zu quetschen.
 .tz__wert {
+  min-inline-size: 0;
   color: var(--color-text);
+  overflow-wrap: anywhere;
 }

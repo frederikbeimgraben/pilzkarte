@@ -1,4 +1,9 @@
 <div class="huelle" [class.huelle--spalte]="breit()">
+  @if (breit()) {
+    @defer (when breit()) {
+      <app-karte class="huelle__karte" [nurFlaeche]="!aufDerKarte()" />
+    }
+  }
   <app-bottom-nav
     class="huelle__nav"
     [eintraege]="eintraege()"
@@ -6,10 +11,10 @@
     [beschriftung]="'nav.beschriftung' | t"
     [variante]="breit() ? 'spalte' : 'unten'"
   />
-  <main class="huelle__inhalt" [class.huelle__inhalt--unter]="breit() && !aufDerKarte()">
+  <main class="huelle__inhalt" [class.huelle__inhalt--aus]="breit() && aufDerKarte()">
     <router-outlet />
   </main>
-  @if (aufDerKarte()) {
+  @if (aufDerKarte() || breit()) {
     <app-avatar-button
       class="huelle__avatar"
       [name]="avatarName()"

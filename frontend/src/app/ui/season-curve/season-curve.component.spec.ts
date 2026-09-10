@@ -4,6 +4,14 @@ import { SeasonCurveComponent, glaette } from './season-curve.component';
 
 const ALLE = Array.from({ length: 52 }, (_, i) => i / 51);
 const LAUFEND = Array.from({ length: 20 }, (_, i) => i / 51);
+/** Die Monatsmarken der Artseite: der Name und die Woche, in der er beginnt. */
+const MONATE = [
+  { text: 'Jan', woche: 1 },
+  { text: 'Apr', woche: 14 },
+  { text: 'Jul', woche: 27 },
+  { text: 'Okt', woche: 40 },
+  { text: 'Dez', woche: 49 },
+];
 
 describe('glaette', () => {
   it('mittelt zentriert über drei Wochen', () => {
@@ -66,10 +74,10 @@ describe('SeasonCurveComponent', () => {
       inputs: { alleJahre: ALLE, laufendesJahr: LAUFEND, beschriftung: 'Saisonkurve', gross: true },
     });
 
-    const punkt = container.querySelector('.funke__ende');
-    // Der Punkt sitzt auf Woche 20 von 52, also bei 19/51 der Breite.
-    expect(punkt).toHaveAttribute('cx', ((19 / 51) * 330).toString());
-    expect(punkt).toHaveAttribute('r', '3');
+    // Der Punkt sitzt auf Woche 20 von 52, also bei 19/51 der Breite. Er steht
+    // in Anteilen neben dem SVG, weil die verzerrte Fläche ihn oval zöge.
+    const punkt = container.querySelector<HTMLElement>('.funke__ende');
+    expect(punkt?.style.left).toBe(`${((19 / 51) * 100).toString()}%`);
   });
 
   it('schreibt die Monatsmarken unter die Grundlinie', async () => {
@@ -79,12 +87,41 @@ describe('SeasonCurveComponent', () => {
         laufendesJahr: LAUFEND,
         beschriftung: 'Saisonkurve',
         gross: true,
-        monate: ['Jan', 'Apr', 'Jul', 'Okt', 'Dez'],
+        monate: MONATE,
       },
     });
 
     expect(screen.getByText('Jan')).toBeInTheDocument();
     expect(screen.getByText('Dez')).toBeInTheDocument();
+  });
+
+  it.each([390, 1440])('legt bei %i px die Marke Okt unter Woche 40', async (breite) => {
+    const { container } = await render(
+      `<div style="width: ${breite.toString()}px">
+         <app-season-curve
+           [alleJahre]="alle" [laufendesJahr]="laufend" [monate]="monate"
+           [gross]="true" beschriftung="Saisonkurve" />
+       </div>`,
+      {
+        imports: [SeasonCurveComponent],
+        componentProperties: { alle: ALLE, laufend: LAUFEND, monate: MONATE },
+      },
+    );
+
+    // Die Kurve füllt die Breite (`preserveAspectRatio="none"`), darum ist die
+    // Stelle einer Woche ein Anteil und keine Pixelzahl: sie stimmt bei jeder
+    // Breite. Der Vergleich holt sie aus dem Pfad, den die Kurve wirklich malt.
+    const okt = [...container.querySelectorAll<HTMLElement>('.funke__monat')].find(
+      (marke) => marke.textContent === 'Okt',
+    );
+    expect(okt?.style.left).toBe(`${((39 / 51) * 100).toString()}%`);
+
+    // Dieselbe Stelle malt auch die Kurve für Woche 40, bis auf die eine
+    // Nachkommastelle, auf die der Pfad gerundet wird.
+    const pfad = container.querySelector('.funke__alle')?.getAttribute('d') ?? '';
+    const xWerte = [...pfad.matchAll(/L(\d+\.\d)/g)].map((treffer) => Number(treffer[1]));
+    expect((xWerte[39] / 330) * 100).toBeCloseTo(Number.parseFloat(okt?.style.left ?? ''), 1);
+    expect(container.querySelector('.funke')).toHaveAttribute('preserveAspectRatio', 'none');
   });
 
   it('zeichnet geglättet, behält aber den Höchstwert der Rohdaten', async () => {

@@ -10,7 +10,8 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'karte' },
   {
     path: 'karte',
-    loadComponent: () => import('./features/karte/karte.component').then((m) => m.KarteComponent),
+    loadComponent: () =>
+      import('./features/karte/karten-route.component').then((m) => m.KartenRouteComponent),
   },
   {
     path: 'arten',

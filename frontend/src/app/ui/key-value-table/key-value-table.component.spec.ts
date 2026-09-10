@@ -15,6 +15,12 @@ import { KeyValueTableComponent } from './key-value-table.component';
 })
 class WirtComponent {}
 
+/** Die gerechneten Stile eines Elements, das es geben muss. */
+function stilVon(element: Element | null): CSSStyleDeclaration {
+  if (element === null) throw new Error('Das Element steht nicht im Baum.');
+  return getComputedStyle(element);
+}
+
 describe('KeyValueTableComponent', () => {
   it('zeigt Schlüssel und Wert je Zeile', async () => {
     const { container } = await render(WirtComponent);
@@ -28,5 +34,24 @@ describe('KeyValueTableComponent', () => {
     await render(WirtComponent);
 
     expect(screen.getByText('Speisepilz')).toBeInTheDocument();
+  });
+
+  it('lässt einen langen Schlüssel umbrechen, statt in den Wert zu laufen', async () => {
+    // „Ölbaumtrichterling“ in der Verwechslungstabelle: 18 Zeichen sind breiter
+    // als die 104 px der Mockups. jsdom setzt nichts; geprüft wird die Regel,
+    // die den Umbruch erzwingt und die Spalte begrenzt.
+    const { container } = await render(
+      `<app-key-value-row schluessel="Ölbaumtrichterling XXXXXX"
+         wert="Leuchtet im Dunkeln, Lamellen laufen am Stiel herab, wächst büschelig an Wurzeln von Ölbaum und Eiche. Giftig." />`,
+      { imports: [KeyValueRowComponent] },
+    );
+
+    const stile = stilVon(container.querySelector('app-key-value-row'));
+    const schluessel = stilVon(container.querySelector('.tz__schluessel'));
+
+    expect(stile.gridTemplateColumns).toBe('minmax(104px, max-content) minmax(0, 1fr)');
+    expect(stile.alignItems).toBe('start');
+    expect(schluessel.maxInlineSize).toBe('145px');
+    expect(schluessel.overflowWrap).toBe('anywhere');
   });
 });

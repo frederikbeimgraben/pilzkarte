@@ -12,17 +12,21 @@ import {
   NoteComponent,
   PageHeaderComponent,
   SeasonCurveComponent,
+  type Monatsmarke,
 } from '../../ui';
 import { ArtenZustand } from './arten.zustand';
 import { ESSBARKEIT_BADGE, ESSBARKEIT_TEXT, MERKMAL_TEXT, STUFE_BADGE, TAG_TEXT } from './beschriftungen';
 
-/** Die fünf Monatsmarken unter der Kurve, gleichmäßig über das Jahr verteilt. */
-const MONATE: readonly TranslationKey[] = [
-  'art.monat.jan',
-  'art.monat.apr',
-  'art.monat.jul',
-  'art.monat.okt',
-  'art.monat.dez',
+/**
+ * Die fünf Monatsmarken unter der Kurve, jede auf der ISO-Woche, in der ihr
+ * Monat beginnt. Sie liegen damit auf derselben Skala wie die Kurve selbst.
+ */
+const MONATE: readonly { schluessel: TranslationKey; woche: number }[] = [
+  { schluessel: 'art.monat.jan', woche: 1 },
+  { schluessel: 'art.monat.apr', woche: 14 },
+  { schluessel: 'art.monat.jul', woche: 27 },
+  { schluessel: 'art.monat.okt', woche: 40 },
+  { schluessel: 'art.monat.dez', woche: 49 },
 ];
 
 interface Marke {
@@ -50,7 +54,7 @@ interface Ansicht {
   saison: SaisonKurve;
   hatKurve: boolean;
   achse: string;
-  monate: string[];
+  monate: Monatsmarke[];
   legendeLaufend: string;
   legendeJahre: string;
   beschriftung: string;
@@ -139,7 +143,10 @@ export class ArtComponent {
       // sagte über die Saison nichts.
       hatKurve: saison.hoechstwert > 0,
       achse: this.i18n.translate('art.kurve.achse', { wert: Math.round(saison.hoechstwert) }),
-      monate: MONATE.map((monat) => this.i18n.translate(monat)),
+      monate: MONATE.map((monat) => ({
+        text: this.i18n.translate(monat.schluessel),
+        woche: monat.woche,
+      })),
       legendeLaufend: this.i18n.translate('art.kurve.laufend', {
         jahr: saison.stand.jahr,
         woche: saison.stand.woche,
