@@ -1,0 +1,49 @@
+name = "Leuchtender Weichporling"
+lateinisch = "Pycnoporellus fulgens"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["tanne"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/LeuchtenderWeich.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch weinrot."
+
+[merkmale]
+fruchtkoerper = "3 bis 8, selten bis 12 cm breit, leuchtend orangerot bis orangegelb, jung kugelig, später flach und konsolenförmig, gezont. Jung glatt, später filzig und weich, Rand heller, Zuwachszone orange bis gelb."
+poren = "1 bis 3 mm weit, gelblich bis orangegelb, am Rand oft heller, rundlich eckig bis teils zerschlitzt."
+stiel = "Fehlt, der Fruchtkörper ist flach am Holz angewachsen."
+fleisch = "Gelblich bis orangerot, zäh, jung weich und saftig."
+geruch = "Etwas säuerlich."
+geschmack = "Unbedeutend bis unangenehm."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer an Totholz und Bauholz, meist Nadelholz, gern Weißtanne. Erzeugt Braunfäule."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Zimtfarbiger Weichporling"
+merkmal = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
+essbar = "toedlichGiftig"
+slug = "zimtfarbiger-weichporling"
+
+[[verwechslungen]]
+name = "Duftender Goldporling"
+merkmal = "Liegt dem Holz flach auf und wirkt, als bestehe er nur aus Röhren. Geruch nach Anis oder Aprikose."
+essbar = "ungeniessbar"
+slug = "duftender-goldporling"
+
+[[verwechslungen]]
+name = "Schwefelporling"
+merkmal = "Hüte fächerförmig und dachziegelartig, gelb bis orange, Poren gelb, Geruch säuerlich obstartig."
+essbar = "bedingtEssbar"
+slug = "schwefelporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/LeuchtenderWeich.htm"

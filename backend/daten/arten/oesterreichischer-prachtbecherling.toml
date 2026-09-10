@@ -1,0 +1,39 @@
+name = "Österreichischer Prachtbecherling"
+lateinisch = "Sarcoscypha austriaca"
+gruppe = "becherling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["weide", "pappel", "linde"]
+speisewertHinweis = "Ungiftig, aber ohne Wert für die Küche. 123pilzsuche gibt die Relative Wertigkeit 5."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/AustriaPrachtbecherling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "1 bis 7, selten bis 9 cm breit, kelch- bis schüsselförmig, Innenseite zinnoberrot, in gelber Form als Gelber Prachtbecherling geführt. Rand lange eingerollt, Außenseite blasser und filzig haarig, später abgeflacht."
+stiel = "2 bis 3, selten bis 4 cm lang, weißlich bis gelblich, Spitze rötlich, meist kurz."
+fleisch = "Weißlich bis hellgelb mit roter Innenschicht, dünn und wachsartig."
+geruch = "Neutral, unbedeutend."
+geschmack = "Mild, neutral."
+sporenpulver = "Weiß bis farblos."
+vorkommen = "Folgezersetzer an Laubholzästen, gern in Auwäldern bei Erle, Weide und Espe, seltener Linde. Gern auf sandigem, kalkreichem Boden."
+zeit = "Winter bis Mai."
+
+[[verwechslungen]]
+name = "Linden-Kelchbecherling"
+merkmal = "Wächst an verrotteten Lindenzweigen, sonst kaum zu trennen."
+essbar = "ohneSpeisewert"
+slug = "linden-kelchbecherling"
+
+[[verwechslungen]]
+name = "Scharlachroter Kelchbecherling"
+merkmal = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
+essbar = "ohneSpeisewert"
+slug = "scharlachroter-kelchbecherling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/AustriaPrachtbecherling.htm"

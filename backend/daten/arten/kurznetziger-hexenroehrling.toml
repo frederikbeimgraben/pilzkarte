@@ -1,0 +1,46 @@
+name = "Kurznetziger Hexenröhrling"
+lateinisch = "Suillellus mendax"
+gruppe = "roehrling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Der Seitenkopf nennt ihn nur bedingt essbar und mit Alkohol giftig. Von ihm stammt der Rat, zum Pilzgericht keinen Alkohol zu trinken; er verursacht dann Magen-Darm-Beschwerden. Alte Pilze sind vom Netzstieligen Hexenröhrling nur mikroskopisch zu trennen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/KurznetzHexe.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 15, selten bis 22 cm breit, dunkelbraun, weinrot, olivbraun oder graubraun, samtig und klebrig. Zwischen Hutfleisch und Röhren liegt eine rote Zone, ein gutes Erkennungsmerkmal."
+roehren = "Mündungen rot, Röhrenboden orangerot, leicht vom Fleisch lösbar."
+stiel = "Mit rötlicher, rotbrauner bis dunkelbrauner Netzzeichnung. Jung nur im oberen Bereich genetzt, im Alter verschiebt sich das Netz in die Mitte und nach unten."
+fleisch = "Gelb, sofort schwarzblau verfärbend. In der Stielbasis rötlich, das Stielfleisch stark weinrot, bisweilen auch im Hut."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Goldgelb bis olivgelb."
+vorkommen = "Symbiosepilz in Laubwäldern und Parkanlagen, wärmeliebend. Zum Boden gibt es widersprüchliche Angaben, teils kalkhaltig, teils sauer."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Blaufleckender Purpurröhrling"
+merkmal = "Hut purpurrot bis weinrosa und blau fleckend, Röhren später purpurrot, Fleisch schnell stark blauend, alt aasartiger Geruch."
+essbar = "giftig"
+slug = "blaufleckender-purpurroehrling"
+
+[[verwechslungen]]
+name = "Falscher Satansröhrling"
+merkmal = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz, Fleisch chromgelb."
+essbar = "giftig"
+slug = "falscher-satansroehrling"
+
+[[verwechslungen]]
+name = "Glattstieliger Hexenröhrling"
+merkmal = "Stiel ohne Netz, nur rillig labyrinthisch, Hut ohne Olivton."
+essbar = "essbar"
+slug = "glattstieliger-hexenroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/KurznetzHexe.htm"

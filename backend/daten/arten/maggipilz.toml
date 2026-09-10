@@ -1,0 +1,39 @@
+name = "Maggipilz"
+lateinisch = "Lactarius helvus"
+gruppe = "milchling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "In größeren Mengen verursacht er heftige Magen-Darm-Störungen. Erkennbar am Geruch nach Maggi oder Liebstöckel und an der glasklaren, milden Milch. Früher als Würzpilz benutzt, heute besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BruchreizkerMaggipilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 10, selten bis 13 cm breit, hellbraun, graubraun, fleischrot bis orangebraun, filzig, Mitte meist dunkler. Flach gewölbt, später niedergedrückt und meist mit Buckel."
+lamellen = "Hellgelb ockerlich, herablaufend, mit Zwischenlamellen."
+milch = "Glasklar, wässrig, mild, unveränderlich und spärlich. Er ist daher kaum als Milchling zu erkennen."
+stiel = "4 bis 12, selten bis 15 cm lang, 1 bis 4, selten bis 5 cm dick, heller als der Hut, glatt, sehr brüchig, jung weiß bereift, voll, alt hohl."
+fleisch = "Weiß bis hell ocker, oft mit Rosaton, brüchig."
+geruch = "Nach Maggi, Liebstöckel, Bockshornklee oder Sellerie, jung teils fast unbedeutend."
+geschmack = "Mild, würzig, leicht nussartig."
+sporenpulver = "Gelb."
+vorkommen = "Symbiosepilz in Mischwald, häufig in moorigen Nadelwäldern, gern auf saurem Boden. Selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Eichenmilchling"
+merkmal = "Milch weiß und beim Trocknen grünlichgelb, Fleisch auf Druck weinbraun, Geruch nach Blattwanzen, nur bei Eiche."
+essbar = "essbar"
+slug = "eichenmilchling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BruchreizkerMaggipilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Filziger_Milchling"

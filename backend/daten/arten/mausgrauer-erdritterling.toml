@@ -1,0 +1,40 @@
+name = "Mausgrauer Erdritterling"
+lateinisch = "Tricholoma myomyces"
+gruppe = "ritterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Bei Erdritterlingen wurde ein Giftstoff gefunden, der Muskelzersetzung auslöst (Rhabdomyolyse). Die Arten sind kaum sicher zu trennen, daher rät 123pilzsuche von allen Erdritterlingen ab."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/MausgrauerErdritterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 7, selten bis 9 cm breit, mausgrau, graubraun, hellgrau, aschgrau bis bläulichgrau, faserig wollig. Mitte dunkelbraun und gebuckelt, Rand blasser."
+lamellen = "Grauweiß bis blassgrau, ausgebuchtet angewachsen und mit Zahn herablaufend, Schneiden fein gekerbt."
+stiel = "Weiß bis hellgrau, faserig, jung mit weißem Haarschleier, voll, alt ausgestopft."
+fleisch = "Weiß bis hellgrau, nicht verfärbend."
+geruch = "Neutral."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Nadelwald und Parks mit Nadelbäumen, gern bei Kiefer, auch auf Dünen und im Gebüsch, auf kalkreichem Boden. Gern in Meeresnähe, selten."
+zeit = "Spätsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Tigerritterling"
+merkmal = "Größer und dickfleischiger, Hut weiß mit grauen bis schwarzbraunen Schüppchen, Lamellenschneiden jung tränend, Geruch mehlartig."
+essbar = "toedlichGiftig"
+slug = "tigerritterling"
+
+[[verwechslungen]]
+name = "Gilbender Erdritterling"
+merkmal = "Lamellen gilben beim Reiben, Fleisch gilbt im Alter, Geruch ranzig mehlig."
+essbar = "giftig"
+slug = "gilbender-erdritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/MausgrauerErdritterling.htm"

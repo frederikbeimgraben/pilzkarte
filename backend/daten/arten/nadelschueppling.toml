@@ -1,0 +1,46 @@
+name = "Nadelschüppling"
+lateinisch = "Pholiota spumosa"
+gruppe = "schueppling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Schüpplinge taugen meist nicht als Speisepilze, einige sind giftig. Dieser schmeckt bitter und wächst büschelig an Nadelholz, also dort, wo auch der tödlich giftige Gifthäubling steht."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Nadelschueppling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 4, selten bis 6 cm breit, zitronengelb, orangegelb bis dunkelgelb, Scheitel fuchsigbraun bis rostbraun, mit Schüppchen besetzt, Rand lange gewölbt. Unter UV-Licht leuchtet er gelblich bis grünlich."
+lamellen = "Jung hellgelb, sonst gelb bis hell orangegelb, alt bräunlich, angewachsen und leicht herablaufend, mit Zwischenlamellen."
+stiel = "Gelblich bis weißlich, überfasert, oft mit faseriger Ringzone, hohl. Basis oft schmutzig braunschwarz bis olivschwarz."
+fleisch = "Hellgelb, im Stiel rostgelb."
+geruch = "Holzig, nicht unangenehm."
+geschmack = "Bitter."
+sporenpulver = "Bräunlich."
+vorkommen = "Folgezersetzer im Nadelwald, meist am Boden auf Nadelholz, seltener an Stümpfen und Totholz. Oft büschelig, selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Gifthäubling"
+merkmal = "Hut hellbraun bis dunkelbraun und meist gebuckelt, Stiel silbrig überfasert mit dünnem, vergänglichem Ring, Sporenpulver rostbraun, Geruch muffig mehlig."
+essbar = "toedlichGiftig"
+slug = "gifthaeubling"
+
+[[verwechslungen]]
+name = "Samtschuppiger Tannenflämmling"
+merkmal = "Hut gelbfuchsig mit trockener, schuppiger Oberfläche, Lamellen mit rostbraunen Flecken, an Tanne und Kiefer."
+essbar = "giftig"
+slug = "samtschuppiger-tannenflaemmling"
+
+[[verwechslungen]]
+name = "Grünblättriger Schwefelkopf"
+merkmal = "Lamellen grün bis grüngelb, Sporenpulver purpurbraun, Geschmack stark bitter."
+essbar = "giftig"
+slug = "gruenblaettriger-schwefelkopf"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Nadelschueppling.htm"

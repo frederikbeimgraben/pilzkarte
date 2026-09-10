@@ -1,0 +1,46 @@
+name = "Nadelholzschwefelporling"
+lateinisch = "Laetiporus montanus"
+gruppe = "porling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "tanne", "laerche"]
+speisewertHinweis = "123pilzsuche gibt die Relative Wertigkeit 4, mit besonderer Zubereitung 1. Nur jung, roh ist er unverträglich. Wächst er an einem giftigen Baum wie der Eibe, kann er dessen Gift aufnehmen; dann meiden."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/NadelholzSchwefelporling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "5 bis 30, selten bis 50 cm breit, orange, hellgelb bis blass gelblich, alt weißlich ausbleichend, fächerförmig, dachziegelartig, samtig."
+poren = "Gelb, alt weißlich."
+stiel = "Fehlt, der Fruchtkörper sitzt waagrecht am Stamm."
+fleisch = "Gelb, alt weißlich, jung weich und elastisch, im Alter hart, trocken und brüchig."
+geruch = "Aromatisch, säuerlich, pilzig, obstartig."
+geschmack = "Säuerlich, alt nach Käse."
+sporenpulver = "Weiß."
+vorkommen = "An Nadelholz, meist Fichte und Tanne, in höheren Lagen auch Lärche. Parasit oder Folgezersetzer, erzeugt Braunfäule."
+zeit = "Die Fruchtkörper sind einjährig; die Seite nennt keine Monate."
+
+[[verwechslungen]]
+name = "Zimtfarbener Weichporling"
+merkmal = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
+essbar = "toedlichGiftig"
+slug = "zimtfarbener-weichporling"
+
+[[verwechslungen]]
+name = "Duftender Goldporling"
+merkmal = "Liegt dem Holz flach auf, orange bis blutrot, Geruch nach Anis oder Aprikose."
+essbar = "ungeniessbar"
+slug = "duftender-goldporling"
+
+[[verwechslungen]]
+name = "Leuchtender Weichporling"
+merkmal = "Oberfläche filzig und orangerot, Fleisch mit KOH weinrot."
+essbar = "ungeniessbar"
+slug = "leuchtender-weichporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/NadelholzSchwefelporling.htm"

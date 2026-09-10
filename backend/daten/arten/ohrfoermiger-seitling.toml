@@ -1,0 +1,38 @@
+name = "Ohrförmiger Seitling"
+lateinisch = "Pleurocybella porrigens (var. phyllotus porrigens, nothopanus porrigens, agaricus porrigens, pleuropus porrigens, pleurotus porrigens, nothopanus porrigens, pleurotellus porrigens, geopetalum porrigens, dendrosarcus porrigens, calathinus porrigens, pleurotus albolanatus, agaricus porrigens var. dimidiatus, agaricus porrigens var. infundibuliformis)"
+gruppe = "seitling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "In Japan gab es mehrere Todesfälle, vor allem bei älteren Menschen mit Nierenschaden und Dialyse. Die Symptome ähneln einem Schlaganfall, dazu Fieber und Krampfanfälle. Vorsicht bei allen ungestielten weißen Seitlingen an Nadelholz."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/OhrfoermigerSeitling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 10, selten bis 13 cm breit, weiß, im Alter gilbend, kahl und bereift, nur um die Anwachsstelle etwas filzig. Muschel- bis zungenförmig, stiellos angewachsen, gern dachziegelartig übereinander, Rand oft eingerollt."
+lamellen = "Weiß, später gilbend, sehr gedrängt stehend."
+stiel = "Fehlt. Lamellen und Fruchtkörper bilden ein Stück."
+fleisch = "Weiß, im Alter gelblich, weich und zäh."
+geruch = "Pilzig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer an Totholzästen von Nadelholz. Selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Berindeter Seitling"
+merkmal = "Hut grau bis hellbraun mit dunklen Schüppchen, mit Stiel und flüchtigem Ring, meist an Laubholz."
+essbar = "essbar"
+slug = "berindeter-seitling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/OhrfoermigerSeitling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Pleurocybella_porrigens_(var._phyllotus_porrigens,_nothopanus_porrigens,_agaricus_porrigens,_pleuropus_porrigens,_pleurotus_porrigens,_nothopanus_porrigens,_pleurotellus_porrigens,_geopetalum_porrigens,_dendrosarcus_porrigens,_calathinus_porrigens,_pleurotus_albolanatus,_agaricus_porrigens_var._dimidiatus,_agaricus_porrigens_var._infundibuliformis)"

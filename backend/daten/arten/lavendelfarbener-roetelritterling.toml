@@ -1,0 +1,45 @@
+name = "Lavendelfarbener Rötelritterling"
+lateinisch = "Lepista glaucocana"
+gruppe = "roetelritterling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["herbst", "winter"]
+baeume = []
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/LavendelRoetelritterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 12, selten bis 16 cm breit, rötlichlila bis lavendelfarben, beim Trocknen heller werdend. Huthaut kahl und glatt, Rand lange eingerollt."
+lamellen = "Lila, am Stiel ausgebuchtet angewachsen, leicht ablösbar."
+stiel = "6 bis 10 cm lang, 1 bis 2 cm dick, blass lila, kahl, Oberfläche etwas flockig weiß bereift."
+fleisch = "Lila bis weißlich lila, im Zentrum weißlich."
+geruch = "Parfümiert, angenehm würzig, fast wie beim Violetten Rötelritterling."
+geschmack = "Mild, nussig."
+sporenpulver = "Beigerosa."
+vorkommen = "Folgezersetzer in Mischwald, Parks, Gärten und auf Ruderalflächen."
+zeit = "Herbst bis Winteranfang."
+
+[[verwechslungen]]
+name = "Riesenrötling"
+merkmal = "Hut elfenbeinfarben bis bleigrau ohne Lilaton, Lamellen jung gelblich, später rosaocker, Geruch säuerlich mehlig."
+essbar = "toedlichGiftig"
+slug = "riesenroetling"
+
+[[verwechslungen]]
+name = "Bocksdickfuß"
+merkmal = "Lamellen bald zimtbraun, Sporenpulver gelbbräunlich, Geruch widerlich nach Ziegenbock."
+essbar = "giftig"
+slug = "bocksdickfuss"
+
+[[verwechslungen]]
+name = "Violetter Rötelritterling"
+merkmal = "Hut kräftig lilaviolett, Lamellen blaulila und nie bräunlich."
+essbar = "bedingtEssbar"
+slug = "violetter-roetelritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/LavendelRoetelritterling.htm"

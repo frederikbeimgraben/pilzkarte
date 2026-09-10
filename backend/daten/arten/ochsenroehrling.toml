@@ -1,0 +1,49 @@
+name = "Ochsenröhrling"
+lateinisch = "Imperator torosus"
+gruppe = "roehrling"
+speisewert = "bedingtEssbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche"]
+speisewertHinweis = "Der Seitenkopf nennt ihn oft unverträglich, nur bedingt essbar und mit Alkohol giftig. Alle Purpurröhrlinge stehen im Verdacht, Coprin oder ähnliche Stoffe zu enthalten. Kennzeichen sind das auffällige Gewicht, das schwefelgelbe, sofort schwarzblau verfärbende Fleisch und das feine Netz auf gelblichem Stiel."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Ochsenroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 9, selten bis 13 cm breit, goldgelb, ockergelb, braungelb oder leicht grünlich, schnell rötlich fleckend. Jung feinfilzig, später kahl."
+roehren = "Gelb, später goldgelb bis rötlich, auf Druck blauend. Der Porenboden ist erst goldgelb, dann orangerot; im Alter verliert sich das Rot und die Röhren werden wieder olivgelb."
+stiel = "7 bis 14, selten bis 16 cm hoch, an der Basis 3 bis 6, selten bis 8 cm dick, an der Spitze 2 bis 4, selten bis 5 cm. Gelblich mit feinem Netz, das oft nur mit der Lupe zu sehen ist, rötlich fleckig, Basis dunkelrot bis purpurbraun."
+fleisch = "Schwefelgelblich, auf Druck schwarzblau, zur Stielbasis nur wenig rötlich, faserig und fest."
+geruch = "Angenehm pilzig, nach Ananas oder Apfel, alt fast geruchlos."
+geschmack = "Mild, pilzig."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz meist im Laubwald, gern bei Eiche und Buche. In südlichen Ländern häufiger, hier sehr selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Blasshütiger Purpurröhrling"
+merkmal = "Hut weißlich bis olivgrau, später purpurrosa, Huthaut nicht blauend, Fleisch nur wenig blauend."
+essbar = "giftig"
+
+[[verwechslungen]]
+name = "Blaufleckender Purpurröhrling"
+merkmal = "Hut purpurrot bis weinrosa und blau fleckend, Fleisch schnell stark blauend, alt aasartiger Geruch."
+essbar = "giftig"
+slug = "blaufleckender-purpurroehrling"
+
+[[verwechslungen]]
+name = "Flockenstieliger Hexenröhrling"
+merkmal = "Stiel ohne Netz, mit roten Flöckchen auf gelbem Grund, Hut dunkelbraun."
+essbar = "bedingtEssbar"
+slug = "flockenstieliger-hexenroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Ochsenroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Ochsen-Röhrling"
