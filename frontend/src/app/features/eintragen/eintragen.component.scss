@@ -1,0 +1,68 @@
+// Der Ablauf liegt über der Karte, füllt sie aber nicht ab: solange das
+// Fadenkreuz steht, muss die Karte unter dem Finger bleiben.
+.eintragen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+// Die Deckkraft steht so in den Artboards `KarteAktionen` (0,45) und
+// `MeldenFormular` (0,55); ein Wert für beide reicht.
+.eintragen__schleier {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 18 10 / 50%);
+  pointer-events: auto;
+}
+
+// Das Fadenkreuz sitzt in der Mitte des freien Streifens, also über dem Blatt.
+// Dieselbe Mitte meint die Karte, wenn sie ihr Polster kennt.
+.eintragen__kreuz {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  display: grid;
+  place-items: center;
+}
+
+.eintragen__blatt {
+  position: absolute;
+  inset: 0;
+}
+
+.eintragen__kurz {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--pilz-gutter) var(--space-4);
+}
+
+.eintragen__inhalt {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 18px;
+  min-block-size: 0;
+  padding: var(--space-1) var(--pilz-gutter) var(--space-6);
+  overflow-y: auto;
+}
+
+.eintragen__kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+// 17 px im kurzen Blatt, 24 px im Formular: beide Maße stehen so in den
+// Artboards `MeldenOrt` und `MeldenFormular`.
+.eintragen__titel {
+  margin: 0;
+  font-size: 17px;
+  font-weight: var(--fw-semibold);
+}
+
+.eintragen__inhalt .eintragen__titel {
+  font-size: 24px;
+  letter-spacing: var(--tracking-tight);
+}

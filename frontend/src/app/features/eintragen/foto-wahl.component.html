@@ -1,0 +1,29 @@
+<div class="fotos">
+  @for (vorschau of vorschauen(); track vorschau.url) {
+    <div class="fotos__bild">
+      <img class="fotos__vorschau" [src]="vorschau.url" [alt]="vorschau.beschriftung" />
+      <button
+        class="fotos__weg"
+        type="button"
+        [attr.aria-label]="vorschau.entfernen"
+        (click)="entferne(vorschau.datei)"
+      >
+        <app-svg-icon name="zu" [groesse]="14" />
+      </button>
+    </div>
+  }
+  @if (!voll()) {
+    <label class="fotos__neu">
+      <app-svg-icon name="plus" [groesse]="20" />
+      <span class="sr-only">{{ 'melden.fotoHinzufuegen' | t }}</span>
+      <input
+        class="sr-only"
+        type="file"
+        accept="image/jpeg,image/webp"
+        capture="environment"
+        multiple
+        (change)="beiWahl($event)"
+      />
+    </label>
+  }
+</div>

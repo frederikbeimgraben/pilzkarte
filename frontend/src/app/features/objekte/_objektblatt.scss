@@ -1,0 +1,37 @@
+// Kopf und Rumpf eines Objekt-Blatts. Fund, Marker und Zone teilen sie sich;
+// die Maße stehen so in den Artboards `Fund` und `Zone`.
+@mixin objektblatt {
+  .objektblatt {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 18px;
+    min-block-size: 0;
+    padding: var(--space-1) var(--pilz-gutter) var(--space-6);
+    overflow-y: auto;
+  }
+
+  .objektblatt__kopf {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .objektblatt__titel {
+    margin: 0;
+    font-size: 24px;
+    font-weight: var(--fw-semibold);
+    line-height: 1.2;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .objektblatt__unter {
+    margin: 0;
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+  }
+
+  .objektblatt__dialogfuss {
+    inline-size: 100%;
+  }
+}

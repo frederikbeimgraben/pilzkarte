@@ -1,0 +1,27 @@
+@if (karte.objekt() !== null) {
+  <div class="objekt">
+    <app-sheet appBlattHoehe class="objekt__blatt" [beschriftung]="blattName()" [rasten]="rasten">
+      @if (fund(); as eintrag) {
+        <app-fund-blatt
+          [fund]="eintrag"
+          (zeigeAufKarte)="zeigeAufKarte($event)"
+          (geschlossen)="schliesse()"
+        />
+      } @else if (marker(); as eintrag) {
+        <app-marker-blatt
+          [marker]="eintrag"
+          (zeigeAufKarte)="zeigeAufKarte($event)"
+          (geschlossen)="schliesse()"
+        />
+      } @else if (zone(); as eintrag) {
+        <app-zone-blatt
+          [zone]="eintrag"
+          (zeigeAufKarte)="zeigeAufKarte($event)"
+          (geschlossen)="schliesse()"
+        />
+      } @else if (fehlt()) {
+        <app-note class="empty-state">{{ 'objekt.nichtGefunden' | t }}</app-note>
+      }
+    </app-sheet>
+  </div>
+}

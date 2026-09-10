@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+}
+
+.eintraege {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-block-size: 0;
+  padding: var(--space-5) var(--pilz-gutter);
+  overflow-y: auto;
+}
+
+// Der Punkt vor der Zeile trägt die Farbe des Objekts; 12 px stehen so im
+// Artboard `Funde`.
+.eintraege__punkt {
+  display: block;
+  inline-size: 12px;
+  block-size: 12px;
+  margin-block-start: 5px;
+  border-radius: 50%;
+}
