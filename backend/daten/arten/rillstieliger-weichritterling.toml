@@ -1,0 +1,33 @@
+name = "Rillstieliger Weichritterling"
+lateinisch = "Melanoleuca grammopodia"
+gruppe = "ritterling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/RillstieligerWeichritterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 15, selten bis 20 cm breit, rotbraun, graubraun bis kastanienbraun, Mitte meist dunkler, Rand heller, später vollständig ausbleichend. Kahl, Zentrum eingedrückt und gebuckelt, Rand lange eingebogen."
+lamellen = "Weiß, hell cremeweiß, hellgelblich, ockerbraun bis braun, angewachsen und mit Zahn etwas herablaufend, sehr gedrängt."
+stiel = "Bräunlich bis graubraun auf weißlichem Grund, später dunkelbraun gestreift, etwas rillig, faserig, voll, fest und elastisch."
+fleisch = "Grauweiß bis hell gelblich."
+geruch = "Mehr oder weniger mehlig und angenehm pilzig, im Alter unangenehm muffig. Die mehlige Note fehlt manchmal."
+geschmack = "Mild, mehlartig bis angenehm pilzig. Die mehlige Note fehlt manchmal."
+sporenpulver = "Weißlich bis hell gelblich oder cremeweiß."
+vorkommen = "Im Mischwald, in Parks, auf grasigen Flächen, an Waldwegen und Waldrändern, gern auf kalkreichem Boden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Mönchskopf"
+merkmal = "Hut ockerbraun mit deutlichem Buckel, Lamellen weit herablaufend, Geruch süßlich parfümiert."
+essbar = "speisepilz"
+slug = "moenchskopf"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/RillstieligerWeichritterling.htm"

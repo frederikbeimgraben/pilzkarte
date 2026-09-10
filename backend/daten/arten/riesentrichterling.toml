@@ -1,0 +1,45 @@
+name = "Riesentrichterling"
+lateinisch = "Clitocybe maxima (infundibulicybe geotropa var. maxima)"
+gruppe = "trichterling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Riesentrichterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 20, selten bis 30 cm breit, weißlich, ockerbraun bis hellbraun, trocken seidig glatt. Mitte trichterförmig, nicht oder nur schwach gebuckelt, Rand lange eingerollt und etwas wellig."
+lamellen = "Weißlich, cremefarben bis cremebeige, ziemlich gedrängt, angewachsen und weit herablaufend, einzelne gegabelt."
+stiel = "5 bis 18, selten bis 27 cm lang, 1 bis 3, selten bis 4 cm dick, weißbräunlich, faserig, fest, biegsam, voll oder schwammig ausgestopft."
+fleisch = "Weiß, am Stielrand bräunlich, in der Hutmitte dick."
+geruch = "Süßlich, pilzig, parfümiert, etwas nach Heu."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer im Laub- und Nadelwald, meist gesellig in Hexenringen. Regional häufig, sonst sehr selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Mönchskopf"
+merkmal = "Hut mit deutlich fühlbarem Buckel in der Mitte, sonst sehr ähnlich."
+essbar = "speisepilz"
+slug = "moenchskopf"
+
+[[verwechslungen]]
+name = "Riesenkrempentrichterling"
+merkmal = "Hut weiß bis cremeweiß, Rand krempenartig gerollt, Stiel kurz und dick."
+essbar = "speisepilz"
+slug = "riesenkrempentrichterling"
+
+[[verwechslungen]]
+name = "Fuchsiger Röteltrichterling"
+merkmal = "Hut fuchsig orangebraun, Sporenpulver blassrosa, Lamellen nicht so weit herablaufend."
+essbar = "essbar"
+slug = "fuchsiger-roetelritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Riesentrichterling.htm"

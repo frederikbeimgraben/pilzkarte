@@ -1,0 +1,40 @@
+name = "Rauer Wulstling"
+lateinisch = "Amanita franchetii"
+gruppe = "wulstling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "kastanie", "kiefer"]
+speisewertHinweis = "Zu erkennen an den gelblichen bis grauen flockigen Velumresten auf Hut und Stiel, dem gelb gerandeten gerieften Ring und dem Fleisch, das nicht rötet. Roh ist er unverträglich, deshalb keine Kostversuche."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GelbflockigerWulstling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 7, selten bis 9 cm breit, gelblich, braungelb bis lehmgrau, mit grauen und gelblichen flockigen Velumresten."
+lamellen = "Weiß, frei, Schneiden feinflockig."
+stiel = "5 bis 8, selten bis 10 cm lang, 1 bis 2, selten bis 2,5 cm dick, weiß, mit gelblichem flockigem Warzengürtel, oft serpentinenartig aufsteigend, zylindrisch. Basis rüben- bis keulenförmig, Spitze leicht vom Hutfleisch abtrennbar. Ring weißlich mit gelblichem Rand, gerandet, gerieft und hängend."
+fleisch = "Weiß, nicht rötend."
+geruch = "Neutral bis angenehm."
+geschmack = "Mild. Keine Kostversuche."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald bei Laub- und Nadelbäumen, gern bei Eiche, Esskastanie und Kiefer, auf kalkreichem Boden. Sehr selten, im Mittelmeerraum häufiger."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Königsfliegenpilz"
+merkmal = "Hut braun mit ockerfarbenen Velumresten, deutlich größer, Stiel mit gerandeter Knolle."
+essbar = "giftig"
+slug = "koenigsfliegenpilz"
+
+[[verwechslungen]]
+name = "Grauer Wulstling"
+merkmal = "Velumreste grau statt gelb, Ring rein weiß, Geruch rettichartig."
+essbar = "ohneSpeisewert"
+slug = "grauer-wulstling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GelbflockigerWulstling.htm"

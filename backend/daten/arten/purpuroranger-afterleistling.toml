@@ -1,0 +1,46 @@
+name = "Purpuroranger Afterleistling"
+lateinisch = "Aphroditeola olida"
+gruppe = "leistling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Zu erkennen an den ablösbaren, oft gegabelten Lamellen, die anders als die Leisten der echten Leistlinge nicht mit dem Fleisch verwachsen sind, und am Geruch nach reifen Walderdbeeren. Extrem selten und in Deutschland vom Aussterben bedroht, deshalb ohnehin stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/PurpurorangerAfterleistling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 5, selten bis 6 cm breit, braun, braunorange, purpurorange, gelborange bis rosaorange, feinfilzig, trichterförmig. Rand wellig, lange eingerollt und leicht gerieft."
+lamellen = "Weißlich, fleischrosa, orangegelb, cremefarben bis gelborange, rötlich bis braun fleckend, braungelb bis blassrosa marmoriert, herablaufend, viele gegabelt und ablösbar."
+stiel = "Orangegelb, orangebraun bis gelbbraun, rötlich fleckend, körnig schuppig, zylindrisch, biegsam, nach unten dünner werdend."
+fleisch = "Gelblich, weißlich, rosa bis ocker, dünn, biegsam, weich, zäh und schwammig."
+geruch = "Holzig unangenehm bis aromatisch, teils nach reifen Walderdbeeren. Beim Trocknen chemisch und unangenehm."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer in Nadel- und Mischwäldern auf vergrabenem Holz, auf kalkhaltigen Böden. Extrem selten, in Deutschland vom Aussterben bedroht."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Falscher Pfifferling"
+merkmal = "Hut gleichmäßig orangegelb ohne Purpurton, Lamellen orange und dicht gegabelt, an Nadelholz."
+essbar = "giftig"
+slug = "falscher-pfifferling"
+
+[[verwechslungen]]
+name = "Ölbaumtrichterling"
+merkmal = "Deutlich größer, orangebraun, büschelig an Laubholzstümpfen, Lamellen im Dunkeln leuchtend."
+essbar = "giftig"
+slug = "oelbaumtrichterling"
+
+[[verwechslungen]]
+name = "Wohlriechender Trichterling"
+merkmal = "Hut graugrün bis blaugrün, Geruch stark anisartig."
+essbar = "giftig"
+slug = "wohlriechender-trichterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/PurpurorangerAfterleistling.htm"

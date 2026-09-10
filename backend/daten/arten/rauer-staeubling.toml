@@ -1,0 +1,46 @@
+name = "Rauer Stäubling"
+lateinisch = "Geastrum pedicellatum"
+gruppe = "staeubling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Sehr selten. Von den anderen weißen Stäublingen lässt er sich meist nur mikroskopisch sicher trennen. Nur solange das Innere rein weiß ist."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WeisserIgelstaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "2 bis 5, selten bis 7 cm breit, weißlich, kugelig, zur Basis zugespitzt. Haut sehr dünn, mit pyramidenartigen Stacheln und Warzen besetzt. Fallen die Stacheln ab, bleibt ein Netzmuster zurück."
+stacheln = "Dick, rund und pyramidenartig, meist zu dritt zueinander geneigt, die Spitzen weißlich."
+stiel = "Weiß, mit sehr langen Myzelwurzeln."
+fleisch = "Weiß, alt innen olivbraun und mit Sporenmasse gefüllt."
+geruch = "Unbedeutend bis angenehm."
+geschmack = "Mild."
+sporenpulver = "Grüngelb."
+vorkommen = "Folgezersetzer an grasigen Waldwegen und im Nadelwald, gern in Kiefernwäldern auf sandigem Boden. Sehr selten."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Igelstäubling"
+merkmal = "Stacheln länger und braunspitzig, Fruchtkörper ohne die langen Myzelwurzeln."
+essbar = "ohneSpeisewert"
+slug = "igelstaeubling"
+
+[[verwechslungen]]
+name = "Flaschenstäubling"
+merkmal = "Deutlich flaschen- bis birnenförmig mit langem Stielteil, Haut nur feinwarzig."
+essbar = "speisepilz"
+slug = "flaschenbovist"
+
+[[verwechslungen]]
+name = "Weißer Großstäubling"
+merkmal = "Viel größer, bis über 20 cm, Haut ohne pyramidenartige Stacheln."
+essbar = "speisepilz"
+slug = "weisser-grossstaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WeisserIgelstaeubling.htm"

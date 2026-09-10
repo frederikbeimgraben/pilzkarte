@@ -1,0 +1,49 @@
+name = "Riesenrötling"
+lateinisch = "Entoloma sinuatum"
+gruppe = "roetling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = ["eiche", "buche", "pappel"]
+speisewertHinweis = "Zu erkennen am fleischrötlichen Sporenpulver, an den jung gelblichen und später rotocker bis rosaocker werdenden Lamellen, die am Stiel ausgebuchtet sind und praktisch nie herablaufen, und am unangenehm säuerlich-mehligen Geruch. Keine Kostversuche."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Riesenroetling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 12, selten bis 16 cm breit, elfenbeinfarben, blassgelb, hell cremegelb, bleigrau bis silbrig ockerlich, oft unregelmäßig verbogen, etwas eingewachsen radialfaserig. Jung halbkugelig, alt breitkegelig bis ausgebreitet und gebuckelt, nicht ausbleichend."
+lamellen = "Jung meist gelblich bis hellgelb, selten weißlich, später rotocker, rosaocker bis rostgelb, am Stiel ausgebuchtet und fast frei wirkend, praktisch nie herablaufend, am Grund queraderig, mit Zwischenlamellen."
+stiel = "5 bis 13, selten bis 17 cm lang, 1 bis 4, selten bis 5 cm dick, weißlich, cremeweiß bis ockerbraun, längsfaserig mit feinen Rillen, dick und kernig. Basis bauchig verdickt bis knollig, Spitze oft heller bereift, im Alter schwammig bis hohl."
+fleisch = "Weiß, dick und fest."
+geruch = "Unangenehm, säuerlich, mehlig bis säuerlich rettichartig, manchmal etwas süßlich."
+geschmack = "Mild, etwas mehlartig, aber unangenehm. Keine Kostversuche."
+sporenpulver = "Fleischrötlich."
+vorkommen = "Symbiosepilz bei Laubbäumen wie Eiche, Buche und Espe, gern auf lehmigem kalkreichem Boden. Bildet Hexenringe."
+zeit = "Frühling bis Spätherbst, häufiger im Herbst."
+
+[[verwechslungen]]
+name = "Maipilz"
+merkmal = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch stark mehlig und angenehm, im Frühling."
+essbar = "speisepilz"
+slug = "maipilz"
+
+[[verwechslungen]]
+name = "Würziger Tellerling"
+merkmal = "Deutlich kleiner, Hut braun und hygrophan, Geruch würzig mehlig."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Schlehenrötling"
+merkmal = "Kleiner und schlanker, Hut graubraun, an Schlehen- und Weißdornhecken im Frühling."
+essbar = "essbar"
+slug = "schlehenroetling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Riesenroetling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Riesen-Rötling"
