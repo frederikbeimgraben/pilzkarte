@@ -178,6 +178,28 @@ Abnahme:
 - Kurve: laufendes Jahr endet mit Punkt, Höchstwert als Achsenbeschriftung
 - axe ohne Verstoß, Tastaturbedienung der Liste
 
+### D3 Taxonomie
+
+Nach D1d. Jede Art bekommt ihre Einordnung: Gattung, Familie, Ordnung,
+Klasse, mit lateinischem und deutschem Namen. Quelle ist das GBIF-Backbone
+(`/v1/species/match` je lateinischem Namen), abgelegt als
+`backend/daten/taxonomie.json` durch ein Skript in `modell/`, deutsche
+Namen der Gattungen und Familien aus 123pilzsuche oder Wikipedia mit
+Quelle. Endpunkte `GET /api/taxonomie/{rang}/{slug}` (Rang als Enum) mit
+den Arten darunter, dem Elternrang und den Geschwistern. Das Profil trägt
+`taxonomie` mit Slugs je Rang.
+
+Frontend: Seiten `/taxonomie/gattung/boletus`, `/taxonomie/familie/boletaceae`
+und so weiter, mit Pfad nach oben (Klasse, Ordnung, Familie, Gattung), Liste
+der Arten mit `SpeciesRow`, Liste der Kinder (Gattungen einer Familie).
+Die Artseite verlinkt Gattung und Familie unter dem lateinischen Namen. Die
+Artenliste bekommt Chips je Gruppe, die auf die Ordnung zeigen.
+
+Abnahme:
+- 85 Arten mit vollständiger Einordnung, Test gegen die JSON-Datei
+- Jede Taxonomie-Seite erreichbar aus der Artseite und zurück
+- axe ohne Verstoß, Screenshots Gattung und Familie hell
+
 ## Block 3, Konto und Objekte
 
 ### E1 Auth Frontend
