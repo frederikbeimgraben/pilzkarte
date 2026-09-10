@@ -13,7 +13,7 @@ from fastapi.responses import FileResponse
 from sqlalchemy import Select, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.auth import Nutzer, aktueller_nutzer
+from app.core.auth import Nutzer, aktueller_nutzer, nutzer_optional
 from app.core.db import sitzung
 from app.core.errors import Konflikt, MedientypFalsch, NichtGefunden, Ungueltig
 from app.core.settings import Einstellungen, einstellungen
@@ -55,6 +55,9 @@ RASTER_RAND_GRAD: Final = RASTER_KM / KM_JE_BREITENGRAD
 FOTOS_JE_FUND: Final = 3
 
 Angemeldet = Annotated[Nutzer, Depends(aktueller_nutzer)]
+# Die Karte mit geteilten Funden liest man auch ohne Konto. Ein Konto braucht
+# nur, wer speichert. Ein falsches Token bleibt auch hier ein Fehler.
+Vielleicht = Annotated[Nutzer | None, Depends(nutzer_optional)]
 Sitzung = Annotated[AsyncSession, Depends(sitzung)]
 Werte = Annotated[Einstellungen, Depends(einstellungen)]
 Gewaehlt = Annotated[Katalog, Depends(aktueller_katalog)]
@@ -108,14 +111,15 @@ async def foto_zum_fund(sitzung_: AsyncSession, fund: Fund, foto_id: str) -> Fot
     return treffer
 
 
-def ort_fuer(fund: Fund, gewaehlt: Katalog, nutzer: Nutzer) -> tuple[Punkt, bool]:
+def ort_fuer(fund: Fund, gewaehlt: Katalog, sub: str | None) -> tuple[Punkt, bool]:
     """Der Ort, der einen geteilten Fund verlassen darf, und ob er grob ist.
 
     Der eigene Fund bleibt immer genau. Bei einer geschuetzten Art liegt ein
-    fremder Fund auf dem Raster, nie auf seinem Punkt.
+    fremder Fund auf dem Raster, nie auf seinem Punkt. Ein Zugang ohne Konto hat
+    keinen ``sub`` und besitzt darum keinen Fund.
     """
     genau: Punkt = (fund.lon, fund.lat)
-    if fund.besitzer_sub == nutzer.sub:
+    if fund.besitzer_sub == sub:
         return genau, False
     if gewaehlt.ist_geschuetzt(fund.art_slug):
         return auf_raster(genau, RASTER_KM), True
@@ -152,9 +156,9 @@ async def fund_anlegen(
     return fund_aus(fund)
 
 
-@router.get("/geteilt", summary="Geteilte Funde im Ausschnitt")
+@router.get("/geteilt", summary="Geteilte Funde im Ausschnitt, auch ohne Konto")
 async def geteilte_funde(
-    nutzer: Angemeldet,
+    nutzer: Vielleicht,
     sitzung_: Sitzung,
     gewaehlt: Gewaehlt,
     ausschnitt: Ausschnitt,
@@ -162,10 +166,15 @@ async def geteilte_funde(
 ) -> Seite[GeteilterFund]:
     """Liefert geteilte Funde. Geschuetzte Arten liegen auf einem 5-km-Raster.
 
+    Diese Route liest auch, wer nicht angemeldet ist. Dann gehoert kein Fund dem
+    Aufrufer: jeder Eintrag traegt ``eigen: false``, und jede geschuetzte Art
+    liegt auf dem Raster.
+
     Gesucht wird in einem etwas groesseren Rechteck als gefragt, und gefiltert
     wird erst nach dem Runden. Sonst liesse sich der genaue Ort einer
     geschuetzten Art aus der Grenze des Ausschnitts zurueckrechnen.
     """
+    sub = nutzer.sub if nutzer is not None else None
     rechteck = bbox_lesen(bbox)
     auswahl = (
         select(Fund)
@@ -184,7 +193,7 @@ async def geteilte_funde(
 
     sichtbar: list[GeteilterFund] = []
     for fund in treffer:
-        ort, gerundet = ort_fuer(fund, gewaehlt, nutzer)
+        ort, gerundet = ort_fuer(fund, gewaehlt, sub)
         if rechteck is not None and not im_rechteck(ort, rechteck):
             continue
         sichtbar.append(
@@ -192,7 +201,7 @@ async def geteilte_funde(
                 fund,
                 ort,
                 gerundet=gerundet,
-                eigen=fund.besitzer_sub == nutzer.sub,
+                eigen=fund.besitzer_sub == sub,
             )
         )
     return seite_aus(sichtbar, ausschnitt)
