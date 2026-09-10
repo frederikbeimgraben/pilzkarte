@@ -63,13 +63,28 @@ SCHUTZ_NEIN = (
 )
 
 
-def stufe_fuer(begehungen_mit_fund: int) -> Stufe:
-    """Die Stufe einer Art, entschieden von ihren Begehungen mit Fund seit 2015."""
-    if begehungen_mit_fund >= SCHWELLE_VORHERSAGE:
+def stufe_fuer(begehungen_mit_fund: int, *, hat_karte: bool) -> Stufe:
+    """Die Stufe einer Art: was die App zu ihr zeigen kann, heute.
+
+    ``vorhersage`` heisst, dass eine Karte da ist. Die Datenlage allein reicht
+    nicht: 23 Arten tragen ein Modell, gerendert sind erst 13. Der Chip "mit
+    Vorhersage" zeigte sonst zehn Arten ohne Karte.
+    """
+    if hat_karte:
         return Stufe.VORHERSAGE
     if begehungen_mit_fund >= SCHWELLE_SAISON:
         return Stufe.SAISON
     return Stufe.PROFIL
+
+
+def vorhersage_geplant(begehungen_mit_fund: int) -> bool:
+    """Sagt, ob die Datenlage ein Modell traegt: 600 Begehungen mit Fund.
+
+    Das Feld ueberlebt die Trennung von Stufe und Karte. Die Artseite sagt
+    damit "Vorhersage in Arbeit", solange die Art noch kein Manifest hat, und
+    die dokumentierte Zahl von 23 Arten bleibt nachzuzaehlen.
+    """
+    return begehungen_mit_fund >= SCHWELLE_VORHERSAGE
 
 
 def anteil_je_woche(funde: Sequence[int], begehungen: Sequence[int]) -> list[float]:
@@ -194,7 +209,8 @@ class Katalog:
         for slug, profil in self.profile.items():
             zaehlung = self._zaehlung(profil)
             alle, laufend = self._reihen(profil)
-            stufe = stufe_fuer(zaehlung.begehungen_mit_fund)
+            karte = self.karten.get(slug)
+            stufe = stufe_fuer(zaehlung.begehungen_mit_fund, hat_karte=karte is not None)
             arten.append(
                 ArtKurz(
                     slug=slug,
@@ -205,7 +221,8 @@ class Katalog:
                     tags=tags_bauen(profil, stufe),
                     geschuetzt=profil.geschuetzt,
                     speisewert=profil.speisewert,
-                    karten_slug=self.karten.get(slug),
+                    karten_slug=karte,
+                    vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
                     begehungen_mit_fund=zaehlung.begehungen_mit_fund,
                     spitze_woche=spitze_woche_fuer(alle),
                     saison=SaisonKurz(
@@ -253,7 +270,8 @@ class Katalog:
             raise NichtGefunden(f"Die Art {slug} steht nicht im Katalog.")
         zaehlung = self._zaehlung(profil)
         alle, laufend = self._reihen(profil)
-        stufe = stufe_fuer(zaehlung.begehungen_mit_fund)
+        karte = self.karten.get(slug)
+        stufe = stufe_fuer(zaehlung.begehungen_mit_fund, hat_karte=karte is not None)
         return Art(
             slug=slug,
             name=profil.name,
@@ -263,7 +281,8 @@ class Katalog:
             tags=tags_bauen(profil, stufe),
             geschuetzt=profil.geschuetzt,
             speisewert=profil.speisewert,
-            karten_slug=self.karten.get(slug),
+            karten_slug=karte,
+            vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
             begehungen_mit_fund=zaehlung.begehungen_mit_fund,
             spitze_woche=spitze_woche_fuer(alle),
             merkmale=merkmale_bauen(profil),
