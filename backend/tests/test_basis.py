@@ -6,7 +6,7 @@ from fastapi import FastAPI
 
 from app.core.version import VERSION
 from app.main import app_bauen, lebenszyklus
-from tests.conftest import CLIENT_ID, ISSUER
+from tests.conftest import CLIENT_ID, ISSUER, FalscherIdp, kopfzeile
 
 
 def klient(app: FastAPI, *, fehler_durchreichen: bool = True) -> httpx.AsyncClient:
@@ -40,6 +40,27 @@ async def test_version_kommt_aus_der_pyproject() -> None:
         antwort = await ruf.get("/api/config")
 
     assert antwort.json()["version"].count(".") >= 1
+
+
+async def test_ich_liefert_die_person_aus_dem_token(idp: FalscherIdp) -> None:
+    async with klient(app_bauen()) as ruf:
+        antwort = await ruf.get("/api/ich", headers=kopfzeile(idp.token()))
+
+    assert antwort.status_code == 200
+    assert antwort.json() == {
+        "sub": "nutzer-1",
+        "email": "pilz@example.test",
+        "name": "Pilzsammlerin",
+    }
+
+
+async def test_ich_ohne_token_ist_401() -> None:
+    async with klient(app_bauen()) as ruf:
+        antwort = await ruf.get("/api/ich")
+
+    assert antwort.status_code == 401
+    assert antwort.headers["content-type"].startswith("application/problem+json")
+    assert antwort.json()["code"] == "unauthorized"
 
 
 async def test_unbekannter_pfad_ist_problem_json() -> None:

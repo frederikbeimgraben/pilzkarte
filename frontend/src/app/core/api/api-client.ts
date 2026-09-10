@@ -4,7 +4,7 @@ import { ToastService } from '@stupa-makers/ui-kit';
 import { catchError, throwError, type Observable } from 'rxjs';
 import { I18nService } from '../i18n/i18n.service';
 import { API_BASE_URL } from './api.config';
-import { istProblemDetail, type ProblemDetail } from './problem';
+import { ANMELDUNG_NOETIG, istProblemDetail, type ProblemDetail } from './problem';
 
 /** Abfragewerte einer URL. `undefined` fällt weg, statt als Text zu landen. */
 export type Abfrage = Record<string, string | number | boolean | undefined>;
@@ -57,7 +57,7 @@ export class ApiClient {
 
   private melde(fehler: unknown): Observable<never> {
     const problem = this.alsProblem(fehler);
-    this.toasts.error(problem.detail ?? problem.title);
+    if (problem.code !== ANMELDUNG_NOETIG) this.toasts.error(problem.detail ?? problem.title);
     return throwError(() => problem);
   }
 
@@ -66,6 +66,9 @@ export class ApiClient {
    * Aufrufer zwei Fehlerformen kennen.
    */
   private alsProblem(fehler: unknown): ProblemDetail {
+    // Der Interceptor wirft schon ein fertiges Problem. Es hier noch einmal zu
+    // deuten machte aus einer bekannten 401 einen unbekannten Fehler.
+    if (istProblemDetail(fehler)) return fehler;
     if (fehler instanceof HttpErrorResponse) {
       if (istProblemDetail(fehler.error)) return fehler.error;
       const ohneAntwort = fehler.status === 0;

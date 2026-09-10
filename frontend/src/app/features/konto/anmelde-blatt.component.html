@@ -1,0 +1,18 @@
+@if (offen()) {
+  <div class="anmelden">
+    <div class="anmelden__schleier"></div>
+    <app-sheet class="anmelden__blatt" [beschriftung]="'anmelden.blatt' | t" [modal]="true" [rasten]="rasten">
+      <div class="anmelden__inhalt">
+        <h2 class="anmelden__titel">{{ 'anmelden.titel' | t }}</h2>
+        <p class="anmelden__text">{{ 'anmelden.text' | t }}</p>
+      </div>
+      <app-action-bar
+        #fuss
+        [haupt]="'anmelden.knopf' | t"
+        [geist]="'anmelden.spaeter' | t"
+        (hauptKlick)="anmelden()"
+        (geistKlick)="spaeter()"
+      />
+    </app-sheet>
+  </div>
+}

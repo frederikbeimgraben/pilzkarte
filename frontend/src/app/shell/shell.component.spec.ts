@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
+import { AuthService } from '../core/auth';
+import { ManagerAttrappe, authAnbieter, oidcNutzer } from '../testing/auth-attrappe';
 import { keineVerstoesse } from '../testing/axe';
 import { ShellComponent } from './shell.component';
 
@@ -19,8 +22,13 @@ const ROUTEN = [
   { path: '', pathMatch: 'full' as const, redirectTo: 'karte' },
 ];
 
-function huelle() {
-  return render(ShellComponent, { providers: [provideRouter(ROUTEN)] });
+/** Je Test eine eigene Attrappe, sonst trüge eine Anmeldung in den nächsten. */
+async function huelle() {
+  const manager = new ManagerAttrappe();
+  const ergebnis = await render(ShellComponent, {
+    providers: [provideRouter(ROUTEN), ...authAnbieter(manager)],
+  });
+  return { ...ergebnis, manager };
 }
 
 describe('ShellComponent', () => {
@@ -52,6 +60,17 @@ describe('ShellComponent', () => {
 
     expect(screen.getByRole('link', { name: 'Arten' })).toHaveAttribute('aria-current', 'page');
     expect(screen.queryByRole('button', { name: 'Konto' })).not.toBeInTheDocument();
+  });
+
+  it('trägt der Avatar angemeldet den ersten Buchstaben des Namens', async () => {
+    const { navigate, detectChanges, manager } = await huelle();
+    await navigate('/karte');
+    manager.still = oidcNutzer();
+
+    await TestBed.inject(AuthService).stilleErneuerung();
+    detectChanges();
+
+    expect(screen.getByRole('button', { name: 'Konto von Frederik' })).toHaveTextContent('F');
   });
 
   it('führt der Avatar zum Konto', async () => {

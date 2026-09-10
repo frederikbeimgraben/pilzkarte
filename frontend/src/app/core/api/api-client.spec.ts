@@ -1,9 +1,10 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ToastService } from '@stupa-makers/ui-kit';
+import { throwError } from 'rxjs';
 import { ApiClient } from './api-client';
-import type { ProblemDetail } from './problem';
+import { ANMELDUNG_NOETIG, type ProblemDetail } from './problem';
 
 function aufbauen(): { api: ApiClient; http: HttpTestingController; toasts: ToastService } {
   TestBed.configureTestingModule({ providers: [provideHttpClient(), provideHttpClientTesting()] });
@@ -92,6 +93,33 @@ describe('ApiClient', () => {
 
     expect(gefangen[0].title).toBe('Unbekannter Fehler.');
     expect(gefangen[0].status).toBe(500);
+  });
+
+  it('schweigt, wenn das Anmelde-Blatt schon fragt', () => {
+    const problem: ProblemDetail = {
+      type: 'about:blank',
+      title: 'Nicht angemeldet',
+      status: 401,
+      code: ANMELDUNG_NOETIG,
+    };
+    // So wirft der authInterceptor: kein HttpErrorResponse, sondern ein
+    // fertiges Problem. Der Aufrufer soll es sehen, ohne dass ein Toast
+    // danebensteht, denn das Anmelde-Blatt fragt schon.
+    TestBed.resetTestingModule();
+    TestBed.configureTestingModule({
+      providers: [
+        provideHttpClient(withInterceptors([() => throwError(() => problem)])),
+        provideHttpClientTesting(),
+      ],
+    });
+    const api = TestBed.inject(ApiClient);
+    const toasts = TestBed.inject(ToastService);
+    const gefangen: ProblemDetail[] = [];
+
+    api.get('/funde').subscribe({ error: (fehler: ProblemDetail) => gefangen.push(fehler) });
+
+    expect(gefangen[0]).toEqual(problem);
+    expect(toasts.toasts()).toHaveLength(0);
   });
 
   it('fängt auch einen Fehler, der keine HTTP-Antwort ist', () => {

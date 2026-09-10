@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
+import { AuthService } from '../core/auth';
 import { AnsichtDienst } from '../core/layout/ansicht.service';
 import { TranslatePipe } from '../core/i18n/translate.pipe';
 import { I18nService } from '../core/i18n/i18n.service';
@@ -33,6 +34,7 @@ export class ShellComponent {
   private readonly router = inject(Router);
   private readonly i18n = inject(I18nService);
   private readonly ansicht = inject(AnsichtDienst);
+  private readonly auth = inject(AuthService);
 
   private readonly adresse = toSignal(
     this.router.events.pipe(
@@ -48,6 +50,18 @@ export class ShellComponent {
   protected readonly aktiv = computed(() => `/${this.adresse().split(/[?#/]/)[1] || 'karte'}`);
 
   protected readonly aufDerKarte = computed(() => this.aktiv() === '/karte');
+
+  /** Angemeldet trägt der Kreis den ersten Buchstaben des Namens, sonst „G“. */
+  protected readonly avatarName = computed(
+    () => this.auth.nutzer()?.name ?? this.i18n.translate('konto.gast'),
+  );
+
+  protected readonly avatarBeschriftung = computed(() => {
+    const person = this.auth.nutzer();
+    return person === null
+      ? this.i18n.translate('nav.konto')
+      : this.i18n.translate('konto.avatarAngemeldet', { name: person.name });
+  });
 
   protected readonly eintraege = computed<NavEintrag[]>(() =>
     REITER.map((reiter) => ({

@@ -12,8 +12,8 @@
   @if (aufDerKarte()) {
     <app-avatar-button
       class="huelle__avatar"
-      [name]="'konto.gast' | t"
-      [beschriftung]="'nav.konto' | t"
+      [name]="avatarName()"
+      [beschriftung]="avatarBeschriftung()"
       (klick)="zumKonto()"
     />
   }
