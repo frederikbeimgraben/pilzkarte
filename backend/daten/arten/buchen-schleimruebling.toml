@@ -4,25 +4,54 @@ gruppe = "schleimruebling"
 speisewert = "ohneSpeisewert"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["buche"]
+baeume = ["buche", "eiche"]
 karte = "schleimruebling"
-speisewertHinweis = "Essbar, aber ohne Wert. Der Schleim lässt sich abwaschen."
+speisewertHinweis = "Essbar, aber ohne Wert. Die Huthaut lässt sich gummiartig abziehen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BeringterSchleimruebling.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "2 bis 8 cm, weiß bis grauweiß, durchscheinend, dick und glasig schleimig."
-lamellen = "Weiß, breit, entfernt stehend, am Stiel angewachsen."
-stiel = "Weiß, zäh, mit häutigem Ring, an der Basis oft gebogen."
-fleisch = "Weiß, dünn, wässrig."
-geruch = "Unauffällig."
-geschmack = "Mild."
-sporenpulver = "Weiß."
-vorkommen = "Schwächeparasit an Buche, an Stämmen und an toten Ästen bis hoch in die Krone. Eine Anzeigerart für Buchenwald."
-zeit = "Juli bis November."
+hut = "1 bis 8, selten bis 10 cm breit, weiß, manchmal von der Mitte her bräunlich, stark schleimig. Huthaut gummiartig abziehbar, Rand gerieft und oft runzelig."
+lamellen = "Weiß, im Alter hellgelb, ausgebuchtet angewachsen und mit einem Zahn herablaufend."
+stiel = "1 bis 10, selten bis 15 cm lang, weißlich bis bräunlich, oft braun bis schwarzbraun faserig oder genattert. Mit häutigem weißem Ring, dessen Rand im Alter schwarzbraun wird."
+fleisch = "Weiß, dünn, zäh."
+geruch = "Neutral bis leicht rettichartig."
+geschmack = "Nach Weißkraut, leicht rettichartig."
+sporenpulver = "Weiß bis cremeweiß."
+vorkommen = "Folgezersetzer an Totholz von Laubbäumen, meist Buche, selten Eiche, einzeln bis büschelig."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Keine gefährliche"
-merkmal = "Weiß, schleimig, beringt und an Buchenholz: die Kombination ist eindeutig."
-essbar = "ohneSpeisewert"
+name = "Grauer Dachpilz"
+merkmal = "Hut grau bis graubraun, Lamellen erst weiß, dann rosa, frei. Kein Ring am Stiel."
+essbar = "giftig"
+slug = "grauer-dachpilz"
+
+[[verwechslungen]]
+name = "Weißer Dachpilz"
+merkmal = "Hut weiß, im Alter rosabraun, Lamellen werden fleischrot, ohne Ring."
+essbar = "essbar"
+slug = "weisser-dachpilz"
+
+[[verwechslungen]]
+name = "Seidiger Dachpilz"
+merkmal = "Hut elfenbeinweiß mit dunklerem Scheitel, Lamellen später rotbraun, ohne Ring."
+essbar = "essbar"
+slug = "seidiger-dachpilz"
+
+[[verwechslungen]]
+name = "Olivgrauer Schneckling"
+merkmal = "Hut dunkelbraun bis olivgrau, Stiel genattert, Lamellen wachsartig."
+essbar = "essbar"
+slug = "olivgrauer-schneckling"
+
+[[verwechslungen]]
+name = "Schleimigberingter Schneckling"
+merkmal = "Lamellen sehr weit auseinander, Stielbasis keulig, an Nadelholz."
+essbar = "essbar"
+slug = "schleimigberingter-schneckling"
 
 [[links]]
 titel = "123pilzsuche.de"

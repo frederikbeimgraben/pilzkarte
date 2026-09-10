@@ -4,28 +4,57 @@ gruppe = "roehrling"
 speisewert = "speisepilz"
 geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
-baeume = ["eiche", "buche"]
+baeume = ["buche", "eiche", "hasel", "fichte"]
+speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Wenn überhaupt, nur einen Fruchtkörper für den Eigenbedarf."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Anhaengselroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Im Fleisch orangerötlich bis intensiv rot."
 
 [merkmale]
-hut = "8 bis 20 cm, hell- bis rötlichbraun, samtig, im Alter rissig."
-roehren = "Chromgelb, fein, auf Druck blauend."
-stiel = "Gelb, fein gelb genetzt, Basis zugespitzt und oft wurzelnd."
-fleisch = "Gelb, im Schnitt schwach blauend, in der Stielbasis weinrötlich."
-geruch = "Angenehm pilzig."
-geschmack = "Mild, nussig."
-sporenpulver = "Olivbraun."
-vorkommen = "Wärmeliebend, Mykorrhiza mit Eiche und Buche auf Kalk. In Deutschland selten."
-zeit = "Juli bis September."
+hut = "4 bis 15, selten bis 18 cm breit, ocker-, kastanien- bis rotbraun, trocken, filzig bis lederartig, uneben. Fraßstellen gelblich bis orangerosa. Huthaut steht am scharfen Rand meist über."
+roehren = "Gelblich, am Stiel ausgebuchtet angewachsen."
+stiel = "Gelblich, zur Basis hell bräunend, Spitze gelb, mit feinmaschigem gelblichem bis bräunlichem Netz. Basis verdickt und mit einem wurzelnden Anhängsel im Boden."
+fleisch = "Zitronengelb, später ausblassend und nur am Stielrand noch zitronengelb, fest bis hart, meist nur leicht blauend."
+geruch = "Angenehm säuerlich pilzig, etwas nussig bis mandelartig."
+geschmack = "Mild."
+sporenpulver = "Dunkel olivbraun."
+vorkommen = "Symbiosepilz in Laubwäldern bei Buche, Eiche und Hasel, vereinzelt bei Fichte, auf kalkreichem Boden. In Deutschland gefährdet."
+zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-name = "Satansröhrling"
-merkmal = "Hut kreidig hellgrau, Stiel dick mit rotem Netz, Fleisch blaut. Auf Kalk unter Eiche und Buche."
+name = "Wurzelnder Bitterröhrling"
+merkmal = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte."
 essbar = "giftig"
+slug = "wurzelnder-bitterroehrling"
 
 [[verwechslungen]]
-name = "Flockenstieliger Hexenröhrling"
-merkmal = "Mündungen rot statt gelb, Stiel geflockt."
-essbar = "bedingtEssbar"
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch blaut sofort."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Falscher Anhängselröhrling"
+merkmal = "Röhren zitronengelb und nie blauend, Fleisch unter den Röhren schwefelgelb."
+essbar = "essbar"
+slug = "falscher-anhaengselroehrling"
+
+[[verwechslungen]]
+name = "Königsröhrling"
+merkmal = "Hut blutrot bis purpurrot statt ockerbraun."
+essbar = "essbar"
+slug = "koenigsroehrling"
+
+[[verwechslungen]]
+name = "Silberröhrling"
+merkmal = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau."
+essbar = "essbar"
+slug = "silberroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

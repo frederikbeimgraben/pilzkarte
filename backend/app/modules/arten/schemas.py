@@ -79,6 +79,7 @@ class Baumart(StrEnum):
     EICHE = "eiche"
     BIRKE = "birke"
     HAINBUCHE = "hainbuche"
+    HASEL = "hasel"
     PAPPEL = "pappel"
     WEIDE = "weide"
     LINDE = "linde"

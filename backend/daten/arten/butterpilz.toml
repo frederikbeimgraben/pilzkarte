@@ -1,32 +1,50 @@
 name = "Butterpilz"
 lateinisch = "Suillus luteus"
 gruppe = "schmierroehrling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
-speisewertHinweis = "Die schleimige Huthaut abziehen. Sie führt bei manchen zu Durchfall."
+speisewertHinweis = "Die schleimige Huthaut vor dem Garen abziehen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Butterroehring.htm"
+geprueftAm = "2026-09-10"
 
 [merkmale]
-hut = "5 bis 12 cm, kastanienbraun, stark schleimig, Haut leicht abziehbar."
-roehren = "Blassgelb, fein, jung von einem weißen Schleier bedeckt."
-stiel = "Kurz, gelblich, mit häutigem violettbraunem Ring, darüber gekörnelt."
-fleisch = "Blassgelb, weich, ohne Farbwechsel."
-geruch = "Unauffällig."
-geschmack = "Mild."
-sporenpulver = "Ockerbraun."
-vorkommen = "Mykorrhiza mit zweinadeligen Kiefern, in Forsten, auf Sandböden und an Wegrändern, oft in Reihen."
-zeit = "Juni bis November."
+hut = "3 bis 10, selten bis 13 cm breit, braun, glänzend, sehr schleimig und schmierig, Rand dunkler."
+roehren = "Zitronengelb."
+stiel = "Gelb, mit braunviolettem Ring, darüber bräunlich gepünktelt, voll und fest."
+fleisch = "Weißlich bis gelblich, leicht gilbend."
+geruch = "Obstartig."
+geschmack = "Mild bis säuerlich."
+sporenpulver = "Oliv-ockerbraun."
+vorkommen = "Symbiosepilz bei Kiefer."
+zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Kuhröhrling"
-merkmal = "Ohne Ring, Röhren weit und eckig, bei Kiefer."
+name = "Ringloser Butterröhrling"
+merkmal = "Ohne Ring am Stiel, Stielbasis rosa."
 essbar = "essbar"
+slug = "ringloser-butterroehrling"
+
+[[verwechslungen]]
+name = "Goldröhrling"
+merkmal = "Hut hellgelb bis orangerötlich, bei Lärche."
+essbar = "essbar"
+slug = "goldroehrling"
 
 [[verwechslungen]]
 name = "Körnchenröhrling"
-merkmal = "Ohne Ring, Stiel dicht gekörnelt, Röhren tropfen jung milchig."
+merkmal = "Ohne Ring, Stiel dicht gekörnelt, Röhren jung milchig tropfend."
 essbar = "essbar"
+slug = "koernchenroehrling"
+
+[[verwechslungen]]
+name = "Grauer Lärchenröhrling"
+merkmal = "Hut olivgrau bis gelbgrau, Röhren grau, bei Lärche."
+essbar = "essbar"
+slug = "grauer-laerchenroehrling"
 
 [[links]]
 titel = "123pilzsuche.de"

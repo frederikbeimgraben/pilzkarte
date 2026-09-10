@@ -1,31 +1,49 @@
 name = "Büscheliger Rasling"
 lateinisch = "Lyophyllum decastes"
 gruppe = "rasling"
-speisewert = "essbar"
+speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BraunerRasling.htm"
+geprueftAm = "2026-09-10"
+
 [merkmale]
-hut = "4 bis 12 cm, graubraun bis dunkelbraun, glatt, glänzend, oft verbogen durch den Druck der Nachbarn."
-lamellen = "Weiß bis cremefarben, dicht, ausgebuchtet."
-stiel = "Weiß, fest, faserig, an der Basis mit den Nachbarn verwachsen."
-fleisch = "Weiß, fest, elastisch."
-geruch = "Angenehm pilzig."
-geschmack = "Mild."
-sporenpulver = "Weiß."
-vorkommen = "Zersetzer auf verdichteten Böden, an Wegrändern, Böschungen und Baustellen, in dichten Büscheln aus einer Basis."
-zeit = "Juli bis November."
+hut = "3 bis 9, selten bis 13 cm breit, ledergelb, blass braungrau bis orangebraun, leicht gebuckelt oder in der Mitte eingedrückt, jung mit feiner Radialfaserung. Rand wellig eingerollt, Huthaut gummiartig elastisch bis knorpelig."
+lamellen = "Weißlich, breit angewachsen oder etwas herablaufend."
+stiel = "5 bis 10, selten bis 13 cm lang, weißlich bis hellbräunlich, längsfaserig, Spitze bereift."
+fleisch = "Weiß, fest, zäh und elastisch."
+geruch = "Neutral bis etwas mehlartig."
+geschmack = "Mild und angenehm."
+sporenpulver = "Reinweiß."
+vorkommen = "Folgezersetzer im Laubwald, auf Wegen, an Wegrändern und in Parks, meist büschelig aus einem Strunk."
+zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-name = "Riesenrötling"
-merkmal = "Lamellen werden rosa, Geruch mehlig, nicht büschelig."
+name = "Weißstieliger Rötling"
+merkmal = "Lamellen laufen rosa an, Sporenpulver rosa, wächst nicht büschelig."
 essbar = "giftig"
+slug = "weissstieliger-roetling"
 
 [[verwechslungen]]
-name = "Ziegelroter Rißpilz"
-merkmal = "Hut faserig aufreißend, Lamellen bräunlich."
-essbar = "toedlichGiftig"
+name = "Nebelkappe"
+merkmal = "Hut nebelgrau, Geruch auffallend süßlich, wächst in Reihen statt in Büscheln."
+essbar = "nichtEmpfohlen"
+slug = "nebelkappe"
+
+[[verwechslungen]]
+name = "Panzerrasling"
+merkmal = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
+essbar = "essbar"
+slug = "panzerrasling"
+
+[[verwechslungen]]
+name = "Frostrasling"
+merkmal = "Hut aschgrau bis dunkel graubraun, Stiele meist einzeln nebeneinander und tief im Boden."
+essbar = "essbar"
+slug = "frostrasling"
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,32 +1,56 @@
 name = "Böhmische Verpel"
 lateinisch = "Verpa bohemica"
 gruppe = "morchel"
-speisewert = "nichtEmpfohlen"
+speisewert = "speisepilz"
 geschuetzt = false
-jahreszeiten = ["fruehling"]
+jahreszeiten = ["winter", "fruehling"]
 baeume = ["pappel", "weide"]
-speisewertHinweis = "Wird nicht empfohlen. Es sind Vergiftungen mit Störungen der Bewegungssteuerung beschrieben."
+speisewertHinweis = "Roh giftig wie alle Morcheln. Durchgaren. Riecht der Fund fischartig, ist er verdorben."
 schutzHinweis = "Die Verordnung nennt die Morcheln (Morchella). Die Verpeln stehen nicht darin, werden aber leicht mit ihnen verwechselt."
 
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BoehmischeVerpel.htm"
+geprueftAm = "2026-09-10"
+
 [merkmale]
-hut = "2 bis 5 cm, glockig, ockerbraun, längs runzelig gefaltet, ohne Kammern. Er hängt wie ein Fingerhut nur am Scheitel des Stiels."
-stiel = "Lang, weiß, hohl, kleiig bereift."
-fleisch = "Dünn, brüchig."
-geruch = "Unauffällig."
-geschmack = "Nicht kosten."
-sporenpulver = "Cremeweiß."
-vorkommen = "In Auwäldern unter Pappel und Weide, auf feuchtem Kalkboden. Sehr früh im Jahr."
-zeit = "März bis April."
+fruchtkoerper = "Käppchen 2 bis 4, selten bis 5 cm breit und 1 bis 8 cm hoch, hellbeige bis dunkelbraun, runzelig labyrinthartig mit hochgestellten Längs- und Querrillen. Der Rand ist heller und nach oben gebogen."
+stiel = "7,5 bis 14,5 cm lang, 1 bis 2 cm breit, weißlich bis gelbbraun, flockig genattert, gekammert wattig hohl. Nur an der Spitze flach mit dem Käppchen verwachsen."
+fleisch = "Weißlich, zum Stielrand gelblich, dünn, wachsartig, zerbrechlich."
+geruch = "Angenehm pilzartig bis spermatisch."
+geschmack = "Mild."
+sporenpulver = "Kräftig ockergelb."
+vorkommen = "Folgezersetzer in Misch- und Auwald, gern in Rindenmulch, oft zusammen mit Spitzmorcheln. In Deutschland gefährdet."
+zeit = "Februar bis Juni, in kälteren Lagen nicht vor Anfang April."
+
+[[verwechslungen]]
+name = "Runzelige Fingerhutverpel"
+merkmal = "Hut stark hirnartig gerunzelt, kastanien- bis rotbraun."
+essbar = "giftig"
+slug = "runzelige-fingerhutverpel"
+
+[[verwechslungen]]
+name = "Glatte Fingerhutverpel"
+merkmal = "Hut nur gerunzelt mit Querrillen, ohne hochgestellte Längsrillen."
+essbar = "giftig"
+slug = "glatte-fingerhutverpel"
+
+[[verwechslungen]]
+name = "Käppchenmorchel"
+merkmal = "Stiel hohl, das Käppchen ist zu einem Drittel mit ihm verwachsen und meist zugespitzt."
+essbar = "speisepilz"
+slug = "kaeppchenmorchel"
 
 [[verwechslungen]]
 name = "Spitzmorchel"
-merkmal = "Kappe mit Kammern und ganz angewachsen."
-essbar = "bedingtEssbar"
+merkmal = "Käppchen mit Kammern und ganz am Stiel angewachsen."
+essbar = "speisepilz"
+slug = "spitzmorchel"
 
 [[verwechslungen]]
-name = "Frühjahrslorchel"
-merkmal = "Kappe hirnartig gewunden."
-essbar = "giftig"
+name = "Speisemorchel"
+merkmal = "Käppchen wabenartig und ganz am Stiel angewachsen."
+essbar = "speisepilz"
+slug = "speisemorchel"
 
 [[links]]
 titel = "123pilzsuche.de"
