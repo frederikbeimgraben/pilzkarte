@@ -87,6 +87,20 @@ lässt die Deckkraft mit dem Wert laufen. Eine Eingabe-Ebene trägt ihre Spanne
 `low` bis `high` in ihrer Einheit, spannt die Rampe darüber und bleibt gleich
 deckend; sonst sähe ein niedriger pH aus wie fehlende Daten.
 
+### Kombination
+
+Die Kombination ist dasselbe Protokoll mit mehreren Quellen. Der Worker holt
+die Kacheln aller angehakten Faktoren, prüft je Punkt jede Bedingung und
+liefert eine Kachel. Die Schnittmenge färbt in einer Farbe, halb deckend, wo
+jede Bedingung zutrifft. Abgestuft nimmt das geometrische Mittel der
+Erfüllungsgrade; ein Grad fällt außerhalb der Bedingung linear über ein
+Zehntel der Skala auf null, damit sichtbar bleibt, wo es knapp ist. Fehlt einer
+Quelle der Punkt, bleibt der Punkt leer.
+
+Eine Vorhersage-Art taugt als Faktor: `ebeneAusArt` bringt sie in die Form
+einer Ebene. Beide tragen Skala, Kachelordner je Woche und ein Histogramm,
+also führt nur ein Weg durch die Anwendung.
+
 ### Rollen
 
 Zwei Wertebenen liegen übereinander: `vorhersage` unten, `ebene` darüber. Jede
