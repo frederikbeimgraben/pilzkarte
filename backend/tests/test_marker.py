@@ -5,150 +5,150 @@ from typing import Any
 import httpx
 import pytest
 
-from tests.conftest import FalscherIdp
-from tests.objekte import marker_koerper
-from tests.test_funde import EIGEN, FREMD, als
+from tests.conftest import FakeIdp
+from tests.objects import marker_body
+from tests.test_finds import OTHER, OWN, as_user
 
 
-async def marker_anlegen(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
-    sub: str = EIGEN,
-    **abweichung: Any,  # noqa: ANN401
+async def create_marker(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+    sub: str = OWN,
+    **override: Any,  # noqa: ANN401
 ) -> dict[str, Any]:
     """Legt einen Marker an und liefert die Antwort."""
-    antwort = await ruf.post(
+    response = await call.post(
         "/api/marker",
-        json=marker_koerper(**abweichung),
-        headers=als(idp, sub),
+        json=marker_body(**override),
+        headers=as_user(idp, sub),
     )
-    assert antwort.status_code == 201, antwort.text
-    return antwort.json()
+    assert response.status_code == 201, response.text
+    return response.json()
 
 
-async def test_ohne_token_gibt_es_keine_marker(ruf: httpx.AsyncClient) -> None:
-    async with ruf:
-        antwort = await ruf.get("/api/marker")
+async def test_without_a_token_there_are_no_markers(call: httpx.AsyncClient) -> None:
+    async with call:
+        response = await call.get("/api/marker")
 
-    assert antwort.status_code == 401
+    assert response.status_code == 401
 
 
-async def test_ein_marker_traegt_farbe_und_notiz(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
+async def test_a_marker_carries_colour_and_note(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
 ) -> None:
-    async with ruf:
-        angelegt = await marker_anlegen(ruf, idp)
-        gelesen = await ruf.get(f"/api/marker/{angelegt['id']}", headers=als(idp))
+    async with call:
+        created = await create_marker(call, idp)
+        read_back = await call.get(f"/api/marker/{created['id']}", headers=as_user(idp))
 
-    koerper = gelesen.json()
-    assert koerper["name"] == "Alter Fichtenhang"
-    assert koerper["farbe"] == "blau"
-    assert koerper["sichtbarkeit"] == "privat"
+    body = read_back.json()
+    assert body["name"] == "Alter Fichtenhang"
+    assert body["farbe"] == "blau"
+    assert body["sichtbarkeit"] == "privat"
 
 
-async def test_eine_farbe_ausserhalb_der_sechs_wird_abgewiesen(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
+async def test_a_colour_outside_the_six_is_rejected(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
 ) -> None:
-    async with ruf:
-        antwort = await ruf.post(
+    async with call:
+        response = await call.post(
             "/api/marker",
-            json=marker_koerper(farbe="magenta"),
-            headers=als(idp),
+            json=marker_body(color="magenta"),
+            headers=as_user(idp),
         )
 
-    assert antwort.status_code == 422
+    assert response.status_code == 422
 
 
-async def test_ein_marker_ausserhalb_deutschlands_wird_abgewiesen(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
+async def test_a_marker_outside_germany_is_rejected(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
 ) -> None:
-    async with ruf:
-        antwort = await ruf.post(
+    async with call:
+        response = await call.post(
             "/api/marker",
-            json=marker_koerper(lat=41.9, lon=12.5),
-            headers=als(idp),
+            json=marker_body(lat=41.9, lon=12.5),
+            headers=as_user(idp),
         )
 
-    assert antwort.status_code == 422
+    assert response.status_code == 422
 
 
-async def test_ein_marker_ohne_namen_wird_abgewiesen(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
+async def test_a_marker_without_a_name_is_rejected(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
 ) -> None:
-    async with ruf:
-        antwort = await ruf.post("/api/marker", json=marker_koerper(name=""), headers=als(idp))
+    async with call:
+        response = await call.post("/api/marker", json=marker_body(name=""), headers=as_user(idp))
 
-    assert antwort.status_code == 422
+    assert response.status_code == 422
 
 
-async def test_die_liste_zeigt_nur_die_eigenen_marker(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
+async def test_the_listing_shows_only_own_markers(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
 ) -> None:
-    async with ruf:
-        _ = await marker_anlegen(ruf, idp)
-        _ = await marker_anlegen(ruf, idp, sub=FREMD)
-        meine = await ruf.get("/api/marker", headers=als(idp))
+    async with call:
+        _ = await create_marker(call, idp)
+        _ = await create_marker(call, idp, sub=OTHER)
+        mine = await call.get("/api/marker", headers=as_user(idp))
 
-    assert meine.json()["gesamt"] == 1
+    assert mine.json()["gesamt"] == 1
 
 
-async def test_die_liste_der_marker_blaettert(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
+async def test_the_marker_listing_pages(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
 ) -> None:
-    async with ruf:
+    async with call:
         for nummer in range(3):
-            _ = await marker_anlegen(ruf, idp, name=f"Stelle {nummer}")
-        seite = await ruf.get("/api/marker?limit=1&offset=1", headers=als(idp))
+            _ = await create_marker(call, idp, name=f"Stelle {nummer}")
+        page = await call.get("/api/marker?limit=1&offset=1", headers=as_user(idp))
 
-    koerper = seite.json()
-    assert koerper["gesamt"] == 3
-    assert len(koerper["eintraege"]) == 1
+    body = page.json()
+    assert body["gesamt"] == 3
+    assert len(body["eintraege"]) == 1
 
 
-async def test_ein_marker_laesst_sich_aendern(ruf: httpx.AsyncClient, idp: FalscherIdp) -> None:
-    async with ruf:
-        angelegt = await marker_anlegen(ruf, idp)
-        geaendert = await ruf.patch(
-            f"/api/marker/{angelegt['id']}",
+async def test_a_marker_can_be_patched(call: httpx.AsyncClient, idp: FakeIdp) -> None:
+    async with call:
+        created = await create_marker(call, idp)
+        patched = await call.patch(
+            f"/api/marker/{created['id']}",
             json={"farbe": "rot", "sichtbarkeit": "geteilt"},
-            headers=als(idp),
+            headers=as_user(idp),
         )
 
-    koerper = geaendert.json()
-    assert koerper["farbe"] == "rot"
-    assert koerper["sichtbarkeit"] == "geteilt"
-    assert koerper["name"] == angelegt["name"]
+    body = patched.json()
+    assert body["farbe"] == "rot"
+    assert body["sichtbarkeit"] == "geteilt"
+    assert body["name"] == created["name"]
 
 
-async def test_ein_marker_laesst_sich_loeschen(ruf: httpx.AsyncClient, idp: FalscherIdp) -> None:
-    async with ruf:
-        angelegt = await marker_anlegen(ruf, idp)
-        geloescht = await ruf.delete(f"/api/marker/{angelegt['id']}", headers=als(idp))
-        nachher = await ruf.get(f"/api/marker/{angelegt['id']}", headers=als(idp))
+async def test_a_marker_can_be_deleted(call: httpx.AsyncClient, idp: FakeIdp) -> None:
+    async with call:
+        created = await create_marker(call, idp)
+        deleted = await call.delete(f"/api/marker/{created['id']}", headers=as_user(idp))
+        afterwards = await call.get(f"/api/marker/{created['id']}", headers=as_user(idp))
 
-    assert geloescht.status_code == 204
-    assert nachher.status_code == 404
+    assert deleted.status_code == 204
+    assert afterwards.status_code == 404
 
 
 @pytest.mark.parametrize("verb", ["get", "patch", "delete"])
-async def test_ein_fremder_marker_ist_nicht_gefunden(
-    ruf: httpx.AsyncClient,
-    idp: FalscherIdp,
+async def test_another_persons_marker_is_not_found(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
     verb: str,
 ) -> None:
-    async with ruf:
-        angelegt = await marker_anlegen(ruf, idp)
-        pfad = f"/api/marker/{angelegt['id']}"
+    async with call:
+        created = await create_marker(call, idp)
+        path = f"/api/marker/{created['id']}"
         if verb == "patch":
-            antwort = await ruf.patch(pfad, json={"farbe": "rot"}, headers=als(idp, FREMD))
+            response = await call.patch(path, json={"farbe": "rot"}, headers=as_user(idp, OTHER))
         else:
-            antwort = await ruf.request(verb.upper(), pfad, headers=als(idp, FREMD))
+            response = await call.request(verb.upper(), path, headers=as_user(idp, OTHER))
 
-    assert antwort.status_code == 404
-    assert antwort.json()["code"] == "not_found"
+    assert response.status_code == 404
+    assert response.json()["code"] == "not_found"

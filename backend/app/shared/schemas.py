@@ -6,60 +6,60 @@ from typing import Annotated, Literal
 
 from pydantic import AfterValidator, BaseModel, ConfigDict, Field, model_validator
 
-from app.shared import geometrie
+from app.shared import geometry
 
 
-def zu_camel(name: str) -> str:
+def to_camel(name: str) -> str:
     """Wandelt einen Feldnamen in camelCase, wie ihn das JSON traegt."""
-    kopf, *rest = name.split("_")
-    return kopf + "".join(teil.capitalize() for teil in rest)
+    header, *rest = name.split("_")
+    return header + "".join(part.capitalize() for part in rest)
 
 
-def _mit_zeitzone(wert: datetime) -> datetime:
-    if wert.tzinfo is None:
+def _with_timezone(value: datetime) -> datetime:
+    if value.tzinfo is None:
         raise ValueError("Der Zeitpunkt braucht eine Zeitzone.")
-    return wert
+    return value
 
 
 # Ein Zeitpunkt ohne Zeitzone vergleicht sich falsch, sobald er auf einen
 # bewussten trifft. Der Vertrag laesst darum nur ISO-8601 mit Offset zu.
-Zeitpunkt = Annotated[datetime, AfterValidator(_mit_zeitzone)]
+Timestamp = Annotated[datetime, AfterValidator(_with_timezone)]
 
 
-class BasisModell(BaseModel):
+class BaseSchema(BaseModel):
     """Gemeinsame Wurzel aller Modelle: camelCase im JSON, keine fremden Felder."""
 
     model_config = ConfigDict(
-        alias_generator=zu_camel,
+        alias_generator=to_camel,
         populate_by_name=True,
         extra="forbid",
     )
 
 
-class Woche(BasisModell):
+class Week(BaseSchema):
     """Eine ISO-Kalenderwoche, so wie sie auf dem Draht steht."""
 
-    jahr: int
-    woche: int
+    year: int = Field(validation_alias="jahr", serialization_alias="jahr")
+    week: int = Field(validation_alias="woche", serialization_alias="woche")
 
     @model_validator(mode="after")
-    def _muss_es_geben(self) -> "Woche":
+    def _must_exist(self) -> "Week":
         # Nur manche Jahre haben eine 53. Woche. fromisocalendar kennt die Regel.
         try:
-            date.fromisocalendar(self.jahr, self.woche, 1)
-        except ValueError as fehler:
-            raise ValueError(f"Die Woche {self.woche} gibt es {self.jahr} nicht.") from fehler
+            date.fromisocalendar(self.year, self.week, 1)
+        except ValueError as error:
+            raise ValueError(f"Die Woche {self.week} gibt es {self.year} nicht.") from error
         return self
 
 
-class Sichtbarkeit(StrEnum):
+class Visibility(StrEnum):
     """Wer ein Objekt sehen darf."""
 
-    PRIVAT = "privat"
-    GETEILT = "geteilt"
+    PRIVATE = "privat"
+    SHARED = "geteilt"
 
 
-class Regel(StrEnum):
+class Rule(StrEnum):
     """Wie die Kombination ihre Faktoren verrechnet.
 
     ``schnitt`` faerbt, wo jede Bedingung zutrifft. ``abgestuft`` zeigt das
@@ -67,43 +67,43 @@ class Regel(StrEnum):
     ist. Die Spalte in ``models.py`` baut auf diesem Enum auf.
     """
 
-    SCHNITT = "schnitt"
-    ABGESTUFT = "abgestuft"
+    INTERSECTION = "schnitt"
+    GRADED = "abgestuft"
 
 
-class Farbe(StrEnum):
+class Color(StrEnum):
     """Die sechs Farben aus den Mockups. Eine freie Farbwahl gibt es nicht."""
 
-    GRUEN = "gruen"
-    BRAUN = "braun"
-    BLAU = "blau"
-    ROT = "rot"
+    GREEN = "gruen"
+    BROWN = "braun"
+    BLUE = "blau"
+    RED = "rot"
     GOLD = "gold"
-    GRAU = "grau"
+    GREY = "grau"
 
 
 # Jede Koordinate des Dienstes liegt in Deutschland. Die Grenzen stehen einmal
 # in ``app.shared.geometrie``, damit Punkt und Polygon dieselbe Regel tragen.
-Breitengrad = Annotated[float, Field(ge=geometrie.BREITE_MIN, le=geometrie.BREITE_MAX)]
-Laengengrad = Annotated[float, Field(ge=geometrie.LAENGE_MIN, le=geometrie.LAENGE_MAX)]
+Latitude = Annotated[float, Field(ge=geometry.LAT_MIN, le=geometry.LAT_MAX)]
+Longitude = Annotated[float, Field(ge=geometry.LON_MIN, le=geometry.LON_MAX)]
 
 
-def _nicht_in_der_zukunft(wert: date) -> date:
+def _not_in_the_future(value: date) -> date:
     # Ein Fund, den es noch nicht gibt, ist keiner. Gerechnet wird in UTC, weil
     # der Dienst keine Zeitzone des Geraets kennt.
-    if wert > datetime.now(UTC).date():
+    if value > datetime.now(UTC).date():
         raise ValueError("Das Datum liegt in der Zukunft.")
-    return wert
+    return value
 
 
-Funddatum = Annotated[date, AfterValidator(_nicht_in_der_zukunft)]
+FindDate = Annotated[date, AfterValidator(_not_in_the_future)]
 
 Name = Annotated[str, Field(min_length=1, max_length=80)]
-Notiz = Annotated[str, Field(max_length=2000)]
-Anzahl = Annotated[int, Field(ge=1, le=10_000)]
+Note = Annotated[str, Field(max_length=2000)]
+Count = Annotated[int, Field(ge=1, le=10_000)]
 
 
-class GeoPolygon(BasisModell):
+class GeoPolygon(BaseSchema):
     """Eine Flaeche als GeoJSON, mit genau einem Ring und ohne Loecher.
 
     Der Ring kommt offen oder geschlossen herein und geht immer geschlossen
@@ -112,19 +112,19 @@ class GeoPolygon(BasisModell):
     """
 
     type: Literal["Polygon"] = "Polygon"
-    coordinates: list[list[tuple[Laengengrad, Breitengrad]]] = Field(min_length=1, max_length=1)
+    coordinates: list[list[tuple[Longitude, Latitude]]] = Field(min_length=1, max_length=1)
 
     @property
-    def ring(self) -> list[geometrie.Punkt]:
+    def ring(self) -> list[geometry.Point]:
         """Der geschlossene Ring der Flaeche."""
         return list(self.coordinates[0])
 
     @model_validator(mode="after")
-    def _ring_pruefen(self) -> "GeoPolygon":
-        geschlossen = geometrie.ring_normieren(self.coordinates[0])
-        if not geometrie.ist_einfach(geschlossen):
+    def _check_ring(self) -> "GeoPolygon":
+        closed = geometry.close_ring(self.coordinates[0])
+        if not geometry.is_simple(closed):
             raise ValueError("Die Flaeche ueberschneidet sich selbst.")
-        if geometrie.flaeche_ha(geschlossen) <= 0:
+        if geometry.area_ha(closed) <= 0:
             raise ValueError("Die Eckpunkte liegen auf einer Linie und spannen keine Flaeche auf.")
-        self.coordinates = [geschlossen]
+        self.coordinates = [closed]
         return self

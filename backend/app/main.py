@@ -6,46 +6,46 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.db import motor
-from app.core.errors import fehlerbehandlung_registrieren
-from app.core.settings import einstellungen
+from app.core.db import engine
+from app.core.errors import register_error_handlers
+from app.core.settings import get_settings
 from app.core.version import VERSION
-from app.modules import arten, basis, funde, intern, kombinationen, marker, zonen
+from app.modules import combinations, finds, internal, marker, species, system, zones
 
 
 @asynccontextmanager
-async def lebenszyklus(_: FastAPI) -> AsyncGenerator[None]:
+async def lifespan(_: FastAPI) -> AsyncGenerator[None]:
     """Gibt die Verbindungen frei, wenn der Dienst endet."""
     yield
-    await motor().dispose()
+    await engine().dispose()
 
 
-def app_bauen() -> FastAPI:
+def build_app() -> FastAPI:
     """Baut die App: Router, Fehlerbehandlung, CORS."""
-    werte = einstellungen()
-    gebaut = FastAPI(
+    settings = get_settings()
+    built = FastAPI(
         title="Pilzkarte",
         version=VERSION,
-        lifespan=lebenszyklus,
+        lifespan=lifespan,
     )
     # In der Entwicklung laeuft das Frontend auf einem eigenen Ursprung. Im
     # Betrieb liegt beides hinter derselben Domain, dann greift die Regel nicht.
-    gebaut.add_middleware(
+    built.add_middleware(
         CORSMiddleware,
-        allow_origins=[werte.origin],
+        allow_origins=[settings.origin],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    gebaut.include_router(basis.router, prefix="/api")
-    gebaut.include_router(arten.router, prefix="/api")
-    gebaut.include_router(funde.router, prefix="/api")
-    gebaut.include_router(intern.router, prefix="/api")
-    gebaut.include_router(kombinationen.router, prefix="/api")
-    gebaut.include_router(marker.router, prefix="/api")
-    gebaut.include_router(zonen.router, prefix="/api")
-    fehlerbehandlung_registrieren(gebaut)
-    return gebaut
+    built.include_router(system.router, prefix="/api")
+    built.include_router(species.router, prefix="/api")
+    built.include_router(finds.router, prefix="/api")
+    built.include_router(internal.router, prefix="/api")
+    built.include_router(combinations.router, prefix="/api")
+    built.include_router(marker.router, prefix="/api")
+    built.include_router(zones.router, prefix="/api")
+    register_error_handlers(built)
+    return built
 
 
-app = app_bauen()
+app = build_app()

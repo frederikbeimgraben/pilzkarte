@@ -16,22 +16,22 @@ from fastapi import Depends
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jwt import PyJWK, PyJWTError
 
-from app.core.errors import AnmeldungFehlt
-from app.core.settings import einstellungen
+from app.core.errors import NotAuthenticated
+from app.core.settings import get_settings
 
 # Authentik signiert mit dem Schluessel des Providers. Beide Verfahren kommen
 # vor, je nach hinterlegtem Zertifikat.
-ALGORITHMEN: Final = ["RS256", "ES256"]
+ALGORITHMS: Final = ["RS256", "ES256"]
 
 # Der Issuer dreht seine Schluessel selten. Eine Stunde haelt die Last klein und
 # holt einen Wechsel spaetestens nach einer Stunde nach.
 JWKS_TTL: Final = timedelta(hours=1)
 
-NETZ_ZEITGRENZE: Final = 5.0
+NET_TIMEOUT: Final = 5.0
 
 
 @dataclass(frozen=True, slots=True)
-class Nutzer:
+class User:
     """Die angemeldete Person, so wie sie im Token steht."""
 
     sub: str
@@ -39,123 +39,123 @@ class Nutzer:
     name: str | None
 
 
-def netzklient() -> httpx.AsyncClient:
+def net_client() -> httpx.AsyncClient:
     """Liefert den Klienten fuer die Abfragen beim Issuer."""
-    return httpx.AsyncClient(timeout=NETZ_ZEITGRENZE)
+    return httpx.AsyncClient(timeout=NET_TIMEOUT)
 
 
-def _abbild(wert: object) -> Mapping[str, object] | None:
-    return cast("Mapping[str, object]", wert) if isinstance(wert, Mapping) else None
+def _mapping(value: object) -> Mapping[str, object] | None:
+    return cast("Mapping[str, object]", value) if isinstance(value, Mapping) else None
 
 
-def _text(daten: Mapping[str, object], feld: str) -> str | None:
-    wert = daten.get(feld)
-    return wert if isinstance(wert, str) else None
+def _string(data: Mapping[str, object], field: str) -> str | None:
+    value = data.get(field)
+    return value if isinstance(value, str) else None
 
 
-class JwksSpeicher:
+class JwksCache:
     """Haelt die Signaturschluessel des Issuers im Prozess."""
 
     def __init__(self, ttl: timedelta = JWKS_TTL) -> None:
         self._ttl = ttl
-        self._schluessel: dict[str, Any] = {}
-        self._geladen: datetime | None = None
+        self._keys: dict[str, Any] = {}
+        self._loaded: datetime | None = None
 
-    def _frisch(self) -> bool:
-        return self._geladen is not None and datetime.now(UTC) - self._geladen < self._ttl
+    def _fresh(self) -> bool:
+        return self._loaded is not None and datetime.now(UTC) - self._loaded < self._ttl
 
-    async def schluessel(self, kid: str) -> Any | None:  # noqa: ANN401
+    async def key(self, kid: str) -> Any | None:  # noqa: ANN401
         """Liefert den Schluessel zu einer Kennung, oder None."""
-        if not self._frisch():
-            await self._laden()
-        elif kid not in self._schluessel:
+        if not self._fresh():
+            await self._load()
+        elif kid not in self._keys:
             # Ein unbekannter kid heisst meistens: der Issuer hat gedreht. Das ist
             # ein Grund zum Neuladen, kein Grund fuer 401.
-            await self._laden()
-        return self._schluessel.get(kid)
+            await self._load()
+        return self._keys.get(kid)
 
-    async def _laden(self) -> None:
-        async with netzklient() as klient:
-            antwort = await klient.get(await self._jwks_url(klient))
-            antwort.raise_for_status()
-            dokument = _abbild(antwort.json())
-        eintraege = dokument.get("keys") if dokument is not None else None
-        gefunden: dict[str, Any] = {}
-        if isinstance(eintraege, list):
-            for roh in cast("list[object]", eintraege):
-                eintrag = _abbild(roh)
-                if eintrag is None:
+    async def _load(self) -> None:
+        async with net_client() as client:
+            response = await client.get(await self._jwks_url(client))
+            response.raise_for_status()
+            document = _mapping(response.json())
+        entries = document.get("keys") if document is not None else None
+        found: dict[str, Any] = {}
+        if isinstance(entries, list):
+            for raw in cast("list[object]", entries):
+                entry = _mapping(raw)
+                if entry is None:
                     continue
-                kennung = _text(eintrag, "kid")
-                if kennung is not None:
-                    gefunden[kennung] = PyJWK(dict(eintrag)).key
-        self._schluessel = gefunden
-        self._geladen = datetime.now(UTC)
+                identifier = _string(entry, "kid")
+                if identifier is not None:
+                    found[identifier] = PyJWK(dict(entry)).key
+        self._keys = found
+        self._loaded = datetime.now(UTC)
 
-    async def _jwks_url(self, klient: httpx.AsyncClient) -> str:
-        werte = einstellungen()
+    async def _jwks_url(self, client: httpx.AsyncClient) -> str:
+        settings = get_settings()
         try:
-            antwort = await klient.get(werte.discovery_url)
-            antwort.raise_for_status()
-            dokument = _abbild(antwort.json())
-            uri = _text(dokument, "jwks_uri") if dokument is not None else None
+            response = await client.get(settings.discovery_url)
+            response.raise_for_status()
+            document = _mapping(response.json())
+            uri = _string(document, "jwks_uri") if document is not None else None
         except (httpx.HTTPError, ValueError):
             # Authentik liefert die Schluessel auch ohne Discovery unter jwks/.
-            return werte.jwks_url
-        return uri if uri is not None else werte.jwks_url
+            return settings.jwks_url
+        return uri if uri is not None else settings.jwks_url
 
 
-_speicher = JwksSpeicher()
+_cache = JwksCache()
 
 _bearer = HTTPBearer(auto_error=False)
 
 
-async def nutzer_aus_token(token: str) -> Nutzer:
+async def user_from_token(token: str) -> User:
     """Prueft ein Access-Token und liefert die Person dahinter."""
     try:
-        kopf = jwt.get_unverified_header(token)
-    except PyJWTError as fehler:
-        raise AnmeldungFehlt("Das Token ist nicht lesbar.") from fehler
+        header = jwt.get_unverified_header(token)
+    except PyJWTError as error:
+        raise NotAuthenticated("Das Token ist nicht lesbar.") from error
 
-    kid = _text(kopf, "kid")
+    kid = _string(header, "kid")
     if kid is None:
-        raise AnmeldungFehlt("Dem Token fehlt die Schluesselkennung.")
+        raise NotAuthenticated("Dem Token fehlt die Schluesselkennung.")
 
-    schluessel = await _speicher.schluessel(kid)
-    if schluessel is None:
-        raise AnmeldungFehlt("Der Schluessel des Tokens ist unbekannt.")
+    key = await _cache.key(kid)
+    if key is None:
+        raise NotAuthenticated("Der Schluessel des Tokens ist unbekannt.")
 
-    werte = einstellungen()
+    settings = get_settings()
     try:
-        daten: Mapping[str, object] = jwt.decode(
+        data: Mapping[str, object] = jwt.decode(
             token,
-            schluessel,
-            algorithms=ALGORITHMEN,
-            audience=werte.oidc_client_id,
-            issuer=werte.oidc_issuer,
+            key,
+            algorithms=ALGORITHMS,
+            audience=settings.oidc_client_id,
+            issuer=settings.oidc_issuer,
             options={"require": ["exp", "iss", "aud", "sub"]},
         )
-    except PyJWTError as fehler:
-        raise AnmeldungFehlt("Das Token ist ungueltig.") from fehler
+    except PyJWTError as error:
+        raise NotAuthenticated("Das Token ist ungueltig.") from error
 
     # ``require`` und die Pruefung in PyJWT lassen nur ein Token mit sub als
     # Zeichenkette durch. Eine eigene Pruefung darauf waere unerreichbar.
-    return Nutzer(sub=str(daten["sub"]), email=_text(daten, "email"), name=_text(daten, "name"))
+    return User(sub=str(data["sub"]), email=_string(data, "email"), name=_string(data, "name"))
 
 
-async def nutzer_optional(
-    anmeldung: Annotated[HTTPAuthorizationCredentials | None, Depends(_bearer)],
-) -> Nutzer | None:
+async def optional_user(
+    credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(_bearer)],
+) -> User | None:
     """Liefert die Person, falls ein Token dabei ist. Ein falsches Token bleibt ein Fehler."""
-    if anmeldung is None:
+    if credentials is None:
         return None
-    return await nutzer_aus_token(anmeldung.credentials)
+    return await user_from_token(credentials.credentials)
 
 
-async def aktueller_nutzer(
-    nutzer: Annotated[Nutzer | None, Depends(nutzer_optional)],
-) -> Nutzer:
+async def current_user(
+    user: Annotated[User | None, Depends(optional_user)],
+) -> User:
     """Liefert die angemeldete Person. Ohne Token endet die Anfrage mit 401."""
-    if nutzer is None:
-        raise AnmeldungFehlt("Fuer diesen Zugriff ist eine Anmeldung noetig.")
-    return nutzer
+    if user is None:
+        raise NotAuthenticated("Fuer diesen Zugriff ist eine Anmeldung noetig.")
+    return user

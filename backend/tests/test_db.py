@@ -4,40 +4,40 @@ from pathlib import Path
 
 from sqlalchemy import select, text
 
-from app.core.db import DATEI_PRAEFIX, motor, ordner_anlegen, sitzung
-from app.core.settings import einstellungen
-from app.models import Base, Nutzer
+from app.core.db import FILE_PREFIX, create_folder, db_session, engine
+from app.core.settings import get_settings
+from app.models import Base, User
 
 
-async def test_sitzung_beantwortet_eine_abfrage() -> None:
-    async for offen in sitzung():
-        ergebnis = await offen.execute(text("SELECT 1"))
+async def test_a_session_answers_a_query() -> None:
+    async for open_ring in db_session():
+        ergebnis = await open_ring.execute(text("SELECT 1"))
         assert ergebnis.scalar_one() == 1
 
 
-async def test_schema_traegt_die_tabelle_nutzer() -> None:
-    async with motor().begin() as verbindung:
-        await verbindung.run_sync(Base.metadata.create_all)
+async def test_the_schema_carries_the_user_table() -> None:
+    async with engine().begin() as connection:
+        await connection.run_sync(Base.metadata.create_all)
 
-    async for offen in sitzung():
-        offen.add(Nutzer(sub="nutzer-1"))
-        await offen.commit()
-        gefunden = await offen.execute(select(Nutzer.sub))
-        assert gefunden.scalar_one() == "nutzer-1"
-
-
-def test_ordner_der_datei_entsteht(tmp_path: Path) -> None:
-    ziel = tmp_path / "tief" / "pilze.sqlite"
-
-    ordner_anlegen(f"{DATEI_PRAEFIX}{ziel}")
-
-    assert ziel.parent.is_dir()
+    async for open_ring in db_session():
+        open_ring.add(User(sub="nutzer-1"))
+        await open_ring.commit()
+        found = await open_ring.execute(select(User.sub))
+        assert found.scalar_one() == "nutzer-1"
 
 
-def test_fremde_url_bleibt_unberuehrt() -> None:
-    ordner_anlegen("postgresql+asyncpg://server/pilze")
+def test_the_folder_of_the_file_is_created(tmp_path: Path) -> None:
+    target = tmp_path / "tief" / "pilze.sqlite"
+
+    create_folder(f"{FILE_PREFIX}{target}")
+
+    assert target.parent.is_dir()
 
 
-def test_die_engine_folgt_der_umgebung() -> None:
-    assert str(motor().url).startswith("sqlite+aiosqlite:")
-    assert einstellungen().db.endswith("pilze.sqlite")
+def test_a_foreign_url_stays_untouched() -> None:
+    create_folder("postgresql+asyncpg://server/pilze")
+
+
+def test_the_engine_follows_the_environment() -> None:
+    assert str(engine().url).startswith("sqlite+aiosqlite:")
+    assert get_settings().db.endswith("pilze.sqlite")

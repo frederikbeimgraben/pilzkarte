@@ -311,11 +311,12 @@ svg.diagramm{width:100%;max-width:680px;height:auto;display:block;margin:10px 0}
   ui/            Mobile Bausteine, bis sie im ui-kit sind: Chips, Segment, Zeitleiste, Sheet, BottomNav
 
 backend/app/
-  modules/auth/      OIDC-Prüfung, Principal, Sichtbarkeit
-  modules/funde/     Funde mit Fotos
-  modules/markierungen/  Marker und Zonen
-  modules/arten/     Katalog und Stufen
-  shared/            problem+json, camelCase-Basis, Paging
+  core/              OIDC-Prüfung, Einstellungen, Fehler, Datenbank
+  modules/finds/     Funde mit Fotos
+  modules/marker/, modules/zones/   Marker und Zonen
+  modules/species/   Katalog und Stufen
+  modules/combinations/, modules/internal/
+  shared/            problem+json, camelCase-Basis, Paging, Geometrie, Bilder
 migrations/          Alembic, ein Head
 .claude/skills/      conventions, be-auth, be-funde, frontend, deploy
 .claude/memory/      Entscheidungen mit Datum</pre>

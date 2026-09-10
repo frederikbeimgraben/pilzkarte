@@ -4,36 +4,37 @@ from pathlib import Path
 
 import pytest
 
-from app.core.settings import Einstellungen, einstellungen
-from app.core.version import VERSION, version_lesen
+from app.core.settings import Settings, get_settings
+from app.core.version import VERSION, read_version
 
 
-def test_praefix_wird_gelesen() -> None:
-    assert einstellungen().oidc_client_id == "pilze"
+def test_the_prefix_is_read() -> None:
+    assert get_settings().oidc_client_id == "pilze"
 
 
-def test_issuer_bekommt_einen_schraegstrich(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_the_issuer_gets_a_trailing_slash(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("PILZE_OIDC_ISSUER", "https://sso.example.test/application/o/pilze")
-    einstellungen.cache_clear()
+    get_settings.cache_clear()
 
-    assert einstellungen().oidc_issuer.endswith("/pilze/")
+    assert get_settings().oidc_issuer.endswith("/pilze/")
 
 
-def test_discovery_und_jwks_haengen_am_issuer() -> None:
-    werte = Einstellungen(oidc_issuer="https://sso.example.test/o/pilze/")
+def test_discovery_and_jwks_hang_off_the_issuer() -> None:
+    settings = Settings(oidc_issuer="https://sso.example.test/o/pilze/")
 
     assert (
-        werte.discovery_url == "https://sso.example.test/o/pilze/.well-known/openid-configuration"
+        settings.discovery_url
+        == "https://sso.example.test/o/pilze/.well-known/openid-configuration"
     )
-    assert werte.jwks_url == "https://sso.example.test/o/pilze/jwks/"
+    assert settings.jwks_url == "https://sso.example.test/o/pilze/jwks/"
 
 
-def test_die_vorgaben_zeigen_auf_var() -> None:
-    vorgaben = Einstellungen.model_fields
+def test_the_defaults_point_at_var() -> None:
+    defaults = Settings.model_fields
 
-    assert str(vorgaben["db"].default).startswith("sqlite+aiosqlite:///./var/")
-    assert vorgaben["fotos"].default == Path("./var/fotos")
+    assert str(defaults["db"].default).startswith("sqlite+aiosqlite:///./var/")
+    assert defaults["photos"].default == Path("./var/fotos")
 
 
-def test_version_kommt_aus_der_datei() -> None:
-    assert version_lesen() == VERSION
+def test_the_version_comes_from_the_file() -> None:
+    assert read_version() == VERSION
