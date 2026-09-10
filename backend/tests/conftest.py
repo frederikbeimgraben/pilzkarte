@@ -4,7 +4,7 @@ Der falsche Issuer ersetzt Authentik: er liefert Discovery und JWKS, zaehlt die
 Aufrufe und stellt Token aus. So laeuft kein Test gegen das Netz.
 """
 
-from collections.abc import Callable, Iterator, Mapping
+from collections.abc import AsyncIterator, Callable, Iterator, Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from typing import Any
@@ -13,10 +13,15 @@ import httpx
 import jwt
 import pytest
 from cryptography.hazmat.primitives.asymmetric import ec, rsa
+from fastapi import FastAPI
 from jwt.algorithms import ECAlgorithm, RSAAlgorithm
 
 from app.core import auth, db
 from app.core.settings import einstellungen
+from app.main import app_bauen
+from app.models import Base
+from app.modules.arten.router import aktueller_katalog
+from tests.objekte import testkatalog
 
 ISSUER = "https://sso.example.test/application/o/pilze/"
 CLIENT_ID = "pilze"
@@ -139,3 +144,30 @@ def _klient_fabrik(falscher: FalscherIdp) -> Callable[[], httpx.AsyncClient]:
 def kopfzeile(token: str) -> Mapping[str, str]:
     """Baut die Authorization-Kopfzeile zu einem Token."""
     return {"Authorization": f"Bearer {token}"}
+
+
+@pytest.fixture
+async def schema() -> AsyncIterator[None]:
+    """Legt das Schema in der SQLite-Datei des Tests an."""
+    maschine = db.motor()
+    async with maschine.begin() as verbindung:
+        await verbindung.run_sync(Base.metadata.create_all)
+    yield
+    await maschine.dispose()
+
+
+@pytest.fixture
+def objekt_app(schema: None) -> FastAPI:  # noqa: ARG001
+    """Die App mit Schema und dem Katalog der Tests statt dem der Dateien."""
+    gebaut = app_bauen()
+    gebaut.dependency_overrides[aktueller_katalog] = testkatalog
+    return gebaut
+
+
+@pytest.fixture
+def ruf(objekt_app: FastAPI) -> httpx.AsyncClient:
+    """Ein Klient gegen die App, ohne Netz."""
+    return httpx.AsyncClient(
+        transport=httpx.ASGITransport(app=objekt_app),
+        base_url="http://test",
+    )

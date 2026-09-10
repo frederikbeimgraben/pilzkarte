@@ -40,6 +40,12 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 addopts = "--cov=app --cov-branch --cov-report=term-missing"
 
+# SQLAlchemy fuehrt den synchronen Treiber in einem greenlet aus. Ohne diesen
+# Hinweis verliert coverage jede Zeile hinter einem Wechsel des Stapels und
+# meldet Routen als ungetestet, die der Test gerade durchlaufen hat.
+[tool.coverage.run]
+concurrency = ["thread", "greenlet"]
+
 [tool.coverage.report]
 fail_under = 90
 show_missing = true
@@ -81,6 +87,10 @@ ignore = [
     # Ein Test braucht keinen Docstring-Zwang fuer jedes Modul.
     "D100",
     "D103",
+    # Eine Vorrichtung beschreibt eine Anfrage. Jeder Parameter ist eine Achse
+    # des Falls; sie zu buendeln wuerde den Test unleserlicher machen.
+    "PLR0913",
+    "PLR0917",
 ]
 "migrations/*" = [
     # Alembic laedt die Dateien ueber den eigenen Pfad, nicht als Paket.
