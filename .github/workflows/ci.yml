@@ -185,9 +185,10 @@ jobs:
       - id: ordner
         name: Modell vorhanden
         run: .github/scripts/ordner.sh modell/flake.nix modell C2
-      # Die Kette hängt an numpy, pandas, xarray und lightgbm aus nixpkgs.
+      # Die Kette hängt an numpy, pandas und pillow aus nixpkgs.
       # modell/flake.nix legt diese Versionen als einzige Stelle fest, und
       # pip-Räder finden auf NixOS kein libstdc++. Darum Nix statt pip.
+      # Die Shell #test trägt nur, was die Tests laden.
       - if: steps.ordner.outputs.da == 'true'
         uses: DeterminateSystems/nix-installer-action@v23
         with:
@@ -197,4 +198,4 @@ jobs:
       # liefert dieselben Pfade schneller, und der Actions-Cache bleibt für npm
       # und uv frei.
       - if: steps.ordner.outputs.da == 'true'
-        run: nix develop ./modell -c python -m pytest modell/tests -q
+        run: nix develop ./modell#test -c python -m pytest modell/tests -q
