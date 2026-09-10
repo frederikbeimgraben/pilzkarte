@@ -295,6 +295,62 @@ Abnahme je Schritt:
 - Verhalten unverändert, alle Tests grün, Abdeckung wie vorher
 - Kommentare und Dokumente bleiben deutsch
 
+### H1 Rollen und Rechte
+
+Statt einer festen Rolle `admin` eine kleine Rechteverwaltung.
+
+- Tabellen `role`, `permission`, `role_permission`, `user_role`. Rechte
+  stehen als Katalog im Code, Rollen legt man an.
+- Zwei Rollen stehen fest und lassen sich nicht löschen: **Admin** trägt
+  jedes Recht, auch jedes neue, und **Nutzer** hat jede angemeldete
+  Person. Alles Weitere ist frei.
+- Eine Person trägt mehrere Rollen, die Rechte summieren sich.
+- Rechte je Bereich: Arten (Profile ändern, Bilder hochladen, Bilder
+  freigeben, Arten anlegen), Oberfläche (Texte ändern), Zugang (Rollen
+  verwalten, Rollen vergeben).
+- Endpunkte unter `/api/rollen`, `/api/rechte`, `/api/personen`. Jede
+  Prüfung liegt im Backend, das Frontend blendet nur aus.
+- Der erste Admin kommt aus der Gruppe `pilze-admins` im Token, damit
+  niemand ausgesperrt ist.
+
+Abnahme:
+- Ohne Recht antwortet jeder schreibende Endpunkt mit 403 als problem+json
+- Admin behält jedes neu eingeführte Recht ohne Zutun (Test)
+- Eine feste Rolle lässt sich nicht löschen oder entrechten
+
+### H2 Verwaltung im Frontend
+
+Unter Konto ein Punkt „Verwaltung" mit Texten, Bildern, Arten, Rollen und
+Personen. Jeder Punkt erscheint nur mit dem passenden Recht. Am Rechner
+steht die Verwaltung in der linken Spalte, der gewählte Punkt rechts.
+Entwürfe: Artboards 4 bis 8 und 10 im Canvas.
+
+### I1 Bilder zu Arten, Backend
+
+- Tabelle `species_image` (Art, Datei, Fotograf, Lizenz, Quelle,
+  Aufnahmedatum, Unterschrift, Titelbild, Freigabe, wer, wann).
+- Hochladen mit dem Recht dafür, höchstens 3 MB, JPEG oder WebP, auf
+  1600 px verkleinert, EXIF und GPS entfernt, wie bei den Fundfotos.
+- **Fotograf und Lizenz sind Pflicht.** Ohne beides wird nichts
+  gespeichert. Erlaubte Lizenzen als Enum, dazu „eigenes Foto".
+- Ein fremdes Bild ist erst nach Freigabe öffentlich.
+
+Abnahme:
+- Ohne Rechteangabe 422, ohne Recht 403, Test für beides
+- Ein nicht freigegebenes Bild sieht nur, wer es hochgeladen hat
+
+### I2 Bilder auf der Artseite
+
+Titelbild oben, Streifen darunter, Herkunft als Zeile am Bild. Tipp
+öffnet das Bild groß mit Fotograf, Lizenz, Datum und grobem Ort.
+Hochladen als eigener Screen mit Pflichtfeldern. Entwürfe: Artboards 1
+bis 3 und 9.
+
+Abnahme:
+- Art ohne Bild zeigt keinen leeren Rahmen
+- Lizenz und Fotograf stehen an jedem Bild, auch in der Großansicht
+- Geschützte Arten zeigen den Ort nur auf 5 km gerundet
+
 ### G1 Texte in der Datenbank
 
 Die Oberfläche trägt heute ihre Texte im Code. Sie ziehen in die
@@ -306,9 +362,8 @@ Datenbank um und werden mit einer Rolle bearbeitbar.
 - `GET /api/texte?sprache=de` liefert den ganzen Katalog, öffentlich, mit
   ETag und langer Gültigkeit. `PUT /api/texte/{schluessel}` ändert einen
   Text, nur mit der Rolle `admin`. `DELETE` setzt auf die Vorgabe zurück.
-- Die Rolle kommt aus dem Anspruch `groups` des Tokens. Die Gruppe heißt
-  `pilze-admins` und steht im NixOS-Blueprint von Authentik; der Name
-  steht in `PILZE_ADMIN_GRUPPE`.
+- Wer ändern darf, entscheidet das Recht „Texte ändern" aus H1. Die
+  Gruppe `pilze-admins` im Token macht die erste Person zum Admin.
 - Fehler und Meldungen des Backends nutzen dieselben Schlüssel.
 
 Abnahme:
