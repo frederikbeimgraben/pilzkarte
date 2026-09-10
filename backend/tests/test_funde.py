@@ -574,14 +574,64 @@ async def test_ein_gerundeter_fund_wird_nach_dem_runden_gefiltert(
     assert antwort.json()["gesamt"] == 0
 
 
+async def test_geteilte_funde_liest_auch_wer_kein_konto_hat(
+    ruf: httpx.AsyncClient,
+    idp: FalscherIdp,
+) -> None:
+    async with ruf:
+        _ = await fund_anlegen(ruf, idp, artSlug="parasol", sichtbarkeit="geteilt")
+        ohne_konto = await ruf.get("/api/funde/geteilt")
+
+    eintrag = ohne_konto.json()["eintraege"][0]
+    assert ohne_konto.status_code == 200
+    # Ohne Konto gehoert kein Fund dem Aufrufer.
+    assert eintrag["eigen"] is False
+    assert eintrag["melder"] == "Frederik"
+    assert (eintrag["lat"], eintrag["lon"]) == (FUNDORT["lat"], FUNDORT["lon"])
+
+
+async def test_ohne_konto_bleibt_eine_geschuetzte_art_gerundet(
+    ruf: httpx.AsyncClient,
+    idp: FalscherIdp,
+) -> None:
+    async with ruf:
+        _ = await fund_anlegen(ruf, idp, sichtbarkeit="geteilt")
+        ohne_konto = await ruf.get("/api/funde/geteilt")
+        mit_konto = await ruf.get("/api/funde/geteilt", headers=als(idp, FREMD))
+
+    ohne = ohne_konto.json()["eintraege"][0]
+    fremd = mit_konto.json()["eintraege"][0]
+    assert ohne["gerundet"] is True
+    assert (ohne["lat"], ohne["lon"]) != (FUNDORT["lat"], FUNDORT["lon"])
+    # Ohne Konto und mit fremdem Konto ist die Antwort dieselbe.
+    assert (ohne["lat"], ohne["lon"]) == (fremd["lat"], fremd["lon"])
+
+
+async def test_ein_falsches_token_bleibt_auch_hier_ein_fehler(
+    ruf: httpx.AsyncClient,
+    idp: FalscherIdp,
+) -> None:
+    async with ruf:
+        _ = await fund_anlegen(ruf, idp, sichtbarkeit="geteilt")
+        antwort = await ruf.get(
+            "/api/funde/geteilt",
+            headers={"Authorization": "Bearer kein-echtes-token"},
+        )
+
+    assert antwort.status_code == 401
+    assert antwort.headers["content-type"].startswith("application/problem+json")
+
+
 async def test_ein_kaputter_ausschnitt_wird_abgewiesen(
     ruf: httpx.AsyncClient,
     idp: FalscherIdp,
 ) -> None:
     async with ruf:
         antwort = await ruf.get("/api/funde/geteilt?bbox=9.0,48.4", headers=als(idp))
+        ohne_konto = await ruf.get("/api/funde/geteilt?bbox=9.0,48.4")
 
     assert antwort.status_code == 422
+    assert ohne_konto.status_code == 422
     assert "vier Zahlen" in antwort.json()["detail"]
 
 
