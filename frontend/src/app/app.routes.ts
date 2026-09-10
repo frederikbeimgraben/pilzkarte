@@ -28,6 +28,17 @@ export const routes: Routes = [
     path: 'konto',
     loadComponent: () => import('./features/konto/konto.component').then((m) => m.KontoComponent),
   },
+  // Die stille Route steht vor der Anmeldung: sonst nähme diese den ersten
+  // Abschnitt und der Rest des Weges fände keine Route mehr.
+  {
+    path: 'anmeldung/still',
+    loadComponent: () =>
+      import('./features/konto/stille-anmeldung.component').then((m) => m.StilleAnmeldungComponent),
+  },
+  {
+    path: 'anmeldung',
+    loadComponent: () => import('./features/konto/anmeldung.component').then((m) => m.AnmeldungComponent),
+  },
   ...(isDevMode()
     ? [
         {

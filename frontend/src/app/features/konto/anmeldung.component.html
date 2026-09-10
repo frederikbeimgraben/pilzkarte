@@ -1,0 +1,8 @@
+<div class="anmeldung" role="status">
+  @if (fehler()) {
+    <p class="anmeldung__text">{{ 'anmeldung.fehler' | t }}</p>
+    <app-button variant="secondary" (click)="zurKarte()">{{ 'nav.karte' | t }}</app-button>
+  } @else {
+    <p class="anmeldung__text">{{ 'anmeldung.laeuft' | t }}</p>
+  }
+</div>

@@ -1,3 +1,5 @@
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideRouter } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
 import { App } from './app';
@@ -7,7 +9,11 @@ import { karteMitAttrappen, manifestAntwort } from './testing/karte-attrappen';
 async function app() {
   manifestAntwort();
   karteMitAttrappen();
-  return render(App, { providers: [provideRouter(routes)] });
+  // Die Hülle hängt über den Avatar am Konto und damit an der API; im Test
+  // antwortet dort niemand.
+  return render(App, {
+    providers: [provideRouter(routes), provideHttpClient(), provideHttpClientTesting()],
+  });
 }
 
 describe('App', () => {
@@ -28,7 +34,9 @@ describe('App', () => {
       ['/konto', 'Konto'],
     ]) {
       await navigate(pfad);
-      expect(await screen.findByRole('heading', { name: titel })).toBeInTheDocument();
+      // Die Kopfleiste der Seite ist die einzige H1; „Konto“ steht auf dem
+      // Konto-Screen auch als Abschnitt darunter.
+      expect(await screen.findByRole('heading', { name: titel, level: 1 })).toBeInTheDocument();
     }
   });
 
