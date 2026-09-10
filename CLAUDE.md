@@ -106,6 +106,11 @@ in `app/core/` oder `app/shared/`.
   überstehen. Die Adresse wird nicht geschrieben. Ein tiefer Link wird beim
   ersten Laden einmal übernommen und danach aus der Adresse entfernt.
 - TDD. Test zuerst, dann der kleinste Code, dann aufräumen. Kein `skip` ohne Grund.
+- **Bezeichner sind englisch, ausnahmslos.** Klassen, Komponenten,
+  Selektoren, Methoden, Variablen, Dateinamen, CSS-Klassen, Testnamen,
+  Feldnamen im Vertrag, Spalten in der Datenbank, i18n-Schlüssel. Deutsch
+  steht nur in dem, was eine Person liest: Oberflächentexte über i18n,
+  Kommentare, Docstrings, Commits und die Dokumente unter `docs/`.
 - Kommentare sagen Warum, nie Was. Kein Kommentar erzählt den Code nach.
 - Kein toter Code, keine ungenutzten Importe, keine `print`- oder `console.log`-Reste, keine TODOs.
 - Ruff und ESLint mit allen Regeln des Projekts, grün vor jedem Commit.

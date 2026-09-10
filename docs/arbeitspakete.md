@@ -275,6 +275,26 @@ Abnahme:
 - Endpunkt über den Vhost 404, von 127.0.0.1 200, Test für beide
 - Fixture-Test in `modell/tests/`: ein freigegebener Fund landet als Begehung mit Fund in der Tabelle
 
+### R1 bis R3 Bezeichner auf Englisch
+
+Der Code trägt heute deutsche Bezeichner. Das wird umgestellt, in drei
+Schritten, damit jeder Schritt für sich grün bleibt.
+
+- **R1** Backend, nur intern: Klassen, Methoden, Variablen, Dateinamen,
+  Testnamen. Der Vertrag nach außen bleibt unverändert.
+- **R2** Frontend, nur intern: Komponenten, Selektoren (`app-*`), Dienste,
+  Signale, Dateinamen, CSS-Klassen, Testnamen. Vertrag und i18n-Schlüssel
+  bleiben.
+- **R3** Vertrag und Speicher, beide Seiten in einem Zug: Feldnamen in
+  JSON, Spalten in der Datenbank samt Migration, i18n-Schlüssel, Slugs der
+  Routen. Erst wenn R1 und R2 stehen.
+
+Abnahme je Schritt:
+- Kein deutscher Bezeichner mehr im betroffenen Bereich, geprüft mit einer
+  Wortliste im Testlauf
+- Verhalten unverändert, alle Tests grün, Abdeckung wie vorher
+- Kommentare und Dokumente bleiben deutsch
+
 ## Block 4, Offline und Feinschliff
 
 ### F1 Offline-Warteschlange und PWA
