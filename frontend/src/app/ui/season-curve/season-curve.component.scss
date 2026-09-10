@@ -1,25 +1,60 @@
-.funke {
+:host {
+  display: block;
+}
+
+// Die Zeichenfläche und alles, was auf ihr sitzt, aber nicht verzerren darf.
+.funke__buehne {
+  position: relative;
   inline-size: 96px;
   block-size: 40px;
 }
 
-.funke--gross {
+.funke__buehne--gross {
   inline-size: 100%;
   block-size: 72px;
 }
 
+// `preserveAspectRatio="none"`: die Kurve folgt der Breite des Wirts, damit
+// Woche und Marke darunter auf derselben Stelle liegen.
+.funke {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.funke__achse {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 2px;
+  font-size: 9px;
+  line-height: 1.2;
+  color: var(--color-text-muted);
+}
+
+// Der Endpunkt des laufenden Jahres. Im verzerrten SVG wäre aus dem Kreis eine
+// Ellipse geworden.
+.funke__ende {
+  position: absolute;
+  inline-size: 4px;
+  block-size: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.funke__buehne--gross .funke__ende {
+  inline-size: 6px;
+  block-size: 6px;
+}
+
 .funke__grund {
   stroke: var(--color-border);
+  vector-effect: non-scaling-stroke;
 }
 
 .funke__marke {
   stroke: var(--color-border-strong);
-}
-
-.funke__achse {
-  font-family: var(--font-sans);
-  font-size: 9px;
-  fill: var(--color-text-muted);
+  vector-effect: non-scaling-stroke;
 }
 
 .funke__alle {
@@ -40,30 +75,42 @@
   vector-effect: non-scaling-stroke;
 }
 
-.funke--gross .funke__laufend {
+.funke__buehne--gross .funke__laufend {
   stroke-width: 2;
 }
 
-.funke__ende {
-  fill: var(--color-primary);
-}
-
-.funke__monate,
 .funke__legende {
   display: flex;
+  gap: var(--space-3);
   justify-content: space-between;
+  margin-block-start: var(--space-2);
   font-size: 13px;
   color: var(--color-text-muted);
 }
 
 .funke__monate {
+  position: relative;
+  block-size: 19px;
   margin-block-start: 6px;
+  font-size: 13px;
+  color: var(--color-text-muted);
   font-variant-numeric: tabular-nums;
 }
 
-.funke__legende {
-  gap: var(--space-3);
-  margin-block-start: var(--space-2);
+.funke__monat {
+  position: absolute;
+  inset-block-start: 0;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+// Die äußeren Marken rücken nach innen, sonst stünden sie halb außerhalb.
+.funke__monat--erster {
+  transform: none;
+}
+
+.funke__monat--letzter {
+  transform: translateX(-100%);
 }
 
 // Die Jahreszahl des laufenden Jahres bricht nicht um; die längere Erklärung

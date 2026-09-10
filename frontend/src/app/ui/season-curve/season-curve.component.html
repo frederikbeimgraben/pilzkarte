@@ -1,80 +1,88 @@
-<svg
-  class="funke"
-  [class.funke--gross]="gross()"
-  [attr.viewBox]="'0 0 ' + zeichnung().breite + ' ' + zeichnung().hoehe"
-  [attr.preserveAspectRatio]="achse() ? 'xMidYMid meet' : 'none'"
-  role="img"
-  [attr.aria-label]="beschriftung()"
->
-  @if (zeichnung().duenn.length) {
-    <defs>
-      <!-- Grauwerte statt Farben: die Maske steuert Deckkraft, nicht das Thema. -->
-      <mask
-        [attr.id]="maskeId"
-        maskUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        [attr.width]="zeichnung().breite"
-        [attr.height]="zeichnung().hoehe"
-        color-interpolation="sRGB"
-      >
-        <rect
+<div class="funke__buehne" [class.funke__buehne--gross]="gross()">
+  <svg
+    class="funke"
+    [attr.viewBox]="'0 0 ' + zeichnung().breite + ' ' + zeichnung().hoehe"
+    preserveAspectRatio="none"
+    role="img"
+    [attr.aria-label]="beschriftung()"
+  >
+    @if (zeichnung().duenn.length) {
+      <defs>
+        <!-- Grauwerte statt Farben: die Maske steuert Deckkraft, nicht das Thema. -->
+        <mask
+          [attr.id]="maskeId"
+          maskUnits="userSpaceOnUse"
           x="0"
           y="0"
           [attr.width]="zeichnung().breite"
           [attr.height]="zeichnung().hoehe"
-          fill="#ffffff"
-        />
-        @for (streifen of zeichnung().duenn; track streifen.x) {
+          color-interpolation="sRGB"
+        >
           <rect
-            class="funke__duenn"
-            [attr.x]="streifen.x"
+            x="0"
             y="0"
-            [attr.width]="streifen.breite"
+            [attr.width]="zeichnung().breite"
             [attr.height]="zeichnung().hoehe"
-            fill="#8c8c8c"
+            fill="#ffffff"
           />
-        }
-      </mask>
-    </defs>
-  }
-  <line
-    class="funke__grund"
-    x1="0"
-    [attr.y1]="zeichnung().hoehe - 0.5"
-    [attr.x2]="zeichnung().breite"
-    [attr.y2]="zeichnung().hoehe - 0.5"
-  />
-  @for (marke of zeichnung().marken; track marke) {
+          @for (streifen of zeichnung().duenn; track streifen.x) {
+            <rect
+              class="funke__duenn"
+              [attr.x]="streifen.x"
+              y="0"
+              [attr.width]="streifen.breite"
+              [attr.height]="zeichnung().hoehe"
+              fill="#8c8c8c"
+            />
+          }
+        </mask>
+      </defs>
+    }
     <line
-      class="funke__marke"
-      [attr.x1]="marke"
-      [attr.y1]="zeichnung().hoehe - 5"
-      [attr.x2]="marke"
-      [attr.y2]="zeichnung().hoehe"
+      class="funke__grund"
+      x1="0"
+      [attr.y1]="zeichnung().hoehe - 0.5"
+      [attr.x2]="zeichnung().breite"
+      [attr.y2]="zeichnung().hoehe - 0.5"
     />
-  }
-  @if (achse()) {
-    <text class="funke__achse" x="2" y="10">{{ achse() }}</text>
-  }
-  <g [attr.mask]="zeichnung().duenn.length ? 'url(#' + maskeId + ')' : null">
-    <path class="funke__alle" [attr.d]="zeichnung().alleJahre" />
-    @if (zeichnung().hatLaufend) {
-      <path class="funke__laufend-flaeche" [attr.d]="zeichnung().laufendFlaeche" />
-      <path class="funke__laufend" [attr.d]="zeichnung().laufendLinie" />
-      <circle
-        class="funke__ende"
-        [attr.cx]="zeichnung().endeX"
-        [attr.cy]="zeichnung().endeY"
-        [attr.r]="zeichnung().punktRadius"
+    @for (marke of zeichnung().marken; track marke) {
+      <line
+        class="funke__marke"
+        [attr.x1]="marke"
+        [attr.y1]="zeichnung().hoehe - 5"
+        [attr.x2]="marke"
+        [attr.y2]="zeichnung().hoehe"
       />
     }
-  </g>
-</svg>
-@if (monate().length) {
+    <g [attr.mask]="zeichnung().duenn.length ? 'url(#' + maskeId + ')' : null">
+      <path class="funke__alle" [attr.d]="zeichnung().alleJahre" />
+      @if (zeichnung().hatLaufend) {
+        <path class="funke__laufend-flaeche" [attr.d]="zeichnung().laufendFlaeche" />
+        <path class="funke__laufend" [attr.d]="zeichnung().laufendLinie" />
+      }
+    </g>
+  </svg>
+  @if (achse()) {
+    <span class="funke__achse">{{ achse() }}</span>
+  }
+  @if (zeichnung().hatLaufend) {
+    <span
+      class="funke__ende"
+      [style.left.%]="zeichnung().endeLinks"
+      [style.top.%]="zeichnung().endeOben"
+    ></span>
+  }
+</div>
+@if (monatsmarken().length) {
   <div class="funke__monate">
-    @for (monat of monate(); track monat) {
-      <span>{{ monat }}</span>
+    @for (marke of monatsmarken(); track marke.text; let erster = $first; let letzter = $last) {
+      <span
+        class="funke__monat"
+        [class.funke__monat--erster]="erster"
+        [class.funke__monat--letzter]="letzter"
+        [style.left.%]="marke.links"
+        >{{ marke.text }}</span
+      >
     }
   </div>
 }

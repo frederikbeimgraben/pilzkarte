@@ -31,6 +31,18 @@ interface Streifen {
   breite: number;
 }
 
+/** Eine Monatsmarke unter der Kurve: der Name und die Woche, in der er beginnt. */
+export interface Monatsmarke {
+  text: string;
+  woche: number;
+}
+
+/** Eine gesetzte Monatsmarke: Anteil der Breite, auf dem sie sitzt. */
+interface GesetzteMarke {
+  text: string;
+  links: number;
+}
+
 interface Zeichnung {
   breite: number;
   hoehe: number;
@@ -39,9 +51,10 @@ interface Zeichnung {
   laufendLinie: string;
   hatLaufend: boolean;
   marken: number[];
-  endeX: number;
-  endeY: number;
-  punktRadius: number;
+  /** Der Endpunkt als Anteil der Fläche, in Prozent. Er steht neben dem SVG,
+   * weil die verzerrte Zeichenfläche aus einem Kreis eine Ellipse machte. */
+  endeLinks: number;
+  endeOben: number;
   duenn: Streifen[];
 }
 
@@ -54,6 +67,11 @@ interface Zeichnung {
  * Sind die Begehungen je Woche bekannt, verblassen die Wochen, die auf wenigen
  * Begehungen ruhen. Ohne diese Zahlen sähe eine Woche mit drei Begehungen aus
  * wie eine mit dreihundert.
+ *
+ * Die Zeichenfläche folgt der Breite des Wirts, damit die Kurve nie schmal in
+ * der Mitte steht, während die Marken darunter über die ganze Breite laufen.
+ * Was dabei nicht verzerren darf — die Zahl an der Achse und der Endpunkt —
+ * steht neben dem SVG und nicht darin.
  *
  * Gezeichnet wird ein gleitendes Mittel über drei Wochen. Eine Woche mehr oder
  * weniger ist Zufall des Meldeverhaltens, nicht der Saison. Die Achse behält
@@ -73,8 +91,8 @@ export class SeasonCurveComponent {
   readonly gross = input(false);
   /** Der Höchstwert der Achse, oben links in die Kurve geschrieben. */
   readonly achse = input<string>();
-  /** Die Monatsnamen unter der Grundlinie, gleichmäßig verteilt. */
-  readonly monate = input<readonly string[]>([]);
+  /** Die Monatsnamen unter der Grundlinie, jeder auf seiner Woche. */
+  readonly monate = input<readonly Monatsmarke[]>([]);
   readonly legendeLaufend = input<string>();
   readonly legendeJahre = input<string>();
   /** Der Nenner der Fläche: Begehungen je Kalenderwoche über alle Jahre. */
@@ -115,12 +133,23 @@ export class SeasonCurveComponent {
       laufendLinie: `M${laufendP.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' L')}`,
       hatLaufend: laufendP.length > 0,
       marken: MONATSMARKEN.map((k) => (k / 51) * breite),
-      endeX: letzte[0],
-      endeY: letzte[1],
-      punktRadius: gross ? 3 : 2,
+      endeLinks: (letzte[0] / breite) * 100,
+      endeOben: (letzte[1] / hoehe) * 100,
       duenn: this.duenneWochen(breite),
     };
   }
+
+  /**
+   * Die Monatsmarken auf derselben Skala wie die Kurve: Woche 1 ganz links,
+   * Woche 52 ganz rechts. Als Anteil, damit die Marke bei jeder Breite unter
+   * ihrer Woche steht.
+   */
+  protected readonly monatsmarken = computed<GesetzteMarke[]>(() =>
+    this.monate().map((marke) => ({
+      text: marke.text,
+      links: ((marke.woche - 1) / 51) * 100,
+    })),
+  );
 
   protected glaettungText(): string {
     return this.i18n.translate('saison.geglaettet', { wochen: this.glaettung() });
