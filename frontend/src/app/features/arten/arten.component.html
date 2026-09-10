@@ -15,10 +15,10 @@
     (wertChange)="waehleChip($event)"
   />
   <app-note class="arten__anzahl">{{ anzahlText() }}</app-note>
+  @if (zeilen().length === 0) {
+    <app-empty-state [text]="'arten.leer' | t" />
+  }
   <app-card class="randlos">
-    @if (zeilen().length === 0) {
-      <app-note class="empty-state">{{ 'arten.leer' | t }}</app-note>
-    }
     @for (zeile of zeilen(); track zeile.slug; let i = $index) {
       <app-species-row
         [name]="zeile.name"
@@ -27,14 +27,16 @@
         (auswahl)="oeffne(zeile.slug)"
         (keydown)="beiTaste($event, i)"
       >
-        <app-season-curve
-          kurve
-          [alleJahre]="zeile.kurve"
-          [laufendesJahr]="zeile.laufend"
-          [begehungenAlleJahre]="begehungen()"
-          [begehungenLaufendesJahr]="begehungenLaufend()"
-          [beschriftung]="zeile.beschriftung"
-        />
+        @if (zeile.hatKurve) {
+          <app-season-curve
+            kurve
+            [alleJahre]="zeile.kurve"
+            [laufendesJahr]="zeile.laufend"
+            [begehungenAlleJahre]="begehungen()"
+            [begehungenLaufendesJahr]="begehungenLaufend()"
+            [beschriftung]="zeile.beschriftung"
+          />
+        }
         <ng-container tags>
           @for (marke of zeile.marken; track marke.text) {
             <app-badge [variant]="marke.variant">{{ marke.text }}</app-badge>

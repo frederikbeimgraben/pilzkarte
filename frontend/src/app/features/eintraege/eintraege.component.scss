@@ -17,16 +17,6 @@
   scrollbar-width: none;
 }
 
-// Der Leerzustand ist Text, kein Kasten: er steht linksbündig im Textmaß der
-// Liste, 24 px unter den Chips.
-.eintraege__leer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-4);
-  margin-block-start: 4px;
-}
-
 // Der Punkt vor der Zeile trägt die Farbe des Objekts; 12 px stehen so im
 // Artboard `Funde`.
 .eintraege__punkt {

@@ -9,6 +9,7 @@ import type { TranslationKey } from '../../core/i18n/translations';
 import type { WarteArt, WarteEintrag } from '../../core/offline/warteschlange';
 import {
   ChipGroupComponent,
+  EmptyStateComponent,
   ListRowComponent,
   NoteComponent,
   PageHeaderComponent,
@@ -73,6 +74,7 @@ const FREMDER_FUND = '#185468';
     ButtonComponent,
     CardComponent,
     ChipGroupComponent,
+    EmptyStateComponent,
     ListRowComponent,
     NoteComponent,
     PageHeaderComponent,

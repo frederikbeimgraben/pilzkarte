@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { Router, provideRouter } from '@angular/router';
 import { render, screen, within } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import { ARTEN_LISTE } from '../../testing/arten-fixture';
+import { ALLE_LISTE, ARTEN_LISTE, VERWECHSLUNG_LISTE } from '../../testing/arten-fixture';
 import { keineVerstoesse } from '../../testing/axe';
 import { ArtenComponent } from './arten.component';
 import { ArtenZustand } from './arten.zustand';
@@ -14,6 +14,7 @@ interface Aufbau {
   router: Router;
   zustand: ArtenZustand;
   aktualisiere: () => void;
+  nachlade: (pfad: string, liste: typeof ARTEN_LISTE) => void;
 }
 
 async function aufbauen(): Promise<Aufbau> {
@@ -22,19 +23,27 @@ async function aufbauen(): Promise<Aufbau> {
   });
   TestBed.inject(HttpTestingController).expectOne('/api/arten').flush(ARTEN_LISTE);
   detectChanges();
+  const http = TestBed.inject(HttpTestingController);
+  /** Der zweite Topf kommt erst, wenn Chip oder Suche ihn brauchen. */
+  const nachlade = (pfad: string, liste: typeof ARTEN_LISTE): void => {
+    http.expectOne(pfad).flush(liste);
+    detectChanges();
+  };
   return {
     container,
     router: TestBed.inject(Router),
     zustand: TestBed.inject(ArtenZustand),
     aktualisiere: detectChanges,
+    nachlade,
   };
 }
 
-/** Die Namen der sichtbaren Zeilen, gelesen aus der Beschriftung ihrer Kurve. */
+/**
+ * Die Namen der sichtbaren Zeilen. Nicht jede Zeile trägt eine Kurve: eine Art,
+ * die niemand sammelt, hat keine Saison.
+ */
 function namen(): string[] {
-  return screen
-    .getAllByRole('img')
-    .map((kurve) => /^Saisonkurve (.+?),/.exec(kurve.getAttribute('aria-label') ?? '')?.[1] ?? '');
+  return [...document.querySelectorAll('.artzeile__name')].map((zelle) => zelle.textContent.trim());
 }
 
 describe('ArtenComponent', () => {
@@ -77,10 +86,11 @@ describe('ArtenComponent', () => {
   });
 
   it('sucht in Namen und lateinischen Namen', async () => {
-    const { aktualisiere } = await aufbauen();
+    const { aktualisiere, nachlade } = await aufbauen();
     const feld = screen.getByLabelText('Art suchen');
 
     await userEvent.type(feld, 'morch');
+    nachlade('/api/arten?alle=true', ALLE_LISTE);
     aktualisiere();
     expect(namen()).toEqual(['Speisemorchel']);
 
@@ -103,10 +113,49 @@ describe('ArtenComponent', () => {
     expect(screen.getByText('2 von 4 Arten')).toBeInTheDocument();
   });
 
+  it('lässt die Verwechslungsprofile draußen, bis der Chip sie holt', async () => {
+    const { aktualisiere, nachlade } = await aufbauen();
+
+    // Wer den Katalog durchblättert, sucht etwas zum Sammeln.
+    expect(namen()).not.toContain('Gallenröhrling');
+    expect(screen.getByText('4 Arten')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Giftig und Verwechslung' }));
+    nachlade('/api/arten?sammelbar=false', VERWECHSLUNG_LISTE);
+    aktualisiere();
+
+    expect(namen()).toEqual(['Gallenröhrling']);
+    expect(screen.getByText('1 Arten')).toBeInTheDocument();
+  });
+
+  it('findet über die Suche auch einen Giftpilz und zeigt seine Stufe rot', async () => {
+    const { aktualisiere, nachlade } = await aufbauen();
+
+    await userEvent.type(screen.getByLabelText('Art suchen'), 'Gallen');
+    nachlade('/api/arten?alle=true', ALLE_LISTE);
+    aktualisiere();
+
+    const zeile = screen.getByRole('button', { name: /Gallenröhrling/ });
+    expect(within(zeile).getByText('Verwechslung')).toBeInTheDocument();
+    expect(within(zeile).getByText('Giftig')).toBeInTheDocument();
+  });
+
+  it('nennt eine Art, deren Modell noch fehlt', async () => {
+    await aufbauen();
+
+    // Genug Funde für ein Modell, aber noch keine Karte.
+    const zeile = screen.getByRole('button', { name: /Semmelstoppelpilz/ });
+    expect(within(zeile).getByText('Vorhersage in Arbeit')).toBeInTheDocument();
+    expect(
+      within(screen.getByRole('button', { name: /Steinpilz/ })).queryByText('Vorhersage in Arbeit'),
+    ).not.toBeInTheDocument();
+  });
+
   it('zeigt einen Leerzustand, wenn nichts passt', async () => {
-    const { aktualisiere } = await aufbauen();
+    const { aktualisiere, nachlade } = await aufbauen();
 
     await userEvent.type(screen.getByLabelText('Art suchen'), 'Trüffel');
+    nachlade('/api/arten?alle=true', ALLE_LISTE);
     aktualisiere();
 
     expect(screen.getByText('Keine Art passt zur Suche.')).toBeInTheDocument();

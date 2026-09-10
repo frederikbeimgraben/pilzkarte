@@ -1,0 +1,56 @@
+// Dasselbe Raster wie die Merkmalstabelle, damit beide Tabellen einer Artseite
+// dieselbe Kante haben.
+:host {
+  display: grid;
+  grid-template-columns: minmax(104px, max-content) minmax(0, 1fr);
+  column-gap: var(--space-3);
+  align-items: start;
+  padding: 10px 14px;
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+:host(:nth-child(even)) {
+  background: var(--color-bg);
+}
+
+:host(:last-child) {
+  border-block-end: 0;
+}
+
+.verwechslung__name {
+  max-inline-size: 145px;
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.verwechslung__name--link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.verwechslung__name--link:hover {
+  text-decoration: underline;
+}
+
+// Ein Stapel: lateinischer Name, Text, Marke. Die Marke bekommt in jeder Zeile
+// denselben Abstand nach oben, egal wie lang der Text ist.
+.verwechslung__wert {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-inline-size: 0;
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.verwechslung__latein {
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.verwechslung__marke:not(:empty) {
+  margin-block-start: var(--space-2);
+}

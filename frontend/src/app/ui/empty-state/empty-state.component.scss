@@ -1,0 +1,20 @@
+// Kein Rahmen und kein Kasten: der Satz steht wie ein Absatz der Seite.
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-block-start: 4px;
+}
+
+.leer__text {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
+
+// Der Knopf nimmt die Inhaltsbreite. Linksbündig unter dem Satz wirkte er
+// verloren, mittig ohne Breite genauso.
+.leer__knopf {
+  min-block-size: var(--pilz-feld-hoehe);
+}

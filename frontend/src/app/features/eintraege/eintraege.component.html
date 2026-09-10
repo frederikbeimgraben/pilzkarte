@@ -12,12 +12,11 @@
     (wertChange)="waehleChip($event)"
   />
   @if (zeilen().length === 0) {
-    <div class="eintraege__leer">
-      <app-note>{{ leerText() | t }}</app-note>
-      @if (braucheAnmeldung()) {
-        <app-button variant="primary" (click)="anmelden()">{{ 'konto.anmelden' | t }}</app-button>
-      }
-    </div>
+    <app-empty-state
+      [text]="leerText() | t"
+      [action]="braucheAnmeldung() ? ('konto.anmelden' | t) : undefined"
+      (actionClick)="anmelden()"
+    />
   } @else {
     <app-card class="randlos">
       @for (zeile of zeilen(); track zeile.schluessel) {

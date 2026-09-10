@@ -1,0 +1,19 @@
+// Symbol und Text im Knopf des Kits.
+//
+// Das Kit legt den Inhalt in `.btn__label`, ohne ihn auszurichten. Ein
+// Piktogramm daneben saß damit auf der Grundlinie und stand zu hoch; der
+// Abstand kam allein vom Leerzeichen im Markup.
+//
+// Die Regel steht global, weil sie jeden Knopf mit Symbol betrifft: die
+// Aktionsleiste der Artseite ebenso wie den Knopf in der Kopfzeile.
+.btn__label {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.btn__label app-svg-icon {
+  flex: 0 0 auto;
+}

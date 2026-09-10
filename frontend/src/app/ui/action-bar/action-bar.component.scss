@@ -24,13 +24,20 @@
 }
 
 // Der Knopf des Kits füllt seinen Wirt in der Höhe; die Maße der Mockups
-// stehen deshalb hier und nicht im Kit.
+// stehen deshalb hier und nicht im Kit. Der Innenabstand kommt dazu, sonst
+// wirkt die Hauptaktion gedrungen: das Kit rechnet ihn für eine Zeile ohne
+// Symbol.
 app-button {
   min-block-size: var(--pilz-feld-hoehe);
 }
 
 .fuss__haupt {
   min-block-size: var(--pilz-aktion-hoehe);
+}
+
+.fuss__haupt .btn {
+  block-size: 100%;
+  padding-inline: var(--space-5);
 }
 
 // Gefahr ist im Mockup ein roter Rand auf heller Fläche, nicht eine rote

@@ -1,0 +1,12 @@
+@if (route(); as ziel) {
+  <a class="verwechslung__name verwechslung__name--link" [routerLink]="ziel">{{ name() }}</a>
+} @else {
+  <span class="verwechslung__name">{{ name() }}</span>
+}
+<span class="verwechslung__wert">
+  @if (latin(); as lateinisch) {
+    <span class="verwechslung__latein">{{ lateinisch }}</span>
+  }
+  <span class="verwechslung__text">{{ difference() }}</span>
+  <span class="verwechslung__marke"><ng-content /></span>
+</span>

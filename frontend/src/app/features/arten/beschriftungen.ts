@@ -1,5 +1,13 @@
 import type { BadgeVariant } from '@stupa-makers/ui-kit';
-import type { Essbarkeit, MerkmalSchluessel, Stufe, Tag } from '../../core/api/models';
+import type {
+  Essbarkeit,
+  Gefaehrdung,
+  Haeufigkeit,
+  MerkmalSchluessel,
+  Reagenz,
+  Stufe,
+  Tag,
+} from '../../core/api/models';
 import type { TranslationKey } from '../../core/i18n/translations';
 
 /**
@@ -11,6 +19,7 @@ export const TAG_TEXT: Record<Tag, TranslationKey> = {
   vorhersage: 'art.tag.vorhersage',
   saison: 'art.tag.saison',
   profil: 'art.tag.profil',
+  verwechslung: 'art.tag.verwechslung',
   roehrling: 'art.tag.roehrling',
   raufussroehrling: 'art.tag.raufussroehrling',
   schmierroehrling: 'art.tag.schmierroehrling',
@@ -52,10 +61,18 @@ export const TAG_TEXT: Record<Tag, TranslationKey> = {
   kiefer: 'art.tag.kiefer',
   tanne: 'art.tag.tanne',
   laerche: 'art.tag.laerche',
+  douglasie: 'art.tag.douglasie',
   buche: 'art.tag.buche',
   eiche: 'art.tag.eiche',
   birke: 'art.tag.birke',
+  erle: 'art.tag.erle',
+  robinie: 'art.tag.robinie',
+  eibe: 'art.tag.eibe',
+  goldregen: 'art.tag.goldregen',
+  heidelbeere: 'art.tag.heidelbeere',
+  steineiche: 'art.tag.steineiche',
   hainbuche: 'art.tag.hainbuche',
+  hasel: 'art.tag.hasel',
   pappel: 'art.tag.pappel',
   weide: 'art.tag.weide',
   linde: 'art.tag.linde',
@@ -81,6 +98,7 @@ export const MERKMAL_TEXT: Record<MerkmalSchluessel, TranslationKey> = {
   geruch: 'art.merkmal.geruch',
   geschmack: 'art.merkmal.geschmack',
   sporenpulver: 'art.merkmal.sporenpulver',
+  reagenzien: 'art.merkmal.reagenzien',
   vorkommen: 'art.merkmal.vorkommen',
   zeit: 'art.merkmal.zeit',
   speisewert: 'art.merkmal.speisewert',
@@ -88,11 +106,11 @@ export const MERKMAL_TEXT: Record<MerkmalSchluessel, TranslationKey> = {
 };
 
 export const ESSBARKEIT_TEXT: Record<Essbarkeit, TranslationKey> = {
-  speisepilz: 'art.essbar.speisepilz',
+  sehrGuterSpeisepilz: 'art.essbar.sehrGuterSpeisepilz',
+  guterSpeisepilz: 'art.essbar.guterSpeisepilz',
   essbar: 'art.essbar.essbar',
+  minderwertig: 'art.essbar.minderwertig',
   bedingtEssbar: 'art.essbar.bedingtEssbar',
-  ohneSpeisewert: 'art.essbar.ohneSpeisewert',
-  nichtEmpfohlen: 'art.essbar.nichtEmpfohlen',
   ungeniessbar: 'art.essbar.ungeniessbar',
   giftig: 'art.essbar.giftig',
   toedlichGiftig: 'art.essbar.toedlichGiftig',
@@ -100,14 +118,30 @@ export const ESSBARKEIT_TEXT: Record<Essbarkeit, TranslationKey> = {
 
 /** Grün, was in die Pfanne darf; rot, was schadet; grau der Rest. */
 export const ESSBARKEIT_BADGE: Record<Essbarkeit, BadgeVariant> = {
-  speisepilz: 'success',
+  sehrGuterSpeisepilz: 'success',
+  guterSpeisepilz: 'success',
   essbar: 'success',
+  minderwertig: 'neutral',
   bedingtEssbar: 'warning',
-  ohneSpeisewert: 'neutral',
-  nichtEmpfohlen: 'warning',
   ungeniessbar: 'warning',
   giftig: 'danger',
   toedlichGiftig: 'danger',
+};
+
+/**
+ * Wie gefährlich die Stufe ist, tödlich zuerst. Der Chip mit den nicht
+ * sammelbaren Arten stellt sie danach auf: wer dort nachschlägt, sucht die
+ * Gefahr und nicht das Alphabet.
+ */
+export const ESSBARKEIT_GEFAHR: Record<Essbarkeit, number> = {
+  toedlichGiftig: 0,
+  giftig: 1,
+  ungeniessbar: 2,
+  bedingtEssbar: 3,
+  minderwertig: 4,
+  essbar: 5,
+  guterSpeisepilz: 6,
+  sehrGuterSpeisepilz: 7,
 };
 
 /** Die drei Stufen der Mockups: Vorhersage primär, Saison info, Profil neutral. */
@@ -115,6 +149,7 @@ export const STUFE_BADGE: Record<Stufe, BadgeVariant> = {
   vorhersage: 'primary',
   saison: 'info',
   profil: 'neutral',
+  verwechslung: 'warning',
 };
 
 /**
@@ -125,4 +160,45 @@ export const STUFE_RANG: Record<Stufe, number> = {
   vorhersage: 0,
   saison: 1,
   profil: 2,
+  verwechslung: 3,
+};
+
+export const HAEUFIGKEIT_TEXT: Record<Haeufigkeit, TranslationKey> = {
+  sehrHaeufig: 'art.haeufigkeit.sehrHaeufig',
+  haeufig: 'art.haeufigkeit.haeufig',
+  zerstreut: 'art.haeufigkeit.zerstreut',
+  selten: 'art.haeufigkeit.selten',
+  sehrSelten: 'art.haeufigkeit.sehrSelten',
+};
+
+export const GEFAEHRDUNG_TEXT: Record<Gefaehrdung, TranslationKey> = {
+  vomAussterbenBedroht: 'art.gefaehrdung.vomAussterbenBedroht',
+  starkGefaehrdet: 'art.gefaehrdung.starkGefaehrdet',
+  gefaehrdet: 'art.gefaehrdung.gefaehrdet',
+  unbekanntesAusmass: 'art.gefaehrdung.unbekanntesAusmass',
+  extremSelten: 'art.gefaehrdung.extremSelten',
+  vorwarnliste: 'art.gefaehrdung.vorwarnliste',
+  datenUnzureichend: 'art.gefaehrdung.datenUnzureichend',
+};
+
+export const REAGENZ_TEXT: Record<Reagenz, TranslationKey> = {
+  koh: 'art.reagenz.koh',
+  naoh: 'art.reagenz.naoh',
+  feso4: 'art.reagenz.feso4',
+  guajak: 'art.reagenz.guajak',
+  melzer: 'art.reagenz.melzer',
+  anilin: 'art.reagenz.anilin',
+  phenol: 'art.reagenz.phenol',
+  ammoniak: 'art.reagenz.ammoniak',
+  sulfovanillin: 'art.reagenz.sulfovanillin',
+  formalin: 'art.reagenz.formalin',
+  fecl3: 'art.reagenz.fecl3',
+  wieland: 'art.reagenz.wieland',
+  schaeffer: 'art.reagenz.schaeffer',
+};
+
+/** Was der Sammler nicht in die Pfanne tun darf. Die Artseite warnt dafür groß. */
+export const WARNUNG_TEXT: Partial<Record<Essbarkeit, TranslationKey>> = {
+  giftig: 'art.warnung.giftig',
+  toedlichGiftig: 'art.warnung.toedlich',
 };

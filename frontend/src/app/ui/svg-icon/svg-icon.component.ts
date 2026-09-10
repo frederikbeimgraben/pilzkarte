@@ -10,10 +10,12 @@ export type PiktogrammName =
   | 'ort'
   | 'ebenen'
   | 'zurueck'
+  | 'vor'
   | 'zu'
   | 'haken'
   | 'zone'
   | 'suche'
+  | 'warnung'
   | 'links'
   | 'rechts'
   | 'abspielen';

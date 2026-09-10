@@ -1,13 +1,35 @@
-<div class="chips" role="group" [attr.aria-label]="beschriftung()">
-  @for (chip of chips(); track chip.wert) {
+<div class="chips" [class.chips--zurueck]="zurueckMoeglich()" [class.chips--vor]="vorMoeglich()">
+  @if (zurueckMoeglich()) {
     <button
-      class="chip"
+      class="chips__knopf chips__knopf--zurueck"
       type="button"
-      [class.chip--aktiv]="chip.wert === wert()"
-      [attr.aria-pressed]="chip.wert === wert()"
-      (click)="wertChange.emit(chip.wert)"
+      [attr.aria-label]="zurueckText()"
+      (click)="schiebe(-1)"
     >
-      {{ chip.label }}
+      <app-svg-icon name="zurueck" [groesse]="16" />
+    </button>
+  }
+  <div #reihe class="chips__reihe" role="group" [attr.aria-label]="beschriftung()" (scroll)="pruefe()">
+    @for (chip of chips(); track chip.wert) {
+      <button
+        class="chip"
+        type="button"
+        [class.chip--aktiv]="chip.wert === wert()"
+        [attr.aria-pressed]="chip.wert === wert()"
+        (click)="wertChange.emit(chip.wert)"
+      >
+        {{ chip.label }}
+      </button>
+    }
+  </div>
+  @if (vorMoeglich()) {
+    <button
+      class="chips__knopf chips__knopf--vor"
+      type="button"
+      [attr.aria-label]="vorText()"
+      (click)="schiebe(1)"
+    >
+      <app-svg-icon name="vor" [groesse]="16" />
     </button>
   }
 </div>
