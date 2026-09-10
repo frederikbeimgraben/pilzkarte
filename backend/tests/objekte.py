@@ -155,6 +155,34 @@ def zone_koerper(**abweichung: Any) -> dict[str, Any]:  # noqa: ANN401
     return koerper
 
 
+def kombination_koerper(**abweichung: Any) -> dict[str, Any]:  # noqa: ANN401
+    """Eine gueltige Kombination: das Beispiel aus dem Konzept."""
+    koerper: dict[str, Any] = {
+        "name": "Nasser Buchenhang",
+        "regel": "schnitt",
+        "faktoren": [
+            {"quelle": "regen_4w", "bedingung": "ueber", "von": 80},
+            {"quelle": "temperatur", "bedingung": "zwischen", "von": 8, "bis": 16},
+            {"quelle": "hangneigung", "bedingung": "unter", "bis": 15, "aktiv": False},
+        ],
+    }
+    koerper.update(abweichung)
+    return koerper
+
+
+def ebenen_schreiben(maps: Path, namen: list[str] | None = None) -> None:
+    """Legt ein layers.json an, wie die Kette es neben die Kacheln legt."""
+    ebenen = {
+        name: {"label": name.capitalize(), "unit": "mm", "low": 0.0, "high": 200.0}
+        for name in (namen if namen is not None else ["regen_4w", "temperatur", "hangneigung"])
+    }
+    maps.mkdir(parents=True, exist_ok=True)
+    _ = (maps / "layers.json").write_text(
+        json.dumps({"bounds": [[47.1, 4.9], [55.2, 15.2]], "layers": ebenen}),
+        encoding="utf-8",
+    )
+
+
 def bild_mit_exif(breite: int = 2400, hoehe: int = 1200) -> bytes:
     """Ein JPEG mit Kamera- und GPS-Kopfzeilen, so wie es aus einem Telefon kommt."""
     exif = Image.Exif()

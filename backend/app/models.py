@@ -10,7 +10,7 @@ from sqlalchemy import Enum as SaEnum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.types import TypeDecorator
 
-from app.shared.schemas import Farbe, Sichtbarkeit
+from app.shared.schemas import Farbe, Regel, Sichtbarkeit
 
 # Eine UUID als Zeichenkette. Das Geraet vergibt sie schon offline, damit ein
 # Eintrag aus der Warteschlange dieselbe Kennung behaelt.
@@ -71,24 +71,32 @@ class Nutzer(Base):
     erstellt_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt)
 
 
-class Besitztum(Base):
-    """Was einem Konto gehoert: Fund, Marker und Zone teilen sich diese Felder.
+class Eigentum(Base):
+    """Was einem Konto gehoert: Kennung, Besitzer und die beiden Zeitpunkte.
 
     Der Besitzer ist der ``sub`` aus dem Token. Er kommt nie aus dem Koerper
-    einer Anfrage.
+    einer Anfrage. Die Besitzerpruefung in ``app/shared/objekte.py`` haengt an
+    dieser Stufe, damit sie fuer jedes eigene Objekt gilt.
     """
 
     __abstract__ = True
 
     id: Mapped[str] = mapped_column(String(KENNUNG_LAENGE), primary_key=True, default=neue_kennung)
     besitzer_sub: Mapped[str] = mapped_column(String(255), index=True)
+    erstellt_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt)
+    geaendert_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt, onupdate=jetzt)
+
+
+class Besitztum(Eigentum):
+    """Was auf der Karte liegt: Fund, Marker und Zone tragen zusaetzlich diese Felder."""
+
+    __abstract__ = True
+
     sichtbarkeit: Mapped[Sichtbarkeit] = mapped_column(
         _enum_spalte(Sichtbarkeit),
         default=Sichtbarkeit.PRIVAT,
     )
     notiz: Mapped[str | None] = mapped_column(Text, default=None)
-    erstellt_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt)
-    geaendert_am: Mapped[datetime] = mapped_column(UtcZeit, default=jetzt, onupdate=jetzt)
 
 
 class Fund(Besitztum):
@@ -152,3 +160,18 @@ class Zone(Besitztum):
     polygon: Mapped[str] = mapped_column(Text)
     flaeche_ha: Mapped[float] = mapped_column(Float)
     farbe: Mapped[Farbe] = mapped_column(_enum_spalte(Farbe), default=Farbe.GRUEN)
+
+
+class Kombination(Eigentum):
+    """Ein gespeicherter Faktor-Finder: eine Regel und ihre Faktoren.
+
+    Die Faktoren liegen als GeoJSON-fremdes JSON in einer Textspalte. Sie sind
+    eine Liste ohne eigene Abfrage: niemand sucht nach einem Faktor, und eine
+    zweite Tabelle waere nur ein Verbund mehr je Zeile.
+    """
+
+    __tablename__ = "kombination"
+
+    name: Mapped[str] = mapped_column(String(80))
+    regel: Mapped[Regel] = mapped_column(_enum_spalte(Regel), default=Regel.SCHNITT)
+    faktoren: Mapped[str] = mapped_column(Text)

@@ -1,4 +1,4 @@
-"""Eigene Objekte lesen und aendern. Jede Route von Fund, Marker und Zone nimmt diesen Weg."""
+"""Eigene Objekte lesen und aendern. Jede Route eines eigenen Objekts nimmt diesen Weg."""
 
 from collections.abc import Iterable
 
@@ -7,10 +7,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.auth import Nutzer
 from app.core.errors import NichtGefunden
-from app.models import Besitztum
+from app.models import Eigentum
 
 
-async def eigenes[E: Besitztum](
+async def eigenes[E: Eigentum](
     sitzung: AsyncSession,
     modell: type[E],
     kennung: str,
