@@ -64,15 +64,36 @@ STATIC = {
 # dg/kg. Fuer die Anzeige durch 10 teilen, sonst steht dort pH 49.
 SKALA = {"boden_ph": 0.1, "boden_sand": 0.1, "boden_kohlenstoff": 0.1}
 # name -> (column, label, unit). The columns come from the weekly table and
-# the rolling sums below. The order is the order in the page's chooser.
+# the rolling windows below. The order is the order in the page's chooser.
 WEEKLY = {
     "regen":       ("pr", "Niederschlag der Woche", "mm"),
     "regen_2w":    ("pr_sum2", "Niederschlag der letzten 2 Wochen", "mm"),
     "regen_4w":    ("pr_sum4", "Niederschlag der letzten 4 Wochen", "mm"),
     "regen_8w":    ("pr_sum8", "Niederschlag der letzten 8 Wochen", "mm"),
     "regen_anomalie": ("pr_sum4_anom", "Regen der letzten 4 Wochen gegen normal", "mm"),
+    "regen_tage_seit": ("regen_tage_seit", "Tage seit dem letzten Regen ueber 5 mm", "Tage"),
     "temperatur":  ("tas", "Mitteltemperatur der Woche", "Grad"),
     "temperatur_min": ("tasmin", "Tiefsttemperatur der Woche", "Grad"),
+    "temperatur_max": ("tasmax", "Hoechsttemperatur der Woche", "Grad"),
+    "temperatur_2w": ("tas_mittel2", "Mitteltemperatur der letzten 2 Wochen", "Grad"),
+    "temperatur_4w": ("tas_mittel4", "Mitteltemperatur der letzten 4 Wochen", "Grad"),
+    "frosttage":   ("frosttage", "Frosttage der Woche, unter 0 Grad", "Tage"),
+    "hitzetage":   ("hitzetage", "Hitzetage der Woche, ueber 25 Grad", "Tage"),
+    "luftfeuchte": ("hurs", "Luftfeuchte der Woche", "%"),
+    "bodenfeuchte": ("paws", "Bodenwasser fuer Pflanzen, Mittel ueber vier Baumarten",
+                     "% nFK"),
+}
+# Die Bodenfeuchte des DWD liegt je Baumart vor. Eine Ebene je Baumart waere
+# vier Karten desselben Wetters; das Mittel ist die Feuchte des Standorts.
+PAWS = ["paws_spruce", "paws_beech", "paws_oak", "paws_pine"]
+# Ebenen, deren Skala aus der Definition kommt statt aus den Daten. Eine Woche
+# hat sieben Tage, und die Tage seit dem letzten Regen sind bei 60 gekappt. Aus
+# Perzentilen haenge die Skala daran, welche Wochen gerade gerendert werden:
+# ein Sommerlauf allein zeigte null Frosttage und damit gar keine Spanne.
+FESTE_SPANNE = {
+    "regen_tage_seit": (0.0, 60.0),
+    "frosttage": (0.0, 7.0),
+    "hitzetage": (0.0, 7.0),
 }
 
 
@@ -112,16 +133,25 @@ def wochenwetter(path: Path, cells: set[str], weeks: int) -> tuple[pd.DataFrame,
     of the record for the normal value, so the whole table is read and only
     the end is returned.
     """
-    w = pd.read_parquet(path, columns=["cell", "iso_year", "iso_week", "pr", "tas", "tasmin"])
+    roh = ["cell", "iso_year", "iso_week", "pr", "tas", "tasmin", "tasmax", "hurs",
+           "regen_tage_seit", "frosttage", "hitzetage", *PAWS]
+    w = pd.read_parquet(path, columns=roh)
     w["cell"] = w["cell"].astype(str)
     w = w[w["cell"].isin(cells)].copy()
+    # Die vier Baumarten sofort zum Standortmittel zusammenziehen. Vier Spalten
+    # ueber zehn Millionen Zeilen zu halten kostet mehr, als sie wert sind.
+    w["paws"] = w[PAWS].mean(axis=1).astype("float32")
+    w = w.drop(columns=PAWS)
     w["cell"] = w["cell"].astype("category")
     w["week_id"] = week_number(w)
     w = w.sort_values(["cell", "week_id"]).reset_index(drop=True)
-    regen = w.groupby("cell", sort=False, observed=True)["pr"]
+    je_zelle = w.groupby("cell", sort=False, observed=True)
     for fenster in (2, 4, 8):
-        w[f"pr_sum{fenster}"] = (regen.rolling(fenster, min_periods=fenster).sum()
+        w[f"pr_sum{fenster}"] = (je_zelle["pr"].rolling(fenster, min_periods=fenster).sum()
                                  .reset_index(level=0, drop=True))
+    for fenster in (2, 4):
+        w[f"tas_mittel{fenster}"] = (je_zelle["tas"].rolling(fenster, min_periods=fenster)
+                                     .mean().reset_index(level=0, drop=True))
     normal = w.groupby(["cell", "iso_week"], observed=True)["pr_sum4"].transform("mean")
     w["pr_sum4_anom"] = w["pr_sum4"] - normal
     letzte = sorted(w["week_id"].unique())[-weeks:]
@@ -242,14 +272,17 @@ def main() -> None:
               f"{wochen[-1][0]}-W{wochen[-1][1]:02d}")
         zellen = grid["cell"].to_numpy()
         for name, (column, label, unit) in WEEKLY.items():
-            # Eine Farbskala fuer alle Wochen, sonst saehe jede Woche gleich aus.
-            low, high = (float(v) for v in np.nanpercentile(wetter[column], [1, 99]))
-            if name == "regen_anomalie":
-                # Symmetrisch, damit die Mitte der Skala "normal" heisst.
-                high = max(abs(low), abs(high)); low = -high
-            elif column.startswith("pr"):
-                low = 0.0
-            low, high = round(low, 1), round(high, 1)
+            if name in FESTE_SPANNE:
+                low, high = FESTE_SPANNE[name]
+            else:
+                # Eine Farbskala fuer alle Wochen, sonst saehe jede Woche gleich aus.
+                low, high = (float(v) for v in np.nanpercentile(wetter[column], [1, 99]))
+                if name == "regen_anomalie":
+                    # Symmetrisch, damit die Mitte der Skala "normal" heisst.
+                    high = max(abs(low), abs(high)); low = -high
+                elif column.startswith("pr"):
+                    low = 0.0
+                low, high = round(low, 1), round(high, 1)
             wurzel = args.out / "layers_kacheln" / name
             eintrag = {"label": label, "unit": unit, "static": False,
                        "low": low, "high": high, "weeks": []}
