@@ -1,0 +1,34 @@
+name = "Eichenzunge"
+lateinisch = "Piptoporus quercinus"
+gruppe = "porling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche"]
+speisewertHinweis = "Nur ganz jung weich, sonst hart. Die Wertigkeit liegt bei 4. In Deutschland vom Aussterben bedroht, deshalb stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Eichenzunge.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 25, selten bis 30 cm breit, blass lederfarben, ockerbraun, gelbbraun bis orangebraun, alt schwarzbraun, flockig körnig, zungenförmig, teils mit weißlichem Rand. Auf Druck rotbraun verfärbend."
+poren = "Weißlich, später rötlich bis rotbraun, auf Druck bräunlich bis rotbraun verfärbend."
+stiel = "Kurz, seitlich angesetzt und verschmälert."
+fleisch = "Fleischrötlich, mehr oder weniger rotbraun verfärbend, jung weich, später hart."
+geruch = "Angenehm pilzig."
+geschmack = "Mild und säuerlich."
+sporenpulver = "Hellbraun."
+vorkommen = "Meist parasitisch an Eichen, seltener folgezersetzend, löst Braunfäule aus. Sehr selten, in Deutschland vom Aussterben bedroht."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Zimtfarbiger Weichporling"
+merkmal = "Zimtbraune Farbtöne, Fleisch weich und saftig, wächst meist an Nadelholz."
+essbar = "toedlichGiftig"
+slug = "zimtfarbiger-weichporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Eichenzunge.htm"

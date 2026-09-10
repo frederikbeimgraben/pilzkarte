@@ -1,0 +1,50 @@
+name = "Brennendscharfer Ritterling"
+lateinisch = "Tricholoma virgatum"
+gruppe = "ritterling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er schmeckt extrem scharf und pfeffrig und riecht erdig nach Rettich und verbranntem Gras. Der graue, radialfaserig einreißende Hut mit dem spitzen Buckel trennt ihn von milden Ritterlingen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BrennendscharferRitterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 10, selten bis 12 cm breit, aschgrau bis graubraun auf seidigem Grund, radialfaserig und wie bei Risspilzen radial einreißend. Mitte spitz gebuckelt, Rand lange eingerollt und scharfkantig."
+lamellen = "Weißlich bis leicht gelblich, am Stiel ausgebuchtet angewachsen, Schneiden gekerbt."
+stiel = "Weiß, unter der Huthaut grau."
+fleisch = "Grauweiß."
+geruch = "Erdig, rettichartig, nach verbranntem Gras."
+geschmack = "Extrem scharf, sehr pfeffrig bis bitterlich."
+sporenpulver = "Weiß."
+vorkommen = "Nadelwald, sporadisch bei Laubholz, auf saurem Boden. Sehr selten, in Deutschland gefährdet. Ein Wirtsbaum wird nicht genannt."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Tigerritterling"
+merkmal = "Hut mit dunklen, tigerartig angeordneten Schuppen, Fleisch mild, Geruch mehlartig."
+essbar = "toedlichGiftig"
+slug = "tigerritterling"
+
+[[verwechslungen]]
+name = "Schärflicher Ritterling"
+merkmal = "Nur schwach scharf, Hut mit feineren Fasern ohne spitzen Buckel."
+essbar = "giftig"
+slug = "schaerflicher-ritterling"
+
+[[verwechslungen]]
+name = "Rötender Erdritterling"
+merkmal = "Fleisch läuft im Schnitt rötlich an, Geschmack mild."
+essbar = "giftig"
+slug = "roetender-erdritterling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BrennendscharferRitterling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Brennender_Ritterling"

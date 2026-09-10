@@ -1,0 +1,32 @@
+name = "Eichenfeuerschwamm"
+lateinisch = "Fomitiporia robusta"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = ["eiche", "buche", "kastanie"]
+speisewertHinweis = "Das Fleisch ist holzig, fest und zäh. Er lässt sich nicht essen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Eichenfeuer.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "5 bis 15, selten bis 35 cm breit, bräunlich, kastanienbraun bis schwarzbraun, von Algen oft grünlich. Jung halbkugelig, später konsolenförmig, der Rand abgerundet."
+poren = "Gelblich bis rostbraun."
+fleisch = "Gelbbraun bis hellbraun, holzig, fest und zäh."
+geruch = "Neutral."
+geschmack = "Unbedeutend."
+sporenpulver = "Hellbraun."
+vorkommen = "Parasitisch an lebenden Eichen, selten an anderen Laubhölzern wie Buche, Robinie oder Edelkastanie. Löst Weißfäule aus."
+zeit = "Mehrjährig, das ganze Jahr über zu finden."
+
+[[verwechslungen]]
+name = "Tannenfeuerschwamm"
+merkmal = "Wächst an Nadelholz, vor allem Tanne, Fruchtkörper flacher und dünner."
+essbar = "ungeniessbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Eichenfeuer.htm"

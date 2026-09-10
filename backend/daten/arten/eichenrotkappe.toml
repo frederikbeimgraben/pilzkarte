@@ -1,0 +1,50 @@
+name = "Eichenrotkappe"
+lateinisch = "Leccinum quercinum"
+gruppe = "raufussroehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "buche", "hasel"]
+speisewertHinweis = "Raufußröhrlinge sind besonders geschützt und die Art ist selten. Nur wenig für den Eigenbedarf nehmen. Roh sind Rotkappen unverträglich, deshalb durchgaren."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Eichenrot.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 17, selten bis 21 cm breit, rotbraun, ziegelfarben bis rot, feinfilzig. Die Huthaut ist meist verkürzt, anders als bei der fast gleichen Espenrotkappe mit ihrer über die Röhren eingerollten Huthaut."
+roehren = "Weißlich, grauweiß bis gelbbraun, später bräunlich, am Stiel stark ausgebuchtet angewachsen."
+stiel = "6 bis 20, selten bis 22 cm hoch und 1 bis 4, selten bis 5 cm dick, mit rötlichen bis rotgrauen Schüppchen auf weißem Grund, nicht mit schwärzlichen wie bei der Birkenrotkappe."
+fleisch = "Weiß, im Schnitt etwas rötlich bis rosalila."
+geruch = "Pilzig."
+geschmack = "Mild und angenehm."
+sporenpulver = "Gelbbraun."
+vorkommen = "Symbiosepilz im Laubwald, überwiegend bei Eiche, selten bei Buche, Hasel und anderen Laubbäumen. Selten, in der Schweiz gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Fichtenrotkappe"
+merkmal = "Stielschuppen schwarz, wächst bei Nadelbäumen."
+essbar = "speisepilz"
+slug = "fichtenrotkappe"
+
+[[verwechslungen]]
+name = "Kiefernrotkappe"
+merkmal = "Hut fuchsrot und samtig, Schuppen erst hellbraun, dann rötlich, bei Kiefer."
+essbar = "speisepilz"
+slug = "kiefernrotkappe"
+
+[[verwechslungen]]
+name = "Birkenrotkappe"
+merkmal = "Stielschuppen schwärzlich statt rötlich, wächst bei Birke."
+essbar = "bedingtEssbar"
+slug = "birken-rotkappe"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Eichenrot.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Laubwald-Rotkappe"

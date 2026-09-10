@@ -1,0 +1,49 @@
+name = "Elfenbeinröhrling"
+lateinisch = "Suillus placidus"
+gruppe = "schmierroehrling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Die schleimige Huthaut vor dem Garen abziehen. In Deutschland gefährdet."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Elfenbeinroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Hut und Stiel violettgrau, an gelben Stellen blaugrün."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Auf dem Hut rosa bis lilaviolett, im Fleisch lila, in den Poren lachsrosa bis rötlichbraun."
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Auf dem Hut schwach rosa bis violett, später bräunlich bis schwarz."
+
+[merkmale]
+hut = "2 bis 11, selten bis 15 cm breit, weiß bis cremefarben, alt gelbbraun, schleimig und abziehbar, im Alter trocken. Jung halbkugelig, später abgeflacht und teils etwas gebuckelt."
+roehren = "Weiß, später gelblich, ein bis zwei je Millimeter, bis 1 cm tief, eckig, herablaufend."
+stiel = "5 bis 10, selten bis 12 cm lang und 5 bis 11, selten bis 15 mm dick, zylindrisch, weiß, cremegelb bis gelb, mit braunen Pünktchen, die sich leicht harzig anfühlen. Myzel weißlich."
+fleisch = "Weißlich bis cremegelb, später gelblich, etwas faserig brüchig."
+geruch = "Pilzig und angenehm."
+geschmack = "Mild und angenehm."
+sporenpulver = "Gelboliv."
+vorkommen = "Symbiosepilz bei fünfnadeligen Kiefern, nämlich Zirbelkiefer und Weymouthskiefer. Im Bayerischen Wald zunehmend häufiger, in Deutschland gefährdet."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Weißbrauner Schmierröhrling"
+merkmal = "Hut graubraun bis dunkelbraun statt elfenbeinweiß, Stiel oft mit Ringzone."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Elfenbeinroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Elfenbein-Röhrling"

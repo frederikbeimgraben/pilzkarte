@@ -1,0 +1,38 @@
+name = "Brennender Rübling"
+lateinisch = "Gymnopus peronatus"
+gruppe = "ruebling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Der Geschmack wird nach kurzer Zeit brennend scharf und pfefferig. Das macht ihn ungenießbar."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BrennenderRuebling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 8, selten bis 10 cm breit, braun bis gelblich, oft mit einem Buckel in der Mitte. Zieht man den Stiel ab, bleibt ein Loch im Hut."
+lamellen = "Bräunlich, gelblich bis dottergelb, ausgebuchtet angewachsen und fast frei wirkend, entfernt stehend, am Grund queraderig, mit kürzeren Zwischenlamellen. Schneiden heller."
+stiel = "5 bis 8, selten bis 19 cm lang und nur 0,3 bis 0,7 mm dick, weißlich bis braun, faserig, die Basis mit weißlichem Myzelfilz."
+fleisch = "Weiß bis gelbbraun."
+geruch = "Angenehm pilzig, junge Stücke leicht nach Essig. Zum Prüfen die Lamellen quetschen."
+geschmack = "Zuerst mild, nach einiger Zeit scharf und pfefferig."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer im Mischwald auf Blatt- und Nadelstreu, häufig."
+zeit = "Spätfrühling bis Herbst."
+
+[[verwechslungen]]
+name = "Nelkenschwindling"
+merkmal = "Hut ledergelb bis hellbraun, Lamellen weißlich und entfernt, Stiel zäh und hornartig, Geschmack bleibt mild."
+essbar = "bedingtEssbar"
+slug = "nelkenschwindling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BrennenderRuebling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Brennender_Rübling"

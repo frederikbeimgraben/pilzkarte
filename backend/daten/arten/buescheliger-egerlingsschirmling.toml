@@ -1,0 +1,46 @@
+name = "Büscheliger Egerlingsschirmling"
+lateinisch = "Leucoagaricus americanus"
+gruppe = "schirmling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er gilbt und rötet bei Verletzung sehr stark, erst orange, dann weinrot bis rotbraun. Wer ihn für einen Safranschirmling hält, achte auf die freistehende Wuchsform am Kompost und den fehlenden Buckel aus Schuppen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BuscheliegerEgerlingsschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 10, selten bis 25 cm breit, weiß mit konzentrisch angeordneten braunen bis rotbraunen Schüppchen, oft schon jung gilbend. Mitte glatt und gebuckelt, Rand gekerbt."
+lamellen = "Weiß, im Alter oder auf Druck safranrötlich, frei, mit Zwischenlamellen."
+stiel = "6 bis 18, selten bis 21 cm lang und 1 bis 5 cm dick, oben hell, unten rotbräunlich, längsfaserig und flockig braunschuppig, bei Verletzung intensiv gelb bis rotbraun verfärbend. Der Ring ist dick und häutig, weiß mit braunem Rand, nicht verschiebbar."
+fleisch = "Weißlich, stark gilbend und rötend, über Orange später weinrot, dann gelbbraun bis rotbraun."
+geruch = "Pilzig."
+geschmack = "Mild."
+sporenpulver = "Cremeweiß."
+vorkommen = "Folgezersetzer in Parks und Gärten, auf Kompost und Rindenmulch. Selten."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Karbolegerling"
+merkmal = "Lamellen rosa, dann schokoladenbraun, Stielbasis chromgelb, Geruch nach Karbol."
+essbar = "giftig"
+slug = "karbolegerling"
+
+[[verwechslungen]]
+name = "Gerandetknolliger Garten-Safranschirmling"
+merkmal = "Stiel mit gerandeter Knolle, Fleisch rötet ohne den starken Gelbton."
+essbar = "giftig"
+slug = "gerandetknolliger-garten-safranschirmling"
+
+[[verwechslungen]]
+name = "Safranschirmling"
+merkmal = "Stielbasis knollig ohne Rand, Fleisch rötet safranrot, ohne kräftiges Gilben."
+essbar = "bedingtEssbar"
+slug = "safranschirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BuscheliegerEgerlingsschirmling.htm"

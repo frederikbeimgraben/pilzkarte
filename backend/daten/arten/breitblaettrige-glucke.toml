@@ -1,0 +1,45 @@
+name = "Breitblättrige Glucke"
+lateinisch = "Sparassis brevipes (eichenglucke: (sparassis laminosa), tannen-glucke"
+gruppe = "glucke"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche", "tanne"]
+speisewertHinweis = "Das Fleisch ist zäh und gummiartig, roh gilt die Wertigkeit 4 bis 5. Erst mit langer, besonderer Zubereitung wird sie brauchbar. In Deutschland gefährdet, regional stark gefährdet, deshalb besser stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/BreitblaettrigeKrauseGlucke2004.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "6 bis 30, selten bis 100 cm breit, hirnartig und schwammartig breit gekräuselt, zuerst weißlich, später gelblich, die Spitzen heller. Die Lappen sind breiter als bei der Krausen Glucke."
+stiel = "Ein weißlicher Strunk, der am Boden entspringt oder auf Holz sitzt."
+fleisch = "Weißlich bis gelblich, elastisch, zäh und gummiartig."
+geruch = "Angenehm aromatisch pilzartig, beim Kochen nach Waschküche."
+geschmack = "Mild, alt bitterlich."
+sporenpulver = "Weiß bis blassocker."
+vorkommen = "Am Wurzelgeflecht von Laubbäumen, gern Eiche, seltener an Nadelholz wie Tanne. In Deutschland gefährdet, regional stark gefährdet."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Bauchwehkoralle"
+merkmal = "Korallenartig verzweigt statt gekräuselt, Äste mit rötlichen Spitzen."
+essbar = "giftig"
+slug = "bauchwehkoralle"
+
+[[verwechslungen]]
+name = "Krause Glucke"
+merkmal = "Schmalere, stärker gekrauste Lappen, wächst an Kiefer statt an Laubholz."
+essbar = "speisepilz"
+slug = "krause-glucke"
+
+[[verwechslungen]]
+name = "Gelbe Koralle"
+merkmal = "Aufrechte, gegabelte Äste von einem Strunk, nicht blattartig gekräuselt."
+essbar = "speisepilz"
+slug = "gelbe-koralle"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/BreitblaettrigeKrauseGlucke2004.htm"

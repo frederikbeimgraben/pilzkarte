@@ -1,0 +1,39 @@
+name = "Eichenmilchling"
+lateinisch = "Lactarius quietus"
+gruppe = "milchling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["eiche"]
+speisewertHinweis = "Der Geruch nach Blattwanzen bleibt beim Garen erhalten. Als Speisepilz taugt er wenig."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Eichenmilchling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 8, selten bis 11 cm breit, rotbraun, orangebraun bis haselnussbraun, teils dunkler gezont mit helleren bereiften Zonen. Mitte eingedrückt, Rand jung eingerollt."
+lamellen = "Hellbräunlich, angewachsen bis etwas herablaufend, in Stielnähe oft gegabelt."
+milch = "Weiß bis hell gelblich, trocknet hell grünlichgelb ein."
+stiel = "Rotbraun, orangebraun bis haselnussbraun auf hellem Grund, fest und voll, auf Druck leicht weinbraun verfärbend."
+fleisch = "Weißlich bis hellbraun, auf Druck weinbraun verfärbend, in der Stielbasis bräunlich."
+geruch = "Nach Blattwanzen."
+geschmack = "Mild, leicht bitterlich."
+sporenpulver = "Hellgelblich."
+vorkommen = "Symbiosepilz nur unter Eichen. Sehr häufig."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Rotbrauner Milchling"
+merkmal = "Milch weiß und bleibend, Geschmack scharf, Geruch ohne Wanzennote."
+essbar = "ungeniessbar"
+slug = "rotbrauner-milchling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Eichenmilchling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Eichen-Milchling"
