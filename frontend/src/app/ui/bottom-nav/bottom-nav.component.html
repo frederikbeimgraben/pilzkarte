@@ -6,7 +6,7 @@
       [routerLink]="eintrag.pfad"
       [attr.aria-current]="eintrag.pfad === aktiv() ? 'page' : null"
     >
-      <app-svg-icon [name]="eintrag.icon" />
+      <span class="nav__pill"><app-svg-icon [name]="eintrag.icon" /></span>
       <span class="nav__label">{{ eintrag.label }}</span>
     </a>
   }

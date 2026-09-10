@@ -1,3 +1,7 @@
+// Farbe und Tönung blenden über dieselbe Zeit um: der Wechsel zwischen zwei
+// Reitern und das Drücken eines Reiters sollen sich gleich anfühlen.
+$dauer: 150ms;
+
 .nav {
   display: flex;
   block-size: var(--pilz-nav-hoehe);
@@ -15,15 +19,53 @@
   gap: 3px;
   color: var(--color-text-muted);
   text-decoration: none;
+  transition: color $dauer ease-out;
 }
 
 .nav__eintrag--aktiv {
   color: var(--color-primary);
 }
 
+// Die Tipp-Fläche ist eine Pille um das Symbol, nicht der ganze Knopf. Eine
+// Tönung über die volle Fläche liefe bis an die Kante der Leiste und sähe aus
+// wie ein Kasten, nicht wie ein gedrückter Knopf.
+.nav__pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 18px;
+  border-radius: var(--radius-lg);
+  transition: background-color $dauer ease-out;
+}
+
+.nav__eintrag:active .nav__pill {
+  background: var(--color-surface-sunken);
+}
+
 .nav__label {
   font-size: var(--fs-xs);
   font-weight: var(--fw-semibold);
+}
+
+// Das Symbol sinkt ein, die Beschriftung nicht: eine Schrift, die mitspringt,
+// macht die Leiste unruhig und liest sich für den Moment schlechter.
+@media (prefers-reduced-motion: no-preference) {
+  .nav__pill app-svg-icon {
+    transition: transform $dauer ease-out;
+  }
+
+  .nav__eintrag:active .nav__pill app-svg-icon {
+    transform: scale(0.94);
+  }
+}
+
+// Wer weniger Bewegung will, bekommt die Tönung ohne Überblendung. Sie ist
+// Rückmeldung, keine Bewegung.
+@media (prefers-reduced-motion: reduce) {
+  .nav__eintrag,
+  .nav__pill {
+    transition: none;
+  }
 }
 
 // Am Rechner sitzt dieselbe Leiste oben in der Spalte. Der Balken unter dem
@@ -35,11 +77,20 @@
 }
 
 .nav--spalte .nav__eintrag {
-  gap: var(--space-1);
-  padding-block: 6px 10px;
+  gap: 2px;
+  padding-block: 2px 8px;
   border-block-end: 2px solid transparent;
+  transition:
+    color $dauer ease-out,
+    border-color $dauer ease-out;
 }
 
 .nav--spalte .nav__eintrag--aktiv {
   border-block-end-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav--spalte .nav__eintrag {
+    transition: none;
+  }
 }

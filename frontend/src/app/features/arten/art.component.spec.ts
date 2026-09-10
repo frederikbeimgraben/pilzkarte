@@ -41,7 +41,7 @@ describe('ArtComponent', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Steinpilz' })).toBeInTheDocument();
     expect(screen.getByText('Boletus edulis · Röhrling')).toBeInTheDocument();
     expect(screen.getByText('Vorhersage')).toBeInTheDocument();
-    expect(screen.getByText('geschützt')).toBeInTheDocument();
+    expect(screen.getByText('Geschützt')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: '123pilzsuche.de' })).toHaveAttribute(
       'href',
       'https://www.123pilzsuche.de/daten/details/Steinpilze.htm',
