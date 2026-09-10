@@ -1,4 +1,4 @@
-import { MapLibreAdapter, type KartenOptionen, type MaplibreModul } from './map-adapter';
+import { MapLibreAdapter, WORKER_PFAD, type KartenOptionen, type MaplibreModul } from './map-adapter';
 
 interface Ereignis {
   typ: string;
@@ -135,13 +135,21 @@ const OPTIONEN: KartenOptionen = {
   kompakt: false,
 };
 
-function modul(): { modul: MaplibreModul; angemeldet: string[]; abgemeldet: string[] } {
+function modul(): {
+  modul: MaplibreModul;
+  angemeldet: string[];
+  abgemeldet: string[];
+  arbeiter: string[];
+} {
   const angemeldet: string[] = [];
   const abgemeldet: string[] = [];
+  const arbeiter: string[] = [];
   return {
     angemeldet,
     abgemeldet,
+    arbeiter,
     modul: {
+      setWorkerUrl: (pfad: string) => arbeiter.push(pfad),
       Map: KarteAttrappe as unknown as MaplibreModul['Map'],
       AttributionControl: HinweisAttrappe as unknown as MaplibreModul['AttributionControl'],
       addProtocol: (name: string) => angemeldet.push(name),
@@ -155,19 +163,22 @@ async function adapter(): Promise<{
   karte: KarteAttrappe;
   angemeldet: string[];
   abgemeldet: string[];
+  arbeiter: string[];
 }> {
-  const { modul: m, angemeldet, abgemeldet } = modul();
+  const { modul: m, angemeldet, abgemeldet, arbeiter } = modul();
   const adapter = new MapLibreAdapter(() => Promise.resolve(m));
   await adapter.starte(document.createElement('div'), OPTIONEN);
   const karte = KarteAttrappe.letzte;
   if (!karte) throw new Error('Der Adapter hat keine Karte gebaut.');
-  return { adapter, karte, angemeldet, abgemeldet };
+  return { adapter, karte, angemeldet, abgemeldet, arbeiter };
 }
 
 describe('MapLibreAdapter', () => {
-  it('meldet das Protokoll an, bevor die Karte entsteht', async () => {
-    const { karte, angemeldet } = await adapter();
+  it('nennt den Worker-Pfad und meldet das Protokoll an, bevor die Karte entsteht', async () => {
+    const { karte, angemeldet, arbeiter } = await adapter();
 
+    expect(arbeiter).toEqual([WORKER_PFAD]);
+    expect(WORKER_PFAD.startsWith('/assets/')).toBe(true);
     expect(angemeldet).toEqual(['wert']);
     expect(karte.optionen['minZoom']).toBe(5);
     expect(karte.optionen['maxBounds']).toEqual(OPTIONEN.maxGrenzen);

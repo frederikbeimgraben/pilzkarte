@@ -4,8 +4,20 @@ import type { Ausschnitt } from './kachel-raster';
 /** Nur der Teil von MapLibre, den der Adapter braucht. */
 export type MaplibreModul = Pick<
   typeof import('maplibre-gl'),
-  'Map' | 'AttributionControl' | 'addProtocol' | 'removeProtocol'
+  'Map' | 'AttributionControl' | 'addProtocol' | 'removeProtocol' | 'setWorkerUrl'
 >;
+
+/**
+ * Wo der Worker von MapLibre liegt.
+ *
+ * MapLibre baut den Pfad sonst zur Laufzeit aus `import.meta.url` und sucht
+ * `maplibre-gl-worker.mjs` neben dem Bündel. Dort liegt die Datei nicht: der
+ * Bündler kopiert sie nicht mit, und der Webserver antwortet für einen
+ * unbekannten Pfad mit der Seite selbst. Firefox lehnt den Worker dann wegen
+ * des MIME-Typs ab, und die Karte bleibt leer. Die Datei wird darum als Asset
+ * ausgeliefert (`angular.json`) und hier benannt.
+ */
+export const WORKER_PFAD = '/assets/maplibre/maplibre-gl-worker.mjs';
 
 /** Südwest- und Nordostecke als [Länge, Breite]. */
 export type Grenzen = readonly [readonly [number, number], readonly [number, number]];
@@ -110,6 +122,7 @@ export class MapLibreAdapter implements MapAdapter {
   async starte(wirt: HTMLElement, optionen: KartenOptionen): Promise<void> {
     const modul = await this.lade();
     this.modul = modul;
+    modul.setWorkerUrl(WORKER_PFAD);
     // Das Protokoll steht vor der Karte, sonst fiele die erste Kachel ins Leere.
     modul.addProtocol(optionen.protokoll.name, (anfrage) => optionen.protokoll.aufloesen(anfrage.url));
     this.protokollName = optionen.protokoll.name;

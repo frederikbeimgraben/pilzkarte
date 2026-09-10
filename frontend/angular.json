@@ -35,6 +35,11 @@
                 "glob": "**/*",
                 "input": "node_modules/@stupa-makers/ui-kit/assets/fonts",
                 "output": "assets/fonts"
+              },
+              {
+                "glob": "maplibre-gl-worker.mjs",
+                "input": "node_modules/maplibre-gl/dist",
+                "output": "assets/maplibre"
               }
             ],
             "styles": ["src/styles.scss"]
