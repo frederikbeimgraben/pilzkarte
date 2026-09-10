@@ -108,7 +108,7 @@ in `app/core/` oder `app/shared/`.
 - TDD. Test zuerst, dann der kleinste Code, dann aufräumen. Kein `skip` ohne Grund.
 - **Kein Text steht fest im Code.** Jede Zeichenkette, die eine Person
   liest, ist ein Schlüssel. Der Text dazu liegt in der Datenbank und lässt
-  sich mit der Rolle `admin` in der Oberfläche ändern. Die Migration setzt
+  sich mit dem Recht „Texte ändern" in der Oberfläche ändern. Die Migration setzt
   den Anfangsbestand, der Client hält ihn als Rückfall für den ersten Start
   und für offline.
 - **Bezeichner sind englisch, ausnahmslos.** Klassen, Komponenten,
@@ -122,6 +122,9 @@ in `app/core/` oder `app/shared/`.
 - Jede Funktion, jeder Endpunkt, jede Komponente hat Tests. Abdeckung 90 % Zeilen und Zweige, `backend/app/core/auth.py` und die Offline-Warteschlange 100 % Zweige.
 - problem+json auf jedem Fehlerpfad (RFC 9457). Nie das FastAPI-`detail`.
 - Besitzer kommt aus dem Token (`sub`), nie aus dem Body. Fremde Objekte liefern 404.
+- **Rechte prüft das Backend.** Rollen sind frei anlegbar, Admin trägt
+  jedes Recht, Nutzer hat jede angemeldete Person. Das Frontend blendet
+  nur aus, es entscheidet nichts.
 - Enums statt freier Strings. Frontend `strict`, kein `any`. Backend voll annotiert.
 - Zeit tz-aware. ISO-8601 mit Offset auf dem Draht. Wochen als `{"jahr": 2026, "woche": 40}`.
 - camelCase in JSON, gleiche Feldnamen auf beiden Seiten. OpenAPI ist die Quelle.
