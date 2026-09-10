@@ -1,0 +1,49 @@
+name = "Zitronenporling"
+lateinisch = "Albatrellus citrinus"
+gruppe = "porling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Zitronenporling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch rasch gelb, später orange bis rot."
+
+[merkmale]
+hut = "3 bis 18, selten bis 20 cm breit, jung weißlich, schnell zitronengelb, später gilbend, alt und getrocknet orange bis ockerbraun. Oberfläche glatt und matt, im Alter braunschuppig aufreißend, Rand scharf eingebogen. Jung mit graubrauner bis grauvioletter Marmorierung."
+poren = "Weißlich, auf Druck gilbend, am Stiel etwas herablaufend."
+stiel = "Weißlich, strunkartig, mehrere Stiele oft verwachsen, voll, fein filzig, zur Basis verjüngt, etwas braunfleckig."
+fleisch = "Weiß bis cremefarben, im Schnitt langsam schwach rotbraun anlaufend, fest und brüchig."
+geruch = "Angenehm pilzig."
+geschmack = "Mild, nussartig."
+sporenpulver = "Weiß bis farblos."
+vorkommen = "In Nadel- und Mischwäldern auf Nadelstreu oder nacktem Boden, gern in höheren Lagen. Vermutlich Symbiosepilz, nach anderen Autoren auch Folgezersetzer. Er kann zusammen mit dem Schafporling auftreten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Weißer Knochenporling"
+merkmal = "Bleibt weiß bis cremefarben, Fleisch trocken steinhart, wächst an Lärchenholz."
+essbar = "ungeniessbar"
+slug = "weisser-knochenporling"
+
+[[verwechslungen]]
+name = "Rötender Schafeuterporling"
+merkmal = "Hut weißlich bis ockerlich, Fleisch rötet deutlich, Poren gilben nicht zitronengelb."
+essbar = "speisepilz"
+slug = "roetender-schafeuterporling"
+
+[[verwechslungen]]
+name = "Semmelporling"
+merkmal = "Hut semmelgelb bis blass orange ohne Zitronengelb, Fruchtkörper oft miteinander verwachsen."
+essbar = "speisepilz"
+slug = "semmelporling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Zitronenporling.htm"

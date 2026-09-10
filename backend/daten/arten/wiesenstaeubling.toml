@@ -1,0 +1,49 @@
+name = "Wiesenstäubling"
+lateinisch = "Vascellum pratense"
+gruppe = "staeubling"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Nur solange das Innere rein weiß ist. Sobald das Fleisch gilbt oder olivbraun wird, ist er nicht mehr brauchbar."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Wiesenstaubbecher.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "2 bis 7, selten bis 9 cm breit, weiß, rund, kugel- bis birnenförmig, feinkörnig und feinstachelig, später glatt und cremefarben, alt braun mit geöffnetem Scheitel und becherförmig."
+stiel = "Weiß, kurz, mit weißem Myzelfilz und kräftigen Rhizomorphen."
+fleisch = "Weiß, später gelb, im Alter olivbraun bis schwarzbraun. Die Fruchtmasse ist durch eine Außenhaut und ein deutliches Diaphragma von der cremeweißen, wabigen Subgleba getrennt."
+geruch = "Angenehm pilzig."
+geschmack = "Mild."
+sporenpulver = "Olivbraun."
+vorkommen = "Folgezersetzer auf Rasenflächen, Wiesen und Viehweiden."
+zeit = "Frühling ab April bis Spätherbst."
+
+[[verwechslungen]]
+name = "Weißer Knollenblätterpilz"
+merkmal = "Junge Eier zeigen im Längsschnitt schon Hut, Lamellen und Stiel, Stäublinge sind innen gleichmäßig weiß."
+essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Riesenbovist"
+merkmal = "Weiß und rundlich, aber 10 bis 50 cm groß, ohne Stielteil."
+essbar = "speisepilz"
+slug = "riesenbovist"
+
+[[verwechslungen]]
+name = "Hasenstäubling"
+merkmal = "Größer, die Außenhaut reißt im Alter netzig felderig auf."
+essbar = "speisepilz"
+slug = "hasenbovist"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Wiesenstaubbecher.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Wiesen-Stäubling"

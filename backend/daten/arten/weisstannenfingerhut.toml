@@ -1,0 +1,33 @@
+name = "Weißtannenfingerhut"
+lateinisch = "Cyphella digitalis"
+gruppe = "becherling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["winter", "fruehling"]
+baeume = ["tanne", "kiefer", "fichte"]
+speisewertHinweis = "Zu klein und zu selten für die Küche. In Deutschland stark gefährdet."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Weisstannenfingerhut.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "0,5 bis 1,5, selten bis 2 cm breit, außen braun bis haselnussbraun, später graurötlich bis graulila, raukörnig. Innen weißlich mit rosa Hauch, alt bräunlich und glatt. Becher- bis fingerhutförmig, faserig."
+stiel = "Fehlend oder kurz, sitzt dem Holz auf und ist nicht mit ihm verwachsen."
+fleisch = "Weißlich bis bräunlich, brüchig."
+geruch = "Neutral."
+geschmack = "Mild, unbedeutend."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer an Nadelholz, gern Weißtanne, Tanne oder Kiefer, sehr selten Fichte, meist gesellig an Weißtannenästen. Selten, in Deutschland stark gefährdet."
+zeit = "Winter bis Frühjahr."
+
+[[verwechslungen]]
+name = "Kleines Judasohr"
+merkmal = "Gallertartig elastisch und ohrförmig, wächst an Laubholz."
+essbar = "ungeniessbar"
+slug = "kleines-judasohr"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Weisstannenfingerhut.htm"

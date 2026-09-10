@@ -1,0 +1,33 @@
+name = "Weißer Knochenporling"
+lateinisch = "Osteina obducta"
+gruppe = "porling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["laerche"]
+speisewertHinweis = "Ungenießbar, weil das Fleisch zäh ist und trocken steinhart wird. Vermutlich ungiftig."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Knochenporling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 9, selten bis 11 cm breit, weiß, gelblich bis cremefarben, kahl. Mehrere unterschiedlich geformte Hüte wachsen zusammen und wirken oft wie halbiert."
+roehren = "Weiß, gelblich bis cremefarben, winzig, herablaufend, verfärbend."
+stiel = "Weiß, gelblich bis cremefarben, kurz, entspringt einem gemeinsamen Strunk."
+fleisch = "Weiß, elastisch zäh, trocken sehr hart werdend."
+geruch = "Neutral."
+geschmack = "Unbedeutend bis etwas bitterlich."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer an toten Lärchenstämmen und Lärchenstrünken, gern in höheren Gebirgswäldern. In Deutschland extrem selten."
+zeit = "Die Quellseite nennt keine Zeit."
+
+[[verwechslungen]]
+name = "Weißer Semmelstoppelpilz"
+merkmal = "Wächst am Boden statt auf Holz und trägt Stacheln statt Poren."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Knochenporling.htm"

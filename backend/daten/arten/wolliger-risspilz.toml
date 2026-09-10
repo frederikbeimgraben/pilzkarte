@@ -1,0 +1,34 @@
+name = "Wolliger Risspilz"
+lateinisch = "Inocybe lanuginosa"
+gruppe = "schleierling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Tödlich giftig, wie alle Risspilze mindestens verdächtig. Kennzeichen sind der wollig-filzige braune Hut mit fransig überstehendem Rand, der erdig-spermatische Geruch und das tabakbraune Sporenpulver."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/WolligeRisspilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 7, selten bis 9 cm breit, braun bis orangebraun, wollig filzig, nicht sparrig, Rand fransig überstehend, Mitte teils dunkler."
+lamellen = "Hellgrau bis graubraun, alt dunkel rostbraun, mehr oder weniger angewachsen, Schneiden weißlich bewimpert."
+stiel = "Jung grauweißlich, später wollig braun- bis rostbraunschuppig auf hellem Grund, Spitze heller und weniger geschuppt, nur ganz oben bereift, im Alter hohl."
+fleisch = "Schmutzig weißlich bis hellbräunlich, im Alter bräunend, im Stiel holzbraun."
+geruch = "Moderig, erdig, säuerlich, spermatisch."
+geschmack = "Mild, etwas muffig."
+sporenpulver = "Tabakbraun bis dunkelbraun."
+vorkommen = "Symbiosepilz im Mischwald, gern im feuchten Nadelwald, auf verrottetem Holz."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Gemeiner Hallimasch"
+merkmal = "Wächst büschelig an Holz, hat einen Ring am Stiel und weißliche bis cremefarbene Lamellen."
+essbar = "bedingtEssbar"
+slug = "dunkler-hallimasch"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/WolligeRisspilz.htm"

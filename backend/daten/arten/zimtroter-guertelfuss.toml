@@ -1,0 +1,33 @@
+name = "Zimtroter Gürtelfuß"
+lateinisch = "Cortinarius laniger"
+gruppe = "schleierling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "tanne"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/ZimtroterGuertelfuss.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 9, selten bis 11 cm breit, orangebraun, gelbbraun bis rötlichbraun, durch das Velum zartseidig bereift, halbkugelig bis glockenförmig, Randbereich mit Velumresten und gern etwas eingerollt."
+lamellen = "Zimtrot bis rotbraun, ausgebuchtet angewachsen, etwas gezahnt."
+stiel = "Weiß bis hellbraun, mit oder ohne violetten Hauch, wollig mit Velum gegürtelt, Basis knollig."
+fleisch = "Grauweiß bis blass rötlichbraun, faserig."
+geruch = "Rettichartig."
+geschmack = "Mild."
+sporenpulver = "Rostbraun."
+vorkommen = "Symbiosepilz im Mischwald, gern im Nadelwald bei Fichte oder Tanne, gern auf moosigem, kalkreichem Boden."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Reifpilz"
+merkmal = "Hut mit weißem Reifüberzug, Stiel mit häutigem Ring statt wolliger Gürtelung."
+essbar = "speisepilz"
+slug = "reifpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/ZimtroterGuertelfuss.htm"
