@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
+marktfaehig = false
+weitereNamen = ["Napfförmiger Kelchbecherling"]
+synonyme = ["Pustulina cupularis", "Tarzetta cupularis var. velata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KerbrandigerNapf.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 19.0, bis = 21.0 }
+sporenBreiteUm = { von = 10.0, bis = 13.0 }
 
 [merkmale]
 fruchtkoerper = "1 bis 3, selten bis 4 cm breit, schüsselförmig, hellbraun, der Rand gekerbt. Scheibe weißlich bis gelblich, Becherboden manchmal aderig, Außenseite ockerfarben und etwas kleiig."

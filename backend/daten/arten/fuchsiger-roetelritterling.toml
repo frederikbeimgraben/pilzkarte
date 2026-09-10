@@ -6,6 +6,11 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Die DGfM nennt einen ungeklärten Fall mit muscarinartigen Beschwerden. Zäh und ohne großen Wert; wer ihn nicht sicher von giftigen Trichterlingen trennt, lässt ihn stehen."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Fuchsiger Röteltrichterling", "Fuchsiger Trichterling"]
+synonyme = ["Agaricus flaccidus", "Clitocybe flaccida"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FuchsigerRoeteltrichterling.htm"
@@ -14,6 +19,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut gelb, am Stiel zitronengelb, an der Stielbasis gelblich orange bis bräunlich."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0 }
+sporenLaengeUm = { von = 3.0, bis = 4.5 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, bräunlich, haselnuss- bis gelbbraun, glatt und fettig anzufassen, beim Abtrocknen ausblassend, trichterförmig. Rand lange eingerollt."

@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Roh unvertraeglich, deshalb gut durchgaren. Alte Fruchtkoerper koennen bitterlich werden."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Rötender Schafporling"]
+synonyme = ["Scutiger subrubescens", "Albatrellus ovinus", "Polyporus ovinus", "Caloporus ovinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetenderSchafporling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0 }
+sporenLaengeUm = { von = 3.5, bis = 5.0 }
+sporenBreiteUm = { von = 2.5, bis = 3.5 }
 
 [merkmale]
 hut = "3 bis 18, selten bis 30 cm breit, weiss, spaeter gelblich, fleischrosa, rosa bis schmutzig weiss. Nach dem Reiben gelblich, teils etwas roetend, filzig, aufreissend, im Alter mit Schuppchen."

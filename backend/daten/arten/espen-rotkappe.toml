@@ -6,6 +6,11 @@ geschuetzt = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["pappel"]
 speisewertHinweis = "Fleisch wird beim Kochen schwarz. In Deutschland gefährdet."
+marktfaehig = false
+wertigkeit = 1
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Espenrotkappe", "Weißstielige Rotkappe", "Rothäubchen", "Pappelrotkappe", "Rothaut-Röhrling"]
+synonyme = ["Leccinum quercinum", "Leccinum rufum", "Leccinum albostipitatum", "Leccinum populinum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Espenrotkappe.htm"
@@ -18,6 +23,13 @@ reaktion = "Schmutzig rosenrot, später braunviolett."
 [[reagenzien]]
 reagenz = "feso4"
 reaktion = "Fleisch graugrünlich."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 19.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 13.0, bis = 18.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
 hut = "4 bis 19, selten bis 22 cm breit, braunrot bis orangebraun, feinfilzig. Die Huthaut steht im Alter am Rand über."

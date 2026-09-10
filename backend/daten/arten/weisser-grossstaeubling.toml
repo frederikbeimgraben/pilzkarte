@@ -7,10 +7,16 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur essbar, solange das Innere rein weiß ist; später wird es gelb und ungenießbar. Jeden Fruchtkörper aufschneiden, um junge Knollenblätterpilze auszuschließen."
+marktfaehig = false
+wertigkeit = 2
+synonyme = ["Langermannia candida", "Lycoperdon candidum", "Aussereuropäische form: calvatia craniiformis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserGrossstaeubling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0 }
 
 [merkmale]
 fruchtkoerper = "3 bis 9, selten bis 11 cm breit, weiß bis grauweiß, später gelblich, netzartig fleckig bis wellig vertieft, teils mit stielartigem Teil und kugeligem Kopf."

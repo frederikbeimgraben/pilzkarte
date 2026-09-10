@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "kastanie"]
 speisewertHinweis = "Selten, in Deutschland gefährdet und in der Schweiz verletzlich. Besser stehen lassen."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Goldporiger Pulverröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GoldporigerRoehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 15.0, bis = 17.0 }
+sporenBreiteUm = { von = 4.1, bis = 7.1 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 9 cm breit, gelbrosa, rosabraun bis beigerosa. Feucht schmierig bis schleimig, trocken oft etwas bereift. Rand steht etwas über, Huthaut teilweise abziehbar."

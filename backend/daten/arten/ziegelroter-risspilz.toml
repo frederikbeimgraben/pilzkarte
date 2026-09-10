@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["linde", "buche"]
 speisewertHinweis = "Tödlich giftig. Er erscheint schon im Mai auf denselben Plätzen wie der Maipilz. Sicherstes Zeichen ist das Röten von Fleisch, Stiel und Lamellen zusammen mit dem spermatischen Geruch."
+marktfaehig = false
+synonyme = ["Inocybe erubescens", "Inocybe patouillardii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZiegelroterRisspilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 12.0 }
+stielDickeCm = { von = 0.8, bis = 2.2, seltenBis = 2.6 }
+sporenLaengeUm = { von = 10.0, bis = 13.8 }
+sporenBreiteUm = { von = 5.5, bis = 8.5 }
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, jung geschlossen und weißlich, später gelbbraun, ockerbraun, rotbraun bis ziegelrot, kegelig gebuckelt und radialfaserig. Erst beim Öffnen reißt die Huthaut auf."

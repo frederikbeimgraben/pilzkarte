@@ -6,10 +6,21 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["weide"]
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Feuchtstellen Schüppling", "Weidenschüppling", "Weißbehangener Schüppling", "Feuchtstellenschüppling"]
+synonyme = ["Pholiota graminis", "Pholiota inaurata", "Hypholoma graminis", "Flammula graminis", "Flammula muricella", "Dryophila muricella var. graminis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Feuchtstellenschueppling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
+stielDickeCm = { von = 0.4, bis = 1.2, seltenBis = 1.7 }
+sporenLaengeUm = { von = 6.5, bis = 7.5 }
+sporenBreiteUm = { von = 3.5, bis = 4.5 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 7 cm breit, kastanienbraun bis gelbocker, Mitte rötlich ocker, Rand gelbocker, kahl bis eingewachsen faserig, jung mit wolligen Velumresten, im Alter rissig wie bei einem Risspilz, feucht schmierig."

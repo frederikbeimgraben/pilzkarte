@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["herbst", "winter"]
 baeume = []
 speisewertHinweis = "Kann bei empfindlichen Personen Magen-Darm-Störungen auslösen, die schnell wieder vergehen."
+marktfaehig = false
+weitereNamen = ["Gelbgrüner Ellerling", "Olivgelber Nabeling", "Gelbgrüner Nabeling", "Gelboliver Ellerling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruengelberNabeling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 7.4, bis = 10.0 }
+sporenBreiteUm = { von = 4.3, bis = 5.6 }
 
 [merkmale]
 hut = "1 bis 3, selten bis 4 cm breit, gelb, olivgelb bis grüngelb, feinfaserig. Rand heller und fein durchscheinend gerieft, im Alter immer genabelt."

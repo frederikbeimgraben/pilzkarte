@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = []
 speisewertHinweis = "Fleisch zäh, Geschmack oft bitterlich."
+marktfaehig = false
+weitereNamen = ["Gelbstieliger Zwergknäueling", "Später Seitling", "Gelber Muscheling", "Mukitake"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbstieligerMuschelseitling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 3.5, bis = 6.0 }
+sporenBreiteUm = { von = 0.7, bis = 2.0 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 22 cm breit, grünbraun, grünocker, schwarzbraun, grau bis graubraun, muschelförmig und fein braunfilzig. Die Farben sind veränderlich, Rand jung eingerollt."

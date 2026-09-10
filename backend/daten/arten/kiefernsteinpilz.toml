@@ -6,10 +6,16 @@ geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "tanne", "fichte"]
 schutzHinweis = "Die Verordnung nennt Boletus edulis und Boletus aereus. Dieses Projekt behandelt den Kiefernsteinpilz gleich, weil er im Wald kaum von ihnen zu trennen ist."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Kiefernsteini", "Steinpilze", "Herrenpilz", "Dobberniggl", "Gemeiner Steinpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kiefernsteinpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 25.0, seltenBis = 30.0 }
 
 [merkmale]
 hut = "4 bis 25, selten bis 30 cm breit, rotbraun, weinrot bis purpurbraun, der Rand lange eingerollt und meist heller. Jung halbkugelig, knubbelig runzelig, weißlich grau bereift und feinsamtig, später polsterförmig, kahler und meist uneben bis grubig. Bei feuchtem Wetter leicht klebrig."

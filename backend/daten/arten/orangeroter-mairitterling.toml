@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["laerche"]
 speisewertHinweis = "Sehr selten und kaum bekannt. Er riecht schwächer und weniger angenehm als der Maipilz."
+marktfaehig = false
+weitereNamen = ["Starkriechender Schönkopf", "Starkriechender Maipilz"]
+synonyme = ["Calocybe gambosa f. graveolens", "Gyrophila graveolens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OrangerMairitterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 6.0 }
+sporenLaengeUm = { von = 5.0, bis = 6.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 10 cm breit, zuerst rotbraun, cremeockerbraun bis ockerorange, später schmutzig weiß bis gelblich, fast immer mit rötlichem Unterton. Huthaut glatt, Rand jung eingerollt, manchmal ausbleichend, alt von der Mitte her bräunlich schuppig."

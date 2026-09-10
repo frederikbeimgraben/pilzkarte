@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "birke"]
 speisewertHinweis = "Roh unverträglich. Nur für Sammler, die den Pantherpilz sicher trennen: jeden Fruchtkörper mit ganzer Stielbasis ausgraben und die Scheide prüfen."
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Rotbrauner Scheidenstreifling", "Rotbrauner Streifling", "Gelbbräunlicher Scheidenstreifling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerScheidens.htm"
@@ -22,6 +25,13 @@ reaktion = "Fleisch braun bis schokoladenbraun."
 [[reagenzien]]
 reagenz = "guajak"
 reaktion = "Huthaut und Scheide nach zwei Minuten blau."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 7.0, bis = 18.0, seltenBis = 20.0 }
+stielDickeCm = { von = 1.0, bis = 2.0 }
+sporenLaengeUm = { von = 9.0, bis = 19.5 }
+sporenBreiteUm = { von = 8.0, bis = 15.5 }
 
 [merkmale]
 hut = "3 bis 6, selten bis 9 cm breit, gelb, fuchsig, orange bis dunkel rotbraun, Mitte dunkler, Rand heller und auf etwa einem Drittel des Radius stark gerieft."

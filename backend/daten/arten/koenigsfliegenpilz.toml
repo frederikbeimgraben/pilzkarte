@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Zu erkennen am braunen bis gelbbraunen Hut mit gelblichen, abwischbaren Velumflocken, am hellgelben Stiel und an der warzig-knolligen Basis mit gürtelförmigen Velumzonen."
+marktfaehig = false
+weitereNamen = ["Brauner Fliegenpilz"]
+synonyme = ["Amanita muscaria var. regalis", "Amanita regalis forma umbrina", "Amanita emilii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koenigsfliegenpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+stielLaengeCm = { von = 7.0, bis = 16.0, seltenBis = 20.0 }
+stielDickeCm = { von = 2.0, bis = 4.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 8.1, bis = 16.7 }
+sporenBreiteUm = { von = 6.5, bis = 12.0 }
 
 [merkmale]
 hut = "4 bis 16, selten bis 20 cm breit, braun bis gelbbraun, mit gelblichen pyramidalen, abwischbaren grauweißen Velumflocken, selten nackt. Oberfläche glänzend, feucht schmierig, Haut bis zur Mitte abziehbar."

@@ -7,6 +7,8 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Schon ein kleines Stück Fleisch auf der Zunge schmeckt sehr bitter; ein einziger Fruchtkörper verdirbt ein ganzes Gericht. Er enthält etwas Bufotenin. Vereinzelt gab es Vergiftungen mit Erbrechen, Durchfall, Bauchkoliken, Schwindel und Schweißausbrüchen."
+marktfaehig = false
+weitereNamen = ["Bitterröhrling", "Bitterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bitterroehrling.htm"
@@ -23,6 +25,11 @@ reaktion = "Auf dem Hut negativ bis blassorange oder blassrosa, im Fleisch immer
 [[reagenzien]]
 reagenz = "feso4"
 reaktion = "Auf dem Hut negativ bis grünlich, im Fleisch negativ bis blassgrau, auf den Röhren blaugrau."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 18.0 }
+sporenLaengeUm = { von = 10.0, bis = 16.0 }
+sporenBreiteUm = { von = 3.0, bis = 6.0 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 18 cm breit, hellbraun, manchmal dunkelbraun wie beim Maronenröhrling, außergewöhnlich selten mit rötlicher Kappe."

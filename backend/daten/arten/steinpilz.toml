@@ -7,6 +7,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne", "kiefer", "eiche", "hainbuche", "linde", "kastanie", "buche", "birke"]
 karte = "boletus_edulis"
 speisewertHinweis = "Bei einem Fund ohne oder mit kaum sichtbarem Netz am Stiel und mit gelblichen Röhren entscheidet eine Geschmacksprobe, ob ein bitterer Gallenröhrling vorliegt."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Steinpilze", "Herrenpilz", "Dobberniggl", "Fichtensteinpilz", "Gemeiner Steinpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"
@@ -19,6 +22,11 @@ reaktion = "Fleisch blass braun."
 [[reagenzien]]
 reagenz = "melzer"
 reaktion = "Fleisch ocker mit graugrüner Schattierung."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 12.4, bis = 19.2 }
+sporenBreiteUm = { von = 4.5, bis = 5.5 }
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, wildlederartig braun bis haselnussbraun. Der Rand bleibt lange eingerollt und ist meist weiß."

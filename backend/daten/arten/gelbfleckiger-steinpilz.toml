@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ein Steinpilz und damit besonders geschützt. Er ist sehr selten, deshalb höchstens ein Fruchtkörper für den Eigenbedarf."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbfleckigerSteinpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 10.0, bis = 20.0 }
+sporenBreiteUm = { von = 3.0, bis = 8.0 }
 
 [merkmale]
 hut = "5 bis 20, selten bis 25 cm breit, hell ockerbraun, dottergelb bis bronzefarben, immer gelbfleckig. Feucht und im Alter schmierig, mit gelber Zwischenschicht in der Huthaut."

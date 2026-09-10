@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur solange das Innere rein weiß ist. Sobald das Fleisch gilbt oder olivbraun wird, ist er nicht mehr brauchbar."
+marktfaehig = false
+wertigkeit = 2
+weitereNamen = ["Wiesenstaubbecher", "Niedergedrückter Stäubling", "Münzstäubling"]
+synonyme = ["Lycoperdon pratense"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Wiesenstaubbecher.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 3.0, bis = 4.3 }
+sporenBreiteUm = { von = 3.3, bis = 3.8 }
 
 [merkmale]
 fruchtkoerper = "2 bis 7, selten bis 9 cm breit, weiß, rund, kugel- bis birnenförmig, feinkörnig und feinstachelig, später glatt und cremefarben, alt braun mit geöffnetem Scheitel und becherförmig."

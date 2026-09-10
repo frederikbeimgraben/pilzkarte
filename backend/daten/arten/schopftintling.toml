@@ -7,10 +7,21 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 karte = "schopftintling"
 speisewertHinweis = "Roh etwas unverträglich. Nur junge, ganz weiße Fruchtkörper nehmen und rasch verarbeiten; rötliche oder schwarze Teile sind nicht mehr brauchbar."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Spargelpilz", "Schopfpilz", "Tintenpilz", "Porzellantintling"]
+synonyme = ["Coprinus porcellanus", "Coprinus ovatus", "Coprinus comatus var. caprimammillatus", "Coprinus comatus var. ovatus", "Agaricus porcellanus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schopftintling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 4.0, bis = 17.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 1.3, seltenBis = 1.6 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 6.0, bis = 8.5 }
 
 [merkmale]
 hut = "2 bis 9, selten bis 15 cm breit, weißlich und geschuppt, am Scheitel mit glattem bräunlichem Häubchen. Lang gezogen eiförmig bis walzenförmig, später schwarz zerfließend."

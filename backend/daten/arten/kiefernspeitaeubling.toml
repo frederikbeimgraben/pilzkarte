@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Zu erkennen am brennend scharfen Geschmack, am blut- bis kirschroten Hut mit fast ganz abziehbarer Haut und am rein weißen Stiel ohne Rottöne."
+marktfaehig = false
+weitereNamen = ["Speitäufel"]
+synonyme = ["Russula emetica var. silvestris"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speitaeubling.htm"
@@ -31,6 +34,13 @@ reaktion = "Rosa."
 [[reagenzien]]
 reagenz = "formalin"
 reaktion = "Stielrinde und Fleisch rosa."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+stielDickeCm = { von = 0.5, bis = 1.5, seltenBis = 2.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 6.5, bis = 8.3 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 12 cm breit, blut- bis kirschrot, älter mattrot bis karminrot, Mitte niedergedrückt. Haut fast ganz abziehbar, feucht schmierig glänzend, trocken matt. Darunter ist das Fleisch weiß."

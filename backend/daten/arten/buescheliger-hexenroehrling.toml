@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = ["eiche"]
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+synonyme = ["Boletus permagnificus", "Exsudoporus permagnificus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BuescheligerHexenRoehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 12.0, bis = 16.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 8, selten bis 11 cm breit, kupferrot, purpurrot, kirschrot, granatrot bis braunrot, mit kleinen dunkleren Schuppen, bei Verletzung schwarzblau verfärbend."

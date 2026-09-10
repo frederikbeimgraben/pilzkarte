@@ -6,10 +6,18 @@ geschuetzt = true
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["pappel"]
 speisewertHinweis = "Roh giftig wie alle Morcheln. Gut durchgaren, sonst drohen Magen-Darm-Vergiftungen. Dazu kommt das Morchella-Syndrom mit Trunkenheitsgefühl, Zittern und Schwindel. Besonders geschützt, nur für den Eigenbedarf sammeln."
+marktfaehig = false
+wertigkeit = 2
+weitereNamen = ["Halbfreie Morchel", "Glockenmorchel", "Mützenmorchel"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kaeppchen.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 4.5, seltenBis = 6.0 }
+sporenLaengeUm = { von = 20.0, bis = 27.0 }
+sporenBreiteUm = { von = 10.0, bis = 18.0 }
 
 [merkmale]
 fruchtkoerper = "2 bis 4,5, selten bis 6 cm breit, hellbraun, dunkelbraun bis gelbbraun. Wabenartiges Käppchen, innen hohl, meist zugespitzt. Es ist nur zu etwa einem Drittel mit dem Stiel verwachsen, der übrige Rand steht frei ab."

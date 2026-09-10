@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche", "weide"]
 speisewertHinweis = "Leicht giftig, weil er Psilocybin enthält und halluzinogen wirkt. Erkennbar am grünlich-bläulichen Schein des Stiels."
+marktfaehig = false
+weitereNamen = ["Graugrüner Dachpilz", "Silbriger Dachpilz", "Grünlichgrauer Dachpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerDachpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.1 }
+sporenLaengeUm = { von = 7.0, bis = 10.5 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 11 cm breit, blassgrau, mausgrau, graugrün bis hellbraun. Huthaut seidig und feinschuppig."

@@ -6,6 +6,8 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "tanne", "fichte"]
+marktfaehig = true
+wertigkeit = 1
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OrangGraustieltaeub.htm"
@@ -26,6 +28,12 @@ reaktion = "Weinbraun."
 [[reagenzien]]
 reagenz = "formalin"
 reaktion = "Rosa."
+
+[masse]
+stielLaengeCm = { von = 3.0, bis = 11.0, seltenBis = 13.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.5 }
+sporenLaengeUm = { von = 8.4, bis = 13.5 }
+sporenBreiteUm = { von = 6.7, bis = 10.0 }
 
 [merkmale]
 hut = "3 bis 11, selten bis 13 cm breit, gelborange, ockergelborange, dunkelorangerot, ziegelrot bis kupferfarben."

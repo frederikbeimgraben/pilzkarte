@@ -7,10 +7,15 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Bei Erdritterlingen wurde ein Giftstoff gefunden, der Muskelzersetzung auslöst (Rhabdomyolyse). Die Arten sind kaum sicher zu trennen, daher rät 123pilzsuche von allen Erdritterlingen ab."
+marktfaehig = false
+haeufigkeit = "selten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MausgrauerErdritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 7.0, seltenBis = 9.0 }
 
 [merkmale]
 hut = "4 bis 7, selten bis 9 cm breit, mausgrau, graubraun, hellgrau, aschgrau bis bläulichgrau, faserig wollig. Mitte dunkelbraun und gebuckelt, Rand blasser."

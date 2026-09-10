@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Geschmack wird nach kurzer Zeit brennend scharf und pfefferig. Das macht ihn ungenießbar."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Brennender Blasssporrübling"]
+synonyme = ["Collybia peronata", "Marasmius peronatus", "Chamaeceras urens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrennenderRuebling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 19.0 }
+sporenLaengeUm = { von = 7.5, bis = 11.2 }
+sporenBreiteUm = { von = 2.7, bis = 4.4 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, braun bis gelblich, oft mit einem Buckel in der Mitte. Zieht man den Stiel ab, bleibt ein Loch im Hut."

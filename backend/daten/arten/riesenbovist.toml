@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jeden kugeligen Fund durchschneiden und auf Lamellenansätze prüfen, junge Knollenblätterpilze sehen ähnlich aus."
+marktfaehig = true
+wertigkeit = 1
+synonyme = ["Langermannia gigantea", "Lycoperdon giganteum", "Clavatia maxima", "Lasiosphaera gigantea", "Bovista gigantea"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenbovist.htm"
@@ -14,6 +17,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf der Oberfläche negativ."
+
+[masse]
+fruchtkoerperBreiteCm = { von = 5.0, bis = 50.0, seltenBis = 150.0 }
+sporenLaengeUm = { von = 2.5, bis = 5.5 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 fruchtkoerper = "5 bis 50, selten bis 150 cm breit und über 20 kg schwer, kugelförmig, jung weiß bis grüngelb, später bräunend. Haut glatt und lederartig."

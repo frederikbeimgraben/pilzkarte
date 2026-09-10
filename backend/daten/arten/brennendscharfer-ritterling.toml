@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er schmeckt extrem scharf und pfeffrig und riecht erdig nach Rettich und verbranntem Gras. Der graue, radialfaserig einreißende Hut mit dem spitzen Buckel trennt ihn von milden Ritterlingen."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+synonyme = ["Gyrophila virgata", "Agaricus virgatus", "Agaricus fumosus subsp. virgatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrennendscharferRitterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 6.0, bis = 7.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
 hut = "4 bis 10, selten bis 12 cm breit, aschgrau bis graubraun auf seidigem Grund, radialfaserig und wie bei Risspilzen radial einreißend. Mitte spitz gebuckelt, Rand lange eingerollt und scharfkantig."

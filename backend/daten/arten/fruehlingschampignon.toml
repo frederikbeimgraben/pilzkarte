@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Sehr selten, in der Schweiz stark gefährdet."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Langstieliger Egerling", "Sommeregerling", "Sommerchampignon", "Frühlings-Egerling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fruehlingsegerling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 4.0, bis = 4.5 }
+sporenBreiteUm = { von = 6.0, bis = 8.0 }
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, weiß bis gelblich, bei Berührung strohgelb verfärbend, mit seidigen angedrückten gelbbraunen Radialfasern. Rand hell, bisweilen rosa durchscheinend."

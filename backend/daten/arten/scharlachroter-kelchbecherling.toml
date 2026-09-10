@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["weide", "pappel"]
 speisewertHinweis = "Ohne Speisewert, 123pilze gibt die relative Wertigkeit 5. In Deutschland gefährdet, darum stehen lassen."
+marktfaehig = false
+wertigkeit = 5
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Zinnoberroter Kelchbecherling", "Gemeiner Kelchbecherling", "Blutroter Prachtbecherling", "Scharlachroter Prachtbecherling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Prachtbecherling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 24.0, bis = 35.0 }
+sporenBreiteUm = { von = 10.0, bis = 14.0 }
 
 [merkmale]
 fruchtkoerper = "1 bis 7, selten bis 15 cm breit, kelch- bis schüsselförmig. Innenseite zinnoberrot, Außenseite blasser rötlich weiß und kleiig, der untere Teil ganz weiß und filzig haarig. An der Grenze von Ober- und Unterseite ein weißer Rand."

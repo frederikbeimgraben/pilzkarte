@@ -34,14 +34,19 @@ from app.modules.arten.katalog import (
 )
 from app.modules.arten.router import aktueller_katalog
 from app.modules.arten.schemas import (
+    WERTIGKEIT_BESTE,
+    WERTIGKEIT_SCHWAECHSTE,
     WOCHEN,
     Essbarkeit,
+    Gefaehrdung,
+    Haeufigkeit,
     MerkmalSchluessel,
     Profil,
     Reagenz,
     Reagenzeintrag,
     SaisonKurve,
     Saisontabelle,
+    Spanne,
     Stufe,
 )
 
@@ -714,6 +719,9 @@ async def test_liste_antwortet_in_camel_case(app: FastAPI) -> None:
         "speisewert",
         "kartenSlug",
         "sammelbar",
+        "marktfaehig",
+        "wertigkeit",
+        "haeufigkeit",
         "vorhersageGeplant",
         "begehungenMitFund",
         "spitzeWoche",
@@ -945,3 +953,76 @@ def test_jedes_profil_verlinkt_seine_quellseite() -> None:
         assert titel[0] == "123pilzsuche.de", slug
         assert titel[1:] in ([], ["Wikipedia"]), slug
         assert profil.links[0].url == (profil.quelle.url if profil.quelle else ""), slug
+
+
+# ------------------------------------------------- Zahlen und Listen der Quelle
+
+
+def test_eine_spanne_laeuft_von_klein_nach_gross() -> None:
+    spanne = Spanne(von=4, bis=20, selten_bis=25)
+
+    assert (spanne.von, spanne.bis, spanne.selten_bis) == (4, 20, 25)
+
+
+def test_eine_verdrehte_spanne_ist_kein_mass() -> None:
+    with pytest.raises(ValidationError, match="unter"):
+        Spanne(von=20, bis=4)
+
+
+def test_der_ausnahmewert_liegt_ueber_dem_oberen_wert() -> None:
+    with pytest.raises(ValidationError, match="Ausnahmewert"):
+        Spanne(von=4, bis=20, selten_bis=10)
+
+
+def test_die_wertigkeit_bleibt_in_der_skala_von_eins_bis_sechs() -> None:
+    for profil in profile_lesen(DATEN / "arten").values():
+        if profil.wertigkeit is not None:
+            assert WERTIGKEIT_BESTE <= profil.wertigkeit <= WERTIGKEIT_SCHWAECHSTE
+
+
+def test_marktfaehig_folgt_der_positivliste_der_dgfm(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, tmp_path)
+
+    # Der Steinpilz steht auf der Liste, der Gruene Knollenblaetterpilz nicht.
+    assert gebaut.art("steinpilz").marktfaehigkeit.marktfaehig is True
+    assert gebaut.art("gruener-knollenblaetterpilz").marktfaehigkeit.marktfaehig is False
+
+
+def test_die_marktfaehigkeit_nennt_ihre_quelle(tmp_path: Path) -> None:
+    quelle = katalog(DATEN, tmp_path).art("steinpilz").marktfaehigkeit.quelle
+
+    assert quelle.url.startswith("https://www.dgfm-ev.de/")
+    assert quelle.geprueft_am == "2026-05-01"
+
+
+def test_die_masse_kommen_aus_der_quellseite(tmp_path: Path) -> None:
+    masse = katalog(DATEN, tmp_path).art("steinpilz").masse
+
+    assert masse.hut_breite_cm is not None
+    assert (masse.hut_breite_cm.von, masse.hut_breite_cm.bis) == (4.0, 20.0)
+    assert masse.hut_breite_cm.selten_bis == 25.0
+    assert masse.sporen_laenge_um is not None
+
+
+def test_jede_haeufigkeit_und_gefaehrdung_ist_ein_enumwert() -> None:
+    for profil in profile_lesen(DATEN / "arten").values():
+        assert profil.haeufigkeit is None or isinstance(profil.haeufigkeit, Haeufigkeit)
+        assert profil.gefaehrdung is None or isinstance(profil.gefaehrdung, Gefaehrdung)
+
+
+def test_kein_weiterer_name_wiederholt_den_hauptnamen() -> None:
+    for slug, profil in profile_lesen(DATEN / "arten").items():
+        assert profil.name not in profil.weitere_namen, slug
+        assert profil.lateinisch not in profil.synonyme, slug
+
+
+async def test_das_profil_liefert_die_zahlen_der_quelle() -> None:
+    async with klient(app_bauen()) as ruf:
+        antwort = await ruf.get("/api/arten/steinpilz")
+
+    koerper = antwort.json()
+    assert koerper["marktfaehigkeit"]["marktfaehig"] is True
+    assert koerper["wertigkeit"] == 1
+    assert koerper["masse"]["hutBreiteCm"] == {"von": 4.0, "bis": 20.0, "seltenBis": 25.0}
+    assert "Herrenpilz" in koerper["weitereNamen"]
+    assert koerper["quelle"]["url"].startswith("https://www.123pilzsuche.de/")

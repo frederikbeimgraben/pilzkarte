@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["fruehling", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Giftig und wie alle Erdritterlinge verdaechtig. Er ist an den bei Verletzung roetenden Lamellen und der blaugruenen bis rosaroten Stielbasis zu erkennen."
+marktfaehig = true
+weitereNamen = ["Rötende Erd-Ritterling"]
+synonyme = ["Gyrophila orirubens", "Tricholoma horribile", "Tricholoma orirubens var. basirubens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetenderErd-Ritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 3.9, bis = 6.5 }
+sporenBreiteUm = { von = 3.0, bis = 5.2 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 11 cm breit, braun bis graubraun und sehr variabel: heller Grund mit grauen bis schwaerzlichen feinen Schuppen, Mitte dunkler, leicht buckelig, Rand heller und etwas gilbend."

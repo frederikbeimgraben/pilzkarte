@@ -7,6 +7,8 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "buche", "eiche"]
 speisewertHinweis = "Er ist wegen der Verwechslungsgefahr gefährlich. Zu erkennen an schwefelgelbem, schmierigem Hut mit rotbraunen Schuppen, chromgelbem Stiel mit gerandeter Knolle, rostbraunem Sporenpulver auf dem Stiel und dem widerlich erdigen Geruch."
+marktfaehig = false
+synonyme = ["Cortinarius splendens var. meinhardii", "Cortinarius vitellinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DottergelberKlumpfuss.htm"
@@ -15,6 +17,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Im Fleisch olivbraun. Der ähnliche Schöngelbe Klumpfuß wird dunkel rotbraun."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 8.6, bis = 10.5 }
+sporenBreiteUm = { von = 5.3, bis = 6.4 }
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, schwefelgelb mit rotbraunen Schuppen, Huthaut schmierig bis schleimig."

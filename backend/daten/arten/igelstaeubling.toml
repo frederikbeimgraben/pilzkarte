@@ -7,10 +7,16 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilze gibt ihm die Relative Wertigkeit 6."
+marktfaehig = false
+wertigkeit = 6
+synonyme = ["Lycoperdon gemmatum var. echinatum", "Utraria echinata", "Lycoperdon hoylei", "Lycoperdum echinatum sensu"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Igelstaeubling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 9.0 }
 
 [merkmale]
 fruchtkoerper = "2 bis 6, selten bis 9 cm breit, bräunlich, kugel- oder birnenförmig."

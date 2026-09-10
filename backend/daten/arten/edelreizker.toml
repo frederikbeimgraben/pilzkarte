@@ -6,10 +6,20 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 karte = "reizker"
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Echter Reizker", "Kiefernreizker", "Kiefern Blutreizker", "Röstling", "Karottenmilchling", "Rizke", "Kiefernblut-Reizker", "Reske"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Edelreizker.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+stielDickeCm = { von = 1.5, bis = 3.0, seltenBis = 3.5 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 5.9, bis = 7.6 }
 
 [merkmale]
 hut = "4 bis 10, selten bis 15 cm breit, orange, weißlich bereift, mit konzentrisch getropften Flecken. Glatt, feucht etwas schleimig, Rand lange eingebogen. Verletzte Stellen laufen später grün an."

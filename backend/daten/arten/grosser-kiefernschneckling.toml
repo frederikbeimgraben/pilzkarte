@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "In Deutschland gefährdet und sehr selten. Stehen lassen."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Grauweißer Schneckling", "Dunkler Kiefern-Schneckling"]
+synonyme = ["Hygrophorus fuscoalbus", "Hygrophorus limacinus", "Hygrophorus olivaceoalbus var. obesus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrosserKiefernschneckling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 9.0, bis = 14.0 }
+sporenBreiteUm = { von = 6.0, bis = 8.0 }
 
 [merkmale]
 hut = "5 bis 10, selten bis 12 cm breit, graubraun bis olivbraun, Mitte dunkler mit stumpfem Buckel. Haut schleimig und glänzend, Rand lange eingerollt."

@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur junge Fruchtkörper verwenden, ältere werden zäh. Der leicht bittere Geschmack verliert sich beim Zubereiten."
+marktfaehig = true
+wertigkeit = 3
+weitereNamen = ["Kleiner Schuppenporling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sklerotienporling.htm"
@@ -15,6 +18,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Poren leicht gelblich."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 9.3, bis = 16.0 }
+sporenBreiteUm = { von = 3.5, bis = 6.0 }
 
 [merkmale]
 hut = "2 bis 6, selten bis 9 cm breit, meist kreisrund, bräunlich, blass ockerlich bis orangebraun, auf hellem weißlichem bis gelbem Grund mit dunkleren braunen Schuppen. Rand dünn, meist weißlich und bewimpert."

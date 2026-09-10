@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Das Fleisch bleibt zäh und schmeckt bitterlich. Sehr selten und in Deutschland gefährdet."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Trichterförmiger Sägeblättling"]
+synonyme = ["Lentinus cyathiformis", "Agaricus cyathiformis", "Neolentinus schaefferi", "Favolus cyathiformis", "Pocillaria cyathiformis", "Panus cyathiformis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BecherfoermigerSaegeblaettling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 10.0, bis = 16.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, ockerbraun bis hell rotbraun mit fuchsigbraunen Schuppen. Rand lange eingerollt, Mitte jung gebuckelt, später leicht bis stark trichterförmig."

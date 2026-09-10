@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Erkennbar an der breiten, tellerartig gerandeten Stielknolle, am einfachen Ring und am stark safranfarben rötenden Fleisch. Er wächst auf Kompost und in Gewächshäusern, kaum im Wald."
+marktfaehig = false
+weitereNamen = ["Gerandetknolliger Gartenriesenschirmling", "Safranschirmling-Gartenform", "Rötender Gartenschirmpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gartenschirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 26.0 }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.0, bis = 15.0 }
+sporenBreiteUm = { von = 6.0, bis = 9.5 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, schmutzig weiß bis braun, cremeweißlich bis hellocker, mit gezonten, weichen, wolligen, abstehenden braunen Schüppchen, die sternförmig aufreißen und zur Mitte hin dichter stehen. Rand flockig und meist fetzig behangen. Jung eiförmig, später halbkugelig."

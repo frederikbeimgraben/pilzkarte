@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Besonders geschützt, sehr selten und in Deutschland gefährdet. Wenn überhaupt, nur wenige Fruchtkörper für den Eigenbedarf nehmen. Ältere Fruchtkörper werden schnell schwammig."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Vielfärbender Birkenpilz", "Verfärbender Raufußröhrling", "Blaufärbender Raufuß"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/VerfaerbenderBirkenpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 13.0, bis = 16.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.3 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 16 cm breit, braungrau, schwarzbraun, mausgrau, ocker marmoriert, oft gefleckt, halbkugelig bis polsterförmig, feucht schmierig. Huthaut nur leicht überstehend."

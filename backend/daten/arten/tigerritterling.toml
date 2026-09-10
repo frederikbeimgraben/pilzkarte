@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Schon Kostproben verursachen Bauchschmerzen. Zu erkennen an den silbergrauen bis schwarzbraunen Schüppchen auf weißem Hut, den jung tränenden Lamellenschneiden, der oft kupferrötlich gefleckten Stielbasis und dem mehlartigen Geruch."
+marktfaehig = false
+haeufigkeit = "haeufig"
+synonyme = ["Tricholoma pardalotum", "Pleurotus tigrinus", "Agaricus tigrinus", "Agaricus undulatus", "Agaricus fritillarius"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Tigerritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 16.0 }
+stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.5, bis = 10.5 }
+sporenBreiteUm = { von = 5.5, bis = 7.5 }
 
 [merkmale]
 hut = "4 bis 11, selten bis 16 cm breit, weiß mit silbergrauen, graubraunen bis schwarzbraunen Schüppchen, Rand lange eingerollt."

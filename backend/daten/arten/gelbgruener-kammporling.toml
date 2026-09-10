@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "kastanie", "tanne", "laerche", "fichte"]
 speisewertHinweis = "Riecht unangenehm bis stinkend und schmeckt bitter."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Grüner Kammporling"]
+synonyme = ["Scutiger cristatus", "Polypilus poripes", "Polyporus cristatiformis", "Boletus cristatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenerKamm.htm"
@@ -15,6 +19,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Rasch rosa bis rot, unter der Huthaut orange, an den Poren nur schwach. Ganz junge Fruchtkörper reagieren teils nicht."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 20 cm breit, gelbgrün, olivgrün bis gelbbraun. Rand wellig und unregelmäßig verbogen, Oberfläche samtig, lederig bis schuppig aufgerissen."

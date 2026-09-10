@@ -6,6 +6,11 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Es gibt drei Ziegenlippen-Arten mit gleichem Speisewert. Sie trennen sich am Stiel: heller Stiel ohne Netz bei der Ziegenlippe, bräunlicher Stiel mit Netz beim Braunen Filzröhrling."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "haeufig"
+weitereNamen = ["Schafheiterl", "Gänsemaul", "Mooshäuptchen", "Hellstieliger Filz-Röhrling"]
+synonyme = ["Boletus subtomentosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ziegenlippe.htm"
@@ -26,6 +31,13 @@ reaktion = "Negativ bis grau auf Hut und Fleisch."
 [[reagenzien]]
 reagenz = "melzer"
 reaktion = "Poren grün."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 5.0, bis = 9.0, seltenBis = 11.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 10.0, bis = 16.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
 hut = "4 bis 9, selten bis 12 cm breit, graubraun, hell olivbraun bis olivocker, wildlederartig filzig und feinsamtig. Unter der Huthaut leicht rosalich."

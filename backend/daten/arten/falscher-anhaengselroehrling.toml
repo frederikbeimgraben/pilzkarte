@@ -7,6 +7,11 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Selten und wärmeliebend, in der Schweiz auf der Roten Liste. Wenn überhaupt, nur einzelne Fruchtkörper nehmen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Nadelwald Anhängselröhrling", "Gelber Steinpilz"]
+synonyme = ["Boletus subappendiculatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalschAnhaengselroehrling.htm"
@@ -15,6 +20,9 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Im Fruchtfleisch keine oder nur eine schwache Braunreaktion."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 19.0 }
 
 [merkmale]
 hut = "4 bis 16, selten bis 19 cm breit, ockerbraun, kastanienbraun bis braunorange, meist trocken und filzig. Im Alter reißt die Huthaut auf."

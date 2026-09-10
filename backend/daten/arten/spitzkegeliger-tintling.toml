@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Stark giftig. Zu erkennen am stumpf spitzen, dunkleren Hutscheitel, den braunen Schuppen auf grauweißem Grund und der ringartigen Wulst an der verdickten Stielbasis."
+marktfaehig = false
+synonyme = ["Coprinus acuminatus", "Coprinus atramentarius var. acuminatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SpitzTintling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 6.0, bis = 10.6 }
+sporenBreiteUm = { von = 4.1, bis = 5.7 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 7 cm breit, grauweiß mit braunen Schuppen, gerieft und leicht faltig, oft mit dunklerem, stumpf spitzem Scheitel."

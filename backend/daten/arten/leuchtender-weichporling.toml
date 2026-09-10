@@ -6,6 +6,7 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne"]
+marktfaehig = false
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LeuchtenderWeich.htm"
@@ -14,6 +15,10 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch weinrot."
+
+[masse]
+sporenLaengeUm = { von = 6.0, bis = 9.4 }
+sporenBreiteUm = { von = 2.5, bis = 4.4 }
 
 [merkmale]
 fruchtkoerper = "3 bis 8, selten bis 12 cm breit, leuchtend orangerot bis orangegelb, jung kugelig, später flach und konsolenförmig, gezont. Jung glatt, später filzig und weich, Rand heller, Zuwachszone orange bis gelb."

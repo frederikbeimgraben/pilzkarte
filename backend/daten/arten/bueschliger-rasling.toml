@@ -5,10 +5,20 @@ speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Brauner Rasling", "Büschelrasling", "Geselliger Rasling", "Gepanzerter Rasling", "Knorpeliger Knäuelrasling", "Frostrasling", "Geselliger Ritterling", "Buchele"]
+synonyme = ["Lyophyllum aggregatum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerRasling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 6.0, bis = 7.0 }
+sporenBreiteUm = { von = 3.5, bis = 4.0 }
 
 [merkmale]
 hut = "3 bis 9, selten bis 13 cm breit, ledergelb, blass braungrau bis orangebraun, leicht gebuckelt oder in der Mitte eingedrückt, jung mit feiner Radialfaserung. Rand wellig eingerollt, Huthaut gummiartig elastisch bis knorpelig."

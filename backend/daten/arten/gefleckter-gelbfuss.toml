@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
 speisewertHinweis = "Selten. In der Schweiz auf der Roten Liste als potenziell gefährdet geführt."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Fleckender Lärchenschmierling", "Fleckender Lärchen-Schmierling", "Fleckender Gelbfuß", "Fleckender Schmierling"]
+synonyme = ["Gomphidius gracilis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GefleckterGelbfuss.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 18.8, bis = 23.2 }
+sporenBreiteUm = { von = 5.8, bis = 7.6 }
 
 [merkmale]
 hut = "2 bis 9, selten bis 11 cm breit, hellbraun, hell zimtbraun bis fleischbraun mit dunklerer Mitte. Haut schmierig und abziehbar, oft mit bernsteinfarbenen schleimigen Tropfen. Druckstellen verfärben schwarzbraun."

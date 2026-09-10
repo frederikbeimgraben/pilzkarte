@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["tanne", "kiefer", "fichte"]
 speisewertHinweis = "Zu klein und zu selten für die Küche. In Deutschland stark gefährdet."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "starkGefaehrdet"
+weitereNamen = ["Nadelholzfingerhut"]
+synonyme = ["Aleurodiscus digitali", "Peziza digitalis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Weisstannenfingerhut.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 0.5, bis = 1.5, seltenBis = 2.0 }
 
 [merkmale]
 fruchtkoerper = "0,5 bis 1,5, selten bis 2 cm breit, außen braun bis haselnussbraun, später graurötlich bis graulila, raukörnig. Innen weißlich mit rosa Hauch, alt bräunlich und glatt. Becher- bis fingerhutförmig, faserig."

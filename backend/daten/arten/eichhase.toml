@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Jung sammeln, im Alter wird er bitter. Er ist überwiegend selten und kommt jährlich an derselben Stelle wieder, deshalb den Standort schonen."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Ästiger Porling", "Ästiger Büschelporling"]
+synonyme = ["Dendropolyporus umbellatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichhase2004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 2.5, bis = 3.5 }
 
 [merkmale]
 fruchtkoerper = "Einzelhüte 2 bis 5, selten bis 7 cm breit, in Büscheln bis 100 cm. Gesprenkelt bräunlich, cremefarben bis haselnussbraun. Viele kleine Porenpilze entspringen einem gemeinsamen Strunk."

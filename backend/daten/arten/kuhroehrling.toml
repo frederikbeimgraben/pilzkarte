@@ -6,10 +6,20 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Etwas säuerlich, guter Mischpilz und Trockenpilz. Beim Kochen läuft das Fleisch rosa bis leicht violett an."
+marktfaehig = true
+wertigkeit = 3
+weitereNamen = ["Kuhpilz"]
+synonyme = ["Mariaella bovina", "Ixocomus bovinus", "Boletus bovinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kuhroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 4.0, bis = 6.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 7.0, bis = 11.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 hut = "2 bis 12, selten bis 15 cm breit, bräunlich, glatt, kahl und ledrig, feucht schmierig, trocken glänzend. Halbkugelig bis polsterförmig oder gebuckelt, Rand scharfkantig und wellig verbogen."

@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne", "buche"]
 speisewertHinweis = "Nur ganz junge Fruchtkörper sind mild. Er wird schnell scharf und bitter und ist dann unbrauchbar."
+marktfaehig = false
+wertigkeit = 4
+synonyme = ["Agaricus aequivocus", "Flabellopilus giganteus", "Polyporus aequivocus", "Polypilus frondosus var. intybaceus", "Polypilus giganteus", "Grifola gigantea", "Grifola acanthoides"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenporling.htm"
@@ -14,6 +17,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Im Fleisch ohne Verfärbung."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0 }
+sporenLaengeUm = { von = 4.2, bis = 8.0 }
+sporenBreiteUm = { von = 3.5, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 30, selten bis 200 cm breit, jung fast weiß, später hell- bis gelbbraun, zuletzt mit vielen kleinen braunen flachen Schuppen, fein samtig bis kahl, oft radial gestreift und konzentrisch gezont. Die fächerförmigen Hüte überlappen sich und wachsen aus einem gemeinsamen Strunk. Ganz jung färben sich Druckstellen sofort braunschwarz."

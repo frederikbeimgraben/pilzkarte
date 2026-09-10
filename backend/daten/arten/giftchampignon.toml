@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Absolut tödlich giftig, schon etwa 20 Gramm genügen und das Gift schädigt die Leber. Zu erkennen an der häutigen, eierschalenartigen Volva an der Stielknolle, am hängenden Ring, an den stets weißen Lamellen und am nicht gerieften Hutrand. Niemals kosten."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Grüner Knollenblätterpilz", "Grüner Mörder"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"
@@ -15,6 +18,12 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch und Huthaut ohne Verfärbung, anders als beim Kegelhütigen Knollenblätterpilz, der gelb wird."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 17.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 7.0, bis = 12.0 }
+sporenBreiteUm = { von = 6.0, bis = 10.0 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 17 cm breit, grünlich, gelb, ocker, bräunlich, olivgrün, olivbraun bis grüngrau, ganz jung auch weiß. Jung eiförmig-halbkugelig mit weißer Gesamthülle, später aufschirmend. Huthaut fein radialfaserig eingewachsen, feucht etwas klebrig, Rand nicht gerieft."

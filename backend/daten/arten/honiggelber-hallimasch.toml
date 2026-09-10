@@ -6,10 +6,19 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Nur die Hüte, mindestens 20 Minuten abkochen und das Kochwasser weggießen. Nach Frost und bei alten Stücken steigt die Unverträglichkeit. Er ist besser verträglich als der Gemeine Hallimasch, aber auch ihn vertragen nicht alle."
+marktfaehig = false
+wertigkeit = 2
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/HoniggelberHallimasch.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 4.0, bis = 11.0, seltenBis = 18.0 }
+stielDickeCm = { von = 1.5, bis = 1.5, seltenBis = 2.2 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.5 }
 
 [merkmale]
 hut = "2 bis 12, selten bis 15 cm breit, gelblich, zitronengelb bis hellbraun, mit abwischbaren Schüppchen. Jung stumpfkegelig mit eingerolltem Rand, später abgeflacht und leicht gebuckelt, im Alter gerieft."

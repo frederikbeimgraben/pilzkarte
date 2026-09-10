@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte", "birke", "buche"]
 speisewertHinweis = "Ungeniessbar durch die extreme Schaerfe, die erst nach etwa einer Minute einsetzt. Bei empfindlichen Personen kann er Lippenblaeschen ausloesen, deshalb nur sehr vorsichtig kosten."
+marktfaehig = false
+weitereNamen = ["Paprikapilz", "Braunroter Milchling"]
+synonyme = ["Lactarius mollis", "Lactifluus rufus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerMilchling2004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+stielDickeCm = { von = 0.6, bis = 1.3, seltenBis = 1.6 }
+sporenLaengeUm = { von = 6.8, bis = 9.5 }
+sporenBreiteUm = { von = 5.2, bis = 7.4 }
 
 [merkmale]
 hut = "2 bis 9, selten bis 12 cm breit, rotbraun, kastanienbraun bis ziegelrotbraun, meist mit kleinem Buckel, spaeter abgeflacht und trichterfoermig. Rand eingerollt und meist heller, Haut manchmal blass bereift und uneben."

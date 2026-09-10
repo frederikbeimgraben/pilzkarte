@@ -6,10 +6,20 @@ geschuetzt = false
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = []
 speisewertHinweis = "Regional sehr selten und in Deutschland gefährdet. Nur wenige Fruchtkörper nehmen."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Maskierter Ritterling", "Maskierter Rötelritterling", "Fleischbräunlicher Rötelritterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LilastieligerRoetelritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, grauviolett, beigebräunlich, graubräunlich bis graublau, nie ganz braun ohne rotviolette Töne. Hygrophan, Huthaut glatt und leicht bereift, manchmal etwas fleckend, Rand lange eingerollt, später scharfkantig."

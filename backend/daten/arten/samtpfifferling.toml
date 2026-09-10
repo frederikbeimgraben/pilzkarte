@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Pfifferlinge sind besonders geschuetzt, diese Art steht zudem in Deutschland auf der Roten Liste. Nur kleine Mengen fuer den Eigenbedarf."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "haeufig"
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Rötlicher Pfifferling", "Samtleistling", "Fries´scher Pfifferling", "Samtiger Leistling", "Aprikosenpfifferling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetlicherPfifferling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 8.0, bis = 10.5 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
 
 [merkmale]
 hut = "1 bis 7, selten bis 9 cm breit, orange bis orangegelb, trichterfoermig, Oberflaeche samtig bis zottig, Rand wellig."

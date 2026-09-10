@@ -6,10 +6,21 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh unverträglich, gut durchgaren. Riesenschirmlinge aus Garten, Kompost oder Gewächshaus stehen lassen; dort wächst der giftige Gerandetknollige Garten-Safranschirmling."
+marktfaehig = false
+wertigkeit = 3
+weitereNamen = ["Keulenstieliger Garten-Safranschirmling", "Gemeiner Safranschirmling", "Gartenform des Safran-Schirmpilzes", "Safran-Riesenschirmpilz", "Safran-Riesenschirmling", "Rötender Schirmling"]
+synonyme = ["Macrolepiota rhacodes var. hortensis", "Macrolepiota bohemica", "Agaricus rachodes", "Chlorophyllum rhacodes sensu", "Lepiota rhacodes", "Leucocoprinus rhacodes", "Agaricus rhacodes var. candidus", "Lepiota procera var. rhacodes"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Safranschirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 6.0, bis = 22.0, seltenBis = 25.0 }
+stielDickeCm = { von = 1.0, bis = 6.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 10.0, bis = 14.0 }
+sporenBreiteUm = { von = 5.0, bis = 8.0 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, auf cremefarbenem bis hell ockerlichem Grund grob bräunlich geschuppt, zur Mitte hin dichter. Schuppen weich, wollig und abstehend, Rand flockig fransig. Jung eiförmig, später halbkugelig."

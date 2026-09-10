@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen am schwach tintigen, karbolartigen Geruch nach Phenol und faulem Stroh und an der Stielbasis, die bei Verletzung chromgelb gilbt und später braunrot wird. Nicht essen."
+marktfaehig = false
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Rebhuhnchampignon"]
+synonyme = ["Psalliota phaeolepidota"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rebhuhnegerling.htm"
@@ -19,6 +23,9 @@ reaktion = "Gelb."
 [[reagenzien]]
 reagenz = "schaeffer"
 reaktion = "Negativ."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
 
 [merkmale]
 hut = "3 bis 9, selten bis 12 cm breit, graubraun, rauchschwärzlich bis dunkelbraun, mit faserigen Schuppen, Scheitel bräunlich und dunkler, zum Rand hin rotbraun schuppig. Rand bei Verletzung gelblich anlaufend."

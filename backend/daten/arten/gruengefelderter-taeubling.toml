@@ -6,6 +6,10 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "hainbuche"]
 speisewertHinweis = "Vor dem Einsammeln jeden Fruchtkörper mit der ganzen Stielbasis ausgraben: ein Täubling hat keine Scheide und keinen Ring."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Feldriger Täubling", "Grünschuppiger Täubling"]
+synonyme = ["Agaricus virescens", "Russula virescens var. albidocitrina", "Russula virescens f. erythrocephala", "Russula viridirubrolimbata", "Russula erythrocephala"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruengefelderterTaeubling.htm"
@@ -26,6 +30,13 @@ reaktion = "Weinbraun."
 [[reagenzien]]
 reagenz = "ammoniak"
 reaktion = "Rosa bis blaugrau."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 12.0 }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 5.7, bis = 10.0 }
+sporenBreiteUm = { von = 4.7, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, ganz jung oft weißlich, dann grün, grasgrün, spangrün bis lagunenblau, nie violett. Kenntlich an den grünen Feldern, die felderig auf weißlichem bis blassgrünem Grund aufreißen, im Alter mit schmutzig gelben Rissen. Huthaut zur Hälfte abziehbar."

@@ -7,10 +7,16 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["pappel", "weide", "linde", "eiche"]
 speisewertHinweis = "Giftig und halluzinogen. Das Grünen an Stiel und Fleisch ist das sicherste Merkmal."
+marktfaehig = false
+weitereNamen = ["Grünlichverfärbender Risspilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenenderRisspilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+stielLaengeCm = { von = 2.0, bis = 7.0 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 7 cm breit, strohgelb, grünlichgelb bis braun, radial rissig und faserig, Rand wellig."

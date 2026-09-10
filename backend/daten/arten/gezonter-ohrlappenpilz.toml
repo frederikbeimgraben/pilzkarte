@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["esche", "pappel", "buche", "birke"]
 speisewertHinweis = "Fleisch trocken hart und hornartig, ohne Speisewert."
+marktfaehig = false
+weitereNamen = ["Falsches Judasohr"]
+synonyme = ["Merulioporia violacea", "Stereum mesentericum", "Meruliopsis violacea", "Exidia gemmata f. violacea", "Tremella corrugata", "Auricularia lobata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GezonterOhrlappenpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 12.0, bis = 18.0 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
 
 [merkmale]
 fruchtkoerper = "Die einzelnen Hütchen 4 bis 12, im Verbund bis 25 cm breit, graubraun bis hellbraun, striegelig-filzig behaart und in verschiedenen Brauntönen bunt gezont. Sie sitzen versetzt nebeneinander und wirken oft violett getönt."

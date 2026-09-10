@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "In der Schweiz nicht marktfähig, Relative Wertigkeit 4. Kulinarisch bringt er kaum etwas."
+marktfaehig = false
+wertigkeit = 4
+weitereNamen = ["Ringloser Butter-Röhrling", "Rosafüßiger Körnchen-Röhrling"]
+synonyme = ["Suillus fluryi"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RingloserButterpilz.htm"
@@ -15,6 +19,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Lachsrosa."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
+sporenLaengeUm = { von = 7.5, bis = 10.5 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 14 cm breit, braun, rotbraun bis kastanienbraun, eingewachsen faserig, glänzend, feucht schleimig bis schmierig."

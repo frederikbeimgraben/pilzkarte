@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "In Japan gab es mehrere Todesfälle, vor allem bei älteren Menschen mit Nierenschaden und Dialyse. Die Symptome ähneln einem Schlaganfall, dazu Fieber und Krampfanfälle. Vorsicht bei allen ungestielten weißen Seitlingen an Nadelholz."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Ohrförmiger Weißseitling", "Engelsflügel"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OhrfoermigerSeitling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 4.8, bis = 7.0 }
+sporenBreiteUm = { von = 3.0, bis = 6.0 }
 
 [merkmale]
 hut = "2 bis 10, selten bis 13 cm breit, weiß, im Alter gilbend, kahl und bereift, nur um die Anwachsstelle etwas filzig. Muschel- bis zungenförmig, stiellos angewachsen, gern dachziegelartig übereinander, Rand oft eingerollt."

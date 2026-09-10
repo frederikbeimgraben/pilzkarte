@@ -6,10 +6,20 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "obstbaum"]
 speisewertHinweis = "In freier Natur nur vereinzelt und in Deutschland stark gefährdet. Er wird gezüchtet; den Fund besser stehen lassen."
+marktfaehig = true
+wertigkeit = 2
+gefaehrdung = "starkGefaehrdet"
+weitereNamen = ["Yamabusitake", "Löwenmähne", "Pom-Pom blanc", "Affenkopfpilz --- HERICIUM ERINACEUS"]
+synonyme = ["Hericium erinaceum", "Hericium erinaceus forma caput-medusae", "Martella hystrix", "Hydnum juranum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Igelstachelbart.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 20.0, seltenBis = 60.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
 
 [merkmale]
 fruchtkoerper = "2 bis 20, selten bis 60 cm breit, weißlich cremefarben bis beige, später rotbraun verfärbend, mit langen büscheligen herabhängenden Stacheln. Oberseite faserig aufgerissen."

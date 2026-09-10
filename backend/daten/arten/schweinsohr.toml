@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Besonders geschützt und in Deutschland gefährdet. Nicht sammeln."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Purpurleistling"]
+synonyme = ["Cantharellus brevipes", "Trombetta clavata", "Cantharellus clavatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schweinsohr.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 10.0, bis = 16.0 }
+sporenBreiteUm = { von = 4.5, bis = 6.5 }
 
 [merkmale]
 fruchtkoerper = "3 bis 12, selten bis 15 cm breit, violett, im Alter bräunlich, abgeplattet keulenförmig, später trichterförmig, glatt und kahl."

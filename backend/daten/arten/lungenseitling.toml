@@ -6,6 +6,11 @@ geschuetzt = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche", "esche", "pappel", "birke"]
 speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen. Weiße Seitlinge ohne Stiel bleiben stehen."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "selten"
+weitereNamen = ["Löffelförmiger Seitling", "Cremeweißer Seitling", "Sommer-Austernseitling"]
+synonyme = ["Agaricus pulmonarius", "Pleurotus ostreatus var. pulmonarius", "Pleurotus populinus (nur bei espen + pappeln"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Lungenseitling.htm"
@@ -18,6 +23,13 @@ reaktion = "Auf dem Hut orange."
 [[reagenzien]]
 reagenz = "sulfovanillin"
 reaktion = "Magentarot."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+stielDickeCm = { von = 0.5, bis = 1.0, seltenBis = 1.2 }
+sporenLaengeUm = { von = 7.0, bis = 11.0 }
+sporenBreiteUm = { von = 2.5, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, nie reinweiß, sondern milchweiß, elfenbeinweiß, cremeweiß, grauweiß bis hellbeige, fettig glänzend. Kleiner, zarter und dünnfleischiger als der Austernseitling. Rand lange eingerollt, später gewellt."

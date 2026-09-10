@@ -7,10 +7,16 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "linde", "buche"]
 speisewertHinweis = "Extrem bitter, Magen-Darm-Beschwerden sind laut DGfM nicht ausgeschlossen. Zu erkennen am grauen bis grauweißen Hut, an den zitronengelben Röhren, am stark blauenden Fleisch und am Geruch nach Maggi oder Tinte."
+marktfaehig = false
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Bitterschwamm"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WurzelnderBitterroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 20.0, seltenBis = 25.0 }
 
 [merkmale]
 hut = "6 bis 20, selten bis 25 cm breit, grau, grauweiß bis braungrau, gefleckt, polsterförmig."

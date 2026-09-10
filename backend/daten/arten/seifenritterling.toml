@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur leicht giftig, dazu bitter. Er verrät sich durch den Geruch nach Seifenlauge und das rötende Fleisch, vor allem an der Stielbasis."
+marktfaehig = false
+weitereNamen = ["Waschküchenritterling", "Seifen-Ritterling"]
+synonyme = ["Gyrophila saponacea", "Agaricus fusiformis", "Agaricus atrovirens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SeifenritterlingGiftig1004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 5.0, bis = 6.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, sehr vielgestaltig in Farbe und Form: grau, gelb, orangegelb, graubraun bis schwarzbraun, meist feinschuppig auf hellem Grund."

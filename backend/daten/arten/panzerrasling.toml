@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Gepanzerter Rasling", "Erdzimmerling", "Erdzimmermandl", "Knorpeliger Knäuelrasling", "Büschelrasling", "Brauner Rasling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/PanzerRasling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 6.0, bis = 7.5 }
+sporenBreiteUm = { von = 5.0, bis = 5.5 }
 
 [merkmale]
 hut = "1 bis 8, selten bis 11 cm breit, dunkelbraun, olivumbrabraun, olivschwarz, kastanienbraun, schwarzbraun bis rußbraun, jung leicht radialfaserig. Huthaut kahl, mit einer dicken knorpeligen Schicht wie gepanzert. Rand lange eingerollt."

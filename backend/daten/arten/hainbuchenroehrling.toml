@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["hainbuche", "hasel"]
 speisewertHinweis = "Als Raufußröhrling besonders geschützt, also nur für den Eigenbedarf sammeln. Das Fleisch wird beim Kochen schwarz."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Hainbuchenraufußröhrling"]
+synonyme = ["Leccinum pseudoscabrum", "Leccinum carpini", "Leccinum griseum", "Leccinellum carpini", "Boletus scaber var. carpini", "Boletus pseudoscaber"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hainbuchenroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
+stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.4 }
+sporenLaengeUm = { von = 16.0, bis = 28.0 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 13 cm breit, kastanienbraun, hellbraun bis olivgelb. Die Haut wirkt gehämmert und runzelig, alt felderig rissig. Rand jung eingebogen, alt verkürzt, dann quellen die Röhren hervor."

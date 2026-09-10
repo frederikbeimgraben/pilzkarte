@@ -7,10 +7,19 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 karte = "pfifferling"
 speisewertHinweis = "Besonders geschützt. Nur kleine Mengen für den Eigenbedarf sammeln."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Eierschwamm", "Rehgeiserl", "Reherl", "Gemeiner Pfifferling", "Eierleistling", "Eierpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Pfiffi.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, blassgelb, dottergelb bis zitronengelb, trichterförmig."

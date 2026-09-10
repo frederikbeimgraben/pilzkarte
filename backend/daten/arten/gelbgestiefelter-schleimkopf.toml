@@ -7,6 +7,12 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "In Deutschland gefährdet (Rote Liste 3), in der Schweiz verletzlich. Besser stehen lassen."
+marktfaehig = true
+wertigkeit = 4
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Gelbfußschleimkopf", "Gelbgegürtelter Schleimkopf"]
+synonyme = ["Cortinarius crocolitus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbgestiefelteSchleimkopf.htm"
@@ -15,6 +21,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch gelblich, auf dem Hut rötlich."
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 10.0, bis = 12.5 }
+sporenBreiteUm = { von = 5.5, bis = 7.0 }
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, gelbocker, gelbbraun, gelbfuchsig bis rötlichbraun, feucht schleimig bis schmierig. Haut faserig-schuppig, Rand eingerollt und jung mit bräunlichen Velumresten behangen."

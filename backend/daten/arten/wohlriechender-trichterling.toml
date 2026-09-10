@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Giftig. Zu erkennen am aufdringlich anis- bis fenchelartigen Geruch, am hygrophanen graubraunen Hut mit eingedrückter Mitte und am knorpelig-elastischen, oft breitgedrückten Stiel."
+marktfaehig = false
+weitereNamen = ["Fleischbräunlicher Anistrichterling"]
+synonyme = ["Omphalia obsoleta", "Agaricus obsoletus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FleischAnistrichterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 1.0, bis = 3.5, seltenBis = 5.0 }
+sporenLaengeUm = { von = 5.5, bis = 7.5 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
 
 [merkmale]
 hut = "2 bis 6, selten bis 8 cm breit, caramelbraun, graubraun, graubeige bis fleischbräunlich, hygrophan, Mitte eingedrückt und alt genabelt, speckig glänzend. Rand lange wellig nach unten gebogen und leicht durchscheinend gerieft."

@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "vomAussterbenBedroht"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/NoerdlicherStachelseitling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 30.0, seltenBis = 60.0 }
+sporenLaengeUm = { von = 4.5, bis = 5.0 }
+sporenBreiteUm = { von = 2.0, bis = 2.5 }
 
 [merkmale]
 fruchtkoerper = "3 bis 30, selten bis 60 cm breit, weißlich, hellgelb bis strohfarben. Dachziegelartig übereinanderstehende Hüte, Oberseite rauhaarig."

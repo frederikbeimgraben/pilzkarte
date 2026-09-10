@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er schmeckt bitter. Geruch und helle Grundfarbe trennen ihn von den anderen Schüpplingen."
+marktfaehig = false
+haeufigkeit = "selten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BleicherSchueppling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 11.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 4.0, bis = 6.0 }
+sporenBreiteUm = { von = 2.5, bis = 3.5 }
 
 [merkmale]
 hut = "5 bis 10, selten bis 15 cm breit, hellbraun bis gelbbraun auf sehr hellem, fast cremeweißem Grund, trocken, feucht schmierig, mit dunkleren, spitzen und sparrig abstehenden Schüppchen. Gewölbt bis halbkugelig, ohne Buckel, später etwas abgeflacht."

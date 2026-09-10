@@ -6,6 +6,10 @@ geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "hasel", "fichte"]
 speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Wenn überhaupt, nur einen Fruchtkörper für den Eigenbedarf."
+marktfaehig = true
+wertigkeit = 1
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Laubwald Anhängselröhrling", "Gelber Steinpilz", "Gelber Bronzeröhrling", "Gelber Steini"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Anhaengselroehrling.htm"
@@ -14,6 +18,9 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Im Fleisch orangerötlich bis intensiv rot."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 18.0 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 18 cm breit, ocker-, kastanien- bis rotbraun, trocken, filzig bis lederartig, uneben. Fraßstellen gelblich bis orangerosa. Huthaut steht am scharfen Rand meist über."

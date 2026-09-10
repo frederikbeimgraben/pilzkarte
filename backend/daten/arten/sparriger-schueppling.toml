@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["obstbaum", "fichte"]
 speisewertHinweis = "Verursacht gelegentlich Magen-Darm-Beschwerden; vom Verzehr wird abgeraten. Zu erkennen an den abstehenden sparrigen Schuppen auf Hut und Stiel und am rettichartigen Geruch."
+marktfaehig = false
+synonyme = ["Pholiota jahnii sensu", "Hypodendrum floccosum", "Fungus squarrosus", "Stropharia squarrosa", "Dryophila muelleri", "Pholiota squarrosa f. annulosa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SparrigerSchueppling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 5.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 2.0, bis = 18.0, seltenBis = 25.0 }
+stielDickeCm = { von = 0.6, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 6.5, bis = 8.0 }
+sporenBreiteUm = { von = 4.0, bis = 4.5 }
 
 [merkmale]
 hut = "1 bis 5, selten bis 10 cm breit, strohgelb, trocken, mit abstehenden sparrigen Schüppchen auf gelbbraunem bis hellbraunem Grund."

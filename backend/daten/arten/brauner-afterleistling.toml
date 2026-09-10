@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Erst in größerer Menge reizt er Magen und Darm; einzelne Stücke sind harmlos, schmecken aber muffig. Er schmeckt mild, echte Pfifferlinge schmecken pfefferig scharf."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+synonyme = ["Hygrophoropsis aurantiaca var. rufa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrauneAfterleistling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 5.5, bis = 6.4 }
+sporenBreiteUm = { von = 3.5, bis = 4.4 }
 
 [merkmale]
 hut = "2 bis 12, selten bis 15 cm breit, braun bis braunorange, feinfilzig, Rand lange eingerollt."

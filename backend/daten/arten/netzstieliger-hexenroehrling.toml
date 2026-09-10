@@ -7,6 +7,10 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 karte = "hexen_netz"
 speisewertHinweis = "123pilzsuche führt ihn als nur bedingt essbar. Gut durchgaren und nicht mit Alkohol zusammen essen, das gibt Magen-Darm-Beschwerden. Etwa ein bis fünf von hundert Personen vertragen ihn nicht; darum nicht weitergeben und Vorräte deutlich beschriften."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Netzstielige Hexenröhrling", "Netzhexe"]
+synonyme = ["Boletus luridus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/NetzstieligeHexenroehrling.htm"
@@ -19,6 +23,11 @@ reaktion = "Hut dunkelrot, Fleisch orange."
 [[reagenzien]]
 reagenz = "feso4"
 reaktion = "Hut olivgrau, Fleisch hell olivgelb."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
+sporenLaengeUm = { von = 11.0, bis = 18.0 }
+sporenBreiteUm = { von = 4.5, bis = 7.5 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 22 cm breit, hell- bis dunkelbraun, lederfarben oder graubraun mit Olivton, samtig und etwas klebrig, auf Druck blauend. Zwischen Hutfleisch und Röhren liegt eine rote Zone."

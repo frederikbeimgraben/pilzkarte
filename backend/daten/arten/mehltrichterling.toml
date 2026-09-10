@@ -6,10 +6,20 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter"]
 baeume = ["fichte"]
+marktfaehig = false
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Grauer Mehltrichterling"]
+synonyme = ["Clitocybe ditopus", "Pseudolyophyllum ditopus", "Clitocybe odorula", "Clitocybe murinifolia", "Clitocybe brunnescens", "Agaricus ditopus", "Clitocybe ditopa var. odorula", "Clitocybe longispora"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerMehltrichterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 3.0, bis = 4.7 }
+sporenBreiteUm = { von = 2.6, bis = 3.4 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 8 cm breit, dunkelgrau bis graubraun, hellgrau bereift, trocken weißlich und glänzend, glatt und genabelt, teils unregelmäßig verbogen. Beim Trocknen ausblassend, Rand eingebogen und ungerieft."

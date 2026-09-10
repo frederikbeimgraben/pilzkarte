@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Als Pfifferling besonders geschützt, sehr selten und in Deutschland gefährdet. Stehen lassen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Gelbvioletter Pfifferling", "Schwärzender Pfifferling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwaerzenderLeistling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 14.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 9.0, bis = 12.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.0 }
 
 [merkmale]
 hut = "2 bis 14, selten bis 16 cm breit, eidottergelb bis braungelb mit einem Hauch Violett, später ausblassend, jung flaumig behaart. Mitte stark trichterförmig eingedellt, Rand verbogen."

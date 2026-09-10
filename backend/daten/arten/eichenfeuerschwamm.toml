@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["eiche", "buche", "kastanie"]
 speisewertHinweis = "Das Fleisch ist holzig, fest und zäh. Er lässt sich nicht essen."
+marktfaehig = false
+synonyme = ["Phellinus robustus", "Phellinus aestriplex", "Polyporus robustus", "Ochroporus robustus", "Fomes tuberosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenfeuer.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 35.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 5.5, bis = 8.0 }
 
 [merkmale]
 fruchtkoerper = "5 bis 15, selten bis 35 cm breit, bräunlich, kastanienbraun bis schwarzbraun, von Algen oft grünlich. Jung halbkugelig, später konsolenförmig, der Rand abgerundet."

@@ -6,10 +6,18 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte"]
 speisewertHinweis = "Den Strunk nicht mitessen, er kann Übelkeit und Erbrechen auslösen. Im Alter wird sie bitterlich. Zum Putzen kurz in kochendes Wasser tauchen oder in Scheiben schneiden und wässern."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Fette Henne", "Bärenschädel"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KrauseGlucke.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 6.0, bis = 30.0, seltenBis = 50.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.5 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
 fruchtkoerper = "6 bis 30, selten bis 50 cm breit, weißlich bis gelblich, später dunkler. Blumenkohlartig krause Struktur mit vielen breiten Verästelungen, elastisch, zäh und brüchig."

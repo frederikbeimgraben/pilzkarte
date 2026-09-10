@@ -7,6 +7,11 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "In südlichen Ländern gibt es den sehr giftigen Wohlriechenden Trichterling, der nach Jasmin riecht. Auf den Geruch achten."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "haeufig"
+weitereNamen = ["Ockertrichterling"]
+synonyme = ["Clitocybe gibba", "Agaricus gibbus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ockertrichter.htm"
@@ -15,6 +20,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch wässrig braun."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 11.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
+stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.2 }
+sporenLaengeUm = { von = 5.0, bis = 9.0 }
+sporenBreiteUm = { von = 3.5, bis = 6.0 }
 
 [merkmale]
 hut = "2 bis 9, selten bis 11 cm breit, hellbraun, blass lederfarben bis cremeocker, trichterförmig, jung meist mit kleinem stumpfem Buckel. Alt wellig gerieft und schwach ausblassend."

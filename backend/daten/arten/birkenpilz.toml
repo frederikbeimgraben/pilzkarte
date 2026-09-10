@@ -7,10 +7,18 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 karte = "birkenpilz"
 speisewertHinweis = "Jung sammeln. Im Alter wird das Fleisch schwammig."
+marktfaehig = false
+wertigkeit = 2
+weitereNamen = ["Gemeiner Birkenpilz", "Langhaxen", "Graugrüner Birkenpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 26.0 }
+sporenLaengeUm = { von = 13.0, bis = 18.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
 hut = "4 bis 16, selten bis 26 cm breit, grau-, gelb- bis rotbraun, bei Nässe schmierig, jung halbkugelig, später abflachend."

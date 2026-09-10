@@ -6,10 +6,19 @@ geschuetzt = true
 jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Gut durchgaren. Besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Morchel", "Rundmorchel"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speisemorchel.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+fruchtkoerperHoeheCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 17.0, bis = 22.0 }
+sporenBreiteUm = { von = 8.0, bis = 12.0 }
 
 [merkmale]
 fruchtkoerper = "5 bis 12, selten bis 16 cm hoch und 3 bis 7, selten bis 9 cm breit, gelb, hellbraun, graugelb bis grüngelb, unregelmäßig wabenartig und hohl. Eiförmig, manchmal stumpfkegelig."

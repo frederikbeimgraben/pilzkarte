@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["kastanie", "linde", "birke", "pappel"]
 speisewertHinweis = "Ohne Speisewert, 123pilze gibt die relative Wertigkeit 4. Rötlinge mit rosa Lamellen sehen ähnlich aus und sind zum Teil giftig."
+marktfaehig = false
+wertigkeit = 4
+weitereNamen = ["Schuppigseidiger Dachpilz", "Braunschuppiger Dachpilz"]
+synonyme = ["Pluteus curtisii sensu", "Agaricus cervinus var. patricius", "Pluteus cervinus var. petasatus", "Pluteus patricius", "Agaricus patricius"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SeidigerDachpilz.htm"
@@ -15,6 +19,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut keine Verfärbung."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 14.0 }
+stielDickeCm = { von = 0.4, bis = 2.0, seltenBis = 2.5 }
+sporenLaengeUm = { von = 5.0, bis = 7.0 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
 hut = "3 bis 11, selten bis 15 cm breit, elfenbein- bis cremeweiß, manchmal etwas bräunlich auf hellem Grund. Scheitel meist mit dunkleren Faserschuppen, bei Trockenheit sparrig schuppig, Rand im Alter aufreißend."

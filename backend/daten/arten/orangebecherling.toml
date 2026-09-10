@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Eine der wenigen roh essbaren Arten, als Salatpilz oder zum Füllen der Kelche. Er hat kaum Eigengeschmack und ist oft sandig."
+marktfaehig = false
+wertigkeit = 3
+weitereNamen = ["Gemeiner Orangebecherling", "Orangeroter Becherling", "Feuerroter Becherpilz", "Orangeroter Becherpilz", "Pomeranzenfarbiger Becherpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Orangebecherling.htm"
@@ -14,6 +17,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf der Oberfläche ohne Reaktion."
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 17.0, bis = 25.0 }
+sporenBreiteUm = { von = 9.0, bis = 11.0 }
 
 [merkmale]
 fruchtkoerper = "1 bis 10, selten bis 12 cm breit, orange, gelborange oder gelb, kahl. Schüssel- bis kelchförmig, später abgeflacht und unregelmäßig. Außenseite blasser rosalich und weißlich körnig kleiig, im Alter fast kahl."

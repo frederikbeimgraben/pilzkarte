@@ -6,10 +6,22 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen und die schleimige Huthaut abziehen. Die DGfM nennt Magen-Darm-Beschwerden mit starkem Durchfall und mögliche Allergien; wer darauf reagiert, meidet alle Schmierröhrlinge."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Schmerling", "Schälpilz", "Rotzer", "Schalschwamm", "Rotzling", "Pimp", "Maschlurken", "Pimk"]
+synonyme = ["Boletus granulatus", "Ixocomus granulatus", "Boletus lactifluus", "Suillus lactifluus", "Boletus granulatus var. lactifluus", "Boletus granulatus var. heterosporus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koernchenroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 15.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 2.5, bis = 4.0 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, kastanienbraun, hellbraun bis ockerbraun, bei Nässe sehr schmierig."

@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche"]
 speisewertHinweis = "Der Geruch nach Blattwanzen bleibt beim Garen erhalten. Als Speisepilz taugt er wenig."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+synonyme = ["Lactarius quieta", "Agaricus quietus", "Lactifluus quietus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenmilchling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 8.0, bis = 9.0 }
+sporenBreiteUm = { von = 7.0, bis = 7.5 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 11 cm breit, rotbraun, orangebraun bis haselnussbraun, teils dunkler gezont mit helleren bereiften Zonen. Mitte eingedrückt, Rand jung eingerollt."

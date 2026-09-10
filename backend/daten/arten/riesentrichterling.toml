@@ -6,10 +6,21 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "haeufig"
+synonyme = ["Clitocybe maxima", "Infundibulicybe geotropa", "Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe geotropa var. minor", "Clitocybe maxima sensu"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesentrichterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 30.0 }
+stielLaengeCm = { von = 5.0, bis = 18.0, seltenBis = 27.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 6.0, bis = 11.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 20, selten bis 30 cm breit, weißlich, ockerbraun bis hellbraun, trocken seidig glatt. Mitte trichterförmig, nicht oder nur schwach gebuckelt, Rand lange eingerollt und etwas wellig."

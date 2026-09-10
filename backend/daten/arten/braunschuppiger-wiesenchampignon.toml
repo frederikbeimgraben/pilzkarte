@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er wächst gern am Straßenrand und auf gedüngten Weiden. Solche Funde besser stehen lassen."
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Kleinsporiger Wiesenegerling", "Varietät Wiesenchampignon", "Braunschuppiger Wiesenegerling", "Kleinsporiger Weidechampignon", "Feld-Egerling"]
+synonyme = ["Agaricus floccipes", "Agaricus campestris cf. var floccipes", "Psalliota campestris var. floccipes", "Agaricus campestris var. floccipes"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WiesenchampinonVAR.htm"
@@ -19,6 +23,11 @@ reaktion = "Höchstens hell ockerlich, später hell olivbraun."
 [[reagenzien]]
 reagenz = "schaeffer"
 reaktion = "Negativ. Seltene Unterarten reagieren positiv."
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 8.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
 hut = "5 bis 8, selten bis 12 cm breit, weiß, im Alter grau bis graubraun mit rosa Hauch, leicht gilbend, mit großen bräunlichen flach anliegenden Schuppen. Rand weißlich, weit überstehend, mit Velumresten behangen. Kleiner als der Schafchampignon."

@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "esche", "fichte", "tanne"]
 speisewertHinweis = "Nur junge Fruchtkörper taugen. Der Stielbereich bleibt zu zäh und gehört weg."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "selten"
+weitereNamen = ["Eichenseitling"]
+synonyme = ["Lentodiopsis dryina", "Pleurotus corticatus var. albertinii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BerindeterSeitling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 9.0, bis = 15.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 25 cm breit, grau bis hellbraun mit dunkelbräunlichen Schüppchen, etwas filzig. Rand jung mit Velumresten behangen."

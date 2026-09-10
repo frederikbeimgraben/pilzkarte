@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["weide", "pappel", "linde"]
 speisewertHinweis = "Ungiftig, aber ohne Wert für die Küche. 123pilzsuche gibt die Relative Wertigkeit 5."
+marktfaehig = false
+wertigkeit = 5
+weitereNamen = ["Blutroter Kelchbecherling", "Blutroter Prachtbecherling", "Österreichischer Kelchbecherling"]
+synonyme = ["Molliardiomyces coccineus", "Peziza austriaca", "Lachnea austriaca"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/AustriaPrachtbecherling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 22.5, bis = 35.0 }
+sporenBreiteUm = { von = 9.9, bis = 13.5 }
 
 [merkmale]
 fruchtkoerper = "1 bis 7, selten bis 9 cm breit, kelch- bis schüsselförmig, Innenseite zinnoberrot, in gelber Form als Gelber Prachtbecherling geführt. Rand lange eingerollt, Außenseite blasser und filzig haarig, später abgeflacht."

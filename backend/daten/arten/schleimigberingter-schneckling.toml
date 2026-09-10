@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in Deutschland stark gefährdet. Den Fund besser stehen lassen."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+gefaehrdung = "starkGefaehrdet"
+synonyme = ["Hygrophorus ligatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchleimigberingterSchneck.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 8.5, bis = 10.0 }
+sporenBreiteUm = { von = 4.5, bis = 6.0 }
 
 [merkmale]
 hut = "3 bis 7, selten bis 9 cm breit, weiß bis weißlich gelb, im Alter ockergelblich, meist mit gelber Scheibe, ganz jung vereinzelt strohgelb bis orangegelb, schleimig schmierig. Rand lange eingerollt, alt gewellt und dünner."

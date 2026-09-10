@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Vor dem Essen durchgaren. Morcheln sind besonders geschützt, deshalb nur wenig für den Eigenbedarf nehmen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Dickfüßige Speisemorchel"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DickfuessigeMorchel.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+fruchtkoerperHoeheCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 17.0, bis = 24.0 }
+sporenBreiteUm = { von = 11.0, bis = 15.0 }
 
 [merkmale]
 fruchtkoerper = "5 bis 12, selten bis 16 cm hoch und 3 bis 7, selten bis 9 cm breit, hellbraun, graugelb bis grüngelb, wabenartig mit schmalen Rippen, hohl. Meist deutlich größer als die Speisemorchel."

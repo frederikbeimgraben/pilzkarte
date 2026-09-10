@@ -6,10 +6,17 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne"]
+marktfaehig = false
+synonyme = ["Telamonia praesignis", "Telamonia macropus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZimtroterGuertelfuss.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 9.0, bis = 11.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
 hut = "4 bis 9, selten bis 11 cm breit, orangebraun, gelbbraun bis rötlichbraun, durch das Velum zartseidig bereift, halbkugelig bis glockenförmig, Randbereich mit Velumresten und gern etwas eingerollt."

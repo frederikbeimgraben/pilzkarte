@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Sie löst Magen-Darm-Beschwerden mit Durchfall aus, meist 30 bis 90 Minuten nach dem Essen. Korallen sind schwer zu trennen; von der Rosaspitzigen Koralle ist sie kaum sicher zu unterscheiden."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Blasse Koralle", "Bauchweh-Ziegenbart", "Rosaliche Koralle"]
+synonyme = ["Ramaria pallida", "Ramaria roseola", "Clavaria pallida"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BauchwehkoralleGiftig1004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
+sporenLaengeUm = { von = 9.0, bis = 12.0 }
+sporenBreiteUm = { von = 4.4, bis = 6.5 }
 
 [merkmale]
 fruchtkoerper = "3 bis 15, selten bis 22 cm breit, milchkaffeebraun, hellgelblich, lilarötlich, fleischrötlich bis rosa, längsrunzelig. Die Endästchen tragen stumpfe Zähnchen und sind lilarötlich bis fleischrötlich getönt."

@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne"]
 speisewertHinweis = "Nur ganz junge Fruchtkörper sind essbar; sie werden schnell extrem scharf und dann ungeniessbar."
+marktfaehig = false
+wertigkeit = 4
+haeufigkeit = "haeufig"
+synonyme = ["Bondarzewia montana", "Grifola mesenterica", "Grifola montana", "Cladomeris montanus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bergporling.htm"
@@ -19,6 +23,11 @@ reaktion = "Lagunenblau bis blaugrün."
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf den Röhren gelblich, auf dem Hut weinrötlich."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0 }
+sporenLaengeUm = { von = 5.0, bis = 8.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 30, in Ausnahmen bis 200 cm breit, braun und samtig, fächerförmig ineinander verwachsen und aus einem gemeinsamen Strunk wachsend, Rand wellig."

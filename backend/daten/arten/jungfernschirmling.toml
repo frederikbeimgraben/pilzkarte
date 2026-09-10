@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er verursacht möglicherweise Magen-Darm-Störungen. Zu erkennen am Fleisch, das bei Verletzung nicht rötet, sondern höchstens im Alter etwas grau wird, und am Stiel ohne Natterung."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Jungfern Riesenschirmling"]
+synonyme = ["Macrolepiota puellaris", "Macrolepiota nympharum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Jungfernschirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 8.0, bis = 10.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 9, selten bis 12 cm breit, hellbraun, mit gezonten weichen wolligen abstehenden gelblichen bis braunen Schüppchen. Rand flockig, Mitte glatt und hellbraun, graubraun bis dunkel kastanienbraun."

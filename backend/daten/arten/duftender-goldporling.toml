@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "Er wächst flach auf dem Holz und besteht fast nur aus Röhren. Als Speisepilz kommt er nicht infrage. In Deutschland extrem selten, deshalb stehen lassen."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "extremSelten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DuftenderGoldporling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 30.0 }
+sporenLaengeUm = { von = 4.0, bis = 6.1 }
+sporenBreiteUm = { von = 2.4, bis = 4.0 }
 
 [merkmale]
 fruchtkoerper = "5 bis 13, selten bis 30 cm breit, orange bis leuchtend gelb, karottenrot bis blutrot, die Zuwachsstellen oft orangerosa. Rand oft ausgefranst. Er wirkt, als bestünde er nur aus Röhren."

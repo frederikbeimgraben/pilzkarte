@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Guter Speisepilz, in der Schweiz aber nicht marktfaehig."
+marktfaehig = false
+wertigkeit = 2
+synonyme = ["Boletus lanatus", "Boletus subtomentosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SamtigerFilzroehrling.htm"
@@ -15,6 +18,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "ammoniak"
 reaktion = "Huthaut gruenblau."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 11.0, bis = 16.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
 hut = "4 bis 9, selten bis 12 cm breit, graubraun bis rotbraun, filzig, unter der Huthaut leicht rosalich."

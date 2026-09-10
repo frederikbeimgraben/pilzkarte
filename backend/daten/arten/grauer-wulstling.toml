@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Roh giftig. Er schmeckt muffig und herb, 123pilzsuche gibt ihm nur die Wertigkeit 4. Wegen der Ähnlichkeit mit dem tödlich giftigen Pantherpilz ist er kein Pilz für Anfänger."
+marktfaehig = false
+wertigkeit = 4
+weitereNamen = ["Hoher Wulstling", "Gedrungener Wulstling", "Eingesenkter Wulstling", "Schäler"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerWulstling0904.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 8.0, bis = 11.0 }
+sporenBreiteUm = { von = 6.5, bis = 8.5 }
 
 [merkmale]
 hut = "3 bis 12, selten bis 15 cm breit, hellbräunlich, grau bis schwarzbraun, mit großflächigen grauweißen Velumflocken, die sich meist leicht abwischen lassen."

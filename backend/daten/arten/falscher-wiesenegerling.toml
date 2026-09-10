@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Er riecht unangenehm nach Karbol, Tinte oder Urin, nicht pilzig wie die Wiesenchampignons. Die Stielbasis gilbt auf Druck oder im Schnitt, manchmal nur schwach und später rötend. Riecht ein Champignon nicht nach Champignon, bleibt er stehen."
+marktfaehig = false
+gefaehrdung = "extremSelten"
+weitereNamen = ["Falscher Wiesen-Egerling", "Schmalberingter Karbol-Egerling", "Rötender Karbolegerling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalscherWiesenegerling.htm"
@@ -19,6 +22,11 @@ reaktion = "Gelb verfärbend."
 [[reagenzien]]
 reagenz = "schaeffer"
 reaktion = "Negativ bis leicht kartonbraun."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 14.0, seltenBis = 18.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.5 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
 hut = "3 bis 14, selten bis 18 cm breit, weiß, alt graubraun bis gelbbraun, beim Reiben gelblich verfärbend. Jung halbkugelig bis konvex, im Alter abgeflacht."

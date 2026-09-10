@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Nur wenig oder gar nichts mitnehmen."
+marktfaehig = true
+wertigkeit = 1
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Graue Kraterelle", "Grauer Pfifferling"]
+synonyme = ["Craterellus cinereus", "Pseudocraterellus cinereus", "Merulius cinereus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerLeistling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 2.5, bis = 6.0, seltenBis = 8.0 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 9 cm breit, schwarzgrau bis graubraun, feinschuppig, Rand wellig. Das Hymenium bilden Adern und Falten."

@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen. Er nimmt Cäsium 137 stärker auf als die meisten Arten; für Kinder und Schwangere sind größere Mengen nicht zu empfehlen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Braunkappen", "Braunkuppen", "Braune", "Bräunling", "Marone"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Maronenroehrling.htm"
@@ -26,6 +29,13 @@ reaktion = "Im Fleisch ohne Reaktion bis etwas grau, auf dem Hut ohne Reaktion o
 [[reagenzien]]
 reagenz = "melzer"
 reaktion = "In den Lamellen blau."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 25 cm breit, dunkel- bis hellbraun oder olivbraun, glatt, matt und feinsamtig, feucht schmierig und glänzend."

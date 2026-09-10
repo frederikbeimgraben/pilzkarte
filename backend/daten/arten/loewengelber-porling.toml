@@ -6,6 +6,8 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche"]
+marktfaehig = false
+synonyme = ["Polyporus leptocephalus", "(polyporus varius", "Boletus leptocephalus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LoewenPorling.htm"
@@ -18,6 +20,12 @@ reaktion = "Fleisch und Hut braunorange."
 [[reagenzien]]
 reagenz = "naoh"
 reaktion = "Poren rosa bis braunrosa."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 6.0, bis = 10.0 }
+sporenBreiteUm = { von = 2.0, bis = 4.0 }
 
 [merkmale]
 hut = "3 bis 6, selten bis 8 cm breit, graugelb, hellgelb, orange, ocker bis rötlich ockergelb, matt filzig bis kahl, Rand scharf."

@@ -6,10 +6,17 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden: zeigt der Schnitt Lamellenansätze, ist es ein junger Knollenblätterpilz."
+marktfaehig = false
+wertigkeit = 2
+weitereNamen = ["Hasenstäubling"]
+synonyme = ["Handkea utriformis", "Calvatia utriformis", "Calvatia caelata", "Lycoperdon sinclairii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hasenstaubling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 16.0, seltenBis = 18.0 }
 
 [merkmale]
 fruchtkoerper = "3 bis 16, selten bis 18 cm breit, weiß, später grau, ballon-, sack- oder kreiselförmig. Jung mit plattenartigen, etwas spitzkegeligen Erhebungen, die im Alter verschwinden."

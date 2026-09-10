@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "Relativ selten. Nach einem trockenen Sommer und anschließendem Regen tritt er häufiger auf."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "selten"
+synonyme = ["Gomphidus helveticus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FilzigerGelbfuss.htm"
@@ -15,6 +19,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch weinrot verfärbend."
+
+[masse]
+hutBreiteCm = { von = 2.5, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 6.0, bis = 8.0, seltenBis = 12.0 }
+stielDickeCm = { von = 0.6, bis = 1.5, seltenBis = 2.0 }
+sporenLaengeUm = { von = 17.0, bis = 20.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "2,5 bis 8, selten bis 10 cm breit, orangebraun, filzig schuppig, feucht schmierig, jung mit Schleier. Der Rand ist lange eingerollt und meist mit Velumresten behaftet. Eine Varietät hat eine abstehend wollig filzige Oberfläche."

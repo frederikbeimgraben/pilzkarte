@@ -6,6 +6,11 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur Mischpilz. Er ist oft madig und häufig von Goldschimmel befallen; befallene Stücke wegwerfen. Lässt sich der Hut mit zwei Fingern eindrücken, ist er nicht mehr brauchbar."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Gemeiner Rotfußröhrling", "Echter Rotfußröhrling"]
+synonyme = ["Xerocomus chrysenteron", "Boletus chrysenteron", "Versipellis chrysenteron", "Suillus chrysenteron", "Boletus pascuus sensu", "Boletus chrysenteron var. nanus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rotfuss.htm"
@@ -22,6 +27,13 @@ reaktion = "Auf dem Hut oliv, auf dem Stiel negativ."
 [[reagenzien]]
 reagenz = "ammoniak"
 reaktion = "Überall negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
+stielDickeCm = { von = 0.7, bis = 3.0, seltenBis = 4.5 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 3.0, bis = 6.0 }
 
 [merkmale]
 hut = "4 bis 10, selten bis 13 cm breit, bräunlich, filzig samtig, später aufgerissen. Unter der Huthaut liegt eine Rotfärbung wie ein Schutzanstrich über dem Fleisch."

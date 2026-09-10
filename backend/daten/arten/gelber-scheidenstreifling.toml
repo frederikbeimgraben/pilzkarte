@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Roh giftig, nur durchgegart essen. Er hat wie alle Scheidenstreiflinge keinen Ring, deshalb ist die Scheide an der Basis stets freizulegen und mit den Knollenblätterpilzen zu vergleichen."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "selten"
+synonyme = ["Amanita flavescens", "Amanitopsis flavescens", "Amanitopsis vaginata var. flavescens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelberStreifling.htm"
@@ -15,6 +19,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "phenol"
 reaktion = "Stielfleisch dunkel weinrot."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 8.4, bis = 17.6 }
+sporenBreiteUm = { von = 7.4, bis = 14.1 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 11 cm breit, gelb bis orange, Mitte dunkler, Rand heller und auf etwa einem Drittel des Radius stark gerieft. Oberfläche glatt, bei alten Exemplaren Huthaut zweischichtig."

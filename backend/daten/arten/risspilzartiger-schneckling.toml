@@ -7,10 +7,16 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungeniessbar und in Europa sehr selten, deshalb stehen lassen."
+marktfaehig = false
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RisspilzartigerSchneckling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
 hut = "3 bis 7, selten bis 9 cm breit, braunschuppig auf hellgrauem Grund, Rand fransig."

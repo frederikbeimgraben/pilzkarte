@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Wird als giftig geführt, weil Erdritterlinge im Verdacht stehen, die Muskeln zu zersetzen. Er ist am grauschwarz schuppigen Hut, an den dunkler punktierten Lamellenschneiden und am mehlartigen Geruch zu erkennen."
+marktfaehig = false
+weitereNamen = ["Schwarzschuppiger Ritterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzschuppigerRitterlingEssbar.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 7.5, seltenBis = 8.5 }
+stielDickeCm = { von = 1.0, bis = 1.5, seltenBis = 2.0 }
+sporenLaengeUm = { von = 5.5, bis = 8.2 }
+sporenBreiteUm = { von = 3.5, bis = 5.1 }
 
 [merkmale]
 hut = "4 bis 8, selten bis 10 cm breit, grauschwarz bis schwarzbraun, mit wolligen, sparrigen, dunklen Schüppchen, die sich auflösen. Rand heller, kein Velum erkennbar."

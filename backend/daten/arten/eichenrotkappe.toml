@@ -7,10 +7,22 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "hasel"]
 speisewertHinweis = "Raufußröhrlinge sind besonders geschützt und die Art ist selten. Nur wenig für den Eigenbedarf nehmen. Roh sind Rotkappen unverträglich, deshalb durchgaren."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Eichenraufuss", "Laubwald-Rotkappe"]
+synonyme = ["Leccinum aurantiacum var. quercinum", "Leccinum rufum", "Boletus quercinus", "Krombholziella quercina"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenrot.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 17.0, seltenBis = 21.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 12.0, bis = 19.0 }
+sporenBreiteUm = { von = 3.0, bis = 6.0 }
 
 [merkmale]
 hut = "4 bis 17, selten bis 21 cm breit, rotbraun, ziegelfarben bis rot, feinfilzig. Die Huthaut ist meist verkürzt, anders als bei der fast gleichen Espenrotkappe mit ihrer über die Röhren eingerollten Huthaut."

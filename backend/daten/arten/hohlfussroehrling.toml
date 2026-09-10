@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
+marktfaehig = true
+wertigkeit = 3
+weitereNamen = ["Brauner Hohlfussröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hohlfussroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 3.5, bis = 4.0 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 10 cm breit, rostbraun, schuppig und filzig, Mitte oft gebuckelt, Rand lange eingerollt. Jung zieht ein spinnwebenartiges Velum vom Hut zum Stiel; es reißt später ab und hinterlässt am Stiel eine angedeutete Ringzone."

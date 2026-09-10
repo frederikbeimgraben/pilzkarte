@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Raufußröhrlinge sind in Deutschland besonders geschützt. Die Art ist sehr selten; nur wenige Fruchtkörper für den Eigenbedarf nehmen oder den Fund stehen lassen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+synonyme = ["Krombholziella piceina", "Leccinum piceinum pilát", "Boletus piceinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FichtenRotkappe.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 21.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 14.0, bis = 19.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 18, selten bis 21 cm breit, braunrot bis orangebraun, feinfilzig, Huthaut am Rand überstehend und eingerollt."

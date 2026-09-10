@@ -7,10 +7,20 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "parasol"
 speisewertHinweis = "Nicht roh essen. Ungenügend gegart löst er Magen-Darm-Beschwerden aus, deshalb gut durchgaren. Riesenschirmlinge vom Komposthaufen oder aus dem Garten stehen lassen, dort wächst der Gift-Riesenschirmling."
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Riesenschirmling", "Riesenschirmpilz", "Paukenschläger", "Paukenschleger", "Gemeiner Riesenschirmling", "Gugermukken", "Schulmeisterpilz", "Eulchen"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Parasol.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 30.0 }
+stielLaengeCm = { von = 6.0, bis = 30.0, seltenBis = 40.0 }
+stielDickeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 12.0, bis = 18.0 }
+sporenBreiteUm = { von = 9.0, bis = 12.0 }
 
 [merkmale]
 hut = "3 bis 25, selten bis 30 cm breit, hellbraun, mit gezonten, weichen, wolligen Schüppchen. Rand behangen."

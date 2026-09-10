@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter"]
 baeume = ["pappel", "weide"]
+marktfaehig = false
+weitereNamen = ["Pappel-Becherrindenschwamm", "Judas-Öhrchen"]
+synonyme = ["Auriculariopsis ampala", "Cyphella ampla", "Auriculariopsis flocculenta", "Stereum pubescens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KleinesJudasohr.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 0.5, bis = 1.0, seltenBis = 2.0 }
+sporenLaengeUm = { von = 9.0, bis = 12.0 }
+sporenBreiteUm = { von = 2.4, bis = 3.0 }
 
 [merkmale]
 hut = "0,5 bis 1, selten bis 2 cm breit, becher- bis schalenförmig oder konvex. Oberseite mit weißlichem haarigem Filz, im Alter durch Algen grünlich, Rand eingerollt. Unterseite fleischbraun bis ockerbraun und aderig gefaltet."

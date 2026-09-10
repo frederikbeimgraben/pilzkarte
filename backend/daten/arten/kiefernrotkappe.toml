@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Roh stark unverträglich, nur durchgegart essen. In Deutschland stark gefährdet und als Raufußröhrling besonders geschützt, deshalb höchstens für den Eigenbedarf sammeln."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "starkGefaehrdet"
+weitereNamen = ["Fuchsrotkappe", "Föhrenrotkappe", "Fuchsröhrling"]
+synonyme = ["Leccinum aurantiacum var. vulpinum", "Boletus vulpinus", "Xanthochrous vulpinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fuchsrotkappe.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
 
 [merkmale]
 hut = "4 bis 18, selten bis 22 cm breit, fuchsrot bis rotbraun, samtig. Huthaut angewachsen und über den Rand stehend."

@@ -6,10 +6,20 @@ geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kastanie"]
 speisewertHinweis = "Besonders geschützt und selten. Wenn überhaupt, nur wenige Fruchtkörper für den Eigenbedarf."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Weißer Bronzeröhrling"]
+synonyme = ["Boletus edulis forma aereus", "Tubiporus edulis subsp. aereus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerSteini.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
+sporenLaengeUm = { von = 10.5, bis = 19.0 }
+sporenBreiteUm = { von = 3.5, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, kastanien- bis schwarzbraun oder hell bronzefarben, feinsamtig und matt weißlich bereift. Rand meist heller."

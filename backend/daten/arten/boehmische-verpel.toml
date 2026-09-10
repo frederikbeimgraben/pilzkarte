@@ -7,10 +7,21 @@ jahreszeiten = ["winter", "fruehling"]
 baeume = ["pappel", "weide"]
 speisewertHinweis = "Roh giftig wie alle Morcheln. Durchgaren. Riecht der Fund fischartig, ist er verdorben."
 schutzHinweis = "Die Verordnung nennt die Morcheln (Morchella). Die Verpeln stehen nicht darin, werden aber leicht mit ihnen verwechselt."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Runzelverpel", "Böhmische Morchel"]
+synonyme = ["Ptychverpa bohemica"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BoehmischeVerpel.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 4.0, seltenBis = 5.0 }
+fruchtkoerperHoeheCm = { von = 1.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 7.5, bis = 14.5 }
 
 [merkmale]
 fruchtkoerper = "Käppchen 2 bis 4, selten bis 5 cm breit und 1 bis 8 cm hoch, hellbeige bis dunkelbraun, runzelig labyrinthartig mit hochgestellten Längs- und Querrillen. Der Rand ist heller und nach oben gebogen."

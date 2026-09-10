@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kiefer"]
 speisewertHinweis = "Essbar, in Mitteleuropa aber kaum zu finden. Sehr alte Fruchtkoerper riechen fischartig und sind dann nicht mehr essbar."
+marktfaehig = false
+wertigkeit = 4
+synonyme = ["Lactarius rugatus", "Lactarius hygrophoroides var. rugatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RunzeligerMilchling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 8.0, bis = 11.0 }
+sporenBreiteUm = { von = 5.0, bis = 8.0 }
 
 [merkmale]
 hut = "5 bis 10, selten bis 13 cm breit, orangebraun, rotbraun bis orangefuchsig, Mitte eingedrueckt, Rand runzelig und gezahnt, jung eingebogen, spaeter ausgebreitet."

@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als giftig, mindestens aber als sehr verdächtig. Saftlinge sind besonders geschützt und werden nicht gesammelt."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Schuppiger Saftling", "Grobschuppiger Moorsaftling", "Rußigflockiger Saftling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlammigerSaftling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+stielLaengeCm = { von = 3.0, bis = 6.0 }
+sporenLaengeUm = { von = 8.3, bis = 11.8 }
+sporenBreiteUm = { von = 5.2, bis = 7.3 }
 
 [merkmale]
 hut = "1 bis 2, selten bis 3 cm breit, gelb, goldgelb, orange bis schmutzig rotgelb, mit dunklen graubraunen Schuppen, Mitte trichterförmig vertieft. Rand eingerollt bis umgebogen, nicht gekerbt, jung klebrig."

@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nicht roh essen. Nur für Sammler, die den tödlich giftigen Gifthäubling sicher trennen: jeden Fruchtkörper einzeln mit Stiel prüfen, nie ganze Büschel abschneiden. Das Stockschwämmchen hat unter dem häutigen Ring deutliche Schüppchen und riecht pilzig, der Gifthäubling ist dort seidig faserig und silbrig. Eine Pilzberatung gibt Stockschwämmchen ohne Stiel nicht frei. Die Stiele sind sehr zäh und taugen höchstens als Pilzpulver."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Echtes Stockschwämmchen", "Gemeines Stockschwämmchen"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Stockschwaemmchen.htm"
@@ -14,6 +17,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Ohne Reaktion auf dem Hut."
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 10.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 1.0, bis = 10.0, seltenBis = 15.0 }
+stielDickeCm = { von = 0.3, bis = 1.2, seltenBis = 1.8 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 3.0, bis = 6.0 }
 
 [merkmale]
 hut = "1 bis 10, selten bis 15 cm breit, hellbraun, dunkelbraun bis haselnussbraun, von der Mitte her ausbleichend, meist mit kleinen braunen bis graubraunen Schüppchen."

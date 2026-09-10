@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er gilbt und rötet bei Verletzung sehr stark, erst orange, dann weinrot bis rotbraun. Wer ihn für einen Safranschirmling hält, achte auf die freistehende Wuchsform am Kompost und den fehlenden Buckel aus Schuppen."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Gelbfüßiger Egerlingsschirmling"]
+synonyme = ["Leucoagaricus bresadolae"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BuscheliegerEgerlingsschirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+stielLaengeCm = { von = 6.0, bis = 18.0, seltenBis = 21.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 9.0, bis = 11.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.0 }
 
 [merkmale]
 hut = "3 bis 10, selten bis 25 cm breit, weiß mit konzentrisch angeordneten braunen bis rotbraunen Schüppchen, oft schon jung gilbend. Mitte glatt und gebuckelt, Rand gekerbt."

@@ -7,10 +7,21 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["fichte", "buche"]
 karte = "hexen_flock"
 speisewertHinweis = "Roh unverträglich. Gut durchgaren."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Flocki", "Zigeuner", "Hexenpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flocki.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 5.0, bis = 15.0 }
+stielDickeCm = { von = 2.0, bis = 5.0 }
+sporenLaengeUm = { von = 12.0, bis = 18.0 }
+sporenBreiteUm = { von = 4.5, bis = 6.5 }
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, dunkelbraun, teils gelb gescheckt oder mit olivem Ton, samtig, feucht leicht klebrig. Halbkugelig bis polsterförmig. Nach Schneckenfraß erscheint darunter Rötliches."

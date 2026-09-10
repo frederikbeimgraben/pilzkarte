@@ -6,6 +6,10 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke", "buche", "eiche"]
+marktfaehig = false
+wertigkeit = 3
+weitereNamen = ["Grauvioletter Reif-Täubling"]
+synonyme = ["Russula palumbina"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Taubentaebling.htm"
@@ -22,6 +26,12 @@ reaktion = "Hellrosa."
 [[reagenzien]]
 reagenz = "ammoniak"
 reaktion = "Positiv."
+
+[masse]
+stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 10.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 6.5, bis = 9.2 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 11, selten bis 14 cm breit, schwarzoliv, schwarzgrau, hell blaugrün, olivgrau, graulila, purpurviolett, eisengrau bis violettgrau, alt gelblich. Mitte alt vertieft und meist dunkler, Rand gerieft, bei Feuchtigkeit glänzend und schmierig."

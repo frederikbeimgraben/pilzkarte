@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Austernpilz", "Kalbfleischpilz", "Buchenschwamm", "Drehling", "Austernschwamm", "Eichhännchen", "Muschelpilz", "Sommerauster"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Austernseitling1105.htm"
@@ -14,6 +17,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut ohne Reaktion."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 15.0, seltenBis = 20.0 }
+sporenLaengeUm = { von = 7.0, bis = 11.0 }
+sporenBreiteUm = { von = 2.0, bis = 4.0 }
 
 [merkmale]
 hut = "2 bis 15, selten bis 20 cm breit, silbergrau, grau bis graubraun, nach den ersten Frostschäden meist brauner. Muschelförmig, glatt und kahl, Rand jung eingerollt."

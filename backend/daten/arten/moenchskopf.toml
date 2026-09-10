@@ -6,6 +6,11 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Alte Stiele sind wässrig und zäh und bleiben besser stehen. Unter den Trichterlingen stehen einige tödlich giftige Arten; nur mit sicherer Bestimmung sammeln."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "haeufig"
+weitereNamen = ["Falber Riesentrichterling"]
+synonyme = ["Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe maxima sensu", "Infundibulicybe geotropa var. maxima", "Clitocybe geotropa var. minor"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MoenchskopfEssbar1004.htm"
@@ -14,6 +19,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Nur an frischen Fruchtkörpern, auf dem Hut olivgrün."
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 6.0, bis = 15.0, seltenBis = 17.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 5.8, bis = 10.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "5 bis 20, selten bis 25 cm breit, bräunlich, feinfilzig, später kahl. In der Mitte ein Buckel, der oft nur mit den Fingern zu ertasten ist. Rand jung weit eingerollt und gekrempelt, alt unregelmäßig wellig."

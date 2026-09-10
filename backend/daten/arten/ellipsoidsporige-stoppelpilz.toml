@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Jung sammeln. Alte Stücke werden bitter und beim längeren Kauen etwas scharf."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Kleinwüchsiger Semmelstoppelpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/EllipsoidsporigeStoppelpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.0, bis = 11.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.8 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, gelborange bis terrakottafarben, Rand lange eingerollt. Deutlich kleiner als der Semmelstoppelpilz."

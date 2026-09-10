@@ -6,6 +6,9 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = false
+wertigkeit = 1
+synonyme = ["Russula peltereaui", "Russula cyanoxantha forma peltereaui", "Russula cyanoxantha f. peltereaui"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OlivfarbenerFrauentaeubling.htm"
@@ -22,6 +25,13 @@ reaktion = "Umbrabraun bis tief blutrot."
 [[reagenzien]]
 reagenz = "anilin"
 reaktion = "Trüb blutrot."
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 13.0, seltenBis = 16.0 }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 6.4, bis = 9.5 }
+sporenBreiteUm = { von = 5.0, bis = 6.7 }
 
 [merkmale]
 hut = "6 bis 13, selten bis 16 cm breit, olivgrün mit violetten Flecken, Mitte meist dunkler und niedergedrückt. Huthaut schmierig und glänzend, Rand etwas höckerig gerieft."

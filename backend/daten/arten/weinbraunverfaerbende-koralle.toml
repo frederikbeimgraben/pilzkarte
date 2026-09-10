@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "buche"]
 speisewertHinweis = "Ungenießbar wegen des stark bitterlichen Geschmacks."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Weinbraune Koralle", "Kalkbuchenwald-Koralle", "Batailles Koralle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeinbrauneKoralle.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 15.0 }
+fruchtkoerperHoeheCm = { von = 5.0, bis = 15.0 }
+sporenLaengeUm = { von = 10.0, bis = 17.2 }
+sporenBreiteUm = { von = 4.0, bis = 6.2 }
 
 [merkmale]
 fruchtkoerper = "5 bis 15 cm hoch, 5 bis 13, selten bis 15 cm breit, schmutzig braun, rosabraun, lachsfarben, lilagraubraun bis weinbraun oder rötlich verfärbend, alt grauende Äste. Büschelig aus einem Strunk, Spitzen geweihförmig."

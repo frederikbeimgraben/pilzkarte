@@ -7,10 +7,15 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Tödlich giftig, wie alle Risspilze mindestens verdächtig. Kennzeichen sind der wollig-filzige braune Hut mit fransig überstehendem Rand, der erdig-spermatische Geruch und das tabakbraune Sporenpulver."
+marktfaehig = false
+synonyme = ["Astrosporina lanuginosa", "Agaricus lanuginosus", "Inocybe lanuginosa var. lanuginosa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WolligeRisspilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, braun bis orangebraun, wollig filzig, nicht sparrig, Rand fransig überstehend, Mitte teils dunkler."

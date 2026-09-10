@@ -6,10 +6,21 @@ geschuetzt = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh in größeren Mengen unbekömmlich, er gibt Blausäure ab. Beim Kochen und Trocknen verflüchtigt sie sich. Nur die Hüte nehmen, die Stiele sind zäh."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Feldschwindling", "Suppenpilz", "Hartbeindl", "Herbstmusseron", "Oreadenpilz"]
+synonyme = ["Collybia oreades", "Agaricus coriaceus", "Agaricus pseudomouceron", "Scorteus oreades"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Nelkenschwindling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.8 }
+sporenBreiteUm = { von = 4.0, bis = 6.2 }
 
 [merkmale]
 hut = "1 bis 6, selten bis 7 cm breit, hellbraun bis ocker-rotbraun, gebuckelt, Rand etwas gerieft und beim Abtrocknen ausblassend."

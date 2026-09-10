@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Nicht selten, aber wegen der kleinen, dunklen Fruchtkörper schwer zu finden."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "selten"
+weitereNamen = ["Krause Kraterelle", "Vollstieliger Leistling", "Krauser Leistling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KrausenKantarelle.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 7.0, bis = 8.7 }
+sporenBreiteUm = { von = 3.3, bis = 4.5 }
 
 [merkmale]
 hut = "1 bis 3, selten bis 4 cm breit, lehmbraun, graubraun bis gelbbraun, trichterförmig. Rand gelblich, gewellt und uneben gerippt."

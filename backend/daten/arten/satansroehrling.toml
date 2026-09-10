@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Giftig. Er ist am weißlichen bis grauen Hut, an den karminroten Röhrenmündungen, am dicken bauchigen Stiel mit roter Netzzeichnung und am aasartigen Geruch alter Fruchtkörper zu erkennen."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Satanspilz", "Teufelspilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Satanspilz-Satansroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 7.0, bis = 14.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 9.5, bis = 15.0 }
+sporenBreiteUm = { von = 3.5, bis = 7.0 }
 
 [merkmale]
 hut = "5 bis 20, selten bis 25 cm breit, weiß bis hellgrau, grauoliv oder ockerlederfarben, jung halbkugelig, später polsterförmig ausgebreitet, im Alter unregelmäßig verbogen. Rand eingebogen, Oberfläche nicht blauend."

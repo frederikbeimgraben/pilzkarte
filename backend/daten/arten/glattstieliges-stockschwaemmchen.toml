@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Stiel ist glatt und dunkel, ohne die braunen Schüppchen des Stockschwämmchens. Wegen der Ähnlichkeit mit dem Gifthäubling nicht sammeln."
+marktfaehig = false
+weitereNamen = ["Glattstieliges Frühlings-Stockschwämmchen"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GlattstielStockschwamm.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 6.0, bis = 7.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 hut = "1 bis 3, selten bis 5 cm breit, hellbraun, dunkelbraun, haselnussbraun, dattelbraun bis gelbbraun, Mitte ausbleichend. Meist mit kleinen braunen bis graubraunen Schüppchen besetzt."

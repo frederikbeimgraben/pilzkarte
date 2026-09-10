@@ -6,10 +6,17 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Die schleimige Huthaut vor dem Garen abziehen."
+marktfaehig = true
+weitereNamen = ["Butterröhrling", "Huasara", "Schmalzer", "Schmerzling", "Butter-Schmerling", "Schmalzling", "Schleimchen"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Butterroehring.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 3.0, bis = 3.5 }
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, braun, glänzend, sehr schleimig und schmierig, Rand dunkler."

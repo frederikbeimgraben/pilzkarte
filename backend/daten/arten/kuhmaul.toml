@@ -6,10 +6,18 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Die schleimige Huthaut schon im Wald abziehen. Sonst färbt der Pilz im Korb die Berührungsstellen an Pfifferlingen schwarz; das ist nicht giftig, sieht aber unappetitlich aus."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Großer Gelbfuß", "Großer Schmierling", "Großer Keilpilz", "Großer Schleimpilz", "Rotzer", "Rotznase", "Schafsnase"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kuhmaul.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0 }
+sporenLaengeUm = { von = 17.5, bis = 21.5 }
+sporenBreiteUm = { von = 5.8, bis = 7.1 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 20 cm breit, braun, violett bis blau, stark schmierig und schleimig, oft mit schwarzbraunen Flecken. Die Huthaut lässt sich leicht abziehen."

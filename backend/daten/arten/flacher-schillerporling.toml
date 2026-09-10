@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Ankerhaariger Buchen-Schillerporling", "Blasser Schillerporling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlacherSchillerporling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 35.0 }
+sporenLaengeUm = { von = 5.5, bis = 8.0 }
+sporenBreiteUm = { von = 4.5, bis = 6.5 }
 
 [merkmale]
 fruchtkoerper = "5 bis 15, selten bis 35 cm breit, rostbraun bis gelbbraun, alt fast schwarzbraun, am Rand heller. Flach konsolen- bis fächerförmig, meist waagerecht vom Holz abstehend, weich, schwammig bis weichkorkig, Oberfläche rauhaarig und filzig."

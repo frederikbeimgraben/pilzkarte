@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne", "kiefer"]
 speisewertHinweis = "Giftig und halluzinogen. Der bitterliche Geschmack, die gelben bis rostbraunen Lamellen und das rostbraune Sporenpulver kennzeichnen ihn."
+marktfaehig = false
+weitereNamen = ["Scaly Rustgill"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SamttannFlaemmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.6 }
+sporenLaengeUm = { von = 6.5, bis = 10.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.5 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, gelbfuchsig bis gelbbraun, matt, trocken und schuppig auf gelblichem Grund, fein behaart. Mitte oft dunkler, gern mit senkrechten Rissen wie bei Risspilzen. Rand nicht gerieft, lange etwas eingerollt, spaeter nach aussen gekruemmt."

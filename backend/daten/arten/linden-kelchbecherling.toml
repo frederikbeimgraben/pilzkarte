@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["linde"]
 speisewertHinweis = "Ungiftig, aber nicht schmackhaft. 123pilzsuche gibt die Relative Wertigkeit 5."
+marktfaehig = false
+wertigkeit = 5
+weitereNamen = ["Scharlachroter Linden-Kelchbecherling"]
+synonyme = ["Sarcoscypha coccinea var. jurana + sarcoscypha emarginata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Linden-Kelchbecherling.htm"
@@ -15,6 +19,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "melzer"
 reaktion = "Auf der Scheibe blau oder grün."
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 21.6, bis = 27.7 }
+sporenBreiteUm = { von = 11.2, bis = 13.0 }
 
 [merkmale]
 fruchtkoerper = "1 bis 7, selten bis 9 cm breit, kelch-, becher- bis schüsselförmig. Innenseite zinnoberrot bis karminrot, selten gelb, dünn und wachsartig. Außenseite blasser und weißlich, filzig bis haarig, Rand lange eingebogen."

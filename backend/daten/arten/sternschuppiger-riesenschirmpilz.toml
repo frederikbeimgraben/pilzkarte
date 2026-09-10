@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Das Fleisch rötet nie; das trennt ihn vom Safranschirmling. Wie alle Riesenschirmlinge nur durchgegart essen."
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Essbarer Gartenriesenschirmling"]
+synonyme = ["Macrolepiota rhodosperma", "Macrolepiota konradii", "Leucocoprinus fuliginosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SternschuppigerRiesenschirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 25.0, seltenBis = 35.0 }
+stielDickeCm = { von = 1.0, bis = 6.0, seltenBis = 8.0 }
+sporenLaengeUm = { von = 10.0, bis = 17.0 }
+sporenBreiteUm = { von = 8.0, bis = 11.0 }
 
 [merkmale]
 hut = "4 bis 10, selten bis 15 cm breit, mit braunen bis kastanienbraunen, sternförmig auseinanderlaufenden Schuppen auf weißlichem Grund. Mitte schwarzbraun und gebuckelt, jung in Paukenschlägerform."

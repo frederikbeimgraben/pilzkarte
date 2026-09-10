@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Stark giftig. Zu erkennen an den braunen, spitzen Stacheln auf cremefarbenem Grund, dem hängenden, nicht verschiebbaren Ring und dem stechend gasartigen Geruch."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Rauer Schirmling", "Kegelschuppiger Schirmling", "Spitzschuppiger Mehlschirmling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SpitzschuppigerSchirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 17.0 }
+stielLaengeCm = { von = 5.0, bis = 11.0, seltenBis = 14.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 7.5, bis = 9.0 }
+sporenBreiteUm = { von = 2.5, bis = 3.5 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 17 cm breit, fleischbraun, mit braunen Stacheln auf cremefarbenem Grund, im Alter abflachend."

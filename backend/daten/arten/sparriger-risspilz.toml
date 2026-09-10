@@ -7,6 +7,8 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Tödlich giftig; wie alle Risspilze mindestens verdächtig. Zu erkennen an den braunen, dornartigen Schuppen auf Hut und Stiel, dem fransigen Hutrand und dem moderig-spermatischen Geruch."
+marktfaehig = false
+weitereNamen = ["Sparrigschuppiger Risspilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SparrigerRisspilz.htm"
@@ -15,6 +17,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut sofort violettgrau."
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.0, bis = 13.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.5 }
 
 [merkmale]
 hut = "1 bis 4, selten bis 6 cm breit, braune, dornartige, spitze Schuppen auf beige-ockerfarbenem Grund. Huthaut steht am Rand über, Rand fransig."

@@ -7,6 +7,11 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Die schleimige Huthaut vor dem Garen abziehen. In Deutschland gefährdet."
+marktfaehig = true
+wertigkeit = 1
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Weymouthsröhrling"]
+synonyme = ["Boletus placidus", "Uloporus placidus", "Suillus plorans subsp. placidus", "Boletus fusipes", "Gyrodon placidus", "Viscipellis fusipes", "Ixocomus fusipes"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Elfenbeinroehrling.htm"
@@ -23,6 +28,12 @@ reaktion = "Auf dem Hut rosa bis lilaviolett, im Fleisch lila, in den Poren lach
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut schwach rosa bis violett, später bräunlich bis schwarz."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 11.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 7.0, bis = 9.0 }
+sporenBreiteUm = { von = 2.0, bis = 3.0 }
 
 [merkmale]
 hut = "2 bis 11, selten bis 15 cm breit, weiß bis cremefarben, alt gelbbraun, schleimig und abziehbar, im Alter trocken. Jung halbkugelig, später abgeflacht und teils etwas gebuckelt."

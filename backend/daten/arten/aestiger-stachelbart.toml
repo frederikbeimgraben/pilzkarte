@@ -6,10 +6,21 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "tanne"]
 speisewertHinweis = "Selten und in Deutschland auf der Roten Liste. Kleine Mengen nehmen oder den Fund stehen lassen."
+marktfaehig = true
+wertigkeit = 3
+haeufigkeit = "selten"
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Buchenstachelbart", "Eiskoralle", "Bartkoralle"]
+synonyme = ["Hericium ramosum = buchenstachelbart"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/StachelbartEssbar1004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 4.0, bis = 5.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
 
 [merkmale]
 fruchtkoerper = "3 bis 12, selten bis 25 cm breit, weiß, im Alter schmutzig gelb. Vom gemeinsamen Strunk gehen aufwärts gerichtete Äste aus."

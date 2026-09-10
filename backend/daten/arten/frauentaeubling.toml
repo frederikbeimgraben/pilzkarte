@@ -6,6 +6,10 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Die biegsamen, nicht brechenden Lamellen sind sein sicherstes Merkmal."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Violettgrüner Frauentäubling", "Blautäubling", "Rissighütiger Frauentäubling", "Bläulicher Täubling", "Grüntäubling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Frauentaeubling.htm"
@@ -30,6 +34,13 @@ reaktion = "Huthaut bräunlich."
 [[reagenzien]]
 reagenz = "ammoniak"
 reaktion = "Rosaorange."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0 }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 6.5, bis = 10.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.5 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 16 cm breit, grün, braun, blau bis lila in wechselnden Mischungen, Huthaut meist glanzlos. Mitte meist vertieft."

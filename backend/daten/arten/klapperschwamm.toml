@@ -6,10 +6,17 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kastanie", "linde", "buche"]
 speisewertHinweis = "Nur jung essbar, im Alter wird er sehr zäh."
+marktfaehig = true
+weitereNamen = ["Maitake", "Spatelhütiger Porling", "Laubporling", "Kamm-Porling Graue Gans", "Gemeiner Klapperschwamm"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Klapperschwamm.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 5.0, bis = 7.0 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
 hut = "3 bis 7, selten bis 9 cm breit je Einzelhut, graubraun, in Büscheln bis 50 cm Breite. Breite halbierte Einzelhüte, büschelig oder rosettenartig verwachsen, Oberseite etwas radialfaserig oder runzelig."

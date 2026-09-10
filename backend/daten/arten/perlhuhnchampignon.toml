@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen an dem tintigen, karbolartigen Geruch nach Phenol, Jodoform oder faulem Stroh und am Gilben des Fleisches, vor allem an der Stielbasis. Der Hut ist grau bis schwarzbraun geschuppt wie ein Perlhuhngefieder. Nicht essen."
+marktfaehig = false
+weitereNamen = ["Perlhuhnegerling"]
+synonyme = ["Agaricus meleagris", "Agaricus praeclaresquamosus", "Agaricus placomyces var. meleagris", "Agaricus xanthodermus var. obscuratus", "Psalliota meleagris var. obscurata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Perhuhnegerling.htm"
@@ -19,6 +22,13 @@ reaktion = "Gelb."
 [[reagenzien]]
 reagenz = "schaeffer"
 reaktion = "Negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 11, selten bis 13 cm breit, fein grau bis braun oder schwarzbraun geschuppt auf weißem bis hellgelbem Grund, an ein Perlhuhngefieder erinnernd. Scheitel dunkler und nicht flockig."

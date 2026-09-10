@@ -6,10 +6,21 @@ geschuetzt = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["pappel", "laerche"]
 speisewertHinweis = "Ohne den starken Mehlgeruch stehen lassen. Zur selben Zeit und am selben Ort wachsen tödlich giftige Risspilze."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Mairitterling", "Georgsritterling", "Gelber Schönkopf", "Maischönkopf", "Huf-Ritterling Mairitterling", "Maiblattl", "Huf-Ritterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 10.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 4.0, bis = 7.0 }
+sporenBreiteUm = { von = 2.0, bis = 4.0 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 20 cm breit, weiß, cremeweiß bis gelblich, matt, oft bereift fleckig. Rand jung eingerollt, im Alter von der Mitte her bräunlich schuppig. Form oft unregelmäßig verbogen."

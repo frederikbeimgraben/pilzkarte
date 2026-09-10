@@ -7,10 +7,20 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Gut zum Trocknen und als Mischpilz. Beim Putzen den hohlen Stiel prüfen, dort sitzen oft Schnecken und Insekten. Alte, nicht mehr brauchbare Stücke verfärben sich schwärzlich."
 schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Der Trompetenpfifferling steht heute meist als Craterellus tubaeformis und wird hier mit ihnen geschützt."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Trompetenpfifferlinge", "Durchbohrter Leistling", "Hohlstieliger Leistling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Trompetenpfifferlinge.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 9.0, bis = 11.0 }
+sporenBreiteUm = { von = 6.0, bis = 8.0 }
 
 [merkmale]
 hut = "1 bis 7, selten bis 9 cm breit, gelbbraun, in der Mitte gefurcht und radial wellig."

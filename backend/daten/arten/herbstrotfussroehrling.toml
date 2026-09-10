@@ -6,6 +6,10 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Herbstrotfuß", "Bereifter Rotfuß", "Stattlicher Rotfuß"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotfussHerbst.htm"
@@ -14,6 +18,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "melzer"
 reaktion = "Fleisch junger Fruchtkörper olivgrün."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 9.0, bis = 17.0 }
+sporenBreiteUm = { von = 3.8, bis = 6.2 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 10 cm breit, bräunlich, samtig filzig, später aufreißend. Unter der Huthaut liegt immer eine Rotfärbung. Oberfläche feucht klebrig. Gelbliche Fraßstellen werden nach einigen Stunden rötlich."

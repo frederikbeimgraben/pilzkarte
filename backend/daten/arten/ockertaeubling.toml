@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["pappel"]
 speisewertHinweis = "Sehr minderwertig, 123pilzsuche gibt die Relative Wertigkeit 5. Er schmeckt teils schärflich und etwas bitterlich."
+marktfaehig = false
+wertigkeit = 5
+weitereNamen = ["Ockergelber Täubling", "Zitronentäubling", "Ockerweißer Täubling"]
+synonyme = ["Russula citrina", "Russula granulosa", "Russula ochroleuca var. granulosa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ockertaeubling.htm"
@@ -35,6 +39,11 @@ reaktion = "Keine oder kaum eine Reaktion."
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "An der Stielbasis rot, feuerrot bis rostrot. Markantes Merkmal."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
 
 [merkmale]
 hut = "3 bis 10, selten bis 12 cm breit, hellgelb, gelbocker, honiggelb, olivocker, grünocker oder rostrot, kahl und matt, nur feucht etwas glänzend. Huthaut bis zur Hälfte abziehbar, Rand glatt bis schwach gerieft, im Alter leicht trichterförmig."

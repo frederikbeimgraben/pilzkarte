@@ -7,10 +7,20 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 karte = "reizker"
 speisewertHinweis = "Schmeckt bitterlich und leicht scharf, geringer als der Edelreizker."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Nadelwaldreizker"]
+synonyme = ["Lactarius deliciosus var. deterrimus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fichtenreizker.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 5.0, bis = 15.0, seltenBis = 17.0 }
+sporenLaengeUm = { von = 7.5, bis = 10.0 }
+sporenBreiteUm = { von = 6.0, bis = 7.6 }
 
 [merkmale]
 hut = "4 bis 10, selten bis 15 cm breit, orange bis orangerot, ausblassend, bald mit kräftigen grünen Flecken vor allem in der Mitte, dunkler gezont. Feucht stark schleimig, später flach trichterförmig vertieft."

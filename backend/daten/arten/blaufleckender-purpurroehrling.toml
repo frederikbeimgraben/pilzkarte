@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["sommer"]
 baeume = []
 speisewertHinweis = "Er hat schon Unverträglichkeitsreaktionen ausgelöst und ist roh giftig. Zu erkennen an der blauenden Huthaut, dem roten Netz am Stiel und dem im Alter aasartigen Geruch."
+marktfaehig = false
+gefaehrdung = "extremSelten"
+weitereNamen = ["Dunkler Purpurröhrling", "Weinroter Purpurröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BlaufleckenderPurpurroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 6.0, bis = 12.0, seltenBis = 18.0 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
 hut = "6 bis 12, selten bis 18 cm breit, purpurrot, weinrosa, altrosa bis primelgelb auf gelblichem oder rosa Grund, oft bunt blaukörnig fleckend. Die Oberfläche blaut, Schneckenfraßstellen sind weinrot oder blau. Polsterförmig, samthaarig, filzig und körnig schuppig."

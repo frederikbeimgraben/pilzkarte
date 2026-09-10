@@ -6,6 +6,11 @@ geschuetzt = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["obstbaum"]
 speisewertHinweis = "Roh sehr giftig, mindestens fünf bis zehn Minuten garen. Rötlinge sind schwer zu bestimmen und mit tödlich giftigen Arten zu verwechseln; nur für Kenner."
+marktfaehig = true
+wertigkeit = 3
+haeufigkeit = "selten"
+weitereNamen = ["Geflammter Rötling"]
+synonyme = ["Agaricus clypeatus", "Rhodophyllus clypeatus", "Hyporrhodius clypeatus", "Entoloma clypeatum f. hybridum", "Rhodophyllus aprilis f. hybridus", "Entoloma clypeatum f. xanthophyllum", "Rhodophyllus clypeatus var. hybridus", "Rhodophyllus clypeatus var. niveus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schildroetling.htm"
@@ -18,6 +23,13 @@ reaktion = "Im Fleisch negativ oder sehr schwach."
 [[reagenzien]]
 reagenz = "guajak"
 reaktion = "Im Fleisch negativ oder sehr schwach."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
+stielDickeCm = { von = 0.5, bis = 0.8, seltenBis = 1.2 }
+sporenLaengeUm = { von = 7.7, bis = 10.1 }
+sporenBreiteUm = { von = 6.6, bis = 8.8 }
 
 [merkmale]
 hut = "2 bis 9, selten bis 12 cm breit, graubraun, blassbraun, horngrau, sepia-, dunkel-, silbrig- oder olivbraun. Jung kegelig gewölbt, später ausgebreitet mit stumpfem Buckel, radial eingewachsen faserig, kaum ausblassend. Rand rissig wie bei den Risspilzen und lange eingebogen."

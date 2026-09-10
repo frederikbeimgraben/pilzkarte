@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Seitenkopf nennt ihn nur bedingt essbar und mit Alkohol giftig. Von ihm stammt der Rat, zum Pilzgericht keinen Alkohol zu trinken; er verursacht dann Magen-Darm-Beschwerden. Alte Pilze sind vom Netzstieligen Hexenröhrling nur mikroskopisch zu trennen."
+marktfaehig = false
+weitereNamen = ["Trügerischer Hexenpilz"]
+synonyme = ["Boletus mendax"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KurznetzHexe.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
+sporenLaengeUm = { von = 13.2, bis = 15.5 }
+sporenBreiteUm = { von = 4.5, bis = 5.7 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 22 cm breit, dunkelbraun, weinrot, olivbraun oder graubraun, samtig und klebrig. Zwischen Hutfleisch und Röhren liegt eine rote Zone, ein gutes Erkennungsmerkmal."

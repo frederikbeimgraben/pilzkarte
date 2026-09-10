@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Laut Bundesartenschutzgesetz vollständig geschützt und in Deutschland stark gefährdet. Nicht sammeln."
+marktfaehig = true
+haeufigkeit = "selten"
+gefaehrdung = "starkGefaehrdet"
+weitereNamen = ["Sommerröhrling"]
+synonyme = ["Boletus fechtneri"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Silberroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 19.0 }
+sporenLaengeUm = { von = 10.0, bis = 15.0 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 15, selten bis 19 cm breit, milchkaffeebraun, silbergrau bis rotbraun, alt graubraun, seidig und trocken, ohne violette Farben, halbkugelig bis polsterförmig, Rand uneben."

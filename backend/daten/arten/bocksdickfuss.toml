@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der widerliche Geruch nach Ziegenbock, Schweißfüßen oder faulenden Kartoffeln macht ihn leicht kenntlich."
+marktfaehig = false
+haeufigkeit = "haeufig"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bocksdickfuss105.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 8.5, bis = 11.0 }
+sporenBreiteUm = { von = 5.5, bis = 6.5 }
 
 [merkmale]
 hut = "2 bis 9, selten bis 12 cm breit, helllila, lilablau bis weißlich, hygrophan, die Mitte wird gelbbraun."

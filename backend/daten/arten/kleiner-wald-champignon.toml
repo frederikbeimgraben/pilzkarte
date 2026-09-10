@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nicht roh verzehren, das kann unverträglich sein."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Waldegerling", "Waldchampignon", "Kleiner Blutegerling"]
+synonyme = ["Psalliota silvatica var. pallida", "Agaricus haemorrhoidarius forma fagetorum", "Agaricus silvaticus var. vinosobrunneus", "Psalliota sanguinaria", "Agaricus silvaticus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Waldegerling.htm"
@@ -19,6 +23,11 @@ reaktion = "Nicht oder kaum verfärbend."
 [[reagenzien]]
 reagenz = "schaeffer"
 reaktion = "Negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 4.4, bis = 6.5 }
+sporenBreiteUm = { von = 2.9, bis = 4.3 }
 
 [merkmale]
 hut = "4 bis 8, selten bis 10 cm breit, Grundfarbe weiß bis gelb, mit hellbräunlichen, rot- bis dunkelbraunen Schuppen. Zum Rand hin sind die Schuppen meist größer und stehen weiter auseinander."

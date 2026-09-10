@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "In Deutschland stark gefährdet und vollständig geschützt. Nicht sammeln, nur stehen lassen und melden."
+marktfaehig = true
+haeufigkeit = "sehrSelten"
+gefaehrdung = "starkGefaehrdet"
+synonyme = ["Boletus regius"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koenigesroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 12.0, bis = 17.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 20 cm breit, blutrot, purpurrot, kirschrot, rosarot bis oliv, trocken, glatt bis feinfilzig-schorfig oder samtig. Alt mit Falten und Gruben."

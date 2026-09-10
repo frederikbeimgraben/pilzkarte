@@ -7,10 +7,19 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "flaschenbovist"
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Flaschenstäubling", "Warzen-Stäubling", "Würziger Staubbuff", "Warziger Staubbuff", "Nonnefürzli", "Judenfurzpilz", "Fohenfist"]
+synonyme = ["Lycoperdon perlatum var. perlatum", "Lycoperdon gemmatum var. perlatum", "Lycoperdon gemmatum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flaschenstaeubling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 3.3, bis = 3.9 }
+sporenBreiteUm = { von = 3.4, bis = 3.8 }
 
 [merkmale]
 fruchtkoerper = "2 bis 5, selten bis 7 cm breit und bis 8 cm hoch, keulig bis birnenförmig mit stielartigem Fuß. Jung weiß, im Alter bräunlich."

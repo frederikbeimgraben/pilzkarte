@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Giftig. Der bitterliche Geschmack, die jung zitronengelben Lamellen und das gelbbraune Sporenpulver trennen ihn von essbaren Holzbewohnern."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Dunkelstieliger Flämmling"]
+synonyme = ["Fulvidula picrea", "Gymnopilus satur"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerFlaemmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 4.5, bis = 6.0 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 7 cm breit, zimtbraun bis rotbraun, trocken verblassend."

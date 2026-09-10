@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Magen-Darm-giftig. Aus südlichen Ländern sind viele heftige Vergiftungen gemeldet. Zu erkennen an den im Alter grünlichen Lamellen und am grünlichen Sporenpulver."
+marktfaehig = false
+weitereNamen = ["Grünsporiger Riesenschirmling", "Falscher Parasol"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gruensporschirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 9.0, bis = 13.0 }
+sporenBreiteUm = { von = 6.0, bis = 9.0 }
 
 [merkmale]
 hut = "3 bis 9, selten bis 13 cm breit, weiß und wollig, jung mit hellbraunen landkartenartigen Zonen und abstehenden Schüppchen, Rand flockig."

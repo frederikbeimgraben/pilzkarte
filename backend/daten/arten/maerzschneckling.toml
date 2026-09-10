@@ -6,10 +6,20 @@ geschuetzt = true
 jahreszeiten = ["fruehling"]
 baeume = ["tanne", "fichte", "buche"]
 speisewertHinweis = "Besonders geschützt und in Deutschland stark gefährdet. Den Fund besser stehen lassen."
+marktfaehig = true
+wertigkeit = 1
+gefaehrdung = "starkGefaehrdet"
+weitereNamen = ["Märzellerling", "Schneepilz"]
+synonyme = ["Limacium camarophyllum subsp. marzuolum", "Agaricus marzuolus", "Clitocybe marzuolus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Maerzschneckling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.5 }
+sporenBreiteUm = { von = 4.0, bis = 6.5 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 12 cm breit, weißlich bis grauschwarz oder braunschwarz, zum Rand grauer, fleckig, klebrig, radial streifig und wellig gebogen. Die Huthaut färbt das Fleisch etwas durch."

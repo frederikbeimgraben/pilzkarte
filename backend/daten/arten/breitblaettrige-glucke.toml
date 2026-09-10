@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "tanne"]
 speisewertHinweis = "Das Fleisch ist zäh und gummiartig, roh gilt die Wertigkeit 4 bis 5. Erst mit langer, besonderer Zubereitung wird sie brauchbar. In Deutschland gefährdet, regional stark gefährdet, deshalb besser stehen lassen."
+marktfaehig = false
+wertigkeit = 4
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Eichenglucke", "Tannenglucke", "Bärenschädel", "Breitblättrige Krause-Glucke"]
+synonyme = ["Sparassis nemecii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BreitblaettrigeKrauseGlucke2004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 6.0, bis = 30.0, seltenBis = 100.0 }
+sporenLaengeUm = { von = 4.5, bis = 7.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.5 }
 
 [merkmale]
 fruchtkoerper = "6 bis 30, selten bis 100 cm breit, hirnartig und schwammartig breit gekräuselt, zuerst weißlich, später gelblich, die Spitzen heller. Die Lappen sind breiter als bei der Krausen Glucke."

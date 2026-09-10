@@ -6,10 +6,19 @@ geschuetzt = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Die DGfM meldet häufig Magen-Darm-Beschwerden. Er galt früher als essbar. Wegen der Verwechslung mit Knollenblätterpilzen ganz meiden."
+marktfaehig = false
+weitereNamen = ["Rosablättriger Egerlingsschirmpilz", "Gemeiner Egerlingsschirmling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RosablaettrigerEggerling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 6.0, bis = 7.0, seltenBis = 9.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.5 }
+sporenLaengeUm = { von = 7.0, bis = 9.8 }
+sporenBreiteUm = { von = 4.8, bis = 6.1 }
 
 [merkmale]
 hut = "3 bis 11, selten bis 15 cm breit, weiß bis cremefarben, seidig, Rand überhängend. Scheibe im Alter oft blassocker und stumpf gebuckelt."

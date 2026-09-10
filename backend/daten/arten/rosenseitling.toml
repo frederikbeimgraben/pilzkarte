@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
 speisewertHinweis = "Essbar. In Mitteleuropa ist er nur als Zuchtpilz zu erwarten."
+marktfaehig = false
+wertigkeit = 2
+weitereNamen = ["Rosenroter Seitling", "Rosa Seitling", "Rosafarbener Seitling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rosenseitling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 1.5, bis = 3.0 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, gelblich bis rosafarben, rosenrot, hellgrau oder rosabraun, samtig filzig."

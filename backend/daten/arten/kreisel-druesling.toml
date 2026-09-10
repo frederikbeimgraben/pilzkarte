@@ -6,10 +6,20 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["weide"]
+marktfaehig = false
+wertigkeit = 4
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Weidendrüsling"]
+synonyme = ["Tremella r ecisa", "Peziza gelatinosa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kreiseldruesling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 1.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 10.0, bis = 17.0 }
+sporenBreiteUm = { von = 2.5, bis = 5.2 }
 
 [merkmale]
 fruchtkoerper = "1 bis 9, selten bis 12 cm breit, haselnussbraun, kandisbraun, kastanienbraun, gelb bis schwarzbraun, gallertartig. Zuerst kopfig gestielt und scheibenförmig oder gewölbt, später kreisel- bis leicht becherförmig und flach ausgebreitet. Oberseite jung glatt, später runzlig-uneben, Rand scharf wie abgeschnitten und oberhalb kerbig gerieft, Unterseite körnig-warzig. Fast nie ohrförmig, wächst einzeln und verschmilzt nicht."

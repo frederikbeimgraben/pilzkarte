@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur solange die innere Fruchtschicht rein weiß ist. Er schmeckt fade und gilt in der Schweiz als nicht marktfähig."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "sehrHaeufig"
+synonyme = ["Lycoperdon pyriforme", "Morganella pyriformis", "Utraria pyriformis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birnenstaeubling1004.htm"
@@ -15,6 +19,9 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf der Oberfläche ohne Reaktion."
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
 
 [merkmale]
 fruchtkoerper = "2 bis 6, selten bis 8 cm breit, kugelig bis birnenförmig und kopfig gestielt, bräunlich, selten mit Lilaton, mit dunkelbraunen kleiigen bis flockigen Warzen. Oben mit Sporenöffnung, Basisteil steril und stark im Substrat wurzelnd. Oft büschelig."

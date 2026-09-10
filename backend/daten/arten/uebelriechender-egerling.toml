@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungenießbar wegen des widerlich fischartigen Geruchs."
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Übelriechender Champignon"]
+synonyme = ["Psalliota ingrata", "Agaricus ingratus", "Agaricus bernardii syn. maleolens", "Agaricus ingratus syn. maleolens", "Agaricus ingratus var. maleolens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/UebelriechenderEgerling.htm"
@@ -15,6 +19,11 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Kaum verfärbend."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
 
 [merkmale]
 hut = "3 bis 9, selten bis 12 cm breit, schmutzigbraun bis gelbbraun, später braunschuppig auf weißlichem Grund, jung glatt, Rand lange eingerollt."

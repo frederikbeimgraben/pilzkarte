@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Er schmeckt schärflich bis bitterlich. In Deutschland vom Aussterben bedroht und deshalb stehen zu lassen."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "vomAussterbenBedroht"
+synonyme = ["Piptoporus hirtus", "Polyporus lucienqueletii", "Cerioporus lucienqueletii", "Polyporus hirtus", "Albatrellus hirtus", "Favolus hirtus", "Polyporellus hirtus", "Polyporus hispidellus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Haarstielporling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 18.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 2.0, bis = 17.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
 
 [merkmale]
 hut = "5 bis 18, selten bis 25 cm breit, hellbraun, gelbbraun, orangebraun, rosabraun bis kastanienbraun, fein samtig kurzhaarig mit verklebten Haarbüscheln, filzig. Rand gewellt, dünnfleischig."

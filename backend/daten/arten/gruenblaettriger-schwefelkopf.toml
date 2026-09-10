@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
 speisewertHinweis = "Er macht starke Magen-Darm-Störungen, die über mehrere Tage anhalten. Zu erkennen an den grünen bis grüngelben Lamellen und am stark bitteren Geschmack."
+marktfaehig = false
+weitereNamen = ["Büscheliger Schwefelkopf", "Bitterer Schwefelkopf"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenblaettrigerSchwefelkopf.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
+stielDickeCm = { von = 0.4, bis = 2.0, seltenBis = 3.0 }
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, schwefelgelb bis grünlich, Mitte ocker bis rotbraun, Rand heller und oft mit gelblichem Flockensaum. Kahl und dünnfleischig, jung halbkugelig und oft stumpf gebuckelt, im Alter flach."

@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Kenntlich an den beim Reiben gilbenden Lamellen und am ranzig mehligen Geruch. Die Gilbung bleibt oft aus, deshalb ist er schwer zu bestimmen und von den giftigen Erdritterlingen kaum sicher zu trennen."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Gilbernder Erdritterling", "Silbergrauer Erdritterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GilbenderErd.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 4.5, bis = 7.0 }
+sporenBreiteUm = { von = 2.8, bis = 4.0 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 9 cm breit, hell silbergrau bis graubraun auf cremegrauem Grund, trocken, filzig und schuppig, mit kleinem Buckel. Rand jung eingebogen und durch weißliche Cortinareste mit dem Stiel verbunden."

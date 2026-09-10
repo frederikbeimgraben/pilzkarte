@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Guter Speisepilz, als Raufußröhrling aber besonders geschützt. Nur wenige Stücke für den Eigenbedarf nehmen."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "selten"
+weitereNamen = ["Schwärzlicher Birkenpilz"]
+synonyme = ["Leccinum scabrum var. melaneum", "Krombholzia scabra f. melanea", "Krombholziella melanea", "Boletus melaneus", "Boletus scaber var. melaneus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerBirkenpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 12.0 }
+sporenLaengeUm = { von = 11.0, bis = 17.0 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 10, selten bis 12 cm breit, dunkel schwarzbraun, dunkel rotbraun bis graubraun, feinsamtig, feucht etwas schmierig."

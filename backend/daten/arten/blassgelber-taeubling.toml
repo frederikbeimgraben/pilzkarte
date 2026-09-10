@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Er schmeckt scharf und wird gern für den milden Ockertäubling gehalten. Im Zweifel Sporen nehmen: Bei ihm ist das Pulver weiß, beim Ockertäubling gelblich."
+marktfaehig = false
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Weißblättriger Ockertäubling"]
+synonyme = ["Russula ochroleuca var. raoultii", "Russula emetica f. raoultii", "Russula fragilis var. nivea sensu", "Russula fragilis var. raoultii", "Russula raoultii var. meridionalis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BlassgelberTaeubling.htm"
@@ -35,6 +39,11 @@ reaktion = "Keine oder kaum eine Reaktion."
 [[reagenzien]]
 reagenz = "sulfovanillin"
 reaktion = "Keine oder kaum eine Reaktion."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
+stielLaengeCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
+stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.5 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, jung zitronengelb, später blasser bis gelbocker, Rand heller. Kahl und etwas glänzend, Huthaut abziehbar."

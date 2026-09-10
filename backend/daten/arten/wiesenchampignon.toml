@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur Fruchtkörper mit rosa Lamellen nehmen; sind die Lamellen braun, ist der Pilz alt. Tödlich giftige Knollenblätterpilze haben nie rosa Lamellen. Läuft die Stielbasis gelb an oder riecht der Pilz nach Karbol oder Tinte, bleibt er stehen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Maichampignon", "Feldegerling", "Wiesenegerling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Wiesenchampinon.htm"
@@ -18,6 +21,11 @@ reaktion = "Nicht oder kaum verfärbend."
 [[reagenzien]]
 reagenz = "schaeffer"
 reaktion = "Fast immer negativ. Seltene Unterarten reagieren positiv."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 13.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 5.5, bis = 10.0 }
+sporenBreiteUm = { von = 4.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 13, selten bis 16 cm breit, kleiner als der Schafchampignon. Haut weiß, alt grau bis graubraun, jung feinschuppig und über den Hutrand hinaus abziehbar. Alt von der Mitte her mit bräunlichen, flach anliegenden Schuppen. Rand meist weißlich und mit Velumresten behangen."

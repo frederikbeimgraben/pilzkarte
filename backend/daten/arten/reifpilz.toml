@@ -6,10 +6,19 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte"]
 speisewertHinweis = "Er ist häufig von Maden befallen."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Zigeuner", "Runzelschüppling", "Hühnerkoppe", "Scheidenrunzling Reifpilz"]
+synonyme = ["Rozites caperatus", "Rozites caperata", "Agaricus caperatus", "Pholiota caperata", "Dryophila caperata", "Togaria caperata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ReifpilzEssbar1004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 10.0, bis = 14.0 }
+sporenBreiteUm = { von = 7.0, bis = 9.0 }
 
 [merkmale]
 hut = "3 bis 10, selten bis 15 cm breit, violett-hellbraun, graubraun, rosabraun, umbrabraun, gelb-, orange- bis beigebraun, meist mit weißem oder hell violettem Reifüberzug. Haut uneben."

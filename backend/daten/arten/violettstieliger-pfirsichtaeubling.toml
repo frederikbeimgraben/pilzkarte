@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ältere Fruchtkörper riechen heringsartig; dann besser stehen lassen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Violettstieliger Brätlingstäubling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ViolettstieligerPfirsichtaeubling.htm"
@@ -23,6 +27,13 @@ reaktion = "Dunkelgrün."
 [[reagenzien]]
 reagenz = "phenol"
 reaktion = "Langsam weinbraun bis purpurschokoladenbraun."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 5.3, bis = 8.0 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, gelb, zitronengelb, grüngelb bis gelbviolett, später violettbraun, rotbraun oder grünrosa. Huthaut gummi- bis wachsartig, manchmal bereift, leicht abziehbar. Rand im Alter oft herabgebogen."

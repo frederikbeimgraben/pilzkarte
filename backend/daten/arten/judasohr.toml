@@ -5,10 +5,18 @@ speisewert = "speisepilz"
 geschuetzt = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["holunder", "birke"]
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Holunderschwammpilz", "Holunderpilz", "Holunderschwamm", "Black Fungus", "Weißes Judasohr"]
+synonyme = ["Auricularia auricula", "Auricularia sambucina oder hirneola auricula-judae", "Auricularia polytricha"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Judasohr.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+sporenLaengeUm = { von = 11.0, bis = 23.0 }
+sporenBreiteUm = { von = 4.0, bis = 8.0 }
 
 [merkmale]
 fruchtkoerper = "1 bis 13, selten bis 16 cm breit, ohrförmig, braun, schwarzbraun bis schwarz, selten weiß, von Adern durchzogen, Oberfläche meist etwas feinfilzig. Die Rückseite ist feinkörnig filzig und blassgrau."

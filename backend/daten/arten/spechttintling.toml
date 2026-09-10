@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungenießbar wegen des muffigen Geruchs und Geschmacks."
+marktfaehig = false
+weitereNamen = ["Elsterntintling"]
+synonyme = ["Coprinus picaceus", "Agaricus picaceus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Spechttintling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 10.0, bis = 15.0, seltenBis = 25.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 14.0, bis = 18.5 }
+sporenBreiteUm = { von = 10.0, bis = 13.0 }
 
 [merkmale]
 hut = "1 bis 4, selten bis 8 cm breit, braun, mit weißen flockigen Schuppen besetzt. Im Alter rollt sich der Rand nach oben und der Pilz zerfließt schwarz."

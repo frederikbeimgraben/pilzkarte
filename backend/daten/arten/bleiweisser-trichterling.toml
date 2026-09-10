@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er wird für den Mehlräsling gehalten, riecht aber nicht nach Mehl, sondern muffig süßlich bis parfümiert. Weiße Trichterlinge gelten als Muscarinträger; weiße Pilze aus Wald und Garten gehören nicht in den Korb."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Bleiweißer Firnistrichterling", "Laubfreundtrichterling", "Streuliebender Trichterling", "Fichtentrichterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BleiweisserTrichterling2004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 14.0 }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 3.2, bis = 5.0 }
+sporenBreiteUm = { von = 2.5, bis = 4.0 }
 
 [merkmale]
 hut = "2 bis 9, selten bis 14 cm breit, flach gewölbt oder leicht gebuckelt, weiß und schimmelartig glasig bereift."

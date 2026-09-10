@@ -7,6 +7,11 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Brennend scharf und bitter. In Deutschland gefährdet."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Flammenstieltäubling"]
+synonyme = ["Russula rhodopoda"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flammstiel.htm"
@@ -23,6 +28,13 @@ reaktion = "Dunkelgrün bis fast schwarz."
 [[reagenzien]]
 reagenz = "phenol"
 reaktion = "Weinbraun."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 8.0 }
+stielDickeCm = { von = 0.6, bis = 1.5, seltenBis = 2.5 }
+sporenLaengeUm = { von = 7.0, bis = 9.0 }
+sporenBreiteUm = { von = 7.0, bis = 8.0 }
 
 [merkmale]
 hut = "4 bis 10, selten bis 13 cm breit, blut- bis kirschrot, Mitte meist dunkler, selten cremefarben bis gelb. Die Haut lässt sich zu zwei Dritteln abziehen, feucht glänzend und schmierig. Rand glatt, lange eingerollt und unregelmäßig gelappt."

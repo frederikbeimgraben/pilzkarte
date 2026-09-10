@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche"]
 speisewertHinweis = "Nur ganz jung weich, sonst hart. Die Wertigkeit liegt bei 4. In Deutschland vom Aussterben bedroht, deshalb stehen lassen."
+marktfaehig = false
+wertigkeit = 4
+haeufigkeit = "sehrSelten"
+gefaehrdung = "vomAussterbenBedroht"
+weitereNamen = ["Eichenzungenporling"]
+synonyme = ["Antrodia quercina", "Polyporus quercicola", "Polystictus fuscopellis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenzunge.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 25.0, seltenBis = 30.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 3.0, bis = 4.0 }
 
 [merkmale]
 hut = "5 bis 25, selten bis 30 cm breit, blass lederfarben, ockerbraun, gelbbraun bis orangebraun, alt schwarzbraun, flockig körnig, zungenförmig, teils mit weißlichem Rand. Auf Druck rotbraun verfärbend."

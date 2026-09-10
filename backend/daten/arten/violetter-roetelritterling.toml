@@ -6,10 +6,20 @@ geschuetzt = false
 jahreszeiten = ["herbst", "winter"]
 baeume = []
 speisewertHinweis = "Roh giftig. Er zersetzt rote Blutkörperchen und enthält Blausäure. Immer gut durchgaren oder trocknen, dann zerfällt die Blausäure."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Nackter Rötelritterling", "Violetter Röteltrichterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/VioletterRoetelritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 4.0, bis = 13.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 18, selten bis 22 cm breit, lilaviolett bis rosaviolett, alt bräunlich bis fleischlila, Mitte etwas violettbraun. Matt bis leicht glänzend, hygrophan, Huthaut kahl und glatt, Rand lange eingerollt."

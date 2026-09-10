@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Extrem selten, deshalb besser stehen lassen. Alte Fruchtkörper werden bitter."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+synonyme = ["Dentinum umbilicatum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GenabelterSemmelstoppelpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 2.5, bis = 6.0 }
+sporenLaengeUm = { von = 8.0, bis = 10.0 }
+sporenBreiteUm = { von = 7.5, bis = 8.5 }
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, jung weißlich gelb bis semmelgelb, später dunkler gelblich. Rand lange eingerollt, Mitte genabelt und vertieft."

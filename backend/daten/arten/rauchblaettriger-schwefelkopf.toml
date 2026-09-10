@@ -6,6 +6,9 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["herbst", "fruehling"]
 baeume = ["kiefer", "fichte", "douglasie"]
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Graublättriger Schwefelkopf"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rauchblaettrige.htm"
@@ -14,6 +17,12 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut rot."
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 6.0, bis = 9.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 hut = "1 bis 8, selten bis 12 cm breit, ockerbraun bis gelbbraun, ocker bis dunkelbraun, kahl und ohne Schüppchen, Rand meist heller und teils mit feinen Schleierresten."

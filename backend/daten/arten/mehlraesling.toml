@@ -6,6 +6,9 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur mit starkem Mehlgeruch und rosa Sporenabdruck nehmen. Fehlt eines von beiden, kann es ein tödlich giftiger weißer Trichterling sein."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Mehlpilz", "Großer Mehlräsling", "Moosling", "Großer Musseron", "Pflaumenpilz", "Pflaumen-Räsling", "Simmerling", "Pflaumen-Rässling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MehlraeslingEssbar1004.htm"
@@ -14,6 +17,12 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut ohne Reaktion."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 15.0, seltenBis = 20.0 }
+stielLaengeCm = { von = 2.0, bis = 10.0, seltenBis = 18.0 }
+sporenLaengeUm = { von = 8.5, bis = 12.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.5 }
 
 [merkmale]
 hut = "2 bis 15, selten bis 20 cm breit, weiß, grauweiß bis braungrau, fein bereift und samtig. Mitte unregelmäßig vertieft, teils mit leichten Buckeln, Rand eingerollt und wellig mit brüchigen Kanten. Ein Fingerdruck bleibt oft sichtbar."

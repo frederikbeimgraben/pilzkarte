@@ -6,10 +6,20 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter"]
 baeume = []
+marktfaehig = false
+wertigkeit = 1
+weitereNamen = ["Blassblauer Rötelritterling", "Blasser Rötelritterling"]
+synonyme = ["Lepista nuda var. glaucocana", "Rhodopaxillus glaucocanus", "Clitocybe glaucocana"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LavendelRoetelritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0 }
+stielLaengeCm = { von = 6.0, bis = 10.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.0 }
+sporenBreiteUm = { von = 3.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 12, selten bis 16 cm breit, rötlichlila bis lavendelfarben, beim Trocknen heller werdend. Huthaut kahl und glatt, Rand lange eingerollt."

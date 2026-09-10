@@ -6,10 +6,21 @@ geschuetzt = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Roh führt er zu Vergiftungen. Durchgaren und nur junge Stücke nehmen, im Alter wird das Fleisch schwarz und ist dann nicht mehr essbar."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "haeufig"
+weitereNamen = ["Birkenrotkappe", "Heiderotkappe", "Schwarzschuppiger Birkenröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenrotkappe2004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 22.0 }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 12.0, bis = 16.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 20, selten bis 22 cm breit, braunrot bis orangegelb, feinfilzig, dickfleischig, trocken, bei Nässe schmierig und klebrig. Die Huthaut steht am Rand über."

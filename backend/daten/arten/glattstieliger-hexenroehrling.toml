@@ -7,10 +7,22 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Roh giftig, nur durchgegart essen. In Deutschland gefährdet (Rote Liste 3) und in der Schweiz verletzlich."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "selten"
+gefaehrdung = "gefaehrdet"
+synonyme = ["Boletus queletii", "Boletus queletii var. lateritius", "Boletus queletii var. rubicundus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Glatthexe.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5 }
+sporenLaengeUm = { von = 8.8, bis = 15.2 }
+sporenBreiteUm = { von = 4.4, bis = 7.5 }
 
 [merkmale]
 hut = "5 bis 15, selten bis 25 cm breit, sehr verschieden gefärbt: braun, rötlich, kupfer-karminrot, lebhaft orange, rubin-, granat- bis braunrot, aber ohne Olivton. Samtig, alt kahl, auf Druck blauend."

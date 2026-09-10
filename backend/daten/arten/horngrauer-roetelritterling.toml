@@ -6,10 +6,18 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = true
+wertigkeit = 4
+weitereNamen = ["Graubräunlicher Rötelritterling", "Marmorierter Röteltrichterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/HorngrauerRoetelritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.5 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 11 cm breit, graubraun mit konzentrischen Wasserflecken, faserig. Rand wellig, verbogen und meist hochgebogen."

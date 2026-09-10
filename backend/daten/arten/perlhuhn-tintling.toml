@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als ungenießbar und verdächtig. Nicht essen."
+marktfaehig = false
+synonyme = ["Coprinus strossmayeri"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Perlhuhn-Tintling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 6.0, bis = 8.5 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 hut = "1 bis 5, selten bis 7 cm breit, weißgrau, ockergelblich, graubraun, im Alter dunkelbraun, mit sparrigen abwischbaren grauweißen Schuppen, ungerieft. Mitte dunkler, jung langgestreckt glockig, alt kegelig glockig, am Lebensende schwarz zerfließend."

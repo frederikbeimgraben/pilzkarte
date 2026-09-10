@@ -7,10 +7,18 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungeniessbar. Erdritterlinge sind schwer zu trennen und gelten als verdaechtig, deshalb keine Kostproben."
+marktfaehig = true
+synonyme = ["Tricholoma inocybeoides", "Tricholoma inocyboides", "Tricholoma scalpturatum var. argyraceum", "Tricholoma argyraceum forma inocybeoides", "Tricholoma myomyces var. argyraceum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RisspilzErdritterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
+sporenLaengeUm = { von = 4.5, bis = 7.0 }
+sporenBreiteUm = { von = 2.7, bis = 4.5 }
 
 [merkmale]
 hut = "3 bis 8, selten bis 10 cm breit, hell silbergrau, graubraun bis lilabraun, trocken, filzig und schuppig, mit kleinem spitzem Buckel. Rand etwas eingebogen und uneben, ohne auffaelliges Velum."

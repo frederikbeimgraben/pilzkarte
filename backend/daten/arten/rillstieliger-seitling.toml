@@ -7,10 +7,22 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["weide", "ulme", "pappel"]
 speisewertHinweis = "Roh enthält er Hämolysine und zersetzt rote Blutkörperchen. Nur durchgegart essen."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "selten"
+weitereNamen = ["Verzweigter Austernseitling"]
+synonyme = ["Pleurotus ostreatus var. cornucopiae", "Crepidotus cornucopiae", "Pocillaria cornucopioides"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RillstieligerSeitling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 11.0, seltenBis = 15.0 }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 9.0 }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
+sporenLaengeUm = { von = 7.0, bis = 11.8 }
+sporenBreiteUm = { von = 3.4, bis = 5.0 }
 
 [merkmale]
 hut = "2 bis 11, selten bis 15 cm breit, hellbraun, graubraun, gelbbraun bis blass gelbgrau, im Alter fuchsigbraun. Anfangs etwas flockig, bald kahl, trichterförmig, Rand gebogen, oft eingerissen und wellig."

@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Bei allen Riesenschirmlingen muss der Ring am Stiel verschiebbar sein. Roh ist er unbekömmlich."
+marktfaehig = true
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+gefaehrdung = "gefaehrdet"
+weitereNamen = ["Ackerriesenschirmpilz", "Geschundener Schirmling", "Ackerschirmling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ackerschirmpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 14.0 }
+stielDickeCm = { von = 0.7, bis = 1.5, seltenBis = 2.0 }
+sporenLaengeUm = { von = 12.0, bis = 15.0 }
+sporenBreiteUm = { von = 8.0, bis = 9.0 }
 
 [merkmale]
 hut = "3 bis 11, selten bis 14 cm breit, grauweiß, graubraun, beige bis karamellbraun auf cremeweißem bis hellgelbem Grund. Jung glockig bis halbkugelig, später ausgebreitet, Mitte glatt und braun bleibend. Schüppchen sternförmig eingedrückt, Rand oft mit fetzigen Ringresten behangen."

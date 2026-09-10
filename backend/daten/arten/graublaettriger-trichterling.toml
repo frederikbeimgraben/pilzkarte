@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Graue Trichterlinge sind keine Speisepilze."
+marktfaehig = false
+synonyme = ["Clitocybe inornata", "Omphalia inornata", "Paxillus inornatus", "Agaricus elixus", "Clitocybe zygophylla"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GraublaettrigerTrichterling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.0 }
+sporenBreiteUm = { von = 2.5, bis = 4.0 }
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, milchkaffeebraun, feinfilzig, von der Mitte aus ausbleichend. Rand dunkler, runzelig, rippig und wellig, Huthaut abziehbar."

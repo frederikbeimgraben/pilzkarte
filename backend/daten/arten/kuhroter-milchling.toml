@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Geschmack ist extrem scharf."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "starkGefaehrdet"
+weitereNamen = ["Fleischroter Milchling"]
+synonyme = ["Lactarius curtus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KuhroterMilchling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
+sporenLaengeUm = { von = 7.0, bis = 9.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, fleischrosa, bräunlich, kastanienbraun bis purpurbraun. Mitte eingedrückt bis genabelt oder trichterförmig, Haut abziehbar, Rand lange eingebogen."

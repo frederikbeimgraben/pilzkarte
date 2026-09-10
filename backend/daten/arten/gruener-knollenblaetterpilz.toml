@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Absolut tödlich, schon 20 Gramm genügen. Das Gift schädigt die Leber. Die wichtigsten Merkmale sind weiße Lamellen, ein häutiger Ring, ein radialfaserig eingewachsener Hut mit wie ein Tortenstück abziehbarer Haut und eine abgerundete Knolle mit häutiger Scheide."
+marktfaehig = false
+haeufigkeit = "haeufig"
+weitereNamen = ["Grüner Mörder"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"
@@ -15,6 +18,12 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch und Huthaut verfärben sich nicht, anders als beim Kegelhütigen Knollenblätterpilz, der gelb wird."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 17.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+sporenLaengeUm = { von = 7.0, bis = 12.0 }
+sporenBreiteUm = { von = 6.0, bis = 10.0 }
 
 [merkmale]
 hut = "3 bis 15, selten bis 17 cm breit, grünlich, olivgrün, olivbraun, olivgelb, ocker, gelb bis fast weiß. Jung eiförmig-halbkugelig mit weißer Gesamthülle, später aufschirmend. Rand nicht gerieft, Huthaut fein radialfaserig eingewachsen, feucht etwas klebrig und wie ein Tortenstück abziehbar."

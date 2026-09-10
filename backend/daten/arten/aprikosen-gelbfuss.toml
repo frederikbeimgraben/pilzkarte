@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "eiche"]
 speisewertHinweis = "Auf der Positivliste der DGfM und in der Schweiz marktfähig. Extrem selten, deshalb besser stehen lassen."
+marktfaehig = false
+wertigkeit = 1
+haeufigkeit = "sehrSelten"
+synonyme = ["Chroogomphus rutilus var. fulmineus", "Gomphidius viscidus var. fulmineus", "Chroogomphus ochraceus subsp. fulmineus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Aprikosen-Gelbfuss.htm"
@@ -15,6 +19,12 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch lila verfärbend."
+
+[masse]
+hutBreiteCm = { von = 2.5, bis = 7.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 4.0, bis = 8.0 }
+sporenLaengeUm = { von = 15.0, bis = 22.0 }
+sporenBreiteUm = { von = 5.5, bis = 7.0 }
 
 [merkmale]
 hut = "2,5 bis 7, selten bis 9 cm breit, orangebraun, rosa bis violett, feucht schmierig, kahl und nicht filzig, jung mit Schleier."

@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Der Seitenkopf nennt ihn oft unverträglich, nur bedingt essbar und mit Alkohol giftig. Alle Purpurröhrlinge stehen im Verdacht, Coprin oder ähnliche Stoffe zu enthalten. Kennzeichen sind das auffällige Gewicht, das schwefelgelbe, sofort schwarzblau verfärbende Fleisch und das feine Netz auf gelblichem Stiel."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+synonyme = ["Boletus torosus", "Dictyopus torosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ochsenroehrling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 7.0, bis = 14.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 12.0, bis = 17.5 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "4 bis 9, selten bis 13 cm breit, goldgelb, ockergelb, braungelb oder leicht grünlich, schnell rötlich fleckend. Jung feinfilzig, später kahl."

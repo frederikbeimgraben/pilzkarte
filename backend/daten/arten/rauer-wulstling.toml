@@ -7,10 +7,21 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kastanie", "kiefer"]
 speisewertHinweis = "Zu erkennen an den gelblichen bis grauen flockigen Velumresten auf Hut und Stiel, dem gelb gerandeten gerieften Ring und dem Fleisch, das nicht rötet. Roh ist er unverträglich, deshalb keine Kostversuche."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "unbekanntesAusmass"
+weitereNamen = ["Gelbflockiger Wulstling"]
+synonyme = ["Amanita aspera", "Amanita aspera var. franchetii", "Amanita aspera f. franchetii", "Amanita queletii var. franchetii", "Amanita franchetii var. lactella", "Amanita rubescens f. aspera"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbflockigerWulstling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+stielLaengeCm = { von = 5.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 7.5, bis = 12.0 }
+sporenBreiteUm = { von = 4.5, bis = 7.5 }
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, gelblich, braungelb bis lehmgrau, mit grauen und gelblichen flockigen Velumresten."

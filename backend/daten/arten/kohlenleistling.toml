@@ -6,10 +6,17 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = false
+haeufigkeit = "selten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kohlenleistling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.0, bis = 10.5 }
+sporenBreiteUm = { von = 4.5, bis = 5.0 }
 
 [merkmale]
 hut = "1 bis 4, selten bis 6 cm breit, grauschwarz bis schwarzbraun, der Rand dunkler. Mitte trichterförmig genabelt."

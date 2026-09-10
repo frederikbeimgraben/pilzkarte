@@ -7,10 +7,17 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Gekocht schmeckt er sehr fade. Braune Stäublinge sind minderwertig, junge Fruchtkörper allenfalls Beikost."
+marktfaehig = false
+wertigkeit = 6
+weitereNamen = ["Brauner Stäubling", "Brauner Staubbovist"]
+synonyme = ["Lycoperdon umbrinum var. hirtum", "Lycoperdon hirtum", "Lycoperdon umbrinum var. curtisiiforme", "Lycoperdon umbrinum f. fissispinum", "Lycoperdon umbrinum var. hirsutum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerStaeubling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
 
 [merkmale]
 fruchtkoerper = "2 bis 6, selten bis 8 cm breit, birnenförmig bis kugelig, bräunlich, mit dunkelbraunen, weichen und ablösbaren kleinen Stacheln auf hellem Grund. Nach dem Abwaschen der Stacheln bleibt kein Netzmuster zurück."

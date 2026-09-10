@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Tödlich giftig, niemals probieren: die Inhaltsstoffe können Nieren und Leber schädigen. Er ist der einzige Raukopf mit ausbleichender Huthaut und hat einen zitronengelben Stiel mit gelben Velumresten."
+marktfaehig = false
+weitereNamen = ["Löwengelber Raukopf"]
+synonyme = ["Agaricus limonius", "Cortinarius callisteus sensu", "Gomphos limonius", "Telamonia limonia", "Flammula limonia", "Cortinarius luteus", "Cortinarius limonius f. hydrolimonius"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZitronengelberRaukopf.htm"
@@ -15,6 +18,12 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Hut blutrot verfärbend."
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
+stielLaengeCm = { von = 4.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 7.0, bis = 9.0 }
+sporenBreiteUm = { von = 5.6, bis = 7.0 }
 
 [merkmale]
 hut = "2 bis 6, selten bis 8 cm breit, gelblich, rot, rotbraun bis fuchsrot, trocken löwengelb, kahl, hygrophan, ohne spitzen Buckel. Rand etwas nach unten gelappt und mit gelblichem Velum behangen."

@@ -7,10 +7,16 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
 speisewertHinweis = "Tödlich giftig. Zu erkennen am durchgehend zimt- bis rosabraunen weichen Fleisch und an den gleichfarbigen Poren des stiellosen, tellerförmig abstehenden Fruchtkörpers an Laubholz."
+marktfaehig = false
+synonyme = ["Hapalopilus nidulans"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZimtfarbenerWeichporling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+sporenLaengeUm = { von = 3.4, bis = 5.1 }
+sporenBreiteUm = { von = 1.9, bis = 3.2 }
 
 [merkmale]
 fruchtkoerper = "3 bis 10, selten bis 30 cm breit, tellerförmig vom Holz abstehend, jung gelbockerlich bis hell rotbraun, später zimtbraun bis rosabraun, trocken ledergelblich. Der Rand bleibt lange gebogen."

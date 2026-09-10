@@ -6,10 +6,19 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Sind die Stoppeln länger als drei Millimeter, schmeckt er oft etwas bitter. Die Größe des Fruchtkörpers sagt darüber nichts aus."
+marktfaehig = true
+wertigkeit = 2
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Semmelstoppelpilz", "Rostgelber Semmelstoppelpilz", "Semmelgelber Stacheling", "Rotgelber Semmelstoppelpilz", "Orangeroter Stoppelpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+sporenLaengeUm = { von = 4.6, bis = 10.0 }
+sporenBreiteUm = { von = 4.9, bis = 7.8 }
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, jung weißlich gelb bis semmelgelb, später dunkler gelblich. Rand lange eingerollt."

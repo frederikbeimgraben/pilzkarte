@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen an den ablösbaren, oft gegabelten Lamellen, die anders als die Leisten der echten Leistlinge nicht mit dem Fleisch verwachsen sind, und am Geruch nach reifen Walderdbeeren. Extrem selten und in Deutschland vom Aussterben bedroht, deshalb ohnehin stehen lassen."
+marktfaehig = false
+haeufigkeit = "sehrSelten"
+gefaehrdung = "vomAussterbenBedroht"
+weitereNamen = ["Rosa-Afterleistling", "Duftender Afterleistling", "Duftener Wiesenellerling"]
+synonyme = ["Hygrophoropsis olida", "Cantharellus olidus", "Aphroditeola roch", "Clitocybe morganii", "Hygrophoropsis morganii", "Clitocybe olida", "Merulius morganii", "Cantharellus morganii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/PurpurorangerAfterleistling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 3.5, bis = 4.5 }
+sporenBreiteUm = { von = 2.5, bis = 3.0 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, braun, braunorange, purpurorange, gelborange bis rosaorange, feinfilzig, trichterförmig. Rand wellig, lange eingerollt und leicht gerieft."

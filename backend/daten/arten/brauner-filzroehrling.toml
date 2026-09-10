@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Auf der Positivliste der DGfM, in der Schweiz nicht marktfähig. Er ist einer der wenigen essbaren Röhrlinge mit Netzzeichnung am Stiel."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "haeufig"
+weitereNamen = ["Filziger Röhrling", "Braune Ziegenlippe"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerFilzroehrling.htm"
@@ -27,6 +31,13 @@ reaktion = "Auf der Hutoberfläche blaugrün, später rötlichbraun."
 [[reagenzien]]
 reagenz = "feso4"
 reaktion = "Auf der Huthaut negativ bis leicht grau, im Fleisch negativ."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
+stielLaengeCm = { von = 5.0, bis = 9.0, seltenBis = 11.0 }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.5 }
+sporenLaengeUm = { von = 11.0, bis = 16.0 }
+sporenBreiteUm = { von = 3.4, bis = 5.5 }
 
 [merkmale]
 hut = "4 bis 9, selten bis 12 cm breit, graubraun und filzig, unter der Huthaut leicht rosa."

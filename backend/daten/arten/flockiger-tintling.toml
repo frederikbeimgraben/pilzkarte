@@ -6,10 +6,19 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
+marktfaehig = false
+haeufigkeit = "selten"
+weitereNamen = ["Grosssporiger Flockentintling"]
+synonyme = ["Coprinus rostrupianus", "Coprinus flocculosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlockigerTintling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
+sporenLaengeUm = { von = 9.5, bis = 17.5 }
+sporenBreiteUm = { von = 5.0, bis = 10.0 }
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, graubraun bis blass ockerbräunlich, mit weißlichen Velumflocken, die bei feuchtem Wetter schnell vergehen, jung mit grauockerfarbener Mitte. Zuerst eiförmig, dann glockig spitzkegelig, alt schirmartig ausgebreitet."

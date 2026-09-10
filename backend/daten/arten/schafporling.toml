@@ -6,6 +6,10 @@ geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Besonders geschützt. Roh löst er Unverträglichkeiten aus: durchgaren und Kostproben wieder ausspucken."
+marktfaehig = true
+wertigkeit = 2
+weitereNamen = ["Schofferl", "Echter Schafporling", "Schafeuter", "Schafsporling"]
+synonyme = ["Scutiger ovinus", "Polyporus limonius", "Polyporus lutescens", "Caloporus ovinus", "Albatrellus albidus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schafporling.htm"
@@ -14,6 +18,9 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Fleisch ockergelb bis olivgelb."
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0 }
 
 [merkmale]
 hut = "3 bis 18, selten bis 30 cm breit, weiß, später gelblich, braungelb, graugelb oder schmutzig weiß, filzig, im Alter aufreißend."

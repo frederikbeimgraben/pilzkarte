@@ -6,10 +6,17 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
+marktfaehig = false
+weitereNamen = ["Wurzelnder Egerlingsschirmpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WurzelnderEgerlingsschirmling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 16.0 }
+sporenLaengeUm = { von = 7.5, bis = 9.0 }
+sporenBreiteUm = { von = 4.5, bis = 5.5 }
 
 [merkmale]
 hut = "3 bis 11, selten bis 16 cm breit, weiß, hellbraun bis cremefarben, seidig filzig, die Haut wollig filzig, Rand federig, Mitte teils gebuckelt oder eingedrückt."

@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten. Von den anderen weißen Stäublingen lässt er sich meist nur mikroskopisch sicher trennen. Nur solange das Innere rein weiß ist."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrSelten"
+weitereNamen = ["Weißer Igelstäubling", "Geschwänzsporiger Stäublings", "Moor-Stäubling"]
+synonyme = ["Lycoperdon caudatum", "Lycoperdon pedicellatum", "Bovistella pedicellata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserIgelstaeubling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
+sporenLaengeUm = { von = 3.0, bis = 4.0 }
+sporenBreiteUm = { von = 4.0, bis = 5.0 }
 
 [merkmale]
 fruchtkoerper = "2 bis 5, selten bis 7 cm breit, weißlich, kugelig, zur Basis zugespitzt. Haut sehr dünn, mit pyramidenartigen Stacheln und Warzen besetzt. Fallen die Stacheln ab, bleibt ein Netzmuster zurück."

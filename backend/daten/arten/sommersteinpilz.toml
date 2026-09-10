@@ -6,10 +6,16 @@ geschuetzt = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "linde", "kastanie"]
 schutzHinweis = "Die Verordnung nennt Boletus edulis, Boletus aereus und Boletus appendiculatus, nicht aber Boletus reticulatus. Dieses Projekt behandelt ihn gleich."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Eichensteinpilz", "Herrenpilz", "Schwarzer Steinpilz", "Steini"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sommersteinpilz2004.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 22.0, seltenBis = 28.0 }
 
 [merkmale]
 hut = "4 bis 22, selten bis 28 cm breit, hell lederbraun, ockerbraun, blass bräunlich, milchkaffee- bis haselnussbraun, Huthaut oft uneben. Jung halbkugelig und fest geschlossen, später polsterförmig bis flach. Matt, feinfilzig bis samtig und trocken, bei Nässe feucht, aber nie schleimig. Bei Trockenheit reißt die Huthaut felderig auf und lässt in den Rissen das weiße Fleisch sehen."

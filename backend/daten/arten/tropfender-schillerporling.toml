@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Ungenießbar, weil das Fleisch korkig und zäh ist."
+marktfaehig = false
+haeufigkeit = "selten"
+gefaehrdung = "unbekanntesAusmass"
+synonyme = ["Inonotus dryadeus", "Boletus dryadeus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/TropfenderSchillerporling.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 8.0, bis = 20.0, seltenBis = 30.0 }
+sporenLaengeUm = { von = 7.5, bis = 8.5 }
+sporenBreiteUm = { von = 5.5, bis = 6.5 }
 
 [merkmale]
 hut = "8 bis 20, selten bis 30 cm breit, hellbraun, tabakbraun bis gelbbraun, gewölbt und rundlich, manchmal dachziegelartig. Oberfläche bereift, jung mit hellbraunen Tröpfchen."

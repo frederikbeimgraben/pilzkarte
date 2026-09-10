@@ -7,10 +7,19 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Sehr selten; in der Schweiz stark gefährdet. Besser stehen lassen."
+marktfaehig = false
+wertigkeit = 4
+haeufigkeit = "sehrSelten"
+synonyme = ["Agaricus pellitus", "Rhodosporus pellitus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserDachpilz.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
+sporenLaengeUm = { von = 5.0, bis = 8.0 }
+sporenBreiteUm = { von = 4.0, bis = 6.0 }
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, weiß, alt rosabraun, etwas klebrig und glänzend, trocken seidenartig, eingewachsen faserig, glatt."

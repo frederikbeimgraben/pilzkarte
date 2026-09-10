@@ -7,6 +7,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "nebelkappe"
 speisewertHinweis = "123pilzsuche führt sie als giftig. Der Stoff Nebularin löst Magen-Darm-Beschwerden aus, auch nach dem Garen. In der Schweiz ist sie nicht marktfähig."
+marktfaehig = false
+weitereNamen = ["Herbstblattl", "Nebelgrauer Röteltrichterling", "Nebelgrauer Trichterling", "Graukappe", "Graukopf"]
+synonyme = ["Lepista nebularis", "Clitocybe pileolaris", "Gymnopus nebularis", "Clitocybe nebularis var. alba"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Herbstblattl.htm"
@@ -15,6 +18,13 @@ geprueftAm = "2026-09-10"
 [[reagenzien]]
 reagenz = "koh"
 reaktion = "Auf dem Hut ohne Reaktion."
+
+[masse]
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 5.5, bis = 8.5 }
+sporenBreiteUm = { von = 3.5, bis = 5.0 }
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, graubraun bis weißgrau, etwas radialfaserig, Haut glatt und abziehbar. Rand meist eingerollt, Mitte im Alter eingedellt und weißlich bereift."

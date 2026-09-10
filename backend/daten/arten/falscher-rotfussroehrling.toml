@@ -7,10 +7,20 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "In Europa selten, in der Schweiz verletzlich. Kein Sammelpilz."
+marktfaehig = false
+wertigkeit = 3
+haeufigkeit = "selten"
+weitereNamen = ["Falscher Rotfuß", "Düsterner Rotfußröhrling"]
+synonyme = ["Boletus porosporus", "Xerocomus porosporus", "Boletus porosporus var. americanus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotfussFalsch.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+sporenLaengeUm = { von = 12.0, bis = 15.0 }
+sporenBreiteUm = { von = 5.0, bis = 6.0 }
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, braun, beigebraun bis nussbraun, filzig, im Alter aufgerissen. Die rote Schicht zwischen Huthaut und Fleisch ist schwächer ausgeprägt als bei den anderen Rotfußarten."

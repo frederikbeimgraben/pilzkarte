@@ -6,10 +6,20 @@ geschuetzt = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = ["kiefer"]
+marktfaehig = false
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Mediterraner Körnchenröhrling", "Mittelmeer Körnchenröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MediterranerKoernchen.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 12.0 }
+stielDickeCm = { von = 1.3, bis = 2.7 }
+sporenLaengeUm = { von = 9.0, bis = 12.0 }
+sporenBreiteUm = { von = 4.0, bis = 4.8 }
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, gelbbraun, haselnussbraun bis olivbraun, schmierig klebrig, Haut zu drei Vierteln abziehbar, Mitte leicht gebuckelt."

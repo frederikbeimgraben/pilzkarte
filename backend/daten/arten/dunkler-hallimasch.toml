@@ -6,10 +6,22 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Roh macht er ein Taubheitsgefühl im Hals. Nur die Hüte, lange kochen, das Kochwasser weggießen. Auch dann kommen Magen-Darm-Beschwerden vor."
+marktfaehig = false
+wertigkeit = 2
+haeufigkeit = "sehrHaeufig"
+weitereNamen = ["Gemeiner Hallimasch", "Nadelholzhallimasch"]
+synonyme = ["Armillaria mellea var. obscura", "Armillariella solidipes", "Armillariella polymyces sensu", "Armillaria obscura sensu", "Armillaria polymyces sensu"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeinerHallimarsch.htm"
 geprueftAm = "2026-09-10"
+
+[masse]
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 14.0 }
+stielLaengeCm = { von = 4.0, bis = 22.0, seltenBis = 25.0 }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
+sporenLaengeUm = { von = 5.8, bis = 10.0 }
+sporenBreiteUm = { von = 5.0, bis = 7.0 }
 
 [merkmale]
 hut = "2 bis 10, selten bis 14 cm breit, rotbraun, mit abwischbaren braunen Schüppchen, im Alter gerieft. Farbe und Form sind sehr veränderlich."

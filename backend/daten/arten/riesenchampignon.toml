@@ -6,6 +6,10 @@ geschuetzt = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Gilbende Champignons reichern Cadmium an, einige Mykologen raten deshalb von großen Mengen ab. Riecht ein Champignon nach Karbol, Tinte oder Medizinschrank, gehört er nicht in den Korb."
+marktfaehig = true
+wertigkeit = 1
+weitereNamen = ["Braunschuppiger Riesenegerling"]
+synonyme = ["Agaricus augustus var. perrarus", "Psalliota subrufescens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenchampignon.htm"
@@ -18,6 +22,11 @@ reaktion = "Gelb verfärbend."
 [[reagenzien]]
 reagenz = "schaeffer"
 reaktion = "Knallig rot."
+
+[masse]
+hutBreiteCm = { von = 7.0, bis = 20.0, seltenBis = 35.0 }
+sporenLaengeUm = { von = 7.0, bis = 10.5 }
+sporenBreiteUm = { von = 4.3, bis = 7.0 }
 
 [merkmale]
 hut = "7 bis 20, selten bis 35 cm breit, mit braunen Schuppen auf weißlichem, gelblichem oder hell bräunlichem Grund, auf Druck gilbend."
