@@ -144,6 +144,14 @@ in `app/core/` oder `app/shared/`.
 unter `modell/tests` in der Shell aus `modell/flake.nix`. Alle sind Pflicht
 für einen Merge nach `main`.
 
+## Brett
+
+Der Stand der Arbeit steht auf einem Brett unter `http://127.0.0.1:8123`
+und `http://10.66.66.5:8123`. Anleitung: `tools/board/README.md`. Wer ein
+Paket beginnt, setzt seine Karte auf `arbeit`, wer einen PR stellt, auf
+`pruefung`. Ein Befund, den man nicht selbst behebt, wird eine Karte im
+Backlog.
+
 ## Befehle
 
 ```
