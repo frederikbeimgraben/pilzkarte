@@ -121,6 +121,20 @@ Abnahme:
 - `week_stats.py` füllt bestehende Manifeste nach
 - Renderzeit steigt um weniger als 5 %
 
+### C3 Mehr Wochenebenen
+
+Für die Kombination fehlen Metriken. Aus den DWD-Rastern der Kette lassen
+sich je Woche weitere Ebenen rendern: Niederschlag 1 und 2 Wochen,
+Tage seit dem letzten Regen über 5 mm, Frosttage der Woche, Hitzetage
+über 25 Grad, Temperaturmittel 2 und 4 Wochen, Bodenfeuchte, falls HYRAS
+oder ein anderer freier Datensatz sie liefert. Jede neue Ebene mit Einheit,
+Spanne, Rampe und Histogramm in `layers.json`, Renderzeit im Bericht.
+
+Abnahme:
+- mindestens sechs neue Wochenebenen live, jede als Faktor wählbar
+- `update.sh` rechnet sie ohne Zusatzschritt
+- Renderzeit der Wochenebenen steigt um weniger als 30 %
+
 ## Block 2, Arten
 
 ### D1 Artenkatalog Backend
@@ -190,8 +204,9 @@ den Arten darunter, dem Elternrang und den Geschwistern. Das Profil trägt
 `taxonomie` mit Slugs je Rang.
 
 Frontend: Seiten `/taxonomie/gattung/boletus`, `/taxonomie/familie/boletaceae`
-und so weiter, mit Pfad nach oben (Klasse, Ordnung, Familie, Gattung), Liste
-der Arten mit `SpeciesRow`, Liste der Kinder (Gattungen einer Familie).
+und so weiter. Jede Seite zeigt beides: die äußere Taxonomie (Pfad nach
+oben bis zur Klasse, Geschwister auf derselben Stufe) und die innere
+(Kinder: Gattungen einer Familie, Arten einer Gattung, als `SpeciesRow`).
 Die Artseite verlinkt Gattung und Familie unter dem lateinischen Namen. Die
 Artenliste bekommt Chips je Gruppe, die auf die Ordnung zeigen.
 
@@ -246,6 +261,19 @@ Abnahme:
 - Fund mit drei Fotos in unter 10 s auf LTE gespeichert
 - Zone: Fläche in ha während des Zeichnens, Wert und Funde im Zonen-Blatt
 - Playwright: Fund melden von der Karte bis zum Eintrag in der Liste
+
+### E5 Funde für das Training freigeben
+
+Beim Fund wählt man, ob er in die Trainingsdaten einfließt
+(`fuerTraining`, Vorgabe aus). Ein interner Endpunkt, nur vom Homeserver
+selbst erreichbar, liefert die freigegebenen Funde exakt. `update.sh`
+holt sie vor dem Bau der Vorkommenstabelle, `build_occurrences.py` hängt
+sie mit Quelle `app` an.
+
+Abnahme:
+- Schalter im Fund-Formular, Feld in allen Fund-Antworten
+- Endpunkt über den Vhost 404, von 127.0.0.1 200, Test für beide
+- Fixture-Test in `modell/tests/`: ein freigegebener Fund landet als Begehung mit Fund in der Tabelle
 
 ## Block 4, Offline und Feinschliff
 
