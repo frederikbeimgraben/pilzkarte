@@ -40,7 +40,7 @@ from build_dataset import week_number
 from manifest import histogramm, schreibe
 from region_map import (COLORS, MODEL_CRS, REGION, TRAIN_CELL,
                         raster_ausrichten, render)
-from tiles import schreibe_kacheln
+from tiles import schreibe_kacheln, schreibe_kachelsaetze
 
 # name -> (source, column, label, unit)
 STATIC = {
@@ -97,26 +97,34 @@ FESTE_SPANNE = {
 }
 
 
-def schreibe_feld(field, work: Path, bounds, step, low, high) -> Path:
-    """Scale a field into 0..1 and write it as a GeoTIFF in the model CRS."""
-    scaled = np.clip((field - low) / max(high - low, 1e-9), 0, 1)
-    scaled = np.where(np.isfinite(field), scaled, np.nan)
-    source = work / "layer.tif"
+def schreibe_felder(felder, work: Path, bounds, step) -> Path:
+    """Scale fields into 0..1 and write them as the bands of one GeoTIFF.
+
+    ``felder`` is a list of (field, low, high). One file with many bands lets
+    gdalwarp do all layers of a week in one run; see tiles.py.
+    """
     transform = from_origin(bounds[0], bounds[3], step, step)
-    with rasterio.open(source, "w", driver="GTiff", height=field.shape[0],
-                       width=field.shape[1], count=1, dtype="float32",
-                       crs=MODEL_CRS, transform=transform, nodata=np.nan) as dst:
-        dst.write(scaled.astype("float32"), 1)
+    source = work / "layer.tif"
+    form = felder[0][0].shape
+    with rasterio.open(source, "w", driver="GTiff", height=form[0], width=form[1],
+                       count=len(felder), dtype="float32", crs=MODEL_CRS,
+                       transform=transform, nodata=np.nan) as dst:
+        for band, (field, low, high) in enumerate(felder, start=1):
+            scaled = np.clip((field - low) / max(high - low, 1e-9), 0, 1)
+            scaled = np.where(np.isfinite(field), scaled, np.nan)
+            dst.write(scaled.astype("float32"), band)
     return source
 
 
-def schreibe_bild(source: Path, target: Path, work: Path) -> None:
+def schreibe_bilder(source: Path, targets: list[Path], work: Path) -> None:
+    """Draw one full image per band of the source."""
     merc = work / "layer3857.tif"
     subprocess.run(["gdalwarp", "-q", "-overwrite", "-t_srs", "EPSG:3857",
                     "-r", "bilinear", "-dstnodata", "nan", str(source), str(merc)],
                    check=True, capture_output=True)
     with rasterio.open(merc) as src:
-        render(src.read(1), target, 1.0, vary_alpha=False)
+        for band, target in enumerate(targets, start=1):
+            render(src.read(band), target, 1.0, vary_alpha=False)
 
 
 def belegung(gefuellt) -> dict[str, list[str]]:
@@ -242,7 +250,7 @@ def main() -> None:
             values = grid[column].to_numpy(dtype="float32")
             low, high = np.nanpercentile(values, [2, 98])
             feld = to_field(values)
-            source = schreibe_feld(feld, work, bounds, args.step, low, high)
+            source = schreibe_felder([(feld, low, high)], work, bounds, args.step)
             k = SKALA.get(name, 1.0)
             unten, oben = round(float(low) * k, 3), round(float(high) * k, 3)
             eintrag = {"label": label, "unit": unit, "static": True,
@@ -253,7 +261,7 @@ def main() -> None:
             if verteilung is not None:
                 eintrag["histogramm"] = verteilung
             if not args.no_image:
-                schreibe_bild(source, folder / f"{name}.png", work)
+                schreibe_bilder(source, [folder / f"{name}.png"], work)
                 eintrag["file"] = f"layers/{name}.png"
             if args.tiles:
                 gefuellt, _ = schreibe_kacheln(source, args.out / "layers_kacheln" / name,
@@ -270,7 +278,11 @@ def main() -> None:
         wetter, wochen = wochenwetter(args.weather, set(grid["cell"]), args.weeks)
         print(f"\n{len(wochen)} Wochen Wetter, {wochen[0][0]}-W{wochen[0][1]:02d} bis "
               f"{wochen[-1][0]}-W{wochen[-1][1]:02d}")
-        zellen = grid["cell"].to_numpy()
+        # Die Zuordnung Modellzelle auf Wetterzelle ist fuer jede Ebene und
+        # jede Woche dieselbe. Einmal als Positionen gerechnet, ist das Holen
+        # der Werte danach ein numpy-Griff statt eines Index-Abgleichs ueber
+        # 2,3 Millionen Zeichenketten.
+        zellen = pd.Categorical(grid["cell"].to_numpy())
         for name, (column, label, unit) in WEEKLY.items():
             if name in FESTE_SPANNE:
                 low, high = FESTE_SPANNE[name]
@@ -283,41 +295,53 @@ def main() -> None:
                 elif column.startswith("pr"):
                     low = 0.0
                 low, high = round(low, 1), round(high, 1)
-            wurzel = args.out / "layers_kacheln" / name
-            eintrag = {"label": label, "unit": unit, "static": False,
-                       "low": low, "high": high, "weeks": []}
             # Je Woche ein Histogramm, aber nicht in `weeks`: dort stehen
             # Wochenschluessel, und `update.sh` raeumt die Kachelordner nach
             # dieser Liste auf. Eine Zuordnung daneben laesst beides heil.
-            verteilungen: dict[str, dict] = {}
-            gefuellt_erste = None
-            for year, week in wochen:
-                zeile = wetter[(wetter["iso_year"] == year) & (wetter["iso_week"] == week)]
-                werte = pd.Series(zeile[column].to_numpy(), index=zeile["cell"].to_numpy())
-                values = werte.reindex(zellen).to_numpy(dtype="float32")
+            layers[name] = {"label": label, "unit": unit, "static": False,
+                            "low": low, "high": high, "weeks": [],
+                            "histogramme": {}}
+            print(f"  {name:20s} {low:8.1f} bis {high:8.1f} {unit}", flush=True)
+
+        # Je Woche ein Quellbild mit einem Band je Ebene, statt je Ebene und
+        # Woche ein eigenes. gdalwarp warpt alle Baender in einem Lauf.
+        namen = list(WEEKLY)
+        for year, week in wochen:
+            schluessel = f"{year}W{week:02d}"
+            zeile = wetter[(wetter["iso_year"] == year) & (wetter["iso_week"] == week)]
+            spalten = pd.DataFrame({c: zeile[c].to_numpy() for c in
+                                    {v[0] for v in WEEKLY.values()}},
+                                   index=zeile["cell"].to_numpy())
+            spalten = spalten.reindex(zellen.categories)
+            felder = []
+            for name in namen:
+                column = WEEKLY[name][0]
+                eintrag = layers[name]
+                values = spalten[column].to_numpy(dtype="float32")[zellen.codes]
                 feld = to_field(values)
-                source = schreibe_feld(feld, work, bounds, args.step, low, high)
-                schluessel = f"{year}W{week:02d}"
-                verteilung = histogramm(feld, low, high)
+                verteilung = histogramm(feld, eintrag["low"], eintrag["high"])
                 if verteilung is not None:
-                    verteilungen[schluessel] = verteilung
-                if not args.no_image:
-                    schreibe_bild(source, folder / f"{name}_{schluessel}.png", work)
-                if args.tiles:
-                    gefuellt, _ = schreibe_kacheln(source, wurzel / schluessel, 1.0,
-                                                   range(z0, z1 + 1), work, wgs_box)
-                    if gefuellt_erste is None:
-                        gefuellt_erste = gefuellt
+                    eintrag["histogramme"][schluessel] = verteilung
                 eintrag["weeks"].append(schluessel)
-            eintrag["histogramme"] = verteilungen
-            if args.tiles:
-                eintrag.update(tiles=f"layers_kacheln/{name}", zooms=[z0, z1],
-                               have=belegung(gefuellt_erste or []))
+                felder.append((feld, eintrag["low"], eintrag["high"]))
+            source = schreibe_felder(felder, work, bounds, args.step)
             if not args.no_image:
-                eintrag["files"] = f"layers/{name}_"
-            layers[name] = eintrag
-            print(f"  {name:20s} {low:8.1f} bis {high:8.1f} {unit}   {len(wochen)} Wochen",
-                  flush=True)
+                schreibe_bilder(source, [folder / f"{n}_{schluessel}.png" for n in namen],
+                                work)
+            if args.tiles:
+                saetze = schreibe_kachelsaetze(
+                    source, [args.out / "layers_kacheln" / n / schluessel for n in namen],
+                    [1.0] * len(namen), range(z0, z1 + 1), work, wgs_box)
+                if year == wochen[0][0] and week == wochen[0][1]:
+                    for name, (gefuellt, _) in zip(namen, saetze):
+                        layers[name]["have"] = belegung(gefuellt)
+            print(f"  {schluessel}: {len(namen)} Ebenen", flush=True)
+
+        for name in namen:
+            if args.tiles:
+                layers[name].update(tiles=f"layers_kacheln/{name}", zooms=[z0, z1])
+            if not args.no_image:
+                layers[name]["files"] = f"layers/{name}_"
 
     meta = {"bounds": [[wgs_box[1], wgs_box[0]], [wgs_box[3], wgs_box[2]]],
             "layers": layers}
