@@ -135,6 +135,7 @@ const de = {
   'sprache.beschriftung': 'Sprache',
   'sprache.de': 'Deutsch',
   'sprache.en': 'English',
+  'sprache.system': 'System',
 
   'fehler.netz': 'Keine Verbindung zum Server.',
   'fehler.unbekannt': 'Unbekannter Fehler.',
@@ -175,6 +176,8 @@ const de = {
   'arten.aktiv': 'aktiv',
   'arten.geschuetzt': 'geschützt',
   'arten.leer': 'Keine Art passt zur Suche.',
+  'arten.anzahlAlle': '{gesamt} Arten',
+  'arten.anzahlGefiltert': '{gefiltert} von {gesamt} Arten',
   'arten.chip.alle': 'alle',
   'arten.chip.mitVorhersage': 'mit Vorhersage',
   'arten.chip.roehrlinge': 'Röhrlinge',
@@ -524,6 +527,7 @@ const en: Record<TranslationKey, string> = {
   'sprache.beschriftung': 'Language',
   'sprache.de': 'Deutsch',
   'sprache.en': 'English',
+  'sprache.system': 'System',
 
   'fehler.netz': 'No connection to the server.',
   'fehler.unbekannt': 'Unknown error.',
@@ -564,6 +568,8 @@ const en: Record<TranslationKey, string> = {
   'arten.aktiv': 'active',
   'arten.geschuetzt': 'protected',
   'arten.leer': 'No species matches the search.',
+  'arten.anzahlAlle': '{gesamt} species',
+  'arten.anzahlGefiltert': '{gefiltert} of {gesamt} species',
   'arten.chip.alle': 'all',
   'arten.chip.mitVorhersage': 'with forecast',
   'arten.chip.roehrlinge': 'boletes',

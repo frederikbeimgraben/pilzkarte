@@ -49,6 +49,34 @@ describe('I18nService', () => {
     expect(dienst().locale()).toBe('en');
   });
 
+  it('folgt unter „System“ dem Browser und merkt sich die Wahl', () => {
+    const i18n = dienst();
+
+    i18n.setWahl('system');
+
+    // Der Testbrowser steht auf de-DE, siehe `test-setup.ts`.
+    expect(i18n.wahl()).toBe('system');
+    expect(i18n.locale()).toBe('de');
+    expect(localStorage.getItem('pilzkarte.sprache')).toBe('system');
+  });
+
+  it('hält die Wahl gegen einen fremdsprachigen Browser', () => {
+    localStorage.setItem('pilzkarte.sprache', 'de');
+    Object.defineProperty(navigator, 'language', { configurable: true, get: () => 'en-GB' });
+
+    // Ein englischer Browser machte aus der App sonst eine halb übersetzte
+    // Seite: die Oberfläche englisch, der Artenkatalog deutsch.
+    expect(dienst().locale()).toBe('de');
+  });
+
+  it('lehnt eine unbekannte Wahl ab', () => {
+    const i18n = dienst();
+
+    i18n.setWahl('fr' as 'de');
+
+    expect(i18n.wahl()).toBe('de');
+  });
+
   it('fällt ohne gespeicherte Wahl auf die Browsersprache', () => {
     localStorage.clear();
     vi.spyOn(navigator, 'language', 'get').mockReturnValue('en-GB');

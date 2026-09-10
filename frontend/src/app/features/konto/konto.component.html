@@ -35,6 +35,13 @@
       [beschriftung]="'theme.beschriftung' | t"
       (wertChange)="waehleTheme($event)"
     />
+    <h3 class="konto__unterabschnitt">{{ 'sprache.beschriftung' | t }}</h3>
+    <app-segmented
+      [optionen]="sprachen()"
+      [wert]="sprachWahl()"
+      [beschriftung]="'sprache.beschriftung' | t"
+      (wertChange)="waehleSprache($event)"
+    />
   </section>
 
   <section class="konto__block">

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ButtonComponent, CardComponent } from '@stupa-makers/ui-kit';
 import { AuthService, type AngemeldeterNutzer } from '../../core/auth';
 import { ConfigService } from '../../core/config/config.service';
-import { I18nService } from '../../core/i18n/i18n.service';
+import { I18nService, SPRACH_WAHLEN, type SprachWahl } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { ThemeService, type ThemeWahl } from '../../core/theme/theme.service';
 import { ListRowComponent, PageHeaderComponent, SegmentedComponent, type SegmentOption } from '../../ui';
@@ -44,6 +44,20 @@ export class KontoComponent {
   protected readonly nutzer = this.auth.nutzer;
   protected readonly angemeldet = this.auth.angemeldet;
   protected readonly wahl = this.theme.wahl;
+  protected readonly sprachWahl = this.i18n.wahl;
+
+  /**
+   * Deutsch, Englisch oder der Browser. Die Wahl steht neben der Darstellung,
+   * weil beides dasselbe ist: wie die App aussieht, nicht was in ihr steht.
+   */
+  protected readonly sprachen = computed<SegmentOption[]>(() =>
+    SPRACH_WAHLEN.map((wert) => ({ wert, label: this.i18n.translate(`sprache.${wert}`) })),
+  );
+
+  protected waehleSprache(wert: string): void {
+    const gewaehlt = SPRACH_WAHLEN.find((kandidat) => kandidat === wert);
+    if (gewaehlt) this.i18n.setWahl(gewaehlt satisfies SprachWahl);
+  }
 
   protected initiale(person: AngemeldeterNutzer): string {
     return person.name.trim().charAt(0).toUpperCase();

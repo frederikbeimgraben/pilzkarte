@@ -3,6 +3,7 @@ import { Router, provideRouter } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { AuthService } from '../../core/auth';
+import { I18nService } from '../../core/i18n/i18n.service';
 import { ThemeService } from '../../core/theme/theme.service';
 import { KONFIGURATION, ManagerAttrappe, authAnbieter, oidcNutzer } from '../../testing/auth-attrappe';
 import { keineVerstoesse } from '../../testing/axe';
@@ -72,6 +73,29 @@ describe('KontoComponent', () => {
     expect(theme.wahl()).toBe('dunkel');
     expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
     expect(screen.getByRole('tab', { name: 'Dunkel' })).toHaveAttribute('aria-selected', 'true');
+  });
+
+  it('schaltet die Sprache um und merkt sie sich', async () => {
+    const { aktualisiere } = await aufbauen();
+    const i18n = TestBed.inject(I18nService);
+
+    await userEvent.click(screen.getByRole('tab', { name: 'English' }));
+    aktualisiere();
+
+    expect(i18n.wahl()).toBe('en');
+    expect(localStorage.getItem('pilzkarte.sprache')).toBe('en');
+    expect(document.documentElement).toHaveAttribute('lang', 'en');
+    expect(screen.getByRole('tab', { name: 'English' })).toHaveAttribute('aria-selected', 'true');
+  });
+
+  it('lässt die Sprache dem Browser folgen', async () => {
+    const { aktualisiere } = await aufbauen();
+    const i18n = TestBed.inject(I18nService);
+
+    await userEvent.click(screen.getAllByRole('tab', { name: 'System' })[1]);
+    aktualisiere();
+
+    expect(i18n.wahl()).toBe('system');
   });
 
   it('zeigt Offline und Über mit den Werten, die heute feststehen', async () => {
