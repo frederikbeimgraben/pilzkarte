@@ -1,0 +1,64 @@
+name = "Kiefernspeitäubling"
+lateinisch = "Russula silvestris"
+gruppe = "taeubling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Zu erkennen am brennend scharfen Geschmack, am blut- bis kirschroten Hut mit fast ganz abziehbarer Haut und am rein weißen Stiel ohne Rottöne."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Speitaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "feso4"
+reaktion = "Fleisch rosa."
+
+[[reagenzien]]
+reagenz = "guajak"
+reaktion = "Hell graugrün."
+
+[[reagenzien]]
+reagenz = "phenol"
+reaktion = "Hell weinrot."
+
+[[reagenzien]]
+reagenz = "ammoniak"
+reaktion = "Rosa."
+
+[[reagenzien]]
+reagenz = "formalin"
+reaktion = "Stielrinde und Fleisch rosa."
+
+[merkmale]
+hut = "3 bis 8, selten bis 12 cm breit, blut- bis kirschrot, älter mattrot bis karminrot, Mitte niedergedrückt. Haut fast ganz abziehbar, feucht schmierig glänzend, trocken matt. Darunter ist das Fleisch weiß."
+lamellen = "Weiß, eventuell mit bläulichem Reflex, gerade angewachsen, einige gegabelt, nur wenige Zwischenlamellen."
+stiel = "3 bis 7, selten bis 9 cm lang und 0,5 bis 1,5, selten bis 2 cm dick, weiß ohne Rottöne, etwas wattig hohl, Rinde längsaderig. Basis alt gelblich verfärbend."
+fleisch = "Weiß und brüchig, unter der Huthaut weiß."
+geruch = "Obstartig, nach Kokos."
+geschmack = "Brennend scharf."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im trockenen Mischwald, gern bei Kiefer, auf sandigem saurem Boden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Birkenspeitäubling"
+merkmal = "Hut blasser, weißlich bis rosenrot, Rand schwach kammartig gerieft, bei Birke auf feuchtem Boden."
+essbar = "giftig"
+slug = "birkenspeitaeubling"
+
+[[verwechslungen]]
+name = "Buchenspeitäubling"
+merkmal = "Huthaut matt-samtig und kaum abziehbar, stellenweise weißfleckig, bei Buche auf kalkhaltigem Boden."
+essbar = "giftig"
+slug = "buchenspeitaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Speitaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Kiefern-Spei-Täubling"

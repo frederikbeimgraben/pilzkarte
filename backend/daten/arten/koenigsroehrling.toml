@@ -1,0 +1,49 @@
+name = "Königsröhrling"
+lateinisch = "Butyriboletus regius"
+gruppe = "roehrling"
+speisewert = "essbar"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "In Deutschland stark gefährdet und vollständig geschützt. Nicht sammeln, nur stehen lassen und melden."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Koenigesroehrling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 12, selten bis 20 cm breit, blutrot, purpurrot, kirschrot, rosarot bis oliv, trocken, glatt bis feinfilzig-schorfig oder samtig. Alt mit Falten und Gruben."
+roehren = "0,5 bis 2,5, selten bis 3,5 cm lang, hellgelb, leuchtend zitronengelb bis goldgelb, im Alter gelboliv, eckig, ausgebuchtet angewachsen. Druckstellen blauen schwach."
+stiel = "5 bis 13, selten bis 15 cm lang, gelb bis hellgelb, oft fast weiß, karminrötlich gefleckt, mit Netzzeichnung, voll. Basis bauchig verdickt und stärker rotfleckig."
+fleisch = "Weißlich bis hellgelb, dick, fest und kompakt."
+geruch = "Pilzig, im Alter leicht nach Medizinschrank."
+geschmack = "Mild, nussartig."
+sporenpulver = "Olivbraun."
+vorkommen = "Symbiosepilz im Laubwald, gern bei Rotbuche und Eiche, auf kalkreichem Boden. Sehr selten, in Deutschland stark gefährdet und vollständig geschützt."
+zeit = "Frühsommer bis Herbst."
+
+[[verwechslungen]]
+name = "Schönfußröhrling"
+merkmal = "Hut lehmgrau bis tonfarben und samtig, Stiel zur Basis rötlich, Fleisch sofort blauend, Geschmack bitter."
+essbar = "giftig"
+slug = "schoenfussroehrling"
+
+[[verwechslungen]]
+name = "Blauender Königsröhrling"
+merkmal = "Fleisch im Hut- und Röhrenbereich deutlich blauend, Hut mehr braunrot bis himbeerrosa."
+essbar = "essbar"
+
+[[verwechslungen]]
+name = "Silberröhrling"
+merkmal = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau, Geruch nach Marzipan."
+essbar = "essbar"
+slug = "silberroehrling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Koenigesroehrling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Königs-Röhrling"

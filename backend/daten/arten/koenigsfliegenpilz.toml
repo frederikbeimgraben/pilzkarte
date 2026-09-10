@@ -1,0 +1,44 @@
+name = "Königsfliegenpilz"
+lateinisch = "Amanita regalis"
+gruppe = "wulstling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte"]
+speisewertHinweis = "Zu erkennen am braunen bis gelbbraunen Hut mit gelblichen, abwischbaren Velumflocken, am hellgelben Stiel und an der warzig-knolligen Basis mit gürtelförmigen Velumzonen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Koenigsfliegenpilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 16, selten bis 20 cm breit, braun bis gelbbraun, mit gelblichen pyramidalen, abwischbaren grauweißen Velumflocken, selten nackt. Oberfläche glänzend, feucht schmierig, Haut bis zur Mitte abziehbar."
+lamellen = "Weiß bis hellgelblich, dicht stehend, wellig und uneben, frei bis leicht angewachsen, Schneiden flockig."
+stiel = "7 bis 16, selten bis 20 cm lang und 2 bis 4, selten bis 6 cm dick, hellgelb, jung voll, alt hohl. Basis knollig und warzig, bräunlich gegürtelt mit grob flockigen Velumzonen. Ring weiß mit jung gelbem, warzigem Rand, schlapp herabhängend."
+fleisch = "Weiß, unter der Huthaut mit gelber, gelbbrauner bis gelbgrüner Übergangszone."
+geruch = "Angenehm pilzig bis neutral."
+geschmack = "Mild, angenehm."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, auf saurem Boden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Pantherpilz"
+merkmal = "Hut kastanien- bis graubraun mit rein weißen, gleichmäßig angeordneten Velumflocken, Stiel weiß mit abgesetzter Knolle, Fleisch unter der Huthaut nicht gelb."
+essbar = "toedlichGiftig"
+slug = "pantherpilz"
+
+[[verwechslungen]]
+name = "Grauer Wulstling"
+merkmal = "Hut hellbräunlich bis schwarzbraun mit grauweißen Velumresten, Stiel weiß bis grauweiß, Geruch rettich- bis rübenartig."
+essbar = "ohneSpeisewert"
+slug = "grauer-wulstling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Koenigsfliegenpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Königs-Fliegenpilz"

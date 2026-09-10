@@ -1,0 +1,46 @@
+name = "Kiefernrotkappe"
+lateinisch = "Leccinum vulpinum"
+gruppe = "raufussroehrling"
+speisewert = "speisepilz"
+geschuetzt = true
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["kiefer"]
+speisewertHinweis = "Roh stark unverträglich, nur durchgegart essen. In Deutschland stark gefährdet und als Raufußröhrling besonders geschützt, deshalb höchstens für den Eigenbedarf sammeln."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Fuchsrotkappe.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 18, selten bis 22 cm breit, fuchsrot bis rotbraun, samtig. Huthaut angewachsen und über den Rand stehend."
+roehren = "Hell graubraun bis gelbbraun."
+stiel = "6 bis 20, selten bis 22 cm lang und 1 bis 4, selten bis 5 cm dick, weißlich, mit zuerst hellbraunen, dann rötlichen bis dunkelbraunen Schuppen."
+fleisch = "Weiß, am Stiel rosa bis braun verfärbend, beim Kochen schwärzend."
+geruch = "Angenehm pilzig."
+geschmack = "Mild und angenehm pilzig, roh stark unverträglich."
+sporenpulver = "Gelbbraun."
+vorkommen = "Symbiosepilz im Nadelwald bei Kiefer und Föhre. Sehr selten, in Deutschland stark gefährdet."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Fichtenrotkappe"
+merkmal = "Stiel mit schwarzen faserigen Schüppchen, bei Fichte und Heidelbeere."
+essbar = "speisepilz"
+slug = "fichtenrotkappe"
+
+[[verwechslungen]]
+name = "Birkenrotkappe"
+merkmal = "Stiel mit schwärzlichen Schüppchen, Fleisch violettgrau und schwach blauend, bei Birke."
+essbar = "bedingtEssbar"
+slug = "birken-rotkappe"
+
+[[verwechslungen]]
+name = "Espenrotkappe"
+merkmal = "Stielschüppchen orangebraun statt schwarz, bei Espe und Zitterpappel."
+essbar = "speisepilz"
+slug = "espen-rotkappe"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Fuchsrotkappe.htm"

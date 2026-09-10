@@ -1,0 +1,47 @@
+name = "Kleines Judasohr"
+lateinisch = "Schizophyllum amplum"
+gruppe = "ohrlappenpilz"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["herbst", "winter"]
+baeume = ["pappel", "weide"]
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/KleinesJudasohr.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "0,5 bis 1, selten bis 2 cm breit, becher- bis schalenförmig oder konvex. Oberseite mit weißlichem haarigem Filz, im Alter durch Algen grünlich, Rand eingerollt. Unterseite fleischbraun bis ockerbraun und aderig gefaltet."
+stiel = "Fehlt, der Pilz sitzt stiellos am Holz."
+fleisch = "Karamellfarben bis bräunlich, zäh und gummiartig, alt oder trocken hornartig hart."
+geruch = "Neutral."
+geschmack = "Unbedeutend bis herb."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer an Laubholzästen in Auwald und Bruchwald, gern an Zitterpappel und Weide."
+zeit = "Herbst bis Winter."
+
+[[verwechslungen]]
+name = "Weißtannenfingerhut"
+merkmal = "Außen raukörnig und haselnussbraun bis graulila, innen weißlich mit rosa Hauch, an Nadelholz, gern Weißtanne."
+essbar = "ungeniessbar"
+slug = "weisstannenfingerhut"
+
+[[verwechslungen]]
+name = "Gezonter Ohrlappenpilz"
+merkmal = "4 bis 12, selten bis 25 cm breit, dachziegelartig übereinander sitzend, Oberseite striegelig behaart und bunt gezont."
+essbar = "ungeniessbar"
+slug = "gezonter-ohrlappenpilz"
+
+[[verwechslungen]]
+name = "Blattartiger Zitterling"
+merkmal = "Wellig und blattartig gekräuselt, die ganze Oberfläche bildet Sporen."
+essbar = "essbar"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/KleinesJudasohr.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Pappel-Becherrindenschwamm"

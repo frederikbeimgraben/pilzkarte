@@ -1,0 +1,58 @@
+name = "Karbolegerling"
+lateinisch = "Agaricus xanthodermus"
+gruppe = "champignon"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Zu erkennen am tinten- bis karbolartigen Geruch nach Phenol und an der starken Gelbfärbung der Stielbasis beim Anschneiden. Die Vergiftung ist nicht gefährlich, aber sehr unangenehm: meist Bauchschmerzen über einige Stunden, in Ausnahmefällen Schwindel und Sehstörungen. Bei jungen Stücken ist der Geruch oft nicht eindeutig; dann den Pilz stehen lassen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Karbolegerling.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Gelb verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ, selten etwas kartonbraun."
+
+[merkmale]
+hut = "3 bis 14, selten bis 18 cm breit, weiß, alt graubraun bis gelbbraun, Mitte mit bräunlichen schuppigen Zonen. Beim Reiben gelblich verfärbend. Jung halbkugelig bis konvex, im Alter abgeflacht."
+lamellen = "Rosa, alt braun, frei, gedrängt."
+stiel = "3 bis 12, selten bis 15 cm lang und 1 bis 3, selten bis 3,5 cm dick, weiß und glatt, bei Berührung oder im Alter gelbfleckig, später bräunlich. Basis mit starker Gelbfärbung. Ring weiß, breit, hängend, mit doppeltem, teils bräunlichem Rand, teils vergänglich."
+fleisch = "Weiß, in der Stielbasis und bei Verletzung gelblich verfärbend."
+geruch = "Unangenehm tintenartig und karbolartig nach Phenol, urinartig, nicht pilzartig wie bei den Wiesenchampignons. Beim Kochen verstärkt er sich."
+geschmack = "Mild, dabei widerlich, unangenehm und muffig."
+sporenpulver = "Dunkelbraun bis purpurbraun."
+vorkommen = "Folgezersetzer auf Wiesen, im Gebüsch, in Parkanlagen, gern auf Streuobstwiesen, seltener in Wäldern."
+zeit = "Frühling bis Herbst."
+
+[[verwechslungen]]
+name = "Übelriechender Egerling"
+merkmal = "Hut schmutzigbraun bis gelbbraun, Fleisch braunrosa anlaufend, Geruch widerlich fischartig statt karbolartig."
+essbar = "ungeniessbar"
+slug = "uebelriechender-egerling"
+
+[[verwechslungen]]
+name = "Wiesenchampignon"
+merkmal = "Stielbasis nicht knollig und nicht gelb verfärbend, Geruch angenehm pilzig."
+essbar = "speisepilz"
+slug = "wiesenchampignon"
+
+[[verwechslungen]]
+name = "Frühlingschampignon"
+merkmal = "Geruch mandel- bis anisartig, Hut mit seidigen gelbbraunen Radialfasern."
+essbar = "speisepilz"
+slug = "fruehlingschampignon"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Karbolegerling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Karbol-Champignon"

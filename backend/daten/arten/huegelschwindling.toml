@@ -1,0 +1,46 @@
+name = "Hügelschwindling"
+lateinisch = "Marasmius collinus"
+gruppe = "schwindling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+speisewertHinweis = "123pilzsuche führt ihn als leicht giftig. Er unterscheidet sich vom Nelkenschwindling durch den Geruch: nach Zedernholz und zwischen den Fingern mehlig-ranzig, nie nach Bittermandeln, dazu ein ekelhaft ranziger Geschmack."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Huegelschwindling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "1 bis 6, selten bis 7 cm breit, jung haselnussbraun, blass cremegelb, hellbraun bis ocker-rotbraun, Mitte dunkler und gebuckelt. Haut frisch glänzend und fettig wirkend, im Alter grubig-runzelig. Rand etwas gerieft und ausblassend, im Alter nie gekerbt."
+lamellen = "Weißlich, gelblich bis cremerosa, ausgebuchtet und mit einem Zahn angeheftet, mäßig entfernt, mit vielen Zwischenlamellen."
+stiel = "4,5 bis 7, selten bis 8 cm lang und 0,2 bis 0,6, selten bis 0,7 cm dick, blass creme bis hellbraun, im Alter kräftiger braungelb. Starr, zäh, elastisch und knorpelig, zur Basis dunkler braun bis rotgelbbraun, Spitze heller und leicht bereift. Jung ziemlich voll, schnell hohl werdend."
+fleisch = "Weißlich bis cremefarben, faserig."
+geruch = "Nach Zedernholz, zwischen den Fingern zerrieben mehlig-ranzig. Nicht nach Bittermandeln und nicht alkalisch stechend wie beim Nelkenschwindling."
+geschmack = "Mild, aber unangenehm mehlig-ranzig und widerlich."
+sporenpulver = "Weiß mit einem Hauch rosa."
+vorkommen = "Folgezersetzer in Parks, Gärten, auf Rasen und Wiesen, an Waldrändern, Waldwegen und im Mischwald. Meist in dichten Büscheln und Hexenringen. Extrem selten, kaum Fundnachweise in Mitteleuropa."
+zeit = "Frühling bis Spätherbst."
+
+[[verwechslungen]]
+name = "Ziegelroter Risspilz"
+merkmal = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Fleisch rot verfärbend, Sporenpulver dunkelbraun."
+essbar = "toedlichGiftig"
+slug = "ziegelroter-risspilz"
+
+[[verwechslungen]]
+name = "Grünender Risspilz"
+merkmal = "Stiel von unten nach oben blaugrün, Fleisch bei Verletzung grün bis blaugrün, Sporenpulver lehmbraun."
+essbar = "giftig"
+slug = "gruenender-risspilz"
+
+[[verwechslungen]]
+name = "Brennender Rübling"
+merkmal = "Lamellen gelbbraun bis dottergelb und entfernt stehend, Geschmack nach kurzer Zeit scharf bis pfefferig."
+essbar = "ungeniessbar"
+slug = "brennender-ruebling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Huegelschwindling.htm"

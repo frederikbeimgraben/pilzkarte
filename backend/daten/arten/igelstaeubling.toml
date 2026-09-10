@@ -1,0 +1,49 @@
+name = "Igelstäubling"
+lateinisch = "Lycoperdon echinatum"
+gruppe = "staeubling"
+speisewert = "ohneSpeisewert"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "123pilze gibt ihm die Relative Wertigkeit 6."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Igelstaeubling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "2 bis 6, selten bis 9 cm breit, bräunlich, kugel- oder birnenförmig."
+stacheln = "Dicht stehend und zusammenneigend, die Spitzen heller. Fallen die Stacheln ab, bleibt ein deutliches Netzmuster zurück."
+fleisch = "Jung innen weiß und fest, später gelblich, olivgelb bis dunkelbraun und schwammig, alt lila-schwarzbraun und pulvrig stäubend."
+geruch = "Unbedeutend."
+geschmack = "Mild."
+sporenpulver = "Dunkelbraun bis olivbraun."
+vorkommen = "Folgezersetzer, meist im Laubwald, gern auf kalkreichem Boden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Flaschenstäubling"
+merkmal = "Keulig bis birnenförmig mit stielartigem Teil, Stacheln blass und pyramidenartig, ohne bleibendes Netzmuster."
+essbar = "speisepilz"
+slug = "flaschenbovist"
+
+[[verwechslungen]]
+name = "Birnenstäubling"
+merkmal = "Mit dunkelbraunen kleiigen Warzen statt Stacheln, wächst büschelig auf altem Holz."
+essbar = "essbar"
+slug = "birnenstaeubling"
+
+[[verwechslungen]]
+name = "Bräunlicher Stäubling"
+merkmal = "Stachelspitzen braun statt weißlich, Stacheln leicht abwischbar, danach kein Netzmuster."
+essbar = "ohneSpeisewert"
+slug = "braeunlicher-staeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Igelstaeubling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Igel-Stäubling"

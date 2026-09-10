@@ -1,0 +1,46 @@
+name = "Jungfernschirmling"
+lateinisch = "Leucoagaricus nympharum"
+gruppe = "schirmling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Er verursacht möglicherweise Magen-Darm-Störungen. Zu erkennen am Fleisch, das bei Verletzung nicht rötet, sondern höchstens im Alter etwas grau wird, und am Stiel ohne Natterung."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Jungfernschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 9, selten bis 12 cm breit, hellbraun, mit gezonten weichen wolligen abstehenden gelblichen bis braunen Schüppchen. Rand flockig, Mitte glatt und hellbraun, graubraun bis dunkel kastanienbraun."
+lamellen = "Weiß, leicht gilbend, frei, weich, im Alter manchmal dunkel fleckend."
+stiel = "Schlank, zäh, faserig und glatt, hellbräunlich, hell rotbräunlich bis grüngelblich, ohne Natterung. Basis jung knollig. Ring weißlich, wattig, am Stiel verschiebbar, mit gezähntem Rand."
+fleisch = "Weich und weiß, bei Verletzung nicht rötlich anlaufend, höchstens im Alter etwas schwärzend oder grauend."
+geruch = "Unbedeutend, neutral."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer im Nadelwald, auch in Bergnadelwäldern, gern auf saurem Boden. Selten."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Büscheliger Egerlingsschirmling"
+merkmal = "Fleisch stark gilbend und rötend, später weinrot, Stiel bei Verletzung intensiv gelb bis rotbraun, wächst büschelig auf Kompost und Rindenmulch."
+essbar = "giftig"
+slug = "buescheliger-egerlingsschirmling"
+
+[[verwechslungen]]
+name = "Parasol"
+merkmal = "Stiel mit dunkelbrauner Natterung, Hut bis 25, selten 30 cm breit, Geruch nussartig."
+essbar = "bedingtEssbar"
+slug = "parasol"
+
+[[verwechslungen]]
+name = "Safranschirmling"
+merkmal = "Fleisch bei Verletzung sofort safranrötlich anlaufend, Stielbasis verdickt aber ohne abgesetzte Knolle."
+essbar = "bedingtEssbar"
+slug = "safranschirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Jungfernschirmling.htm"

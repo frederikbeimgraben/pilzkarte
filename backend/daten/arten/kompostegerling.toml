@@ -1,0 +1,39 @@
+name = "Kompostegerling"
+lateinisch = "Agaricus cappellianus"
+gruppe = "champignon"
+speisewert = "essbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Kompostegerling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "5 bis 15, selten bis 20 cm breit, braun, schmutzigbraun bis gelbbraun, breitschuppig auf hellem Untergrund. Huthaut aufreißend, Rand jung fransig mit Velum behangen und lange eingerollt."
+lamellen = "Blass rosa, später braun, lilabraun bis schwarzbraun, frei."
+stiel = "4 bis 14, selten bis 16 cm lang und 1 bis 3, selten bis 3,5 cm dick, rotbraun auf hellem Grund. Ring weißlich, unterhalb hellbräunlich, alt ganz braun, dünn, doppelkantig, alt anliegend."
+fleisch = "Weiß und dick, bald schmutzig grauweiß, im Schnitt rötend, teils etwas verzögert."
+geruch = "Pilzig und nussig, nicht anisartig, im Alter unangenehm urin- bis fischartig."
+geschmack = "Mild, nussig."
+sporenpulver = "Purpurbraun."
+vorkommen = "Folgezersetzer in Parks und Gärten, auf Kompost, Müllhalden und nährstoffreichem Boden."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Rebhuhnegerling"
+merkmal = "Hut graubraun bis rauchschwärzlich, Fleisch chromgelb an der Stielbasis, Geruch schwach karbolartig."
+essbar = "giftig"
+slug = "rebhuhnegerling"
+
+[[verwechslungen]]
+name = "Übelriechender Egerling"
+merkmal = "Kleiner, 3 bis 9, selten 12 cm breit, Geruch widerlich stinkend und fischartig."
+essbar = "ungeniessbar"
+slug = "uebelriechender-egerling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Kompostegerling.htm"

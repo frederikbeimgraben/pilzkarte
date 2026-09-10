@@ -1,0 +1,36 @@
+name = "Kerbrandiger Napfbecherling"
+lateinisch = "Tarzetta cupularis"
+gruppe = "becherling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst"]
+baeume = []
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/KerbrandigerNapf.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+fruchtkoerper = "1 bis 3, selten bis 4 cm breit, schüsselförmig, hellbraun, der Rand gekerbt. Scheibe weißlich bis gelblich, Becherboden manchmal aderig, Außenseite ockerfarben und etwas kleiig."
+stiel = "Sehr kurz, meist fehlend."
+fleisch = "Hellbraun, dünn und brüchig."
+geruch = "Neutral, angenehm."
+geschmack = "Neutral, mild, angenehm."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer auf Erde in Gärten und in Blumentöpfen."
+zeit = "Frühjahr bis Herbst."
+
+[[verwechslungen]]
+name = "Judasohr"
+merkmal = "Ohrförmig und gallertartig, wächst an Laubholz, meist an Holunder, nicht auf Erde."
+essbar = "speisepilz"
+slug = "judasohr"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/KerbrandigerNapf.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Kerbrandiger_Napfbecherling"

@@ -1,0 +1,44 @@
+name = "Kegelhütiger Knollenblätterpilz"
+lateinisch = "Amanita virosa"
+gruppe = "wulstling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["fichte", "buche", "birke", "eiche"]
+speisewertHinweis = "Absolut tödlich, schon 20 Gramm genügen. Zu erkennen am rein weißen spitzkegeligen Hut ohne Riefung, am weiß genatterten Stiel mit häutigem Ring und an der zwiebelknolligen Basis in eierschalenartiger weißer Scheide. Keine Kostversuche wegen der Leberschädigung."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/KegelhuetigerKnollenblaetterpilz.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 14, selten bis 18 cm breit, weißlich, selten hell rotbräunlich, nicht gerieft, seidig-radialfaserig. Jung halbkugelig, später spitzkegelig gebuckelt, alt abgeflacht. Haut wie Kuchenstücke abziehbar, feucht etwas schmierig-klebrig, teils mit Velumresten."
+lamellen = "Weiß, frei, selten etwas angeheftet, Schneiden feinflockig."
+stiel = "5 bis 12, selten bis 15 cm lang und 1 bis 4, selten bis 6 cm dick, weiß bis schmutzig weiß, seidig und faserig, weiß genattert mit faserigen bis flockigen Schüppchen. Voll, später hohl. Basis zwiebelknollig mit eierschalenartiger, ein- bis zweilappiger weißer Scheide. Ring weiß, häutig, hängend, ungerieft und vergänglich."
+fleisch = "Weiß, unter der Huthaut etwas gelbgrünlich."
+geruch = "Leicht rettichartig, unangenehm süßlich nach Kunsthonig, teils muffig, alt nach Tierkäfig und verrottendem Fleisch."
+geschmack = "Mild, angenehm bis unangenehm. Niemals kosten, es droht Leberschädigung."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Nadelwald, überwiegend bei Fichte, selten im Laubwald bei Buche, Birke und Eiche, auf saurem Boden."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Weißer Knollenblätterpilz"
+merkmal = "Hut flach ausgebreitet statt spitzkegelig, Stiel nur mit angedrückten Velumschüppchen, Knolle gerandet."
+essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Grüner Knollenblätterpilz"
+merkmal = "Hut olivgrün, gelbgrün bis ocker statt weiß."
+essbar = "toedlichGiftig"
+slug = "gruener-knollenblaetterpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/KegelhuetigerKnollenblaetterpilz.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Kegelhütiger_Knollenblätterpilz"
