@@ -23,9 +23,11 @@ from app.modules.arten.schemas import (
     ArtKurz,
     Essbarkeit,
     Jahresspanne,
+    Marktfaehigkeit,
     Merkmal,
     MerkmalSchluessel,
     Profil,
+    Quelle,
     Reagenz,
     SaisonKurve,
     SaisonKurz,
@@ -38,6 +40,13 @@ from app.shared.schemas import Woche
 # Der Ordner liegt neben ``app`` und wird mit dem Backend ausgeliefert. Ein
 # eigener Pfad in der Umgebung waere ein weiterer Vertrag zum NixOS-Modul.
 DATEN = Path(__file__).resolve().parents[3] / "daten"
+
+# Die Positivliste der DGfM entscheidet, was in den Handel darf. Sie steht als
+# PDF im Netz und traegt ihren eigenen Stand.
+MARKT_QUELLE = Quelle(
+    url="https://www.dgfm-ev.de/files/dokumente/PSV/2026-08-11_positivliste_speisepilze.pdf",
+    geprueft_am="2026-05-01",
+)
 
 SCHWELLE_VORHERSAGE = 600
 SCHWELLE_SAISON = 60
@@ -251,6 +260,9 @@ class Katalog:
                     speisewert=profil.speisewert,
                     karten_slug=karte,
                     sammelbar=profil.sammelbar,
+                    marktfaehig=profil.marktfaehig,
+                    wertigkeit=profil.wertigkeit,
+                    haeufigkeit=profil.haeufigkeit,
                     vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
                     begehungen_mit_fund=zaehlung.begehungen_mit_fund,
                     spitze_woche=spitze_woche_fuer(alle) if profil.sammelbar else None,
@@ -318,6 +330,14 @@ class Katalog:
             speisewert=profil.speisewert,
             karten_slug=karte,
             sammelbar=profil.sammelbar,
+            marktfaehigkeit=Marktfaehigkeit(marktfaehig=profil.marktfaehig, quelle=MARKT_QUELLE),
+            wertigkeit=profil.wertigkeit,
+            haeufigkeit=profil.haeufigkeit,
+            gefaehrdung=profil.gefaehrdung,
+            weitere_namen=profil.weitere_namen,
+            synonyme=profil.synonyme,
+            masse=profil.masse,
+            quelle=profil.quelle,
             vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
             begehungen_mit_fund=zaehlung.begehungen_mit_fund,
             spitze_woche=spitze_woche_fuer(alle) if profil.sammelbar else None,

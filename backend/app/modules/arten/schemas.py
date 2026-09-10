@@ -93,6 +93,28 @@ class Baumart(StrEnum):
     OBSTBAUM = "obstbaum"
 
 
+class Haeufigkeit(StrEnum):
+    """Wie oft man die Art findet, laut ihrer Quellseite."""
+
+    SEHR_HAEUFIG = "sehrHaeufig"
+    HAEUFIG = "haeufig"
+    ZERSTREUT = "zerstreut"
+    SELTEN = "selten"
+    SEHR_SELTEN = "sehrSelten"
+
+
+class Gefaehrdung(StrEnum):
+    """Die Stufe der Roten Liste Deutschlands, wenn die Quellseite eine nennt."""
+
+    VOM_AUSSTERBEN_BEDROHT = "vomAussterbenBedroht"
+    STARK_GEFAEHRDET = "starkGefaehrdet"
+    GEFAEHRDET = "gefaehrdet"
+    UNBEKANNTES_AUSMASS = "unbekanntesAusmass"
+    EXTREM_SELTEN = "extremSelten"
+    VORWARNLISTE = "vorwarnliste"
+    DATEN_UNZUREICHEND = "datenUnzureichend"
+
+
 class Reagenz(StrEnum):
     """Die Chemikalien, mit denen ein Bestimmer eine Farbreaktion auslöst."""
 
@@ -164,6 +186,38 @@ class MerkmalSchluessel(StrEnum):
 type Tag = Stufe | Gruppe | Jahreszeit | Baumart
 
 
+class Spanne(BasisModell):
+    """Ein Messbereich, so wie 123pilzsuche ihn schreibt: 4 bis 20, selten bis 25."""
+
+    von: float = Field(gt=0)
+    bis: float = Field(gt=0)
+    selten_bis: float | None = Field(default=None, gt=0)
+
+    @model_validator(mode="after")
+    def _reihenfolge(self) -> "Spanne":
+        if self.von > self.bis:
+            raise ValueError("Der untere Wert einer Spanne liegt ueber dem oberen.")
+        if self.selten_bis is not None and self.selten_bis < self.bis:
+            raise ValueError("Der Ausnahmewert liegt unter dem oberen Wert.")
+        return self
+
+
+class Masse(BasisModell):
+    """Die Zahlen, die die Quellseite nennt. Was sie nicht nennt, bleibt leer.
+
+    Huete werden in Zentimetern breit gemessen, Sporen in Mikrometern. Ein Pilz
+    hat entweder einen Hut oder einen Fruchtkoerper, nie beides.
+    """
+
+    hut_breite_cm: Spanne | None = None
+    fruchtkoerper_breite_cm: Spanne | None = None
+    fruchtkoerper_hoehe_cm: Spanne | None = None
+    stiel_laenge_cm: Spanne | None = None
+    stiel_dicke_cm: Spanne | None = None
+    sporen_laenge_um: Spanne | None = None
+    sporen_breite_um: Spanne | None = None
+
+
 class Verwechslung(BasisModell):
     """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
 
@@ -190,6 +244,10 @@ class Verweis(BasisModell):
 
     titel: str
     url: str
+
+
+WERTIGKEIT_BESTE = 1
+WERTIGKEIT_SCHWAECHSTE = 6
 
 
 class Quelle(BasisModell):
@@ -219,6 +277,16 @@ class Profil(BasisModell):
     jahreszeiten: list[Jahreszeit] = Field(min_length=1)
     baeume: list[Baumart]
     sammelbar: bool = True
+    # Die Positivliste der DGfM. Nur was dort steht, darf in den Handel.
+    marktfaehig: bool = False
+    # Die "Relative Wertigkeit" von 123pilzsuche: 1 ist die beste Stufe,
+    # 6 die schwaechste. Die Seite nennt sie nicht fuer jede Art.
+    wertigkeit: int | None = Field(default=None, ge=WERTIGKEIT_BESTE, le=WERTIGKEIT_SCHWAECHSTE)
+    haeufigkeit: Haeufigkeit | None = None
+    gefaehrdung: Gefaehrdung | None = None
+    weitere_namen: list[str] = Field(default_factory=list[str])
+    synonyme: list[str] = Field(default_factory=list[str])
+    masse: Masse = Field(default_factory=Masse)
     karte: str | None = None
     speisewert_hinweis: str | None = None
     schutz_hinweis: str | None = None
@@ -354,6 +422,13 @@ class SaisonKurve(BasisModell):
     begehungen_je_woche_laufendes_jahr: list[int]
 
 
+class Marktfaehigkeit(BasisModell):
+    """Ob die DGfM die Art auf ihrer Positivliste der Speisepilze fuehrt."""
+
+    marktfaehig: bool
+    quelle: Quelle
+
+
 class Merkmal(BasisModell):
     """Eine Zeile der Merkmalstabelle."""
 
@@ -374,6 +449,9 @@ class ArtKurz(BasisModell):
     speisewert: Essbarkeit
     karten_slug: str | None
     sammelbar: bool
+    marktfaehig: bool
+    wertigkeit: int | None
+    haeufigkeit: Haeufigkeit | None
     vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
@@ -393,6 +471,14 @@ class Art(BasisModell):
     speisewert: Essbarkeit
     karten_slug: str | None
     sammelbar: bool
+    marktfaehigkeit: Marktfaehigkeit
+    wertigkeit: int | None
+    haeufigkeit: Haeufigkeit | None
+    gefaehrdung: Gefaehrdung | None
+    weitere_namen: list[str]
+    synonyme: list[str]
+    masse: Masse
+    quelle: Quelle
     vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
