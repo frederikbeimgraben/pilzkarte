@@ -3,10 +3,10 @@ lateinisch = "Inonotus cuticularis"
 gruppe = "porling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Ankerhaariger Buchen-Schillerporling", "Blasser Schillerporling"]
 

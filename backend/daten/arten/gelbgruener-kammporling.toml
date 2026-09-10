@@ -3,11 +3,11 @@ lateinisch = "Albatrellus cristatus"
 gruppe = "porling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "kastanie", "tanne", "laerche", "fichte"]
 speisewertHinweis = "Riecht unangenehm bis stinkend und schmeckt bitter."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Grüner Kammporling"]
 synonyme = ["Scutiger cristatus", "Polypilus poripes", "Polyporus cristatiformis", "Boletus cristatus"]
@@ -41,19 +41,19 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Schafporling"
 merkmal = "Hut weißlich bis cremefarben ohne Grünton, Poren weiß, Fleisch weiß und mild."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schafporling"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Hut semmelgelb bis orange, Fleisch mild, Poren gelblich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Zitronenporling"
 merkmal = "Hut zitronengelb bis cremefarben ohne Olivgrün, Fleisch mild."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "zitronenporling"
 
 [[links]]

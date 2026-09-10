@@ -1,14 +1,19 @@
 name = "Speisemorchel"
 lateinisch = "Morchella esculenta"
 gruppe = "morchel"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Gut durchgaren. Besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Morchel", "Rundmorchel"]
+
+[baeumeAusErfahrung]
+baeume = ["esche", "ulme", "obstbaum"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speisemorchel.htm"
@@ -33,19 +38,19 @@ zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai."
 [[verwechslungen]]
 name = "Gemeine Morchel"
 merkmal = "Kleiner, 2 bis 6, selten bis 8 cm breit, hellbraun, graubraun bis rußbraun mit rostfarbenen Flecken."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gemeine-morchel"
 
 [[verwechslungen]]
 name = "Dickfüßige Morchel"
 merkmal = "Stiel klumpig dick und längs gefurcht, sonst gleich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "dickfuessige-morchel"
 
 [[verwechslungen]]
 name = "Spitzmorchel"
 merkmal = "Käppchen zugespitzt, olivbeige bis graubraun, mit Längsrippen und Kammern statt runder Waben."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "spitzmorchel"
 
 [[links]]

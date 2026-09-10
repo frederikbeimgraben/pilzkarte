@@ -1,14 +1,15 @@
 name = "Braunschuppiger Wiesenchampignon"
 lateinisch = "Agaricus moellerianus"
 gruppe = "champignon"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er wächst gern am Straßenrand und auf gedüngten Weiden. Solche Funde besser stehen lassen."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Kleinsporiger Wiesenegerling", "Varietät Wiesenchampignon", "Braunschuppiger Wiesenegerling", "Kleinsporiger Weidechampignon", "Feld-Egerling"]
 synonyme = ["Agaricus floccipes", "Agaricus campestris cf. var floccipes", "Psalliota campestris var. floccipes", "Agaricus campestris var. floccipes"]
 
@@ -55,7 +56,7 @@ slug = "uebelriechender-egerling"
 [[verwechslungen]]
 name = "Wiesenchampignon"
 merkmal = "Hut ohne die großen braunen Schuppen, rein weiß bis cremefarben."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "wiesenchampignon"
 
 [[links]]

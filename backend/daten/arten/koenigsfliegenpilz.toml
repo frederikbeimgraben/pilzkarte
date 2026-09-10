@@ -3,11 +3,11 @@ lateinisch = "Amanita regalis"
 gruppe = "wulstling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Zu erkennen am braunen bis gelbbraunen Hut mit gelblichen, abwischbaren Velumflocken, am hellgelben Stiel und an der warzig-knolligen Basis mit gürtelförmigen Velumzonen."
-marktfaehig = false
 weitereNamen = ["Brauner Fliegenpilz"]
 synonyme = ["Amanita muscaria var. regalis", "Amanita regalis forma umbrina", "Amanita emilii"]
 
@@ -41,7 +41,7 @@ slug = "pantherpilz"
 [[verwechslungen]]
 name = "Grauer Wulstling"
 merkmal = "Hut hellbräunlich bis schwarzbraun mit grauweißen Velumresten, Stiel weiß bis grauweiß, Geruch rettich- bis rübenartig."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "grauer-wulstling"
 
 [[links]]

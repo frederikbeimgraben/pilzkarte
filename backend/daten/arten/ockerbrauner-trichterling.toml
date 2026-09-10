@@ -1,14 +1,15 @@
 name = "Ockerbrauner Trichterling"
 lateinisch = "Infundibulicybe gibba"
 gruppe = "trichterling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "In südlichen Ländern gibt es den sehr giftigen Wohlriechenden Trichterling, der nach Jasmin riecht. Auf den Geruch achten."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "haeufig"
 weitereNamen = ["Ockertrichterling"]
 synonyme = ["Clitocybe gibba", "Agaricus gibbus"]
@@ -42,7 +43,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Mönchskopf"
 merkmal = "Deutlich größer, Hut bräunlich mit warzenartigem Buckel in der Mitte, Geruch süßlich nach Bittermandel."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "moenchskopf"
 
 [[verwechslungen]]

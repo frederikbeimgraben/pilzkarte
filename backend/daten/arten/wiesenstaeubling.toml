@@ -3,12 +3,13 @@ lateinisch = "Vascellum pratense"
 gruppe = "staeubling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur solange das Innere rein weiß ist. Sobald das Fleisch gilbt oder olivbraun wird, ist er nicht mehr brauchbar."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Wiesenstaubbecher", "Niedergedrückter Stäubling", "Münzstäubling"]
 synonyme = ["Lycoperdon pratense"]
 
@@ -40,13 +41,13 @@ slug = "weisser-knollenblaetterpilz"
 [[verwechslungen]]
 name = "Riesenbovist"
 merkmal = "Weiß und rundlich, aber 10 bis 50 cm groß, ohne Stielteil."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenbovist"
 
 [[verwechslungen]]
 name = "Hasenstäubling"
 merkmal = "Größer, die Außenhaut reißt im Alter netzig felderig auf."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "hasenbovist"
 
 [[links]]

@@ -1,13 +1,14 @@
 name = "Igelstachelbart"
 lateinisch = "Hericium erinaceus"
 gruppe = "stachelbart"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "obstbaum"]
 speisewertHinweis = "In freier Natur nur vereinzelt und in Deutschland stark gefährdet. Er wird gezüchtet; den Fund besser stehen lassen."
-marktfaehig = true
-wertigkeit = 2
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Yamabusitake", "Löwenmähne", "Pom-Pom blanc", "Affenkopfpilz --- HERICIUM ERINACEUS"]
 synonyme = ["Hericium erinaceum", "Hericium erinaceus forma caput-medusae", "Martella hystrix", "Hydnum juranum"]

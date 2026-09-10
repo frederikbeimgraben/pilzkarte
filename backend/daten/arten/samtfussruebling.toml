@@ -1,15 +1,20 @@
 name = "Samtfußrübling"
 lateinisch = "Flammulina velutipes"
 gruppe = "ruebling"
-speisewert = "speisepilz"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = []
 speisewertHinweis = "Nur die Hüte verwenden. Die Stiele sind zäh und taugen höchstens als Pilzpulver."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Gemeiner Samtfußrübling", "Enoki", "Winterrübling", "Winterlinge"]
+
+[baeumeAusErfahrung]
+baeume = ["weide", "pappel", "buche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Samtfussruebling.htm"

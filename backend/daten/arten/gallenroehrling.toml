@@ -3,11 +3,11 @@ lateinisch = "Tylopilus felleus"
 gruppe = "roehrling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Schon ein kleines Stück Fleisch auf der Zunge schmeckt sehr bitter; ein einziger Fruchtkörper verdirbt ein ganzes Gericht. Er enthält etwas Bufotenin. Vereinzelt gab es Vergiftungen mit Erbrechen, Durchfall, Bauchkoliken, Schwindel und Schweißausbrüchen."
-marktfaehig = false
 weitereNamen = ["Bitterröhrling", "Bitterling"]
 
 [quelle]
@@ -57,7 +57,7 @@ slug = "wurzelnder-bitterroehrling"
 [[verwechslungen]]
 name = "Steinpilz"
 merkmal = "Röhren weiß, dann gelb bis oliv, nie rosa, Netz am Stiel weiß, Geschmack mild und nussig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "steinpilz"
 
 [[links]]

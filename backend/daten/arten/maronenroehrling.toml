@@ -1,14 +1,19 @@
 name = "Maronenröhrling"
 lateinisch = "Imleria badia"
 gruppe = "roehrling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen. Er nimmt Cäsium 137 stärker auf als die meisten Arten; für Kinder und Schwangere sind größere Mengen nicht zu empfehlen."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Braunkappen", "Braunkuppen", "Braune", "Bräunling", "Marone"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte", "kiefer", "buche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Maronenroehrling.htm"
@@ -63,7 +68,7 @@ slug = "schoenfussroehrling"
 [[verwechslungen]]
 name = "Steinpilz"
 merkmal = "Röhren weißlich bis gelbgrün und kaum blauend, Stiel mit weißem Netz."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "steinpilz"
 
 [[verwechslungen]]
@@ -75,7 +80,7 @@ slug = "rotfussroehrling"
 [[verwechslungen]]
 name = "Ziegenlippe"
 merkmal = "Hut wildlederartig filzig, Röhren jung leuchtend gelb und höchstens leicht blauend, Stiel fast weiß und schlank."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ziegenlippe"
 
 [[links]]

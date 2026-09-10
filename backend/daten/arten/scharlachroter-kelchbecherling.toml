@@ -1,14 +1,14 @@
 name = "Scharlachroter Kelchbecherling"
 lateinisch = "Sarcoscypha coccinea"
 gruppe = "becherling"
-speisewert = "ohneSpeisewert"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 5
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["winter", "fruehling"]
 baeume = ["weide", "pappel"]
 speisewertHinweis = "Ohne Speisewert, 123pilze gibt die relative Wertigkeit 5. In Deutschland gefährdet, darum stehen lassen."
-marktfaehig = false
-wertigkeit = 5
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Zinnoberroter Kelchbecherling", "Gemeiner Kelchbecherling", "Blutroter Prachtbecherling", "Scharlachroter Prachtbecherling"]
 
@@ -34,7 +34,7 @@ zeit = "Winter bis Mai."
 [[verwechslungen]]
 name = "Linden-Kelchbecherling"
 merkmal = "Wächst an Linde, Innenseite etwas blasser rot."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "linden-kelchbecherling"
 
 [[links]]

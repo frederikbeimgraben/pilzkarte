@@ -1,13 +1,13 @@
 name = "Zitronenporling"
 lateinisch = "Albatrellus citrinus"
 gruppe = "porling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = false
-wertigkeit = 2
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Zitronenporling.htm"
@@ -42,13 +42,13 @@ slug = "weisser-knochenporling"
 [[verwechslungen]]
 name = "Rötender Schafeuterporling"
 merkmal = "Hut weißlich bis ockerlich, Fleisch rötet deutlich, Poren gilben nicht zitronengelb."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "roetender-schafeuterporling"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Hut semmelgelb bis blass orange ohne Zitronengelb, Fruchtkörper oft miteinander verwachsen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[links]]

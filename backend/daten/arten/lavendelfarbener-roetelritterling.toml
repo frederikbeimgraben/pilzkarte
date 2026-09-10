@@ -1,13 +1,13 @@
 name = "Lavendelfarbener Rötelritterling"
 lateinisch = "Lepista glaucocana"
 gruppe = "roetelritterling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter"]
 baeume = []
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Blassblauer Rötelritterling", "Blasser Rötelritterling"]
 synonyme = ["Lepista nuda var. glaucocana", "Rhodopaxillus glaucocanus", "Clitocybe glaucocana"]
 
@@ -47,7 +47,7 @@ slug = "bocksdickfuss"
 [[verwechslungen]]
 name = "Violetter Rötelritterling"
 merkmal = "Hut kräftig lilaviolett, Lamellen blaulila und nie bräunlich."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "violetter-roetelritterling"
 
 [[links]]

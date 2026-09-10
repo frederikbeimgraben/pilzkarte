@@ -3,11 +3,11 @@ lateinisch = "Echinoderma asperum"
 gruppe = "schirmling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Stark giftig. Zu erkennen an den braunen, spitzen Stacheln auf cremefarbenem Grund, dem hängenden, nicht verschiebbaren Ring und dem stechend gasartigen Geruch."
-marktfaehig = false
 haeufigkeit = "haeufig"
 weitereNamen = ["Rauer Schirmling", "Kegelschuppiger Schirmling", "Spitzschuppiger Mehlschirmling"]
 
@@ -36,7 +36,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Riesenchampignon"
 merkmal = "Hut mit braunen Schuppen statt Stacheln, Lamellen blassrosa und später braun, Sporenpulver purpurbraun, Geruch anisartig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenchampignon"
 
 [[links]]

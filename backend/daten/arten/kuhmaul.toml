@@ -1,13 +1,14 @@
 name = "Kuhmaul"
 lateinisch = "Gomphidius glutinosus"
 gruppe = "gelbfuss"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Die schleimige Huthaut schon im Wald abziehen. Sonst färbt der Pilz im Korb die Berührungsstellen an Pfifferlingen schwarz; das ist nicht giftig, sieht aber unappetitlich aus."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Großer Gelbfuß", "Großer Schmierling", "Großer Keilpilz", "Großer Schleimpilz", "Rotzer", "Rotznase", "Schafsnase"]
 
 [quelle]
@@ -33,7 +34,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Rosenroter Gelbfuß"
 merkmal = "Hut rosenrot und samtig, nur schmierig statt schleimig, bei Kiefer auf dem Myzel des Kuhröhrlings."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rosenroter-gelbfuss"
 
 [[verwechslungen]]
@@ -51,13 +52,13 @@ slug = "gelbgestiefelter-schleimkopf"
 [[verwechslungen]]
 name = "Kupferroter Gelbfuß"
 merkmal = "Lamellen und Fleisch gelborange, bei Verletzung rötend, bei Kiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kupferroter-gelbfuss"
 
 [[verwechslungen]]
 name = "Aprikosen-Gelbfuß"
 merkmal = "Hut orangebraun, rosa bis violett, Lamellen jung purpurbraun, Stiel mit orangefarbener Ringzone."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "aprikosen-gelbfuss"
 
 [[links]]

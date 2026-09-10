@@ -80,6 +80,11 @@ class Baumart(StrEnum):
     EICHE = "eiche"
     BIRKE = "birke"
     ERLE = "erle"
+    ROBINIE = "robinie"
+    EIBE = "eibe"
+    GOLDREGEN = "goldregen"
+    HEIDELBEERE = "heidelbeere"
+    STEINEICHE = "steineiche"
     HAINBUCHE = "hainbuche"
     HASEL = "hasel"
     PAPPEL = "pappel"
@@ -128,6 +133,8 @@ class Reagenz(StrEnum):
     AMMONIAK = "ammoniak"
     SULFOVANILLIN = "sulfovanillin"
     FORMALIN = "formalin"
+    FECL3 = "fecl3"
+    WIELAND = "wieland"
     SCHAEFFER = "schaeffer"
 
 
@@ -141,13 +148,19 @@ class Jahreszeit(StrEnum):
 
 
 class Essbarkeit(StrEnum):
-    """Was mit einer Art in der Pfanne passieren darf."""
+    """Was mit einer Art in der Pfanne passieren darf.
 
-    SPEISEPILZ = "speisepilz"
+    Die Stufe kommt allein aus der Auszeichnung im Kopf der Quellseite und dem
+    Zusatz dahinter. Garzeiten, Rohgiftigkeit und Unvertraeglichkeiten stehen
+    im ``speisewertHinweis``: sie sagen, wie man die Art zubereitet, nicht ob
+    man sie essen darf.
+    """
+
+    SEHR_GUTER_SPEISEPILZ = "sehrGuterSpeisepilz"
+    GUTER_SPEISEPILZ = "guterSpeisepilz"
     ESSBAR = "essbar"
+    MINDERWERTIG = "minderwertig"
     BEDINGT_ESSBAR = "bedingtEssbar"
-    OHNE_SPEISEWERT = "ohneSpeisewert"
-    NICHT_EMPFOHLEN = "nichtEmpfohlen"
     UNGENIESSBAR = "ungeniessbar"
     GIFTIG = "giftig"
     TOEDLICH_GIFTIG = "toedlichGiftig"
@@ -218,6 +231,21 @@ class Masse(BasisModell):
     sporen_breite_um: Spanne | None = None
 
 
+HERKUNFT_ERFAHRUNG = "eigene Erfahrung"
+
+
+class BaeumeAusErfahrung(BasisModell):
+    """Baeume, die 123pilzsuche nicht nennt, das Projekt aber kennt.
+
+    Sie stehen getrennt von ``baeume``, damit man sieht, welche Angabe belegt
+    ist und welche aus dem eigenen Sammeln stammt. Die Chips der Artenliste
+    zeigen beide Listen zusammen.
+    """
+
+    baeume: list[Baumart] = Field(min_length=1)
+    quelle: str = Field(pattern=f"^{HERKUNFT_ERFAHRUNG}$")
+
+
 class Verwechslung(BasisModell):
     """Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
 
@@ -276,9 +304,14 @@ class Profil(BasisModell):
     geschuetzt: bool
     jahreszeiten: list[Jahreszeit] = Field(min_length=1)
     baeume: list[Baumart]
+    baeume_aus_erfahrung: BaeumeAusErfahrung | None = None
+    # Eine Art, die in der Kette steht und trotzdem giftig ist, braucht auf der
+    # Artseite mehr als eine Enum-Stufe. Der Satz steht ueber der Tabelle.
+    warnung: str | None = Field(default=None, min_length=1)
     sammelbar: bool = True
     # Die Positivliste der DGfM. Nur was dort steht, darf in den Handel.
     marktfaehig: bool = False
+    marktfaehig_schweiz: bool | None = None
     # Die "Relative Wertigkeit" von 123pilzsuche: 1 ist die beste Stufe,
     # 6 die schwaechste. Die Seite nennt sie nicht fuer jede Art.
     wertigkeit: int | None = Field(default=None, ge=WERTIGKEIT_BESTE, le=WERTIGKEIT_SCHWAECHSTE)
@@ -295,6 +328,15 @@ class Profil(BasisModell):
     merkmale: dict[MerkmalSchluessel, str]
     verwechslungen: list[Verwechslung] = Field(min_length=1)
     links: list[Verweis] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def _giftige_arten_warnen(self) -> "Profil":
+        # Wer eine giftige Art im Katalog der sammelbaren findet, muss den Grund
+        # sofort lesen und nicht erst in der Zeile Speisewert suchen.
+        giftig = {Essbarkeit.GIFTIG, Essbarkeit.TOEDLICH_GIFTIG}
+        if self.sammelbar and self.speisewert in giftig and not self.warnung:
+            raise ValueError("Eine giftige sammelbare Art braucht eine Warnung.")
+        return self
 
     @model_validator(mode="after")
     def _keine_karte_ohne_sammeln(self) -> "Profil":
@@ -423,9 +465,14 @@ class SaisonKurve(BasisModell):
 
 
 class Marktfaehigkeit(BasisModell):
-    """Ob die DGfM die Art auf ihrer Positivliste der Speisepilze fuehrt."""
+    """Was die Zeile "Relativer Speisewert" der Quellseite zum Handel sagt.
+
+    Sie nennt die Positivliste der DGfM und die Marktfaehigkeit in der Schweiz.
+    Die Zeile steht bei jeder Art und ist darum genauer als eine Gesamtliste.
+    """
 
     marktfaehig: bool
+    schweiz: bool | None
     quelle: Quelle
 
 
@@ -450,8 +497,16 @@ class ArtKurz(BasisModell):
     karten_slug: str | None
     sammelbar: bool
     marktfaehig: bool
+    marktfaehig_schweiz: bool | None
     wertigkeit: int | None
     haeufigkeit: Haeufigkeit | None
+    gefaehrdung: Gefaehrdung | None
+    warnung: str | None
+    jahreszeiten: list[Jahreszeit]
+    baeume: list[Baumart]
+    baeume_aus_erfahrung: BaeumeAusErfahrung | None
+    weitere_namen: list[str]
+    synonyme: list[str]
     vorhersage_geplant: bool
     begehungen_mit_fund: int
     spitze_woche: int | None
@@ -471,13 +526,20 @@ class Art(BasisModell):
     speisewert: Essbarkeit
     karten_slug: str | None
     sammelbar: bool
+    marktfaehig: bool
+    marktfaehig_schweiz: bool | None
     marktfaehigkeit: Marktfaehigkeit
     wertigkeit: int | None
     haeufigkeit: Haeufigkeit | None
     gefaehrdung: Gefaehrdung | None
+    warnung: str | None
+    jahreszeiten: list[Jahreszeit]
+    baeume: list[Baumart]
+    baeume_aus_erfahrung: BaeumeAusErfahrung | None
     weitere_namen: list[str]
     synonyme: list[str]
     masse: Masse
+    reagenzien: list[Reagenzeintrag]
     quelle: Quelle
     vorhersage_geplant: bool
     begehungen_mit_fund: int

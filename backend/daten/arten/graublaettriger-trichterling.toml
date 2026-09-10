@@ -3,11 +3,11 @@ lateinisch = "Atractosporocybe inornata"
 gruppe = "trichterling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Graue Trichterlinge sind keine Speisepilze."
-marktfaehig = false
 synonyme = ["Clitocybe inornata", "Omphalia inornata", "Paxillus inornatus", "Agaricus elixus", "Clitocybe zygophylla"]
 
 [quelle]

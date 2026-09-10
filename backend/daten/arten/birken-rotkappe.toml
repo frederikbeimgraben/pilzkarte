@@ -1,13 +1,14 @@
 name = "Birken-Rotkappe"
 lateinisch = "Leccinum versipelle"
 gruppe = "raufussroehrling"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Roh führt er zu Vergiftungen. Durchgaren und nur junge Stücke nehmen, im Alter wird das Fleisch schwarz und ist dann nicht mehr essbar."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "haeufig"
 weitereNamen = ["Birkenrotkappe", "Heiderotkappe", "Schwarzschuppiger Birkenröhrling"]
 
@@ -36,25 +37,25 @@ zeit = "Frühling bis Spätherbst."
 [[verwechslungen]]
 name = "Fichtenrotkappe"
 merkmal = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenrotkappe"
 
 [[verwechslungen]]
 name = "Eichenrotkappe"
 merkmal = "Stielschuppen rötlich bis rotgrau auf weißem Grund, Huthaut meist verkürzt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "eichenrotkappe"
 
 [[verwechslungen]]
 name = "Espenrotkappe"
 merkmal = "Stielschuppen jung weißlich, später orangebraun, Fleisch graulila."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "espen-rotkappe"
 
 [[verwechslungen]]
 name = "Kiefernrotkappe"
 merkmal = "Hut fuchsrot bis rotbraun und samtig, Schuppen erst hellbraun, dann rötlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kiefernrotkappe"
 
 [[links]]

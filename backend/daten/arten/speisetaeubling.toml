@@ -1,13 +1,14 @@
 name = "Speisetäubling"
 lateinisch = "Russula vesca"
 gruppe = "taeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["eiche", "buche", "fichte", "hainbuche"]
 speisewertHinweis = "Das beste Merkmal ist die verkürzte Huthaut, die die Lamellen am Rand frei lässt. Sie kann auch bei anderen Täublingen auftreten, deshalb zusätzlich auf den milden Geschmack achten."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Fleischroter Speisetäubling", "Fleischroter Täubling"]
 synonyme = ["Russula heterophylla var. vesca", "Russula vesca var. major", "Russula vesca var. romellii", "Russula vesca f. viridata", "Russula vesca var. neglecta", "Russula vesca f. montana"]

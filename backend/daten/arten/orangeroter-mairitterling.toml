@@ -3,11 +3,11 @@ lateinisch = "Calocybe graveolens"
 gruppe = "ritterling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]
 baeume = ["laerche"]
 speisewertHinweis = "Sehr selten und kaum bekannt. Er riecht schwächer und weniger angenehm als der Maipilz."
-marktfaehig = false
 weitereNamen = ["Starkriechender Schönkopf", "Starkriechender Maipilz"]
 synonyme = ["Calocybe gambosa f. graveolens", "Gyrophila graveolens"]
 

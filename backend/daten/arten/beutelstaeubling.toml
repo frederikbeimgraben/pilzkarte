@@ -1,14 +1,15 @@
 name = "Beutelstäubling"
 lateinisch = "Lycoperdon excipuliforme"
 gruppe = "staeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur solange die innere Fruchtschicht rein weiß ist. In der Schweiz nicht marktfähig."
-marktfaehig = false
-wertigkeit = 2
 weitereNamen = ["Beutel Großstäubling", "Beutelbovist"]
 synonyme = ["Calvatia excipuliformis", "Calvatia excipuliformis forma elata", "Handkea excipuliformis", "Calvatia saccata", "Lycoperdon polymorphum var. excipuliforme"]
 
@@ -31,19 +32,19 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 name = "Hasenstäubling"
 merkmal = "Ballon-, sack- oder kreiselförmig und meist viel größer, ohne abgesetzten Stielteil, auf Wiesen und Weiden."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "hasenbovist"
 
 [[verwechslungen]]
 name = "Flaschenstäubling"
 merkmal = "Kleiner und keulig, mit blassen pyramidenartigen Stacheln besetzt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "flaschenbovist"
 
 [[verwechslungen]]
 name = "Riesenbovist"
 merkmal = "Kugelig und bis über 50 cm breit, Haut glatt und lederartig, ohne Stielteil."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "riesenbovist"
 
 [[links]]

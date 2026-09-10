@@ -1,14 +1,14 @@
 name = "Glatte Fingerhutverpel"
 lateinisch = "Verpa conica"
 gruppe = "morchel"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig, nur gut durchgegart. Die Angaben zur Essbarkeit gehen auseinander, deshalb besser stehen lassen. In der Schweiz potenziell gefährdet, in Deutschland in unbekanntem Ausmaß gefährdet."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "selten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Fingerhutverpel", "Glockenverpel", "Fingerhutmorchel"]
@@ -37,13 +37,13 @@ zeit = "Frühling, April bis Mai."
 [[verwechslungen]]
 name = "Runzelige Fingerhutverpel"
 merkmal = "Fruchtkörper längsrunzelig bis netzig gefaltet statt nur quergerillt."
-essbar = "giftig"
+essbar = "essbar"
 slug = "runzelige-fingerhutverpel"
 
 [[verwechslungen]]
 name = "Käppchenmorchel"
 merkmal = "Hut wabig gerippt und nur am Scheitel angewachsen, Rand frei abstehend."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "kaeppchenmorchel"
 
 [[links]]

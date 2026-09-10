@@ -27,7 +27,6 @@ from app.modules.arten.schemas import (
     Merkmal,
     MerkmalSchluessel,
     Profil,
-    Quelle,
     Reagenz,
     SaisonKurve,
     SaisonKurz,
@@ -41,24 +40,17 @@ from app.shared.schemas import Woche
 # eigener Pfad in der Umgebung waere ein weiterer Vertrag zum NixOS-Modul.
 DATEN = Path(__file__).resolve().parents[3] / "daten"
 
-# Die Positivliste der DGfM entscheidet, was in den Handel darf. Sie steht als
-# PDF im Netz und traegt ihren eigenen Stand.
-MARKT_QUELLE = Quelle(
-    url="https://www.dgfm-ev.de/files/dokumente/PSV/2026-08-11_positivliste_speisepilze.pdf",
-    geprueft_am="2026-05-01",
-)
-
 SCHWELLE_VORHERSAGE = 600
 SCHWELLE_SAISON = 60
 
 # Diese Texte stehen in der Merkmalstabelle der Artseite. Sie tragen darum
 # Umlaute, anders als die Bezeichner und Docstrings dieses Projekts.
 SPEISEWERT_TEXT: dict[Essbarkeit, str] = {
-    Essbarkeit.SPEISEPILZ: "Guter Speisepilz.",
+    Essbarkeit.SEHR_GUTER_SPEISEPILZ: "Sehr guter Speisepilz.",
+    Essbarkeit.GUTER_SPEISEPILZ: "Guter Speisepilz.",
     Essbarkeit.ESSBAR: "Essbar.",
-    Essbarkeit.BEDINGT_ESSBAR: "Nur gegart essbar.",
-    Essbarkeit.OHNE_SPEISEWERT: "Essbar, aber ohne Wert.",
-    Essbarkeit.NICHT_EMPFOHLEN: "Wird nicht zum Essen empfohlen.",
+    Essbarkeit.MINDERWERTIG: "Essbar, aber minderwertig.",
+    Essbarkeit.BEDINGT_ESSBAR: "Giftig, erst nach Vorbehandlung essbar.",
     Essbarkeit.UNGENIESSBAR: "Ungenie\u00dfbar.",
     Essbarkeit.GIFTIG: "Giftig.",
     Essbarkeit.TOEDLICH_GIFTIG: "T\u00f6dlich giftig.",
@@ -83,6 +75,8 @@ REAGENZ_TEXT: dict[Reagenz, str] = {
     Reagenz.AMMONIAK: "Ammoniak",
     Reagenz.SULFOVANILLIN: "Sulfovanillin",
     Reagenz.FORMALIN: "Formalin",
+    Reagenz.FECL3: "Eisen(III)-chlorid (FeCl\u2083)",
+    Reagenz.WIELAND: "Wieland-Test",
     Reagenz.SCHAEFFER: "Sch\u00e4ffer-Reaktion",
 }
 
@@ -174,8 +168,14 @@ def merkmale_bauen(profil: Profil) -> list[Merkmal]:
 
 
 def tags_bauen(profil: Profil, stufe: Stufe) -> list[Tag]:
-    """Die Chips einer Art: erst die Stufe, dann Gruppe, Jahreszeit und Baum."""
-    return [stufe, profil.gruppe, *profil.jahreszeiten, *profil.baeume]
+    """Die Chips einer Art: erst die Stufe, dann Gruppe, Jahreszeit und Baum.
+
+    Beide Baumlisten zaehlen. Wer nach Fichte filtert, will die Art auch dann
+    sehen, wenn nur das eigene Sammeln den Baum kennt.
+    """
+    erfahrung = profil.baeume_aus_erfahrung.baeume if profil.baeume_aus_erfahrung else []
+    baeume = list(dict.fromkeys([*profil.baeume, *erfahrung]))
+    return [stufe, profil.gruppe, *profil.jahreszeiten, *baeume]
 
 
 def profile_lesen(ordner: Path) -> dict[str, Profil]:
@@ -236,10 +236,18 @@ class Katalog:
     def _begehungen_laufendes_jahr(self) -> list[int]:
         return self.tabelle.begehungen_je_woche_laufendes_jahr[: self.tabelle.stand_woche]
 
-    def liste(self) -> ArtenListe:
-        """Alle Arten mit Stufe, Tags und der kleinen Kurve."""
+    def liste(self, *, nur_sammelbare: bool | None = True) -> ArtenListe:
+        """Die Arten mit Stufe, Tags und der kleinen Kurve.
+
+        ``nur_sammelbare`` waehlt aus: ``True`` liefert die 85 sammelbaren,
+        ``False`` die Verwechslungsarten, ``None`` alle. Die Auswahl gehoert
+        hierher und nicht ins Frontend: der Reiter Arten zeigt sonst Giftpilze
+        zwischen den Speisepilzen.
+        """
         arten: list[ArtKurz] = []
         for slug, profil in self.profile.items():
+            if nur_sammelbare is not None and profil.sammelbar is not nur_sammelbare:
+                continue
             zaehlung = self._zaehlung(profil)
             alle, laufend = self._reihen(profil)
             karte = self.karten.get(slug)
@@ -261,8 +269,16 @@ class Katalog:
                     karten_slug=karte,
                     sammelbar=profil.sammelbar,
                     marktfaehig=profil.marktfaehig,
+                    marktfaehig_schweiz=profil.marktfaehig_schweiz,
                     wertigkeit=profil.wertigkeit,
                     haeufigkeit=profil.haeufigkeit,
+                    gefaehrdung=profil.gefaehrdung,
+                    warnung=profil.warnung,
+                    jahreszeiten=profil.jahreszeiten,
+                    baeume=profil.baeume,
+                    baeume_aus_erfahrung=profil.baeume_aus_erfahrung,
+                    weitere_namen=profil.weitere_namen,
+                    synonyme=profil.synonyme,
                     vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
                     begehungen_mit_fund=zaehlung.begehungen_mit_fund,
                     spitze_woche=spitze_woche_fuer(alle) if profil.sammelbar else None,
@@ -330,13 +346,24 @@ class Katalog:
             speisewert=profil.speisewert,
             karten_slug=karte,
             sammelbar=profil.sammelbar,
-            marktfaehigkeit=Marktfaehigkeit(marktfaehig=profil.marktfaehig, quelle=MARKT_QUELLE),
+            marktfaehig=profil.marktfaehig,
+            marktfaehig_schweiz=profil.marktfaehig_schweiz,
+            marktfaehigkeit=Marktfaehigkeit(
+                marktfaehig=profil.marktfaehig,
+                schweiz=profil.marktfaehig_schweiz,
+                quelle=profil.quelle,
+            ),
             wertigkeit=profil.wertigkeit,
             haeufigkeit=profil.haeufigkeit,
             gefaehrdung=profil.gefaehrdung,
+            warnung=profil.warnung,
+            jahreszeiten=profil.jahreszeiten,
+            baeume=profil.baeume,
+            baeume_aus_erfahrung=profil.baeume_aus_erfahrung,
             weitere_namen=profil.weitere_namen,
             synonyme=profil.synonyme,
             masse=profil.masse,
+            reagenzien=profil.reagenzien,
             quelle=profil.quelle,
             vorhersage_geplant=vorhersage_geplant(zaehlung.begehungen_mit_fund),
             begehungen_mit_fund=zaehlung.begehungen_mit_fund,

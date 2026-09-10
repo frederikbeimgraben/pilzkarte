@@ -3,11 +3,11 @@ lateinisch = "Imperator torosus"
 gruppe = "roehrling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Der Seitenkopf nennt ihn oft unverträglich, nur bedingt essbar und mit Alkohol giftig. Alle Purpurröhrlinge stehen im Verdacht, Coprin oder ähnliche Stoffe zu enthalten. Kennzeichen sind das auffällige Gewicht, das schwefelgelbe, sofort schwarzblau verfärbende Fleisch und das feine Netz auf gelblichem Stiel."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 synonyme = ["Boletus torosus", "Dictyopus torosus"]
 
@@ -46,7 +46,7 @@ slug = "blaufleckender-purpurroehrling"
 [[verwechslungen]]
 name = "Flockenstieliger Hexenröhrling"
 merkmal = "Stiel ohne Netz, mit roten Flöckchen auf gelbem Grund, Hut dunkelbraun."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "flockenstieliger-hexenroehrling"
 
 [[links]]

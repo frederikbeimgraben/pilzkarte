@@ -1,13 +1,14 @@
 name = "Kiefernsteinpilz"
 lateinisch = "Boletus pinophilus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "tanne", "fichte"]
 schutzHinweis = "Die Verordnung nennt Boletus edulis und Boletus aereus. Dieses Projekt behandelt den Kiefernsteinpilz gleich, weil er im Wald kaum von ihnen zu trennen ist."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Kiefernsteini", "Steinpilze", "Herrenpilz", "Dobberniggl", "Gemeiner Steinpilz"]
 
 [quelle]
@@ -37,19 +38,19 @@ slug = "gallenroehrling"
 [[verwechslungen]]
 name = "Fichtensteinpilz"
 merkmal = "Hut wildlederbraun bis haselnussbraun statt rotbraun, Rand weiß, Netz am Stiel weiß und erst im Alter bräunlich."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "steinpilz"
 
 [[verwechslungen]]
 name = "Sommersteinpilz"
 merkmal = "Hut hell lederbraun bis milchkaffeebraun, Fleisch unter der Huthaut weiß ohne Rottöne, Netz am Stiel stark erhaben."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "sommersteinpilz"
 
 [[verwechslungen]]
 name = "Maronenröhrling"
 merkmal = "Röhren auf Druck blaugrün, Stiel längsfaserig und ohne Netz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "maronenroehrling"
 
 [[links]]

@@ -3,11 +3,11 @@ lateinisch = "Amanita pantherina"
 gruppe = "wulstling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er enthält Ibotensäure, Muscimol, Muscazon sowie Stizolob- und Stizolobinsäure. Zu erkennen an den rein weißen Velumflöckchen auf braunem Hut, der abgesetzten Knolle mit söckchenartigen Gürtelzonen und dem Fleisch, das unter der Huthaut nicht gelb ist. Nach Regen können die weißen Schüppchen abgewaschen sein. Keine Kostversuche."
-marktfaehig = false
 haeufigkeit = "haeufig"
 weitereNamen = ["Pantherwulstling"]
 synonyme = ["Amanitaria pantherina", "Amanita pantherina forma robusta", "Agaricus pantherinus", "Amanita pantherina var. abietum = tannen-pantherpilz"]
@@ -51,7 +51,7 @@ slug = "koenigsfliegenpilz"
 [[verwechslungen]]
 name = "Grauer Wulstling"
 merkmal = "Ring deutlich gerieft, Knolle nicht abgesetzt und ohne Söckchen, Geruch rettichartig."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "grauer-wulstling"
 
 [[links]]

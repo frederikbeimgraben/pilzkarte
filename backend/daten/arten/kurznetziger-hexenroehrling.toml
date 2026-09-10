@@ -3,11 +3,11 @@ lateinisch = "Suillellus mendax"
 gruppe = "roehrling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Seitenkopf nennt ihn nur bedingt essbar und mit Alkohol giftig. Von ihm stammt der Rat, zum Pilzgericht keinen Alkohol zu trinken; er verursacht dann Magen-Darm-Beschwerden. Alte Pilze sind vom Netzstieligen Hexenröhrling nur mikroskopisch zu trennen."
-marktfaehig = false
 weitereNamen = ["Trügerischer Hexenpilz"]
 synonyme = ["Boletus mendax"]
 

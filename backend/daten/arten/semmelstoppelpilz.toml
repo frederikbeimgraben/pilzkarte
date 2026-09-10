@@ -1,15 +1,20 @@
 name = "Semmelstoppelpilz"
 lateinisch = "Hydnum repandum"
 gruppe = "stoppelpilz"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Alle mild schmeckenden weißen und gelben Stoppelpilze sind essbar, eine Verwechslung untereinander ist unbedenklich. Sehr lange Stoppeln über drei Millimeter machen den Pilz bitter."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Rostgelber Semmelstoppelpilz", "Semmelgelber Stacheling", "Rotgelber Semmelstoppelpilz", "Orangeroter Stoppelpilz"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "fichte", "eiche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
@@ -34,25 +39,25 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Ellipsoidsporige Stoppelpilz"
 merkmal = "Deutlich kleiner, 2 bis 5, selten bis 6 cm breit, Hut gelborange bis terracottafarben."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ellipsoidsporige-stoppelpilz"
 
 [[verwechslungen]]
 name = "Genabelter Semmelstoppelpilz"
 merkmal = "Fast gleich, Stiel 2,5 bis 6 cm hoch. Sicher nur unter dem Mikroskop zu trennen, sehr selten."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "genabelter-semmelstoppelpilz"
 
 [[verwechslungen]]
 name = "Semmelporling"
 merkmal = "Unterseite mit Poren statt Stoppeln, mehrere Stiele oft miteinander verwachsen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "semmelporling"
 
 [[verwechslungen]]
 name = "Schafporling"
 merkmal = "Hut weiß, später gelblich, braun- bis graugelb, Unterseite mit Poren, Stiel mit graubraunen bis dunkelbraunen Flecken."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schafporling"
 
 [[links]]

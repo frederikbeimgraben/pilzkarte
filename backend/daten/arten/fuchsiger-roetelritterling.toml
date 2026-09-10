@@ -3,14 +3,19 @@ lateinisch = "Lepista flaccida"
 gruppe = "trichterling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = true
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Die DGfM nennt einen ungeklärten Fall mit muscarinartigen Beschwerden. Zäh und ohne großen Wert; wer ihn nicht sicher von giftigen Trichterlingen trennt, lässt ihn stehen."
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Fuchsiger Röteltrichterling", "Fuchsiger Trichterling"]
 synonyme = ["Agaricus flaccidus", "Clitocybe flaccida"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte", "buche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FuchsigerRoeteltrichterling.htm"
@@ -59,13 +64,13 @@ slug = "falscher-pfifferling"
 [[verwechslungen]]
 name = "Mönchskopf"
 merkmal = "Viel größer, Hut mit stumpfem Buckel, Stiel kräftig und keulig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "moenchskopf"
 
 [[verwechslungen]]
 name = "Ockerbrauner Trichterling"
 merkmal = "Hut blass lederfarben bis cremeocker, Lamellen weiß bis creme."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ockerbrauner-trichterling"
 
 [[links]]

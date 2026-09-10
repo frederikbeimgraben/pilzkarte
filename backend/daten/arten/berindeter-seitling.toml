@@ -3,12 +3,12 @@ lateinisch = "Pleurotus dryinus"
 gruppe = "seitling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "esche", "fichte", "tanne"]
 speisewertHinweis = "Nur junge Fruchtkörper taugen. Der Stielbereich bleibt zu zäh und gehört weg."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "selten"
 weitereNamen = ["Eichenseitling"]
 synonyme = ["Lentodiopsis dryina", "Pleurotus corticatus var. albertinii"]
@@ -36,19 +36,19 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Schuppiger Porling"
 merkmal = "Hut mit konzentrisch angeordneten braunen Schuppen, Unterseite mit Poren, Stielbasis im Alter schwarz."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schuppiger-porling"
 
 [[verwechslungen]]
 name = "Lungenseitling"
 merkmal = "Milchweiß bis cremeweiß, dünnfleischiger, Stiel ohne Ring."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "lungenseitling"
 
 [[verwechslungen]]
 name = "Rillstieliger Seitling"
 merkmal = "Stiel längsrillig, Lamellen bis zur Stielbasis herablaufend, Geruch mehlartig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "rillstieliger-seitling"
 
 [[links]]

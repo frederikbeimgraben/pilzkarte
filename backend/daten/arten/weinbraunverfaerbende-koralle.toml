@@ -3,11 +3,11 @@ lateinisch = "Ramaria bataillei"
 gruppe = "stachelbart"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "buche"]
 speisewertHinweis = "Ungenießbar wegen des stark bitterlichen Geschmacks."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Weinbraune Koralle", "Kalkbuchenwald-Koralle", "Batailles Koralle"]
 

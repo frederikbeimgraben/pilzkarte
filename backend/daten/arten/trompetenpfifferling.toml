@@ -1,16 +1,21 @@
 name = "Trompetenpfifferling"
 lateinisch = "Craterellus tubaeformis"
 gruppe = "leistling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Gut zum Trocknen und als Mischpilz. Beim Putzen den hohlen Stiel prüfen, dort sitzen oft Schnecken und Insekten. Alte, nicht mehr brauchbare Stücke verfärben sich schwärzlich."
 schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Der Trompetenpfifferling steht heute meist als Craterellus tubaeformis und wird hier mit ihnen geschützt."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Trompetenpfifferlinge", "Durchbohrter Leistling", "Hohlstieliger Leistling"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte", "buche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Trompetenpfifferlinge.htm"
@@ -54,13 +59,13 @@ slug = "mehltrichterling"
 [[verwechslungen]]
 name = "Gelbstieliger Trompetenpfifferling"
 merkmal = "Stiel leuchtend gelb statt gelbbraun."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gelbstieliger-trompetenpfifferling"
 
 [[verwechslungen]]
 name = "Schwärzender Leistling"
 merkmal = "Größer, Hut eidottergelb bis braungelb, Fleisch bei Verletzung und im Alter schwärzend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schwaerzender-leistling"
 
 [[links]]

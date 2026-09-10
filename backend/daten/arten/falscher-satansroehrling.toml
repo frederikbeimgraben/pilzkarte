@@ -3,11 +3,11 @@ lateinisch = "Imperator luteocupreus"
 gruppe = "roehrling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "kastanie"]
 speisewertHinweis = "Roh giftig und unverträglich. Er trägt purpurrote bis blutrote Röhren, einen kräftig roten Stiel mit rotem Netz und chromgelbes Fleisch, das sofort stark blaut. Dem Satansröhrling sehr ähnlich."
-marktfaehig = false
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Gelbhütiger Purpurröhrling"]
 
@@ -46,7 +46,7 @@ slug = "blaufleckender-purpurroehrling"
 [[verwechslungen]]
 name = "Flockenstieliger Hexenröhrling"
 merkmal = "Stiel ohne Netz, nur rot geflockt, Hut dunkelbraun."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "flockenstieliger-hexenroehrling"
 
 [[links]]

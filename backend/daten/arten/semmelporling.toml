@@ -1,14 +1,15 @@
 name = "Semmelporling"
 lateinisch = "Albatrellus confluens"
 gruppe = "porling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh unverträglich und rasch bitter. Nur ganz junge Fruchtkörper verwenden. In Deutschland gefährdet."
-marktfaehig = true
-wertigkeit = 2
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Schofferl"]
 synonyme = ["Scutiger confluens"]
@@ -40,13 +41,13 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Schafporling"
 merkmal = "Hut weißlich bis cremefarben, Fruchtkörper meist einzeln statt stark verwachsen, Fleisch mild."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schafporling"
 
 [[verwechslungen]]
 name = "Rötender Schafeuterporling"
 merkmal = "Fleisch rötet bei Verletzung und im Alter."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "roetender-schafeuterporling"
 
 [[verwechslungen]]

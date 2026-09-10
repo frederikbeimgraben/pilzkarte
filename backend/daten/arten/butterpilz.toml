@@ -1,12 +1,12 @@
 name = "Butterpilz"
 lateinisch = "Suillus luteus"
 gruppe = "schmierroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Die schleimige Huthaut vor dem Garen abziehen."
-marktfaehig = true
 weitereNamen = ["Butterröhrling", "Huasara", "Schmalzer", "Schmerzling", "Butter-Schmerling", "Schmalzling", "Schleimchen"]
 
 [quelle]
@@ -32,25 +32,25 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Ringloser Butterröhrling"
 merkmal = "Ohne Ring am Stiel, Stielbasis rosa."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "ringloser-butterroehrling"
 
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Hut hellgelb bis orangerötlich, bei Lärche."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[verwechslungen]]
 name = "Körnchenröhrling"
 merkmal = "Ohne Ring, Stiel dicht gekörnelt, Röhren jung milchig tropfend."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "koernchenroehrling"
 
 [[verwechslungen]]
 name = "Grauer Lärchenröhrling"
 merkmal = "Hut olivgrau bis gelbgrau, Röhren grau, bei Lärche."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "grauer-laerchenroehrling"
 
 [[links]]

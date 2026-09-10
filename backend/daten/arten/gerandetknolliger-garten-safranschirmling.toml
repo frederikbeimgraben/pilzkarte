@@ -3,11 +3,11 @@ lateinisch = "Chlorophyllum brunneum"
 gruppe = "schirmling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Erkennbar an der breiten, tellerartig gerandeten Stielknolle, am einfachen Ring und am stark safranfarben rötenden Fleisch. Er wächst auf Kompost und in Gewächshäusern, kaum im Wald."
-marktfaehig = false
 weitereNamen = ["Gerandetknolliger Gartenriesenschirmling", "Safranschirmling-Gartenform", "Rötender Gartenschirmpilz"]
 
 [quelle]
@@ -41,7 +41,7 @@ slug = "gruensporschirmling"
 [[verwechslungen]]
 name = "Parasol"
 merkmal = "Stiel deutlich genattert, Ring doppelt, Fleisch kaum rötend."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "parasol"
 
 [[verwechslungen]]

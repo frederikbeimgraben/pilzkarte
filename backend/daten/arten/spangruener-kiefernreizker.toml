@@ -1,14 +1,14 @@
 name = "Spangrüner Kiefernreizker"
 lateinisch = "Lactarius semisanguifluus"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in Deutschland gefährdet (Rote Liste 3). Das Fleisch schmeckt herb bis bitterlich."
-marktfaehig = true
-wertigkeit = 2
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 
@@ -36,19 +36,19 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Edelreizker"
 merkmal = "Milch karottenrot bis orangerot und kaum veränderlich, Geschmack mild nach Weißkraut."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "edelreizker"
 
 [[verwechslungen]]
 name = "Fichtenreizker"
 merkmal = "Bei Fichte, Stiel ohne Grübchen, Milch karottenrot und erst nach etwa 15 Minuten weinrot."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenreizker"
 
 [[verwechslungen]]
 name = "Lachsreizker"
 merkmal = "Überwiegend bei Weißtanne, Hut genabelt bis trichterförmig, Milch karottenrot bis orange."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lachsreizker"
 
 [[links]]

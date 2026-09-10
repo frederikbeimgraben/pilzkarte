@@ -3,13 +3,18 @@ lateinisch = "Armillaria gallica"
 gruppe = "hallimasch"
 speisewert = "bedingtEssbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Nur die Hüte, mindestens 20 Minuten abkochen und das Kochwasser weggießen. Nach Frost und bei alten Stücken steigt die Unverträglichkeit. Auch dann vertragen ihn nicht alle."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "haeufig"
 weitereNamen = ["Fleischfarbener Hallimasch", "Dunkler Laubholzhallimasch"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "eiche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FleischfarbeneHallimarsch.htm"

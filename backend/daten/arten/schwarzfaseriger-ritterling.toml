@@ -1,13 +1,14 @@
 name = "Schwarzfaseriger Ritterling"
 lateinisch = "Tricholoma portentosum"
 gruppe = "ritterling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["herbst", "winter"]
 baeume = ["fichte", "kiefer", "tanne", "pappel", "birke"]
 speisewertHinweis = "In Deutschland gefährdet (RL 3). Graue Ritterlinge sind untereinander schwer zu trennen; nur eindeutig bestimmte Funde nehmen."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Schneeritterling", "Rußkopf"]

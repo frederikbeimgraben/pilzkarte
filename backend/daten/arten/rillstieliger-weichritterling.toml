@@ -1,13 +1,14 @@
 name = "Rillstieliger Weichritterling"
 lateinisch = "Melanoleuca grammopodia"
 gruppe = "ritterling"
-speisewert = "essbar"
+speisewert = "minderwertig"
 geschuetzt = false
+wertigkeit = 4
+marktfaehigSchweiz = true
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = false
-wertigkeit = 4
 synonyme = ["Melanoleuca grammopus", "Agaricus grammopodius", "Tricholoma grammopodium", "Gyrophila grammopodia", "Melanoleuca subbrevipes", "Melanoleuca grammopodia var. subbrevipes", "Melanoleuca grammopodia var. pseudoevenosa", "Melanoleuca grammopodia var. obscura"]
 
 [quelle]
@@ -33,7 +34,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 name = "Mönchskopf"
 merkmal = "Hut ockerbraun mit deutlichem Buckel, Lamellen weit herablaufend, Geruch süßlich parfümiert."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "moenchskopf"
 
 [[links]]

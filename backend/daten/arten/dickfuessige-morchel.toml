@@ -1,14 +1,15 @@
 name = "Dickfüßige Morchel"
 lateinisch = "Morchella crassipes"
 gruppe = "morchel"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Vor dem Essen durchgaren. Morcheln sind besonders geschützt, deshalb nur wenig für den Eigenbedarf nehmen."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Dickfüßige Speisemorchel"]
 
@@ -41,13 +42,13 @@ slug = "zipfellorchel"
 [[verwechslungen]]
 name = "Speisemorchel"
 merkmal = "Kleiner, Stiel schlank und nicht klumpig verdickt."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "speisemorchel"
 
 [[verwechslungen]]
 name = "Gemeine Morchel"
 merkmal = "Kappe rundlicher und dunkler, Stiel deutlich dünner."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "gemeine-morchel"
 
 [[links]]

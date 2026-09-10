@@ -3,11 +3,11 @@ lateinisch = "Russula grisea"
 gruppe = "taeubling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke", "buche", "eiche"]
-marktfaehig = false
-wertigkeit = 3
 weitereNamen = ["Grauvioletter Reif-Täubling"]
 synonyme = ["Russula palumbina"]
 
@@ -47,7 +47,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Frauentäubling"
 merkmal = "Lamellen biegsam und meist nicht brechend, Sporenpulver weiß statt hellgelb, Fleisch nicht rosaviolett verfärbend."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "frauentaeubling"
 
 [[links]]

@@ -3,14 +3,18 @@ lateinisch = "Suillellus luridus"
 gruppe = "roehrling"
 speisewert = "bedingtEssbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehig = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 karte = "hexen_netz"
 speisewertHinweis = "123pilzsuche führt ihn als nur bedingt essbar. Gut durchgaren und nicht mit Alkohol zusammen essen, das gibt Magen-Darm-Beschwerden. Etwa ein bis fünf von hundert Personen vertragen ihn nicht; darum nicht weitergeben und Vorräte deutlich beschriften."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Netzstielige Hexenröhrling", "Netzhexe"]
 synonyme = ["Boletus luridus"]
+
+[baeumeAusErfahrung]
+baeume = ["eiche", "buche", "linde"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/NetzstieligeHexenroehrling.htm"
@@ -67,7 +71,7 @@ slug = "blaufleckender-purpurroehrling"
 [[verwechslungen]]
 name = "Flockenstieliger Hexenröhrling"
 merkmal = "Stiel mit roten Flöckchen und ohne jedes Netz, Hut dunkelbraun, auf saurem Boden."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "flockenstieliger-hexenroehrling"
 
 [[links]]

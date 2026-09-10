@@ -3,11 +3,11 @@ lateinisch = "Aleuria aurantia"
 gruppe = "becherling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Eine der wenigen roh essbaren Arten, als Salatpilz oder zum Füllen der Kelche. Er hat kaum Eigengeschmack und ist oft sandig."
-marktfaehig = false
-wertigkeit = 3
 weitereNamen = ["Gemeiner Orangebecherling", "Orangeroter Becherling", "Feuerroter Becherpilz", "Orangeroter Becherpilz", "Pomeranzenfarbiger Becherpilz"]
 
 [quelle]
@@ -36,19 +36,19 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Österreichischer Prachtbecherling"
 merkmal = "Innenseite zinnoberrot statt orange, Außenseite filzig haarig, meist mit kurzem Stiel, von Winter bis Mai."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "oesterreichischer-prachtbecherling"
 
 [[verwechslungen]]
 name = "Scharlachroter Kelchbecherling"
 merkmal = "Innenseite zinnoberrot, unterer Teil ganz weiß und filzig haarig, an Laubholzästen von Winter bis Mai."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "scharlachroter-kelchbecherling"
 
 [[verwechslungen]]
 name = "Linden-Kelchbecherling"
 merkmal = "Innenseite zinnober- bis karminrot, an vergrabenen Lindenzweigen und anderem Laubholz, von Winter bis Mai."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "linden-kelchbecherling"
 
 [[links]]

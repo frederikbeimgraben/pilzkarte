@@ -30,6 +30,7 @@ from app.modules.arten.katalog import (
     saison_lesen,
     spitze_woche_fuer,
     stufe_fuer,
+    tags_bauen,
     vorhersage_geplant,
 )
 from app.modules.arten.router import aktueller_katalog
@@ -37,6 +38,9 @@ from app.modules.arten.schemas import (
     WERTIGKEIT_BESTE,
     WERTIGKEIT_SCHWAECHSTE,
     WOCHEN,
+    Art,
+    BaeumeAusErfahrung,
+    Baumart,
     Essbarkeit,
     Gefaehrdung,
     Haeufigkeit,
@@ -56,7 +60,7 @@ STEINPILZ = """
 name = "Steinpilz"
 lateinisch = "Boletus edulis"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "guterSpeisepilz"
 geschuetzt = true
 jahreszeiten = ["herbst"]
 baeume = ["fichte", "buche"]
@@ -93,7 +97,7 @@ MAIPILZ = """
 name = "Maipilz"
 lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
-speisewert = "speisepilz"
+speisewert = "guterSpeisepilz"
 geschuetzt = false
 jahreszeiten = ["fruehling"]
 baeume = []
@@ -126,7 +130,7 @@ BRAETLING = """
 name = "Braetling"
 lateinisch = "Lactarius volemus"
 gruppe = "milchling"
-speisewert = "speisepilz"
+speisewert = "guterSpeisepilz"
 geschuetzt = true
 jahreszeiten = ["sommer"]
 baeume = ["buche"]
@@ -192,7 +196,7 @@ zeit = "Juni bis Oktober."
 [[verwechslungen]]
 name = "Steinpilz"
 merkmal = "Roehren bleiben weiss bis oliv, Netz weiss, Geschmack mild."
-essbar = "speisepilz"
+essbar = "guterSpeisepilz"
 slug = "steinpilz"
 
 [[links]]
@@ -332,7 +336,7 @@ def test_spitze_woche_fehlt_ohne_fund() -> None:
 
 
 def test_liste_traegt_alle_arten_nach_namen(gebaut: Katalog) -> None:
-    liste = gebaut.liste()
+    liste = gebaut.liste(nur_sammelbare=None)
 
     assert [art.name for art in liste.arten] == [
         "Braetling",
@@ -352,7 +356,7 @@ def test_liste_nennt_stand_jahre_und_nenner(gebaut: Katalog) -> None:
 
 
 def test_stufen_kommen_aus_karte_und_tabelle(gebaut: Katalog) -> None:
-    stufen = {art.slug: art.stufe for art in gebaut.liste().arten}
+    stufen = {art.slug: art.stufe for art in gebaut.liste(nur_sammelbare=None).arten}
 
     assert stufen == {
         "steinpilz": Stufe.VORHERSAGE,
@@ -378,7 +382,7 @@ def test_ohne_manifest_bleibt_die_art_auf_saison(daten: Path, tmp_path: Path) ->
 
 
 def test_vorhersage_geplant_steht_in_liste_und_profil(gebaut: Katalog) -> None:
-    geplant = {art.slug: art.vorhersage_geplant for art in gebaut.liste().arten}
+    geplant = {art.slug: art.vorhersage_geplant for art in gebaut.liste(nur_sammelbare=None).arten}
 
     assert geplant == {
         "steinpilz": True,
@@ -484,7 +488,7 @@ def test_tags_beginnen_mit_der_stufe(gebaut: Katalog) -> None:
 
 
 def test_karte_kommt_nur_mit_manifest(gebaut: Katalog) -> None:
-    karten = {art.slug: art.karten_slug for art in gebaut.liste().arten}
+    karten = {art.slug: art.karten_slug for art in gebaut.liste(nur_sammelbare=None).arten}
 
     assert karten == {
         "steinpilz": "boletus_edulis",
@@ -519,7 +523,7 @@ def test_eine_verwechslungsart_traegt_keine_saisonkurve(gebaut: Katalog) -> None
 
 
 def test_sammelbare_arten_tragen_die_kurve(gebaut: Katalog) -> None:
-    sammelbar = {art.slug: art.sammelbar for art in gebaut.liste().arten}
+    sammelbar = {art.slug: art.sammelbar for art in gebaut.liste(nur_sammelbare=None).arten}
 
     assert sammelbar == {
         "steinpilz": True,
@@ -527,8 +531,12 @@ def test_sammelbare_arten_tragen_die_kurve(gebaut: Katalog) -> None:
         "braetling": True,
         "gallenroehrling": False,
     }
-    assert all(art.saison is not None for art in gebaut.liste().arten if art.sammelbar)
-    assert all(art.saison is None for art in gebaut.liste().arten if not art.sammelbar)
+    assert all(
+        art.saison is not None for art in gebaut.liste(nur_sammelbare=None).arten if art.sammelbar
+    )
+    assert all(
+        art.saison is None for art in gebaut.liste(nur_sammelbare=None).arten if not art.sammelbar
+    )
 
 
 def test_eine_verwechslung_verlinkt_ihr_eigenes_profil(gebaut: Katalog) -> None:
@@ -720,8 +728,16 @@ async def test_liste_antwortet_in_camel_case(app: FastAPI) -> None:
         "kartenSlug",
         "sammelbar",
         "marktfaehig",
+        "marktfaehigSchweiz",
         "wertigkeit",
         "haeufigkeit",
+        "gefaehrdung",
+        "warnung",
+        "jahreszeiten",
+        "baeume",
+        "baeumeAusErfahrung",
+        "weitereNamen",
+        "synonyme",
         "vorhersageGeplant",
         "begehungenMitFund",
         "spitzeWoche",
@@ -937,7 +953,7 @@ def test_die_sammelbaren_arten_bleiben_fuenfundachtzig() -> None:
 
 def test_verwechslungsarten_tragen_die_stufe_verwechslung(tmp_path: Path) -> None:
     gebaut = katalog(DATEN, _maps_der_kette(tmp_path / "maps"))
-    arten = {art.slug: art for art in gebaut.liste().arten}
+    arten = {art.slug: art for art in gebaut.liste(nur_sammelbare=None).arten}
     profile = profile_lesen(DATEN / "arten")
 
     for slug, profil in profile.items():
@@ -989,10 +1005,11 @@ def test_marktfaehig_folgt_der_positivliste_der_dgfm(tmp_path: Path) -> None:
 
 
 def test_die_marktfaehigkeit_nennt_ihre_quelle(tmp_path: Path) -> None:
-    quelle = katalog(DATEN, tmp_path).art("steinpilz").marktfaehigkeit.quelle
+    art = katalog(DATEN, tmp_path).art("steinpilz")
 
-    assert quelle.url.startswith("https://www.dgfm-ev.de/")
-    assert quelle.geprueft_am == "2026-05-01"
+    # Die Zeile "Relativer Speisewert" steht auf der Artseite selbst.
+    assert art.marktfaehigkeit.quelle == art.quelle
+    assert art.marktfaehigkeit.quelle.url.startswith("https://www.123pilzsuche.de/")
 
 
 def test_die_masse_kommen_aus_der_quellseite(tmp_path: Path) -> None:
@@ -1026,3 +1043,192 @@ async def test_das_profil_liefert_die_zahlen_der_quelle() -> None:
     assert koerper["masse"]["hutBreiteCm"] == {"von": 4.0, "bis": 20.0, "seltenBis": 25.0}
     assert "Herrenpilz" in koerper["weitereNamen"]
     assert koerper["quelle"]["url"].startswith("https://www.123pilzsuche.de/")
+
+
+# ------------------------------------------------- Auswahl und Vollstaendigkeit
+
+# Was in der Datei steht, geht auch hinaus. Wo ein Feld draussen anders heisst
+# oder in einer Zeile der Merkmalstabelle aufgeht, sagt es diese Zuordnung.
+PROFILFELD_IM_VERTRAG: dict[str, str | None] = {
+    "karte": "karten_slug",
+    "speisewert_hinweis": None,
+    "schutz_hinweis": None,
+}
+
+
+def test_jedes_feld_der_datei_erreicht_die_antwort() -> None:
+    vertrag = set(Art.model_fields)
+
+    for feld in Profil.model_fields:
+        ziel = PROFILFELD_IM_VERTRAG.get(feld, feld)
+        if ziel is None:
+            continue
+        assert ziel in vertrag, f"{feld} fehlt in der Antwort"
+
+
+def test_die_zuordnung_nennt_nur_felder_der_datei() -> None:
+    assert set(PROFILFELD_IM_VERTRAG) <= set(Profil.model_fields)
+
+
+def test_die_liste_zeigt_ohne_parameter_nur_sammelbare(gebaut: Katalog) -> None:
+    arten = gebaut.liste().arten
+
+    assert [art.slug for art in arten] == ["braetling", "maipilz", "steinpilz"]
+    assert all(art.sammelbar for art in arten)
+
+
+def test_die_liste_zeigt_auf_wunsch_die_verwechslungsarten(gebaut: Katalog) -> None:
+    arten = gebaut.liste(nur_sammelbare=False).arten
+
+    assert [art.slug for art in arten] == ["gallenroehrling"]
+    assert not any(art.sammelbar for art in arten)
+
+
+def test_die_liste_zeigt_auf_wunsch_alle(gebaut: Katalog) -> None:
+    assert len(gebaut.liste(nur_sammelbare=None).arten) == 4
+
+
+async def test_der_endpunkt_liefert_ohne_parameter_die_sammelbaren(app: FastAPI) -> None:
+    async with klient(app) as ruf:
+        antwort = await ruf.get("/api/arten")
+
+    slugs = [art["slug"] for art in antwort.json()["arten"]]
+    assert slugs == ["braetling", "maipilz", "steinpilz"]
+
+
+async def test_der_endpunkt_liefert_mit_sammelbar_false_die_anderen(app: FastAPI) -> None:
+    async with klient(app) as ruf:
+        antwort = await ruf.get("/api/arten", params={"sammelbar": "false"})
+
+    assert [art["slug"] for art in antwort.json()["arten"]] == ["gallenroehrling"]
+
+
+async def test_der_endpunkt_liefert_mit_alle_beide_gruppen(app: FastAPI) -> None:
+    async with klient(app) as ruf:
+        antwort = await ruf.get("/api/arten", params={"alle": "true", "sammelbar": "false"})
+
+    assert len(antwort.json()["arten"]) == 4
+
+
+async def test_die_echte_liste_zeigt_fuenfundachtzig_arten() -> None:
+    async with klient(app_bauen()) as ruf:
+        antwort = await ruf.get("/api/arten")
+
+    assert len(antwort.json()["arten"]) == 85
+
+
+async def test_die_echte_liste_kennt_alle_dreihundertneun() -> None:
+    async with klient(app_bauen()) as ruf:
+        antwort = await ruf.get("/api/arten", params={"alle": "true"})
+
+    assert len(antwort.json()["arten"]) == 309
+
+
+# ------------------------------------------------- Baeume, Warnung, Reagenzien
+
+
+def test_baeume_aus_erfahrung_stehen_neben_den_belegten(tmp_path: Path) -> None:
+    art = katalog(DATEN, tmp_path).art("maronenroehrling")
+
+    assert art.baeume_aus_erfahrung is not None
+    assert art.baeume_aus_erfahrung.quelle == "eigene Erfahrung"
+    assert Baumart.FICHTE in art.baeume_aus_erfahrung.baeume
+    assert Baumart.FICHTE not in art.baeume
+
+
+def test_beide_baumlisten_werden_zu_chips(tmp_path: Path) -> None:
+    art = katalog(DATEN, tmp_path).art("maronenroehrling")
+
+    assert Baumart.FICHTE in art.tags
+
+
+def test_ein_baum_steht_nur_einmal_im_chip() -> None:
+    profil = Profil.model_validate(
+        {
+            **_profil_grundlage(),
+            "baeume": ["fichte"],
+            "baeumeAusErfahrung": {"baeume": ["fichte", "buche"], "quelle": "eigene Erfahrung"},
+        }
+    )
+
+    assert tags_bauen(profil, Stufe.SAISON).count(Baumart.FICHTE) == 1
+
+
+def test_baeume_aus_erfahrung_brauchen_ihre_quelle() -> None:
+    with pytest.raises(ValidationError):
+        BaeumeAusErfahrung(baeume=[Baumart.FICHTE], quelle="123pilzsuche")
+
+
+def test_baeume_aus_erfahrung_sind_nie_leer() -> None:
+    with pytest.raises(ValidationError):
+        BaeumeAusErfahrung(baeume=[], quelle="eigene Erfahrung")
+
+
+def test_eine_giftige_sammelbare_art_braucht_eine_warnung() -> None:
+    with pytest.raises(ValidationError, match="Warnung"):
+        Profil.model_validate({**_profil_grundlage(), "speisewert": "giftig"})
+
+
+def test_eine_giftige_verwechslungsart_braucht_keine_warnung() -> None:
+    profil = Profil.model_validate(
+        {**_profil_grundlage(), "speisewert": "toedlichGiftig", "sammelbar": False}
+    )
+
+    assert profil.warnung is None
+
+
+def test_die_giftigen_arten_der_kette_warnen(tmp_path: Path) -> None:
+    gebaut = katalog(DATEN, tmp_path)
+    giftig = {Essbarkeit.GIFTIG, Essbarkeit.TOEDLICH_GIFTIG}
+
+    gewarnt = [art.slug for art in gebaut.liste().arten if art.speisewert in giftig]
+    assert sorted(gewarnt) == [
+        "erdritterling",
+        "nebelkappe",
+        "rosablaettriger-egerlingsschirmling",
+    ]
+    for slug in gewarnt:
+        assert gebaut.art(slug).warnung
+
+
+def test_reagenzien_stehen_auch_als_eigenes_feld(gebaut: Katalog) -> None:
+    art = gebaut.art("gallenroehrling")
+
+    assert [eintrag.reagenz for eintrag in art.reagenzien] == [Reagenz.KOH, Reagenz.MELZER]
+
+
+def test_die_neuen_reagenzien_und_baeume_stehen_im_enum() -> None:
+    assert {Reagenz.FECL3, Reagenz.WIELAND} <= set(Reagenz)
+    assert {
+        Baumart.ROBINIE,
+        Baumart.EIBE,
+        Baumart.GOLDREGEN,
+        Baumart.HEIDELBEERE,
+        Baumart.STEINEICHE,
+    } <= set(Baumart)
+
+
+async def test_das_profil_liefert_marktfaehigkeit_und_masse() -> None:
+    async with klient(app_bauen()) as ruf:
+        antwort = await ruf.get("/api/arten/steinpilz")
+
+    koerper = antwort.json()
+    assert koerper["marktfaehig"] is True
+    assert koerper["marktfaehigkeit"]["quelle"]["url"].startswith("https://www.123pilzsuche.de/")
+    assert koerper["marktfaehigSchweiz"] is True
+    assert koerper["baeume"]
+    assert set(koerper) >= {
+        "marktfaehig",
+        "wertigkeit",
+        "haeufigkeit",
+        "gefaehrdung",
+        "reagenzien",
+        "masse",
+        "weitereNamen",
+        "synonyme",
+        "sammelbar",
+        "warnung",
+        "jahreszeiten",
+        "baeume",
+        "baeumeAusErfahrung",
+    }

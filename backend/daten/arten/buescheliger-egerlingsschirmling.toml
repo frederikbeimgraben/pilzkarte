@@ -3,11 +3,11 @@ lateinisch = "Leucoagaricus americanus"
 gruppe = "schirmling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er gilbt und rötet bei Verletzung sehr stark, erst orange, dann weinrot bis rotbraun. Wer ihn für einen Safranschirmling hält, achte auf die freistehende Wuchsform am Kompost und den fehlenden Buckel aus Schuppen."
-marktfaehig = false
 haeufigkeit = "selten"
 weitereNamen = ["Gelbfüßiger Egerlingsschirmling"]
 synonyme = ["Leucoagaricus bresadolae"]
@@ -48,7 +48,7 @@ slug = "gerandetknolliger-garten-safranschirmling"
 [[verwechslungen]]
 name = "Safranschirmling"
 merkmal = "Stielbasis knollig ohne Rand, Fleisch rötet safranrot, ohne kräftiges Gilben."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "safranschirmling"
 
 [[links]]

@@ -3,11 +3,11 @@ lateinisch = "Pholiota lignicola"
 gruppe = "schueppling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Stiel ist glatt und dunkel, ohne die braunen Schüppchen des Stockschwämmchens. Wegen der Ähnlichkeit mit dem Gifthäubling nicht sammeln."
-marktfaehig = false
 weitereNamen = ["Glattstieliges Frühlings-Stockschwämmchen"]
 
 [quelle]
@@ -39,7 +39,7 @@ slug = "gifthaeubling"
 [[verwechslungen]]
 name = "Stockschwämmchen"
 merkmal = "Stiel unterhalb der Ringzone braun geschuppt, mit deutlicherem Ring."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "stockschwaemmchen"
 
 [[verwechslungen]]

@@ -3,10 +3,10 @@ lateinisch = "Cortinarius laniger"
 gruppe = "schleierling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne"]
-marktfaehig = false
 synonyme = ["Telamonia praesignis", "Telamonia macropus"]
 
 [quelle]
@@ -32,7 +32,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 name = "Reifpilz"
 merkmal = "Hut mit weißem Reifüberzug, Stiel mit häutigem Ring statt wolliger Gürtelung."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "reifpilz"
 
 [[links]]

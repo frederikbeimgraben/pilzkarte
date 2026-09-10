@@ -1,14 +1,19 @@
 name = "Violetter Rötelritterling"
 lateinisch = "Lepista nuda"
 gruppe = "roetelritterling"
-speisewert = "bedingtEssbar"
+speisewert = "sehrGuterSpeisepilz"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["herbst", "winter"]
 baeume = []
 speisewertHinweis = "Roh giftig. Er zersetzt rote Blutkörperchen und enthält Blausäure. Immer gut durchgaren oder trocknen, dann zerfällt die Blausäure."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Nackter Rötelritterling", "Violetter Röteltrichterling"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/VioletterRoetelritterling.htm"
@@ -47,13 +52,13 @@ slug = "nebelkappe"
 [[verwechslungen]]
 name = "Lilastieliger Rötelritterling"
 merkmal = "Hut grauviolett bis graubräunlich statt lilaviolett, Lamellen nur weißlich lila."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lilastieliger-roetelritterling"
 
 [[verwechslungen]]
 name = "Lavendelfarbener Rötelritterling"
 merkmal = "Hut rötlichlila bis lavendelfarben, ebenfalls hygrophan."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "lavendelfarbener-roetelritterling"
 
 [[verwechslungen]]

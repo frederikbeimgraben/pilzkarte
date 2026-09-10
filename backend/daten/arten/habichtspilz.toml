@@ -1,13 +1,14 @@
 name = "Habichtspilz"
 lateinisch = "Sarcodon imbricatus"
 gruppe = "stachelpilz"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = true
+marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Nur junge Fruchtkörper. Im Alter wird er bitter und ist dann ungenießbar; eine Geschmacksprobe klärt das. Gelegentlich kommen Magen-Darm-Beschwerden vor. Gut zum Trocknen als Würzpilz."
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "haeufig"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Habichtsstacheling", "Rehpilz"]

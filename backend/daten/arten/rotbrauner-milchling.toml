@@ -1,13 +1,13 @@
 name = "Rotbrauner Milchling"
 lateinisch = "Lactarius rufus"
 gruppe = "milchling"
-speisewert = "ungeniessbar"
+speisewert = "essbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte", "birke", "buche"]
 speisewertHinweis = "Ungeniessbar durch die extreme Schaerfe, die erst nach etwa einer Minute einsetzt. Bei empfindlichen Personen kann er Lippenblaeschen ausloesen, deshalb nur sehr vorsichtig kosten."
-marktfaehig = false
 weitereNamen = ["Paprikapilz", "Braunroter Milchling"]
 synonyme = ["Lactarius mollis", "Lactifluus rufus"]
 

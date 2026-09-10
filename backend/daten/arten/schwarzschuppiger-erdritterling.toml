@@ -3,11 +3,12 @@ lateinisch = "Tricholoma atrosquamosum"
 gruppe = "ritterling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Wird als giftig geführt, weil Erdritterlinge im Verdacht stehen, die Muskeln zu zersetzen. Er ist am grauschwarz schuppigen Hut, an den dunkler punktierten Lamellenschneiden und am mehlartigen Geruch zu erkennen."
-marktfaehig = false
 weitereNamen = ["Schwarzschuppiger Ritterling"]
 
 [quelle]

@@ -3,14 +3,19 @@ lateinisch = "Xerocomellus chrysenteron"
 gruppe = "roehrling"
 speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 3
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur Mischpilz. Er ist oft madig und häufig von Goldschimmel befallen; befallene Stücke wegwerfen. Lässt sich der Hut mit zwei Fingern eindrücken, ist er nicht mehr brauchbar."
-marktfaehig = false
-wertigkeit = 3
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Gemeiner Rotfußröhrling", "Echter Rotfußröhrling"]
 synonyme = ["Xerocomus chrysenteron", "Boletus chrysenteron", "Versipellis chrysenteron", "Suillus chrysenteron", "Boletus pascuus sensu", "Boletus chrysenteron var. nanus"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "eiche", "fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rotfuss.htm"
@@ -55,7 +60,7 @@ slug = "schoenfussroehrling"
 [[verwechslungen]]
 name = "Maronenröhrling"
 merkmal = "Hut glatt und feucht schmierig, Röhren auf Druck blaugrün, ohne Rotfärbung unter der Huthaut."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "maronenroehrling"
 
 [[verwechslungen]]
@@ -73,7 +78,7 @@ slug = "falscher-rotfussroehrling"
 [[verwechslungen]]
 name = "Ziegenlippe"
 merkmal = "Hut graubraun bis olivocker und wildlederartig filzig, Stiel fast weiß und ohne rote Punkte."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "ziegenlippe"
 
 [[links]]

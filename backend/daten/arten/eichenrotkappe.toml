@@ -1,14 +1,15 @@
 name = "Eichenrotkappe"
 lateinisch = "Leccinum quercinum"
 gruppe = "raufussroehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = false
+marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "hasel"]
 speisewertHinweis = "Raufußröhrlinge sind besonders geschützt und die Art ist selten. Nur wenig für den Eigenbedarf nehmen. Roh sind Rotkappen unverträglich, deshalb durchgaren."
-marktfaehig = false
-wertigkeit = 1
 haeufigkeit = "selten"
 weitereNamen = ["Eichenraufuss", "Laubwald-Rotkappe"]
 synonyme = ["Leccinum aurantiacum var. quercinum", "Leccinum rufum", "Boletus quercinus", "Krombholziella quercina"]
@@ -38,19 +39,19 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Fichtenrotkappe"
 merkmal = "Stielschuppen schwarz, wächst bei Nadelbäumen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "fichtenrotkappe"
 
 [[verwechslungen]]
 name = "Kiefernrotkappe"
 merkmal = "Hut fuchsrot und samtig, Schuppen erst hellbraun, dann rötlich, bei Kiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "kiefernrotkappe"
 
 [[verwechslungen]]
 name = "Birkenrotkappe"
 merkmal = "Stielschuppen schwärzlich statt rötlich, wächst bei Birke."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "birken-rotkappe"
 
 [[links]]

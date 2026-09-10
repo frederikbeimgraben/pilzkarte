@@ -1,14 +1,19 @@
 name = "Spitzmorchel"
 lateinisch = "Morchella elata"
 gruppe = "morchel"
-speisewert = "bedingtEssbar"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Gut durchgaren. Besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Zipfelmützenmorchel", "RiMuMo"]
+
+[baeumeAusErfahrung]
+baeume = ["esche", "fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Spitzmorchel.htm"
@@ -39,7 +44,7 @@ slug = "zipfellorchel"
 [[verwechslungen]]
 name = "Speisemorchel"
 merkmal = "Käppchen eiförmig mit runden Waben statt Längsrippen, gelb bis hellbraun."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "speisemorchel"
 
 [[links]]

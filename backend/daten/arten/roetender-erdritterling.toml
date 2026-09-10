@@ -3,11 +3,11 @@ lateinisch = "Tricholoma orirubens"
 gruppe = "ritterling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Giftig und wie alle Erdritterlinge verdaechtig. Er ist an den bei Verletzung roetenden Lamellen und der blaugruenen bis rosaroten Stielbasis zu erkennen."
-marktfaehig = true
 weitereNamen = ["Rötende Erd-Ritterling"]
 synonyme = ["Gyrophila orirubens", "Tricholoma horribile", "Tricholoma orirubens var. basirubens"]
 

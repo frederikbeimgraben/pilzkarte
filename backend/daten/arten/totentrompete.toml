@@ -1,16 +1,21 @@
 name = "Totentrompete"
 lateinisch = "Craterellus cornucopioides"
 gruppe = "leistling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 speisewertHinweis = "Gut zum Trocknen. Beim Putzen den hohlen Stiel prüfen, dort sitzen oft Schnecken und Insekten."
 schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Totentrompete steht heute als Craterellus cornucopioides und wird hier mit ihnen geschützt."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Herbsttrompete", "Füllhorn", "Kraterpilz", "Herbstleistling"]
+
+[baeumeAusErfahrung]
+baeume = ["hainbuche"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Totentrompete.htm"
@@ -55,7 +60,7 @@ slug = "grauer-leistling"
 [[verwechslungen]]
 name = "Verbogener Leistling"
 merkmal = "Viel kleiner, 1 bis 3, selten bis 4 cm breit, Hut lehmbraun bis gelbbraun, Fleisch blassgrau."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "verbogener-leistling"
 
 [[links]]

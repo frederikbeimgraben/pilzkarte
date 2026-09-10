@@ -1,12 +1,13 @@
 name = "Judasohr"
 lateinisch = "Auricularia auricula-judae"
 gruppe = "ohrlappenpilz"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["holunder", "birke"]
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Holunderschwammpilz", "Holunderpilz", "Holunderschwamm", "Black Fungus", "Weißes Judasohr"]
 synonyme = ["Auricularia auricula", "Auricularia sambucina oder hirneola auricula-judae", "Auricularia polytricha"]
 

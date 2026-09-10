@@ -3,10 +3,10 @@ lateinisch = "Cerioporus leptocephalus"
 gruppe = "porling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche"]
-marktfaehig = false
 synonyme = ["Polyporus leptocephalus", "(polyporus varius", "Boletus leptocephalus"]
 
 [quelle]
@@ -41,7 +41,7 @@ zeit = "Frühling bis Herbst."
 [[verwechslungen]]
 name = "Schuppiger Porling"
 merkmal = "Viel größer, Hut mit groben braunen Schuppen, Poren weißlich und nur ein bis zwei je Millimeter."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "schuppiger-porling"
 
 [[links]]

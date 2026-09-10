@@ -3,10 +3,10 @@ lateinisch = "Suillus mediterraneensis"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = ["kiefer"]
-marktfaehig = false
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Mediterraner Körnchenröhrling", "Mittelmeer Körnchenröhrling"]
 
@@ -35,13 +35,13 @@ zeit = "Herbst bis Frühjahr."
 [[verwechslungen]]
 name = "Elfenbeinröhrling"
 merkmal = "Hut weiß bis cremefarben, Röhren weiß, bei fünfnadeligen Kiefern wie Zirbe und Weymouthskiefer."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "elfenbeinroehrling"
 
 [[verwechslungen]]
 name = "Ringloser Butterpilz"
 merkmal = "Hut braun bis kastanienbraun, Röhren gelb, Stielbasis rosa, bei Fichte und Kiefer."
-essbar = "ohneSpeisewert"
+essbar = "essbar"
 slug = "ringloser-butterpilz"
 
 [[verwechslungen]]

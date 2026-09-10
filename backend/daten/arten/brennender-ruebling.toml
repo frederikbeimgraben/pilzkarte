@@ -3,11 +3,11 @@ lateinisch = "Gymnopus peronatus"
 gruppe = "ruebling"
 speisewert = "ungeniessbar"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Geschmack wird nach kurzer Zeit brennend scharf und pfefferig. Das macht ihn ungenießbar."
-marktfaehig = false
 haeufigkeit = "haeufig"
 weitereNamen = ["Brennender Blasssporrübling"]
 synonyme = ["Collybia peronata", "Marasmius peronatus", "Chamaeceras urens"]
@@ -36,7 +36,7 @@ zeit = "Spätfrühling bis Herbst."
 [[verwechslungen]]
 name = "Nelkenschwindling"
 merkmal = "Hut ledergelb bis hellbraun, Lamellen weißlich und entfernt, Stiel zäh und hornartig, Geschmack bleibt mild."
-essbar = "bedingtEssbar"
+essbar = "sehrGuterSpeisepilz"
 slug = "nelkenschwindling"
 
 [[links]]

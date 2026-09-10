@@ -1,18 +1,23 @@
 name = "Gelbstieliger Trompetenpfifferling"
 lateinisch = "Craterellus lutescens"
 gruppe = "leistling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = true
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["herbst"]
 baeume = []
 speisewertHinweis = "Selten und in Deutschland gefährdet. Dünnfleischig, aber stark aromatisch. Nur einen Teil des Fundes nehmen."
 schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Trompetenpfifferlinge werden hier gleich behandelt."
-marktfaehig = true
-wertigkeit = 1
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Starkriechender Trompetenpfifferling", "Duftleistling", "Starkriechender Pfifferling", "Gelbe Kraterelle", "Gelbstieliger Leistling", "Gelbe Kantherelle", "Goldstieliger Pfifferling", "Wohlriechende Craterelle"]
 synonyme = ["Cantharellus aurora", "Cantarellus lutescens", "Cantarellus aurora", "Weiße arten: cantarellus lutescens forma schizocroica"]
+
+[baeumeAusErfahrung]
+baeume = ["fichte", "kiefer"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Goldpfiffi.htm"
@@ -38,13 +43,13 @@ zeit = "Herbst bis Spätherbst."
 [[verwechslungen]]
 name = "Schwärzender Leistling"
 merkmal = "Leisten breit, dick und mehrfach gegabelt, Fleisch bei Verletzung und im Alter schwärzend, im Laubwald bei Eiche und Buche."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "schwaerzender-leistling"
 
 [[verwechslungen]]
 name = "Trompetenpfifferling"
 merkmal = "Leisten deutlich ausgeprägt und graugelb, Stiel nur gelblich bis gelbbraun statt leuchtend gelb."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "trompetenpfifferling"
 
 [[links]]

@@ -3,11 +3,11 @@ lateinisch = "Cortinarius limonius"
 gruppe = "schleierling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Tödlich giftig, niemals probieren: die Inhaltsstoffe können Nieren und Leber schädigen. Er ist der einzige Raukopf mit ausbleichender Huthaut und hat einen zitronengelben Stiel mit gelben Velumresten."
-marktfaehig = false
 weitereNamen = ["Löwengelber Raukopf"]
 synonyme = ["Agaricus limonius", "Cortinarius callisteus sensu", "Gomphos limonius", "Telamonia limonia", "Flammula limonia", "Cortinarius luteus", "Cortinarius limonius f. hydrolimonius"]
 
@@ -45,7 +45,7 @@ slug = "spitzgebuckelter-raukopf"
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Röhren statt Lamellen, Stiel mit Ring, wächst bei Lärche."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[links]]

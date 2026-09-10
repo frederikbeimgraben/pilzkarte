@@ -3,11 +3,11 @@ lateinisch = "Pholiota squarrosa"
 gruppe = "schueppling"
 speisewert = "giftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["obstbaum", "fichte"]
 speisewertHinweis = "Verursacht gelegentlich Magen-Darm-Beschwerden; vom Verzehr wird abgeraten. Zu erkennen an den abstehenden sparrigen Schuppen auf Hut und Stiel und am rettichartigen Geruch."
-marktfaehig = false
 synonyme = ["Pholiota jahnii sensu", "Hypodendrum floccosum", "Fungus squarrosus", "Stropharia squarrosa", "Dryophila muelleri", "Pholiota squarrosa f. annulosa"]
 
 [quelle]

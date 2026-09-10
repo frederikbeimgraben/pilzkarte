@@ -1,12 +1,13 @@
 name = "Büscheliger Rasling"
 lateinisch = "Lyophyllum decastes"
 gruppe = "rasling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-marktfaehig = false
-wertigkeit = 1
 weitereNamen = ["Brauner Rasling", "Büschelrasling", "Geselliger Rasling", "Gepanzerter Rasling", "Knorpeliger Knäuelrasling", "Frostrasling", "Geselliger Ritterling", "Buchele"]
 synonyme = ["Lyophyllum aggregatum"]
 
@@ -45,7 +46,7 @@ slug = "nebelkappe"
 [[verwechslungen]]
 name = "Panzerrasling"
 merkmal = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "panzerrasling"
 
 [[verwechslungen]]

@@ -1,15 +1,20 @@
 name = "Reifpilz"
 lateinisch = "Cortinarius caperatus"
 gruppe = "schleierling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte"]
 speisewertHinweis = "Er ist häufig von Maden befallen."
-marktfaehig = true
-wertigkeit = 1
 weitereNamen = ["Zigeuner", "Runzelschüppling", "Hühnerkoppe", "Scheidenrunzling Reifpilz"]
 synonyme = ["Rozites caperatus", "Rozites caperata", "Agaricus caperatus", "Pholiota caperata", "Dryophila caperata", "Togaria caperata"]
+
+[baeumeAusErfahrung]
+baeume = ["birke"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ReifpilzEssbar1004.htm"

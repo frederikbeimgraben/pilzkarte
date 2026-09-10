@@ -1,13 +1,14 @@
 name = "Riesenbovist"
 lateinisch = "Calvatia gigantea"
 gruppe = "staeubling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 1
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jeden kugeligen Fund durchschneiden und auf Lamellenansätze prüfen, junge Knollenblätterpilze sehen ähnlich aus."
-marktfaehig = true
-wertigkeit = 1
 synonyme = ["Langermannia gigantea", "Lycoperdon giganteum", "Clavatia maxima", "Lasiosphaera gigantea", "Bovista gigantea"]
 
 [quelle]
@@ -42,25 +43,25 @@ slug = "weisser-knollenblaetterpilz"
 [[verwechslungen]]
 name = "Hasenstäubling"
 merkmal = "Nur 3 bis 16 cm breit, jung mit plattenartigen Erhebungen, auf Wiesen und Weiden, gern in Gebirgslagen."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "hasenbovist"
 
 [[verwechslungen]]
 name = "Flaschenstäubling"
 merkmal = "Klein, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen pyramidenartigen Stacheln."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "flaschenbovist"
 
 [[verwechslungen]]
 name = "Weißer Großstäubling"
 merkmal = "3 bis 9 cm breit, Oberfläche netzartig fleckig bis hirnartig gewunden, oft mit Stielteil."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "weisser-grossstaeubling"
 
 [[verwechslungen]]
 name = "Beutelstäubling"
 merkmal = "Bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun bis lilabraun."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "beutelstaeubling"
 
 [[links]]

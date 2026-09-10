@@ -1,16 +1,21 @@
 name = "Ziegenlippe"
 lateinisch = "Xerocomus subtomentosus"
 gruppe = "roehrling"
-speisewert = "speisepilz"
+speisewert = "essbar"
 geschuetzt = false
+wertigkeit = 2
+marktfaehigSchweiz = true
+marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Es gibt drei Ziegenlippen-Arten mit gleichem Speisewert. Sie trennen sich am Stiel: heller Stiel ohne Netz bei der Ziegenlippe, bräunlicher Stiel mit Netz beim Braunen Filzröhrling."
-marktfaehig = false
-wertigkeit = 2
 haeufigkeit = "haeufig"
 weitereNamen = ["Schafheiterl", "Gänsemaul", "Mooshäuptchen", "Hellstieliger Filz-Röhrling"]
 synonyme = ["Boletus subtomentosus"]
+
+[baeumeAusErfahrung]
+baeume = ["buche", "eiche", "fichte"]
+quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ziegenlippe.htm"
@@ -53,13 +58,13 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 name = "Brauner Filzröhrling"
 merkmal = "Stiel gelblich bis bräunlich mit Netzzeichnung statt fast weiß."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "brauner-filzroehrling"
 
 [[verwechslungen]]
 name = "Samtiger Filzröhrling"
 merkmal = "Hut auch rotbraun, Stiel mit Netz von der Mitte bis zur Spitze, Geruch nach Schwefel."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "samtiger-filzroehrling"
 
 [[verwechslungen]]
@@ -71,7 +76,7 @@ slug = "rotfussroehrling"
 [[verwechslungen]]
 name = "Goldröhrling"
 merkmal = "Hut schleimig und schmierig, hellgelb bis orangerötlich, Röhren auf Druck rosalila fleckend, Stiel mit Ring."
-essbar = "bedingtEssbar"
+essbar = "essbar"
 slug = "goldroehrling"
 
 [[verwechslungen]]

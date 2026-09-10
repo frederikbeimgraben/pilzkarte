@@ -3,11 +3,11 @@ lateinisch = "Amanita phalloides (var. amanita phalloides f. citrina, amanita ph
 gruppe = "wulstling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
+marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Absolut tödlich, schon 20 Gramm genügen. Das Gift schädigt die Leber. Die wichtigsten Merkmale sind weiße Lamellen, ein häutiger Ring, ein radialfaserig eingewachsener Hut mit wie ein Tortenstück abziehbarer Haut und eine abgerundete Knolle mit häutiger Scheide."
-marktfaehig = false
 haeufigkeit = "haeufig"
 weitereNamen = ["Grüner Mörder"]
 
@@ -51,7 +51,7 @@ slug = "kegelhuetiger-knollenblaetterpilz"
 [[verwechslungen]]
 name = "Frauentäubling"
 merkmal = "Ohne Ring, ohne Knolle und ohne Scheide, Lamellen und Fleisch brüchig."
-essbar = "speisepilz"
+essbar = "essbar"
 slug = "frauentaeubling"
 
 [[links]]
