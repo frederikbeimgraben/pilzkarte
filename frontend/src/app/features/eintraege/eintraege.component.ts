@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { Router } from '@angular/router';
 import { BadgeComponent, ButtonComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
 import type { Fund, GeteilterFund, Marker, Sichtbarkeit, Zone } from '../../core/api/models';
+import { AuthService } from '../../core/auth';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import type { TranslationKey } from '../../core/i18n/translations';
@@ -83,6 +84,7 @@ const FREMDER_FUND = '#185468';
 })
 export class EintraegeComponent {
   private readonly arten = inject(ArtenZustand);
+  private readonly auth = inject(AuthService);
   private readonly eintragenZustand = inject(EintragenZustand);
   private readonly i18n = inject(I18nService);
   private readonly router = inject(Router);
@@ -110,9 +112,17 @@ export class EintraegeComponent {
     return [...wartend, ...this.zustand.funde().map((fund) => this.fundZeile(fund))];
   });
 
-  protected readonly leerText = computed<TranslationKey>(() =>
-    this.chip() === 'geteilt' ? 'eintraege.leerGeteilt' : 'eintraege.leer',
-  );
+  protected readonly leerText = computed<TranslationKey>(() => {
+    if (this.braucheAnmeldung()) return 'eintraege.anmelden';
+    return this.chip() === 'geteilt' ? 'eintraege.leerGeteilt' : 'eintraege.leer';
+  });
+
+  /** Geteilte Funde stehen jedem offen; die eigenen liegen hinter dem Konto. */
+  protected readonly braucheAnmeldung = computed(() => !this.angemeldet() && this.chip() !== 'geteilt');
+
+  protected anmelden(): void {
+    void this.auth.anmeldungAnfordern();
+  }
 
   constructor() {
     this.arten.ladeListe();

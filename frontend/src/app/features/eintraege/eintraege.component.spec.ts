@@ -10,6 +10,7 @@ import { ARTEN_LISTE } from '../../testing/arten-fixture';
 import { AuthStummel, authStummelAnbieter } from '../../testing/auth-stummel';
 import { keineVerstoesse } from '../../testing/axe';
 import { FUND, GETEILTER_FUND, MARKER, ZONE, seite } from '../../testing/eintraege-fixture';
+import { AuthService } from '../../core/auth';
 import { EintragenZustand } from '../eintragen/eintragen.zustand';
 import { EintraegeComponent } from './eintraege.component';
 
@@ -91,12 +92,12 @@ describe('EintraegeComponent', () => {
     const aufbau = await aufbauen();
 
     expect(screen.getByRole('heading', { name: 'Einträge' })).toBeInTheDocument();
-    for (const chip of ['Funde', 'Marker', 'Zonen', 'geteilt']) {
+    for (const chip of ['Funde', 'Marker', 'Zonen', 'Geteilt']) {
       expect(screen.getByRole('button', { name: chip })).toBeInTheDocument();
     }
     const zeile = screen.getByRole('button', { name: /Steinpilz/ });
     expect(within(zeile).getByText('6. Sept. · 3 Stück · Frederik')).toBeInTheDocument();
-    expect(within(zeile).getByText('geteilt')).toBeInTheDocument();
+    expect(within(zeile).getByText('Geteilt')).toBeInTheDocument();
     await keineVerstoesse(aufbau.container);
   });
 
@@ -129,7 +130,7 @@ describe('EintraegeComponent', () => {
   it('zeigt unter „geteilt“ auch fremde Funde ohne Blatt', async () => {
     const aufbau = await aufbauen();
 
-    await userEvent.click(screen.getByRole('button', { name: 'geteilt' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Geteilt' }));
     aufbau.aktualisiere();
 
     expect(screen.getByText('Maronenröhrling')).toBeInTheDocument();
@@ -170,5 +171,24 @@ describe('EintraegeComponent', () => {
     expect(
       screen.getByText('Eigene Einträge stehen im Konto. Zum Lesen ist eine Anmeldung nötig.'),
     ).toBeInTheDocument();
+  });
+
+  it('führt aus dem Leerzustand zur Anmeldung', async () => {
+    await aufbauen(false, []);
+    const auth = TestBed.inject(AuthService);
+    const gefragt = vi.spyOn(auth, 'anmeldungAnfordern').mockResolvedValue(true);
+
+    await userEvent.click(screen.getByRole('button', { name: 'Anmelden' }));
+
+    expect(gefragt).toHaveBeenCalledTimes(1);
+  });
+
+  it('bietet unter „geteilt“ keine Anmeldung an, dort liest jeder mit', async () => {
+    const aufbau = await aufbauen(false, []);
+
+    await userEvent.click(screen.getByRole('button', { name: 'Geteilt' }));
+    aufbau.aktualisiere();
+
+    expect(screen.queryByRole('button', { name: 'Anmelden' })).not.toBeInTheDocument();
   });
 });

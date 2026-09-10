@@ -11,25 +11,29 @@
     [beschriftung]="'eintraege.filter' | t"
     (wertChange)="waehleChip($event)"
   />
-  <app-card class="randlos">
-    @if (zeilen().length === 0) {
-      <app-note class="empty-state">
-        {{ (!angemeldet() && chip() !== 'geteilt' ? 'eintraege.anmelden' : leerText()) | t }}
-      </app-note>
-    }
-    @for (zeile of zeilen(); track zeile.schluessel) {
-      <app-list-row
-        [titel]="zeile.titel"
-        [unter]="zeile.unter"
-        [notiz]="zeile.notiz"
-        [anklickbar]="zeile.objekt !== null"
-        (auswahl)="oeffne(zeile)"
-      >
-        <span vorn class="eintraege__punkt" [style.background]="zeile.farbe"></span>
-        @if (zeile.marke; as marke) {
-          <app-badge hinten [variant]="marke.variant">{{ marke.text }}</app-badge>
-        }
-      </app-list-row>
-    }
-  </app-card>
+  @if (zeilen().length === 0) {
+    <div class="eintraege__leer">
+      <app-note>{{ leerText() | t }}</app-note>
+      @if (braucheAnmeldung()) {
+        <app-button variant="primary" (click)="anmelden()">{{ 'konto.anmelden' | t }}</app-button>
+      }
+    </div>
+  } @else {
+    <app-card class="randlos">
+      @for (zeile of zeilen(); track zeile.schluessel) {
+        <app-list-row
+          [titel]="zeile.titel"
+          [unter]="zeile.unter"
+          [notiz]="zeile.notiz"
+          [anklickbar]="zeile.objekt !== null"
+          (auswahl)="oeffne(zeile)"
+        >
+          <span vorn class="eintraege__punkt" [style.background]="zeile.farbe"></span>
+          @if (zeile.marke; as marke) {
+            <app-badge hinten [variant]="marke.variant">{{ marke.text }}</app-badge>
+          }
+        </app-list-row>
+      }
+    </app-card>
+  }
 </div>
