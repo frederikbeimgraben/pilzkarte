@@ -141,6 +141,31 @@ Abnahme:
 - Saisonkurve in Prozent, beide Reihen, Test gegen eine Fixture
 - Tests je Endpunkt, Schema strikt, camelCase
 
+### D1d Profile nach 123pilzsuche geprüft
+
+Jedes der 85 Profile Feld für Feld gegen die verlinkte Seite auf
+123pilzsuche.de prüfen. 123pilzsuche ist die primäre Quelle für die Fakten,
+die Texte bleiben eigene Worte. Verwechslungen nur die, die die Seite nennt.
+Je Profil ein Feld `quelle` mit URL und Prüfdatum.
+
+Abnahme:
+- Tabelle im PR: Art, URL, korrigierte Felder, Verwechslungen vorher und nachher
+- Test: jedes Profil hat `quelle`, keine leeren Felder
+
+### D1e Gegenkontrolle der Inhalte
+
+Nach D1d. Mehrere Agenten prüfen die Profile unabhängig voneinander und
+gegeneinander. Je Art ein Prüfer, der die Seite auf 123pilzsuche und eine
+zweite Quelle (Wikipedia, DGfM) liest und jede Abweichung im Profil als
+Befund meldet, mit Zitat der Quelle. Ein zweiter Agent entscheidet je Befund
+und korrigiert. Kein Profil gilt als richtig, das nicht zwei Prüfer ohne
+Befund passiert hat. Läuft als Workflow mit Fan-out je Art.
+
+Abnahme:
+- Befundliste je Art mit Entscheidung, im Repo unter `backend/daten/pruefung/`
+- 85 Profile ohne offenen Befund
+- `quelle.geprueftAm` auf das Datum der Gegenkontrolle gesetzt
+
 ### D2 Arten Frontend
 
 Voraussetzung D1, A1. Reiter Arten: Suche, Chips (alle, mit Vorhersage,
