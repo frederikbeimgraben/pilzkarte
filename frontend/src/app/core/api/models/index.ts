@@ -1,5 +1,24 @@
 /** Die Modelle der API an einer Stelle, damit Seiten nur einen Pfad kennen. */
 export { BAUMARTEN, ESSBARKEITEN, GRUPPEN, JAHRESZEITEN, MERKMAL_SCHLUESSEL, STUFEN } from './arten';
+export { FARBEN, SICHTBARKEITEN } from './eintraege';
+export type {
+  Farbe,
+  Foto,
+  Fund,
+  FundAenderung,
+  FundEingabe,
+  GeoPolygon,
+  GeteilterFund,
+  Marker,
+  MarkerAenderung,
+  MarkerEingabe,
+  Seite,
+  Sichtbarkeit,
+  Zone,
+  ZoneAenderung,
+  ZoneEingabe,
+  ZonenWert,
+} from './eintraege';
 export type {
   Art,
   ArtenListe,

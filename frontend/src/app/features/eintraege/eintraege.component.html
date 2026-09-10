@@ -1,1 +1,35 @@
-<app-platzhalter [titel]="'nav.eintraege' | t" />
+<app-page-header [titel]="'eintraege.titel' | t">
+  <app-button variant="primary" (click)="eintragen()">
+    <app-svg-icon name="plus" [groesse]="16" />
+    {{ 'eintragen.knopf' | t }}
+  </app-button>
+</app-page-header>
+<div class="eintraege">
+  <app-chip-group
+    [chips]="chips()"
+    [wert]="chip()"
+    [beschriftung]="'eintraege.filter' | t"
+    (wertChange)="waehleChip($event)"
+  />
+  <app-card class="randlos">
+    @if (zeilen().length === 0) {
+      <app-note class="empty-state">
+        {{ (!angemeldet() && chip() !== 'geteilt' ? 'eintraege.anmelden' : leerText()) | t }}
+      </app-note>
+    }
+    @for (zeile of zeilen(); track zeile.schluessel) {
+      <app-list-row
+        [titel]="zeile.titel"
+        [unter]="zeile.unter"
+        [notiz]="zeile.notiz"
+        [anklickbar]="zeile.objekt !== null"
+        (auswahl)="oeffne(zeile)"
+      >
+        <span vorn class="eintraege__punkt" [style.background]="zeile.farbe"></span>
+        @if (zeile.marke; as marke) {
+          <app-badge hinten [variant]="marke.variant">{{ marke.text }}</app-badge>
+        }
+      </app-list-row>
+    }
+  </app-card>
+</div>

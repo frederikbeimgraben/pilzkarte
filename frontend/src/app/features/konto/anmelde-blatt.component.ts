@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, ElementRef, effect, inject, viewChild } from '@angular/core';
 import { AuthService } from '../../core/auth';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
-import { ActionBarComponent, SheetComponent } from '../../ui';
+import { ActionBarComponent, SheetComponent, type RasteMass } from '../../ui';
 
 /**
- * Das Anmelde-Blatt kennt nur eine Raste. Im Artboard `Anmelden` steht es auf
- * 404 von 844 px; ein Griff, der die Höhe wechselt, hat hier nichts zu tun.
+ * Das Anmelde-Blatt kennt nur eine Raste: Titel, Satz und Fußleiste bestimmen
+ * die Höhe. Ein fester Anteil ließe zwischen Text und Knöpfen Leerraum stehen.
  */
-const RASTEN: readonly [number, number, number] = [0.48, 0.48, 0.48];
+const RASTEN: readonly [RasteMass, RasteMass, RasteMass] = ['inhalt', 'inhalt', 'inhalt'];
 
 /**
  * Fragt nach der Anmeldung, wenn etwas gespeichert werden soll. Es erscheint

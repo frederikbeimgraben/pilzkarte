@@ -1,3 +1,5 @@
+import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router, RouterOutlet, provideRouter } from '@angular/router';
 import { fireEvent, render, screen } from '@testing-library/angular';
@@ -14,7 +16,10 @@ import {
 import { ThemeService } from '../../core/theme/theme.service';
 import { ToastService } from '@stupa-makers/ui-kit';
 import { TestBed } from '@angular/core/testing';
+import { AuthStummel, authStummelAnbieter } from '../../testing/auth-stummel';
+import { EintragenZustand } from '../eintragen/eintragen.zustand';
 import { KarteComponent } from './karte.component';
+import { KartenZustand } from './karten-zustand';
 
 /** Die Seite hängt am Router; nur so trägt ihre Adresse die Abfragewerte. */
 @Component({
@@ -46,7 +51,12 @@ async function karte(adresse = '/karte'): Promise<{
   manifestAntwort();
   const { karte: attrappe, arbeiter } = karteMitAttrappen();
   const { fixture, navigate, container } = await render(WirtComponent, {
-    providers: [provideRouter(ROUTEN)],
+    providers: [
+      provideRouter(ROUTEN),
+      provideHttpClient(),
+      provideHttpClientTesting(),
+      ...authStummelAnbieter(new AuthStummel()),
+    ],
   });
   const stabil = async (): Promise<void> => {
     await fixture.whenStable();
@@ -295,11 +305,41 @@ describe('KarteComponent', () => {
     await keineVerstoesse(container);
   });
 
+  it('öffnet mit dem Plus-Knopf das Aktionsblatt', async () => {
+    const { stabil } = await karte();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Eintragen' }));
+    await stabil();
+
+    expect(TestBed.inject(EintragenZustand).schritt()).toBe('aktionen');
+    expect(screen.getByRole('heading', { name: 'Eintragen' })).toBeInTheDocument();
+  });
+
+  it('holt die geteilten Funde des Ausschnitts', async () => {
+    await karte();
+    const http = TestBed.inject(HttpTestingController);
+
+    await vi.waitFor(() => http.expectOne('/api/funde/geteilt?bbox=9.9,50.9,10.9,51.9&limit=200'));
+  });
+
+  it('rechnet das Polster auf ein Blatt, das über der Karte liegt', async () => {
+    const { attrappe, stabil } = await karte();
+    TestBed.inject(KartenZustand).ueberlagerung.set(240);
+    await stabil();
+
+    expect(attrappe.polster.at(-1)).toEqual({ top: 0, bottom: 240, left: 0, right: 0 });
+  });
+
   it('räumt Karte und Worker beim Verlassen auf', async () => {
     manifestAntwort(MANIFEST_ROH);
     const { karte: attrappe, arbeiter } = karteMitAttrappen();
     const { fixture, navigate } = await render(WirtComponent, {
-      providers: [provideRouter(ROUTEN)],
+      providers: [
+        provideRouter(ROUTEN),
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        ...authStummelAnbieter(new AuthStummel()),
+      ],
     });
     await navigate('/karte');
     await fixture.whenStable();

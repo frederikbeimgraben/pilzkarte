@@ -15,11 +15,15 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
 export type Raste = 0 | 1 | 2;
 
 /**
- * Eine Raste ist ein Anteil der Wirtshöhe (0 bis 1) oder eine feste Höhe.
- * Die unterste Raste zeigt genau den Kopf; als Anteil würde sie auf einem
- * kurzen Telefon die Zeitleiste abschneiden.
+ * Eine Raste ist ein Anteil der Wirtshöhe (0 bis 1), eine feste Höhe oder
+ * `inhalt`. Die unterste Raste zeigt genau den Kopf; als Anteil würde sie auf
+ * einem kurzen Telefon die Zeitleiste abschneiden.
+ *
+ * `inhalt` lässt den Inhalt die Höhe bestimmen. Blätter, die nur einen Satz
+ * und eine Fußleiste tragen (Anmelden, Fundort, Aktionen), stünden mit einem
+ * Anteil entweder gequetscht oder mit Leerraum zwischen Text und Knöpfen da.
  */
-export type RasteMass = number | `${number}px`;
+export type RasteMass = number | `${number}px` | 'inhalt';
 
 /** Griff, Kopfzeile und Zeitleiste, wie sie das Artboard `KarteEingeklappt` zeigt. */
 export const KOPF_HOEHE = '152px';
@@ -48,8 +52,12 @@ export function rasteFuerHoehe(
   return beste;
 }
 
-/** Rechnet ein Rastenmaß in Punkte um. */
-export function rasteInPx(mass: RasteMass, wirtHoehe: number): number {
+/**
+ * Rechnet ein Rastenmaß in Punkte um. `inhalt` kennt seine Höhe erst nach dem
+ * Zeichnen; der Aufrufer reicht sie als `gemessen` herein.
+ */
+export function rasteInPx(mass: RasteMass, wirtHoehe: number, gemessen = 0): number {
+  if (mass === 'inhalt') return gemessen;
   return typeof mass === 'number' ? mass * wirtHoehe : Number.parseFloat(mass);
 }
 
@@ -91,6 +99,7 @@ export class SheetComponent {
     const gezogen = this.gezogen();
     if (gezogen !== null) return `${gezogen}px`;
     const mass = this.rasten()[this.raste()];
+    if (mass === 'inhalt') return 'auto';
     return typeof mass === 'number' ? `${mass * 100}%` : mass;
   });
 
@@ -165,8 +174,9 @@ export class SheetComponent {
 
   private hoehenInPx(): [number, number, number] {
     const wirt = this.wirtHoehe();
+    const gemessen = this.blattHoehe();
     const [a, b, c] = this.rasten();
-    return [rasteInPx(a, wirt), rasteInPx(b, wirt), rasteInPx(c, wirt)];
+    return [rasteInPx(a, wirt, gemessen), rasteInPx(b, wirt, gemessen), rasteInPx(c, wirt, gemessen)];
   }
 
   private fokussierbare(): HTMLElement[] {

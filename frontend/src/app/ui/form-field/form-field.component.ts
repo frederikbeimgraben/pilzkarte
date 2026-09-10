@@ -24,6 +24,11 @@ export class FormFieldComponent {
   readonly wert = input<string>('');
   readonly platzhalter = input<string>('');
   readonly mehrzeilig = input(false);
+  /**
+   * Die Art des Feldes. `date` und `number` geben am Telefon die passende
+   * Tastatur und den Datumswähler des Systems, statt beides nachzubauen.
+   */
+  readonly typ = input<'text' | 'number' | 'date'>('text');
   /** Ein Feld, das nur zeigt und beim Tippen eine Auswahl öffnet. */
   readonly nurAnzeige = input(false);
   /** Ein Piktogramm vor der Eingabe, wie die Lupe im Suchfeld. */

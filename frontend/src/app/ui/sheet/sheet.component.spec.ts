@@ -140,11 +140,26 @@ describe('SheetComponent', () => {
   });
 });
 
+describe('Raste Inhalt', () => {
+  it('lässt den Inhalt die Höhe des Blatts bestimmen', async () => {
+    const { container } = await render(SheetComponent, {
+      inputs: { beschriftung: 'Fundort festlegen', rasten: ['inhalt', 'inhalt', 'inhalt'] as const },
+    });
+
+    expect(container.querySelector('.blatt')).toHaveStyle({ 'block-size': 'auto' });
+  });
+});
+
 describe('Rasten', () => {
   it('rechnet Anteil und feste Höhe in Punkte um', () => {
     expect(rasteInPx(0.4, 800)).toBe(320);
     expect(rasteInPx('152px', 800)).toBe(152);
     expect(RASTEN_STANDARD[0]).toBe('152px');
+  });
+
+  it('nimmt für die Raste „Inhalt“ die gemessene Höhe', () => {
+    expect(rasteInPx('inhalt', 800, 240)).toBe(240);
+    expect(rasteInPx('inhalt', 800)).toBe(0);
   });
 
   it('nimmt die nächstgelegene Raste, erst ab der Schwelle', () => {

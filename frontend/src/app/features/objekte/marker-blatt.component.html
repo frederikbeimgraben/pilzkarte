@@ -1,0 +1,38 @@
+<div class="objektblatt">
+  <div class="objektblatt__kopf">
+    <h2 class="objektblatt__titel">{{ marker().name }}</h2>
+    <p class="objektblatt__unter">{{ unterzeile() }}</p>
+  </div>
+  <app-objekt-formular
+    [ohneName]="true"
+    [start]="start()"
+    [nameLabel]="'marker.name' | t"
+    [namePlatzhalter]="'marker.namePlatzhalter' | t"
+    [nameFehltText]="'marker.nameFehlt' | t"
+  />
+</div>
+<app-action-bar
+  [haupt]="'eintragen.speichern' | t"
+  [hauptDeaktiviert]="beschaeftigt()"
+  [sekundaer]="'fund.aufDerKarte' | t"
+  [gefahr]="'marker.loeschen' | t"
+  (hauptKlick)="speichere()"
+  (sekundaerKlick)="zeigeAufKarte.emit(ort())"
+  (gefahrKlick)="loeschFrage.set(true)"
+/>
+<app-dialog
+  [open]="loeschFrage()"
+  [title]="'marker.loeschenFrage' | t"
+  [closeLabel]="'objekt.schliessen' | t"
+  (closed)="loeschFrage.set(false)"
+>
+  <app-note>{{ 'marker.loeschenText' | t }}</app-note>
+  <div dialog-footer class="objektblatt__dialogfuss">
+    <app-action-bar
+      [gefahr]="'objekt.loeschen' | t"
+      [sekundaer]="'objekt.abbrechen' | t"
+      (gefahrKlick)="loesche()"
+      (sekundaerKlick)="loeschFrage.set(false)"
+    />
+  </div>
+</app-dialog>

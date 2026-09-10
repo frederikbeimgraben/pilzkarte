@@ -6,8 +6,11 @@ export interface Farbfeld {
   label: string;
 }
 
-/** Die sechs Farben aus dem Artboard `Zone`. */
-export const OBJEKT_FARBEN: readonly string[] = [
+/**
+ * Die sechs Farben aus dem Artboard `Zone`. Der enge Typ ist kein Schmuck:
+ * MapLibre und Terra Draw nehmen nur echte Hex-Werte an.
+ */
+export const OBJEKT_FARBEN: readonly `#${string}`[] = [
   '#004225',
   '#8c6820',
   '#185468',

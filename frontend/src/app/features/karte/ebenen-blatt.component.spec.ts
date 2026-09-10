@@ -39,11 +39,27 @@ describe('EbenenBlattComponent', () => {
       inputs: { hintergrund: 'hell' as Hintergrund, deckkraft: 1, zeigtEbene: false },
     });
 
-    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+    expect(screen.queryByRole('checkbox', { name: 'Vorhersage darunter zeigen' })).not.toBeInTheDocument();
 
     await rerender({ inputs: { hintergrund: 'hell' as Hintergrund, deckkraft: 1, zeigtEbene: true } });
 
     expect(screen.getByRole('checkbox', { name: 'Vorhersage darunter zeigen' })).toBeInTheDocument();
+  });
+
+  it('schaltet Marker, Zonen und geteilte Funde', async () => {
+    const { fixture } = await render(EbenenBlattComponent, {
+      inputs: { hintergrund: 'hell' as Hintergrund, deckkraft: 1 },
+    });
+    const geschaltet: string[] = [];
+    fixture.componentInstance.zeigeMarkerChange.subscribe((an) => geschaltet.push(`marker:${an}`));
+    fixture.componentInstance.zeigeZonenChange.subscribe((an) => geschaltet.push(`zonen:${an}`));
+    fixture.componentInstance.zeigeGeteilteFundeChange.subscribe((an) => geschaltet.push(`funde:${an}`));
+
+    await userEvent.click(screen.getByRole('checkbox', { name: 'Meine Marker' }));
+    await userEvent.click(screen.getByRole('checkbox', { name: 'Zonen' }));
+    await userEvent.click(screen.getByRole('checkbox', { name: 'Geteilte Funde' }));
+
+    expect(geschaltet).toEqual(['marker:false', 'zonen:false', 'funde:false']);
   });
 
   it('schließt über die Fußleiste', async () => {

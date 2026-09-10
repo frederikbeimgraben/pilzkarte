@@ -33,6 +33,28 @@ export class ApiClient {
       .pipe(catchError((fehler: unknown) => this.melde(fehler)));
   }
 
+  /**
+   * Lädt eine Datei als `multipart/form-data`. Der Kopf `Content-Type` wird
+   * nicht gesetzt: nur der Browser kennt die Grenze zwischen den Teilen.
+   */
+  postDatei<T>(pfad: string, feld: string, datei: File): Observable<T> {
+    const koerper = new FormData();
+    koerper.append(feld, datei, datei.name);
+    return this.http
+      .post<T>(this.url(pfad), koerper)
+      .pipe(catchError((fehler: unknown) => this.melde(fehler)));
+  }
+
+  /**
+   * Holt eine Datei. Ein Foto hängt an den Rechten seines Fundes; es geht
+   * darum denselben Weg mit Token und nicht über `src` am Bild.
+   */
+  getBlob(pfad: string): Observable<Blob> {
+    return this.http
+      .get(this.url(pfad), { responseType: 'blob' })
+      .pipe(catchError((fehler: unknown) => this.melde(fehler)));
+  }
+
   patch<T>(pfad: string, koerper: unknown): Observable<T> {
     return this.http
       .patch<T>(this.url(pfad), koerper)

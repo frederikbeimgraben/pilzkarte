@@ -2,7 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { KarteComponent } from '../features/karte/karte.component';
 import { KARTE_ADAPTER, WERT_ARBEITER } from '../map/karte.tokens';
 import type { Ausschnitt } from '../map/kachel-raster';
-import type { Grenzen, KartenOptionen, MapAdapter, Polster, Rolle } from '../map/map-adapter';
+import type { FeatureCollection } from 'geojson';
+import type { Map as MapLibreKarte } from 'maplibre-gl';
+import type { Grenzen, KartenOptionen, MapAdapter, ObjektEbene, Polster, Rolle } from '../map/map-adapter';
 import type { WertAntwort, WertAuftrag } from '../map/wert-nachrichten';
 import type { FaerbeArbeiter } from '../map/wert-protokoll';
 
@@ -26,6 +28,11 @@ export class KartenAttrappe implements MapAdapter {
   gewaermt = 0;
   /** Wie oft die Karte aufgebaut wurde. Ein zweites Mal hieße: neu geladen. */
   gestartet = 0;
+  /** Der Ort unter dem Fadenkreuz, den ein Test setzen kann. */
+  zentrum: readonly [number, number] | null = [9.05, 48.52];
+  fluege: { ziel: readonly [number, number]; zoom?: number }[] = [];
+  ebenen = new Map<ObjektEbene, FeatureCollection>();
+  auswahl: ((ebene: ObjektEbene, id: string) => void) | null = null;
 
   waermeAuf(): void {
     this.gewaermt += 1;
@@ -79,6 +86,33 @@ export class KartenAttrappe implements MapAdapter {
   zerstoere(): void {
     this.zerstoert = true;
   }
+
+  mitte(): readonly [number, number] | null {
+    return this.zentrum;
+  }
+
+  fliegeZu(ziel: readonly [number, number], zoom?: number): void {
+    this.fluege.push({ ziel, zoom });
+  }
+
+  zeigeObjekte(ebene: ObjektEbene, daten: FeatureCollection): void {
+    this.ebenen.set(ebene, daten);
+  }
+
+  verbergeObjekte(ebene: ObjektEbene): void {
+    this.ebenen.delete(ebene);
+  }
+
+  beiObjektAuswahl(hoerer: (ebene: ObjektEbene, id: string) => void): void {
+    this.auswahl = hoerer;
+  }
+
+  /** Ohne WebGL gibt es keine echte Karte; ein Test setzt hier eine Attrappe. */
+  rohe: MapLibreKarte | null = null;
+
+  rohkarte(): MapLibreKarte | null {
+    return this.rohe;
+  }
 }
 
 /** Ein Worker, der nichts färbt. Der Test antwortet selbst über `antworte`. */
@@ -120,6 +154,24 @@ export function karteMitAttrappen(): { karte: KartenAttrappe; arbeiter: Arbeiter
     },
   });
   return { karte, arbeiter };
+}
+
+/**
+ * Eine Wertkachel ohne Netz und ohne Leinwand: jeder Punkt trägt dasselbe
+ * Byte. Byte 0 heißt „keine Daten“, so wie im Rendering.
+ */
+export function wertKachelAntwort(byte: number): void {
+  vi.stubGlobal('createImageBitmap', () =>
+    Promise.resolve({ width: 256, height: 256, close: () => undefined }),
+  );
+  vi.stubGlobal(
+    'OffscreenCanvas',
+    class {
+      getContext(): { drawImage: () => void; getImageData: () => { data: number[] } } {
+        return { drawImage: () => undefined, getImageData: () => ({ data: [byte, byte, byte, 255] }) };
+      }
+    },
+  );
 }
 
 /** Die Manifeste vom Server, ohne Server. */

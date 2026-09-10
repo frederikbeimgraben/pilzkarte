@@ -1,3 +1,4 @@
+import type { FeatureCollection } from 'geojson';
 import { MapLibreAdapter, WORKER_PFAD, type KartenOptionen, type MaplibreModul } from './map-adapter';
 
 interface Ereignis {
@@ -39,8 +40,25 @@ class KarteAttrappe {
     this.kontrollen.push({ steuerung, ort });
   }
 
-  on(typ: string, hoerer: (nutzlast: unknown) => void): void {
-    this.hoerer.push({ typ, hoerer });
+  /** Die zweite Form meldet auf eine Schicht an und gibt ein Abo zurück. */
+  on(typ: string, zweites: unknown, drittes?: (nutzlast: unknown) => void): { unsubscribe: () => void } {
+    const hoerer = (drittes ?? zweites) as (nutzlast: unknown) => void;
+    const schicht = drittes ? (zweites as string) : null;
+    const eintrag = { typ: schicht === null ? typ : `${typ}:${schicht}`, hoerer };
+    this.hoerer.push(eintrag);
+    return {
+      unsubscribe: () => {
+        const index = this.hoerer.indexOf(eintrag);
+        if (index >= 0) this.hoerer.splice(index, 1);
+      },
+    };
+  }
+
+  /** Stellt einen Tipp auf eine Schicht nach. */
+  tippe(schicht: string, id: string): void {
+    for (const eintrag of [...this.hoerer]) {
+      if (eintrag.typ === `click:${schicht}`) eintrag.hoerer({ features: [{ properties: { id } }] });
+    }
   }
 
   off(typ: string, hoerer: (nutzlast: unknown) => void): void {
@@ -53,8 +71,16 @@ class KarteAttrappe {
     for (const eintrag of [...this.hoerer]) if (eintrag.typ === typ) eintrag.hoerer(nutzlast);
   }
 
-  addSource(id: string, quelle: object): void {
-    this.quellen.set(id, quelle);
+  addSource(id: string, quelle: { type?: string; data?: unknown }): void {
+    // Eine GeoJSON-Quelle nimmt später neue Daten an; eine Rasterquelle nicht.
+    const gespeichert: { data?: unknown; setData?: (daten: unknown) => Promise<void> } = { ...quelle };
+    if (quelle.type === 'geojson') {
+      gespeichert.setData = (daten: unknown) => {
+        gespeichert.data = daten;
+        return Promise.resolve();
+      };
+    }
+    this.quellen.set(id, gespeichert);
   }
 
   readonly vorGelegt = new Map<string, string | undefined>();
@@ -103,6 +129,10 @@ class KarteAttrappe {
     this.bewegt.push(optionen);
   }
 
+  getCenter(): { lng: number; lat: number } {
+    return { lng: 9.05, lat: 48.52 };
+  }
+
   getBounds(): Record<string, () => number> {
     return { getWest: () => 9, getSouth: () => 50, getEast: () => 11, getNorth: () => 52 };
   }
@@ -119,6 +149,21 @@ class KarteAttrappe {
 /** Der Urheberhinweis; der Adapter fragt ihn nichts, er setzt ihn nur. */
 class HinweisAttrappe {
   constructor(readonly optionen: unknown) {}
+}
+
+/** Eine Sammlung mit genau einem Punkt, so wie die Karte sie bekommt. */
+function sammlung(id: string): FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: [
+      {
+        id,
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [9.05, 48.52] },
+        properties: { id, farbe: '#004225', gerundet: true },
+      },
+    ],
+  };
 }
 
 const OPTIONEN: KartenOptionen = {
@@ -308,6 +353,100 @@ describe('MapLibreAdapter', () => {
     expect(a.ausschnitt()).toBeNull();
   });
 
+  it('nennt die Mitte des freien Streifens als Ort unter dem Fadenkreuz', async () => {
+    const { adapter: a } = await adapter();
+
+    expect(a.mitte()).toEqual([9.05, 48.52]);
+  });
+
+  it('fährt zu einem Ort', async () => {
+    const { adapter: a, karte } = await adapter();
+
+    a.fliegeZu([9.1, 48.6], 13);
+
+    expect(karte.bewegt.at(-1)).toMatchObject({ center: [9.1, 48.6], zoom: 13 });
+  });
+
+  it('legt Zonen als Fläche und Linie in ihrer Farbe auf die Karte', async () => {
+    const { adapter: a, karte } = await adapter();
+
+    a.zeigeObjekte('zonen', sammlung('zone-eins'));
+
+    expect(karte.quellen.has('objekte-zonen')).toBe(true);
+    expect(karte.ebenen.has('objekte-zonen-flaeche')).toBe(true);
+    expect(karte.ebenen.has('objekte-zonen-linie')).toBe(true);
+  });
+
+  it('macht aus einem gerundeten geteilten Fund einen großen blassen Kreis', async () => {
+    const { adapter: a, karte } = await adapter();
+
+    a.zeigeObjekte('geteilteFunde', sammlung('geteilt-eins'));
+
+    const schicht = karte.ebenen.get('objekte-geteilteFunde-punkt') as {
+      paint: Record<string, unknown>;
+    };
+    expect(schicht.paint['circle-radius']).toEqual(['case', ['get', 'gerundet'], 18, 7]);
+  });
+
+  it('schreibt neue Daten in eine Quelle, die schon steht', async () => {
+    const { adapter: a, karte } = await adapter();
+
+    a.zeigeObjekte('marker', sammlung('marker-eins'));
+    a.zeigeObjekte('marker', sammlung('marker-zwei'));
+
+    const quelle = karte.quellen.get('objekte-marker') as { data: { features: { id: string }[] } };
+    expect(quelle.data.features[0].id).toBe('marker-zwei');
+    expect(karte.ebenen.size).toBe(1);
+  });
+
+  it('meldet die Kennung des angetippten Objekts', async () => {
+    const { adapter: a, karte } = await adapter();
+    const getippt: string[] = [];
+    a.beiObjektAuswahl((_ebene, id) => getippt.push(id));
+    a.zeigeObjekte('funde', sammlung('fund-eins'));
+
+    karte.tippe('objekte-funde-punkt', 'fund-eins');
+    // Ein Punkt ohne Kennung öffnet nichts.
+    for (const eintrag of karte.hoerer) {
+      if (eintrag.typ === 'click:objekte-funde-punkt') eintrag.hoerer({ features: [] });
+    }
+
+    expect(getippt).toEqual(['fund-eins']);
+  });
+
+  it('nimmt eine Ebene samt ihrer Anmeldung wieder weg', async () => {
+    const { adapter: a, karte } = await adapter();
+    a.zeigeObjekte('marker', sammlung('marker-eins'));
+
+    a.verbergeObjekte('marker');
+
+    expect(karte.quellen.has('objekte-marker')).toBe(false);
+    expect(karte.hoerer.some((eintrag) => eintrag.typ.startsWith('click:'))).toBe(false);
+  });
+
+  it('legt die Objekte nach einem Stilwechsel neu auf', async () => {
+    const { adapter: a, karte } = await adapter();
+    a.zeigeObjekte('marker', sammlung('marker-eins'));
+
+    a.setzeStil('dunkel');
+    karte.quellen.clear();
+    karte.ebenen.clear();
+    karte.einmal.get('style.load')?.();
+
+    expect(karte.quellen.has('objekte-marker')).toBe(true);
+  });
+
+  it('gibt die rohe Karte für Terra Draw her', async () => {
+    const { adapter: a, karte } = await adapter();
+
+    expect(a.rohkarte()).toBe(karte);
+
+    a.zerstoere();
+
+    expect(a.rohkarte()).toBeNull();
+    expect(a.mitte()).toBeNull();
+  });
+
   it('bleibt still, solange keine Karte da ist', () => {
     const a = new MapLibreAdapter(() => Promise.resolve(modul().modul));
 
@@ -316,6 +455,9 @@ describe('MapLibreAdapter', () => {
     a.passeEin(OPTIONEN.maxGrenzen, { top: 0, bottom: 0, left: 0, right: 0 });
     a.setzePolster({ top: 0, bottom: 0, left: 0, right: 0 });
     a.beiBewegung(() => undefined);
+    a.fliegeZu([9, 48]);
+    a.zeigeObjekte('marker', sammlung('marker-eins'));
+    a.verbergeObjekte('marker');
     a.zerstoere();
 
     expect(a.ausschnitt()).toBeNull();

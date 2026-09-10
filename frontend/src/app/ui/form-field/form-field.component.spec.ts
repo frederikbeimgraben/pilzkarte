@@ -61,4 +61,15 @@ describe('FormFieldComponent', () => {
 
     expect(screen.getByRole('button', { name: 'optional' })).toBeInTheDocument();
   });
+  it('nimmt Datum und Zahl als eigene Art des Feldes', async () => {
+    const { container, rerender } = await render(FormFieldComponent, {
+      inputs: { label: 'Datum', typ: 'date' as const, wert: '2026-09-06' },
+    });
+
+    expect(container.querySelector('input')).toHaveAttribute('type', 'date');
+
+    await rerender({ inputs: { label: 'Anzahl', typ: 'number' as const, wert: '3' } });
+
+    expect(container.querySelector('input')).toHaveAttribute('type', 'number');
+  });
 });

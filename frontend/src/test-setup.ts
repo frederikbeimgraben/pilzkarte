@@ -20,6 +20,21 @@ Object.defineProperty(window, 'matchMedia', {
 // jsdom hat keine Darstellung und keinen Zeiger. Ohne diese Stummel bräche
 // jeder Baustein, der etwas in den Blick holt oder eine Geste fängt.
 Element.prototype.scrollIntoView = () => undefined;
+
+// jsdom rechnet kein Layout und kennt darum keinen ResizeObserver. Ohne
+// Ersatz bräche jede Oberfläche, die ihre eigene Höhe misst.
+Object.defineProperty(window, 'ResizeObserver', {
+  configurable: true,
+  writable: true,
+  value: class {
+    observe(): void {
+      // Ohne Layout ändert sich keine Größe; es gibt nichts zu melden.
+    }
+    disconnect(): void {
+      // Es gibt nichts zu lösen.
+    }
+  },
+});
 Element.prototype.setPointerCapture = () => undefined;
 Element.prototype.releasePointerCapture = () => undefined;
 
