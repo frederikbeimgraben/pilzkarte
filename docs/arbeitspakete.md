@@ -351,6 +351,54 @@ Abnahme:
 - Lizenz und Fotograf stehen an jedem Bild, auch in der Großansicht
 - Geschützte Arten zeigen den Ort nur auf 5 km gerundet
 
+### I3 Bilder einreichen und prüfen
+
+Jede angemeldete Person darf ein Bild zu einer Art einreichen. Sichtbar
+wird es erst nach der Prüfung durch jemanden mit dem Recht „Bilder
+freigeben".
+
+- Zustände: eingereicht, freigegeben, abgelehnt. Eine Absage nennt einen
+  Grund, den die einreichende Person sieht.
+- Bis zur Freigabe sieht das Bild nur, wer es eingereicht hat.
+- Unter Konto steht „Meine Bilder" mit dem Zustand je Einreichung.
+- In der Verwaltung eine Liste der offenen Einreichungen mit Freigeben
+  und Ablehnen. Entwürfe: Artboards 17 bis 19.
+
+Abnahme:
+- Ein eingereichtes Bild taucht in keiner öffentlichen Antwort auf
+- Ablehnen ohne Grund ist nicht möglich
+- Die einreichende Person sieht Zustand und Grund
+
+### J1 Arten anlegen, ändern, löschen
+
+Mit dem passenden Recht lassen sich Arten anlegen, ändern und löschen.
+Beim Anlegen genügen Name, lateinischer Name und Quelle; die Merkmale
+liest ein Vorschlag aus der Quelle und legt sie zum Prüfen bereit. Eine
+Art mit Karte oder mit Funden lässt sich nicht löschen, nur verbergen.
+Wer ein Feld ändert, steht mit Datum daran. Entwürfe: Artboards 11 bis 13.
+
+Abnahme:
+- Löschen einer Art mit Funden wird abgelehnt, mit klarer Meldung
+- Jede Änderung trägt Person und Zeitpunkt
+- Der Vorschlag aus der Quelle wird nie ungeprüft gespeichert
+
+### J2 Funde und Läufe verwalten
+
+- **Alle Funde**: Liste über alle Konten mit Suche und Filter, je Fund ein
+  Schalter für die Freigabe zum Training, dazu Freigabe für eine Auswahl.
+  Braucht ein eigenes Recht.
+- **Läufe**: was die Kette gerade rechnet, mit Fortschritt, und was zuletzt
+  lief, mit Dauer und Ergebnis. Ein Lauf lässt sich anstoßen, nicht
+  anhalten. Je Lauf die Schritte und die letzte Ausgabe.
+- Die Kette meldet ihren Zustand an das Backend, das ihn hält; der Dienst
+  startet keine Rechnung selbst, er schreibt einen Auftrag, den die Kette
+  abholt. Entwürfe: Artboards 14 bis 16.
+
+Abnahme:
+- Ohne Recht ist die Liste nicht erreichbar, auch nicht über die Adresse
+- Ein Schalter wirkt sofort und steht auch im Eintrag der Person
+- Ein angestoßener Lauf erscheint binnen einer Minute als laufend
+
 ### G1 Texte in der Datenbank
 
 Die Oberfläche trägt heute ihre Texte im Code. Sie ziehen in die
