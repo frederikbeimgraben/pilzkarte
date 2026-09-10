@@ -48,6 +48,7 @@ from sklearn.metrics import average_precision_score, roc_auc_score
 
 sys.path.insert(0, str(Path(__file__).parent))
 from build_dataset import add_anomalies, add_lags, week_number
+from build_occurrences import APP, GBIF, visit_gate
 
 PARAMS = dict(objective="binary", learning_rate=0.05, num_leaves=31,
               min_data_in_leaf=40, feature_fraction=0.8, bagging_fraction=0.8,
@@ -70,17 +71,31 @@ def activity_names(horizon: int = 0) -> list[str]:
 
 
 def build_visits(occ: pd.DataFrame, species: str, min_species: int) -> pd.DataFrame:
+    """Reduce the records to one row per visit.
+
+    The min-species gate keeps a visit only if the person named at least
+    `min_species` species. That is what turns a visit without the target into
+    a real absence: somebody looked hard and did not find it.
+
+    A find from the app is the one exception. `visit_gate` in
+    `build_occurrences.py` holds the rule and says why.
+    """
     occ = occ[occ["recordedByHash"].notna()].copy()
+    # An occurrence table written before the app existed has no basis column.
+    if "basis" not in occ.columns:
+        occ["basis"] = GBIF
     occ["km_x"] = (occ["x"] // 1000).astype(int)
     occ["km_y"] = (occ["y"] // 1000).astype(int)
     occ["visit"] = (occ["recordedByHash"].astype(str) + "|" + occ["date"].astype(str)
                     + "|" + occ["km_x"].astype(str) + "_" + occ["km_y"].astype(str))
     wanted = [n.strip() for n in species.split(",")]
     occ["is_target"] = occ["species"].isin(wanted).astype("int8")
+    occ["from_app"] = (occ["basis"] == APP).astype("int8")
     visits = occ.groupby("visit").agg(
         n_records=("gbifID", "size"),
         n_species=("species", "nunique"),
         label=("is_target", "max"),
+        from_app=("from_app", "max"),
         lon=("decimalLongitude", "mean"),
         lat=("decimalLatitude", "mean"),
         x=("x", "mean"), y=("y", "mean"),
@@ -90,9 +105,10 @@ def build_visits(occ: pd.DataFrame, species: str, min_species: int) -> pd.DataFr
         iso_week=("iso_week", "first"),
     ).reset_index()
     print(f"visits: {len(visits)}   rate: {visits['label'].mean():.2%}")
-    visits = visits[visits["n_species"] >= min_species].reset_index(drop=True)
+    visits = visits[visit_gate(visits, min_species)].reset_index(drop=True)
     print(f"visits with at least {min_species} species: {len(visits)}   "
-          f"rate: {visits['label'].mean():.2%}   positive: {int(visits['label'].sum())}")
+          f"rate: {visits['label'].mean():.2%}   positive: {int(visits['label'].sum())}   "
+          f"from the app: {int(visits['from_app'].sum())}")
     return visits
 
 
