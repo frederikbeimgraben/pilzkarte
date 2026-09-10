@@ -3,12 +3,31 @@ import type { ThemeWirksam } from '../core/theme/theme.service';
 
 /**
  * Die Hintergrundkarte kommt von OpenFreeMap: frei, ohne Schlüssel, in hell und
- * dunkel. Der Stil folgt dem Theme der App.
+ * dunkel.
  */
 export const HINTERGRUND: Record<ThemeWirksam, string> = {
   hell: 'https://tiles.openfreemap.org/styles/liberty',
   dunkel: 'https://tiles.openfreemap.org/styles/dark',
 };
+
+/**
+ * Was der Ebenen-Knopf zur Wahl stellt. Topo und Satellit stehen mit, damit
+ * die Wahl vollständig ist; für beide steht noch keine freie Quelle fest.
+ */
+export type Hintergrund = 'automatisch' | 'hell' | 'dunkel' | 'topo' | 'satellit';
+
+export const HINTERGRUENDE: readonly Hintergrund[] = ['automatisch', 'hell', 'dunkel', 'topo', 'satellit'];
+
+/** Topo und Satellit sind noch nicht wählbar. */
+export function hintergrundVerfuegbar(wahl: Hintergrund): boolean {
+  return wahl === 'automatisch' || wahl === 'hell' || wahl === 'dunkel';
+}
+
+/** Der Stil zur Wahl. „Automatisch“ folgt dem Theme der App. */
+export function stilFuer(wahl: Hintergrund, theme: ThemeWirksam): string {
+  if (wahl === 'hell' || wahl === 'dunkel') return HINTERGRUND[wahl];
+  return HINTERGRUND[theme];
+}
 
 /** Deutschland als [Länge, Breite]. Darauf wird die Karte beim Öffnen gepasst. */
 export const DEUTSCHLAND: Grenzen = [

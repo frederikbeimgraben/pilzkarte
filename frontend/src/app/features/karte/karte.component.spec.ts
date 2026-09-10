@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router, RouterOutlet, provideRouter } from '@angular/router';
-import { render, screen } from '@testing-library/angular';
+import { fireEvent, render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { keineVerstoesse } from '../../testing/axe';
 import {
+  EBENEN_ROH,
   MANIFEST_ROH,
   karteMitAttrappen,
   manifestAntwort,
@@ -11,6 +12,7 @@ import {
   type KartenAttrappe,
 } from '../../testing/karte-attrappen';
 import { ThemeService } from '../../core/theme/theme.service';
+import { ToastService } from '@stupa-makers/ui-kit';
 import { TestBed } from '@angular/core/testing';
 import { KarteComponent } from './karte.component';
 
@@ -56,6 +58,11 @@ async function karte(adresse = '/karte'): Promise<{
   return { attrappe, arbeiter, stabil, container };
 }
 
+/** jsdom kennt keine Ortung; der Test setzt sie am Navigator ein. */
+function setzeOrtung(ortung: Partial<Geolocation>): void {
+  Object.defineProperty(navigator, 'geolocation', { configurable: true, value: ortung });
+}
+
 describe('KarteComponent', () => {
   it('zeigt Karte, Blattkopf, Zeitleiste und Legende', async () => {
     const { attrappe, container } = await karte();
@@ -76,7 +83,9 @@ describe('KarteComponent', () => {
   it('nimmt ohne Angabe die jüngste gemessene Woche, nicht die Prognose', async () => {
     const { attrappe } = await karte();
 
-    expect(attrappe.vorlagen.at(-1)).toBe('wert://boletus_edulis/boletus_edulis_kacheln/2025W40/{z}/{x}/{y}');
+    expect(attrappe.vorlagen().at(-1)).toBe(
+      'wert://boletus_edulis/boletus_edulis_kacheln/2025W40/{z}/{x}/{y}',
+    );
     expect(screen.queryByText('· Prognose')).not.toBeInTheDocument();
   });
 
@@ -85,7 +94,7 @@ describe('KarteComponent', () => {
 
     expect(screen.getByText('KW 41 · 2025')).toBeInTheDocument();
     expect(screen.getByText('· Prognose')).toBeInTheDocument();
-    expect(attrappe.vorlagen.at(-1)).toContain('2025W41');
+    expect(attrappe.vorlagen().at(-1)).toContain('2025W41');
   });
 
   it('wechselt die Woche per Zeitleiste und schreibt sie in die Adresse', async () => {
@@ -94,7 +103,7 @@ describe('KarteComponent', () => {
     await userEvent.click(screen.getByRole('button', { name: 'KW 39 · 2025' }));
     await stabil();
 
-    expect(attrappe.vorlagen.at(-1)).toContain('2025W39');
+    expect(attrappe.vorlagen().at(-1)).toContain('2025W39');
     expect(TestBed.inject(Router).url).toContain('kw=2025-39');
   });
 
@@ -103,13 +112,13 @@ describe('KarteComponent', () => {
 
     await userEvent.click(screen.getByRole('button', { name: 'Nächste Woche' }));
     await stabil();
-    const nachRechts = attrappe.vorlagen.length;
+    const nachRechts = attrappe.vorlagen().length;
 
     await userEvent.click(screen.getByRole('button', { name: 'Vorige Woche' }));
     await stabil();
 
-    expect(attrappe.vorlagen).toHaveLength(nachRechts + 1);
-    expect(attrappe.vorlagen.at(-1)).toContain('2025W40');
+    expect(attrappe.vorlagen()).toHaveLength(nachRechts + 1);
+    expect(attrappe.vorlagen().at(-1)).toContain('2025W40');
   });
 
   it('spielt die Wochen im Takt und hält am Ende an', async () => {
@@ -121,12 +130,12 @@ describe('KarteComponent', () => {
       await vi.advanceTimersByTimeAsync(1500);
       await stabil();
 
-      expect(attrappe.vorlagen.at(-1)).toContain('2025W41');
+      expect(attrappe.vorlagen().at(-1)).toContain('2025W41');
 
       await vi.advanceTimersByTimeAsync(1500);
       await stabil();
 
-      expect(attrappe.vorlagen.at(-1)).toContain('2025W41');
+      expect(attrappe.vorlagen().at(-1)).toContain('2025W41');
     } finally {
       vi.useRealTimers();
     }
@@ -163,10 +172,10 @@ describe('KarteComponent', () => {
     expect(attrappe.stile.at(-1)).toContain('dark');
   });
 
-  it('zeigt zu Ebene und Kombination noch keinen Inhalt', async () => {
+  it('zeigt zur Kombination noch keinen Inhalt', async () => {
     const { stabil } = await karte();
 
-    await userEvent.click(screen.getByRole('tab', { name: 'Ebene' }));
+    await userEvent.click(screen.getByRole('tab', { name: 'Kombination' }));
     await stabil();
 
     expect(screen.getByText('Dieser Bereich kommt in einem späteren Arbeitspaket.')).toBeInTheDocument();
@@ -181,7 +190,7 @@ describe('KarteComponent', () => {
     await navigate('/karte');
     await fixture.whenStable();
 
-    expect(attrappe.vorlagen).toHaveLength(0);
+    expect(attrappe.vorlagen()).toHaveLength(0);
     expect(screen.getByRole('region', { name: 'Karte von Deutschland' })).toBeInTheDocument();
     await keineVerstoesse(container);
   });
@@ -199,5 +208,184 @@ describe('KarteComponent', () => {
 
     expect(attrappe.zerstoert).toBe(true);
     expect(arbeiter.beendet).toBe(true);
+  });
+
+  it('zeigt die Ebenen in zwei Gruppen mit ihrer Einheit', async () => {
+    const { container, stabil } = await karte();
+
+    await userEvent.click(screen.getByRole('tab', { name: 'Ebene' }));
+    await stabil();
+
+    expect(screen.getByText('Je Woche')).toBeInTheDocument();
+    expect(screen.getByText('Fest')).toBeInTheDocument();
+    const liste = screen.getByRole('group', { name: 'Eingabe-Ebenen' });
+    expect(liste).toHaveTextContent('Niederschlag der letzten 4 Wochen');
+    expect(liste).toHaveTextContent('mm');
+    expect(liste).toHaveTextContent('Waldanteil');
+    await keineVerstoesse(container);
+  });
+
+  it('legt die gewählte Ebene über die Karte und nennt Rampe und Einheit', async () => {
+    const { attrappe, stabil } = await karte();
+
+    await userEvent.click(screen.getByRole('tab', { name: 'Ebene' }));
+    await stabil();
+
+    expect(attrappe.vorlagen('ebene').at(-1)).toBe(
+      'wert://ebene-regen_4w/layers_kacheln/regen_4w/2025W40/{z}/{x}/{y}',
+    );
+    expect(
+      screen.getByRole('img', {
+        name: /Niederschlag der letzten 4 Wochen: 0 mm – 152 mm/,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Niederschlag der letzten 4 Wochen/ })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+  });
+
+  it('wechselt die Ebene und schreibt sie in die Adresse', async () => {
+    const { attrappe, stabil } = await karte();
+    await userEvent.click(screen.getByRole('tab', { name: 'Ebene' }));
+    await stabil();
+
+    await userEvent.click(screen.getByRole('button', { name: /Boden-pH/ }));
+    await stabil();
+
+    expect(attrappe.vorlagen('ebene').at(-1)).toBe(
+      'wert://ebene-boden_ph/layers_kacheln/boden_ph/{z}/{x}/{y}',
+    );
+    expect(TestBed.inject(Router).url).toContain('ebene=boden_ph');
+    expect(screen.getByRole('img', { name: /Boden-pH: 4,7 – 6,9/ })).toBeInTheDocument();
+  });
+
+  it('dämpft die Zeitleiste bei einer festen Ebene und sagt warum', async () => {
+    const { container, stabil } = await karte();
+    await userEvent.click(screen.getByRole('tab', { name: 'Ebene' }));
+    await stabil();
+
+    await userEvent.click(screen.getByRole('button', { name: /Waldanteil/ }));
+    await stabil();
+
+    expect(screen.getByText('Diese Ebene gilt für alle Wochen.')).toBeInTheDocument();
+    expect(container.querySelector('.leiste--gedaempft')).not.toBeNull();
+    expect(screen.getByRole('button', { name: 'KW 40 · 2025' })).toBeDisabled();
+  });
+
+  it('sagt, wenn die Ebene nicht so weit reicht wie die Zeitleiste', async () => {
+    const { stabil } = await karte('/karte?darstellung=ebene&kw=2025-41');
+    await stabil();
+
+    expect(
+      screen.getByText('Die Ebene zeigt KW 40 · 2025; weiter reicht das Wetter nicht.'),
+    ).toBeInTheDocument();
+  });
+
+  it('öffnet den Deep Link mit Darstellung, Ebene und Deckkraft', async () => {
+    const { attrappe, stabil } = await karte(
+      '/karte?darstellung=ebene&ebene=temperatur&kw=2025-40&deckkraft=70',
+    );
+    await stabil();
+
+    expect(attrappe.vorlagen('ebene').at(-1)).toContain('ebene-temperatur');
+    expect(attrappe.deckkraft.get('ebene')).toBeCloseTo(0.7);
+    expect(attrappe.deckkraft.get('vorhersage')).toBe(1);
+    expect(
+      screen.getByRole('img', { name: /Mitteltemperatur der Woche: -3,6 Grad – 24,7 Grad/ }),
+    ).toBeInTheDocument();
+  });
+
+  it('nimmt die Vorhersage weg, solange nur die Ebene gefragt ist', async () => {
+    const { attrappe, stabil } = await karte();
+    const vorher = attrappe.vorlagen().length;
+
+    await userEvent.click(screen.getByRole('tab', { name: 'Ebene' }));
+    await stabil();
+
+    expect(attrappe.vorlagenJeRolle.get('vorhersage')?.at(-1)).toBeNull();
+    expect(vorher).toBeGreaterThan(0);
+  });
+
+  it('legt die Vorhersage auf Wunsch unter die Ebene', async () => {
+    const { attrappe, stabil } = await karte('/karte?darstellung=ebene');
+    await stabil();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Auf der Karte' }));
+    await stabil();
+    await userEvent.click(screen.getByRole('checkbox', { name: 'Vorhersage darunter zeigen' }));
+    await stabil();
+
+    expect(attrappe.vorlagenJeRolle.get('vorhersage')?.at(-1)).toContain('boletus_edulis');
+  });
+
+  it('stellt Hintergrund und Deckkraft über den Ebenen-Knopf', async () => {
+    const { attrappe, stabil } = await karte();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Auf der Karte' }));
+    await stabil();
+
+    expect(screen.getAllByText('kommt später')).toHaveLength(2);
+    await userEvent.click(screen.getByRole('button', { name: 'Dunkel' }));
+    await stabil();
+
+    expect(attrappe.stile.at(-1)).toContain('dark');
+
+    const regler = screen.getByRole('slider', { name: 'Deckkraft der Wertebene' });
+    fireEvent.input(regler, { target: { value: '40' } });
+    await stabil();
+
+    expect(attrappe.deckkraft.get('vorhersage')).toBeCloseTo(0.4);
+    expect(TestBed.inject(Router).url).toContain('deckkraft=40');
+  });
+
+  it('zentriert auf den Standort und meldet einen Fehlschlag', async () => {
+    const { attrappe, stabil } = await karte();
+    const holen = vi.fn((erfolg: PositionCallback) => {
+      erfolg({ coords: { longitude: 9.1, latitude: 48.8 } } as GeolocationPosition);
+    });
+    setzeOrtung({ getCurrentPosition: holen });
+
+    await userEvent.click(screen.getByRole('button', { name: 'Auf meinen Standort' }));
+    await stabil();
+
+    expect(attrappe.zentriert?.punkt).toEqual([9.1, 48.8]);
+
+    setzeOrtung({
+      getCurrentPosition: (_erfolg: PositionCallback, fehler: PositionErrorCallback) => {
+        fehler({ code: 1 } as GeolocationPositionError);
+      },
+    });
+    await userEvent.click(screen.getByRole('button', { name: 'Auf meinen Standort' }));
+    await stabil();
+
+    expect(TestBed.inject(ToastService).toasts().at(-1)?.message).toContain('Kein Standort');
+  });
+
+  it('behält die Ebene aus dem Deep Link, auch wenn `layers.json` später kommt', async () => {
+    vi.stubGlobal('fetch', (pfad: string) =>
+      pfad === '/layers.json'
+        ? new Promise<Response>((fertig) => {
+            setTimeout(() => {
+              fertig({ ok: true, status: 200, json: () => Promise.resolve(EBENEN_ROH) } as Response);
+            }, 20);
+          })
+        : Promise.resolve({
+            ok: true,
+            status: 200,
+            json: () => Promise.resolve(MANIFEST_ROH),
+          } as Response),
+    );
+    const { karte: attrappe } = karteMitAttrappen();
+    const { fixture, navigate } = await render(WirtComponent, { providers: [provideRouter(ROUTEN)] });
+
+    await navigate('/karte?darstellung=ebene&ebene=temperatur');
+    await new Promise((fertig) => setTimeout(fertig, 60));
+    await fixture.whenStable();
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    expect(TestBed.inject(Router).url).toContain('ebene=temperatur');
+    expect(attrappe.vorlagen('ebene').at(-1)).toContain('ebene-temperatur');
   });
 });

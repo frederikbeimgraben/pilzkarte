@@ -1,5 +1,7 @@
 import { kachelPfad } from '../core/kacheln/kachel-pfade';
-import { kachelSchluessel, type ArtManifest } from '../core/kacheln/manifest';
+import { kachelSchluessel } from '../core/kacheln/manifest';
+import { VORHERSAGE_RAMPE } from '../ui/ramp/rampe-farben';
+import type { WertSkala } from './wert-farben';
 import type { WertAntwort, WertAuftrag } from './wert-nachrichten';
 
 /**
@@ -12,6 +14,17 @@ export interface FaerbeArbeiter {
   terminate(): void;
 }
 
+/**
+ * Eine angemeldete Quelle: was ihre Bytes bedeuten, in welchen Farben sie
+ * liegen und welche Kacheln es überhaupt gibt.
+ */
+export interface WertQuelle {
+  id: string;
+  skala: WertSkala;
+  farben: readonly string[];
+  vorhanden: ReadonlySet<string>;
+}
+
 /** Eine leere Antwort. MapLibre macht daraus eine durchsichtige Kachel. */
 const LEER = new ArrayBuffer(0);
 
@@ -19,41 +32,47 @@ const MUSTER = /^wert:\/\/([^/]+)\/(.+)\/(\d+)\/(\d+)\/(\d+)$/;
 
 /** Die Teile einer `wert://`-Adresse. */
 export interface WertAdresse {
-  slug: string;
-  wochenOrdner: string;
+  quelle: string;
+  ordner: string;
   z: number;
   x: number;
   y: number;
 }
 
-/** Die Vorlage für eine Rasterquelle: `wert://<art>/<wochenordner>/{z}/{x}/{y}`. */
-export function wertVorlage(slug: string, wochenOrdner: string): string {
-  return `wert://${slug}/${wochenOrdner}/{z}/{x}/{y}`;
+/** Die Vorlage für eine Rasterquelle: `wert://<quelle>/<ordner>/{z}/{x}/{y}`. */
+export function wertVorlage(quelle: string, ordner: string): string {
+  return `wert://${quelle}/${ordner}/{z}/{x}/{y}`;
 }
 
 export function zerlegeWertUrl(url: string): WertAdresse | null {
   const treffer = MUSTER.exec(url);
   if (!treffer) return null;
   return {
-    slug: treffer[1],
-    wochenOrdner: treffer[2],
+    quelle: treffer[1],
+    ordner: treffer[2],
     z: Number(treffer[3]),
     x: Number(treffer[4]),
     y: Number(treffer[5]),
   };
 }
 
+/** Die Quelle einer Vorhersage-Art. */
+export function artQuelle(slug: string, top: number, vorhanden: ReadonlySet<string>): WertQuelle {
+  return { id: slug, skala: { art: 'wahrscheinlichkeit', top }, farben: VORHERSAGE_RAMPE, vorhanden };
+}
+
 /**
  * Das Protokoll `wert://` für MapLibre.
  *
- * Es kennt je Art den Höchstwert und die Liste der Kacheln mit Daten. Eine
- * Kachel, die es nicht gibt, wird gar nicht erst geholt: sie kommt leer zurück,
- * ohne 404 und ohne Meldung in der Konsole. Alles andere geht an den Worker,
- * der die Bytes holt, färbt und ein fertiges Bild zurückschickt.
+ * Jede Quelle meldet sich einmal an: mit ihrer Skala, ihrer Rampe und der Liste
+ * der Kacheln, die Daten tragen. Eine Kachel, die dort fehlt, wird gar nicht
+ * erst geholt: sie kommt leer zurück, ohne 404 und ohne Meldung in der Konsole.
+ * Alles andere geht an den Worker, der die Bytes holt, färbt und ein fertiges
+ * Bild zurückschickt.
  */
 export class WertProtokoll {
   private readonly arbeiter: FaerbeArbeiter;
-  private readonly arten = new Map<string, ArtManifest>();
+  private readonly quellen = new Map<string, WertQuelle>();
   private readonly offen = new Map<number, (bild: ImageBitmap | null) => void>();
   private naechsteId = 0;
 
@@ -67,36 +86,32 @@ export class WertProtokoll {
     });
   }
 
-  merkeArt(manifest: ArtManifest): void {
-    this.arten.set(manifest.slug, manifest);
+  melde(quelle: WertQuelle): void {
+    this.quellen.set(quelle.id, quelle);
   }
 
   /** Die Funktion für `maplibregl.addProtocol('wert', …)`. */
   readonly aufloesen = async (url: string): Promise<{ data: ImageBitmap | ArrayBuffer }> => {
     const adresse = zerlegeWertUrl(url);
-    const art = adresse ? this.arten.get(adresse.slug) : undefined;
-    if (!adresse || !art?.vorhanden.has(kachelSchluessel(adresse.z, adresse.x, adresse.y))) {
+    const quelle = adresse ? this.quellen.get(adresse.quelle) : undefined;
+    if (!adresse || !quelle?.vorhanden.has(kachelSchluessel(adresse.z, adresse.x, adresse.y))) {
       return { data: LEER };
     }
-    const bild = await this.frage(kachelPfad(adresse.wochenOrdner, adresse.z, adresse.x, adresse.y), art.top);
+    const bild = await this.frage(kachelPfad(adresse.ordner, adresse.z, adresse.x, adresse.y), quelle);
     return { data: bild ?? LEER };
   };
 
   /**
-   * Holt die Kacheln der genannten Wochen in den Speicher des Workers, damit
+   * Holt die Kacheln der genannten Ordner in den Speicher des Workers, damit
    * ein Wochenwechsel nicht mehr ins Netz muss.
    */
-  vorladen(
-    slug: string,
-    wochenOrdner: readonly string[],
-    kacheln: readonly [number, number, number][],
-  ): void {
-    const art = this.arten.get(slug);
-    if (!art) return;
+  vorladen(quelleId: string, ordner: readonly string[], kacheln: readonly [number, number, number][]): void {
+    const quelle = this.quellen.get(quelleId);
+    if (!quelle) return;
     const urls: string[] = [];
-    for (const ordner of wochenOrdner) {
+    for (const pfad of ordner) {
       for (const [z, x, y] of kacheln) {
-        if (art.vorhanden.has(kachelSchluessel(z, x, y))) urls.push(kachelPfad(ordner, z, x, y));
+        if (quelle.vorhanden.has(kachelSchluessel(z, x, y))) urls.push(kachelPfad(pfad, z, x, y));
       }
     }
     if (urls.length > 0) this.sende({ typ: 'vorladen', urls });
@@ -107,11 +122,11 @@ export class WertProtokoll {
     this.offen.clear();
   }
 
-  private frage(url: string, top: number): Promise<ImageBitmap | null> {
+  private frage(url: string, quelle: WertQuelle): Promise<ImageBitmap | null> {
     const id = this.naechsteId++;
     return new Promise<ImageBitmap | null>((fertig) => {
       this.offen.set(id, fertig);
-      this.sende({ typ: 'faerbe', id, url, top });
+      this.sende({ typ: 'faerbe', id, url, skala: quelle.skala, farben: quelle.farben });
     });
   }
 

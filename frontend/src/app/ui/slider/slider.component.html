@@ -1,0 +1,21 @@
+<p class="regler__kopf">
+  <span class="regler__beschriftung">{{ beschriftung() }}</span>
+  @if (wertText()) {
+    <span class="regler__wert">{{ wertText() }}</span>
+  }
+</p>
+<div class="regler">
+  <span class="regler__spur"></span>
+  <span class="regler__gewaehlt" [style.inline-size]="anteil()"></span>
+  <input
+    class="regler__griff"
+    type="range"
+    [attr.aria-label]="beschriftung()"
+    [attr.aria-valuetext]="wertText()"
+    [min]="min()"
+    [max]="max()"
+    [step]="schritt()"
+    [value]="wert()"
+    (input)="beiEingabe($event)"
+  />
+</div>

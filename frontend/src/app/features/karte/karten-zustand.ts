@@ -1,8 +1,9 @@
 import { Injectable, computed, signal } from '@angular/core';
 import { VORHERSAGE_SLUGS, type VorhersageSlug } from '../../core/kacheln/kachel-pfade';
+import { HINTERGRUENDE, hintergrundVerfuegbar, type Hintergrund } from '../../map/hintergrund';
 import type { Raste } from '../../ui';
 
-/** Die drei Darstellungen des Blatts. Ebene und Kombination kommen in B1 und B2. */
+/** Die drei Darstellungen des Blatts. Die Kombination kommt in B2. */
 export type Darstellung = 'vorhersage' | 'ebene' | 'kombination';
 
 export const DARSTELLUNGEN: readonly Darstellung[] = ['vorhersage', 'ebene', 'kombination'];
@@ -10,12 +11,23 @@ export const DARSTELLUNGEN: readonly Darstellung[] = ['vorhersage', 'ebene', 'ko
 /** Ohne Angabe zeigt die Karte den Steinpilz. */
 export const STANDARD_ART: VorhersageSlug = 'boletus_edulis';
 
+/**
+ * Ohne Wahl steht der Niederschlag der letzten vier Wochen vorn: die Ebene,
+ * nach der man zuerst schaut, und das Beispiel aus dem Konzept.
+ */
+export const STANDARD_EBENE = 'regen_4w';
+
 const WOCHEN_MUSTER = /^\d{4}-\d{2}$/;
+const EBENEN_MUSTER = /^[a-z0-9_]{1,40}$/;
 
 /** Der Zustand, den ein Link trägt. */
 export interface KartenAdresse {
   art: VorhersageSlug;
   kw: string | null;
+  darstellung: Darstellung;
+  ebene: string | null;
+  /** Deckkraft der Wertebene in Prozent, damit die Adresse lesbar bleibt. */
+  deckkraft: number;
 }
 
 function istArt(wert: string | null): wert is VorhersageSlug {
@@ -26,12 +38,18 @@ function istDarstellung(wert: string | null): wert is Darstellung {
   return wert !== null && (DARSTELLUNGEN as readonly string[]).includes(wert);
 }
 
+function leseProzent(wert: string | null): number | null {
+  if (wert === null) return null;
+  const zahl = Number(wert);
+  if (!Number.isFinite(zahl)) return null;
+  return Math.min(Math.max(Math.round(zahl), 0), 100) / 100;
+}
+
 /**
- * Art, Woche, Darstellung und Raste der Karte.
+ * Art, Woche, Darstellung, Ebene, Deckkraft und Raste der Karte.
  *
- * Art und Woche stehen in der Adresse, damit ein Link dieselbe Ansicht öffnet.
- * Eine unbekannte Art oder eine Woche in falscher Form fällt auf den Standard
- * zurück, statt eine leere Karte zu zeigen.
+ * Was in der Adresse steht, öffnet ein Link genauso wieder. Ein Wert in
+ * falscher Form fällt auf den Standard zurück, statt eine leere Karte zu zeigen.
  */
 @Injectable({ providedIn: 'root' })
 export class KartenZustand {
@@ -39,14 +57,40 @@ export class KartenZustand {
   /** `2025-40` oder `null` für „die aktuelle Woche der Art“. */
   readonly woche = signal<string | null>(null);
   readonly darstellung = signal<Darstellung>('vorhersage');
+  /** Die gewählte Eingabe-Ebene, `null` heißt „die erste der Liste“. */
+  readonly ebene = signal<string | null>(null);
+  /** Deckkraft der Wertebene, 0 bis 1. */
+  readonly deckkraft = signal(1);
+  readonly hintergrund = signal<Hintergrund>('automatisch');
+  /** In der Darstellung Ebene: die Vorhersage der Art bleibt darunter liegen. */
+  readonly vorhersageDarunter = signal(false);
   readonly raste = signal<Raste>(1);
 
-  readonly adresse = computed<KartenAdresse>(() => ({ art: this.art(), kw: this.woche() }));
+  readonly adresse = computed<KartenAdresse>(() => ({
+    art: this.art(),
+    kw: this.woche(),
+    darstellung: this.darstellung(),
+    ebene: this.ebene(),
+    deckkraft: Math.round(this.deckkraft() * 100),
+  }));
 
   /** Übernimmt die Abfragewerte einer Adresse. */
-  uebernimm(art: string | null, kw: string | null, darstellung: string | null = null): void {
-    this.art.set(istArt(art) ? art : STANDARD_ART);
-    this.woche.set(kw !== null && WOCHEN_MUSTER.test(kw) ? kw : null);
-    if (istDarstellung(darstellung)) this.darstellung.set(darstellung);
+  uebernimm(abfrage: {
+    art: string | null;
+    kw: string | null;
+    darstellung: string | null;
+    ebene: string | null;
+    deckkraft: string | null;
+  }): void {
+    this.art.set(istArt(abfrage.art) ? abfrage.art : STANDARD_ART);
+    this.woche.set(abfrage.kw !== null && WOCHEN_MUSTER.test(abfrage.kw) ? abfrage.kw : null);
+    this.darstellung.set(istDarstellung(abfrage.darstellung) ? abfrage.darstellung : 'vorhersage');
+    this.ebene.set(abfrage.ebene !== null && EBENEN_MUSTER.test(abfrage.ebene) ? abfrage.ebene : null);
+    const deckkraft = leseProzent(abfrage.deckkraft);
+    if (deckkraft !== null) this.deckkraft.set(deckkraft);
+  }
+
+  setzeHintergrund(wahl: Hintergrund): void {
+    if (HINTERGRUENDE.includes(wahl) && hintergrundVerfuegbar(wahl)) this.hintergrund.set(wahl);
   }
 }

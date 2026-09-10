@@ -1,0 +1,29 @@
+.ebenen-blatt {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-block-size: 0;
+  padding: var(--pilz-gutter) var(--pilz-gutter) var(--space-4);
+  overflow-y: auto;
+  // Wie im Blatt der Karte: die App füllt das Gerät, ein Balken am Rand
+  // gehörte zu einem Fenster.
+  scrollbar-width: none;
+}
+
+.ebenen-blatt__titel {
+  margin-block-end: var(--space-1);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ebenen-blatt__zeile--aktiv {
+  background: var(--color-primary-subtle);
+}
+
+.ebenen-blatt__zeile--aus {
+  opacity: 0.55;
+}

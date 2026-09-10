@@ -37,6 +37,8 @@ export class WeekButtonComponent {
   readonly jahresmarke = input(false);
   /** Nur eine Woche der Leiste liegt im Tabulator-Weg; die Pfeile führen weiter. */
   readonly imTabWeg = input(true);
+  /** Gesperrt, solange die Darstellung keine Woche kennt. */
+  readonly gesperrt = input(false);
 
   readonly auswahl = output();
 

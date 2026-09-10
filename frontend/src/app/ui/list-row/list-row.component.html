@@ -16,7 +16,12 @@
 </ng-template>
 
 @if (anklickbar()) {
-  <button class="zeile zeile--knopf" type="button" (click)="auswahl.emit()">
+  <button
+    class="zeile zeile--knopf"
+    type="button"
+    [attr.aria-pressed]="gewaehlt() ? true : null"
+    (click)="auswahl.emit()"
+  >
     <ng-container [ngTemplateOutlet]="inhalt" />
   </button>
 } @else {

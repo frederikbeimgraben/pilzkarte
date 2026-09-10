@@ -1,6 +1,7 @@
 import { ArbeiterAttrappe } from '../testing/karte-attrappen';
 import { leseManifest } from '../core/kacheln/manifest';
-import { WertProtokoll, wertVorlage, zerlegeWertUrl } from './wert-protokoll';
+import { WertProtokoll, artQuelle, wertVorlage, zerlegeWertUrl } from './wert-protokoll';
+import { VORHERSAGE_RAMPE } from '../ui/ramp/rampe-farben';
 import type { FaerbeAuftrag, VorladeAuftrag } from './wert-nachrichten';
 
 const MANIFEST = leseManifest(
@@ -15,7 +16,7 @@ const MANIFEST = leseManifest(
 function protokoll(): { wert: WertProtokoll; arbeiter: ArbeiterAttrappe } {
   const arbeiter = new ArbeiterAttrappe();
   const wert = new WertProtokoll(() => arbeiter);
-  wert.merkeArt(MANIFEST);
+  wert.melde(artQuelle(MANIFEST.slug, MANIFEST.top, MANIFEST.vorhanden));
   return { wert, arbeiter };
 }
 
@@ -28,8 +29,8 @@ describe('wert://', () => {
 
   it('zerlegt eine Adresse mit Schrägstrichen im Wochenordner', () => {
     expect(zerlegeWertUrl('wert://boletus_edulis/boletus_edulis_kacheln/2025W40/7/66/42')).toEqual({
-      slug: 'boletus_edulis',
-      wochenOrdner: 'boletus_edulis_kacheln/2025W40',
+      quelle: 'boletus_edulis',
+      ordner: 'boletus_edulis_kacheln/2025W40',
       z: 7,
       x: 66,
       y: 42,
@@ -49,7 +50,8 @@ describe('wert://', () => {
       typ: 'faerbe',
       id: 0,
       url: '/boletus_edulis_kacheln/2025W40/7/66/42.png',
-      top: 0.5,
+      skala: { art: 'wahrscheinlichkeit', top: 0.5 },
+      farben: VORHERSAGE_RAMPE,
     });
     await expect(lauf).resolves.toEqual({ data: bild });
   });

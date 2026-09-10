@@ -1,0 +1,38 @@
+<app-sheet [beschriftung]="'ebenenKnopf.titel' | t" [raste]="2" [modal]="true">
+  <div class="ebenen-blatt">
+    <section class="ebenen-blatt__teil">
+      <h3 class="ebenen-blatt__titel">{{ 'ebenenKnopf.hintergrund' | t }}</h3>
+      @for (wahl of wahlen(); track wahl.wert) {
+        <app-list-row
+          [titel]="wahl.label"
+          [unter]="wahl.unter"
+          [anklickbar]="wahl.verfuegbar"
+          [gewaehlt]="wahl.wert === hintergrund()"
+          [class.ebenen-blatt__zeile--aktiv]="wahl.wert === hintergrund()"
+          [class.ebenen-blatt__zeile--aus]="!wahl.verfuegbar"
+          (auswahl)="hintergrundChange.emit(wahl.wert)"
+        />
+      }
+    </section>
+
+    <section class="ebenen-blatt__teil">
+      <app-slider
+        [beschriftung]="'ebenenKnopf.deckkraft' | t"
+        [wert]="prozent()"
+        [wertText]="prozentText()"
+        (wertChange)="beiDeckkraft($event)"
+      />
+    </section>
+
+    @if (zeigtEbene()) {
+      <section class="ebenen-blatt__teil">
+        <app-checkbox
+          [ngModel]="vorhersageDarunter()"
+          (ngModelChange)="vorhersageDarunterChange.emit($event)"
+          >{{ 'ebenenKnopf.vorhersageDarunter' | t }}</app-checkbox
+        >
+      </section>
+    }
+  </div>
+  <app-action-bar [haupt]="'ebenenKnopf.fertig' | t" (hauptKlick)="schliessen.emit()" />
+</app-sheet>

@@ -1,0 +1,70 @@
+.regler__kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-block-end: var(--space-2);
+}
+
+.regler__beschriftung {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.regler__wert {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+.regler {
+  position: relative;
+  block-size: 28px;
+}
+
+.regler__spur,
+.regler__gewaehlt {
+  position: absolute;
+  inset-block-start: 12px;
+  block-size: 4px;
+  border-radius: 2px;
+}
+
+.regler__spur {
+  inset-inline: 0;
+  background: var(--color-border);
+}
+
+.regler__gewaehlt {
+  inset-inline-start: 0;
+  background: var(--color-primary);
+}
+
+.regler__griff {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  inline-size: 100%;
+  block-size: 28px;
+  margin: 0;
+  appearance: none;
+  background: none;
+}
+
+.regler__griff::-webkit-slider-thumb {
+  inline-size: 24px;
+  block-size: 24px;
+  appearance: none;
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.regler__griff::-moz-range-thumb {
+  inline-size: 24px;
+  block-size: 24px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}

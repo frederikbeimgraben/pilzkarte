@@ -19,6 +19,8 @@ export class ListRowComponent {
   readonly notiz = input<string>();
   readonly wert = input<string>();
   readonly anklickbar = input(false);
+  /** Eine Zeile, die eine Wahl trägt, meldet sich als gedrückt. */
+  readonly gewaehlt = input(false);
 
   readonly auswahl = output();
 }

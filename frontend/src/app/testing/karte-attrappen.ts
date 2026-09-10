@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { KarteComponent } from '../features/karte/karte.component';
 import { KARTE_ADAPTER, WERT_ARBEITER } from '../map/karte.tokens';
 import type { Ausschnitt } from '../map/kachel-raster';
-import type { Grenzen, KartenOptionen, MapAdapter, Polster } from '../map/map-adapter';
+import type { Grenzen, KartenOptionen, MapAdapter, Polster, Rolle } from '../map/map-adapter';
 import type { WertAntwort, WertAuftrag } from '../map/wert-nachrichten';
 import type { FaerbeArbeiter } from '../map/wert-protokoll';
 
@@ -10,7 +10,10 @@ import type { FaerbeArbeiter } from '../map/wert-protokoll';
 export class KartenAttrappe implements MapAdapter {
   optionen: KartenOptionen | null = null;
   stile: string[] = [];
-  vorlagen: string[] = [];
+  /** Je Rolle, was zuletzt gefragt wurde. `null` heißt „abgeräumt“. */
+  readonly vorlagenJeRolle = new Map<Rolle, (string | null)[]>();
+  readonly deckkraft = new Map<Rolle, number>();
+  zentriert: { punkt: readonly [number, number]; zoom: number } | null = null;
   polster: Polster[] = [];
   eingepasst: { grenzen: Grenzen; polster: Polster }[] = [];
   bewegung: (() => void) | null = null;
@@ -35,8 +38,23 @@ export class KartenAttrappe implements MapAdapter {
     this.stile.push(stil);
   }
 
-  zeigeWert(vorlage: string): void {
-    this.vorlagen.push(vorlage);
+  zeigeWert(rolle: Rolle, vorlage: string | null): void {
+    const bisher = this.vorlagenJeRolle.get(rolle) ?? [];
+    bisher.push(vorlage);
+    this.vorlagenJeRolle.set(rolle, bisher);
+  }
+
+  setzeDeckkraft(rolle: Rolle, wert: number): void {
+    this.deckkraft.set(rolle, wert);
+  }
+
+  zentriere(punkt: readonly [number, number], zoom: number): void {
+    this.zentriert = { punkt, zoom };
+  }
+
+  /** Was für eine Rolle gefragt wurde, ohne die Abräum-Aufrufe. */
+  vorlagen(rolle: Rolle = 'vorhersage'): string[] {
+    return (this.vorlagenJeRolle.get(rolle) ?? []).filter((wert): wert is string => wert !== null);
   }
 
   passeEin(grenzen: Grenzen, polster: Polster): void {
@@ -101,12 +119,68 @@ export function karteMitAttrappen(): { karte: KartenAttrappe; arbeiter: Arbeiter
   return { karte, arbeiter };
 }
 
-/** Ein Manifest vom Server, ohne Server. */
-export function manifestAntwort(daten: unknown = MANIFEST_ROH): void {
-  vi.stubGlobal('fetch', () =>
-    Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(daten) } as Response),
+/** Die Manifeste vom Server, ohne Server. */
+export function manifestAntwort(daten: unknown = MANIFEST_ROH, ebenen: unknown = EBENEN_ROH): void {
+  vi.stubGlobal('fetch', (pfad: string) =>
+    Promise.resolve({
+      ok: true,
+      status: 200,
+      json: () => Promise.resolve(pfad === '/layers.json' ? ebenen : daten),
+    } as Response),
   );
 }
+
+/** Zwei Wochenebenen und zwei feste, wie sie `input_layers.py` schreibt. */
+export const EBENEN_ROH = {
+  bounds: [
+    [47.14, 4.93],
+    [55.25, 15.14],
+  ],
+  layers: {
+    regen_4w: {
+      label: 'Niederschlag der letzten 4 Wochen',
+      unit: 'mm',
+      static: false,
+      low: 0,
+      high: 151.9,
+      weeks: ['2025W39', '2025W40'],
+      tiles: 'layers_kacheln/regen_4w',
+      zooms: [5, 7],
+      have: { '7': ['66/42', '67/42'] },
+    },
+    temperatur: {
+      label: 'Mitteltemperatur der Woche',
+      unit: 'Grad',
+      static: false,
+      low: -3.6,
+      high: 24.7,
+      weeks: ['2025W39', '2025W40'],
+      tiles: 'layers_kacheln/temperatur',
+      zooms: [5, 7],
+      have: { '7': ['66/42'] },
+    },
+    wald: {
+      label: 'Waldanteil',
+      unit: '',
+      static: true,
+      low: 0,
+      high: 1,
+      tiles: 'layers_kacheln/wald',
+      zooms: [5, 8],
+      have: { '7': ['66/42'] },
+    },
+    boden_ph: {
+      label: 'Boden-pH',
+      unit: '',
+      static: true,
+      low: 4.663,
+      high: 6.899,
+      tiles: 'layers_kacheln/boden_ph',
+      zooms: [5, 8],
+      have: { '7': ['66/42'] },
+    },
+  },
+};
 
 /** Zwei gemessene Wochen und eine Prognose, wie sie das Rendering schreibt. */
 export const MANIFEST_ROH = {

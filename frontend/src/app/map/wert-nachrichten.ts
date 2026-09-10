@@ -1,11 +1,14 @@
+import type { WertSkala } from './wert-farben';
+
 /** Was der Hauptfaden dem Färbe-Worker schickt und was zurückkommt. */
 
 export interface FaerbeAuftrag {
   typ: 'faerbe';
   id: number;
   url: string;
-  /** Höchstwert der Art aus dem Manifest; er bestimmt die Nachschlagetabelle. */
-  top: number;
+  /** Wie das Byte zu lesen ist: Vorhersage einer Art oder Spanne einer Ebene. */
+  skala: WertSkala;
+  farben: readonly string[];
 }
 
 export interface VorladeAuftrag {

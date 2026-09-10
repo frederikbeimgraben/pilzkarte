@@ -41,6 +41,11 @@ export class TimelineComponent {
   readonly wochen = input.required<readonly ZeitleisteWoche[]>();
   readonly aktiv = input<{ jahr: number; woche: number } | null>(null);
   readonly beschriftung = input.required<string>();
+  /**
+   * Gedämpft und ohne Wahl. Eine feste Ebene gilt für alle Wochen; die Leiste
+   * bleibt sichtbar, damit die Zeit greifbar bleibt, nimmt aber nichts an.
+   */
+  readonly gedaempft = input(false);
 
   readonly auswahl = output<ZeitleisteWoche>();
 
@@ -75,7 +80,7 @@ export class TimelineComponent {
 
   protected beiTaste(ereignis: KeyboardEvent): void {
     const wochen = this.wochen();
-    if (wochen.length === 0) return;
+    if (this.gedaempft() || wochen.length === 0) return;
     const ziel = this.zielIndex(ereignis.key, wochen.length);
     if (ziel === null) return;
     ereignis.preventDefault();
