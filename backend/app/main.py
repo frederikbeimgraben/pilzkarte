@@ -10,7 +10,7 @@ from app.core.db import motor
 from app.core.errors import fehlerbehandlung_registrieren
 from app.core.settings import einstellungen
 from app.core.version import VERSION
-from app.modules import arten, basis
+from app.modules import arten, basis, funde, marker, zonen
 
 
 @asynccontextmanager
@@ -39,6 +39,9 @@ def app_bauen() -> FastAPI:
     )
     gebaut.include_router(basis.router, prefix="/api")
     gebaut.include_router(arten.router, prefix="/api")
+    gebaut.include_router(funde.router, prefix="/api")
+    gebaut.include_router(marker.router, prefix="/api")
+    gebaut.include_router(zonen.router, prefix="/api")
     fehlerbehandlung_registrieren(gebaut)
     return gebaut
 

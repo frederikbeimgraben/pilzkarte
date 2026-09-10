@@ -97,6 +97,24 @@ class NichtGefunden(AppFehler):
     status: ClassVar[int] = 404
 
 
+class Ungueltig(AppFehler):
+    """Die Eingabe passt zum Vertrag, aber nicht zu den Regeln der App."""
+
+    status: ClassVar[int] = 422
+
+
+class MedientypFalsch(AppFehler):
+    """Der Dienst nimmt diesen Medientyp nicht an."""
+
+    status: ClassVar[int] = 415
+
+
+class Konflikt(AppFehler):
+    """Der Zustand des Objekts laesst diesen Schritt nicht zu."""
+
+    status: ClassVar[int] = 409
+
+
 def problem_antwort(
     status: int,
     *,
