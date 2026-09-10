@@ -1,0 +1,47 @@
+name = "Großer Waldchampignon"
+lateinisch = "Agaricus langei"
+gruppe = "champignon"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GrosserWaldCh.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Nicht oder kaum verfärbend."
+
+[[reagenzien]]
+reagenz = "schaeffer"
+reaktion = "Negativ."
+
+[merkmale]
+hut = "6 bis 15, selten bis 20 cm breit, ockerbräunlich bis dunkelbraun, mit rostbraunen Fasern auf hellerem Grund, geschuppt."
+lamellen = "Rosa, im Alter dunkel rotbraun, frei."
+stiel = "Weißlich mit rosa Schimmer, glatt. Ring weißlich, doppelrandig und hängend. Angeritzte Stielrinde färbt sich sofort rötlich."
+fleisch = "Weiß, sofort rötlich bis blutrot verfärbend."
+geruch = "Pilzig angenehm, kann einen leichten Ton nach Bittermandel oder Marzipan haben."
+geschmack = "Mild."
+sporenpulver = "Rotbraun bis purpurbraun."
+vorkommen = "Folgezersetzer im Nadelwald."
+zeit = "Sommer bis Herbst."
+
+[[verwechslungen]]
+name = "Karbolegerling"
+merkmal = "Riecht nach Karbol oder Tinte, die Stielbasis gilbt beim Anschneiden stark chromgelb, das Fleisch rötet nicht."
+essbar = "giftig"
+slug = "karbolegerling"
+
+[[verwechslungen]]
+name = "Riesenchampignon"
+merkmal = "Riecht nach Anis, das Fleisch gilbt statt zu röten."
+essbar = "speisepilz"
+slug = "riesenchampignon"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GrosserWaldCh.htm"

@@ -1,0 +1,50 @@
+name = "Grünsporschirmling"
+lateinisch = "Chlorophyllum molybdites"
+gruppe = "schirmling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Magen-Darm-giftig. Aus südlichen Ländern sind viele heftige Vergiftungen gemeldet. Zu erkennen an den im Alter grünlichen Lamellen und am grünlichen Sporenpulver."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/Gruensporschirmling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "3 bis 9, selten bis 13 cm breit, weiß und wollig, jung mit hellbraunen landkartenartigen Zonen und abstehenden Schüppchen, Rand flockig."
+lamellen = "Weiß, im Alter grünlich, immer mit einem Hauch Blaugrün."
+stiel = "Glatt, weißlich bis hellgelblich, später gilbend und bräunend, bei Verletzung etwas rötend. Basis kaum knollig, nur etwas verdickt, mit weißen Myzelresten. Ring verschiebbar und kräftig, mit doppeltem gezahntem Rand."
+fleisch = "Weißlich, bei Verletzung etwas rötend."
+geruch = "Angenehm pilzig, ähnlich dem Parasol."
+geschmack = "Mild. Roh sehr unverträglich."
+sporenpulver = "Grünlich."
+vorkommen = "In Gewächshäusern, botanischen Gärten, Treibhäusern und auf Komposthaufen. In warmen Gebieten auch auf Rasenflächen und an Waldrändern. In Deutschland bisher nur unter Glas gefunden."
+zeit = "Die Seite nennt keine Jahreszeit."
+
+[[verwechslungen]]
+name = "Jungfernschirmling"
+merkmal = "Kleiner, Lamellen weiß bis blassrosa, Sporenpulver weiß."
+essbar = "giftig"
+slug = "jungfernschirmling"
+
+[[verwechslungen]]
+name = "Gerandetknolliger Garten-Safranschirmling"
+merkmal = "Stielbasis mit gerandeter Knolle, Fleisch rötet kräftig, Sporenpulver weiß."
+essbar = "giftig"
+slug = "gerandetknolliger-garten-safranschirmling"
+
+[[verwechslungen]]
+name = "Büscheliger Egerlingsschirmling"
+merkmal = "Wächst büschelig, Sporenpulver weiß."
+essbar = "giftig"
+slug = "buescheliger-egerlingsschirmling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/Gruensporschirmling.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Chlorophyllum_molybdites"

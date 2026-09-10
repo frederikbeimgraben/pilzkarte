@@ -1,0 +1,40 @@
+name = "Grüngelber Nabeling"
+lateinisch = "Chrysomphalina grossula"
+gruppe = "trichterling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["herbst", "winter"]
+baeume = []
+speisewertHinweis = "Kann bei empfindlichen Personen Magen-Darm-Störungen auslösen, die schnell wieder vergehen."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GruengelberNabeling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "1 bis 3, selten bis 4 cm breit, gelb, olivgelb bis grüngelb, feinfaserig. Rand heller und fein durchscheinend gerieft, im Alter immer genabelt."
+lamellen = "Gelb bis blass gelblich, dicklich, angewachsen und weit herablaufend."
+stiel = "Blassgelb bis grüngelb, glatt, fein längsstreifig gerieft, hohl, Basis etwas myzelstriegelig."
+fleisch = "Gelblich, graugelblich bis hellgelb, dünn."
+geruch = "Unbedeutend bis schwach rettichartig oder krautartig."
+geschmack = "Mild."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer auf Nadelholzstümpfen, Rindenstücken und verrotteten Ästen, gesellig oder büschelig."
+zeit = "Herbst bis Winter."
+
+[[verwechslungen]]
+name = "Gelbstieliger Trompetenpfifferling"
+merkmal = "Hut braun bis graubraun, Stiel leuchtend gelb, Unterseite mit Leisten statt Lamellen, wächst am Boden."
+essbar = "speisepilz"
+slug = "gelbstieliger-trompetenpfifferling"
+
+[[verwechslungen]]
+name = "Trompetenpfifferling"
+merkmal = "Hut graubraun und trichterig, Unterseite mit graulila Leisten, wächst am Boden."
+essbar = "speisepilz"
+slug = "trompetenpfifferling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GruengelberNabeling.htm"

@@ -1,0 +1,40 @@
+name = "Grossscheidiger Scheidenstreifling"
+lateinisch = "Amanita magnivolvata"
+gruppe = "wulstling"
+speisewert = "speisepilz"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Roh giftig, also keine Kostversuche. Selten, in der Schweiz auf der Roten Liste."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GrossscheidigerStreifling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "4 bis 12, selten bis 20 cm breit, braun, jung helloliv, alt grau, lederbraun bis olivbraun. Trocken, glänzend, ausbleichend, ohne Hüllreste, auf etwa einem Drittel des Radius stark gerieft. Jung eiförmig-glockig, alt ausgebreitet und gebuckelt."
+lamellen = "Weiß bis cremegelb, frei bis fein angewachsen, sehr dicht stehend, Schneiden dunkler."
+stiel = "5 bis 12, selten bis 14 cm lang und 5 bis 20, selten bis 25 mm dick, weiß, mit kleinen braunen Schüppchen genattert, nach oben verjüngt, im Alter hohl. Scheide sehr groß, zwei- bis dreilappig, brüchig, weiß bis rostbraun gefleckt."
+fleisch = "Weiß, im Stiel graulich und glatt."
+geruch = "Unbedeutend, neutral."
+geschmack = "Mild. Roh giftig."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz im Mischwald, meist in Laubwäldern, gern an Waldrändern. Selten."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Pantherpilz"
+merkmal = "Mit Ring am Stiel, Hutrand nur schwach gerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
+essbar = "toedlichGiftig"
+slug = "pantherpilz"
+
+[[verwechslungen]]
+name = "Königsfliegenpilz"
+merkmal = "Mit Ring am Stiel, Hut braun mit weißen Flocken, Fleisch unter der Huthaut gelb."
+essbar = "giftig"
+slug = "koenigsfliegenpilz"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GrossscheidigerStreifling.htm"

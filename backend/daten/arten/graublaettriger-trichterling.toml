@@ -1,0 +1,34 @@
+name = "Graublättriger Trichterling"
+lateinisch = "Atractosporocybe inornata"
+gruppe = "trichterling"
+speisewert = "ungeniessbar"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = []
+speisewertHinweis = "Graue Trichterlinge sind keine Speisepilze."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GraublaettrigerTrichterling.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 7, selten bis 9 cm breit, milchkaffeebraun, feinfilzig, von der Mitte aus ausbleichend. Rand dunkler, runzelig, rippig und wellig, Huthaut abziehbar."
+lamellen = "Grauweiß bis graubraun, eng stehend, schwach herablaufend, vom Hutfleisch leicht ablösbar, Schneiden wellig, mit Zwischenlamellen."
+stiel = "Hellgrau bis braun, flockig, Basis mit weißem Myzelfilz."
+fleisch = "Blass weiß, wässrig, in Spitze und Mitte dicker."
+geruch = "Jung obstartig, süßlich, rettichartig bis heringsartig, teils nach Mäuseurin, im Alter ranzig-mehlig."
+geschmack = "Mild, mehlig-ranzig, unangenehm."
+sporenpulver = "Weiß."
+vorkommen = "Folgezersetzer im Mischwald auf kalkreichem Boden."
+zeit = "Sommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Nebelkappe"
+merkmal = "Deutlich größer, Hut grau und wie bereift, Geruch stark mehlig-süßlich, Lamellen weißlich."
+essbar = "giftig"
+slug = "nebelkappe"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GraublaettrigerTrichterling.htm"

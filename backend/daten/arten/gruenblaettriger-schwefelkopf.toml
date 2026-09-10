@@ -1,0 +1,50 @@
+name = "Grünblättriger Schwefelkopf"
+lateinisch = "Hypholoma fasciculare"
+gruppe = "schueppling"
+speisewert = "giftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
+baeume = []
+speisewertHinweis = "Er macht starke Magen-Darm-Störungen, die über mehrere Tage anhalten. Zu erkennen an den grünen bis grüngelben Lamellen und am stark bitteren Geschmack."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GruenblaettrigerSchwefelkopf.htm"
+geprueftAm = "2026-09-10"
+
+[merkmale]
+hut = "2 bis 7, selten bis 9 cm breit, schwefelgelb bis grünlich, Mitte ocker bis rotbraun, Rand heller und oft mit gelblichem Flockensaum. Kahl und dünnfleischig, jung halbkugelig und oft stumpf gebuckelt, im Alter flach."
+lamellen = "Grün bis grüngelb, alt olivbräunlich bis dunkelbraun mit Lilastich, schmal angewachsen."
+stiel = "2 bis 8, selten bis 11 cm lang und 0,4 bis 2, selten bis 3 cm dick, schwefelgelb bis orangegelb, zur Basis dunkler bräunlich, Spitze fast neongelb, faserig, hohl und gebogen. Jung manchmal mit schwacher faseriger Ringzone."
+fleisch = "Gelblich bis schwefelgelb, bräunend, am Stiel mehr bräunlich, dünn."
+geruch = "Unbedeutend bis unangenehm, schwach obstartig."
+geschmack = "Stark bitter."
+sporenpulver = "Dunkelbraun-lila bis purpurbraun."
+vorkommen = "Folgezersetzer an Laub- und Nadelholzstümpfen, Ästen und vergrabenem Holz, gesellig bis büschelig."
+zeit = "Ganzjährig."
+
+[[verwechslungen]]
+name = "Rotbrauner Flämmling"
+merkmal = "Hut rotbraun bis gelbbraun, Lamellen und Sporenpulver rostbraun, ohne Grünton."
+essbar = "giftig"
+slug = "rotbrauner-flaemmling"
+
+[[verwechslungen]]
+name = "Nadelschüppling"
+merkmal = "An Nadelholz, Hut gelb mit spitzen Schuppen, Lamellen ohne Grünton."
+essbar = "giftig"
+slug = "nadelschueppling"
+
+[[verwechslungen]]
+name = "Stockschwämmchen"
+merkmal = "Hut zweifarbig ausblassend, Lamellen zimtbraun, Stiel unter dem Ring braun beschuppt, Geschmack mild."
+essbar = "bedingtEssbar"
+slug = "stockschwaemmchen"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GruenblaettrigerSchwefelkopf.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Grünblättriger_Schwefelkopf"

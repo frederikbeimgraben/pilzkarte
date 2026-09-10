@@ -1,0 +1,54 @@
+name = "Grüner Knollenblätterpilz"
+lateinisch = "Amanita phalloides (var. amanita phalloides f. citrina, amanita phalloides f. dunensis, amanita phalloides var. umbrina, amanita phalloides var. euphalloides, amanita phalloides var. larroquei, amanita phalloides var. pulla, amanita phalloides var. verna, amanita phalloides var. striatula)"
+gruppe = "wulstling"
+speisewert = "toedlichGiftig"
+geschuetzt = false
+sammelbar = false
+jahreszeiten = ["sommer", "herbst"]
+baeume = ["buche", "eiche"]
+speisewertHinweis = "Absolut tödlich, schon 20 Gramm genügen. Das Gift schädigt die Leber. Die wichtigsten Merkmale sind weiße Lamellen, ein häutiger Ring, ein radialfaserig eingewachsener Hut mit wie ein Tortenstück abziehbarer Haut und eine abgerundete Knolle mit häutiger Scheide."
+
+[quelle]
+url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"
+geprueftAm = "2026-09-10"
+
+[[reagenzien]]
+reagenz = "koh"
+reaktion = "Fleisch und Huthaut verfärben sich nicht, anders als beim Kegelhütigen Knollenblätterpilz, der gelb wird."
+
+[merkmale]
+hut = "3 bis 15, selten bis 17 cm breit, grünlich, olivgrün, olivbraun, olivgelb, ocker, gelb bis fast weiß. Jung eiförmig-halbkugelig mit weißer Gesamthülle, später aufschirmend. Rand nicht gerieft, Huthaut fein radialfaserig eingewachsen, feucht etwas klebrig und wie ein Tortenstück abziehbar."
+lamellen = "Weiß, eng stehend, frei bis fein angewachsen, mit Zahn etwas herablaufend."
+stiel = "5 bis 12, selten bis 15 cm lang und 1 bis 4, selten bis 6 cm dick, weiß bis gelbgrünlich, faserig, oft genattert. Basis zwiebelknollig mit häutiger, eierschaliger Volva. Ring weiß bis gelblich, häutig, hängend, oben leicht gerieft, nicht verschiebbar."
+fleisch = "Weiß, unter der Huthaut gelbgrünlich, beim Schneiden unverändert."
+geruch = "Jung fast geruchlos, nach Kleeheu, süßlich oder hornartig, alt widerlich nach Ammoniak."
+geschmack = "Mild und süßlich. Niemals kosten, es droht eine Leberschädigung."
+sporenpulver = "Weiß."
+vorkommen = "Symbiosepilz meist bei Laubbäumen wie Eiche und Buche, selten bei Nadelbäumen, auch in Parks und Gärten. Häufig."
+zeit = "Frühsommer bis Spätherbst."
+
+[[verwechslungen]]
+name = "Weißer Knollenblätterpilz"
+merkmal = "Ganz weiß, Hut ohne Grün- oder Olivton."
+essbar = "toedlichGiftig"
+slug = "weisser-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Kegelhütiger Knollenblätterpilz"
+merkmal = "Hut weiß bis cremefarben und kegelig, Huthaut wird mit KOH gelb."
+essbar = "toedlichGiftig"
+slug = "kegelhuetiger-knollenblaetterpilz"
+
+[[verwechslungen]]
+name = "Frauentäubling"
+merkmal = "Ohne Ring, ohne Knolle und ohne Scheide, Lamellen und Fleisch brüchig."
+essbar = "speisepilz"
+slug = "frauentaeubling"
+
+[[links]]
+titel = "123pilzsuche.de"
+url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"
+
+[[links]]
+titel = "Wikipedia"
+url = "https://de.wikipedia.org/wiki/Amanita_phalloides_(var._amanita_phalloides_f._citrina,_amanita_phalloides_f._dunensis,_amanita_phalloides_var._umbrina,_amanita_phalloides_var._euphalloides,_amanita_phalloides_var._larroquei,_amanita_phalloides_var._pulla,_amanita_phalloides_var._verna,_amanita_phalloides_var._striatula)"
