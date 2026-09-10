@@ -299,8 +299,14 @@ export interface ArtKurz {
   /** Ob man die Art sammelt. Ein Verwechslungsprofil steht auf `false`. */
   sammelbar: boolean;
   marktfaehig: boolean;
+  marktfaehigSchweiz: boolean | null;
   wertigkeit: number | null;
   haeufigkeit: Haeufigkeit | null;
+  gefaehrdung: Gefaehrdung | null;
+  warnung: string | null;
+  jahreszeiten: Jahreszeit[];
+  baeume: Baumart[];
+  baeumeAusErfahrung: BaeumeAusErfahrung | null;
   /** Genug Funde für ein eigenes Modell, aber noch keine Karte. */
   vorhersageGeplant: boolean;
   begehungenMitFund: number;
@@ -312,17 +318,6 @@ export interface ArtKurz {
 /** Eine Art mit Profil, so wie die Artseite sie braucht. */
 export interface Art extends Omit<ArtKurz, 'saison'> {
   marktfaehigkeit: Marktfaehigkeit;
-  /** Die Positivliste der Schweiz, wenn die Quelle sie kennt. */
-  marktfaehigSchweiz: boolean | null;
-  /**
-   * Der Satz über der Tabelle, wenn eine Art in der Kette steht und trotzdem
-   * schadet. Er sagt mehr als eine Enum-Stufe.
-   */
-  warnung: string | null;
-  jahreszeiten: Jahreszeit[];
-  baeume: Baumart[];
-  baeumeAusErfahrung: BaeumeAusErfahrung | null;
-  gefaehrdung: Gefaehrdung | null;
   weitereNamen: string[];
   synonyme: string[];
   masse: Masse;

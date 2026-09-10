@@ -13,6 +13,7 @@
   />
   @if (zeilen().length === 0) {
     <app-empty-state
+      icon="funde"
       [text]="leerText() | t"
       [action]="braucheAnmeldung() ? ('konto.anmelden' | t) : undefined"
       (actionClick)="anmelden()"

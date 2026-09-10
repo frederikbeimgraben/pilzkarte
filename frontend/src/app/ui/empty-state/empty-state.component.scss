@@ -1,20 +1,25 @@
-// Kein Rahmen und kein Kasten: der Satz steht wie ein Absatz der Seite.
+// Mittig und mit Luft: der Leerzustand ist kein Fehler, sondern eine Auskunft.
 :host {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  margin-block-start: 4px;
+  align-items: center;
+  padding-block: var(--space-7);
+  text-align: center;
+}
+
+.leer__bild {
+  color: var(--color-border-strong);
 }
 
 .leer__text {
+  max-inline-size: 32ch;
   margin: 0;
   font-size: var(--fs-sm);
   line-height: var(--lh-normal);
   color: var(--color-text-muted);
 }
 
-// Der Knopf nimmt die Inhaltsbreite. Linksbündig unter dem Satz wirkte er
-// verloren, mittig ohne Breite genauso.
 .leer__knopf {
   min-block-size: var(--pilz-feld-hoehe);
 }

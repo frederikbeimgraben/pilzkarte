@@ -1,6 +1,7 @@
+<app-svg-icon class="leer__bild" [name]="icon()" [groesse]="48" />
 <p class="leer__text">{{ text() }}</p>
 @if (action(); as beschriftung) {
-  <app-button class="leer__knopf" variant="primary" [block]="true" (click)="actionClick.emit()">{{
+  <app-button class="leer__knopf" variant="primary" (click)="actionClick.emit()">{{
     beschriftung
   }}</app-button>
 }

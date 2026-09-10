@@ -197,6 +197,9 @@ export const REAGENZ_TEXT: Record<Reagenz, TranslationKey> = {
   schaeffer: 'art.reagenz.schaeffer',
 };
 
+/** Die Stufen, die eine Zeile der Liste rot markiert. */
+export const GEFAEHRLICH: readonly Essbarkeit[] = ['giftig', 'toedlichGiftig'];
+
 /** Was der Sammler nicht in die Pfanne tun darf. Die Artseite warnt dafür groß. */
 export const WARNUNG_TEXT: Partial<Record<Essbarkeit, TranslationKey>> = {
   giftig: 'art.warnung.giftig',

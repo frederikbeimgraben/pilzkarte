@@ -140,15 +140,14 @@ describe('ArtenComponent', () => {
     expect(within(zeile).getByText('Giftig')).toBeInTheDocument();
   });
 
-  it('nennt eine Art, deren Modell noch fehlt', async () => {
+  it('setzt die Marken einer Zeile in fester Reihenfolge', async () => {
     await aufbauen();
 
-    // Genug Funde für ein Modell, aber noch keine Karte.
-    const zeile = screen.getByRole('button', { name: /Semmelstoppelpilz/ });
-    expect(within(zeile).getByText('Vorhersage in Arbeit')).toBeInTheDocument();
-    expect(
-      within(screen.getByRole('button', { name: /Steinpilz/ })).queryByText('Vorhersage in Arbeit'),
-    ).not.toBeInTheDocument();
+    // Stufe, Schutz, Speisewert, Symbiosepartner, Jahreszeit — und nur, was
+    // etwas sagt: „Essbar“ an jeder zweiten Zeile sagt nichts.
+    const zeile = screen.getByRole('button', { name: /Steinpilz/ });
+    const marken = [...zeile.querySelectorAll('.badge')].map((marke) => marke.textContent.trim());
+    expect(marken).toEqual(['Vorhersage', 'Geschützt', 'Fichte']);
   });
 
   it('zeigt einen Leerzustand, wenn nichts passt', async () => {

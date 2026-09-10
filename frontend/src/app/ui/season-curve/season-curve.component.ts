@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { I18nService } from '../../core/i18n/i18n.service';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 /** Die Marken auf der Grundlinie stehen am Anfang der Monate Jan, Mär, … Nov. */
 const MONATSMARKEN = [0, 9, 18, 27, 36, 44] as const;
@@ -102,8 +101,6 @@ export class SeasonCurveComponent {
   /** Breite des gleitenden Mittels in Wochen. 1 zeichnet die Rohwerte. */
   readonly glaettung = input(3);
 
-  private readonly i18n = inject(I18nService);
-
   protected readonly maskeId = `funke-dicht-${naechsteNummer++}`;
   protected readonly zeichnung = computed<Zeichnung>(() => this.rechne());
 
@@ -150,10 +147,6 @@ export class SeasonCurveComponent {
       links: ((marke.woche - 1) / 51) * 100,
     })),
   );
-
-  protected glaettungText(): string {
-    return this.i18n.translate('saison.geglaettet', { wochen: this.glaettung() });
-  }
 
   /**
    * Die Wochen, in denen wenigstens eine der beiden Reihen auf wenigen

@@ -18,7 +18,7 @@
     }
 
     @if (!ansicht.sammelbar) {
-      <app-note>{{ 'art.nichtSammelbar' | t }}</app-note>
+      <app-info-text>{{ 'art.nichtSammelbar' | t }}</app-info-text>
     }
 
     @if (ansicht.sammelbar) {
@@ -38,7 +38,7 @@
             [beschriftung]="ansicht.beschriftung"
           />
         } @else {
-          <app-note>{{ 'art.keineKurve' | t }}</app-note>
+          <app-info-text>{{ 'art.keineKurve' | t }}</app-info-text>
         }
       </section>
     }
@@ -120,5 +120,5 @@
   }
 } @else if (unbekannt()) {
   <app-page-header [titel]="'nav.arten' | t" [zurueck]="true" (zurueckKlick)="zurueck()" />
-  <app-note class="empty-state">{{ 'art.nichtGefunden' | t }}</app-note>
+  <app-empty-state [text]="'art.nichtGefunden' | t" />
 }
