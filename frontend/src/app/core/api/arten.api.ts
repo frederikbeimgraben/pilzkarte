@@ -8,8 +8,12 @@ import type { Art, ArtenListe } from './models';
 export class ArtenApi {
   private readonly api = inject(ApiClient);
 
-  liste(): Observable<ArtenListe> {
-    return this.api.get<ArtenListe>('/arten');
+  /**
+   * Ohne Angabe kommen nur die sammelbaren Arten. Die 224 Verwechslungsprofile
+   * holt `sammelbar: false`, beide Töpfe zusammen `alle: true`.
+   */
+  liste(abfrage?: { sammelbar?: boolean; alle?: boolean }): Observable<ArtenListe> {
+    return this.api.get<ArtenListe>('/arten', abfrage);
   }
 
   profil(slug: string): Observable<Art> {

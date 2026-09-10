@@ -16,8 +16,13 @@ function kurz(art: Partial<ArtKurz> & Pick<ArtKurz, 'slug' | 'name' | 'lateinisc
     stufe: 'vorhersage',
     tags: ['vorhersage', 'roehrling', 'sommer', 'herbst', 'fichte'],
     geschuetzt: false,
-    speisewert: 'speisepilz',
+    speisewert: 'guterSpeisepilz',
     kartenSlug: null,
+    sammelbar: true,
+    marktfaehig: true,
+    wertigkeit: 1,
+    haeufigkeit: 'haeufig',
+    vorhersageGeplant: true,
     begehungenMitFund: 1853,
     spitzeWoche: 40,
     saison: { alleJahre: glocke(39, 32), laufendesJahr: glocke(39, 28).slice(0, 36), hoechstwert: 32 },
@@ -67,6 +72,25 @@ export const MORCHEL_KURZ = kurz({
   },
 });
 
+export const GALLENROEHRLING_KURZ: ArtKurz = {
+  ...MARONE_KURZ,
+  slug: 'gallenroehrling',
+  name: 'Gallenröhrling',
+  lateinisch: 'Tylopilus felleus',
+  stufe: 'verwechslung',
+  tags: ['verwechslung', 'roehrling', 'sommer', 'herbst'],
+  speisewert: 'giftig',
+  kartenSlug: null,
+  sammelbar: false,
+  marktfaehig: false,
+  wertigkeit: null,
+  haeufigkeit: null,
+  vorhersageGeplant: false,
+  begehungenMitFund: 0,
+  spitzeWoche: null,
+  saison: null,
+};
+
 export const ARTEN_LISTE: ArtenListe = {
   stand: { jahr: 2025, woche: 39 },
   jahre: { von: 2015, bis: 2024 },
@@ -87,6 +111,19 @@ const SAISON: SaisonKurve = {
   begehungenJeWocheLaufendesJahr: Array.from({ length: 39 }, (_, i) => (i > 36 ? 2 : 40)),
 };
 
+/** Die Angaben, die jedes Profil seit D1d trägt. */
+const QUELLE = { url: 'https://www.123pilzsuche.de/daten/details/Steinpilze.htm', geprueftAm: '2026-09-10' };
+
+const LEERE_MASSE = {
+  hutBreiteCm: null,
+  fruchtkoerperBreiteCm: null,
+  fruchtkoerperHoeheCm: null,
+  stielLaengeCm: null,
+  stielDickeCm: null,
+  sporenLaengeUm: null,
+  sporenBreiteUm: null,
+};
+
 export const STEINPILZ: Art = {
   slug: 'steinpilz',
   name: 'Steinpilz',
@@ -95,8 +132,30 @@ export const STEINPILZ: Art = {
   stufe: 'vorhersage',
   tags: ['vorhersage', 'roehrling', 'sommer', 'herbst', 'fichte', 'buche'],
   geschuetzt: true,
-  speisewert: 'speisepilz',
+  speisewert: 'guterSpeisepilz',
   kartenSlug: 'boletus_edulis',
+  sammelbar: true,
+  marktfaehig: true,
+  marktfaehigkeit: { marktfaehig: true, quelle: { ...QUELLE, geprueftAm: '2026-05-01' } },
+  wertigkeit: 1,
+  haeufigkeit: 'haeufig',
+  gefaehrdung: null,
+  weitereNamen: ['Herrenpilz', 'Fichtensteinpilz'],
+  synonyme: ['Boletus bulbosus'],
+  masse: {
+    ...LEERE_MASSE,
+    hutBreiteCm: { von: 4, bis: 20, seltenBis: 25 },
+    sporenLaengeUm: { von: 12.4, bis: 19.2, seltenBis: null },
+    sporenBreiteUm: { von: 4.5, bis: 5.5, seltenBis: null },
+  },
+  quelle: QUELLE,
+  reagenzien: [{ reagenz: 'koh', reaktion: 'Fleisch blass braun.' }],
+  marktfaehigSchweiz: null,
+  warnung: null,
+  jahreszeiten: ['sommer', 'herbst'],
+  baeume: ['fichte', 'buche'],
+  baeumeAusErfahrung: null,
+  vorhersageGeplant: true,
   begehungenMitFund: 1853,
   spitzeWoche: 40,
   merkmale: [
@@ -113,8 +172,13 @@ export const STEINPILZ: Art = {
     { schluessel: 'schutz', text: 'Besonders geschützt nach Bundesartenschutzverordnung.' },
   ],
   verwechslungen: [
-    { name: 'Gallenröhrling', merkmal: 'Röhren rosa, sehr bitter.', essbar: 'ungeniessbar' },
-    { name: 'Satansröhrling', merkmal: 'Stiel mit rotem Netz.', essbar: 'giftig' },
+    {
+      name: 'Gallenröhrling',
+      merkmal: 'Röhren rosa, sehr bitter.',
+      essbar: 'ungeniessbar',
+      slug: 'gallenroehrling',
+    },
+    { name: 'Satansröhrling', merkmal: 'Stiel mit rotem Netz.', essbar: 'giftig', slug: null },
   ],
   links: [
     { titel: '123pilzsuche.de', url: 'https://www.123pilzsuche.de/daten/details/Steinpilze.htm' },
@@ -142,4 +206,48 @@ export const MORCHEL: Art = {
     laufendesJahr: Array.from({ length: 39 }, () => 0),
     hoechstwert: 0,
   },
+};
+
+/** Ein Profil, das niemand sammelt: es steht im Katalog als Verwechslung. */
+export const GALLENROEHRLING: Art = {
+  ...STEINPILZ,
+  slug: 'gallenroehrling',
+  name: 'Gallenröhrling',
+  lateinisch: 'Tylopilus felleus',
+  stufe: 'verwechslung',
+  tags: ['verwechslung', 'roehrling', 'sommer', 'herbst'],
+  geschuetzt: false,
+  speisewert: 'giftig',
+  kartenSlug: null,
+  sammelbar: false,
+  marktfaehigkeit: { marktfaehig: false, quelle: { ...QUELLE, geprueftAm: '2026-05-01' } },
+  wertigkeit: null,
+  haeufigkeit: null,
+  weitereNamen: [],
+  synonyme: [],
+  reagenzien: [],
+  vorhersageGeplant: false,
+  begehungenMitFund: 0,
+  spitzeWoche: null,
+  verwechslungen: [
+    {
+      name: 'Steinpilz',
+      merkmal: 'Netz hell, Geschmack mild.',
+      essbar: 'guterSpeisepilz',
+      slug: 'steinpilz',
+    },
+  ],
+  saison: null,
+};
+
+/** `GET /api/arten?sammelbar=false`: nur die Profile, die niemand sammelt. */
+export const VERWECHSLUNG_LISTE: ArtenListe = {
+  ...ARTEN_LISTE,
+  arten: [GALLENROEHRLING_KURZ],
+};
+
+/** `GET /api/arten?alle=true`: beide Töpfe, für die Suche über den Katalog. */
+export const ALLE_LISTE: ArtenListe = {
+  ...ARTEN_LISTE,
+  arten: [...ARTEN_LISTE.arten, GALLENROEHRLING_KURZ],
 };

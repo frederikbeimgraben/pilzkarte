@@ -5,7 +5,7 @@ import { Router, provideRouter } from '@angular/router';
 import { render, screen, within } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import type { Art } from '../../core/api/models';
-import { MORCHEL, STEINPILZ } from '../../testing/arten-fixture';
+import { GALLENROEHRLING, MORCHEL, STEINPILZ } from '../../testing/arten-fixture';
 import { keineVerstoesse } from '../../testing/axe';
 import { ArtComponent } from './art.component';
 import { ArtenZustand } from './arten.zustand';
@@ -14,6 +14,7 @@ interface Aufbau {
   container: Element;
   router: Router;
   zustand: ArtenZustand;
+  aktualisiere: () => void;
 }
 
 async function aufbauen(art: Art | 'fehlt', slug = 'steinpilz'): Promise<Aufbau> {
@@ -31,7 +32,12 @@ async function aufbauen(art: Art | 'fehlt', slug = 'steinpilz'): Promise<Aufbau>
     anfrage.flush(art);
   }
   detectChanges();
-  return { container, router: TestBed.inject(Router), zustand: TestBed.inject(ArtenZustand) };
+  return {
+    container,
+    router: TestBed.inject(Router),
+    zustand: TestBed.inject(ArtenZustand),
+    aktualisiere: detectChanges,
+  };
 }
 
 describe('ArtComponent', () => {
@@ -67,18 +73,29 @@ describe('ArtComponent', () => {
       'Sporenpulver',
       'Vorkommen',
       'Zeit',
+      // Die geprüften Angaben hängen am Speisewert: dieselbe Frage, was die Art wert ist.
       'Speisewert',
+      'Wertigkeit',
+      'Marktfähigkeit',
+      'Häufigkeit',
       'Schutz',
-      // Danach folgt die zweite Tabelle: die Verwechslungen.
-      'Gallenröhrling',
-      'Satansröhrling',
+      'Maße',
+      'Weitere Namen',
+      'Synonyme',
+      // Danach die eigene Tabelle der Reagenzien. Die Verwechslungen stehen in
+      // einem eigenen Baustein, weil ihre Marke eine eigene Zeile braucht.
+      'Kalilauge (KOH)',
     ]);
+    const partner = [...container.querySelectorAll('.verwechslung__name')].map((zelle) =>
+      zelle.textContent.trim(),
+    );
+    expect(partner).toEqual(['Gallenröhrling', 'Satansröhrling']);
   });
 
   it('zeigt den Speisewert und jede Verwechslung als Badge', async () => {
     await aufbauen(STEINPILZ);
 
-    expect(screen.getByText('Speisepilz')).toBeInTheDocument();
+    expect(screen.getAllByText('Guter Speisepilz').length).toBeGreaterThan(0);
     expect(screen.getByText('Ungenießbar')).toBeInTheDocument();
     expect(screen.getByText('Giftig')).toBeInTheDocument();
   });
@@ -93,6 +110,82 @@ describe('ArtComponent', () => {
     expect(screen.getByText('Dez')).toBeInTheDocument();
     // Das laufende Jahr endet mit einem Punkt auf der letzten vollen Woche.
     expect(container.querySelector('.funke__ende')).not.toBeNull();
+  });
+
+  it('zeigt die geprüften Angaben mit Quelle', async () => {
+    await aufbauen(STEINPILZ);
+
+    expect(screen.getByText('Auf der Positivliste der DGfM Stand 1. Mai 2026')).toBeInTheDocument();
+    expect(screen.getByText('Häufig')).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'Hut 4 bis 20, selten bis 25 cm breit · Sporen 12,4 bis 19,2 µm lang · Sporen 4,5 bis 5,5 µm breit',
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Herrenpilz, Fichtensteinpilz')).toBeInTheDocument();
+    expect(screen.getByText('Boletus bulbosus')).toBeInTheDocument();
+    expect(screen.getByText(/Angaben geprüft am 10. September 2026/)).toBeInTheDocument();
+  });
+
+  it('zeichnet die Wertigkeit als Skala von sechs Stufen', async () => {
+    const { container } = await aufbauen(STEINPILZ);
+
+    // Eine gefüllte Strecke von links wäre falsch herum: 1 ist die beste Stufe.
+    expect(container.querySelectorAll('.art__stufe')).toHaveLength(6);
+    expect(container.querySelectorAll('.art__stufe--erreicht')).toHaveLength(1);
+    expect(screen.getByRole('img', { name: 'Wertigkeit 1 von 6' })).toBeInTheDocument();
+    expect(screen.getByText('Stufe 1 von 6 · 1 ist die beste')).toBeInTheDocument();
+  });
+
+  it('stellt die Reagenzien als eigene Tabelle', async () => {
+    await aufbauen(STEINPILZ);
+
+    expect(screen.getByRole('heading', { name: 'Reagenzien' })).toBeInTheDocument();
+    expect(screen.getByText('Fleisch blass braun.')).toBeInTheDocument();
+  });
+
+  it('verlinkt eine Verwechslung auf ihr eigenes Profil', async () => {
+    await aufbauen(STEINPILZ);
+
+    // Der Satansröhrling hat kein eigenes Profil, der Gallenröhrling schon.
+    expect(screen.getByRole('link', { name: 'Gallenröhrling' })).toHaveAttribute(
+      'href',
+      '/arten/gallenroehrling',
+    );
+    expect(screen.queryByRole('link', { name: 'Satansröhrling' })).not.toBeInTheDocument();
+  });
+
+  it('warnt bei einer giftigen Art groß und mit Symbol', async () => {
+    const { container } = await aufbauen(GALLENROEHRLING, 'gallenroehrling');
+
+    expect(screen.getByText('Giftig. Diese Art gehört nicht in die Pfanne.')).toBeInTheDocument();
+    expect(container.querySelector('.art__warnung app-svg-icon')).not.toBeNull();
+    await keineVerstoesse(container);
+  });
+
+  it('nimmt einem Verwechslungsprofil Saison und Karte, gibt ihm den Rückweg', async () => {
+    const { container } = await aufbauen(GALLENROEHRLING, 'gallenroehrling');
+
+    expect(
+      screen.getByText(
+        'Diese Art wird nicht gesammelt. Sie steht im Katalog, weil sammelbare Arten ihr ähnlich sehen.',
+      ),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Saison' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Auf der Karte anzeigen' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Zu den Arten' })).toBeInTheDocument();
+    await keineVerstoesse(container);
+  });
+
+  it('führt vom Verwechslungsprofil zu der Art zurück, von der man kam', async () => {
+    const { router, zustand, aktualisiere } = await aufbauen(GALLENROEHRLING, 'gallenroehrling');
+    zustand.setOrigin({ slug: 'steinpilz', name: 'Steinpilz' });
+    aktualisiere();
+    const gerufen = vi.spyOn(router, 'navigate').mockResolvedValue(true);
+
+    await userEvent.click(screen.getByRole('button', { name: 'Zurück zu Steinpilz' }));
+
+    expect(gerufen).toHaveBeenCalledWith(['/arten', 'steinpilz']);
   });
 
   it('springt auf die Karte und merkt die Art dort', async () => {

@@ -45,3 +45,42 @@
 .art__quellen a {
   color: var(--color-primary);
 }
+
+// Giftig und toedlich giftig stehen nicht als Marke in einer Tabellenzeile,
+// sondern hier oben mit Symbol: wer die Seite aufschlaegt, soll es zuerst lesen.
+.art__warnung {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-danger);
+  background: var(--color-danger-subtle);
+  border-radius: var(--radius-lg);
+}
+
+// Die Wertigkeit als Skala: sechs Stufen, die erreichte ist gefuellt. Eine
+// gefuellte Strecke von links waere falsch herum, weil 1 die beste Stufe ist.
+.art__skala {
+  display: inline-flex;
+  gap: 3px;
+  margin-inline-end: var(--space-2);
+  vertical-align: middle;
+}
+
+.art__stufe {
+  inline-size: 12px;
+  block-size: 8px;
+  background: var(--color-surface-sunken);
+  border-radius: 2px;
+}
+
+.art__stufe--erreicht {
+  background: var(--color-primary);
+}
+
+.art__skalaText {
+  color: var(--color-text-muted);
+}

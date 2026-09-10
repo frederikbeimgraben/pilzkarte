@@ -1,4 +1,4 @@
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable, inject, signal, type WritableSignal } from '@angular/core';
 import { ArtenApi } from '../../core/api/arten.api';
 import type { ProblemDetail } from '../../core/api/problem';
 import type { Art, ArtenListe } from '../../core/api/models';
@@ -14,11 +14,18 @@ export class ArtenZustand {
   private readonly laeuft = new Set<string>();
 
   private readonly _liste = signal<ArtenListe | null>(null);
+  private readonly _verwechslungen = signal<ArtenListe | null>(null);
+  private readonly _alle = signal<ArtenListe | null>(null);
   private readonly _profile = signal<ReadonlyMap<string, Art>>(new Map());
   private readonly _unbekannt = signal<ReadonlySet<string>>(new Set());
   private readonly _aktiveArt = signal<string | null>(null);
+  private readonly _origin = signal<{ slug: string; name: string } | null>(null);
 
   readonly liste = this._liste.asReadonly();
+  /** Die nicht sammelbaren Profile. Sie kommen erst, wenn jemand sie sucht. */
+  readonly verwechslungen = this._verwechslungen.asReadonly();
+  /** Beide Töpfe zusammen, für die Suche über den ganzen Katalog. */
+  readonly alle = this._alle.asReadonly();
   readonly profile = this._profile.asReadonly();
   /** Slugs, die das Backend mit 404 beantwortet hat. */
   readonly unbekannt = this._unbekannt.asReadonly();
@@ -27,15 +34,34 @@ export class ArtenZustand {
    * Signal die einzige Quelle; danach spiegelt es ihn.
    */
   readonly aktiveArt = this._aktiveArt.asReadonly();
+  readonly origin = this._origin.asReadonly();
 
   ladeListe(): void {
-    if (this._liste() !== null || !this.beginne('liste')) return;
-    this.api.liste().subscribe({
+    this.hole('liste', this._liste, undefined);
+  }
+
+  /** Die nicht sammelbaren Profile, für den Chip „Giftig und Verwechslung“. */
+  ladeVerwechslungen(): void {
+    this.hole('verwechslungen', this._verwechslungen, { sammelbar: false });
+  }
+
+  /** Beide Töpfe, sobald jemand über den ganzen Katalog sucht. */
+  ladeAlle(): void {
+    this.hole('alle', this._alle, { alle: true });
+  }
+
+  private hole(
+    schluessel: string,
+    ziel: WritableSignal<ArtenListe | null>,
+    abfrage: { sammelbar?: boolean; alle?: boolean } | undefined,
+  ): void {
+    if (ziel() !== null || !this.beginne(schluessel)) return;
+    this.api.liste(abfrage).subscribe({
       next: (liste) => {
-        this._liste.set(liste);
-        this.laeuft.delete('liste');
+        ziel.set(liste);
+        this.laeuft.delete(schluessel);
       },
-      error: () => this.laeuft.delete('liste'),
+      error: () => this.laeuft.delete(schluessel),
     });
   }
 
@@ -52,6 +78,15 @@ export class ArtenZustand {
         this.laeuft.delete(slug);
       },
     });
+  }
+
+  /**
+   * Woher der Sprung auf ein Verwechslungsprofil kam. Diese Profile stehen im
+   * Katalog, weil eine sammelbare Art ihnen ähnlich sieht; von dort führt der
+   * Rückweg zurück zu genau dieser Art.
+   */
+  setOrigin(art: { slug: string; name: string } | null): void {
+    this._origin.set(art);
   }
 
   waehle(slug: string | null): void {

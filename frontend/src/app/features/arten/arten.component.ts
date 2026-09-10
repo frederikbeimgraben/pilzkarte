@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal, viewChildren } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  signal,
+  viewChildren,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { BadgeComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
 import { BAUMARTEN, type ArtKurz, type Tag } from '../../core/api/models';
@@ -7,6 +15,7 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import type { TranslationKey } from '../../core/i18n/translations';
 import {
   ChipGroupComponent,
+  EmptyStateComponent,
   FormFieldComponent,
   NoteComponent,
   PageHeaderComponent,
@@ -15,7 +24,14 @@ import {
   type Chip,
 } from '../../ui';
 import { ArtenZustand } from './arten.zustand';
-import { STUFE_BADGE, STUFE_RANG, TAG_TEXT } from './beschriftungen';
+import {
+  ESSBARKEIT_BADGE,
+  ESSBARKEIT_GEFAHR,
+  ESSBARKEIT_TEXT,
+  STUFE_BADGE,
+  STUFE_RANG,
+  TAG_TEXT,
+} from './beschriftungen';
 
 /** „alle“ zeigt den ganzen Katalog, jeder andere Chip ist ein Tag einer Art. */
 type ChipWert = 'alle' | Tag;
@@ -29,7 +45,15 @@ const CHIPS: readonly { wert: ChipWert; label: TranslationKey }[] = [
   { wert: 'vorhersage', label: 'arten.chip.mitVorhersage' },
   { wert: 'roehrling', label: 'arten.chip.roehrlinge' },
   { wert: 'herbst', label: 'arten.chip.herbst' },
+  { wert: 'verwechslung', label: 'arten.chip.verwechslung' },
 ];
+
+/**
+ * Der einzige Chip, der die nicht sammelbaren Profile zeigt. Die 224
+ * Verwechslungsarten stehen sonst draußen: wer den Katalog durchblättert,
+ * sucht etwas zum Sammeln.
+ */
+const CHIP_VERWECHSLUNG = 'verwechslung';
 
 /** Ein Tag unter dem Namen einer Art. */
 interface Marke {
@@ -44,6 +68,8 @@ interface Zeile {
   latein: string;
   aktiv: boolean;
   marken: Marke[];
+  /** Ohne Saison zeichnet die Zeile keine Kurve, statt eine leere Achse zu zeigen. */
+  hatKurve: boolean;
   kurve: readonly number[];
   laufend: readonly number[];
   beschriftung: string;
@@ -65,6 +91,7 @@ interface Zeile {
     BadgeComponent,
     CardComponent,
     ChipGroupComponent,
+    EmptyStateComponent,
     FormFieldComponent,
     NoteComponent,
     PageHeaderComponent,
@@ -101,12 +128,18 @@ export class ArtenComponent {
     const chip = this.chip();
     const aktiv = this.zustand.aktiveArt();
     // `filter` gibt schon eine eigene Liste zurück; `sort` rührt den Zustand nicht an.
-    const gefiltert = (this.zustand.liste()?.arten ?? [])
-      .filter((art) => chip === 'alle' || art.tags.includes(chip))
+    const gefiltert = this.grundmenge()
+      .filter((art) => chip === 'alle' || chip === CHIP_VERWECHSLUNG || art.tags.includes(chip))
       .filter((art) => this.passt(art, gesucht));
+    // Unter „Giftig und Verwechslung“ führt die Gefahr, sonst die Stufe: wer
+    // dort nachschlägt, sucht das Tödliche und nicht das Alphabet.
+    const nachGefahr = chip === CHIP_VERWECHSLUNG;
     gefiltert.sort(
       (links, rechts) =>
-        STUFE_RANG[links.stufe] - STUFE_RANG[rechts.stufe] || links.name.localeCompare(rechts.name, 'de'),
+        (nachGefahr
+          ? ESSBARKEIT_GEFAHR[links.speisewert] - ESSBARKEIT_GEFAHR[rechts.speisewert]
+          : STUFE_RANG[links.stufe] - STUFE_RANG[rechts.stufe]) ||
+        links.name.localeCompare(rechts.name, 'de'),
     );
     return gefiltert.map((art) => this.zeile(art, art.slug === aktiv));
   });
@@ -116,8 +149,17 @@ export class ArtenComponent {
    * wie tot: die Liste steht nach Stufe, die ersten Zeilen bleiben dieselben,
    * und dass aus 85 Arten 23 wurden, sieht man erst nach langem Scrollen.
    */
+  /** Sammelbar oder nicht: der Chip entscheidet, aus welchem Topf gefiltert wird. */
+  protected readonly grundmenge = computed<readonly ArtKurz[]>(() => {
+    if (this.chip() === CHIP_VERWECHSLUNG) return this.zustand.verwechslungen()?.arten ?? [];
+    // Wer einen Namen tippt, sucht über den ganzen Katalog: sonst fände er den
+    // Giftpilz nicht, den er in der Hand hält.
+    if (this.suche().trim().length > 0) return this.zustand.alle()?.arten ?? [];
+    return this.zustand.liste()?.arten ?? [];
+  });
+
   protected readonly anzahlText = computed(() => {
-    const gesamt = this.zustand.liste()?.arten.length ?? 0;
+    const gesamt = this.grundmenge().length;
     const gefiltert = this.zeilen().length;
     return gefiltert === gesamt
       ? this.i18n.translate('arten.anzahlAlle', { gesamt })
@@ -126,6 +168,11 @@ export class ArtenComponent {
 
   constructor() {
     this.zustand.ladeListe();
+    // Beide Töpfe erst, wenn sie gebraucht werden.
+    effect(() => {
+      if (this.chip() === CHIP_VERWECHSLUNG) this.zustand.ladeVerwechslungen();
+      if (this.suche().trim().length > 0) this.zustand.ladeAlle();
+    });
   }
 
   protected waehleChip(wert: string): void {
@@ -164,6 +211,18 @@ export class ArtenComponent {
     const marken: Marke[] = [
       { text: this.i18n.translate(TAG_TEXT[art.stufe]), variant: STUFE_BADGE[art.stufe] },
     ];
+    // Wer die Liste nach einem Giftpilz durchsucht, muss ihn sofort erkennen.
+    if (!art.sammelbar) {
+      marken.push({
+        text: this.i18n.translate(ESSBARKEIT_TEXT[art.speisewert]),
+        variant: ESSBARKEIT_BADGE[art.speisewert],
+      });
+    }
+    // Genug Funde für ein Modell, aber noch keine Karte: das ist eine eigene
+    // Nachricht und nicht dasselbe wie die Stufe.
+    if (art.vorhersageGeplant && !art.kartenSlug) {
+      marken.push({ text: this.i18n.translate('arten.vorhersageGeplant'), variant: 'info' });
+    }
     if (art.geschuetzt) {
       marken.push({ text: this.i18n.translate('arten.geschuetzt'), variant: 'warning' });
     }
@@ -180,11 +239,12 @@ export class ArtenComponent {
       latein: art.lateinisch,
       aktiv,
       marken: marken.slice(0, aktiv ? 2 : 3),
-      kurve: art.saison.alleJahre,
-      laufend: art.saison.laufendesJahr,
+      hatKurve: art.saison !== null,
+      kurve: art.saison?.alleJahre ?? [],
+      laufend: art.saison?.laufendesJahr ?? [],
       beschriftung: this.i18n.translate('art.kurve.beschriftung', {
         name: art.name,
-        hoechstwert: Math.round(art.saison.hoechstwert),
+        hoechstwert: Math.round(art.saison?.hoechstwert ?? 0),
       }),
     };
   }

@@ -6,8 +6,12 @@
  * bereit, wo eine Oberfläche die Werte einer Art einordnen muss.
  */
 
-/** Was die App zu einer Art zeigen kann. Die Datenlage entscheidet. */
-export const STUFEN = ['vorhersage', 'saison', 'profil'] as const;
+/**
+ * Was die App zu einer Art zeigen kann. Die Datenlage entscheidet. `verwechslung`
+ * steht für ein Profil, das man nicht sammelt: es steht im Katalog, weil eine
+ * sammelbare Art ihm ähnlich sieht.
+ */
+export const STUFEN = ['vorhersage', 'saison', 'profil', 'verwechslung'] as const;
 export type Stufe = (typeof STUFEN)[number];
 
 /** Die Verwandtschaft, mit der eine Art im Katalog steht. */
@@ -54,10 +58,18 @@ export const BAUMARTEN = [
   'kiefer',
   'tanne',
   'laerche',
+  'douglasie',
   'buche',
   'eiche',
   'birke',
+  'erle',
+  'robinie',
+  'eibe',
+  'goldregen',
+  'heidelbeere',
+  'steineiche',
   'hainbuche',
+  'hasel',
   'pappel',
   'weide',
   'linde',
@@ -76,11 +88,11 @@ export type Jahreszeit = (typeof JAHRESZEITEN)[number];
 
 /** Was mit einer Art in der Pfanne passieren darf. */
 export const ESSBARKEITEN = [
-  'speisepilz',
+  'sehrGuterSpeisepilz',
+  'guterSpeisepilz',
   'essbar',
+  'minderwertig',
   'bedingtEssbar',
-  'ohneSpeisewert',
-  'nichtEmpfohlen',
   'ungeniessbar',
   'giftig',
   'toedlichGiftig',
@@ -102,6 +114,7 @@ export const MERKMAL_SCHLUESSEL = [
   'geruch',
   'geschmack',
   'sporenpulver',
+  'reagenzien',
   'vorkommen',
   'zeit',
   'speisewert',
@@ -111,6 +124,92 @@ export type MerkmalSchluessel = (typeof MERKMAL_SCHLUESSEL)[number];
 
 /** Ein Merkmal einer Art, mit dem sich die Liste filtern lässt. */
 export type Tag = Stufe | Gruppe | Jahreszeit | Baumart;
+
+/** Wie oft man die Art findet, laut ihrer Quellseite. */
+export const HAEUFIGKEITEN = ['sehrHaeufig', 'haeufig', 'zerstreut', 'selten', 'sehrSelten'] as const;
+export type Haeufigkeit = (typeof HAEUFIGKEITEN)[number];
+
+/** Die Stufe der Roten Liste Deutschlands, wenn die Quellseite eine nennt. */
+export const GEFAEHRDUNGEN = [
+  'vomAussterbenBedroht',
+  'starkGefaehrdet',
+  'gefaehrdet',
+  'unbekanntesAusmass',
+  'extremSelten',
+  'vorwarnliste',
+  'datenUnzureichend',
+] as const;
+export type Gefaehrdung = (typeof GEFAEHRDUNGEN)[number];
+
+/** Die Chemikalien, mit denen ein Bestimmer eine Farbreaktion auslöst. */
+export const REAGENZIEN = [
+  'koh',
+  'naoh',
+  'feso4',
+  'guajak',
+  'melzer',
+  'anilin',
+  'phenol',
+  'ammoniak',
+  'sulfovanillin',
+  'formalin',
+  'fecl3',
+  'wieland',
+  'schaeffer',
+] as const;
+export type Reagenz = (typeof REAGENZIEN)[number];
+
+/** Die beste und die schwächste Stufe der Wertigkeit von 123pilzsuche. */
+export const WERTIGKEIT_BESTE = 1;
+export const WERTIGKEIT_SCHWAECHSTE = 6;
+
+/** Ein Messbereich, so wie die Quelle ihn schreibt: 4 bis 20, selten bis 25. */
+export interface Spanne {
+  von: number;
+  bis: number;
+  seltenBis: number | null;
+}
+
+/**
+ * Die Zahlen, die die Quellseite nennt. Was sie nicht nennt, bleibt leer. Hüte
+ * misst man in Zentimetern, Sporen in Mikrometern.
+ */
+export interface Masse {
+  hutBreiteCm: Spanne | null;
+  fruchtkoerperBreiteCm: Spanne | null;
+  fruchtkoerperHoeheCm: Spanne | null;
+  stielLaengeCm: Spanne | null;
+  stielDickeCm: Spanne | null;
+  sporenLaengeUm: Spanne | null;
+  sporenBreiteUm: Spanne | null;
+}
+
+/** Woher die Angaben stammen und wann sie zuletzt geprüft wurden. */
+export interface Quelle {
+  url: string;
+  geprueftAm: string;
+}
+
+/** Ob die DGfM die Art auf ihrer Positivliste der Speisepilze führt. */
+export interface Marktfaehigkeit {
+  marktfaehig: boolean;
+  quelle: Quelle;
+}
+
+/**
+ * Bäume, die die Quelle nicht nennt, das Projekt aber kennt. Sie stehen
+ * getrennt, damit man sieht, welche Angabe belegt ist.
+ */
+export interface BaeumeAusErfahrung {
+  baeume: Baumart[];
+  quelle: string;
+}
+
+/** Eine Chemikalie und die Farbe, die sie am Pilz hervorruft. */
+export interface Reagenzeintrag {
+  reagenz: Reagenz;
+  reaktion: string;
+}
 
 /** Eine ISO-Kalenderwoche, so wie sie auf dem Draht steht. */
 export interface Woche {
@@ -125,10 +224,30 @@ export interface Jahresspanne {
 }
 
 /** Eine Art, die man mit dieser verwechselt, und das trennende Merkmal. */
+/**
+ * Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
+ *
+ * D1g stellt den Vertrag gerade um: der Eintrag trägt dann nur noch `slug` und
+ * `unterschied`, alles Weitere kommt aufgelöst dazu. Bis dahin heißen dieselben
+ * Angaben `merkmal` und `essbar`. Beide Namen stehen hier, damit die Artseite
+ * über den Wechsel hinweg läuft.
+ */
 export interface Verwechslung {
   name: string;
-  merkmal: string;
-  essbar: Essbarkeit;
+  /** Das eigene Profil des Partners, wenn es eines gibt. */
+  slug: string | null;
+  lateinisch?: string;
+  unterschied?: string;
+  merkmal?: string;
+  speisewert?: Essbarkeit;
+  essbar?: Essbarkeit;
+  warnung?: string | null;
+}
+
+/** Eine Art, bei der dieser Pilz als Verwechslung steht. Der Rückweg von D1g. */
+export interface Betrifft {
+  slug: string;
+  name: string;
 }
 
 /** Ein Link nach draußen. Nur die Adresse, kein fremder Text. */
@@ -177,17 +296,44 @@ export interface ArtKurz {
   geschuetzt: boolean;
   speisewert: Essbarkeit;
   kartenSlug: string | null;
+  /** Ob man die Art sammelt. Ein Verwechslungsprofil steht auf `false`. */
+  sammelbar: boolean;
+  marktfaehig: boolean;
+  wertigkeit: number | null;
+  haeufigkeit: Haeufigkeit | null;
+  /** Genug Funde für ein eigenes Modell, aber noch keine Karte. */
+  vorhersageGeplant: boolean;
   begehungenMitFund: number;
   spitzeWoche: number | null;
-  saison: SaisonKurz;
+  /** Eine Art, die niemand sammelt, trägt keine Saisonkurve. */
+  saison: SaisonKurz | null;
 }
 
 /** Eine Art mit Profil, so wie die Artseite sie braucht. */
 export interface Art extends Omit<ArtKurz, 'saison'> {
+  marktfaehigkeit: Marktfaehigkeit;
+  /** Die Positivliste der Schweiz, wenn die Quelle sie kennt. */
+  marktfaehigSchweiz: boolean | null;
+  /**
+   * Der Satz über der Tabelle, wenn eine Art in der Kette steht und trotzdem
+   * schadet. Er sagt mehr als eine Enum-Stufe.
+   */
+  warnung: string | null;
+  jahreszeiten: Jahreszeit[];
+  baeume: Baumart[];
+  baeumeAusErfahrung: BaeumeAusErfahrung | null;
+  gefaehrdung: Gefaehrdung | null;
+  weitereNamen: string[];
+  synonyme: string[];
+  masse: Masse;
+  quelle: Quelle;
   merkmale: Merkmal[];
+  reagenzien: Reagenzeintrag[];
   verwechslungen: Verwechslung[];
+  /** Die Arten, bei denen dieser Pilz als Verwechslung steht. Kommt mit D1g. */
+  betrifft?: Betrifft[];
   links: Verweis[];
-  saison: SaisonKurve;
+  saison: SaisonKurve | null;
 }
 
 /**

@@ -5,6 +5,7 @@
 @use 'styles/tokens';
 @use 'styles/kit-hilfsklassen';
 @use 'app/ui/tipp';
+@use 'app/ui/knopf';
 
 // Die App füllt das Gerät und scrollt nur innerhalb ihrer Flächen. Ein
 // Seitenscroll würde das Blatt und die Navigation vom Rand lösen.
