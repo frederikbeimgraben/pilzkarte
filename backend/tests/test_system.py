@@ -42,6 +42,7 @@ async def test_the_version_comes_from_the_pyproject() -> None:
     assert response.json()["version"].count(".") >= 1
 
 
+@pytest.mark.usefixtures("schema")
 async def test_me_returns_the_person_from_the_token(idp: FakeIdp) -> None:
     async with client(build_app()) as call:
         response = await call.get("/api/ich", headers=auth_header(idp.token()))
@@ -72,6 +73,7 @@ async def test_an_unknown_path_is_problem_json() -> None:
     assert response.json()["code"] == "not_found"
 
 
+@pytest.mark.usefixtures("schema")
 async def test_the_lifespan_releases_the_connections() -> None:
     app = build_app()
 

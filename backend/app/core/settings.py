@@ -30,6 +30,10 @@ class Settings(BaseSettings):
     oidc_issuer: str = "https://sso.beimgraben.net/application/o/pilze/"
     oidc_client_id: str = "pilze"
     origin: str = "http://localhost:4200"
+    # Wer diese Gruppe im Token traegt, ist Admin, auch ohne Zeile in der
+    # Datenbank. Ohne sie wäre nach dem ersten Deploy niemand da, der Rollen
+    # vergeben kann.
+    admin_group: str = "pilze-admins"
 
     @field_validator("oidc_issuer")
     @classmethod

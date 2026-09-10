@@ -40,6 +40,7 @@ Umgebung:
 | `PILZE_MAPS` | `/var/www/pilze` | Manifeste und Funde für Artenliste und Saisonkurve |
 | `PILZE_OIDC_ISSUER` | `https://sso.beimgraben.net/application/o/pilze/` | Issuer. Discovery und JWKS folgen daraus |
 | `PILZE_OIDC_CLIENT_ID` | `pilze` | erwartete `aud` im Access-Token |
+| `PILZE_ADMIN_GROUP` | `pilze-admins` | Gruppe im Token. Wer sie trägt, ist Admin, auch ohne Zeile in der Datenbank |
 | `PILZE_ORIGIN` | `https://pilze.beimgraben.net` | eigener Ursprung für CORS in der Entwicklung und für Links |
 
 Lokal stehen dieselben Variablen in `backend/.env`. Vorgaben für die

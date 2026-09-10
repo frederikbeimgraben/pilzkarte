@@ -15,8 +15,11 @@ import jwt
 from fastapi import Depends
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jwt import PyJWK, PyJWTError
+from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.db import db_session
 from app.core.errors import NotAuthenticated
+from app.core.people import remember
 from app.core.settings import get_settings
 
 # Authentik signiert mit dem Schluessel des Providers. Beide Verfahren kommen
@@ -37,6 +40,10 @@ class User:
     sub: str
     email: str | None
     name: str | None
+    # Authentik legt die Gruppen als Liste in den Anspruch ``groups``. Sie
+    # entscheiden nur über den ersten Admin, alles Weitere steht in der
+    # Datenbank.
+    groups: tuple[str, ...] = ()
 
 
 def net_client() -> httpx.AsyncClient:
@@ -51,6 +58,13 @@ def _mapping(value: object) -> Mapping[str, object] | None:
 def _string(data: Mapping[str, object], field: str) -> str | None:
     value = data.get(field)
     return value if isinstance(value, str) else None
+
+
+def _strings(data: Mapping[str, object], field: str) -> tuple[str, ...]:
+    value = data.get(field)
+    if not isinstance(value, list):
+        return ()
+    return tuple(entry for entry in cast("list[object]", value) if isinstance(entry, str))
 
 
 class JwksCache:
@@ -140,7 +154,12 @@ async def user_from_token(token: str) -> User:
 
     # ``require`` und die Pruefung in PyJWT lassen nur ein Token mit sub als
     # Zeichenkette durch. Eine eigene Pruefung darauf waere unerreichbar.
-    return User(sub=str(data["sub"]), email=_string(data, "email"), name=_string(data, "name"))
+    return User(
+        sub=str(data["sub"]),
+        email=_string(data, "email"),
+        name=_string(data, "name"),
+        groups=_strings(data, "groups"),
+    )
 
 
 async def optional_user(
@@ -154,8 +173,14 @@ async def optional_user(
 
 async def current_user(
     user: Annotated[User | None, Depends(optional_user)],
+    session: Annotated[AsyncSession, Depends(db_session)],
 ) -> User:
-    """Liefert die angemeldete Person. Ohne Token endet die Anfrage mit 401."""
+    """Liefert die angemeldete Person. Ohne Token endet die Anfrage mit 401.
+
+    Wer hier durchkommt, steht danach in der Personentabelle. Das ist der
+    einzige Ort, an dem der Dienst erfährt, dass es ein Konto gibt.
+    """
     if user is None:
         raise NotAuthenticated("Fuer diesen Zugriff ist eine Anmeldung noetig.")
+    await remember(session, user.sub, user.email, user.name)
     return user

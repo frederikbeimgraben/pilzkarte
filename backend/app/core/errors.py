@@ -97,6 +97,12 @@ class NotFound(AppError):
     status: ClassVar[int] = 404
 
 
+class Forbidden(AppError):
+    """Die Person ist angemeldet, aber ihr fehlt das Recht."""
+
+    status: ClassVar[int] = 403
+
+
 class Invalid(AppError):
     """Die Eingabe passt zum Vertrag, aber nicht zu den Regeln der App."""
 

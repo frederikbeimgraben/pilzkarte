@@ -193,6 +193,7 @@ async def test_guarded_with_a_wrong_token_is_401(idp: FakeIdp) -> None:
     assert response.json()["title"] == "Nicht angemeldet"
 
 
+@pytest.mark.usefixtures("schema")
 async def test_guarded_with_a_valid_token(idp: FakeIdp) -> None:
     async with client(app_with_guard()) as call:
         response = await call.get("/geschuetzt", headers=auth_header(idp.token()))
