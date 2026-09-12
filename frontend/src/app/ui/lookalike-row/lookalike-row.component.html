@@ -1,3 +1,6 @@
+@if (colours().length) {
+  <app-colour-field class="lookalike__colour" [colours]="colours()" [label]="coloursLabel()" />
+}
 <span class="lookalike__name">{{ name() }}</span>
 <span class="lookalike__value">
   @if (latin(); as lateinisch) {

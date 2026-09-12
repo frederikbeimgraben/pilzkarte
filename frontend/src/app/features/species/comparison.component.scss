@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+}
+
+// Dasselbe Raster wie die Artseite: 20 px oben, 20 px zwischen den Teilen.
+.comparison-page {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 20px;
+  min-block-size: 0;
+  padding: 20px var(--pilz-gutter);
+  overflow-y: auto;
+  scrollbar-width: none;
+}

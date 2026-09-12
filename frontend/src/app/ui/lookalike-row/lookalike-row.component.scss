@@ -19,6 +19,17 @@
   border-block-end: 0;
 }
 
+// Die Spur für das Farbfeld gibt es nur, wo eines steht. Sonst rückte der Name
+// in jeder Zeile ohne Farbe um die Breite der leeren Spur ein.
+:host:has(.lookalike__colour) {
+  grid-template-columns: auto minmax(104px, max-content) minmax(0, 1fr) auto;
+}
+
+.lookalike__colour {
+  align-self: center;
+  inline-size: 40px;
+}
+
 .lookalike__name {
   max-inline-size: 145px;
   font-weight: var(--fw-semibold);
