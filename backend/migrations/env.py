@@ -6,7 +6,7 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import Connection
 
-from app.core.db import engine
+from app.core.db import migration_engine
 from app.models import Base
 
 config = context.config
@@ -32,7 +32,7 @@ def _migrate(connection: Connection) -> None:
 
 async def online() -> None:
     """Fuehrt die Migrationen gegen die Datenbank aus PILZE_DB aus."""
-    engine_of_process = engine()
+    engine_of_process = migration_engine()
     async with engine_of_process.connect() as connection:
         await connection.run_sync(_migrate)
         await connection.commit()
@@ -42,7 +42,7 @@ async def online() -> None:
 def offline() -> None:
     """Schreibt die Migrationen als SQL, ohne Datenbank."""
     context.configure(
-        url=str(engine().url),
+        url=str(migration_engine().url),
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},

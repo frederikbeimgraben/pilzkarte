@@ -25,18 +25,18 @@ erDiagram
         BOOLEAN fuer_training
         VARCHAR(16) sichtbarkeit
         TEXT notiz "optional"
-        VARCHAR(255) besitzer_sub
         DATETIME erstellt_am
         DATETIME geaendert_am
+        VARCHAR(255) besitzer_sub FK
     }
     kombination {
         VARCHAR(36) id PK
         VARCHAR(80) name
         VARCHAR(16) regel
         TEXT faktoren
-        VARCHAR(255) besitzer_sub
         DATETIME erstellt_am
         DATETIME geaendert_am
+        VARCHAR(255) besitzer_sub FK
     }
     marker {
         VARCHAR(36) id PK
@@ -46,9 +46,9 @@ erDiagram
         VARCHAR(16) farbe
         VARCHAR(16) sichtbarkeit
         TEXT notiz "optional"
-        VARCHAR(255) besitzer_sub
         DATETIME erstellt_am
         DATETIME geaendert_am
+        VARCHAR(255) besitzer_sub FK
     }
     nutzer {
         VARCHAR(255) sub PK
@@ -76,7 +76,7 @@ erDiagram
     species_image {
         VARCHAR(36) id PK
         VARCHAR(80) species_slug
-        VARCHAR(255) uploader_sub
+        VARCHAR(255) uploader_sub FK
         VARCHAR(120) photographer
         VARCHAR(16) licence
         TEXT source "optional"
@@ -87,7 +87,7 @@ erDiagram
         BOOLEAN lead
         VARCHAR(16) state
         VARCHAR(200) reject_reason "optional"
-        VARCHAR(255) reviewed_by "optional"
+        VARCHAR(255) reviewed_by FK "optional"
         DATETIME reviewed_at "optional"
         INTEGER width
         INTEGER height
@@ -99,10 +99,10 @@ erDiagram
         VARCHAR(5) locale PK
         TEXT value
         DATETIME updated_at
-        VARCHAR(255) updated_by "optional"
+        VARCHAR(255) updated_by FK "optional"
     }
     user_role {
-        VARCHAR(255) user_sub PK
+        VARCHAR(255) user_sub PK, FK
         VARCHAR(36) role_id PK, FK
         DATETIME granted_at
     }
@@ -114,11 +114,19 @@ erDiagram
         VARCHAR(16) farbe
         VARCHAR(16) sichtbarkeit
         TEXT notiz "optional"
-        VARCHAR(255) besitzer_sub
         DATETIME erstellt_am
         DATETIME geaendert_am
+        VARCHAR(255) besitzer_sub FK
     }
     fund ||--o{ foto : "fund_id"
+    nutzer |o--o{ species_image : "reviewed_by"
+    nutzer |o--o{ text : "updated_by"
+    nutzer ||--o{ fund : "besitzer_sub"
+    nutzer ||--o{ kombination : "besitzer_sub"
+    nutzer ||--o{ marker : "besitzer_sub"
+    nutzer ||--o{ species_image : "uploader_sub"
+    nutzer ||--o{ user_role : "user_sub"
+    nutzer ||--o{ zone : "besitzer_sub"
     permission ||--o{ role_permission : "permission_key"
     role ||--o{ role_permission : "role_id"
     role ||--o{ user_role : "role_id"
