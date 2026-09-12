@@ -1,0 +1,68 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.images {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--pilz-gutter);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.images__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// Bild links, Text in der Mitte, Zustand rechts. Die Knöpfe stehen darunter,
+// damit sie am Telefon die volle Breite behalten.
+.images__task {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.images__thumb {
+  flex: 0 0 auto;
+  inline-size: 96px;
+  block-size: 72px;
+}
+
+.images__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-inline-size: 0;
+}
+
+.images__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+}
+
+.images__sub {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.images__reason {
+  font-size: var(--fs-sm);
+  color: var(--color-danger);
+}
+
+.images__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-block-start: var(--space-3);
+}

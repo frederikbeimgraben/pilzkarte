@@ -43,8 +43,8 @@ const ENTRIES: readonly AdminEntry[] = [
     subline: 'verwaltung.bilderUnter',
     permission: 'image.review',
     section: 'inhalte',
-    path: null,
-    paket: 'I3',
+    path: '/verwaltung/bilder',
+    paket: null,
   },
   {
     titel: 'verwaltung.arten',

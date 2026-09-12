@@ -23,12 +23,21 @@ export const routes: Routes = [
     loadComponent: () => import('./features/species/species.component').then((m) => m.SpeciesComponent),
   },
   {
+    path: 'arten/:slug/bild',
+    loadComponent: () =>
+      import('./features/species/submit-image.component').then((m) => m.SubmitImageComponent),
+  },
+  {
     path: 'eintraege',
     loadComponent: () => import('./features/entries/entries.component').then((m) => m.EntriesComponent),
   },
   {
     path: 'konto',
     loadComponent: () => import('./features/account/account.component').then((m) => m.AccountComponent),
+  },
+  {
+    path: 'konto/bilder',
+    loadComponent: () => import('./features/account/my-images.component').then((m) => m.MyImagesComponent),
   },
   {
     path: 'verwaltung',
@@ -49,6 +58,11 @@ export const routes: Routes = [
         path: 'rollen/:id',
         canActivate: [requiresPermission('role.manage')],
         loadComponent: () => import('./features/admin/role.component').then((m) => m.RoleComponent),
+      },
+      {
+        path: 'bilder',
+        canActivate: [requiresPermission('image.review')],
+        loadComponent: () => import('./features/admin/images.component').then((m) => m.AdminImagesComponent),
       },
       {
         path: 'personen',

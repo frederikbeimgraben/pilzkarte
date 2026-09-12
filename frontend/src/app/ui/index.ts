@@ -28,6 +28,7 @@ export { LookalikeRowComponent } from './lookalike-row/lookalike-row.component';
 export { MetricRowComponent } from './metric-row/metric-row.component';
 export { NoteComponent, type NoteVariant } from './note/note.component';
 export { PageHeaderComponent } from './page-header/page-header.component';
+export { PrivateImageComponent } from './private-image/private-image.component';
 export { RampComponent } from './ramp/ramp.component';
 export { FORECAST_RAMP } from './ramp/ramp-colors';
 export { RangeSliderComponent, type Handles } from './range-slider/range-slider.component';

@@ -8,7 +8,7 @@
       [height]="lead.height"
     />
   </button>
-  @if (others().length) {
+  @if (others().length || signedIn()) {
     <ul class="gallery__strip" [attr.aria-label]="'bild.streifen' | t">
       @for (image of others(); track image.id) {
         <li>
@@ -22,10 +22,27 @@
           </button>
         </li>
       }
+      @if (signedIn()) {
+        <li>
+          <button
+            type="button"
+            class="gallery__thumb gallery__add"
+            [attr.aria-label]="'bild.einreichen' | t"
+            (click)="submit()"
+          >
+            <app-svg-icon name="plus" [size]="18" />
+          </button>
+        </li>
+      }
     </ul>
   }
   <app-image-credit [photographer]="lead.photographer" [licence]="lead.licence" />
 } @else {
-  <app-empty-state icon="leer" [text]="'bild.keine' | t" />
+  <app-empty-state
+    icon="leer"
+    [text]="'bild.keine' | t"
+    [action]="signedIn() ? ('bild.einreichen' | t) : undefined"
+    (actionClick)="submit()"
+  />
 }
 <app-image-viewer [image]="open()" [titel]="speciesName()" (closed)="open.set(null)" />

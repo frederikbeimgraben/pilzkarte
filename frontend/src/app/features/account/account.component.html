@@ -44,6 +44,15 @@
     />
   </section>
 
+  @if (signedIn()) {
+    <section class="account__block">
+      <h2 class="account__section">{{ 'konto.abschnitt.beitraege' | t }}</h2>
+      <div class="account__list">
+        <app-list-row [titel]="'bild.meine' | t" [clickable]="true" (chosen)="toMyImages()" />
+      </div>
+    </section>
+  }
+
   @if (canAdminister()) {
     <section class="account__block">
       <h2 class="account__section">{{ 'konto.verwaltung' | t }}</h2>

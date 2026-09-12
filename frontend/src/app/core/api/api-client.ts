@@ -34,12 +34,16 @@ export class ApiClient {
   }
 
   /**
-   * Lädt eine Datei als `multipart/form-data`. Der Kopf `Content-Type` wird
-   * nicht gesetzt: nur der Browser kennt die Grenze zwischen den Teilen.
+   * Lädt eine Datei als `multipart/form-data`, dazu die Felder, die im selben
+   * Formular stehen. Der Kopf `Content-Type` wird nicht gesetzt: nur der
+   * Browser kennt die Grenze zwischen den Teilen.
    */
-  postFile<T>(path: string, field: string, file: File): Observable<T> {
+  postFile<T>(path: string, field: string, file: File, fields: Query = {}): Observable<T> {
     const body = new FormData();
     body.append(field, file, file.name);
+    for (const [name, value] of Object.entries(fields)) {
+      if (value !== undefined) body.append(name, String(value));
+    }
     return this.http
       .post<T>(this.url(path), body)
       .pipe(catchError((failure: unknown) => this.report(failure)));

@@ -46,11 +46,19 @@ describe('AdminComponent', () => {
   });
 
   it('sagt bei einem Punkt ohne Arbeitspaket, wann er kommt', async () => {
-    await build(['image.review']);
+    await build(['species.edit']);
 
-    expect(screen.getByText('Kommt mit Paket I3.')).toBeInTheDocument();
+    expect(screen.getByText('Kommt mit Paket J1.')).toBeInTheDocument();
     // Ohne Weg bleibt die Zeile eine Zeile und keine Schaltfläche.
-    expect(screen.queryByRole('button', { name: /Bilder/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Arten/ })).not.toBeInTheDocument();
+  });
+
+  it('führt mit dem Recht zu prüfen in den Eingang der Bilder', async () => {
+    const { router } = await build(['image.review']);
+
+    await userEvent.click(screen.getByRole('button', { name: /Bilder/ }));
+
+    expect(router.url).toBe('/verwaltung/bilder');
   });
 
   it('führt von der Zeile Texte auf die Texte', async () => {

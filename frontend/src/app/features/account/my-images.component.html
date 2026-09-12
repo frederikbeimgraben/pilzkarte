@@ -1,0 +1,28 @@
+<app-page-header [titel]="'bild.meine' | t" [back]="true" (backClick)="back()" />
+
+<div class="mine">
+  @if (loaded() && rows().length === 0) {
+    <app-empty-state [text]="'bild.meineLeer' | t" />
+  } @else {
+    <ul class="mine__list">
+      @for (row of rows(); track row.id) {
+        <li>
+          <app-card>
+            <div class="mine__row">
+              <app-private-image class="mine__thumb" [path]="row.thumbPath" [alt]="row.alt" />
+              <div class="mine__text">
+                <span class="mine__title">{{ row.species }}</span>
+                <span class="mine__sub">{{ row.submitted }}</span>
+                @if (row.reason; as reason) {
+                  <span class="mine__reason">{{ reason }}</span>
+                }
+              </div>
+              <app-badge [variant]="row.badge">{{ row.badgeText }}</app-badge>
+            </div>
+          </app-card>
+        </li>
+      }
+    </ul>
+    <app-note>{{ 'bild.meineHinweis' | t }}</app-note>
+  }
+</div>

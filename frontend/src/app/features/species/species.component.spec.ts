@@ -7,6 +7,7 @@ import userEvent from '@testing-library/user-event';
 import type { Species, SpeciesImage } from '../../core/api/models';
 import { GALLENROEHRLING, MORCHEL, STEINPILZ } from '../../testing/species-fixture';
 import { speciesImage } from '../../testing/species-images-fixture';
+import { AuthStub, authStubProviders } from '../../testing/auth-stub';
 import { noViolations } from '../../testing/axe';
 import { SpeciesComponent } from './species.component';
 import { SpeciesState } from './species.state';
@@ -25,7 +26,12 @@ async function build(
 ): Promise<Setup> {
   const { container, detectChanges } = await render(SpeciesComponent, {
     inputs: { slug },
-    providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])],
+    providers: [
+      provideHttpClient(),
+      provideHttpClientTesting(),
+      provideRouter([]),
+      ...authStubProviders(new AuthStub()),
+    ],
   });
   const http = TestBed.inject(HttpTestingController);
   const request = http.expectOne(`/api/arten/${slug}`);

@@ -1,0 +1,52 @@
+<app-page-header [titel]="'verwaltung.bilder' | t" [back]="true" (backClick)="back()" />
+
+<div class="images">
+  <app-segmented
+    [options]="options()"
+    [value]="view()"
+    [label]="'bild.sicht' | t"
+    (valueChange)="select($event)"
+  />
+
+  @if (loaded() && tasks().length === 0) {
+    <app-empty-state [text]="'bild.eingangLeer' | t" />
+  } @else {
+    <ul class="images__list">
+      @for (task of tasks(); track task.id) {
+        <li>
+          <app-card>
+            <div class="images__task">
+              <app-private-image class="images__thumb" [path]="task.thumbPath" [alt]="task.alt" />
+              <div class="images__text">
+                <span class="images__title">{{ task.species }}</span>
+                <span class="images__sub">{{ task.subline }}</span>
+                @if (task.reason; as reason) {
+                  <span class="images__reason">{{ reason }}</span>
+                }
+              </div>
+              <app-badge [variant]="task.badge">{{ task.badgeText }}</app-badge>
+            </div>
+            @if (task.state === 'submitted') {
+              <div class="images__actions">
+                <app-button variant="primary" size="sm" (click)="approve(task)">
+                  {{ 'bild.freigeben' | t }}
+                </app-button>
+                <app-button variant="secondary" size="sm" (click)="rejecting.set(task)">
+                  {{ 'bild.ablehnen' | t }}
+                </app-button>
+              </div>
+            }
+          </app-card>
+        </li>
+      }
+    </ul>
+    <app-note>{{ 'bild.eingangHinweis' | t }}</app-note>
+  }
+</div>
+
+<app-reject-dialog
+  [open]="rejecting() !== null"
+  [person]="rejecting()?.submittedBy ?? null"
+  (rejected)="reject($event)"
+  (closed)="rejecting.set(null)"
+/>
