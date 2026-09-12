@@ -4,8 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { Router, provideRouter } from '@angular/router';
 import { render, screen, within } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import type { Species } from '../../core/api/models';
+import type { Species, SpeciesImage } from '../../core/api/models';
 import { GALLENROEHRLING, MORCHEL, STEINPILZ } from '../../testing/species-fixture';
+import { speciesImage } from '../../testing/species-images-fixture';
 import { noViolations } from '../../testing/axe';
 import { SpeciesComponent } from './species.component';
 import { SpeciesState } from './species.state';
@@ -17,12 +18,17 @@ interface Setup {
   refresh: () => void;
 }
 
-async function build(art: Species | 'fehlt', slug = 'steinpilz'): Promise<Setup> {
+async function build(
+  art: Species | 'fehlt',
+  slug = 'steinpilz',
+  images: SpeciesImage[] = [],
+): Promise<Setup> {
   const { container, detectChanges } = await render(SpeciesComponent, {
     inputs: { slug },
     providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])],
   });
-  const request = TestBed.inject(HttpTestingController).expectOne(`/api/arten/${slug}`);
+  const http = TestBed.inject(HttpTestingController);
+  const request = http.expectOne(`/api/arten/${slug}`);
   if (art === 'fehlt') {
     request.flush(
       { type: 'about:blank', title: 'Nicht gefunden', status: 404 },
@@ -31,6 +37,9 @@ async function build(art: Species | 'fehlt', slug = 'steinpilz'): Promise<Setup>
   } else {
     request.flush(art);
   }
+  // Die Bilder kommen aus einer zweiten Anfrage: das Profil liegt als TOML
+  // beim Dienst, die Bilder stehen in der Datenbank.
+  http.expectOne(`/api/species-images?species=${slug}`).flush(images);
   detectChanges();
   return {
     container,
@@ -230,5 +239,21 @@ describe('ArtComponent', () => {
     await userEvent.click(within(head).getByRole('button', { name: 'Zurück' }));
 
     expect(calls).toHaveBeenCalledWith(['/arten']);
+  });
+
+  it('stellt das Titelbild über die Art und nennt Fotograf und Lizenz', async () => {
+    const { container } = await build(STEINPILZ, 'steinpilz', [speciesImage()]);
+
+    const lead = container.querySelector('.gallery__lead img');
+    expect(lead).toHaveAttribute('src', '/api/species-images/bild-eins/full');
+    expect(screen.getByText('Foto: Marie Weber · CC BY-SA 4.0')).toBeInTheDocument();
+    await noViolations(container);
+  });
+
+  it('zeigt zu einer Art ohne Bild den Leerzustand statt eines leeren Rahmens', async () => {
+    const { container } = await build(STEINPILZ);
+
+    expect(screen.getByText('Zu dieser Art gibt es noch kein Bild.')).toBeInTheDocument();
+    expect(container.querySelector('.gallery__lead')).toBeNull();
   });
 });

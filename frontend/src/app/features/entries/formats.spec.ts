@@ -1,4 +1,5 @@
-import { asDate, hectaresText, isoDatum, shortDate, longDate, locationText } from './formats';
+import { asDate, longDate } from '../../core/i18n/dates';
+import { hectaresText, isoDatum, shortDate, locationText } from './formats';
 
 describe('Formate', () => {
   it('schreibt ein Datum als ISO-Tag in der Zeitzone des Geräts', () => {

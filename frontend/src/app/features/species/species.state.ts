@@ -1,7 +1,8 @@
 import { Injectable, inject, signal, type WritableSignal } from '@angular/core';
 import { SpeciesApi } from '../../core/api/species.api';
+import { SpeciesImagesApi } from '../../core/api/species-images.api';
 import type { ProblemDetail } from '../../core/api/problem';
-import type { Species, SpeciesCatalogue } from '../../core/api/models';
+import type { Species, SpeciesCatalogue, SpeciesImage } from '../../core/api/models';
 
 /**
  * Der Katalog im Speicher. Die Liste hängt an keiner Seite: sie wird einmal
@@ -11,6 +12,7 @@ import type { Species, SpeciesCatalogue } from '../../core/api/models';
 @Injectable({ providedIn: 'root' })
 export class SpeciesState {
   private readonly api = inject(SpeciesApi);
+  private readonly imagesApi = inject(SpeciesImagesApi);
   private readonly running = new Set<string>();
 
   private readonly _catalogue = signal<SpeciesCatalogue | null>(null);
@@ -18,6 +20,7 @@ export class SpeciesState {
   private readonly _alle = signal<SpeciesCatalogue | null>(null);
   private readonly _profile = signal<ReadonlyMap<string, Species>>(new Map());
   private readonly _unknown = signal<ReadonlySet<string>>(new Set());
+  private readonly _images = signal<ReadonlyMap<string, readonly SpeciesImage[]>>(new Map());
   private readonly _activeSpecies = signal<string | null>(null);
   private readonly _origin = signal<{ slug: string; name: string } | null>(null);
 
@@ -29,6 +32,8 @@ export class SpeciesState {
   readonly profile = this._profile.asReadonly();
   /** Slugs, die das Backend mit 404 beantwortet hat. */
   readonly unknown = this._unknown.asReadonly();
+  /** Die freigegebenen Bilder je Art. Ein leerer Eintrag heißt: geladen, keine Bilder. */
+  readonly images = this._images.asReadonly();
   /**
    * Die Art, die die Karte zeigt. Bis A2 den Kartenzustand liefert, ist dieses
    * Signal die einzige Quelle; danach spiegelt es ihn.
@@ -77,6 +82,22 @@ export class SpeciesState {
         if (failure.status === 404) this._unknown.update((alt) => new Set(alt).add(slug));
         this.running.delete(slug);
       },
+    });
+  }
+
+  /**
+   * Die Bilder einer Art. Sie kommen getrennt vom Profil: das Profil liegt als
+   * TOML beim Dienst, die Bilder stehen in der Datenbank.
+   */
+  loadImages(slug: string): void {
+    const schluessel = `bilder:${slug}`;
+    if (this._images().has(slug) || !this.begin(schluessel)) return;
+    this.imagesApi.ofSpecies(slug).subscribe({
+      next: (images) => {
+        this._images.update((alt) => new Map(alt).set(slug, images));
+        this.running.delete(schluessel);
+      },
+      error: () => this.running.delete(schluessel),
     });
   }
 

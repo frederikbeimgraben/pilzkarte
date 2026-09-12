@@ -2,6 +2,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { SPECIES_LIST, STEINPILZ } from '../../testing/species-fixture';
+import { speciesImage } from '../../testing/species-images-fixture';
 import { SpeciesState } from './species.state';
 
 function build(): { state: SpeciesState; http: HttpTestingController } {
@@ -69,5 +70,41 @@ describe('ArtenZustand', () => {
     state.select('steinpilz');
 
     expect(state.activeSpecies()).toBe('steinpilz');
+  });
+
+  it('holt die Bilder einer Art einmal und behält sie', () => {
+    const { state, http } = build();
+
+    state.loadImages('steinpilz');
+    state.loadImages('steinpilz');
+    http.expectOne('/api/species-images?species=steinpilz').flush([speciesImage()]);
+    state.loadImages('steinpilz');
+
+    expect(state.images().get('steinpilz')).toHaveLength(1);
+    http.verify();
+  });
+
+  it('merkt sich auch eine Art ganz ohne Bild', () => {
+    const { state, http } = build();
+
+    state.loadImages('parasol');
+    http.expectOne('/api/species-images?species=parasol').flush([]);
+    state.loadImages('parasol');
+
+    expect(state.images().get('parasol')).toEqual([]);
+    http.verify();
+  });
+
+  it('lässt einen gescheiterten Bildabruf einen zweiten Versuch zu', () => {
+    const { state, http } = build();
+
+    state.loadImages('steinpilz');
+    http
+      .expectOne('/api/species-images?species=steinpilz')
+      .flush('', { status: 503, statusText: 'Service Unavailable' });
+    state.loadImages('steinpilz');
+    http.expectOne('/api/species-images?species=steinpilz').flush([speciesImage()]);
+
+    expect(state.images().get('steinpilz')).toHaveLength(1);
   });
 });

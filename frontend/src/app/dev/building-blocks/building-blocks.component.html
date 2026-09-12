@@ -312,6 +312,12 @@
     </app-card>
 
     <app-card>
+      <p class="gallery__title">{{ 'bausteine.imageCredit' | t }}</p>
+      <app-image-credit photographer="Marie Weber" licence="cc-by-sa-4" />
+      <app-image-credit [photographer]="text('beispiel.steinpilz')" licence="own" />
+    </app-card>
+
+    <app-card>
       <p class="gallery__title">{{ 'bausteine.svgIcon' | t }}</p>
       <div class="gallery__row">
         <app-svg-icon name="karte" />

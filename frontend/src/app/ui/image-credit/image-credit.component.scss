@@ -1,0 +1,10 @@
+// Ruhig und klein: die Herkunft gehört ans Bild, sie führt es aber nicht an.
+:host {
+  display: block;
+}
+
+.credit {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}

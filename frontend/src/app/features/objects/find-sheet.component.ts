@@ -18,7 +18,7 @@ import { valueAtPoint } from '../../core/tiles/value-at-point';
 import { ActionBarComponent, MetricRowComponent, NoteComponent } from '../../ui';
 import { SpeciesState } from '../species/species.state';
 import { EntriesState } from '../entries/entries.state';
-import { longDate } from '../entries/formats';
+import { longDate } from '../../core/i18n/dates';
 import { FindFormComponent, type FindSubmission } from '../add-entry/find-form.component';
 import { MapState } from '../map/map.state';
 import { PhotoGalleryComponent } from './photo-gallery.component';

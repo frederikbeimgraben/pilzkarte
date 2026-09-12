@@ -1,6 +1,8 @@
 @if (viewport(); as viewport) {
   <app-page-header [titel]="viewport.name" [back]="true" (backClick)="back()" />
   <div class="species">
+    <app-species-images [images]="images()" [speciesName]="viewport.name" />
+
     <div class="species__head">
       <app-note variant="unter" [italic]="true">{{ viewport.subtitle }}</app-note>
       <div class="species__badges">

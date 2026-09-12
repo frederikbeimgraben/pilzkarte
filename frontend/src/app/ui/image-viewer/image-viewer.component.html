@@ -1,0 +1,26 @@
+<app-dialog
+  [open]="image() !== null"
+  [title]="titel()"
+  size="lg"
+  [closeLabel]="'bild.schliessen' | t"
+  (closed)="closed.emit()"
+>
+  @if (image(); as image) {
+    <img
+      class="viewer__image"
+      [src]="image.url"
+      [alt]="alt()"
+      [width]="image.width"
+      [height]="image.height"
+    />
+    <app-key-value-table>
+      @for (row of details(); track row.label) {
+        <app-key-value-row [schluessel]="row.label" [value]="row.text">
+          @if (row.licence; as licence) {
+            <app-badge variant="primary">{{ licence }}</app-badge>
+          }
+        </app-key-value-row>
+      }
+    </app-key-value-table>
+  }
+</app-dialog>

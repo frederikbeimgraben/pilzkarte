@@ -1,0 +1,47 @@
+// Maße aus `docs/mockups/bauen.py`, Artboard 1: Titelbild 210 px hoch, die
+// Vorschau daneben 84 × 64.
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.gallery__lead,
+.gallery__thumb {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-surface-sunken);
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+.gallery__lead {
+  inline-size: 100%;
+  block-size: 210px;
+}
+
+.gallery__thumb {
+  inline-size: 84px;
+  block-size: 64px;
+  border-radius: var(--radius-sm);
+}
+
+.gallery__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+// Der Streifen läuft waagerecht und scrollt in sich. Sonst schiebt das vierte
+// Bild die Seite quer.
+.gallery__strip {
+  display: flex;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: none;
+}

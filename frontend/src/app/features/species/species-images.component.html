@@ -1,0 +1,31 @@
+@if (lead(); as lead) {
+  <button type="button" class="gallery__lead" [attr.aria-label]="openLabel(lead)" (click)="show(lead)">
+    <img
+      class="gallery__image"
+      [src]="lead.url"
+      [alt]="label(lead)"
+      [width]="lead.width"
+      [height]="lead.height"
+    />
+  </button>
+  @if (others().length) {
+    <ul class="gallery__strip" [attr.aria-label]="'bild.streifen' | t">
+      @for (image of others(); track image.id) {
+        <li>
+          <button
+            type="button"
+            class="gallery__thumb"
+            [attr.aria-label]="openLabel(image)"
+            (click)="show(image)"
+          >
+            <img class="gallery__image" [src]="image.thumbUrl" [alt]="label(image)" />
+          </button>
+        </li>
+      }
+    </ul>
+  }
+  <app-image-credit [photographer]="lead.photographer" [licence]="lead.licence" />
+} @else {
+  <app-empty-state icon="leer" [text]="'bild.keine' | t" />
+}
+<app-image-viewer [image]="open()" [titel]="speciesName()" (closed)="open.set(null)" />
