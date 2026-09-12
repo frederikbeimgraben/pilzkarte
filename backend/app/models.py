@@ -22,7 +22,7 @@ from sqlalchemy import Enum as SaEnum
 from sqlalchemy.orm import DeclarativeBase, Mapped, declared_attr, mapped_column, relationship
 from sqlalchemy.types import TypeDecorator
 
-from app.shared.schemas import Color, ImageState, Licence, Rule, Visibility
+from app.shared.schemas import Color, ImageState, Licence, Rule, TaxonRank, Visibility
 
 # Eine UUID als Zeichenkette. Das Geraet vergibt sie schon offline, damit ein
 # Eintrag aus der Warteschlange dieselbe Kennung behaelt.
@@ -216,6 +216,35 @@ class Term(Base):
     slug: Mapped[str] = mapped_column(String(64))
     name: Mapped[str] = mapped_column(String(120))
     position: Mapped[int] = mapped_column("reihenfolge", Integer, default=0)
+
+
+class Taxon(Base):
+    """Eine Stufe der Einordnung: Klasse, Ordnung, Familie, Gattung.
+
+    Eine Tabelle fuer alle Raenge, verkettet ueber ``parent_id`` auf sich
+    selbst und leer an der Wurzel. Ein Rang mehr ist damit eine Zeile und kein
+    Umbau, und eine Art darf an jeder Stufe haengen: ist die Gattung strittig,
+    traegt die Familie sie.
+
+    Der Anfangsbestand kommt aus ``daten/taxonomie.json``. Danach ist diese
+    Tabelle die Wahrheit, und der Start gleicht nur noch ab.
+    """
+
+    __tablename__ = "taxon"
+
+    id: Mapped[str] = mapped_column(String(ID_LENGTH), primary_key=True, default=new_identifier)
+    rank: Mapped[TaxonRank] = mapped_column(_enum_column(TaxonRank), index=True)
+    slug: Mapped[str] = mapped_column(String(80), unique=True)
+    name: Mapped[str] = mapped_column(String(120))
+    # Leer, wo keine Quelle einen fuehrt. Geraten wird nichts.
+    latin_name: Mapped[str | None] = mapped_column(String(120), default=None)
+    parent_id: Mapped[str | None] = mapped_column(
+        ForeignKey("taxon.id", ondelete="RESTRICT"), default=None, index=True
+    )
+    description: Mapped[str | None] = mapped_column(Text, default=None)
+
+    parent: Mapped["Taxon | None"] = relationship(remote_side="Taxon.id", back_populates="children")
+    children: Mapped[list["Taxon"]] = relationship(back_populates="parent")
 
 
 class UiText(Base):

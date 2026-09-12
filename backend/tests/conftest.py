@@ -23,7 +23,7 @@ from app.core import auth, db
 from app.core.settings import get_settings
 from app.main import build_app
 from app.models import Base
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from tests.objects import catalog_for_tests
 
 ISSUER = "https://sso.example.test/application/o/pilze/"

@@ -94,6 +94,38 @@ class ImageState(StrEnum):
     REJECTED = "rejected"
 
 
+class TaxonRank(StrEnum):
+    """Die Stufe eines Taxons in der Einordnung, von weit nach eng.
+
+    Die Reihenfolge der Glieder ist die Reihenfolge der Stufen. Ein Rang mehr
+    ist ein Glied hier und eine Zeile in ``taxon``: die Tabelle verkettet sich
+    ueber sich selbst und kennt den Abstand zur Wurzel nicht.
+    """
+
+    CLASS = "klasse"
+    ORDER = "ordnung"
+    FAMILY = "familie"
+    GENUS = "gattung"
+
+
+class TaxonStep(BaseSchema):
+    """Ein Taxon, so knapp wie eine Verweiszeile es braucht.
+
+    Der Schritt steht hier und nicht im Modul ``taxonomy``: die Artseite traegt
+    ihre Einordnung, und die Taxonomieseite traegt Arten. Beide Vertraege
+    zeigten sonst im Kreis aufeinander.
+    """
+
+    rank: TaxonRank = Field(validation_alias="rang", serialization_alias="rang")
+    slug: str
+    name: str
+    # Leer, wo keine Quelle einen fuehrt. Dann steht der lateinische Name schon
+    # in ``name``, und die Oberflaeche zeigt ihn nur einmal.
+    latin_name: str | None = Field(
+        validation_alias="lateinisch", serialization_alias="lateinisch", default=None
+    )
+
+
 class Color(StrEnum):
     """Die sechs Farben aus den Mockups. Eine freie Farbwahl gibt es nicht."""
 

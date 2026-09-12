@@ -299,6 +299,13 @@ const VERTRAG = new Set([
   'stielmerkmale',
   'ueberstehend',
   'entwicklung',
+  // Die Einordnung: Rang und Kette stehen so auf dem Draht.
+  'pfad',
+  'klasse',
+  'geschwister',
+  'kinder',
+  'rang',
+  'artenZahl',
 ]);
 
 const STELLEN = [];

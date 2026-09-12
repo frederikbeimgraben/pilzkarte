@@ -14,7 +14,7 @@ from enum import StrEnum
 
 from pydantic import Field, field_validator, model_validator
 
-from app.shared.schemas import BaseSchema, Week
+from app.shared.schemas import BaseSchema, TaxonStep, Week
 
 WEEKS = 52
 MONTHS = 12
@@ -1105,6 +1105,11 @@ class Species(SpeciesCommon):
     )
     links: list[Link]
     season: SeasonCurve | None = Field(validation_alias="saison", serialization_alias="saison")
+    # Der Weg von der Klasse bis zur Gattung. Er kommt aus der Tabelle ``taxon``
+    # und nicht aus dem Profil, darum setzt ihn erst der Endpunkt.
+    taxonomy: list[TaxonStep] = Field(
+        validation_alias="taxonomie", serialization_alias="taxonomie", default_factory=list
+    )
 
 
 class SpeciesQuery(BaseSchema):

@@ -8,6 +8,7 @@ import type {
   Reagenzeintrag,
   SeasonCurveData,
   Link,
+  TaxonStep,
 } from '../../core/api/models';
 import { TIER_WEAKEST } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
@@ -53,6 +54,7 @@ import { longDate } from '../../core/i18n/dates';
 import { SpeciesState } from './species.state';
 import { MapState } from '../map/map.state';
 import { FORECAST_SLUGS, type ForecastSlug } from '../../core/tiles/tile-paths';
+import { RANK_TEXT } from '../taxonomy/labels';
 import {
   ATTACHMENT_TEXT,
   CAP_FEATURE_TEXT,
@@ -126,6 +128,14 @@ interface Reagenzzeile {
 }
 
 /** Die Artseite, fertig für die Vorlage. */
+/** Eine Stufe der Einordnung, wie die Artseite sie verlinkt. */
+interface TaxonRow {
+  name: string;
+  rank: string;
+  latin: string | null;
+  route: string;
+}
+
 interface Viewport {
   slug: string;
   name: string;
@@ -153,6 +163,7 @@ interface Viewport {
   merkmale: FeatureRow[];
   reagenzien: Reagenzzeile[];
   verwechslungen: ConfusableRow[];
+  taxonomie: TaxonRow[];
   links: Link[];
   geprueft: string;
   kartenSlug: string | null;
@@ -332,12 +343,23 @@ export class SpeciesComponent {
           farben: confusable.hutFarben.map((farbe) => farbe.name).join(', '),
         }),
       })),
+      taxonomie: art.taxonomie.map((step) => this.taxonRow(step)),
       links: art.links,
       geprueft: this.i18n.translate('art.geprueft', {
         datum: longDate(art.quelle.geprueftAm, this.i18n.locale()),
       }),
       kartenSlug: art.kartenSlug,
       woche: saison?.stand.woche ?? 0,
+    };
+  }
+
+  private taxonRow(step: TaxonStep): TaxonRow {
+    return {
+      name: step.name,
+      rank: this.i18n.translate(RANK_TEXT[step.rang]),
+      // Der lateinische Name steht nur, wo er nicht schon der Name ist.
+      latin: step.lateinisch === step.name ? null : step.lateinisch,
+      route: `/taxonomie/${step.rang}/${step.slug}`,
     };
   }
 

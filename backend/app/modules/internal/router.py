@@ -20,7 +20,7 @@ from app.core.db import db_session
 from app.core.errors import NotFound
 from app.models import Find
 from app.modules.species.catalog import Catalog
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from app.shared.schemas import BaseSchema
 
 router = APIRouter(prefix="/intern", tags=["intern"])

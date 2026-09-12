@@ -29,7 +29,7 @@ from app.modules.finds.schemas import (
     shared_find_out,
 )
 from app.modules.species.catalog import Catalog
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from app.shared import images
 from app.shared.geometry import (
     GRID_KM,

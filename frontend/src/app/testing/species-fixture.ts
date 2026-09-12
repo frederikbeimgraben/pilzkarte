@@ -1,6 +1,14 @@
-import type { Species, SpeciesCatalogue, SpeciesBrief, SeasonCurveData } from '../core/api/models';
+import type { Species, SpeciesCatalogue, SpeciesBrief, SeasonCurveData, TaxonStep } from '../core/api/models';
 
 const WEEKS = 52;
+
+/** Der Weg des Steinpilzes von der Klasse bis zur Gattung. */
+export const STEINPILZ_TAXONOMIE: TaxonStep[] = [
+  { rang: 'klasse', slug: 'agaricomycetes', name: 'Agaricomycetes', lateinisch: 'Agaricomycetes' },
+  { rang: 'ordnung', slug: 'boletales', name: 'Röhrlinge', lateinisch: 'Boletales' },
+  { rang: 'familie', slug: 'boletaceae', name: 'Boletaceae', lateinisch: 'Boletaceae' },
+  { rang: 'gattung', slug: 'boletus', name: 'Boletus', lateinisch: 'Boletus' },
+];
 
 /** Der Schutzstatus, den die meisten Arten tragen. */
 const KEIN_SCHUTZ = {
@@ -259,6 +267,7 @@ export const STEINPILZ: Species = {
     { titel: 'Wikipedia', url: 'https://de.wikipedia.org/wiki/Gemeiner_Steinpilz' },
   ],
   saison: SEASON,
+  taxonomie: STEINPILZ_TAXONOMIE,
 };
 
 /** Eine Art der Stufe Profil: kein Manifest, keine Kurve. */
@@ -267,6 +276,8 @@ export const MORCHEL: Species = {
   slug: 'speisemorchel',
   name: 'Speisemorchel',
   lateinisch: 'Morchella esculenta',
+  // Ohne Einordnung: die Artseite zeigt den Abschnitt dann gar nicht.
+  taxonomie: [],
   gruppe: 'morchel',
   stufe: 'profil',
   tags: ['profil', 'morchel', 'fruehling', 'esche'],
@@ -288,6 +299,12 @@ export const GALLENROEHRLING: Species = {
   slug: 'gallenroehrling',
   name: 'Gallenröhrling',
   lateinisch: 'Tylopilus felleus',
+  taxonomie: [
+    { rang: 'klasse', slug: 'agaricomycetes', name: 'Agaricomycetes', lateinisch: 'Agaricomycetes' },
+    { rang: 'ordnung', slug: 'boletales', name: 'Röhrlinge', lateinisch: 'Boletales' },
+    { rang: 'familie', slug: 'boletaceae', name: 'Boletaceae', lateinisch: 'Boletaceae' },
+    { rang: 'gattung', slug: 'tylopilus', name: 'Rosasporröhrlinge', lateinisch: 'Tylopilus' },
+  ],
   stufe: 'profil',
   tags: ['profil', 'roehrling', 'sommer', 'herbst'],
   schutz: KEIN_SCHUTZ,

@@ -34,6 +34,12 @@ export const routes: Routes = [
       import('./features/species/submit-image.component').then((m) => m.SubmitImageComponent),
   },
   {
+    // Ein eigener Brocken: die Einordnung wird selten geöffnet und kostet im
+    // ersten Bündel darum nichts.
+    path: 'taxonomie/:rank/:slug',
+    loadComponent: () => import('./features/taxonomy/taxonomy.component').then((m) => m.TaxonomyComponent),
+  },
+  {
     path: 'eintraege',
     loadComponent: () => import('./features/entries/entries.component').then((m) => m.EntriesComponent),
   },

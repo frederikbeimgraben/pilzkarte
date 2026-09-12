@@ -43,7 +43,7 @@ from app.modules.species.catalog import (
     share_per_week,
     tier_for,
 )
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from app.modules.species.schemas import (
     BEST_RATING,
     MONTHS,
@@ -303,8 +303,12 @@ def built(data: Path, maps: Path) -> Catalog:
 
 
 @pytest.fixture
-def app(built: Catalog) -> FastAPI:
-    """Die App mit dem Katalog der Fixture statt dem der ausgelieferten Dateien."""
+def app(built: Catalog, schema: None) -> FastAPI:  # noqa: ARG001
+    """Die App mit dem Katalog der Fixture statt dem der ausgelieferten Dateien.
+
+    Das Schema gehoert dazu: das Profil traegt seine Einordnung, und die steht
+    in der Tabelle ``taxon``.
+    """
     built_app = build_app()
     built_app.dependency_overrides[current_catalog] = lambda: built
     return built_app
@@ -950,12 +954,14 @@ def test_penny_bun_and_chanterelle_are_protected(tmp_path: Path) -> None:
     assert built.is_protected("pfifferling")
 
 
-async def test_the_service_reads_the_shipped_files() -> None:
+async def test_the_service_reads_the_shipped_files(migrated: None) -> None:  # noqa: ARG001
     async with client(build_app()) as call:
         response = await call.get("/api/arten/steinpilz")
 
     assert response.status_code == 200
-    assert response.json()["lateinisch"] == "Boletus edulis"
+    body = response.json()
+    assert body["lateinisch"] == "Boletus edulis"
+    assert [step["slug"] for step in body["taxonomie"]][-1] == "boletus"
 
 
 # ------------------------------------------------- die geprueften Profile
@@ -1215,7 +1221,7 @@ def test_no_other_name_repeats_the_main_name() -> None:
         assert profile.scientific not in profile.synonyms, slug
 
 
-async def test_the_profile_returns_the_numbers_of_the_source() -> None:
+async def test_the_profile_returns_the_numbers_of_the_source(schema: None) -> None:  # noqa: ARG001
     async with client(build_app()) as call:
         response = await call.get("/api/arten/steinpilz")
 
@@ -1399,7 +1405,7 @@ def test_the_new_reagents_and_trees_are_in_the_enum() -> None:
     } <= set(TreeSpecies)
 
 
-async def test_the_profile_returns_marketability_and_measurements() -> None:
+async def test_the_profile_returns_marketability_and_measurements(schema: None) -> None:  # noqa: ARG001
     async with client(build_app()) as call:
         response = await call.get("/api/arten/steinpilz")
 

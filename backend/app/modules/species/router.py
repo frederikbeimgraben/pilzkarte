@@ -3,19 +3,15 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.settings import Settings, get_settings
-from app.modules.species.catalog import DATA, Catalog, SpeciesFilter, catalog
+from app.core.db import db_session
+from app.modules.species.catalog import Catalog, SpeciesFilter
+from app.modules.species.dependencies import current_catalog
 from app.modules.species.schemas import Species, SpeciesList, SpeciesQuery
+from app.modules.taxonomy.service import lineage_of
 
 router = APIRouter(prefix="/arten", tags=["arten"])
-
-
-def current_catalog(
-    settings: Annotated[Settings, Depends(get_settings)],
-) -> Catalog:
-    """Liefert den Katalog des Prozesses. Tests haengen hier ihren eigenen ein."""
-    return catalog(DATA, settings.maps)
 
 
 @router.get("", summary="Die sammelbaren Arten")
@@ -64,6 +60,7 @@ async def species_list(
 async def species_profile(
     slug: str,
     catalog: Annotated[Catalog, Depends(current_catalog)],
+    session: Annotated[AsyncSession, Depends(db_session)],
 ) -> Species:
-    """Liefert Merkmalstabelle, Verwechslungen, Links und beide Saisonreihen."""
-    return catalog.species(slug)
+    """Liefert Merkmalstabelle, Verwechslungen, Links, Einordnung und beide Saisonreihen."""
+    return catalog.species(slug, taxonomy=await lineage_of(session, catalog.scientific(slug)))

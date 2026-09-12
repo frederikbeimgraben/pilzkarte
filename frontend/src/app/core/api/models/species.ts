@@ -6,6 +6,8 @@
  * bereit, wo eine Oberfläche die Werte einer Art einordnen muss.
  */
 
+import type { TaxonStep } from './taxonomy';
+
 /**
  * Was die App zu einer Art zeigen kann. Die Datenlage entscheidet. Eine
  * Verwechslung ist keine Stufe: sie ist eine Beziehung zwischen zwei Arten und
@@ -512,6 +514,8 @@ export interface Species extends Omit<SpeciesBrief, 'saison'> {
   verwechslungen: Confusable[];
   links: Link[];
   saison: SeasonCurveData | null;
+  /** Der Weg von der Klasse bis zur Gattung, Wurzel zuerst. */
+  taxonomie: TaxonStep[];
 }
 
 /**

@@ -19,27 +19,31 @@ from app.modules import (
     species,
     species_images,
     system,
+    taxonomy,
     terms,
     texts,
     zones,
 )
 from app.modules.access.service import ensure_built_in_roles, sync_permissions
+from app.modules.taxonomy.service import sync_taxa
 from app.modules.texts.service import sync_texts
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI) -> AsyncGenerator[None]:
-    """Gleicht Rechte, Rollen und Texte ab, gibt die Verbindungen frei, wenn der Dienst endet.
+    """Gleicht Rechte, Rollen, Texte und Einordnung ab, gibt die Verbindungen frei.
 
-    Alles drei steht im Code. Der Abgleich beim Start erspart jedem neuen Recht
-    und jedem neuen Textschlüssel eine eigene Migration; die Migration legt
-    dasselbe an, damit eine frisch hochgezogene Datenbank auch vor dem ersten
-    Start vollständig ist.
+    Alle vier haben eine Vorgabe: Rechte und Rollen stehen im Code, Texte und
+    Einordnung als Datei. Der Abgleich beim Start erspart jedem neuen Recht,
+    jedem neuen Textschlüssel und jedem neuen Rang eine eigene Migration; die
+    Migration legt dasselbe an, damit eine frisch hochgezogene Datenbank auch
+    vor dem ersten Start vollständig ist.
     """
     async with session_factory()() as session:
         await sync_permissions(session)
         await ensure_built_in_roles(session)
         await sync_texts(session)
+        await sync_taxa(session)
     yield
     await engine().dispose()
 
@@ -65,6 +69,7 @@ def build_app() -> FastAPI:
     built.include_router(access.router, prefix="/api")
     built.include_router(species.router, prefix="/api")
     built.include_router(species_images.router, prefix="/api")
+    built.include_router(taxonomy.router, prefix="/api")
     built.include_router(terms.router, prefix="/api")
     built.include_router(texts.router, prefix="/api")
     built.include_router(finds.router, prefix="/api")

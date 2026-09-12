@@ -14,7 +14,7 @@ from app.core.errors import NotFound
 from app.core.settings import Settings, get_settings
 from app.models import Find, Zone
 from app.modules.species.catalog import Catalog
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from app.modules.zones.schemas import (
     ZoneIn,
     ZoneOut,

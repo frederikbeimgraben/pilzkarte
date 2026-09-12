@@ -94,6 +94,15 @@ erDiagram
         DATETIME created_at
         DATETIME updated_at
     }
+    taxon {
+        VARCHAR(36) id PK
+        VARCHAR(16) rank
+        VARCHAR(80) slug UK
+        VARCHAR(120) name
+        VARCHAR(120) latin_name "optional"
+        VARCHAR(36) parent_id FK "optional"
+        TEXT description "optional"
+    }
     text {
         VARCHAR(120) key PK
         VARCHAR(5) locale PK
@@ -130,3 +139,4 @@ erDiagram
     permission ||--o{ role_permission : "permission_key"
     role ||--o{ role_permission : "role_id"
     role ||--o{ user_role : "role_id"
+    taxon |o--o{ taxon : "parent_id"
