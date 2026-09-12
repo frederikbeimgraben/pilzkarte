@@ -11,7 +11,11 @@
     [label]="'nav.beschriftung' | t"
     [variant]="wide() ? 'spalte' : 'unten'"
   />
-  <main class="shell__content" [class.shell__content--off]="wide() && onTheMap()">
+  <main
+    class="shell__content"
+    [class.shell__content--off]="wide() && onTheMap()"
+    [class.shell__content--full]="wide() && fullWidth()"
+  >
     <router-outlet />
   </main>
   @if (onTheMap() || wide()) {

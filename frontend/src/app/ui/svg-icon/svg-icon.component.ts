@@ -17,6 +17,7 @@ export type IconName =
   | 'suche'
   | 'warnung'
   | 'info'
+  | 'schloss'
   | 'leer'
   | 'links'
   | 'rechts'

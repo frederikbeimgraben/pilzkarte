@@ -55,6 +55,12 @@ export class ApiClient {
       .pipe(catchError((failure: unknown) => this.report(failure)));
   }
 
+  put<T>(path: string, body: unknown): Observable<T> {
+    return this.http
+      .put<T>(this.url(path), body)
+      .pipe(catchError((failure: unknown) => this.report(failure)));
+  }
+
   patch<T>(path: string, body: unknown): Observable<T> {
     return this.http
       .patch<T>(this.url(path), body)

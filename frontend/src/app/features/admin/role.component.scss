@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.role {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--pilz-gutter);
+  overflow-y: auto;
+}
+
+.role__section {
+  margin: 0 0 10px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.role__confirm {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}

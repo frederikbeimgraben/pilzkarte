@@ -1,0 +1,56 @@
+<div class="admin" [class.admin--split]="wide()">
+  @if (showList()) {
+    <div class="admin__list">
+      <app-page-header [titel]="'verwaltung.titel' | t" [back]="true" (backClick)="back()" />
+      <div class="admin__body">
+        @if (empty()) {
+          <app-empty-state icon="schloss" [text]="'verwaltung.leer' | t" />
+        } @else {
+          @if (content().length > 0) {
+            <section class="admin__block">
+              <h2 class="admin__section">{{ 'verwaltung.abschnitt.inhalte' | t }}</h2>
+              <app-card>
+                @for (row of content(); track row.titel) {
+                  <app-list-row
+                    [titel]="row.titel"
+                    [subline]="row.subline"
+                    [notiz]="row.notiz"
+                    [clickable]="row.path !== null"
+                    (chosen)="open(row.path)"
+                  >
+                    @if (row.path !== null) {
+                      <app-svg-icon trail name="vor" [size]="18" />
+                    }
+                  </app-list-row>
+                }
+              </app-card>
+            </section>
+          }
+          @if (access().length > 0) {
+            <section class="admin__block">
+              <h2 class="admin__section">{{ 'verwaltung.abschnitt.zugang' | t }}</h2>
+              <app-card>
+                @for (row of access(); track row.titel) {
+                  <app-list-row
+                    [titel]="row.titel"
+                    [subline]="row.subline"
+                    [clickable]="true"
+                    (chosen)="open(row.path)"
+                  >
+                    <app-svg-icon trail name="vor" [size]="18" />
+                  </app-list-row>
+                }
+              </app-card>
+            </section>
+          }
+          <app-note>{{ 'verwaltung.hinweis' | t }}</app-note>
+        }
+      </div>
+    </div>
+  }
+  @if (wide() || onEntry()) {
+    <div class="admin__detail">
+      <router-outlet />
+    </div>
+  }
+</div>

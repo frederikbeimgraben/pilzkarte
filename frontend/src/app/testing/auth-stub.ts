@@ -12,6 +12,8 @@ export class AuthStub {
     email: 'frederik@beimgraben.net',
   });
   readonly signedIn = computed(() => this.user() !== null);
+  /** Wahr, solange eine stille Anmeldung läuft. */
+  readonly busy = signal(false);
   /** Die Antwort auf `anmeldungAnfordern`. */
   reply = true;
   asked = 0;

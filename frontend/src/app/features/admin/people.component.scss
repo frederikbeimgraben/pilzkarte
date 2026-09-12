@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.people {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--pilz-gutter);
+  overflow-y: auto;
+}
+
+.people__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}

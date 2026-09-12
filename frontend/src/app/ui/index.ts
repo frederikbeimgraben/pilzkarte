@@ -4,6 +4,7 @@ export { ActionRowComponent } from './action-sheet/action-row.component';
 export { ActionSheetComponent } from './action-sheet/action-sheet.component';
 export { AvatarButtonComponent } from './avatar-button/avatar-button.component';
 export { BottomNavComponent, type NavItem, type NavVariant } from './bottom-nav/bottom-nav.component';
+export { CheckRowComponent } from './check-row/check-row.component';
 export { ChipGroupComponent, type Chip } from './chip-group/chip-group.component';
 export {
   ColorSwatchesComponent,

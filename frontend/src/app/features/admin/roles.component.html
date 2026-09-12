@@ -1,0 +1,23 @@
+<app-page-header [titel]="'rollen.titel' | t" [back]="true" (backClick)="back()" />
+
+<div class="roles">
+  @if (loaded() && rows().length === 0) {
+    <app-empty-state [text]="'rollen.leer' | t" />
+  } @else {
+    <app-card>
+      @for (row of rows(); track row.id) {
+        <app-list-row [titel]="row.name" [subline]="row.subline" [clickable]="true" (chosen)="open(row.id)">
+          <span trail class="roles__trail">
+            @if (row.locked) {
+              <app-svg-icon name="schloss" [size]="16" [label]="lockLabel()" />
+            }
+            <app-svg-icon name="vor" [size]="18" />
+          </span>
+        </app-list-row>
+      }
+    </app-card>
+    <app-note>{{ 'rollen.hinweis' | t }}</app-note>
+  }
+</div>
+
+<app-action-bar [primary]="'rollen.anlegen' | t" (mainClick)="create()" />
