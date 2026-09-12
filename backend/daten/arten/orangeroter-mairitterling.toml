@@ -2,7 +2,6 @@ name = "Orangeroter Mairitterling"
 lateinisch = "Calocybe graveolens"
 gruppe = "ritterling"
 speisewert = "ungeniessbar"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer"]

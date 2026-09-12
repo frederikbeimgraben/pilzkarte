@@ -1,0 +1,19 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags__tag {
+  display: inline-flex;
+  align-items: center;
+  block-size: 30px;
+  padding: 0 12px;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+}

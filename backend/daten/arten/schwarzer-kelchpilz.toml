@@ -2,7 +2,6 @@ name = "Schwarzer Kelchpilz"
 lateinisch = "Urnula craterium"
 gruppe = "becherling"
 speisewert = "ungeniessbar"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["winter", "fruehling"]

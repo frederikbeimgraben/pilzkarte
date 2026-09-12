@@ -2,7 +2,6 @@ name = "Mairitterling"
 lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

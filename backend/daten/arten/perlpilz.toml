@@ -2,7 +2,6 @@ name = "Perlpilz"
 lateinisch = "Amanita rubescens"
 gruppe = "wulstling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

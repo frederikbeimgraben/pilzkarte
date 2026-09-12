@@ -2,7 +2,6 @@ name = "Schleimigberingter Schneckling"
 lateinisch = "Hygrophorus gliocyclus"
 gruppe = "schneckling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = false
 sammelbar = false

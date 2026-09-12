@@ -2,7 +2,6 @@ name = "Gemeine Morchel"
 lateinisch = "Morchella vulgaris"
 gruppe = "morchel"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

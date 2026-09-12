@@ -2,7 +2,6 @@ name = "Nebelkappe"
 lateinisch = "Clitocybe nebularis"
 gruppe = "trichterling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehigSchweiz = false
 marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]

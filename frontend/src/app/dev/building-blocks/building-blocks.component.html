@@ -335,7 +335,85 @@
         <app-svg-icon name="links" />
         <app-svg-icon name="abspielen" />
         <app-svg-icon name="rechts" />
+        <app-svg-icon name="hutbreite" />
+        <app-svg-icon name="stielhoehe" />
+        <app-svg-icon name="stieldicke" />
+        <app-svg-icon name="sporenlaenge" />
+        <app-svg-icon name="wandelt" />
+        <app-svg-icon name="dauer" />
       </div>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.measurement' | t }}</p>
+      <app-key-value-table>
+        <app-key-value-row [schluessel]="text('art.mass.hut')">
+          <app-measurement
+            extent="hutbreite"
+            [from]="4"
+            [to]="20"
+            [unit]="text('art.einheit.cm')"
+            [label]="text('art.mass.zeichen.hutbreite')"
+          />
+        </app-key-value-row>
+        <app-key-value-row
+          [schluessel]="text('art.mass.sporenLaenge')"
+          [unter]="text('art.mass.unter.laenge')"
+        >
+          <app-measurement
+            extent="sporenlaenge"
+            [from]="12.4"
+            [to]="19.2"
+            [unit]="text('art.einheit.um')"
+            [label]="text('art.mass.zeichen.sporenlaenge')"
+          />
+        </app-key-value-row>
+      </app-key-value-table>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.colourField' | t }}</p>
+      <app-key-value-table>
+        <app-key-value-row [schluessel]="text('art.farbe.hut')" [unter]="text('beispiel.farbe.hut')">
+          <app-colour-field [colours]="CAP_COLOURS" [label]="text('beispiel.farbe.hut')" />
+        </app-key-value-row>
+        <app-key-value-row [schluessel]="text('art.verfaerbung.zeile')">
+          <app-colour-change
+            [from]="FLESH_COLOURS"
+            [to]="BRUISE_COLOURS"
+            [fromLabel]="text('beispiel.farbe.fleisch')"
+            [toLabel]="text('beispiel.farbe.blau')"
+            [duration]="text('art.verfaerbung.schnell')"
+            [arrowLabel]="text('art.verfaerbung.pfeil')"
+          />
+        </app-key-value-row>
+      </app-key-value-table>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.levelPill' | t }}</p>
+      <div class="gallery__row">
+        <app-level-pill [text]="text('art.essbar.essbar')" colour="#4f9d6f" />
+        <app-level-pill [text]="text('art.essbar.giftig')" colour="#d2915f" />
+        <app-level-pill [text]="text('art.essbar.toedlichGiftig')" colour="#d2685f" />
+      </div>
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.tagList' | t }}</p>
+      <app-tag-list [tags]="SMELL_TAGS" [label]="text('art.zeile.geruch')" />
+    </app-card>
+
+    <app-card>
+      <p class="gallery__title">{{ 'bausteine.yearBand' | t }}</p>
+      <app-year-band
+        [fromMonth]="6"
+        [toMonth]="11"
+        [peakFromMonth]="8"
+        [peakToMonth]="10"
+        [months]="YEAR_MARKS"
+        [label]="text('bausteine.yearBand')"
+      />
     </app-card>
   </div>
 </ng-template>

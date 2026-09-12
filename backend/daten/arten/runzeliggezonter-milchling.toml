@@ -2,7 +2,6 @@ name = "Runzeliggezonter Milchling"
 lateinisch = "Lactifluus rugatus"
 gruppe = "milchling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehig = false
 sammelbar = false

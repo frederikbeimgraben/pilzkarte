@@ -2,7 +2,6 @@ name = "Kiefernsteinpilz"
 lateinisch = "Boletus pinophilus"
 gruppe = "roehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

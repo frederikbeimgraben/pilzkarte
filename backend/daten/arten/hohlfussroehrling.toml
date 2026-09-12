@@ -2,7 +2,6 @@ name = "Hohlfußröhrling"
 lateinisch = "Suillus cavipes"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 3
 marktfaehigSchweiz = false
 marktfaehig = true

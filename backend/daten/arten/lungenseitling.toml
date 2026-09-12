@@ -2,7 +2,6 @@ name = "Lungenseitling"
 lateinisch = "Pleurotus pulmonarius"
 gruppe = "seitling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]

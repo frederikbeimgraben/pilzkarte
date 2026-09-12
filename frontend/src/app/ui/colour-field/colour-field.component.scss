@@ -1,0 +1,12 @@
+:host {
+  display: inline-flex;
+}
+
+// Kein Rahmen: er läge als eigene Farbe um die Fläche. Die Innenlinie liegt
+// darin und hält Weiß und Schwarz gegen den Untergrund sichtbar.
+.field {
+  inline-size: var(--pilz-colour-width);
+  block-size: var(--pilz-colour-height);
+  border-radius: var(--pilz-colour-radius);
+  box-shadow: inset 0 0 0 1px rgb(127 127 127 / 22%);
+}

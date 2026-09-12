@@ -2,7 +2,6 @@ name = "Rosablättriger Egerlingsschirmling"
 lateinisch = "Leucoagaricus leucothites"
 gruppe = "schirmling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []

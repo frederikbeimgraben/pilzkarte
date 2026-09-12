@@ -1,8 +1,13 @@
-@if (keyRoute(); as target) {
-  <a class="tz__key tz__key--link" [routerLink]="target">{{ schluessel() }}</a>
-} @else {
-  <span class="tz__key">{{ schluessel() }}</span>
-}
+<span class="tz__label">
+  @if (keyRoute(); as target) {
+    <a class="tz__key tz__key--link" [routerLink]="target">{{ schluessel() }}</a>
+  } @else {
+    <span class="tz__key">{{ schluessel() }}</span>
+  }
+  @if (unter(); as unter) {
+    <span class="tz__note">{{ unter }}</span>
+  }
+</span>
 <span class="tz__value">
   @if (value()) {
     {{ value() }}

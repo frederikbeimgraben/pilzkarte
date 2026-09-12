@@ -17,13 +17,16 @@ from typing import TypedDict
 
 from app.core.errors import NotFound
 from app.modules.species.schemas import (
+    MONTHS,
     Colours,
     Edibility,
     Frequency,
     Group,
     Marketability,
+    MonthRange,
     Period,
     Profile,
+    Protection,
     ProtectionStatus,
     Reagent,
     RedListStatus,
@@ -63,13 +66,19 @@ EDIBILITY_TEXT: dict[Edibility, str] = {
     Edibility.DEADLY: "T\u00f6dlich giftig.",
 }
 
-PROTECTED_TEXT = (
-    "Besonders gesch\u00fctzt nach Bundesartenschutzverordnung. Entnahme nur in "
-    "geringen Mengen f\u00fcr den Eigenbedarf, nicht in Schutzgebieten."
-)
-UNPROTECTED_TEXT = (
-    "Nicht besonders gesch\u00fctzt. Es gelten die Regeln des Landes und des Waldbesitzers."
-)
+PROTECTION_TEXT: dict[ProtectionStatus, str] = {
+    ProtectionStatus.NONE: (
+        "Nicht besonders gesch\u00fctzt. Es gelten die Regeln des Landes und des Waldbesitzers."
+    ),
+    ProtectionStatus.SPECIAL: (
+        "Besonders gesch\u00fctzt nach Bundesartenschutzverordnung. Entnahme nur in "
+        "geringen Mengen f\u00fcr den Eigenbedarf, nicht in Schutzgebieten."
+    ),
+    ProtectionStatus.STRICT: (
+        "Streng gesch\u00fctzt nach Bundesartenschutzverordnung. Entnahme ist verboten, "
+        "auch in kleinen Mengen."
+    ),
+}
 
 REAGENT_TEXT: dict[Reagent, str] = {
     Reagent.KOH: "Kalilauge (KOH)",
@@ -135,6 +144,54 @@ def mean_per_week(visits: Sequence[int], years: int) -> list[float]:
     return [round(value / years, 1) for value in visits]
 
 
+# Ab der halben Hoehe des Jahres zaehlt eine Woche zur Hauptzeit. Eine
+# einzelne Spitzenwoche waere ein Band von einem Zwoelftel Breite, das niemand
+# liest; die Haelfte fasst die Wochen zusammen, in denen es sich lohnt.
+PEAK_SHARE = 0.5
+
+
+# Die Mitte der Woche entscheidet, nicht ihr Anfang. Woche 31 beginnt Ende
+# Juli und liegt trotzdem im August.
+DAYS_PER_WEEK = 7
+DAYS_PER_YEAR = 365
+MID_WEEK = 3
+
+
+def month_of_week(week: int) -> int:
+    """Der Monat, in dem die Mitte einer Kalenderwoche liegt. Woche 0 ist Januar."""
+    day = DAYS_PER_WEEK * week + MID_WEEK
+    return min(MONTHS, day * MONTHS // DAYS_PER_YEAR + 1)
+
+
+def peak_months(shares: Sequence[float]) -> MonthRange | None:
+    """Die Monate, in denen die Kurve mindestens halb so hoch steht wie im Jahr.
+
+    Die laengste zusammenhaengende Strecke gewinnt, und sie darf ueber den
+    Jahreswechsel laufen: der Samtfussruebling faende sonst zwei Zeiten statt
+    einer. Eine Kurve ohne Fund hat keine Hauptzeit.
+    """
+    highest = max(shares, default=0.0)
+    if highest <= 0:
+        return None
+    high = [share >= PEAK_SHARE * highest for share in shares]
+    weeks = len(high)
+    best_start, best_length, start, length = 0, 0, None, 0
+    # Zweimal herum, damit eine Strecke ueber den Jahreswechsel ganz gezaehlt
+    # wird. Laenger als ein Jahr kann sie nicht werden.
+    for step in range(2 * weeks):
+        if high[step % weeks]:
+            start = step if length == 0 else start
+            length = min(length + 1, weeks)
+            if length > best_length:
+                best_start, best_length = start or 0, length
+        else:
+            length = 0
+    return MonthRange(
+        start_month=month_of_week(best_start % weeks),
+        end_month=month_of_week((best_start + best_length - 1) % weeks),
+    )
+
+
 def peak_week_of(shares: Sequence[float]) -> int | None:
     """Die Kalenderwoche mit dem hoechsten Anteil, oder nichts ohne einen Fund."""
     highest = max(shares)
@@ -154,7 +211,7 @@ def build_traits(profile: Profile) -> list[Trait]:
     if profile.edibility_note:
         edibility = f"{edibility} {profile.edibility_note}"
     lines[TraitKey.EDIBILITY] = edibility
-    protection = PROTECTED_TEXT if profile.protected else UNPROTECTED_TEXT
+    protection = PROTECTION_TEXT[profile.protection.status]
     if profile.protection_note:
         protection = f"{protection} {profile.protection_note}"
     lines[TraitKey.PROTECTION] = protection
@@ -241,8 +298,7 @@ class SpeciesFilter:
             self.group is None or profile.group is self.group,
             self.tier is None or tier is self.tier,
             self.edibility is None or profile.edibility is self.edibility,
-            self.protection is None
-            or (profile.protection is not None and profile.protection.status is self.protection),
+            self.protection is None or profile.protection.status is self.protection,
             self.frequency is None or profile.frequency is self.frequency,
             self.red_list is None or profile.red_list is self.red_list,
             self.rating is None or profile.rating == self.rating,
@@ -331,7 +387,7 @@ class CommonFields(TypedDict):
     group: Group
     tier: Tier
     tags: list[Tag]
-    protected: bool
+    protection: Protection
     edibility: Edibility
     map_slug: str | None
     collectable: bool
@@ -406,7 +462,7 @@ class Catalog:
             group=profile.group,
             tier=tier,
             tags=build_tags(profile, tier),
-            protected=profile.protected,
+            protection=profile.protection,
             edibility=profile.edibility,
             map_slug=map_name,
             collectable=profile.collectable,
@@ -482,7 +538,7 @@ class Catalog:
         Zweifel grob heraus und nicht genau.
         """
         profile = self.profiles.get(slug)
-        return profile is None or profile.protected
+        return profile is None or profile.protection.restricted
 
     def scientific(self, slug: str) -> str | None:
         """Der wissenschaftliche Name einer Art, oder nichts fuer einen unbekannten Slug.
@@ -532,7 +588,7 @@ class Catalog:
             measurements=profile.measurements,
             colours=profile.colours,
             period=profile.period,
-            protection=profile.protection,
+            observed_period=peak_months(self._series(counts)[0]) if counts else None,
             smell=profile.smell,
             taste=profile.taste,
             reagents=profile.reagents,

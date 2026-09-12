@@ -2,7 +2,6 @@ name = "Fichtenrotkappe"
 lateinisch = "Leccinum piceinum"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = false
 marktfaehig = true

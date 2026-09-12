@@ -2,7 +2,6 @@ name = "Espen-Rotkappe"
 lateinisch = "Leccinum aurantiacum"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = false
 marktfaehig = true

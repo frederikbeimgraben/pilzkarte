@@ -2,7 +2,6 @@ name = "Ockerbrauner Trichterling"
 lateinisch = "Infundibulicybe gibba"
 gruppe = "trichterling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehigSchweiz = true
 marktfaehig = true

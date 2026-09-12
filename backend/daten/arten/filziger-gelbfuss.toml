@@ -2,7 +2,6 @@ name = "Filziger Gelbfuß"
 lateinisch = "Chroogomphus helveticus"
 gruppe = "gelbfuss"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

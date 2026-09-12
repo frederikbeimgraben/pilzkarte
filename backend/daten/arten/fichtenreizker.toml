@@ -2,7 +2,6 @@ name = "Fichtenreizker"
 lateinisch = "Lactarius deterrimus"
 gruppe = "milchling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehigSchweiz = true
 marktfaehig = true

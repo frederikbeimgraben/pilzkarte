@@ -2,7 +2,6 @@ name = "Gelbe Koralle"
 lateinisch = "Ramaria flava"
 gruppe = "stachelbart"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehig = false
 sammelbar = false

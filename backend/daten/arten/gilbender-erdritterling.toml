@@ -2,7 +2,6 @@ name = "Gilbender Erdritterling"
 lateinisch = "Tricholoma scalpturatum"
 gruppe = "ritterling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

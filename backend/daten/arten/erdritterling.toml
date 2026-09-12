@@ -2,7 +2,6 @@ name = "Gemeiner Erdritterling"
 lateinisch = "Tricholoma terreum"
 gruppe = "ritterling"
 speisewert = "toedlichGiftig"
-geschuetzt = false
 marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte", "tanne", "douglasie"]

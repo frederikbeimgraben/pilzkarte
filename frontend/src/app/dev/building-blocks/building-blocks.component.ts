@@ -9,6 +9,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { BadgeComponent, CardComponent } from '@stupa-makers/ui-kit';
+import type { Farbe } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import {
@@ -19,6 +20,8 @@ import {
   BottomNavComponent,
   ChipGroupComponent,
   ColorSwatchesComponent,
+  ColourChangeComponent,
+  ColourFieldComponent,
   CrosshairComponent,
   FactorRowComponent,
   FloatingButtonComponent,
@@ -27,7 +30,9 @@ import {
   ImageCreditComponent,
   KeyValueRowComponent,
   KeyValueTableComponent,
+  LevelPillComponent,
   ListRowComponent,
+  MeasurementComponent,
   MetricRowComponent,
   NoteComponent,
   OBJECT_COLORS,
@@ -41,7 +46,9 @@ import {
   SpeciesRowComponent,
   CheckRowComponent,
   SvgIconComponent,
+  TagListComponent,
   TimelineComponent,
+  YearBandComponent,
   type Detent,
 } from '../../ui';
 import { SAMPLE_ALL_YEARS, SAMPLE_HISTOGRAM, SAMPLE_CURRENT_YEAR, SAMPLE_WEEKS } from './sample-data';
@@ -67,6 +74,8 @@ import { SAMPLE_ALL_YEARS, SAMPLE_HISTOGRAM, SAMPLE_CURRENT_YEAR, SAMPLE_WEEKS }
     CardComponent,
     ChipGroupComponent,
     ColorSwatchesComponent,
+    ColourChangeComponent,
+    ColourFieldComponent,
     CrosshairComponent,
     FactorRowComponent,
     FloatingButtonComponent,
@@ -75,7 +84,9 @@ import { SAMPLE_ALL_YEARS, SAMPLE_HISTOGRAM, SAMPLE_CURRENT_YEAR, SAMPLE_WEEKS }
     ImageCreditComponent,
     KeyValueRowComponent,
     KeyValueTableComponent,
+    LevelPillComponent,
     ListRowComponent,
+    MeasurementComponent,
     MetricRowComponent,
     NgTemplateOutlet,
     NoteComponent,
@@ -89,6 +100,8 @@ import { SAMPLE_ALL_YEARS, SAMPLE_HISTOGRAM, SAMPLE_CURRENT_YEAR, SAMPLE_WEEKS }
     SpeciesRowComponent,
     CheckRowComponent,
     SvgIconComponent,
+    TagListComponent,
+    YearBandComponent,
     TimelineComponent,
     TranslatePipe,
   ],
@@ -115,6 +128,17 @@ export class BuildingBlocksComponent {
   protected readonly bis = signal(240);
   protected readonly farbe = signal<string>(OBJECT_COLORS[0]);
   protected readonly noteValue = signal('');
+
+  // Beispielwerte der Merkmalsbausteine. Sie stehen hier und nicht in der
+  // Vorlage, weil ein Ausdruck in der Vorlage bei jedem Lauf neu entstünde.
+  protected readonly CAP_COLOURS: Farbe[] = [
+    { name: 'hellbraun', hex: '#e2c79a' },
+    { name: 'dunkelbraun', hex: '#6b4423' },
+  ];
+  protected readonly FLESH_COLOURS: Farbe[] = [{ name: 'weiß', hex: '#f4efe2' }];
+  protected readonly BRUISE_COLOURS: Farbe[] = [{ name: 'blau', hex: '#3f6ea8' }];
+  protected readonly SMELL_TAGS = ['pilzig', 'nussig', 'angenehm'];
+  protected readonly YEAR_MARKS = ['Jan', 'Apr', 'Jul', 'Okt'];
 
   constructor() {
     afterNextRender(() => {

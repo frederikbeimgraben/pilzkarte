@@ -2,7 +2,6 @@ name = "Schwärzlicher Birkenpilz"
 lateinisch = "Leccinum melaneum"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 2
 marktfaehigSchweiz = false
 marktfaehig = false

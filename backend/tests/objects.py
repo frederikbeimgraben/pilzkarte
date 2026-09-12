@@ -23,6 +23,8 @@ from app.modules.species.schemas import (
     Link,
     Lookalike,
     Profile,
+    Protection,
+    ProtectionStatus,
     Season,
     SeasonTable,
     Source,
@@ -76,7 +78,10 @@ def _profile(name: str, scientific: str, *, protected: bool, reference: str = "p
         scientific=scientific,
         group=Group.BOLETE,
         edibility=Edibility.EDIBLE,
-        protected=protected,
+        protection=Protection(
+            status=ProtectionStatus.SPECIAL if protected else ProtectionStatus.NONE,
+            source="Bundesartenschutzverordnung, Anlage 1",
+        ),
         seasons=[Season.AUTUMN],
         trees=[TreeSpecies.SPRUCE],
         source=Source(

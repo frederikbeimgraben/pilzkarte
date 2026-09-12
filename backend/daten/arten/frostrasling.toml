@@ -2,7 +2,6 @@ name = "Frostrasling"
 lateinisch = "Lyophyllum decastes var. fumosum"
 gruppe = "rasling"
 speisewert = "essbar"
-geschuetzt = false
 marktfaehig = true
 marktfaehigSchweiz = true
 wertigkeit = 1

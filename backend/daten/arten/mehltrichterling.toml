@@ -2,7 +2,6 @@ name = "Mehltrichterling"
 lateinisch = "Clitocybe ditopa"
 gruppe = "trichterling"
 speisewert = "ungeniessbar"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["herbst", "winter"]

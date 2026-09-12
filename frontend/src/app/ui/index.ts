@@ -11,6 +11,8 @@ export {
   OBJECT_COLORS,
   type ColorSwatch,
 } from './color-swatches/color-swatches.component';
+export { ColourChangeComponent } from './colour-change/colour-change.component';
+export { ColourFieldComponent } from './colour-field/colour-field.component';
 export { CrosshairComponent } from './crosshair/crosshair.component';
 export { EmptyStateComponent } from './empty-state/empty-state.component';
 export { FactorRowComponent } from './factor-row/factor-row.component';
@@ -23,8 +25,10 @@ export { ImageViewerComponent } from './image-viewer/image-viewer.component';
 export { InfoTextComponent } from './info-text/info-text.component';
 export { KeyValueRowComponent } from './key-value-table/key-value-row.component';
 export { KeyValueTableComponent } from './key-value-table/key-value-table.component';
+export { LevelPillComponent } from './level-pill/level-pill.component';
 export { ListRowComponent } from './list-row/list-row.component';
 export { LookalikeRowComponent } from './lookalike-row/lookalike-row.component';
+export { MeasurementComponent, type Extent } from './measurement/measurement.component';
 export { MetricRowComponent } from './metric-row/metric-row.component';
 export { NoteComponent, type NoteVariant } from './note/note.component';
 export { PageHeaderComponent } from './page-header/page-header.component';
@@ -48,5 +52,7 @@ export {
 export { SheetHeadComponent } from './sheet-head/sheet-head.component';
 export { SpeciesRowComponent } from './species-row/species-row.component';
 export { SvgIconComponent, type IconName } from './svg-icon/svg-icon.component';
+export { TagListComponent } from './tag-list/tag-list.component';
 export { TimelineComponent, type TimelineWeek } from './timeline/timeline.component';
 export { WeekButtonComponent } from './timeline/week-button.component';
+export { YearBandComponent } from './year-band/year-band.component';

@@ -2,7 +2,6 @@ name = "Gelbfleckiger Steinpilz"
 lateinisch = "Boletus fulvomaculatus"
 gruppe = "roehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 2
 marktfaehig = false
 sammelbar = false

@@ -157,11 +157,79 @@ export type Reagenz = (typeof REAGENZIEN)[number];
 export const TIER_BEST = 1;
 export const TIER_WEAKEST = 6;
 
-/** Ein Messbereich, so wie die Quelle ihn schreibt: 4 bis 20, selten bis 25. */
+/** Die Einheit einer Messung. Sie steht am Wert, nicht im Feldnamen. */
+export const EINHEITEN = ['cm', 'mm', 'um'] as const;
+export type Einheit = (typeof EINHEITEN)[number];
+
+/**
+ * Ein Messbereich, so wie die Quelle ihn schreibt: 4 bis 20, selten bis 25.
+ * `seltenVon` und `seltenBis` sind die Ausreißer, `beschreibung` trägt den
+ * Satz, wo er mehr sagt als die Zahlen.
+ */
 export interface Spanne {
   von: number;
   bis: number;
+  seltenVon: number | null;
   seltenBis: number | null;
+  einheit: Einheit;
+  beschreibung: string | null;
+}
+
+/** Eine Farbe mit Namen und Wert. Der Name steht links, der Wert in der Fläche. */
+export interface Farbe {
+  name: string;
+  hex: string;
+}
+
+/** Wie schnell eine Verfärbung eintritt. */
+export const WECHSELDAUERN = ['schnell', 'langsam'] as const;
+export type Wechseldauer = (typeof WECHSELDAUERN)[number];
+
+/** Was beim Anschnitt oder auf Druck passiert. Ohne `nach` gibt es nichts zu zeigen. */
+export interface Verfaerbung {
+  von: Farbe[];
+  nach: Farbe[];
+  dauer: Wechseldauer | null;
+}
+
+/** Die Farben der Art, nach Körperteil getrennt. */
+export interface Farben {
+  hut: Farbe[];
+  sporenlager: Farbe[];
+  stiel: Farbe[];
+  fleisch: Farbe[];
+  sporenpulver: Farbe[];
+  verfaerbung: Verfaerbung | null;
+}
+
+/**
+ * Von welchem bis zu welchem Monat, beide eingeschlossen. Liegt das Ende vor
+ * dem Anfang, läuft die Spanne über den Jahreswechsel.
+ */
+export interface Monatsspanne {
+  vonMonat: number;
+  bisMonat: number;
+}
+
+/** Der Zeitraum der Quelle, dazu die Spitze, wo die Quelle eine nennt. */
+export interface Zeitraum extends Monatsspanne {
+  spitzeMonat: number | null;
+}
+
+/** Der Schutz nach Bundesartenschutzverordnung. Drei Stufen, kein Schalter. */
+export const SCHUTZSTUFEN = ['keiner', 'besondersGeschuetzt', 'strengGeschuetzt'] as const;
+export type Schutzstufe = (typeof SCHUTZSTUFEN)[number];
+
+/** Der Schutzstatus mit der Verordnung, aus der er stammt. */
+export interface Schutz {
+  status: Schutzstufe;
+  quelle: string;
+}
+
+/** Geruch oder Geschmack: Kategorien für den Filter, Satz für den Rest. */
+export interface Sinneseindruck {
+  tags: string[];
+  text: string | null;
 }
 
 /**
@@ -279,7 +347,7 @@ export interface SpeciesBrief {
   gruppe: Group;
   stufe: Level;
   tags: Tag[];
-  geschuetzt: boolean;
+  schutz: Schutz;
   speisewert: Essbarkeit;
   kartenSlug: string | null;
   /** Ob man die Art sammelt. Ein Verwechslungsprofil steht auf `false`. */
@@ -305,6 +373,12 @@ export interface SpeciesBrief {
 /** Eine Art mit Profil, so wie die Artseite sie braucht. */
 export interface Species extends Omit<SpeciesBrief, 'saison'> {
   masse: Masse;
+  farben: Farben;
+  zeitraum: Zeitraum | null;
+  /** Die Monate, in denen die Kurve mindestens halb so hoch steht wie im Jahr. */
+  beobachteterZeitraum: Monatsspanne | null;
+  geruch: Sinneseindruck;
+  geschmack: Sinneseindruck;
   quelle: Source;
   merkmale: Feature[];
   reagenzien: Reagenzeintrag[];

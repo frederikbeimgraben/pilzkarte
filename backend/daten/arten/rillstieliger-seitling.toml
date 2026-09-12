@@ -2,7 +2,6 @@ name = "Rillstieliger Seitling"
 lateinisch = "Pleurotus cornucopiae"
 gruppe = "seitling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
 sammelbar = false

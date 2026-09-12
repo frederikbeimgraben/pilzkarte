@@ -1,12 +1,15 @@
 import type { BadgeVariant } from '@stupa-makers/ui-kit';
 import type {
+  Einheit,
   Essbarkeit,
   Gefaehrdung,
   Haeufigkeit,
   FeatureKey,
   Reagenz,
   Level,
+  Schutzstufe,
   Tag,
+  Wechseldauer,
 } from '../../core/api/models';
 import type { TranslationKey } from '../../core/i18n/translations';
 
@@ -193,3 +196,74 @@ export const WARNUNG_TEXT: Partial<Record<Essbarkeit, TranslationKey>> = {
   giftig: 'art.warnung.giftig',
   toedlichGiftig: 'art.warnung.toedlich',
 };
+
+/**
+ * Die Farbe je Stufe der Essbarkeit. Sie trägt die Warnung, darum steht sie
+ * hier als Wert und nicht als Rolle des Kits: das Kit kennt fünf Rollen und
+ * müsste „giftig“ und „tödlich giftig“ dieselbe geben.
+ */
+export const EDIBILITY_COLOUR: Record<Essbarkeit, string> = {
+  essbar: '#4f9d6f',
+  bedingtEssbar: '#9db44f',
+  ungeniessbar: '#95a09a',
+  giftig: '#d2915f',
+  toedlichGiftig: '#d2685f',
+};
+
+export const PROTECTION_TEXT: Record<Schutzstufe, TranslationKey> = {
+  keiner: 'art.schutz.keiner',
+  besondersGeschuetzt: 'art.schutz.besonders',
+  strengGeschuetzt: 'art.schutz.streng',
+};
+
+/**
+ * Das kurze Wort für die Artenliste. Dort steht kein Platz für „für den
+ * Eigenbedarf“, und die Zeile soll nur sagen, dass die Art unter Schutz steht.
+ */
+export const PROTECTION_SHORT: Record<Schutzstufe, TranslationKey> = {
+  keiner: 'art.schutz.keiner',
+  besondersGeschuetzt: 'arten.geschuetzt',
+  strengGeschuetzt: 'art.schutz.streng',
+};
+
+/** Nur der Schutz warnt; „nicht geschützt“ ist keine Nachricht. */
+export const PROTECTION_BADGE: Record<Schutzstufe, BadgeVariant> = {
+  keiner: 'neutral',
+  besondersGeschuetzt: 'success',
+  strengGeschuetzt: 'danger',
+};
+
+export const UNIT_TEXT: Record<Einheit, TranslationKey> = {
+  cm: 'art.einheit.cm',
+  mm: 'art.einheit.mm',
+  um: 'art.einheit.um',
+};
+
+export const CHANGE_SPEED_TEXT: Record<Wechseldauer, TranslationKey> = {
+  schnell: 'art.verfaerbung.schnell',
+  langsam: 'art.verfaerbung.langsam',
+};
+
+/** Die vier Marken der Jahresbahn. Sie stehen auf Januar, April, Juli, Oktober. */
+export const YEAR_MARKS: readonly TranslationKey[] = [
+  'art.monat.jan',
+  'art.monat.apr',
+  'art.monat.jul',
+  'art.monat.okt',
+];
+
+/** Die zwölf Monate ausgeschrieben, für den Satz über der Bahn. */
+export const MONTH_NAMES: readonly TranslationKey[] = [
+  'art.monat.januar',
+  'art.monat.februar',
+  'art.monat.maerz',
+  'art.monat.april',
+  'art.monat.mai',
+  'art.monat.juni',
+  'art.monat.juli',
+  'art.monat.august',
+  'art.monat.september',
+  'art.monat.oktober',
+  'art.monat.november',
+  'art.monat.dezember',
+];

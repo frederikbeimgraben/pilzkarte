@@ -2,7 +2,6 @@ name = "Schwärzender Leistling"
 lateinisch = "Cantharellus melanoxeros"
 gruppe = "leistling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehig = false
 sammelbar = false

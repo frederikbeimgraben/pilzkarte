@@ -2,7 +2,6 @@ name = "Flaschenstäubling"
 lateinisch = "Lycoperdon perlatum"
 gruppe = "staeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehigSchweiz = true
 marktfaehig = true

@@ -2,7 +2,6 @@ name = "Rauchblättriger Schwefelkopf"
 lateinisch = "Hypholoma capnoides"
 gruppe = "schueppling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
 sammelbar = false

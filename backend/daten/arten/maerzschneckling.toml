@@ -2,7 +2,6 @@ name = "Märzschneckling"
 lateinisch = "Hygrophorus marzuolus"
 gruppe = "schneckling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

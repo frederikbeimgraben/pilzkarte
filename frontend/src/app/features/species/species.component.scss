@@ -84,3 +84,45 @@
 .species__scaleText {
   color: var(--color-text-muted);
 }
+
+// Die Zeit steht als Bahn, nicht als Tabellenzeile: die Bahn braucht die
+// ganze Breite, und der Satz darüber sagt, welche Monate gemeint sind.
+.species__period {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px 14px;
+}
+
+.species__periodHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+}
+
+.species__periodText {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-align: end;
+}
+
+// Kategorien und Satz stehen nebeneinander, keines ersetzt das andere.
+.species__sense {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.species__sense:last-child {
+  border-block-end: 0;
+}
+
+.species__senseName {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+}

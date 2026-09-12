@@ -2,7 +2,6 @@ name = "Rissiger Frauentäubling"
 lateinisch = "Russula cutefracta"
 gruppe = "taeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

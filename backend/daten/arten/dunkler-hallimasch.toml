@@ -2,7 +2,6 @@ name = "Gemeiner Hallimasch"
 lateinisch = "Armillaria ostoyae"
 gruppe = "hallimasch"
 speisewert = "bedingtEssbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehigSchweiz = true
 marktfaehig = false

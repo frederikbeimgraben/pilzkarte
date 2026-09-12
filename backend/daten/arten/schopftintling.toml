@@ -2,7 +2,6 @@ name = "Schopftintling"
 lateinisch = "Coprinus comatus"
 gruppe = "tintling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

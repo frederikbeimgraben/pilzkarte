@@ -20,8 +20,7 @@ from app.main import build_app
 from app.modules.species.catalog import (
     DATA,
     EDIBILITY_TEXT,
-    PROTECTED_TEXT,
-    UNPROTECTED_TEXT,
+    PROTECTION_TEXT,
     Catalog,
     SpeciesFilter,
     build_relations,
@@ -35,6 +34,8 @@ from app.modules.species.catalog import (
     find_maps,
     forecast_planned,
     mean_per_week,
+    month_of_week,
+    peak_months,
     peak_week_of,
     read_profiles,
     read_season,
@@ -44,6 +45,7 @@ from app.modules.species.catalog import (
 from app.modules.species.router import current_catalog
 from app.modules.species.schemas import (
     BEST_RATING,
+    MONTHS,
     WEAKEST_RATING,
     WEEKS,
     ChangeSpeed,
@@ -76,12 +78,15 @@ name = "Steinpilz"
 lateinisch = "Boletus edulis"
 gruppe = "roehrling"
 speisewert = "essbar"
-geschuetzt = true
 jahreszeiten = ["herbst"]
 baeume = ["fichte", "buche"]
 karte = "boletus_edulis"
 speisewertHinweis = "Jung sammeln."
 schutzHinweis = "Auch die Verwandten schont man."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"
@@ -113,9 +118,12 @@ name = "Maipilz"
 lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
 speisewert = "essbar"
-geschuetzt = false
 jahreszeiten = ["fruehling"]
 baeume = []
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
@@ -145,9 +153,12 @@ name = "Braetling"
 lateinisch = "Lactarius volemus"
 gruppe = "milchling"
 speisewert = "essbar"
-geschuetzt = true
 jahreszeiten = ["sommer"]
 baeume = ["buche"]
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Braetling2004.htm"
@@ -178,10 +189,13 @@ name = "Gallenroehrling"
 lateinisch = "Tylopilus felleus"
 gruppe = "roehrling"
 speisewert = "ungeniessbar"
-geschuetzt = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gallenroehrling.htm"
@@ -593,13 +607,14 @@ def test_edibility_and_protection_carry_the_note(built: Catalog) -> None:
     lines = {line.key: line.text for line in built.species("steinpilz").traits}
 
     assert lines[TraitKey.EDIBILITY] == "Essbar. Jung sammeln."
-    assert lines[TraitKey.PROTECTION] == f"{PROTECTED_TEXT} Auch die Verwandten schont man."
+    special = PROTECTION_TEXT[ProtectionStatus.SPECIAL]
+    assert lines[TraitKey.PROTECTION] == f"{special} Auch die Verwandten schont man."
 
 
 def test_without_protection_the_second_sentence_stands(built: Catalog) -> None:
     lines = {line.key: line.text for line in built.species("maipilz").traits}
 
-    assert lines[TraitKey.PROTECTION] == UNPROTECTED_TEXT
+    assert lines[TraitKey.PROTECTION] == PROTECTION_TEXT[ProtectionStatus.NONE]
     assert lines[TraitKey.EDIBILITY] == "Essbar."
 
 
@@ -735,7 +750,7 @@ async def test_the_listing_answers_in_camel_case(app: FastAPI) -> None:
         "gruppe",
         "stufe",
         "tags",
-        "geschuetzt",
+        "schutz",
         "speisewert",
         "kartenSlug",
         "sammelbar",
@@ -898,19 +913,25 @@ def test_every_slug_is_an_address() -> None:
 
 def test_protected_species_name_the_collecting_rule(tmp_path: Path) -> None:
     built = catalog(DATA, tmp_path)
-    protected = [species for species in built.listing().species if species.protected]
+    protected = [
+        species
+        for species in built.listing().species
+        if species.protection.status is not ProtectionStatus.NONE
+    ]
 
     assert len(protected) >= 18
     for brief in protected:
         lines = {line.key: line.text for line in built.species(brief.slug).traits}
-        assert lines[TraitKey.PROTECTION].startswith(PROTECTED_TEXT)
+        assert lines[TraitKey.PROTECTION].startswith(PROTECTION_TEXT[brief.protection.status])
 
 
 def test_penny_bun_and_chanterelle_are_protected(tmp_path: Path) -> None:
     built = catalog(DATA, tmp_path)
 
-    assert built.species("steinpilz").protected
-    assert built.species("pfifferling").protected
+    assert built.species("steinpilz").protection.status is ProtectionStatus.SPECIAL
+    assert built.species("pfifferling").protection.status is ProtectionStatus.SPECIAL
+    assert built.is_protected("steinpilz")
+    assert built.is_protected("pfifferling")
 
 
 async def test_the_service_reads_the_shipped_files() -> None:
@@ -1278,6 +1299,76 @@ async def test_the_profile_returns_marketability_and_measurements() -> None:
     }
 
 
+# ------------------------------------------------- Die beobachtete Hauptzeit
+
+
+def test_a_week_belongs_to_its_month() -> None:
+    assert month_of_week(0) == 1
+    assert month_of_week(WEEKS - 1) == MONTHS
+    assert month_of_week(WEEKS // 2) == 7
+    # Woche 31 beginnt Ende Juli und liegt in der Mitte schon im August.
+    assert month_of_week(30) == 8
+
+
+def test_the_peak_months_are_the_weeks_above_half_the_year() -> None:
+    shares = [0.0] * WEEKS
+    for week in range(30, 40):
+        shares[week] = 10.0
+    shares[20] = 2.0
+
+    months = peak_months(shares)
+
+    assert months is not None
+    assert (months.start_month, months.end_month) == (8, 10)
+
+
+def test_a_peak_may_cross_the_turn_of_the_year() -> None:
+    # Der Samtfussruebling faende sonst zwei Zeiten statt einer.
+    shares = [0.0] * WEEKS
+    for week in [*range(48, WEEKS), *range(6)]:
+        shares[week] = 10.0
+
+    months = peak_months(shares)
+
+    assert months is not None
+    assert (months.start_month, months.end_month) == (12, 2)
+
+
+def test_a_curve_without_a_find_has_no_peak() -> None:
+    assert peak_months([0.0] * WEEKS) is None
+
+
+def test_the_longest_stretch_wins() -> None:
+    shares = [0.0] * WEEKS
+    shares[5] = 10.0
+    for week in range(20, 26):
+        shares[week] = 10.0
+
+    months = peak_months(shares)
+
+    assert months is not None
+    assert (months.start_month, months.end_month) == (5, 6)
+
+
+def test_the_profile_names_the_observed_period(built: Catalog) -> None:
+    # Der Steinpilz der Vorrichtung wird in Woche 40 am haeufigsten gefunden.
+    observed = built.species("steinpilz").observed_period
+
+    assert observed is not None
+    assert (observed.start_month, observed.end_month) == (10, 10)
+
+
+def test_a_species_without_a_curve_names_no_observed_period(built: Catalog) -> None:
+    assert built.species("braetling").observed_period is None
+
+
+async def test_the_observed_period_reaches_the_wire(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get("/api/arten/steinpilz")
+
+    assert response.json()["beobachteterZeitraum"] == {"vonMonat": 10, "bisMonat": 10}
+
+
 # ------------------------------------------------- Stufen der Essbarkeit
 
 
@@ -1612,11 +1703,15 @@ def test_the_protection_status_names_its_source(tmp_path: Path) -> None:
     assert boletus.source.startswith("Bundesartenschutzverordnung")
 
 
-def test_the_protection_status_matches_the_flag() -> None:
-    for slug, profile in read_profiles(DATA / "arten").items():
-        assert profile.protection is not None, slug
-        special = profile.protection.status is ProtectionStatus.SPECIAL
-        assert special is profile.protected, slug
+def test_the_protection_status_is_the_only_place(tmp_path: Path) -> None:
+    # Ein Schalter "geschuetzt" neben dem Status waere eine zweite Wahrheit,
+    # und er koennte "streng" nicht von "fuer den Eigenbedarf" trennen.
+    assert "protected" not in Profile.model_fields
+    assert "protected" not in Species.model_fields
+
+    built = catalog(DATA, tmp_path)
+    for slug, profile in built.profiles.items():
+        assert built.is_protected(slug) is profile.protection.restricted, slug
 
 
 def test_every_measurement_of_every_profile_carries_a_unit() -> None:

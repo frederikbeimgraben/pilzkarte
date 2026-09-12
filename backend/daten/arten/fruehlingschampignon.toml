@@ -2,7 +2,6 @@ name = "Frühlingschampignon"
 lateinisch = "Agaricus altipes"
 gruppe = "champignon"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

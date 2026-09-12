@@ -279,6 +279,16 @@ const VERTRAG = new Set([
   'sporenpulver',
   'vorkommen',
   'schutz',
+  'farben',
+  'verfaerbung',
+  'zeitraum',
+  'beobachteterZeitraum',
+  'vonMonat',
+  'bisMonat',
+  'spitzeMonat',
+  'wechseldauer',
+  'wechseldauern',
+  'einheiten',
 ]);
 
 const STELLEN = [];

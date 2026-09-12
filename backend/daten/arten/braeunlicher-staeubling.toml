@@ -2,7 +2,6 @@ name = "Brauner Stäubling"
 lateinisch = "Lycoperdon umbrinum"
 gruppe = "staeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 6
 marktfaehig = false
 sammelbar = false

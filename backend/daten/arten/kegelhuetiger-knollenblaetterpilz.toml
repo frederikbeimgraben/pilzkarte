@@ -2,7 +2,6 @@ name = "Kegelhütiger Knollenblätterpilz"
 lateinisch = "Amanita virosa"
 gruppe = "wulstling"
 speisewert = "toedlichGiftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

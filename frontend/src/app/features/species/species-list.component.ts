@@ -31,6 +31,8 @@ import {
   GEFAEHRLICH,
   LEVEL_BADGE,
   LEVEL_RANK,
+  PROTECTION_BADGE,
+  PROTECTION_SHORT,
   TAG_TEXT,
 } from './labels';
 
@@ -233,8 +235,11 @@ export class SpeciesListComponent {
     const badges: Marke[] = [
       { text: this.i18n.translate(TAG_TEXT[art.stufe]), variant: LEVEL_BADGE[art.stufe] },
     ];
-    if (art.geschuetzt) {
-      badges.push({ text: this.i18n.translate('arten.geschuetzt'), variant: 'warning' });
+    if (art.schutz.status !== 'keiner') {
+      badges.push({
+        text: this.i18n.translate(PROTECTION_SHORT[art.schutz.status]),
+        variant: PROTECTION_BADGE[art.schutz.status],
+      });
     }
     if (GEFAEHRLICH.includes(art.speisewert)) {
       badges.push({

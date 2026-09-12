@@ -2,7 +2,6 @@ name = "Genabelter Semmelstoppelpilz"
 lateinisch = "Hydnum umbilicatum"
 gruppe = "stoppelpilz"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehigSchweiz = true
 marktfaehig = true

@@ -2,7 +2,6 @@ name = "Sandröhrling"
 lateinisch = "Suillus variegatus"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = false
 marktfaehig = true

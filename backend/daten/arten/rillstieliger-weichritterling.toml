@@ -2,7 +2,6 @@ name = "Rillstieliger Weichritterling"
 lateinisch = "Melanoleuca grammopodia"
 gruppe = "ritterling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehigSchweiz = true
 marktfaehig = false

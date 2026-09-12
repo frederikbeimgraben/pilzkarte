@@ -2,7 +2,6 @@ name = "Schuppiger Sägeblättling"
 lateinisch = "Neolentinus lepideus"
 gruppe = "seitling"
 speisewert = "bedingtEssbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehig = false
 sammelbar = false

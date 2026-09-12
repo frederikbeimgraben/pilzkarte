@@ -2,7 +2,6 @@ name = "Breitblättrige Glucke"
 lateinisch = "Sparassis brevipes"
 gruppe = "glucke"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehigSchweiz = true
 marktfaehig = false

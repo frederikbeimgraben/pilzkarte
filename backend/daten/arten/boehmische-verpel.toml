@@ -2,7 +2,6 @@ name = "Böhmische Verpel"
 lateinisch = "Verpa bohemica"
 gruppe = "morchel"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehigSchweiz = true
 marktfaehig = true

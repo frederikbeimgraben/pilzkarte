@@ -2,6 +2,12 @@ import type { Species, SpeciesCatalogue, SpeciesBrief, SeasonCurveData } from '.
 
 const WEEKS = 52;
 
+/** Der Schutzstatus, den die meisten Arten tragen. */
+const KEIN_SCHUTZ = {
+  status: 'keiner',
+  quelle: 'Bundesartenschutzverordnung, Anlage 1',
+} as const;
+
 /** Eine Glocke über dem Herbst, damit die Kurve etwas zu zeichnen hat. */
 function glocke(peak: number, hoehe: number): number[] {
   return Array.from({ length: WEEKS }, (_, i) => Math.max(0, hoehe - Math.abs(i - peak) * 2));
@@ -17,7 +23,7 @@ function brief(
     gruppe: 'roehrling',
     stufe: 'vorhersage',
     tags: ['vorhersage', 'roehrling', 'sommer', 'herbst', 'fichte'],
-    geschuetzt: false,
+    schutz: KEIN_SCHUTZ,
     speisewert: 'essbar',
     kartenSlug: null,
     sammelbar: true,
@@ -43,7 +49,7 @@ export const PENNY_BUN_BRIEF = brief({
   slug: 'steinpilz',
   name: 'Steinpilz',
   lateinisch: 'Boletus edulis',
-  geschuetzt: true,
+  schutz: { status: 'besondersGeschuetzt', quelle: 'Bundesartenschutzverordnung, Anlage 1' },
   kartenSlug: 'boletus_edulis',
   tags: ['vorhersage', 'roehrling', 'sommer', 'herbst', 'fichte', 'buche'],
 });
@@ -145,7 +151,7 @@ export const STEINPILZ: Species = {
   gruppe: 'roehrling',
   stufe: 'vorhersage',
   tags: ['vorhersage', 'roehrling', 'sommer', 'herbst', 'fichte', 'buche'],
-  geschuetzt: true,
+  schutz: { status: 'besondersGeschuetzt', quelle: 'Bundesartenschutzverordnung, Anlage 1' },
   speisewert: 'essbar',
   kartenSlug: 'boletus_edulis',
   sammelbar: true,
@@ -157,10 +163,50 @@ export const STEINPILZ: Species = {
   synonyme: ['Boletus bulbosus'],
   masse: {
     ...LEERE_MASSE,
-    hutBreiteCm: { von: 4, bis: 20, seltenBis: 25 },
-    sporenLaengeUm: { von: 12.4, bis: 19.2, seltenBis: null },
-    sporenBreiteUm: { von: 4.5, bis: 5.5, seltenBis: null },
+    hutBreiteCm: {
+      von: 4,
+      bis: 20,
+      seltenVon: null,
+      seltenBis: 25,
+      einheit: 'cm',
+      beschreibung: null,
+    },
+    sporenLaengeUm: {
+      von: 12.4,
+      bis: 19.2,
+      seltenVon: null,
+      seltenBis: null,
+      einheit: 'um',
+      beschreibung: null,
+    },
+    sporenBreiteUm: {
+      von: 4.5,
+      bis: 5.5,
+      seltenVon: null,
+      seltenBis: null,
+      einheit: 'um',
+      beschreibung: null,
+    },
   },
+  farben: {
+    hut: [
+      { name: 'hellbraun', hex: '#e2c79a' },
+      { name: 'dunkelbraun', hex: '#6b4423' },
+    ],
+    sporenlager: [{ name: 'weiß', hex: '#f0ece0' }],
+    stiel: [{ name: 'cremeweiß', hex: '#f2e8d5' }],
+    fleisch: [],
+    sporenpulver: [{ name: 'olivbraun', hex: '#7a5c2e' }],
+    verfaerbung: {
+      von: [{ name: 'weiß', hex: '#f4efe2' }],
+      nach: [{ name: 'blau', hex: '#3f6ea8' }],
+      dauer: 'schnell',
+    },
+  },
+  zeitraum: { vonMonat: 6, bisMonat: 11, spitzeMonat: null },
+  beobachteterZeitraum: { vonMonat: 8, bisMonat: 10 },
+  geruch: { tags: ['pilzig', 'angenehm'], text: 'Sehr angenehm, pilzig.' },
+  geschmack: { tags: ['mild', 'nussig'], text: 'Mild und nussig.' },
   quelle: SOURCE,
   reagenzien: [{ reagenz: 'koh', reaktion: 'Fleisch blass braun.' }],
   warnung: null,
@@ -217,7 +263,7 @@ export const MORCHEL: Species = {
   gruppe: 'morchel',
   stufe: 'profil',
   tags: ['profil', 'morchel', 'fruehling', 'esche'],
-  geschuetzt: false,
+  schutz: KEIN_SCHUTZ,
   kartenSlug: null,
   begehungenMitFund: 12,
   spitzeWoche: null,
@@ -237,7 +283,7 @@ export const GALLENROEHRLING: Species = {
   lateinisch: 'Tylopilus felleus',
   stufe: 'profil',
   tags: ['profil', 'roehrling', 'sommer', 'herbst'],
-  geschuetzt: false,
+  schutz: KEIN_SCHUTZ,
   speisewert: 'giftig',
   kartenSlug: null,
   sammelbar: false,

@@ -2,7 +2,6 @@ name = "Grasgrüner Täubling"
 lateinisch = "Russula aeruginea"
 gruppe = "taeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = false
 sammelbar = false

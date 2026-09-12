@@ -2,7 +2,6 @@ name = "Grauer Lärchenröhrling"
 lateinisch = "Suillus viscidus"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = true
 sammelbar = false

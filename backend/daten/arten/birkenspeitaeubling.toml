@@ -2,7 +2,6 @@ name = "Birkenspeitäubling"
 lateinisch = "Russula betularum"
 gruppe = "taeubling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

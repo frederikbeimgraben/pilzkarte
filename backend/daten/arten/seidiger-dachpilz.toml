@@ -2,7 +2,6 @@ name = "Seidiger Dachpilz"
 lateinisch = "Pluteus petasatus"
 gruppe = "roetling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehig = false
 sammelbar = false
