@@ -86,10 +86,12 @@ const MEASURE_ROWS: readonly {
   },
 ];
 
-/** Die Farbzeilen der Artseite, in der Reihenfolge des Mockups. */
+/**
+ * Die Farbzeilen der Artseite, in der Reihenfolge des Mockups. Das
+ * Sporenlager fehlt: seine Farbe steht bei der Fruchtschicht, wo sie hingehört.
+ */
 const COLOUR_ROWS: readonly { field: keyof Omit<Farben, 'verfaerbung'>; schluessel: TranslationKey }[] = [
   { field: 'hut', schluessel: 'art.farbe.hut' },
-  { field: 'sporenlager', schluessel: 'art.farbe.sporenlager' },
   { field: 'stiel', schluessel: 'art.farbe.stiel' },
   { field: 'fleisch', schluessel: 'art.farbe.fleisch' },
   { field: 'sporenpulver', schluessel: 'art.farbe.sporenpulver' },
@@ -150,6 +152,12 @@ export interface SenseRow {
   label: string;
 }
 
+/**
+ * Speisewert, Schutz und Handel als feste Werte.
+ *
+ * Der Speisewert trägt seine eigene Farbe: nur so warnt die Stufe, bevor man
+ * das Wort gelesen hat. Schutz und Handel sind Marken, keine Warnungen.
+ */
 export function levelRows(i18n: I18nService, art: Species): LevelRow[] {
   const trade = art.marktfaehigkeit.marktfaehig ? 'art.handel.ja' : 'art.handel.nein';
   return [
@@ -225,18 +233,27 @@ function rareNote(i18n: I18nService, span: Spanne, unit: string): string | null 
 /** Die Farben je Körperteil. Ein Körperteil ohne Farbe steht nicht da. */
 export function colourRows(i18n: I18nService, farben: Farben): ColourRow[] {
   return COLOUR_ROWS.flatMap((row) => {
-    const colours = farben[row.field];
-    if (colours.length === 0) return [];
-    const names = colours.map((colour) => colour.name).join(', ');
-    return [
-      {
-        schluessel: i18n.translate(row.schluessel),
-        unter: names,
-        farben: colours,
-        label: i18n.translate('art.farbe.beschriftung', { farben: names }),
-      },
-    ];
+    const colour = colourRow(i18n, row.field, row.schluessel, farben);
+    return colour === null ? [] : [colour];
   });
+}
+
+/** Eine einzelne Farbzeile, oder nichts, wenn die Quelle keine Farbe nennt. */
+export function colourRow(
+  i18n: I18nService,
+  field: keyof Omit<Farben, 'verfaerbung'>,
+  schluessel: TranslationKey,
+  farben: Farben,
+): ColourRow | null {
+  const colours = farben[field];
+  if (colours.length === 0) return null;
+  const names = colours.map((colour) => colour.name).join(', ');
+  return {
+    schluessel: i18n.translate(schluessel),
+    unter: names,
+    farben: colours,
+    label: i18n.translate('art.farbe.beschriftung', { farben: names }),
+  };
 }
 
 /** Ohne Zielfarbe gibt es keine Verfärbung, nur eine Farbe, die bleibt. */

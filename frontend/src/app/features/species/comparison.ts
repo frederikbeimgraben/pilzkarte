@@ -3,7 +3,7 @@ import type { I18nService } from '../../core/i18n/i18n.service';
 import type { TranslationKey } from '../../core/i18n/translations';
 import {
   changeRow,
-  colourRows,
+  colourRow,
   levelRows,
   measureRows,
   senseRows,
@@ -69,9 +69,9 @@ function capWidth(i18n: I18nService, art: Species): Extract {
 }
 
 function colour(i18n: I18nService, art: Species, field: 'hut' | 'sporenlager'): Extract {
-  const label = i18n.translate(field === 'hut' ? 'art.farbe.hut' : 'art.farbe.sporenlager');
-  const row = colourRows(i18n, art.farben).find((entry) => entry.schluessel === label);
-  if (!row) return NOTHING;
+  const schluessel = field === 'hut' ? 'art.farbe.hut' : 'art.farbe.sporenlager';
+  const row = colourRow(i18n, field, schluessel, art.farben);
+  if (row === null) return NOTHING;
   return { values: [{ kind: 'farbe', colour: row }], mark: row.farben.map((one) => one.hex).join(',') };
 }
 

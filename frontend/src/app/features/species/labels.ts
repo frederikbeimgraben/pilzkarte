@@ -2,6 +2,10 @@ import type { BadgeVariant } from '@stupa-makers/ui-kit';
 import type {
   Einheit,
   Essbarkeit,
+  Fruchtschichtart,
+  Lamellenansatz,
+  Lamellenschneide,
+  Lamellenstand,
   Gefaehrdung,
   Haeufigkeit,
   FeatureKey,
@@ -267,3 +271,30 @@ export const MONTH_NAMES: readonly TranslationKey[] = [
   'art.monat.november',
   'art.monat.dezember',
 ];
+
+export const HYMENOPHORE_TEXT: Record<Fruchtschichtart, TranslationKey> = {
+  lamellen: 'art.fruchtschicht.lamellen',
+  roehren: 'art.fruchtschicht.roehren',
+  poren: 'art.fruchtschicht.poren',
+  stacheln: 'art.fruchtschicht.stacheln',
+  leisten: 'art.fruchtschicht.leisten',
+};
+
+export const ATTACHMENT_TEXT: Record<Lamellenansatz, TranslationKey> = {
+  frei: 'art.ansatz.frei',
+  angewachsen: 'art.ansatz.angewachsen',
+  ausgebuchtet: 'art.ansatz.ausgebuchtet',
+  herablaufend: 'art.ansatz.herablaufend',
+};
+
+export const SPACING_TEXT: Record<Lamellenstand, TranslationKey> = {
+  eng: 'art.stand.eng',
+  normal: 'art.stand.normal',
+  weit: 'art.stand.weit',
+};
+
+export const EDGE_TEXT: Record<Lamellenschneide, TranslationKey> = {
+  glatt: 'art.schneide.glatt',
+  gesaegt: 'art.schneide.gesaegt',
+  bewimpert: 'art.schneide.bewimpert',
+};

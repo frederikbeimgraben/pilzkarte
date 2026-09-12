@@ -27,6 +27,7 @@ import {
 } from '../../ui';
 import {
   changeRow,
+  colourRow,
   colourRows,
   levelRows,
   measureRows,
@@ -46,13 +47,17 @@ import { SpeciesState } from './species.state';
 import { MapState } from '../map/map.state';
 import { FORECAST_SLUGS, type ForecastSlug } from '../../core/tiles/tile-paths';
 import {
+  ATTACHMENT_TEXT,
+  EDGE_TEXT,
   EDIBILITY_BADGE,
   EDIBILITY_TEXT,
   GEFAEHRDUNG_TEXT,
   HAEUFIGKEIT_TEXT,
+  HYMENOPHORE_TEXT,
   FEATURE_TEXT,
   REAGENZ_TEXT,
   LEVEL_BADGE,
+  SPACING_TEXT,
   TAG_TEXT,
   WARNUNG_TEXT,
 } from './labels';
@@ -94,6 +99,12 @@ interface ConfusableRow {
   vergleich: string;
 }
 
+/** Eine Zeile der Fruchtschicht: das Wort links, der Wert rechts. */
+interface LayerRow {
+  schluessel: string;
+  wert: string;
+}
+
 interface Reagenzzeile {
   reagenz: string;
   reaktion: string;
@@ -116,6 +127,8 @@ interface Viewport {
   label: string;
   einstufung: LevelRow[];
   masse: MeasureRow[];
+  fruchtschicht: LayerRow[];
+  sporenlager: ColourRow | null;
   farben: ColourRow[];
   verfaerbung: ChangeRow | null;
   zeit: TimeRow | null;
@@ -281,6 +294,8 @@ export class SpeciesComponent {
       }),
       einstufung: levelRows(this.i18n, art),
       masse: measureRows(this.i18n, art.masse),
+      fruchtschicht: this.layerRows(art),
+      sporenlager: colourRow(this.i18n, 'sporenlager', 'art.zeile.sporenlagerFarbe', art.farben),
       farben: colourRows(this.i18n, art.farben),
       verfaerbung: changeRow(this.i18n, art.farben),
       zeit: timeRow(this.i18n, art),
@@ -378,11 +393,42 @@ export class SpeciesComponent {
   }
 
   /**
-   * Speisewert, Schutz und Handel als feste Werte.
+   * Die Fruchtschicht: Art, dazu Ansatz, Stand und Schneide.
    *
-   * Der Speisewert trägt seine eigene Farbe: nur so warnt die Stufe, bevor man
-   * das Wort gelesen hat. Schutz und Handel sind Marken, keine Warnungen.
+   * Kein Zeichen, nur das Wort. Der Sachverhalt lässt sich bei 24 px nicht
+   * zeichnen, ohne zu verschwimmen. Die drei Zeilen nach der Art gibt es nur
+   * an Lamellen; Röhren, Stacheln und Leisten tragen sie nicht.
    */
+  private layerRows(art: Species): LayerRow[] {
+    const layer = art.fruchtschicht;
+    if (layer === null) return [];
+    const rows: LayerRow[] = [
+      {
+        schluessel: this.i18n.translate('art.zeile.fruchtschichtart'),
+        wert: this.i18n.translate(HYMENOPHORE_TEXT[layer.art]),
+      },
+    ];
+    if (layer.ansatz !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.ansatz'),
+        wert: this.i18n.translate(ATTACHMENT_TEXT[layer.ansatz]),
+      });
+    }
+    if (layer.stand !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.stand'),
+        wert: this.i18n.translate(SPACING_TEXT[layer.stand]),
+      });
+    }
+    if (layer.schneide !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.schneide'),
+        wert: this.i18n.translate(EDGE_TEXT[layer.schneide]),
+      });
+    }
+    return rows;
+  }
+
   private namenzeilen(art: Species): FeatureRow[] {
     const rows: FeatureRow[] = [];
     if (art.weitereNamen.length > 0) {

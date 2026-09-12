@@ -204,6 +204,7 @@ export const STEINPILZ: Species = {
     },
   },
   zeitraum: { vonMonat: 6, bisMonat: 11, spitzeMonat: null },
+  fruchtschicht: { art: 'roehren', ansatz: null, stand: null, schneide: null },
   beobachteterZeitraum: { vonMonat: 8, bisMonat: 10 },
   geruch: { tags: ['pilzig', 'angenehm'], text: 'Sehr angenehm, pilzig.' },
   geschmack: { tags: ['mild', 'nussig'], text: 'Mild und nussig.' },

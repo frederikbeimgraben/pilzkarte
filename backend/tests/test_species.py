@@ -7,6 +7,7 @@ Prozentwert im Kopf nachrechnen: 30 von 100 Begehungen sind 30 Prozent.
 import json
 import re
 import tomllib
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -53,6 +54,11 @@ from app.modules.species.schemas import (
     ColourChange,
     Edibility,
     Frequency,
+    GillAttachment,
+    GillEdge,
+    GillSpacing,
+    Hymenophore,
+    HymenophoreKind,
     Lookalike,
     Period,
     Profile,
@@ -1297,6 +1303,108 @@ async def test_the_profile_returns_marketability_and_measurements() -> None:
         "baeume",
         "baeumeAusErfahrung",
     }
+
+
+# ------------------------------------------------- Die Fruchtschicht
+
+
+def test_gills_carry_attachment_spacing_and_edge() -> None:
+    layer = Hymenophore.model_validate(
+        {"art": "lamellen", "ansatz": "frei", "stand": "eng", "schneide": "glatt"}
+    )
+
+    assert layer.kind is HymenophoreKind.GILLS
+    assert layer.attachment is GillAttachment.FREE
+    assert layer.spacing is GillSpacing.CLOSE
+    assert layer.edge is GillEdge.SMOOTH
+
+
+def test_tubes_carry_none_of_the_three() -> None:
+    # Roehren haben keinen Ansatz am Stiel. Ein Wert dort waere eine
+    # Behauptung ueber etwas, das die Art nicht hat.
+    with pytest.raises(ValidationError, match="Nur Lamellen tragen ansatz"):
+        Hymenophore.model_validate({"art": "roehren", "ansatz": "frei"})
+
+
+def test_spines_carry_no_spacing() -> None:
+    with pytest.raises(ValidationError, match="stand"):
+        Hymenophore.model_validate({"art": "stacheln", "stand": "eng"})
+
+
+def test_the_kind_alone_is_enough() -> None:
+    assert Hymenophore.model_validate({"art": "leisten"}).attachment is None
+
+
+def test_a_profile_without_the_layer_stays_empty(built: Catalog) -> None:
+    # Die Quellseite nennt sie noch nicht; geraten wird nichts.
+    assert built.species("braetling").hymenophore is None
+
+
+def test_the_layer_reaches_the_wire(built: Catalog) -> None:
+    penny_bun = built.profiles["steinpilz"].model_copy(
+        update={"hymenophore": Hymenophore(kind=HymenophoreKind.TUBES)}
+    )
+    catalogue = replace(built, profiles={**built.profiles, "steinpilz": penny_bun})
+
+    assert catalogue.species("steinpilz").hymenophore == Hymenophore(kind=HymenophoreKind.TUBES)
+
+
+def test_the_filter_narrows_to_one_layer(built: Catalog) -> None:
+    gills = built.profiles["maipilz"].model_copy(
+        update={"hymenophore": Hymenophore(kind=HymenophoreKind.GILLS)}
+    )
+    catalogue = replace(built, profiles={**built.profiles, "maipilz": gills})
+    chosen = SpeciesFilter(hymenophore=HymenophoreKind.GILLS)
+
+    listing = catalogue.listing(only_collectable=None, chosen=chosen)
+
+    assert [species.slug for species in listing.species] == ["maipilz"]
+
+
+def test_the_filter_reaches_attachment_spacing_and_edge(built: Catalog) -> None:
+    gills = built.profiles["maipilz"].model_copy(
+        update={
+            "hymenophore": Hymenophore(
+                kind=HymenophoreKind.GILLS,
+                attachment=GillAttachment.FREE,
+                spacing=GillSpacing.CLOSE,
+                edge=GillEdge.SMOOTH,
+            )
+        }
+    )
+    catalogue = replace(built, profiles={**built.profiles, "maipilz": gills})
+
+    for chosen in (
+        SpeciesFilter(attachment=GillAttachment.FREE),
+        SpeciesFilter(spacing=GillSpacing.CLOSE),
+        SpeciesFilter(edge=GillEdge.SMOOTH),
+    ):
+        listing = catalogue.listing(only_collectable=None, chosen=chosen)
+        assert [species.slug for species in listing.species] == ["maipilz"], chosen
+
+    without = catalogue.listing(
+        only_collectable=None, chosen=SpeciesFilter(attachment=GillAttachment.DECURRENT)
+    )
+    assert without.species == []
+
+
+async def test_the_endpoint_takes_the_layer_filter(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get(
+            "/api/arten", params={"alle": "true", "fruchtschicht": "lamellen"}
+        )
+
+    assert response.status_code == 200
+
+
+def test_no_shipped_profile_breaks_the_rule() -> None:
+    # Der Katalog traegt die Fruchtschicht noch nicht. Sobald er es tut, faellt
+    # ein Ansatz an Roehren hier auf und nicht erst in der Oberflaeche.
+    for slug, profile in read_profiles(DATA / "arten").items():
+        layer = profile.hymenophore
+        if layer is None or layer.kind is HymenophoreKind.GILLS:
+            continue
+        assert (layer.attachment, layer.spacing, layer.edge) == (None, None, None), slug
 
 
 # ------------------------------------------------- Die beobachtete Hauptzeit

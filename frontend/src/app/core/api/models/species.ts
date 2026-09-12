@@ -226,6 +226,36 @@ export interface Schutz {
   quelle: string;
 }
 
+/**
+ * Woran die Sporen sitzen. Die Liste kommt aus den Quellseiten: 177 nennen
+ * Lamellen, 64 Röhren, 10 Poren, 9 Leisten, 6 Stacheln.
+ */
+export const FRUCHTSCHICHTEN = ['lamellen', 'roehren', 'poren', 'stacheln', 'leisten'] as const;
+export type Fruchtschichtart = (typeof FRUCHTSCHICHTEN)[number];
+
+/** Wie die Lamellen den Stiel treffen. Das trennt den Champignon vom Wulstling. */
+export const LAMELLENANSAETZE = ['frei', 'angewachsen', 'ausgebuchtet', 'herablaufend'] as const;
+export type Lamellenansatz = (typeof LAMELLENANSAETZE)[number];
+
+/** Wie dicht die Lamellen stehen. */
+export const LAMELLENSTAENDE = ['eng', 'normal', 'weit'] as const;
+export type Lamellenstand = (typeof LAMELLENSTAENDE)[number];
+
+/** Wie die Schneide einer Lamelle aussieht. */
+export const LAMELLENSCHNEIDEN = ['glatt', 'gesaegt', 'bewimpert'] as const;
+export type Lamellenschneide = (typeof LAMELLENSCHNEIDEN)[number];
+
+/**
+ * Die Fruchtschicht. Ansatz, Stand und Schneide gibt es nur an Lamellen;
+ * Röhren, Stacheln und Leisten tragen sie nicht.
+ */
+export interface Fruchtschicht {
+  art: Fruchtschichtart;
+  ansatz: Lamellenansatz | null;
+  stand: Lamellenstand | null;
+  schneide: Lamellenschneide | null;
+}
+
 /** Geruch oder Geschmack: Kategorien für den Filter, Satz für den Rest. */
 export interface Sinneseindruck {
   tags: string[];
@@ -377,6 +407,8 @@ export interface Species extends Omit<SpeciesBrief, 'saison'> {
   zeitraum: Zeitraum | null;
   /** Die Monate, in denen die Kurve mindestens halb so hoch steht wie im Jahr. */
   beobachteterZeitraum: Monatsspanne | null;
+  /** Die Quelle nennt sie nicht bei jeder Art; dann bleibt sie leer. */
+  fruchtschicht: Fruchtschicht | null;
   geruch: Sinneseindruck;
   geschmack: Sinneseindruck;
   quelle: Source;

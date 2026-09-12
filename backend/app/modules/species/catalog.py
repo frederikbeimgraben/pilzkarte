@@ -21,7 +21,11 @@ from app.modules.species.schemas import (
     Colours,
     Edibility,
     Frequency,
+    GillAttachment,
+    GillEdge,
+    GillSpacing,
     Group,
+    HymenophoreKind,
     Marketability,
     MonthRange,
     Period,
@@ -283,6 +287,10 @@ class SpeciesFilter:
     red_list: RedListStatus | None = None
     rating: int | None = None
     marketable: bool | None = None
+    hymenophore: HymenophoreKind | None = None
+    attachment: GillAttachment | None = None
+    spacing: GillSpacing | None = None
+    edge: GillEdge | None = None
     smell: str | None = None
     taste: str | None = None
     tree: str | None = None
@@ -291,6 +299,7 @@ class SpeciesFilter:
 
     def matches(self, profile: Profile, tier: Tier) -> bool:
         """Prueft eine Art gegen jede gesetzte Bedingung."""
+        layer = profile.hymenophore
         trees = set(profile.trees)
         if profile.trees_from_experience:
             trees |= set(profile.trees_from_experience.trees)
@@ -303,6 +312,10 @@ class SpeciesFilter:
             self.red_list is None or profile.red_list is self.red_list,
             self.rating is None or profile.rating == self.rating,
             self.marketable is None or profile.marketable is self.marketable,
+            self.hymenophore is None or (layer is not None and layer.kind is self.hymenophore),
+            self.attachment is None or (layer is not None and layer.attachment is self.attachment),
+            self.spacing is None or (layer is not None and layer.spacing is self.spacing),
+            self.edge is None or (layer is not None and layer.edge is self.edge),
             self.smell is None or self.smell in profile.smell.tags,
             self.taste is None or self.taste in profile.taste.tags,
             self.tree is None or self.tree in trees,
@@ -597,6 +610,7 @@ class Catalog:
             colours=profile.colours,
             period=profile.period,
             observed_period=peak_months(self._series(counts)[0]) if counts else None,
+            hymenophore=profile.hymenophore,
             smell=profile.smell,
             taste=profile.taste,
             reagents=profile.reagents,

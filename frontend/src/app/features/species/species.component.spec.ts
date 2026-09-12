@@ -87,8 +87,10 @@ describe('ArtComponent', () => {
       'Hut',
       'Sporen',
       'Sporen',
+      // Die Fruchtschicht trägt die Farbe ihres Sporenlagers selbst.
+      'Art',
+      'Farbe',
       'Hut',
-      'Sporenlager',
       'Stiel',
       'Sporenpulver',
       'Auf Druck oder im Schnitt',
@@ -148,6 +150,30 @@ describe('ArtComponent', () => {
     await build(STEINPILZ);
 
     expect(screen.getByText('selten bis 25 cm')).toBeInTheDocument();
+  });
+
+  it('nennt die Fruchtschicht mit dem Wort, ohne Zeichen', async () => {
+    const { container } = await build(STEINPILZ);
+
+    // Der Sachverhalt lässt sich bei 24 px nicht zeichnen; das Wort trägt.
+    const heading = screen.getByRole('heading', { name: 'Fruchtschicht' });
+    const section = heading.parentElement;
+    expect(section).not.toBeNull();
+    expect(within(section ?? heading).getByText('Röhren')).toBeInTheDocument();
+    // Röhren haben keinen Ansatz am Stiel, also steht die Zeile nicht da.
+    expect(container.textContent).not.toContain('Ansatz am Stiel');
+  });
+
+  it('gibt Lamellen Ansatz, Stand und Schneide dazu', async () => {
+    await build({
+      ...STEINPILZ,
+      fruchtschicht: { art: 'lamellen', ansatz: 'frei', stand: 'eng', schneide: 'glatt' },
+    });
+
+    expect(screen.getByText('Lamellen')).toBeInTheDocument();
+    expect(screen.getByText('frei')).toBeInTheDocument();
+    expect(screen.getByText('eng')).toBeInTheDocument();
+    expect(screen.getByText('glatt')).toBeInTheDocument();
   });
 
   it('zeigt jede Farbe als Fläche, das Wort daneben', async () => {
@@ -341,7 +367,8 @@ describe('ArtComponent', () => {
     expect(lead).toHaveAttribute('src', '/api/species-images/bild-eins/full');
     expect(screen.getByText('Foto: Marie Weber · CC BY-SA 4.0')).toBeInTheDocument();
     await noViolations(container);
-  });
+    // Wie oben: die Artseite ist mit den Abschnitten aus D4b länger geworden.
+  }, 30_000);
 
   it('zeigt zu einer Art ohne Bild den Leerzustand statt eines leeren Rahmens', async () => {
     const { container } = await build(STEINPILZ);

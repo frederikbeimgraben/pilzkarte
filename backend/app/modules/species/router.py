@@ -48,6 +48,10 @@ async def species_list(
             tree=chosen.tree,
             month=chosen.month,
             colour=chosen.colour,
+            hymenophore=chosen.hymenophore,
+            attachment=chosen.attachment,
+            spacing=chosen.spacing,
+            edge=chosen.edge,
         ),
     )
 

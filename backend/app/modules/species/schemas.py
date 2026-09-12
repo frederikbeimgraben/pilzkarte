@@ -351,6 +351,87 @@ class Protection(BaseSchema):
         return self.status is not ProtectionStatus.NONE
 
 
+class HymenophoreKind(StrEnum):
+    """Woran die Sporen sitzen. Ein Fruchtkoerper hat genau eine dieser Formen.
+
+    Die Liste kommt aus den Quellseiten und nicht aus dem Kopf: 177 Seiten
+    fuehren eine Zeile "Lamellen", 64 "Roehren", 10 "Poren", 9 "Leisten" und
+    6 "Stacheln". Poren stehen als eigener Wert, weil die Porlinge sie von den
+    Roehren der Roehrlinge trennen; die Merkmalstabelle tut das schon.
+    """
+
+    GILLS = "lamellen"
+    TUBES = "roehren"
+    PORES = "poren"
+    SPINES = "stacheln"
+    FOLDS = "leisten"
+
+
+class GillAttachment(StrEnum):
+    """Wie die Lamellen den Stiel treffen. Das trennt den Champignon vom Wulstling."""
+
+    FREE = "frei"
+    ADNATE = "angewachsen"
+    EMARGINATE = "ausgebuchtet"
+    DECURRENT = "herablaufend"
+
+
+class GillSpacing(StrEnum):
+    """Wie dicht die Lamellen stehen."""
+
+    CLOSE = "eng"
+    NORMAL = "normal"
+    DISTANT = "weit"
+
+
+class GillEdge(StrEnum):
+    """Wie die Schneide einer Lamelle aussieht."""
+
+    SMOOTH = "glatt"
+    SERRATE = "gesaegt"
+    CILIATE = "bewimpert"
+
+
+class Hymenophore(BaseSchema):
+    """Die Fruchtschicht: woran die Sporen sitzen und wie sie stehen.
+
+    Ansatz, Stand und Schneide gibt es nur an Lamellen. Roehren, Stacheln und
+    Leisten tragen sie nicht, und ein Wert dort waere eine Behauptung ueber
+    etwas, das die Art nicht hat.
+
+    Die Farbe steht nicht hier: sie gehoert zu ``farben.sporenlager`` und
+    stuende sonst an zwei Stellen.
+    """
+
+    kind: HymenophoreKind = Field(validation_alias="art", serialization_alias="art")
+    attachment: GillAttachment | None = Field(
+        validation_alias="ansatz", serialization_alias="ansatz", default=None
+    )
+    spacing: GillSpacing | None = Field(
+        validation_alias="stand", serialization_alias="stand", default=None
+    )
+    edge: GillEdge | None = Field(
+        validation_alias="schneide", serialization_alias="schneide", default=None
+    )
+
+    @model_validator(mode="after")
+    def _only_gills_carry_the_rest(self) -> "Hymenophore":
+        if self.kind is HymenophoreKind.GILLS:
+            return self
+        set_here = [
+            name
+            for name, value in (
+                ("ansatz", self.attachment),
+                ("stand", self.spacing),
+                ("schneide", self.edge),
+            )
+            if value is not None
+        ]
+        if set_here:
+            raise ValueError(f"Nur Lamellen tragen {', '.join(set_here)}, nicht {self.kind.value}.")
+        return self
+
+
 class TaggedText(BaseSchema):
     """Geruch oder Geschmack: Schlagworte aus dem Katalog und der Satz daneben.
 
@@ -568,6 +649,11 @@ class Profile(BaseSchema):
         validation_alias="zeitraum", serialization_alias="zeitraum", default=None
     )
     protection: Protection = Field(validation_alias="schutz", serialization_alias="schutz")
+    # Die Quellseite nennt die Fruchtschicht nicht bei jeder Art. Wo sie
+    # schweigt, bleibt das Feld leer statt geraten.
+    hymenophore: Hymenophore | None = Field(
+        validation_alias="fruchtschicht", serialization_alias="fruchtschicht", default=None
+    )
     smell: TaggedText = Field(
         validation_alias="geruch", serialization_alias="geruch", default_factory=TaggedText
     )
@@ -865,6 +951,9 @@ class Species(SpeciesCommon):
     observed_period: MonthRange | None = Field(
         validation_alias="beobachteterZeitraum", serialization_alias="beobachteterZeitraum"
     )
+    hymenophore: Hymenophore | None = Field(
+        validation_alias="fruchtschicht", serialization_alias="fruchtschicht"
+    )
     smell: TaggedText = Field(validation_alias="geruch", serialization_alias="geruch")
     taste: TaggedText = Field(validation_alias="geschmack", serialization_alias="geschmack")
     reagents: list[ReagentEntry] = Field(
@@ -935,6 +1024,18 @@ class SpeciesQuery(BaseSchema):
         validation_alias="monat", serialization_alias="monat", default=None, ge=1, le=12
     )
     colour: str | None = Field(validation_alias="farbe", serialization_alias="farbe", default=None)
+    hymenophore: HymenophoreKind | None = Field(
+        validation_alias="fruchtschicht", serialization_alias="fruchtschicht", default=None
+    )
+    attachment: GillAttachment | None = Field(
+        validation_alias="ansatz", serialization_alias="ansatz", default=None
+    )
+    spacing: GillSpacing | None = Field(
+        validation_alias="stand", serialization_alias="stand", default=None
+    )
+    edge: GillEdge | None = Field(
+        validation_alias="schneide", serialization_alias="schneide", default=None
+    )
 
 
 class SpeciesList(BaseSchema):
