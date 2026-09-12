@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { BadgeComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
-import type { SpeciesBrief, Tag } from '../../core/api/models';
+import { EDIBILITIES, type Essbarkeit, type SpeciesBrief, type Tag } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import type { TranslationKey } from '../../core/i18n/translations';
@@ -34,11 +34,19 @@ import {
   TAG_TEXT,
 } from './labels';
 
+/**
+ * Der einzige Chip, der die nicht sammelbaren Profile zeigt. Die 221 Profile
+ * stehen sonst draußen: wer den Katalog durchblättert, sucht etwas zum
+ * Sammeln. „nichtSammelbar“ ist kein Tag einer Art, sondern der Topf, aus dem
+ * die Liste zieht.
+ */
+const CHIP_LOOKALIKE = 'nichtSammelbar';
+
 /** „alle“ zeigt den ganzen Katalog, jeder andere Chip ist ein Tag einer Art. */
-type ChipValue = 'alle' | Tag;
+type ChipValue = 'alle' | typeof CHIP_LOOKALIKE | Tag;
 
 /**
- * Die vier Chips der Mockups. Die Werte sind Enum-Werte des Backends, die
+ * Die fünf Chips der Mockups. Die Werte sind Enum-Werte des Backends, die
  * Beschriftungen stehen wörtlich in `docs/mockups/Arten.dc.html`.
  */
 const CHIPS: readonly { value: ChipValue; label: TranslationKey }[] = [
@@ -46,15 +54,11 @@ const CHIPS: readonly { value: ChipValue; label: TranslationKey }[] = [
   { value: 'vorhersage', label: 'arten.chip.mitVorhersage' },
   { value: 'roehrling', label: 'arten.chip.roehrlinge' },
   { value: 'herbst', label: 'arten.chip.herbst' },
-  { value: 'verwechslung', label: 'arten.chip.verwechslung' },
+  { value: CHIP_LOOKALIKE, label: 'arten.chip.verwechslung' },
 ];
 
-/**
- * Der einzige Chip, der die nicht sammelbaren Profile zeigt. Die 224
- * Verwechslungsarten stehen sonst draußen: wer den Katalog durchblättert,
- * sucht etwas zum Sammeln.
- */
-const CHIP_LOOKALIKE = 'verwechslung';
+/** Die Stufen der Essbarkeit als zweite Reihe. „alle“ schränkt nicht ein. */
+type LevelFilter = 'alle' | Essbarkeit;
 
 /** Ein Tag unter dem Namen einer Art. */
 interface Marke {
@@ -111,10 +115,19 @@ export class SpeciesListComponent {
 
   protected readonly search = signal('');
   protected readonly chip = signal<ChipValue>('alle');
+  protected readonly edibility = signal<LevelFilter>('alle');
 
   protected readonly chips = computed<Chip[]>(() =>
     CHIPS.map((chip) => ({ value: chip.value, label: this.i18n.translate(chip.label) })),
   );
+
+  protected readonly edibilityChips = computed<Chip[]>(() => [
+    { value: 'alle', label: this.i18n.translate('arten.chip.jedeStufe') },
+    ...EDIBILITIES.map((level) => ({
+      value: level,
+      label: this.i18n.translate(EDIBILITY_TEXT[level]),
+    })),
+  ]);
 
   /** Die Begehungen je Woche gelten für alle Arten gleich und stehen am Kopf. */
   protected readonly begehungen = computed<readonly number[]>(
@@ -129,8 +142,10 @@ export class SpeciesListComponent {
     const chip = this.chip();
     const active = this.state.activeSpecies();
     // `filter` gibt schon eine eigene Liste zurück; `sort` rührt den Zustand nicht an.
+    const level = this.edibility();
     const filtered = this.grundmenge()
       .filter((art) => chip === 'alle' || chip === CHIP_LOOKALIKE || art.tags.includes(chip))
+      .filter((art) => level === 'alle' || art.speisewert === level)
       .filter((art) => this.matches(art, query));
     // Unter „Giftig und Verwechslung“ führt die Gefahr, sonst die Stufe: wer
     // dort nachschlägt, sucht das Tödliche und nicht das Alphabet.
@@ -178,6 +193,11 @@ export class SpeciesListComponent {
   protected selectChip(value: string): void {
     const chip = CHIPS.find((candidate) => candidate.value === value);
     if (chip) this.chip.set(chip.value);
+  }
+
+  protected selectEdibility(value: string): void {
+    const level = EDIBILITIES.find((candidate) => candidate === value);
+    this.edibility.set(level ?? 'alle');
   }
 
   protected open(slug: string): void {

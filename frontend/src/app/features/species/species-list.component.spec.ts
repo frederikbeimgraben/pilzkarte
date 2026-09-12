@@ -128,6 +128,28 @@ describe('ArtenComponent', () => {
     expect(screen.getByText('1 Arten')).toBeInTheDocument();
   });
 
+  it('filtert nach der Stufe der Essbarkeit', async () => {
+    const { refresh, nachlade } = await build();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Giftig und Verwechslung' }));
+    nachlade('/api/arten?sammelbar=false', LOOKALIKE_LIST);
+    refresh();
+    await userEvent.click(screen.getByRole('button', { name: 'Giftig' }));
+    refresh();
+
+    expect(names()).toEqual(['Gallenröhrling']);
+
+    await userEvent.click(screen.getByRole('button', { name: 'Tödlich giftig' }));
+    refresh();
+
+    expect(screen.getByText('Keine Art passt zur Suche.')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Jede Stufe' }));
+    refresh();
+
+    expect(names()).toEqual(['Gallenröhrling']);
+  });
+
   it('findet über die Suche auch einen Giftpilz und zeigt seine Stufe rot', async () => {
     const { refresh, nachlade } = await build();
 
@@ -136,7 +158,7 @@ describe('ArtenComponent', () => {
     refresh();
 
     const row = screen.getByRole('button', { name: /Gallenröhrling/ });
-    expect(within(row).getByText('Verwechslung')).toBeInTheDocument();
+    expect(within(row).getByText('Profil')).toBeInTheDocument();
     expect(within(row).getByText('Giftig')).toBeInTheDocument();
   });
 
