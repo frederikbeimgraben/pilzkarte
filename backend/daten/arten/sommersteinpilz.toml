@@ -2,7 +2,6 @@ name = "Sommersteinpilz"
 lateinisch = "Boletus reticulatus"
 gruppe = "roehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

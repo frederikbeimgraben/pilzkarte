@@ -2,7 +2,6 @@ name = "Käppchenmorchel"
 lateinisch = "Mitrophora semilibera"
 gruppe = "morchel"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 2
 marktfaehigSchweiz = true
 marktfaehig = true

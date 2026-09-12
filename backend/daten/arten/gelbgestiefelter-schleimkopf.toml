@@ -2,7 +2,6 @@ name = "Gelbgestiefelter Schleimkopf"
 lateinisch = "Cortinarius triumphans"
 gruppe = "schleierling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehig = true
 sammelbar = false

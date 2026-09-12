@@ -2,7 +2,6 @@ name = "Risspilzähnlicher Erdritterling"
 lateinisch = "Tricholoma argyraceum"
 gruppe = "ritterling"
 speisewert = "ungeniessbar"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

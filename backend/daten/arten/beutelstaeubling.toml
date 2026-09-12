@@ -2,7 +2,6 @@ name = "Beutelstäubling"
 lateinisch = "Lycoperdon excipuliforme"
 gruppe = "staeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehigSchweiz = false
 marktfaehig = false

@@ -2,7 +2,6 @@ name = "Braunschuppiger Wiesenchampignon"
 lateinisch = "Agaricus moellerianus"
 gruppe = "champignon"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

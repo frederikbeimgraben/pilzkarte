@@ -2,7 +2,6 @@ name = "Nelkenschwindling"
 lateinisch = "Marasmius oreades"
 gruppe = "schwindling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]

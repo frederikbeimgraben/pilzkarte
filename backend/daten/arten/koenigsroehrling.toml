@@ -2,7 +2,6 @@ name = "Königsröhrling"
 lateinisch = "Butyriboletus regius"
 gruppe = "roehrling"
 speisewert = "essbar"
-geschuetzt = true
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

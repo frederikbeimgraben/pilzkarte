@@ -2,7 +2,6 @@ name = "Rosenroter Seitling"
 lateinisch = "Pleurotus djamor"
 gruppe = "seitling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = false
 sammelbar = false

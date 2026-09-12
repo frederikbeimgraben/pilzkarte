@@ -2,7 +2,6 @@ name = "Fingerhutverpel"
 lateinisch = "Verpa conica"
 gruppe = "morchel"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = true
 sammelbar = false

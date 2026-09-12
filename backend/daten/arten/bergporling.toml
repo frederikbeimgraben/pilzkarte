@@ -2,7 +2,6 @@ name = "Bergporling"
 lateinisch = "Bondarzewia mesenterica"
 gruppe = "porling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehig = false
 sammelbar = false

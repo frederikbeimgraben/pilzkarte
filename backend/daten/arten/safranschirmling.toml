@@ -2,7 +2,6 @@ name = "Keulenstieliger Garten-Safranschirmling"
 lateinisch = "Chlorophyllum rhacodes"
 gruppe = "schirmling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 3
 marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]

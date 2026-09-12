@@ -2,7 +2,6 @@ name = "Großer Kiefernschneckling"
 lateinisch = "Hygrophorus latitabundus"
 gruppe = "schneckling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = false
 marktfaehig = true

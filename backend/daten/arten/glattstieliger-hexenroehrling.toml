@@ -2,7 +2,6 @@ name = "Glattstieliger Hexenröhrling"
 lateinisch = "Suillellus queletii"
 gruppe = "roehrling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehig = false
 sammelbar = false

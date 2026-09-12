@@ -2,7 +2,6 @@ name = "Spangrüner Kiefernreizker"
 lateinisch = "Lactarius semisanguifluus"
 gruppe = "milchling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = false
 sammelbar = false

@@ -2,7 +2,6 @@ name = "Purpuroranger Afterleistling"
 lateinisch = "Aphroditeola olida"
 gruppe = "leistling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

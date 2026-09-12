@@ -2,7 +2,6 @@ name = "Glatter Ohrlappenpilz"
 lateinisch = "Auricularia auricula-judae"
 gruppe = "ohrlappenpilz"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

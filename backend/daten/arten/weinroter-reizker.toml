@@ -2,7 +2,6 @@ name = "Weinroter Kiefernreizker"
 lateinisch = "Lactarius sanguifluus"
 gruppe = "milchling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

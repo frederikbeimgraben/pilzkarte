@@ -2,7 +2,6 @@ name = "Graublättriger Trichterling"
 lateinisch = "Atractosporocybe inornata"
 gruppe = "trichterling"
 speisewert = "ungeniessbar"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

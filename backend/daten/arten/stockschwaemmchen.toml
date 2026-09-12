@@ -2,7 +2,6 @@ name = "Stockschwämmchen"
 lateinisch = "Kuehneromyces mutabilis"
 gruppe = "schueppling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst"]

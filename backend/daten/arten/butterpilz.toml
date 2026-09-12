@@ -2,7 +2,6 @@ name = "Butterpilz"
 lateinisch = "Suillus luteus"
 gruppe = "schmierroehrling"
 speisewert = "essbar"
-geschuetzt = false
 marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]

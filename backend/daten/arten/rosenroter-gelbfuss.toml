@@ -2,7 +2,6 @@ name = "Rosenroter Gelbfuß"
 lateinisch = "Gomphidius roseus"
 gruppe = "gelbfuss"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
 sammelbar = false

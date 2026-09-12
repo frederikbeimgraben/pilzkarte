@@ -2,7 +2,6 @@ name = "Austernseitling"
 lateinisch = "Pleurotus ostreatus"
 gruppe = "seitling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

@@ -2,7 +2,6 @@ name = "Samtpfifferling"
 lateinisch = "Cantharellus friesii"
 gruppe = "leistling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = false
 marktfaehig = true

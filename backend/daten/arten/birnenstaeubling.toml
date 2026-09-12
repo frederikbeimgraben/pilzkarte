@@ -2,7 +2,6 @@ name = "Birnenstäubling"
 lateinisch = "Apioperdon pyriforme"
 gruppe = "staeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 3
 marktfaehigSchweiz = false
 marktfaehig = false

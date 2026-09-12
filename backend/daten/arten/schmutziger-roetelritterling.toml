@@ -2,7 +2,6 @@ name = "Schmutziger Rötelritterling"
 lateinisch = "Lepista sordida"
 gruppe = "roetelritterling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 3
 marktfaehigSchweiz = true
 marktfaehig = true

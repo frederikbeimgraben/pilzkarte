@@ -2,7 +2,6 @@ name = "Fuchsrotkappe"
 lateinisch = "Leccinum vulpinum"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = false
 marktfaehig = true

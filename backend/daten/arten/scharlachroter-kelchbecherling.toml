@@ -2,7 +2,6 @@ name = "Scharlachroter Kelchbecherling"
 lateinisch = "Sarcoscypha coccinea"
 gruppe = "becherling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 5
 marktfaehig = false
 sammelbar = false

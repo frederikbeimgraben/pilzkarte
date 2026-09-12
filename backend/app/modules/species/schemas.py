@@ -17,6 +17,7 @@ from pydantic import Field, field_validator, model_validator
 from app.shared.schemas import BaseSchema, Week
 
 WEEKS = 52
+MONTHS = 12
 
 
 class Tier(StrEnum):
@@ -300,13 +301,22 @@ class Colours(BaseSchema):
     )
 
 
-class Period(BaseSchema):
-    """Der Zeitraum als Monatszahlen. Dezember bis Februar laeuft ueber den Jahreswechsel."""
+class MonthRange(BaseSchema):
+    """Von welchem bis zu welchem Monat, beide eingeschlossen.
+
+    Liegt das Ende vor dem Anfang, laeuft die Spanne ueber den Jahreswechsel:
+    November bis Februar ist eine Spanne, keine zwei.
+    """
 
     start_month: int = Field(
         validation_alias="vonMonat", serialization_alias="vonMonat", ge=1, le=12
     )
     end_month: int = Field(validation_alias="bisMonat", serialization_alias="bisMonat", ge=1, le=12)
+
+
+class Period(MonthRange):
+    """Der Zeitraum der Quellseite. Dezember bis Februar laeuft ueber den Jahreswechsel."""
+
     peak_month: int | None = Field(
         validation_alias="spitzeMonat",
         serialization_alias="spitzeMonat",
@@ -325,10 +335,20 @@ class ProtectionStatus(StrEnum):
 
 
 class Protection(BaseSchema):
-    """Der Schutzstatus mit der Verordnung, aus der er stammt."""
+    """Der Schutzstatus mit der Verordnung, aus der er stammt.
+
+    Drei Stufen statt eines Schalters: "streng geschuetzt" und "fuer den
+    Eigenbedarf" sind zwei verschiedene Sachen, die ein Ja oder Nein nicht
+    trennen kann.
+    """
 
     status: ProtectionStatus
     source: str = Field(validation_alias="quelle", serialization_alias="quelle", min_length=1)
+
+    @property
+    def restricted(self) -> bool:
+        """Sagt, ob die Art ueberhaupt unter Schutz steht."""
+        return self.status is not ProtectionStatus.NONE
 
 
 class TaggedText(BaseSchema):
@@ -489,7 +509,6 @@ class Profile(BaseSchema):
     )
     group: Group = Field(validation_alias="gruppe", serialization_alias="gruppe")
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
-    protected: bool = Field(validation_alias="geschuetzt", serialization_alias="geschuetzt")
     seasons: list[Season] = Field(
         validation_alias="jahreszeiten", serialization_alias="jahreszeiten", min_length=1
     )
@@ -548,9 +567,7 @@ class Profile(BaseSchema):
     period: Period | None = Field(
         validation_alias="zeitraum", serialization_alias="zeitraum", default=None
     )
-    protection: Protection | None = Field(
-        validation_alias="schutz", serialization_alias="schutz", default=None
-    )
+    protection: Protection = Field(validation_alias="schutz", serialization_alias="schutz")
     smell: TaggedText = Field(
         validation_alias="geruch", serialization_alias="geruch", default_factory=TaggedText
     )
@@ -796,7 +813,7 @@ class SpeciesCommon(BaseSchema):
     group: Group = Field(validation_alias="gruppe", serialization_alias="gruppe")
     tier: Tier = Field(validation_alias="stufe", serialization_alias="stufe")
     tags: list[Tag]
-    protected: bool = Field(validation_alias="geschuetzt", serialization_alias="geschuetzt")
+    protection: Protection = Field(validation_alias="schutz", serialization_alias="schutz")
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     map_slug: str | None = Field(validation_alias="kartenSlug", serialization_alias="kartenSlug")
     collectable: bool = Field(validation_alias="sammelbar", serialization_alias="sammelbar")
@@ -843,7 +860,11 @@ class Species(SpeciesCommon):
     measurements: Measurements = Field(validation_alias="masse", serialization_alias="masse")
     colours: Colours = Field(validation_alias="farben", serialization_alias="farben")
     period: Period | None = Field(validation_alias="zeitraum", serialization_alias="zeitraum")
-    protection: Protection | None = Field(validation_alias="schutz", serialization_alias="schutz")
+    # Was die Kurve zeigt, nicht was die Quellseite sagt: die Wochen ueber der
+    # halben Hoehe des Jahres. Ohne Kurve bleibt es leer.
+    observed_period: MonthRange | None = Field(
+        validation_alias="beobachteterZeitraum", serialization_alias="beobachteterZeitraum"
+    )
     smell: TaggedText = Field(validation_alias="geruch", serialization_alias="geruch")
     taste: TaggedText = Field(validation_alias="geschmack", serialization_alias="geschmack")
     reagents: list[ReagentEntry] = Field(

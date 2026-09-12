@@ -2,7 +2,6 @@ name = "Riesenporling"
 lateinisch = "Meripilus giganteus"
 gruppe = "porling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 4
 marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]

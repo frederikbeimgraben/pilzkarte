@@ -2,7 +2,6 @@ name = "Spitzschuppiger Schirmling"
 lateinisch = "Echinoderma asperum"
 gruppe = "schirmling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

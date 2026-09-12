@@ -2,7 +2,6 @@ name = "Grüner Knollenblätterpilz"
 lateinisch = "Amanita phalloides"
 gruppe = "wulstling"
 speisewert = "toedlichGiftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

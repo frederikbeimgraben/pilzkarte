@@ -2,7 +2,6 @@ name = "Birken-Rotkappe"
 lateinisch = "Leccinum versipelle"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true

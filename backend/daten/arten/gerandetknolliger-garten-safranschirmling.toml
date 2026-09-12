@@ -2,7 +2,6 @@ name = "Gerandetknolliger Garten-Safranschirmling"
 lateinisch = "Chlorophyllum brunneum"
 gruppe = "schirmling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

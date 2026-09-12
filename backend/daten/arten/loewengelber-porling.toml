@@ -2,7 +2,6 @@ name = "Löwengelber Porling"
 lateinisch = "Cerioporus leptocephalus"
 gruppe = "porling"
 speisewert = "ungeniessbar"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]

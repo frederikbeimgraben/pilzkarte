@@ -2,7 +2,6 @@ name = "Ochsenröhrling"
 lateinisch = "Imperator torosus"
 gruppe = "roehrling"
 speisewert = "bedingtEssbar"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]

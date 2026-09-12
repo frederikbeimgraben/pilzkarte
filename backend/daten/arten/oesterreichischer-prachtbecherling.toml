@@ -2,7 +2,6 @@ name = "Österreichischer Prachtbecherling"
 lateinisch = "Sarcoscypha austriaca"
 gruppe = "becherling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 5
 marktfaehig = false
 sammelbar = false

@@ -2,7 +2,6 @@ name = "Berindeter Seitling"
 lateinisch = "Pleurotus dryinus"
 gruppe = "seitling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = false
 sammelbar = false

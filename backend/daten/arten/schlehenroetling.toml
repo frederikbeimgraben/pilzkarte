@@ -2,7 +2,6 @@ name = "Schlehenrötling"
 lateinisch = "Entoloma sepium"
 gruppe = "roetling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 2
 marktfaehig = true
 sammelbar = false

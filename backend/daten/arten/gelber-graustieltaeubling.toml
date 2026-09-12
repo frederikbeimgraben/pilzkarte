@@ -2,7 +2,6 @@ name = "Gelber Graustieltäubling"
 lateinisch = "Russula claroflava"
 gruppe = "taeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = false
 marktfaehig = true

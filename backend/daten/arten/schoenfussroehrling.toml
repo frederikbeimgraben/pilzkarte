@@ -2,7 +2,6 @@ name = "Schönfußröhrling"
 lateinisch = "Caloboletus calopus"
 gruppe = "roehrling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]

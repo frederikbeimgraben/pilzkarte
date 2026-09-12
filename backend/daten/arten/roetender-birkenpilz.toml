@@ -2,7 +2,6 @@ name = "Rötender Birkenpilz"
 lateinisch = "Leccinum oxydabile"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
-geschuetzt = true
 wertigkeit = 3
 marktfaehigSchweiz = false
 marktfaehig = false

@@ -2,7 +2,6 @@ name = "Ockertäubling"
 lateinisch = "Russula ochroleuca"
 gruppe = "taeubling"
 speisewert = "essbar"
-geschuetzt = false
 wertigkeit = 5
 marktfaehig = false
 sammelbar = false

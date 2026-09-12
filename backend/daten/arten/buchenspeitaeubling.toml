@@ -2,7 +2,6 @@ name = "Buchenspeitäubling"
 lateinisch = "Russula nobilis"
 gruppe = "taeubling"
 speisewert = "giftig"
-geschuetzt = false
 marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
