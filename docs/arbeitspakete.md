@@ -486,6 +486,63 @@ Abnahme:
 - Offline zeigt die App den zuletzt geladenen Katalog
 - Ein geänderter Text erscheint nach dem Speichern ohne Neuladen
 
+### R4 Datenmodell aufräumen
+
+Das Entitätendiagramm aus M1 hat vier Mängel sichtbar gemacht. Dreizehn
+Tabellen tragen vier Fremdschlüssel. Acht Verweise auf eine Person sind lose
+Zeichenketten, darum zeigt nichts auf `nutzer` und die Zugehörigkeit von
+Fund, Marker, Zone, Kombination und Artbild ist im Modell unsichtbar. Es gibt
+zwei Fototabellen mit verschiedenen Spalten und verschiedenen Lebenszyklen.
+Es gibt keine Art als Entität. Die Bezeichner sind halb deutsch, halb
+englisch.
+
+#### R4a Person als Fremdschlüssel
+
+Umfang: `fund.besitzer_sub`, `marker.besitzer_sub`, `zone.besitzer_sub`,
+`kombination.besitzer_sub`, `species_image.uploader_sub`,
+`species_image.reviewed_by`, `text.updated_by` und `user_role.user_sub`
+verweisen auf `nutzer.sub`. `fund.besitzer_name` fällt weg, der Name kommt
+beim Ausliefern aus der Verbindung. Wer sich zum ersten Mal anmeldet, bekommt
+seine Zeile in `nutzer`, bevor das erste Objekt entsteht.
+
+Abnahme:
+- Ein Test lehnt ein Objekt ab, dessen Person es nicht gibt
+- Das Diagramm zeigt die Zugehörigkeit aller fünf besitzbaren Tabellen
+- Keine Antwort ändert sich, der Name steht weiter am Fund
+
+#### R4b Art als Entität
+
+Umfang: Die 306 Profile wandern in eine Tabelle. Die TOML-Dateien bleiben
+Anfangsbestand, wie `translations.ts` bei den Texten aus G1: die Migration
+liest sie ein, danach ist die Tabelle die Wahrheit, und der Start gleicht nur
+noch ab. `fund` und die Fotos verweisen per Fremdschlüssel, leer erlaubt.
+Leer heißt unbekannt.
+
+Abnahme:
+- Ein Fund mit unbekannter Art lässt sich speichern und lesen
+- Ein Fund mit einer Art, die es nicht gibt, wird abgelehnt
+- Der Katalog antwortet wie vorher, gemessen an den Tests aus D1 bis D8
+
+#### R4c Ein Foto
+
+Umfang: `foto` und `species_image` werden eine Tabelle mit Urheber, Lizenz,
+Prüfzustand und wahlfreien Verweisen auf Fund und Art. Ein Fundfoto mit
+bestimmter Art ist damit auch ein Artfoto und erscheint nach Freigabe auf der
+Artseite.
+
+Abnahme:
+- Ein Foto am Fund mit gesetzter Art erscheint nach Freigabe auf der Artseite
+- Ein Foto ohne Fund und ohne Art wird abgelehnt
+- Die Ablage bleibt, wo sie ist, kein zweiter Pfad
+
+#### R4d Bezeichner vereinheitlichen
+
+Das ist R3, hier nur als Abhängigkeit genannt: `nutzer`, `besitzer_sub` und
+`erstellt_am` stehen neben `role`, `created_at` und `updated_by`.
+
+Reihenfolge: R4a hängt an nichts. R4b wartet auf D8, sonst schreibt der
+Katalog in Dateien, die zur Tabelle werden. R4c braucht R4b. R4d zuletzt.
+
 ## Block 4, Offline und Feinschliff
 
 ### F1 Offline-Warteschlange und PWA
