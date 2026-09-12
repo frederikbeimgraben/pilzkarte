@@ -42,6 +42,7 @@ from pyproj import Transformer
 sys.path.insert(0, str(Path(__file__).parent))
 from build_dataset import add_anomalies, add_lags, week_number
 from manifest import histogramm, schreibe
+from smoothing import smoothed_field
 from tiles import schreibe_kacheln
 from tree_species import CLASSES, CONIFERS
 from visit_model import BLOCK_M, ActivityFields
@@ -420,7 +421,6 @@ def main() -> None:
         observed_last = None
     weeks = (weather[["iso_year", "iso_week"]].drop_duplicates()
              .sort_values(["iso_year", "iso_week"]).tail(args.weeks))
-    from scipy.ndimage import gaussian_filter
     # Ausserhalb Deutschlands gibt es kein HYRAS-Raster, ueber Wasser keinen
     # Bodenwert. Beides sind saubere Masken aus den Daten selbst: eine Zelle
     # ohne Wetterzelle liegt im Ausland, eine ohne Boden-pH liegt im See.
@@ -431,8 +431,19 @@ def main() -> None:
     zellen = pd.Index(pd.unique(weather["cell"]))
     zellcode = zellen.get_indexer(grid["cell"].to_numpy())
     ausland = zellcode < 0
-    wasser = grid["soil_phh2o_0_5cm"].isna().to_numpy() if "soil_phh2o_0_5cm" in grid else np.zeros(len(grid), bool)
+    if "soil_phh2o_0_5cm" not in grid:
+        # Früher fiel die Wassermaske hier still weg. Mit --min-forest 0 —
+        # so läuft der Schopftintling — blieb dann nichts mehr, was das Meer
+        # aussparte, und die Karte behauptete Werte auf der Ostsee.
+        raise SystemExit("site_500m.parquet fehlt oder hat keinen Boden-pH — "
+                         "erst input_layers.py laufen lassen")
+    wasser = grid["soil_phh2o_0_5cm"].isna().to_numpy()
     bare = (grid["forest_mask"].to_numpy() < args.min_forest) | ausland | wasser
+    # Wo überhaupt gezeichnet werden darf. Der Waldanteil steht bewusst nicht
+    # darin: ein Wert soll über den Waldrand laufen dürfen, denn der Rand
+    # eines Waldes folgt keiner Rasterlinie. Über die Küste und über die
+    # Grenze soll er es nicht.
+    land = np.logical_not(ausland | wasser).reshape(shape)
     print(f"  ausgespart: {int(ausland.sum())} Zellen Ausland, "
           f"{int(wasser.sum())} Wasser, {int(bare.sum())} gesamt von {len(grid)}")
 
@@ -596,14 +607,7 @@ def main() -> None:
                 Path(os.environ["PILZE_DUMP"]) / f"dump_{year}W{week:02d}.parquet", index=False)
         del eingabe
         probability[bare] = np.nan
-        field = probability.reshape(shape)
-        if args.smooth > 0:
-            filled = np.where(np.isfinite(field), field, 0.0)
-            mask = np.isfinite(field).astype("float32")
-            blur = gaussian_filter(filled, args.smooth)
-            norm = gaussian_filter(mask, args.smooth)
-            with np.errstate(invalid="ignore", divide="ignore"):
-                field = np.where(norm > 0.08, blur / np.maximum(norm, 1e-6), np.nan)
+        field = smoothed_field(probability.reshape(shape), args.smooth, land)
         print(f"  {year}-W{week:02d}  mean {np.nanmean(field):.3f} "
               f"max {np.nanmax(field):.3f}", flush=True)
         manifest.append(schreibe_woche(year, week, field, ahead))

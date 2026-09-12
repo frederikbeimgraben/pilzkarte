@@ -36,6 +36,10 @@
   flex: none;
   align-items: center;
   justify-content: center;
+  // Ein <button> ist von sich aus nur so breit wie sein Inhalt, auch als
+  // Flexkasten. Ohne diese Breite klebte der Balken am linken Rand des
+  // Blattes, statt in seiner Mitte zu stehen.
+  inline-size: 100%;
   block-size: var(--pilz-handle-height);
   padding: 0;
   background: none;
