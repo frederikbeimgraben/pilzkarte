@@ -12,6 +12,9 @@
   // Schritt zwischen Bedienelementen, die zusammengehören.
   --pilz-block: var(--space-5);
   --pilz-step: var(--space-3);
+  // Griff, Kopfzeile und Zeitleiste des Blatts. Dieselbe Zahl steht als
+  // `HEAD_HEIGHT` in `sheet.component.ts`: sie ist dort die unterste Raste.
+  --pilz-sheet-head: 152px;
   --pilz-handle-height: 24px;
   --pilz-handle-width: 40px;
   --pilz-field-height: 44px;

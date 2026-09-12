@@ -21,6 +21,7 @@ import type { Combination } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { ViewportService } from '../../core/layout/viewport.service';
+import { LocationService } from '../../core/location/location.service';
 import { ManifestService } from '../../core/tiles/manifest.service';
 import { NOW } from '../../core/tiles/now';
 import { LayersService } from '../../core/tiles/layers.service';
@@ -161,6 +162,7 @@ export class MapComponent implements OnDestroy {
   private readonly toasts = inject(ToastService);
   private readonly auth = inject(AuthService);
   private readonly combinations = inject(CombinationsApi);
+  protected readonly locating = inject(LocationService);
   private readonly protocol = new ValueProtocol(inject(VALUE_WORKER));
 
   /**
@@ -206,6 +208,18 @@ export class MapComponent implements OnDestroy {
    * ein Objekt offen ist, tritt das Blatt der Karte zurück.
    */
   protected readonly overlaid = computed(() => this.addEntry.running() || this.state.object() !== null);
+
+  /**
+   * Wie hoch das Blatt gerade über dem unteren Rand steht. Der Knopf
+   * „Eintragen“ und der Urheberhinweis bleiben darüber, statt dahinter zu
+   * verschwinden. Am Rechner steht das Blatt in der linken Spalte und lässt
+   * den unteren Rand frei.
+   */
+  protected readonly sheetInset = computed(() => {
+    if (this.wide()) return '0px';
+    const size = DETENTS_DEFAULT[this.state.detent()];
+    return typeof size === 'number' ? `${size * 100}%` : size;
+  });
 
   protected readonly showsLayer = computed(() => this.state.viewMode() === 'ebene');
   protected readonly showsCombination = computed(() => this.state.viewMode() === 'kombination');
@@ -623,14 +637,29 @@ export class MapComponent implements OnDestroy {
   }
 
   /** Zentriert die Karte auf den eigenen Standort. */
+  /**
+   * Zentriert auf den eigenen Standort. Steht er schon, geht es ohne zweite
+   * Ortung; sonst wird einmal gefragt. Ohne Freigabe ist der Knopf gesperrt und
+   * dieser Weg gar nicht erst offen.
+   */
   protected toMyLocation(): void {
+    const own = this.locating.location();
+    if (own !== null) {
+      this.adapter.centerOn([own.lon, own.lat], ZOOM_LOCATION);
+      return;
+    }
+    const api = navigator.geolocation as Partial<Geolocation> | undefined;
+    if (typeof api?.getCurrentPosition !== 'function') {
+      this.toasts.error(this.i18n.translate('karte.ortFehler'));
+      return;
+    }
     navigator.geolocation.getCurrentPosition(
       (location) => {
         this.adapter.centerOn([location.coords.longitude, location.coords.latitude], ZOOM_LOCATION);
       },
       () => {
-        // Kein Standort ist kein Fehler der App: der Nutzer hat abgelehnt, oder
-        // im Wald steht kein Signal. Ein Toast sagt es und lässt die Karte stehen.
+        // Kein Signal ist kein Fehler der App: im Wald steht keins. Ein Toast
+        // sagt es und lässt die Karte stehen.
         this.toasts.error(this.i18n.translate('karte.ortFehler'));
       },
     );

@@ -228,7 +228,7 @@ describe('MapLibreAdapter', () => {
     expect(map.options['minZoom']).toBe(5);
     expect(map.options['maxBounds']).toEqual(OPTIONEN.maxBounds);
     expect(map.options['attributionControl']).toBe(false);
-    expect(map.controls[0].location).toBe('top-right');
+    expect(map.controls[0].location).toBe('bottom-left');
   });
 
   it('legt die erste Woche sofort sichtbar auf die Karte', async () => {

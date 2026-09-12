@@ -21,3 +21,8 @@
   background: var(--color-primary);
   border-color: var(--color-primary);
 }
+
+.floating:disabled {
+  cursor: default;
+  opacity: 0.45;
+}

@@ -16,6 +16,19 @@ describe('RampComponent', () => {
     await noViolations(container);
   });
 
+  it('trägt die Fußnote nur, wenn eine da ist', async () => {
+    const { fixture, container } = await render(RampComponent, {
+      inputs: { label: 'Waldanteil', von: '0 %', bis: '100 %' },
+    });
+
+    expect(container.querySelector('app-note')).toBeNull();
+
+    fixture.componentRef.setInput('note', 'Eine Zelle misst 500 Meter.');
+    fixture.detectChanges();
+
+    expect(screen.getByText('Eine Zelle misst 500 Meter.')).toBeInTheDocument();
+  });
+
   it('nennt Hilfsmitteln die Spanne des Verlaufs', async () => {
     await render(RampComponent, {
       inputs: { label: 'Niederschlag', von: '0 mm', bis: '152 mm', colors: ['#000', '#fff'] },

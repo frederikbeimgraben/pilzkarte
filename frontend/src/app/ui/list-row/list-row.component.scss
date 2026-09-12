@@ -39,8 +39,13 @@
 }
 
 .row__lead {
+  // Der Inhalt sitzt auf der ersten Zeile des Titels. Ein fester Abstand von
+  // oben traf sie nur bei einer Schriftgröße.
+  display: flex;
   flex: none;
-  margin-block-start: 5px;
+  align-items: center;
+  block-size: 1lh;
+  font-size: var(--fs-md);
 }
 
 .row__stack {

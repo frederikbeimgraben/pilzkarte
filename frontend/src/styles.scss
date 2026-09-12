@@ -16,10 +16,18 @@ body {
   overscroll-behavior: none;
 }
 
-// Der Urheberhinweis von MapLibre steht oben rechts über der Karte, weil unten
-// das Blatt liegt. Auf dem Telefon ist er breiter als der Bildschirm; ohne
-// Umbruch liefe sein Anfang aus dem Bild. Seine eigenen Farben sind fest hell,
-// darum die Tokens der App.
+// Der Urheberhinweis von MapLibre steht am unteren Rand der Karte, weg von der
+// Knopfgruppe oben rechts und weg von „Eintragen“ unten rechts. Am Telefon
+// deckt das Blatt diesen Rand; `--pilz-sheet-inset` hebt den Hinweis über
+// dessen jeweilige Raste. Am Rechner steht das Blatt in der linken Spalte und
+// lässt den Rand frei.
+.maplibregl-ctrl-bottom-left {
+  inset-block-end: var(--pilz-sheet-inset, var(--pilz-sheet-head));
+}
+
+// Auf dem Telefon ist der Hinweis breiter als der Bildschirm; ohne Umbruch
+// liefe sein Anfang aus dem Bild. Seine eigenen Farben sind fest hell, darum
+// die Tokens der App.
 .maplibregl-ctrl-attrib {
   max-inline-size: min(72vw, 340px);
   color: var(--color-text-muted);

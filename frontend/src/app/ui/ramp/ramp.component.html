@@ -8,3 +8,6 @@
   <span>{{ von() }}</span>
   <span>{{ bis() }}</span>
 </div>
+@if (note()) {
+  <app-note variant="unter">{{ note() }}</app-note>
+}

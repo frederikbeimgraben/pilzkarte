@@ -16,6 +16,8 @@ export class FloatingButtonComponent {
   readonly icon = input.required<IconName>();
   readonly label = input.required<string>();
   readonly variant = input<FloatingVariant>('hell');
+  /** Ein Knopf ohne Wirkung bleibt sichtbar, aber gesperrt. */
+  readonly disabled = input(false);
 
   readonly pressed = output();
 }

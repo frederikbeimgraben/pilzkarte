@@ -43,7 +43,6 @@ function answerMap(byte: number, manifest: unknown = MANIFEST): void {
 
 interface Setup {
   container: Element;
-  locations: (readonly [number, number])[];
   closed: number;
   toasts: ToastSpy;
   http: HttpTestingController;
@@ -60,13 +59,10 @@ async function build(): Promise<Setup> {
     request.flush(SPECIES_LIST);
   });
   detectChanges();
-  const locations: (readonly [number, number])[] = [];
   let closed = 0;
-  fixture.componentInstance.showOnMap.subscribe((location) => locations.push(location));
   fixture.componentInstance.closed.subscribe(() => (closed += 1));
   return {
     container,
-    locations,
     toasts: toastSpy(),
     http,
     refresh: detectChanges,
@@ -128,12 +124,18 @@ describe('FundBlattComponent', () => {
     expect(screen.getByText('6. September 2026 · Frederik')).toBeInTheDocument();
   });
 
-  it('führt auf die Karte', async () => {
-    const setup = await build();
+  it('führt den Fund an Google Maps weiter', async () => {
+    await build();
+    const opened = vi.fn();
+    vi.stubGlobal('open', opened);
 
-    await userEvent.click(screen.getByRole('button', { name: /Auf der Karte anzeigen/ }));
+    await userEvent.click(screen.getByRole('button', { name: /In Google Maps öffnen/ }));
 
-    expect(setup.locations).toEqual([[FIND.lon, FIND.lat]]);
+    expect(opened).toHaveBeenCalledWith(
+      expect.stringContaining(`${FIND.lat.toFixed(6)}%2C${FIND.lon.toFixed(6)}`),
+      '_blank',
+      'noopener',
+    );
   });
 
   it('speichert eine Änderung und kehrt zur Ansicht zurück', async () => {

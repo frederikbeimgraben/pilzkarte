@@ -57,16 +57,33 @@
   }
 }
 
-// Die schwebenden Knöpfe sitzen unter dem Urheberhinweis, der oben rechts
-// steht. Maße aus `docs/mockups/bauen.py`, Klasse `.schwebe`.
+// Die schwebenden Knöpfe sitzen oben rechts, jetzt ohne den Urheberhinweis
+// über sich. Maße aus `docs/mockups/bauen.py`, Klasse `.schwebe`.
 .map__buttons {
   position: absolute;
-  inset-block-start: 56px;
+  inset-block-start: 12px;
   inset-inline-end: 12px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+// Am Telefon schwebt „Eintragen“ unten rechts, wo der Daumen liegt, und bleibt
+// über dem Blatt. Am Rechner steht er als dritter Knopf in der Gruppe oben
+// rechts.
+.map__add {
+  position: absolute;
+  inset-block-end: calc(var(--pilz-sheet-inset, var(--pilz-sheet-head)) + 12px);
+  inset-inline-end: 12px;
+  // Über dem Blatt: dessen Wirt spannt über die ganze Karte, damit die Raste
+  // ein Anteil dieser Höhe sein kann.
+  z-index: 3;
+}
+
+:host-context(.shell--column) .map__add {
+  inset-block-start: calc(2 * (var(--pilz-floating-size) + 12px) + 12px);
+  inset-block-end: auto;
 }
 
 .map__scrim {
@@ -93,14 +110,8 @@ app-object-sheet {
   pointer-events: none;
 }
 
-:host-context(.shell--column) {
-  .map__buttons {
-    inset-block-start: calc(var(--pilz-nav-height) + 12px);
-  }
-
-  // Die Abdunkelung gehört über die Spalte, nicht über die Karte: die bleibt
-  // sichtbar, damit man weiß, worüber man gerade entscheidet.
-  .map__scrim {
-    inline-size: var(--pilz-column);
-  }
+// Die Abdunkelung gehört am Rechner über die Spalte, nicht über die Karte: die
+// bleibt sichtbar, damit man weiß, worüber man gerade entscheidet.
+:host-context(.shell--column) .map__scrim {
+  inline-size: var(--pilz-column);
 }

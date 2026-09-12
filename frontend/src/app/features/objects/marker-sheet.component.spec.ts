@@ -10,7 +10,6 @@ import { MarkerSheetComponent } from './marker-sheet.component';
 
 interface Setup {
   container: Element;
-  locations: (readonly [number, number])[];
   closed: number;
   http: HttpTestingController;
   toasts: ToastSpy;
@@ -22,13 +21,10 @@ async function build(): Promise<Setup> {
     inputs: { marker: MARKER },
     providers: [provideHttpClient(), provideHttpClientTesting()],
   });
-  const locations: (readonly [number, number])[] = [];
   let closed = 0;
-  fixture.componentInstance.showOnMap.subscribe((location) => locations.push(location));
   fixture.componentInstance.closed.subscribe(() => (closed += 1));
   return {
     container,
-    locations,
     http: TestBed.inject(HttpTestingController),
     toasts: toastSpy(),
     refresh: detectChanges,
@@ -63,12 +59,18 @@ describe('MarkerBlattComponent', () => {
     });
   });
 
-  it('führt auf die Karte', async () => {
-    const setup = await build();
+  it('führt den Marker an Google Maps weiter', async () => {
+    await build();
+    const opened = vi.fn();
+    vi.stubGlobal('open', opened);
 
-    await userEvent.click(screen.getByRole('button', { name: 'Auf der Karte anzeigen' }));
+    await userEvent.click(screen.getByRole('button', { name: 'In Google Maps öffnen' }));
 
-    expect(setup.locations).toEqual([[MARKER.lon, MARKER.lat]]);
+    expect(opened).toHaveBeenCalledWith(
+      expect.stringContaining(`${MARKER.lat.toFixed(6)}%2C${MARKER.lon.toFixed(6)}`),
+      '_blank',
+      'noopener',
+    );
   });
 
   it('löscht nach der Rückfrage und schließt', async () => {

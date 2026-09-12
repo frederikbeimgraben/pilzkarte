@@ -15,6 +15,7 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { ActionBarComponent, NoteComponent } from '../../ui';
 import { EntriesState } from '../entries/entries.state';
 import { ObjectFormComponent, type ObjectValues } from '../add-entry/object-form.component';
+import { openGoogleMaps } from './map-links';
 import { visibilityText } from '../add-entry/visibility';
 
 /**
@@ -37,7 +38,6 @@ export class MarkerSheetComponent {
 
   readonly marker = input.required<Marker>();
 
-  readonly showOnMap = output<readonly [number, number]>();
   readonly closed = output();
 
   protected readonly deleteAsk = signal(false);
@@ -47,6 +47,10 @@ export class MarkerSheetComponent {
     this.marker().lon,
     this.marker().lat,
   ]);
+
+  protected toGoogleMaps(): void {
+    openGoogleMaps(this.location());
+  }
 
   protected readonly subline = computed(() =>
     this.i18n.translate('marker.unter', {

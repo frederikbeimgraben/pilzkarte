@@ -578,6 +578,44 @@ describe('KarteComponent', () => {
     expect(TestBed.inject(ToastService).toasts().at(-1)?.message).toContain('Kein Standort');
   });
 
+  it('macht aus dem Abspielknopf ein Pausensymbol und wieder zurück', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    try {
+      const { stable } = await map('/karte?kw=2025-39');
+
+      screen.getByRole('button', { name: 'Wochen abspielen' }).click();
+      await stable();
+
+      expect(screen.getByRole('button', { name: 'Wiedergabe anhalten' })).toHaveAttribute(
+        'aria-pressed',
+        'true',
+      );
+
+      screen.getByRole('button', { name: 'Wiedergabe anhalten' }).click();
+      await stable();
+
+      expect(screen.getByRole('button', { name: 'Wochen abspielen' })).toHaveAttribute(
+        'aria-pressed',
+        'false',
+      );
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('sperrt den Standortknopf, wenn die Freigabe abgelehnt ist', async () => {
+    Object.defineProperty(navigator, 'permissions', {
+      configurable: true,
+      value: { query: () => Promise.resolve({ state: 'denied', addEventListener: () => undefined }) },
+    });
+    const { stable } = await map();
+    await vi.waitFor(async () => {
+      await stable();
+      expect(screen.getByRole('button', { name: 'Auf meinen Standort' })).toBeDisabled();
+    });
+    Reflect.deleteProperty(navigator, 'permissions');
+  });
+
   it('behält die Ebene aus dem Deep Link, auch wenn `layers.json` später kommt', async () => {
     vi.stubGlobal('fetch', (path: string) =>
       path === '/layers.json'

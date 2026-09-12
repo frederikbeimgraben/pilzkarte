@@ -22,6 +22,7 @@ import { EntriesState } from '../entries/entries.state';
 import { longDate } from '../../core/i18n/dates';
 import { FindFormComponent, type FindSubmission } from '../add-entry/find-form.component';
 import { MapState } from '../map/map.state';
+import { openGoogleMaps } from './map-links';
 import { PhotoGalleryComponent } from './photo-gallery.component';
 
 /**
@@ -59,7 +60,6 @@ export class FindSheetComponent {
   readonly find = input.required<Find>();
 
   /** „Auf der Karte anzeigen“: der Ort, zu dem die Karte fahren soll. */
-  readonly showOnMap = output<readonly [number, number]>();
   readonly closed = output();
 
   protected readonly editing = signal(false);
@@ -76,6 +76,10 @@ export class FindSheetComponent {
   protected readonly speciesName = computed(() => this.art()?.name ?? this.find().artSlug);
   protected readonly geteilt = computed(() => this.find().sichtbarkeit === 'geteilt');
   protected readonly location = computed<readonly [number, number]>(() => [this.find().lon, this.find().lat]);
+
+  protected toGoogleMaps(): void {
+    openGoogleMaps(this.location());
+  }
 
   protected readonly subline = computed(() => {
     const find = this.find();

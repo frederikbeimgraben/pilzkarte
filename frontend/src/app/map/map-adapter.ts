@@ -68,7 +68,7 @@ export interface MapOptions {
  * als Fläche unten, Punkte darüber, damit ein Fund in seiner Zone anklickbar
  * bleibt.
  */
-export const OBJECT_LAYERS = ['zonen', 'geteilteFunde', 'marker', 'funde'] as const;
+export const OBJECT_LAYERS = ['zonen', 'geteilteFunde', 'marker', 'funde', 'location'] as const;
 export type ObjectLayer = (typeof OBJECT_LAYERS)[number];
 
 /**
@@ -129,13 +129,18 @@ function layerName(role: Role, space: 0 | 1): string {
 const ROUNDED_RADIUS = 18;
 const POINT_RADIUS = 7;
 
+/** Der eigene Standort trägt nie eine der sechs Objektfarben, sondern Blau. */
+const LOCATION_COLOR = '#1a73e8';
+
 function sourceFor(layer: ObjectLayer): string {
   return `objekte-${layer}`;
 }
 
 /** Die Schichten einer Ebene, in der Reihenfolge, in der sie liegen. */
 function layerPaintLayers(layer: ObjectLayer): string[] {
-  return layer === 'zonen' ? ['objekte-zonen-flaeche', 'objekte-zonen-linie'] : [`objekte-${layer}-punkt`];
+  if (layer === 'zonen') return ['objekte-zonen-flaeche', 'objekte-zonen-linie'];
+  if (layer === 'location') return ['objekte-location-kreis', 'objekte-location-punkt'];
+  return [`objekte-${layer}-punkt`];
 }
 
 /**
@@ -160,6 +165,31 @@ function paintLayersFor(layer: ObjectLayer): LayerSpecification[] {
         type: 'line',
         source: source,
         paint: { 'line-color': ['get', 'farbe'], 'line-width': 2 },
+      },
+    ];
+  }
+  if (layer === 'location') {
+    return [
+      {
+        id: 'objekte-location-kreis',
+        type: 'fill',
+        source: source,
+        // Der Genauigkeitskreis kommt als Fläche in Grad, damit er beim Zoomen
+        // mit dem Gelände wächst statt als fester Punktradius stehen zu bleiben.
+        filter: ['==', ['geometry-type'], 'Polygon'],
+        paint: { 'fill-color': LOCATION_COLOR, 'fill-opacity': 0.15 },
+      },
+      {
+        id: 'objekte-location-punkt',
+        type: 'circle',
+        source: source,
+        filter: ['==', ['geometry-type'], 'Point'],
+        paint: {
+          'circle-radius': POINT_RADIUS,
+          'circle-color': LOCATION_COLOR,
+          'circle-stroke-width': 3,
+          'circle-stroke-color': '#ffffff',
+        },
       },
     ];
   }
@@ -235,12 +265,14 @@ export class MapLibreAdapter implements MapAdapter {
       minZoom: options.minZoom,
       maxZoom: options.maxZoom,
       maxBounds: options.maxBounds as [[number, number], [number, number]],
-      // Der Hinweis steht oben rechts, nicht wie sonst unten: unten liegt das
-      // Blatt darüber, und ein verdeckter Hinweis wäre keiner. Den Text liefert
-      // der Stil von OpenFreeMap selbst; ein zweiter eigener stünde doppelt da.
+      // Den Text liefert der Stil von OpenFreeMap selbst; ein zweiter eigener
+      // stünde doppelt da.
       attributionControl: false,
     });
-    this.map.addControl(new module.AttributionControl({ compact: options.compact }), 'top-right');
+    // Der Hinweis steht unten links, weg von der Knopfgruppe oben und weg von
+    // „Eintragen“ unten rechts. Das Blatt deckt ihn nicht zu: `styles.scss`
+    // hebt ihn über dessen Kopf.
+    this.map.addControl(new module.AttributionControl({ compact: options.compact }), 'bottom-left');
     if (options.compact) this.collapseAttribution(host);
     // Eine Quelle vor dem Stil wirft. `style.load` ist das erste Ereignis, nach
     // dem der Stil steht; `load` wartet zusätzlich auf jede Kachel und bleibt
@@ -310,6 +342,12 @@ export class MapLibreAdapter implements MapAdapter {
           // Woche ist da schon weg, und dazwischen bliebe die Karte leer.
           'raster-opacity-transition': { duration: 0, delay: 0 },
           'raster-fade-duration': 0,
+          // Die Kacheln reichen bis Zoom 8, das Raster darunter misst 500 m
+          // und ist geglättet. Weich hochgerechnet verliefe ein Rand bis zu
+          // einem Kilometer neben den Wald der Grundkarte, und das sähe aus wie
+          // ein Versatz. Als Quadrat sieht man die Zellgrenze und weiß, wie
+          // grob gemessen wird.
+          'raster-resampling': 'nearest',
         },
       },
       this.ueber(role),
