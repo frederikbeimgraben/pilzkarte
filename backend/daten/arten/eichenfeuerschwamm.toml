@@ -15,9 +15,27 @@ url = "https://www.123pilzsuche.de/daten/details/Eichenfeuer.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 35.0 }
-sporenLaengeUm = { von = 6.0, bis = 9.0 }
-sporenBreiteUm = { von = 5.5, bis = 8.0 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 35.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 5.5, bis = 8.0, einheit = "um" }
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }]
+sporenpulver = [{ name = "hellbraun", hex = "#a97c50" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = []
+text = "Unbedeutend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 15, selten bis 35 cm breit, bräunlich, kastanienbraun bis schwarzbraun, von Algen oft grünlich. Jung halbkugelig, später konsolenförmig, der Rand abgerundet."

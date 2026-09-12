@@ -20,9 +20,30 @@ reagenz = "koh"
 reaktion = "Auf der Oberfläche negativ."
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 50.0, seltenBis = 150.0 }
-sporenLaengeUm = { von = 2.5, bis = 5.5 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 50.0, seltenBis = 150.0, einheit = "cm" }
+sporenLaengeUm = { von = 2.5, bis = 5.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 8
+
+[farben]
+hut = [{ name = "grüngelb", hex = "#9fb02f" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "olivbraun", hex = "#6e6435" }, { name = "dunkelbraun", hex = "#4a3120" }, { name = "grüngelb", hex = "#9fb02f" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "dunkelbraun", hex = "#4a3120" }, { name = "rotbraun", hex = "#8b4a2b" }]
+
+[geruch]
+tags = ["unangenehm", "angenehm"]
+text = "Unangenehm, alt urinartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 50, selten bis 150 cm breit und über 20 kg schwer, kugelförmig, jung weiß bis grüngelb, später bräunend. Haut glatt und lederartig."

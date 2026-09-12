@@ -15,9 +15,36 @@ url = "https://www.123pilzsuche.de/daten/details/GraublaettrigerTrichterling.htm
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 2.5, bis = 4.0 }
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "hellgrau", hex = "#c0c0c0" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["mehlig", "rettichartig", "obstartig", "suesslich", "fischartig"]
+text = "Jung obstartig, süßlich, rettichartig bis heringsartig, teils nach Mäuseurin, im Alter ranzig-mehlig."
+
+[geschmack]
+tags = ["mild", "mehlig", "unangenehm"]
+text = "Mild, mehlig-ranzig, unangenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, milchkaffeebraun, feinfilzig, von der Mitte aus ausbleichend. Rand dunkler, runzelig, rippig und wellig, Huthaut abziehbar."

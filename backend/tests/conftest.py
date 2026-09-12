@@ -7,11 +7,14 @@ Aufrufe und stellt Token aus. So laeuft kein Test gegen das Netz.
 from collections.abc import AsyncIterator, Callable, Iterator, Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 from typing import Any
 
 import httpx
 import jwt
 import pytest
+from alembic import command
+from alembic.config import Config
 from cryptography.hazmat.primitives.asymmetric import ec, rsa
 from fastapi import FastAPI
 from jwt.algorithms import ECAlgorithm, RSAAlgorithm
@@ -154,6 +157,17 @@ async def schema() -> AsyncIterator[None]:
         await connection.run_sync(Base.metadata.create_all)
     yield
     await engine_of_process.dispose()
+
+
+@pytest.fixture
+def migrated() -> None:
+    """Faehrt die Migrationen hoch, so wie der Dienst es beim Start tut.
+
+    Das Schema allein reicht nicht: die Begriffskataloge entstehen in einer
+    Migration, und ohne sie waeren die Tabellen leer. Die Vorrichtung laeuft
+    synchron, weil Alembic seine eigene Schleife startet.
+    """
+    command.upgrade(Config(Path(__file__).resolve().parents[1] / "alembic.ini"), "head")
 
 
 @pytest.fixture

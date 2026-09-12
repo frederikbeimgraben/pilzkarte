@@ -18,11 +18,34 @@ url = "https://www.123pilzsuche.de/daten/details/FichtenRotkappe.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 21.0 }
-stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 14.0, bis = 19.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 21.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 14.0, bis = 19.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangebraun", hex = "#c86e28" }, { name = "braunrot", hex = "#7d3324" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "gelbbraun", hex = "#a3813f" }]
+
+[geruch]
+tags = ["obstartig", "angenehm"]
+text = "Angenehm, frisch etwas obstartig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild, säuerlich."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 18, selten bis 21 cm breit, braunrot bis orangebraun, feinfilzig, Huthaut am Rand überstehend und eingerollt."

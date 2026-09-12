@@ -18,11 +18,39 @@ url = "https://www.123pilzsuche.de/daten/details/Schopftintling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 4.0, bis = 17.0, seltenBis = 22.0 }
-stielDickeCm = { von = 1.0, bis = 1.3, seltenBis = 1.6 }
-sporenLaengeUm = { von = 10.0, bis = 15.0 }
-sporenBreiteUm = { von = 6.0, bis = 8.5 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 17.0, seltenBis = 22.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 1.3, seltenBis = 1.6, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 15.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 8.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "schwarz", hex = "#1a1a1a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm", "unauffaellig"]
+text = "Angenehm pilzig bis neutral."
+
+[geschmack]
+tags = ["mild", "pilzig", "suesslich"]
+text = "Pilzig, mild, süßlich. Roh etwas unverträglich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 15 cm breit, weißlich und geschuppt, am Scheitel mit glattem bräunlichem Häubchen. Lang gezogen eiförmig bis walzenförmig, später schwarz zerfließend."

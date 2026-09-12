@@ -16,7 +16,25 @@ url = "https://www.123pilzsuche.de/daten/details/NadelholzSchwefelporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 30.0, seltenBis = 50.0 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 30.0, seltenBis = 50.0, einheit = "cm" }
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "saeuerlich", "pilzig"]
+text = "Aromatisch, säuerlich, pilzig, obstartig."
+
+[geschmack]
+tags = ["saeuerlich"]
+text = "Säuerlich, alt nach Käse."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 30, selten bis 50 cm breit, orange, hellgelb bis blass gelblich, alt weißlich ausbleichend, fächerförmig, dachziegelartig, samtig."

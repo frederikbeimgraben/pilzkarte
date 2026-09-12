@@ -21,9 +21,31 @@ reagenz = "melzer"
 reaktion = "Auf der Scheibe blau oder grün."
 
 [masse]
-fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 21.6, bis = 27.7 }
-sporenBreiteUm = { von = 11.2, bis = 13.0 }
+fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 21.6, bis = 27.7, einheit = "um" }
+sporenBreiteUm = { von = 11.2, bis = 13.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 12
+bisMonat = 5
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral, unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, neutral."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "1 bis 7, selten bis 9 cm breit, kelch-, becher- bis schüsselförmig. Innenseite zinnoberrot bis karminrot, selten gelb, dünn und wachsartig. Außenseite blasser und weißlich, filzig bis haarig, Rand lange eingebogen."

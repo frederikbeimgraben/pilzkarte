@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/RosenroterGelbfuss.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 15.5, bis = 21.0 }
-sporenBreiteUm = { von = 4.5, bis = 6.5 }
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 15.5, bis = 21.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "schwarzbraun", hex = "#3a2a1c" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, rosenrot, schmierig aber nicht schleimig, samtig, oft schwarz fleckend, jung mit Schleier."

@@ -22,9 +22,36 @@ url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerSteini.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 10.5, bis = 19.0 }
-sporenBreiteUm = { von = 3.5, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.5, bis = 19.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = []
+text = "Mandelartig, nussig."
+
+[geschmack]
+tags = ["mild", "pilzig", "nussig"]
+text = "Mild, pilzig, nussig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, kastanien- bis schwarzbraun oder hell bronzefarben, feinsamtig und matt weißlich bereift. Rand meist heller."

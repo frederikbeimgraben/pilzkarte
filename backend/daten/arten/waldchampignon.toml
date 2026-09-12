@@ -29,9 +29,32 @@ reagenz = "schaeffer"
 reaktion = "Negativ."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 4.4, bis = 6.5 }
-sporenBreiteUm = { von = 2.9, bis = 4.3 }
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.4, bis = 6.5, einheit = "um" }
+sporenBreiteUm = { von = 2.9, bis = 4.3, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "blutrot", hex = "#8e1f1f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "purpurbraun", hex = "#5f3346" }]
+
+[geruch]
+tags = ["fruchtig", "pilzig", "angenehm"]
+text = "Pilzig, angenehm, leicht fruchtig."
+
+[geschmack]
+tags = ["mild", "suesslich"]
+text = "Mild, süßlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 8, selten bis 10 cm breit, Grundfarbe weiß bis gelb, mit braunen Schuppen von hellbräunlich über rot- bis dunkelbraun. Zum Rand hin werden die Schuppen meist größer und stehen weiter auseinander."

@@ -17,7 +17,28 @@ url = "https://www.123pilzsuche.de/daten/details/BraunerStaeubling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }]
+fleisch = [{ name = "olivbraun", hex = "#6e6435" }, { name = "dunkelbraun", hex = "#4a3120" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[geruch]
+tags = ["wuerzig", "pilzig"]
+text = "Würzig pilzig."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild und angenehm pilzig, gekocht sehr fade."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "2 bis 6, selten bis 8 cm breit, birnenförmig bis kugelig, bräunlich, mit dunkelbraunen, weichen und ablösbaren kleinen Stacheln auf hellem Grund. Nach dem Abwaschen der Stacheln bleibt kein Netzmuster zurück."

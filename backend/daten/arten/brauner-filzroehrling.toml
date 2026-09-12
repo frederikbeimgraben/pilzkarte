@@ -33,11 +33,38 @@ reagenz = "feso4"
 reaktion = "Auf der Huthaut negativ bis leicht grau, im Fleisch negativ."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 5.0, bis = 9.0, seltenBis = 11.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.5 }
-sporenLaengeUm = { von = 11.0, bis = 16.0 }
-sporenBreiteUm = { von = 3.4, bis = 5.5 }
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.5, einheit = "cm" }
+sporenLaengeUm = { von = 11.0, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 3.4, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "chromgelb", hex = "#e5b820" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["pilzig", "angenehm", "unauffaellig"]
+text = "Neutral bis leicht angenehm pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 9, selten bis 12 cm breit, graubraun und filzig, unter der Huthaut leicht rosa."

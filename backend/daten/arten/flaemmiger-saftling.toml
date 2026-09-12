@@ -16,10 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/FlammigerSaftling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
-stielLaengeCm = { von = 3.0, bis = 6.0 }
-sporenLaengeUm = { von = 8.3, bis = 11.8 }
-sporenBreiteUm = { von = 5.2, bis = 7.3 }
+hutBreiteCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.3, bis = 11.8, einheit = "um" }
+sporenBreiteUm = { von = 5.2, bis = 7.3, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "goldgelb", hex = "#e2b13a" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 2, selten bis 3 cm breit, gelb, goldgelb, orange bis schmutzig rotgelb, mit dunklen graubraunen Schuppen, Mitte trichterförmig vertieft. Rand eingerollt bis umgebogen, nicht gekerbt, jung klebrig."

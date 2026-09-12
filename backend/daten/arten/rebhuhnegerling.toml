@@ -25,7 +25,35 @@ reagenz = "schaeffer"
 reaktion = "Negativ."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "rotbraun", hex = "#8b4a2b" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "chromgelb", hex = "#e5b820" }, { name = "braunrot", hex = "#7d3324" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "purpurbraun", hex = "#5f3346" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["karbolartig"]
+text = "Oft nur schwach tintenartig, karbolartig nach Phenol, nach faulem Stroh."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 9, selten bis 12 cm breit, graubraun, rauchschwärzlich bis dunkelbraun, mit faserigen Schuppen, Scheitel bräunlich und dunkler, zum Rand hin rotbraun schuppig. Rand bei Verletzung gelblich anlaufend."

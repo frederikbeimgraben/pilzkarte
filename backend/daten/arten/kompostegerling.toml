@@ -14,11 +14,39 @@ url = "https://www.123pilzsuche.de/daten/details/Kompostegerling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 4.0, bis = 14.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5 }
-sporenLaengeUm = { von = 5.5, bis = 8.0 }
-sporenBreiteUm = { von = 4.0, bis = 6.5 }
+hutBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "purpurbraun", hex = "#5f3346" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["fischartig", "unangenehm", "pilzig", "angenehm"]
+text = "Pilzig und nussig, nicht anisartig, im Alter unangenehm urin- bis fischartig."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild, nussig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 15, selten bis 20 cm breit, braun, schmutzigbraun bis gelbbraun, breitschuppig auf hellem Untergrund. Huthaut aufreißend, Rand jung fransig mit Velum behangen und lange eingerollt."

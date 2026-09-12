@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/SchmutzigerRoetelritterling.htm
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 6.0, bis = 11.0 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 1
+
+[farben]
+hut = [{ name = "violett", hex = "#6b4a8a" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "hellgrau", hex = "#c0c0c0" }, { name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["fischartig", "unangenehm", "pilzig", "angenehm", "unauffaellig"]
+text = "Leicht parfümiert, etwas pilzig bis nussartig, schwächer als beim Violetten Rötelritterling. Bei feuchtem Wetter den Fruchtkörper in der Hand zerkrümeln und anwärmen: dann fast unauffällig, teils etwas staubartig. Alte Stücke riechen unangenehm bis fischig."
+
+[geschmack]
+tags = ["mild", "suesslich"]
+text = "Mild, dumpf, eventuell etwas süßlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 6, selten bis 7 cm breit, der kleinste Rötelritterling, blass bis stark lila oder rosaviolett, hygrophan und beim Trocknen heller werdend, Haut glatt, Rand lange eingerollt."

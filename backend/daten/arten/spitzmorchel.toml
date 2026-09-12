@@ -20,10 +20,32 @@ url = "https://www.123pilzsuche.de/daten/details/Spitzmorchel.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 8.0 }
-fruchtkoerperHoeheCm = { von = 5.0, bis = 15.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 20.0, bis = 26.0 }
-sporenBreiteUm = { von = 12.0, bis = 14.0 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 8.0, einheit = "cm" }
+fruchtkoerperHoeheCm = { von = 5.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 20.0, bis = 26.0, einheit = "um" }
+sporenBreiteUm = { von = 12.0, bis = 14.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 5
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "beige", hex = "#d9c9a3" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "oliv", hex = "#6b7a3a" }]
+stiel = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild. Roh ist er giftig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 15, selten bis 20 cm hoch und 3 bis 8 cm breit, olivbeige, dunkel gelbbraun bis graubraun, alt schwärzlich, hohl. Zugespitzt, der Rand ist ganz mit dem Stiel verwachsen. Fast schwarze Formen sind die Schwarze Spitzmorchel und die Gerippte Morchel, rötliche die Fleischfarbene Spitzmorchel. Alle sind ebenso essbar."

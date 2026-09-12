@@ -16,10 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/GelbhuetigerPurpurroehrling.htm
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 6.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 10.5, bis = 14.5 }
-sporenBreiteUm = { von = 4.5, bis = 6.0 }
+hutBreiteCm = { von = 6.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.5, bis = 14.5, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weinrot", hex = "#7b2436" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "purpurrot", hex = "#8e2f4a" }, { name = "blutrot", hex = "#8e1f1f" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "chromgelb", hex = "#e5b820" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "chromgelb", hex = "#e5b820" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend, neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, roh giftig und unverträglich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "6 bis 12, selten bis 15 cm breit, purpurrosa, gold-, orange- bis rostgelb, rosabraun körnig auf gelblichem Grund, auf Druck blauend. Rand oft gelblich fleckend und lange eingerollt, Schneckenfraßstellen gelblich weinrot."

@@ -23,7 +23,34 @@ reagenz = "koh"
 reaktion = "Im Fruchtfleisch keine oder nur eine schwache Braunreaktion."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 19.0 }
+hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 19.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "ocker", hex = "#c8963c" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "schwefelgelb", hex = "#e3d13a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["angenehm", "unauffaellig"]
+text = "Neutral bis angenehm, nicht pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 16, selten bis 19 cm breit, ockerbraun, kastanienbraun bis braunorange, meist trocken und filzig. Im Alter reißt die Huthaut auf."

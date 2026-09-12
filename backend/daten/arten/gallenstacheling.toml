@@ -17,7 +17,34 @@ url = "https://www.123pilzsuche.de/daten/details/Gallenstacheling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
+hutBreiteCm = { von = 5.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "grün", hex = "#4f8a3a" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "grün", hex = "#4f8a3a" }]
+
+[geruch]
+tags = ["angenehm", "unauffaellig"]
+text = "Angenehm, neutral."
+
+[geschmack]
+tags = ["bitter", "scharf", "unangenehm"]
+text = "Extrem scharf und bitterlich, lang anhaltend unangenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 12, selten bis 15 cm breit, bräunlich bis dunkelbraun, braunschuppig, jung filzig, uneben."

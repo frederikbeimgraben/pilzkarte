@@ -18,9 +18,36 @@ url = "https://www.123pilzsuche.de/daten/details/LilastieligerRoetelritterling.h
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 1
+
+[farben]
+hut = [{ name = "violett", hex = "#6b4a8a" }, { name = "beige", hex = "#d9c9a3" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "hellgrau", hex = "#c0c0c0" }, { name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["fruchtig"]
+text = "Leicht fruchtig, parfümiert, nicht so kräftig wie beim Violetten Rötelritterling."
+
+[geschmack]
+tags = ["mild", "suesslich"]
+text = "Mild, leicht süßlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, grauviolett, beigebräunlich, graubräunlich bis graublau, nie ganz braun ohne rotviolette Töne. Hygrophan, Huthaut glatt und leicht bereift, manchmal etwas fleckend, Rand lange eingerollt, später scharfkantig."

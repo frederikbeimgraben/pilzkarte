@@ -20,10 +20,38 @@ reagenz = "ammoniak"
 reaktion = "Keine Reaktion."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 4.5, bis = 7.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.5, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "goldgelb", hex = "#e2b13a" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grün", hex = "#4f8a3a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "hellbraun", hex = "#a97c50" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "cremefarben", hex = "#f0e6c8" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["fruchtig", "pilzig", "angenehm", "unauffaellig"]
+text = "Neutral, schwach fruchtig bis angenehm pilzig."
+
+[geschmack]
+tags = ["saeuerlich", "bitter"]
+text = "Säuerlich und leicht bitterlich."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 9, selten bis 12 cm breit, gelblich, olivgelb bis hellbraun, feucht etwas schmierig. Die Oberfläche ist glatt und grübchenartig vertieft. Rand dünn und eingerollt, im Alter aufgebogen mit scharfer Kante."

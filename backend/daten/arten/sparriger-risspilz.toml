@@ -19,9 +19,32 @@ reagenz = "koh"
 reaktion = "Auf dem Hut sofort violettgrau."
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 9.0, bis = 13.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.5 }
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 13.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "beige", hex = "#d9c9a3" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "hellgrau", hex = "#c0c0c0" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "beige", hex = "#d9c9a3" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["spermatisch"]
+text = "Moderig, spermatisch."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 4, selten bis 6 cm breit, braune, dornartige, spitze Schuppen auf beige-ockerfarbenem Grund. Huthaut steht am Rand über, Rand fransig."

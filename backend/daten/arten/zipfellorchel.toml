@@ -16,9 +16,31 @@ url = "https://www.123pilzsuche.de/daten/details/Zipfellorchel.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 14.0 }
-sporenLaengeUm = { von = 23.0, bis = 37.0 }
-sporenBreiteUm = { von = 10.0, bis = 17.0 }
+hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 14.0, einheit = "cm" }
+sporenLaengeUm = { von = 23.0, bis = 37.0, einheit = "um" }
+sporenBreiteUm = { von = 10.0, bis = 17.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 5
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["spermatisch", "angenehm"]
+text = "Angenehm bis schwach spermatisch."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, roh giftig, nicht kosten."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 11, selten bis 14 cm breit, bräunlich, aderig, zipfelmützenartig hoch gestülpt, wirkt wie zweiteilig zusammengeklebt mit weißlicher bis hellbräunlicher Naht. In den inneren Hohlräumen weißlich."

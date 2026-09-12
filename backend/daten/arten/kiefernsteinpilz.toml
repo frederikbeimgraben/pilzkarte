@@ -16,7 +16,30 @@ url = "https://www.123pilzsuche.de/daten/details/Kiefernsteinpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 25.0, seltenBis = 30.0 }
+hutBreiteCm = { von = 4.0, bis = 25.0, seltenBis = 30.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "purpurbraun", hex = "#5f3346" }, { name = "weinrot", hex = "#7b2436" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "olivgrün", hex = "#6f8438" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm, etwas pilzig."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild, nussig und typisch steinpilzartig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 25, selten bis 30 cm breit, rotbraun, weinrot bis purpurbraun, der Rand lange eingerollt und meist heller. Jung halbkugelig, knubbelig runzelig, weißlich grau bereift und feinsamtig, später polsterförmig, kahler und meist uneben bis grubig. Bei feuchtem Wetter leicht klebrig."

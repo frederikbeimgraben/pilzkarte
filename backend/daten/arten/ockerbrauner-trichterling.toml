@@ -23,11 +23,39 @@ reagenz = "koh"
 reaktion = "Fleisch wässrig braun."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 11.0 }
-stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
-stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.2 }
-sporenLaengeUm = { von = 5.0, bis = 9.0 }
-sporenBreiteUm = { von = 3.5, bis = 6.0 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
+stielDickeCm = { von = 0.8, bis = 1.0, seltenBis = 1.2, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "ocker", hex = "#c8963c" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["suesslich", "pilzig", "angenehm"]
+text = "Angenehm pilzig süßlich, mandelartig, etwas stechend alkalisch."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 11 cm breit, hellbraun, blass lederfarben bis cremeocker, trichterförmig, jung meist mit kleinem stumpfem Buckel. Alt wellig gerieft und schwach ausblassend."

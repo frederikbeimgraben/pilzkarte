@@ -23,9 +23,32 @@ reagenz = "koh"
 reaktion = "Fleisch lila verfärbend."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0 }
-sporenLaengeUm = { von = 5.0, bis = 6.0 }
-sporenBreiteUm = { von = 3.0, bis = 4.0 }
+hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 6.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangebraun", hex = "#c86e28" }, { name = "ziegelrot", hex = "#b4472b" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "grün", hex = "#4f8a3a" }, { name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Schnell bitterlich, nur ganz junge Exemplare mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 18, selten bis 30 cm breit, semmelgelb, orangebraun bis gelbrötlich, beim Trocknen ziegelrot, Oberfläche glatt und matt, Rand scharf eingebogen, alt aufreißend."

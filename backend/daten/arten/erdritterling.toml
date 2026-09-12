@@ -15,11 +15,34 @@ url = "https://www.123pilzsuche.de/daten/details/GemeinerErdritterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 7.0, seltenBis = 9.0 }
-stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 12.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.2 }
-sporenLaengeUm = { von = 5.0, bis = 8.0 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 2.2, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "silbergrau", hex = "#b8bcc0" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral, ausdrücklich nicht mehlartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nicht mehlartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 7, selten bis 9 cm breit, hell silbergrau bis graubraun, trocken, filzig und feinschuppig, mit kleinem Buckel. Rand jung fein wollig."

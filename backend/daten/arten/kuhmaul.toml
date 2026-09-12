@@ -16,9 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/Kuhmaul.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 17.5, bis = 21.5 }
-sporenBreiteUm = { von = 5.8, bis = 7.1 }
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 17.5, bis = 21.5, einheit = "um" }
+sporenBreiteUm = { von = 5.8, bis = 7.1, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "violett", hex = "#6b4a8a" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "schwarzbraun", hex = "#3a2a1c" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 15, selten bis 20 cm breit, braun, violett bis blau, stark schmierig und schleimig, oft mit schwarzbraunen Flecken. Die Huthaut lässt sich leicht abziehen."

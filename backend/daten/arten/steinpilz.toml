@@ -25,9 +25,32 @@ reagenz = "melzer"
 reaktion = "Fleisch ocker mit graugrüner Schattierung."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 12.4, bis = 19.2 }
-sporenBreiteUm = { von = 4.5, bis = 5.5 }
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.4, bis = 19.2, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "olivgrün", hex = "#6f8438" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Sehr angenehm, pilzig."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild, angenehm pilzig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, wildlederartig braun bis haselnussbraun. Der Rand bleibt lange eingerollt und ist meist weiß."

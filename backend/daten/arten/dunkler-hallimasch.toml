@@ -18,11 +18,39 @@ url = "https://www.123pilzsuche.de/daten/details/GemeinerHallimarsch.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 14.0 }
-stielLaengeCm = { von = 4.0, bis = 22.0, seltenBis = 25.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 5.8, bis = 10.0 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 14.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 22.0, seltenBis = 25.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.8, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig"]
+text = "Pilzig."
+
+[geschmack]
+tags = ["herb", "kratzend"]
+text = "Herb, kratzend, seifig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 10, selten bis 14 cm breit, rotbraun, mit abwischbaren braunen Schüppchen, im Alter gerieft. Farbe und Form sind sehr veränderlich."

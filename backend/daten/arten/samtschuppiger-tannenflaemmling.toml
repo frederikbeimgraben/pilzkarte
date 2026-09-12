@@ -15,11 +15,39 @@ url = "https://www.123pilzsuche.de/daten/details/SamttannFlaemmling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 10.0 }
-stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.6 }
-sporenLaengeUm = { von = 6.5, bis = 10.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.5 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielDickeCm = { von = 0.6, bis = 1.2, seltenBis = 1.6, einheit = "cm" }
+sporenLaengeUm = { von = 6.5, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "orangebraun", hex = "#c86e28" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "goldgelb", hex = "#e2b13a" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "orangebraun", hex = "#c86e28" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "orangebraun", hex = "#c86e28" }, { name = "rostbraun", hex = "#8a4b23" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm, suesslich, leicht holzig."
+
+[geschmack]
+tags = ["bitter"]
+text = "Meist bitterlich, die Bitterkeit ist oft kaum wahrnehmbar."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, gelbfuchsig bis gelbbraun, matt, trocken und schuppig auf gelblichem Grund, fein behaart. Mitte oft dunkler, gern mit senkrechten Rissen wie bei Risspilzen. Rand nicht gerieft, lange etwas eingerollt, spaeter nach aussen gekruemmt."

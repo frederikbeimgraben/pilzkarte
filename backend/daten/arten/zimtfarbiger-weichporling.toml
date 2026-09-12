@@ -15,8 +15,30 @@ url = "https://www.123pilzsuche.de/daten/details/ZimtfarbenerWeichporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-sporenLaengeUm = { von = 3.4, bis = 5.1 }
-sporenBreiteUm = { von = 1.9, bis = 3.2 }
+sporenLaengeUm = { von = 3.4, bis = 5.1, einheit = "um" }
+sporenBreiteUm = { von = 1.9, bis = 3.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 1
+bisMonat = 12
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = []
+text = "Pilzartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 10, selten bis 30 cm breit, tellerförmig vom Holz abstehend, jung gelbockerlich bis hell rotbraun, später zimtbraun bis rosabraun, trocken ledergelblich. Der Rand bleibt lange gebogen."

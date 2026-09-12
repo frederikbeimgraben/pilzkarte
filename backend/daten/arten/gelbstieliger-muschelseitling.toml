@@ -15,11 +15,39 @@ url = "https://www.123pilzsuche.de/daten/details/GelbstieligerMuschelseitling.ht
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
-stielLaengeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 3.5, bis = 6.0 }
-sporenBreiteUm = { von = 0.7, bis = 2.0 }
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0, einheit = "cm" }
+stielLaengeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.5, bis = 6.0, einheit = "um" }
+sporenBreiteUm = { von = 0.7, bis = 2.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 5
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "grüngelb", hex = "#9fb02f" }, { name = "ockergelb", hex = "#d4a63c" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig"]
+text = "Leicht pilzig."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild bis etwas bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 15, selten bis 22 cm breit, grünbraun, grünocker, schwarzbraun, grau bis graubraun, muschelförmig und fein braunfilzig. Die Farben sind veränderlich, Rand jung eingerollt."

@@ -25,11 +25,34 @@ reagenz = "koh"
 reaktion = "Keine Reaktion."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 2.5, seltenBis = 3.5 }
-sporenLaengeUm = { von = 8.0, bis = 14.0 }
-sporenBreiteUm = { von = 6.0, bis = 10.0 }
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.5, seltenBis = 3.5, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 14.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 10.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "orangebraun", hex = "#c86e28" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["rettichartig"]
+text = "Leicht rettichartig bis dumpf kartoffelartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild. Keine Kostversuche, er ist tödlich giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 15, selten bis 20 cm breit, kastanienbraun, graubraun, gelbbraun, graugelb bis orangebraun, mit rein weißen konzentrisch angeordneten Velumflöckchen. Huthaut bis zur Mitte abziehbar, Rand im Alter gerieft."

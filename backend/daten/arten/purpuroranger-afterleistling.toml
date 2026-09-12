@@ -18,9 +18,36 @@ url = "https://www.123pilzsuche.de/daten/details/PurpurorangerAfterleistling.htm
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 3.5, bis = 4.5 }
-sporenBreiteUm = { von = 2.5, bis = 3.0 }
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.5, bis = 4.5, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 3.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "fleischrosa", hex = "#e7b9a8" }, { name = "orangegelb", hex = "#e9a32c" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "orangebraun", hex = "#c86e28" }, { name = "orangegelb", hex = "#e9a32c" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unangenehm", "angenehm"]
+text = "Holzig unangenehm bis aromatisch, teils nach reifen Walderdbeeren. Beim Trocknen chemisch und unangenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, braun, braunorange, purpurorange, gelborange bis rosaorange, feinfilzig, trichterförmig. Rand wellig, lange eingerollt und leicht gerieft."

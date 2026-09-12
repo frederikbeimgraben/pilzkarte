@@ -15,9 +15,37 @@ url = "https://www.123pilzsuche.de/daten/details/Schoenfussroehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 18.0 }
-sporenLaengeUm = { von = 11.0, bis = 16.0 }
-sporenBreiteUm = { von = 4.0, bis = 4.5 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 18.0, einheit = "cm" }
+sporenLaengeUm = { von = 11.0, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "braunrot", hex = "#7d3324" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "ocker", hex = "#c8963c" }, { name = "oliv", hex = "#6b7a3a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["muffig", "unangenehm", "saeuerlich", "angenehm"]
+text = "Säuerlich unangenehm, etwas muffig mit Essignote, ähnlich einem Textmarker."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Bitter, manchmal fast mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 18 cm breit, lehmgrau bis tonfarben, trocken und samtig, unregelmäßig wellig, Rand überstehend."

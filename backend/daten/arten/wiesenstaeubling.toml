@@ -18,9 +18,31 @@ url = "https://www.123pilzsuche.de/daten/details/Wiesenstaubbecher.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 3.0, bis = 4.3 }
-sporenBreiteUm = { von = 3.3, bis = 3.8 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.0, bis = 4.3, einheit = "um" }
+sporenBreiteUm = { von = 3.3, bis = 3.8, einheit = "um" }
+
+[zeitraum]
+vonMonat = 4
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "olivbraun", hex = "#6e6435" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "2 bis 7, selten bis 9 cm breit, weiß, rund, kugel- bis birnenförmig, feinkörnig und feinstachelig, später glatt und cremefarben, alt braun mit geöffnetem Scheitel und becherförmig."

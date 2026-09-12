@@ -16,10 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/GrauerWulstling0904.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 8.0, bis = 11.0 }
-sporenBreiteUm = { von = 6.5, bis = 8.5 }
+hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 6.5, bis = 8.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["rettichartig", "muffig", "unangenehm", "angenehm", "unauffaellig"]
+text = "Rübenartig, rettichartig, muffig, unangenehm bis unbedeutend."
+
+[geschmack]
+tags = ["herb", "bitter"]
+text = "Muffig und rettichartig, mit bitterlichem, leicht herbem Nachgeschmack. Roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 12, selten bis 15 cm breit, hellbräunlich, grau bis schwarzbraun, mit großflächigen grauweißen Velumflocken, die sich meist leicht abwischen lassen."

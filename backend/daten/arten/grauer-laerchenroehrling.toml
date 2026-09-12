@@ -17,9 +17,32 @@ url = "https://www.123pilzsuche.de/daten/details/GraublasserLaerchenroehrling.ht
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
-sporenLaengeUm = { von = 8.0, bis = 14.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 14.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 14.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "hellbraun", hex = "#a97c50" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "oliv", hex = "#6b7a3a" }]
+stiel = [{ name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["fruchtig"]
+text = "Fruchtig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Mild säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 14 cm breit, hellbraun, olivgrau, gelbgrau, braungelb bis rotbraun, alt blassgrau. Rand lange eingerollt, Mitte etwas gebuckelt."

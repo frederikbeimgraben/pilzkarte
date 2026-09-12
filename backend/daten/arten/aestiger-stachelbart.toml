@@ -18,9 +18,30 @@ url = "https://www.123pilzsuche.de/daten/details/StachelbartEssbar1004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 4.0, bis = 5.0 }
-sporenBreiteUm = { von = 3.0, bis = 4.0 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.0, bis = 5.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 8
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["rettichartig", "angenehm"]
+text = "Angenehm, leicht rettichartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 12, selten bis 25 cm breit, weiß, im Alter schmutzig gelb. Vom gemeinsamen Strunk gehen aufwärts gerichtete Äste aus."

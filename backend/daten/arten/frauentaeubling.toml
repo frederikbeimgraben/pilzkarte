@@ -37,11 +37,38 @@ reagenz = "ammoniak"
 reaktion = "Rosaorange."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0 }
-stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 6.5, bis = 10.0 }
-sporenBreiteUm = { von = 5.0, bis = 7.5 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.5, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "braun", hex = "#7a5230" }, { name = "grün", hex = "#4f8a3a" }, { name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nussartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 16 cm breit, grün, braun, blau bis lila in wechselnden Mischungen, Huthaut meist glanzlos. Mitte meist vertieft."

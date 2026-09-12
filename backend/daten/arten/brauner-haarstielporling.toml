@@ -17,9 +17,36 @@ url = "https://www.123pilzsuche.de/daten/details/Haarstielporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 18.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 2.0, bis = 17.0 }
-sporenBreiteUm = { von = 4.0, bis = 6.0 }
+hutBreiteCm = { von = 5.0, bis = 18.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 2.0, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "orangebraun", hex = "#c86e28" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild, leicht schärflich bis bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 18, selten bis 25 cm breit, hellbraun, gelbbraun, orangebraun, rosabraun bis kastanienbraun, fein samtig kurzhaarig mit verklebten Haarbüscheln, filzig. Rand gewellt, dünnfleischig."

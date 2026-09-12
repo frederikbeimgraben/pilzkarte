@@ -34,11 +34,37 @@ reagenz = "ammoniak"
 reaktion = "Überall negativ."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
-stielDickeCm = { von = 0.7, bis = 3.0, seltenBis = 4.5 }
-sporenLaengeUm = { von = 10.0, bis = 15.0 }
-sporenBreiteUm = { von = 3.0, bis = 6.0 }
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 0.7, bis = 3.0, seltenBis = 4.5, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 15.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }, { name = "blau", hex = "#3a5f9e" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["saeuerlich", "pilzig", "unauffaellig"]
+text = "Pilzig, etwas säuerlich bis neutral."
+
+[geschmack]
+tags = ["saeuerlich"]
+text = "Säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 10, selten bis 13 cm breit, bräunlich, filzig samtig, später aufgerissen. Unter der Huthaut liegt eine Rotfärbung wie ein Schutzanstrich über dem Fleisch."

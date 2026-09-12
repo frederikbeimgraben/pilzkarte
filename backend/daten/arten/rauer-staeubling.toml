@@ -18,9 +18,32 @@ url = "https://www.123pilzsuche.de/daten/details/WeisserIgelstaeubling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 3.0, bis = 4.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.0, bis = 4.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "olivbraun", hex = "#6e6435" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "grüngelb", hex = "#9fb02f" }]
+
+[geruch]
+tags = ["angenehm", "unauffaellig"]
+text = "Unbedeutend bis angenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "2 bis 5, selten bis 7 cm breit, weißlich, kugelig, zur Basis zugespitzt. Haut sehr dünn, mit pyramidenartigen Stacheln und Warzen besetzt. Fallen die Stacheln ab, bleibt ein Netzmuster zurück."

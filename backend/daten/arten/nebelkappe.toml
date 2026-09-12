@@ -26,11 +26,39 @@ reagenz = "koh"
 reaktion = "Auf dem Hut ohne Reaktion."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 5.5, bis = 8.5 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 8.5, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 8
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["suesslich", "unangenehm", "angenehm"]
+text = "Unangenehm süßlich, nach Raps, etwas parfümiert, an Schimmelkäse erinnernd."
+
+[geschmack]
+tags = ["mild", "saeuerlich", "unangenehm"]
+text = "Säuerlich unangenehm, mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 20, selten bis 25 cm breit, graubraun bis weißgrau, etwas radialfaserig, Haut glatt und abziehbar. Rand meist eingerollt, Mitte im Alter eingedellt und weißlich bereift."

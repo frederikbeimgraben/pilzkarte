@@ -18,9 +18,36 @@ url = "https://www.123pilzsuche.de/daten/details/HohlfussroehrlingGelb.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.5 }
-sporenBreiteUm = { von = 3.5, bis = 4.5 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 4.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["wuerzig", "pilzig"]
+text = "Pilzig, würzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 10 cm breit, kanariengelb, bräunlich schuppig und filzig, Mitte oft gebuckelt. Rand lange eingerollt, jung durch ein spinnwebiges Velum mit dem Stiel verbunden; davon bleibt eine angedeutete Ringzone."

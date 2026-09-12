@@ -16,10 +16,33 @@ url = "https://www.123pilzsuche.de/daten/details/GrauhautigerSS.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 14.0 }
-sporenLaengeUm = { von = 8.3, bis = 14.5 }
-sporenBreiteUm = { von = 7.2, bis = 13.0 }
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 14.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.3, bis = 14.5, einheit = "um" }
+sporenBreiteUm = { von = 7.2, bis = 13.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "olivgrün", hex = "#6f8438" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend, neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild. Roh giftig, keine Kostversuche."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 13 cm breit, graubraun, rötlichbraun, braunoliv, grauocker bis olivgrün, oft mit grauen Hüllresten. Rand blasser und auf etwa einem Drittel des Radius stark gerieft. Flach ausgebreitet, aber immer mit kleinem Buckel."

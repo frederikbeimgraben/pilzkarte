@@ -17,8 +17,30 @@ reagenz = "koh"
 reaktion = "Fleisch weinrot."
 
 [masse]
-sporenLaengeUm = { von = 6.0, bis = 9.4 }
-sporenBreiteUm = { von = 2.5, bis = 4.4 }
+sporenLaengeUm = { von = 6.0, bis = 9.4, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 4.4, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangerot", hex = "#df5a25" }, { name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "orangerot", hex = "#df5a25" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["saeuerlich"]
+text = "Etwas säuerlich."
+
+[geschmack]
+tags = ["unangenehm"]
+text = "Unbedeutend bis unangenehm."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 8, selten bis 12 cm breit, leuchtend orangerot bis orangegelb, jung kugelig, später flach und konsolenförmig, gezont. Jung glatt, später filzig und weich, Rand heller, Zuwachszone orange bis gelb."

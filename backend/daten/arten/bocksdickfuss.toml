@@ -15,9 +15,32 @@ url = "https://www.123pilzsuche.de/daten/details/Bocksdickfuss105.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 8.5, bis = 11.0 }
-sporenBreiteUm = { von = 5.5, bis = 6.5 }
+hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.5, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 5.5, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }]
+sporenlager = [{ name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["unangenehm"]
+text = "Widerlich, nach Ziegenbock, Schweißfüßen, verbranntem Horn oder faulenden Kartoffeln."
+
+[geschmack]
+tags = ["unangenehm"]
+text = "Unangenehm und widerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 9, selten bis 12 cm breit, helllila, lilablau bis weißlich, hygrophan, die Mitte wird gelbbraun."

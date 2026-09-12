@@ -16,10 +16,33 @@ url = "https://www.123pilzsuche.de/daten/details/Fruehlingsroetling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0 }
-stielLaengeCm = { von = 4.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 8.0, bis = 12.0 }
-sporenBreiteUm = { von = 5.0, bis = 9.0 }
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 9.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 7
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "beige", hex = "#d9c9a3" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral, nicht mehlig."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Pilzig und mild, nicht mehlig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 4, selten bis 6 cm breit, jung fast schwarzbraun bis graubraun, feucht kastanienbraun, später rosagrau bis rosabräunlich, beim Abtrocknen verblassend. Gebuckelt und schnell ausgebreitet, Rand meist überstehend und schwach gerieft."

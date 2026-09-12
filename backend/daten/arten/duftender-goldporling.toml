@@ -16,9 +16,32 @@ url = "https://www.123pilzsuche.de/daten/details/DuftenderGoldporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 30.0 }
-sporenLaengeUm = { von = 4.0, bis = 6.1 }
-sporenBreiteUm = { von = 2.4, bis = 4.0 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 30.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.0, bis = 6.1, einheit = "um" }
+sporenBreiteUm = { von = 2.4, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 1
+bisMonat = 12
+
+[farben]
+hut = [{ name = "karottenrot", hex = "#e2642a" }, { name = "blutrot", hex = "#8e1f1f" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+stiel = [{ name = "orangerot", hex = "#df5a25" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["anisartig", "fruchtig", "suesslich"]
+text = "Nach Anis, Aprikosenkompott oder süßlich nach Vanille."
+
+[geschmack]
+tags = []
+text = "Unbedeutend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 13, selten bis 30 cm breit, orange bis leuchtend gelb, karottenrot bis blutrot, die Zuwachsstellen oft orangerosa. Rand oft ausgefranst. Er wirkt, als bestünde er nur aus Röhren."

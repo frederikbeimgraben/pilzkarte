@@ -19,9 +19,30 @@ reagenz = "koh"
 reaktion = "Auf der Oberfläche ohne Reaktion."
 
 [masse]
-fruchtkoerperBreiteCm = { von = 1.0, bis = 10.0, seltenBis = 12.0 }
-sporenLaengeUm = { von = 17.0, bis = 25.0 }
-sporenBreiteUm = { von = 9.0, bis = 11.0 }
+fruchtkoerperBreiteCm = { von = 1.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+sporenLaengeUm = { von = 17.0, bis = 25.0, einheit = "um" }
+sporenBreiteUm = { von = 9.0, bis = 11.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild und neutral, roh essbar."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "1 bis 10, selten bis 12 cm breit, orange, gelborange oder gelb, kahl. Schüssel- bis kelchförmig, später abgeflacht und unregelmäßig. Außenseite blasser rosalich und weißlich körnig kleiig, im Alter fast kahl."

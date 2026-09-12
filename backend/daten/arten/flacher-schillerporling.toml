@@ -15,9 +15,35 @@ url = "https://www.123pilzsuche.de/daten/details/FlacherSchillerporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 35.0 }
-sporenLaengeUm = { von = 5.5, bis = 8.0 }
-sporenBreiteUm = { von = 4.5, bis = 6.5 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 35.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "schwarzbraun", hex = "#3a2a1c" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["angenehm", "unauffaellig"]
+text = "Neutral bis angenehm pilzartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, aromatisch pilzartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 15, selten bis 35 cm breit, rostbraun bis gelbbraun, alt fast schwarzbraun, am Rand heller. Flach konsolen- bis fächerförmig, meist waagerecht vom Holz abstehend, weich, schwammig bis weichkorkig, Oberfläche rauhaarig und filzig."

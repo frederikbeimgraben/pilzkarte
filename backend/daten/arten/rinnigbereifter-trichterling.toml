@@ -16,10 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/Rinnigertrichterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 3.9, bis = 6.0 }
-sporenBreiteUm = { von = 2.5, bis = 4.0 }
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.9, bis = 6.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "ocker", hex = "#c8963c" }]
+sporenlager = [{ name = "hellbraun", hex = "#a97c50" }, { name = "beige", hex = "#d9c9a3" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "ocker", hex = "#c8963c" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "ocker", hex = "#c8963c" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["anisartig", "fruchtig"]
+text = "Suesslich-pilzartig, saeuerlich fruchtig, nicht mehlartig und nicht nach Anis."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, oft angenehm pilzartig, etwas adstringierend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 10, selten bis 13 cm breit, weisslich, elfenbeinweiss bis etwas ockerlich. Rand jung heller, eingerollt und weiss bereift, spaeter mit konzentrisch angeordneten ockerlichen Flecken. Glatt und wachsartig, feucht nicht schleimig, Huthaut nicht abziehbar."

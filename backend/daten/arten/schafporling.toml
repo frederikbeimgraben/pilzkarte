@@ -21,7 +21,35 @@ reagenz = "koh"
 reaktion = "Fleisch ockergelb bis olivgelb."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0 }
+hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grün", hex = "#4f8a3a" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Fast immer mild, erst im späten Alter vereinzelt bitterlich. Roh unverträglich."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 18, selten bis 30 cm breit, weiß, später gelblich, braungelb, graugelb oder schmutzig weiß, filzig, im Alter aufreißend."

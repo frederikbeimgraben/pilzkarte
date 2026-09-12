@@ -15,9 +15,36 @@ url = "https://www.123pilzsuche.de/daten/details/BuescheligerHexenRoehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 12.0, bis = 16.0 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 5
+
+[farben]
+hut = [{ name = "purpurrot", hex = "#8e2f4a" }, { name = "kupferrot", hex = "#a5522a" }, { name = "braunrot", hex = "#7d3324" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "braunrot", hex = "#7d3324" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 8, selten bis 11 cm breit, kupferrot, purpurrot, kirschrot, granatrot bis braunrot, mit kleinen dunkleren Schuppen, bei Verletzung schwarzblau verfärbend."

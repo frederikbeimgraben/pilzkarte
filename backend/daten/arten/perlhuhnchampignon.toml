@@ -24,11 +24,39 @@ reagenz = "schaeffer"
 reaktion = "Negativ."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 15.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 3.5, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "purpurbraun", hex = "#5f3346" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["karbolartig"]
+text = "Tintenartig, karbolartig nach Phenol, nach Jodoform, Schweiß oder faulem Stroh."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 11, selten bis 13 cm breit, fein grau bis braun oder schwarzbraun geschuppt auf weißem bis hellgelbem Grund, an ein Perlhuhngefieder erinnernd. Scheitel dunkler und nicht flockig."

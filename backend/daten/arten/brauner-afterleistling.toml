@@ -16,9 +16,36 @@ url = "https://www.123pilzsuche.de/daten/details/BrauneAfterleistling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 5.5, bis = 6.4 }
-sporenBreiteUm = { von = 3.5, bis = 4.4 }
+hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 6.4, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 4.4, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "orangebraun", hex = "#c86e28" }, { name = "orangegelb", hex = "#e9a32c" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["saeuerlich", "unauffaellig"]
+text = "Säuerlich, unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 12, selten bis 15 cm breit, braun bis braunorange, feinfilzig, Rand lange eingerollt."

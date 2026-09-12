@@ -19,8 +19,31 @@ url = "https://www.123pilzsuche.de/daten/details/GrauerLeistling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0 }
-stielLaengeCm = { von = 2.5, bis = 6.0, seltenBis = 8.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
+stielLaengeCm = { von = 2.5, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "schwarzbraun", hex = "#3a2a1c" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "fruchtig", "angenehm"]
+text = "Fruchtig, obstartig, angenehm, nach Pflaumen."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild, pilzig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 9 cm breit, schwarzgrau bis graubraun, feinschuppig, Rand wellig. Das Hymenium bilden Adern und Falten."

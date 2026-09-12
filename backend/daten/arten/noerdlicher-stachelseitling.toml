@@ -15,9 +15,31 @@ url = "https://www.123pilzsuche.de/daten/details/NoerdlicherStachelseitling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 30.0, seltenBis = 60.0 }
-sporenLaengeUm = { von = 4.5, bis = 5.0 }
-sporenBreiteUm = { von = 2.0, bis = 2.5 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 30.0, seltenBis = 60.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.5, bis = 5.0, einheit = "um" }
+sporenBreiteUm = { von = 2.0, bis = 2.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend."
+
+[geschmack]
+tags = []
+text = "Neutral."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 30, selten bis 60 cm breit, weißlich, hellgelb bis strohfarben. Dachziegelartig übereinanderstehende Hüte, Oberseite rauhaarig."

@@ -27,9 +27,37 @@ reagenz = "feso4"
 reaktion = "Auf dem Hut negativ bis grünlich, im Fleisch negativ bis blassgrau, auf den Röhren blaugrau."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 18.0 }
-sporenLaengeUm = { von = 10.0, bis = 16.0 }
-sporenBreiteUm = { von = 3.0, bis = 6.0 }
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 18.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "hellbraun", hex = "#a97c50" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["saeuerlich"]
+text = "Säuerlich, pilzartig."
+
+[geschmack]
+tags = ["bitter"]
+text = "Immer sehr bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 15, selten bis 18 cm breit, hellbraun, manchmal dunkelbraun wie beim Maronenröhrling, außergewöhnlich selten mit rötlicher Kappe."

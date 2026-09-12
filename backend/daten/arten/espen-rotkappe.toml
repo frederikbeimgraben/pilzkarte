@@ -30,11 +30,39 @@ reagenz = "feso4"
 reaktion = "Fleisch graugrünlich."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 19.0, seltenBis = 22.0 }
-stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 13.0, bis = 18.0 }
-sporenBreiteUm = { von = 4.0, bis = 5.5 }
+hutBreiteCm = { von = 4.0, bis = 19.0, seltenBis = 22.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 20.0, seltenBis = 22.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 13.0, bis = 18.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangebraun", hex = "#c86e28" }, { name = "braunrot", hex = "#7d3324" }]
+sporenlager = [{ name = "olivgrün", hex = "#6f8438" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "orangebraun", hex = "#c86e28" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "grün", hex = "#4f8a3a" }, { name = "blau", hex = "#3a5f9e" }, { name = "lila", hex = "#8a5fa8" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "lila", hex = "#8a5fa8" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "oliv", hex = "#6b7a3a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "schwarz", hex = "#1a1a1a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig"]
+text = "Pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild und angenehm."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 19, selten bis 22 cm breit, braunrot bis orangebraun, feinfilzig. Die Huthaut steht im Alter am Rand über."

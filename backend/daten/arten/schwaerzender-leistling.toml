@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/SchwaerzenderLeistling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 14.0, seltenBis = 16.0 }
-sporenLaengeUm = { von = 9.0, bis = 12.0 }
-sporenBreiteUm = { von = 6.0, bis = 7.0 }
+hutBreiteCm = { von = 2.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "violett", hex = "#6b4a8a" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "schwarz", hex = "#1a1a1a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["obstartig"]
+text = "Obstartig, fruchtartig."
+
+[geschmack]
+tags = ["mild", "suesslich"]
+text = "Mild, etwas schärflich pfeffrig, süßlich angenehm."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 14, selten bis 16 cm breit, eidottergelb bis braungelb mit einem Hauch Violett, später ausblassend, jung flaumig behaart. Mitte stark trichterförmig eingedellt, Rand verbogen."

@@ -16,10 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/Ochsenroehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 7.0, bis = 14.0, seltenBis = 16.0 }
-sporenLaengeUm = { von = 12.0, bis = 17.5 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 7.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 17.5, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "goldgelb", hex = "#e2b13a" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "goldgelb", hex = "#e2b13a" }, { name = "orangerot", hex = "#df5a25" }, { name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "purpurbraun", hex = "#5f3346" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "schwefelgelb", hex = "#e3d13a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig, nach Ananas oder Apfel, alt fast geruchlos."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild, pilzig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 9, selten bis 13 cm breit, goldgelb, ockergelb, braungelb oder leicht grünlich, schnell rötlich fleckend. Jung feinfilzig, später kahl."

@@ -23,9 +23,37 @@ reagenz = "koh"
 reaktion = "Im Fleisch ohne Verfärbung."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0 }
-sporenLaengeUm = { von = 4.2, bis = 8.0 }
-sporenBreiteUm = { von = 3.5, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.2, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "schwarz", hex = "#1a1a1a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Pilzig, angenehm."
+
+[geschmack]
+tags = ["mild", "bitter", "scharf"]
+text = "Jung mild, später scharf und bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 30, selten bis 200 cm breit, jung fast weiß, später hell- bis gelbbraun, zuletzt mit vielen kleinen braunen flachen Schuppen, fein samtig bis kahl, oft radial gestreift und konzentrisch gezont. Die fächerförmigen Hüte überlappen sich und wachsen aus einem gemeinsamen Strunk. Ganz jung färben sich Druckstellen sofort braunschwarz."

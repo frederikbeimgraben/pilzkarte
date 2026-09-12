@@ -18,6 +18,7 @@ from app.modules import (
     marker,
     species,
     system,
+    terms,
     zones,
 )
 from app.modules.access.service import ensure_built_in_roles, sync_permissions
@@ -58,6 +59,7 @@ def build_app() -> FastAPI:
     built.include_router(system.router, prefix="/api")
     built.include_router(access.router, prefix="/api")
     built.include_router(species.router, prefix="/api")
+    built.include_router(terms.router, prefix="/api")
     built.include_router(finds.router, prefix="/api")
     built.include_router(internal.router, prefix="/api")
     built.include_router(combinations.router, prefix="/api")

@@ -25,9 +25,36 @@ reagenz = "koh"
 reaktion = "Auf den Röhren gelblich, auf dem Hut weinrötlich."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0 }
-sporenLaengeUm = { von = 5.0, bis = 8.0 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 200.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["anisartig", "pilzig", "angenehm"]
+text = "Pilzig und angenehm, ganz jung etwas anisartig."
+
+[geschmack]
+tags = ["mild", "scharf"]
+text = "Jung mild, dann schnell extrem scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 30, in Ausnahmen bis 200 cm breit, braun und samtig, fächerförmig ineinander verwachsen und aus einem gemeinsamen Strunk wachsend, Rand wellig."

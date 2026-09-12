@@ -21,11 +21,39 @@ url = "https://www.123pilzsuche.de/daten/details/FleischfarbeneHallimarsch.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-stielDickeCm = { von = 1.5, bis = 2.0, seltenBis = 3.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 4.0, bis = 6.0 }
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielDickeCm = { von = 1.5, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "goldgelb", hex = "#e2b13a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["erdartig", "muffig", "pilzig"]
+text = "Pilzig, oft etwas erdig muffig."
+
+[geschmack]
+tags = ["herb", "kratzend"]
+text = "Herb, kratzend, seifig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 10, selten bis 13 cm breit, haselnussbraun, gelbbraun bis rotbraun, mit abwischbaren grauen, braunen bis goldbraunen Schüppchen. Am Rand hängen Reste eines gelblichen Velums."

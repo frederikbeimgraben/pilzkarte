@@ -22,10 +22,38 @@ reagenz = "naoh"
 reaktion = "Poren rosa bis braunrosa."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0 }
-stielLaengeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 6.0, bis = 10.0 }
-sporenBreiteUm = { von = 2.0, bis = 4.0 }
+hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
+stielLaengeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 2.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "orange", hex = "#e08a2e" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild, etwas bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 6, selten bis 8 cm breit, graugelb, hellgelb, orange, ocker bis rötlich ockergelb, matt filzig bis kahl, Rand scharf."

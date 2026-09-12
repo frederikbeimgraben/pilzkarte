@@ -5,6 +5,7 @@ Prozentwert im Kopf nachrechnen: 30 von 100 Begehungen sind 30 Prozent.
 """
 
 import json
+import re
 import tomllib
 from pathlib import Path
 from typing import Any
@@ -21,11 +22,14 @@ from app.modules.species.catalog import (
     PROTECTED_TEXT,
     UNPROTECTED_TEXT,
     Catalog,
+    SpeciesFilter,
     build_affects,
     build_tags,
     build_traits,
     catalog,
     check_references,
+    colour_names,
+    covers_month,
     find_maps,
     forecast_planned,
     mean_per_week,
@@ -40,10 +44,15 @@ from app.modules.species.schemas import (
     BEST_RATING,
     WEAKEST_RATING,
     WEEKS,
+    ChangeSpeed,
+    Colour,
+    ColourChange,
     Edibility,
     Frequency,
     Lookalike,
+    Period,
     Profile,
+    ProtectionStatus,
     Range,
     Reagent,
     ReagentEntry,
@@ -55,6 +64,7 @@ from app.modules.species.schemas import (
     TraitKey,
     TreeSource,
     TreeSpecies,
+    Unit,
 )
 
 # Die drei Arten der Fixture: eine mit Karte und vielen Begehungen, eine
@@ -987,19 +997,31 @@ def test_every_profile_links_its_source_page() -> None:
 
 
 def test_a_range_runs_from_small_to_large() -> None:
-    range_ = Range(start=4, end=20, rare_until=25)
+    range_ = Range(start=4, end=20, rare_from=2, rare_until=25, unit=Unit.CM)
 
     assert (range_.start, range_.end, range_.rare_until) == (4, 20, 25)
+    assert (range_.rare_from, range_.unit) == (2, Unit.CM)
 
 
 def test_a_reversed_range_is_no_measurement() -> None:
     with pytest.raises(ValidationError, match="unter"):
-        Range(start=20, end=4)
+        Range(start=20, end=4, unit=Unit.CM)
 
 
 def test_the_exceptional_value_lies_above_the_upper_bound() -> None:
     with pytest.raises(ValidationError, match="Ausnahmewert"):
-        Range(start=4, end=20, rare_until=10)
+        Range(start=4, end=20, rare_until=10, unit=Unit.CM)
+
+
+def test_the_exceptional_value_lies_below_the_lower_bound() -> None:
+    with pytest.raises(ValidationError, match="Ausnahmewert"):
+        Range(start=4, end=20, rare_from=6, unit=Unit.CM)
+
+
+def test_a_measurement_carries_its_unit() -> None:
+    for name, measurement in read_profiles(DATA / "arten")["steinpilz"].measurements:
+        if measurement is not None:
+            assert measurement.unit in set(Unit), name
 
 
 def test_the_rating_stays_on_the_scale_of_one_to_six() -> None:
@@ -1052,7 +1074,14 @@ async def test_the_profile_returns_the_numbers_of_the_source() -> None:
     body = response.json()
     assert body["marktfaehigkeit"]["marktfaehig"] is True
     assert body["wertigkeit"] == 1
-    assert body["masse"]["hutBreiteCm"] == {"von": 4.0, "bis": 20.0, "seltenBis": 25.0}
+    assert body["masse"]["hutBreiteCm"] == {
+        "von": 4.0,
+        "bis": 20.0,
+        "seltenVon": None,
+        "seltenBis": 25.0,
+        "einheit": "cm",
+        "beschreibung": None,
+    }
     assert "Herrenpilz" in body["weitereNamen"]
     assert body["quelle"]["url"].startswith("https://www.123pilzsuche.de/")
 
@@ -1333,3 +1362,186 @@ async def test_the_profile_answers_with_references_and_reverse_direction(app: Fa
         "speisewert",
         "warnung",
     }
+
+
+# ------------------------------------------------- Strukturierte Felder
+
+
+def test_the_period_reads_months_from_the_sentence(tmp_path: Path) -> None:
+    period = catalog(DATA, tmp_path).species("steinpilz").period
+
+    assert period is not None
+    assert (period.start_month, period.end_month) == (6, 11)
+
+
+def test_a_period_may_cross_the_turn_of_the_year(tmp_path: Path) -> None:
+    period = catalog(DATA, tmp_path).species("samtfussruebling").period
+
+    assert period is not None
+    assert period.start_month > period.end_month
+    assert covers_month(period, 12)
+    assert covers_month(period, 3)
+    assert not covers_month(period, 8)
+
+
+def test_a_period_inside_one_year_covers_only_its_months() -> None:
+    period = Period(start_month=6, end_month=9)
+
+    assert covers_month(period, 7)
+    assert not covers_month(period, 3)
+
+
+def test_a_month_outside_the_calendar_is_no_month() -> None:
+    with pytest.raises(ValidationError):
+        Period(start_month=0, end_month=9)
+
+
+def test_the_colours_carry_a_name_and_a_value(tmp_path: Path) -> None:
+    colours = catalog(DATA, tmp_path).species("steinpilz").colours
+
+    assert colours.cap
+    for colour in colours.cap:
+        assert colour.name.strip()
+        assert re.fullmatch(r"#[0-9a-f]{6}", colour.hex)
+
+
+def test_a_colour_needs_a_hex_value() -> None:
+    with pytest.raises(ValidationError):
+        Colour(name="braun", hex="braun")
+
+
+def test_a_colour_change_names_its_target(tmp_path: Path) -> None:
+    change = catalog(DATA, tmp_path).species("flockenstieliger-hexenroehrling").colours.change
+
+    assert change is not None
+    assert [colour.name for colour in change.end] == ["blau"]
+    assert change.speed is ChangeSpeed.FAST
+
+
+def test_a_colour_change_without_a_stated_speed_stays_empty() -> None:
+    change = ColourChange(start=[], end=[Colour(name="rot", hex="#c0392b")])
+
+    assert change.speed is None
+
+
+def test_smell_and_taste_carry_tags_and_the_sentence(tmp_path: Path) -> None:
+    boletus = catalog(DATA, tmp_path).species("steinpilz")
+
+    assert "pilzig" in boletus.smell.tags
+    assert "mild" in boletus.taste.tags
+    assert boletus.smell.text
+
+
+def test_a_negated_word_is_no_tag() -> None:
+    # "nicht mehlartig" beim Erdritterling darf kein Schlagwort mehlig setzen.
+    profiles = read_profiles(DATA / "arten")
+
+    assert "mehlig" not in profiles["erdritterling"].smell.tags
+
+
+def test_the_protection_status_names_its_source(tmp_path: Path) -> None:
+    built = catalog(DATA, tmp_path)
+
+    boletus = built.species("steinpilz").protection
+    parasol = built.species("parasol").protection
+    assert boletus is not None
+    assert parasol is not None
+    assert boletus.status is ProtectionStatus.SPECIAL
+    assert parasol.status is ProtectionStatus.NONE
+    assert boletus.source.startswith("Bundesartenschutzverordnung")
+
+
+def test_the_protection_status_matches_the_flag() -> None:
+    for slug, profile in read_profiles(DATA / "arten").items():
+        assert profile.protection is not None, slug
+        special = profile.protection.status is ProtectionStatus.SPECIAL
+        assert special is profile.protected, slug
+
+
+def test_every_measurement_of_every_profile_carries_a_unit() -> None:
+    for slug, profile in read_profiles(DATA / "arten").items():
+        for name, measurement in profile.measurements:
+            if measurement is not None:
+                assert measurement.unit in set(Unit), f"{slug}: {name}"
+
+
+# ------------------------------------------------- Filter
+
+
+@pytest.mark.parametrize(
+    ("chosen", "expected"),
+    [
+        (SpeciesFilter(smell="anisartig"), {"riesenchampignon", "schafchampignon"}),
+        (SpeciesFilter(tree="laerche"), {"goldroehrling"}),
+        (SpeciesFilter(protection=ProtectionStatus.SPECIAL), {"steinpilz", "pfifferling"}),
+    ],
+)
+def test_a_filter_narrows_the_listing(
+    tmp_path: Path, chosen: SpeciesFilter, expected: set[str]
+) -> None:
+    slugs = {species.slug for species in catalog(DATA, tmp_path).listing(chosen=chosen).species}
+
+    assert expected <= slugs
+    assert len(slugs) < 85
+
+
+def test_filters_hold_together(tmp_path: Path) -> None:
+    built = catalog(DATA, tmp_path)
+    both = built.listing(chosen=SpeciesFilter(tree="fichte", month=9))
+    only_tree = built.listing(chosen=SpeciesFilter(tree="fichte"))
+
+    assert 0 < len(both.species) <= len(only_tree.species)
+
+
+def test_an_empty_filter_changes_nothing(tmp_path: Path) -> None:
+    built = catalog(DATA, tmp_path)
+
+    assert len(built.listing(chosen=SpeciesFilter()).species) == len(built.listing().species)
+
+
+def test_a_filter_without_a_hit_stays_empty(tmp_path: Path) -> None:
+    chosen = SpeciesFilter(smell="anisartig", taste="brennend")
+
+    assert catalog(DATA, tmp_path).listing(chosen=chosen).species == []
+
+
+def test_the_colour_filter_looks_at_every_part(tmp_path: Path) -> None:
+    built = catalog(DATA, tmp_path)
+    names = colour_names(built.species("steinpilz").colours)
+
+    assert "olivbraun" in names
+    slugs = {s.slug for s in built.listing(chosen=SpeciesFilter(colour="olivbraun")).species}
+    assert "steinpilz" in slugs
+
+
+async def test_the_endpoint_takes_every_filter() -> None:
+    async with client(build_app()) as call:
+        answer = await call.get(
+            "/api/arten",
+            params={
+                "geruch": "anisartig",
+                "monat": "9",
+                "baum": "",
+                "schutz": "keiner",
+                "speisewert": "sehrGuterSpeisepilz",
+            },
+        )
+
+    assert answer.status_code == 200
+
+
+async def test_a_month_outside_the_calendar_is_rejected() -> None:
+    async with client(build_app()) as call:
+        answer = await call.get("/api/arten", params={"monat": "13"})
+
+    assert answer.status_code == 422
+    assert answer.headers["content-type"].startswith("application/problem+json")
+
+
+async def test_the_tree_filter_answers_over_the_wire() -> None:
+    async with client(build_app()) as call:
+        body = (await call.get("/api/arten", params={"baum": "laerche"})).json()
+
+    slugs = [species["slug"] for species in body["arten"]]
+    assert "goldroehrling" in slugs
+    assert len(slugs) < 85

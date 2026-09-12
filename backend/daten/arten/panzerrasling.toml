@@ -16,9 +16,32 @@ url = "https://www.123pilzsuche.de/daten/details/PanzerRasling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 6.0, bis = 7.5 }
-sporenBreiteUm = { von = 5.0, bis = 5.5 }
+hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 7.5, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 5.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "dunkelbraun", hex = "#4a3120" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "braun", hex = "#7a5230" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig", "suesslich", "unauffaellig"]
+text = "Neutral bis obstartig süßlich."
+
+[geschmack]
+tags = ["mild", "suesslich"]
+text = "Mild, angenehm, süßlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 8, selten bis 11 cm breit, dunkelbraun, olivumbrabraun, olivschwarz, kastanienbraun, schwarzbraun bis rußbraun, jung leicht radialfaserig. Huthaut kahl, mit einer dicken knorpeligen Schicht wie gepanzert. Rand lange eingerollt."

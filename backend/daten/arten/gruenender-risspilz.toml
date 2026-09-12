@@ -15,8 +15,36 @@ url = "https://www.123pilzsuche.de/daten/details/GruenenderRisspilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
-stielLaengeCm = { von = 2.0, bis = 7.0 }
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 7.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 8
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "hellgrau", hex = "#c0c0c0" }, { name = "blaugrün", hex = "#2f7f7a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+fleisch = [{ name = "hellbraun", hex = "#a97c50" }, { name = "blaugrün", hex = "#2f7f7a" }, { name = "weiß", hex = "#ffffff" }, { name = "grün", hex = "#4f8a3a" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["spermatisch", "seifig", "unangenehm", "angenehm"]
+text = "Spermatisch, im Alter unangenehm seifig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 5, selten bis 7 cm breit, strohgelb, grünlichgelb bis braun, radial rissig und faserig, Rand wellig."

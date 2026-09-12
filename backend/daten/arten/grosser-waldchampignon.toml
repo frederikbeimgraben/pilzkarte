@@ -24,9 +24,32 @@ reagenz = "schaeffer"
 reaktion = "Negativ."
 
 [masse]
-hutBreiteCm = { von = 6.0, bis = 15.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 7.0, bis = 9.0 }
-sporenBreiteUm = { von = 3.4, bis = 5.0 }
+hutBreiteCm = { von = 6.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 3.4, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "ocker", hex = "#c8963c" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "blutrot", hex = "#8e1f1f" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "purpurbraun", hex = "#5f3346" }]
+
+[geruch]
+tags = ["bittermandel", "pilzig", "angenehm"]
+text = "Pilzig angenehm, kann einen leichten Ton nach Bittermandel oder Marzipan haben."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "6 bis 15, selten bis 20 cm breit, ockerbräunlich bis dunkelbraun, mit rostbraunen Fasern auf hellerem Grund, geschuppt."

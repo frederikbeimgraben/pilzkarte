@@ -17,10 +17,33 @@ url = "https://www.123pilzsuche.de/daten/details/Nelkenschwindling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.0 }
-stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.8 }
-sporenBreiteUm = { von = 4.0, bis = 6.2 }
+hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.8, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "hellbraun", hex = "#a97c50" }, { name = "ocker", hex = "#c8963c" }]
+sporenlager = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }]
+fleisch = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["bittermandel", "pilzig", "angenehm"]
+text = "Nach Bittermandel und Blausäure, dazu nach Sägespänen und Gewürznelken, etwas stechend alkalisch, dennoch angenehm pilzig."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild, würzig, angenehm pilzig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 6, selten bis 7 cm breit, hellbraun bis ocker-rotbraun, gebuckelt, Rand etwas gerieft und beim Abtrocknen ausblassend."

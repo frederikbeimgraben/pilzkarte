@@ -16,9 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/HorngrauerRoetelritterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
-stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.5 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.5, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 8
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig"]
+text = "Mehlartig, nicht parfümiert wie bei der Nebelkappe."
+
+[geschmack]
+tags = ["mild"]
+text = "Leicht mehlartig, mild, dumpf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 11 cm breit, graubraun mit konzentrischen Wasserflecken, faserig. Rand wellig, verbogen und meist hochgebogen."

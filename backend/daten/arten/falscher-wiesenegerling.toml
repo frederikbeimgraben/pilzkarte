@@ -24,9 +24,37 @@ reagenz = "schaeffer"
 reaktion = "Negativ bis leicht kartonbraun."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 14.0, seltenBis = 18.0 }
-sporenLaengeUm = { von = 5.0, bis = 7.5 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+hutBreiteCm = { von = 3.0, bis = 14.0, seltenBis = 18.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 7.5, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 8
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "purpurbraun", hex = "#5f3346" }, { name = "schwarz", hex = "#1a1a1a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["karbolartig", "unangenehm", "angenehm"]
+text = "Unangenehm tintenartig, nach Karbol oder Urin, nicht pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, widerlich und muffig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 14, selten bis 18 cm breit, weiß, alt graubraun bis gelbbraun, beim Reiben gelblich verfärbend. Jung halbkugelig bis konvex, im Alter abgeflacht."

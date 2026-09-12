@@ -23,9 +23,32 @@ reagenz = "koh"
 reaktion = "Fleisch gelblich, auf dem Hut rötlich."
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 10.0, bis = 12.5 }
-sporenBreiteUm = { von = 5.5, bis = 7.0 }
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 12.5, einheit = "um" }
+sporenBreiteUm = { von = 5.5, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral, eventuell etwas nach Hefe."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, gelbocker, gelbbraun, gelbfuchsig bis rötlichbraun, feucht schleimig bis schmierig. Haut faserig-schuppig, Rand eingerollt und jung mit bräunlichen Velumresten behangen."

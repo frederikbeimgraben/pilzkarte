@@ -27,11 +27,34 @@ reagenz = "phenol"
 reaktion = "Rosa."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
-stielDickeCm = { von = 1.0, bis = 1.8, seltenBis = 2.3 }
-sporenLaengeUm = { von = 7.9, bis = 11.5 }
-sporenBreiteUm = { von = 7.4, bis = 8.5 }
+hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 1.8, seltenBis = 2.3, einheit = "cm" }
+sporenLaengeUm = { von = 7.9, bis = 11.5, einheit = "um" }
+sporenBreiteUm = { von = 7.4, bis = 8.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["obstartig"]
+text = "Leicht obstartig."
+
+[geschmack]
+tags = ["scharf"]
+text = "Extrem scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 8, selten bis 12 cm breit, weißlich, blass rosa, rötlich bis rosenrot, kräftige Rottöne fast nie. Mitte oft blass gelblich bis ocker, Rand schwach kammartig gerieft. Die Huthaut lässt sich ganz abziehen."

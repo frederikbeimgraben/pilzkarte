@@ -16,9 +16,36 @@ url = "https://www.123pilzsuche.de/daten/details/OhrfoermigerSeitling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 4.8, bis = 7.0 }
-sporenBreiteUm = { von = 3.0, bis = 6.0 }
+hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.8, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig"]
+text = "Pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 10, selten bis 13 cm breit, weiß, im Alter gilbend, kahl und bereift, nur um die Anwachsstelle etwas filzig. Muschel- bis zungenförmig, stiellos angewachsen, gern dachziegelartig übereinander, Rand oft eingerollt."

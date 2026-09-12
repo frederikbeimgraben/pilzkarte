@@ -17,11 +17,17 @@ from pathlib import Path
 from app.core.errors import NotFound
 from app.modules.species.schemas import (
     WEEKS,
+    Colours,
     Edibility,
+    Frequency,
+    Group,
     Lookalike,
     Marketability,
+    Period,
     Profile,
+    ProtectionStatus,
     Reagent,
+    RedListStatus,
     ResolvedLookalike,
     SeasonBrief,
     SeasonCurve,
@@ -185,6 +191,78 @@ def read_profiles(folder: Path) -> dict[str, Profile]:
     return profiles
 
 
+def covers_month(period: Period, month: int) -> bool:
+    """Sagt, ob ein Zeitraum einen Monat einschliesst.
+
+    Der Samtfussruebling laeuft von November bis Mai. Ein Zeitraum, dessen Ende
+    vor seinem Anfang liegt, geht ueber den Jahreswechsel.
+    """
+    if period.start_month <= period.end_month:
+        return period.start_month <= month <= period.end_month
+    return month >= period.start_month or month <= period.end_month
+
+
+def colour_names(colours: Colours) -> set[str]:
+    """Alle Farbnamen einer Art, ueber alle Koerperteile hinweg."""
+    parts = (
+        colours.cap,
+        colours.hymenium,
+        colours.stem,
+        colours.flesh,
+        colours.spore_print,
+        colours.change.end if colours.change else [],
+    )
+    return {colour.name for part in parts for colour in part}
+
+
+@dataclass(frozen=True)
+class SpeciesFilter:
+    """Die Auswahl, die ``GET /api/arten`` als Abfrage entgegennimmt.
+
+    Jedes Feld ist eine Und-Bedingung. Was leer bleibt, schraenkt nicht ein.
+    Die Auswahl gehoert auf den Server: er kennt die Werte, das Frontend nur
+    die Slugs.
+    """
+
+    group: Group | None = None
+    tier: Tier | None = None
+    edibility: Edibility | None = None
+    protection: ProtectionStatus | None = None
+    frequency: Frequency | None = None
+    red_list: RedListStatus | None = None
+    rating: int | None = None
+    marketable: bool | None = None
+    smell: str | None = None
+    taste: str | None = None
+    tree: str | None = None
+    month: int | None = None
+    colour: str | None = None
+
+    def matches(self, profile: Profile, tier: Tier) -> bool:
+        """Prueft eine Art gegen jede gesetzte Bedingung."""
+        trees = set(profile.trees)
+        if profile.trees_from_experience:
+            trees |= set(profile.trees_from_experience.trees)
+        checks = (
+            self.group is None or profile.group is self.group,
+            self.tier is None or tier is self.tier,
+            self.edibility is None or profile.edibility is self.edibility,
+            self.protection is None
+            or (profile.protection is not None and profile.protection.status is self.protection),
+            self.frequency is None or profile.frequency is self.frequency,
+            self.red_list is None or profile.red_list is self.red_list,
+            self.rating is None or profile.rating == self.rating,
+            self.marketable is None or profile.marketable is self.marketable,
+            self.smell is None or self.smell in profile.smell.tags,
+            self.taste is None or self.taste in profile.taste.tags,
+            self.tree is None or self.tree in trees,
+            self.month is None
+            or (profile.period is not None and covers_month(profile.period, self.month)),
+            self.colour is None or self.colour in colour_names(profile.colours),
+        )
+        return all(checks)
+
+
 def check_references(profiles: dict[str, Profile]) -> None:
     """Prueft, dass jede Verwechslung auf ein Profil zeigt.
 
@@ -261,14 +339,22 @@ class Catalog:
     def _visits_current_year(self) -> list[int]:
         return self.table.visits_per_week_current_year[: self.table.as_of_week]
 
-    def listing(self, *, only_collectable: bool | None = True) -> SpeciesList:
+    def listing(
+        self,
+        *,
+        only_collectable: bool | None = True,
+        chosen: SpeciesFilter | None = None,
+    ) -> SpeciesList:
         """Die Arten mit Stufe, Tags und der kleinen Kurve.
 
         ``nur_sammelbare`` waehlt aus: ``True`` liefert die 85 sammelbaren,
         ``False`` die Verwechslungsarten, ``None`` alle. Die Auswahl gehoert
         hierher und nicht ins Frontend: der Reiter Arten zeigt sonst Giftpilze
         zwischen den Speisepilzen.
+
+        ``chosen`` schraenkt weiter ein, ueber die strukturierten Felder.
         """
+        wanted = chosen or SpeciesFilter()
         species: list[SpeciesBrief] = []
         for slug, profile in self.profiles.items():
             if only_collectable is not None and profile.collectable is not only_collectable:
@@ -281,6 +367,8 @@ class Catalog:
                 has_map=map_name is not None,
                 collectable=profile.collectable,
             )
+            if not wanted.matches(profile, tier):
+                continue
             species.append(
                 SpeciesBrief(
                     slug=slug,
@@ -399,6 +487,11 @@ class Catalog:
             other_names=profile.other_names,
             synonyms=profile.synonyms,
             measurements=profile.measurements,
+            colours=profile.colours,
+            period=profile.period,
+            protection=profile.protection,
+            smell=profile.smell,
+            taste=profile.taste,
             reagents=profile.reagents,
             source=profile.source,
             forecast_planned=forecast_planned(counts.visits_with_find),

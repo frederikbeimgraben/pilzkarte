@@ -20,10 +20,37 @@ reagenz = "koh"
 reaktion = "Fleisch und Huthaut verfärben sich nicht, anders als beim Kegelhütigen Knollenblätterpilz, der gelb wird."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 17.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 7.0, bis = 12.0 }
-sporenBreiteUm = { von = 6.0, bis = 10.0 }
+hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 17.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 10.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "olivbraun", hex = "#6e6435" }, { name = "olivgrün", hex = "#6f8438" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["suesslich", "unangenehm"]
+text = "Jung fast geruchlos, nach Kleeheu, süßlich oder hornartig, alt widerlich nach Ammoniak."
+
+[geschmack]
+tags = ["mild", "suesslich"]
+text = "Mild und süßlich. Niemals kosten, es droht eine Leberschädigung."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 15, selten bis 17 cm breit, grünlich, olivgrün, olivbraun, olivgelb, ocker, gelb bis fast weiß. Jung eiförmig-halbkugelig mit weißer Gesamthülle, später aufschirmend. Rand nicht gerieft, Huthaut fein radialfaserig eingewachsen, feucht etwas klebrig und wie ein Tortenstück abziehbar."

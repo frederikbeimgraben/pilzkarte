@@ -24,9 +24,36 @@ reagenz = "koh"
 reaktion = "Auf dem Hut ohne Reaktion."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 15.0, seltenBis = 20.0 }
-sporenLaengeUm = { von = 7.0, bis = 11.0 }
-sporenBreiteUm = { von = 2.0, bis = 4.0 }
+hutBreiteCm = { von = 2.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 2.0, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 5
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "silbergrau", hex = "#b8bcc0" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "lila", hex = "#8a5fa8" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["wuerzig", "pilzig"]
+text = "Würzig pilzig, etwas nach Porling."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 15, selten bis 20 cm breit, silbergrau, grau bis graubraun, nach den ersten Frostschäden meist brauner. Muschelförmig, glatt und kahl, Rand jung eingerollt."

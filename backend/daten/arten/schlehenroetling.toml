@@ -26,11 +26,39 @@ reagenz = "guajak"
 reaktion = "Blaugrün bis türkis, im Hutfleisch und an der Stielbasis mehr blau."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 14.0 }
-stielDickeCm = { von = 0.5, bis = 1.8, seltenBis = 3.0 }
-sporenLaengeUm = { von = 7.5, bis = 11.0 }
-sporenBreiteUm = { von = 7.0, bis = 10.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 14.0, einheit = "cm" }
+stielDickeCm = { von = 0.5, bis = 1.8, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.5, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 7.0, bis = 10.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 8
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "orangebraun", hex = "#c86e28" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "orangebraun", hex = "#c86e28" }, { name = "braunrot", hex = "#7d3324" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig", "obstartig", "suesslich"]
+text = "Süßlich obstartig, bei Verletzung mehlig."
+
+[geschmack]
+tags = ["mild", "mehlig"]
+text = "Mild, mehlig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, weißlich, cremegelb bis graubräunlich, im Alter silbrig braun, kegelig gewölbt, später ausgebreitet und etwas gebuckelt. Oberfläche eingewachsen radialfaserig und fein behaart, nur schwach hygrophan, Rand lange eingerollt."

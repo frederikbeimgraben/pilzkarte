@@ -17,9 +17,35 @@ url = "https://www.123pilzsuche.de/daten/details/DornigerStachelbart.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 2.8, bis = 4.5 }
-sporenBreiteUm = { von = 3.0, bis = 4.2 }
+fruchtkoerperBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 2.8, bis = 4.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 4.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 8
+bisMonat = 2
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm, ähnlich dem Schwefelporling."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 20, selten bis 25 cm breit, weiß, später schmutzig gelb mit orangen, rosa bis roten Verfärbungen. Aus einzelnen, unregelmäßig gelappten, oft verbogenen Hüten aufgebaut."

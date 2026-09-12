@@ -20,10 +20,38 @@ url = "https://www.123pilzsuche.de/daten/details/Braetling2004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 17.0, seltenBis = 23.0 }
-stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 14.0 }
-sporenLaengeUm = { von = 8.0, bis = 12.0 }
-sporenBreiteUm = { von = 7.0, bis = 11.0 }
+hutBreiteCm = { von = 4.0, bis = 17.0, seltenBis = 23.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 12.0, seltenBis = 14.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 7.0, bis = 11.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 10
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "orangebraun", hex = "#c86e28" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "ockergelb", hex = "#d4a63c" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremeweiß", hex = "#f5efdc" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["fischartig"]
+text = "Deutlich nach Heringslake, fischartig."
+
+[geschmack]
+tags = ["mild", "pilzig"]
+text = "Mild, angenehm pilzig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 17, selten bis 23 cm breit, orangebraun, rotbraun bis orangefuchsig, in der Mitte rötlich fleckend, matt und feinsamtig, im Alter federig rissig. Rand eingebogen."

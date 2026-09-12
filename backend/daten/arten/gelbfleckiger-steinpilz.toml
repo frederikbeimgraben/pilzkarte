@@ -16,9 +16,37 @@ url = "https://www.123pilzsuche.de/daten/details/GelbfleckigerSteinpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0 }
-sporenLaengeUm = { von = 10.0, bis = 20.0 }
-sporenBreiteUm = { von = 3.0, bis = 8.0 }
+hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 20.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "ockergelb", hex = "#d4a63c" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 20, selten bis 25 cm breit, hell ockerbraun, dottergelb bis bronzefarben, immer gelbfleckig. Feucht und im Alter schmierig, mit gelber Zwischenschicht in der Huthaut."

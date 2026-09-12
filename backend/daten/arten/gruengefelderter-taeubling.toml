@@ -33,11 +33,34 @@ reagenz = "ammoniak"
 reaktion = "Rosa bis blaugrau."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 12.0 }
-stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 5.7, bis = 10.0 }
-sporenBreiteUm = { von = 4.7, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.7, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.7, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["bittermandel", "mehlig", "unauffaellig"]
+text = "Neutral bis leicht mehlig, nussig, etwas marzipanartig, alt nach Käse."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, ganz jung oft weißlich, dann grün, grasgrün, spangrün bis lagunenblau, nie violett. Kenntlich an den grünen Feldern, die felderig auf weißlichem bis blassgrünem Grund aufreißen, im Alter mit schmutzig gelben Rissen. Huthaut zur Hälfte abziehbar."

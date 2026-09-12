@@ -18,9 +18,31 @@ url = "https://www.123pilzsuche.de/daten/details/BauchwehkoralleGiftig1004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0 }
-sporenLaengeUm = { von = 9.0, bis = 12.0 }
-sporenBreiteUm = { von = 4.4, bis = 6.5 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 4.4, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "blassgelb", hex = "#efe3a0" }]
+
+[geruch]
+tags = ["seifig", "saeuerlich", "maggiartig"]
+text = "Säuerlich und seifig, im Alter etwas nach Maggi."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild, alt leicht bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 15, selten bis 22 cm breit, milchkaffeebraun, hellgelblich, lilarötlich, fleischrötlich bis rosa, längsrunzelig. Die Endästchen tragen stumpfe Zähnchen und sind lilarötlich bis fleischrötlich getönt."

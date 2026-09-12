@@ -21,11 +21,38 @@ reagenz = "melzer"
 reaktion = "Fleisch junger Fruchtkörper olivgrün."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 13.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 9.0, bis = 17.0 }
-sporenBreiteUm = { von = 3.8, bis = 6.2 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 17.0, einheit = "um" }
+sporenBreiteUm = { von = 3.8, bis = 6.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }]
+
+[geruch]
+tags = ["saeuerlich", "pilzig", "unauffaellig"]
+text = "Pilzig, etwas säuerlich bis neutral."
+
+[geschmack]
+tags = ["saeuerlich"]
+text = "Säuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 10 cm breit, bräunlich, samtig filzig, später aufreißend. Unter der Huthaut liegt immer eine Rotfärbung. Oberfläche feucht klebrig. Gelbliche Fraßstellen werden nach einigen Stunden rötlich."

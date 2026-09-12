@@ -19,9 +19,31 @@ url = "https://www.123pilzsuche.de/daten/details/GelbeKoralle1004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 0.5, bis = 1.0, seltenBis = 1.2 }
-sporenLaengeUm = { von = 11.0, bis = 18.0 }
-sporenBreiteUm = { von = 4.0, bis = 6.5 }
+fruchtkoerperBreiteCm = { von = 0.5, bis = 1.0, seltenBis = 1.2, einheit = "cm" }
+sporenLaengeUm = { von = 11.0, bis = 18.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwefelgelb", hex = "#e3d13a" }, { name = "goldgelb", hex = "#e2b13a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "grüngelb", hex = "#9fb02f" }, { name = "schwefelgelb", hex = "#e3d13a" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }]
+
+[geruch]
+tags = ["wuerzig", "pilzig", "unauffaellig"]
+text = "Pilzig würzig, teils unbedeutend bis herb."
+
+[geschmack]
+tags = ["bitter"]
+text = "Neutral, an den Spitzen alt bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "Einzelne Äste 0,5 bis 1, selten bis 1,2 cm dick, die Büschel bis 15, selten bis 25 cm breit. Gelb, ganz jung etwas weißlich, später goldgelb und schwefelgelb ausblassend. Aus einem weißen Strunk ästig verzweigt. Unterseite jung weißlich, später zunehmend gelblich."

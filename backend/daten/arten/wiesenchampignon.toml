@@ -24,9 +24,37 @@ reagenz = "schaeffer"
 reaktion = "Fast immer negativ. Seltene Unterarten reagieren positiv."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 13.0, seltenBis = 16.0 }
-sporenLaengeUm = { von = 5.5, bis = 10.0 }
-sporenBreiteUm = { von = 4.0, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 13.0, seltenBis = 16.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.5, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "fleischrosa", hex = "#e7b9a8" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "purpurbraun", hex = "#5f3346" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "rot", hex = "#c0392b" }]
+dauer = "schnell"
+
+[geruch]
+tags = ["anisartig", "pilzig", "angenehm"]
+text = "Pilzig, angenehm, kein oder kaum wahrnehmbarer Anisgeruch."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nussartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 13, selten bis 16 cm breit, kleiner als der Schafchampignon. Haut weiß, alt grau bis graubraun, jung feinschuppig und über den Hutrand hinaus abziehbar. Alt von der Mitte her mit bräunlichen, flach anliegenden Schuppen. Rand meist weißlich und mit Velumresten behangen."

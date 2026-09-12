@@ -17,11 +17,34 @@ url = "https://www.123pilzsuche.de/daten/details/Parasol.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 30.0 }
-stielLaengeCm = { von = 6.0, bis = 30.0, seltenBis = 40.0 }
-stielDickeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 12.0, bis = 18.0 }
-sporenBreiteUm = { von = 9.0, bis = 12.0 }
+hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 30.0, einheit = "cm" }
+stielLaengeCm = { von = 6.0, bis = 30.0, seltenBis = 40.0, einheit = "cm" }
+stielDickeCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 12.0, bis = 18.0, einheit = "um" }
+sporenBreiteUm = { von = 9.0, bis = 12.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm nussartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Angenehm nussartig, mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 25, selten bis 30 cm breit, hellbraun, mit gezonten, weichen, wolligen Schüppchen. Rand behangen."

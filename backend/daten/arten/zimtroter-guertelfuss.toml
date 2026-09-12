@@ -14,9 +14,32 @@ url = "https://www.123pilzsuche.de/daten/details/ZimtroterGuertelfuss.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 9.0, bis = 11.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.0 }
+hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "orangebraun", hex = "#c86e28" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "violett", hex = "#6b4a8a" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenpulver = [{ name = "rostbraun", hex = "#8a4b23" }]
+
+[geruch]
+tags = ["rettichartig"]
+text = "Rettichartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 9, selten bis 11 cm breit, orangebraun, gelbbraun bis rötlichbraun, durch das Velum zartseidig bereift, halbkugelig bis glockenförmig, Randbereich mit Velumresten und gern etwas eingerollt."

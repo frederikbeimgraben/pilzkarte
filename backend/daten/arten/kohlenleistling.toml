@@ -14,9 +14,37 @@ url = "https://www.123pilzsuche.de/daten/details/Kohlenleistling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 9.0, bis = 10.5 }
-sporenBreiteUm = { von = 4.5, bis = 5.0 }
+hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 4.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "graubraun", hex = "#7d6f5e" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 4, selten bis 6 cm breit, grauschwarz bis schwarzbraun, der Rand dunkler. Mitte trichterförmig genabelt."

@@ -17,7 +17,28 @@ url = "https://www.123pilzsuche.de/daten/details/Hasenstaubling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 16.0, seltenBis = 18.0 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 16.0, seltenBis = 18.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "olivbraun", hex = "#6e6435" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "grün", hex = "#4f8a3a" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }, { name = "dunkelbraun", hex = "#4a3120" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm."
+
+[geschmack]
+tags = ["mild", "unangenehm"]
+text = "Mild und angenehm, im Alter unangenehm karbolartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "3 bis 16, selten bis 18 cm breit, weiß, später grau, ballon-, sack- oder kreiselförmig. Jung mit plattenartigen, etwas spitzkegeligen Erhebungen, die im Alter verschwinden."

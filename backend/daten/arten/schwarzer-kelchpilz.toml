@@ -17,9 +17,31 @@ url = "https://www.123pilzsuche.de/daten/details/SchwarzerKelchpilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 25.0, bis = 35.0 }
-sporenBreiteUm = { von = 10.0, bis = 14.0 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 25.0, bis = 35.0, einheit = "um" }
+sporenBreiteUm = { von = 10.0, bis = 14.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 12
+bisMonat = 5
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "schwarzbraun", hex = "#3a2a1c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "braun", hex = "#7a5230" }]
+stiel = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "2 bis 8, selten bis 9 cm breit und bis 8 cm hoch, kelch- bis pokalförmig, braun bis schwarz. Außen graubraun bis schwarzbraun, etwas warzig, mehlig bereift und feinfilzig, Rand gekerbt. Die Fruchtschicht ist fast schwarz."

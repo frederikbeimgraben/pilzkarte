@@ -18,11 +18,34 @@ url = "https://www.123pilzsuche.de/daten/details/Koernchenroehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 15.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 2.5, bis = 4.0 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 15.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "hellbraun", hex = "#a97c50" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "ockergelb", hex = "#d4a63c" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["fruchtig", "wuerzig"]
+text = "Würzig, leicht fruchtig."
+
+[geschmack]
+tags = ["mild", "saeuerlich"]
+text = "Schwach säuerlich, mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 15 cm breit, kastanienbraun, hellbraun bis ockerbraun, bei Nässe sehr schmierig."

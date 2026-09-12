@@ -20,9 +20,36 @@ reagenz = "koh"
 reaktion = "Poren leicht gelblich."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 9.3, bis = 16.0 }
-sporenBreiteUm = { von = 3.5, bis = 6.0 }
+hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.3, bis = 16.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangebraun", hex = "#c86e28" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["wuerzig", "pilzig"]
+text = "Würzig, pilzig."
+
+[geschmack]
+tags = ["bitter"]
+text = "Leicht bitterlich, das verliert sich beim Zubereiten."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 6, selten bis 9 cm breit, meist kreisrund, bräunlich, blass ockerlich bis orangebraun, auf hellem weißlichem bis gelbem Grund mit dunkleren braunen Schuppen. Rand dünn, meist weißlich und bewimpert."

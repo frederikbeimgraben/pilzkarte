@@ -21,11 +21,34 @@ reagenz = "koh"
 reaktion = "Auf dem Hut keine Verfärbung."
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 14.0 }
-stielDickeCm = { von = 0.4, bis = 2.0, seltenBis = 2.5 }
-sporenLaengeUm = { von = 5.0, bis = 7.0 }
-sporenBreiteUm = { von = 3.5, bis = 5.0 }
+hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 12.0, seltenBis = 14.0, einheit = "cm" }
+stielDickeCm = { von = 0.4, bis = 2.0, seltenBis = 2.5, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 3.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremeweiß", hex = "#f5efdc" }]
+sporenlager = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "rosa", hex = "#e8a0b0" }]
+
+[geruch]
+tags = ["rettichartig", "suesslich", "erdartig", "unangenehm", "angenehm", "unauffaellig"]
+text = "Neutral, im Alter unangenehm erdig oder süßlich, selten leicht rettichartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, etwas rettichartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 11, selten bis 15 cm breit, elfenbein- bis cremeweiß, manchmal etwas bräunlich auf hellem Grund. Scheitel meist mit dunkleren Faserschuppen, bei Trockenheit sparrig schuppig, Rand im Alter aufreißend."

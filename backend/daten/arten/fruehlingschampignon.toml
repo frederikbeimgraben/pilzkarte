@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/Fruehlingsegerling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0 }
-sporenLaengeUm = { von = 4.0, bis = 4.5 }
-sporenBreiteUm = { von = 6.0, bis = 8.0 }
+hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.0, bis = 4.5, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 8
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "rosa", hex = "#e8a0b0" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "purpurbraun", hex = "#5f3346" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["anisartig"]
+text = "Etwas mandel- bis anisartig."
+
+[geschmack]
+tags = ["mild", "nussig"]
+text = "Mild, nussig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "5 bis 11, selten bis 13 cm breit, weiß bis gelblich, bei Berührung strohgelb verfärbend, mit seidigen angedrückten gelbbraunen Radialfasern. Rand hell, bisweilen rosa durchscheinend."

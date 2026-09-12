@@ -16,11 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/Riesentrichterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 30.0 }
-stielLaengeCm = { von = 5.0, bis = 18.0, seltenBis = 27.0 }
-stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 6.0, bis = 11.0 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 30.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 18.0, seltenBis = 27.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["suesslich", "pilzig"]
+text = "Süßlich, pilzig, parfümiert, etwas nach Heu."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 20, selten bis 30 cm breit, weißlich, ockerbraun bis hellbraun, trocken seidig glatt. Mitte trichterförmig, nicht oder nur schwach gebuckelt, Rand lange eingerollt und etwas wellig."

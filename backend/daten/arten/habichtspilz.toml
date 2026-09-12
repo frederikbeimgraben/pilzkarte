@@ -18,9 +18,32 @@ url = "https://www.123pilzsuche.de/daten/details/Habichtspilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 6.0, bis = 15.0, seltenBis = 30.0 }
-sporenLaengeUm = { von = 5.0, bis = 8.5 }
-sporenBreiteUm = { von = 5.0, bis = 7.5 }
+hutBreiteCm = { von = 6.0, bis = 15.0, seltenBis = 30.0, einheit = "cm" }
+sporenLaengeUm = { von = 5.0, bis = 8.5, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "hellbraun", hex = "#a97c50" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }]
+fleisch = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }]
+
+[geruch]
+tags = ["wuerzig"]
+text = "Würzig."
+
+[geschmack]
+tags = ["mild", "bitter"]
+text = "Mild, im Alter bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "6 bis 15, selten bis 30 cm breit, grauweißlich, braunweißlich bis hellbraun, dunkelbraun gefeldert, mit groben aufgerichteten Schuppen."

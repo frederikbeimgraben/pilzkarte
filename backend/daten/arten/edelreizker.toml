@@ -16,11 +16,39 @@ url = "https://www.123pilzsuche.de/daten/details/Edelreizker.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
-stielDickeCm = { von = 1.5, bis = 3.0, seltenBis = 3.5 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 5.9, bis = 7.6 }
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
+stielDickeCm = { von = 1.5, bis = 3.0, seltenBis = 3.5, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 5.9, bis = 7.6, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "orange", hex = "#e08a2e" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "blassocker", hex = "#dcc48a" }, { name = "ocker", hex = "#c8963c" }, { name = "orange", hex = "#e08a2e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "orange", hex = "#e08a2e" }]
+fleisch = [{ name = "orange", hex = "#e08a2e" }, { name = "grün", hex = "#4f8a3a" }]
+sporenpulver = [{ name = "ockergelb", hex = "#d4a63c" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "grün", hex = "#4f8a3a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["obstartig", "suesslich"]
+text = "Süßlich, obstartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, nach Weißkraut, kaum bitterlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 10, selten bis 15 cm breit, orange, weißlich bereift, mit konzentrisch getropften Flecken. Glatt, feucht etwas schleimig, Rand lange eingebogen. Verletzte Stellen laufen später grün an."

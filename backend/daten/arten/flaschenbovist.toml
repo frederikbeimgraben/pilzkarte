@@ -18,9 +18,30 @@ url = "https://www.123pilzsuche.de/daten/details/Flaschenstaeubling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 3.3, bis = 3.9 }
-sporenBreiteUm = { von = 3.4, bis = 3.8 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.3, bis = 3.9, einheit = "um" }
+sporenBreiteUm = { von = 3.4, bis = 3.8, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "2 bis 5, selten bis 7 cm breit und bis 8 cm hoch, keulig bis birnenförmig mit stielartigem Fuß. Jung weiß, im Alter bräunlich."

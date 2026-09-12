@@ -16,11 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/Riesenroetling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 16.0 }
-stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 17.0 }
-stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-sporenLaengeUm = { von = 8.0, bis = 12.0 }
-sporenBreiteUm = { von = 7.0, bis = 9.5 }
+hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
+stielLaengeCm = { von = 5.0, bis = 13.0, seltenBis = 17.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+sporenLaengeUm = { von = 8.0, bis = 12.0, einheit = "um" }
+sporenBreiteUm = { von = 7.0, bis = 9.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+stiel = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig", "rettichartig", "suesslich", "unangenehm", "saeuerlich", "angenehm"]
+text = "Unangenehm, säuerlich, mehlig bis säuerlich rettichartig, manchmal etwas süßlich."
+
+[geschmack]
+tags = ["mild", "unangenehm"]
+text = "Mild, etwas mehlartig, aber unangenehm. Keine Kostversuche."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 12, selten bis 16 cm breit, elfenbeinfarben, blassgelb, hell cremegelb, bleigrau bis silbrig ockerlich, oft unregelmäßig verbogen, etwas eingewachsen radialfaserig. Jung halbkugelig, alt breitkegelig bis ausgebreitet und gebuckelt, nicht ausbleichend."

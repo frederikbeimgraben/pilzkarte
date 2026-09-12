@@ -199,13 +199,36 @@ class TraitKey(StrEnum):
 type Tag = Tier | Group | Season | TreeSpecies
 
 
+class Unit(StrEnum):
+    """Die Einheit einer Messung. Sie steht am Wert, nicht im Feldnamen."""
+
+    CM = "cm"
+    MM = "mm"
+    UM = "um"
+
+
 class Range(BaseSchema):
-    """Ein Messbereich, so wie 123pilzsuche ihn schreibt: 4 bis 20, selten bis 25."""
+    """Ein Messbereich, so wie 123pilzsuche ihn schreibt: 4 bis 20, selten bis 25.
+
+    ``seltenVon`` und ``seltenBis`` sind die Ausreisser nach unten und oben.
+    ``beschreibung`` traegt den Satz der Seite, wo er mehr sagt als die Zahlen,
+    etwa "jung halbkugelig, spaeter polsterfoermig".
+    """
 
     start: float = Field(validation_alias="von", serialization_alias="von", gt=0)
     end: float = Field(validation_alias="bis", serialization_alias="bis", gt=0)
+    rare_from: float | None = Field(
+        validation_alias="seltenVon", serialization_alias="seltenVon", default=None, gt=0
+    )
     rare_until: float | None = Field(
         validation_alias="seltenBis", serialization_alias="seltenBis", default=None, gt=0
+    )
+    unit: Unit = Field(validation_alias="einheit", serialization_alias="einheit")
+    description: str | None = Field(
+        validation_alias="beschreibung",
+        serialization_alias="beschreibung",
+        default=None,
+        min_length=1,
     )
 
     @model_validator(mode="after")
@@ -213,8 +236,110 @@ class Range(BaseSchema):
         if self.start > self.end:
             raise ValueError("Der untere Wert einer Spanne liegt ueber dem oberen.")
         if self.rare_until is not None and self.rare_until < self.end:
-            raise ValueError("Der Ausnahmewert liegt unter dem oberen Wert.")
+            raise ValueError("Der Ausnahmewert nach oben liegt unter dem oberen Wert.")
+        if self.rare_from is not None and self.rare_from > self.start:
+            raise ValueError("Der Ausnahmewert nach unten liegt ueber dem unteren Wert.")
         return self
+
+
+class Colour(BaseSchema):
+    """Eine Farbe mit Namen und Wert. Der Name steht in der Tabelle, der Wert im Feld."""
+
+    name: str = Field(min_length=1)
+    hex: str = Field(pattern=r"^#[0-9a-f]{6}$")
+
+
+class ChangeSpeed(StrEnum):
+    """Wie schnell eine Verfaerbung eintritt."""
+
+    FAST = "schnell"
+    SLOW = "langsam"
+
+
+class ColourChange(BaseSchema):
+    """Was beim Anschnitt oder auf Druck passiert: "blaut sofort"."""
+
+    start: list[Colour] = Field(validation_alias="von", serialization_alias="von")
+    end: list[Colour] = Field(validation_alias="nach", serialization_alias="nach", min_length=1)
+    # Die Quellseite sagt nicht immer, wie schnell. Wo sie schweigt, bleibt das
+    # Feld leer, statt eine Geschwindigkeit zu behaupten.
+    speed: ChangeSpeed | None = Field(
+        validation_alias="dauer", serialization_alias="dauer", default=None
+    )
+
+
+class Colours(BaseSchema):
+    """Die Farben der Art, nach Koerperteil getrennt.
+
+    Sie stehen als Werte und nicht als Satz, damit die Oberflaeche sie zeigen
+    und ein Filter sie vergleichen kann. Der Satz bleibt in der Merkmalstabelle.
+    """
+
+    cap: list[Colour] = Field(
+        validation_alias="hut", serialization_alias="hut", default_factory=list["Colour"]
+    )
+    hymenium: list[Colour] = Field(
+        validation_alias="sporenlager",
+        serialization_alias="sporenlager",
+        default_factory=list["Colour"],
+    )
+    stem: list[Colour] = Field(
+        validation_alias="stiel", serialization_alias="stiel", default_factory=list["Colour"]
+    )
+    flesh: list[Colour] = Field(
+        validation_alias="fleisch", serialization_alias="fleisch", default_factory=list["Colour"]
+    )
+    spore_print: list[Colour] = Field(
+        validation_alias="sporenpulver",
+        serialization_alias="sporenpulver",
+        default_factory=list["Colour"],
+    )
+    change: ColourChange | None = Field(
+        validation_alias="verfaerbung", serialization_alias="verfaerbung", default=None
+    )
+
+
+class Period(BaseSchema):
+    """Der Zeitraum als Monatszahlen. Dezember bis Februar laeuft ueber den Jahreswechsel."""
+
+    start_month: int = Field(
+        validation_alias="vonMonat", serialization_alias="vonMonat", ge=1, le=12
+    )
+    end_month: int = Field(validation_alias="bisMonat", serialization_alias="bisMonat", ge=1, le=12)
+    peak_month: int | None = Field(
+        validation_alias="spitzeMonat",
+        serialization_alias="spitzeMonat",
+        default=None,
+        ge=1,
+        le=12,
+    )
+
+
+class ProtectionStatus(StrEnum):
+    """Der Schutz nach Bundesartenschutzverordnung."""
+
+    NONE = "keiner"
+    SPECIAL = "besondersGeschuetzt"
+    STRICT = "strengGeschuetzt"
+
+
+class Protection(BaseSchema):
+    """Der Schutzstatus mit der Verordnung, aus der er stammt."""
+
+    status: ProtectionStatus
+    source: str = Field(validation_alias="quelle", serialization_alias="quelle", min_length=1)
+
+
+class TaggedText(BaseSchema):
+    """Geruch oder Geschmack: Schlagworte aus dem Katalog und der Satz daneben.
+
+    Die Schlagworte kommen aus der Tabelle ``begriff`` und nicht aus einem Enum,
+    damit die Verwaltung sie erweitern kann. Der Satz bleibt, weil er mehr sagt
+    als eine Liste.
+    """
+
+    tags: list[str] = Field(default_factory=list[str])
+    text: str | None = Field(default=None, min_length=1)
 
 
 class Measurements(BaseSchema):
@@ -401,6 +526,21 @@ class Profile(BaseSchema):
     )
     measurements: Measurements = Field(
         validation_alias="masse", serialization_alias="masse", default_factory=Measurements
+    )
+    colours: Colours = Field(
+        validation_alias="farben", serialization_alias="farben", default_factory=Colours
+    )
+    period: Period | None = Field(
+        validation_alias="zeitraum", serialization_alias="zeitraum", default=None
+    )
+    protection: Protection | None = Field(
+        validation_alias="schutz", serialization_alias="schutz", default=None
+    )
+    smell: TaggedText = Field(
+        validation_alias="geruch", serialization_alias="geruch", default_factory=TaggedText
+    )
+    taste: TaggedText = Field(
+        validation_alias="geschmack", serialization_alias="geschmack", default_factory=TaggedText
     )
     map_name: str | None = Field(
         default=None, validation_alias="karte", serialization_alias="karte"
@@ -701,6 +841,11 @@ class Species(BaseSchema):
     )
     synonyms: list[str] = Field(validation_alias="synonyme", serialization_alias="synonyme")
     measurements: Measurements = Field(validation_alias="masse", serialization_alias="masse")
+    colours: Colours = Field(validation_alias="farben", serialization_alias="farben")
+    period: Period | None = Field(validation_alias="zeitraum", serialization_alias="zeitraum")
+    protection: Protection | None = Field(validation_alias="schutz", serialization_alias="schutz")
+    smell: TaggedText = Field(validation_alias="geruch", serialization_alias="geruch")
+    taste: TaggedText = Field(validation_alias="geschmack", serialization_alias="geschmack")
     reagents: list[ReagentEntry] = Field(
         validation_alias="reagenzien", serialization_alias="reagenzien"
     )
@@ -721,6 +866,62 @@ class Species(BaseSchema):
     affects: list[str] = Field(validation_alias="betrifft", serialization_alias="betrifft")
     links: list[Link]
     season: SeasonCurve | None = Field(validation_alias="saison", serialization_alias="saison")
+
+
+class SpeciesQuery(BaseSchema):
+    """Die Abfrage von ``GET /api/arten``, jedes Feld eine Und-Bedingung.
+
+    Sie steht als Modell und nicht als sechzehn Parameter, damit die Bedingungen
+    an einer Stelle stehen und die OpenAPI sie zusammen zeigt.
+    """
+
+    collectable: bool = Field(
+        validation_alias="sammelbar",
+        serialization_alias="sammelbar",
+        default=True,
+        description="true liefert die sammelbaren Arten, false die Verwechslungsarten.",
+    )
+    all_groups: bool = Field(
+        validation_alias="alle",
+        serialization_alias="alle",
+        default=False,
+        description="Liefert beide Gruppen zusammen und schlaegt sammelbar.",
+    )
+    group: Group | None = Field(
+        validation_alias="gruppe", serialization_alias="gruppe", default=None
+    )
+    tier: Tier | None = Field(validation_alias="stufe", serialization_alias="stufe", default=None)
+    edibility: Edibility | None = Field(
+        validation_alias="speisewert", serialization_alias="speisewert", default=None
+    )
+    protection: ProtectionStatus | None = Field(
+        validation_alias="schutz", serialization_alias="schutz", default=None
+    )
+    frequency: Frequency | None = Field(
+        validation_alias="haeufigkeit", serialization_alias="haeufigkeit", default=None
+    )
+    red_list: RedListStatus | None = Field(
+        validation_alias="gefaehrdung", serialization_alias="gefaehrdung", default=None
+    )
+    rating: int | None = Field(
+        validation_alias="wertigkeit",
+        serialization_alias="wertigkeit",
+        default=None,
+        ge=BEST_RATING,
+        le=WEAKEST_RATING,
+    )
+    marketable: bool | None = Field(
+        validation_alias="marktfaehig", serialization_alias="marktfaehig", default=None
+    )
+    smell: str | None = Field(validation_alias="geruch", serialization_alias="geruch", default=None)
+    taste: str | None = Field(
+        validation_alias="geschmack", serialization_alias="geschmack", default=None
+    )
+    tree: str | None = Field(validation_alias="baum", serialization_alias="baum", default=None)
+    month: int | None = Field(
+        validation_alias="monat", serialization_alias="monat", default=None, ge=1, le=12
+    )
+    colour: str | None = Field(validation_alias="farbe", serialization_alias="farbe", default=None)
 
 
 class SpeciesList(BaseSchema):

@@ -18,9 +18,36 @@ url = "https://www.123pilzsuche.de/daten/details/EllipsoidsporigeStoppelpilz.htm
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0 }
-sporenLaengeUm = { von = 9.0, bis = 11.0 }
-sporenBreiteUm = { von = 6.0, bis = 7.8 }
+hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
+sporenLaengeUm = { von = 9.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 6.0, bis = 7.8, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }, { name = "braun", hex = "#7a5230" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["angenehm"]
+text = "Angenehm, nach Orangenblütenwasser."
+
+[geschmack]
+tags = ["mild", "bitter", "scharf"]
+text = "Mild, alt bitterlich wie getrocknete Haferflocken und bei längerem Kauen etwas scharf."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 5, selten bis 6 cm breit, gelborange bis terrakottafarben, Rand lange eingerollt. Deutlich kleiner als der Semmelstoppelpilz."

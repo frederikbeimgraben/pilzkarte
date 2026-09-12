@@ -18,9 +18,29 @@ url = "https://www.123pilzsuche.de/daten/details/RunzeligeVerpel.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 3.0, seltenBis = 4.0 }
-sporenLaengeUm = { von = 20.0, bis = 34.0 }
-sporenBreiteUm = { von = 8.0, bis = 23.0 }
+hutBreiteCm = { von = 2.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
+sporenLaengeUm = { von = 20.0, bis = 34.0, einheit = "um" }
+sporenBreiteUm = { von = 8.0, bis = 23.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 4
+bisMonat = 5
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "rotbraun", hex = "#8b4a2b" }, { name = "ocker", hex = "#c8963c" }]
+stiel = [{ name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Neutral bis mild, roh giftig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 3, selten bis 4 cm breit und 1 bis 5, selten bis 8 cm hoch, kastanienbraun bis rotbraun, stark hirnartig gerunzelt mit Querrillen und Rippen. Unterseite ockerlich weisslich, jung eifoermig."

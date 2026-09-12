@@ -18,9 +18,37 @@ url = "https://www.123pilzsuche.de/daten/details/Eichhase2004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 2.5, bis = 3.5 }
+fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 3.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "hellbraun", hex = "#a97c50" }, { name = "cremefarben", hex = "#f0e6c8" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "cremefarben", hex = "#f0e6c8" }]
+fleisch = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["nussig", "bitter"]
+text = "Nussig, im Alter bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "Einzelhüte 2 bis 5, selten bis 7 cm breit, in Büscheln bis 100 cm. Gesprenkelt bräunlich, cremefarben bis haselnussbraun. Viele kleine Porenpilze entspringen einem gemeinsamen Strunk."

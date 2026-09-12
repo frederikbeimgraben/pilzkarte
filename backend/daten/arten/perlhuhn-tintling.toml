@@ -15,9 +15,32 @@ url = "https://www.123pilzsuche.de/daten/details/Perlhuhn-Tintling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 5.0, seltenBis = 7.0 }
-sporenLaengeUm = { von = 6.0, bis = 8.5 }
-sporenBreiteUm = { von = 4.0, bis = 5.0 }
+hutBreiteCm = { von = 1.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.5, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "graubraun", hex = "#7d6f5e" }, { name = "ockergelb", hex = "#d4a63c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "schwarz", hex = "#1a1a1a" }]
+
+[geruch]
+tags = ["unangenehm", "angenehm"]
+text = "Unangenehm."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 5, selten bis 7 cm breit, weißgrau, ockergelblich, graubraun, im Alter dunkelbraun, mit sparrigen abwischbaren grauweißen Schuppen, ungerieft. Mitte dunkler, jung langgestreckt glockig, alt kegelig glockig, am Lebensende schwarz zerfließend."

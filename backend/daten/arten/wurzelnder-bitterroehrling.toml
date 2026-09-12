@@ -16,7 +16,35 @@ url = "https://www.123pilzsuche.de/daten/details/WurzelnderBitterroehrling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 6.0, bis = 20.0, seltenBis = 25.0 }
+hutBreiteCm = { von = 6.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "chromgelb", hex = "#e5b820" }, { name = "gelb", hex = "#e8c33a" }, { name = "oliv", hex = "#6b7a3a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "braunrot", hex = "#7d3324" }, { name = "gelb", hex = "#e8c33a" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "rot", hex = "#c0392b" }, { name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["karbolartig", "unangenehm", "maggiartig", "angenehm"]
+text = "Unangenehm, etwas nach Maggi oder Tinte."
+
+[geschmack]
+tags = ["bitter"]
+text = "Sehr bitter, vereinzelt etwas schärflich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "6 bis 20, selten bis 25 cm breit, grau, grauweiß bis braungrau, gefleckt, polsterförmig."

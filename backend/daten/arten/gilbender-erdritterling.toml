@@ -16,10 +16,38 @@ url = "https://www.123pilzsuche.de/daten/details/GilbenderErd.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0 }
-stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-sporenLaengeUm = { von = 4.5, bis = 7.0 }
-sporenBreiteUm = { von = 2.8, bis = 4.0 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+sporenLaengeUm = { von = 4.5, bis = 7.0, einheit = "um" }
+sporenBreiteUm = { von = 2.8, bis = 4.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "silbergrau", hex = "#b8bcc0" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["mehlig"]
+text = "Ranzig mehlig."
+
+[geschmack]
+tags = ["mild", "mehlig"]
+text = "Ranzig mehlig, mild, leicht erdig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 9 cm breit, hell silbergrau bis graubraun auf cremegrauem Grund, trocken, filzig und schuppig, mit kleinem Buckel. Rand jung eingebogen und durch weißliche Cortinareste mit dem Stiel verbunden."

@@ -21,7 +21,35 @@ reagenz = "koh"
 reaktion = "Im Fleisch orangerötlich bis intensiv rot."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 18.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 18.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "orange", hex = "#e08a2e" }, { name = "rosa", hex = "#e8a0b0" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "blau", hex = "#3a5f9e" }]
+sporenpulver = [{ name = "olivbraun", hex = "#6e6435" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["saeuerlich", "pilzig", "angenehm"]
+text = "Angenehm säuerlich pilzig, etwas nussig bis mandelartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 18 cm breit, ocker-, kastanien- bis rotbraun, trocken, filzig bis lederartig, uneben. Fraßstellen gelblich bis orangerosa. Huthaut steht am scharfen Rand meist über."

@@ -21,9 +21,37 @@ url = "https://www.123pilzsuche.de/daten/details/ReifpilzEssbar1004.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 15.0 }
-sporenLaengeUm = { von = 10.0, bis = 14.0 }
-sporenBreiteUm = { von = 7.0, bis = 9.0 }
+hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
+sporenLaengeUm = { von = 10.0, bis = 14.0, einheit = "um" }
+sporenBreiteUm = { von = 7.0, bis = 9.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "hellbraun", hex = "#a97c50" }, { name = "violett", hex = "#6b4a8a" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "beige", hex = "#d9c9a3" }, { name = "ocker", hex = "#c8963c" }]
+stiel = [{ name = "hellbraun", hex = "#a97c50" }, { name = "violett", hex = "#6b4a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["pilzig", "angenehm"]
+text = "Angenehm pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 10, selten bis 15 cm breit, violett-hellbraun, graubraun, rosabraun, umbrabraun, gelb-, orange- bis beigebraun, meist mit weißem oder hell violettem Reifüberzug. Haut uneben."

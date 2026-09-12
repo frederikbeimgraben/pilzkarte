@@ -20,10 +20,32 @@ url = "https://www.123pilzsuche.de/daten/details/Speisemorchel.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-fruchtkoerperBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
-fruchtkoerperHoeheCm = { von = 5.0, bis = 12.0, seltenBis = 16.0 }
-sporenLaengeUm = { von = 17.0, bis = 22.0 }
-sporenBreiteUm = { von = 8.0, bis = 12.0 }
+fruchtkoerperBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+fruchtkoerperHoeheCm = { von = 5.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
+sporenLaengeUm = { von = 17.0, bis = 22.0, einheit = "um" }
+sporenBreiteUm = { von = 8.0, bis = 12.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 5
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "grüngelb", hex = "#9fb02f" }, { name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }]
+
+[geruch]
+tags = ["wuerzig", "pilzig", "angenehm"]
+text = "Angenehm würzig, pilzig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild. Roh ist er giftig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "5 bis 12, selten bis 16 cm hoch und 3 bis 7, selten bis 9 cm breit, gelb, hellbraun, graugelb bis grüngelb, unregelmäßig wabenartig und hohl. Eiförmig, manchmal stumpfkegelig."

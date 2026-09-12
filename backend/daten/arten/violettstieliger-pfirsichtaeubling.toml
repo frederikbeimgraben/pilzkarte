@@ -30,11 +30,34 @@ reagenz = "phenol"
 reaktion = "Langsam weinbraun bis purpurschokoladenbraun."
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0 }
-stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0 }
-sporenLaengeUm = { von = 6.0, bis = 9.0 }
-sporenBreiteUm = { von = 5.3, bis = 8.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
+stielDickeCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 5.3, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "grüngelb", hex = "#9fb02f" }, { name = "zitronengelb", hex = "#f2e14c" }, { name = "violett", hex = "#6b4a8a" }, { name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "lila", hex = "#8a5fa8" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "blassgelb", hex = "#efe3a0" }]
+
+[geruch]
+tags = ["obstartig", "fischartig"]
+text = "Jung obstartig, im Alter heringsartig."
+
+[geschmack]
+tags = ["mild"]
+text = "Angenehm mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, gelb, zitronengelb, grüngelb bis gelbviolett, später violettbraun, rotbraun oder grünrosa. Huthaut gummi- bis wachsartig, manchmal bereift, leicht abziehbar. Rand im Alter oft herabgebogen."

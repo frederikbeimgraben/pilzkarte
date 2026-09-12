@@ -22,9 +22,32 @@ reagenz = "koh"
 reaktion = "Lachsrosa verfaerbend."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 14.0 }
-sporenLaengeUm = { von = 7.5, bis = 10.5 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 14.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.5, bis = 10.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "kastanienbraun", hex = "#6b3a20" }, { name = "rotbraun", hex = "#8b4a2b" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }, { name = "rosa", hex = "#e8a0b0" }]
+fleisch = [{ name = "gelb", hex = "#e8c33a" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "hellbraun", hex = "#a97c50" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["obstartig"]
+text = "Obstartig, saeuerlich."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild-saeuerlich."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 12, selten bis 14 cm breit, braun, rotbraun bis kastanienbraun, eingewachsen faserig und glaenzend, feucht schleimig bis schmierig."

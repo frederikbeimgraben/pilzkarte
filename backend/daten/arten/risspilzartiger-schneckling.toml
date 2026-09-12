@@ -14,9 +14,35 @@ url = "https://www.123pilzsuche.de/daten/details/RisspilzartigerSchneckling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 7.0, bis = 10.0 }
-sporenBreiteUm = { von = 5.0, bis = 6.0 }
+hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 10.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 6.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellgrau", hex = "#c0c0c0" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "grau", hex = "#8a8a8a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "grau", hex = "#8a8a8a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Unbedeutend."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 7, selten bis 9 cm breit, braunschuppig auf hellgrauem Grund, Rand fransig."

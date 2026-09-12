@@ -15,9 +15,36 @@ url = "https://www.123pilzsuche.de/daten/details/GruenblaettrigerSchwefelkopf.ht
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
-stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 11.0 }
-stielDickeCm = { von = 0.4, bis = 2.0, seltenBis = 3.0 }
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielDickeCm = { von = 0.4, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 1
+bisMonat = 12
+
+[farben]
+hut = [{ name = "rotbraun", hex = "#8b4a2b" }, { name = "schwefelgelb", hex = "#e3d13a" }, { name = "gelb", hex = "#e8c33a" }, { name = "ocker", hex = "#c8963c" }, { name = "grün", hex = "#4f8a3a" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "grüngelb", hex = "#9fb02f" }, { name = "oliv", hex = "#6b7a3a" }, { name = "grün", hex = "#4f8a3a" }, { name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "schwefelgelb", hex = "#e3d13a" }, { name = "orangegelb", hex = "#e9a32c" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "schwefelgelb", hex = "#e3d13a" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "purpurbraun", hex = "#5f3346" }, { name = "lila", hex = "#8a5fa8" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+
+[geruch]
+tags = ["obstartig", "unangenehm", "angenehm", "unauffaellig"]
+text = "Unbedeutend bis unangenehm, schwach obstartig."
+
+[geschmack]
+tags = ["bitter"]
+text = "Stark bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, schwefelgelb bis grünlich, Mitte ocker bis rotbraun, Rand heller und oft mit gelblichem Flockensaum. Kahl und dünnfleischig, jung halbkugelig und oft stumpf gebuckelt, im Alter flach."

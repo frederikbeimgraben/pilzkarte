@@ -17,9 +17,27 @@ url = "https://www.123pilzsuche.de/daten/details/TropfenderSchillerporling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 8.0, bis = 20.0, seltenBis = 30.0 }
-sporenLaengeUm = { von = 7.5, bis = 8.5 }
-sporenBreiteUm = { von = 5.5, bis = 6.5 }
+hutBreiteCm = { von = 8.0, bis = 20.0, seltenBis = 30.0, einheit = "cm" }
+sporenLaengeUm = { von = 7.5, bis = 8.5, einheit = "um" }
+sporenBreiteUm = { von = 5.5, bis = 6.5, einheit = "um" }
+
+[farben]
+hut = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "hellbraun", hex = "#a97c50" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "rostbraun", hex = "#8a4b23" }]
+sporenpulver = [{ name = "hellbraun", hex = "#a97c50" }]
+
+[geruch]
+tags = ["unauffaellig"]
+text = "Neutral."
+
+[geschmack]
+tags = []
+text = "Unbedeutend."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "8 bis 20, selten bis 30 cm breit, hellbraun, tabakbraun bis gelbbraun, gewölbt und rundlich, manchmal dachziegelartig. Oberfläche bereift, jung mit hellbraunen Tröpfchen."

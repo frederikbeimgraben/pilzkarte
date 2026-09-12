@@ -30,11 +30,34 @@ reagenz = "phenol"
 reaktion = "Weinbraun."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 13.0 }
-stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 8.0 }
-stielDickeCm = { von = 0.6, bis = 1.5, seltenBis = 2.5 }
-sporenLaengeUm = { von = 7.0, bis = 9.0 }
-sporenBreiteUm = { von = 7.0, bis = 8.0 }
+hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 7.0, seltenBis = 8.0, einheit = "cm" }
+stielDickeCm = { von = 0.6, bis = 1.5, seltenBis = 2.5, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 7.0, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+sporenlager = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "rot", hex = "#c0392b" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "ocker", hex = "#c8963c" }]
+
+[geruch]
+tags = ["obstartig"]
+text = "Schwach obstartig."
+
+[geschmack]
+tags = ["bitter", "scharf", "brennend"]
+text = "Brennend scharf und bitter."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 10, selten bis 13 cm breit, blut- bis kirschrot, Mitte meist dunkler, selten cremefarben bis gelb. Die Haut lässt sich zu zwei Dritteln abziehen, feucht glänzend und schmierig. Rand glatt, lange eingerollt und unregelmäßig gelappt."

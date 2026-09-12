@@ -16,10 +16,36 @@ url = "https://www.123pilzsuche.de/daten/details/RoetenderErd-Ritterling.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0 }
-stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0 }
-sporenLaengeUm = { von = 3.9, bis = 6.5 }
-sporenBreiteUm = { von = 3.0, bis = 5.2 }
+hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
+stielLaengeCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+sporenLaengeUm = { von = 3.9, bis = 6.5, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.2, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 11
+
+[farben]
+hut = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "blau", hex = "#3a5f9e" }, { name = "rosa", hex = "#e8a0b0" }, { name = "rot", hex = "#c0392b" }]
+fleisch = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "gelb", hex = "#e8c33a" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+
+[geruch]
+tags = ["mehlig"]
+text = "Unauffaellig bis mehlig."
+
+[geschmack]
+tags = ["mild", "mehlig"]
+text = "Mehlig, mild."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "3 bis 8, selten bis 11 cm breit, braun bis graubraun und sehr variabel: heller Grund mit grauen bis schwaerzlichen feinen Schuppen, Mitte dunkler, leicht buckelig, Rand heller und etwas gilbend."

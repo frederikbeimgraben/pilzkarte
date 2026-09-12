@@ -22,9 +22,32 @@ url = "https://www.123pilzsuche.de/daten/details/Pfiffi.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 6.0, bis = 8.0 }
-sporenBreiteUm = { von = 5.0, bis = 7.0 }
+hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 8.0, einheit = "um" }
+sporenBreiteUm = { von = 5.0, bis = 7.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "zitronengelb", hex = "#f2e14c" }, { name = "blassgelb", hex = "#efe3a0" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "blassgelb", hex = "#efe3a0" }, { name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["obstartig", "pilzig"]
+text = "Aromatisch, obstartig, frisch pilzig."
+
+[geschmack]
+tags = []
+text = "Aromatisch, leicht schärflich, pfefferig."
+
+[schutz]
+status = "besondersGeschuetzt"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 8, selten bis 10 cm breit, blassgelb, dottergelb bis zitronengelb, trichterförmig."

@@ -19,10 +19,33 @@ reagenz = "koh"
 reaktion = "Auf dem Hut rot."
 
 [masse]
-hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 12.0 }
-stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0 }
-sporenLaengeUm = { von = 6.0, bis = 9.0 }
-sporenBreiteUm = { von = 3.0, bis = 5.0 }
+hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
+stielLaengeCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 3.0, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 9
+bisMonat = 11
+
+[farben]
+hut = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "gelbbraun", hex = "#a3813f" }, { name = "ocker", hex = "#c8963c" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "gelb", hex = "#e8c33a" }, { name = "grau", hex = "#8a8a8a" }, { name = "grün", hex = "#4f8a3a" }, { name = "lila", hex = "#8a5fa8" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "orange", hex = "#e08a2e" }]
+sporenpulver = [{ name = "violett", hex = "#6b4a8a" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "braun", hex = "#7a5230" }, { name = "lila", hex = "#8a5fa8" }]
+
+[geruch]
+tags = ["obstartig", "angenehm"]
+text = "Etwas stechend, an Blausäure erinnernd, aber nicht unangenehm, oft mit einem Hauch obstartigem Duft."
+
+[geschmack]
+tags = ["mild", "pilzig", "nussig"]
+text = "Mild, angenehm pilzig, würzig und nussig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "1 bis 8, selten bis 12 cm breit, ockerbraun bis gelbbraun, ocker bis dunkelbraun, kahl und ohne Schüppchen, Rand meist heller und teils mit feinen Schleierresten."

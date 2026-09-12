@@ -15,7 +15,35 @@ url = "https://www.123pilzsuche.de/daten/details/WolligeRisspilz.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0 }
+hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "orangebraun", hex = "#c86e28" }, { name = "braun", hex = "#7a5230" }]
+sporenlager = [{ name = "graubraun", hex = "#7d6f5e" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "hellgrau", hex = "#c0c0c0" }, { name = "weiß", hex = "#ffffff" }]
+stiel = [{ name = "rostbraun", hex = "#8a4b23" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }]
+sporenpulver = [{ name = "dunkelbraun", hex = "#4a3120" }, { name = "braun", hex = "#7a5230" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "braun", hex = "#7a5230" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["spermatisch", "erdartig", "saeuerlich"]
+text = "Moderig, erdig, säuerlich, spermatisch."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild, etwas muffig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 7, selten bis 9 cm breit, braun bis orangebraun, wollig filzig, nicht sparrig, Rand fransig überstehend, Mitte teils dunkler."

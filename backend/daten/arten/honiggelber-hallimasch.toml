@@ -19,11 +19,39 @@ url = "https://www.123pilzsuche.de/daten/details/HoniggelberHallimasch.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0 }
-stielLaengeCm = { von = 4.0, bis = 11.0, seltenBis = 18.0 }
-stielDickeCm = { von = 1.5, bis = 1.5, seltenBis = 2.2 }
-sporenLaengeUm = { von = 6.0, bis = 9.0 }
-sporenBreiteUm = { von = 4.0, bis = 6.5 }
+hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
+stielLaengeCm = { von = 4.0, bis = 11.0, seltenBis = 18.0, einheit = "cm" }
+stielDickeCm = { von = 1.5, bis = 1.5, seltenBis = 2.2, einheit = "cm" }
+sporenLaengeUm = { von = 6.0, bis = 9.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 6.5, einheit = "um" }
+
+[zeitraum]
+vonMonat = 6
+bisMonat = 11
+
+[farben]
+hut = [{ name = "hellbraun", hex = "#a97c50" }, { name = "zitronengelb", hex = "#f2e14c" }, { name = "gelb", hex = "#e8c33a" }]
+sporenlager = [{ name = "hellbraun", hex = "#a97c50" }, { name = "rostbraun", hex = "#8a4b23" }, { name = "cremeweiß", hex = "#f5efdc" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "gelbbraun", hex = "#a3813f" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["seifig", "muffig"]
+text = "Muffig, seifig."
+
+[geschmack]
+tags = ["herb", "kratzend"]
+text = "Herb, kratzend, seifig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "2 bis 12, selten bis 15 cm breit, gelblich, zitronengelb bis hellbraun, mit abwischbaren Schüppchen. Jung stumpfkegelig mit eingerolltem Rand, später abgeflacht und leicht gebuckelt, im Alter gerieft."

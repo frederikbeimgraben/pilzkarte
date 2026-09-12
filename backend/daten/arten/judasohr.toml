@@ -16,8 +16,30 @@ url = "https://www.123pilzsuche.de/daten/details/Judasohr.htm"
 geprueftAm = "2026-09-10"
 
 [masse]
-sporenLaengeUm = { von = 11.0, bis = 23.0 }
-sporenBreiteUm = { von = 4.0, bis = 8.0 }
+sporenLaengeUm = { von = 11.0, bis = 23.0, einheit = "um" }
+sporenBreiteUm = { von = 4.0, bis = 8.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 1
+bisMonat = 12
+
+[farben]
+hut = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "schwarz", hex = "#1a1a1a" }, { name = "weiß", hex = "#ffffff" }, { name = "braun", hex = "#7a5230" }, { name = "grau", hex = "#8a8a8a" }]
+stiel = [{ name = "braun", hex = "#7a5230" }]
+fleisch = [{ name = "schwarzbraun", hex = "#3a2a1c" }, { name = "schwarz", hex = "#1a1a1a" }]
+sporenpulver = [{ name = "weiß", hex = "#ffffff" }, { name = "gelb", hex = "#e8c33a" }]
+
+[geruch]
+tags = ["erdartig", "muffig", "unauffaellig"]
+text = "Neutral bis muffig erdig."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild bis geschmacklos, gallertartig."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 fruchtkoerper = "1 bis 13, selten bis 16 cm breit, ohrförmig, braun, schwarzbraun bis schwarz, selten weiß, von Adern durchzogen, Oberfläche meist etwas feinfilzig. Die Rückseite ist feinkörnig filzig und blassgrau."

@@ -25,11 +25,39 @@ reagenz = "sulfovanillin"
 reaktion = "Magentarot."
 
 [masse]
-hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0 }
-stielLaengeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0 }
-stielDickeCm = { von = 0.5, bis = 1.0, seltenBis = 1.2 }
-sporenLaengeUm = { von = 7.0, bis = 11.0 }
-sporenBreiteUm = { von = 2.5, bis = 5.0 }
+hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
+stielLaengeCm = { von = 1.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
+stielDickeCm = { von = 0.5, bis = 1.0, seltenBis = 1.2, einheit = "cm" }
+sporenLaengeUm = { von = 7.0, bis = 11.0, einheit = "um" }
+sporenBreiteUm = { von = 2.5, bis = 5.0, einheit = "um" }
+
+[zeitraum]
+vonMonat = 3
+bisMonat = 11
+
+[farben]
+hut = [{ name = "cremeweiß", hex = "#f5efdc" }, { name = "beige", hex = "#d9c9a3" }, { name = "weiß", hex = "#ffffff" }, { name = "grau", hex = "#8a8a8a" }]
+sporenlager = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }, { name = "blau", hex = "#3a5f9e" }]
+stiel = [{ name = "weiß", hex = "#ffffff" }]
+fleisch = [{ name = "weiß", hex = "#ffffff" }]
+sporenpulver = [{ name = "cremefarben", hex = "#f0e6c8" }, { name = "weiß", hex = "#ffffff" }]
+
+[farben.verfaerbung]
+von = []
+nach = [{ name = "blau", hex = "#3a5f9e" }, { name = "gelb", hex = "#e8c33a" }]
+dauer = "langsam"
+
+[geruch]
+tags = ["anisartig", "suesslich", "pilzig", "angenehm", "unauffaellig"]
+text = "Angenehm pilzig, süßlich, anisartig oder neutral."
+
+[geschmack]
+tags = ["mild"]
+text = "Mild. Roh zersetzt er rote Blutkörperchen."
+
+[schutz]
+status = "keiner"
+quelle = "Bundesartenschutzverordnung, Anlage 1"
 
 [merkmale]
 hut = "4 bis 15, selten bis 20 cm breit, nie reinweiß, sondern milchweiß, elfenbeinweiß, cremeweiß, grauweiß bis hellbeige, fettig glänzend. Kleiner, zarter und dünnfleischiger als der Austernseitling. Rand lange eingerollt, später gewellt."
