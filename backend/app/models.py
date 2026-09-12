@@ -171,6 +171,24 @@ class Term(Base):
     position: Mapped[int] = mapped_column("reihenfolge", Integer, default=0)
 
 
+class UiText(Base):
+    """Ein Text der Oberflaeche, je Schluessel und Sprache eine Zeile.
+
+    Der Anfangsbestand kommt aus ``daten/texte.json``. Danach ist diese Tabelle
+    die einzige Wahrheit: der eingebaute Katalog des Frontends dient nur noch
+    dem ersten Start und dem Betrieb ohne Netz.
+    """
+
+    __tablename__ = "text"
+
+    key: Mapped[str] = mapped_column(String(120), primary_key=True)
+    locale: Mapped[str] = mapped_column(String(5), primary_key=True)
+    value: Mapped[str] = mapped_column(Text)
+    updated_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now, onupdate=utc_now)
+    # Wer zuletzt geschrieben hat. Leer heisst: so kam der Text aus der Vorgabe.
+    updated_by: Mapped[str | None] = mapped_column(String(255), default=None)
+
+
 class Owned(Base):
     """Was einem Konto gehoert: Kennung, Besitzer und die beiden Zeitpunkte.
 

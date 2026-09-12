@@ -96,6 +96,13 @@ Artprofile liegen daneben als TOML unter `backend/daten/arten/`. Beides geht
 mit `deploy/backend.sh` auf den Server; ohne diese Dateien startet der Dienst
 nicht.
 
+Ebenso `backend/daten/texte.json` (rund 52 kB, im Git): der Anfangsbestand der
+Oberflächentexte. Geschrieben werden die Texte im Frontend, in
+`frontend/src/app/core/i18n/translations.ts`; auf den Server geht aber nur
+`backend/`. `cd backend && uv run python -m tools.export_texts` hält die
+Abschrift auf Stand, ein Test in `be-test` prüft das. Aus ihr füllt die
+Migration die Tabelle `text`, und der Start zieht jeden neuen Schlüssel nach.
+
 In der Gegenrichtung holt `modell/update.sh` die Funde, die jemand in der App
 für das Training freigegeben hat: `GET /api/intern/training-funde` nach
 `modell/data/raw/app/funde.json`, gelesen von `build_occurrences.py`. Der
