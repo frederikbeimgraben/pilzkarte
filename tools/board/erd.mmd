@@ -73,6 +73,13 @@ erDiagram
         VARCHAR(36) role_id PK, FK
         VARCHAR(40) permission_key PK, FK
     }
+    text {
+        VARCHAR(120) key PK
+        VARCHAR(5) locale PK
+        TEXT value
+        DATETIME updated_at
+        VARCHAR(255) updated_by "optional"
+    }
     user_role {
         VARCHAR(255) user_sub PK
         VARCHAR(36) role_id PK, FK

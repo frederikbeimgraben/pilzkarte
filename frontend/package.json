@@ -10,8 +10,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci": "ng test --no-watch --coverage",
-    "lint": "eslint . && npm run check:identifiers && npm run format:check",
+    "lint": "eslint . && npm run check:identifiers && npm run check:templates && npm run format:check",
     "check:identifiers": "node tools/check-identifiers.mjs",
+    "check:templates": "node tools/check-templates.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.spec.json --noEmit"

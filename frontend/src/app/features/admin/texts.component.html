@@ -1,0 +1,73 @@
+<app-page-header [titel]="'texte.titel' | t" [back]="true" (backClick)="back()" />
+
+<div class="texts">
+  <app-form-field
+    icon="suche"
+    [label]="'texte.suche' | t"
+    [hideLabel]="true"
+    [placeholder]="'texte.suche' | t"
+    [value]="search()"
+    (valueChange)="search.set($event)"
+  />
+  <app-chip-group
+    [chips]="chips()"
+    [value]="chip()"
+    [label]="'texte.filter' | t"
+    (valueChange)="selectChip($event)"
+  />
+  <app-note class="texts__count">{{ countText() }}</app-note>
+
+  @if (rows().length === 0) {
+    <app-empty-state icon="suche" [text]="'texte.leer' | t" />
+  } @else {
+    <app-card class="flush">
+      @for (row of rows(); track row.key) {
+        <button class="texts__row" type="button" (click)="open(row)">
+          <span class="texts__head">
+            <span class="texts__key">{{ row.key }}</span>
+            @if (row.changed) {
+              <app-badge variant="primary">{{ 'texte.marke.geaendert' | t }}</app-badge>
+            }
+          </span>
+          <span class="texts__values">
+            @for (locale of locales; track locale) {
+              <span class="texts__value">
+                <span class="texts__language">{{ localeLabel(locale) }}</span>
+                <span class="texts__text">{{ row.values[locale] }}</span>
+              </span>
+            }
+          </span>
+        </button>
+      }
+    </app-card>
+  }
+  <app-note>{{ 'texte.hinweis' | t }}</app-note>
+</div>
+
+@if (draft(); as open) {
+  <div class="texts__overlay">
+    <div class="texts__scrim"></div>
+    <app-sheet class="texts__sheet" [label]="'texte.blatt' | t" [modal]="true" [detents]="detents">
+      <div class="texts__form">
+        <p class="texts__key texts__key--sheet">{{ open.key }}</p>
+        @for (locale of locales; track locale) {
+          <app-form-field
+            [label]="localeLabel(locale)"
+            [multiline]="true"
+            [value]="open.values[locale]"
+            (valueChange)="edit(locale, $event)"
+          />
+        }
+      </div>
+      <app-action-bar
+        [primary]="'texte.speichern' | t"
+        [mainDisabled]="busy()"
+        [danger]="resettable() ? ('texte.zuruecksetzen' | t) : undefined"
+        [secondary]="'texte.schliessen' | t"
+        (mainClick)="save()"
+        (dangerClick)="reset()"
+        (secondaryClick)="close()"
+      />
+    </app-sheet>
+  </div>
+}

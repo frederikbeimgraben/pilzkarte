@@ -35,8 +35,8 @@ const ENTRIES: readonly AdminEntry[] = [
     subline: 'verwaltung.texteUnter',
     permission: 'text.edit',
     section: 'inhalte',
-    path: null,
-    paket: 'G2',
+    path: '/verwaltung/texte',
+    paket: null,
   },
   {
     titel: 'verwaltung.bilder',
