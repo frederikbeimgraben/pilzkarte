@@ -129,9 +129,7 @@ export class TaxonomyComponent {
         name: art.name,
         latin: art.lateinisch,
       })),
-      countText: taxon.artenZahl
-        ? this.i18n.translate('taxonomie.artenZahl', { anzahl: String(taxon.artenZahl) })
-        : null,
+      countText: taxon.artenZahl ? this.countText(taxon.artenZahl) : null,
     };
   }
 
@@ -141,8 +139,13 @@ export class TaxonomyComponent {
       name: step.name,
       latin: step.lateinisch === step.name ? null : step.lateinisch,
       route: `/taxonomie/${step.rang}/${step.slug}`,
-      count: count === null ? null : this.i18n.translate('taxonomie.artenZahl', { anzahl: String(count) }),
+      count: count === null ? null : this.countText(count),
     };
+  }
+
+  private countText(count: number): string {
+    if (count === 1) return this.i18n.translate('taxonomie.eineArt');
+    return this.i18n.translate('taxonomie.artenZahl', { anzahl: String(count) });
   }
 
   private rankText(rank: TaxonRank): string {

@@ -53,7 +53,7 @@ describe('TaxonomyComponent', () => {
     await build(BOLETUS);
 
     expect(screen.getByText('Gattung')).toBeTruthy();
-    expect(screen.getByText('1 Arten im Katalog')).toBeTruthy();
+    expect(screen.getByText('Eine Art im Katalog')).toBeTruthy();
   });
 
   it('zählt die Arten an jeder untergeordneten Stufe', async () => {
@@ -61,7 +61,7 @@ describe('TaxonomyComponent', () => {
 
     const boletus = screen.getByRole('button', { name: /Boletus/ });
 
-    expect(boletus.textContent).toContain('1 Arten im Katalog');
+    expect(boletus.textContent).toContain('Eine Art im Katalog');
     expect(screen.getByText('Keine Art hängt unmittelbar hier, nur an den Stufen darunter.')).toBeTruthy();
   });
 
