@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonComponent, CardComponent } from '@stupa-makers/ui-kit';
+import { PermissionsService } from '../../core/access/permissions.service';
 import { AuthService, type SignedInUser } from '../../core/auth';
 import { ConfigService } from '../../core/config/config.service';
 import { I18nService, LANGUAGE_CHOICES, type LanguageChoice } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { ThemeService, type ThemeChoice } from '../../core/theme/theme.service';
 import { ListRowComponent, PageHeaderComponent, SegmentedComponent, type SegmentOption } from '../../ui';
+import { ADMIN_PERMISSIONS } from '../admin/admin.guard';
 
 /** Die drei Wahlmöglichkeiten der Darstellung, in der Reihenfolge des Artboards. */
 const THEMES: readonly ThemeChoice[] = ['hell', 'dunkel', 'system'];
@@ -40,8 +42,11 @@ export class AccountComponent {
   private readonly i18n = inject(I18nService);
   private readonly router = inject(Router);
   private readonly theme = inject(ThemeService);
+  private readonly rights = inject(PermissionsService);
 
   protected readonly user = this.auth.user;
+  /** Ohne ein Recht der Verwaltung fehlt der Punkt ganz. */
+  protected readonly canAdminister = computed(() => this.rights.canAny(ADMIN_PERMISSIONS));
   protected readonly signedIn = this.auth.signedIn;
   protected readonly choice = this.theme.choice;
   protected readonly languageChoice = this.i18n.choice;
@@ -81,6 +86,10 @@ export class AccountComponent {
 
   protected back(): void {
     void this.router.navigateByUrl('/karte');
+  }
+
+  protected toAdministration(): void {
+    void this.router.navigateByUrl('/verwaltung');
   }
 
   protected signIn(): void {

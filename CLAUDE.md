@@ -76,6 +76,7 @@ Quelle der Maße: `docs/mockups/bauen.py`.
 | `Segmented` | `seg()`, Rolle tablist | Darstellung, Regel, Sichtbarkeit, Bedingung |
 | `ChipGroup` | `.chips`, `.chip` | Arten, Einträge, Ebenen |
 | `ListRow` | `.liste .zeile`, `fundzeile()`, `einstellung()` | Einträge, Konto, Ebenen |
+| `CheckRow` | Kästchen 20 px, Titel, Unterzeile | Rolle, Personen |
 | `ActionBar` | `fuss()` | Fund, Zone, Melden, Anmelden, Art, Faktor, Kombination, Ort, Zeichnen |
 | `ActionSheet`, `ActionRow` | `aktionsreihe()` | Plus-Menü |
 | `FloatingButton` | `schwebend()`, 48 px, Radius 14 | Karte |

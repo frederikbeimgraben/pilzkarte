@@ -1,0 +1,21 @@
+<input
+  class="check__input"
+  type="checkbox"
+  [id]="boxId"
+  [checked]="checked()"
+  [disabled]="disabled()"
+  (change)="onChange($event)"
+/>
+<label class="check" [attr.for]="boxId">
+  <span class="check__box" aria-hidden="true">
+    @if (checked()) {
+      <app-svg-icon name="haken" [size]="14" />
+    }
+  </span>
+  <span class="check__stack">
+    <span class="check__title">{{ titel() }}</span>
+    @if (subline()) {
+      <span class="check__sub">{{ subline() }}</span>
+    }
+  </span>
+</label>

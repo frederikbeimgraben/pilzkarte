@@ -38,6 +38,7 @@ import {
   SheetComponent,
   SheetHeadComponent,
   SpeciesRowComponent,
+  CheckRowComponent,
   SvgIconComponent,
   TimelineComponent,
   type Detent,
@@ -84,6 +85,7 @@ import { SAMPLE_ALL_YEARS, SAMPLE_HISTOGRAM, SAMPLE_CURRENT_YEAR, SAMPLE_WEEKS }
     SheetComponent,
     SheetHeadComponent,
     SpeciesRowComponent,
+    CheckRowComponent,
     SvgIconComponent,
     TimelineComponent,
     TranslatePipe,
@@ -105,6 +107,7 @@ export class BuildingBlocksComponent {
   protected readonly detent = signal<Detent>(1);
   protected readonly viewMode = signal('ebene');
   protected readonly chip = signal('alle');
+  protected readonly checked = signal(true);
   protected readonly factorActive = signal(true);
   protected readonly von = signal(80);
   protected readonly bis = signal(240);

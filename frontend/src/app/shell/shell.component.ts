@@ -57,6 +57,12 @@ export class ShellComponent {
 
   protected readonly onTheMap = computed(() => this.active() === '/karte');
 
+  /**
+   * Die Verwaltung trägt am Rechner ihre eigenen zwei Spalten und braucht dafür
+   * die ganze Fläche, nicht nur die linke.
+   */
+  protected readonly fullWidth = computed(() => this.active() === '/verwaltung');
+
   /** Angemeldet trägt der Kreis den ersten Buchstaben des Namens, sonst „G“. */
   protected readonly avatarName = computed(() => this.auth.user()?.name ?? this.i18n.translate('konto.gast'));
 

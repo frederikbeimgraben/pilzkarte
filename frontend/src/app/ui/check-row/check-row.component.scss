@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+:host(:last-child) {
+  border-block-end: 0;
+}
+
+// Das Kästchen bleibt bedienbar und für Vorleser da, nur unsichtbar: das
+// gezeichnete Feld daneben trägt das Bild.
+.check__input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-block: 10px;
+  cursor: pointer;
+}
+
+.check__input:disabled + .check {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.check__box {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: 20px;
+  block-size: 20px;
+  margin-block-start: 2px;
+  color: var(--color-on-primary);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 5px;
+}
+
+.check__input:checked + .check .check__box {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.check__input:focus-visible + .check .check__box {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.check__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-inline-size: 0;
+}
+
+.check__title {
+  font-size: var(--fs-md);
+}
+
+.check__sub {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}

@@ -1,5 +1,6 @@
 import { isDevMode } from '@angular/core';
 import type { Routes } from '@angular/router';
+import { requiresPermission } from './features/admin/admin.guard';
 
 /**
  * Die vier Reiter. Wo das Arbeitspaket noch aussteht, steht ein Platzhalter.
@@ -28,6 +29,28 @@ export const routes: Routes = [
   {
     path: 'konto',
     loadComponent: () => import('./features/account/account.component').then((m) => m.AccountComponent),
+  },
+  {
+    path: 'verwaltung',
+    canActivate: [requiresPermission(null)],
+    loadComponent: () => import('./features/admin/admin.component').then((m) => m.AdminComponent),
+    children: [
+      {
+        path: 'rollen',
+        canActivate: [requiresPermission('role.manage')],
+        loadComponent: () => import('./features/admin/roles.component').then((m) => m.RolesComponent),
+      },
+      {
+        path: 'rollen/:id',
+        canActivate: [requiresPermission('role.manage')],
+        loadComponent: () => import('./features/admin/role.component').then((m) => m.RoleComponent),
+      },
+      {
+        path: 'personen',
+        canActivate: [requiresPermission('role.assign')],
+        loadComponent: () => import('./features/admin/people.component').then((m) => m.PeopleComponent),
+      },
+    ],
   },
   // Die stille Route steht vor der Anmeldung: sonst nähme diese den ersten
   // Abschnitt und der Rest des Weges fände keine Route mehr.

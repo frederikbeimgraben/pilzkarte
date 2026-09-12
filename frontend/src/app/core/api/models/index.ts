@@ -12,6 +12,18 @@ export {
   TIER_BEST,
   TIER_WEAKEST,
 } from './species';
+export { PERMISSIONS, PERMISSION_AREAS } from './access';
+export type {
+  MyPermissions,
+  Permission,
+  PermissionArea,
+  PermissionEntry,
+  Person,
+  Role,
+  RoleInput,
+  RolePatch,
+  RoleRef,
+} from './access';
 export { COLORS, VISIBILITIES } from './entries';
 export type {
   Color,

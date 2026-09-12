@@ -1,0 +1,77 @@
+<app-page-header [titel]="title()" [back]="true" (backClick)="back()" />
+
+<div class="role">
+  @if (missing()) {
+    <app-note>{{ 'rolle.nichtGefunden' | t }}</app-note>
+  } @else {
+    @if (!locked()) {
+      <app-form-field
+        [label]="'rolle.name' | t"
+        [value]="name()"
+        [placeholder]="'rolle.namePlatzhalter' | t"
+        (valueChange)="name.set($event)"
+      />
+      @if (creating()) {
+        <app-form-field
+          [label]="'rolle.slug' | t"
+          [value]="slug()"
+          [placeholder]="'rolle.slugPlatzhalter' | t"
+          (valueChange)="slug.set($event)"
+        />
+      }
+      <app-form-field
+        [label]="'rolle.beschreibung' | t"
+        [value]="description()"
+        [placeholder]="'rolle.beschreibungPlatzhalter' | t"
+        [multiline]="true"
+        (valueChange)="description.set($event)"
+      />
+    } @else {
+      <app-note>{{ 'rolle.festHinweis' | t }}</app-note>
+    }
+
+    @for (group of areas(); track group.area) {
+      <section class="role__block">
+        <h2 class="role__section">{{ group.titel }}</h2>
+        <app-card>
+          @for (right of group.rights; track right.key) {
+            <app-check-row
+              [titel]="right.titel"
+              [subline]="right.subline"
+              [checked]="right.checked"
+              [disabled]="locked()"
+              (toggled)="toggle(right.key, $event)"
+            />
+          }
+        </app-card>
+      </section>
+    }
+
+    @if (!locked()) {
+      <app-note>{{ 'rolle.rechteHinweis' | t }}</app-note>
+    }
+  }
+</div>
+
+@if (!locked() && !missing()) {
+  <app-action-bar
+    [primary]="'rolle.speichern' | t"
+    [mainDisabled]="!ready() || saving()"
+    [danger]="creating() ? undefined : ('rolle.loeschen' | t)"
+    (mainClick)="save()"
+    (dangerClick)="confirming.set(true)"
+  />
+}
+
+<app-dialog
+  [open]="confirming()"
+  [title]="deleteQuestion()"
+  [closeLabel]="'rolle.abbrechen' | t"
+  (closed)="confirming.set(false)"
+>
+  <p>{{ 'rolle.loeschenText' | t }}</p>
+  <div dialog-footer class="role__confirm">
+    <app-button variant="secondary" (click)="confirming.set(false)">{{ 'rolle.abbrechen' | t }}</app-button>
+    <app-button variant="danger" (click)="remove()">{{ 'rolle.loeschen' | t }}</app-button>
+  </div>
+</app-dialog>

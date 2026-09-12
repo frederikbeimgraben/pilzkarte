@@ -66,6 +66,17 @@
     </app-card>
 
     <app-card>
+      <p class="gallery__title">{{ 'bausteine.checkRow' | t }}</p>
+      <app-check-row
+        [titel]="text('recht.species.edit')"
+        [subline]="text('recht.species.editUnter')"
+        [checked]="checked()"
+        (toggled)="checked.set($event)"
+      />
+      <app-check-row [titel]="text('recht.text.edit')" [checked]="false" [disabled]="true" />
+    </app-card>
+
+    <app-card>
       <p class="gallery__title">{{ 'bausteine.listRow' | t }}</p>
       <app-list-row [titel]="text('beispiel.pfifferling')" [subline]="text('beispiel.fund.pfifferlingMeta')">
         <span lead class="gallery__dot"></span>

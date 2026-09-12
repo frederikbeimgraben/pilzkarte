@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.admin {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  block-size: 100%;
+}
+
+// Am Rechner trägt die Verwaltung ihre eigenen zwei Spalten: links die Punkte,
+// rechts der gewählte.
+.admin--split {
+  grid-template-columns: var(--pilz-column) minmax(0, 1fr);
+}
+
+.admin__list,
+.admin__detail {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  overflow: hidden;
+}
+
+.admin--split .admin__list {
+  border-inline-end: var(--border-width) solid var(--color-border);
+}
+
+.admin__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--pilz-gutter);
+  overflow-y: auto;
+}
+
+.admin__section {
+  margin: 0 0 10px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}

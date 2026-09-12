@@ -1,0 +1,50 @@
+<app-page-header [titel]="'personen.titel' | t" [back]="true" (backClick)="back()" />
+
+<div class="people">
+  <app-form-field
+    icon="suche"
+    [label]="'personen.suche' | t"
+    [hideLabel]="true"
+    [value]="search()"
+    [placeholder]="'personen.suche' | t"
+    (valueChange)="onSearch($event)"
+  />
+
+  @if (loaded() && rows().length === 0) {
+    <app-empty-state [text]="'personen.leer' | t" />
+  } @else {
+    <app-card>
+      @for (row of rows(); track row.sub) {
+        <app-list-row
+          [titel]="row.name"
+          [subline]="row.email"
+          [value]="row.roles"
+          [clickable]="true"
+          (chosen)="edit(row.sub)"
+        />
+      }
+    </app-card>
+    <app-note variant="unter">{{ count() }}</app-note>
+    <app-note>{{ 'personen.hinweis' | t }}</app-note>
+  }
+</div>
+
+<app-dialog
+  [open]="editing() !== null"
+  [title]="dialogTitle()"
+  [closeLabel]="'personen.abbrechen' | t"
+  (closed)="close()"
+>
+  <app-card>
+    @for (choice of choices(); track choice.id) {
+      <app-check-row [titel]="choice.name" [checked]="choice.checked" (toggled)="toggle(choice.id, $event)" />
+    }
+  </app-card>
+  <app-note>{{ 'personen.rollenHinweis' | t }}</app-note>
+  <div dialog-footer class="people__actions">
+    <app-button variant="secondary" (click)="close()">{{ 'personen.abbrechen' | t }}</app-button>
+    <app-button variant="primary" [disabled]="saving()" (click)="save()">{{
+      'personen.speichern' | t
+    }}</app-button>
+  </div>
+</app-dialog>
