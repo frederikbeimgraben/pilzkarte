@@ -3,6 +3,7 @@
   type="button"
   [class.floating--primary]="variant() === 'primaer'"
   [attr.aria-label]="label()"
+  [disabled]="disabled()"
   (click)="pressed.emit()"
 >
   <app-svg-icon [name]="icon()" [size]="24" />

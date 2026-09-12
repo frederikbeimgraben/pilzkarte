@@ -31,11 +31,11 @@
     }
   </div>
   <app-action-bar
-    mainIcon="karte"
-    [primary]="'fund.aufDerKarte' | t"
+    mainIcon="ort"
+    [primary]="'fund.inGoogleMaps' | t"
     [secondary]="'fund.bearbeiten' | t"
     [danger]="'fund.loeschen' | t"
-    (mainClick)="showOnMap.emit(location())"
+    (mainClick)="toGoogleMaps()"
     (secondaryClick)="editing.set(true)"
     (dangerClick)="deleteAsk.set(true)"
   />

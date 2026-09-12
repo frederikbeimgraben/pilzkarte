@@ -26,6 +26,29 @@ describe('SheetHeadComponent', () => {
     await noViolations(container);
   });
 
+  it('zeigt das Pausensymbol, solange die Wochen laufen', async () => {
+    const { container, fixture } = await render(SheetHeadComponent, {
+      inputs: { titel: 'Steinpilz', playing: false },
+    });
+
+    expect(screen.getByRole('button', { name: 'Wochen abspielen' })).toHaveAttribute('aria-pressed', 'false');
+    // Ein Dreieck: der Pfad des Abspiel-Piktogramms.
+    const playing = [...container.querySelectorAll('path')].map((path) => path.getAttribute('d'));
+    expect(playing.some((path) => path === 'M3 1.4 10 6 3 10.6Z')).toBe(true);
+
+    fixture.componentRef.setInput('playing', true);
+    fixture.detectChanges();
+
+    expect(screen.queryByRole('button', { name: 'Wochen abspielen' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Wiedergabe anhalten' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    // Zwei Balken statt eines Dreiecks: der Pfad des Pause-Piktogramms.
+    const paused = [...container.querySelectorAll('path')].map((path) => path.getAttribute('d'));
+    expect(paused.some((path) => path?.startsWith('M2.5 1.5h2.5v9'))).toBe(true);
+  });
+
   it('lässt Titel und Pfeile weg, wenn der Kopf sie nicht braucht', async () => {
     await render(SheetHeadComponent, { inputs: { titel: 'Kombination', arrows: false } });
 

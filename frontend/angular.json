@@ -47,6 +47,11 @@
           "configurations": {
             "production": {
               "budgets": [
+                // 650 kB statt 600 sind ein Übergang, kein neues Maß. Der
+                // i18n-Katalog liegt mit beiden Sprachen fest im ersten
+                // Bündel, obwohl G2 die Texte von `GET /api/texts` holt: tote
+                // Fracht, kein Wachstum. Karte 80 räumt sie weg, dann geht die
+                // Schwelle zurück.
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",

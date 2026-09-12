@@ -99,15 +99,35 @@ describe('ObjektBlattComponent', () => {
     expect(screen.getByText('Diesen Eintrag gibt es nicht mehr.')).toBeInTheDocument();
   });
 
-  it('fährt auf die Karte und schließt das Blatt', async () => {
+  it('zoomt die Karte auf das Objekt, sobald es offen ist', async () => {
     const setup = await build();
+
     setup.state.object.set({ art: 'marker', id: MARKER.id });
     setup.refresh();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Auf der Karte anzeigen' }));
-
+    expect(setup.map.flights).toHaveLength(1);
     expect(setup.map.flights[0].target).toEqual([MARKER.lon, MARKER.lat]);
-    expect(setup.router.url).not.toContain('objekt=');
+    expect(setup.map.flights[0].zoom).toBe(14);
+  });
+
+  it('zoomt bei einer Zone auf den Mittelpunkt ihrer Ecken', async () => {
+    const setup = await build();
+    const ring = ZONE.polygon.coordinates[0];
+    const middle = ring.reduce((sum, point) => [sum[0] + point[0], sum[1] + point[1]], [0, 0]);
+
+    setup.state.object.set({ art: 'zone', id: ZONE.id });
+    setup.refresh();
+
+    expect(setup.map.flights[0].target).toEqual([middle[0] / ring.length, middle[1] / ring.length]);
+  });
+
+  it('lässt die Karte stehen, wenn das Objekt niemand mehr kennt', async () => {
+    const setup = await build();
+
+    setup.state.object.set({ art: 'fund', id: 'weg' });
+    setup.refresh();
+
+    expect(setup.map.flights).toHaveLength(0);
   });
 
   it('schließt, wenn ein Objekt gelöscht wurde', async () => {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@angular/core';
 import type { Find, Marker, Zone } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -13,6 +13,12 @@ import { ZoneSheetComponent } from './zone-sheet.component';
 
 /** Das Objekt steht auf 250 von 844 px, so wie im Artboard `Fund`. */
 const DETENTS: readonly [number, number, number] = [0.7, 0.7, 0.7];
+
+/**
+ * So nah holt ein geöffnetes Objekt die Karte heran. Nah genug, um den Weg
+ * dorthin zu sehen, weit genug, um zu wissen, wo man ist.
+ */
+const ZOOM_OBJECT = 14;
 
 /**
  * Das Blatt über der Karte, das ein Objekt zeigt (Artboards `Fund` und
@@ -63,6 +69,22 @@ export class ObjectSheetComponent {
     return this.eintraege.zones().find((candidate) => candidate.id === offen.id) ?? null;
   });
 
+  /**
+   * Der Punkt des offenen Objekts. Bei einer Zone der Mittelpunkt ihrer Ecken:
+   * eine Fläche hat keinen einen Ort.
+   */
+  protected readonly location = computed<readonly [number, number] | null>(() => {
+    const find = this.find();
+    if (find) return [find.lon, find.lat];
+    const marker = this.marker();
+    if (marker) return [marker.lon, marker.lat];
+    const zone = this.zone();
+    if (!zone) return null;
+    const ring = zone.polygon.coordinates[0];
+    const sum = ring.reduce((links, point) => [links[0] + point[0], links[1] + point[1]], [0, 0]);
+    return [sum[0] / ring.length, sum[1] / ring.length];
+  });
+
   /** Der Name des Blatts für Hilfsmittel: Fund, Marker oder Zone. */
   protected readonly sheetName = computed(() => {
     const offen = this.map.object();
@@ -74,12 +96,17 @@ export class ObjectSheetComponent {
     () => this.map.object() !== null && !this.find() && !this.marker() && !this.zone(),
   );
 
-  protected close(): void {
-    this.map.object.set(null);
+  constructor() {
+    // Ein Tipp auf einen Marker soll ihn zeigen, nicht nur sein Blatt öffnen.
+    // Der Weg über den Zustand fasst beide Wege zusammen: den Tipp auf der
+    // Karte und den auf eine Zeile im Reiter Einträge.
+    effect(() => {
+      const point = this.location();
+      if (point !== null) this.adapter.flyTo(point, ZOOM_OBJECT);
+    });
   }
 
-  protected showOnMap(location: readonly [number, number]): void {
-    this.adapter.flyTo(location);
-    this.close();
+  protected close(): void {
+    this.map.object.set(null);
   }
 }

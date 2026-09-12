@@ -121,4 +121,29 @@ describe('KartenObjekteDirective', () => {
 
     expect(TestBed.inject(MapState).object()).toBeNull();
   });
+
+  it('legt den eigenen Standort als Punkt mit Genauigkeitskreis auf die Karte', async () => {
+    const watchers: PositionCallback[] = [];
+    Object.defineProperty(navigator, 'geolocation', {
+      configurable: true,
+      value: {
+        watchPosition: (ok: PositionCallback) => watchers.push(ok),
+        clearWatch: () => undefined,
+      },
+    });
+    const setup = await build();
+
+    expect(setup.map.layers.has('location')).toBe(false);
+
+    watchers[0]({ coords: { longitude: 9.1, latitude: 48.8, accuracy: 40 } } as GeolocationPosition);
+    setup.refresh();
+
+    const features = setup.map.layers.get('location')?.features ?? [];
+    expect(features.map((feature) => feature.geometry.type)).toEqual(['Polygon', 'Point']);
+    const dot = features[1].geometry;
+    expect(dot.type === 'Point' && dot.coordinates).toEqual([9.1, 48.8]);
+    const ring = features[0].geometry;
+    // Ein Viertel des Rings weiter liegt der Norden: 40 m sind 40 / 111320 Grad.
+    expect(ring.type === 'Polygon' && ring.coordinates[0][12][1]).toBeCloseTo(48.8 + 40 / 111320, 6);
+  });
 });

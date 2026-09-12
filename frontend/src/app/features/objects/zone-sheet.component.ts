@@ -72,7 +72,6 @@ export class ZoneSheetComponent implements OnDestroy {
 
   readonly zone = input.required<Zone>();
 
-  readonly showOnMap = output<readonly [number, number]>();
   readonly closed = output();
 
   protected readonly deleteAsk = signal(false);
@@ -107,7 +106,7 @@ export class ZoneSheetComponent implements OnDestroy {
     };
   });
 
-  /** Der Mittelpunkt der Fläche, damit „Auf der Karte“ die Zone zeigt. */
+  /** Der Mittelpunkt der Fläche: der Punkt, den eine Navigation ansteuert. */
   protected readonly center = computed<readonly [number, number]>(() => {
     const ring = this.zone().polygon.coordinates[0];
     const sum = ring.reduce((links, point) => [links[0] + point[0], links[1] + point[1]], [0, 0]);

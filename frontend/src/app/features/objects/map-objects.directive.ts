@@ -1,6 +1,8 @@
 import { Directive, effect, inject } from '@angular/core';
 import type { Feature, FeatureCollection } from 'geojson';
 import type { Find, SharedFind, Marker, Zone } from '../../core/api/models';
+import { LocationService, type OwnLocation } from '../../core/location/location.service';
+import { circleAround } from '../../map/geo-circle';
 import { MAP_ADAPTER } from '../../map/map.tokens';
 import type { ObjectLayer } from '../../map/map-adapter';
 import { EntriesState } from '../entries/entries.state';
@@ -38,6 +40,7 @@ function collection(features: Feature[]): FeatureCollection {
 export class MapObjectsDirective {
   private readonly adapter = inject(MAP_ADAPTER);
   private readonly eintraege = inject(EntriesState);
+  private readonly locating = inject(LocationService);
   private readonly map = inject(MapState);
 
   constructor() {
@@ -57,6 +60,11 @@ export class MapObjectsDirective {
     // Eigene Funde liegen immer: sie sind der Grund, warum jemand eintraegt.
     effect(() => {
       this.put('funde', true, () => this.finds(this.eintraege.finds()));
+    });
+    this.locating.start();
+    effect(() => {
+      const own = this.locating.location();
+      this.put('location', own !== null, () => this.ownLocation(own));
     });
   }
 
@@ -98,6 +106,19 @@ export class MapObjectsDirective {
         .filter((fund) => !fund.eigen)
         .map((fund) => point(fund.id, fund.lon, fund.lat, { farbe: FOREIGN_FIND, gerundet: fund.gerundet })),
     );
+  }
+
+  /** Punkt und Genauigkeitskreis. Ohne Ortung bleibt die Ebene leer. */
+  private ownLocation(own: OwnLocation | null): FeatureCollection {
+    if (own === null) return collection([]);
+    return collection([
+      {
+        type: 'Feature',
+        geometry: { type: 'Polygon', coordinates: [circleAround([own.lon, own.lat], own.accuracy)] },
+        properties: {},
+      },
+      { type: 'Feature', geometry: { type: 'Point', coordinates: [own.lon, own.lat] }, properties: {} },
+    ]);
   }
 
   private open(layer: ObjectLayer, id: string): void {

@@ -1,4 +1,4 @@
-<div class="map">
+<div class="map" [style.--pilz-sheet-inset]="sheetInset()">
   <div
     #surface
     appMapObjects
@@ -19,16 +19,23 @@
           [variant]="layersSheetOpen() ? 'primaer' : 'hell'"
           (pressed)="layersSheetOpen.set(!layersSheetOpen())"
         />
-        <app-floating-button icon="ort" [label]="'karte.standort' | t" (pressed)="toMyLocation()" />
-        @if (!addEntry.running()) {
-          <app-floating-button
-            icon="plus"
-            variant="primaer"
-            [label]="'eintragen.knopf' | t"
-            (pressed)="openAddEntry()"
-          />
-        }
+        <app-floating-button
+          icon="ort"
+          [label]="'karte.standort' | t"
+          [disabled]="!locating.allowed()"
+          (pressed)="toMyLocation()"
+        />
       </div>
+
+      @if (!addEntry.running()) {
+        <app-floating-button
+          class="map__add"
+          icon="plus"
+          variant="primaer"
+          [label]="'eintragen.knopf' | t"
+          (pressed)="openAddEntry()"
+        />
+      }
     }
 
     <app-add-entry />
@@ -90,11 +97,21 @@
 
             @switch (state.viewMode()) {
               @case ('vorhersage') {
-                <app-ramp [label]="rampTitle()" [von]="rampFrom()" [bis]="rampTo()" />
+                <app-ramp
+                  [label]="rampTitle()"
+                  [von]="rampFrom()"
+                  [bis]="rampTo()"
+                  [note]="'karte.aufloesung' | t"
+                />
               }
               @case ('ebene') {
                 @if (layer(); as selected) {
-                  <app-ramp [label]="rampTitle()" [von]="rampFrom()" [bis]="rampTo()" />
+                  <app-ramp
+                    [label]="rampTitle()"
+                    [von]="rampFrom()"
+                    [bis]="rampTo()"
+                    [note]="'karte.aufloesung' | t"
+                  />
                   <app-layer-list
                     [layers]="allLayers()"
                     [selected]="selected.id"
@@ -107,7 +124,12 @@
               }
               @case ('kombination') {
                 @if (state.rule() === 'abgestuft') {
-                  <app-ramp [label]="rampTitle()" [von]="rampFrom()" [bis]="rampTo()" />
+                  <app-ramp
+                    [label]="rampTitle()"
+                    [von]="rampFrom()"
+                    [bis]="rampTo()"
+                    [note]="'karte.aufloesung' | t"
+                  />
                 }
                 <app-combination
                   [factors]="state.factors()"

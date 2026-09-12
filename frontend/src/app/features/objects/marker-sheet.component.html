@@ -14,10 +14,10 @@
 <app-action-bar
   [primary]="'eintragen.speichern' | t"
   [mainDisabled]="busy()"
-  [secondary]="'fund.aufDerKarte' | t"
+  [secondary]="'fund.inGoogleMaps' | t"
   [danger]="'marker.loeschen' | t"
   (mainClick)="save()"
-  (secondaryClick)="showOnMap.emit(location())"
+  (secondaryClick)="toGoogleMaps()"
   (dangerClick)="deleteAsk.set(true)"
 />
 <app-dialog
