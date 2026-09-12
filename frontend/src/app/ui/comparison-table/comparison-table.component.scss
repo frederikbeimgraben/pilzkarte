@@ -1,0 +1,36 @@
+// Eine feste Spur für die Beschriftung, dann je Art eine gleich breite. Am
+// Telefon reicht die Beschriftung mit 76 px für zwei Wörter, am Rechner steht
+// mehr Platz zur Verfügung. Maße aus den Artboards 15 und 16.
+.comparison {
+  display: grid;
+  grid-template-columns: 76px repeat(var(--comparison-columns), minmax(0, 1fr));
+  inline-size: 100%;
+}
+
+@media (min-width: 1024px) {
+  .comparison {
+    grid-template-columns: 170px repeat(var(--comparison-columns), minmax(0, 1fr));
+  }
+}
+
+// Die Zeile gibt es nur für Hilfsmittel: ohne sie stünden die Zellen ohne
+// Zeile in der Tabelle. `contents` hält sie aus dem Raster heraus.
+.comparison__row {
+  display: contents;
+}
+
+.comparison__head {
+  padding: 10px 9px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  .comparison__head {
+    padding: 14px 16px;
+  }
+}

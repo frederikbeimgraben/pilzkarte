@@ -162,11 +162,12 @@ describe('ArtComponent', () => {
     await build(STEINPILZ);
 
     // Jedes Paar zeigt auf ein Profil, seit der Katalog nur noch Verweise hält.
-    expect(screen.getByRole('link', { name: 'Gallenröhrling' })).toHaveAttribute(
+    // Der Weg ist das Zeichen rechts in der Zeile, nicht mehr der Name.
+    expect(screen.getByRole('link', { name: 'Gallenröhrling ansehen' })).toHaveAttribute(
       'href',
       '/arten/gallenroehrling',
     );
-    expect(screen.getByRole('link', { name: 'Satansröhrling' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Satansröhrling ansehen' })).toHaveAttribute(
       'href',
       '/arten/satansroehrling',
     );

@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  align-items: center;
+  min-inline-size: 0;
+  padding: 10px 9px;
+  font-size: var(--fs-sm);
+  background: var(--comparison-tint, transparent);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  :host {
+    padding: 14px 16px;
+  }
+}
+
+:host(.comparison__cell--label) {
+  color: var(--color-text-muted);
+}

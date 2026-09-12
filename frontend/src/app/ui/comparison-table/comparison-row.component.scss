@@ -1,0 +1,12 @@
+:host {
+  display: contents;
+
+  // Die Zellen lesen die Tönung als Eigenschaft, statt sie einzeln zu tragen.
+  --comparison-tint: transparent;
+}
+
+// Getönt ist die ganze Zeile: der Unterschied fällt auf, bevor man liest. Die
+// Warnfarbe stimmt hier, denn der Vergleich trennt Speisepilz von Giftpilz.
+:host(.comparison__row--differs) {
+  --comparison-tint: var(--color-danger-bg);
+}

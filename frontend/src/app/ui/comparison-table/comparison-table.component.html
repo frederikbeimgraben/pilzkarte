@@ -1,0 +1,14 @@
+<div
+  class="comparison"
+  role="table"
+  [attr.aria-label]="label()"
+  [style.--comparison-columns]="columns().length"
+>
+  <span class="comparison__row" role="row">
+    <span class="comparison__head" role="columnheader">{{ headLabel() }}</span>
+    @for (name of columns(); track name) {
+      <span class="comparison__head" role="columnheader">{{ name }}</span>
+    }
+  </span>
+  <ng-content />
+</div>
