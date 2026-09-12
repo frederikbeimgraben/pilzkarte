@@ -26,6 +26,27 @@ export type MaplibreModule = Pick<
  */
 export const WORKER_PATH = '/assets/maplibre/maplibre-gl-worker.mjs';
 
+/**
+ * Wo das Stylesheet von MapLibre liegt.
+ *
+ * MapLibre haengt seine Bedienelemente selbst in den Baum, an Angular vorbei;
+ * eingekapselte Komponentenstile erreichen sie nicht, das Stylesheet muss
+ * global gelten. Global heisst aber nicht: im ersten Buendel. Es sind 84 kB,
+ * die nur der Kartenreiter braucht, und ueber `styles.scss` lud sie jeder
+ * Aufruf mit. Die Datei geht darum denselben Weg wie der Worker und kommt
+ * erst, wenn die Karte entsteht.
+ */
+export const STYLE_PATH = '/assets/maplibre/maplibre-gl.css';
+
+/** Haengt das Stylesheet in den Kopf. Ein zweiter Aufruf tut nichts. */
+export function ensureStyles(head: HTMLHeadElement): void {
+  if (head.querySelector(`link[href="${STYLE_PATH}"]`) !== null) return;
+  const link = head.ownerDocument.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = STYLE_PATH;
+  head.append(link);
+}
+
 /** Südwest- und Nordostecke als [Länge, Breite]. */
 export type Bounds = readonly [readonly [number, number], readonly [number, number]];
 
@@ -253,6 +274,9 @@ export class MapLibreAdapter implements MapAdapter {
   async start(host: HTMLElement, options: MapOptions): Promise<void> {
     const module = await this.load();
     this.module = module;
+    // Das Stylesheet steht vor der Karte: sonst waeren die Bedienelemente
+    // einen Wimpernschlag lang ungestylt.
+    ensureStyles(host.ownerDocument.head);
     module.setWorkerUrl(WORKER_PATH);
     // Das Protokoll steht vor der Karte, sonst fiele die erste Kachel ins Leere.
     module.addProtocol(options.protocol.name, (request) => options.protocol.resolve(request.url));

@@ -1,5 +1,12 @@
 import type { FeatureCollection } from 'geojson';
-import { MapLibreAdapter, WORKER_PATH, type MapOptions, type MaplibreModule } from './map-adapter';
+import {
+  MapLibreAdapter,
+  STYLE_PATH,
+  WORKER_PATH,
+  ensureStyles,
+  type MapOptions,
+  type MaplibreModule,
+} from './map-adapter';
 
 interface Handler {
   kind: string;
@@ -229,6 +236,26 @@ describe('MapLibreAdapter', () => {
     expect(map.options['maxBounds']).toEqual(OPTIONEN.maxBounds);
     expect(map.options['attributionControl']).toBe(false);
     expect(map.controls[0].location).toBe('bottom-left');
+  });
+
+  it('haengt das Stylesheet der Karte in den Kopf, bevor die Karte entsteht', async () => {
+    for (const stale of document.head.querySelectorAll(`link[href="${STYLE_PATH}"]`)) stale.remove();
+
+    await adapter();
+
+    const links = document.head.querySelectorAll(`link[href="${STYLE_PATH}"]`);
+    expect(links).toHaveLength(1);
+    // Es liegt als Asset und nicht im ersten Buendel: nur die Karte braucht es.
+    expect(STYLE_PATH.startsWith('/assets/')).toBe(true);
+  });
+
+  it('haengt das Stylesheet kein zweites Mal ein', () => {
+    for (const stale of document.head.querySelectorAll(`link[href="${STYLE_PATH}"]`)) stale.remove();
+
+    ensureStyles(document.head);
+    ensureStyles(document.head);
+
+    expect(document.head.querySelectorAll(`link[href="${STYLE_PATH}"]`)).toHaveLength(1);
   });
 
   it('legt die erste Woche sofort sichtbar auf die Karte', async () => {
