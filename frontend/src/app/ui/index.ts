@@ -27,6 +27,12 @@ export { KeyValueRowComponent } from './key-value-table/key-value-row.component'
 export { KeyValueTableComponent } from './key-value-table/key-value-table.component';
 export { LevelPillComponent } from './level-pill/level-pill.component';
 export { ListRowComponent } from './list-row/list-row.component';
+export {
+  ComparisonCellComponent,
+  type ComparisonCellVariant,
+} from './comparison-table/comparison-cell.component';
+export { ComparisonRowComponent } from './comparison-table/comparison-row.component';
+export { ComparisonTableComponent } from './comparison-table/comparison-table.component';
 export { LookalikeRowComponent } from './lookalike-row/lookalike-row.component';
 export { MeasurementComponent, type Extent } from './measurement/measurement.component';
 export { MetricRowComponent } from './metric-row/metric-row.component';

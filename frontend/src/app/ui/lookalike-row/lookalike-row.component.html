@@ -1,12 +1,23 @@
-@if (route(); as target) {
-  <a class="lookalike__name lookalike__name--link" [routerLink]="target">{{ name() }}</a>
-} @else {
-  <span class="lookalike__name">{{ name() }}</span>
-}
+<span class="lookalike__name">{{ name() }}</span>
 <span class="lookalike__value">
   @if (latin(); as lateinisch) {
     <span class="lookalike__latin">{{ lateinisch }}</span>
   }
-  <span class="lookalike__text">{{ difference() }}</span>
   <span class="lookalike__badge"><ng-content /></span>
+</span>
+<span class="lookalike__actions">
+  @if (compareRoute(); as target) {
+    <a class="lookalike__action" [routerLink]="target" [attr.aria-label]="compareLabel()">
+      <app-svg-icon name="vergleich" [size]="20" />
+    </a>
+  }
+  @if (route(); as target) {
+    <a
+      class="lookalike__action lookalike__action--muted"
+      [routerLink]="target"
+      [attr.aria-label]="openLabel()"
+    >
+      <app-svg-icon name="rechts" [size]="12" />
+    </a>
+  }
 </span>

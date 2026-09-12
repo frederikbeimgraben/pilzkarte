@@ -10,12 +10,12 @@ import { LookalikeRowComponent } from './lookalike-row.component';
     <app-lookalike-row
       name="Ölbaumtrichterling"
       latin="Omphalotus olearius"
-      difference="Leuchtet im Dunkeln, Lamellen laufen am Stiel herab, wächst büschelig an Wurzeln."
       route="/arten/oelbaumtrichterling"
+      compareRoute="/arten/pfifferling/vergleich/oelbaumtrichterling"
     >
       <span>Giftig</span>
     </app-lookalike-row>
-    <app-lookalike-row name="Sommersteinpilz" difference="Netz über den ganzen Stiel." />
+    <app-lookalike-row name="Sommersteinpilz" />
   `,
 })
 class HostComponent {}
@@ -27,22 +27,32 @@ function styleOf(element: Element | null): CSSStyleDeclaration {
 }
 
 describe('LookalikeRowComponent', () => {
-  it('zeigt Name, lateinischen Namen, Unterschied und Marke', async () => {
+  it('zeigt Name, lateinischen Namen und Marke', async () => {
     const { container } = await render(HostComponent, { providers: [provideRouter([])] });
 
-    expect(screen.getByRole('link', { name: 'Ölbaumtrichterling' })).toHaveAttribute(
-      'href',
-      '/arten/oelbaumtrichterling',
-    );
+    expect(screen.getByText('Ölbaumtrichterling')).toBeInTheDocument();
     expect(screen.getByText('Omphalotus olearius')).toBeInTheDocument();
     expect(screen.getByText('Giftig')).toBeInTheDocument();
     await noViolations(container);
   });
 
-  it('lässt den Namen Text, wenn es kein eigenes Profil gibt', async () => {
+  it('führt über zwei Zeichen zum Vergleich und zur Artseite', async () => {
     await render(HostComponent, { providers: [provideRouter([])] });
 
-    expect(screen.queryByRole('link', { name: 'Sommersteinpilz' })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Ölbaumtrichterling gegenüberstellen' })).toHaveAttribute(
+      'href',
+      '/arten/pfifferling/vergleich/oelbaumtrichterling',
+    );
+    expect(screen.getByRole('link', { name: 'Ölbaumtrichterling ansehen' })).toHaveAttribute(
+      'href',
+      '/arten/oelbaumtrichterling',
+    );
+  });
+
+  it('lässt beide Zeichen weg, wo es kein Ziel gibt', async () => {
+    await render(HostComponent, { providers: [provideRouter([])] });
+
+    expect(screen.queryByRole('link', { name: /Sommersteinpilz/ })).not.toBeInTheDocument();
     expect(screen.getByText('Sommersteinpilz')).toBeInTheDocument();
   });
 

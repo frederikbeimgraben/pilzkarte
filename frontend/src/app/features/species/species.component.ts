@@ -158,7 +158,6 @@ interface FeatureRow {
 interface ConfusableRow {
   name: string;
   lateinisch: string;
-  merkmal: string;
   badge: Marke;
   /** Der Weg zum Profil der anderen Art. Jedes Paar zeigt auf ein Profil. */
   route: string;
@@ -415,8 +414,6 @@ export class SpeciesComponent {
       verwechslungen: art.verwechslungen.map((confusable) => ({
         name: confusable.name,
         lateinisch: confusable.lateinisch,
-        // Ohne Satz zählt der Name: das Paar steht in der anderen Datei.
-        merkmal: confusable.unterschied ?? '',
         badge: this.essbar(confusable.speisewert),
         route: `/arten/${confusable.slug}`,
       })),
