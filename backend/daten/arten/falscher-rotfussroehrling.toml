@@ -12,6 +12,7 @@ speisewertHinweis = "In Europa selten, in der Schweiz verletzlich. Kein Sammelpi
 haeufigkeit = "selten"
 weitereNamen = ["Falscher Rotfuß", "Düsterner Rotfußröhrling"]
 synonyme = ["Boletus porosporus", "Xerocomus porosporus", "Boletus porosporus var. americanus"]
+fruchtschicht = { art = "roehren" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotfussFalsch.htm"

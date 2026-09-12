@@ -11,6 +11,9 @@ speisewertHinweis = "Fleisch wird beim Kochen schwarz. In Deutschland gefährdet
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Espenrotkappe", "Weißstielige Rotkappe", "Rothäubchen", "Pappelrotkappe", "Rothaut-Röhrling"]
 synonyme = ["Leccinum quercinum", "Leccinum rufum", "Leccinum albostipitatum", "Leccinum populinum"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["ueberstehend"] }
+stielmerkmale = ["beflockt"]
 
 [baeumeAusErfahrung]
 baeume = ["eiche"]

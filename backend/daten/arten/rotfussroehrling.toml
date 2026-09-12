@@ -11,6 +11,8 @@ speisewertHinweis = "Nur Mischpilz. Er ist oft madig und häufig von Goldschimme
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Gemeiner Rotfußröhrling", "Echter Rotfußröhrling"]
 synonyme = ["Xerocomus chrysenteron", "Boletus chrysenteron", "Versipellis chrysenteron", "Suillus chrysenteron", "Boletus pascuus sensu", "Boletus chrysenteron var. nanus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["beflockt"]
 
 [baeumeAusErfahrung]
 baeume = ["buche", "eiche", "fichte"]

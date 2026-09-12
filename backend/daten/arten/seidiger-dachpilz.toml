@@ -10,6 +10,9 @@ baeume = ["kastanie", "linde", "birke", "pappel"]
 speisewertHinweis = "Ohne Speisewert, 123pilze gibt die relative Wertigkeit 4. Rötlinge mit rosa Lamellen sehen ähnlich aus und sind zum Teil giftig."
 weitereNamen = ["Schuppigseidiger Dachpilz", "Braunschuppiger Dachpilz"]
 synonyme = ["Pluteus curtisii sensu", "Agaricus cervinus var. patricius", "Pluteus cervinus var. petasatus", "Pluteus patricius", "Agaricus patricius"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutrand = { von = ["gerissen"] }
+stielmerkmale = ["faserig", "beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SeidigerDachpilz.htm"

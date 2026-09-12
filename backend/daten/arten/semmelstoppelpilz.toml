@@ -10,6 +10,8 @@ baeume = []
 speisewertHinweis = "Alle mild schmeckenden weißen und gelben Stoppelpilze sind essbar, eine Verwechslung untereinander ist unbedenklich. Sehr lange Stoppeln über drei Millimeter machen den Pilz bitter."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Rostgelber Semmelstoppelpilz", "Semmelgelber Stacheling", "Rotgelber Semmelstoppelpilz", "Orangeroter Stoppelpilz"]
+fruchtschicht = { art = "stacheln" }
+hutrand = { von = ["eingerollt"] }
 
 [baeumeAusErfahrung]
 baeume = ["buche", "fichte", "eiche"]

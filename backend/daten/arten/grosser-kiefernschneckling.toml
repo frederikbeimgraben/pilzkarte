@@ -13,6 +13,10 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Grauweißer Schneckling", "Dunkler Kiefern-Schneckling"]
 synonyme = ["Hygrophorus fuscoalbus", "Hygrophorus limacinus", "Hygrophorus olivaceoalbus var. obesus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", schneide = "glatt" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["genattert", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrosserKiefernschneckling.htm"

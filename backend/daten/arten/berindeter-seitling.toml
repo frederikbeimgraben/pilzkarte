@@ -11,6 +11,8 @@ speisewertHinweis = "Nur junge Fruchtkörper taugen. Der Stielbereich bleibt zu 
 haeufigkeit = "selten"
 weitereNamen = ["Eichenseitling"]
 synonyme = ["Lentodiopsis dryina", "Pleurotus corticatus var. albertinii"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BerindeterSeitling.htm"

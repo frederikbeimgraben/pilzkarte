@@ -11,6 +11,7 @@ haeufigkeit = "selten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Buchenstachelbart", "Eiskoralle", "Bartkoralle"]
 synonyme = ["Hericium ramosum = buchenstachelbart"]
+fruchtschicht = { art = "stacheln" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/StachelbartEssbar1004.htm"

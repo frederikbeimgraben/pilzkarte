@@ -9,6 +9,9 @@ baeume = []
 speisewertHinweis = "Erst in größeren Mengen magen-darm-giftig, einzelne Fruchtkörper gelten als harmlos. Empfindliche Personen lassen ihn stehen. Er schmeckt mild, echte Pfifferlinge schmecken pfefferig scharf; sein Hut fühlt sich zwischen zwei Fingern weich und wässrig an."
 weitereNamen = ["Orangegelber Gabelblättling", "Falscher Eierschwamm"]
 synonyme = ["Hygrophoropsis aurantiaca var. nigripes", "Hygrophoropsis aurantiaca var. pallida", "Cantharellus aurantiacus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalscherPfifferling.htm"

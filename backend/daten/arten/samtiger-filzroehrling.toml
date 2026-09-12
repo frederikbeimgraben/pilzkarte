@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Guter Speisepilz, in der Schweiz aber nicht marktfaehig."
 synonyme = ["Boletus lanatus", "Boletus subtomentosus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SamtigerFilzroehrling.htm"

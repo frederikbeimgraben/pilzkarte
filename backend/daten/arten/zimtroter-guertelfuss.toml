@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne"]
 synonyme = ["Telamonia praesignis", "Telamonia macropus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutform = { von = "halbkugelig" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["genattert", "knolle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZimtroterGuertelfuss.htm"

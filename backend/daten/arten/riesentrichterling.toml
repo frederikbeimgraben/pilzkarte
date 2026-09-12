@@ -9,6 +9,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 haeufigkeit = "haeufig"
 synonyme = ["Infundibulicybe geotropa", "Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe geotropa var. minor", "Clitocybe maxima sensu", "Infundibulicybe geotropa var. maxima"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["eingerollt", "wellig"] }
+stielmerkmale = ["faserig", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesentrichterling.htm"

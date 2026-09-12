@@ -9,6 +9,9 @@ baeume = ["eiche", "linde", "buche"]
 speisewertHinweis = "Extrem bitter, Magen-Darm-Beschwerden sind laut DGfM nicht ausgeschlossen. Zu erkennen am grauen bis grauweißen Hut, an den zitronengelben Röhren, am stark blauenden Fleisch und am Geruch nach Maggi oder Tinte."
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Bitterschwamm"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "gewoelbt" }
+stielmerkmale = ["genetzt", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WurzelnderBitterroehrling.htm"

@@ -10,6 +10,8 @@ baeume = ["weide"]
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Weidendrüsling"]
 synonyme = ["Tremella r ecisa", "Peziza gelatinosa"]
+hutform = { von = "gewoelbt", nach = "flach" }
+hutrand = { von = ["scharf", "gerieft"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kreiseldruesling.htm"

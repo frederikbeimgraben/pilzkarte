@@ -11,6 +11,10 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Trichterförmiger Sägeblättling"]
 synonyme = ["Lentinus cyathiformis", "Agaricus cyathiformis", "Neolentinus schaefferi", "Favolus cyathiformis", "Pocillaria cyathiformis", "Panus cyathiformis"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", schneide = "gesaegt" }
+hutform = { von = "trichterfoermig" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BecherfoermigerSaegeblaettling.htm"

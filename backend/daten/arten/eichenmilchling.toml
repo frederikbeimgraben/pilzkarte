@@ -10,6 +10,10 @@ baeume = ["eiche"]
 speisewertHinweis = "Der Geruch nach Blattwanzen bleibt beim Garen erhalten. Als Speisepilz taugt er wenig."
 haeufigkeit = "sehrHaeufig"
 synonyme = ["Lactarius quieta", "Agaricus quietus", "Lactifluus quietus"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["gezont", "vertieft"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenmilchling.htm"

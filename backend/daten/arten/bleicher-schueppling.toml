@@ -9,6 +9,9 @@ baeume = []
 speisewertHinweis = "Er schmeckt bitter. Geruch und helle Grundfarbe trennen ihn von den anderen Schüpplingen."
 synonyme = ["Agaricus squarrosoides"]
 haeufigkeit = "selten"
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+hutform = { von = "gewoelbt", nach = "flach" }
+stielmerkmale = ["voll", "ring", "beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BleicherSchueppling.htm"

@@ -9,6 +9,8 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 weitereNamen = ["Großer Waldchampignon", "Großer Blutegerling", "Grosser Blutchampignon"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrosserWaldCh.htm"

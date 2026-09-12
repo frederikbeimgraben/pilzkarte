@@ -11,6 +11,8 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Rauer Wulstling"]
 synonyme = ["Amanita aspera", "Amanita aspera var. franchetii", "Amanita aspera f. franchetii", "Amanita queletii var. franchetii", "Amanita franchetii var. lactella", "Amanita rubescens f. aspera"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["beflockt", "genattert", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbflockigerWulstling.htm"

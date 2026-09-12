@@ -9,6 +9,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche", "linde", "kastanie"]
 schutzHinweis = "Die Verordnung nennt Boletus edulis, Boletus aereus und Boletus appendiculatus, nicht aber Boletus reticulatus. Dieses Projekt behandelt ihn gleich."
 weitereNamen = ["Eichensteinpilz", "Herrenpilz", "Schwarzer Steinpilz", "Steini"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig", nach = "gewoelbt" }
+stielmerkmale = ["faserig", "genetzt"]
 
 [baeumeAusErfahrung]
 baeume = ["hainbuche"]

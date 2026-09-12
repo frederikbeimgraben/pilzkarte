@@ -10,6 +10,10 @@ baeume = ["pappel"]
 speisewertHinweis = "Sehr minderwertig, 123pilzsuche gibt die Relative Wertigkeit 5. Er schmeckt teils schärflich und etwas bitterlich."
 weitereNamen = ["Ockergelber Täubling", "Zitronentäubling", "Ockerweißer Täubling"]
 synonyme = ["Russula citrina", "Russula granulosa", "Russula ochroleuca var. granulosa"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ockertaeubling.htm"

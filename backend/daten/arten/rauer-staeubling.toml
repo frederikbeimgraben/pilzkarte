@@ -11,6 +11,9 @@ speisewertHinweis = "Sehr selten. Von den anderen weißen Stäublingen lässt er
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Rauer Stäubling", "Geschwänzsporiger Stäublings", "Moor-Stäubling"]
 synonyme = ["Lycoperdon caudatum", "Lycoperdon pedicellatum", "Bovistella pedicellata"]
+fruchtschicht = { art = "stacheln" }
+hutform = { von = "kugelig" }
+stielmerkmale = ["wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserIgelstaeubling.htm"

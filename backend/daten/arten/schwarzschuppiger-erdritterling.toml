@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Wird als giftig geführt, weil Erdritterlinge im Verdacht stehen, die Muskeln zu zersetzen. Er ist am grauschwarz schuppigen Hut, an den dunkler punktierten Lamellenschneiden und am mehlartigen Geruch zu erkennen."
 weitereNamen = ["Schwarzschuppiger Ritterling"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "glatt" }
+stielmerkmale = ["beflockt", "faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzschuppigerRitterlingEssbar.htm"

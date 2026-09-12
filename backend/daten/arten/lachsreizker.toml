@@ -11,6 +11,11 @@ karte = "reizker"
 speisewertHinweis = "Schmeckt etwas bitterlich. Der rote Farbstoff färbt den Urin bis zum nächsten Tag, das ist harmlos."
 weitereNamen = ["Weißtannenreizker"]
 synonyme = ["Lactarius salmoneus", "Lactarius subsalmoneus", "Lactarius thyinos", "Lactarius salmonicolor f. brigantiacus"]
+fruchtschicht = { art = "lamellen" }
+hutform = { von = "trichterfoermig" }
+hutmerkmale = ["genabelt", "gezont"]
+hutrand = { von = ["scharf"] }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Lachsreizker.htm"

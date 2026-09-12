@@ -12,6 +12,8 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Graubrauner Schleimstiel-Schneckling", "Olivbrauner Schneckling"]
 synonyme = ["Limacium mesotephrum", "Limacium arbustivum var. mesotephrum"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+stielmerkmale = ["genattert"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OlivgrauerSchneckling.htm"

@@ -9,6 +9,9 @@ baeume = ["laerche"]
 speisewertHinweis = "Sehr selten und kaum bekannt. Er riecht schwächer und weniger angenehm als der Maipilz."
 weitereNamen = ["Starkriechender Schönkopf", "Starkriechender Maipilz"]
 synonyme = ["Calocybe gambosa f. graveolens", "Gyrophila graveolens"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OrangerMairitterling.htm"

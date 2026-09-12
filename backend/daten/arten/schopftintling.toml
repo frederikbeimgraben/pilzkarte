@@ -11,6 +11,9 @@ karte = "schopftintling"
 speisewertHinweis = "Roh etwas unverträglich. Nur junge, ganz weiße Fruchtkörper nehmen und rasch verarbeiten; rötliche oder schwarze Teile sind nicht mehr brauchbar."
 weitereNamen = ["Spargelpilz", "Schopfpilz", "Tintenpilz", "Porzellantintling"]
 synonyme = ["Coprinus porcellanus", "Coprinus ovatus", "Coprinus comatus var. caprimammillatus", "Coprinus comatus var. ovatus", "Agaricus porcellanus"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutform = { von = "eifoermig" }
+stielmerkmale = ["ring", "knolle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schopftintling.htm"

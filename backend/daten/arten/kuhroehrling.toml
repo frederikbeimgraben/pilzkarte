@@ -10,6 +10,11 @@ baeume = ["kiefer"]
 speisewertHinweis = "Etwas säuerlich, guter Mischpilz und Trockenpilz. Beim Kochen läuft das Fleisch rosa bis leicht violett an."
 weitereNamen = ["Kuhpilz"]
 synonyme = ["Mariaella bovina", "Ixocomus bovinus", "Boletus bovinus"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["scharf", "wellig"] }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kuhroehrling.htm"

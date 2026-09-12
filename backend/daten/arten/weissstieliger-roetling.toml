@@ -9,6 +9,10 @@ baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als giftig und verdächtig. Der mehlige Geruch verleitet dazu, ihn für einen Speisepilz zu halten."
 weitereNamen = ["Weißgrauer Rötling", "Herbstschildrötling"]
 synonyme = ["Rhodophyllus lividoalbus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutmerkmale = ["gebuckelt", "vertieft"]
+hutrand = { von = ["wellig"] }
+stielmerkmale = ["faserig", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Weisstieligerroetling.htm"

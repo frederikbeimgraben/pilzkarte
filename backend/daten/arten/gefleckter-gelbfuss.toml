@@ -11,6 +11,7 @@ speisewertHinweis = "Selten. In der Schweiz auf der Roten Liste als potenziell g
 haeufigkeit = "selten"
 weitereNamen = ["Fleckender Lärchenschmierling", "Fleckender Lärchen-Schmierling", "Fleckender Gelbfuß", "Fleckender Schmierling"]
 synonyme = ["Gomphidius gracilis"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GefleckterGelbfuss.htm"

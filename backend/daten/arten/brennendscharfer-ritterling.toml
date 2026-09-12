@@ -10,6 +10,9 @@ speisewertHinweis = "Er schmeckt extrem scharf und pfeffrig und riecht erdig nac
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 synonyme = ["Gyrophila virgata", "Agaricus virgatus", "Agaricus fumosus subsp. virgatus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt", "scharf"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrennendscharferRitterling.htm"

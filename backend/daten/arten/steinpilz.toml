@@ -10,6 +10,9 @@ baeume = ["fichte", "tanne", "kiefer", "eiche", "hainbuche", "linde", "kastanie"
 karte = "boletus_edulis"
 speisewertHinweis = "Bei einem Fund ohne oder mit kaum sichtbarem Netz am Stiel und mit gelblichen Röhren entscheidet eine Geschmacksprobe, ob ein bitterer Gallenröhrling vorliegt."
 weitereNamen = ["Steinpilze", "Herrenpilz", "Dobberniggl", "Fichtensteinpilz", "Gemeiner Steinpilz"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig", "genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"

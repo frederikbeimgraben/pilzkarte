@@ -10,6 +10,9 @@ baeume = ["birke"]
 karte = "birkenpilz"
 speisewertHinweis = "Jung sammeln. Im Alter wird das Fleisch schwammig."
 weitereNamen = ["Gemeiner Birkenpilz", "Langhaxen", "Graugrüner Birkenpilz"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig", nach = "flach" }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenpilz.htm"

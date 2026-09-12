@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Kenntlich am stark bitteren Geschmack und an den jung hellgelben, bald orangen und rostfleckigen Lamellen."
 weitereNamen = ["Gefleckter Flämmling", "Gemeiner Flämmling", "Schupopilz"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["faserig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GefleckterFlaemmling.htm"

@@ -8,6 +8,10 @@ baeume = []
 warnung = "123pilzsuche führt den Rosablättrigen Egerlingsschirmling als giftig. Dazu kommt die Verwechslung mit weißen Knollenblätterpilzen, die tödlich endet."
 speisewertHinweis = "Die DGfM meldet häufig Magen-Darm-Beschwerden. Er galt früher als essbar. Wegen der Verwechslung mit Knollenblätterpilzen ganz meiden."
 weitereNamen = ["Rosablättriger Egerlingsschirmpilz", "Gemeiner Egerlingsschirmling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng", schneide = "gesaegt" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["ueberstehend"] }
+stielmerkmale = ["hohl", "knolle", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RosablaettrigerEggerling.htm"

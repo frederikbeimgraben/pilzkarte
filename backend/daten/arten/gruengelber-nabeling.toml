@@ -8,6 +8,10 @@ jahreszeiten = ["herbst", "winter"]
 baeume = []
 speisewertHinweis = "Kann bei empfindlichen Personen Magen-Darm-Störungen auslösen, die schnell wieder vergehen."
 weitereNamen = ["Gelbgrüner Ellerling", "Olivgelber Nabeling", "Gelbgrüner Nabeling", "Gelboliver Ellerling"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutmerkmale = ["genabelt"]
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["gerieft", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruengelberNabeling.htm"

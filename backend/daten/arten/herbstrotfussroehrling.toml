@@ -10,6 +10,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Herbstrotfuß", "Bereifter Rotfuß", "Stattlicher Rotfuß"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["beflockt", "knolle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotfussHerbst.htm"

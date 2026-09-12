@@ -10,6 +10,8 @@ speisewertHinweis = "In Deutschland stark gefährdet und vollständig geschützt
 haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 synonyme = ["Boletus regius"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koenigesroehrling.htm"

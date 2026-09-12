@@ -9,6 +9,8 @@ baeume = ["fichte"]
 speisewertHinweis = "Zu erkennen am braunen bis gelbbraunen Hut mit gelblichen, abwischbaren Velumflocken, am hellgelben Stiel und an der warzig-knolligen Basis mit gürtelförmigen Velumzonen."
 weitereNamen = ["Brauner Fliegenpilz"]
 synonyme = ["Amanita muscaria var. regalis", "Amanita regalis forma umbrina", "Amanita emilii"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+stielmerkmale = ["hohl", "voll", "knolle", "genattert", "beflockt", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koenigsfliegenpilz.htm"

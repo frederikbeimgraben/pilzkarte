@@ -8,6 +8,8 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der Stiel ist glatt und dunkel, ohne die braunen Schüppchen des Stockschwämmchens. Wegen der Ähnlichkeit mit dem Gifthäubling nicht sammeln."
 weitereNamen = ["Glattstieliges Frühlings-Stockschwämmchen"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+stielmerkmale = ["faserig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GlattstielStockschwamm.htm"

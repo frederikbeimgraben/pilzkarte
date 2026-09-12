@@ -10,6 +10,8 @@ baeume = ["fichte"]
 speisewertHinweis = "Roh giftig. Er schmeckt muffig und herb, 123pilzsuche gibt ihm nur die Wertigkeit 4. Wegen der Ähnlichkeit mit dem tödlich giftigen Pantherpilz ist er kein Pilz für Anfänger."
 weitereNamen = ["Hoher Wulstling", "Gedrungener Wulstling", "Eingesenkter Wulstling", "Schäler"]
 synonyme = ["Amanita excelsa", "Amanita spissa var. valida", "Amanita spissa var. cariosa", "Amanita cariosa"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["faserig", "genattert", "knolle", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerWulstling0904.htm"

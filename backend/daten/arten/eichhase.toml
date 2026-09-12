@@ -11,6 +11,7 @@ baeume = ["eiche", "buche"]
 speisewertHinweis = "Jung sammeln, im Alter wird er bitter. Er ist überwiegend selten und kommt jährlich an derselben Stelle wieder, deshalb den Standort schonen."
 weitereNamen = ["Ästiger Porling", "Ästiger Büschelporling"]
 synonyme = ["Dendropolyporus umbellatus"]
+fruchtschicht = { art = "poren" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichhase2004.htm"

@@ -11,6 +11,8 @@ baeume = ["kiefer"]
 speisewertHinweis = "Guter Speisepilz, in der Schweiz aber nicht marktfaehig."
 weitereNamen = ["Hirsepilz"]
 synonyme = ["Boletus variegatus", "Versipellis variegata", "Suillus variegatus f. rubescens", "Boletus aureus", "Boletus squalidus", "Boletopsis squalida", "Ixocomus variegatus", "Suillus squalidus"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["ueberstehend", "eingerollt", "scharf"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sandroehrling.htm"

@@ -10,6 +10,8 @@ speisewertHinweis = "Er schmeckt scharf und wird gern für den milden Ockertäub
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Weißblättriger Ockertäubling"]
 synonyme = ["Russula ochroleuca var. raoultii", "Russula emetica f. raoultii", "Russula fragilis var. nivea sensu", "Russula fragilis var. raoultii", "Russula raoultii var. meridionalis"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "weit" }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BlassgelberTaeubling.htm"

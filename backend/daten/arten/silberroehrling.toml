@@ -11,6 +11,9 @@ haeufigkeit = "selten"
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Sommerröhrling"]
 synonyme = ["Boletus fechtneri"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig" }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Silberroehrling.htm"

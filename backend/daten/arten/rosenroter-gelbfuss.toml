@@ -11,6 +11,8 @@ speisewertHinweis = "Selten. Er lebt parasitisch auf dem Myzel des Kuhröhrlings
 haeufigkeit = "selten"
 weitereNamen = ["Rosenroter Gelbfuss", "Rosenroter Schmierling", "Rosa Schmierling"]
 synonyme = ["Agaricus glutinosus roseus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RosenroterGelbfuss.htm"

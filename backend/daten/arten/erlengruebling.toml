@@ -9,6 +9,10 @@ baeume = []
 speisewertHinweis = "Er gilt als giftverdächtig. Zu erkennen an den sehr kurzen, feinen, herablaufenden gelben Poren, die auf Druck grünblau und später schwarzbraun werden, an der grübchenartig vertieften Huthaut und daran, dass er fast nur bei Erlen wächst. Er ist besonders geschützt."
 haeufigkeit = "sehrSelten"
 synonyme = ["Boletus chrysenteron var. lividus", "Gyrodon labyrinthicus", "Gyrodon sistotrema var. brachyporus", "Uloporus lividus", "Cladomeris sistotrema", "Boletus lividus var. rubescens"]
+fruchtschicht = { art = "roehren" }
+hutmerkmale = ["vertieft"]
+hutrand = { von = ["eingerollt"], nach = ["scharf"] }
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Erlengruebling.htm"

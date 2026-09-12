@@ -10,6 +10,8 @@ speisewertHinweis = "Ohne Speisewert, das Fleisch ist lederartig zäh. Sehr selt
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Schwarzer Tulpenkelch", "Schwarzer Tulpenpilz", "Urnenpilz", "Devil´s Urn"]
 synonyme = ["Sarcoscypha craterium", "Geopyxis craterium"]
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["hoeckerig"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzerKelchpilz.htm"

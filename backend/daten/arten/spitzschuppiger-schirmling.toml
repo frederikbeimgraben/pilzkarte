@@ -9,6 +9,9 @@ baeume = []
 speisewertHinweis = "Stark giftig. Zu erkennen an den braunen, spitzen Stacheln auf cremefarbenem Grund, dem hängenden, nicht verschiebbaren Ring und dem stechend gasartigen Geruch."
 haeufigkeit = "haeufig"
 weitereNamen = ["Rauer Schirmling", "Kegelschuppiger Schirmling", "Spitzschuppiger Mehlschirmling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutform = { von = "flach" }
+stielmerkmale = ["ring", "beflockt", "knolle", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SpitzschuppigerSchirmling.htm"

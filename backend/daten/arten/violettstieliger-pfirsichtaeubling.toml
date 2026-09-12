@@ -12,6 +12,9 @@ speisewertHinweis = "Ältere Fruchtkörper riechen heringsartig; dann besser ste
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Violettstieliger Brätlingstäubling"]
 synonyme = ["Russula amoena var. violeipes", "Russula violeipes f. citrina"]
+fruchtschicht = { art = "lamellen" }
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["genetzt", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ViolettstieligerPfirsichtaeubling.htm"

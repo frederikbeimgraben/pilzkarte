@@ -11,6 +11,7 @@ baeume = ["fichte", "kiefer"]
 speisewertHinweis = "In der Schweiz nicht marktfähig, Relative Wertigkeit 4. Kulinarisch bringt er kaum etwas."
 weitereNamen = ["Ringloser Butter-Röhrling", "Rosafüßiger Körnchen-Röhrling", "Ringloser Butterröhrling"]
 synonyme = ["Suillus fluryi"]
+fruchtschicht = { art = "roehren" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RingloserButterpilz.htm"

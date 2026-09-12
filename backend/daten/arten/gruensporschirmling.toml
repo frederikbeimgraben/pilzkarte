@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Magen-Darm-giftig. Aus südlichen Ländern sind viele heftige Vergiftungen gemeldet. Zu erkennen an den im Alter grünlichen Lamellen und am grünlichen Sporenpulver."
 weitereNamen = ["Grünsporiger Riesenschirmling", "Falscher Parasol"]
+fruchtschicht = { art = "lamellen" }
+hutmerkmale = ["gezont"]
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gruensporschirmling.htm"

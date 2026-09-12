@@ -8,6 +8,11 @@ marktfaehig = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Nur die Hüte, mindestens 20 Minuten abkochen und das Kochwasser weggießen. Nach Frost und bei alten Stücken steigt die Unverträglichkeit. Er ist besser verträglich als der Gemeine Hallimasch, aber auch ihn vertragen nicht alle."
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutform = { von = "kegelig", nach = "flach" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"], nach = ["gerieft"] }
+stielmerkmale = ["beflockt", "faserig", "ring", "gerieft", "genattert"]
 
 [baeumeAusErfahrung]
 baeume = ["eiche", "buche", "obstbaum"]

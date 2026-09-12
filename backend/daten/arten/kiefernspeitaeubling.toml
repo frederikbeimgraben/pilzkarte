@@ -9,6 +9,9 @@ baeume = ["kiefer"]
 speisewertHinweis = "Zu erkennen am brennend scharfen Geschmack, am blut- bis kirschroten Hut mit fast ganz abziehbarer Haut und am rein weißen Stiel ohne Rottöne."
 weitereNamen = ["Speitäufel"]
 synonyme = ["Russula emetica var. silvestris"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["vertieft"]
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speitaeubling.htm"

@@ -13,6 +13,8 @@ haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Purpurleistling"]
 synonyme = ["Cantharellus brevipes", "Trombetta clavata", "Cantharellus clavatus"]
+fruchtschicht = { art = "leisten" }
+hutform = { von = "keulig", nach = "trichterfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schweinsohr.htm"

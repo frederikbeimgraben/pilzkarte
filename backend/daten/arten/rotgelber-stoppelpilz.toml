@@ -10,6 +10,8 @@ baeume = []
 speisewertHinweis = "Sind die Stoppeln länger als drei Millimeter, schmeckt er oft etwas bitter. Die Größe des Fruchtkörpers sagt darüber nichts aus."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Semmelstoppelpilz", "Rostgelber Semmelstoppelpilz", "Semmelgelber Stacheling", "Rotgelber Semmelstoppelpilz", "Orangeroter Stoppelpilz"]
+fruchtschicht = { art = "stacheln" }
+hutrand = { von = ["eingerollt"] }
 
 [baeumeAusErfahrung]
 baeume = ["fichte", "buche"]

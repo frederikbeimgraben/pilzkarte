@@ -11,6 +11,10 @@ speisewertHinweis = "In Deutschland gefährdet (RL 3). Graue Ritterlinge sind un
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Schneeritterling", "Rußkopf"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+hutform = { von = "halbkugelig", nach = "gewoelbt" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schwarzfaserigerritterling.htm"

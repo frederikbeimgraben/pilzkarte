@@ -11,6 +11,8 @@ speisewertHinweis = "Besonders geschützt und selten. Wenn überhaupt, nur wenig
 haeufigkeit = "selten"
 weitereNamen = ["Weißer Bronzeröhrling"]
 synonyme = ["Boletus edulis forma aereus", "Tubiporus edulis subsp. aereus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["faserig", "gerieft", "genetzt"]
 
 [baeumeAusErfahrung]
 baeume = ["buche"]

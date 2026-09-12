@@ -11,6 +11,8 @@ speisewertHinweis = "Als Pfifferling besonders geschützt, sehr selten und in De
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Gelbvioletter Pfifferling", "Schwärzender Pfifferling"]
+fruchtschicht = { art = "leisten" }
+hutmerkmale = ["vertieft"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwaerzenderLeistling.htm"

@@ -12,6 +12,9 @@ speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Nur wen
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Grauer Leistling", "Grauer Pfifferling"]
 synonyme = ["Craterellus cinereus", "Pseudocraterellus cinereus", "Merulius cinereus"]
+fruchtschicht = { art = "leisten" }
+hutrand = { von = ["wellig"] }
+stielmerkmale = ["hohl", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerLeistling.htm"

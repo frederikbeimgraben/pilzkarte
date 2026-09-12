@@ -9,6 +9,10 @@ baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als leicht giftig. Er unterscheidet sich vom Nelkenschwindling durch den Geruch: nach Zedernholz und zwischen den Fingern mehlig-ranzig, nie nach Bittermandeln, dazu ein ekelhaft ranziger Geschmack."
 haeufigkeit = "sehrSelten"
 synonyme = ["Agaricus collinus", "Gymnopus collinus", "Collybia collina"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "normal" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["hohl", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Huegelschwindling.htm"

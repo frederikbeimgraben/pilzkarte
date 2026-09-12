@@ -10,6 +10,8 @@ baeume = ["linde"]
 speisewertHinweis = "Ungiftig, aber nicht schmackhaft. 123pilzsuche gibt die Relative Wertigkeit 5."
 weitereNamen = ["Scharlachroter Linden-Kelchbecherling"]
 synonyme = ["Sarcoscypha coccinea var. jurana + sarcoscypha emarginata"]
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["eingebogen"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Linden-Kelchbecherling.htm"

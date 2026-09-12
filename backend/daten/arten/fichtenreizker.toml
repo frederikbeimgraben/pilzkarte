@@ -11,6 +11,10 @@ karte = "reizker"
 speisewertHinweis = "Schmeckt bitterlich und leicht scharf, geringer als der Edelreizker."
 weitereNamen = ["Nadelwaldreizker"]
 synonyme = ["Lactarius deliciosus var. deterrimus"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutform = { von = "trichterfoermig" }
+hutmerkmale = ["gezont", "vertieft"]
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fichtenreizker.htm"

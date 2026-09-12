@@ -12,6 +12,10 @@ speisewertHinweis = "Pfifferlinge sind besonders geschuetzt, diese Art steht zud
 haeufigkeit = "haeufig"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Rötlicher Pfifferling", "Samtleistling", "Fries´scher Pfifferling", "Samtiger Leistling", "Aprikosenpfifferling"]
+fruchtschicht = { art = "leisten" }
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["wellig"] }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetlicherPfifferling.htm"

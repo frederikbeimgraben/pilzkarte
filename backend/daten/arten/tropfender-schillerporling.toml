@@ -10,6 +10,8 @@ speisewertHinweis = "Ungenießbar, weil das Fleisch korkig und zäh ist."
 haeufigkeit = "selten"
 gefaehrdung = "unbekanntesAusmass"
 synonyme = ["Inonotus dryadeus", "Boletus dryadeus"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "gewoelbt" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/TropfenderSchillerporling.htm"

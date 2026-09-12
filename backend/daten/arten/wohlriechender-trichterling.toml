@@ -9,6 +9,10 @@ baeume = []
 speisewertHinweis = "Giftig. Zu erkennen am aufdringlich anis- bis fenchelartigen Geruch, am hygrophanen graubraunen Hut mit eingedrückter Mitte und am knorpelig-elastischen, oft breitgedrückten Stiel."
 weitereNamen = ["Wohlriechender Trichterling"]
 synonyme = ["Omphalia obsoleta", "Agaricus obsoletus"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng", schneide = "glatt" }
+hutmerkmale = ["hygrophan", "vertieft", "genabelt"]
+hutrand = { von = ["wellig", "eingebogen", "gerieft"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FleischAnistrichterling.htm"

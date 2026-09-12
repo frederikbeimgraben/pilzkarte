@@ -8,6 +8,8 @@ jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["eiche", "buche", "kastanie"]
 speisewertHinweis = "Das Fleisch ist holzig, fest und zäh. Er lässt sich nicht essen."
 synonyme = ["Phellinus robustus", "Phellinus aestriplex", "Polyporus robustus", "Ochroporus robustus", "Fomes tuberosus"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "halbkugelig", nach = "muschelfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenfeuer.htm"

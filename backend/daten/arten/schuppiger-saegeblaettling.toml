@@ -8,6 +8,9 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["laerche", "kiefer"]
 speisewertHinweis = "Ungenießbar, weil das Fleisch rasch zäh wird. Nur ganz junge Fruchtkörper gelten als essbar."
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", schneide = "gesaegt" }
+hutrand = { von = ["eingerollt", "scharf"] }
+stielmerkmale = ["ring", "beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchuppigerSaegeblaettling.htm"

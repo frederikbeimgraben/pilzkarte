@@ -11,6 +11,7 @@ haeufigkeit = "selten"
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Nadelholzfingerhut"]
 synonyme = ["Aleurodiscus digitali", "Peziza digitalis"]
+hutform = { von = "trichterfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Weisstannenfingerhut.htm"

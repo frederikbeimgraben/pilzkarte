@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 weitereNamen = ["Brauner Riesenchampignon", "Schmutziger Riesenchampignon"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutrand = { von = ["fransig", "eingerollt"] }
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kompostegerling.htm"

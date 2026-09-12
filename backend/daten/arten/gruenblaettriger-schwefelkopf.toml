@@ -8,6 +8,10 @@ jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
 speisewertHinweis = "Er macht starke Magen-Darm-Störungen, die über mehrere Tage anhalten. Zu erkennen an den grünen bis grüngelben Lamellen und am stark bitteren Geschmack."
 weitereNamen = ["Büscheliger Schwefelkopf", "Bitterer Schwefelkopf"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutform = { von = "halbkugelig", nach = "flach" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["faserig", "hohl", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenblaettrigerSchwefelkopf.htm"

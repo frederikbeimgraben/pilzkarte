@@ -11,6 +11,8 @@ baeume = ["fichte"]
 speisewertHinweis = "Roh unvertraeglich, deshalb gut durchgaren. Alte Fruchtkoerper koennen bitterlich werden."
 weitereNamen = ["Rötender Schafeuterporling"]
 synonyme = ["Scutiger subrubescens", "Albatrellus ovinus", "Polyporus ovinus", "Caloporus ovinus"]
+fruchtschicht = { art = "poren" }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetenderSchafporling.htm"

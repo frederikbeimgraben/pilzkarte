@@ -10,6 +10,9 @@ baeume = ["birke"]
 speisewertHinweis = "Roh giftig, nur durchgegart essen. Er hat wie alle Scheidenstreiflinge keinen Ring, deshalb ist die Scheide an der Basis stets freizulegen und mit den Knollenblätterpilzen zu vergleichen."
 haeufigkeit = "selten"
 synonyme = ["Amanita flavescens", "Amanitopsis flavescens", "Amanitopsis vaginata var. flavescens"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["genattert", "beflockt", "hohl", "scheide"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelberStreifling.htm"

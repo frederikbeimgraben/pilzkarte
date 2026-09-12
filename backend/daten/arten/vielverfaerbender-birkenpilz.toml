@@ -12,6 +12,10 @@ speisewertHinweis = "Besonders geschützt, sehr selten und in Deutschland gefäh
 haeufigkeit = "sehrSelten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Vielverfärbender Birkenpilz", "Vielfärbender Birkenpilz", "Verfärbender Raufußröhrling", "Blaufärbender Raufuß"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig" }
+hutrand = { von = ["ueberstehend"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/VerfaerbenderBirkenpilz.htm"

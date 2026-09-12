@@ -11,6 +11,9 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Fleischroter Milchling"]
 synonyme = ["Lactarius curtus"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutmerkmale = ["vertieft", "genabelt"]
+hutrand = { von = ["eingebogen"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KuhroterMilchling.htm"

@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Enthält Orellanin und schädigt Nieren und Leber; niemals probieren. Zu erkennen am spitz gebuckelten rotbraunen Hut, den zimtbraunen Lamellen und dem genatterten Stiel ohne echten Ring. Er wächst bei Fichte, oft zwischen Trompetenpfifferlingen."
 weitereNamen = ["Spitzbuckeliger Raukopf", "Prächtiger Schleierling", "Spitzgebuckelter Orangeschleierling", "Spitzkegeliger Raukopf"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["genattert", "voll", "faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SpitzbuckligeRauhkopf.htm"

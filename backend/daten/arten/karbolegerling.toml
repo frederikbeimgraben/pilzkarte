@@ -8,6 +8,9 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen am tinten- bis karbolartigen Geruch nach Phenol und an der starken Gelbfärbung der Stielbasis beim Anschneiden. Die Vergiftung ist nicht gefährlich, aber sehr unangenehm: meist Bauchschmerzen über einige Stunden, in Ausnahmefällen Schwindel und Sehstörungen. Bei jungen Stücken ist der Geruch oft nicht eindeutig; dann den Pilz stehen lassen."
 weitereNamen = ["Karbolegerling", "Giftchampignon", "Tintenegerling", "Giftegerling", "Karbolchampignon"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutform = { von = "halbkugelig", nach = "flach" }
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Karbolegerling.htm"

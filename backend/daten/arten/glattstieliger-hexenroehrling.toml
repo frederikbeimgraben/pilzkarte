@@ -11,6 +11,8 @@ speisewertHinweis = "Roh giftig, nur durchgegart essen. In Deutschland gefährde
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 synonyme = ["Boletus queletii", "Boletus queletii var. lateritius", "Boletus queletii var. rubicundus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["gerieft"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Glatthexe.htm"

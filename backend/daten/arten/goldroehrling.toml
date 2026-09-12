@@ -10,6 +10,9 @@ baeume = ["laerche", "douglasie", "kiefer"]
 speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen und den Schleim vom Hut abziehen. Wie alle Schmierröhrlinge löst er bei manchen Magen-Darm-Beschwerden aus."
 weitereNamen = ["Goldgelber Lärchenröhrling", "Schöner Röhrling", "Gelber Röhrling"]
 synonyme = ["Boletopsis elegans", "Suillus grevillei forma badius", "Ixocomus elegans forma badius", "Boletinus grevillei", "Suillus elegans", "Boletopsis annulatus"]
+fruchtschicht = { art = "roehren" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["ring", "faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Goldroehrling.htm"

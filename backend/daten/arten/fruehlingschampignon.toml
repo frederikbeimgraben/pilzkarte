@@ -11,6 +11,8 @@ baeume = []
 speisewertHinweis = "Sehr selten, in der Schweiz stark gefährdet."
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Langstieliger Egerling", "Sommeregerling", "Sommerchampignon", "Frühlings-Egerling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fruehlingsegerling.htm"

@@ -10,6 +10,9 @@ speisewertHinweis = "In Japan gab es mehrere Todesfälle, vor allem bei älteren
 haeufigkeit = "selten"
 weitereNamen = ["Ohrförmiger Weißseitling", "Engelsflügel"]
 synonyme = ["Phyllotus porrigens", "Nothopanus porrigens", "Agaricus porrigens", "Pleuropus porrigens", "Pleurotus porrigens", "Pleurotellus porrigens", "Geopetalum porrigens", "Dendrosarcus porrigens", "Calathinus porrigens", "Pleurotus albolanatus", "Agaricus porrigens var. dimidiatus", "Agaricus porrigens var. infundibuliformis"]
+fruchtschicht = { art = "lamellen", stand = "eng" }
+hutform = { von = "muschelfoermig" }
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OhrfoermigerSeitling.htm"

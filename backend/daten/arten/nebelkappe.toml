@@ -11,6 +11,10 @@ karte = "nebelkappe"
 speisewertHinweis = "123pilzsuche führt sie als giftig. Der Stoff Nebularin löst Magen-Darm-Beschwerden aus, auch nach dem Garen. In der Schweiz ist sie nicht marktfähig."
 weitereNamen = ["Herbstblattl", "Nebelgrauer Röteltrichterling", "Nebelgrauer Trichterling", "Graukappe", "Graukopf"]
 synonyme = ["Lepista nebularis", "Clitocybe pileolaris", "Gymnopus nebularis", "Clitocybe nebularis var. alba"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["vertieft"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig", "hohl", "knolle"]
 
 [baeumeAusErfahrung]
 baeume = ["buche", "fichte"]

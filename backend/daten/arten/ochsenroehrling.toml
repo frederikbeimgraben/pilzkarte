@@ -9,6 +9,8 @@ baeume = ["eiche", "buche"]
 speisewertHinweis = "Der Seitenkopf nennt ihn oft unverträglich, nur bedingt essbar und mit Alkohol giftig. Alle Purpurröhrlinge stehen im Verdacht, Coprin oder ähnliche Stoffe zu enthalten. Kennzeichen sind das auffällige Gewicht, das schwefelgelbe, sofort schwarzblau verfärbende Fleisch und das feine Netz auf gelblichem Stiel."
 haeufigkeit = "sehrSelten"
 synonyme = ["Boletus torosus", "Dictyopus torosus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ochsenroehrling.htm"

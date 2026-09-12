@@ -10,6 +10,9 @@ baeume = ["laerche"]
 speisewertHinweis = "Von der DGfM als Speisepilz geführt. Er ist selten, deshalb nur wenig mitnehmen."
 haeufigkeit = "selten"
 synonyme = ["Suillus laricinus", "Suillus aeruginascens"]
+fruchtschicht = { art = "roehren" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GraublasserLaerchenroehrling.htm"

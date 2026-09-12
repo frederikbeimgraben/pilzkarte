@@ -11,6 +11,10 @@ baeume = ["fichte"]
 speisewertHinweis = "Roh giftig, er zersetzt das Blut. Nur gut durchgegart essen."
 weitereNamen = ["Fleischbrauner Rötelritterling"]
 synonyme = ["Lepista sordida var. lilacea", "Lepista sordida var. obscurata", "Rhodopaxillus sordidus forma obscuratus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutmerkmale = ["hygrophan"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchmutzigerRoetelritterling.htm"

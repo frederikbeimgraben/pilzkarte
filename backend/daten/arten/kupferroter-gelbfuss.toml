@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Beim Kochen wird er violettbraun und schmeckt parfümiert, ähnlich dem Violetten Rötelritterling."
 synonyme = ["Chroogomphus britannicus", "Gomphidius rutilus forma testaceus", "Chroogomphus helveticus subsp. tatrensis", "Chroogomphus rutilus var. corallinus", "Chroogomphus rutilus subsp. alabamensis"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "weit" }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KupferroterGelbfuss.htm"

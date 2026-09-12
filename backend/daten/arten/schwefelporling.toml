@@ -10,6 +10,8 @@ baeume = ["buche", "eiche", "weide", "birke", "laerche", "obstbaum"]
 speisewertHinweis = "Roh unverträglich wegen Oxalsäure. Nur junge Stücke, in etwa 1 cm dicke Scheiben schneiden, zehn Minuten in Salzwasser kochen und das Kochwasser weggießen. Funde an Eibe und Goldregen stehen lassen, der Pilz kann das Gift des Baumes aufnehmen. Auch Funde aus Obstplantagen meiden, wegen der Spritzmittel. Die DGfM nennt gelegentlich Magen-Darm-Beschwerden und allergische Reaktionen."
 weitereNamen = ["Eierporling", "Gemeiner Schwefelporling", "Laubholzschwefelporling"]
 synonyme = ["Sulphurina sulphurea", "Tyromyces sulphureus", "Sporotrichum versisporum", "Polyporus sulphureus var. albolabyrinthiporus"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "muschelfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schwefelporling.htm"

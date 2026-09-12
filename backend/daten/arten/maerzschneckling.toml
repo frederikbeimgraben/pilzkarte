@@ -11,6 +11,9 @@ speisewertHinweis = "Besonders geschützt und in Deutschland stark gefährdet. D
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Märzellerling", "Schneepilz"]
 synonyme = ["Limacium camarophyllum subsp. marzuolum", "Agaricus marzuolus", "Clitocybe marzuolus"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "weit" }
+hutrand = { von = ["wellig"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Maerzschneckling.htm"

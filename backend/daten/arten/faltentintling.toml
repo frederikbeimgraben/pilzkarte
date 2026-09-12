@@ -9,6 +9,9 @@ baeume = []
 speisewertHinweis = "Er enthält Coprin. Zusammen mit Alkohol löst er eine Acetaldehyd-Reaktion aus, auch noch Tage nach der Mahlzeit. 123pilzsuche rät grundsätzlich vom Verzehr ab."
 weitereNamen = ["Grauer Faltentintling", "Knotentintling"]
 synonyme = ["Coprinus atramentarius", "Agaricus atramentarius"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["hohl", "faserig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Faltentintling.htm"

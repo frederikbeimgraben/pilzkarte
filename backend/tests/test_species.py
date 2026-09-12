@@ -994,6 +994,115 @@ def test_every_lookalike_points_at_a_profile() -> None:
             assert lookalike.slug in profiles, f"{slug} zeigt auf {lookalike.slug}"
 
 
+# Welche Merkmalszeile der Quellseite welche Fruchtschicht bedeutet. Die
+# Zeile ist die Quelle, nicht die Gattung: eine Seite mit einer Zeile
+# "Poren" nennt Poren, auch wenn andere Porlinge Roehren tragen.
+HYMENOPHORE_ROWS = {
+    TraitKey.GILLS: HymenophoreKind.GILLS,
+    TraitKey.TUBES: HymenophoreKind.TUBES,
+    TraitKey.PORES: HymenophoreKind.PORES,
+    TraitKey.SPINES: HymenophoreKind.SPINES,
+    TraitKey.FOLDS: HymenophoreKind.FOLDS,
+}
+
+
+def test_the_hymenophore_follows_the_trait_row() -> None:
+    for slug, profile in read_profiles(DATA / "arten").items():
+        if profile.hymenophore is None:
+            continue
+        rows = [HYMENOPHORE_ROWS[key] for key in profile.traits if key in HYMENOPHORE_ROWS]
+        assert rows == [profile.hymenophore.kind], slug
+
+
+def test_one_profile_names_a_hymenophore_the_vocabulary_has_no_word_for() -> None:
+    # Der Gezonte Ohrlappenpilz traegt eine aderig-faltige Unterseite. Keiner
+    # der fuenf Werte trifft das, also bleibt das Feld leer statt geraten.
+    without = {
+        slug
+        for slug, profile in read_profiles(DATA / "arten").items()
+        if profile.hymenophore is None and any(key in HYMENOPHORE_ROWS for key in profile.traits)
+    }
+
+    assert without == {"gezonter-ohrlappenpilz"}
+
+
+def test_no_cap_field_without_a_cap_row() -> None:
+    # Wer keinen Hut hat, hat auch keine Hutform. Ein Wert dort waere eine
+    # Behauptung ueber etwas, das die Art nicht hat.
+    for slug, profile in read_profiles(DATA / "arten").items():
+        if TraitKey.CAP in profile.traits or TraitKey.FRUITBODY in profile.traits:
+            continue
+        assert profile.cap_shape is None, slug
+        assert profile.cap_features == [], slug
+        assert profile.cap_margin is None, slug
+
+
+def test_no_stem_feature_without_a_stem_row() -> None:
+    for slug, profile in read_profiles(DATA / "arten").items():
+        if TraitKey.STEM in profile.traits:
+            continue
+        assert profile.stem_features == [], slug
+
+
+def test_the_source_pages_fill_the_four_fields() -> None:
+    # Was ein Durchgang durch die 305 Quellseiten hergibt. Die Zahlen stehen
+    # hier, damit ein spaeterer Lauf sieht, was er verliert.
+    profiles = read_profiles(DATA / "arten").values()
+
+    filled = {
+        "fruchtschicht": sum(profile.hymenophore is not None for profile in profiles),
+        "ansatz": sum(
+            profile.hymenophore is not None and profile.hymenophore.attachment is not None
+            for profile in profiles
+        ),
+        "stand": sum(
+            profile.hymenophore is not None and profile.hymenophore.spacing is not None
+            for profile in profiles
+        ),
+        "schneide": sum(
+            profile.hymenophore is not None and profile.hymenophore.edge is not None
+            for profile in profiles
+        ),
+        "hutform": sum(profile.cap_shape is not None for profile in profiles),
+        "hutmerkmale": sum(bool(profile.cap_features) for profile in profiles),
+        "hutrand": sum(profile.cap_margin is not None for profile in profiles),
+        "stielmerkmale": sum(bool(profile.stem_features) for profile in profiles),
+    }
+
+    assert filled == {
+        "fruchtschicht": 273,
+        "ansatz": 157,
+        "stand": 63,
+        "schneide": 27,
+        "hutform": 94,
+        "hutmerkmale": 94,
+        "hutrand": 142,
+        "stielmerkmale": 217,
+    }
+
+
+def test_a_stem_may_be_solid_when_young_and_hollow_when_old() -> None:
+    # "Jung voll, spaeter hohl" sind zwei Aussagen, keine widerspruechliche.
+    # Die flache Liste kann sie nicht ordnen, aber sie darf keine verschweigen.
+    # Die Reihenfolge traegt erst die Spalte "phase" aus R4b.
+    both = {
+        slug
+        for slug, profile in read_profiles(DATA / "arten").items()
+        if {StemFeature.HOLLOW, StemFeature.SOLID} <= set(profile.stem_features)
+    }
+
+    assert both == {
+        "falscher-wiesenegerling",
+        "grauer-leistling",
+        "huegelschwindling",
+        "kegelhuetiger-knollenblaetterpilz",
+        "koenigsfliegenpilz",
+        "maggipilz",
+        "olivfarbener-frauentaeubling",
+        "verbogener-leistling",
+    }
+
+
 def test_no_file_carries_a_name_or_edibility_in_a_lookalike() -> None:
     # Der Umbau ist nur fertig, wenn die doppelten Felder wirklich weg sind.
     allowed = {"slug", "unterschied", "eigenerUnterschied"}
@@ -1537,8 +1646,7 @@ async def test_the_endpoint_takes_the_layer_filter(app: FastAPI) -> None:
 
 
 def test_no_shipped_profile_breaks_the_rule() -> None:
-    # Der Katalog traegt die Fruchtschicht noch nicht. Sobald er es tut, faellt
-    # ein Ansatz an Roehren hier auf und nicht erst in der Oberflaeche.
+    # Ein Ansatz an Roehren faellt hier auf und nicht erst in der Oberflaeche.
     for slug, profile in read_profiles(DATA / "arten").items():
         layer = profile.hymenophore
         if layer is None or layer.kind is HymenophoreKind.GILLS:

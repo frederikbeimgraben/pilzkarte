@@ -9,6 +9,10 @@ baeume = []
 speisewertHinweis = "Toedlich giftig. Er waechst auf Wiesen, schmeckt mild und wird deshalb mit Champignons und Raslingen verwechselt. Zu erkennen ist er am kleinen weissen Hut mit konzentrischen Ringzonen und den sehr gedraengten, weisslichen bis cremefarbenen Lamellen. Keine Kostproben."
 weitereNamen = ["Weißer Gifttrichterling"]
 synonyme = ["Clitocybe rivulosa var. dealbata", "Clitocybe dealbata var. rivulosa", "Omphalia rivulosa", "Clitocybe rivulosa var. neptunea"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutmerkmale = ["gezont"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rinnigertrichterling.htm"
