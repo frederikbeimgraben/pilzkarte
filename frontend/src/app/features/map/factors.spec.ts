@@ -1,7 +1,6 @@
 import { readLayers, type Layer } from '../../core/tiles/layers';
 import { EDGE_SHARE } from '../../map/value-colors';
 import {
-  DEFAULT_FACTORS,
   conditionText,
   byteForValue,
   replaceFactor,
@@ -23,11 +22,17 @@ const SHARE_LAYER: Layer = { ...RAIN, id: 'buche', label: 'Buche', unit: '', low
 
 const FAKTOR: Faktor = { source: 'regen_4w', condition: 'ueber', von: 80, bis: 0, active: true };
 
+/** Das Beispiel aus dem Konzept, als Prüfstein für Kodierung und Lesen. */
+const VIER: readonly Faktor[] = [
+  FAKTOR,
+  { source: 'temperatur', condition: 'zwischen', von: 8, bis: 16, active: true },
+  { source: 'buche', condition: 'ueber', von: 0.3, bis: 0, active: true },
+  { source: 'hangneigung', condition: 'unter', von: 0, bis: 15, active: true },
+];
+
 describe('Faktoren', () => {
   it('kodiert die drei Formen der Bedingung', () => {
-    expect(encodeFactors(DEFAULT_FACTORS)).toBe(
-      'regen_4w:ge:80,temperatur:zw:8:16,buche:ge:0.3,hangneigung:le:15',
-    );
+    expect(encodeFactors(VIER)).toBe('regen_4w:ge:80,temperatur:zw:8:16,buche:ge:0.3,hangneigung:le:15');
   });
 
   it('kennzeichnet einen abgehakten Faktor', () => {
@@ -35,7 +40,7 @@ describe('Faktoren', () => {
   });
 
   it('liest die Kodierung wieder ein', () => {
-    expect(readFactors(encodeFactors(DEFAULT_FACTORS))).toEqual(DEFAULT_FACTORS);
+    expect(readFactors(encodeFactors(VIER))).toEqual(VIER);
     expect(readFactors('!regen_4w:ge:80')).toEqual([{ ...FAKTOR, active: false }]);
   });
 
@@ -85,11 +90,9 @@ describe('Faktoren', () => {
   it('hält je Quelle genau einen Faktor', () => {
     const second: Faktor = { ...FAKTOR, von: 40 };
 
-    expect(replaceFactor(DEFAULT_FACTORS, second)[0].von).toBe(40);
-    expect(replaceFactor(DEFAULT_FACTORS, second)).toHaveLength(DEFAULT_FACTORS.length);
-    expect(replaceFactor(DEFAULT_FACTORS, { ...FAKTOR, source: 'hoehe' })).toHaveLength(
-      DEFAULT_FACTORS.length + 1,
-    );
+    expect(replaceFactor(VIER, second)[0].von).toBe(40);
+    expect(replaceFactor(VIER, second)).toHaveLength(VIER.length);
+    expect(replaceFactor(VIER, { ...FAKTOR, source: 'hoehe' })).toHaveLength(VIER.length + 1);
   });
 
   it('gibt jeder Kombination einen eigenen Schlüssel', () => {

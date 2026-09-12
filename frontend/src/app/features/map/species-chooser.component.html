@@ -1,0 +1,35 @@
+<app-sheet [label]="'artWahl.titel' | t" [detent]="2" [modal]="true">
+  <div class="speciespicker">
+    <app-input
+      [label]="'artWahl.suche' | t"
+      [placeholder]="'artWahl.suchePlatzhalter' | t"
+      [ngModel]="search()"
+      (ngModelChange)="search.set($event)"
+    />
+
+    <div class="speciespicker__list" role="group" [attr.aria-label]="'artWahl.titel' | t">
+      @for (row of rows(); track row.art.slug) {
+        <app-list-row
+          [titel]="row.art.name"
+          [subline]="row.art.lateinisch"
+          [clickable]="true"
+          [selected]="row.slug === selected()"
+          (chosen)="chosen.emit(row.slug)"
+        >
+          <app-season-curve
+            trail
+            [alleJahre]="row.curve"
+            [laufendesJahr]="row.current"
+            [visitsAllYears]="begehungen()"
+            [visitsCurrentYearSeries]="visitsCurrentYear()"
+            [label]="row.label"
+          />
+        </app-list-row>
+      } @empty {
+        <p class="artwahl__leer">{{ (catalogue() === null ? 'artWahl.laedt' : 'artWahl.nichts') | t }}</p>
+      }
+      <app-list-row [titel]="'artWahl.katalog' | t" [clickable]="true" (chosen)="zumKatalog.emit()" />
+    </div>
+  </div>
+  <app-action-bar [secondary]="'faktor.abbrechen' | t" (secondaryClick)="closed.emit()" />
+</app-sheet>

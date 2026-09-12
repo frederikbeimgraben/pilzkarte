@@ -8,6 +8,10 @@
   --pilz-column: 400px;
   --pilz-pageheader-height: 64px;
   --pilz-gutter: 16px;
+  // Das Raster im Blattinhalt: ein Blockabstand zwischen den Teilen, ein
+  // Schritt zwischen Bedienelementen, die zusammengehören.
+  --pilz-block: var(--space-5);
+  --pilz-step: var(--space-3);
   --pilz-handle-height: 24px;
   --pilz-handle-width: 40px;
   --pilz-field-height: 44px;

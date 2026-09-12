@@ -77,3 +77,11 @@
 .head__arrow:first-child {
   border-inline-start: 0;
 }
+
+// Am Rechner ist der Daumen nicht das Maß: dort dürfen die Pfeile flacher
+// stehen, damit der Kopf des Blatts nicht so hoch baut. Die Breite bleibt.
+@media (min-width: 1024px) {
+  .head__arrow {
+    block-size: 32px;
+  }
+}

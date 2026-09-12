@@ -12,6 +12,11 @@ export class LayersService {
   // Sitzung wird es darum genau einmal geholt, auch bei parallelen Aufrufen.
   private pending: Promise<LayersManifest> | null = null;
 
+  /** Vergisst, was geholt wurde. Der nächste Aufruf fragt den Server erneut. */
+  vergiss(): void {
+    this.pending = null;
+  }
+
   get(): Promise<LayersManifest> {
     this.pending ??= this.load();
     return this.pending;

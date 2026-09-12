@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { BadgeComponent, ButtonComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
+import { BadgeComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
 import type { Find, SharedFind, Marker, Visibility, Zone } from '../../core/api/models';
 import { AuthService } from '../../core/auth';
 import { I18nService } from '../../core/i18n/i18n.service';
@@ -11,15 +11,13 @@ import {
   ChipGroupComponent,
   EmptyStateComponent,
   ListRowComponent,
-  NoteComponent,
   PageHeaderComponent,
-  SvgIconComponent,
   type Chip,
 } from '../../ui';
 import { SpeciesState } from '../species/species.state';
-import { AddEntryState } from '../add-entry/add-entry.state';
+import { MapState } from '../map/map.state';
 import { visibilityText } from '../add-entry/visibility';
-import { writeObject, type ObjectKind } from '../map/map.state';
+import type { ObjectKind } from '../map/map.state';
 import { EntriesState } from './entries.state';
 import { colorHex } from './colors';
 import { hectaresText, isoDatum, shortDate } from './formats';
@@ -71,14 +69,11 @@ const FOREIGN_FIND = '#185468';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     BadgeComponent,
-    ButtonComponent,
     CardComponent,
     ChipGroupComponent,
     EmptyStateComponent,
     ListRowComponent,
-    NoteComponent,
     PageHeaderComponent,
-    SvgIconComponent,
     TranslatePipe,
   ],
   templateUrl: './entries.component.html',
@@ -87,7 +82,7 @@ const FOREIGN_FIND = '#185468';
 export class EntriesComponent {
   private readonly arten = inject(SpeciesState);
   private readonly auth = inject(AuthService);
-  private readonly addEntryState = inject(AddEntryState);
+  private readonly map = inject(MapState);
   private readonly i18n = inject(I18nService);
   private readonly router = inject(Router);
   private readonly state = inject(EntriesState);
@@ -101,7 +96,7 @@ export class EntriesComponent {
 
   protected readonly rows = computed<Row[]>(() => {
     const chip = this.chip();
-    if (chip === 'geteilt') return this.state.shared().map((find) => this.sharedRow(find));
+    if (chip === 'geteilt') return this.state.shared().map((fund) => this.sharedRow(fund));
     const waiter = CHIPS.find((candidate) => candidate.value === chip)?.waiter ?? 'fund';
     const pending = this.state
       .pendingEntries()
@@ -111,7 +106,7 @@ export class EntriesComponent {
       return [...pending, ...this.state.marker().map((entry) => this.markerRow(entry))];
     }
     if (chip === 'zonen') return [...pending, ...this.state.zones().map((zone) => this.zoneRow(zone))];
-    return [...pending, ...this.state.finds().map((find) => this.findRow(find))];
+    return [...pending, ...this.state.finds().map((fund) => this.findRow(fund))];
   });
 
   protected readonly emptyText = computed<TranslationKey>(() => {
@@ -137,15 +132,10 @@ export class EntriesComponent {
     if (chip) this.chip.set(chip.value);
   }
 
-  /** Der Plus-Knopf der Kopfleiste führt auf die Karte und öffnet das Menü. */
-  protected async addEntry(): Promise<void> {
-    await this.router.navigate(['/karte']);
-    this.addEntryState.open();
-  }
-
-  protected open(row: Row): void {
+  protected async open(row: Row): Promise<void> {
     if (row.object === null) return;
-    void this.router.navigate(['/karte'], { queryParams: { objekt: writeObject(row.object) } });
+    await this.router.navigate(['/karte']);
+    this.map.object.set(row.object);
   }
 
   private speciesName(slug: string): string {
@@ -172,28 +162,28 @@ export class EntriesComponent {
       : null;
   }
 
-  private findRow(find: Find): Row {
+  private findRow(fund: Find): Row {
     return {
-      schluessel: `fund-${find.id}`,
+      schluessel: `fund-${fund.id}`,
       farbe: OWN_FIND,
-      titel: this.speciesName(find.artSlug),
-      subline: this.findSubline(this.datum(find.datum), find.anzahl, this.state.melder() ?? ''),
-      notiz: find.notiz ?? '',
-      badge: this.sharedBadge(find.sichtbarkeit),
-      object: { art: 'fund', id: find.id },
+      titel: this.speciesName(fund.artSlug),
+      subline: this.findSubline(this.datum(fund.datum), fund.anzahl, this.state.melder() ?? ''),
+      notiz: fund.notiz ?? '',
+      badge: this.sharedBadge(fund.sichtbarkeit),
+      object: { art: 'fund', id: fund.id },
     };
   }
 
-  private sharedRow(find: SharedFind): Row {
+  private sharedRow(fund: SharedFind): Row {
     return {
-      schluessel: `geteilt-${find.id}`,
-      farbe: find.eigen ? OWN_FIND : FOREIGN_FIND,
-      titel: this.speciesName(find.artSlug),
-      subline: this.findSubline(this.datum(find.datum), find.anzahl, find.melder ?? ''),
-      notiz: find.notiz ?? '',
+      schluessel: `geteilt-${fund.id}`,
+      farbe: fund.eigen ? OWN_FIND : FOREIGN_FIND,
+      titel: this.speciesName(fund.artSlug),
+      subline: this.findSubline(this.datum(fund.datum), fund.anzahl, fund.melder ?? ''),
+      notiz: fund.notiz ?? '',
       badge: { text: this.i18n.translate('eintraege.badge.geteilt'), variant: 'success' },
       // Ein fremder Fund hat kein Blatt: der Dienst gibt ihn nur als Punkt her.
-      object: find.eigen ? { art: 'fund', id: find.id } : null,
+      object: fund.eigen ? { art: 'fund', id: fund.id } : null,
     };
   }
 

@@ -7,16 +7,25 @@
   border-block-end: 0;
 }
 
+// Die Zeile ist der Rahmen, das Feld darin der tippbare Teil. Eine Aktion am
+// Ende bleibt daneben: ein Knopf im Knopf wäre für Hilfsmittel ein Fehler.
 .row {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
   inline-size: 100%;
+}
+
+.row__field {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  gap: 14px;
+  min-inline-size: 0;
   padding-block: var(--pilz-gutter);
   text-align: start;
 }
 
-.row--button {
+.row__field--button {
   font: inherit;
   color: inherit;
   cursor: pointer;
@@ -66,4 +75,14 @@
 
 .row__trail {
   flex: none;
+  align-self: center;
+}
+
+.row__action:empty {
+  display: none;
+}
+
+.row__action {
+  flex: none;
+  align-self: center;
 }

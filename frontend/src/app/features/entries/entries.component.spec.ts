@@ -1,6 +1,7 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { MapState } from '../map/map.state';
 import { Router, provideRouter } from '@angular/router';
 import { render, screen, within } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
@@ -11,7 +12,6 @@ import { AuthStub, authStubProviders } from '../../testing/auth-stub';
 import { noViolations } from '../../testing/axe';
 import { FIND, SHARED_FIND, MARKER, ZONE, page } from '../../testing/entries-fixture';
 import { AuthService } from '../../core/auth';
-import { AddEntryState } from '../add-entry/add-entry.state';
 import { EntriesComponent } from './entries.component';
 
 const PENDING: QueueEntry = {
@@ -139,24 +139,13 @@ describe('EintraegeComponent', () => {
   });
 
   it('öffnet einen Eintrag über der Karte', async () => {
-    const setup = await build();
+    await build();
 
     await userEvent.click(screen.getByRole('button', { name: /Steinpilz/ }));
 
     await vi.waitFor(() => {
-      expect(setup.router.url).toContain(`objekt=fund:${FIND.id}`);
+      expect(TestBed.inject(MapState).object()).toEqual({ art: 'fund', id: FIND.id });
     });
-  });
-
-  it('führt vom Plus-Knopf auf die Karte und öffnet das Menü', async () => {
-    const setup = await build();
-
-    await userEvent.click(screen.getByRole('button', { name: /Eintragen/ }));
-
-    await vi.waitFor(() => {
-      expect(setup.router.url).toBe('/karte');
-    });
-    expect(TestBed.inject(AddEntryState).step()).toBe('aktionen');
   });
 
   it('bittet ohne Konto um eine Anmeldung', async () => {

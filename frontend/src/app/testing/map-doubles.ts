@@ -266,3 +266,16 @@ export const RAW_MANIFEST = {
     { year: 2025, week: 41, forecast: true, tiles: 'boletus_edulis_kacheln/2025W41', mean: 0.08, max: 0.4 },
   ],
 };
+
+/** Eine gespeicherte Kombination, wie der Dienst sie liefert. */
+export const SAVED_COMBINATION = {
+  id: 'k1',
+  name: 'Buchenwald im Herbst',
+  regel: 'abgestuft',
+  faktoren: [
+    { quelle: 'wald', bedingung: 'ueber', von: 0.3, bis: null, aktiv: true },
+    { quelle: 'boden_ph', bedingung: 'unter', von: null, bis: 5.5, aktiv: true },
+  ],
+  erstelltAm: '2026-09-01T10:00:00+02:00',
+  geaendertAm: '2026-09-01T10:00:00+02:00',
+};

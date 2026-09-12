@@ -7,24 +7,29 @@
   [style.block-size]="hoehe()"
   (keydown)="onKey($event)"
 >
-  @if (!column()) {
-    <button
-      class="sheet__handle"
-      type="button"
-      [attr.aria-label]="handleText()"
-      (click)="nextDetent()"
-      (keydown)="onHandleKey($event)"
-      (pointerdown)="onPointerDown($event)"
-      (pointermove)="onPointerMove($event)"
-      (pointerup)="onPointerUp($event)"
-      (pointercancel)="onPointerUp($event)"
-    >
-      <span class="sheet__handle-line"></span>
-    </button>
-  }
-  @if (handleHint()) {
-    <p class="sheet__hint">{{ 'sheet.griffTipp' | t }}</p>
-  }
+  <div
+    class="sheet__drag"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp($event)"
+    (pointercancel)="onPointerUp($event)"
+  >
+    @if (!column()) {
+      <button
+        class="sheet__handle"
+        type="button"
+        [attr.aria-label]="handleText()"
+        (click)="nextDetent()"
+        (keydown)="onHandleKey($event)"
+      >
+        <span class="sheet__handle-line"></span>
+      </button>
+    }
+    @if (handleHint()) {
+      <p class="sheet__hint">{{ 'sheet.griffTipp' | t }}</p>
+    }
+    <ng-content select="[head]" />
+  </div>
   <div class="sheet__content">
     <ng-content />
   </div>

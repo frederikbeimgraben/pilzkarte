@@ -11,9 +11,9 @@ describe('EbenenBlattComponent', () => {
     });
 
     expect(screen.getByRole('dialog', { name: 'Auf der Karte' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Wie die App/ })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByText('Topografisch')).toBeInTheDocument();
-    expect(screen.getAllByText('kommt später')).toHaveLength(2);
+    expect(screen.getByRole('tab', { name: 'System' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Topografisch' })).toBeDisabled();
+    expect(screen.getByText('Topografisch und Satellit kommen später.')).toBeInTheDocument();
     expect(screen.getByText('70 %')).toBeInTheDocument();
     await noViolations(container);
   });
@@ -27,11 +27,23 @@ describe('EbenenBlattComponent', () => {
     fixture.componentInstance.backgroundChange.subscribe((choice) => backgrounds.push(choice));
     fixture.componentInstance.opacityChange.subscribe((value) => opacity.push(value));
 
-    await userEvent.click(screen.getByRole('button', { name: 'Dunkel' }));
+    await userEvent.click(screen.getByRole('tab', { name: 'Dunkel' }));
     fireEvent.input(screen.getByRole('slider', { name: /Deckkraft/ }), { target: { value: '40' } });
 
     expect(backgrounds).toEqual(['dunkel']);
     expect(opacity[0]).toBeCloseTo(0.4);
+  });
+
+  it('lässt die gesperrte Wahl nicht zu', async () => {
+    const { fixture } = await render(LayersSheetComponent, {
+      inputs: { background: 'hell' as Background, opacity: 1 },
+    });
+    const backgrounds: Background[] = [];
+    fixture.componentInstance.backgroundChange.subscribe((choice) => backgrounds.push(choice));
+
+    await userEvent.click(screen.getByRole('tab', { name: 'Satellit' }));
+
+    expect(backgrounds).toEqual([]);
   });
 
   it('bietet die Vorhersage darunter nur in der Darstellung Ebene', async () => {

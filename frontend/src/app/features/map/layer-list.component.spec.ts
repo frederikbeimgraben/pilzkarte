@@ -16,9 +16,19 @@ describe('EbenenListeComponent', () => {
     expect(screen.getByText('Je Woche')).toBeInTheDocument();
     expect(screen.getByText('Fest')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Waldanteil/ })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('button', { name: /Boden-pH/ })).not.toHaveAttribute('aria-pressed');
+    expect(screen.getByRole('button', { name: /Boden-pH/ })).toHaveAttribute('aria-pressed', 'false');
     expect(screen.getByRole('group', { name: 'Eingabe-Ebenen' })).toHaveTextContent('Grad');
     await noViolations(container);
+  });
+
+  it('gibt jeder Ebene ihr Zeichen', async () => {
+    const { container } = await render(LayerListComponent, {
+      inputs: { layers: LAYERS, label: 'Eingabe-Ebenen' },
+    });
+
+    // Niederschlag trägt das Kalenderblatt, der Wald den Baum: vier Ebenen,
+    // vier Zeichen, keins doppelt in dieser Auswahl.
+    expect(container.querySelectorAll('.layers__glyph svg')).toHaveLength(4);
   });
 
   it('meldet die gewählte Ebene', async () => {

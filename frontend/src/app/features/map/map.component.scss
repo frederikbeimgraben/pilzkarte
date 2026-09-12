@@ -24,13 +24,20 @@
   pointer-events: none;
 }
 
+// Was zusammen gehört, steht enger: die Darstellung, die Regel und ihr Satz.
+.map__switch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pilz-step);
+}
+
 .map__content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--pilz-block);
   min-block-size: 0;
-  padding: var(--pilz-gutter) var(--pilz-gutter) var(--space-6);
+  padding: var(--pilz-gutter) var(--pilz-gutter) var(--pilz-block);
   overflow-y: auto;
   // Wie die Chip-Reihe und die Artenliste: die App füllt das Gerät, ein Balken
   // am Rand gehörte zu einem Fenster.
@@ -89,5 +96,11 @@ app-object-sheet {
 :host-context(.shell--column) {
   .map__buttons {
     inset-block-start: calc(var(--pilz-nav-height) + 12px);
+  }
+
+  // Die Abdunkelung gehört über die Spalte, nicht über die Karte: die bleibt
+  // sichtbar, damit man weiß, worüber man gerade entscheidet.
+  .map__scrim {
+    inline-size: var(--pilz-column);
   }
 }

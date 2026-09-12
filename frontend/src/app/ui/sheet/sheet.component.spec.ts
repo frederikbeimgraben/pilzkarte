@@ -15,6 +15,20 @@ import { DETENTS_DEFAULT, SheetComponent, detentForHeight, detentInPx } from './
 })
 class HostComponent {}
 
+@Component({
+  imports: [SheetComponent],
+  template: `
+    <app-sheet label="Karte" [detent]="1">
+      <div head>
+        <p>Kopfzeile</p>
+        <button type="button">KW 40</button>
+      </div>
+      <p>Inhalt</p>
+    </app-sheet>
+  `,
+})
+class HeadHostComponent {}
+
 /** jsdom misst nichts; das Blatt braucht aber eine Höhe, um zu rasten. */
 function miss(host: HTMLElement, hostHeight: number, sheetHeight: number): void {
   Object.defineProperty(host, 'clientHeight', { value: hostHeight, configurable: true });
@@ -169,5 +183,44 @@ describe('Rasten', () => {
     expect(detentForHeight(sizes, 1, 160)).toBe(0);
     expect(detentForHeight(sizes, 1, 330)).toBe(1);
     expect(detentForHeight(sizes, 0, 300)).toBe(1);
+  });
+});
+
+/** Der Wirt des Blatts im Testaufbau. */
+function wirtVon(container: Element): HTMLElement {
+  const host = container.querySelector<HTMLElement>('app-sheet');
+  if (!host) throw new Error('Kein Blatt im Wirt.');
+  return host;
+}
+
+describe('SheetComponent, Ziehfläche', () => {
+  it('zieht auch am Kopf, nicht nur am Griff', async () => {
+    const { fixture, container } = await render(HeadHostComponent);
+    const sheet = fixture.debugElement.children[0].componentInstance as SheetComponent;
+    const calls: number[] = [];
+    sheet.detentChange.subscribe((detent) => calls.push(detent));
+    miss(wirtVon(container), 800, 320);
+    const head = screen.getByText('Kopfzeile');
+
+    drag(head, [500, 100, 100]);
+
+    expect(calls).toEqual([2]);
+  });
+
+  it('lässt einen Tipp im Kopf ein Tipp bleiben', async () => {
+    const { fixture, container } = await render(HeadHostComponent);
+    const sheet = fixture.debugElement.children[0].componentInstance as SheetComponent;
+    const calls: number[] = [];
+    sheet.detentChange.subscribe((detent) => calls.push(detent));
+    miss(wirtVon(container), 800, 320);
+    const woche = screen.getByRole('button', { name: 'KW 40' });
+    let tapped = 0;
+    woche.addEventListener('click', () => (tapped += 1));
+
+    drag(woche, [500, 497, 497]);
+    woche.click();
+
+    expect(calls).toEqual([]);
+    expect(tapped).toBe(1);
   });
 });

@@ -3,22 +3,26 @@ import {
   Component,
   ElementRef,
   OnDestroy,
+  DestroyRef,
   afterNextRender,
   computed,
   effect,
   inject,
   input,
   signal,
-  untracked,
   viewChild,
 } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from '@stupa-makers/ui-kit';
+import { firstValueFrom } from 'rxjs';
+import { AuthService } from '../../core/auth';
+import { CombinationsApi } from '../../core/api/combinations.api';
+import type { Combination } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { ViewportService } from '../../core/layout/viewport.service';
 import { ManifestService } from '../../core/tiles/manifest.service';
+import { NOW } from '../../core/tiles/now';
 import { LayersService } from '../../core/tiles/layers.service';
 import {
   layerFolders,
@@ -31,7 +35,7 @@ import {
   type LayersManifest,
 } from '../../core/tiles/layers';
 import { layerFromSpecies } from '../../core/tiles/species-as-layer';
-import { FORECAST_SLUGS } from '../../core/tiles/tile-paths';
+import { FORECAST_SLUGS, type ForecastSlug } from '../../core/tiles/tile-paths';
 import {
   currentWeek,
   barShares,
@@ -68,11 +72,21 @@ import {
   type SegmentOption,
   type TimelineWeek,
 } from '../../ui';
+import { SpeciesChooserComponent } from './species-chooser.component';
 import { LayersSheetComponent } from './layers-sheet.component';
+import { SpeciesState } from '../species/species.state';
 import { FactorSheetComponent } from './factor-sheet.component';
 import { FactorPickerComponent } from './factor-picker.component';
 import { KombinationComponent } from './combination.component';
-import { boundFor, encodeFactors, combinationKey, replaceFactor, type Faktor } from './factors';
+import {
+  fromWire,
+  replaceFactor,
+  boundFor,
+  encodeFactors,
+  combinationKey,
+  toWire,
+  type Faktor,
+} from './factors';
 import { LayerListComponent } from './layer-list.component';
 import { EntriesState } from '../entries/entries.state';
 import { AddEntryComponent } from '../add-entry/add-entry.component';
@@ -110,6 +124,7 @@ export function layerSourceId(layer: Layer): string {
   selector: 'app-map',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    SpeciesChooserComponent,
     LayersSheetComponent,
     LayerListComponent,
     FactorSheetComponent,
@@ -135,13 +150,17 @@ export class MapComponent implements OnDestroy {
   private readonly surface = viewChild.required<ElementRef<HTMLElement>>('surface');
   private readonly adapter = inject(MAP_ADAPTER);
   private readonly manifests = inject(ManifestService);
+  private readonly now = inject(NOW);
   private readonly layersService = inject(LayersService);
+  private readonly arten = inject(SpeciesState);
   private readonly i18n = inject(I18nService);
   private readonly theme = inject(ThemeService);
   private readonly viewport = inject(ViewportService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly toasts = inject(ToastService);
+  private readonly auth = inject(AuthService);
+  private readonly combinations = inject(CombinationsApi);
   private readonly protocol = new ValueProtocol(inject(VALUE_WORKER));
 
   /**
@@ -171,10 +190,16 @@ export class MapComponent implements OnDestroy {
   private readonly speciesLayers = signal<ReadonlyMap<string, Layer>>(new Map());
 
   protected readonly playing = signal(false);
-  protected readonly layersSheetOpen = signal(false);
+  protected readonly layersSheetOpen = this.state.layersSheetOpen;
+  protected readonly saved = signal<readonly Combination[]>([]);
+  /** Die Anmeldung ist geklärt; jetzt fehlt nur noch der Name. */
+  protected readonly asksName = signal(false);
+  protected readonly signedIn = this.auth.signedIn;
   /** Der Faktor, den der Screen `Faktor` gerade bearbeitet. */
   protected readonly openFactorValue = signal<Faktor | null>(null);
   protected readonly pickingFactor = signal(false);
+  /** Das Blatt, in dem die Art für die Karte gewählt wird. */
+  protected readonly speciesChosen = signal(false);
 
   /**
    * Über der Karte liegt immer nur ein Blatt. Solange das Eintragen läuft oder
@@ -189,7 +214,7 @@ export class MapComponent implements OnDestroy {
     const manifest = this.manifest();
     if (!manifest) return null;
     const selected = this.state.woche();
-    return (selected !== null ? findWeek(manifest, selected) : null) ?? currentWeek(manifest);
+    return (selected !== null ? findWeek(manifest, selected) : null) ?? currentWeek(manifest, this.now());
   });
 
   /** Ohne Wahl in der Adresse steht die Ebene aus dem Konzeptbeispiel vorn. */
@@ -246,6 +271,8 @@ export class MapComponent implements OnDestroy {
   );
 
   protected readonly speciesAsLayers = computed(() => [...this.speciesLayers().values()]);
+
+  protected readonly speciesCatalogue = this.arten.catalogue;
 
   protected readonly bar = computed<TimelineWeek[]>(() => {
     const manifest = this.manifest();
@@ -328,29 +355,7 @@ export class MapComponent implements OnDestroy {
   constructor() {
     this.adapter.warmUp();
 
-    this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe((query) => {
-      if (!this.ownsAddress()) return;
-      this.state.adopt({
-        art: query.get('art'),
-        kw: query.get('kw'),
-        viewMode: query.get('darstellung'),
-        layer: query.get('ebene'),
-        opacity: query.get('deckkraft'),
-        rule: query.get('regel'),
-        f: query.get('f'),
-        object: query.get('objekt'),
-      });
-    });
-
-    // Wird die Karte wieder zum Reiter, trägt die Adresse ihren Zustand erneut.
-    // Ein Link mit eigenen Werten bleibt unangetastet; den liest der Abschnitt
-    // darüber, und er käme sonst unter die Räder.
-    effect(() => {
-      if (!this.ownsAddress()) return;
-      untracked(() => {
-        if (this.route.snapshot.queryParamMap.keys.length === 0) this.writeAddress();
-      });
-    });
+    this.nimmLinkAn();
 
     effect(() => {
       void this.loadManifest(this.state.art());
@@ -360,6 +365,13 @@ export class MapComponent implements OnDestroy {
 
     effect(() => {
       if (this.showsCombination()) void this.loadSpecies();
+    });
+
+    // Die eigenen Kombinationen erst, wenn die Darstellung sie zeigen kann und
+    // ein Konto dahintersteht. Ohne Konto antwortet der Dienst mit 401.
+    effect(() => {
+      if (this.showsCombination() && this.auth.signedIn()) void this.loadSaved();
+      if (!this.auth.signedIn()) this.saved.set([]);
     });
 
     // Der Stil folgt der Wahl, sonst dem Theme. Erst wenn die Karte steht.
@@ -400,6 +412,16 @@ export class MapComponent implements OnDestroy {
       void this.loadEntries();
     });
 
+    // Zurück im Vordergrund: die Manifeste können inzwischen eine Woche weiter
+    // sein, und die Vorgabewoche wäre sonst von gestern.
+    const beiSichtbarkeit = (): void => {
+      if (document.visibilityState === 'visible') void this.frischeManifeste();
+    };
+    document.addEventListener('visibilitychange', beiSichtbarkeit);
+    inject(DestroyRef).onDestroy(() => {
+      document.removeEventListener('visibilitychange', beiSichtbarkeit);
+    });
+
     afterNextRender(() => {
       void this.startMap();
     });
@@ -419,17 +441,33 @@ export class MapComponent implements OnDestroy {
     const selected = VIEW_MODES.find((viewMode) => viewMode === value);
     if (!selected) return;
     this.state.viewMode.set(selected);
-    this.writeAddress();
+  }
+
+  /** Die zwei Regeln der Kombination, als Wahl neben der Darstellung. */
+  protected readonly rules = computed<SegmentOption[]>(() =>
+    (['schnitt', 'abgestuft'] as const).map((value) => ({
+      value,
+      label: this.i18n.translate(`kombination.${value}`),
+    })),
+  );
+
+  protected readonly ruleHint = computed(() =>
+    this.i18n.translate(
+      this.state.rule() === 'schnitt' ? 'kombination.hinweisSchnitt' : 'kombination.hinweisAbgestuft',
+      { woche: this.weekText() },
+    ),
+  );
+
+  protected chooseRule(value: string): void {
+    if (value === 'schnitt' || value === 'abgestuft') this.setRule(value);
   }
 
   protected setRule(rule: CombinationRule): void {
     this.state.rule.set(rule);
-    this.writeAddress();
   }
 
   protected toggleFactor(choice: { factor: Faktor; active: boolean }): void {
     this.state.factors.set(replaceFactor(this.state.factors(), { ...choice.factor, active: choice.active }));
-    this.writeAddress();
   }
 
   protected openFactor(factor: Faktor): void {
@@ -439,13 +477,11 @@ export class MapComponent implements OnDestroy {
   protected applyFactor(factor: Faktor): void {
     this.state.factors.set(replaceFactor(this.state.factors(), factor));
     this.openFactorValue.set(null);
-    this.writeAddress();
   }
 
   protected removeFactor(factor: Faktor): void {
     this.state.factors.set(this.state.factors().filter((entry) => entry.source !== factor.source));
     this.openFactorValue.set(null);
-    this.writeAddress();
   }
 
   /** Eine neue Quelle beginnt mit der oberen Hälfte ihrer Skala. */
@@ -455,23 +491,19 @@ export class MapComponent implements OnDestroy {
     this.state.factors.set(replaceFactor(this.state.factors(), factor));
     this.pickingFactor.set(false);
     this.openFactorValue.set(factor);
-    this.writeAddress();
   }
 
   protected selectLayer(layer: Layer): void {
     this.state.layer.set(layer.id);
-    this.writeAddress();
   }
 
   protected setOpacity(value: number): void {
     this.state.opacity.set(value);
-    this.writeAddress();
   }
 
   protected selectWeek(woche: { jahr: number; woche: number }): void {
     this.stopPlaying();
     this.state.woche.set(weekKey(woche));
-    this.writeAddress();
   }
 
   /** Eine Woche vor oder zurück, ohne über die Enden hinaus. */
@@ -500,11 +532,69 @@ export class MapComponent implements OnDestroy {
         return;
       }
       this.state.woche.set(weekKey(manifest.wochen[next]));
-      this.writeAddress();
     }, BEAT);
   }
 
+  /** Ohne Konto führt der Knopf zuerst zur Anmeldung. */
+  protected async saveRequested(): Promise<void> {
+    if (await this.auth.requestSignIn()) this.asksName.set(true);
+  }
+
+  protected async saveCombination(name: string): Promise<void> {
+    this.asksName.set(false);
+    try {
+      await firstValueFrom(
+        this.combinations.create({
+          name,
+          regel: this.state.rule(),
+          faktoren: this.state.factors().map(toWire),
+        }),
+      );
+      this.toasts.success(this.i18n.translate('kombination.gesichert', { name }));
+      await this.loadSaved();
+    } catch {
+      // Der ApiClient hat den Fehler schon als Toast gezeigt.
+    }
+  }
+
+  protected loadCombination(combination: Combination): void {
+    this.state.rule.set(combination.regel === 'abgestuft' ? 'abgestuft' : 'schnitt');
+    this.state.factors.set(combination.faktoren.map(fromWire));
+    this.toasts.success(this.i18n.translate('kombination.geladen', { name: combination.name }));
+  }
+
+  protected async deleteCombination(combination: Combination): Promise<void> {
+    try {
+      await firstValueFrom(this.combinations.remove(combination.id));
+      this.toasts.success(this.i18n.translate('kombination.geloescht', { name: combination.name }));
+      await this.loadSaved();
+    } catch {
+      // Der ApiClient hat den Fehler schon als Toast gezeigt.
+    }
+  }
+
+  private async loadSaved(): Promise<void> {
+    try {
+      const page = await firstValueFrom(this.combinations.catalogue());
+      this.saved.set(page.eintraege);
+    } catch {
+      this.saved.set([]);
+    }
+  }
+
+  /** Der Artname im Kopf öffnet die Wahl, statt den Reiter zu wechseln. */
+  protected openSpeciesChooser(): void {
+    this.arten.loadCatalogue();
+    this.speciesChosen.set(true);
+  }
+
+  protected selectSpecies(slug: ForecastSlug): void {
+    this.state.art.set(slug);
+    this.speciesChosen.set(false);
+  }
+
   protected toSpecies(): void {
+    this.speciesChosen.set(false);
     void this.router.navigate(['/arten']);
   }
 
@@ -558,7 +648,6 @@ export class MapComponent implements OnDestroy {
       this.protocol.report(speciesSource(manifest.slug, manifest.top, manifest.existing));
       this.manifest.set(manifest);
       this.loadOverview(manifest);
-      this.writeAddress();
     } catch {
       // Ohne Manifest bleibt die Hintergrundkarte stehen; das Blatt zeigt dann
       // keine Wochen. Ein Fehlerbild wäre hier nicht hilfreicher.
@@ -594,12 +683,18 @@ export class MapComponent implements OnDestroy {
     return known ? this.i18n.translate(`art.${known}`) : slug;
   }
 
+  /** Holt Art- und Ebenenmanifest neu; der Server schickt sie ohne Cache. */
+  private async frischeManifeste(): Promise<void> {
+    this.manifests.vergiss();
+    this.layersService.vergiss();
+    await Promise.all([this.loadManifest(this.state.art()), this.loadLayers()]);
+  }
+
   private async loadLayers(): Promise<void> {
     try {
       this.layers.set(await this.layersService.get());
       // Erst jetzt steht fest, welche Ebene gilt. Vorher trug die Adresse
       // höchstens eine Kennung, jetzt trägt sie die aufgelöste Ebene.
-      this.writeAddress();
     } catch {
       // Ohne `layers.json` bleibt die Darstellung Ebene leer. Vorhersage geht.
       this.layers.set(null);
@@ -803,25 +898,25 @@ export class MapComponent implements OnDestroy {
     }
   }
 
-  private writeAddress(): void {
+  /**
+   * Ein Link darf den Zustand einmal setzen, beim Eintritt. Danach wird die
+   * Adresse wieder sauber gemacht: sie führt die Karte nicht, sie öffnet sie.
+   */
+  private nimmLinkAn(): void {
     if (!this.ownsAddress()) return;
-    const woche = this.woche();
-    const adresse = this.state.adresse();
-    void this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: {
-        art: adresse.art,
-        kw: woche ? weekKey(woche) : null,
-        darstellung: adresse.viewMode === 'vorhersage' ? null : adresse.viewMode,
-        // Solange die Ebenen noch nicht da sind, bleibt die Kennung aus der
-        // Adresse stehen; sonst löschte der erste Schreibvorgang den Deep Link.
-        ebene: this.showsLayer() ? (this.layer()?.id ?? this.state.layer()) : null,
-        deckkraft: adresse.opacity === 100 ? null : adresse.opacity,
-        regel: this.showsCombination() ? adresse.rule : null,
-        f: this.showsCombination() ? adresse.f : null,
-      },
-      queryParamsHandling: 'merge',
-      replaceUrl: true,
-    });
+    const query = this.route.snapshot.queryParamMap;
+    const values = {
+      art: query.get('art'),
+      kw: query.get('kw'),
+      viewMode: query.get('darstellung'),
+      layer: query.get('ebene'),
+      opacity: query.get('deckkraft'),
+      rule: query.get('regel'),
+      f: query.get('f'),
+      object: query.get('objekt'),
+    };
+    if (!MapState.hasValues(values)) return;
+    this.state.adopt(values);
+    void this.router.navigate([], { relativeTo: this.route, queryParams: {}, replaceUrl: true });
   }
 }

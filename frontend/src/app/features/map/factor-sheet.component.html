@@ -1,5 +1,5 @@
 <app-sheet [label]="'faktor.titel' | t" [detent]="2" [modal]="true">
-  <app-sheet-head [titel]="layer().label" [woche]="timeScope()" [arrows]="false" />
+  <app-sheet-head head [titel]="layer().label" [woche]="timeScope()" [arrows]="false" />
   <div class="factor">
     <app-segmented
       [options]="conditions()"

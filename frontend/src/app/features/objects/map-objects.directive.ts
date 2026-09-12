@@ -1,12 +1,11 @@
 import { Directive, effect, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import type { Feature, FeatureCollection } from 'geojson';
 import type { Find, SharedFind, Marker, Zone } from '../../core/api/models';
 import { MAP_ADAPTER } from '../../map/map.tokens';
 import type { ObjectLayer } from '../../map/map-adapter';
 import { EntriesState } from '../entries/entries.state';
 import { colorHex } from '../entries/colors';
-import { MapState, writeObject, type ObjectKind } from '../map/map.state';
+import { MapState, type ObjectKind } from '../map/map.state';
 
 /**
  * Die Farben der Punkte aus `docs/mockups/bauen.py`: ein eigener Fund trägt
@@ -40,8 +39,6 @@ export class MapObjectsDirective {
   private readonly adapter = inject(MAP_ADAPTER);
   private readonly eintraege = inject(EntriesState);
   private readonly map = inject(MapState);
-  private readonly route = inject(ActivatedRoute);
-  private readonly router = inject(Router);
 
   constructor() {
     this.adapter.onObjectSelect((layer, id) => {
@@ -88,7 +85,7 @@ export class MapObjectsDirective {
   }
 
   private finds(finds: readonly Find[]): FeatureCollection {
-    return collection(finds.map((find) => point(find.id, find.lon, find.lat, { farbe: OWN_FIND })));
+    return collection(finds.map((fund) => point(fund.id, fund.lon, fund.lat, { farbe: OWN_FIND })));
   }
 
   /**
@@ -98,8 +95,8 @@ export class MapObjectsDirective {
   private shared(finds: readonly SharedFind[]): FeatureCollection {
     return collection(
       finds
-        .filter((find) => !find.eigen)
-        .map((find) => point(find.id, find.lon, find.lat, { farbe: FOREIGN_FIND, gerundet: find.gerundet })),
+        .filter((fund) => !fund.eigen)
+        .map((fund) => point(fund.id, fund.lon, fund.lat, { farbe: FOREIGN_FIND, gerundet: fund.gerundet })),
     );
   }
 
@@ -107,10 +104,6 @@ export class MapObjectsDirective {
     const art: ObjectKind | null =
       layer === 'zonen' ? 'zone' : layer === 'marker' ? 'marker' : layer === 'funde' ? 'fund' : null;
     if (art === null) return;
-    void this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { objekt: writeObject({ art, id }) },
-      queryParamsHandling: 'merge',
-    });
+    this.map.object.set({ art, id });
   }
 }

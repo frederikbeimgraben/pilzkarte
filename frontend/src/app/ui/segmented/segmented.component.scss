@@ -20,6 +20,13 @@
   border-radius: var(--radius-md);
 }
 
+// Gesperrt heißt: zu sehen, was kommt, ohne dass es sich bedienen lässt.
+.seg--locked .seg__choice {
+  color: var(--color-text-disabled, var(--color-text-muted));
+  cursor: default;
+  opacity: 0.6;
+}
+
 .seg__choice--active {
   color: var(--color-text);
   background: var(--color-surface);

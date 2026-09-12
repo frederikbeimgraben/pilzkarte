@@ -10,6 +10,7 @@ import { speciesImage } from '../../testing/species-images-fixture';
 import { AuthStub, authStubProviders } from '../../testing/auth-stub';
 import { noViolations } from '../../testing/axe';
 import { SpeciesComponent } from './species.component';
+import { MapState } from '../map/map.state';
 import { SpeciesState } from './species.state';
 
 interface Setup {
@@ -211,9 +212,8 @@ describe('ArtComponent', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Auf der Karte anzeigen' }));
 
     expect(state.activeSpecies()).toBe('steinpilz');
-    expect(calls).toHaveBeenCalledWith(['/karte'], {
-      queryParams: { art: 'boletus_edulis', kw: 39 },
-    });
+    expect(TestBed.inject(MapState).art()).toBe('boletus_edulis');
+    expect(calls).toHaveBeenCalledWith(['/karte']);
   });
 
   it('zeigt ohne Vorhersage weder Kurve noch Sprung auf die Karte', async () => {

@@ -1,4 +1,4 @@
-<ng-template #content>
+<ng-template #primary>
   <span class="row__lead"><ng-content select="[lead]" /></span>
   <span class="row__stack">
     <span class="row__title">{{ titel() }}</span>
@@ -15,17 +15,20 @@
   <span class="row__trail"><ng-content select="[trail]" /></span>
 </ng-template>
 
-@if (clickable()) {
-  <button
-    class="row row--button"
-    type="button"
-    [attr.aria-pressed]="selected() ? true : null"
-    (click)="chosen.emit()"
-  >
-    <ng-container [ngTemplateOutlet]="content" />
-  </button>
-} @else {
-  <div class="row">
-    <ng-container [ngTemplateOutlet]="content" />
-  </div>
-}
+<div class="row">
+  @if (clickable()) {
+    <button
+      class="row__field row__field--button"
+      type="button"
+      [attr.aria-pressed]="selected() ? true : null"
+      (click)="chosen.emit()"
+    >
+      <ng-container [ngTemplateOutlet]="primary" />
+    </button>
+  } @else {
+    <div class="row__field">
+      <ng-container [ngTemplateOutlet]="primary" />
+    </div>
+  }
+  <span class="row__action"><ng-content select="[aktion]" /></span>
+</div>

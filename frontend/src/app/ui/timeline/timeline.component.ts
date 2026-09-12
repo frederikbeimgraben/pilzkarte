@@ -1,10 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   computed,
   effect,
   input,
   output,
+  viewChild,
   viewChildren,
 } from '@angular/core';
 import { WeekButtonComponent } from './week-button.component';
@@ -37,6 +39,7 @@ interface ShownWeek extends TimelineWeek {
 })
 export class TimelineComponent {
   private readonly buttons = viewChildren(WeekButtonComponent);
+  private readonly bar = viewChild.required<ElementRef<HTMLElement>>('bar');
 
   readonly wochen = input.required<readonly TimelineWeek[]>();
   readonly active = input<{ jahr: number; woche: number } | null>(null);
@@ -68,8 +71,7 @@ export class TimelineComponent {
     // Die gewählte Woche muss sichtbar sein, auch wenn sie über einen Deep Link
     // oder die Pfeile im Kopf gesetzt wurde und weit außerhalb liegt.
     effect(() => {
-      const button = this.buttons()[this.activeIndex()] as WeekButtonComponent | undefined;
-      button?.show(false);
+      this.bringIntoView(this.activeIndex(), false);
     });
   }
 
@@ -85,7 +87,20 @@ export class TimelineComponent {
     if (target === null) return;
     event.preventDefault();
     this.chosen.emit(wochen[target]);
-    (this.buttons()[target] as WeekButtonComponent | undefined)?.show(true);
+    this.bringIntoView(target, true);
+  }
+
+  /**
+   * Schiebt die Woche in die Mitte der Leiste. `scrollTo` auf der Leiste, nicht
+   * `scrollIntoView`: das zöge sonst die ganze Seite mit.
+   */
+  private bringIntoView(index: number, withFocus: boolean): void {
+    const button = (this.buttons()[index] as WeekButtonComponent | undefined)?.element();
+    const bar = this.bar().nativeElement;
+    if (!button) return;
+    const center = button.offsetLeft - (bar.clientWidth - button.offsetWidth) / 2;
+    bar.scrollTo({ left: Math.max(center, 0), behavior: 'smooth' });
+    if (withFocus) button.focus();
   }
 
   private targetIndex(key: string, anzahl: number): number | null {

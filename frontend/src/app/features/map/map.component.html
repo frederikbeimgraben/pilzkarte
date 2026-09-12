@@ -7,7 +7,10 @@
     [attr.aria-label]="'karte.beschriftung' | t"
   ></div>
 
-  @if (!surfaceOnly()) {
+  <!-- Die schwebenden Knöpfe und das Aktionsblatt gehören zur Karte, nicht zum
+       Reiter: am Rechner steht die Karte dauerhaft rechts, also stehen sie auch
+       dort, wenn links ein anderer Reiter offen ist. -->
+  @if (!surfaceOnly() || wide()) {
     @if (!addEntry.dark() && state.object() === null) {
       <div class="map__buttons">
         <app-floating-button
@@ -28,8 +31,11 @@
       </div>
     }
 
-    <app-object-sheet />
     <app-add-entry />
+  }
+
+  @if (!surfaceOnly()) {
+    <app-object-sheet />
 
     @if (!overlaid()) {
       <div class="map__sheet">
@@ -40,14 +46,16 @@
           (detentChange)="setDetent($event)"
         >
           <app-sheet-head
+            head
             [titel]="headTitle()"
             [titleAsLink]="!showsLayer()"
             [woche]="weekText()"
             [hint]="forecastHint()"
-            (titleClick)="toSpecies()"
+            [playing]="playing()"
+            (titleClick)="openSpeciesChooser()"
             (back)="step(-1)"
             (playback)="togglePlay()"
-            (vor)="step(1)"
+            (forward)="step(1)"
           >
             <app-timeline
               [wochen]="bar()"
@@ -62,12 +70,23 @@
           </app-sheet-head>
 
           <div class="map__content">
-            <app-segmented
-              [options]="viewModes()"
-              [value]="state.viewMode()"
-              [label]="'darstellung.beschriftung' | t"
-              (valueChange)="setView($event)"
-            />
+            <div class="map__switch">
+              <app-segmented
+                [options]="viewModes()"
+                [value]="state.viewMode()"
+                [label]="'darstellung.beschriftung' | t"
+                (valueChange)="setView($event)"
+              />
+              @if (state.viewMode() === 'kombination') {
+                <app-segmented
+                  [options]="rules()"
+                  [value]="state.rule()"
+                  [label]="'kombination.regel' | t"
+                  (valueChange)="chooseRule($event)"
+                />
+                <app-note variant="unter">{{ ruleHint() }}</app-note>
+              }
+            </div>
 
             @switch (state.viewMode()) {
               @case ('vorhersage') {
@@ -93,12 +112,18 @@
                 <app-combination
                   [factors]="state.factors()"
                   [sources]="factorSources()"
-                  [rule]="state.rule()"
                   [weekText]="weekText()"
-                  (ruleChange)="setRule($event)"
+                  [saved]="saved()"
+                  [signedIn]="signedIn()"
+                  [asksName]="asksName()"
                   (activeChange)="toggleFactor($event)"
                   (openFactor)="openFactor($event)"
                   (add)="pickingFactor.set(true)"
+                  (saveRequested)="saveRequested()"
+                  (save)="saveCombination($event)"
+                  (nameCancelled)="asksName.set(false)"
+                  (picked)="loadCombination($event)"
+                  (remove)="deleteCombination($event)"
                 />
               }
             }
@@ -129,6 +154,24 @@
       }
     }
 
+    @if (speciesChosen()) {
+      <button
+        class="map__scrim"
+        type="button"
+        [attr.aria-label]="'faktor.abbrechen' | t"
+        (click)="speciesChosen.set(false)"
+      ></button>
+      <div class="map__sheet map__sheet--layers">
+        <app-species-chooser
+          [catalogue]="speciesCatalogue()"
+          [selected]="state.art()"
+          (chosen)="selectSpecies($event)"
+          (zumKatalog)="toSpecies()"
+          (closed)="speciesChosen.set(false)"
+        />
+      </div>
+    }
+
     @if (pickingFactor()) {
       <button
         class="map__scrim"
@@ -146,7 +189,9 @@
         />
       </div>
     }
+  }
 
+  @if (!surfaceOnly() || wide()) {
     @if (layersSheetOpen()) {
       <button
         class="map__scrim"

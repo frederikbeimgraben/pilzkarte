@@ -53,6 +53,12 @@
   min-block-size: 0;
 }
 
+// Ein offenes Blatt der Karte deckt den Reiter zu, statt hinter ihm zu
+// verschwinden.
+.shell__map--lead {
+  z-index: 2;
+}
+
 .shell--column .shell__nav {
   z-index: 1;
   grid-area: 1 / 1 / 2 / 2;

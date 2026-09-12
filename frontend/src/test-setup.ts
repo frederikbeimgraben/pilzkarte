@@ -20,6 +20,7 @@ Object.defineProperty(window, 'matchMedia', {
 // jsdom hat keine Darstellung und keinen Zeiger. Ohne diese Stummel bräche
 // jeder Baustein, der etwas in den Blick holt oder eine Geste fängt.
 Element.prototype.scrollIntoView = () => undefined;
+Element.prototype.scrollTo = () => undefined;
 
 // jsdom rechnet kein Layout und kennt darum keinen ResizeObserver. Ohne
 // Ersatz bräche jede Oberfläche, die ihre eigene Höhe misst.

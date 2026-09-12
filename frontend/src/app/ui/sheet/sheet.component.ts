@@ -35,6 +35,18 @@ export const DETENTS_DEFAULT: readonly [DetentSize, DetentSize, DetentSize] = [H
 export const DRAG_THRESHOLD = 24;
 
 /**
+ * Ab dieser Bewegung greift das Blatt den Zeiger ab. Darunter bleibt der
+ * Zeiger, wo er ist: ein Tipp auf eine Woche im Kopf soll ein Tipp bleiben.
+ */
+export const GRAB_THRESHOLD = 6;
+
+/**
+ * Ab dieser waagrechten Bewegung lässt das Blatt die Berührung los: sie gilt
+ * dann der Zeitleiste, die unter dem Finger scrollt.
+ */
+export const AXIS_THRESHOLD = 8;
+
+/**
  * Welche Raste eine Zugbewegung trifft: die nächstgelegene zur erreichten Höhe.
  * Unter der Schwelle bleibt die alte Raste, damit ein Wackeln nichts verstellt.
  */
@@ -63,9 +75,12 @@ export function detentInPx(mass: DetentSize, hostHeight: number, measured = 0): 
 
 /**
  * Das Blatt über der Karte. Es liegt auf einer der drei Rasten; ein Tipp auf
- * den Griff geht zur nächsten, ein Zug am Griff zur nächstgelegenen, die
- * Pfeiltasten eine Stufe auf oder ab. Am Rechner wird daraus eine Spalte ohne
- * Rasten.
+ * den Griff geht zur nächsten, ein Zug zur nächstgelegenen, die Pfeiltasten
+ * eine Stufe auf oder ab. Am Rechner wird daraus eine Spalte ohne Rasten.
+ *
+ * Gezogen wird am Griff und an allem, was mit `kopf` in den Kopf projiziert
+ * wird. Das ist die ganze obere Kante des Blatts und trifft mit dem Daumen
+ * besser als ein 24 Punkte hoher Streifen.
  */
 @Component({
   selector: 'app-sheet',
@@ -92,7 +107,13 @@ export class SheetComponent {
 
   /** Während eines Zugs führt der Finger, nicht die Raste. */
   private readonly dragged = signal<number | null>(null);
-  private drag: { pointer: number; von: number; hoehe: number; moved: boolean } | null = null;
+  private drag: {
+    pointer: number;
+    von: number;
+    vonX: number;
+    hoehe: number;
+    moved: boolean;
+  } | null = null;
 
   protected readonly hoehe = computed(() => {
     if (this.column()) return '100%';
@@ -122,16 +143,34 @@ export class SheetComponent {
 
   protected onPointerDown(event: PointerEvent): void {
     if (this.column()) return;
-    this.drag = { pointer: event.pointerId, von: event.clientY, hoehe: this.sheetHeight(), moved: false };
-    (event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
+    // Noch nicht abgegriffen: bis zur Schwelle gehört der Zeiger dem, worauf
+    // er zeigt. Ein abgegriffener Zeiger schluckt den Klick auf eine Woche.
+    this.drag = {
+      pointer: event.pointerId,
+      von: event.clientY,
+      vonX: event.clientX,
+      hoehe: this.sheetHeight(),
+      moved: false,
+    };
   }
 
   protected onPointerMove(event: PointerEvent): void {
     const drag = this.drag;
     if (drag?.pointer !== event.pointerId) return;
-    const hoehe = drag.hoehe + (drag.von - event.clientY);
-    if (Math.abs(drag.von - event.clientY) > 4) drag.moved = true;
-    this.dragged.set(Math.min(Math.max(hoehe, 0), this.hostHeight()));
+    const tall = Math.abs(drag.von - event.clientY);
+    const quer = Math.abs(event.clientX - drag.vonX);
+    if (!drag.moved) {
+      // Die Achse der ersten Bewegung entscheidet: waagrecht gehört die
+      // Berührung der Zeitleiste, senkrecht dem Blatt.
+      if (quer > tall && quer > AXIS_THRESHOLD) {
+        this.drag = null;
+        return;
+      }
+      if (tall <= GRAB_THRESHOLD) return;
+      drag.moved = true;
+      (event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
+    }
+    this.dragged.set(Math.min(Math.max(drag.hoehe + (drag.von - event.clientY), 0), this.hostHeight()));
   }
 
   protected onPointerUp(event: PointerEvent): void {

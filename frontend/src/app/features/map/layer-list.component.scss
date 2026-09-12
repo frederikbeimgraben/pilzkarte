@@ -4,7 +4,7 @@
 }
 
 .layers__group {
-  margin-block: var(--space-3) var(--space-1);
+  margin-block: var(--pilz-block) var(--space-2);
   font-size: var(--fs-xs);
   font-weight: var(--fw-semibold);
   color: var(--color-text-muted);
@@ -16,8 +16,73 @@
   margin-block-start: 0;
 }
 
-// Die gewählte Zeile bekommt den Grund der Primärfarbe, wie die aktive Art in
-// der Artenliste.
-.layers__row--active {
+.layers__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.layers__card {
+  display: flex;
+  gap: var(--pilz-step);
+  align-items: center;
+  padding: var(--space-3) 14px;
+  font: inherit;
+  color: var(--color-text);
+  text-align: start;
+  cursor: pointer;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+// Die gewählte Ebene trägt Rahmen, leichten Ton und Haken: dreimal dasselbe
+// gesagt, damit es auch ohne Farbe zu erkennen ist.
+.layers__card--active {
+  color: var(--color-text);
   background: var(--color-primary-subtle);
+  border-color: var(--color-primary);
+}
+
+.layers__glyph {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--pilz-swatch-size);
+  block-size: var(--pilz-swatch-size);
+  color: var(--color-text-muted);
+  background: var(--color-surface-sunken);
+  border-radius: var(--pilz-swatch-radius);
+}
+
+.layers__card--active .layers__glyph {
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.layers__name {
+  flex: 1;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-tight);
+}
+
+.layers__card--active .layers__name {
+  font-weight: var(--fw-semibold);
+}
+
+.layers__unit {
+  flex: 0 0 auto;
+  padding: 2px var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.layers__check {
+  flex: 0 0 auto;
+  color: var(--color-primary);
 }

@@ -27,13 +27,17 @@ export class SheetHeadComponent {
   /** Steht rechts neben der Woche, in Gefahrfarbe, etwa „· Prognose“. */
   readonly hint = input<string>();
   readonly arrows = input(true);
+  /** Läuft die Wiedergabe, wird aus dem Play-Knopf ein Pause-Knopf. */
+  readonly playing = input(false);
 
   readonly titleClick = output();
   readonly back = output();
   readonly playback = output();
-  readonly vor = output();
+  readonly forward = output();
 
-  protected text(schluessel: 'zeitleiste.zurueck' | 'zeitleiste.abspielen' | 'zeitleiste.vor'): string {
+  protected text(
+    schluessel: 'zeitleiste.zurueck' | 'zeitleiste.abspielen' | 'zeitleiste.anhalten' | 'zeitleiste.vor',
+  ): string {
     return this.i18n.translate(schluessel);
   }
 }

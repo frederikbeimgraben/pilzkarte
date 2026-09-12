@@ -1,5 +1,7 @@
 .bar {
   display: flex;
+  // Waagrecht scrollt die Leiste, senkrecht zieht das Blatt darunter.
+  touch-action: pan-x;
   gap: 6px;
   padding-block: 10px 2px;
   overflow-x: auto;

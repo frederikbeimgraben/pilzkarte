@@ -1,0 +1,21 @@
+.speciespicker {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--pilz-block);
+  min-block-size: 0;
+  padding: var(--pilz-gutter) var(--pilz-gutter) var(--pilz-block);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.speciespicker__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.artwahl__leer {
+  padding-block: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
