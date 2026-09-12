@@ -10,6 +10,8 @@ baeume = ["weide", "pappel", "linde"]
 speisewertHinweis = "Ungiftig, aber ohne Wert für die Küche. 123pilzsuche gibt die Relative Wertigkeit 5."
 weitereNamen = ["Blutroter Kelchbecherling", "Blutroter Prachtbecherling", "Österreichischer Kelchbecherling"]
 synonyme = ["Molliardiomyces coccineus", "Peziza austriaca", "Lachnea austriaca"]
+hutform = { von = "trichterfoermig", nach = "flach" }
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/AustriaPrachtbecherling.htm"

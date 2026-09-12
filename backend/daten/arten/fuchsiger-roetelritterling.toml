@@ -11,6 +11,10 @@ speisewertHinweis = "Die DGfM nennt einen ungeklärten Fall mit muscarinartigen 
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Fuchsiger Rötelritterling", "Fuchsiger Trichterling"]
 synonyme = ["Agaricus flaccidus", "Clitocybe flaccida"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig"]
 
 [baeumeAusErfahrung]
 baeume = ["fichte", "buche"]

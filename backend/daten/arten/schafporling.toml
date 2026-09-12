@@ -10,6 +10,8 @@ baeume = ["fichte"]
 speisewertHinweis = "Besonders geschützt. Roh löst er Unverträglichkeiten aus: durchgaren und Kostproben wieder ausspucken."
 weitereNamen = ["Schofferl", "Echter Schafporling", "Schafeuter", "Schafsporling"]
 synonyme = ["Scutiger ovinus", "Polyporus limonius", "Polyporus lutescens", "Caloporus ovinus", "Albatrellus albidus"]
+fruchtschicht = { art = "poren" }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schafporling.htm"

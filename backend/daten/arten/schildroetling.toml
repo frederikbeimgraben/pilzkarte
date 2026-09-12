@@ -10,6 +10,11 @@ speisewertHinweis = "Roh sehr giftig, mindestens fünf bis zehn Minuten garen. R
 haeufigkeit = "selten"
 weitereNamen = ["Geflammter Rötling"]
 synonyme = ["Agaricus clypeatus", "Rhodophyllus clypeatus", "Hyporrhodius clypeatus", "Entoloma clypeatum f. hybridum", "Rhodophyllus aprilis f. hybridus", "Entoloma clypeatum f. xanthophyllum", "Rhodophyllus clypeatus var. hybridus", "Rhodophyllus clypeatus var. niveus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutform = { von = "kegelig", nach = "flach" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["gerissen", "eingebogen"] }
+stielmerkmale = ["faserig", "gerieft"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schildroetling.htm"

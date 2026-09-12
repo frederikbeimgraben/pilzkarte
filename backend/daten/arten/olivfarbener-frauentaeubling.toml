@@ -8,6 +8,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 synonyme = ["Russula peltereaui", "Russula cyanoxantha forma peltereaui", "Russula cyanoxantha f. peltereaui"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["vertieft"]
+hutrand = { von = ["hoeckerig", "gerieft"] }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OlivfarbenerFrauentaeubling.htm"

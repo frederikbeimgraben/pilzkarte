@@ -11,6 +11,11 @@ speisewertHinweis = "Nur etwas für Kenner, denn mehrere Rötlinge sind giftig u
 haeufigkeit = "selten"
 weitereNamen = ["Blasser Pflaumen-Rötling", "Blassbrauner Schlehenrötling", "Blasser Rötling"]
 synonyme = ["Rhodophyllus sepius", "Agaricus sepius", "Entoloma saundersii sensu", "Entoloma clypeatum var. sepium"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+hutform = { von = "kegelig", nach = "flach" }
+hutmerkmale = ["gebuckelt", "hygrophan"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schlehenroetling.htm"

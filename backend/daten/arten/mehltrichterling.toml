@@ -9,6 +9,10 @@ baeume = ["fichte"]
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Grauer Mehltrichterling"]
 synonyme = ["Clitocybe ditopus", "Pseudolyophyllum ditopus", "Clitocybe odorula", "Clitocybe murinifolia", "Clitocybe brunnescens", "Agaricus ditopus", "Clitocybe ditopa var. odorula", "Clitocybe longispora"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutmerkmale = ["genabelt", "unregelmaessig"]
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["beflockt", "hohl", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerMehltrichterling.htm"

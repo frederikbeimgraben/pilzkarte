@@ -8,6 +8,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["obstbaum", "fichte"]
 speisewertHinweis = "Verursacht gelegentlich Magen-Darm-Beschwerden; vom Verzehr wird abgeraten. Zu erkennen an den abstehenden sparrigen Schuppen auf Hut und Stiel und am rettichartigen Geruch."
 synonyme = ["Pholiota jahnii sensu", "Hypodendrum floccosum", "Fungus squarrosus", "Stropharia squarrosa", "Dryophila muelleri", "Pholiota squarrosa f. annulosa"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+stielmerkmale = ["ring", "beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SparrigerSchueppling.htm"

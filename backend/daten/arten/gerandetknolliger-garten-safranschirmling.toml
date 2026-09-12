@@ -8,6 +8,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Erkennbar an der breiten, tellerartig gerandeten Stielknolle, am einfachen Ring und am stark safranfarben rötenden Fleisch. Er wächst auf Kompost und in Gewächshäusern, kaum im Wald."
 weitereNamen = ["Gerandetknolliger Gartenriesenschirmling", "Safranschirmling-Gartenform", "Rötender Gartenschirmpilz"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutform = { von = "eifoermig", nach = "halbkugelig" }
+hutmerkmale = ["gezont"]
+hutrand = { von = ["fransig"] }
+stielmerkmale = ["ring", "knolle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gartenschirmling.htm"

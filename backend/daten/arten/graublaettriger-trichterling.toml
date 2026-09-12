@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Graue Trichterlinge sind keine Speisepilze."
 synonyme = ["Clitocybe inornata", "Omphalia inornata", "Paxillus inornatus", "Agaricus elixus", "Clitocybe zygophylla"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutrand = { von = ["wellig", "gerieft"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GraublaettrigerTrichterling.htm"

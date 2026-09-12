@@ -12,6 +12,8 @@ speisewertHinweis = "Guter Speisepilz. Er ist selten und steht in der Schweiz au
 haeufigkeit = "selten"
 weitereNamen = ["Rissiger Zinnober-Täubling", "Risshütiger Frauentäubling", "Rissiger Papageientäubling"]
 synonyme = ["Russula cyanoxantha var. cutefracta"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RissigerFrauentaeubling.htm"

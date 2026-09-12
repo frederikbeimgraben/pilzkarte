@@ -13,6 +13,10 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Weinroter Reizker", "Blutreizker"]
 synonyme = ["Hypophyllum sanguifluum", "Lactifluus sanguifluus", "Lactarius vinosus", "Lactarius violaceus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+hutform = { von = "gewoelbt", nach = "trichterfoermig" }
+hutmerkmale = ["gezont", "genabelt"]
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeinroterReizker.htm"

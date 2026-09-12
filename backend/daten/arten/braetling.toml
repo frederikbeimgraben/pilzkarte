@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Besonders geschützt. Der Fischgeruch verschwindet beim Garen."
 weitereNamen = ["Milchbrätling", "Birnenmilchling", "Süßling"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutrand = { von = ["eingebogen"] }
 
 [baeumeAusErfahrung]
 baeume = ["hainbuche"]

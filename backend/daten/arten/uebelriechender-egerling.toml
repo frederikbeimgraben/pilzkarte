@@ -10,6 +10,9 @@ speisewertHinweis = "Ungenießbar wegen des widerlich fischartigen Geruchs."
 haeufigkeit = "selten"
 weitereNamen = ["Übelriechender Egerling"]
 synonyme = ["Psalliota ingrata", "Agaricus ingratus", "Agaricus bernardii syn. maleolens", "Agaricus ingratus syn. maleolens", "Agaricus ingratus var. maleolens"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/UebelriechenderEgerling.htm"

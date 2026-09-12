@@ -7,6 +7,10 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 weitereNamen = ["Wurzelnder Egerlingsschirmpilz"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutmerkmale = ["gebuckelt", "vertieft"]
+hutrand = { von = ["fransig"] }
+stielmerkmale = ["wurzelnd", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WurzelnderEgerlingsschirmling.htm"

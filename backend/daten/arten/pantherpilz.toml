@@ -10,6 +10,9 @@ speisewertHinweis = "Er enthält Ibotensäure, Muscimol, Muscazon sowie Stizolob
 haeufigkeit = "haeufig"
 weitereNamen = ["Pantherwulstling"]
 synonyme = ["Amanitaria pantherina", "Amanita pantherina forma robusta", "Agaricus pantherinus", "Amanita pantherina var. abietum = tannen-pantherpilz"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["beflockt", "knolle", "genattert"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Pantherpilz.htm"

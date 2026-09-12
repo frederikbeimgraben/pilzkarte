@@ -10,6 +10,10 @@ speisewertHinweis = "Er gilbt und rötet bei Verletzung sehr stark, erst orange,
 haeufigkeit = "selten"
 weitereNamen = ["Gelbfüßiger Egerlingsschirmling"]
 synonyme = ["Leucoagaricus bresadolae"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["hoeckerig"] }
+stielmerkmale = ["faserig", "beflockt", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BuscheliegerEgerlingsschirmling.htm"

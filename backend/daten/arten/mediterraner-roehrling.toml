@@ -8,6 +8,8 @@ jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = ["kiefer"]
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Mediterraner Körnchenröhrling", "Mittelmeer Körnchenröhrling"]
+fruchtschicht = { art = "roehren" }
+hutmerkmale = ["gebuckelt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MediterranerKoernchen.htm"

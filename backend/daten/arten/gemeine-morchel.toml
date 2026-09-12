@@ -11,6 +11,7 @@ baeume = []
 speisewertHinweis = "Roh giftig, nur durchgegart essen. Morcheln sind besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
 weitereNamen = ["Graue Speisemorchel"]
 synonyme = ["Morchella esculenta var. vulgaris"]
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeineMorchel.htm"

@@ -10,6 +10,8 @@ baeume = ["fichte"]
 speisewertHinweis = "Auf der Positivliste der DGfM, in der Schweiz nicht marktfähig. Er ist einer der wenigen essbaren Röhrlinge mit Netzzeichnung am Stiel."
 haeufigkeit = "haeufig"
 weitereNamen = ["Filziger Röhrling", "Braune Ziegenlippe"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerFilzroehrling.htm"

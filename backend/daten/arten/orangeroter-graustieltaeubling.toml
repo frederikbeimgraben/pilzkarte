@@ -8,6 +8,7 @@ marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "tanne", "fichte"]
+fruchtschicht = { art = "lamellen" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OrangGraustieltaeub.htm"

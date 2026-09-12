@@ -9,6 +9,9 @@ jahreszeiten = ["herbst", "winter"]
 baeume = []
 weitereNamen = ["Blassblauer Rötelritterling", "Blasser Rötelritterling"]
 synonyme = ["Lepista nuda var. glaucocana", "Rhodopaxillus glaucocanus", "Clitocybe glaucocana"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LavendelRoetelritterling.htm"

@@ -9,6 +9,8 @@ baeume = []
 speisewertHinweis = "Ungenießbar wegen des muffigen Geruchs und Geschmacks."
 weitereNamen = ["Elsterntintling"]
 synonyme = ["Coprinus picaceus", "Agaricus picaceus"]
+fruchtschicht = { art = "lamellen" }
+stielmerkmale = ["genattert", "beflockt", "faserig", "bruechig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Spechttintling.htm"

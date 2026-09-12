@@ -12,6 +12,9 @@ speisewertHinweis = "Roh giftig, nur nach besonderer Vorbehandlung essbar. Die D
 haeufigkeit = "sehrSelten"
 gefaehrdung = "unbekanntesAusmass"
 synonyme = ["Armillaria tabescens", "Agaricus tabescens"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["faserig", "gerieft", "beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RingloserHallimasch.htm"

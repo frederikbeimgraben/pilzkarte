@@ -11,6 +11,9 @@ speisewertHinweis = "Sehr selten und in Deutschland stark gefährdet. Den Fund b
 haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 synonyme = ["Hygrophorus ligatus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "weit" }
+hutrand = { von = ["eingerollt"], nach = ["wellig"] }
+stielmerkmale = ["ring", "beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchleimigberingterSchneck.htm"

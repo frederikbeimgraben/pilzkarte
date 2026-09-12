@@ -8,6 +8,9 @@ jahreszeiten = ["fruehling", "sommer"]
 baeume = ["pappel", "weide", "linde", "eiche"]
 speisewertHinweis = "Giftig und halluzinogen. Das Grünen an Stiel und Fleisch ist das sicherste Merkmal."
 weitereNamen = ["Grünlichverfärbender Risspilz"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutrand = { von = ["wellig"] }
+stielmerkmale = ["beflockt", "faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenenderRisspilz.htm"

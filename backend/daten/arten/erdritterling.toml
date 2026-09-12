@@ -8,6 +8,9 @@ baeume = ["kiefer", "fichte", "tanne", "douglasie"]
 warnung = "123pilzsuche führt den Erdritterling als tödlich giftig. Die grauen Ritterlinge sind untereinander kaum zu trennen, und einige schädigen die Muskulatur. Er steht hier, weil die Kette ihn zählt, nicht weil man ihn sammeln soll."
 speisewertHinweis = "123pilzsuche führt ihn als tödlich giftig. Er galt lange als Speisepilz; die grauen Ritterlinge sind untereinander kaum zu trennen und einige schädigen die Muskulatur. Stehen lassen."
 weitereNamen = ["Erdritterling", "Silber Erdritterling"]
+fruchtschicht = { art = "lamellen", schneide = "gesaegt" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeinerErdritterling.htm"

@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Bei Erdritterlingen wurde ein Giftstoff gefunden, der Muskelzersetzung auslöst (Rhabdomyolyse). Die Arten sind kaum sicher zu trennen, daher rät 123pilzsuche von allen Erdritterlingen ab."
 haeufigkeit = "selten"
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["faserig", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MausgrauerErdritterling.htm"

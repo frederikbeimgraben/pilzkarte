@@ -10,6 +10,11 @@ baeume = []
 speisewertHinweis = "Roh giftig, also keine Kostversuche. Selten, in der Schweiz auf der Roten Liste."
 haeufigkeit = "selten"
 weitereNamen = ["Grossscheidiger Streifling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutform = { von = "eifoermig", nach = "flach" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["genattert", "beflockt", "hohl", "scheide", "bruechig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrossscheidigerStreifling.htm"

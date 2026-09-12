@@ -9,6 +9,9 @@ baeume = ["buche", "eiche", "kastanie"]
 speisewertHinweis = "Roh giftig und unverträglich. Er trägt purpurrote bis blutrote Röhren, einen kräftig roten Stiel mit rotem Netz und chromgelbes Fleisch, das sofort stark blaut. Dem Satansröhrling sehr ähnlich."
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Falscher Satansröhrling"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbhuetigerPurpurroehrling.htm"

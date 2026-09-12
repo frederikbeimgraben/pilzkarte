@@ -9,6 +9,9 @@ baeume = []
 haeufigkeit = "selten"
 weitereNamen = ["Grosssporiger Flockentintling"]
 synonyme = ["Coprinus rostrupianus", "Coprinus flocculosus"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutform = { von = "eifoermig", nach = "flach" }
+stielmerkmale = ["scheide"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlockigerTintling.htm"

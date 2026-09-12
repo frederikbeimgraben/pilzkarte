@@ -8,6 +8,10 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Tödlich giftig, 100 bis 150 Gramm sind absolut tödlich und schon eine Kostprobe kann schwere Organschäden verursachen. Vom Stockschwämmchen trennt ihn der weiß-silbrig überfaserte Stiel ohne braune Schüppchen und der muffige Geruch nach faulendem Holz. Zur Bestimmung ist immer der Stiel nötig."
 weitereNamen = ["Nadelholzhäubling"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutmerkmale = ["hygrophan", "gebuckelt"]
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["beflockt", "faserig", "hohl", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gifthaeubling.htm"

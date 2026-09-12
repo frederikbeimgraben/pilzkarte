@@ -9,6 +9,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur mit starkem Mehlgeruch und rosa Sporenabdruck nehmen. Fehlt eines von beiden, kann es ein tödlich giftiger weißer Trichterling sein."
 weitereNamen = ["Mehlpilz", "Großer Mehlräsling", "Moosling", "Großer Musseron", "Pflaumenpilz", "Pflaumen-Räsling", "Simmerling", "Pflaumen-Rässling"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["vertieft", "unregelmaessig", "gebuckelt"]
+hutrand = { von = ["eingerollt", "wellig"] }
+stielmerkmale = ["voll"]
 
 [baeumeAusErfahrung]
 baeume = ["buche", "fichte"]

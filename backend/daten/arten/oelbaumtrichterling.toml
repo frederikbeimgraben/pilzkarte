@@ -10,6 +10,10 @@ speisewertHinweis = "Sehr giftig. Er verursacht heftige Brechdurchfälle nach 15
 haeufigkeit = "haeufig"
 weitereNamen = ["Ölbaumtrichterling", "Orangefarbener Ölbaumtrichterling", "Dunkler Ölbaumtrichterling"]
 synonyme = ["Omphalotus illudens"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutform = { von = "trichterfoermig" }
+hutmerkmale = ["gebuckelt", "vertieft"]
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Olbaumtrichterling.htm"

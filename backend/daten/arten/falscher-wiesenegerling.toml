@@ -10,6 +10,9 @@ speisewertHinweis = "Er riecht unangenehm nach Karbol, Tinte oder Urin, nicht pi
 gefaehrdung = "extremSelten"
 weitereNamen = ["Falscher Wiesen-Egerling", "Schmalberingter Karbol-Egerling", "Rötender Karbolegerling"]
 synonyme = ["Agaricus xanthoderma var. pseudopratensis"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutform = { von = "halbkugelig", nach = "flach" }
+stielmerkmale = ["ring", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalscherWiesenegerling.htm"

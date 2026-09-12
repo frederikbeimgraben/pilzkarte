@@ -13,6 +13,9 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Kiefernrotkappe", "Föhrenrotkappe", "Fuchsröhrling"]
 synonyme = ["Leccinum aurantiacum var. vulpinum", "Boletus vulpinus", "Xanthochrous vulpinus"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["ueberstehend"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fuchsrotkappe.htm"

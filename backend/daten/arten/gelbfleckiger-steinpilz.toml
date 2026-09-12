@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ein Steinpilz und damit besonders geschützt. Er ist sehr selten, deshalb höchstens ein Fruchtkörper für den Eigenbedarf."
 haeufigkeit = "sehrSelten"
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt", "faserig", "gerieft"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbfleckigerSteinpilz.htm"

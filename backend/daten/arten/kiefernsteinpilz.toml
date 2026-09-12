@@ -9,6 +9,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "tanne", "fichte"]
 schutzHinweis = "Die Verordnung nennt Boletus edulis und Boletus aereus. Dieses Projekt behandelt den Kiefernsteinpilz gleich, weil er im Wald kaum von ihnen zu trennen ist."
 weitereNamen = ["Kiefernsteini", "Steinpilze", "Herrenpilz", "Dobberniggl", "Gemeiner Steinpilz"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig", nach = "gewoelbt" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["genetzt", "knolle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kiefernsteinpilz.htm"

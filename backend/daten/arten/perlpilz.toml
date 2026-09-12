@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh giftig. Mindestens fünf Minuten garen, bis 90 °C Kerntemperatur erreicht sind. Nur junge Fruchtkörper nehmen, alte verderben schnell. Der stark geriefte Ring und das Röten sind Pflichtmerkmale; wer den Pantherpilz nicht sicher trennt, lässt ihn stehen."
 weitereNamen = ["Rötender Knollenblätterpilz", "Rötender Wulstling", "Perlen-Wulstling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["knolle", "genattert", "wurzelnd", "ring"]
 
 [baeumeAusErfahrung]
 baeume = ["buche", "fichte", "eiche"]

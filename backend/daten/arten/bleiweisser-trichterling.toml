@@ -9,6 +9,10 @@ baeume = []
 speisewertHinweis = "Er wird für den Mehlräsling gehalten, riecht aber nicht nach Mehl, sondern muffig süßlich bis parfümiert. Weiße Trichterlinge gelten als Muscarinträger; weiße Pilze aus Wald und Garten gehören nicht in den Korb."
 haeufigkeit = "haeufig"
 weitereNamen = ["Bleiweißer Trichterling", "Laubfreundtrichterling", "Streuliebender Trichterling", "Fichtentrichterling"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutform = { von = "gewoelbt" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BleiweisserTrichterling2004.htm"

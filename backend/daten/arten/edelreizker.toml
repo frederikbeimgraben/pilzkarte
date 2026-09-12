@@ -9,6 +9,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 karte = "reizker"
 weitereNamen = ["Echter Reizker", "Kiefernreizker", "Kiefern Blutreizker", "Röstling", "Karottenmilchling", "Rizke", "Kiefernblut-Reizker", "Reske"]
+fruchtschicht = { art = "lamellen" }
+hutmerkmale = ["gezont"]
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Edelreizker.htm"

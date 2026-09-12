@@ -9,6 +9,9 @@ baeume = ["buche", "eiche", "esche"]
 speisewertHinweis = "Tödlich giftig, schon ein Fruchtkörper schädigt die Leber. Niemals kosten. Zu erkennen an weißen freien Lamellen, ungerieftem Hutrand, häutigem hängendem Ring und der zwiebeligen Knolle in einer häutigen, sackartigen Scheide."
 haeufigkeit = "selten"
 weitereNamen = ["Weißer Grüner Knollenblätterpilz", "Weißhütiger Knollenblätterpilz"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutform = { von = "halbkugelig", nach = "flach" }
+stielmerkmale = ["faserig", "genattert", "beflockt", "voll", "knolle", "scheide", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserKnolli.htm"

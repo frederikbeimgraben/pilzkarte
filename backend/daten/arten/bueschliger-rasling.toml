@@ -9,6 +9,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 weitereNamen = ["Büscheliger Rasling", "Büschelrasling", "Geselliger Rasling", "Gepanzerter Rasling", "Knorpeliger Knäuelrasling", "Frostrasling", "Geselliger Ritterling", "Buchele"]
 synonyme = ["Lyophyllum aggregatum"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["gebuckelt", "vertieft"]
+hutrand = { von = ["wellig", "eingerollt"] }
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerRasling.htm"

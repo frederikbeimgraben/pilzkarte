@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur Fruchtkörper mit rosa Lamellen nehmen; sind die Lamellen braun, ist der Pilz alt. Tödlich giftige Knollenblätterpilze haben nie rosa Lamellen. Läuft die Stielbasis gelb an oder riecht der Pilz nach Karbol oder Tinte, bleibt er stehen."
 weitereNamen = ["Maichampignon", "Feldegerling", "Wiesenegerling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["bruechig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Wiesenchampinon.htm"

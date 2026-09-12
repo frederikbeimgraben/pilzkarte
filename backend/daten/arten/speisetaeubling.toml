@@ -11,6 +11,7 @@ speisewertHinweis = "Das beste Merkmal ist die verkürzte Huthaut, die die Lamel
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Fleischroter Speisetäubling", "Fleischroter Täubling"]
 synonyme = ["Russula heterophylla var. vesca", "Russula vesca var. major", "Russula vesca var. romellii", "Russula vesca f. viridata", "Russula vesca var. neglecta", "Russula vesca f. montana"]
+fruchtschicht = { art = "lamellen" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speisetaubling.htm"

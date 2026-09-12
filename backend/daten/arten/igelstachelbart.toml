@@ -11,6 +11,7 @@ speisewertHinweis = "In freier Natur nur vereinzelt und in Deutschland stark gef
 gefaehrdung = "starkGefaehrdet"
 weitereNamen = ["Yamabusitake", "Löwenmähne", "Pom-Pom blanc", "Affenkopfpilz --- HERICIUM ERINACEUS"]
 synonyme = ["Hericium erinaceum", "Hericium erinaceus forma caput-medusae", "Martella hystrix", "Hydnum juranum"]
+fruchtschicht = { art = "stacheln" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Igelstachelbart.htm"

@@ -10,6 +10,11 @@ baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in der Schweiz stark gefährdet. Wenn überhaupt, nur wenige Fruchtkörper nehmen."
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Blaureizker", "Blaumilch-Kiefernreizker", "Brauner Kiefern-Blutreizker"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutform = { von = "gewoelbt", nach = "trichterfoermig" }
+hutmerkmale = ["gezont", "genabelt"]
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BlauerReizker.htm"

@@ -11,6 +11,8 @@ baeume = ["kiefer", "eiche"]
 speisewertHinweis = "Auf der Positivliste der DGfM und in der Schweiz marktfähig. Extrem selten, deshalb besser stehen lassen."
 haeufigkeit = "sehrSelten"
 synonyme = ["Chroogomphus rutilus var. fulmineus", "Gomphidius viscidus var. fulmineus", "Chroogomphus ochraceus subsp. fulmineus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "weit" }
+stielmerkmale = ["ring", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Aprikosen-Gelbfuss.htm"

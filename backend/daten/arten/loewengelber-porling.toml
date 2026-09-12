@@ -7,6 +7,8 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche"]
 synonyme = ["Polyporus leptocephalus", "(polyporus varius", "Boletus leptocephalus"]
+fruchtschicht = { art = "poren" }
+hutrand = { von = ["scharf"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LoewenPorling.htm"

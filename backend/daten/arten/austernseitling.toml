@@ -9,6 +9,9 @@ jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen."
 weitereNamen = ["Austernpilz", "Kalbfleischpilz", "Buchenschwamm", "Drehling", "Austernschwamm", "Eichhännchen", "Muschelpilz", "Sommerauster"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", schneide = "gesaegt" }
+hutform = { von = "muschelfoermig" }
+hutrand = { von = ["eingerollt"] }
 
 [baeumeAusErfahrung]
 baeume = ["pappel", "weide"]

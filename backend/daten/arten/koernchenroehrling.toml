@@ -11,6 +11,7 @@ speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 1
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Schmerling", "Schälpilz", "Rotzer", "Schalschwamm", "Rotzling", "Pimp", "Maschlurken", "Pimk"]
 synonyme = ["Boletus granulatus", "Ixocomus granulatus", "Boletus lactifluus", "Suillus lactifluus", "Boletus granulatus var. lactifluus", "Boletus granulatus var. heterosporus"]
+fruchtschicht = { art = "roehren" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koernchenroehrling.htm"

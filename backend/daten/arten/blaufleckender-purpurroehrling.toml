@@ -9,6 +9,9 @@ baeume = []
 speisewertHinweis = "Er hat schon Unverträglichkeitsreaktionen ausgelöst und ist roh giftig. Zu erkennen an der blauenden Huthaut, dem roten Netz am Stiel und dem im Alter aasartigen Geruch."
 gefaehrdung = "extremSelten"
 weitereNamen = ["Dunkler Purpurröhrling", "Weinroter Purpurröhrling"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "gewoelbt" }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BlaufleckenderPurpurroehrling.htm"

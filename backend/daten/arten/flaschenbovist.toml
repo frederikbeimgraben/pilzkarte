@@ -11,6 +11,8 @@ karte = "flaschenbovist"
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden."
 weitereNamen = ["Flaschenbovist", "Warzen-Stäubling", "Würziger Staubbuff", "Warziger Staubbuff", "Nonnefürzli", "Judenfurzpilz", "Fohenfist"]
 synonyme = ["Lycoperdon perlatum var. perlatum", "Lycoperdon gemmatum var. perlatum", "Lycoperdon gemmatum"]
+fruchtschicht = { art = "stacheln" }
+hutform = { von = "keulig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flaschenstaeubling.htm"

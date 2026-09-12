@@ -8,6 +8,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Der widerliche Geruch nach Ziegenbock, Schweißfüßen oder faulenden Kartoffeln macht ihn leicht kenntlich."
 haeufigkeit = "haeufig"
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["hygrophan"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bocksdickfuss105.htm"

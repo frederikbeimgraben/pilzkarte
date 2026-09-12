@@ -10,6 +10,7 @@ speisewertHinweis = "Extrem scharf und bitter, der unangenehme Geschmack hält l
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 synonyme = ["Sarcodon scabrosum", "Hydnum scabrosum", "Phaeodon scabrosus", "Sarcodon scabrosus var. fennicus", "Sarcodon scabrosus var. scabrosus"]
+fruchtschicht = { art = "stacheln" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gallenstacheling.htm"

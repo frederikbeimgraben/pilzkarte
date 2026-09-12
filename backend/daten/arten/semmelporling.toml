@@ -12,6 +12,8 @@ speisewertHinweis = "Roh unverträglich und rasch bitter. Nur ganz junge Fruchtk
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Schofferl"]
 synonyme = ["Scutiger confluens"]
+fruchtschicht = { art = "poren" }
+hutrand = { von = ["scharf", "eingebogen"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Semmelporling0804.htm"

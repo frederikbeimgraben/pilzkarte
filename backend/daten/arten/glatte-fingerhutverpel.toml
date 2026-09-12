@@ -12,6 +12,8 @@ haeufigkeit = "selten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Glatte Fingerhutverpel", "Glockenverpel", "Fingerhutmorchel"]
 synonyme = ["Verpa digit aliformis", "Monka conica"]
+hutform = { von = "eifoermig" }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Verpel.htm"

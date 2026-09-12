@@ -10,6 +10,9 @@ speisewertHinweis = "Der Geschmack wird nach kurzer Zeit brennend scharf und pfe
 haeufigkeit = "haeufig"
 weitereNamen = ["Brennender Blasssporrübling"]
 synonyme = ["Collybia peronata", "Marasmius peronatus", "Chamaeceras urens"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "weit" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrennenderRuebling.htm"

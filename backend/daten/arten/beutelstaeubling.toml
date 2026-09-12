@@ -11,6 +11,7 @@ baeume = []
 speisewertHinweis = "Nur solange die innere Fruchtschicht rein weiß ist. In der Schweiz nicht marktfähig."
 weitereNamen = ["Beutel Großstäubling", "Beutelbovist"]
 synonyme = ["Calvatia excipuliformis", "Calvatia excipuliformis forma elata", "Handkea excipuliformis", "Calvatia saccata", "Lycoperdon polymorphum var. excipuliforme"]
+hutform = { von = "kugelig", nach = "birnenfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Beutelstaeubling.htm"

@@ -11,6 +11,9 @@ baeume = []
 speisewertHinweis = "Der leicht bitterliche Geschmack verliert sich beim Garen."
 weitereNamen = ["Geselliger Ritterling", "Brauner Rasling", "Buchele"]
 synonyme = ["Lyophyllum fumosum"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["vertieft", "gebuckelt"]
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Frostrasling.htm"

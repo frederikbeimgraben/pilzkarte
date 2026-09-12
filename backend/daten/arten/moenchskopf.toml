@@ -11,6 +11,9 @@ speisewertHinweis = "Alte Stiele sind wässrig und zäh und bleiben besser stehe
 haeufigkeit = "haeufig"
 weitereNamen = ["Falber Riesentrichterling"]
 synonyme = ["Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe maxima sensu", "Infundibulicybe geotropa var. maxima", "Clitocybe geotropa var. minor"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"], nach = ["wellig"] }
 
 [baeumeAusErfahrung]
 baeume = ["buche", "fichte"]

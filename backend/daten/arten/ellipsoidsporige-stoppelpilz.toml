@@ -11,6 +11,8 @@ baeume = []
 speisewertHinweis = "Jung sammeln. Alte Stücke werden bitter und beim längeren Kauen etwas scharf."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Kleinwüchsiger Semmelstoppelpilz"]
+fruchtschicht = { art = "stacheln" }
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/EllipsoidsporigeStoppelpilz.htm"

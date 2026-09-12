@@ -9,6 +9,7 @@ jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Gut durchgaren. Besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
 weitereNamen = ["Zipfelmützenmorchel", "RiMuMo"]
+stielmerkmale = ["hohl"]
 
 [baeumeAusErfahrung]
 baeume = ["esche", "fichte"]

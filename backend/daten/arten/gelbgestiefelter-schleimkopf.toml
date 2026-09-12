@@ -12,6 +12,9 @@ haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Gelbfußschleimkopf", "Gelbgegürtelter Schleimkopf"]
 synonyme = ["Cortinarius crocolitus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["genattert", "knolle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbgestiefelteSchleimkopf.htm"

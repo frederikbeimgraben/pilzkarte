@@ -9,6 +9,7 @@ baeume = ["esche", "pappel", "buche", "birke"]
 speisewertHinweis = "Fleisch trocken hart und hornartig, ohne Speisewert."
 weitereNamen = ["Falsches Judasohr"]
 synonyme = ["Merulioporia violacea", "Stereum mesentericum", "Meruliopsis violacea", "Exidia gemmata f. violacea", "Tremella corrugata", "Auricularia lobata"]
+hutmerkmale = ["gezont"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GezonterOhrlappenpilz.htm"

@@ -8,6 +8,10 @@ jahreszeiten = ["herbst", "winter", "fruehling"]
 baeume = []
 speisewertHinweis = "Fleisch zäh, Geschmack oft bitterlich."
 weitereNamen = ["Gelbstieliger Zwergknäueling", "Später Seitling", "Gelber Muscheling", "Mukitake"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutform = { von = "muschelfoermig" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbstieligerMuschelseitling.htm"

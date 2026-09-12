@@ -11,6 +11,8 @@ baeume = []
 speisewertHinweis = "Nicht roh verzehren, das kann unverträglich sein."
 weitereNamen = ["Waldegerling", "Waldchampignon", "Kleiner Blutegerling"]
 synonyme = ["Psalliota silvatica var. pallida", "Agaricus haemorrhoidarius forma fagetorum", "Agaricus silvaticus var. vinosobrunneus", "Psalliota sanguinaria", "Agaricus silvaticus"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+stielmerkmale = ["ring"]
 
 [baeumeAusErfahrung]
 baeume = ["fichte"]

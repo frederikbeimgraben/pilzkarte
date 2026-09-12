@@ -11,6 +11,9 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Isabellfarbige Wulstling", "Kammrandiger Wulstling"]
 synonyme = ["Amanitaria eliae", "Amanita eliae f. griseovelata", "Amanita raymondii", "Amanita griseovelata", "Amanita eliae var. griseovelata", "Amanitaria eliae f. exannulata"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["hohl", "knolle", "ring", "genattert"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KammrandigerWulstling.htm"

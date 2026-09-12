@@ -11,6 +11,7 @@ baeume = []
 speisewertHinweis = "Nur solange das Innere rein weiß ist. Sobald das Fleisch gilbt oder olivbraun wird, ist er nicht mehr brauchbar."
 weitereNamen = ["Wiesenstäubling", "Niedergedrückter Stäubling", "Münzstäubling"]
 synonyme = ["Lycoperdon pratense"]
+hutform = { von = "kugelig", nach = "trichterfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Wiesenstaubbecher.htm"

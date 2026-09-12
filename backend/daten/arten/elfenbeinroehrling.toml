@@ -12,6 +12,9 @@ speisewertHinweis = "Die schleimige Huthaut vor dem Garen abziehen. In Deutschla
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Weymouthsröhrling"]
 synonyme = ["Boletus placidus", "Uloporus placidus", "Suillus plorans subsp. placidus", "Boletus fusipes", "Gyrodon placidus", "Viscipellis fusipes", "Ixocomus fusipes"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig", nach = "flach" }
+hutmerkmale = ["gebuckelt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Elfenbeinroehrling.htm"

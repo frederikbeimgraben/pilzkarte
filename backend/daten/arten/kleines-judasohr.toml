@@ -8,6 +8,8 @@ jahreszeiten = ["herbst", "winter"]
 baeume = ["pappel", "weide"]
 weitereNamen = ["Pappel-Becherrindenschwamm", "Judas-Öhrchen"]
 synonyme = ["Auriculariopsis ampala", "Cyphella ampla", "Auriculariopsis flocculenta", "Stereum pubescens"]
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KleinesJudasohr.htm"

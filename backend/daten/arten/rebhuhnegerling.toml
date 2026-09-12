@@ -10,6 +10,8 @@ speisewertHinweis = "Zu erkennen am schwach tintigen, karbolartigen Geruch nach 
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Rebhuhnegerling"]
 synonyme = ["Psalliota phaeolepidota"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", schneide = "gesaegt" }
+stielmerkmale = ["knolle", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rebhuhnegerling.htm"

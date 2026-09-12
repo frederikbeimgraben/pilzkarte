@@ -10,6 +10,9 @@ baeume = ["tanne"]
 speisewertHinweis = "Nur ganz junge Fruchtkörper sind essbar; sie werden schnell extrem scharf und dann ungeniessbar."
 haeufigkeit = "haeufig"
 synonyme = ["Bondarzewia montana", "Grifola mesenterica", "Grifola montana", "Cladomeris montanus"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "muschelfoermig" }
+hutrand = { von = ["wellig"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bergporling.htm"

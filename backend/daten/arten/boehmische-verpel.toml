@@ -13,6 +13,7 @@ haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Runzelverpel", "Böhmische Morchel"]
 synonyme = ["Ptychverpa bohemica"]
+stielmerkmale = ["genattert", "beflockt", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BoehmischeVerpel.htm"

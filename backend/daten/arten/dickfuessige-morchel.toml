@@ -11,6 +11,7 @@ baeume = []
 speisewertHinweis = "Roh giftig. Vor dem Essen durchgaren. Morcheln sind besonders geschützt, deshalb nur wenig für den Eigenbedarf nehmen."
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Dickfüßige Speisemorchel"]
+stielmerkmale = ["hohl", "gerieft"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DickfuessigeMorchel.htm"

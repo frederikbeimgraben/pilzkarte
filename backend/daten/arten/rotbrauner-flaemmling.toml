@@ -10,6 +10,8 @@ speisewertHinweis = "Giftig. Der bitterliche Geschmack, die jung zitronengelben 
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Dunkelstieliger Flämmling"]
 synonyme = ["Fulvidula picrea", "Gymnopilus satur"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerFlaemmling.htm"

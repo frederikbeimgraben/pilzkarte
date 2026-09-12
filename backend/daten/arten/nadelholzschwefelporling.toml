@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne", "laerche"]
 speisewertHinweis = "123pilzsuche gibt die Relative Wertigkeit 4, mit besonderer Zubereitung 1. Nur jung, roh ist er unverträglich. Wächst er an einem giftigen Baum wie der Eibe, kann er dessen Gift aufnehmen; dann meiden."
 synonyme = ["Laetiporus conifericola", "Laetiporus huroniensis"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "muschelfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/NadelholzSchwefelporling.htm"

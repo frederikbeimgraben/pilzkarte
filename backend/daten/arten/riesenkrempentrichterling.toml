@@ -10,6 +10,9 @@ baeume = []
 speisewertHinweis = "In Deutschland auf der Roten Liste mit unbekanntem Gefährdungsausmaß. Maßvoll sammeln."
 gefaehrdung = "unbekanntesAusmass"
 synonyme = ["Leucopaxillus candidus paxillus giganteus", "Aspropaxillus giganteus"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutform = { von = "gewoelbt" }
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Krempentrichterling.htm"

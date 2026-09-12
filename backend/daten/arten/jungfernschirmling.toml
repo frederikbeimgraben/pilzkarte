@@ -10,6 +10,9 @@ speisewertHinweis = "Er verursacht möglicherweise Magen-Darm-Störungen. Zu erk
 haeufigkeit = "selten"
 weitereNamen = ["Jungfern Riesenschirmling"]
 synonyme = ["Macrolepiota puellaris", "Macrolepiota nympharum"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutmerkmale = ["gezont"]
+stielmerkmale = ["faserig", "knolle", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Jungfernschirmling.htm"

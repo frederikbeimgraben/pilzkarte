@@ -6,6 +6,9 @@ marktfaehig = false
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "kugelig", nach = "flach" }
+hutmerkmale = ["gezont"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LeuchtenderWeich.htm"

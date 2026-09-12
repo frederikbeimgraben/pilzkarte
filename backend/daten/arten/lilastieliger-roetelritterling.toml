@@ -11,6 +11,10 @@ speisewertHinweis = "Regional sehr selten und in Deutschland gefährdet. Nur wen
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Maskierter Ritterling", "Maskierter Rötelritterling", "Fleischbräunlicher Rötelritterling"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutmerkmale = ["hygrophan"]
+hutrand = { von = ["eingerollt"], nach = ["scharf"] }
+stielmerkmale = ["faserig", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LilastieligerRoetelritterling.htm"

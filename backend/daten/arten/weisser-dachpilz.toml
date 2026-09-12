@@ -10,6 +10,8 @@ baeume = ["buche"]
 speisewertHinweis = "Sehr selten; in der Schweiz stark gefährdet. Besser stehen lassen."
 haeufigkeit = "sehrSelten"
 synonyme = ["Agaricus pellitus", "Rhodosporus pellitus"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+stielmerkmale = ["faserig", "bruechig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserDachpilz.htm"

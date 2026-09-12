@@ -10,6 +10,8 @@ baeume = ["fichte", "kiefer", "birke"]
 speisewertHinweis = "Bei grünen Täublingen mit weichen Lamellen ist besondere Vorsicht nötig, denn der Grüne Knollenblätterpilz kann ebenso grün sein. Auf Ring, Scheide und Knolle achten."
 weitereNamen = ["Grasgrüner Birkentäubling"]
 synonyme = ["Russula furcata", "Russula graminicolor"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+stielmerkmale = ["gerieft", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrasgruenerTaeubling.htm"

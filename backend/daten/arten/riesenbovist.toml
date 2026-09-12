@@ -9,6 +9,7 @@ jahreszeiten = ["fruehling", "sommer"]
 baeume = []
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jeden kugeligen Fund durchschneiden und auf Lamellenansätze prüfen, junge Knollenblätterpilze sehen ähnlich aus."
 synonyme = ["Langermannia gigantea", "Lycoperdon giganteum", "Clavatia maxima", "Lasiosphaera gigantea", "Bovista gigantea"]
+hutform = { von = "kugelig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenbovist.htm"

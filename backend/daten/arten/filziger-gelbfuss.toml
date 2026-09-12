@@ -11,6 +11,9 @@ baeume = ["fichte", "kiefer"]
 speisewertHinweis = "Relativ selten. Nach einem trockenen Sommer und anschließendem Regen tritt er häufiger auf."
 haeufigkeit = "selten"
 synonyme = ["Gomphidus helveticus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "weit" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FilzigerGelbfuss.htm"

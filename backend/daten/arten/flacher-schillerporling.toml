@@ -8,6 +8,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "buche"]
 haeufigkeit = "selten"
 weitereNamen = ["Ankerhaariger Buchen-Schillerporling", "Blasser Schillerporling"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "muschelfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlacherSchillerporling.htm"

@@ -9,6 +9,10 @@ baeume = []
 speisewertHinweis = "Er sieht jungen Egerlingen und Schirmlingen ähnlich. Sein Sporenpulver bleibt weiß, das des Rosablättrigen Egerlingsschirmlings wird am nächsten Tag rosa. Nicht verzehren."
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Dichtblättriger Egerlingsschirmling", "Grauhütiger Egerlingsschirmpilz"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["ueberstehend"] }
+stielmerkmale = ["hohl", "knolle", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FleischblaettrigeEgerlingsschirmling.htm"

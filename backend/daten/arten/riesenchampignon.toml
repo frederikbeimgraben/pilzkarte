@@ -10,6 +10,8 @@ baeume = []
 speisewertHinweis = "Gilbende Champignons reichern Cadmium an, einige Mykologen raten deshalb von großen Mengen ab. Riecht ein Champignon nach Karbol, Tinte oder Medizinschrank, gehört er nicht in den Korb."
 weitereNamen = ["Braunschuppiger Riesenegerling"]
 synonyme = ["Agaricus augustus var. perrarus", "Psalliota subrufescens"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["beflockt", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenchampignon.htm"

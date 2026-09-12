@@ -11,6 +11,10 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "vomAussterbenBedroht"
 weitereNamen = ["Rosa-Afterleistling", "Duftender Afterleistling", "Duftener Wiesenellerling"]
 synonyme = ["Hygrophoropsis olida", "Cantharellus olidus", "Aphroditeola roch", "Clitocybe morganii", "Hygrophoropsis morganii", "Clitocybe olida", "Merulius morganii", "Cantharellus morganii"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["wellig", "eingerollt", "gerieft"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/PurpurorangerAfterleistling.htm"

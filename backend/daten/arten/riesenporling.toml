@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne", "buche"]
 speisewertHinweis = "Nur ganz junge Fruchtkörper sind mild. Er wird schnell scharf und bitter und ist dann unbrauchbar."
 synonyme = ["Agaricus aequivocus", "Flabellopilus giganteus", "Polyporus aequivocus", "Polypilus frondosus var. intybaceus", "Polypilus giganteus", "Grifola gigantea", "Grifola acanthoides"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "muschelfoermig" }
+hutmerkmale = ["gezont"]
 
 [baeumeAusErfahrung]
 baeume = ["eiche"]

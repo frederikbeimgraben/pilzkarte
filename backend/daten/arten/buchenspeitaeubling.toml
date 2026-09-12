@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Der extrem scharfe Geschmack verrät ihn. Ein winziges Stück auf die Zunge legen und wieder ausspucken reicht zum Prüfen. Er löst Magen- und Darmbeschwerden aus."
 haeufigkeit = "haeufig"
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["bruechig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BuchenspeitaublingGiftig1004.htm"

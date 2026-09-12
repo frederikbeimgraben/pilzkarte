@@ -10,6 +10,9 @@ speisewertHinweis = "Roh in größeren Mengen unbekömmlich, er gibt Blausäure 
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Feldschwindling", "Suppenpilz", "Hartbeindl", "Herbstmusseron", "Oreadenpilz"]
 synonyme = ["Collybia oreades", "Agaricus coriaceus", "Agaricus pseudomouceron", "Scorteus oreades"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "weit" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["gerieft"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Nelkenschwindling.htm"

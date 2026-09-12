@@ -9,6 +9,7 @@ baeume = []
 weitereNamen = ["Zimtfarbiger Weichporling"]
 speisewertHinweis = "Tödlich giftig. Zu erkennen am durchgehend zimt- bis rosabraunen weichen Fleisch und an den gleichfarbigen Poren des stiellosen, tellerförmig abstehenden Fruchtkörpers an Laubholz."
 synonyme = ["Hapalopilus nidulans"]
+fruchtschicht = { art = "poren" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZimtfarbenerWeichporling.htm"

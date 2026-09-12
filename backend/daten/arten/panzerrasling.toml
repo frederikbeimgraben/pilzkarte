@@ -9,6 +9,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 weitereNamen = ["Panzerrasling", "Erdzimmerling", "Erdzimmermandl", "Knorpeliger Knäuelrasling", "Büschelrasling", "Brauner Rasling"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/PanzerRasling.htm"

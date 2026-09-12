@@ -8,6 +8,8 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche", "weide"]
 speisewertHinweis = "Leicht giftig, weil er Psilocybin enthält und halluzinogen wirkt. Erkennbar am grünlich-bläulichen Schein des Stiels."
 weitereNamen = ["Grauer Dachpilz", "Silbriger Dachpilz", "Grünlichgrauer Dachpilz"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerDachpilz.htm"

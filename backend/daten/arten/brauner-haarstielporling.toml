@@ -10,6 +10,8 @@ speisewertHinweis = "Er schmeckt schärflich bis bitterlich. In Deutschland vom 
 haeufigkeit = "sehrSelten"
 gefaehrdung = "vomAussterbenBedroht"
 synonyme = ["Piptoporus hirtus", "Polyporus lucienqueletii", "Cerioporus lucienqueletii", "Polyporus hirtus", "Albatrellus hirtus", "Favolus hirtus", "Polyporellus hirtus", "Polyporus hispidellus"]
+fruchtschicht = { art = "poren" }
+hutrand = { von = ["wellig"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Haarstielporling.htm"

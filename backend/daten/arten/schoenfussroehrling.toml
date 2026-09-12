@@ -8,6 +8,10 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Giftig und dazu bitter. Kennzeichen sind der lehmgraue samtige Hut, der zur Basis rote Stiel mit Netz und das sofort blauende Fleisch."
 weitereNamen = ["Hantling", "Dickfußröhrling", "Dickfuß", "Bitterpilz"]
+fruchtschicht = { art = "roehren" }
+hutmerkmale = ["unregelmaessig"]
+hutrand = { von = ["wellig", "ueberstehend"] }
+stielmerkmale = ["genetzt", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schoenfussroehrling.htm"

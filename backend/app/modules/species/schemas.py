@@ -803,6 +803,15 @@ class Profile(BaseSchema):
     links: list[Link] = Field(min_length=1)
 
     @model_validator(mode="after")
+    def _a_stem_is_hollow_or_solid(self) -> "Profile":
+        # Beim Fuellen der Profile faellt auf: die Quelle schreibt oft "jung
+        # voll, spaeter hohl". Die Liste kennt keine Phase, darum steht dort
+        # der reife Zustand. Beides zugleich waere ein Widerspruch.
+        if {StemFeature.HOLLOW, StemFeature.SOLID} <= set(self.stem_features):
+            raise ValueError("Ein Stiel ist hohl oder voll, nicht beides.")
+        return self
+
+    @model_validator(mode="after")
     def _poisonous_species_warn(self) -> "Profile":
         # Wer eine giftige Art im Katalog der sammelbaren findet, muss den Grund
         # sofort lesen und nicht erst in der Zeile Speisewert suchen.
