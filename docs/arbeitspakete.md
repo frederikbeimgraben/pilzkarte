@@ -135,6 +135,28 @@ Abnahme:
 - `update.sh` rechnet sie ohne Zusatzschritt
 - Renderzeit der Wochenebenen steigt um weniger als 30 %
 
+### B6 Karte nachschärfen
+
+Rückmeldungen aus dem Betrieb, alle auf dem Karten-Screen.
+
+Umfang:
+- Grundkarte und Wertebene liegen versetzt. Ursache im Kachelraster, in der
+  Projektion oder in einem halben Pixel beim Zeichnen suchen und beheben.
+- Die Knopfgruppe oben rechts sitzt zu tief. Sie rückt nach oben, der
+  Hinweis auf OpenStreetMap wandert an den unteren Rand.
+- Eigener Standort als Punkt mit Genauigkeitskreis, dazu ein Knopf, der die
+  Karte darauf zentriert. Ohne Freigabe bleibt der Knopf inaktiv.
+- Der Abspielknopf für die Wochen zeigt während des Laufs ein Pausensymbol.
+- Ein Marker antippen zoomt die Karte darauf. Der Knopf „Auf der Karte
+  anzeigen“ entfällt, stattdessen „In Google Maps öffnen“.
+- Auf schmalen Anzeigen schwebt der Knopf „Eintragen“ unten rechts.
+- Der farbige Punkt in der Eintragszeile sitzt schief und wird ausgerichtet.
+
+Abnahme:
+- Screenshot bei Zoom 8, 11 und 14 zeigt keinen Versatz
+- Standortpunkt folgt der Position, Genauigkeitskreis passt zum Wert
+- Tests für den Zustand des Abspielknopfs und für den Zoom auf den Marker
+
 ## Block 2, Arten
 
 ### D1 Artenkatalog Backend
@@ -179,6 +201,26 @@ Abnahme:
 - Befundliste je Art mit Entscheidung, im Repo unter `backend/daten/pruefung/`
 - 85 Profile ohne offenen Befund
 - `quelle.geprueftAm` auf das Datum der Gegenkontrolle gesetzt
+
+### D6 Katalog entdoppeln
+
+Rückmeldungen zu den Inhalten und zum Datenmodell des Katalogs.
+
+Umfang:
+- Artnamen gegen 123pilzsuche prüfen. Sammelbegriffe wie „Giftchampignon“
+  weichen dem geführten Namen, hier „Grüner Knollenblätterpilz“.
+- Doppelte Einträge in der Artenliste. Ursache finden, Daten zusammenführen,
+  Test gegen doppelte Slugs und doppelte lateinische Namen.
+- Verwechslung ist eine Beziehung zwischen zwei Arten, keine Kategorie. Sie
+  gilt in beide Richtungen und wird an einer Stelle gepflegt.
+- Stufen der Essbarkeit als Enum: essbar, bedingt essbar, ungenießbar,
+  giftig, tödlich giftig. Filterbar in der Liste.
+- Felder, die an zwei Stellen dasselbe sagen, auf eine Quelle ziehen.
+
+Abnahme:
+- Test schlägt an, sobald ein Name oder ein Slug doppelt vorkommt
+- Beziehung Verwechslung aus beiden Richtungen abrufbar, ein Datensatz
+- Filter nach Stufe der Essbarkeit liefert die erwartete Menge
 
 ### D2 Arten Frontend
 
@@ -507,6 +549,20 @@ Abnahme:
 - axe und Lighthouse a11y ohne Fehler auf allen Routen
 - Startzeit unter 3 s auf einem Mittelklasse-Telefon (Lighthouse mobil)
 - Desktop-Layout auf 1440 px entspricht dem Mockup
+
+### M1 Entitätendiagramm
+
+Ein Diagramm der Datenmodelle, lokal erreichbar und immer aktuell.
+
+Umfang: Generator liest die SQLAlchemy-Modelle und schreibt Mermaid. Das
+Brett unter `tools/board` liefert die Seite mit aus, gleiche Bindung an
+`127.0.0.1` und `10.66.66.5`. Ein Test schlägt an, sobald das Diagramm
+zum Modell nicht mehr passt. Die Migration im CI baut es neu.
+
+Abnahme:
+- Seite zeigt alle Tabellen mit Beziehungen und Fremdschlüsseln
+- Test erkennt ein neues Modell ohne Neubau des Diagramms
+- Ein Befehl erzeugt das Diagramm neu
 
 ## Deploy-Pakete (Product Owner)
 
