@@ -116,6 +116,24 @@ async def role_slugs_of(session: AsyncSession, sub: str) -> set[str]:
     return set(await session.scalars(query))
 
 
+async def admin_holders(session: AsyncSession) -> set[str]:
+    """Wer die feste Rolle Admin ausdrücklich trägt.
+
+    Die Gruppe aus dem Token zählt hier nicht mit: der Dienst kennt nur die
+    Person, die gerade anfragt, und nicht die Mitglieder der Gruppe. Wer sich
+    darauf verliesse, könnte den letzten Admin der Datenbank streichen und
+    stünde ohne Verwaltung da, sobald das SSO die Gruppe anders schneidet.
+    """
+    query = (
+        select(UserRole.user_sub)
+        .join(Role, Role.id == UserRole.role_id)
+        .where(
+            Role.slug == ADMIN_SLUG,
+        )
+    )
+    return set(await session.scalars(query))
+
+
 async def permissions_of(session: AsyncSession, user: User) -> frozenset[Permission]:
     """Alle Rechte einer Person."""
     if in_admin_group(user):

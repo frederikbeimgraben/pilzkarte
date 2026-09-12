@@ -82,6 +82,12 @@ class PersonOut(BaseSchema):
     created_at: Timestamp
 
 
+class MyPermissions(BaseSchema):
+    """Die Rechte der angemeldeten Person, in der Reihenfolge des Katalogs."""
+
+    permissions: list[Permission]
+
+
 class RoleAssignment(BaseSchema):
     """Die Rollen, die eine Person danach trägt."""
 

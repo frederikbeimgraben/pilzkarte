@@ -14,9 +14,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.db import db_session
 from app.core.errors import Conflict, Invalid, NotFound
 from app.models import Person, Role, RolePermission, UserRole
-from app.modules.access.guard import requires
+from app.modules.access.guard import Authenticated, requires
 from app.modules.access.permissions import AREA_OF, Permission
 from app.modules.access.schemas import (
+    MyPermissions,
     PermissionOut,
     PersonOut,
     RoleAssignment,
@@ -27,7 +28,7 @@ from app.modules.access.schemas import (
     person_out,
     role_out,
 )
-from app.modules.access.service import ADMIN_SLUG, USER_SLUG
+from app.modules.access.service import ADMIN_SLUG, USER_SLUG, admin_holders, permissions_of
 from app.shared.objects import apply_patch
 from app.shared.paging import Page, Paging, load_page
 
@@ -112,6 +113,18 @@ async def permission_list() -> list[PermissionOut]:
     ihren Texten, damit sie übersetzbar bleibt.
     """
     return [permission_out(right, AREA_OF[right]) for right in Permission]
+
+
+@router.get("/me/permissions", summary="Die eigenen Rechte")
+async def my_permissions(user: Authenticated, session: Session) -> MyPermissions:
+    """Liefert die Rechte der angemeldeten Person.
+
+    Der Endpunkt verlangt kein eigenes Recht. Sonst müsste das Frontend die
+    Rollenliste lesen, um einen Knopf auszublenden, und dafür bräuchte jede
+    Person das Recht, Rollen zu verwalten.
+    """
+    held = await permissions_of(session, user)
+    return MyPermissions(permissions=[right for right in Permission if right in held])
 
 
 # ------------------------------------------------------------------ Rollen
@@ -251,6 +264,21 @@ async def read_person(sub: str, session: Session) -> PersonOut:
     return person_out(person, roles[person.sub])
 
 
+async def guard_last_admin(session: AsyncSession, sub: str, wanted: list[Role]) -> None:
+    """Lässt die Rolle Admin nicht bei der letzten Person verschwinden.
+
+    Ohne diese Sperre nimmt ein Versehen dem Dienst jede Verwaltung: wer keine
+    Rolle vergeben darf, kann sich die Rolle auch nicht zurückholen.
+    """
+    if any(role.slug == ADMIN_SLUG for role in wanted):
+        return
+    if await admin_holders(session) == {sub}:
+        raise Conflict(
+            "Das ist die letzte Person mit der Rolle Admin. Ohne sie kann niemand mehr "
+            "Rollen vergeben. Gib die Rolle zuerst jemand anderem.",
+        )
+
+
 @router.put("/people/{sub}/roles", dependencies=[AssignsRoles], summary="Rollen vergeben")
 async def set_roles(sub: str, assignment: RoleAssignment, session: Session) -> PersonOut:
     """Setzt die Rollen einer Person neu.
@@ -268,6 +296,7 @@ async def set_roles(sub: str, assignment: RoleAssignment, session: Session) -> P
         raise Invalid(f"Diese Rollen gibt es nicht: {', '.join(missing)}.")
     if any(role.slug == USER_SLUG for role in roles):
         raise Invalid("Die Rolle Nutzer hat jede angemeldete Person, sie wird nicht vergeben.")
+    await guard_last_admin(session, person.sub, roles)
     _ = await session.execute(delete(UserRole).where(UserRole.user_sub == person.sub))
     for role in roles:
         session.add(UserRole(user_sub=person.sub, role_id=role.id))
