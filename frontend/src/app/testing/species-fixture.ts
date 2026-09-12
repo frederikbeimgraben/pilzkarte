@@ -242,6 +242,7 @@ export const STEINPILZ: Species = {
       unterschied: 'Röhren rosa, sehr bitter.',
       speisewert: 'ungeniessbar',
       warnung: null,
+      hutFarben: [{ name: 'hellbraun', hex: '#b07d4a' }],
     },
     {
       slug: 'satansroehrling',
@@ -250,6 +251,7 @@ export const STEINPILZ: Species = {
       unterschied: null,
       speisewert: 'giftig',
       warnung: null,
+      hutFarben: [],
     },
   ],
   links: [
@@ -309,6 +311,7 @@ export const GALLENROEHRLING: Species = {
       unterschied: 'Netz hell, Geschmack mild.',
       speisewert: 'essbar',
       warnung: null,
+      hutFarben: [{ name: 'braun', hex: '#7a5230' }],
     },
   ],
   saison: null,

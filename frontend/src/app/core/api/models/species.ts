@@ -409,6 +409,10 @@ export interface YearRange {
  * Das Paar steht in genau einer der zwei Profildateien und gilt in beide
  * Richtungen. `unterschied` bleibt leer, wo nur die andere Seite einen Satz
  * dazu trägt; der Name allein ist dann immer noch die Warnung, die zählt.
+ *
+ * `hutFarben` sind die Hutfarben des Partners. Sie stehen am Paar, weil die
+ * Zeile sie als Feld zeigt und fünf Profile für fünf Farbflächen nachzuladen
+ * Unsinn wäre.
  */
 export interface Confusable {
   slug: string;
@@ -417,6 +421,7 @@ export interface Confusable {
   unterschied: string | null;
   speisewert: Essbarkeit;
   warnung: string | null;
+  hutFarben: Farbe[];
 }
 
 /** Ein Link nach draußen. Nur die Adresse, kein fremder Text. */
