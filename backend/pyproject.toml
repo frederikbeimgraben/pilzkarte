@@ -35,10 +35,12 @@ dev = [
 package = false
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+# Das Brett liegt außerhalb des Backends und hängt an keinem Paket. Der
+# zweite Pfad lässt den Test der Diagrammseite es trotzdem laden.
+pythonpath = [".", "../tools/board"]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-addopts = "--cov=app --cov-branch --cov-report=term-missing"
+addopts = "--cov=app --cov=tools --cov-branch --cov-report=term-missing"
 
 # SQLAlchemy fuehrt den synchronen Treiber in einem greenlet aus. Ohne diesen
 # Hinweis verliert coverage jede Zeile hinter einem Wechsel des Stapels und
@@ -92,6 +94,10 @@ ignore = [
     "PLR0913",
     "PLR0917",
 ]
+"tools/*" = [
+    # Ein Befehl auf der Zeile sagt, was er geschrieben hat.
+    "T201",
+]
 "migrations/*" = [
     # Alembic laedt die Dateien ueber den eigenen Pfad, nicht als Paket.
     "INP001",
@@ -103,6 +109,7 @@ runtime-evaluated-base-classes = ["pydantic.BaseModel", "pydantic_settings.BaseS
 [tool.basedpyright]
 typeCheckingMode = "strict"
 pythonVersion = "3.13"
-include = ["app", "tests", "migrations"]
+include = ["app", "tests", "tools", "migrations"]
+extraPaths = ["../tools/board"]
 venvPath = "."
 venv = ".venv"

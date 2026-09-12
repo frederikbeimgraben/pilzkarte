@@ -1,7 +1,7 @@
 """Die Bezeichner des Dienstes sind englisch.
 
 Die Regel steht in ``CLAUDE.md``. Dieser Test haelt sie fest: er liest jede
-Datei unter ``app/`` und ``migrations/`` als Folge von Token und sieht sich nur
+Datei unter ``app/``, ``migrations/`` und ``tools/`` als Folge von Token und sieht sich nur
 die Bezeichner an. Zeichenketten, Kommentare und Docstrings bleiben deutsch und
 bleiben darum aussen vor.
 
@@ -17,7 +17,7 @@ import tokenize
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FOLDERS = ("app", "migrations")
+FOLDERS = ("app", "migrations", "tools")
 
 # Deutsche Staemme, die im Code vorkamen. ``zone`` und ``marker`` fehlen mit
 # Absicht: beide Woerter sind im Englischen dieselben.
