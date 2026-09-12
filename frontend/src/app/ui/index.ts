@@ -34,7 +34,7 @@ export {
 export { ComparisonRowComponent } from './comparison-table/comparison-row.component';
 export { ComparisonTableComponent } from './comparison-table/comparison-table.component';
 export { LookalikeRowComponent } from './lookalike-row/lookalike-row.component';
-export { MeasurementComponent, type Extent } from './measurement/measurement.component';
+export { MeasurementComponent, type Extent, type Span } from './measurement/measurement.component';
 export { MetricRowComponent } from './metric-row/metric-row.component';
 export { NoteComponent, type NoteVariant } from './note/note.component';
 export { PageHeaderComponent } from './page-header/page-header.component';

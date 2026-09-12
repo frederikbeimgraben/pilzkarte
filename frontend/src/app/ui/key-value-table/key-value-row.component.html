@@ -8,7 +8,7 @@
     <span class="tz__note">{{ unter }}</span>
   }
 </span>
-<span class="tz__value">
+<span class="tz__value" [class.tz__value--flow]="flow()">
   @if (value()) {
     {{ value() }}
   }

@@ -65,7 +65,8 @@ function level(i18n: I18nService, art: Species): Extract {
 function capWidth(i18n: I18nService, art: Species): Extract {
   const measure = measureRows(i18n, art.masse).find((row) => row.extent === 'hutbreite');
   if (!measure) return NOTHING;
-  return { values: [{ kind: 'mass', measure }], mark: `${measure.von}-${measure.bis}${measure.einheit}` };
+  const mark = measure.spans.map((span) => `${span.von}-${span.bis}`).join('x');
+  return { values: [{ kind: 'mass', measure }], mark: `${mark}${measure.einheit}` };
 }
 
 function colour(i18n: I18nService, art: Species, field: 'hut' | 'sporenlager'): Extract {

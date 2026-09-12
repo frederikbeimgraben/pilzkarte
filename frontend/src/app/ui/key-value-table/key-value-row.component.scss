@@ -1,25 +1,15 @@
-// Die Spalte ist 104 px breit und wächst mit einem langen Schlüssel mit, aber
-// nicht über 145 px: das sind 40 Prozent der Zeile am Telefon. Ein Prozentwert
-// stünde hier im Kreis, weil die Spur ihn erst messen müsste.
+// Die Zeile ist nur eine Klammer: das Raster steht an der Tabelle. Alles, was
+// nach Zeile aussieht — Polster, Trennlinie, Zebra — traegt darum die Zelle.
 :host {
-  display: grid;
-  grid-template-columns: minmax(104px, max-content) minmax(0, 1fr);
-  column-gap: var(--space-3);
-  align-items: start;
-  padding: 10px 14px;
+  display: contents;
+}
+
+.tz__label,
+.tz__value {
+  padding-block: 10px;
   font-size: var(--fs-sm);
   line-height: 1.45;
   border-block-end: var(--border-width) solid var(--color-border);
-}
-
-// Zebra und der fehlende letzte Strich hängen an der Lage der Zeile, nicht am
-// Rahmen. Deshalb stehen sie hier und nicht in der Tabelle.
-:host(:nth-child(even)) {
-  background: var(--color-bg);
-}
-
-:host(:last-child) {
-  border-block-end: 0;
 }
 
 .tz__label {
@@ -27,10 +17,42 @@
   flex-direction: column;
   gap: 2px;
   min-inline-size: 0;
+  padding-inline: var(--pilz-kv-gutter) var(--pilz-kv-gap);
 }
 
-// Das Wort zum Wert steht klein unter dem Schlüssel. Rechts steht daneben
-// nichts als der Wert selbst, sonst kämpfen Wort und Fläche um den Blick.
+// Der Wert endet rechts, wie die Flaeche daneben. Ohne das stuende eine
+// Farbflaeche von 96 px linksbuendig in einer Spalte von 212 und liesse ein
+// Drittel der Karte leer.
+.tz__value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-inline-size: 0;
+  padding-inline-end: var(--pilz-kv-gutter);
+  color: var(--color-text);
+  text-align: end;
+  overflow-wrap: anywhere;
+}
+
+// Fliesstext bleibt links. Ein rechtsbuendiger Absatz franst links aus, und
+// die Merkmalszeile "Hut" ist vier Zeilen lang.
+.tz__value--flow {
+  align-items: flex-start;
+  text-align: start;
+}
+
+:host(:nth-child(even)) .tz__label,
+:host(:nth-child(even)) .tz__value {
+  background: var(--color-bg);
+}
+
+:host(:last-child) .tz__label,
+:host(:last-child) .tz__value {
+  border-block-end: 0;
+}
+
+// Das Wort zum Wert steht klein unter dem Schluessel. Rechts steht daneben
+// nichts als der Wert selbst, sonst kaempfen Wort und Flaeche um den Blick.
 .tz__note {
   font-size: var(--fs-xs);
   font-weight: 400;
@@ -39,17 +61,8 @@
 }
 
 .tz__key {
-  max-inline-size: 145px;
   font-weight: var(--fw-semibold);
   color: var(--color-text-muted);
-  overflow-wrap: anywhere;
-}
-
-// Der Wert läuft als Fließtext; ein Badge darin bricht mit um, statt den Text
-// zu quetschen.
-.tz__value {
-  min-inline-size: 0;
-  color: var(--color-text);
   overflow-wrap: anywhere;
 }
 

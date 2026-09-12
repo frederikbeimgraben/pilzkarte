@@ -4,10 +4,14 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { ColourFieldComponent } from '../colour-field/colour-field.component';
 
 /**
- * Eine Verfärbung: von, Pfeil, nach, dahinter die Dauer.
+ * Eine Verfärbung: von, Pfeil, nach — und darunter die Dauer.
  *
- * Bleibt die Farbe, steht nur eine Fläche und das Wort dazu. Der Pfeil
- * erscheint erst, wenn sich wirklich etwas ändert.
+ * Der Pfeil erscheint erst, wenn es zwei Farben gibt. Nennt die Quelle keine
+ * Ausgangsfarbe, stünde er vor der einzigen Fläche und sähe aus wie ein
+ * Zeichen, dem etwas fehlt.
+ *
+ * Die Dauer stand einmal rechts daneben und schob die Fläche aus der Flucht
+ * der Farbzeilen darüber. Sie steht jetzt darunter.
  */
 @Component({
   selector: 'app-colour-change',
@@ -15,6 +19,7 @@ import { ColourFieldComponent } from '../colour-field/colour-field.component';
   imports: [ColourFieldComponent, SvgIconComponent],
   templateUrl: './colour-change.component.html',
   styleUrl: './colour-change.component.scss',
+  host: { '[class.colour-change--small]': 'small()' },
 })
 export class ColourChangeComponent {
   readonly from = input.required<readonly Farbe[]>();
@@ -25,5 +30,12 @@ export class ColourChangeComponent {
   readonly duration = input.required<string>();
   readonly arrowLabel = input.required<string>();
 
-  protected readonly changes = computed(() => this.to().length > 0);
+  /** Kleiner für die Gegenüberstellung, wo zwei Arten nebeneinander stehen. */
+  readonly small = input(false);
+
+  /** Zwei Farben, also ein Weg von der einen zur anderen. */
+  protected readonly changes = computed(() => this.from().length > 0 && this.to().length > 0);
+
+  protected readonly arrowSize = computed(() => (this.small() ? 12 : 14));
+  protected readonly hourglassSize = computed(() => (this.small() ? 12 : 15));
 }

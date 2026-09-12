@@ -1,11 +1,16 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 /**
- * Eine Stufe mit eigener Farbe: Punkt, dann das Wort.
+ * Eine Plakette mit freier Farbe.
  *
- * Die Farbe trägt die Warnung. Ein Badge des Kits kennt nur fünf Rollen und
- * müsste zwei Stufen dieselbe Farbe geben; „giftig“ und „tödlich giftig“ sind
- * dann nicht mehr zu unterscheiden.
+ * Geometrie und Schrift sind die einer Marke des Kits. Nur die Farbe ist frei,
+ * und die braucht sie: das Kit kennt fünf Rollen, und „giftig“ und „tödlich
+ * giftig“ bekämen dieselbe. Ein Punkt stand hier einmal davor; er hatte die
+ * Farbe der Schrift und sagte nichts, was die Farbe nicht schon sagt.
+ *
+ * Alle drei Zeilen der Einstufung tragen diesen Baustein: eine Bauform, drei
+ * Farbrollen. Nebeneinander sahen Speisewert, Schutz und Handel sonst aus wie
+ * drei verschiedene Dinge.
  */
 @Component({
   selector: 'app-level-pill',

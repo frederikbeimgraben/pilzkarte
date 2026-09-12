@@ -51,12 +51,7 @@
         <app-key-value-table>
           @for (row of viewport.einstufung; track row.schluessel) {
             <app-key-value-row [schluessel]="row.schluessel">
-              @if (row.pill; as pill) {
-                <app-level-pill [text]="pill.text" [colour]="pill.colour" />
-              }
-              @if (row.badge; as badge) {
-                <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
-              }
+              <app-level-pill [text]="row.pill.text" [colour]="row.pill.colour" />
             </app-key-value-row>
           }
         </app-key-value-table>
@@ -68,12 +63,11 @@
         <h2 class="species__section">{{ 'art.abschnitt.masse' | t }}</h2>
         <app-card class="flush">
           <app-key-value-table>
-            @for (row of viewport.masse; track row.extent + row.schluessel + row.von) {
+            @for (row of viewport.masse; track row.schluessel) {
               <app-key-value-row [schluessel]="row.schluessel" [unter]="row.unter">
                 <app-measurement
                   [extent]="row.extent"
-                  [from]="row.von"
-                  [to]="row.bis"
+                  [spans]="row.spans"
                   [unit]="row.einheit"
                   [label]="row.zeichen"
                 />
@@ -211,7 +205,7 @@
       <app-card class="flush">
         <app-key-value-table>
           @for (row of viewport.merkmale; track row.schluessel) {
-            <app-key-value-row [schluessel]="row.schluessel" [value]="row.text">
+            <app-key-value-row [schluessel]="row.schluessel" [value]="row.text" [flow]="true">
               @if (row.badge; as badge) {
                 <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
               }
@@ -235,7 +229,7 @@
         <app-card class="flush">
           <app-key-value-table>
             @for (row of viewport.reagenzien; track row.reagenz) {
-              <app-key-value-row [schluessel]="row.reagenz" [value]="row.reaktion" />
+              <app-key-value-row [schluessel]="row.reagenz" [value]="row.reaktion" [flow]="true" />
             }
           </app-key-value-table>
         </app-card>

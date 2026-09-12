@@ -20,6 +20,7 @@ export type IconName =
   | 'vergleich'
   | 'schloss'
   | 'leer'
+  | 'bildluecke'
   | 'links'
   | 'rechts'
   | 'abspielen'

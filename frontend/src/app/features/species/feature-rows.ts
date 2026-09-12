@@ -2,14 +2,15 @@ import type { Species, Farbe, Farben, Masse, Spanne } from '../../core/api/model
 import type { I18nService } from '../../core/i18n/i18n.service';
 import type { TranslationKey } from '../../core/i18n/translations';
 import type { BadgeVariant } from '@stupa-makers/ui-kit';
-import type { Extent } from '../../ui';
+import type { Extent, Span } from '../../ui';
 import {
   CHANGE_SPEED_TEXT,
   EDIBILITY_COLOUR,
   EDIBILITY_TEXT,
   MONTH_NAMES,
-  PROTECTION_BADGE,
+  PROTECTION_COLOUR,
   PROTECTION_TEXT,
+  TRADE_COLOUR,
   UNIT_TEXT,
   YEAR_MARKS,
 } from './labels';
@@ -32,57 +33,46 @@ export interface Marke {
 }
 
 /**
- * Die Maße in der Reihenfolge, in der die Artseite sie nennt. `extent` sagt,
- * welche Strecke gemessen wurde: das Zeichen davor trägt die Bedeutung, weil
- * ein Balken eine Skala zwischen Hut und Spore vortäuschte, die es nicht gibt.
+ * Eine Zeile je Körperteil, nicht je Strecke.
+ *
+ * Innerhalb eines Teils steht Länge oder Höhe zuerst, dann Breite oder Dicke;
+ * so schreiben es die Bestimmungsbücher und die Quellseiten. Das Zeichen ist
+ * das des Teils. Nennt die Quelle nur eine Strecke, steht diese allein und
+ * bekommt das Zeichen der Strecke: ein führendes Malzeichen wäre unlesbar.
  */
-const MEASURE_ROWS: readonly {
-  field: keyof Masse;
+const MEASURE_PARTS: readonly {
   schluessel: TranslationKey;
-  unter: TranslationKey;
   extent: Extent;
+  fields: readonly { field: keyof Masse; extent: Extent }[];
 }[] = [
   {
-    field: 'hutBreiteCm',
     schluessel: 'art.mass.hut',
-    unter: 'art.mass.unter.breite',
     extent: 'hutbreite',
+    fields: [{ field: 'hutBreiteCm', extent: 'hutbreite' }],
   },
   {
-    field: 'fruchtkoerperBreiteCm',
-    schluessel: 'art.mass.fruchtkoerperBreite',
-    unter: 'art.mass.unter.breite',
-    extent: 'hutbreite',
-  },
-  {
-    field: 'fruchtkoerperHoeheCm',
     schluessel: 'art.mass.fruchtkoerperHoehe',
-    unter: 'art.mass.unter.hoehe',
-    extent: 'stielhoehe',
+    extent: 'hutbreite',
+    fields: [
+      { field: 'fruchtkoerperHoeheCm', extent: 'stielhoehe' },
+      { field: 'fruchtkoerperBreiteCm', extent: 'hutbreite' },
+    ],
   },
   {
-    field: 'stielLaengeCm',
     schluessel: 'art.mass.stielLaenge',
-    unter: 'art.mass.unter.hoehe',
     extent: 'stielhoehe',
+    fields: [
+      { field: 'stielLaengeCm', extent: 'stielhoehe' },
+      { field: 'stielDickeCm', extent: 'stieldicke' },
+    ],
   },
   {
-    field: 'stielDickeCm',
-    schluessel: 'art.mass.stielDicke',
-    unter: 'art.mass.unter.dicke',
-    extent: 'stieldicke',
-  },
-  {
-    field: 'sporenLaengeUm',
     schluessel: 'art.mass.sporenLaenge',
-    unter: 'art.mass.unter.laenge',
     extent: 'sporenlaenge',
-  },
-  {
-    field: 'sporenBreiteUm',
-    schluessel: 'art.mass.sporenBreite',
-    unter: 'art.mass.unter.breite',
-    extent: 'sporenlaenge',
+    fields: [
+      { field: 'sporenLaengeUm', extent: 'sporenlaenge' },
+      { field: 'sporenBreiteUm', extent: 'sporenlaenge' },
+    ],
   },
 ];
 
@@ -97,20 +87,18 @@ const COLOUR_ROWS: readonly { field: keyof Omit<Farben, 'verfaerbung'>; schluess
   { field: 'sporenpulver', schluessel: 'art.farbe.sporenpulver' },
 ];
 
-/** Eine Zeile der Einstufung: Speisewert als Stufe, Schutz und Handel als Marke. */
+/** Eine Zeile der Einstufung: das Wort und die Farbe, die es einordnet. */
 export interface LevelRow {
   schluessel: string;
-  pill: { text: string; colour: string } | null;
-  badge: Marke | null;
+  pill: { text: string; colour: string };
 }
 
-/** Eine Zeile der Maße: Zeichen, Zahl, Einheit. */
+/** Eine Zeile der Maße: Zeichen, eine oder zwei Strecken, Einheit. */
 export interface MeasureRow {
   schluessel: string;
   unter: string | null;
   extent: Extent;
-  von: number;
-  bis: number;
+  spans: Span[];
   einheit: string;
   zeichen: string;
 }
@@ -153,10 +141,15 @@ export interface SenseRow {
 }
 
 /**
- * Speisewert, Schutz und Handel als feste Werte.
+ * Speisewert, Schutz und Handel als drei Plaketten derselben Bauform.
  *
- * Der Speisewert trägt seine eigene Farbe: nur so warnt die Stufe, bevor man
- * das Wort gelesen hat. Schutz und Handel sind Marken, keine Warnungen.
+ * Sie standen einmal in zwei Formen untereinander: der Speisewert als Stufe
+ * mit Punkt, 14 px und 30 px hoch, Schutz und Handel als Marke ohne Punkt,
+ * 12 px und 23 px hoch. Drei Werte derselben Art sahen aus wie drei Dinge.
+ *
+ * Die Farbe bleibt der einzige Unterschied, weil nur sie etwas sagt: der
+ * Speisewert warnt, bevor man das Wort gelesen hat, der Schutz nennt seine
+ * Stufe, der Handel ist gedämpft und urteilt nicht.
  */
 export function levelRows(i18n: I18nService, art: Species): LevelRow[] {
   const trade = art.marktfaehigkeit.marktfaehig ? 'art.handel.ja' : 'art.handel.nein';
@@ -167,55 +160,52 @@ export function levelRows(i18n: I18nService, art: Species): LevelRow[] {
         text: i18n.translate(EDIBILITY_TEXT[art.speisewert]),
         colour: EDIBILITY_COLOUR[art.speisewert],
       },
-      badge: null,
     },
     {
       schluessel: i18n.translate('art.zeile.schutz'),
-      pill: null,
-      badge: {
+      pill: {
         text: i18n.translate(PROTECTION_TEXT[art.schutz.status]),
-        variant: PROTECTION_BADGE[art.schutz.status],
+        colour: PROTECTION_COLOUR[art.schutz.status],
       },
     },
     {
       schluessel: i18n.translate('art.zeile.handel'),
-      pill: null,
-      badge: { text: i18n.translate(trade), variant: 'neutral' },
+      pill: { text: i18n.translate(trade), colour: TRADE_COLOUR },
     },
   ];
 }
 
 /**
- * Die Maße, jedes mit dem Zeichen seiner Strecke.
+ * Die Maße, eine Zeile je Körperteil.
  *
- * Die Unterzeile steht nur, wo sie gebraucht wird: bei „Stiel“ zweimal, um
- * Höhe von Dicke zu trennen, und überall dort, wo die Quelle einen selteneren
- * Wert nennt.
+ * Die Unterzeile trägt nur noch die Ausnahmen der Quelle. „Höhe“ und „Dicke“
+ * standen dort, solange zwei Zeilen gleich hießen; eine Zeile je Teil braucht
+ * das nicht mehr.
  */
 export function measureRows(i18n: I18nService, masse: Masse): MeasureRow[] {
-  const present = MEASURE_ROWS.flatMap((row) => {
-    const span = masse[row.field];
-    return span === null ? [] : [{ ...row, span }];
-  });
-  const names = present.map((row) => i18n.translate(row.schluessel));
-  return present.map((row, index) => {
-    const span = row.span;
-    const unit = i18n.translate(UNIT_TEXT[span.einheit]);
-    // Erst wenn zwei Zeilen gleich heißen, sagt die Unterzeile, welche
-    // Strecke gemeint ist. Bei einem einzelnen „Hut“ wäre sie Beiwerk.
-    const twice = names.filter((name) => name === names[index]).length > 1;
-    const notes = [twice ? i18n.translate(row.unter) : null, rareNote(i18n, span, unit)].filter(
-      (note): note is string => note !== null,
-    );
-    return {
-      schluessel: names[index],
-      unter: notes.length > 0 ? notes.join(' · ') : null,
-      extent: row.extent,
-      von: span.von,
-      bis: span.bis,
-      einheit: unit,
-      zeichen: i18n.translate(`art.mass.zeichen.${row.extent}`),
-    };
+  return MEASURE_PARTS.flatMap((part) => {
+    const found = part.fields.flatMap((entry) => {
+      const span = masse[entry.field];
+      return span === null ? [] : [{ ...entry, span }];
+    });
+    if (found.length === 0) return [];
+    const unit = i18n.translate(UNIT_TEXT[found[0].span.einheit]);
+    // Eine einzelne Strecke traegt ihr eigenes Zeichen, nicht das des Teils:
+    // "Stiel 2 - 6 cm" ohne weitere Angabe waere sonst eine Hoehe.
+    const extent = found.length === 1 ? found[0].extent : part.extent;
+    const rare = found
+      .map((entry) => rareNote(i18n, entry.span, unit))
+      .filter((note): note is string => note !== null);
+    return [
+      {
+        schluessel: i18n.translate(part.schluessel),
+        unter: rare.length > 0 ? rare.join(' · ') : null,
+        extent,
+        spans: found.map((entry) => ({ von: entry.span.von, bis: entry.span.bis })),
+        einheit: unit,
+        zeichen: i18n.translate(`art.mass.zeichen.${extent}`),
+      },
+    ];
   });
 }
 

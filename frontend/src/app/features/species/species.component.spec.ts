@@ -84,8 +84,8 @@ describe('ArtComponent', () => {
       'Speisewert',
       'Schutz',
       'Handel',
+      // Eine Zeile je Koerperteil: die Sporen standen einmal zweimal hier.
       'Hut',
-      'Sporen',
       'Sporen',
       // Hut und Stiel, dann die Fruchtschicht mit der Farbe ihres Sporenlagers.
       'Form',
@@ -126,28 +126,34 @@ describe('ArtComponent', () => {
     expect(partner).toEqual(['Gallenröhrling', 'Satansröhrling']);
   });
 
-  it('stellt die Einstufung als Stufe, Schutz und Handel', async () => {
+  it('stellt Speisewert, Schutz und Handel in einer Bauform', async () => {
     const { container } = await build(STEINPILZ);
 
-    // Die Stufe trägt ihre eigene Farbe: sie warnt, bevor man das Wort liest.
-    const pill = container.querySelector<HTMLElement>('.level');
-    expect(pill?.textContent.trim()).toBe('Essbar');
-    expect(pill?.style.getPropertyValue('--pilz-level-colour')).toBe('#4f9d6f');
-    expect(screen.getByText('für den Eigenbedarf')).toBeInTheDocument();
-    expect(screen.getByText('auf der Positivliste')).toBeInTheDocument();
+    // Drei Werte derselben Art sahen aus wie drei Dinge: der Speisewert als
+    // Stufe mit Punkt, die anderen zwei als Marke. Jetzt eine Plakette, drei
+    // Farbrollen — und die Farbe ist der einzige Unterschied.
+    const pills = [...container.querySelectorAll<HTMLElement>('.level')];
+    expect(pills.map((pill) => pill.textContent.trim())).toEqual([
+      'essbar',
+      'Eigenbedarf',
+      'DGfM-Positivliste',
+    ]);
+    expect(pills.map((pill) => pill.style.getPropertyValue('--pilz-level-colour'))).toEqual([
+      '#4f9d6f',
+      '#4f9d6f',
+      '#95a09a',
+    ]);
   });
 
-  it('zeigt jedes Maß mit Zeichen, Zahl und Einheit', async () => {
+  it('zeigt eine Zeile je Körperteil, Länge mal Breite', async () => {
     await build(STEINPILZ);
 
     expect(screen.getByRole('img', { name: 'Hutbreite' })).toBeInTheDocument();
-    // Die Spore trägt ihr eigenes Zeichen, nicht das des Hutes.
-    expect(screen.getAllByRole('img', { name: 'Sporenlänge' })).toHaveLength(2);
+    // Die Spore trägt ihr eigenes Zeichen, nicht das des Hutes — und nur eines:
+    // Länge und Breite stehen in einer Zelle, wie im Bestimmungsbuch.
+    expect(screen.getAllByRole('img', { name: 'Sporenlänge' })).toHaveLength(1);
     expect(screen.getByText('4 – 20')).toBeInTheDocument();
-    expect(screen.getByText('12,4 – 19,2')).toBeInTheDocument();
-    // Zwei Zeilen heißen „Sporen“; erst dann sagt die Unterzeile, welche gemeint ist.
-    expect(screen.getByText('Länge')).toBeInTheDocument();
-    expect(screen.getByText('Breite')).toBeInTheDocument();
+    expect(screen.getByText('12,4 – 19,2 × 4,5 – 5,5')).toBeInTheDocument();
   });
 
   it('nennt den selteneren Wert als Wort, nicht als zweite Zahl', async () => {
@@ -261,9 +267,9 @@ describe('ArtComponent', () => {
   it('zeigt den Speisewert und jede Verwechslung als Badge', async () => {
     await build(STEINPILZ);
 
-    expect(screen.getAllByText('Essbar').length).toBeGreaterThan(0);
-    expect(screen.getByText('Ungenießbar')).toBeInTheDocument();
-    expect(screen.getByText('Giftig')).toBeInTheDocument();
+    expect(screen.getAllByText('essbar').length).toBeGreaterThan(0);
+    expect(screen.getByText('ungenießbar')).toBeInTheDocument();
+    expect(screen.getByText('giftig')).toBeInTheDocument();
   });
 
   it('nennt zur Kurve die Jahre, die Wochen und den Höchstwert', async () => {

@@ -39,7 +39,7 @@
   <app-image-credit [photographer]="lead.photographer" [licence]="lead.licence" />
 } @else {
   <app-empty-state
-    icon="leer"
+    icon="bildluecke"
     [text]="'bild.keine' | t"
     [action]="signedIn() ? ('bild.einreichen' | t) : undefined"
     (actionClick)="submit()"

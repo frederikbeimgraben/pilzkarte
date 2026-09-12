@@ -218,6 +218,24 @@ export const EDIBILITY_COLOUR: Record<Essbarkeit, string> = {
   toedlichGiftig: '#d2685f',
 };
 
+/**
+ * Die Farbe der Schutzstufe, im Ton der Speisewert-Farben.
+ *
+ * Sie sagt dasselbe wie die Marke vorher: grau, wo nichts gilt, grün, wo mit
+ * Maß gesammelt werden darf, rot, wo es verboten ist.
+ */
+export const PROTECTION_COLOUR: Record<Schutzstufe, string> = {
+  keiner: '#95a09a',
+  besondersGeschuetzt: '#4f9d6f',
+  strengGeschuetzt: '#d2685f',
+};
+
+/**
+ * Der Handel ist gedämpft. Ob eine Art auf der Positivliste steht, ist eine
+ * Auskunft und keine Warnung; eine eigene Farbe je Fall behauptete ein Urteil.
+ */
+export const TRADE_COLOUR = '#95a09a';
+
 export const PROTECTION_TEXT: Record<Schutzstufe, TranslationKey> = {
   keiner: 'art.schutz.keiner',
   besondersGeschuetzt: 'art.schutz.besonders',

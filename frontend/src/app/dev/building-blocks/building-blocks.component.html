@@ -350,20 +350,18 @@
         <app-key-value-row [schluessel]="text('art.mass.hut')">
           <app-measurement
             extent="hutbreite"
-            [from]="4"
-            [to]="20"
+            [spans]="[{ von: 4, bis: 20 }]"
             [unit]="text('art.einheit.cm')"
             [label]="text('art.mass.zeichen.hutbreite')"
           />
         </app-key-value-row>
-        <app-key-value-row
-          [schluessel]="text('art.mass.sporenLaenge')"
-          [unter]="text('art.mass.unter.laenge')"
-        >
+        <app-key-value-row [schluessel]="text('art.mass.sporenLaenge')">
           <app-measurement
             extent="sporenlaenge"
-            [from]="12.4"
-            [to]="19.2"
+            [spans]="[
+              { von: 12.4, bis: 19.2 },
+              { von: 4.5, bis: 5.5 },
+            ]"
             [unit]="text('art.einheit.um')"
             [label]="text('art.mass.zeichen.sporenlaenge')"
           />

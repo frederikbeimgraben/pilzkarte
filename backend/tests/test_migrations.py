@@ -20,6 +20,9 @@ ROOT = Path(__file__).resolve().parents[1]
 # Der letzte Schritt vor den Fremdschluesseln aus R4a.
 BEFORE_PERSON_KEYS = "e7c3b58a10d2"
 
+# Der letzte Schritt vor den neuen Plakettentexten.
+BEFORE_BADGE_LABELS = "a8f2c50d7b31"
+
 
 def configuration() -> Config:
     """Liest die alembic.ini, so wie der Dienst sie im Arbeitsverzeichnis liest."""
@@ -310,3 +313,73 @@ def test_the_upgrade_keeps_the_photos_of_a_find(
 
     assert rows(file, "SELECT id FROM foto") == [("foto-1",)]
     assert points_at(file, "foto") == {"fund"}
+
+
+def text_of(file: Path, key: str, locale: str) -> str | None:
+    """Der Wert eines Oberflaechentextes, am Modell vorbei gelesen."""
+    with closing(sqlite3.connect(file)) as connection:
+        found = connection.execute(
+            "SELECT value FROM text WHERE key = ? AND locale = ?", (key, locale)
+        ).fetchone()
+    return None if found is None else str(found[0])
+
+
+def set_text(file: Path, key: str, locale: str, value: str) -> None:
+    with closing(sqlite3.connect(file)) as connection:
+        connection.execute(
+            "UPDATE text SET value = ? WHERE key = ? AND locale = ?", (value, key, locale)
+        )
+        connection.commit()
+
+
+def before_the_labels(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, name: str) -> Path:
+    """Eine Datenbank auf dem Stand vor den neuen Plakettentexten."""
+    file = tmp_path / name
+    monkeypatch.setenv("PILZE_DB", f"sqlite+aiosqlite:///{file}")
+    get_settings.cache_clear()
+    db.engine.cache_clear()
+    command.upgrade(configuration(), BEFORE_BADGE_LABELS)
+    db.engine.cache_clear()
+    return file
+
+
+def test_the_upgrade_moves_a_label_that_still_holds_the_default(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    # Der Anfangsbestand der Wanderung traegt schon den neuen Text; ein
+    # gewachsener Bestand traegt den alten, und ``sync_texts`` fasst einen
+    # vorhandenen Wert nie an. Ohne diesen Schritt stuende dort ewig der alte.
+    file = before_the_labels(tmp_path, monkeypatch, "plaketten.sqlite")
+    set_text(file, "art.handel.ja", "de", "auf der Positivliste")
+
+    command.upgrade(configuration(), "head")
+
+    assert text_of(file, "art.handel.ja", "de") == "DGfM-Positivliste"
+    assert text_of(file, "art.essbar.essbar", "de") == "essbar"
+
+
+def test_the_upgrade_keeps_a_label_someone_wrote_themselves(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    # Wer den Text in der Oberflaeche geaendert hat, behaelt seine Fassung.
+    file = before_the_labels(tmp_path, monkeypatch, "eigener-text.sqlite")
+    set_text(file, "art.handel.ja", "de", "steht auf der Liste des Vereins")
+
+    command.upgrade(configuration(), "head")
+
+    assert text_of(file, "art.handel.ja", "de") == "steht auf der Liste des Vereins"
+
+
+def test_the_downgrade_puts_the_old_labels_back(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    file = before_the_labels(tmp_path, monkeypatch, "zurueck-plaketten.sqlite")
+    command.upgrade(configuration(), "head")
+    db.engine.cache_clear()
+
+    command.downgrade(configuration(), BEFORE_BADGE_LABELS)
+
+    assert text_of(file, "art.handel.ja", "de") == "auf der Positivliste"
