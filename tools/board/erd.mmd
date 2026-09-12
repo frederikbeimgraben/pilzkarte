@@ -73,6 +73,25 @@ erDiagram
         VARCHAR(36) role_id PK, FK
         VARCHAR(40) permission_key PK, FK
     }
+    species_image {
+        VARCHAR(36) id PK
+        VARCHAR(80) species_slug
+        VARCHAR(255) uploader_sub
+        VARCHAR(120) photographer
+        VARCHAR(16) licence
+        TEXT source "optional"
+        DATE taken_on "optional"
+        VARCHAR(200) caption "optional"
+        BOOLEAN lead
+        VARCHAR(16) state
+        VARCHAR(200) reject_reason "optional"
+        VARCHAR(255) reviewed_by "optional"
+        DATETIME reviewed_at "optional"
+        INTEGER width
+        INTEGER height
+        DATETIME created_at
+        DATETIME updated_at
+    }
     text {
         VARCHAR(120) key PK
         VARCHAR(5) locale PK
