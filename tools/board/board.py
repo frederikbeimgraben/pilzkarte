@@ -10,6 +10,7 @@ Dienst, der auf der Schleife und auf der Tunneladresse horcht.
     curl -s localhost:8123/api/cards | jq   # alles lesen
     curl -sX POST localhost:8123/api/cards -d '{"titel":"…","spalte":"backlog"}'
     curl -sX PATCH localhost:8123/api/cards/17 -d '{"spalte":"arbeit","agent":"b3"}'
+    http://localhost:8123/erd               # das Entitätendiagramm der Modelle
 """
 
 from __future__ import annotations
@@ -24,6 +25,11 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 SPEICHER = Path(os.environ.get("BOARD_DATEI", Path.home() / ".local/state/pilzkarte-board.json"))
+HERE = Path(__file__).resolve().parent
+# Das Diagramm baut `backend/tools/erd.py` aus den Modellen. Mermaid liegt
+# daneben, denn der Rechner hängt nicht immer am Netz.
+DIAGRAM = HERE / "erd.mmd"
+MERMAID = HERE / "vendor" / "mermaid.min.js"
 PORT = int(os.environ.get("BOARD_PORT", "8123"))
 ADRESSEN = os.environ.get("BOARD_ADRESSEN", "127.0.0.1,10.66.66.5").split(",")
 SPALTEN = [
@@ -97,6 +103,12 @@ class Griff(BaseHTTPRequestHandler):
             return {}
         return json.loads(self.rfile.read(laenge))
 
+    def _datei(self, datei: Path, typ: str) -> None:
+        if not datei.exists():
+            self._json({"fehler": f"{datei.name} fehlt"}, 404)
+            return
+        self._antwort(datei.read_bytes(), typ)
+
     def do_GET(self) -> None:  # noqa: N802
         pfad = urlparse(self.path).path
         if pfad == "/api/cards":
@@ -104,7 +116,16 @@ class Griff(BaseHTTPRequestHandler):
                 self._json(laden())
             return
         if pfad in ("/", "/index.html"):
-            self._antwort(SEITE.encode(), "text/html; charset=utf-8")
+            self._antwort(BOARD_PAGE.encode(), "text/html; charset=utf-8")
+            return
+        if pfad in ("/erd", "/erd/"):
+            self._antwort(ERD_PAGE.encode(), "text/html; charset=utf-8")
+            return
+        if pfad == "/erd.mmd":
+            self._datei(DIAGRAM, "text/plain; charset=utf-8")
+            return
+        if pfad == "/erd/mermaid.min.js":
+            self._datei(MERMAID, "text/javascript; charset=utf-8")
             return
         self._json({"fehler": "nicht gefunden"}, 404)
 
@@ -152,11 +173,11 @@ class Griff(BaseHTTPRequestHandler):
         self._json({"geloescht": vorher - len(daten["karten"])})
 
 
-SEITE = """<!doctype html>
-<html lang="de"><head><meta charset="utf-8"><title>Pilzkarte, Brett</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
-<style>
+FONT = "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+
+# Was beide Seiten teilen: Farben, Schrift, Kopfleiste. Das Diagramm soll neben
+# dem Brett nicht wie ein zweites Werkzeug aussehen.
+STYLE = """
  :root{--bg:#101512;--flaeche:#161c18;--rand:#2a332d;--text:#e8eee9;--leise:#95a09a;
        --gruen:#4f9d6f;--gruensub:#16291f;--rot:#d2685f;--gold:#c8a25a}
  *{box-sizing:border-box}
@@ -164,6 +185,23 @@ SEITE = """<!doctype html>
  header{padding:14px 18px;border-bottom:1px solid var(--rand);display:flex;align-items:center;gap:14px;position:sticky;top:0;background:var(--bg);z-index:2}
  header b{font-size:19px}
  header span{color:var(--leise);font-size:13px}
+ header nav{margin-left:auto;display:flex;gap:16px;font-size:13px}
+ a{color:var(--gruen)}
+"""
+
+
+def page(title: str, style: str, body: str) -> str:
+    """Eine Seite des Bretts: gleiche Schrift, gleiche Farben, eigener Inhalt."""
+    return (
+        '<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
+        f"<title>Pilzkarte, {title}</title>\n"
+        '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+        f'<link rel="stylesheet" href="{FONT}">\n'
+        "<style>" + STYLE + style + "</style></head><body>\n" + body + "\n</body></html>\n"
+    )
+
+
+BOARD_STYLE = """
  .brett{display:grid;grid-template-columns:repeat(5,minmax(260px,1fr));gap:12px;padding:14px;align-items:start}
  .spalte{background:var(--flaeche);border:1px solid var(--rand);border-radius:12px;padding:10px;min-height:120px}
  .spalte h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--leise);margin:2px 4px 10px;display:flex;justify-content:space-between}
@@ -175,13 +213,14 @@ SEITE = """<!doctype html>
  .marke.agent{background:#241f14;color:var(--gold)}
  .marke.fehler{background:#2a1a19;color:var(--rot)}
  .notiz{font-size:12px;color:var(--leise);margin-top:6px;line-height:1.45}
- a{color:var(--gruen)}
  .knopf{margin-top:8px;display:flex;gap:6px}
  .knopf button{flex:1;background:transparent;border:1px solid var(--rand);color:var(--leise);border-radius:8px;height:26px;font-size:12px;cursor:pointer;font-family:inherit}
  .knopf button:hover{border-color:var(--gruen);color:var(--gruen)}
  @media(max-width:900px){.brett{grid-template-columns:1fr}}
-</style></head><body>
-<header><b>Pilzkarte</b><span id="stand">lädt …</span></header>
+"""
+
+BOARD_BODY = """<header><b>Pilzkarte</b><span id="stand">lädt …</span>
+<nav><a href="/erd">Entitäten</a></nav></header>
 <div class="brett" id="brett"></div>
 <script>
 const SPALTEN = [["backlog","Backlog"],["bereit","Bereit"],["arbeit","In Arbeit"],["pruefung","Abnahme"],["fertig","Fertig"]];
@@ -225,8 +264,61 @@ async function schieben(e){
 }
 zeichnen();
 setInterval(zeichnen, 5000);
-</script></body></html>
+</script>"""
+
+ERD_STYLE = """
+ .diagram{padding:18px;overflow:auto}
+ .diagram svg{max-width:none}
+ .hint{margin:18px;padding:12px 14px;background:var(--flaeche);border:1px solid var(--rand);border-radius:12px;color:var(--leise);font-size:13px;line-height:1.6}
+ .hint code{color:var(--gruen);font-family:ui-monospace,SFMono-Regular,monospace}
 """
+
+ERD_BODY = """<header><b>Pilzkarte</b><span id="stand">lädt …</span>
+<nav><a href="/">Brett</a></nav></header>
+<div class="diagram" id="diagram"></div>
+<script src="/erd/mermaid.min.js"></script>
+<script>
+const BUILD = 'Neu bauen mit <code>cd backend &amp;&amp; uv run python -m tools.erd</code>.';
+const status = document.getElementById('stand');
+const board = document.getElementById('diagram');
+function hint(text){ board.innerHTML = '<div class="hint">' + text + '</div>'; }
+if (typeof mermaid === 'undefined') {
+  status.textContent = 'Mermaid fehlt';
+  hint('<code>tools/board/vendor/mermaid.min.js</code> fehlt. Die Seite lädt nichts aus dem Netz.');
+} else {
+  // darkMode leitet die Streifen der Spaltenliste aus dem Hintergrund ab.
+  // Ohne ihn legt Mermaid helle Streifen unter die helle Schrift.
+  mermaid.initialize({startOnLoad:false, theme:'base', fontFamily:'Archivo, system-ui, sans-serif',
+    themeVariables:{darkMode:true, background:'#101512', primaryColor:'#161c18',
+      primaryTextColor:'#e8eee9', primaryBorderColor:'#2a332d', lineColor:'#4f9d6f',
+      textColor:'#e8eee9', nodeBorder:'#2a332d'},
+    er:{useMaxWidth:false}});
+  let drawn = '';
+  async function draw(){
+    const answer = await fetch('/erd.mmd', {cache:'no-store'});
+    if (!answer.ok) { status.textContent = 'kein Diagramm'; drawn = ''; hint('Es gibt noch kein Diagramm. ' + BUILD); return; }
+    const text = await answer.text();
+    // Nur bei Änderung neu zeichnen: ein Neuaufbau je Umlauf ließe die
+    // Seite bei jedem Blick springen.
+    if (text === drawn) return;
+    try {
+      const {svg} = await mermaid.render('erd-svg', text);
+      board.innerHTML = svg;
+      drawn = text;
+      const tables = (text.match(/^ {4}\\S+ \\{$/gm) || []).length;
+      status.textContent = tables + ' Tabellen · Stand ' + new Date().toLocaleTimeString('de-DE');
+    } catch (error) {
+      status.textContent = 'Diagramm fehlerhaft';
+      hint(String(error.message || error) + '<br>' + BUILD);
+    }
+  }
+  draw();
+  setInterval(draw, 5000);
+}
+</script>"""
+
+BOARD_PAGE = page("Brett", BOARD_STYLE, BOARD_BODY)
+ERD_PAGE = page("Entitäten", ERD_STYLE, ERD_BODY)
 
 
 def main() -> None:

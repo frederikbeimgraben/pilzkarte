@@ -1,0 +1,89 @@
+erDiagram
+    foto {
+        VARCHAR(36) id PK
+        VARCHAR(36) fund_id FK
+        VARCHAR(64) dateiname
+        INTEGER breite
+        INTEGER hoehe
+        DATETIME erstellt_am
+    }
+    fund {
+        VARCHAR(36) id PK
+        VARCHAR(255) besitzer_name "optional"
+        VARCHAR(64) art_slug
+        FLOAT lat
+        FLOAT lon
+        DATE datum
+        INTEGER anzahl "optional"
+        BOOLEAN fuer_training
+        VARCHAR(16) sichtbarkeit
+        TEXT notiz "optional"
+        VARCHAR(255) besitzer_sub
+        DATETIME erstellt_am
+        DATETIME geaendert_am
+    }
+    kombination {
+        VARCHAR(36) id PK
+        VARCHAR(80) name
+        VARCHAR(16) regel
+        TEXT faktoren
+        VARCHAR(255) besitzer_sub
+        DATETIME erstellt_am
+        DATETIME geaendert_am
+    }
+    marker {
+        VARCHAR(36) id PK
+        VARCHAR(80) name
+        FLOAT lat
+        FLOAT lon
+        VARCHAR(16) farbe
+        VARCHAR(16) sichtbarkeit
+        TEXT notiz "optional"
+        VARCHAR(255) besitzer_sub
+        DATETIME erstellt_am
+        DATETIME geaendert_am
+    }
+    nutzer {
+        VARCHAR(255) sub PK
+        VARCHAR(255) email "optional"
+        VARCHAR(255) name "optional"
+        DATETIME erstellt_am
+    }
+    permission {
+        VARCHAR(40) key PK
+        VARCHAR(20) area
+    }
+    role {
+        VARCHAR(36) id PK
+        VARCHAR(64) slug UK
+        VARCHAR(80) name
+        TEXT description "optional"
+        BOOLEAN built_in
+        DATETIME created_at
+        DATETIME updated_at
+    }
+    role_permission {
+        VARCHAR(36) role_id PK, FK
+        VARCHAR(40) permission_key PK, FK
+    }
+    user_role {
+        VARCHAR(255) user_sub PK
+        VARCHAR(36) role_id PK, FK
+        DATETIME granted_at
+    }
+    zone {
+        VARCHAR(36) id PK
+        VARCHAR(80) name
+        TEXT polygon
+        FLOAT flaeche_ha
+        VARCHAR(16) farbe
+        VARCHAR(16) sichtbarkeit
+        TEXT notiz "optional"
+        VARCHAR(255) besitzer_sub
+        DATETIME erstellt_am
+        DATETIME geaendert_am
+    }
+    fund ||--o{ foto : "fund_id"
+    permission ||--o{ role_permission : "permission_key"
+    role ||--o{ role_permission : "role_id"
+    role ||--o{ user_role : "role_id"

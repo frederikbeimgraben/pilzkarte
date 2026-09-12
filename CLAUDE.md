@@ -156,6 +156,10 @@ Paket beginnt, setzt seine Karte auf `arbeit`, wer einen PR stellt, auf
 `pruefung`. Ein Befund, den man nicht selbst behebt, wird eine Karte im
 Backlog.
 
+Dasselbe Brett zeigt unter `/erd` das Entitätendiagramm der Modelle. Wer ein
+Modell ändert, baut es neu: `cd backend && uv run python -m tools.erd`. Sonst
+schlägt `be-test` an.
+
 ## Befehle
 
 ```

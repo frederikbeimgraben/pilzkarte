@@ -36,3 +36,27 @@ Regel für Agenten: Beim Start eines Pakets die eigene Karte auf `arbeit`
 setzen und den eigenen Namen in `agent` schreiben. Beim PR auf `pruefung`
 mit der Adresse des PR. Wer einen Befund findet, den er nicht selbst
 behebt, legt eine Karte in `backlog` mit `marke: Befund` an.
+
+## Entitätendiagramm
+
+`http://127.0.0.1:8123/erd` zeigt die Tabellen des Backends mit Spalten,
+Typen, Schlüsseln und Beziehungen. Die Seite lädt nichts aus dem Netz:
+`erd.mmd` und `vendor/mermaid.min.js` liegen neben dem Brett.
+
+Das Diagramm neu bauen:
+
+```
+cd backend && uv run python -m tools.erd
+```
+
+Der Generator liest `Base.metadata`, also dieselbe Sammlung, aus der Alembic
+das Schema baut. Ein neues Modell steht damit ohne weiteres Zutun im
+Diagramm. `backend/tests/test_erd.py` vergleicht die Datei mit den Modellen
+und schlägt in `be-test` an, solange jemand den Befehl vergisst.
+
+Mermaid ist auf Version 11.17.2 festgelegt. Zum Anheben:
+
+```
+curl -sSo tools/board/vendor/mermaid.min.js \
+  https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js
+```
