@@ -1,0 +1,69 @@
+<app-page-header [titel]="titel()" [back]="true" (backClick)="leave()" />
+
+<div class="submit">
+  <label class="submit__pick">
+    @if (preview(); as preview) {
+      <img class="submit__preview" [src]="preview" [alt]="'bild.vorschau' | t" />
+    } @else {
+      <span class="submit__empty">
+        <app-svg-icon name="plus" [size]="22" />
+        {{ 'bild.dateiWaehlen' | t }}
+      </span>
+    }
+    <input class="sr-only" type="file" accept="image/jpeg,image/webp" (change)="onPick($event)" />
+  </label>
+
+  <app-note variant="unter">{{ hint() }}</app-note>
+
+  <section class="submit__block">
+    <h2 class="submit__section">{{ 'bild.abschnitt.herkunft' | t }}</h2>
+    <app-form-field
+      [label]="'bild.foto' | t"
+      [placeholder]="'bild.fotografPlatzhalter' | t"
+      [value]="photographer()"
+      (valueChange)="photographer.set($event)"
+    />
+    <app-select
+      class="submit__select"
+      [label]="'bild.lizenz' | t"
+      [options]="licences()"
+      [ngModel]="licence()"
+      (ngModelChange)="setLicence($event)"
+    />
+    @if (needsSource()) {
+      <app-form-field
+        [label]="'bild.quelle' | t"
+        [placeholder]="'bild.quellePlatzhalter' | t"
+        [value]="source()"
+        (valueChange)="source.set($event)"
+      />
+    }
+  </section>
+
+  <section class="submit__block">
+    <h2 class="submit__section">{{ 'bild.abschnitt.angaben' | t }}</h2>
+    <app-form-field
+      kind="date"
+      [label]="'bild.aufgenommen' | t"
+      [value]="takenOn()"
+      (valueChange)="takenOn.set($event)"
+    />
+    <app-form-field
+      [label]="'bild.unterschrift' | t"
+      [placeholder]="'bild.unterschriftPlatzhalter' | t"
+      [multiline]="true"
+      [value]="caption()"
+      (valueChange)="caption.set($event)"
+    />
+  </section>
+
+  <app-note variant="unter">{{ 'bild.pflicht' | t }}</app-note>
+</div>
+
+<app-action-bar
+  [primary]="action()"
+  [mainDisabled]="!ready() || busy()"
+  [secondary]="'objekt.abbrechen' | t"
+  (mainClick)="save()"
+  (secondaryClick)="leave()"
+/>

@@ -45,3 +45,14 @@
   list-style: none;
   scrollbar-width: none;
 }
+
+// Der Weg zum Einreichen steht am Ende des Streifens, gestrichelt statt
+// gefüllt: dort ist noch kein Bild.
+.gallery__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px dashed var(--color-border-strong);
+}

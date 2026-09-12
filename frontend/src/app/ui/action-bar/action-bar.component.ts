@@ -26,6 +26,8 @@ export class ActionBarComponent {
   /** Die linke der beiden Nebenaktionen, wenn keine Gefahr im Spiel ist. */
   readonly second = input<string>();
   readonly danger = input<string>();
+  /** Eine Absage ohne Grund geht nicht hinaus; der Knopf sagt es, bevor man drückt. */
+  readonly dangerDisabled = input(false);
   readonly ghost = input<string>();
 
   readonly mainClick = output();

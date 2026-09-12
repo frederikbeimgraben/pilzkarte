@@ -1,7 +1,7 @@
 @if (viewport(); as viewport) {
   <app-page-header [titel]="viewport.name" [back]="true" (backClick)="back()" />
   <div class="species">
-    <app-species-images [images]="images()" [speciesName]="viewport.name" />
+    <app-species-images [images]="images()" [speciesName]="viewport.name" [slug]="slug()" />
 
     <div class="species__head">
       <app-note variant="unter" [italic]="true">{{ viewport.subtitle }}</app-note>

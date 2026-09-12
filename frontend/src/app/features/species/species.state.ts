@@ -102,6 +102,18 @@ export class SpeciesState {
   }
 
   /**
+   * Der Name einer Art, sobald ein Katalog geladen ist. Ohne ihn bleibt nur
+   * der Slug, und der steht in keiner Oberfläche.
+   */
+  nameOf(slug: string): string | null {
+    for (const catalogue of [this.alle(), this.catalogue(), this.verwechslungen()]) {
+      const found = catalogue?.arten.find((art) => art.slug === slug);
+      if (found) return found.name;
+    }
+    return null;
+  }
+
+  /**
    * Woher der Sprung auf ein Verwechslungsprofil kam. Diese Profile stehen im
    * Katalog, weil eine sammelbare Art ihnen ähnlich sieht; von dort führt der
    * Rückweg zurück zu genau dieser Art.

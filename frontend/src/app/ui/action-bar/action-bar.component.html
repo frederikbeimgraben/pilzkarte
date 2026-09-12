@@ -25,9 +25,14 @@
     </div>
   } @else if (danger() && secondary()) {
     <div class="footer__row">
-      <app-button class="footer__danger" variant="secondary" [block]="true" (click)="dangerClick.emit()">{{
-        danger()
-      }}</app-button>
+      <app-button
+        class="footer__danger"
+        variant="secondary"
+        [block]="true"
+        [disabled]="dangerDisabled()"
+        (click)="dangerClick.emit()"
+        >{{ danger() }}</app-button
+      >
       <app-button variant="secondary" [block]="true" (click)="secondaryClick.emit()">{{
         secondary()
       }}</app-button>
@@ -37,9 +42,14 @@
       secondary()
     }}</app-button>
   } @else if (danger()) {
-    <app-button class="footer__danger" variant="secondary" [block]="true" (click)="dangerClick.emit()">{{
-      danger()
-    }}</app-button>
+    <app-button
+      class="footer__danger"
+      variant="secondary"
+      [block]="true"
+      [disabled]="dangerDisabled()"
+      (click)="dangerClick.emit()"
+      >{{ danger() }}</app-button
+    >
   }
   @if (ghost()) {
     <app-button variant="ghost" [block]="true" (click)="ghostClick.emit()">{{ ghost() }}</app-button>

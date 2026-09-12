@@ -1,0 +1,14 @@
+// Die Fläche steht schon, bevor das Bild da ist. Sonst springt die Zeile,
+// sobald die Antwort kommt.
+:host {
+  display: block;
+  overflow: hidden;
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-sm);
+}
+
+.private__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}

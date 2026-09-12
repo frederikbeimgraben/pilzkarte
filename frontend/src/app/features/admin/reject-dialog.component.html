@@ -1,0 +1,31 @@
+<app-dialog
+  [open]="open()"
+  [title]="'bild.grundFrage' | t"
+  [closeLabel]="'objekt.schliessen' | t"
+  (closed)="cancel()"
+>
+  <app-chip-group
+    [chips]="chips()"
+    [value]="reason()"
+    [label]="'bild.grundVorschlaege' | t"
+    (valueChange)="pick($event)"
+  />
+  <app-form-field
+    class="reject__field"
+    [label]="'bild.grundFeld' | t"
+    [placeholder]="'bild.grundPlatzhalter' | t"
+    [multiline]="true"
+    [value]="reason()"
+    (valueChange)="write($event)"
+  />
+  <app-note variant="unter">{{ hint() }}</app-note>
+  <div dialog-footer>
+    <app-action-bar
+      [danger]="'bild.ablehnen' | t"
+      [secondary]="'objekt.abbrechen' | t"
+      [dangerDisabled]="!ready()"
+      (dangerClick)="confirm()"
+      (secondaryClick)="cancel()"
+    />
+  </div>
+</app-dialog>

@@ -1,0 +1,63 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.submit {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--pilz-gutter);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+// Maße aus `docs/mockups/bauen.py`, Artboard `Einreichen`: die Fläche ist
+// 160 px hoch und trägt die Vorschau randlos.
+.submit__pick {
+  display: flex;
+  block-size: 160px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-surface-sunken);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+}
+
+.submit__preview {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.submit__empty {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.submit__block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.submit__section {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.submit__select {
+  display: block;
+}

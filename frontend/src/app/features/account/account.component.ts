@@ -88,6 +88,10 @@ export class AccountComponent {
     void this.router.navigateByUrl('/karte');
   }
 
+  protected toMyImages(): void {
+    void this.router.navigateByUrl('/konto/bilder');
+  }
+
   protected toAdministration(): void {
     void this.router.navigateByUrl('/verwaltung');
   }
