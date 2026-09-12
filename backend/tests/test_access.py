@@ -624,3 +624,185 @@ async def test_the_sync_is_idempotent_and_cleans_up(schema: None) -> None:  # no
     assert fixed is not None
     assert fixed.area == Area.INTERFACE.value
     assert sorted(roles) == sorted(role.slug for role in BUILT_IN_ROLES)
+
+
+# ------------------------------------------------------------------ Der letzte Admin
+
+
+async def admin_id(call: httpx.AsyncClient, idp: FakeIdp) -> str:
+    """Die Kennung der festen Rolle Admin."""
+    roles = (await call.get("/api/roles", headers=as_root(idp))).json()
+    return str(next(role for role in roles if role["slug"] == ADMIN_SLUG)["id"])
+
+
+async def test_the_last_admin_cannot_be_stripped_of_the_role(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    async with call:
+        admin = await admin_id(call, idp)
+        _ = await call.get("/api/ich", headers=as_helper(idp))
+        _ = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": [admin]},
+            headers=as_root(idp),
+        )
+        stripped = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": []},
+            headers=as_root(idp),
+        )
+        read_back = await call.get(f"/api/people/{HELPER}", headers=as_root(idp))
+
+    assert stripped.status_code == 409
+    assert stripped.headers["content-type"].startswith("application/problem+json")
+    assert stripped.json()["code"] == "conflict"
+    assert "letzte Person" in stripped.json()["detail"]
+    assert [role["slug"] for role in read_back.json()["roles"]] == [ADMIN_SLUG]
+
+
+async def test_the_last_admin_keeps_the_role_while_other_roles_change(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    async with call:
+        admin = await admin_id(call, idp)
+        other = await create_role(call, idp)
+        _ = await call.get("/api/ich", headers=as_helper(idp))
+        _ = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": [admin]},
+            headers=as_root(idp),
+        )
+        added = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": [admin, other["id"]]},
+            headers=as_root(idp),
+        )
+        dropped = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": [other["id"]]},
+            headers=as_root(idp),
+        )
+
+    assert [role["slug"] for role in added.json()["roles"]] == [ADMIN_SLUG, "berater"]
+    assert dropped.status_code == 409
+
+
+async def test_an_admin_may_step_down_while_a_second_one_stays(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    async with call:
+        admin = await admin_id(call, idp)
+        _ = await call.get("/api/ich", headers=as_helper(idp))
+        _ = await call.get("/api/ich", headers=as_guest(idp))
+        for sub in (HELPER, GUEST):
+            _ = await call.put(
+                f"/api/people/{sub}/roles",
+                json={"roles": [admin]},
+                headers=as_root(idp),
+            )
+        first = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": []},
+            headers=as_root(idp),
+        )
+        # Jetzt trägt nur noch das Gastkonto die Rolle, und sie bleibt.
+        second = await call.put(
+            f"/api/people/{GUEST}/roles",
+            json={"roles": []},
+            headers=as_root(idp),
+        )
+
+    assert first.status_code == 200
+    assert first.json()["roles"] == []
+    assert second.status_code == 409
+
+
+async def test_a_person_without_the_admin_role_is_not_the_last_admin(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    # Die Sperre darf nicht jede Zuweisung treffen, nur die, die den letzten
+    # Admin entrechtet.
+    async with call:
+        admin = await admin_id(call, idp)
+        other = await create_role(call, idp)
+        _ = await call.get("/api/ich", headers=as_helper(idp))
+        _ = await call.get("/api/ich", headers=as_guest(idp))
+        _ = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": [admin]},
+            headers=as_root(idp),
+        )
+        _ = await call.put(
+            f"/api/people/{GUEST}/roles",
+            json={"roles": [other["id"]]},
+            headers=as_root(idp),
+        )
+        cleared = await call.put(
+            f"/api/people/{GUEST}/roles",
+            json={"roles": []},
+            headers=as_root(idp),
+        )
+
+    assert cleared.status_code == 200
+
+
+# ------------------------------------------------------------------ Die eigenen Rechte
+
+
+async def test_own_permissions_need_no_permission_of_their_own(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    # Ohne diesen Endpunkt müsste das Frontend die Rollenliste lesen, und dafür
+    # bräuchte jede Person das Recht, Rollen zu verwalten.
+    async with call:
+        response = await call.get("/api/me/permissions", headers=as_guest(idp))
+
+    assert response.status_code == 200
+    assert response.json() == {"permissions": []}
+
+
+async def test_own_permissions_report_the_whole_catalogue_for_an_admin(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    async with call:
+        response = await call.get("/api/me/permissions", headers=as_root(idp))
+
+    assert response.json()["permissions"] == [right.value for right in Permission]
+
+
+async def test_own_permissions_sum_up_the_roles(call: httpx.AsyncClient, idp: FakeIdp) -> None:
+    async with call:
+        first = await create_role(call, idp, slug="berater", permissions=["species.edit"])
+        second = await create_role(
+            call,
+            idp,
+            slug="uebersetzer",
+            name="Übersetzer",
+            permissions=["text.edit"],
+        )
+        _ = await call.get("/api/ich", headers=as_helper(idp))
+        _ = await call.put(
+            f"/api/people/{HELPER}/roles",
+            json={"roles": [first["id"], second["id"]]},
+            headers=as_root(idp),
+        )
+        response = await call.get("/api/me/permissions", headers=as_helper(idp))
+
+    # Die Reihenfolge folgt dem Katalog, nicht der Reihenfolge der Rollen.
+    assert response.json()["permissions"] == [
+        Permission.SPECIES_EDIT.value,
+        Permission.TEXT_EDIT.value,
+    ]
+
+
+async def test_own_permissions_without_a_token_answer_401(call: httpx.AsyncClient) -> None:
+    async with call:
+        response = await call.get("/api/me/permissions")
+
+    assert response.status_code == 401
