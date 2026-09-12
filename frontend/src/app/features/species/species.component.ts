@@ -19,7 +19,8 @@ import {
   SvgIconComponent,
   type MonthMark,
 } from '../../ui';
-import { longDate } from '../entries/formats';
+import { SpeciesImagesComponent } from './species-images.component';
+import { longDate } from '../../core/i18n/dates';
 import { SpeciesState } from './species.state';
 import {
   EDIBILITY_BADGE,
@@ -139,6 +140,7 @@ interface Viewport {
     NoteComponent,
     PageHeaderComponent,
     SeasonCurveComponent,
+    SpeciesImagesComponent,
     SvgIconComponent,
     TranslatePipe,
   ],
@@ -154,6 +156,7 @@ export class SpeciesComponent {
 
   protected readonly unknown = computed(() => this.state.unknown().has(this.slug()));
   protected readonly origin = this.state.origin;
+  protected readonly images = computed(() => this.state.images().get(this.slug()) ?? []);
   protected readonly viewport = computed<Viewport | null>(() => {
     const art = this.state.profile().get(this.slug());
     return art ? this.create(art) : null;
@@ -170,6 +173,7 @@ export class SpeciesComponent {
   constructor() {
     effect(() => {
       this.state.loadProfile(this.slug());
+      this.state.loadImages(this.slug());
     });
   }
 

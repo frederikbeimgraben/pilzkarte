@@ -1,0 +1,11 @@
+// Das Bild führt, die Angaben stehen darunter. Die Höhe ist begrenzt, damit
+// ein hochkantes Bild die Tabelle nicht aus dem Fenster schiebt.
+.viewer__image {
+  display: block;
+  inline-size: 100%;
+  max-block-size: 60vh;
+  margin-block-end: var(--space-4);
+  object-fit: contain;
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-md);
+}

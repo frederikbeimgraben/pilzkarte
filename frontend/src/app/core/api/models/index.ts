@@ -25,6 +25,7 @@ export type {
   RoleRef,
 } from './access';
 export { COLORS, VISIBILITIES } from './entries';
+export { IMAGE_STATES, LICENCES } from './species-images';
 export type {
   Color,
   Photo,
@@ -72,4 +73,5 @@ export type {
   Confusable,
   Week,
 } from './species';
+export type { ImageState, ImageSubmission, Licence, SpeciesImage } from './species-images';
 export type { TextCatalogue, TextEntry } from './texts';

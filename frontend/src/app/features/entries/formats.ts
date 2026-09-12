@@ -1,10 +1,13 @@
 /**
- * Wie Datum, Ort und Fläche in der Oberfläche stehen.
+ * Wie Datum, Ort und Fläche in der Oberfläche stehen. Der lange Tag steht im
+ * Kern, weil ihn auch Arten und Bilder schreiben.
  *
  * Die Formen kommen aus den Mockups: `Fund` schreibt „6. September 2026“,
  * `Funde` schreibt „6. Sept.“ und für den heutigen Tag „Heute“,
  * `MeldenFormular` schreibt den Ort als „48,5203 · 9,0511“.
  */
+
+import { asDate } from '../../core/i18n/dates';
 
 /** Vier Nachkommastellen sind rund elf Meter; genauer trifft kein Daumen. */
 const LOCATION_DIGITS = 4;
@@ -14,22 +17,6 @@ export function isoDatum(instant: Date): string {
   const month = String(instant.getMonth() + 1).padStart(2, '0');
   const tag = String(instant.getDate()).padStart(2, '0');
   return `${instant.getFullYear()}-${month}-${tag}`;
-}
-
-/**
- * Liest ein ISO-Datum als lokalen Tag. `new Date('2026-09-06')` läge in UTC
- * und verschöbe den Tag östlich der Datumsgrenze.
- */
-export function asDate(iso: string): Date {
-  const [jahr, month, tag] = iso.split('-').map(Number);
-  return new Date(jahr, (month || 1) - 1, tag || 1);
-}
-
-/** „6. September 2026“, so wie das Fund-Blatt es schreibt. */
-export function longDate(iso: string, locale: string): string {
-  return new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' }).format(
-    asDate(iso),
-  );
 }
 
 /** „6. Sept.“ in der Liste, für heute „Heute“. */
