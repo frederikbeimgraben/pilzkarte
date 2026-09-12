@@ -73,9 +73,47 @@ describe('LookalikeRowComponent', () => {
 
     // Im Textfluss sprang die Marke je nach Länge in dieselbe oder die nächste
     // Zeile, und der Abstand darüber wechselte von Zeile zu Zeile.
-    const value = styleOf(container.querySelector('.lookalike__value'));
-    expect(value.flexDirection).toBe('column');
-    expect(value.alignItems).toBe('flex-start');
+    const text = styleOf(container.querySelector('.lookalike__text'));
+    expect(text.flexDirection).toBe('column');
     expect(styleOf(container.querySelector('.lookalike__badge')).marginBlockStart).toBe('var(--space-2)');
+  });
+
+  it('stapelt Name und lateinischen Namen in einer Spur', async () => {
+    const { container } = await render(HostComponent, { providers: [provideRouter([])] });
+
+    // Der Grund für den Bruch nach PR 78: Name und lateinischer Name standen in
+    // zwei Rasterspuren. Das Farbfeld nahm eine dritte, und der Wertspur blieb
+    // so wenig, dass „Leccinum melaneum“ Buchstabe für Buchstabe umbrach. Beide
+    // Namen gehören zu einer Art, also stehen sie in einer Spur.
+    const row = container.querySelector('app-lookalike-row');
+    const tracks = [...(row?.children ?? [])].map((child) => child.className);
+    expect(tracks).toEqual(['lookalike__colour', 'lookalike__text', 'lookalike__actions']);
+
+    const stack = container.querySelector('.lookalike__text');
+    expect(stack?.querySelector('.lookalike__name')).not.toBeNull();
+    expect(stack?.querySelector('.lookalike__latin')).not.toBeNull();
+  });
+
+  it('nimmt ohne Farben nur zwei Spuren', async () => {
+    const { container } = await render(HostComponent, { providers: [provideRouter([])] });
+
+    const rows = container.querySelectorAll('app-lookalike-row');
+    const without = rows[1];
+    const tracks = [...without.children].map((child) => child.className);
+    expect(tracks).toEqual(['lookalike__text', 'lookalike__actions']);
+  });
+
+  it('lässt einen langen lateinischen Namen nicht Buchstabe für Buchstabe brechen', async () => {
+    // jsdom rechnet kein Layout, eine Höhe ist hier also nicht zu messen. Was
+    // sich prüfen lässt, ist die Ursache: der Name steht in einer Spur, die
+    // schrumpfen darf, und bricht an Wortgrenzen, nicht an jedem Zeichen.
+    const { container } = await render(HostComponent, { providers: [provideRouter([])] });
+
+    const stack = styleOf(container.querySelector('.lookalike__text'));
+    expect(stack.minInlineSize).toBe('0px');
+    expect(stack.overflowWrap).toBe('anywhere');
+    expect(styleOf(container.querySelector('app-lookalike-row')).gridTemplateColumns).toBe(
+      'auto minmax(0, 1fr) auto',
+    );
   });
 });

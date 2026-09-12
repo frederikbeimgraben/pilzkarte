@@ -1,8 +1,8 @@
 @if (colours().length) {
   <app-colour-field class="lookalike__colour" [colours]="colours()" [label]="coloursLabel()" />
 }
-<span class="lookalike__name">{{ name() }}</span>
-<span class="lookalike__value">
+<span class="lookalike__text">
+  <span class="lookalike__name">{{ name() }}</span>
   @if (latin(); as lateinisch) {
     <span class="lookalike__latin">{{ lateinisch }}</span>
   }
