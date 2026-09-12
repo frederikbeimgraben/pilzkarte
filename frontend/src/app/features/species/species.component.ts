@@ -119,7 +119,7 @@ interface Viewport {
  * der Sprung auf die Karte. Das Profil kommt aus dem Katalog im Speicher; ein
  * zweiter Besuch derselben Art fragt den Server nicht noch einmal.
  *
- * Nicht jede Art hier wird gesammelt: 224 Profile stehen im Katalog, weil eine
+ * Nicht jede Art hier wird gesammelt: 221 Profile stehen im Katalog, weil eine
  * sammelbare Art ihnen ähnlich sieht. Sie tragen keine Saison und keinen Weg
  * auf die Karte, dafür oben den Hinweis und den Rückweg.
  */
