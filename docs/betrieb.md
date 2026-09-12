@@ -19,6 +19,7 @@ hier ändert, ändert auch die andere Seite.
 | `/var/www/pilze/karte` | `deutschland.pmtiles`: Vektorkacheln für Deutschland bis Zoom 14 | `tools/pmtiles/hochladen.sh` |
 | `/var/lib/pilze-render` | Arbeitsbaum: `src/`, `models/`, `data/interim/` aus `modell/`, dazu `app/backend/` | `modell/deploy_daten.sh`, `deploy/backend.sh` |
 | `/var/lib/pilze-app` | `pilze.sqlite`, `fotos/` | Dienst `pilze-app` |
+| `/var/lib/pilze-app/fotos/arten` | Artbilder, ein Ordner je Art, je Bild eine grosse und eine kleine Fassung | Dienst `pilze-app` |
 
 ## Dienst `pilze-app`
 
@@ -36,7 +37,7 @@ Umgebung:
 | Variable | Wert auf dem Homeserver | Bedeutung |
 | --- | --- | --- |
 | `PILZE_DB` | `sqlite+aiosqlite:////var/lib/pilze-app/pilze.sqlite` | SQLAlchemy-URL |
-| `PILZE_FOTOS` | `/var/lib/pilze-app/fotos` | Fotoablage, ein Ordner je Fund |
+| `PILZE_FOTOS` | `/var/lib/pilze-app/fotos` | Fotoablage. Ein Ordner je Fund, dazu `arten/` fuer die Artbilder |
 | `PILZE_MAPS` | `/var/www/pilze` | Manifeste und Funde für Artenliste und Saisonkurve |
 | `PILZE_OIDC_ISSUER` | `https://sso.beimgraben.net/application/o/pilze/` | Issuer. Discovery und JWKS folgen daraus |
 | `PILZE_OIDC_CLIENT_ID` | `pilze` | erwartete `aud` im Access-Token |

@@ -6,6 +6,9 @@ GPS-Ort in einer Kamera-Kopfzeile.
 """
 
 import io
+from collections.abc import Mapping
+from dataclasses import dataclass
+from enum import StrEnum
 from pathlib import Path
 from typing import Final
 
@@ -27,30 +30,74 @@ SUFFIX: Final = ".jpg"
 MAX_BYTES: Final = 12 * 1024 * 1024
 
 
-def shrink(raw_bytes: bytes) -> tuple[bytes, int, int]:
-    """Nimmt ein JPEG oder WebP und liefert ein JPEG ohne Kopfzeilen.
+class Size(StrEnum):
+    """Die Groessen, in denen ein Bild auf der Platte liegt."""
 
-    Zurueck kommen die Bytes und die Kantenlaengen des Ergebnisses. Ein Bild,
-    das kleiner ist als ``KANTE``, bleibt in seiner Groesse.
-    """
-    if len(raw_bytes) > MAX_BYTES:
-        raise UnsupportedMediaType("Das Bild ist groesser als 12 MB.")
+    FULL = "full"
+    THUMB = "thumb"
+
+
+# Eine Artseite zeigt ein grosses Bild und darunter einen Streifen kleiner.
+# Ohne die kleine Fassung laedt der Streifen viermal 1600 px, nur um sie auf
+# 84 px zu zeichnen.
+EDGES: Final[Mapping[Size, int]] = {Size.FULL: EDGE, Size.THUMB: 480}
+
+
+@dataclass(frozen=True, slots=True)
+class Rendered:
+    """Eine fertige Fassung eines Bildes."""
+
+    data: bytes
+    width: int
+    height: int
+
+
+def _accepted(raw_bytes: bytes, max_bytes: int) -> Image.Image:
+    """Prueft Groesse und Format und liefert das Bild als RGB."""
+    if len(raw_bytes) > max_bytes:
+        raise UnsupportedMediaType(f"Das Bild ist groesser als {max_bytes // (1024 * 1024)} MB.")
     try:
         with Image.open(io.BytesIO(raw_bytes)) as opened:
             if opened.format not in FORMATS:
                 raise UnsupportedMediaType("Der Dienst nimmt nur JPEG und WebP an.")
-            colored = opened.convert("RGB")
+            return opened.convert("RGB")
     except OSError as error:
         raise UnsupportedMediaType("Die Datei ist kein lesbares Bild.") from error
 
-    colored.thumbnail((EDGE, EDGE), Image.Resampling.LANCZOS)
+
+def _as_jpeg(source: Image.Image, edge: int) -> Rendered:
+    """Rechnet ein Bild auf eine laengste Kante und schreibt es als JPEG."""
+    scaled = source.copy()
+    scaled.thumbnail((edge, edge), Image.Resampling.LANCZOS)
     # Ein neues Bild traegt keine ``info``. Nur so gehen EXIF und der GPS-Ort
     # sicher verloren, statt beim Speichern wieder mitgeschrieben zu werden.
-    clean = Image.new("RGB", colored.size)
-    clean.paste(colored)
+    clean = Image.new("RGB", scaled.size)
+    clean.paste(scaled)
     buffer = io.BytesIO()
     clean.save(buffer, format="JPEG", quality=QUALITY)
-    return buffer.getvalue(), clean.width, clean.height
+    return Rendered(buffer.getvalue(), clean.width, clean.height)
+
+
+def shrink(raw_bytes: bytes, max_bytes: int = MAX_BYTES) -> tuple[bytes, int, int]:
+    """Nimmt ein JPEG oder WebP und liefert ein JPEG ohne Kopfzeilen.
+
+    Zurueck kommen die Bytes und die Kantenlaengen des Ergebnisses. Ein Bild,
+    das kleiner ist als ``EDGE``, bleibt in seiner Groesse. Die Obergrenze
+    steht als Argument: ein Fundfoto kommt aus der Kamera und darf gross sein,
+    ein Artbild laedt jemand am Rechner hoch und soll es nicht.
+    """
+    rendered = _as_jpeg(_accepted(raw_bytes, max_bytes), EDGE)
+    return rendered.data, rendered.width, rendered.height
+
+
+def sizes(raw_bytes: bytes, max_bytes: int = MAX_BYTES) -> dict[Size, Rendered]:
+    """Liefert jede Fassung eines Bildes, gerechnet aus derselben Quelle.
+
+    Jede Fassung aus der vorigen zu rechnen waere schneller und wuerde bei der
+    kleinsten sichtbar schmieren.
+    """
+    source = _accepted(raw_bytes, max_bytes)
+    return {size: _as_jpeg(source, edge) for size, edge in EDGES.items()}
 
 
 def store(folder: Path, filename: str, data: bytes) -> Path:

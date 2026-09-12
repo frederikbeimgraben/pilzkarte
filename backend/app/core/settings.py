@@ -43,6 +43,16 @@ class Settings(BaseSettings):
         return value if value.endswith("/") else value + "/"
 
     @property
+    def species_images(self) -> Path:
+        """Die Ablage der Artbilder, ein Ordner je Art.
+
+        Sie liegt unter der Fotoablage und braucht darum keine eigene
+        Variable und keine Aenderung am NixOS-Modul. Ein Fundordner heisst
+        nach seiner UUID, ``arten`` kollidiert also mit keinem.
+        """
+        return self.photos / "arten"
+
+    @property
     def discovery_url(self) -> str:
         """URL des OpenID-Configuration-Dokuments."""
         return f"{self.oidc_issuer}.well-known/openid-configuration"

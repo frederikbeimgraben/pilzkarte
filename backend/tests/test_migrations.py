@@ -57,6 +57,7 @@ def test_upgrade_creates_the_schema_on_an_empty_file(
         "role_permission",
         "user_role",
         "text",
+        "species_image",
     }
 
     assert expected | {"alembic_version"} <= tables(file)
@@ -91,6 +92,7 @@ def test_upgrade_also_runs_on_an_existing_database(
         "role_permission",
         "user_role",
         "text",
+        "species_image",
     } <= tables(file)
 
 

@@ -71,6 +71,29 @@ class Rule(StrEnum):
     GRADED = "abgestuft"
 
 
+class Licence(StrEnum):
+    """Unter welchem Recht ein Artbild steht.
+
+    ``own`` heisst: die Person hat das Bild selbst aufgenommen und gibt es der
+    App. Jeder andere Wert nennt die Lizenz, unter der das Bild schon steht.
+    Eine freie Eingabe gibt es nicht, sonst stuende dort irgendwann "frei".
+    """
+
+    OWN = "own"
+    CC0 = "cc0"
+    CC_BY_4 = "cc-by-4"
+    CC_BY_SA_4 = "cc-by-sa-4"
+    PUBLIC_DOMAIN = "public-domain"
+
+
+class ImageState(StrEnum):
+    """Wo ein Artbild in der Pruefung steht."""
+
+    SUBMITTED = "submitted"
+    APPROVED = "approved"
+    REJECTED = "rejected"
+
+
 class Color(StrEnum):
     """Die sechs Farben aus den Mockups. Eine freie Farbwahl gibt es nicht."""
 

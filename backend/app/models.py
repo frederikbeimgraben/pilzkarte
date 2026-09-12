@@ -22,7 +22,7 @@ from sqlalchemy import Enum as SaEnum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.types import TypeDecorator
 
-from app.shared.schemas import Color, Rule, Visibility
+from app.shared.schemas import Color, ImageState, Licence, Rule, Visibility
 
 # Eine UUID als Zeichenkette. Das Geraet vergibt sie schon offline, damit ein
 # Eintrag aus der Warteschlange dieselbe Kennung behaelt.
@@ -266,6 +266,44 @@ class Photo(Base):
     created_at: Mapped[datetime] = mapped_column("erstellt_am", UtcTime, default=utc_now)
 
     find: Mapped[Find] = relationship(back_populates="photos")
+
+
+class SpeciesImage(Base):
+    """Ein Bild zu einer Art. Die Dateien liegen unter ``PILZE_FOTOS/arten``.
+
+    Die Art steht als Slug und nicht als Fremdschluessel: der Artenkatalog ist
+    kein Tabelleninhalt, er kommt als TOML mit dem Deploy.
+
+    ``photographer`` und ``licence`` sind Pflicht. Ein Bild ohne Urheber ist
+    eines, das die App nicht zeigen darf.
+    """
+
+    __tablename__ = "species_image"
+
+    id: Mapped[str] = mapped_column(String(ID_LENGTH), primary_key=True, default=new_identifier)
+    species_slug: Mapped[str] = mapped_column(String(80), index=True)
+    uploader_sub: Mapped[str] = mapped_column(String(255), index=True)
+    photographer: Mapped[str] = mapped_column(String(120))
+    licence: Mapped[Licence] = mapped_column(_enum_column(Licence))
+    source: Mapped[str | None] = mapped_column(Text, default=None)
+    taken_on: Mapped[date | None] = mapped_column(Date, default=None)
+    caption: Mapped[str | None] = mapped_column(String(200), default=None)
+    # Das Titelbild einer Art. Hoechstens eines traegt es, das setzt der Dienst
+    # beim Schreiben durch.
+    lead: Mapped[bool] = mapped_column(Boolean, default=False, server_default=false())
+    state: Mapped[ImageState] = mapped_column(
+        _enum_column(ImageState),
+        default=ImageState.SUBMITTED,
+        index=True,
+    )
+    # Der Grund einer Absage. Er geht an die einreichende Person zurueck.
+    reject_reason: Mapped[str | None] = mapped_column(String(200), default=None)
+    reviewed_by: Mapped[str | None] = mapped_column(String(255), default=None)
+    reviewed_at: Mapped[datetime | None] = mapped_column(UtcTime, default=None)
+    width: Mapped[int] = mapped_column()
+    height: Mapped[int] = mapped_column()
+    created_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now)
+    updated_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now, onupdate=utc_now)
 
 
 class Marker(MapObject):

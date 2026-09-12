@@ -17,6 +17,7 @@ from app.modules import (
     internal,
     marker,
     species,
+    species_images,
     system,
     terms,
     texts,
@@ -63,6 +64,7 @@ def build_app() -> FastAPI:
     built.include_router(system.router, prefix="/api")
     built.include_router(access.router, prefix="/api")
     built.include_router(species.router, prefix="/api")
+    built.include_router(species_images.router, prefix="/api")
     built.include_router(terms.router, prefix="/api")
     built.include_router(texts.router, prefix="/api")
     built.include_router(finds.router, prefix="/api")
