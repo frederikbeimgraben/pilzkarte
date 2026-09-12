@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { BadgeComponent, ButtonComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
+import { PagedList } from '../../core/api/paged-list';
 import { SpeciesImagesApi } from '../../core/api/species-images.api';
 import type { ImageState, ImageSubmission } from '../../core/api/models';
 import { longDate } from '../../core/i18n/dates';
@@ -86,20 +87,30 @@ export class AdminImagesComponent {
   private readonly router = inject(Router);
   private readonly species = inject(SpeciesState);
 
-  private readonly held = signal<readonly ImageSubmission[] | null>(null);
   private readonly busy = signal(false);
+  private readonly held = new PagedList<ImageSubmission>((offset, limit) =>
+    this.api.submissions(this.view(), offset, limit),
+  );
 
   protected readonly view = signal<ImageState>('submitted');
+  protected readonly more = this.held.more;
+  protected readonly loading = this.held.busy;
   /** Die Einreichung, deren Absage gerade nach einem Grund fragt. */
   protected readonly rejecting = signal<Task | null>(null);
 
-  protected readonly loaded = computed(() => this.held() !== null);
+  protected readonly loaded = this.held.loaded;
+  protected readonly shown = computed(() =>
+    this.i18n.translate('bild.vonGesamt', {
+      geladen: this.held.entries().length,
+      gesamt: this.held.total(),
+    }),
+  );
   protected readonly options = computed(() =>
     VIEWS.map((entry) => ({ value: entry.value, label: this.i18n.translate(entry.label) })),
   );
 
   protected readonly tasks = computed<Task[]>(() =>
-    (this.held() ?? []).map((image) => ({
+    this.held.entries().map((image) => ({
       id: image.id,
       species: this.species.nameOf(image.speciesSlug) ?? image.speciesSlug,
       thumbPath: image.thumbUrl,
@@ -121,13 +132,16 @@ export class AdminImagesComponent {
     // Die Antwort nennt nur den Slug. Der Name steht im Katalog, und in der
     // Liste steht der Name.
     this.species.loadAll();
-    this.load();
+    this.held.restart();
   }
 
   protected select(state: string): void {
     this.view.set(state as ImageState);
-    this.held.set(null);
-    this.load();
+    this.held.restart();
+  }
+
+  protected loadMore(): void {
+    this.held.next();
   }
 
   protected approve(task: Task): void {
@@ -135,7 +149,7 @@ export class AdminImagesComponent {
     this.busy.set(true);
     this.api.approve(task.id).subscribe({
       next: () => {
-        this.after();
+        this.after(task.id);
       },
       error: () => {
         this.busy.set(false);
@@ -150,7 +164,7 @@ export class AdminImagesComponent {
     this.rejecting.set(null);
     this.api.reject(task.id, reason).subscribe({
       next: () => {
-        this.after();
+        this.after(task.id);
       },
       error: () => {
         this.busy.set(false);
@@ -162,20 +176,10 @@ export class AdminImagesComponent {
     void this.router.navigateByUrl('/verwaltung');
   }
 
-  private after(): void {
+  /** Eine geprüfte Einreichung gehört nicht mehr in den offenen Eingang. */
+  private after(id: string): void {
     this.busy.set(false);
-    this.load();
-  }
-
-  private load(): void {
-    this.api.submissions(this.view()).subscribe({
-      next: (page) => {
-        this.held.set(page.eintraege);
-      },
-      error: () => {
-        this.held.set([]);
-      },
-    });
+    this.held.withoutEntry((image) => image.id === id);
   }
 
   /**

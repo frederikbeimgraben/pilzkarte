@@ -48,4 +48,24 @@ describe('SpeciesImagesApi', () => {
 
     expect(rejection.request.body).toEqual({ reason: 'Unscharf' });
   });
+
+  it('blättert durch die eigenen Einreichungen', () => {
+    const api = TestBed.inject(SpeciesImagesApi);
+    void firstValueFrom(api.mine(25, 25));
+
+    const request = TestBed.inject(HttpTestingController).expectOne(
+      '/api/species-images/mine?offset=25&limit=25',
+    );
+
+    expect(request.request.method).toBe('GET');
+  });
+
+  it('blättert durch den Eingang eines Zustands', () => {
+    const api = TestBed.inject(SpeciesImagesApi);
+    void firstValueFrom(api.submissions('rejected', 0, 25));
+
+    TestBed.inject(HttpTestingController).expectOne(
+      '/api/species-images/submissions?state=rejected&offset=0&limit=25',
+    );
+  });
 });

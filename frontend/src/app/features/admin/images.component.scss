@@ -66,3 +66,12 @@
   gap: var(--space-2);
   margin-block-start: var(--space-3);
 }
+
+// Der Zaehler steht ueber dem Knopf: erst wie viel schon da ist, dann der Weg
+// zu mehr.
+.images__more {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: center;
+}

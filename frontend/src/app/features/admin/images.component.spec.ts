@@ -24,7 +24,7 @@ const OPEN: ImageSubmission = imageSubmission({
   licence: 'cc-by-4',
 });
 
-async function build(entries: ImageSubmission[] = [OPEN]): Promise<Setup> {
+async function build(entries: ImageSubmission[] = [OPEN], total?: number): Promise<Setup> {
   vi.stubGlobal('URL', {
     ...URL,
     createObjectURL: () => 'blob:eins',
@@ -36,8 +36,8 @@ async function build(entries: ImageSubmission[] = [OPEN]): Promise<Setup> {
   const http = TestBed.inject(HttpTestingController);
   http.expectOne('/api/arten?alle=true').flush(SPECIES_LIST);
   http
-    .expectOne('/api/species-images/submissions?state=submitted')
-    .flush({ eintraege: entries, gesamt: entries.length, limit: 50, offset: 0 });
+    .expectOne('/api/species-images/submissions?state=submitted&offset=0&limit=25')
+    .flush({ eintraege: entries, gesamt: total ?? entries.length, limit: 25, offset: 0 });
   detectChanges();
   return { container, http, refresh: detectChanges };
 }
@@ -76,11 +76,11 @@ describe('AdminImagesComponent', () => {
     const approval = http.expectOne('/api/species-images/bild-eins/approval');
     expect(approval.request.method).toBe('POST');
     approval.flush({ ...OPEN, state: 'approved' });
-    http
-      .expectOne('/api/species-images/submissions?state=submitted')
-      .flush({ eintraege: [], gesamt: 0, limit: 50, offset: 0 });
     refresh();
 
+    // Die Zeile geht heraus, ohne dass die Liste neu geholt wird: wer auf
+    // Seite drei arbeitet, bleibt dort.
+    http.expectNone('/api/species-images/submissions?state=submitted&offset=0&limit=25');
     expect(screen.getByText('Hier liegt nichts zur Prüfung.')).toBeInTheDocument();
   });
 
@@ -116,10 +116,10 @@ describe('AdminImagesComponent', () => {
     answerThumbs(http);
 
     await userEvent.click(screen.getByRole('tab', { name: 'Abgelehnt' }));
-    http.expectOne('/api/species-images/submissions?state=rejected').flush({
+    http.expectOne('/api/species-images/submissions?state=rejected&offset=0&limit=25').flush({
       eintraege: [{ ...OPEN, state: 'rejected', rejectReason: 'Unscharf, die Röhren fehlen.' }],
       gesamt: 1,
-      limit: 50,
+      limit: 25,
       offset: 0,
     });
     refresh();
@@ -127,5 +127,33 @@ describe('AdminImagesComponent', () => {
 
     expect(screen.getByText('Unscharf, die Röhren fehlen.')).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Freigeben' })).not.toBeInTheDocument();
+  });
+
+  it('holt die nächste Seite ans Ende und zählt mit', async () => {
+    const first = ['eins', 'zwei'].map((id) => imageSubmission({ id, submittedBy: 'Jonas Weber' }));
+    const { http, refresh } = await build(first, 3);
+    answerThumbs(http);
+
+    expect(screen.getByText('2 von 3')).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Mehr laden' }));
+    // Der Versatz folgt dem, was schon geladen ist, nicht der Seitenzahl.
+    http.expectOne('/api/species-images/submissions?state=submitted&offset=2&limit=25').flush({
+      eintraege: [imageSubmission({ id: 'drei', submittedBy: 'Marie' })],
+      gesamt: 3,
+      limit: 25,
+      offset: 2,
+    });
+    refresh();
+    answerThumbs(http);
+
+    expect(screen.getAllByRole('button', { name: 'Freigeben' })).toHaveLength(3);
+    expect(screen.queryByRole('button', { name: 'Mehr laden' })).not.toBeInTheDocument();
+  });
+
+  it('bietet keinen Weg zu mehr, wenn alles da ist', async () => {
+    const { http } = await build();
+    answerThumbs(http);
+
+    expect(screen.queryByRole('button', { name: 'Mehr laden' })).not.toBeInTheDocument();
   });
 });
