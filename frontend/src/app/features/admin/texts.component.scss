@@ -1,0 +1,110 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+}
+
+.texts {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--pilz-gutter);
+  overflow-y: auto;
+}
+
+.texts__count {
+  margin: 0;
+}
+
+// Die Zeile trägt zwei Ebenen: oben der Schlüssel, darunter beide Sprachen
+// nebeneinander. Als Schaltfläche ist sie über die Tastatur erreichbar.
+.texts__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  inline-size: 100%;
+  padding: var(--space-3) var(--space-3);
+  background: none;
+  border: 0;
+  border-block-end: var(--border-width) solid var(--color-border);
+  text-align: start;
+  cursor: pointer;
+
+  &:last-child {
+    border-block-end: 0;
+  }
+}
+
+.texts__head {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+// Der Schlüssel ist Technik, kein Satz: dieselbe Breite je Zeichen liest sich
+// schneller und macht den Punkt zwischen Bereich und Namen sichtbar.
+.texts__key {
+  flex: 1 1 auto;
+  overflow: hidden;
+  font-family: ui-monospace, monospace;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.texts__key--sheet {
+  margin: 0;
+}
+
+.texts__values {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.texts__value {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 2px;
+  min-inline-size: 0;
+}
+
+.texts__language {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.texts__text {
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
+.texts__overlay {
+  position: fixed;
+  z-index: var(--z-dialog);
+  inset: 0;
+}
+
+.texts__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 18 10 / 55%);
+}
+
+.texts__sheet {
+  position: absolute;
+  inset: 0;
+}
+
+.texts__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-1) var(--pilz-gutter) var(--space-4);
+  overflow-y: auto;
+}

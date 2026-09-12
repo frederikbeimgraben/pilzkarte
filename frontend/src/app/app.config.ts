@@ -10,6 +10,7 @@ import { UI_KIT_INTL, uiKitIntlFromLang } from '@stupa-makers/ui-kit';
 import { authInterceptor, AuthService } from './core/auth';
 import { ConfigService } from './core/config/config.service';
 import { I18nService } from './core/i18n/i18n.service';
+import { TextCatalogService } from './core/i18n/text-catalog.service';
 import { ThemeService } from './core/theme/theme.service';
 import { routes } from './app.routes';
 
@@ -23,11 +24,16 @@ export const appConfig: ApplicationConfig = {
     provideAppInitializer(async () => {
       inject(ThemeService).init();
       const auth = inject(AuthService);
+      // Die Texte der letzten Sitzung liegen ohne Netzweg an. Der Server
+      // liefert danach den Stand der Datenbank nach.
+      const texts = inject(TextCatalogService);
+      texts.restore();
       // Erst die Konfiguration: ohne Issuer und Client ID gibt es keine
       // Anmeldung. Die Sitzung kommt danach im Hintergrund, damit der Chunk
       // von oidc-client-ts und der iframe den ersten Frame nicht aufhalten.
       await inject(ConfigService).load();
       void auth.restoreSession();
+      void texts.load();
     }),
   ],
 };

@@ -67,8 +67,10 @@ export class ApiClient {
       .pipe(catchError((failure: unknown) => this.report(failure)));
   }
 
-  delete<T>(path: string): Observable<T> {
-    return this.http.delete<T>(this.url(path)).pipe(catchError((failure: unknown) => this.report(failure)));
+  delete<T>(path: string, query?: Query): Observable<T> {
+    return this.http
+      .delete<T>(this.url(path), { params: this.params(query) })
+      .pipe(catchError((failure: unknown) => this.report(failure)));
   }
 
   private url(path: string): string {

@@ -72,3 +72,4 @@ export type {
   Confusable,
   Week,
 } from './species';
+export type { TextCatalogue, TextEntry } from './texts';

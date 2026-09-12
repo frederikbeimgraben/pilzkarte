@@ -53,6 +53,15 @@ describe('AdminComponent', () => {
     expect(screen.queryByRole('button', { name: /Bilder/ })).not.toBeInTheDocument();
   });
 
+  it('führt von der Zeile Texte auf die Texte', async () => {
+    const { router } = await build(['text.edit']);
+    const navigate = vi.spyOn(router, 'navigateByUrl');
+
+    await userEvent.click(screen.getByRole('button', { name: /Texte/ }));
+
+    expect(navigate).toHaveBeenCalledWith('/verwaltung/texte');
+  });
+
   it('führt von der Zeile Rollen auf die Rollenliste', async () => {
     const { router } = await build(['role.manage']);
     const navigate = vi.spyOn(router, 'navigateByUrl');

@@ -36,6 +36,11 @@ export const routes: Routes = [
     loadComponent: () => import('./features/admin/admin.component').then((m) => m.AdminComponent),
     children: [
       {
+        path: 'texte',
+        canActivate: [requiresPermission('text.edit')],
+        loadComponent: () => import('./features/admin/texts.component').then((m) => m.TextsComponent),
+      },
+      {
         path: 'rollen',
         canActivate: [requiresPermission('role.manage')],
         loadComponent: () => import('./features/admin/roles.component').then((m) => m.RolesComponent),
