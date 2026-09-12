@@ -103,6 +103,9 @@ quelle = "Bundesartenschutzverordnung, Anlage 1"
 url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"
 geprueftAm = "2026-09-10"
 
+[farben]
+hut = [{ name = "braun", hex = "#7a5230" }]
+
 [merkmale]
 hut = "Braun."
 roehren = "Weiss, dann oliv."
@@ -803,6 +806,7 @@ async def test_the_profile_answers_with_table_and_curve(app: FastAPI) -> None:
             "unterschied": None,
             "speisewert": "essbar",
             "warnung": None,
+            "hutFarben": [],
         },
         {
             "slug": "gallenroehrling",
@@ -811,6 +815,7 @@ async def test_the_profile_answers_with_table_and_curve(app: FastAPI) -> None:
             "unterschied": "Bitter.",
             "speisewert": "ungeniessbar",
             "warnung": None,
+            "hutFarben": [],
         },
     ]
     assert body["links"][0]["url"].startswith("https://")
@@ -1727,6 +1732,24 @@ def test_a_resolved_lookalike_shows_the_profile_of_its_target(built: Catalog) ->
     assert reference.warning == target.warning
 
 
+def test_a_resolved_lookalike_carries_the_cap_colours_of_its_target(built: Catalog) -> None:
+    # Fuenf Profile nachzuladen fuer fuenf Farbflaechen waere Unsinn. Die
+    # Farben stehen darum am Paar.
+    from_gall = next(
+        row for row in built.species("gallenroehrling").lookalikes if row.slug == "steinpilz"
+    )
+
+    assert from_gall.cap_colours == built.species("steinpilz").colours.cap
+
+
+def test_a_lookalike_without_cap_colours_carries_an_empty_list(built: Catalog) -> None:
+    from_boletus = next(
+        row for row in built.species("steinpilz").lookalikes if row.slug == "gallenroehrling"
+    )
+
+    assert from_boletus.cap_colours == []
+
+
 def test_the_difference_belongs_to_the_pair(built: Catalog) -> None:
     # Derselbe Gallenroehrling, zwei Arten, zwei Saetze.
     from_boletus = next(
@@ -1855,6 +1878,7 @@ async def test_the_profile_answers_with_both_directions(app: FastAPI) -> None:
         "unterschied",
         "speisewert",
         "warnung",
+        "hutFarben",
     }
 
 

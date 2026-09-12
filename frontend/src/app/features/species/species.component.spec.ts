@@ -324,6 +324,23 @@ describe('ArtComponent', () => {
     );
   });
 
+  it('zeigt die Hutfarben des Partners in der Verwechslungszeile', async () => {
+    await build(STEINPILZ);
+
+    // Der Vertrag trägt die Farben mit. Ohne sie müsste die Seite für fünf
+    // Farbflächen fünf Profile nachladen.
+    expect(screen.getByRole('img', { name: 'Farbe: hellbraun' })).toBeInTheDocument();
+  });
+
+  it('lässt das Farbfeld weg, wo die Quelle keine Hutfarbe nennt', async () => {
+    const { container } = await build(STEINPILZ);
+
+    const rows = Array.from(container.querySelectorAll('app-lookalike-row'));
+    const satan = rows.find((row) => row.textContent.includes('Satansröhrling'));
+    expect(satan).toBeDefined();
+    expect(satan?.querySelector('app-colour-field')).toBeNull();
+  });
+
   it('warnt bei einer giftigen Art groß und mit Symbol', async () => {
     const { container } = await build(GALLENROEHRLING, 'gallenroehrling');
 

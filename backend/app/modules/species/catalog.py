@@ -594,6 +594,7 @@ class Catalog:
             difference=difference,
             edibility=target.edibility,
             warning=target.warning,
+            cap_colours=target.colours.cap,
         )
 
     def lookalikes(self, slug: str) -> list[ResolvedLookalike]:
