@@ -1,7 +1,4 @@
 @use '@stupa-makers/ui-kit/styles';
-// MapLibre setzt seine Bedienelemente selbst in den Baum der Karte. Die Stile
-// müssen darum global sein; eingekapselte Komponentenstile erreichen sie nicht.
-@use 'maplibre-gl/dist/maplibre-gl.css';
 @use 'styles/tokens';
 @use 'styles/kit-helpers';
 @use 'app/ui/hint';

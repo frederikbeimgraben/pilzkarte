@@ -6,7 +6,12 @@ import { AuthService } from '../core/auth';
 import { ViewportService } from '../core/layout/viewport.service';
 import { TranslatePipe } from '../core/i18n/translate.pipe';
 import { I18nService } from '../core/i18n/i18n.service';
-import { AvatarButtonComponent, BottomNavComponent, type NavItem } from '../ui';
+// Diese Datei laedt beim Start mit. Sie nimmt die Bausteine darum einzeln
+// und nicht ueber `ui/index.ts`: das Sammelmodul zieht jeden Baustein in das
+// erste Buendel, auch die Saisonkurve und die Zeitleiste, die hier niemand
+// braucht. Das waren 81 kB.
+import { AvatarButtonComponent } from '../ui/avatar-button/avatar-button.component';
+import { BottomNavComponent, type NavItem } from '../ui/bottom-nav/bottom-nav.component';
 import { MapComponent } from '../features/map/map.component';
 import { MapState } from '../features/map/map.state';
 import { AddEntryState } from '../features/add-entry/add-entry.state';

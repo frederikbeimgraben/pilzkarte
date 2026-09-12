@@ -1,7 +1,12 @@
 import { ChangeDetectionStrategy, Component, ElementRef, effect, inject, viewChild } from '@angular/core';
 import { AuthService } from '../../core/auth';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
-import { ActionBarComponent, SheetComponent, type DetentSize } from '../../ui';
+// Diese Datei laedt beim Start mit. Sie nimmt die Bausteine darum einzeln
+// und nicht ueber `ui/index.ts`: das Sammelmodul zieht jeden Baustein in das
+// erste Buendel, auch die Saisonkurve und die Zeitleiste, die hier niemand
+// braucht. Das waren 81 kB.
+import { ActionBarComponent } from '../../ui/action-bar/action-bar.component';
+import { SheetComponent, type DetentSize } from '../../ui/sheet/sheet.component';
 
 /**
  * Das Anmelde-Blatt kennt nur eine Raste: Titel, Satz und Fußleiste bestimmen
