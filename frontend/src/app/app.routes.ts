@@ -23,6 +23,12 @@ export const routes: Routes = [
     loadComponent: () => import('./features/species/species.component').then((m) => m.SpeciesComponent),
   },
   {
+    // Ein eigener Brocken: die Seite wird selten geöffnet und kostet im ersten
+    // Bündel darum nichts.
+    path: 'arten/:slug/vergleich/:andere',
+    loadComponent: () => import('./features/species/comparison.component').then((m) => m.ComparisonComponent),
+  },
+  {
     path: 'arten/:slug/bild',
     loadComponent: () =>
       import('./features/species/submit-image.component').then((m) => m.SubmitImageComponent),

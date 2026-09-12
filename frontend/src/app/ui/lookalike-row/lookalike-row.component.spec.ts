@@ -12,13 +12,17 @@ import { LookalikeRowComponent } from './lookalike-row.component';
       latin="Omphalotus olearius"
       route="/arten/oelbaumtrichterling"
       compareRoute="/arten/pfifferling/vergleich/oelbaumtrichterling"
+      coloursLabel="Orange"
+      [colours]="colours"
     >
       <span>Giftig</span>
     </app-lookalike-row>
     <app-lookalike-row name="Sommersteinpilz" />
   `,
 })
-class HostComponent {}
+class HostComponent {
+  readonly colours = [{ name: 'Orange', hex: '#e08a3c' }];
+}
 
 /** Die gerechneten Stile eines Elements, das es geben muss. */
 function styleOf(element: Element | null): CSSStyleDeclaration {
@@ -54,6 +58,14 @@ describe('LookalikeRowComponent', () => {
 
     expect(screen.queryByRole('link', { name: /Sommersteinpilz/ })).not.toBeInTheDocument();
     expect(screen.getByText('Sommersteinpilz')).toBeInTheDocument();
+  });
+
+  it('zeigt das Farbfeld des Partners, wo es Farben gibt', async () => {
+    const { container } = await render(HostComponent, { providers: [provideRouter([])] });
+
+    // Derselbe Baustein wie auf der Artseite: eine Fläche, kein zweites Muster.
+    expect(container.querySelectorAll('app-colour-field')).toHaveLength(1);
+    expect(screen.getByRole('img', { name: 'Orange' })).toBeInTheDocument();
   });
 
   it('stellt die Marke unter den Text, nicht in den Fluss', async () => {

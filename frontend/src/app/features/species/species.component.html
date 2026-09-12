@@ -206,6 +206,7 @@
             [name]="row.name"
             [latin]="row.lateinisch"
             [route]="row.route"
+            [compareRoute]="row.vergleich"
             (click)="toLookalike(row)"
           >
             <app-badge [variant]="row.badge.variant">{{ row.badge.text }}</app-badge>
