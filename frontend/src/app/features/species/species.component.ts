@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, input } from '@angular/core';
 import { Router } from '@angular/router';
 import { BadgeComponent, CardComponent } from '@stupa-makers/ui-kit';
-import type { Species, Reagenzeintrag, SeasonCurveData, Link } from '../../core/api/models';
+import type { Species, Entwicklung, Reagenzeintrag, SeasonCurveData, Link } from '../../core/api/models';
 import { TIER_WEAKEST } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -27,6 +27,7 @@ import {
 } from '../../ui';
 import {
   changeRow,
+  colourRow,
   colourRows,
   levelRows,
   measureRows,
@@ -46,13 +47,21 @@ import { SpeciesState } from './species.state';
 import { MapState } from '../map/map.state';
 import { FORECAST_SLUGS, type ForecastSlug } from '../../core/tiles/tile-paths';
 import {
+  ATTACHMENT_TEXT,
+  CAP_FEATURE_TEXT,
+  CAP_MARGIN_TEXT,
+  CAP_SHAPE_TEXT,
+  EDGE_TEXT,
   EDIBILITY_BADGE,
   EDIBILITY_TEXT,
   GEFAEHRDUNG_TEXT,
   HAEUFIGKEIT_TEXT,
+  HYMENOPHORE_TEXT,
   FEATURE_TEXT,
   REAGENZ_TEXT,
   LEVEL_BADGE,
+  SPACING_TEXT,
+  STEM_FEATURE_TEXT,
   TAG_TEXT,
   WARNUNG_TEXT,
 } from './labels';
@@ -94,6 +103,12 @@ interface ConfusableRow {
   vergleich: string;
 }
 
+/** Eine Zeile der Fruchtschicht: das Wort links, der Wert rechts. */
+interface LayerRow {
+  schluessel: string;
+  wert: string;
+}
+
 interface Reagenzzeile {
   reagenz: string;
   reaktion: string;
@@ -116,6 +131,10 @@ interface Viewport {
   label: string;
   einstufung: LevelRow[];
   masse: MeasureRow[];
+  fruchtschicht: LayerRow[];
+  hut: LayerRow[];
+  stiel: LayerRow[];
+  sporenlager: ColourRow | null;
   farben: ColourRow[];
   verfaerbung: ChangeRow | null;
   zeit: TimeRow | null;
@@ -281,6 +300,10 @@ export class SpeciesComponent {
       }),
       einstufung: levelRows(this.i18n, art),
       masse: measureRows(this.i18n, art.masse),
+      fruchtschicht: this.layerRows(art),
+      hut: this.capRows(art),
+      stiel: this.stemRows(art),
+      sporenlager: colourRow(this.i18n, 'sporenlager', 'art.zeile.sporenlagerFarbe', art.farben),
       farben: colourRows(this.i18n, art.farben),
       verfaerbung: changeRow(this.i18n, art.farben),
       zeit: timeRow(this.i18n, art),
@@ -378,11 +401,91 @@ export class SpeciesComponent {
   }
 
   /**
-   * Speisewert, Schutz und Handel als feste Werte.
+   * Die Fruchtschicht: Art, dazu Ansatz, Stand und Schneide.
    *
-   * Der Speisewert trägt seine eigene Farbe: nur so warnt die Stufe, bevor man
-   * das Wort gelesen hat. Schutz und Handel sind Marken, keine Warnungen.
+   * Kein Zeichen, nur das Wort. Der Sachverhalt lässt sich bei 24 px nicht
+   * zeichnen, ohne zu verschwimmen. Die drei Zeilen nach der Art gibt es nur
+   * an Lamellen; Röhren, Stacheln und Leisten tragen sie nicht.
    */
+  private layerRows(art: Species): LayerRow[] {
+    const layer = art.fruchtschicht;
+    if (layer === null) return [];
+    const rows: LayerRow[] = [
+      {
+        schluessel: this.i18n.translate('art.zeile.fruchtschichtart'),
+        wert: this.i18n.translate(HYMENOPHORE_TEXT[layer.art]),
+      },
+    ];
+    if (layer.ansatz !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.ansatz'),
+        wert: this.i18n.translate(ATTACHMENT_TEXT[layer.ansatz]),
+      });
+    }
+    if (layer.stand !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.stand'),
+        wert: this.i18n.translate(SPACING_TEXT[layer.stand]),
+      });
+    }
+    if (layer.schneide !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.schneide'),
+        wert: this.i18n.translate(EDGE_TEXT[layer.schneide]),
+      });
+    }
+    return rows;
+  }
+
+  /**
+   * Form, Merkmale und Rand des Hutes, jeweils als Wort.
+   *
+   * Die Form ist eine Entwicklung: „gewölbt, später flach". Wo die Quelle
+   * keine Veränderung nennt, steht nur der erste Wert.
+   */
+  private capRows(art: Species): LayerRow[] {
+    const rows: LayerRow[] = [];
+    if (art.hutform !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.hutform'),
+        wert: this.development(art.hutform, (value) => this.i18n.translate(CAP_SHAPE_TEXT[value])),
+      });
+    }
+    if (art.hutmerkmale.length > 0) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.hutmerkmale'),
+        wert: art.hutmerkmale.map((feature) => this.i18n.translate(CAP_FEATURE_TEXT[feature])).join(', '),
+      });
+    }
+    if (art.hutrand !== null) {
+      rows.push({
+        schluessel: this.i18n.translate('art.zeile.hutrand'),
+        wert: this.development(art.hutrand, (values) =>
+          values.map((value) => this.i18n.translate(CAP_MARGIN_TEXT[value])).join(', '),
+        ),
+      });
+    }
+    return rows;
+  }
+
+  /** Was der Stiel trägt. Mehreres zugleich, darum eine Liste. */
+  private stemRows(art: Species): LayerRow[] {
+    if (art.stielmerkmale.length === 0) return [];
+    return [
+      {
+        schluessel: this.i18n.translate('art.zeile.stielmerkmale'),
+        wert: art.stielmerkmale.map((feature) => this.i18n.translate(STEM_FEATURE_TEXT[feature])).join(', '),
+      },
+    ];
+  }
+
+  /** „gewölbt, später flach" — oder nur der erste Wert, wo nichts folgt. */
+  private development<T>(entwicklung: Entwicklung<T>, wort: (value: T) => string): string {
+    const von = wort(entwicklung.von);
+    if (entwicklung.nach === null) return von;
+    return this.i18n.translate('art.entwicklung', { von, nach: wort(entwicklung.nach) });
+  }
+
   private namenzeilen(art: Species): FeatureRow[] {
     const rows: FeatureRow[] = [];
     if (art.weitereNamen.length > 0) {

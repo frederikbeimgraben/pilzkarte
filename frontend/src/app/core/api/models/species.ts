@@ -226,6 +226,121 @@ export interface Schutz {
   quelle: string;
 }
 
+/**
+ * Der Umriss des Hutes. Gezählt über 305 Quellseiten: flach 41, gewölbt 34,
+ * trichterförmig 27, halbkugelig 26, kegelig 11, muschelförmig 11, glockig 9,
+ * eiförmig 9, kugelig 7, birnenförmig 5, niedergedrückt 3, keulig 2,
+ * zylindrisch 2. Was kein Umriss ist, steht als `Hutmerkmal` daneben.
+ */
+export const HUTFORMEN = [
+  'halbkugelig',
+  'gewoelbt',
+  'flach',
+  'niedergedrueckt',
+  'trichterfoermig',
+  'kegelig',
+  'glockig',
+  'eifoermig',
+  'kugelig',
+  'muschelfoermig',
+  'birnenfoermig',
+  'keulig',
+  'zylindrisch',
+] as const;
+export type Hutform = (typeof HUTFORMEN)[number];
+
+/**
+ * Was zu einem Umriss dazukommt: gebuckelt 53, hygrophan 25, gezont 20,
+ * vertieft 20, unregelmäßig 13, genabelt 10.
+ */
+export const HUTMERKMALE = [
+  'gebuckelt',
+  'hygrophan',
+  'gezont',
+  'vertieft',
+  'unregelmaessig',
+  'genabelt',
+] as const;
+export type Hutmerkmal = (typeof HUTMERKMALE)[number];
+
+/**
+ * Der Hutrand: eingerollt 58, wellig 30, gerieft 30, gerissen 28, fransig 19,
+ * eingebogen 16, überstehend 13, scharf 12, höckerig 10.
+ */
+export const HUTRAENDER = [
+  'eingerollt',
+  'wellig',
+  'gerieft',
+  'gerissen',
+  'fransig',
+  'eingebogen',
+  'ueberstehend',
+  'scharf',
+  'hoeckerig',
+] as const;
+export type Hutrandmerkmal = (typeof HUTRAENDER)[number];
+
+/**
+ * Was ein Stiel trägt, mehreres zugleich: Ring 72, Knolle 72, hohl 68,
+ * faserig 66, beflockt 57, voll 41, genattert 33, genetzt 25, behaart 17,
+ * wurzelnd 16, gerieft 13, Scheide 11, brüchig 10.
+ */
+export const STIELMERKMALE = [
+  'ring',
+  'knolle',
+  'hohl',
+  'faserig',
+  'beflockt',
+  'voll',
+  'genattert',
+  'genetzt',
+  'behaart',
+  'wurzelnd',
+  'gerieft',
+  'scheide',
+  'bruechig',
+] as const;
+export type Stielmerkmal = (typeof STIELMERKMALE)[number];
+
+/**
+ * Ein Merkmal, das sich mit dem Alter ändert. `nach` bleibt leer, wo die
+ * Quelle keine Veränderung nennt; dann gilt `von` für das ganze Leben.
+ */
+export interface Entwicklung<T> {
+  von: T;
+  nach: T | null;
+}
+
+/**
+ * Woran die Sporen sitzen. Die Liste kommt aus den Quellseiten: 177 nennen
+ * Lamellen, 64 Röhren, 10 Poren, 9 Leisten, 6 Stacheln.
+ */
+export const FRUCHTSCHICHTEN = ['lamellen', 'roehren', 'poren', 'stacheln', 'leisten'] as const;
+export type Fruchtschichtart = (typeof FRUCHTSCHICHTEN)[number];
+
+/** Wie die Lamellen den Stiel treffen. Das trennt den Champignon vom Wulstling. */
+export const LAMELLENANSAETZE = ['frei', 'angewachsen', 'ausgebuchtet', 'herablaufend'] as const;
+export type Lamellenansatz = (typeof LAMELLENANSAETZE)[number];
+
+/** Wie dicht die Lamellen stehen. */
+export const LAMELLENSTAENDE = ['eng', 'normal', 'weit'] as const;
+export type Lamellenstand = (typeof LAMELLENSTAENDE)[number];
+
+/** Wie die Schneide einer Lamelle aussieht. */
+export const LAMELLENSCHNEIDEN = ['glatt', 'gesaegt', 'bewimpert'] as const;
+export type Lamellenschneide = (typeof LAMELLENSCHNEIDEN)[number];
+
+/**
+ * Die Fruchtschicht. Ansatz, Stand und Schneide gibt es nur an Lamellen;
+ * Röhren, Stacheln und Leisten tragen sie nicht.
+ */
+export interface Fruchtschicht {
+  art: Fruchtschichtart;
+  ansatz: Lamellenansatz | null;
+  stand: Lamellenstand | null;
+  schneide: Lamellenschneide | null;
+}
+
 /** Geruch oder Geschmack: Kategorien für den Filter, Satz für den Rest. */
 export interface Sinneseindruck {
   tags: string[];
@@ -377,6 +492,12 @@ export interface Species extends Omit<SpeciesBrief, 'saison'> {
   zeitraum: Zeitraum | null;
   /** Die Monate, in denen die Kurve mindestens halb so hoch steht wie im Jahr. */
   beobachteterZeitraum: Monatsspanne | null;
+  /** Die Quelle nennt sie nicht bei jeder Art; dann bleibt sie leer. */
+  fruchtschicht: Fruchtschicht | null;
+  hutform: Entwicklung<Hutform> | null;
+  hutmerkmale: Hutmerkmal[];
+  hutrand: Entwicklung<Hutrandmerkmal[]> | null;
+  stielmerkmale: Stielmerkmal[];
   geruch: Sinneseindruck;
   geschmack: Sinneseindruck;
   quelle: Source;
