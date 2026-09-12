@@ -90,9 +90,7 @@
             [route]="row.route"
             (click)="toLookalike(row)"
           >
-            @if (row.badge; as badge) {
-              <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
-            }
+            <app-badge [variant]="row.badge.variant">{{ row.badge.text }}</app-badge>
           </app-lookalike-row>
         }
       </app-card>
