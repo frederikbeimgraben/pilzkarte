@@ -1,5 +1,6 @@
 import { formatValue, formatNumber, type Layer } from '../../core/tiles/layers';
 import { EDGE_SHARE, type CombinationBound } from '../../map/value-colors';
+import type { WireFactor } from '../../core/api/models';
 
 /** Die drei Formen einer Bedingung. Alle drei sind eine Spanne über der Skala. */
 export type Condition = 'unter' | 'ueber' | 'zwischen';
@@ -17,17 +18,6 @@ export interface Faktor {
   bis: number;
   active: boolean;
 }
-
-/**
- * Die vier Faktoren, mit denen die Kombination aufgeht: das Beispiel aus dem
- * Konzept und dem Artboard `Kombination`.
- */
-export const DEFAULT_FACTORS: readonly Faktor[] = [
-  { source: 'regen_4w', condition: 'ueber', von: 80, bis: 0, active: true },
-  { source: 'temperatur', condition: 'zwischen', von: 8, bis: 16, active: true },
-  { source: 'buche', condition: 'ueber', von: 0.3, bis: 0, active: true },
-  { source: 'hangneigung', condition: 'unter', von: 0, bis: 15, active: true },
-];
 
 /** Kurzform der Bedingung in der Adresse. */
 const SHORT: Record<Condition, string> = { unter: 'le', ueber: 'ge', zwischen: 'zw' };
@@ -138,4 +128,29 @@ export function combinationKey(parts: readonly string[]): string {
   const text = parts.join('|');
   for (let i = 0; i < text.length; i++) hash = ((hash * 33) ^ text.charCodeAt(i)) >>> 0;
   return hash.toString(16).padStart(8, '0');
+}
+
+/**
+ * Ein Faktor für den Draht. Die Bedingung nennt nur die Grenze, die sie
+ * braucht; die andere bleibt leer, weil eine Zahl dort nichts messen würde.
+ */
+export function toWire(factor: Faktor): WireFactor {
+  return {
+    quelle: factor.source,
+    bedingung: factor.condition,
+    von: factor.condition === 'unter' ? null : factor.von,
+    bis: factor.condition === 'ueber' ? null : factor.bis,
+    aktiv: factor.active,
+  };
+}
+
+/** Ein Faktor vom Draht. Die leere Grenze wird zu null, damit sie zählt. */
+export function fromWire(factor: WireFactor): Faktor {
+  return {
+    source: factor.quelle,
+    condition: factor.bedingung,
+    von: factor.von ?? 0,
+    bis: factor.bis ?? 0,
+    active: factor.aktiv,
+  };
 }

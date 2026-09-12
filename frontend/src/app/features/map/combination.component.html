@@ -1,11 +1,21 @@
-<app-segmented
-  [options]="rules()"
-  [value]="rule()"
-  [label]="'kombination.regel' | t"
-  (valueChange)="setRule($event)"
-/>
-
-<app-note variant="unter">{{ hint() }}</app-note>
+@if (saved().length > 0) {
+  <div class="kombination__gespeichert">
+    <h3 class="kombination__titel">{{ 'kombination.gespeichert' | t }}</h3>
+    @for (entry of saved(); track entry.id) {
+      <app-list-row [titel]="entry.name" [clickable]="true" (chosen)="picked.emit(entry)">
+        <button
+          aktion
+          class="combination__delete"
+          type="button"
+          [attr.aria-label]="deleteHint(entry)"
+          (click)="toDelete.set(entry)"
+        >
+          <app-svg-icon name="zu" [size]="18" />
+        </button>
+      </app-list-row>
+    }
+  </div>
+}
 
 @if (rows().length > 0) {
   <div class="combination__factors" role="group" [attr.aria-label]="'kombination.faktoren' | t">
@@ -26,9 +36,45 @@
 
 <app-action-bar
   class="combination__footer"
-  [primary]="'kombination.speichern' | t"
-  [mainDisabled]="true"
-  [subline]="'kombination.speichernSpaeter' | t"
+  [primary]="saveText()"
+  [mainDisabled]="!canSave()"
   [secondary]="'kombination.hinzufuegen' | t"
+  (mainClick)="saveRequested.emit()"
   (secondaryClick)="add.emit()"
 />
+
+<app-dialog
+  [open]="asksName()"
+  [title]="'kombination.nameTitel' | t"
+  [closeLabel]="'faktor.abbrechen' | t"
+  (closed)="brichNamenAb()"
+>
+  <app-input
+    [label]="'kombination.name' | t"
+    [placeholder]="'kombination.namePlatzhalter' | t"
+    [required]="true"
+    [ngModel]="name()"
+    (ngModelChange)="name.set($event)"
+  />
+  <div dialog-footer>
+    <app-button variant="secondary" (click)="brichNamenAb()">{{ 'faktor.abbrechen' | t }}</app-button>
+    <app-button variant="primary" [disabled]="name().trim() === ''" (click)="bestaetigeNamen()">{{
+      'kombination.speichern' | t
+    }}</app-button>
+  </div>
+</app-dialog>
+
+@if (toDelete(); as combination) {
+  <app-dialog
+    [open]="true"
+    [title]="'kombination.loeschenTitel' | t"
+    [closeLabel]="'faktor.abbrechen' | t"
+    (closed)="toDelete.set(null)"
+  >
+    <p>{{ deleteAsk(combination) }}</p>
+    <div dialog-footer>
+      <app-button variant="secondary" (click)="toDelete.set(null)">{{ 'faktor.abbrechen' | t }}</app-button>
+      <app-button variant="primary" (click)="confirmDelete()">{{ 'kombination.loeschenJa' | t }}</app-button>
+    </div>
+  </app-dialog>
+}

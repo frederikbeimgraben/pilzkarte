@@ -1,12 +1,15 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Router, RouterOutlet, provideRouter } from '@angular/router';
-import { fireEvent, render, screen } from '@testing-library/angular';
+import { RouterOutlet, provideRouter } from '@angular/router';
+import { fireEvent, render, screen, within } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 import { noViolations } from '../../testing/axe';
+import { SPECIES_LIST, BAY_BOLETE_BRIEF } from '../../testing/species-fixture';
+import { NOW } from '../../core/tiles/now';
 import {
   RAW_LAYERS,
+  SAVED_COMBINATION,
   RAW_MANIFEST,
   mapWithDoubles,
   answerManifest,
@@ -42,20 +45,30 @@ const ROUTES = [
   { path: 'arten', component: OtherComponent },
 ];
 
-async function map(adresse = '/karte'): Promise<{
+async function map(
+  adresse = '/karte',
+  signedIn = false,
+): Promise<{
   double: MapAdapterDouble;
   worker: WorkerDouble;
   stable: () => Promise<void>;
   container: HTMLElement;
+  auth: AuthStub;
+  netz: HttpTestingController;
 }> {
   answerManifest();
   const { map: double, worker } = mapWithDoubles();
+  const auth = new AuthStub();
+  if (!signedIn) auth.user.set(null);
   const { fixture, navigate, container } = await render(HostComponent, {
     providers: [
       provideRouter(ROUTES),
       provideHttpClient(),
       provideHttpClientTesting(),
-      ...authStubProviders(new AuthStub()),
+      ...authStubProviders(auth),
+      // Ein festes Heute: die Karte öffnet auf der laufenden Kalenderwoche,
+      // und die Fixtures kennen nur die Wochen 39 bis 41 von 2025.
+      { provide: NOW, useValue: () => new Date('2025-10-02T12:00:00Z') },
     ],
   });
   const stable = async (): Promise<void> => {
@@ -65,13 +78,32 @@ async function map(adresse = '/karte'): Promise<{
   };
   await navigate(adresse);
   await stable();
-  return { double, worker, stable, container };
+  return { double, worker, stable, container, auth, netz: TestBed.inject(HttpTestingController) };
 }
 
 /** jsdom kennt keine Ortung; der Test setzt sie am Navigator ein. */
 function stubGeolocation(geolocation: Partial<Geolocation>): void {
   Object.defineProperty(navigator, 'geolocation', { configurable: true, value: geolocation });
 }
+
+/** Das Beispiel aus dem Konzept als Deep Link; die Kombination beginnt leer. */
+/** Der Katalog, wie die Artwahl ihn braucht: mit einer zweiten Art auf Kacheln. */
+const KATALOG = {
+  ...SPECIES_LIST,
+  arten: [
+    ...SPECIES_LIST.arten,
+    {
+      ...BAY_BOLETE_BRIEF,
+      slug: 'pfifferling',
+      name: 'Pfifferling',
+      lateinisch: 'Cantharellus cibarius',
+      kartenSlug: 'pfifferling',
+    },
+  ],
+};
+
+const VIER_FAKTOREN =
+  '/karte?darstellung=kombination&f=regen_4w:ge:80,temperatur:zw:8:16,buche:ge:0.3,hangneigung:le:15';
 
 describe('KarteComponent', () => {
   it('zeigt Karte, Blattkopf, Zeitleiste und Legende', async () => {
@@ -90,7 +122,7 @@ describe('KarteComponent', () => {
     await noViolations(container);
   });
 
-  it('nimmt ohne Angabe die jüngste gemessene Woche, nicht die Prognose', async () => {
+  it('öffnet auf der laufenden Kalenderwoche', async () => {
     const { double } = await map();
 
     expect(double.templates().at(-1)).toBe(
@@ -114,7 +146,7 @@ describe('KarteComponent', () => {
     await stable();
 
     expect(double.templates().at(-1)).toContain('2025W39');
-    expect(TestBed.inject(Router).url).toContain('kw=2025-39');
+    expect(TestBed.inject(MapState).woche()).toBe('2025-39');
   });
 
   it('geht mit den Pfeilen eine Woche weiter und bleibt am Rand stehen', async () => {
@@ -182,8 +214,17 @@ describe('KarteComponent', () => {
     expect(double.styles.at(-1)).toContain('dark');
   });
 
-  it('zeigt die Kombination mit ihren vier Faktoren', async () => {
-    const { container, stable } = await map('/karte?darstellung=kombination');
+  it('beginnt die Kombination ohne Faktoren', async () => {
+    const { double, stable } = await map('/karte?darstellung=kombination');
+    await stable();
+
+    expect(screen.getByText('Noch kein Faktor. Füge einen Faktor hinzu.')).toBeInTheDocument();
+    expect(double.templatesPerRole.get('ebene')?.at(-1)).toBeNull();
+    expect(TestBed.inject(MapState).factors()).toEqual([]);
+  });
+
+  it('zeigt die Kombination mit ihren Faktoren', async () => {
+    const { container, stable } = await map(VIER_FAKTOREN);
     await stable();
 
     expect(screen.getByRole('button', { name: 'Kombination' })).toBeInTheDocument();
@@ -192,13 +233,12 @@ describe('KarteComponent', () => {
     expect(factors).toHaveTextContent('≥ 80 mm');
     expect(factors).toHaveTextContent('8 bis 16 Grad');
     expect(screen.getByText(/Wochenbezogene Faktoren beziehen sich auf KW 40 · 2025/)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Speichern' })).toBeDisabled();
-    expect(screen.getByText('Speichern kommt mit dem Konto.')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Zum Speichern anmelden' })).toBeEnabled();
     await noViolations(container);
   });
 
   it('legt die Kombination als eine Quelle auf die Karte', async () => {
-    const { double, stable } = await map('/karte?darstellung=kombination');
+    const { double, stable } = await map(VIER_FAKTOREN);
     await stable();
 
     expect(double.templates('ebene').at(-1)).toMatch(/^wert:\/\/kombi\/[0-9a-f]{8}\//);
@@ -206,30 +246,30 @@ describe('KarteComponent', () => {
   });
 
   it('wechselt die Regel und zeigt dann eine Rampe', async () => {
-    const { double, stable } = await map('/karte?darstellung=kombination');
+    const { double, stable } = await map(VIER_FAKTOREN);
     await stable();
     const before = double.templates('ebene').at(-1);
 
     await userEvent.click(screen.getByRole('tab', { name: 'Abgestuft' }));
     await stable();
 
-    expect(TestBed.inject(Router).url).toContain('regel=abgestuft');
+    expect(TestBed.inject(MapState).rule()).toBe('abgestuft');
     expect(double.templates('ebene').at(-1)).not.toBe(before);
     expect(screen.getByRole('img', { name: /Erfüllung der Bedingungen/ })).toBeInTheDocument();
   });
 
   it('hakt einen Faktor ab und schreibt ihn so in die Adresse', async () => {
-    const { stable } = await map('/karte?darstellung=kombination');
+    const { stable } = await map(VIER_FAKTOREN);
     await stable();
 
     await userEvent.click(screen.getAllByRole('checkbox')[0]);
     await stable();
 
-    expect(TestBed.inject(Router).url).toContain('!regen_4w');
+    expect(TestBed.inject(MapState).factors()[0].active).toBe(false);
   });
 
   it('öffnet den Faktor-Screen und zeigt dabei die Ebene selbst', async () => {
-    const { double, container, stable } = await map('/karte?darstellung=kombination');
+    const { double, container, stable } = await map(VIER_FAKTOREN);
     await stable();
 
     await userEvent.click(screen.getByRole('button', { name: '≥ 80 mm' }));
@@ -245,7 +285,7 @@ describe('KarteComponent', () => {
   });
 
   it('übernimmt eine geänderte Bedingung', async () => {
-    const { stable } = await map('/karte?darstellung=kombination');
+    const { stable } = await map(VIER_FAKTOREN);
     await stable();
     await userEvent.click(screen.getByRole('button', { name: '≥ 80 mm' }));
     await stable();
@@ -255,12 +295,12 @@ describe('KarteComponent', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Übernehmen' }));
     await stable();
 
-    expect(TestBed.inject(Router).url).toContain('regen_4w:ge:40');
+    expect(TestBed.inject(MapState).factors()[0].von).toBe(40);
     expect(screen.getByRole('group', { name: 'Faktoren' })).toHaveTextContent('≥ 40 mm');
   });
 
   it('entfernt einen Faktor', async () => {
-    const { stable } = await map('/karte?darstellung=kombination');
+    const { stable } = await map(VIER_FAKTOREN);
     await stable();
     await userEvent.click(screen.getByRole('button', { name: '≥ 80 mm' }));
     await stable();
@@ -268,12 +308,46 @@ describe('KarteComponent', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Faktor entfernen' }));
     await stable();
 
-    expect(TestBed.inject(Router).url).not.toContain('regen_4w');
+    expect(
+      TestBed.inject(MapState)
+        .factors()
+        .some((factor) => factor.source === 'regen_4w'),
+    ).toBe(false);
     expect(screen.getByRole('group', { name: 'Faktoren' })).not.toHaveTextContent('Niederschlag');
   });
 
+  it('wählt die Art im Blattkopf und bleibt dabei auf der Karte', async () => {
+    const { stable, netz } = await map();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Steinpilz' }));
+    await stable();
+    netz.expectOne('/api/arten').flush(KATALOG);
+    await stable();
+
+    expect(screen.getByRole('dialog', { name: 'Art für die Karte' })).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: /Pfifferling/ }));
+    await stable();
+
+    expect(screen.queryByRole('dialog', { name: 'Art für die Karte' })).not.toBeInTheDocument();
+    expect(TestBed.inject(MapState).art()).toBe('pfifferling');
+    expect(screen.getByRole('region', { name: 'Karte von Deutschland' })).toBeInTheDocument();
+  });
+
+  it('führt aus der Artwahl in den Reiter Arten', async () => {
+    const { stable, netz } = await map();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Steinpilz' }));
+    await stable();
+    netz.expectOne('/api/arten').flush(KATALOG);
+    await stable();
+    await userEvent.click(screen.getByRole('button', { name: 'Alle Arten ansehen' }));
+    await stable();
+
+    expect(screen.getByRole('heading', { name: 'Arten' })).toBeInTheDocument();
+  });
+
   it('bietet zum Hinzufügen die Ebenen und die Arten an', async () => {
-    const { stable } = await map('/karte?darstellung=kombination');
+    const { stable } = await map(VIER_FAKTOREN);
     await stable();
 
     await userEvent.click(screen.getByRole('button', { name: 'Faktor hinzufügen' }));
@@ -288,7 +362,11 @@ describe('KarteComponent', () => {
     await stable();
 
     expect(screen.getByRole('dialog', { name: 'Faktor' })).toBeInTheDocument();
-    expect(TestBed.inject(Router).url).toContain('boden_ph');
+    expect(
+      TestBed.inject(MapState)
+        .factors()
+        .some((factor) => factor.source === 'boden_ph'),
+    ).toBe(true);
   });
 
   it('bleibt ohne Manifest bedienbar', async () => {
@@ -396,7 +474,7 @@ describe('KarteComponent', () => {
     expect(double.templates('ebene').at(-1)).toBe(
       'wert://ebene-boden_ph/layers_kacheln/boden_ph/{z}/{x}/{y}',
     );
-    expect(TestBed.inject(Router).url).toContain('ebene=boden_ph');
+    expect(TestBed.inject(MapState).layer()).toBe('boden_ph');
     expect(screen.getByRole('img', { name: /Boden-pH: 4,7 – 6,9/ })).toBeInTheDocument();
   });
 
@@ -418,7 +496,7 @@ describe('KarteComponent', () => {
     await stable();
 
     expect(
-      screen.getByText('Die Ebene zeigt KW 40 · 2025; weiter reicht das Wetter nicht.'),
+      screen.getByText('Wetterdaten liegen bis KW 40 · 2025 vor. Die Ebene zeigt diese Woche.'),
     ).toBeInTheDocument();
   });
 
@@ -463,8 +541,8 @@ describe('KarteComponent', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Auf der Karte' }));
     await stable();
 
-    expect(screen.getAllByText('kommt später')).toHaveLength(2);
-    await userEvent.click(screen.getByRole('button', { name: 'Dunkel' }));
+    expect(screen.getByText('Topografisch und Satellit kommen später.')).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('tab', { name: 'Dunkel' }));
     await stable();
 
     expect(double.styles.at(-1)).toContain('dark');
@@ -474,7 +552,7 @@ describe('KarteComponent', () => {
     await stable();
 
     expect(double.opacity.get('vorhersage')).toBeCloseTo(0.4);
-    expect(TestBed.inject(Router).url).toContain('deckkraft=40');
+    expect(TestBed.inject(MapState).opacity()).toBeCloseTo(0.4);
   });
 
   it('zentriert auf den Standort und meldet einen Fehlschlag', async () => {
@@ -523,7 +601,94 @@ describe('KarteComponent', () => {
     fixture.detectChanges();
     await fixture.whenStable();
 
-    expect(TestBed.inject(Router).url).toContain('ebene=temperatur');
+    expect(TestBed.inject(MapState).layer()).toBe('temperatur');
     expect(double.templates('ebene').at(-1)).toContain('ebene-temperatur');
+  });
+
+  it('bietet ohne Konto zuerst die Anmeldung an', async () => {
+    const { auth, stable } = await map(VIER_FAKTOREN);
+    await stable();
+
+    const button = screen.getByRole('button', { name: 'Zum Speichern anmelden' });
+    await userEvent.click(button);
+    await stable();
+
+    expect(auth.asked).toBe(1);
+    expect(screen.getByRole('dialog', { name: 'Kombination speichern' })).toBeInTheDocument();
+  });
+
+  it('lässt den Knopf in Ruhe, solange kein Faktor da ist', async () => {
+    const { stable } = await map('/karte?darstellung=kombination');
+    await stable();
+
+    expect(screen.getByRole('button', { name: 'Zum Speichern anmelden' })).toBeDisabled();
+  });
+
+  it('speichert die Kombination unter einem Namen', async () => {
+    const { netz, stable } = await map(VIER_FAKTOREN);
+    await stable();
+    await userEvent.click(screen.getByRole('button', { name: 'Zum Speichern anmelden' }));
+    await stable();
+
+    const dialog = screen.getByRole('dialog', { name: 'Kombination speichern' });
+    await userEvent.type(screen.getByLabelText(/Name/), 'Buchenwald');
+    await userEvent.click(within(dialog).getByRole('button', { name: 'Speichern' }));
+    await stable();
+
+    const request = netz.expectOne((query) => query.url === '/api/kombinationen' && query.method === 'POST');
+    expect(request.request.body).toEqual({
+      name: 'Buchenwald',
+      regel: 'schnitt',
+      faktoren: [
+        { quelle: 'regen_4w', bedingung: 'ueber', von: 80, bis: null, aktiv: true },
+        { quelle: 'temperatur', bedingung: 'zwischen', von: 8, bis: 16, aktiv: true },
+        { quelle: 'buche', bedingung: 'ueber', von: 0.3, bis: null, aktiv: true },
+        { quelle: 'hangneigung', bedingung: 'unter', von: null, bis: 15, aktiv: true },
+      ],
+    });
+    request.flush(SAVED_COMBINATION);
+    await stable();
+    netz.expectOne('/api/kombinationen').flush({ eintraege: [SAVED_COMBINATION], gesamt: 1 });
+    await stable();
+
+    expect(TestBed.inject(ToastService).toasts().at(-1)?.message).toContain('Buchenwald');
+    expect(screen.queryByRole('dialog', { name: 'Kombination speichern' })).not.toBeInTheDocument();
+  });
+
+  it('zeigt die gespeicherten Kombinationen und lädt eine', async () => {
+    const { netz, container, stable } = await map('/karte?darstellung=kombination', true);
+    netz.expectOne('/api/kombinationen').flush({ eintraege: [SAVED_COMBINATION], gesamt: 1 });
+    await stable();
+
+    expect(screen.getByText('Gespeichert')).toBeInTheDocument();
+    await noViolations(container);
+
+    await userEvent.click(screen.getByRole('button', { name: 'Buchenwald im Herbst' }));
+    await stable();
+
+    expect(TestBed.inject(MapState).rule()).toBe('abgestuft');
+    expect(TestBed.inject(MapState).factors()[0].source).toBe('wald');
+    expect(screen.getByRole('group', { name: 'Faktoren' })).toHaveTextContent('≤ 5,5');
+  });
+
+  it('löscht eine Kombination erst nach Rückfrage', async () => {
+    const { netz, stable } = await map('/karte?darstellung=kombination', true);
+    netz.expectOne('/api/kombinationen').flush({ eintraege: [SAVED_COMBINATION], gesamt: 1 });
+    await stable();
+
+    await userEvent.click(screen.getByRole('button', { name: '„Buchenwald im Herbst“ löschen' }));
+    await stable();
+
+    expect(screen.getByRole('dialog', { name: 'Kombination löschen' })).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Löschen' }));
+    await stable();
+
+    netz.expectOne((query) => query.url === '/api/kombinationen/k1' && query.method === 'DELETE').flush(null);
+    await stable();
+    netz.expectOne('/api/kombinationen').flush({ eintraege: [], gesamt: 0 });
+    await stable();
+
+    expect(screen.queryByText('Gespeichert')).not.toBeInTheDocument();
   });
 });

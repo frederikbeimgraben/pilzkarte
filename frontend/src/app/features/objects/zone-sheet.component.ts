@@ -18,6 +18,7 @@ import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { currentWeek, findWeek } from '../../core/tiles/manifest';
 import { ManifestService } from '../../core/tiles/manifest.service';
+import { NOW } from '../../core/tiles/now';
 import { MAP_ADAPTER } from '../../map/map.tokens';
 import { ActionBarComponent, KeyValueTableComponent, MetricRowComponent, NoteComponent } from '../../ui';
 import { SpeciesState } from '../species/species.state';
@@ -63,6 +64,7 @@ export class ZoneSheetComponent implements OnDestroy {
   private readonly i18n = inject(I18nService);
   private readonly map = inject(MapState);
   private readonly manifests = inject(ManifestService);
+  private readonly now = inject(NOW);
   private readonly toasts = inject(ToastService);
   private readonly draw = inject(ZONE_DRAWER);
 
@@ -189,7 +191,8 @@ export class ZoneSheetComponent implements OnDestroy {
     if (!art) return;
     try {
       const manifest = await this.manifests.get(kartenSlug);
-      const woche = (weekKey !== null ? findWeek(manifest, weekKey) : null) ?? currentWeek(manifest);
+      const woche =
+        (weekKey !== null ? findWeek(manifest, weekKey) : null) ?? currentWeek(manifest, this.now());
       if (woche === null) return;
       this.value.set(await firstValueFrom(this.api.zoneValue(id, art.slug, woche.jahr, woche.woche)));
     } catch {

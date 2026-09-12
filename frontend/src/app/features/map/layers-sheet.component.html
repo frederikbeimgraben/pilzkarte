@@ -2,17 +2,19 @@
   <div class="layers-sheet">
     <section class="layers-sheet__part">
       <h3 class="layers-sheet__title">{{ 'ebenenKnopf.hintergrund' | t }}</h3>
-      @for (choice of choices(); track choice.value) {
-        <app-list-row
-          [titel]="choice.label"
-          [subline]="choice.subline"
-          [clickable]="choice.available"
-          [selected]="choice.value === background()"
-          [class.layers-sheet__row--active]="choice.value === background()"
-          [class.layers-sheet__row--off]="!choice.available"
-          (chosen)="backgroundChange.emit(choice.value)"
-        />
-      }
+      <app-segmented
+        [options]="choices()"
+        [value]="background()"
+        [label]="'ebenenKnopf.hintergrund' | t"
+        (valueChange)="chooseBackground($event)"
+      />
+      <app-segmented
+        class="layers-sheet__later"
+        [options]="later()"
+        [locked]="true"
+        [label]="'hintergrund.spaeterBeschriftung' | t"
+      />
+      <app-note variant="unter">{{ 'hintergrund.gesperrt' | t }}</app-note>
     </section>
 
     <section class="layers-sheet__part">

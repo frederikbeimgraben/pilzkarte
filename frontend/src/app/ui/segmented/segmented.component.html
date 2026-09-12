@@ -1,4 +1,4 @@
-<div class="seg" role="tablist" [attr.aria-label]="label()">
+<div class="seg" role="tablist" [class.seg--locked]="locked()" [attr.aria-label]="label()">
   @for (option of options(); track option.value; let i = $index) {
     <button
       class="seg__choice"
@@ -7,6 +7,7 @@
       [class.seg__choice--active]="option.value === value()"
       [attr.aria-selected]="option.value === value()"
       [attr.tabindex]="option.value === value() ? 0 : -1"
+      [disabled]="locked()"
       (click)="valueChange.emit(option.value)"
       (keydown)="onKey($event, i)"
     >

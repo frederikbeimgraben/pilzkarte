@@ -1,14 +1,16 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, output, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ButtonComponent, DialogComponent, InputComponent } from '@stupa-makers/ui-kit';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import type { Layer } from '../../core/tiles/layers';
-import type { CombinationRule } from '../../map/value-colors';
+import type { Combination } from '../../core/api/models';
 import {
   ActionBarComponent,
   FactorRowComponent,
+  ListRowComponent,
   NoteComponent,
-  SegmentedComponent,
-  type SegmentOption,
+  SvgIconComponent,
 } from '../../ui';
 import { conditionText, type Faktor } from './factors';
 
@@ -21,13 +23,26 @@ interface Row {
 }
 
 /**
- * Die Darstellung „Kombination“: eine Regel, eine Liste von Faktoren und die
- * Aktionen darunter. Sie hängt an keiner Art.
+ * Die Darstellung „Kombination“: die Liste der Faktoren und die Aktionen
+ * darunter. Sie hängt an keiner Art. Wer angemeldet ist, findet darüber seine
+ * gespeicherten Kombinationen. Die Regel steht bei den Schaltern des Blatts,
+ * denn sie gehört zur Darstellung, nicht zu den Faktoren.
  */
 @Component({
   selector: 'app-combination',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ActionBarComponent, FactorRowComponent, NoteComponent, SegmentedComponent, TranslatePipe],
+  imports: [
+    ActionBarComponent,
+    ButtonComponent,
+    DialogComponent,
+    FactorRowComponent,
+    FormsModule,
+    InputComponent,
+    ListRowComponent,
+    NoteComponent,
+    SvgIconComponent,
+    TranslatePipe,
+  ],
   templateUrl: './combination.component.html',
   styleUrl: './combination.component.scss',
 })
@@ -37,21 +52,25 @@ export class KombinationComponent {
   readonly factors = input.required<readonly Faktor[]>();
   /** Die Quellen der Faktoren, nach Kennung. Was fehlt, wird nicht gezeigt. */
   readonly sources = input.required<ReadonlyMap<string, Layer>>();
-  readonly rule = input.required<CombinationRule>();
   /** Die Woche, auf die sich die Wochenfaktoren beziehen. */
   readonly weekText = input<string>();
+  readonly saved = input<readonly Combination[]>([]);
+  readonly signedIn = input(false);
+  /** Die Seite hat die Anmeldung geklärt; jetzt fehlt nur noch der Name. */
+  readonly asksName = input(false);
 
-  readonly ruleChange = output<CombinationRule>();
   readonly activeChange = output<{ factor: Faktor; active: boolean }>();
   readonly openFactor = output<Faktor>();
   readonly add = output();
+  readonly saveRequested = output();
+  readonly save = output<string>();
+  readonly nameCancelled = output();
+  readonly picked = output<Combination>();
+  readonly remove = output<Combination>();
 
-  protected readonly rules = computed<SegmentOption[]>(() =>
-    (['schnitt', 'abgestuft'] as const).map((value) => ({
-      value,
-      label: this.i18n.translate(`kombination.${value}`),
-    })),
-  );
+  protected readonly name = signal('');
+  /** Die Kombination, deren Löschen noch bestätigt werden muss. */
+  protected readonly toDelete = signal<Combination | null>(null);
 
   protected readonly rows = computed<Row[]>(() => {
     const sources = this.sources();
@@ -73,14 +92,36 @@ export class KombinationComponent {
     });
   });
 
-  protected readonly hint = computed(() =>
-    this.i18n.translate(
-      this.rule() === 'schnitt' ? 'kombination.hinweisSchnitt' : 'kombination.hinweisAbgestuft',
-      { woche: this.weekText() ?? '' },
-    ),
+  /** Ohne Konto führt der Knopf zuerst zur Anmeldung, und das steht auf ihm. */
+  protected readonly saveText = computed(() =>
+    this.i18n.translate(this.signedIn() ? 'kombination.speichern' : 'kombination.anmeldenZumSpeichern'),
   );
 
-  protected setRule(value: string): void {
-    if (value === 'schnitt' || value === 'abgestuft') this.ruleChange.emit(value);
+  protected readonly canSave = computed(() => this.factors().length > 0);
+
+  protected bestaetigeNamen(): void {
+    const name = this.name().trim();
+    if (name === '') return;
+    this.name.set('');
+    this.save.emit(name);
+  }
+
+  protected brichNamenAb(): void {
+    this.name.set('');
+    this.nameCancelled.emit();
+  }
+
+  protected confirmDelete(): void {
+    const combination = this.toDelete();
+    this.toDelete.set(null);
+    if (combination) this.remove.emit(combination);
+  }
+
+  protected deleteAsk(combination: Combination): string {
+    return this.i18n.translate('kombination.loeschenFrage', { name: combination.name });
+  }
+
+  protected deleteHint(combination: Combination): string {
+    return this.i18n.translate('kombination.loeschen', { name: combination.name });
   }
 }

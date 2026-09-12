@@ -44,11 +44,9 @@ export class WeekButtonComponent {
 
   protected readonly bars = computed(() => `${Math.round(Math.min(Math.max(this.share(), 0), 1) * 100)}%`);
 
-  /** Holt die Woche in den Blick und, wenn gewünscht, in den Fokus. */
-  show(withFocus: boolean): void {
-    const element = this.button().nativeElement;
-    element.scrollIntoView({ block: 'nearest', inline: 'center' });
-    if (withFocus) element.focus();
+  /** Der Knopf selbst; die Leiste schiebt ihn in Sicht. */
+  element(): HTMLButtonElement {
+    return this.button().nativeElement;
   }
 
   protected label(): string {

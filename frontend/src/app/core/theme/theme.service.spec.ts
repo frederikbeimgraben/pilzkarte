@@ -76,7 +76,7 @@ describe('ThemeService', () => {
     expect(theme.effective()).toBe('hell');
   });
 
-  it('nimmt die gespeicherte Wahl beim Start', () => {
+  it('nimmt die saved Wahl beim Start', () => {
     localStorage.setItem('pilzkarte.theme', 'dunkel');
 
     expect(service().choice()).toBe('dunkel');

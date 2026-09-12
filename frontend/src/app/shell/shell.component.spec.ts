@@ -137,15 +137,16 @@ describe('ShellComponent am Rechner', () => {
     expect(screen.getByRole('region', { name: 'Karte von Deutschland' })).toBeInTheDocument();
   });
 
-  it('zeigt das Blatt nur auf dem Reiter Karte', async () => {
+  it('zeigt das Blatt nur auf dem Reiter Karte, die Knöpfe der Karte immer', async () => {
     const { navigate, detectChanges, container } = await wideShell();
 
     await navigate('/arten');
     detectChanges();
 
     // Auf einem anderen Reiter gehört die Spalte diesem Reiter. Das Blatt wäre
-    // dort verdeckt und läge trotzdem in der Tastaturreihenfolge.
+    // dort verdeckt und läge trotzdem in der Tastaturreihenfolge. Die Knöpfe
+    // gehören dagegen der Karte, und die steht rechts weiter offen.
     expect(container.querySelector('.map__sheet')).toBeNull();
-    expect(container.querySelector('.map__buttons')).toBeNull();
+    expect(container.querySelector('.map__buttons')).not.toBeNull();
   });
 });

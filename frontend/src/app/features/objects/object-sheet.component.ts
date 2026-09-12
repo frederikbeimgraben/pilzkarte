@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import type { Find, Marker, Zone } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -42,34 +41,32 @@ export class ObjectSheetComponent {
   private readonly adapter = inject(MAP_ADAPTER);
   private readonly eintraege = inject(EntriesState);
   private readonly i18n = inject(I18nService);
-  private readonly route = inject(ActivatedRoute);
-  private readonly router = inject(Router);
 
   protected readonly map = inject(MapState);
   protected readonly detents = DETENTS;
 
   protected readonly find = computed<Find | null>(() => {
-    const pending = this.map.object();
-    if (pending?.art !== 'fund') return null;
-    return this.eintraege.finds().find((candidate) => candidate.id === pending.id) ?? null;
+    const offen = this.map.object();
+    if (offen?.art !== 'fund') return null;
+    return this.eintraege.finds().find((candidate) => candidate.id === offen.id) ?? null;
   });
 
   protected readonly marker = computed<Marker | null>(() => {
-    const pending = this.map.object();
-    if (pending?.art !== 'marker') return null;
-    return this.eintraege.marker().find((candidate) => candidate.id === pending.id) ?? null;
+    const offen = this.map.object();
+    if (offen?.art !== 'marker') return null;
+    return this.eintraege.marker().find((candidate) => candidate.id === offen.id) ?? null;
   });
 
   protected readonly zone = computed<Zone | null>(() => {
-    const pending = this.map.object();
-    if (pending?.art !== 'zone') return null;
-    return this.eintraege.zones().find((candidate) => candidate.id === pending.id) ?? null;
+    const offen = this.map.object();
+    if (offen?.art !== 'zone') return null;
+    return this.eintraege.zones().find((candidate) => candidate.id === offen.id) ?? null;
   });
 
   /** Der Name des Blatts für Hilfsmittel: Fund, Marker oder Zone. */
   protected readonly sheetName = computed(() => {
-    const pending = this.map.object();
-    return pending === null ? '' : this.i18n.translate(`${pending.art}.blatt`);
+    const offen = this.map.object();
+    return offen === null ? '' : this.i18n.translate(`${offen.art}.blatt`);
   });
 
   /** Offen, aber nichts gefunden: der Eintrag ist fort oder gehört einem anderen Konto. */
@@ -78,11 +75,7 @@ export class ObjectSheetComponent {
   );
 
   protected close(): void {
-    void this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { objekt: null },
-      queryParamsHandling: 'merge',
-    });
+    this.map.object.set(null);
   }
 
   protected showOnMap(location: readonly [number, number]): void {

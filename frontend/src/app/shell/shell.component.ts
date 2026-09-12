@@ -8,6 +8,8 @@ import { TranslatePipe } from '../core/i18n/translate.pipe';
 import { I18nService } from '../core/i18n/i18n.service';
 import { AvatarButtonComponent, BottomNavComponent, type NavItem } from '../ui';
 import { MapComponent } from '../features/map/map.component';
+import { MapState } from '../features/map/map.state';
+import { AddEntryState } from '../features/add-entry/add-entry.state';
 
 /** Die drei Reiter. Das Konto hängt am Avatar über der Karte, nicht an der Leiste. */
 const TABS: readonly {
@@ -27,7 +29,8 @@ const TABS: readonly {
  * trägt die linke Spalte Navigation und Reiterinhalt, rechts läuft die Karte.
  * Sie hängt hier und nicht am Reiter Karte, damit sie beim Wechsel auf Arten
  * oder Einträge stehen bleibt, statt neu zu laden. Auf den anderen Reitern
- * zeigt sie nur ihre Fläche; das Blatt gehört dem Reiter Karte.
+ * zeigt sie nur ihre Fläche; das Blatt gehört dem Reiter Karte. Ihre Knöpfe
+ * bleiben dort trotzdem stehen: sie gehören der Karte, und die steht dauerhaft.
  */
 @Component({
   selector: 'app-shell',
@@ -41,6 +44,8 @@ export class ShellComponent {
   private readonly i18n = inject(I18nService);
   private readonly viewport = inject(ViewportService);
   private readonly auth = inject(AuthService);
+  private readonly map = inject(MapState);
+  private readonly addEntry = inject(AddEntryState);
 
   private readonly adresse = toSignal(
     this.router.events.pipe(
@@ -62,6 +67,13 @@ export class ShellComponent {
    * die ganze Fläche, nicht nur die linke.
    */
   protected readonly fullWidth = computed(() => this.active() === '/verwaltung');
+
+  /**
+   * Solange ein Blatt der Karte offen ist, liegt die Karte über dem Reiter.
+   * Die Knöpfe der Karte stehen am Rechner auf jedem Reiter; ihre Blätter
+   * gehören in die linke Spalte und müssten sonst hinter dem Reiter bleiben.
+   */
+  protected readonly mapInFront = computed(() => this.map.layersSheetOpen() || this.addEntry.running());
 
   /** Angemeldet trägt der Kreis den ersten Buchstaben des Namens, sonst „G“. */
   protected readonly avatarName = computed(() => this.auth.user()?.name ?? this.i18n.translate('konto.gast'));

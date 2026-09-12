@@ -13,6 +13,7 @@ import type { Find } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { ManifestService } from '../../core/tiles/manifest.service';
+import { NOW } from '../../core/tiles/now';
 import { currentWeek, findWeek, type ManifestWeek } from '../../core/tiles/manifest';
 import { valueAtPoint } from '../../core/tiles/value-at-point';
 import { ActionBarComponent, MetricRowComponent, NoteComponent } from '../../ui';
@@ -53,6 +54,7 @@ export class FindSheetComponent {
   private readonly eintraege = inject(EntriesState);
   private readonly map = inject(MapState);
   private readonly manifests = inject(ManifestService);
+  private readonly now = inject(NOW);
 
   readonly find = input.required<Find>();
 
@@ -141,7 +143,8 @@ export class FindSheetComponent {
     if (kartenSlug === null) return;
     try {
       const manifest = await this.manifests.get(kartenSlug);
-      const woche = (weekKey !== null ? findWeek(manifest, weekKey) : null) ?? currentWeek(manifest);
+      const woche =
+        (weekKey !== null ? findWeek(manifest, weekKey) : null) ?? currentWeek(manifest, this.now());
       if (woche === null) return;
       this.woche.set(woche);
       this.value.set(await valueAtPoint(manifest, woche.tilePath, find.lon, find.lat));

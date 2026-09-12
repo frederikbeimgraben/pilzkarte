@@ -22,6 +22,8 @@ import {
 import { SpeciesImagesComponent } from './species-images.component';
 import { longDate } from '../../core/i18n/dates';
 import { SpeciesState } from './species.state';
+import { MapState } from '../map/map.state';
+import { FORECAST_SLUGS, type ForecastSlug } from '../../core/tiles/tile-paths';
 import {
   EDIBILITY_BADGE,
   EDIBILITY_TEXT,
@@ -148,6 +150,7 @@ interface Viewport {
 })
 export class SpeciesComponent {
   private readonly state = inject(SpeciesState);
+  private readonly map = inject(MapState);
   private readonly i18n = inject(I18nService);
   private readonly router = inject(Router);
 
@@ -198,16 +201,22 @@ export class SpeciesComponent {
   }
 
   /**
-   * Merkt die Art für die Karte und springt in die Woche, auf der die Kurve
-   * steht. Ohne Manifest der Kette gibt es dort nichts zu zeigen.
+   * Merkt die Art für die Karte. Die Woche bleibt, wie sie ist: die Karte
+   * steht ohnehin auf der laufenden Kalenderwoche, und das ist die Woche, auf
+   * der auch die Kurve endet. Ohne Manifest der Kette gibt es nichts zu zeigen.
    */
   protected onMap(): void {
     const viewport = this.viewport();
     if (!viewport?.kartenSlug) return;
     this.state.select(this.slug());
-    void this.router.navigate(['/karte'], {
-      queryParams: { art: viewport.kartenSlug, kw: viewport.woche },
-    });
+    // Der Kartenzustand führt die Karte, nicht die Adresse. Die Art wird hier
+    // gesetzt, und die Karte findet sie beim Öffnen schon vor.
+    const slug = (FORECAST_SLUGS as readonly string[]).includes(viewport.kartenSlug)
+      ? (viewport.kartenSlug as ForecastSlug)
+      : null;
+    if (slug === null) return;
+    this.map.art.set(slug);
+    void this.router.navigate(['/karte']);
   }
 
   private create(art: Species): Viewport {
@@ -348,29 +357,29 @@ export class SpeciesComponent {
   /** Alle Maße in einer Zeile; was die Quelle nicht nennt, fehlt darin. */
   private masszeilen(masse: Masse): FeatureRow[] {
     const parts = MEASURE_ROWS.flatMap((row) => {
-      const span = masse[row.field];
-      return span === null
+      const spanne = masse[row.field];
+      return spanne === null
         ? []
-        : [this.i18n.translate(row.schluessel, { spanne: this.span(span, row.mikro) })];
+        : [this.i18n.translate(row.schluessel, { spanne: this.spanne(spanne, row.mikro) })];
     });
     if (parts.length === 0) return [];
     return [{ schluessel: this.i18n.translate('art.merkmal.masse'), text: parts.join(' · ') }];
   }
 
-  private span(span: Spanne, mikro: boolean): string {
+  private spanne(spanne: Spanne, mikro: boolean): string {
     const unit = this.i18n.translate(mikro ? 'art.masse.um' : 'art.masse.cm');
     const number = (value: number): string => value.toLocaleString(this.i18n.locale());
-    if (span.seltenBis === null) {
+    if (spanne.seltenBis === null) {
       return this.i18n.translate('art.masse.spanne', {
-        von: number(span.von),
-        bis: number(span.bis),
+        von: number(spanne.von),
+        bis: number(spanne.bis),
         einheit: unit,
       });
     }
     return this.i18n.translate('art.masse.spanneSelten', {
-      von: number(span.von),
-      bis: number(span.bis),
-      seltenBis: number(span.seltenBis),
+      von: number(spanne.von),
+      bis: number(spanne.bis),
+      seltenBis: number(spanne.seltenBis),
       einheit: unit,
     });
   }

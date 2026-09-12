@@ -1,4 +1,5 @@
 import { provideHttpClient } from '@angular/common/http';
+import { NOW } from '../../core/tiles/now';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import type { EnvironmentProviders, Provider } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
@@ -28,6 +29,9 @@ function provider(map: MapAdapterDouble, drawer: DrawerDouble): (EnvironmentProv
     provideHttpClientTesting(),
     { provide: MAP_ADAPTER, useValue: map },
     ...drawerProviders(drawer),
+    // Ein festes Heute: die Karte steht auf der laufenden Kalenderwoche, und
+    // die Fixtures kennen nur die Wochen von 2025.
+    { provide: NOW, useValue: () => new Date('2025-10-02T12:00:00Z') },
   ];
 }
 

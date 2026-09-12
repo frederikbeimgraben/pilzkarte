@@ -1,8 +1,8 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, effect, signal } from '@angular/core';
 import { FORECAST_SLUGS, type ForecastSlug } from '../../core/tiles/tile-paths';
 import { BACKGROUNDS, backgroundAvailable, type Background } from '../../map/background';
 import type { CombinationRule } from '../../map/value-colors';
-import { DEFAULT_FACTORS, encodeFactors, readFactors, type Faktor } from './factors';
+import { encodeFactors, readFactors, type Faktor } from './factors';
 import type { Detent } from '../../ui';
 
 /** Die drei Darstellungen des Blatts. Die Kombination kommt in B2. */
@@ -22,17 +22,41 @@ export const DEFAULT_LAYER = 'regen_4w';
 const WEEK_PATTERN = /^\d{4}-\d{2}$/;
 const LAYER_PATTERN = /^[a-z0-9_]{1,40}$/;
 
-/** Der Zustand, den ein Link trägt. */
-export interface MapAddress {
-  art: ForecastSlug;
+/**
+ * Der Schlüssel im Speicher des Geräts. Die Zahl steht dahinter, damit eine
+ * spätere Form die alte nicht falsch liest, sondern verwirft.
+ */
+export const STORAGE_KEY = 'pilzkarte.karte.v1';
+
+/** So lange wird gewartet, bevor eine Änderung im Speicher landet. */
+export const SAVE_DELAY = 400;
+
+/** Was ein Link beim ersten Laden mitbringen darf. */
+export interface MapQuery {
+  art: string | null;
   kw: string | null;
-  viewMode: ViewMode;
+  viewMode: string | null;
   layer: string | null;
-  /** Deckkraft der Wertebene in Prozent, damit die Adresse lesbar bleibt. */
-  opacity: number;
-  rule: CombinationRule;
-  /** Die Faktoren in einem Wert, siehe `kodiereFaktoren`. */
-  f: string;
+  opacity: string | null;
+  rule: string | null;
+  f: string | null;
+  object: string | null;
+}
+
+/** Der Zustand, wie er im Speicher liegt. Jedes Feld darf fehlen. */
+interface Saved {
+  art?: unknown;
+  woche?: unknown;
+  viewMode?: unknown;
+  layer?: unknown;
+  opacity?: unknown;
+  rule?: unknown;
+  factors?: unknown;
+  background?: unknown;
+  forecastBelow?: unknown;
+  showMarkers?: unknown;
+  showZones?: unknown;
+  showSharedFinds?: unknown;
 }
 
 /** Die drei Arten von Objekt, die ein Blatt über der Karte zeigen kann. */
@@ -76,14 +100,23 @@ function readPercent(value: string | null): number | null {
 }
 
 /**
- * Art, Woche, Darstellung, Ebene, Deckkraft und Raste der Karte.
+ * Art, Woche, Darstellung, Ebene, Deckkraft, Regel und Faktoren der Karte.
  *
- * Was in der Adresse steht, öffnet ein Link genauso wieder. Ein Wert in
- * falscher Form fällt auf den Standard zurück, statt eine leere Karte zu zeigen.
+ * Dieser Dienst ist die einzige Quelle. Die Karte liest ihn, nie die Adresse:
+ * Adresse und Zustand gegeneinander zu schreiben war die Ursache dafür, dass
+ * ein Reiterwechsel die Art zurücksetzte.
+ *
+ * Der Zustand überlebt ein Neuladen im Speicher des Geräts. Ein Link darf ihn
+ * einmal beim Eintritt setzen; danach ändert Navigation ihn nicht mehr.
  */
 @Injectable({ providedIn: 'root' })
 export class MapState {
   readonly art = signal<ForecastSlug>(DEFAULT_SPECIES);
+  /**
+   * Ob das Ebenen-Blatt offen ist. Es hängt hier und nicht an der Kartenseite,
+   * weil der Knopf dazu am Rechner auch auf den anderen Reitern steht.
+   */
+  readonly layersSheetOpen = signal(false);
   /** `2025-40` oder `null` für „die aktuelle Woche der Art“. */
   readonly woche = signal<string | null>(null);
   readonly viewMode = signal<ViewMode>('vorhersage');
@@ -93,7 +126,7 @@ export class MapState {
   readonly opacity = signal(1);
   readonly background = signal<Background>('automatisch');
   readonly rule = signal<CombinationRule>('schnitt');
-  readonly factors = signal<readonly Faktor[]>(DEFAULT_FACTORS);
+  readonly factors = signal<readonly Faktor[]>([]);
   /** In der Darstellung Ebene: die Vorhersage der Art bleibt darunter liegen. */
   readonly forecastBelow = signal(false);
   readonly detent = signal<Detent>(1);
@@ -116,42 +149,105 @@ export class MapState {
    */
   readonly overlayHeight = signal(0);
 
-  readonly adresse = computed<MapAddress>(() => ({
-    art: this.art(),
-    kw: this.woche(),
-    viewMode: this.viewMode(),
-    layer: this.layer(),
-    opacity: Math.round(this.opacity() * 100),
-    rule: this.rule(),
-    f: encodeFactors(this.factors()),
-  }));
+  private schreiber: ReturnType<typeof setTimeout> | null = null;
 
-  /** Übernimmt die Abfragewerte einer Adresse. */
-  adopt(query: {
-    art: string | null;
-    kw: string | null;
-    viewMode: string | null;
-    layer: string | null;
-    opacity: string | null;
-    rule: string | null;
-    f: string | null;
-    object: string | null;
-  }): void {
-    this.art.set(isSpecies(query.art) ? query.art : DEFAULT_SPECIES);
-    this.woche.set(query.kw !== null && WEEK_PATTERN.test(query.kw) ? query.kw : null);
-    this.viewMode.set(isView(query.viewMode) ? query.viewMode : 'vorhersage');
-    this.layer.set(query.layer !== null && LAYER_PATTERN.test(query.layer) ? query.layer : null);
-    const opacity = readPercent(query.opacity);
-    if (opacity !== null) this.opacity.set(opacity);
-    this.rule.set(query.rule === 'abgestuft' ? 'abgestuft' : 'schnitt');
-    // Ohne Faktoren in der Adresse bleiben die vier aus dem Konzept stehen;
-    // eine leere Kombination hätte nichts zu zeigen.
-    const factors = readFactors(query.f);
-    this.factors.set(factors.length > 0 ? factors : DEFAULT_FACTORS);
-    this.object.set(readObject(query.object));
+  constructor() {
+    this.load();
+    // Gedrosselt: beim Ziehen eines Reglers ändern sich Signale im Takt der
+    // Finger, und jeder Schreibvorgang ginge synchron auf die Platte.
+    effect(() => {
+      const stand = this.alsGesichert();
+      if (this.schreiber !== null) clearTimeout(this.schreiber);
+      this.schreiber = setTimeout(() => {
+        this.sichere(stand);
+      }, SAVE_DELAY);
+    });
   }
 
-  setBackground(choice: Background): void {
-    if (BACKGROUNDS.includes(choice) && backgroundAvailable(choice)) this.background.set(choice);
+  /**
+   * Übernimmt die Werte eines Links. Nur beim Eintritt: danach führt der
+   * Zustand, und die Adresse wird wieder sauber gemacht.
+   */
+  adopt(query: MapQuery): void {
+    if (isSpecies(query.art)) this.art.set(query.art);
+    if (query.kw !== null && WEEK_PATTERN.test(query.kw)) this.woche.set(query.kw);
+    if (isView(query.viewMode)) this.viewMode.set(query.viewMode);
+    if (query.layer !== null && LAYER_PATTERN.test(query.layer)) this.layer.set(query.layer);
+    const opacity = readPercent(query.opacity);
+    if (opacity !== null) this.opacity.set(opacity);
+    if (query.rule === 'abgestuft' || query.rule === 'schnitt') this.rule.set(query.rule);
+    if (query.f !== null) this.factors.set(readFactors(query.f));
+    if (query.object !== null) this.object.set(readObject(query.object));
+  }
+
+  /** Trägt der Link überhaupt etwas? Sonst bleibt der gesicherte Stand. */
+  static hasValues(query: MapQuery): boolean {
+    return Object.values(query).some((value) => value !== null);
+  }
+
+  /** Nimmt nur an, was es gibt; ein fremder Wert aus dem Speicher fällt weg. */
+  setBackground(choice: string): void {
+    const gefunden = BACKGROUNDS.find((entry) => entry === choice);
+    if (gefunden && backgroundAvailable(gefunden)) this.background.set(gefunden);
+  }
+
+  private alsGesichert(): Saved {
+    return {
+      art: this.art(),
+      woche: this.woche(),
+      viewMode: this.viewMode(),
+      layer: this.layer(),
+      opacity: this.opacity(),
+      rule: this.rule(),
+      factors: encodeFactors(this.factors()),
+      background: this.background(),
+      forecastBelow: this.forecastBelow(),
+      showMarkers: this.showMarkers(),
+      showZones: this.showZones(),
+      showSharedFinds: this.showSharedFinds(),
+    };
+  }
+
+  private sichere(stand: Saved): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(stand));
+    } catch {
+      // Ein gesperrter oder voller Speicher ist kein Fehler; dann gilt der
+      // Zustand eben nur für diese Sitzung.
+    }
+  }
+
+  /** Ein Wert in falscher Form wird verworfen, nicht übernommen. */
+  private load(): void {
+    let stand: Saved = {};
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw === null) return;
+      const got: Saved | null = JSON.parse(raw) as Saved | null;
+      if (typeof got !== 'object' || got === null) return;
+      stand = got;
+    } catch {
+      return;
+    }
+    if (typeof stand.art === 'string' && isSpecies(stand.art)) this.art.set(stand.art);
+    if (typeof stand.woche === 'string' && WEEK_PATTERN.test(stand.woche)) this.woche.set(stand.woche);
+    if (typeof stand.viewMode === 'string' && isView(stand.viewMode)) {
+      this.viewMode.set(stand.viewMode);
+    }
+    if (typeof stand.layer === 'string' && LAYER_PATTERN.test(stand.layer)) this.layer.set(stand.layer);
+    if (typeof stand.opacity === 'number' && Number.isFinite(stand.opacity)) {
+      this.opacity.set(Math.min(Math.max(stand.opacity, 0), 1));
+    }
+    if (stand.rule === 'abgestuft' || stand.rule === 'schnitt') this.rule.set(stand.rule);
+    if (typeof stand.factors === 'string') this.factors.set(readFactors(stand.factors));
+    if (typeof stand.background === 'string') this.setBackground(stand.background);
+    if (typeof stand.forecastBelow === 'boolean') {
+      this.forecastBelow.set(stand.forecastBelow);
+    }
+    if (typeof stand.showMarkers === 'boolean') this.showMarkers.set(stand.showMarkers);
+    if (typeof stand.showZones === 'boolean') this.showZones.set(stand.showZones);
+    if (typeof stand.showSharedFinds === 'boolean') {
+      this.showSharedFinds.set(stand.showSharedFinds);
+    }
   }
 }

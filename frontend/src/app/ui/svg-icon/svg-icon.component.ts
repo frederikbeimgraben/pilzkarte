@@ -21,10 +21,27 @@ export type IconName =
   | 'leer'
   | 'links'
   | 'rechts'
-  | 'abspielen';
+  | 'abspielen'
+  | 'pause'
+  | 'wolke'
+  | 'kalender'
+  | 'ausschlag'
+  | 'thermometer'
+  | 'frost'
+  | 'wald'
+  | 'nadelbaum'
+  | 'blatt'
+  | 'hoehe'
+  | 'hang'
+  | 'kompass'
+  | 'relief'
+  | 'kuppe'
+  | 'kolben'
+  | 'koerner'
+  | 'bodenschichten';
 
 /** Die drei gefüllten Pfeile der Kopfzeile sitzen auf einem 12er-Raster. */
-const FILLED: readonly IconName[] = ['links', 'rechts', 'abspielen'];
+const FILLED: readonly IconName[] = ['links', 'rechts', 'abspielen', 'pause'];
 
 /**
  * Ein Piktogramm aus `docs/mockups/bauen.py`. Ohne Beschriftung ist es
@@ -41,6 +58,11 @@ export class SvgIconComponent {
   readonly name = input.required<IconName>();
   readonly label = input<string>();
   readonly size = input<number>(22);
+  /**
+   * Die Strichstärke. Die Zeichen der Ebenen tragen mehr Linien auf gleicher
+   * Fläche; ein dünnerer Strich hält sie auf 20 Punkten noch lesbar.
+   */
+  readonly strich = input<number>(2);
 
   protected readonly filled = computed(() => FILLED.includes(this.name()));
   protected readonly viewBox = computed(() => (this.filled() ? '0 0 12 12' : '0 0 24 24'));

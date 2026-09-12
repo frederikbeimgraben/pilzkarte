@@ -1,4 +1,4 @@
-import { currentWeek, barShares, findWeek, tileKey, readManifest, weekKey } from './manifest';
+import { currentWeek, isoWoche, barShares, findWeek, tileKey, readManifest, weekKey } from './manifest';
 
 const RAW = {
   name: 'boletus_edulis',
@@ -54,14 +54,32 @@ describe('Manifest', () => {
     expect(currentWeek(manifest)).toBeNull();
   });
 
-  it('nimmt die jüngste gemessene Woche als aktuelle', () => {
-    expect(currentWeek(readManifest(RAW, 'boletus_edulis'))?.woche).toBe(40);
+  it('nimmt die laufende Kalenderwoche, wenn das Manifest sie hat', () => {
+    const manifest = readManifest(RAW, 'boletus_edulis');
+
+    // Der 2. Oktober 2025 liegt in der KW 40, der 6. Januar 2026 in der KW 2.
+    expect(currentWeek(manifest, new Date('2025-10-02'))?.woche).toBe(40);
+    expect(isoWoche(new Date('2025-10-02'))).toEqual({ jahr: 2025, woche: 40 });
+    expect(isoWoche(new Date('2026-01-06'))).toEqual({ jahr: 2026, woche: 2 });
+  });
+
+  it('nimmt auch eine Prognosewoche, wenn heute in ihr liegt', () => {
+    const manifest = readManifest(RAW, 'boletus_edulis');
+
+    // Der 1. Januar 2026 liegt in der KW 1, die im Manifest Prognose ist.
+    expect(currentWeek(manifest, new Date('2026-01-01'))?.forecast).toBe(true);
+  });
+
+  it('nimmt die jüngste Woche, wenn heute über das Manifest hinaus ist', () => {
+    const manifest = readManifest(RAW, 'boletus_edulis');
+
+    expect(currentWeek(manifest, new Date('2026-06-01'))?.woche).toBe(1);
   });
 
   it('nimmt die jüngste Woche, wenn alle Prognose sind', () => {
     const forecastOnly = { ...RAW, weeks: [{ ...RAW.weeks[2] }] };
 
-    expect(currentWeek(readManifest(forecastOnly, 'boletus_edulis'))?.woche).toBe(1);
+    expect(currentWeek(readManifest(forecastOnly, 'boletus_edulis'), new Date('2026-06-01'))?.woche).toBe(1);
   });
 
   it('findet eine Woche über ihren Schlüssel', () => {

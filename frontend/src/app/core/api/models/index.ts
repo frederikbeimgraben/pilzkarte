@@ -72,5 +72,6 @@ export type {
   Confusable,
   Week,
 } from './species';
+export type { Combination, CombinationInput, Rule, WireFactor } from './combinations';
 export type { ImageState, ImageSubmission, Licence, SpeciesImage } from './species-images';
 export type { TextCatalogue, TextEntry } from './texts';

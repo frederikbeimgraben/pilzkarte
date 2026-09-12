@@ -5,6 +5,10 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
  * Eine Zeile in einer Liste: vorn ein Zeichen, in der Mitte Titel, Unterzeile
  * und Notiz, rechts ein Wert oder ein Badge. Anklickbare Zeilen werden zu
  * Schaltflächen, damit sie über die Tastatur erreichbar sind.
+ *
+ * Was mit `hinten` kommt, gehört zur Zeile und liegt im Tippfeld. Was mit
+ * `aktion` kommt, ist eine eigene Handlung und liegt daneben: ein Knopf im
+ * Knopf wäre für Hilfsmittel ein Fehler.
  */
 @Component({
   selector: 'app-list-row',

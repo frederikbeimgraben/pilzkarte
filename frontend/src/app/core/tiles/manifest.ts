@@ -109,13 +109,30 @@ export function readManifest(raw: unknown, slug: string): SpeciesManifest {
 }
 
 /**
- * Die Woche, die beim Öffnen gilt: die jüngste gemessene. Gibt es nur
- * Prognosen, dann die jüngste überhaupt.
+ * Die ISO-Kalenderwoche eines Tages.
+ *
+ * Der Donnerstag entscheidet, zu welchem Jahr eine Woche gehört; das ist die
+ * Regel der ISO 8601 und dieselbe, nach der die Kette ihre Wochen zählt.
  */
-export function currentWeek(manifest: SpeciesManifest): ManifestWeek | null {
-  const measured = manifest.wochen.filter((woche) => !woche.forecast);
-  const series = measured.length > 0 ? measured : manifest.wochen;
-  return series.length > 0 ? series[series.length - 1] : null;
+export function isoWoche(datum: Date): { jahr: number; woche: number } {
+  const tag = new Date(Date.UTC(datum.getFullYear(), datum.getMonth(), datum.getDate()));
+  tag.setUTCDate(tag.getUTCDate() + 4 - (tag.getUTCDay() || 7));
+  const yearStart = new Date(Date.UTC(tag.getUTCFullYear(), 0, 1));
+  const tage = (tag.getTime() - yearStart.getTime()) / 86400000;
+  return { jahr: tag.getUTCFullYear(), woche: Math.ceil((tage + 1) / 7) };
+}
+
+/**
+ * Die Woche, die beim Öffnen gilt: die laufende Kalenderwoche, wenn das
+ * Manifest sie hat, auch als Prognose. Wer die App im Herbst öffnet, will
+ * diese Woche sehen und nicht die letzte gemessene. Reicht das Manifest nicht
+ * so weit, gilt seine jüngste Woche.
+ */
+export function currentWeek(manifest: SpeciesManifest, heute = new Date()): ManifestWeek | null {
+  if (manifest.wochen.length === 0) return null;
+  const jetzt = isoWoche(heute);
+  const current = manifest.wochen.find((woche) => woche.jahr === jetzt.jahr && woche.woche === jetzt.woche);
+  return current ?? manifest.wochen[manifest.wochen.length - 1];
 }
 
 /** Sucht eine Woche über ihren Schlüssel `2025-40`. */

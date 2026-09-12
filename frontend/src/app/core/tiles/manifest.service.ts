@@ -12,6 +12,11 @@ export class ManifestService {
   // Sitzung wird es darum genau einmal geholt, auch bei parallelen Aufrufen.
   private readonly pending = new Map<string, Promise<SpeciesManifest>>();
 
+  /** Vergisst, was geholt wurde. Der nächste Aufruf fragt den Server erneut. */
+  vergiss(): void {
+    this.pending.clear();
+  }
+
   get(slug: string): Promise<SpeciesManifest> {
     let run = this.pending.get(slug);
     if (!run) {

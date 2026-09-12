@@ -100,17 +100,17 @@ describe('KartenObjekteDirective', () => {
 
     setup.map.chosen?.('funde', FIND.id);
     await vi.waitFor(() => {
-      expect(setup.router.url).toContain(`objekt=fund:${FIND.id}`);
+      expect(TestBed.inject(MapState).object()).toEqual({ art: 'fund', id: FIND.id });
     });
 
     setup.map.chosen?.('marker', MARKER.id);
     await vi.waitFor(() => {
-      expect(setup.router.url).toContain(`objekt=marker:${MARKER.id}`);
+      expect(TestBed.inject(MapState).object()).toEqual({ art: 'marker', id: MARKER.id });
     });
 
     setup.map.chosen?.('zonen', ZONE.id);
     await vi.waitFor(() => {
-      expect(setup.router.url).toContain(`objekt=zone:${ZONE.id}`);
+      expect(TestBed.inject(MapState).object()).toEqual({ art: 'zone', id: ZONE.id });
     });
   });
 
@@ -119,6 +119,6 @@ describe('KartenObjekteDirective', () => {
 
     setup.map.chosen?.('geteilteFunde', SHARED_FIND.id);
 
-    expect(setup.router.url).not.toContain('objekt=');
+    expect(TestBed.inject(MapState).object()).toBeNull();
   });
 });

@@ -11,7 +11,7 @@ describe('SheetHeadComponent', () => {
     const calls: string[] = [];
     fixture.componentInstance.back.subscribe(() => calls.push('zurueck'));
     fixture.componentInstance.playback.subscribe(() => calls.push('abspielen'));
-    fixture.componentInstance.vor.subscribe(() => calls.push('vor'));
+    fixture.componentInstance.forward.subscribe(() => calls.push('vor'));
     fixture.componentInstance.titleClick.subscribe(() => calls.push('titel'));
 
     expect(screen.getByText('KW 40 · 2025')).toBeInTheDocument();
@@ -31,5 +31,23 @@ describe('SheetHeadComponent', () => {
 
     expect(screen.getByText('Kombination')).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Nächste Woche' })).not.toBeInTheDocument();
+  });
+
+  it('macht aus dem Play-Knopf einen Pause-Knopf, solange die Wochen laufen', async () => {
+    const { rerender, container } = await render(SheetHeadComponent, {
+      inputs: { titel: 'Steinpilz', playing: false },
+    });
+
+    expect(screen.getByRole('button', { name: 'Wochen abspielen' })).toHaveAttribute('aria-pressed', 'false');
+
+    await rerender({ inputs: { titel: 'Steinpilz', playing: true } });
+
+    expect(screen.getByRole('button', { name: 'Wiedergabe anhalten' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    // Zwei Balken statt eines Dreiecks: der Pfad des Pause-Piktogramms.
+    const paths = [...container.querySelectorAll('path')].map((path) => path.getAttribute('d'));
+    expect(paths.some((path) => path?.startsWith('M2.5 1.5h2.5v9'))).toBe(true);
   });
 });

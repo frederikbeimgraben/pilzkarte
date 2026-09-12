@@ -2,7 +2,7 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--pilz-block);
   min-block-size: 0;
 }
 
@@ -14,4 +14,30 @@
 // Die Aktionen sitzen unten im Blatt, nicht am Ende der Liste.
 .combination__footer {
   margin-block-start: auto;
+}
+
+.kombination__gespeichert {
+  display: flex;
+  flex-direction: column;
+}
+
+.kombination__titel {
+  margin-block-end: var(--space-1);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.combination__delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--pilz-field-height);
+  block-size: var(--pilz-field-height);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  background: none;
+  border: 0;
 }

@@ -1,16 +1,27 @@
 <div class="layers" role="group" [attr.aria-label]="label()">
-  @for (gruppe of groups(); track gruppe.titel) {
-    <h3 class="layers__group">{{ gruppe.titel | t }}</h3>
-    @for (layer of gruppe.layers; track layer.id) {
-      <app-list-row
-        class="layers__row"
-        [class.layers__row--active]="layer.id === selected()"
-        [titel]="layer.label"
-        [value]="layer.unit"
-        [clickable]="true"
-        [selected]="layer.id === selected()"
-        (chosen)="chosen.emit(layer)"
-      />
-    }
+  @for (group of groups(); track group.title) {
+    <h3 class="layers__group">{{ group.title | t }}</h3>
+    <div class="layers__cards">
+      @for (card of group.cards; track card.layer.id) {
+        <button
+          class="layers__card"
+          type="button"
+          [class.layers__card--active]="card.layer.id === selected()"
+          [attr.aria-pressed]="card.layer.id === selected()"
+          (click)="chosen.emit(card.layer)"
+        >
+          <span class="layers__glyph">
+            <app-svg-icon [name]="card.glyph" [size]="20" [strich]="1.6" />
+          </span>
+          <span class="layers__name">{{ card.layer.label }}</span>
+          @if (card.layer.unit) {
+            <span class="layers__unit">{{ card.layer.unit }}</span>
+          }
+          @if (card.layer.id === selected()) {
+            <app-svg-icon class="layers__check" name="haken" [size]="18" [strich]="2.4" />
+          }
+        </button>
+      }
+    </div>
   }
 </div>

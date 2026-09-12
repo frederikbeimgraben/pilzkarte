@@ -2,13 +2,19 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--pilz-block);
   min-block-size: 0;
-  padding: var(--pilz-gutter) var(--pilz-gutter) var(--space-4);
+  padding: var(--pilz-gutter) var(--pilz-gutter) var(--pilz-block);
   overflow-y: auto;
   // Wie im Blatt der Karte: die App füllt das Gerät, ein Balken am Rand
   // gehörte zu einem Fenster.
   scrollbar-width: none;
+}
+
+// Die zwei Segmente der Hintergrundwahl gehören zusammen.
+.layers-sheet__later {
+  display: block;
+  margin-block-start: var(--pilz-step);
 }
 
 .layers-sheet__title {
@@ -23,13 +29,17 @@
 .layers-sheet__switches {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
 }
 
-.layers-sheet__row--active {
-  background: var(--color-primary-subtle);
-}
-
-.layers-sheet__row--off {
-  opacity: 0.55;
+// Ein Kontrollkästchen ist eine Zeile des Rasters: so hoch wie ein Feld,
+// Kästchen und Text mittig zueinander. Ohne das säßen die Zeilen eng
+// aufeinander und die Fläche zum Tippen wäre kleiner als der Finger.
+.layers-sheet app-checkbox {
+  display: flex;
+  // Das Kit stellt sein Kästchen in eine Spalte, damit ein Hinweis darunter
+  // passt. Hier gibt es keinen, und die Spalte rückte Kästchen und Text in
+  // die Mitte der Zeile statt an ihren Anfang.
+  flex-direction: row;
+  align-items: center;
+  min-block-size: var(--pilz-field-height);
 }

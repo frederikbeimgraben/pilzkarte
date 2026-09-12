@@ -29,16 +29,17 @@
         <button
           class="head__arrow"
           type="button"
-          [attr.aria-label]="text('zeitleiste.abspielen')"
+          [attr.aria-label]="text(playing() ? 'zeitleiste.anhalten' : 'zeitleiste.abspielen')"
+          [attr.aria-pressed]="playing()"
           (click)="playback.emit()"
         >
-          <app-svg-icon name="abspielen" [size]="12" />
+          <app-svg-icon [name]="playing() ? 'pause' : 'abspielen'" [size]="12" />
         </button>
         <button
           class="head__arrow"
           type="button"
           [attr.aria-label]="text('zeitleiste.vor')"
-          (click)="vor.emit()"
+          (click)="forward.emit()"
         >
           <app-svg-icon name="rechts" [size]="12" />
         </button>

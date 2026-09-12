@@ -1,9 +1,4 @@
-<app-page-header [titel]="'eintraege.titel' | t">
-  <app-button variant="primary" (click)="addEntry()">
-    <app-svg-icon name="plus" [size]="16" />
-    {{ 'eintragen.knopf' | t }}
-  </app-button>
-</app-page-header>
+<app-page-header [titel]="'eintraege.titel' | t" />
 <div class="entries">
   <app-chip-group
     [chips]="chips()"

@@ -1,7 +1,7 @@
 <div class="shell" [class.shell--column]="wide()">
   @if (wide()) {
     @defer (when wide()) {
-      <app-map class="shell__map" [surfaceOnly]="!onTheMap()" />
+      <app-map class="shell__map" [class.shell__map--lead]="mapInFront()" [surfaceOnly]="!onTheMap()" />
     }
   }
   <app-bottom-nav

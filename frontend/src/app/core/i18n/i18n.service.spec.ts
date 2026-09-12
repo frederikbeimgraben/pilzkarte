@@ -43,7 +43,7 @@ describe('I18nService', () => {
     expect(i18n.translate('zeitleiste.woche', { woche: 40 })).toBe('KW 40 · {jahr}');
   });
 
-  it('nimmt die gespeicherte Sprache beim Start', () => {
+  it('nimmt die saved Sprache beim Start', () => {
     localStorage.setItem('pilzkarte.sprache', 'en');
 
     expect(service().locale()).toBe('en');
@@ -77,7 +77,7 @@ describe('I18nService', () => {
     expect(i18n.choice()).toBe('de');
   });
 
-  it('fällt ohne gespeicherte Wahl auf die Browsersprache', () => {
+  it('fällt ohne saved Wahl auf die Browsersprache', () => {
     localStorage.clear();
     vi.spyOn(navigator, 'language', 'get').mockReturnValue('en-GB');
 

@@ -1,4 +1,5 @@
 import { provideHttpClient } from '@angular/common/http';
+import { NOW } from '../../core/tiles/now';
 import type { EnvironmentProviders, Provider } from '@angular/core';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
@@ -14,7 +15,14 @@ import { FindSheetComponent } from './find-sheet.component';
 
 /** Karte, Konto und Katalog stehen für jeden Test dieses Blatts gleich. */
 function provider(): (EnvironmentProviders | Provider)[] {
-  return [provideHttpClient(), provideHttpClientTesting(), ...authStubProviders(new AuthStub())];
+  return [
+    provideHttpClient(),
+    provideHttpClientTesting(),
+    ...authStubProviders(new AuthStub()),
+    // Ein festes Heute: die Karte steht auf der laufenden Kalenderwoche, und
+    // die Fixtures kennen nur die Wochen von 2025.
+    { provide: NOW, useValue: () => new Date('2025-10-02T12:00:00Z') },
+  ];
 }
 
 /** Die Kachel, in der der Fund der Vorlage liegt: Zoom 7, Spalte 67, Zeile 44. */

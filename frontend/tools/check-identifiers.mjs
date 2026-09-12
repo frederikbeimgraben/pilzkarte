@@ -172,6 +172,9 @@ const ENGLISCH = new Set(['list', 'listener', 'listeners', 'profile', 'random', 
  */
 const VERTRAG = new Set([
   'deckkraft',
+  'bedingung',
+  'faktoren',
+  'aktiv',
   'wertigkeit',
   'quelle',
   'stand',
