@@ -289,6 +289,16 @@ const VERTRAG = new Set([
   'wechseldauer',
   'wechseldauern',
   'einheiten',
+  'hutform',
+  'hutformen',
+  'hutmerkmal',
+  'hutmerkmale',
+  'hutrand',
+  'hutraender',
+  'stielmerkmal',
+  'stielmerkmale',
+  'ueberstehend',
+  'entwicklung',
 ]);
 
 const STELLEN = [];

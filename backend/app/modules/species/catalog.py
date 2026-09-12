@@ -18,6 +18,9 @@ from typing import TypedDict
 from app.core.errors import NotFound
 from app.modules.species.schemas import (
     MONTHS,
+    CapFeature,
+    CapMargin,
+    CapShape,
     Colours,
     Edibility,
     Frequency,
@@ -43,6 +46,7 @@ from app.modules.species.schemas import (
     SpeciesBrief,
     SpeciesCounts,
     SpeciesList,
+    StemFeature,
     Tag,
     Tier,
     Trait,
@@ -291,6 +295,10 @@ class SpeciesFilter:
     attachment: GillAttachment | None = None
     spacing: GillSpacing | None = None
     edge: GillEdge | None = None
+    cap_shape: CapShape | None = None
+    cap_feature: CapFeature | None = None
+    cap_margin: CapMargin | None = None
+    stem_feature: StemFeature | None = None
     smell: str | None = None
     taste: str | None = None
     tree: str | None = None
@@ -300,6 +308,8 @@ class SpeciesFilter:
     def matches(self, profile: Profile, tier: Tier) -> bool:
         """Prueft eine Art gegen jede gesetzte Bedingung."""
         layer = profile.hymenophore
+        shape = profile.cap_shape
+        margin = profile.cap_margin
         trees = set(profile.trees)
         if profile.trees_from_experience:
             trees |= set(profile.trees_from_experience.trees)
@@ -316,6 +326,12 @@ class SpeciesFilter:
             self.attachment is None or (layer is not None and layer.attachment is self.attachment),
             self.spacing is None or (layer is not None and layer.spacing is self.spacing),
             self.edge is None or (layer is not None and layer.edge is self.edge),
+            self.cap_shape is None
+            or (shape is not None and self.cap_shape in (shape.start, shape.end)),
+            self.cap_feature is None or self.cap_feature in profile.cap_features,
+            self.cap_margin is None
+            or (margin is not None and self.cap_margin in [*margin.start, *(margin.end or [])]),
+            self.stem_feature is None or self.stem_feature in profile.stem_features,
             self.smell is None or self.smell in profile.smell.tags,
             self.taste is None or self.taste in profile.taste.tags,
             self.tree is None or self.tree in trees,
@@ -611,6 +627,10 @@ class Catalog:
             period=profile.period,
             observed_period=peak_months(self._series(counts)[0]) if counts else None,
             hymenophore=profile.hymenophore,
+            cap_shape=profile.cap_shape,
+            cap_features=profile.cap_features,
+            cap_margin=profile.cap_margin,
+            stem_features=profile.stem_features,
             smell=profile.smell,
             taste=profile.taste,
             reagents=profile.reagents,

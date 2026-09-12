@@ -84,6 +84,32 @@
       </section>
     }
 
+    @if (viewport.hut.length) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.hut' | t }}</h2>
+        <app-card class="flush">
+          <app-key-value-table>
+            @for (row of viewport.hut; track row.schluessel) {
+              <app-key-value-row [schluessel]="row.schluessel" [value]="row.wert" />
+            }
+          </app-key-value-table>
+        </app-card>
+      </section>
+    }
+
+    @if (viewport.stiel.length) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.stiel' | t }}</h2>
+        <app-card class="flush">
+          <app-key-value-table>
+            @for (row of viewport.stiel; track row.schluessel) {
+              <app-key-value-row [schluessel]="row.schluessel" [value]="row.wert" />
+            }
+          </app-key-value-table>
+        </app-card>
+      </section>
+    }
+
     @if (viewport.fruchtschicht.length || viewport.sporenlager) {
       <section>
         <h2 class="species__section">{{ 'art.abschnitt.fruchtschicht' | t }}</h2>

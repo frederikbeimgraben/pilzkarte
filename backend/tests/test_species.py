@@ -49,9 +49,13 @@ from app.modules.species.schemas import (
     MONTHS,
     WEAKEST_RATING,
     WEEKS,
+    CapFeature,
+    CapMargin,
+    CapShape,
     ChangeSpeed,
     Colour,
     ColourChange,
+    Development,
     Edibility,
     Frequency,
     GillAttachment,
@@ -70,6 +74,7 @@ from app.modules.species.schemas import (
     SeasonCurve,
     SeasonTable,
     Species,
+    StemFeature,
     Tier,
     TraitKey,
     TreeSource,
@@ -1303,6 +1308,135 @@ async def test_the_profile_returns_marketability_and_measurements() -> None:
         "baeume",
         "baeumeAusErfahrung",
     }
+
+
+# ------------------------------------------------- Hut und Stiel
+
+
+def test_a_shape_may_change_with_age() -> None:
+    # Das Kuhmaul ist jung gewoelbt und alt verflacht. Ein Wert traegt das nicht.
+    shape = Development[CapShape].model_validate({"von": "gewoelbt", "nach": "flach"})
+
+    assert shape.start is CapShape.CONVEX
+    assert shape.end is CapShape.FLAT
+
+
+def test_a_shape_that_stays_names_no_second_value() -> None:
+    shape = Development[CapShape].model_validate({"von": "muschelfoermig"})
+
+    assert shape.end is None
+
+
+def test_the_margin_carries_several_values_per_phase() -> None:
+    margin = Development[list[CapMargin]].model_validate(
+        {"von": ["eingerollt"], "nach": ["wellig", "gerissen"]}
+    )
+
+    assert margin.start == [CapMargin.INROLLED]
+    assert margin.end == [CapMargin.WAVY, CapMargin.CRACKED]
+
+
+def test_every_shape_of_the_source_has_a_value() -> None:
+    # Die Liste ist gezaehlt, nicht erfunden: dreizehn Umrisse aus 305 Seiten.
+    assert len(CapShape) == 13
+    assert CapShape.SHELL in CapShape
+    # Was kein Umriss ist, steht nicht darin.
+    assert "gebuckelt" not in {shape.value for shape in CapShape}
+    assert CapFeature.UMBONATE.value == "gebuckelt"
+
+
+def test_a_multiple_choice_is_a_list_not_a_string() -> None:
+    # Im Zielmodell wird daraus eine Kindtabelle mit einer Zeile je Wert.
+    profile = Profile.model_validate(
+        {
+            **tomllib.loads(PENNY_BUN),
+            "stielmerkmale": ["genetzt", "voll"],
+            "hutmerkmale": ["gebuckelt"],
+        }
+    )
+
+    assert profile.stem_features == [StemFeature.NETTED, StemFeature.SOLID]
+    assert profile.cap_features == [CapFeature.UMBONATE]
+
+
+def test_an_unknown_stem_feature_is_refused() -> None:
+    with pytest.raises(ValidationError):
+        Profile.model_validate({**tomllib.loads(PENNY_BUN), "stielmerkmale": ["gestreift"]})
+
+
+def test_the_shape_filter_finds_both_phases(built: Catalog) -> None:
+    penny_bun = built.profiles["steinpilz"].model_copy(
+        update={
+            "cap_shape": Development[CapShape](start=CapShape.HEMISPHERICAL, end=CapShape.CONVEX)
+        }
+    )
+    catalogue = replace(built, profiles={**built.profiles, "steinpilz": penny_bun})
+
+    for wanted in (CapShape.HEMISPHERICAL, CapShape.CONVEX):
+        listing = catalogue.listing(only_collectable=None, chosen=SpeciesFilter(cap_shape=wanted))
+        assert [species.slug for species in listing.species] == ["steinpilz"], wanted
+
+    other = catalogue.listing(only_collectable=None, chosen=SpeciesFilter(cap_shape=CapShape.BELL))
+    assert other.species == []
+
+
+def test_the_margin_filter_finds_both_phases(built: Catalog) -> None:
+    penny_bun = built.profiles["steinpilz"].model_copy(
+        update={
+            "cap_margin": Development[list[CapMargin]](
+                start=[CapMargin.INROLLED], end=[CapMargin.WAVY]
+            )
+        }
+    )
+    catalogue = replace(built, profiles={**built.profiles, "steinpilz": penny_bun})
+
+    for wanted in (CapMargin.INROLLED, CapMargin.WAVY):
+        listing = catalogue.listing(only_collectable=None, chosen=SpeciesFilter(cap_margin=wanted))
+        assert [species.slug for species in listing.species] == ["steinpilz"], wanted
+
+
+def test_the_feature_filters_narrow_the_listing(built: Catalog) -> None:
+    penny_bun = built.profiles["steinpilz"].model_copy(
+        update={"cap_features": [CapFeature.UMBONATE], "stem_features": [StemFeature.NETTED]}
+    )
+    catalogue = replace(built, profiles={**built.profiles, "steinpilz": penny_bun})
+
+    for chosen in (
+        SpeciesFilter(cap_feature=CapFeature.UMBONATE),
+        SpeciesFilter(stem_feature=StemFeature.NETTED),
+    ):
+        listing = catalogue.listing(only_collectable=None, chosen=chosen)
+        assert [species.slug for species in listing.species] == ["steinpilz"], chosen
+
+    without = catalogue.listing(
+        only_collectable=None, chosen=SpeciesFilter(stem_feature=StemFeature.VOLVA)
+    )
+    assert without.species == []
+
+
+async def test_the_endpoint_takes_the_new_filters(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get(
+            "/api/arten",
+            params={
+                "alle": "true",
+                "hutform": "gewoelbt",
+                "hutmerkmal": "gebuckelt",
+                "hutrand": "eingerollt",
+                "stielmerkmal": "genetzt",
+            },
+        )
+
+    assert response.status_code == 200
+
+
+async def test_the_new_fields_reach_the_wire(app: FastAPI) -> None:
+    async with client(app) as call:
+        body = (await call.get("/api/arten/steinpilz")).json()
+
+    assert set(body) >= {"hutform", "hutmerkmale", "hutrand", "stielmerkmale"}
+    assert body["hutmerkmale"] == []
+    assert body["stielmerkmale"] == []
 
 
 # ------------------------------------------------- Die Fruchtschicht

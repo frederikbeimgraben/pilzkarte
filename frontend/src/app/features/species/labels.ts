@@ -3,6 +3,10 @@ import type {
   Einheit,
   Essbarkeit,
   Fruchtschichtart,
+  Hutform,
+  Hutmerkmal,
+  Hutrandmerkmal,
+  Stielmerkmal,
   Lamellenansatz,
   Lamellenschneide,
   Lamellenstand,
@@ -297,4 +301,57 @@ export const EDGE_TEXT: Record<Lamellenschneide, TranslationKey> = {
   glatt: 'art.schneide.glatt',
   gesaegt: 'art.schneide.gesaegt',
   bewimpert: 'art.schneide.bewimpert',
+};
+
+export const CAP_SHAPE_TEXT: Record<Hutform, TranslationKey> = {
+  halbkugelig: 'art.hutform.halbkugelig',
+  gewoelbt: 'art.hutform.gewoelbt',
+  flach: 'art.hutform.flach',
+  niedergedrueckt: 'art.hutform.niedergedrueckt',
+  trichterfoermig: 'art.hutform.trichterfoermig',
+  kegelig: 'art.hutform.kegelig',
+  glockig: 'art.hutform.glockig',
+  eifoermig: 'art.hutform.eifoermig',
+  kugelig: 'art.hutform.kugelig',
+  muschelfoermig: 'art.hutform.muschelfoermig',
+  birnenfoermig: 'art.hutform.birnenfoermig',
+  keulig: 'art.hutform.keulig',
+  zylindrisch: 'art.hutform.zylindrisch',
+};
+
+export const CAP_FEATURE_TEXT: Record<Hutmerkmal, TranslationKey> = {
+  gebuckelt: 'art.hutmerkmal.gebuckelt',
+  hygrophan: 'art.hutmerkmal.hygrophan',
+  gezont: 'art.hutmerkmal.gezont',
+  vertieft: 'art.hutmerkmal.vertieft',
+  unregelmaessig: 'art.hutmerkmal.unregelmaessig',
+  genabelt: 'art.hutmerkmal.genabelt',
+};
+
+export const CAP_MARGIN_TEXT: Record<Hutrandmerkmal, TranslationKey> = {
+  eingerollt: 'art.hutrand.eingerollt',
+  wellig: 'art.hutrand.wellig',
+  gerieft: 'art.hutrand.gerieft',
+  gerissen: 'art.hutrand.gerissen',
+  fransig: 'art.hutrand.fransig',
+  eingebogen: 'art.hutrand.eingebogen',
+  ueberstehend: 'art.hutrand.ueberstehend',
+  scharf: 'art.hutrand.scharf',
+  hoeckerig: 'art.hutrand.hoeckerig',
+};
+
+export const STEM_FEATURE_TEXT: Record<Stielmerkmal, TranslationKey> = {
+  ring: 'art.stielmerkmal.ring',
+  knolle: 'art.stielmerkmal.knolle',
+  hohl: 'art.stielmerkmal.hohl',
+  faserig: 'art.stielmerkmal.faserig',
+  beflockt: 'art.stielmerkmal.beflockt',
+  voll: 'art.stielmerkmal.voll',
+  genattert: 'art.stielmerkmal.genattert',
+  genetzt: 'art.stielmerkmal.genetzt',
+  behaart: 'art.stielmerkmal.behaart',
+  wurzelnd: 'art.stielmerkmal.wurzelnd',
+  gerieft: 'art.stielmerkmal.gerieft',
+  scheide: 'art.stielmerkmal.scheide',
+  bruechig: 'art.stielmerkmal.bruechig',
 };

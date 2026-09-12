@@ -87,7 +87,11 @@ describe('ArtComponent', () => {
       'Hut',
       'Sporen',
       'Sporen',
-      // Die Fruchtschicht trägt die Farbe ihres Sporenlagers selbst.
+      // Hut und Stiel, dann die Fruchtschicht mit der Farbe ihres Sporenlagers.
+      'Form',
+      'Merkmale',
+      'Rand',
+      'Merkmale',
       'Art',
       'Farbe',
       'Hut',
@@ -150,6 +154,41 @@ describe('ArtComponent', () => {
     await build(STEINPILZ);
 
     expect(screen.getByText('selten bis 25 cm')).toBeInTheDocument();
+  });
+
+  it('zeigt die Hutform als Entwicklung, ohne Zeichen', async () => {
+    await build(STEINPILZ);
+
+    // Das Kuhmaul ist jung gewölbt und alt verflacht; ein Wert trägt das nicht.
+    expect(screen.getByText('halbkugelig, später gewölbt')).toBeInTheDocument();
+    expect(screen.getByText('hygrophan')).toBeInTheDocument();
+    expect(screen.getByText('eingerollt')).toBeInTheDocument();
+  });
+
+  it('nennt eine Form ohne Veränderung nur einmal', async () => {
+    await build({ ...STEINPILZ, hutform: { von: 'muschelfoermig', nach: null } });
+
+    expect(screen.getByText('muschelförmig')).toBeInTheDocument();
+  });
+
+  it('zählt die Stielmerkmale auf', async () => {
+    await build(STEINPILZ);
+
+    expect(screen.getByRole('heading', { name: 'Stiel' })).toBeInTheDocument();
+    expect(screen.getByText('genetzt, voll')).toBeInTheDocument();
+  });
+
+  it('lässt Hut und Stiel weg, solange die Quelle nichts hergibt', async () => {
+    const { container } = await build({
+      ...STEINPILZ,
+      hutform: null,
+      hutmerkmale: [],
+      hutrand: null,
+      stielmerkmale: [],
+    });
+
+    expect(screen.queryByRole('heading', { name: 'Stiel' })).not.toBeInTheDocument();
+    expect(container.textContent).not.toContain('eingerollt');
   });
 
   it('nennt die Fruchtschicht mit dem Wort, ohne Zeichen', async () => {

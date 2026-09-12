@@ -52,6 +52,10 @@ async def species_list(
             attachment=chosen.attachment,
             spacing=chosen.spacing,
             edge=chosen.edge,
+            cap_shape=chosen.cap_shape,
+            cap_feature=chosen.cap_feature,
+            cap_margin=chosen.cap_margin,
+            stem_feature=chosen.stem_feature,
         ),
     )
 

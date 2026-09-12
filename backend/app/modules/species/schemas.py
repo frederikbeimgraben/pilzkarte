@@ -351,6 +351,105 @@ class Protection(BaseSchema):
         return self.status is not ProtectionStatus.NONE
 
 
+class CapShape(StrEnum):
+    """Der Umriss des Hutes oder Fruchtkoerpers.
+
+    Die Liste ist gezaehlt, nicht erfunden. So viele der 305 Quellseiten nennen
+    den Umriss samt seiner Varianten: flach 41, gewoelbt 34, trichterfoermig
+    27, halbkugelig 26, kegelig 11, muschelfoermig 11, glockig 9, eifoermig 9,
+    kugelig 7, birnenfoermig 5, niedergedrueckt 3, keulig 2, zylindrisch 2.
+
+    Die letzten drei stehen selten da und bleiben trotzdem: ein Umriss, den die
+    Quelle nennt und wir verschweigen, ist eine Luecke. Was kein Umriss ist,
+    steht als ``CapFeature`` daneben.
+    """
+
+    HEMISPHERICAL = "halbkugelig"
+    CONVEX = "gewoelbt"
+    FLAT = "flach"
+    DEPRESSED = "niedergedrueckt"
+    FUNNEL = "trichterfoermig"
+    CONICAL = "kegelig"
+    BELL = "glockig"
+    EGG = "eifoermig"
+    SPHERICAL = "kugelig"
+    SHELL = "muschelfoermig"
+    PEAR = "birnenfoermig"
+    CLUB = "keulig"
+    CYLINDRICAL = "zylindrisch"
+
+
+class CapFeature(StrEnum):
+    """Was zu einem Umriss dazukommt, ohne selbst einer zu sein.
+
+    ``gebuckelt`` ist mit 53 Seiten der haeufigste Begriff im Hut-Feld und
+    steht fast nie allein: "flach gewoelbt mit Buckel" ist eine Form plus einen
+    Zusatz. Dazu hygrophan 25, gezont 20, vertieft 20, unregelmaessig 13,
+    genabelt 10.
+    """
+
+    UMBONATE = "gebuckelt"
+    HYGROPHANOUS = "hygrophan"
+    ZONED = "gezont"
+    SUNKEN = "vertieft"
+    IRREGULAR = "unregelmaessig"
+    NAVELLED = "genabelt"
+
+
+class CapMargin(StrEnum):
+    """Der Rand des Hutes. Er aendert sich mit dem Alter wie der Hut selbst.
+
+    Gezaehlt: eingerollt 58, wellig 30, gerieft 30, gerissen 28, fransig 19,
+    eingebogen 16, ueberstehend 13, scharf 12, hoeckerig 10. "Glatt" faellt mit
+    5 heraus; es ist ohnehin die Abwesenheit der anderen.
+    """
+
+    INROLLED = "eingerollt"
+    WAVY = "wellig"
+    STRIATE = "gerieft"
+    CRACKED = "gerissen"
+    FRINGED = "fransig"
+    INCURVED = "eingebogen"
+    OVERHANGING = "ueberstehend"
+    SHARP = "scharf"
+    LOBED = "hoeckerig"
+
+
+class StemFeature(StrEnum):
+    """Was ein Stiel traegt. Mehreres zugleich: ein Ring schliesst eine Knolle nicht aus.
+
+    Gezaehlt ueber 291 Seiten mit einem Stiel-Feld: Ring 72, Knolle 72, hohl
+    68, faserig 66, beflockt 57, voll 41, genattert 33, genetzt 25, behaart 17,
+    wurzelnd 16, gerieft 13, Scheide 11, bruechig 10.
+    """
+
+    RING = "ring"
+    BULB = "knolle"
+    HOLLOW = "hohl"
+    FIBROUS = "faserig"
+    FLOCKED = "beflockt"
+    SOLID = "voll"
+    BANDED = "genattert"
+    NETTED = "genetzt"
+    HAIRY = "behaart"
+    ROOTING = "wurzelnd"
+    STRIATE = "gerieft"
+    VOLVA = "scheide"
+    BRITTLE = "bruechig"
+
+
+class Development[T](BaseSchema):
+    """Ein Merkmal, das sich mit dem Alter aendert: von etwas nach etwas.
+
+    81 der 305 Quellseiten schreiben "jung" im Hut-Feld, 78 "spaeter". Ein
+    einzelner Wert traegt das nicht. ``nach`` bleibt leer, wo die Quelle keine
+    Veraenderung nennt; dann gilt ``von`` fuer das ganze Leben.
+    """
+
+    start: T = Field(validation_alias="von", serialization_alias="von")
+    end: T | None = Field(validation_alias="nach", serialization_alias="nach", default=None)
+
+
 class HymenophoreKind(StrEnum):
     """Woran die Sporen sitzen. Ein Fruchtkoerper hat genau eine dieser Formen.
 
@@ -654,6 +753,24 @@ class Profile(BaseSchema):
     hymenophore: Hymenophore | None = Field(
         validation_alias="fruchtschicht", serialization_alias="fruchtschicht", default=None
     )
+    cap_shape: Development[CapShape] | None = Field(
+        validation_alias="hutform", serialization_alias="hutform", default=None
+    )
+    # Mehrfachauswahl als Liste, nicht als Zeichenkette mit Komma: im
+    # Zielmodell wird daraus eine Kindtabelle mit einer Zeile je Wert.
+    cap_features: list[CapFeature] = Field(
+        validation_alias="hutmerkmale",
+        serialization_alias="hutmerkmale",
+        default_factory=list["CapFeature"],
+    )
+    cap_margin: Development[list[CapMargin]] | None = Field(
+        validation_alias="hutrand", serialization_alias="hutrand", default=None
+    )
+    stem_features: list[StemFeature] = Field(
+        validation_alias="stielmerkmale",
+        serialization_alias="stielmerkmale",
+        default_factory=list["StemFeature"],
+    )
     smell: TaggedText = Field(
         validation_alias="geruch", serialization_alias="geruch", default_factory=TaggedText
     )
@@ -954,6 +1071,18 @@ class Species(SpeciesCommon):
     hymenophore: Hymenophore | None = Field(
         validation_alias="fruchtschicht", serialization_alias="fruchtschicht"
     )
+    cap_shape: Development[CapShape] | None = Field(
+        validation_alias="hutform", serialization_alias="hutform"
+    )
+    cap_features: list[CapFeature] = Field(
+        validation_alias="hutmerkmale", serialization_alias="hutmerkmale"
+    )
+    cap_margin: Development[list[CapMargin]] | None = Field(
+        validation_alias="hutrand", serialization_alias="hutrand"
+    )
+    stem_features: list[StemFeature] = Field(
+        validation_alias="stielmerkmale", serialization_alias="stielmerkmale"
+    )
     smell: TaggedText = Field(validation_alias="geruch", serialization_alias="geruch")
     taste: TaggedText = Field(validation_alias="geschmack", serialization_alias="geschmack")
     reagents: list[ReagentEntry] = Field(
@@ -1035,6 +1164,18 @@ class SpeciesQuery(BaseSchema):
     )
     edge: GillEdge | None = Field(
         validation_alias="schneide", serialization_alias="schneide", default=None
+    )
+    cap_shape: CapShape | None = Field(
+        validation_alias="hutform", serialization_alias="hutform", default=None
+    )
+    cap_feature: CapFeature | None = Field(
+        validation_alias="hutmerkmal", serialization_alias="hutmerkmal", default=None
+    )
+    cap_margin: CapMargin | None = Field(
+        validation_alias="hutrand", serialization_alias="hutrand", default=None
+    )
+    stem_feature: StemFeature | None = Field(
+        validation_alias="stielmerkmal", serialization_alias="stielmerkmal", default=None
     )
 
 
