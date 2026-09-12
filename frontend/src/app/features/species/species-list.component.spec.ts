@@ -134,12 +134,12 @@ describe('ArtenComponent', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Giftig und Verwechslung' }));
     nachlade('/api/arten?sammelbar=false', LOOKALIKE_LIST);
     refresh();
-    await userEvent.click(screen.getByRole('button', { name: 'Giftig' }));
+    await userEvent.click(screen.getByRole('button', { name: 'giftig' }));
     refresh();
 
     expect(names()).toEqual(['Gallenröhrling']);
 
-    await userEvent.click(screen.getByRole('button', { name: 'Tödlich giftig' }));
+    await userEvent.click(screen.getByRole('button', { name: 'tödlich giftig' }));
     refresh();
 
     expect(screen.getByText('Keine Art passt zur Suche.')).toBeInTheDocument();
@@ -159,7 +159,7 @@ describe('ArtenComponent', () => {
 
     const row = screen.getByRole('button', { name: /Gallenröhrling/ });
     expect(within(row).getByText('Profil')).toBeInTheDocument();
-    expect(within(row).getByText('Giftig')).toBeInTheDocument();
+    expect(within(row).getByText('giftig')).toBeInTheDocument();
   });
 
   it('setzt die Marken einer Zeile in fester Reihenfolge', async () => {

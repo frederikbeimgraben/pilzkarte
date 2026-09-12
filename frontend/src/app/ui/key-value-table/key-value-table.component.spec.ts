@@ -36,22 +36,51 @@ describe('KeyValueTableComponent', () => {
     expect(screen.getByText('Speisepilz')).toBeInTheDocument();
   });
 
+  it('trägt das Raster an der Tabelle, nicht an der Zeile', async () => {
+    // Solange jede Zeile ihre Spalten selbst setzte, war die Spalte so breit
+    // wie der Inhalt der Zeile: „Stiel“ mit der Unterzeile „schwarzbraun,
+    // weiß“ stand 2 px weiter rechts als „Hut“ darüber. Das Mockup nennt feste
+    // 104 px, und die halten nur alle Zeilen zusammen ein.
+    const { container } = await render(HostComponent);
+
+    const table = styleOf(container.querySelector('app-key-value-table'));
+    expect(table.getPropertyValue('--pilz-kv-label')).toBe('104px');
+    expect(table.gridTemplateColumns).toContain('minmax(0, 1fr)');
+    expect(styleOf(container.querySelector('app-key-value-row')).display).toBe('contents');
+    // Kein Rasterabstand: eine Lücke zwischen den Zellen schnitte Zebra und
+    // Trennlinie in zwei Hälften. Der Abstand steckt im Polster.
+    expect(table.columnGap).not.toBe('12px');
+  });
+
   it('lässt einen langen Schlüssel umbrechen, statt in den Wert zu laufen', async () => {
-    // „Ölbaumtrichterling“ in der Verwechslungstabelle: 18 Zeichen sind breiter
-    // als die 104 px der Mockups. jsdom setzt nichts; geprüft wird die Regel,
-    // die den Umbruch erzwingt und die Spalte begrenzt.
+    // „Ölbaumtrichterling“ ist breiter als die 104 px der Mockups. jsdom setzt
+    // nichts; geprüft wird die Regel, die den Umbruch erzwingt.
     const { container } = await render(
-      `<app-key-value-row schluessel="Ölbaumtrichterling XXXXXX"
-         value="Leuchtet im Dunkeln, Lamellen laufen am Stiel herab, wächst büschelig an Wurzeln von Ölbaum und Eiche. Giftig." />`,
+      `<app-key-value-row schluessel="Ölbaumtrichterling XXXXXX" value="Giftig." />`,
       { imports: [KeyValueRowComponent] },
     );
 
-    const styles = styleOf(container.querySelector('app-key-value-row'));
-    const schluessel = styleOf(container.querySelector('.tz__key'));
+    expect(styleOf(container.querySelector('.tz__key')).overflowWrap).toBe('anywhere');
+  });
 
-    expect(styles.gridTemplateColumns).toBe('minmax(104px, max-content) minmax(0, 1fr)');
-    expect(styles.alignItems).toBe('start');
-    expect(schluessel.maxInlineSize).toBe('145px');
-    expect(schluessel.overflowWrap).toBe('anywhere');
+  it('setzt den Wert an die rechte Kante', async () => {
+    // Eine Farbfläche von 96 px stand linksbündig in einer Spalte von 212 und
+    // ließ ein Drittel der Karte leer.
+    const { container } = await render(HostComponent);
+
+    const value = styleOf(container.querySelector('.tz__value'));
+    expect(value.alignItems).toBe('flex-end');
+    expect(value.textAlign).toBe('end');
+  });
+
+  it('lässt Fließtext links beginnen', async () => {
+    const { container } = await render(
+      `<app-key-value-row schluessel="Hut" value="Vier Zeilen Prosa." [flow]="true" />`,
+      { imports: [KeyValueRowComponent] },
+    );
+
+    const value = styleOf(container.querySelector('.tz__value'));
+    expect(value.alignItems).toBe('flex-start');
+    expect(value.textAlign).toBe('start');
   });
 });

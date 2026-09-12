@@ -18,8 +18,7 @@
                     @case ('mass') {
                       <app-measurement
                         [extent]="value.measure.extent"
-                        [from]="value.measure.von"
-                        [to]="value.measure.bis"
+                        [spans]="value.measure.spans"
                         [unit]="value.measure.einheit"
                         [label]="value.measure.zeichen"
                       />
@@ -35,6 +34,7 @@
                         [toLabel]="value.change.nachLabel"
                         [duration]="value.change.dauer"
                         [arrowLabel]="value.change.pfeil"
+                        [small]="true"
                       />
                     }
                     @case ('tags') {

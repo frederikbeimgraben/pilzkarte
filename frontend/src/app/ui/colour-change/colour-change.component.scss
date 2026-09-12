@@ -1,18 +1,60 @@
+// Drei feste Spuren und eine zweite Reihe darunter.
+//
+// Die Dauer stand einmal rechts neben der Nach-Flaeche und schob sie aus der
+// Flucht: im Abschnitt Farbe enden alle Flaechen an derselben Kante, hier
+// endete die Zeile mit einem Wort. Sie steht jetzt unter den Flaechen.
+//
+// Die Spuren sind fest, damit zwei Arten in der Gegenueberstellung dieselben
+// Kanten teilen. Fehlt die Ausgangsfarbe, bleiben die ersten beiden Spuren
+// leer und die Nach-Flaeche steht trotzdem rechts, wo die Flaechen darueber
+// enden.
 :host {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  color: var(--color-text-muted);
+  --pilz-change-field: 52px;
+  --pilz-change-arrow: 14px;
+  --pilz-change-hourglass: 15px;
+  --pilz-colour-width: var(--pilz-change-field);
+  --pilz-colour-height: 26px;
 
-  // Zwei Flächen und ein Pfeil in einer Zeile: schmaler als eine einzelne.
-  --pilz-colour-width: 60px;
+  display: inline-grid;
+  grid-template-columns: var(--pilz-change-field) var(--pilz-change-arrow) var(--pilz-change-field);
+  gap: 4px;
+  align-items: center;
+  color: var(--color-text-muted);
 }
 
+// Ohne diese Zuweisung ruecken Pfeil und Nach-Flaeche in die erste Spur, sobald
+// die Ausgangsfarbe fehlt.
+.change__from {
+  grid-column: 1;
+}
+
+.change__arrow {
+  grid-column: 2;
+}
+
+.change__to {
+  grid-column: 3;
+}
+
+// Die Dauer steht unter den Flaechen und beginnt an der ersten.
 .change__speed {
   display: inline-flex;
-  align-items: center;
+  grid-column: 1 / -1;
   gap: 4px;
-  margin-inline-start: var(--space-1);
+  align-items: center;
   font-size: var(--fs-xs);
   white-space: nowrap;
+}
+
+// In der Gegenueberstellung stehen zwei Arten nebeneinander. Dort ist alles
+// eine Nummer kleiner, die Bauform bleibt dieselbe.
+:host(.colour-change--small) {
+  --pilz-change-field: 30px;
+  --pilz-change-arrow: 12px;
+  --pilz-change-hourglass: 12px;
+  --pilz-colour-height: 20px;
+}
+
+:host(.colour-change--small) .change__speed {
+  font-size: 11px;
 }

@@ -1,11 +1,13 @@
 @if (from().length) {
-  <app-colour-field [colours]="from()" [label]="fromLabel()" />
+  <app-colour-field class="change__from" [colours]="from()" [label]="fromLabel()" />
 }
 @if (changes()) {
-  <app-svg-icon name="wandelt" [size]="17" [label]="arrowLabel()" />
-  <app-colour-field [colours]="to()" [label]="toLabel()" />
+  <app-svg-icon class="change__arrow" name="wandelt" [size]="arrowSize()" [label]="arrowLabel()" />
+}
+@if (to().length) {
+  <app-colour-field class="change__to" [colours]="to()" [label]="toLabel()" />
 }
 <span class="change__speed">
-  <app-svg-icon name="dauer" [size]="14" />
+  <app-svg-icon name="dauer" [size]="hourglassSize()" />
   {{ duration() }}
 </span>

@@ -1,5 +1,5 @@
 <app-svg-icon class="empty__image" [name]="icon()" [size]="48" />
 <p class="empty__text">{{ text() }}</p>
 @if (action(); as label) {
-  <app-button class="empty__button" variant="primary" (click)="actionClick.emit()">{{ label }}</app-button>
+  <app-button class="empty__button" variant="secondary" (click)="actionClick.emit()">{{ label }}</app-button>
 }

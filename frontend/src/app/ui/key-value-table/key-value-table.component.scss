@@ -1,4 +1,21 @@
+// Die Tabelle traegt das Raster, nicht die Zeile.
+//
+// Bis dahin setzte jede Zeile ihre Spalten selbst, mit
+// ``minmax(104px, max-content)``. Eine Zeile mit einer breiteren Unterzeile
+// bekam damit eine breitere Beschriftungsspalte als ihre Nachbarn: "Stiel"
+// stand 2 px weiter rechts als "Hut" darueber. Das Mockup nennt feste 104 px
+// (``bauen.py``, ``.tz``), und nur ein gemeinsames Raster haelt sie ein. Die
+// Zeilen sind darum ``display: contents``, wie in der Vergleichstabelle.
 :host {
-  display: flex;
-  flex-direction: column;
+  // 104 px für die Beschriftung, wie im Mockup. Der Abstand dazwischen und das
+  // Polster am Rand stecken im Polster der Zellen, nicht in einer Lücke des
+  // Rasters: eine Lücke schnitte Zebra und Trennlinie in zwei Hälften.
+  --pilz-kv-label: 104px;
+  --pilz-kv-gutter: 14px;
+  --pilz-kv-gap: 12px;
+
+  display: grid;
+  grid-template-columns:
+    calc(var(--pilz-kv-gutter) + var(--pilz-kv-label) + var(--pilz-kv-gap))
+    minmax(0, 1fr);
 }

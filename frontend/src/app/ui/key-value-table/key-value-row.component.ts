@@ -25,4 +25,12 @@ export class KeyValueRowComponent {
   readonly keyRoute = input<string | null>(null);
   /** Die Unterzeile am Schlüssel. Sie nennt, was rechts als Wert steht. */
   readonly unter = input<string | null>(null);
+  /**
+   * Ein Wert endet rechts, ein Satz beginnt links.
+   *
+   * Werte fluchten an der rechten Kante mit den Farbflächen daneben. Fließtext
+   * nicht: die Merkmalszeile „Hut“ ist vier Zeilen lang, und ein
+   * rechtsbündiger Absatz franst links aus.
+   */
+  readonly flow = input(false);
 }
