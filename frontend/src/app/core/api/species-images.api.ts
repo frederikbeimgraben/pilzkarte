@@ -11,6 +11,9 @@ export interface ImageInput {
   source?: string;
   takenOn?: string;
   caption?: string;
+  /** Wahlfrei, und nur zusammen. Der Dienst rundet, bevor er speichert. */
+  lat?: number;
+  lon?: number;
 }
 
 /**

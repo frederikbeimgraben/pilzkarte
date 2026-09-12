@@ -32,6 +32,7 @@ from app.modules.species.catalog import Catalog
 from app.modules.species.router import current_catalog
 from app.shared import images
 from app.shared.geometry import (
+    GRID_KM,
     KM_PER_LAT_DEGREE,
     Box,
     Point,
@@ -46,9 +47,6 @@ from app.shared.schemas import Visibility
 
 router = APIRouter(prefix="/funde", tags=["funde"])
 
-# Maschenweite fuer den Ort einer geschuetzten Art. Fuenf Kilometer nennen die
-# Gegend und verraten die Stelle im Wald nicht.
-GRID_KM: Final = 5.0
 # Weiter als eine halbe Masche kann das Runden einen Punkt nicht verschieben.
 GRID_MARGIN_DEG: Final = GRID_KM / KM_PER_LAT_DEGREE
 

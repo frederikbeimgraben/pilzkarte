@@ -5,6 +5,7 @@ Datei traegt Kennung und Groesse; damit kennt der Dienst den Pfad aus der Zeile
 allein und braucht keine zweite Tabelle fuer die Fassungen.
 """
 
+from dataclasses import dataclass
 from pathlib import Path
 
 from sqlalchemy import select, update
@@ -17,8 +18,10 @@ from app.models import Person, SpeciesImage, new_identifier, utc_now
 from app.modules.access.guard import Viewer
 from app.modules.access.permissions import Permission
 from app.modules.species.catalog import Catalog
+from app.modules.species.schemas import ProtectionStatus
 from app.modules.species_images.schemas import ImageIn
 from app.shared import images
+from app.shared.geometry import GRID_KM, Point, to_grid
 from app.shared.images import Size
 from app.shared.schemas import ImageState
 
@@ -45,6 +48,24 @@ def check_species(catalog: Catalog, species_slug: str) -> None:
     """
     if not catalog.has(species_slug):
         raise Invalid(f"Die Art {species_slug} steht nicht im Katalog.")
+
+
+def coarse_place(payload: ImageIn, catalog: Catalog) -> Point | None:
+    """Der Ort, der an einem Bild stehen darf: gerundet, oder gar keiner.
+
+    Der genaue Punkt verlaesst diese Funktion nicht. Was hier herauskommt,
+    schreibt der Dienst; einen Ort auf dem Meter kennt die Datenbank nie.
+
+    Eine streng geschuetzte Art traegt gar keinen Ort. Bei ihr waere schon die
+    Gegend ein Hinweis, den niemand geben soll.
+    """
+    if (payload.lat is None) != (payload.lon is None):
+        raise Invalid("Ein Ort braucht beide Zahlen, Breite und Laenge.")
+    if payload.lat is None or payload.lon is None:
+        return None
+    if catalog.protection_of(payload.species_slug) is ProtectionStatus.STRICT:
+        raise Invalid("Zu einer streng geschuetzten Art nimmt der Dienst keinen Ort an.")
+    return to_grid((payload.lon, payload.lat), GRID_KM)
 
 
 def write_files(
@@ -76,15 +97,32 @@ async def clear_lead(session: AsyncSession, species_slug: str, keep: str) -> Non
     )
 
 
+@dataclass(frozen=True, slots=True)
+class Arrival:
+    """Ein Bild, so wie es hereinkommt: die Angaben, sein grober Ort, sein Zustand.
+
+    Der Ort steht getrennt von den Angaben: er ist schon gerundet, und die
+    Angaben tragen noch den Punkt, den die Person geschickt hat.
+    """
+
+    payload: ImageIn
+    place: Point | None
+    state: ImageState
+
+
 async def create(
     session: AsyncSession,
     settings: Settings,
-    *,
-    payload: ImageIn,
+    arrival: Arrival,
     user: User,
-    state: ImageState,
 ) -> SpeciesImage:
-    """Legt ein Bild an: Dateien auf die Platte, eine Zeile in die Datenbank."""
+    """Legt ein Bild an: Dateien auf die Platte, eine Zeile in die Datenbank.
+
+    Der Ort kommt schon gerundet herein. Diese Funktion sieht den genauen nie.
+    """
+    payload = arrival.payload
+    place = arrival.place
+    state = arrival.state
     # Die Kennung faellt hier und nicht erst beim Schreiben, weil sie den
     # Dateinamen traegt.
     identifier = new_identifier()
@@ -99,6 +137,8 @@ async def create(
         source=payload.source,
         taken_on=payload.taken_on,
         caption=payload.caption,
+        lat=None if place is None else place[1],
+        lon=None if place is None else place[0],
         lead=payload.lead and approved,
         state=state,
         reviewed_by=user.sub if approved else None,

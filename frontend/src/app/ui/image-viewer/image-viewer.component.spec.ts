@@ -59,4 +59,20 @@ describe('ImageViewerComponent', () => {
 
     expect(calls).toBe(1);
   });
+
+  it('nennt am Ort, dass er gerundet ist', async () => {
+    await render(ImageViewerComponent, {
+      inputs: { image: speciesImage({ lat: 48.51, lon: 9.06 }), titel: 'Steinpilz' },
+    });
+
+    expect(screen.getByText('48,51 · 9,06, auf 5 km gerundet')).toBeInTheDocument();
+  });
+
+  it('lässt den Ort weg, wenn das Bild keinen trägt', async () => {
+    await render(ImageViewerComponent, {
+      inputs: { image: speciesImage(), titel: 'Steinpilz' },
+    });
+
+    expect(screen.queryByText('Ort')).not.toBeInTheDocument();
+  });
 });

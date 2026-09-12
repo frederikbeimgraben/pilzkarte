@@ -40,6 +40,23 @@
     }
   </section>
 
+  @if (offersPlace()) {
+    <section class="submit__block">
+      <h2 class="submit__section">{{ 'bild.abschnitt.ort' | t }}</h2>
+      @if (placeText(); as shown) {
+        <app-note variant="unter">{{ shown }}</app-note>
+        <app-button variant="secondary" size="sm" (click)="dropPlace()">
+          {{ 'bild.ortEntfernen' | t }}
+        </app-button>
+      } @else if (mayLocate()) {
+        <app-button variant="secondary" size="sm" (click)="takePlace()">
+          {{ 'bild.ortUebernehmen' | t }}
+        </app-button>
+      }
+      <app-note variant="unter">{{ 'bild.ortHinweis' | t }}</app-note>
+    </section>
+  }
+
   <section class="submit__block">
     <h2 class="submit__section">{{ 'bild.abschnitt.angaben' | t }}</h2>
     <app-form-field

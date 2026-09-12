@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
 import { BadgeComponent, DialogComponent } from '@stupa-makers/ui-kit';
 import { longDate } from '../../core/i18n/dates';
+import { COARSE_DIGITS, GRID_KM } from '../../core/location/grid';
+import { locationText } from '../../core/i18n/places';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { LICENCE_TEXT } from '../image-credit/licences';
@@ -65,6 +67,15 @@ export class ImageViewerComponent {
     }
     if (image.source !== null) {
       rows.push({ label: this.i18n.translate('bild.quelle'), text: image.source });
+    }
+    if (image.lat !== null && image.lon !== null) {
+      const shown = locationText(image.lat, image.lon, this.i18n.locale(), COARSE_DIGITS);
+      rows.push({
+        label: this.i18n.translate('bild.ort'),
+        // Die Rundung steht am Ort und nicht im Kleingedruckten: eine Zahl
+        // ohne ihre Genauigkeit liest sich genauer, als sie ist.
+        text: this.i18n.translate('bild.ortGerundet', { lat: shown.lat, lon: shown.lon, km: GRID_KM }),
+      });
     }
     return rows;
   });

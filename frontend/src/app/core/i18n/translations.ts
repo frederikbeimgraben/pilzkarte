@@ -572,6 +572,14 @@ const de = {
   'bild.unterschriftPlatzhalter': 'Etwa: junges Exemplar',
   'bild.abschnitt.herkunft': 'Herkunft',
   'bild.abschnitt.angaben': 'Angaben',
+  'bild.abschnitt.ort': 'Ort',
+  'bild.ort': 'Ort',
+  'bild.ortGerundet': '{lat} · {lon}, auf {km} km gerundet',
+  'bild.ortUebernehmen': 'Standort dieses Geräts übernehmen',
+  'bild.ortEntfernen': 'Ort entfernen',
+  'bild.ortFehler': 'Kein Standort. Ohne Freigabe oder ohne Signal bleibt das Feld leer.',
+  'bild.ortHinweis':
+    'Wahlfrei. Nimm den Ort nur, wenn du das Bild hier aufgenommen hast. Er wird auf 5 km gerundet gespeichert, nie genau.',
   'bild.pflicht': 'Ohne Fotograf und Lizenz lässt sich das Bild nicht speichern.',
   'bild.hinweisPruefung':
     'Das Bild wird geprüft, bevor es andere sehen. Der Zustand steht unter Konto bei Meine Bilder.',
@@ -1427,6 +1435,14 @@ const en: Record<TranslationKey, string> = {
   'bild.unterschriftPlatzhalter': 'For example: young specimen',
   'bild.abschnitt.herkunft': 'Origin',
   'bild.abschnitt.angaben': 'Details',
+  'bild.abschnitt.ort': 'Place',
+  'bild.ort': 'Place',
+  'bild.ortGerundet': '{lat} · {lon}, rounded to {km} km',
+  'bild.ortUebernehmen': 'Take the location of this device',
+  'bild.ortEntfernen': 'Remove the place',
+  'bild.ortFehler': 'No location. Without permission or signal the field stays empty.',
+  'bild.ortHinweis':
+    'Optional. Take the place only if you took the photo here. It is stored rounded to 5 km, never exactly.',
   'bild.pflicht': 'Without a photographer and a licence the image cannot be saved.',
   'bild.hinweisPruefung':
     'The image is reviewed before others see it. Its state is under Account, My images.',

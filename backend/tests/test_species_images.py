@@ -14,13 +14,16 @@ from fastapi import FastAPI
 
 from app.core.db import session_factory
 from app.core.settings import get_settings
+from app.models import SpeciesImage
 from app.modules.access.permissions import Permission
 from app.modules.access.service import ensure_built_in_roles, sync_permissions
+from app.modules.species.schemas import ProtectionStatus
 from app.modules.species_images.service import MAX_BYTES
+from app.shared.geometry import GRID_KM, to_grid
 from app.shared.images import EDGES, Size
 from app.shared.schemas import ImageState, Licence
 from tests.conftest import FakeIdp, auth_header
-from tests.objects import has_exif, image, image_with_exif
+from tests.objects import catalog_for_tests, has_exif, image, image_with_exif
 
 ADMIN_GROUP = "pilze-admins"
 ROOT = "nutzer-root"
@@ -747,3 +750,105 @@ async def test_an_empty_inbox_is_an_empty_page(call: httpx.AsyncClient, idp: Fak
     mine = await call.get("/api/species-images/mine", headers=as_guest(idp))
 
     assert mine.json() == {"eintraege": [], "gesamt": 0, "limit": 50, "offset": 0}
+
+
+# ------------------------------------------------------------------ Ort
+
+
+# Eine Stelle im Schoenbuch. Sie liegt sicher in Deutschland und laesst sich
+# gegen ihren Rasterknoten nachrechnen.
+PLACE = {"lat": 48.5203, "lon": 9.0511}
+
+
+async def stored(image_id: str) -> SpeciesImage:
+    """Liest die Zeile aus der Datenbank, an der Antwort vorbei."""
+    async with session_factory()() as session:
+        row = await session.get(SpeciesImage, image_id)
+        assert row is not None
+        return row
+
+
+async def test_the_exact_place_never_reaches_the_database(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    body = await published(call, idp, **PLACE)
+
+    row = await stored(body["id"])
+    assert (row.lon, row.lat) == to_grid((PLACE["lon"], PLACE["lat"]), GRID_KM)
+    assert row.lat != PLACE["lat"]
+    assert row.lon != PLACE["lon"]
+
+
+async def test_the_answer_carries_the_place_on_the_grid(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    body = await published(call, idp, **PLACE)
+
+    lon, lat = to_grid((PLACE["lon"], PLACE["lat"]), GRID_KM)
+    assert (body["lon"], body["lat"]) == (lon, lat)
+
+
+async def test_a_place_is_optional(call: httpx.AsyncClient, idp: FakeIdp) -> None:
+    body = await published(call, idp)
+
+    row = await stored(body["id"])
+    assert (body["lat"], body["lon"]) == (None, None)
+    assert (row.lat, row.lon) == (None, None)
+
+
+async def test_half_a_place_is_no_place(call: httpx.AsyncClient, idp: FakeIdp) -> None:
+    only_lat = await upload(call, as_root(idp), lat=PLACE["lat"])
+    only_lon = await upload(call, as_root(idp), lon=PLACE["lon"])
+
+    assert [only_lat.status_code, only_lon.status_code] == [422, 422]
+    assert only_lat.headers["content-type"].startswith("application/problem+json")
+
+
+async def test_a_strictly_protected_species_takes_no_place(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    response = await upload(
+        call,
+        as_root(idp),
+        speciesSlug="kaiserling",
+        lat=PLACE["lat"],
+        lon=PLACE["lon"],
+    )
+
+    assert response.status_code == 422
+    assert "streng" in response.json()["detail"]
+
+
+async def test_a_strictly_protected_species_takes_an_image_without_a_place(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    body = await published(call, idp, speciesSlug="kaiserling")
+
+    assert body["lat"] is None
+
+
+async def test_a_submission_rounds_its_place_too(call: httpx.AsyncClient, idp: FakeIdp) -> None:
+    body = await submitted(call, idp, **PLACE)
+
+    row = await stored(body["id"])
+    assert (row.lon, row.lat) == to_grid((PLACE["lon"], PLACE["lat"]), GRID_KM)
+
+
+async def test_a_place_outside_germany_is_refused(
+    call: httpx.AsyncClient,
+    idp: FakeIdp,
+) -> None:
+    response = await upload(call, as_root(idp), lat=0.0, lon=0.0)
+
+    assert response.status_code == 422
+
+
+def test_an_unknown_species_counts_as_strictly_protected() -> None:
+    # Im Zweifel geht gar kein Ort heraus. Die Route weist einen unbekannten
+    # Slug schon vorher ab; diese Regel traegt den Fall, falls sie es einmal
+    # nicht tut.
+    assert catalog_for_tests().protection_of("gibtsnicht") is ProtectionStatus.STRICT

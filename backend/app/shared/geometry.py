@@ -39,6 +39,11 @@ SQM_PER_HECTARE: Final = 10_000.0
 # Kilometern ohne Projektion rechenbar.
 KM_PER_LAT_DEGREE: Final = 111.32
 
+# Maschenweite fuer einen Ort, der nur grob hinausgehen darf. Fuenf Kilometer
+# nennen die Gegend und verraten die Stelle im Wald nicht. Funde und Artbilder
+# runden auf dieselbe Zahl; zwei waeren zwei Versprechen.
+GRID_KM: Final = 5.0
+
 MIN_CORNERS: Final = 3
 # west, sueden, osten, norden
 BOX_NUMBERS: Final = 4

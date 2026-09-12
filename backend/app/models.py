@@ -288,6 +288,10 @@ class SpeciesImage(Base):
     source: Mapped[str | None] = mapped_column(Text, default=None)
     taken_on: Mapped[date | None] = mapped_column(Date, default=None)
     caption: Mapped[str | None] = mapped_column(String(200), default=None)
+    # Der Ort der Aufnahme, wahlfrei. Er steht hier nur auf dem Raster: der
+    # Dienst rundet vor dem Schreiben und kennt den genauen Punkt nie.
+    lat: Mapped[float | None] = mapped_column(Float, default=None)
+    lon: Mapped[float | None] = mapped_column(Float, default=None)
     # Das Titelbild einer Art. Hoechstens eines traegt es, das setzt der Dienst
     # beim Schreiben durch.
     lead: Mapped[bool] = mapped_column(Boolean, default=False, server_default=false())

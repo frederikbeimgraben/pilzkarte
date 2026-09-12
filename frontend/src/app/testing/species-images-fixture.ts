@@ -11,6 +11,8 @@ export function speciesImage(override: Partial<SpeciesImage> = {}): SpeciesImage
     source: null,
     takenOn: '2026-09-06',
     caption: null,
+    lat: null,
+    lon: null,
     lead: true,
     width: 1600,
     height: 1200,
