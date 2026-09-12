@@ -1,14 +1,25 @@
-// Dasselbe Raster wie die Merkmalstabelle, damit beide Tabellen einer Artseite
-// dieselbe Kante haben.
+// Drei Spuren: die Farbe, der Name mit allem, was zu ihm gehoert, die Wege.
+//
+// Name und lateinischer Name standen bis 78 in zwei Spuren, wie Schlüssel und
+// Wert der Merkmalstabelle. Das trug nicht: beide benennen dieselbe Art, und
+// als das Farbfeld eine vierte Spur dazunahm, blieben der Wertspur 31 px. Ein
+// lateinischer Name brach darin Buchstabe für Buchstabe um. Sie stehen jetzt
+// gestapelt in einer Spur, wie in der Artenliste.
 :host {
   display: grid;
-  grid-template-columns: minmax(104px, max-content) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   column-gap: var(--space-3);
   align-items: start;
   padding: 10px 14px;
   font-size: var(--fs-sm);
   line-height: 1.45;
   border-block-end: var(--border-width) solid var(--color-border);
+}
+
+// Die Spur für das Farbfeld gibt es nur, wo eines steht. Sonst rückte der Name
+// in jeder Zeile ohne Farbe um die Breite der leeren Spur ein.
+:host:has(.lookalike__colour) {
+  grid-template-columns: auto minmax(0, 1fr) auto;
 }
 
 :host(:nth-child(even)) {
@@ -19,32 +30,42 @@
   border-block-end: 0;
 }
 
-// Die Spur für das Farbfeld gibt es nur, wo eines steht. Sonst rückte der Name
-// in jeder Zeile ohne Farbe um die Breite der leeren Spur ein.
-:host:has(.lookalike__colour) {
-  grid-template-columns: auto minmax(104px, max-content) minmax(0, 1fr) auto;
-}
-
 .lookalike__colour {
-  align-self: center;
   inline-size: 40px;
 }
 
-.lookalike__name {
-  max-inline-size: 145px;
-  font-weight: var(--fw-semibold);
-  color: var(--color-text-muted);
+// Alles zum Namen in einem Stapel. ``min-inline-size: 0`` erlaubt der Spur zu
+// schrumpfen, ohne dass der Text aus der Karte laeuft.
+.lookalike__text {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
   overflow-wrap: anywhere;
 }
 
-// Die beiden Wege stehen rechts, mit genug Abstand, dass der Daumen den
-// gemeinten trifft.
+.lookalike__name {
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+}
+
+.lookalike__latin {
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.lookalike__badge:not(:empty) {
+  margin-block-start: var(--space-2);
+}
+
+// Die zwei Wege sind ein Paar und stehen am rechten Rand. Der negative Rand
+// holt die Flaeche des Fingers zurueck: das Zeichen misst 12 bis 20 px, sein
+// Ziel 32, und ohne den Ausgleich sitzt es sichtbar zu weit innen.
 .lookalike__actions {
   display: flex;
   flex: none;
-  gap: var(--space-3);
+  gap: var(--space-1);
   align-items: center;
-  align-self: center;
+  margin-inline-end: -6px;
 }
 
 .lookalike__action {
@@ -59,24 +80,4 @@
 
 .lookalike__action--muted {
   color: var(--color-text-muted);
-}
-
-// Ein Stapel: lateinischer Name, Text, Marke. Die Marke bekommt in jeder Zeile
-// denselben Abstand nach oben, egal wie lang der Text ist.
-.lookalike__value {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-inline-size: 0;
-  color: var(--color-text);
-  overflow-wrap: anywhere;
-}
-
-.lookalike__latin {
-  font-style: italic;
-  color: var(--color-text-muted);
-}
-
-.lookalike__badge:not(:empty) {
-  margin-block-start: var(--space-2);
 }
