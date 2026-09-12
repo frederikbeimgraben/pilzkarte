@@ -13,7 +13,7 @@ synonyme = ["Lycoperdon gemmatum var. echinatum", "Utraria echinata", "Lycoperdo
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Igelstaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 9.0, einheit = "cm" }
@@ -47,18 +47,6 @@ geschmack = "Mild."
 sporenpulver = "Dunkelbraun bis olivbraun."
 vorkommen = "Folgezersetzer, meist im Laubwald, gern auf kalkreichem Boden."
 zeit = "Frühsommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "flaschenbovist"
-unterschied = "Keulig bis birnenförmig mit stielartigem Teil, Stacheln blass und pyramidenartig, ohne bleibendes Netzmuster."
-
-[[verwechslungen]]
-slug = "birnenstaeubling"
-unterschied = "Mit dunkelbraunen kleiigen Warzen statt Stacheln, wächst büschelig auf altem Holz."
-
-[[verwechslungen]]
-slug = "braeunlicher-staeubling"
-unterschied = "Stachelspitzen braun statt weißlich, Stacheln leicht abwischbar, danach kein Netzmuster."
 
 [[links]]
 titel = "123pilzsuche.de"

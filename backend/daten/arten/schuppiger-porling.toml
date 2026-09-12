@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchuppigerPorling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 40.0, einheit = "cm" }
@@ -64,24 +64,28 @@ vorkommen = "Folgezersetzer an Laubholz, gern büschelig zusammenwachsend, löst
 zeit = "Frühjahr bis Sommer, Fruchtkörper sind ganzjährig zu finden."
 
 [[verwechslungen]]
+slug = "berindeter-seitling"
+unterschied = "Lamellen statt Poren, herablaufend und gegabelt, Stiel mit flüchtigem Ring."
+eigenerUnterschied = "Hut mit konzentrisch angeordneten braunen Schuppen, Unterseite mit Poren, Stielbasis im Alter schwarz."
+
+[[verwechslungen]]
 slug = "loewengelber-porling"
 unterschied = "Nur 3 bis 6 cm breit, Hut graugelb bis orange, kahl und ohne Schuppen."
-
-[[verwechslungen]]
-slug = "schuppiger-saegeblaettling"
-unterschied = "Lamellen statt Poren, Schneiden stark gesägt, wächst an Nadelholz."
-
-[[verwechslungen]]
-slug = "sklerotienporling"
-unterschied = "Kleiner, Hutrand bewimpert, Stiel meist zentral, Basis filzig und nicht schwarz."
+eigenerUnterschied = "Viel größer, Hut mit groben braunen Schuppen, Poren weißlich und nur ein bis zwei je Millimeter."
 
 [[verwechslungen]]
 slug = "riesenporling"
 unterschied = "Viele fächerförmige Hüte an einem Strunk, Poren schwärzen auf Druck."
 
 [[verwechslungen]]
-slug = "berindeter-seitling"
-unterschied = "Lamellen statt Poren, herablaufend und gegabelt, Stiel mit flüchtigem Ring."
+slug = "schuppiger-saegeblaettling"
+unterschied = "Lamellen statt Poren, Schneiden stark gesägt, wächst an Nadelholz."
+eigenerUnterschied = "Unterseite mit weiten Poren statt Lamellen, Stielbasis schwarz."
+
+[[verwechslungen]]
+slug = "sklerotienporling"
+unterschied = "Kleiner, Hutrand bewimpert, Stiel meist zentral, Basis filzig und nicht schwarz."
+eigenerUnterschied = "Deutlich größer, Hut mit groben braunen Schuppen, Stielbasis schwarz."
 
 [[links]]
 titel = "123pilzsuche.de"

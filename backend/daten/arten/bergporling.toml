@@ -14,7 +14,7 @@ synonyme = ["Bondarzewia montana", "Grifola mesenterica", "Grifola montana", "Cl
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bergporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "guajak"
@@ -66,14 +66,6 @@ geschmack = "Jung mild, dann schnell extrem scharf."
 sporenpulver = "Weiß."
 vorkommen = "Wurzelparasit im Nadelwald, gern an Weißtanne. In Tschechien und im Bayerischen Wald häufig, in der Schweiz potenziell gefährdet."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "riesenporling"
-unterschied = "Poren auf Druck schwärzend, Fleisch im Schnitt langsam braunschwarz, gern an Buchenstümpfen."
-
-[[verwechslungen]]
-slug = "klapperschwamm"
-unterschied = "Graubraune halbierte Einzelhüte in Büscheln, im Wurzelbereich von Eiche und Kastanie."
 
 [[verwechslungen]]
 slug = "semmelporling"

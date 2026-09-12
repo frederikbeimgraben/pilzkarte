@@ -15,7 +15,7 @@ from typing import Any
 from PIL import Image
 
 from app.core.settings import get_settings
-from app.modules.species.catalog import Catalog
+from app.modules.species.catalog import Catalog, build_relations
 from app.modules.species.schemas import (
     WEEKS,
     Edibility,
@@ -75,7 +75,7 @@ def _profile(name: str, scientific: str, *, protected: bool, reference: str = "p
         name=name,
         scientific=scientific,
         group=Group.BOLETE,
-        edibility=Edibility.CHOICE,
+        edibility=Edibility.EDIBLE,
         protected=protected,
         seasons=[Season.AUTUMN],
         trees=[TreeSpecies.SPRUCE],
@@ -116,23 +116,20 @@ def catalog_for_tests() -> Catalog:
             "Macrolepiota procera": counts,
         },
     )
+    profiles = {
+        "steinpilz": _profile("Steinpilz", "Boletus edulis", protected=True),
+        "pfifferling": _profile("Pfifferling", "Cantharellus cibarius", protected=True),
+        "parasol": _profile(
+            "Parasol", "Macrolepiota procera", protected=False, reference="steinpilz"
+        ),
+    }
     return Catalog(
         table=table,
-        profiles={
-            "steinpilz": _profile("Steinpilz", "Boletus edulis", protected=True),
-            "pfifferling": _profile("Pfifferling", "Cantharellus cibarius", protected=True),
-            "parasol": _profile(
-                "Parasol", "Macrolepiota procera", protected=False, reference="steinpilz"
-            ),
-        },
+        profiles=profiles,
         # Nur der Steinpilz hat eine Wertkarte. Der Parasol belegt den Fall
         # "Art im Katalog, aber ohne Vorhersage".
         maps={"steinpilz": "boletus_edulis"},
-        affects={
-            "parasol": ["pfifferling", "steinpilz"],
-            "steinpilz": ["parasol"],
-            "pfifferling": [],
-        },
+        relations=build_relations(profiles),
     )
 
 

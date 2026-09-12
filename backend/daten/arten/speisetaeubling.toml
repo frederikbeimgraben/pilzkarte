@@ -15,7 +15,7 @@ synonyme = ["Russula heterophylla var. vesca", "Russula vesca var. major", "Russ
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speisetaubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "guajak"
@@ -80,10 +80,6 @@ vorkommen = "Symbiosepilz im Mischwald, gern im sauren Laub- oder Nadelwald bei 
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-slug = "kiefernspeitaeubling"
-unterschied = "Hut blut- bis kirschrot, alt mattrot, Stiel weiß ohne Rottöne."
-
-[[verwechslungen]]
 slug = "birkenspeitaeubling"
 unterschied = "Hut weißlich, blass rosa bis rosenrot, Lamellen sehr zerbrechlich, Stiel weiß und brüchig."
 
@@ -94,6 +90,10 @@ unterschied = "Hut zinnoberrot bis karminrot, Lamellen weiß, im Alter gelblich,
 [[verwechslungen]]
 slug = "flammstieltaeubling"
 unterschied = "Hut blut- bis kirschrot, Stiel weiß und rot geflammt."
+
+[[verwechslungen]]
+slug = "kiefernspeitaeubling"
+unterschied = "Hut blut- bis kirschrot, alt mattrot, Stiel weiß ohne Rottöne."
 
 [[links]]
 titel = "123pilzsuche.de"

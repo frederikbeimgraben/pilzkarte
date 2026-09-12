@@ -15,7 +15,7 @@ synonyme = ["Dendropolyporus umbellatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichhase2004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
@@ -60,10 +60,6 @@ geschmack = "Nussig, im Alter bitter."
 sporenpulver = "Weiß."
 vorkommen = "Am Fuß von Laubbäumen, meist Eiche, seltener Buche. Parasitisch und folgezersetzend, löst Weißfäule aus. Kommt jährlich an derselben Stelle wieder."
 zeit = "Frühsommer bis Herbst."
-
-[[verwechslungen]]
-slug = "klapperschwamm"
-unterschied = "Hüte breiter und zungenförmig, grau bis graubraun, in einem großen Büschel am Stammfuß."
 
 [[verwechslungen]]
 slug = "bergporling"

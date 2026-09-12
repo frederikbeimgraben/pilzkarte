@@ -15,7 +15,7 @@ weitereNamen = ["Ackerriesenschirmpilz", "Geschundener Schirmling", "Ackerschirm
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ackerschirmpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 14.0, einheit = "cm" }
@@ -63,16 +63,12 @@ vorkommen = "Folgezersetzer auf mageren, sandigen Böden an Waldrändern, auf St
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "jungfernschirmling"
-unterschied = "Hut mit wollig abstehenden Schüppchen, Fleisch läuft nie rötlich an, im Bergnadelwald auf saurem Boden."
-
-[[verwechslungen]]
 slug = "gruensporschirmling"
 unterschied = "Lamellen im Alter mit blaugrünem Hauch, wächst in Gewächshäusern, auf Kompost und warmem Substrat."
 
 [[verwechslungen]]
-slug = "parasol"
-unterschied = "Deutlich größer, Stiel mit dunkelbrauner Natterung."
+slug = "jungfernschirmling"
+unterschied = "Hut mit wollig abstehenden Schüppchen, Fleisch läuft nie rötlich an, im Bergnadelwald auf saurem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -17,7 +17,7 @@ synonyme = ["Leccinum aurantiacum var. vulpinum", "Boletus vulpinus", "Xanthochr
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fuchsrotkappe.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 22.0, einheit = "cm" }
@@ -65,14 +65,6 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "fichtenrotkappe"
 unterschied = "Stielschuppen von Anfang an schwarz, Fleisch später violett, bei Fichte."
-
-[[verwechslungen]]
-slug = "birken-rotkappe"
-unterschied = "Stielschuppen jung weiß, bei Birke."
-
-[[verwechslungen]]
-slug = "espen-rotkappe"
-unterschied = "Hut orangerot, bei Espe und Pappel."
 
 [[links]]
 titel = "123pilzsuche.de"

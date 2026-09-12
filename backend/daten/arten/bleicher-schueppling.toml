@@ -1,5 +1,5 @@
 name = "Bleicher Schüppling"
-lateinisch = "Pholiota squarrosoides (agaricus squarrosoides)"
+lateinisch = "Pholiota squarrosoides"
 gruppe = "schueppling"
 speisewert = "ungeniessbar"
 geschuetzt = false
@@ -8,11 +8,12 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er schmeckt bitter. Geruch und helle Grundfarbe trennen ihn von den anderen Schüpplingen."
+synonyme = ["Agaricus squarrosoides"]
 haeufigkeit = "selten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BleicherSchueppling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
@@ -63,6 +64,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "sparriger-schueppling"
 unterschied = "Kleiner, Hut strohgelb und trocken, Geruch und Geschmack rettichartig, gern an Laubholz und Obstbäumen."
+eigenerUnterschied = "Grundfarbe cremeweiß bis sehr hellbraun, Geruch obstartig nach Fruchtbonbon, Geschmack bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

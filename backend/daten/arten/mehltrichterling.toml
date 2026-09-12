@@ -13,7 +13,7 @@ synonyme = ["Clitocybe ditopus", "Pseudolyophyllum ditopus", "Clitocybe odorula"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerMehltrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 8.0, einheit = "cm" }

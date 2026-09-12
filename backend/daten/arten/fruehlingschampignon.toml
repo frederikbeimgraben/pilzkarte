@@ -15,7 +15,7 @@ weitereNamen = ["Langstieliger Egerling", "Sommeregerling", "Sommerchampignon", 
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fruehlingsegerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
@@ -64,6 +64,7 @@ zeit = "Frühjahr bis Sommer."
 [[verwechslungen]]
 slug = "karbolegerling"
 unterschied = "Riecht nach Karbol oder Tinte, Stielbasis im Schnitt kräftig chromgelb."
+eigenerUnterschied = "Geruch mandel- bis anisartig, Hut mit seidigen gelbbraunen Radialfasern."
 
 [[links]]
 titel = "123pilzsuche.de"

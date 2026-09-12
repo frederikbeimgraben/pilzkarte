@@ -13,7 +13,7 @@ weitereNamen = ["Weißer Grüner Knollenblätterpilz", "Weißhütiger Knollenbl�
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserKnolli.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -58,14 +58,6 @@ geschmack = "Mild und würzig, aber niemals kosten."
 sporenpulver = "Weiß."
 vorkommen = "Symbiosepilz in Mischwald, Parkanlagen und Gärten, überwiegend bei Laubbäumen wie Buche, Eiche und Esche, selten bei Nadelbäumen. Selten."
 zeit = "Frühling bis Spätherbst."
-
-[[verwechslungen]]
-slug = "kegelhuetiger-knollenblaetterpilz"
-unterschied = "Hut kegelig gebuckelt, Huthaut färbt sich mit Kalilauge gelb."
-
-[[verwechslungen]]
-slug = "gruener-knollenblaetterpilz"
-unterschied = "Hut grünlich, oliv bis gelbgrün statt rein weißlich."
 
 [[verwechslungen]]
 slug = "riesenroetling"

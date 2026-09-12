@@ -10,12 +10,12 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "In der Schweiz nicht marktfähig, Relative Wertigkeit 4. Kulinarisch bringt er kaum etwas."
-weitereNamen = ["Ringloser Butter-Röhrling", "Rosafüßiger Körnchen-Röhrling"]
+weitereNamen = ["Ringloser Butter-Röhrling", "Rosafüßiger Körnchen-Röhrling", "Ringloser Butterröhrling"]
 synonyme = ["Suillus fluryi"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RingloserButterpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -59,10 +59,6 @@ geschmack = "Mild säuerlich."
 sporenpulver = "Hellbraun bis ockerbraun."
 vorkommen = "Symbiosepilz an Waldrändern und in Parks unter Fichte und Kiefer, gern auf kalkreichem Boden."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "koernchenroehrling"
-unterschied = "Stiel oben mit milchigen Tröpfchen und Drüsenpunkten, Stielbasis nicht rosa."
 
 [[verwechslungen]]
 slug = "goldroehrling"

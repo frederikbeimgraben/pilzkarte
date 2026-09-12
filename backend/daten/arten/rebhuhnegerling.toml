@@ -1,4 +1,4 @@
-name = "Rebhuhnegerling"
+name = "Rebhuhnchampignon"
 lateinisch = "Agaricus phaeolepidotus"
 gruppe = "champignon"
 speisewert = "giftig"
@@ -9,12 +9,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen am schwach tintigen, karbolartigen Geruch nach Phenol und faulem Stroh und an der Stielbasis, die bei Verletzung chromgelb gilbt und später braunrot wird. Nicht essen."
 gefaehrdung = "unbekanntesAusmass"
-weitereNamen = ["Rebhuhnchampignon"]
+weitereNamen = ["Rebhuhnegerling"]
 synonyme = ["Psalliota phaeolepidota"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rebhuhnegerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -65,14 +65,6 @@ geschmack = "Mild."
 sporenpulver = "Purpurbraun."
 vorkommen = "Folgezersetzer in Parks und im Mischwald, gern bei Laubbäumen."
 zeit = "Frühsommer bis Herbst."
-
-[[verwechslungen]]
-slug = "waldchampignon"
-unterschied = "Fleisch bei Verletzung gelborange und später blutrot, Geruch angenehm pilzig und leicht fruchtig."
-
-[[verwechslungen]]
-slug = "riesenchampignon"
-unterschied = "Deutlich größer, Geruch anisartig nach Bittermandeln, Ring breit und dick."
 
 [[links]]
 titel = "123pilzsuche.de"

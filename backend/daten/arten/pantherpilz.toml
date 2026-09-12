@@ -14,7 +14,7 @@ synonyme = ["Amanitaria pantherina", "Amanita pantherina forma robusta", "Agaric
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Pantherpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "phenol"
@@ -64,14 +64,6 @@ geschmack = "Mild. Keine Kostversuche, er ist tödlich giftig."
 sporenpulver = "Weiß."
 vorkommen = "Symbiosepilz im Mischwald, überwiegend bei Laubbäumen, gern auf sandigem Boden. Häufig."
 zeit = "Frühling bis Spätherbst."
-
-[[verwechslungen]]
-slug = "koenigsfliegenpilz"
-unterschied = "Hut braun mit gelblichen bis ockerfarbenen Velumresten, Ring oberseits gerieft."
-
-[[verwechslungen]]
-slug = "grauer-wulstling"
-unterschied = "Ring deutlich gerieft, Knolle nicht abgesetzt und ohne Söckchen, Geruch rettichartig."
 
 [[links]]
 titel = "123pilzsuche.de"

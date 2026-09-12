@@ -12,7 +12,7 @@ synonyme = ["Pustulina cupularis", "Tarzetta cupularis var. velata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KerbrandigerNapf.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
@@ -49,10 +49,6 @@ geschmack = "Neutral, mild, angenehm."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer auf Erde in Gärten und in Blumentöpfen."
 zeit = "Frühjahr bis Herbst."
-
-[[verwechslungen]]
-slug = "judasohr"
-unterschied = "Ohrförmig und gallertartig, wächst an Laubholz, meist an Holunder, nicht auf Erde."
 
 [[links]]
 titel = "123pilzsuche.de"

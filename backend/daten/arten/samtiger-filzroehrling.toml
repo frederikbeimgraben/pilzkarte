@@ -13,7 +13,7 @@ synonyme = ["Boletus lanatus", "Boletus subtomentosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SamtigerFilzroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "ammoniak"
@@ -61,14 +61,6 @@ geschmack = "Mild."
 sporenpulver = "Olivbraun."
 vorkommen = "Symbiosepilz im Laubwald, besonders gern bei Buchen und Eichen."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "brauner-filzroehrling"
-unterschied = "Stiel ohne Netzzeichnung, Hut olivbraun, Fleisch kaum blauend."
-
-[[verwechslungen]]
-slug = "ziegenlippe"
-unterschied = "Hut olivbraun bis gelbbraun und samtig, Stiel ohne Netz, unter der Huthaut nicht rosa."
 
 [[verwechslungen]]
 slug = "rotfussroehrling"

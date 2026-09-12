@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Herbstblattl.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -72,24 +72,17 @@ vorkommen = "Folgezersetzer im Mischwald, gern in Hexenringen. Massenpilz im Sp�
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "riesenroetling"
-unterschied = "Lamellen jung gelblich, später rotocker und praktisch nie herablaufend, Geruch säuerlich mehlig, Sporenpulver rosabraun."
-
-[[verwechslungen]]
 slug = "graublaettriger-trichterling"
 unterschied = "Deutlich kleiner, Hut milchkaffeebraun mit runzeligem Rand, Lamellen grauweiß bis graubraun."
-
-[[verwechslungen]]
-slug = "moenchskopf"
-unterschied = "Hut bräunlich mit einem Buckel in der Mitte, Lamellen weit herablaufend, Stiel keulig."
-
-[[verwechslungen]]
-slug = "bueschliger-rasling"
-unterschied = "Hut ledergelb bis orangebraun, wächst büschelig aus einem Strunk, Fleisch zäh und elastisch."
+eigenerUnterschied = "Deutlich größer, Hut grau und wie bereift, Geruch stark mehlig-süßlich, Lamellen weißlich."
 
 [[verwechslungen]]
 slug = "horngrauer-roetelritterling"
 unterschied = "Hut graubraun mit konzentrischen Wasserflecken, Lamellen später cremerosa, Geruch mehlartig statt parfümiert."
+
+[[verwechslungen]]
+slug = "riesenroetling"
+unterschied = "Lamellen jung gelblich, später rotocker und praktisch nie herablaufend, Geruch säuerlich mehlig, Sporenpulver rosabraun."
 
 [[links]]
 titel = "123pilzsuche.de"

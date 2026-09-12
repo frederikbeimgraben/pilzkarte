@@ -1,5 +1,5 @@
 name = "Flämmiger Saftling"
-lateinisch = "Hygrocybe turunda (flammiger saftling = hygrocybe turunda var. sphagnophila)"
+lateinisch = "Hygrocybe turunda"
 gruppe = "schneckling"
 speisewert = "giftig"
 geschuetzt = true
@@ -10,10 +10,11 @@ baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als giftig, mindestens aber als sehr verdächtig. Saftlinge sind besonders geschützt und werden nicht gesammelt."
 haeufigkeit = "selten"
 weitereNamen = ["Schuppiger Saftling", "Grobschuppiger Moorsaftling", "Rußigflockiger Saftling"]
+synonyme = ["Flammiger saftling = hygrocybe turunda var. sphagnophila"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlammigerSaftling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 2.0, seltenBis = 3.0, einheit = "cm" }
@@ -58,10 +59,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Auf Wiesen und Bergwiesen, in moosigen Wäldern, in feuchtem Torfmoos und in sandiger Umgebung. Selten."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "trompetenpfifferling"
-unterschied = "Hut graubraun und trichterig durchbohrt, Unterseite mit Leisten statt Lamellen, Stiel gelb und hohl."
 
 [[links]]
 titel = "123pilzsuche.de"

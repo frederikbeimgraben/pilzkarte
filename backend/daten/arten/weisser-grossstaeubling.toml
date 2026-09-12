@@ -14,7 +14,7 @@ synonyme = ["Langermannia candida", "Lycoperdon candidum", "Aussereuropäische f
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserGrossstaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
@@ -50,16 +50,12 @@ vorkommen = "Folgezersetzer im Mischwald, in Hecken, Parks, Steppen und Heiden, 
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "weisser-knollenblaetterpilz"
-unterschied = "Jung ebenfalls ein weißes Ei; im Längsschnitt zeigen sich aber Hut, Lamellen und Stiel, die Basis steckt in einer häutigen Scheide."
-
-[[verwechslungen]]
 slug = "hasenbovist"
 unterschied = "Jung mit plattenartigen, spitzkegeligen Erhebungen, wächst auf Wiesen, Weiden und in Obstgärten."
 
 [[verwechslungen]]
-slug = "riesenbovist"
-unterschied = "Viel größer, bis 50 und selten bis 150 cm breit, Haut glatt und lederartig, alt urinartig riechend."
+slug = "weisser-knollenblaetterpilz"
+unterschied = "Jung ebenfalls ein weißes Ei; im Längsschnitt zeigen sich aber Hut, Lamellen und Stiel, die Basis steckt in einer häutigen Scheide."
 
 [[links]]
 titel = "123pilzsuche.de"

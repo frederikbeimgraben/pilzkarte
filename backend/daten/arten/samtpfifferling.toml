@@ -16,7 +16,7 @@ weitereNamen = ["Rötlicher Pfifferling", "Samtleistling", "Fries´scher Pfiffer
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetlicherPfifferling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -58,16 +58,16 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buchen, auf kalkarmem Boden. Reg
 zeit = "Fruehsommer bis Spaetherbst."
 
 [[verwechslungen]]
-slug = "zitronengelber-raukopf"
-unterschied = "Echte, safrangelbe bis rostbraune Lamellen statt Leisten, Sporenpulver rostbraun."
+slug = "falscher-pfifferling"
+unterschied = "Echte, dicht stehende und gegabelte Lamellen, Fleisch weich, Hut mit dunklerer Mitte."
 
 [[verwechslungen]]
 slug = "spitzgebuckelter-raukopf"
 unterschied = "Hut orangebraun mit spitzem Buckel, echte Lamellen, Sporenpulver rostbraun."
 
 [[verwechslungen]]
-slug = "falscher-pfifferling"
-unterschied = "Echte, dicht stehende und gegabelte Lamellen, Fleisch weich, Hut mit dunklerer Mitte."
+slug = "zitronengelber-raukopf"
+unterschied = "Echte, safrangelbe bis rostbraune Lamellen statt Leisten, Sporenpulver rostbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

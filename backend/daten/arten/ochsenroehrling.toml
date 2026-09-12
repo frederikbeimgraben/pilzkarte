@@ -13,7 +13,7 @@ synonyme = ["Boletus torosus", "Dictyopus torosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ochsenroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 13.0, einheit = "cm" }
@@ -63,10 +63,6 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "blaufleckender-purpurroehrling"
 unterschied = "Hut purpurrot bis weinrosa und blau fleckend, Fleisch schnell stark blauend, alt aasartiger Geruch."
-
-[[verwechslungen]]
-slug = "flockenstieliger-hexenroehrling"
-unterschied = "Stiel ohne Netz, mit roten Flöckchen auf gelbem Grund, Hut dunkelbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

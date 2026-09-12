@@ -13,7 +13,7 @@ weitereNamen = ["Satanspilz", "Teufelspilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Satanspilz-Satansroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
@@ -61,12 +61,12 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buche, auf kalkreichem Boden. Se
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "falscher-satansroehrling"
-unterschied = "Hut rosa bis fleischfarben getönt, Fleisch deutlich blauend."
-
-[[verwechslungen]]
 slug = "blaufleckender-purpurroehrling"
 unterschied = "Hut mit rosa bis rötlichen Tönen, Fleisch sofort und stark blauend."
+
+[[verwechslungen]]
+slug = "falscher-satansroehrling"
+unterschied = "Hut rosa bis fleischfarben getönt, Fleisch deutlich blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

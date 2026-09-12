@@ -12,7 +12,7 @@ weitereNamen = ["Büscheliger Schwefelkopf", "Bitterer Schwefelkopf"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenblaettrigerSchwefelkopf.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -58,16 +58,13 @@ vorkommen = "Folgezersetzer an Laub- und Nadelholzstümpfen, Ästen und vergrabe
 zeit = "Ganzjährig."
 
 [[verwechslungen]]
-slug = "rotbrauner-flaemmling"
-unterschied = "Hut rotbraun bis gelbbraun, Lamellen und Sporenpulver rostbraun, ohne Grünton."
-
-[[verwechslungen]]
 slug = "nadelschueppling"
 unterschied = "An Nadelholz, Hut gelb mit spitzen Schuppen, Lamellen ohne Grünton."
+eigenerUnterschied = "Lamellen grün bis grüngelb, Sporenpulver purpurbraun, Geschmack stark bitter."
 
 [[verwechslungen]]
-slug = "stockschwaemmchen"
-unterschied = "Hut zweifarbig ausblassend, Lamellen zimtbraun, Stiel unter dem Ring braun beschuppt, Geschmack mild."
+slug = "rotbrauner-flaemmling"
+unterschied = "Hut rotbraun bis gelbbraun, Lamellen und Sporenpulver rostbraun, ohne Grünton."
 
 [[links]]
 titel = "123pilzsuche.de"

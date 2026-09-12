@@ -20,14 +20,15 @@ WEEKS = 52
 
 
 class Tier(StrEnum):
-    """Was die App zu einer Art zeigen kann. Die Datenlage entscheidet."""
+    """Was die App zu einer Art zeigen kann. Die Datenlage entscheidet.
+
+    Eine Verwechslung ist keine Stufe. Sie ist eine Beziehung zwischen zwei
+    Arten und steht in ``verwechslungen``, nicht als Eigenschaft einer Art.
+    """
 
     FORECAST = "vorhersage"
     SEASON = "saison"
     PROFILE = "profil"
-    # Eine Art, die nur im Katalog steht, weil man eine sammelbare mit ihr
-    # verwechselt. Sie traegt keine Saisonkurve und keine Karte.
-    LOOKALIKE = "verwechslung"
 
 
 class Group(StrEnum):
@@ -148,18 +149,18 @@ class Season(StrEnum):
 
 
 class Edibility(StrEnum):
-    """Was mit einer Art in der Pfanne passieren darf.
+    """Wie gefaehrlich eine Art in der Pfanne ist. Fuenf Stufen, mehr nicht.
 
-    Die Stufe kommt allein aus der Auszeichnung im Kopf der Quellseite und dem
-    Zusatz dahinter. Garzeiten, Rohgiftigkeit und Unvertraeglichkeiten stehen
-    im ``speisewertHinweis``: sie sagen, wie man die Art zubereitet, nicht ob
-    man sie essen darf.
+    Die Stufe kommt allein aus der Auszeichnung im Kopf der Quellseite.
+    Garzeiten, Rohgiftigkeit und Unvertraeglichkeiten stehen im
+    ``speisewertHinweis``: sie sagen, wie man die Art zubereitet, nicht ob man
+    sie essen darf.
+
+    Wie gut eine essbare Art schmeckt, ist keine Stufe der Gefahr. Das steht
+    als ``wertigkeit`` im Profil, mit derselben Zahl wie auf der Quellseite.
     """
 
-    EXCELLENT = "sehrGuterSpeisepilz"
-    CHOICE = "guterSpeisepilz"
     EDIBLE = "essbar"
-    POOR = "minderwertig"
     EDIBLE_WHEN_COOKED = "bedingtEssbar"
     INEDIBLE = "ungeniessbar"
     POISONOUS = "giftig"
@@ -396,33 +397,47 @@ class TreeSource(BaseSchema):
 
 
 class Lookalike(BaseSchema):
-    """Ein Verweis auf die Art, mit der man diese verwechselt.
+    """Ein Paar von Arten, die man miteinander verwechselt.
 
-    Der Eintrag traegt nur den Slug und den Satz, der genau dieses Paar trennt.
-    Name, Speisewert und Warnung stehen im Profil, auf das der Slug zeigt.
-    Stuenden sie hier noch einmal, koennten die zwei Stellen auseinanderlaufen.
+    Der Eintrag traegt nur den Slug der anderen Art und die Saetze, die genau
+    dieses Paar trennen. Name, Speisewert und Warnung stehen im Profil, auf das
+    der Slug zeigt. Stuenden sie hier noch einmal, koennten die zwei Stellen
+    auseinanderlaufen.
 
-    Der Satz gehoert zum Paar, nicht zur Art: dieselbe Art trennt sich von
-    einem Steinpilz an einem anderen Merkmal als von einem Maronenroehrling.
+    Das Paar steht in genau einer der beiden Dateien. ``unterschied`` nennt,
+    woran man die andere Art erkennt, ``eigenerUnterschied`` woran man die Art
+    erkennt, in deren Datei der Eintrag steht. Der Dienst liefert das Paar
+    daher aus beiden Richtungen.
     """
 
     slug: str = Field(min_length=1)
     difference: str = Field(
         validation_alias="unterschied", serialization_alias="unterschied", min_length=1
     )
+    own_difference: str | None = Field(
+        default=None,
+        validation_alias="eigenerUnterschied",
+        serialization_alias="eigenerUnterschied",
+        min_length=1,
+    )
 
 
 class ResolvedLookalike(BaseSchema):
-    """Ein Verweis, wie die Antwort ihn ausliefert.
+    """Ein Paar, wie die Antwort es ausliefert.
 
-    Der Dienst schlaegt das Profil des Ziels nach und legt seine Angaben dazu.
-    Das Frontend muss nichts nachladen, um eine Verwechslung zu zeigen.
+    Der Dienst schlaegt das Profil der anderen Art nach und legt seine Angaben
+    dazu. Das Frontend muss nichts nachladen, um eine Verwechslung zu zeigen.
+
+    ``unterschied`` bleibt leer, solange nur die andere Seite einen Satz zu dem
+    Paar traegt. Der Name allein ist dann immer noch die Warnung, die zaehlt.
     """
 
     slug: str
     name: str
     scientific: str = Field(validation_alias="lateinisch", serialization_alias="lateinisch")
-    difference: str = Field(validation_alias="unterschied", serialization_alias="unterschied")
+    difference: str | None = Field(
+        validation_alias="unterschied", serialization_alias="unterschied"
+    )
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     warning: str | None = Field(validation_alias="warnung", serialization_alias="warnung")
 
@@ -584,6 +599,16 @@ class Profile(BaseSchema):
             raise ValueError("Eine nicht sammelbare Art hat keine Karte.")
         return self
 
+    @model_validator(mode="after")
+    def _one_record_per_pair(self) -> "Profile":
+        # Derselbe Slug zweimal liesse zwei Saetze zu demselben Paar zu, und
+        # die Artseite zeigte die Verwechslung doppelt.
+        slugs = [entry.slug for entry in self.lookalikes]
+        twice = sorted({slug for slug in slugs if slugs.count(slug) > 1})
+        if twice:
+            raise ValueError(f"Diese Verwechslungen stehen doppelt: {', '.join(twice)}.")
+        return self
+
     @field_validator("traits")
     @classmethod
     def _no_empty_row(cls, value: dict[TraitKey, str]) -> dict[TraitKey, str]:
@@ -741,11 +766,13 @@ class Marketability(BaseSchema):
 
     Sie nennt die Positivliste der DGfM und die Marktfaehigkeit in der Schweiz.
     Die Zeile steht bei jeder Art und ist darum genauer als eine Gesamtliste.
+
+    Die Quelle steht nicht hier. Sie gilt fuer das ganze Profil und stuende
+    sonst zweimal in derselben Antwort.
     """
 
     marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
     switzerland: bool | None = Field(validation_alias="schweiz", serialization_alias="schweiz")
-    source: Source = Field(validation_alias="quelle", serialization_alias="quelle")
 
 
 class Trait(BaseSchema):
@@ -755,8 +782,13 @@ class Trait(BaseSchema):
     text: str
 
 
-class SpeciesBrief(BaseSchema):
-    """Eine Art in der Liste."""
+class SpeciesCommon(BaseSchema):
+    """Was die Liste und die Artseite gleich zeigen.
+
+    Beide Antworten tragen dieselben Angaben zu Name, Einordnung, Gefahr und
+    Vorkommen. Sie stehen einmal hier, damit sie nicht an zwei Stellen
+    auseinanderlaufen.
+    """
 
     slug: str
     name: str
@@ -768,56 +800,6 @@ class SpeciesBrief(BaseSchema):
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     map_slug: str | None = Field(validation_alias="kartenSlug", serialization_alias="kartenSlug")
     collectable: bool = Field(validation_alias="sammelbar", serialization_alias="sammelbar")
-    marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
-    marketable_switzerland: bool | None = Field(
-        validation_alias="marktfaehigSchweiz", serialization_alias="marktfaehigSchweiz"
-    )
-    rating: int | None = Field(validation_alias="wertigkeit", serialization_alias="wertigkeit")
-    frequency: Frequency | None = Field(
-        validation_alias="haeufigkeit", serialization_alias="haeufigkeit"
-    )
-    red_list: RedListStatus | None = Field(
-        validation_alias="gefaehrdung", serialization_alias="gefaehrdung"
-    )
-    warning: str | None = Field(validation_alias="warnung", serialization_alias="warnung")
-    seasons: list[Season] = Field(
-        validation_alias="jahreszeiten", serialization_alias="jahreszeiten"
-    )
-    trees: list[TreeSpecies] = Field(validation_alias="baeume", serialization_alias="baeume")
-    trees_from_experience: TreeSource | None = Field(
-        validation_alias="baeumeAusErfahrung", serialization_alias="baeumeAusErfahrung"
-    )
-    other_names: list[str] = Field(
-        validation_alias="weitereNamen", serialization_alias="weitereNamen"
-    )
-    synonyms: list[str] = Field(validation_alias="synonyme", serialization_alias="synonyme")
-    forecast_planned: bool = Field(
-        validation_alias="vorhersageGeplant", serialization_alias="vorhersageGeplant"
-    )
-    visits_with_find: int = Field(
-        validation_alias="begehungenMitFund", serialization_alias="begehungenMitFund"
-    )
-    peak_week: int | None = Field(validation_alias="spitzeWoche", serialization_alias="spitzeWoche")
-    season: SeasonBrief | None = Field(validation_alias="saison", serialization_alias="saison")
-
-
-class Species(BaseSchema):
-    """Eine Art mit Profil, so wie die Artseite sie braucht."""
-
-    slug: str
-    name: str
-    scientific: str = Field(validation_alias="lateinisch", serialization_alias="lateinisch")
-    group: Group = Field(validation_alias="gruppe", serialization_alias="gruppe")
-    tier: Tier = Field(validation_alias="stufe", serialization_alias="stufe")
-    tags: list[Tag]
-    protected: bool = Field(validation_alias="geschuetzt", serialization_alias="geschuetzt")
-    edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
-    map_slug: str | None = Field(validation_alias="kartenSlug", serialization_alias="kartenSlug")
-    collectable: bool = Field(validation_alias="sammelbar", serialization_alias="sammelbar")
-    marketable: bool = Field(validation_alias="marktfaehig", serialization_alias="marktfaehig")
-    marketable_switzerland: bool | None = Field(
-        validation_alias="marktfaehigSchweiz", serialization_alias="marktfaehigSchweiz"
-    )
     marketability: Marketability = Field(
         validation_alias="marktfaehigkeit", serialization_alias="marktfaehigkeit"
     )
@@ -840,6 +822,24 @@ class Species(BaseSchema):
         validation_alias="weitereNamen", serialization_alias="weitereNamen"
     )
     synonyms: list[str] = Field(validation_alias="synonyme", serialization_alias="synonyme")
+    forecast_planned: bool = Field(
+        validation_alias="vorhersageGeplant", serialization_alias="vorhersageGeplant"
+    )
+    visits_with_find: int = Field(
+        validation_alias="begehungenMitFund", serialization_alias="begehungenMitFund"
+    )
+    peak_week: int | None = Field(validation_alias="spitzeWoche", serialization_alias="spitzeWoche")
+
+
+class SpeciesBrief(SpeciesCommon):
+    """Eine Art in der Liste: dazu die kleine Kurve."""
+
+    season: SeasonBrief | None = Field(validation_alias="saison", serialization_alias="saison")
+
+
+class Species(SpeciesCommon):
+    """Eine Art mit Profil, so wie die Artseite sie braucht."""
+
     measurements: Measurements = Field(validation_alias="masse", serialization_alias="masse")
     colours: Colours = Field(validation_alias="farben", serialization_alias="farben")
     period: Period | None = Field(validation_alias="zeitraum", serialization_alias="zeitraum")
@@ -850,20 +850,12 @@ class Species(BaseSchema):
         validation_alias="reagenzien", serialization_alias="reagenzien"
     )
     source: Source = Field(validation_alias="quelle", serialization_alias="quelle")
-    forecast_planned: bool = Field(
-        validation_alias="vorhersageGeplant", serialization_alias="vorhersageGeplant"
-    )
-    visits_with_find: int = Field(
-        validation_alias="begehungenMitFund", serialization_alias="begehungenMitFund"
-    )
-    peak_week: int | None = Field(validation_alias="spitzeWoche", serialization_alias="spitzeWoche")
     traits: list[Trait] = Field(validation_alias="merkmale", serialization_alias="merkmale")
+    # Beide Richtungen in einer Liste. Ein Paar steht in einer der zwei
+    # Dateien, und der Dienst dreht es fuer die andere Seite um.
     lookalikes: list[ResolvedLookalike] = Field(
         validation_alias="verwechslungen", serialization_alias="verwechslungen"
     )
-    # Die Gegenrichtung: bei welchen Arten diese als Verwechslung steht. Die
-    # Seite eines Giftpilzes fuehrt damit zurueck zu dem, was man sammeln wollte.
-    affects: list[str] = Field(validation_alias="betrifft", serialization_alias="betrifft")
     links: list[Link]
     season: SeasonCurve | None = Field(validation_alias="saison", serialization_alias="saison")
 

@@ -1,4 +1,4 @@
-name = "Glatte Fingerhutverpel"
+name = "Fingerhutverpel"
 lateinisch = "Verpa conica"
 gruppe = "morchel"
 speisewert = "essbar"
@@ -11,12 +11,12 @@ baeume = []
 speisewertHinweis = "Roh giftig, nur gut durchgegart. Die Angaben zur Essbarkeit gehen auseinander, deshalb besser stehen lassen. In der Schweiz potenziell gefährdet, in Deutschland in unbekanntem Ausmaß gefährdet."
 haeufigkeit = "selten"
 gefaehrdung = "unbekanntesAusmass"
-weitereNamen = ["Fingerhutverpel", "Glockenverpel", "Fingerhutmorchel"]
+weitereNamen = ["Glatte Fingerhutverpel", "Glockenverpel", "Fingerhutmorchel"]
 synonyme = ["Verpa digit aliformis", "Monka conica"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Verpel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
@@ -57,12 +57,12 @@ vorkommen = "Folgezersetzer in Auen und Flussauen. Selten."
 zeit = "Frühling, April bis Mai."
 
 [[verwechslungen]]
-slug = "runzelige-fingerhutverpel"
-unterschied = "Fruchtkörper längsrunzelig bis netzig gefaltet statt nur quergerillt."
-
-[[verwechslungen]]
 slug = "kaeppchenmorchel"
 unterschied = "Hut wabig gerippt und nur am Scheitel angewachsen, Rand frei abstehend."
+
+[[verwechslungen]]
+slug = "runzelige-fingerhutverpel"
+unterschied = "Fruchtkörper längsrunzelig bis netzig gefaltet statt nur quergerillt."
 
 [[links]]
 titel = "123pilzsuche.de"

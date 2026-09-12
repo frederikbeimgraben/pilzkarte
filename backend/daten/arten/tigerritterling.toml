@@ -13,7 +13,7 @@ synonyme = ["Tricholoma pardalotum", "Pleurotus tigrinus", "Agaricus tigrinus", 
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Tigerritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 16.0, einheit = "cm" }

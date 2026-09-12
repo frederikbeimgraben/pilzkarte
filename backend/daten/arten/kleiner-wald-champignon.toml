@@ -1,21 +1,25 @@
 name = "Kleiner Wald-Champignon"
 lateinisch = "Agaricus sylvaticus"
 gruppe = "champignon"
-speisewert = "guterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
 marktfaehig = true
-sammelbar = false
+sammelbar = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nicht roh verzehren, das kann unverträglich sein."
 weitereNamen = ["Waldegerling", "Waldchampignon", "Kleiner Blutegerling"]
 synonyme = ["Psalliota silvatica var. pallida", "Agaricus haemorrhoidarius forma fagetorum", "Agaricus silvaticus var. vinosobrunneus", "Psalliota sanguinaria", "Agaricus silvaticus"]
 
+[baeumeAusErfahrung]
+baeume = ["fichte"]
+quelle = "eigene Erfahrung"
+
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Waldegerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -71,6 +75,7 @@ unterschied = "Hut fein grau bis schwarzbraun geschuppt wie Perlhuhngefieder, Fl
 [[verwechslungen]]
 slug = "rebhuhnegerling"
 unterschied = "Hut graubraun bis rauchschwärzlich, Stielbasis knollig und bei Verletzung gilbend, Geruch schwach karbolartig."
+eigenerUnterschied = "Fleisch bei Verletzung gelborange und später blutrot, Geruch angenehm pilzig und leicht fruchtig."
 
 [[verwechslungen]]
 slug = "spitzschuppiger-schirmling"

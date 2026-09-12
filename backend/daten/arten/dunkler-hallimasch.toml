@@ -1,4 +1,4 @@
-name = "Dunkler Hallimasch"
+name = "Gemeiner Hallimasch"
 lateinisch = "Armillaria ostoyae"
 gruppe = "hallimasch"
 speisewert = "bedingtEssbar"
@@ -10,12 +10,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "kiefer"]
 speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Roh macht er ein Taubheitsgefühl im Hals. Nur die Hüte, lange kochen, das Kochwasser weggießen. Auch dann kommen Magen-Darm-Beschwerden vor."
 haeufigkeit = "sehrHaeufig"
-weitereNamen = ["Gemeiner Hallimasch", "Nadelholzhallimasch"]
+weitereNamen = ["Dunkler Hallimasch", "Nadelholzhallimasch"]
 synonyme = ["Armillaria mellea var. obscura", "Armillariella solidipes", "Armillariella polymyces sensu", "Armillaria obscura sensu", "Armillaria polymyces sensu"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeinerHallimarsch.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 14.0, einheit = "cm" }
@@ -64,24 +64,28 @@ vorkommen = "An Nadelholzresten in Wäldern, Gärten und Parks. Parasit an krank
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "sparriger-risspilz"
-unterschied = "Hut mit braunen, dornartigen, spitzen Schuppen, Lamellen grau bis graubraun, Sporenpulver braun."
+slug = "gelbschuppiger-hallimasch"
+unterschied = "Hut haselnussbraun mit grauen Schüppchen, Stielbasis keulig, meist einzeln aus dem Boden."
+eigenerUnterschied = "Hut rotbraun, Ring ohne goldgelben Rand, an Nadelholz."
 
 [[verwechslungen]]
-slug = "wolliger-risspilz"
-unterschied = "Hut braun bis orangebraun, wollig filzig, nicht sparrig, Lamellen graubraun bis rostbraun."
+slug = "honiggelber-hallimasch"
+unterschied = "Hut gelblich bis zitronengelb, an Laubholz."
+eigenerUnterschied = "Hut rotbraun statt gelblich, Stiel unter dem Ring mit weißen wolligen Schüppchen, an Nadelholz, schlechter verträglich."
+
+[[verwechslungen]]
+slug = "sparriger-risspilz"
+unterschied = "Hut mit braunen, dornartigen, spitzen Schuppen, Lamellen grau bis graubraun, Sporenpulver braun."
+eigenerUnterschied = "Wächst büschelig an Holz, Stiel mit dickem Ring, Sporenpulver weiß."
 
 [[verwechslungen]]
 slug = "sparriger-schueppling"
 unterschied = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun."
 
 [[verwechslungen]]
-slug = "honiggelber-hallimasch"
-unterschied = "Hut gelblich bis zitronengelb, an Laubholz."
-
-[[verwechslungen]]
-slug = "gelbschuppiger-hallimasch"
-unterschied = "Hut haselnussbraun mit grauen Schüppchen, Stielbasis keulig, meist einzeln aus dem Boden."
+slug = "wolliger-risspilz"
+unterschied = "Hut braun bis orangebraun, wollig filzig, nicht sparrig, Lamellen graubraun bis rostbraun."
+eigenerUnterschied = "Wächst büschelig an Holz, hat einen Ring am Stiel und weißliche bis cremefarbene Lamellen."
 
 [[links]]
 titel = "123pilzsuche.de"

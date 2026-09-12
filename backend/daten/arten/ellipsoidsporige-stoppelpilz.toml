@@ -1,5 +1,5 @@
 name = "Ellipsoidsporige Stoppelpilz"
-lateinisch = "Ellipsoidsporige Stoppelpilz"
+lateinisch = "Hydnum ellipsosporum"
 gruppe = "stoppelpilz"
 speisewert = "essbar"
 geschuetzt = false
@@ -15,7 +15,7 @@ weitereNamen = ["Kleinwüchsiger Semmelstoppelpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/EllipsoidsporigeStoppelpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
@@ -63,14 +63,15 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "genabelter-semmelstoppelpilz"
 unterschied = "Hut in der Mitte deutlich genabelt, blasser gefärbt."
-
-[[verwechslungen]]
-slug = "semmelporling"
-unterschied = "Poren statt Stoppeln auf der Hutunterseite."
+eigenerUnterschied = "Hutmitte nicht genabelt, Stacheln dichter stehend."
 
 [[verwechslungen]]
 slug = "schafporling"
 unterschied = "Hut weißlich, Unterseite mit feinen Poren statt Stacheln."
+
+[[verwechslungen]]
+slug = "semmelporling"
+unterschied = "Poren statt Stoppeln auf der Hutunterseite."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -16,7 +16,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -67,20 +67,18 @@ vorkommen = "Folgezersetzer im Mischwald, im Nadelwald gern an Weißtanne, im La
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-slug = "brauner-haarstielporling"
-unterschied = "Hut samtig kurzhaarig mit verklebten Haarbüscheln, dünnfleischig, zentral gestielt, Poren schwärzen nicht."
-
-[[verwechslungen]]
 slug = "becherfoermiger-saegeblaettling"
 unterschied = "Mit Lamellen statt Poren, Schneiden gesägt und wellig, Geschmack bitterlich."
 
 [[verwechslungen]]
 slug = "bergporling"
 unterschied = "Poren schwärzen auf Druck nicht, Geruch ganz jung etwas anisartig, Wurzelparasit an Weißtanne."
+eigenerUnterschied = "Poren auf Druck schwärzend, Fleisch im Schnitt langsam braunschwarz, gern an Buchenstümpfen."
 
 [[verwechslungen]]
-slug = "klapperschwamm"
-unterschied = "Graubraune Einzelhüte, rosettenartig verwachsen, Röhren schwärzen auf Druck nicht, am Wurzelbereich von Eiche."
+slug = "brauner-haarstielporling"
+unterschied = "Hut samtig kurzhaarig mit verklebten Haarbüscheln, dünnfleischig, zentral gestielt, Poren schwärzen nicht."
+eigenerUnterschied = "Poren auf Druck schwärzend, Fleisch im Schnitt braunschwarz, an Laubholzstümpfen."
 
 [[verwechslungen]]
 slug = "eichhase"

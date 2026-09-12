@@ -1,4 +1,4 @@
-name = "Rauer Wulstling"
+name = "Gelbflockiger Wulstling"
 lateinisch = "Amanita franchetii"
 gruppe = "wulstling"
 speisewert = "giftig"
@@ -10,12 +10,12 @@ baeume = ["eiche", "kastanie", "kiefer"]
 speisewertHinweis = "Zu erkennen an den gelblichen bis grauen flockigen Velumresten auf Hut und Stiel, dem gelb gerandeten gerieften Ring und dem Fleisch, das nicht rötet. Roh ist er unverträglich, deshalb keine Kostversuche."
 haeufigkeit = "sehrSelten"
 gefaehrdung = "unbekanntesAusmass"
-weitereNamen = ["Gelbflockiger Wulstling"]
+weitereNamen = ["Rauer Wulstling"]
 synonyme = ["Amanita aspera", "Amanita aspera var. franchetii", "Amanita aspera f. franchetii", "Amanita queletii var. franchetii", "Amanita franchetii var. lactella", "Amanita rubescens f. aspera"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbflockigerWulstling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -62,12 +62,12 @@ vorkommen = "Symbiosepilz im Mischwald bei Laub- und Nadelbäumen, gern bei Eich
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-slug = "koenigsfliegenpilz"
-unterschied = "Hut braun mit ockerfarbenen Velumresten, deutlich größer, Stiel mit gerandeter Knolle."
-
-[[verwechslungen]]
 slug = "grauer-wulstling"
 unterschied = "Velumreste grau statt gelb, Ring rein weiß, Geruch rettichartig."
+
+[[verwechslungen]]
+slug = "koenigsfliegenpilz"
+unterschied = "Hut braun mit ockerfarbenen Velumresten, deutlich größer, Stiel mit gerandeter Knolle."
 
 [[links]]
 titel = "123pilzsuche.de"

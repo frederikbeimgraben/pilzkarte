@@ -1,7 +1,7 @@
 name = "Samtfußrübling"
 lateinisch = "Flammulina velutipes"
 gruppe = "ruebling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
@@ -18,7 +18,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Samtfussruebling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 20.0, einheit = "cm" }
@@ -62,24 +62,24 @@ vorkommen = "Folgezersetzer meist an Laubholz, sehr häufig."
 zeit = "Spätherbst bis Frühjahr, gern nach dem ersten Frost."
 
 [[verwechslungen]]
-slug = "gifthaeubling"
-unterschied = "Lamellen hellbraun bis zimtbraun, Sporenpulver rostbraun, Stiel weißsilbrig überfasert mit dünnem Ring, Geruch muffig nach faulendem Holz."
-
-[[verwechslungen]]
 slug = "geflecktblaettriger-flaemmling"
 unterschied = "Lamellen jung hellgelb, bald orange und rostfleckig, Fleisch orangegelb, Geschmack stark bitter, meist an Nadelholz."
 
 [[verwechslungen]]
-slug = "samtschuppiger-tannenflaemmling"
-unterschied = "Hut trocken, matt und schuppig, Lamellen gelb bis goldgelb, alt rostbraun, Geschmack bitterlich."
+slug = "gifthaeubling"
+unterschied = "Lamellen hellbraun bis zimtbraun, Sporenpulver rostbraun, Stiel weißsilbrig überfasert mit dünnem Ring, Geruch muffig nach faulendem Holz."
+
+[[verwechslungen]]
+slug = "nadelschueppling"
+unterschied = "Hut zitronen- bis orangegelb mit Schüppchen, Lamellen gelb, Geschmack bitter, im Nadelwald."
 
 [[verwechslungen]]
 slug = "rotbrauner-flaemmling"
 unterschied = "Hut zimt- bis rotbraun und trocken, Lamellen zuerst leuchtend gelb, später rostbraun, Geschmack bitterlich."
 
 [[verwechslungen]]
-slug = "nadelschueppling"
-unterschied = "Hut zitronen- bis orangegelb mit Schüppchen, Lamellen gelb, Geschmack bitter, im Nadelwald."
+slug = "samtschuppiger-tannenflaemmling"
+unterschied = "Hut trocken, matt und schuppig, Lamellen gelb bis goldgelb, alt rostbraun, Geschmack bitterlich."
 
 [[links]]
 titel = "123pilzsuche.de"

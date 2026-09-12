@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rotfuss.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -78,24 +78,22 @@ vorkommen = "Symbiosepilz im Mischwald, sehr häufig."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "schoenfussroehrling"
-unterschied = "Stiel mit weißem, gelbem bis braunrotem Netz, Fleisch sofort stark blauend, Geschmack bitter."
-
-[[verwechslungen]]
-slug = "maronenroehrling"
-unterschied = "Hut glatt und feucht schmierig, Röhren auf Druck blaugrün, ohne Rotfärbung unter der Huthaut."
-
-[[verwechslungen]]
-slug = "herbstrotfussroehrling"
-unterschied = "Stiel dicker und fester, Fleisch auffallend gelb, Röhren kaum blauend, im Oktober und November."
-
-[[verwechslungen]]
 slug = "falscher-rotfussroehrling"
 unterschied = "Stiel zur Basis schwärzlich und kaum rot punktiert, Rotfärbung unter der Huthaut nur schwach."
 
 [[verwechslungen]]
+slug = "herbstrotfussroehrling"
+unterschied = "Stiel dicker und fester, Fleisch auffallend gelb, Röhren kaum blauend, im Oktober und November."
+eigenerUnterschied = "Stiel schlanker, Hut stärker aufreißend mit rotem Grund, Fleisch weniger gelb."
+
+[[verwechslungen]]
+slug = "schoenfussroehrling"
+unterschied = "Stiel mit weißem, gelbem bis braunrotem Netz, Fleisch sofort stark blauend, Geschmack bitter."
+
+[[verwechslungen]]
 slug = "ziegenlippe"
 unterschied = "Hut graubraun bis olivocker und wildlederartig filzig, Stiel fast weiß und ohne rote Punkte."
+eigenerUnterschied = "Hut später aufgerissen, Stiel rötlich punktiert, Röhren gelb bis olivgelb und etwas herablaufend."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -14,7 +14,7 @@ synonyme = ["Sarcodon scabrosum", "Hydnum scabrosum", "Phaeodon scabrosus", "Sar
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gallenstacheling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -56,10 +56,6 @@ geschmack = "Extrem scharf und bitterlich, lang anhaltend unangenehm."
 sporenpulver = "Braun."
 vorkommen = "Symbiosepilz nur im sandigen Nadelwald. Selten, in Deutschland gefährdet, in Tschechien häufiger."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "habichtspilz"
-unterschied = "Hut mit groben, dachziegelig aufgerichteten dunkelbraunen Schuppen, Geschmack mild bis leicht bitter, Stielbasis nicht schwarzblau."
 
 [[links]]
 titel = "123pilzsuche.de"

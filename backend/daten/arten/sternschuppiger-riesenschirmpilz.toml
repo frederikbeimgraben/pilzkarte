@@ -15,7 +15,7 @@ synonyme = ["Macrolepiota rhodosperma", "Macrolepiota konradii", "Leucocoprinus 
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SternschuppigerRiesenschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
@@ -66,10 +66,6 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "gruensporschirmling"
 unterschied = "Lamellen im Alter grünlich, Sporenpulver grünlich, wächst in Gewächshäusern, auf Komposthaufen und in warmen Lagen."
-
-[[verwechslungen]]
-slug = "parasol"
-unterschied = "Hutschuppen weich und wollig, nicht sternförmig aufreißend, Sporenpulver weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

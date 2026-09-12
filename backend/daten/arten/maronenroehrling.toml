@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Maronenroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -86,16 +86,18 @@ slug = "gallenroehrling"
 unterschied = "Röhren jung weiß, später rosa, Stiel mit braunem Netz. Schon ein kleines Stück Fleisch schmeckt sehr bitter."
 
 [[verwechslungen]]
+slug = "rotfussroehrling"
+unterschied = "Huthaut aufreißend, darunter eine rote Zone, Stiel rötlich punktiert, Fleisch nur stellenweise blauend."
+eigenerUnterschied = "Hut glatt und feucht schmierig, Röhren auf Druck blaugrün, ohne Rotfärbung unter der Huthaut."
+
+[[verwechslungen]]
 slug = "schoenfussroehrling"
 unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot mit Netz, Fleisch sofort blauend, Geruch säuerlich muffig."
 
 [[verwechslungen]]
 slug = "steinpilz"
 unterschied = "Röhren weißlich bis gelbgrün und kaum blauend, Stiel mit weißem Netz."
-
-[[verwechslungen]]
-slug = "rotfussroehrling"
-unterschied = "Huthaut aufreißend, darunter eine rote Zone, Stiel rötlich punktiert, Fleisch nur stellenweise blauend."
+eigenerUnterschied = "Hut dunkel- bis hellbraun und feucht glatt, Röhren auf Druck blaugrün, Stiel ohne Netz."
 
 [[verwechslungen]]
 slug = "ziegenlippe"

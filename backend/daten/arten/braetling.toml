@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Braetling2004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 17.0, seltenBis = 23.0, einheit = "cm" }
@@ -66,6 +66,14 @@ vorkommen = "Symbiosepilz im Mischwald. In Deutschland stark zurückgegangen."
 zeit = "Frühsommer bis Herbstanfang, nur selten später."
 
 [[verwechslungen]]
+slug = "eichenmilchling"
+unterschied = "Hut dunkler gezont, Fleisch auf Druck weinbraun."
+
+[[verwechslungen]]
+slug = "kuhroter-milchling"
+unterschied = "Hut fleischrosa bis purpurbraun, Mitte genabelt, Stiel oft mit dunkleren Gruben."
+
+[[verwechslungen]]
 slug = "maggipilz"
 unterschied = "Geruch stark nach Maggi, Lamellen hellgelb ockerlich und herablaufend, Stiel sehr brüchig."
 
@@ -74,16 +82,8 @@ slug = "rotbrauner-milchling"
 unterschied = "Hut rotbraun mit kleinem Buckel, später trichterig, Milch spärlich."
 
 [[verwechslungen]]
-slug = "kuhroter-milchling"
-unterschied = "Hut fleischrosa bis purpurbraun, Mitte genabelt, Stiel oft mit dunkleren Gruben."
-
-[[verwechslungen]]
 slug = "runzeliggezonter-milchling"
 unterschied = "Hutrand runzelig und gezahnt, Lamellen weißlich und bei Verletzung nicht bräunend."
-
-[[verwechslungen]]
-slug = "eichenmilchling"
-unterschied = "Hut dunkler gezont, Fleisch auf Druck weinbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

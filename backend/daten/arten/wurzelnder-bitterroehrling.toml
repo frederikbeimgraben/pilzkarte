@@ -13,7 +13,7 @@ weitereNamen = ["Bitterschwamm"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WurzelnderBitterroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 6.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
@@ -56,14 +56,6 @@ geschmack = "Sehr bitter, vereinzelt etwas schärflich."
 sporenpulver = "Olivbraun."
 vorkommen = "Symbiosepilz in Laubwald, Parks und Gärten, meist bei Eiche, Linde und Buche, gern auf kalkreichem Boden. In Deutschland in unbekanntem Ausmaß gefährdet."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "schoenfussroehrling"
-unterschied = "Hut lehmgrau und samtig, Stiel zur Basis karminrot, Fleisch blaut sofort, Geruch nicht nach Maggi."
-
-[[verwechslungen]]
-slug = "gallenroehrling"
-unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem dunklem Netz, Fleisch blaut nicht."
 
 [[verwechslungen]]
 slug = "brauner-filzroehrling"

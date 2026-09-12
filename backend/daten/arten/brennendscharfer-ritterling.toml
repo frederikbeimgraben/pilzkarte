@@ -14,7 +14,7 @@ synonyme = ["Gyrophila virgata", "Agaricus virgatus", "Agaricus fumosus subsp. v
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrennendscharferRitterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
@@ -56,16 +56,17 @@ vorkommen = "Nadelwald, sporadisch bei Laubholz, auf saurem Boden. Sehr selten, 
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "tigerritterling"
-unterschied = "Hut mit dunklen, tigerartig angeordneten Schuppen, Fleisch mild, Geruch mehlartig."
+slug = "roetender-erdritterling"
+unterschied = "Fleisch läuft im Schnitt rötlich an, Geschmack mild."
 
 [[verwechslungen]]
 slug = "schaerflicher-ritterling"
 unterschied = "Nur schwach scharf, Hut mit feineren Fasern ohne spitzen Buckel."
+eigenerUnterschied = "Hut heller graubraun, Geschmack sofort brennend scharf, Lamellenschneiden schwärzen nicht."
 
 [[verwechslungen]]
-slug = "roetender-erdritterling"
-unterschied = "Fleisch läuft im Schnitt rötlich an, Geschmack mild."
+slug = "tigerritterling"
+unterschied = "Hut mit dunklen, tigerartig angeordneten Schuppen, Fleisch mild, Geruch mehlartig."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -13,7 +13,7 @@ weitereNamen = ["Brauner Hohlfussröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hohlfussroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }

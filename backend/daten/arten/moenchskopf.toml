@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MoenchskopfEssbar1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -76,18 +76,21 @@ unterschied = "Deutlich kleiner und dünnfleischig, Hut weiß und glasig bereift
 [[verwechslungen]]
 slug = "nebelkappe"
 unterschied = "Hut graubraun bis weißgrau ohne Buckel, Geruch unangenehm süßlich nach Raps, Sporenpulver cremegelblich."
-
-[[verwechslungen]]
-slug = "riesentrichterling"
-unterschied = "Hutmitte ohne Buckel, Rand nur wenig eingerollt, Hut seidig glatt."
+eigenerUnterschied = "Hut bräunlich mit einem Buckel in der Mitte, Lamellen weit herablaufend, Stiel keulig."
 
 [[verwechslungen]]
 slug = "riesenkrempentrichterling"
 unterschied = "Hut weiß bis blassocker, im Alter mit braunen Flecken und kreisförmigen Rissen, Geruch mehlig, Geschmack nussig."
 
 [[verwechslungen]]
+slug = "riesentrichterling"
+unterschied = "Hutmitte ohne Buckel, Rand nur wenig eingerollt, Hut seidig glatt."
+eigenerUnterschied = "Hut mit deutlich fühlbarem Buckel in der Mitte, sonst sehr ähnlich."
+
+[[verwechslungen]]
 slug = "rillstieliger-weichritterling"
 unterschied = "Hut rotbraun bis kastanienbraun und stark ausblassend, Lamellen nur mit einem Zahn herablaufend, Stiel rillig gestreift."
+eigenerUnterschied = "Hut ockerbraun mit deutlichem Buckel, Lamellen weit herablaufend, Geruch süßlich parfümiert."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -12,7 +12,7 @@ haeufigkeit = "haeufig"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BuchenspeitaublingGiftig1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 10.0, einheit = "cm" }
@@ -56,12 +56,9 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buche auf Laubstreu, bevorzugt k
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "birkenspeitaeubling"
-unterschied = "Wächst bei Birke, Stiel oft mit rosa Ton, Hut heller."
-
-[[verwechslungen]]
 slug = "kiefernspeitaeubling"
 unterschied = "Wächst bei Kiefer auf saurem Boden, Hut blutrot und stärker ausblassend."
+eigenerUnterschied = "Huthaut matt-samtig und kaum abziehbar, stellenweise weißfleckig, bei Buche auf kalkhaltigem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

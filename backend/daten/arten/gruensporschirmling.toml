@@ -12,7 +12,7 @@ weitereNamen = ["Grünsporiger Riesenschirmling", "Falscher Parasol"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gruensporschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 13.0, einheit = "cm" }
@@ -55,16 +55,12 @@ vorkommen = "In Gewächshäusern, botanischen Gärten, Treibhäusern und auf Kom
 zeit = "Die Seite nennt keine Jahreszeit."
 
 [[verwechslungen]]
-slug = "jungfernschirmling"
-unterschied = "Kleiner, Lamellen weiß bis blassrosa, Sporenpulver weiß."
-
-[[verwechslungen]]
-slug = "gerandetknolliger-garten-safranschirmling"
-unterschied = "Stielbasis mit gerandeter Knolle, Fleisch rötet kräftig, Sporenpulver weiß."
-
-[[verwechslungen]]
 slug = "buescheliger-egerlingsschirmling"
 unterschied = "Wächst büschelig, Sporenpulver weiß."
+
+[[verwechslungen]]
+slug = "jungfernschirmling"
+unterschied = "Kleiner, Lamellen weiß bis blassrosa, Sporenpulver weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

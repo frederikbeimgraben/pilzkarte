@@ -1,4 +1,4 @@
-name = "Rötender Schafeuterporling"
+name = "Rötender Schafporling"
 lateinisch = "Albatrellus subrubescens"
 gruppe = "porling"
 speisewert = "essbar"
@@ -10,12 +10,12 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Roh unvertraeglich, deshalb gut durchgaren. Alte Fruchtkoerper koennen bitterlich werden."
-weitereNamen = ["Rötender Schafporling"]
+weitereNamen = ["Rötender Schafeuterporling"]
 synonyme = ["Scutiger subrubescens", "Albatrellus ovinus", "Polyporus ovinus", "Caloporus ovinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetenderSchafporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 18.0, seltenBis = 30.0, einheit = "cm" }
@@ -59,16 +59,14 @@ vorkommen = "Im Mischwald ueberwiegend bei Nadelbaeumen, vor allem Fichte, auf N
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-slug = "zitronenporling"
-unterschied = "Fleisch und Oberflaeche verfaerben zitronengelb, ohne zu roeten, bei Fichte auf kalkreichem Boden."
-
-[[verwechslungen]]
-slug = "schafporling"
-unterschied = "Hut weiss bis cremefarben, Fleisch gilbt nur und roetet nicht."
-
-[[verwechslungen]]
 slug = "semmelporling"
 unterschied = "Hut semmelgelb bis orangebraun, Stiel deutlich kuerzer, im Alter schneller bitter."
+eigenerUnterschied = "Fleisch rötet bei Verletzung und im Alter."
+
+[[verwechslungen]]
+slug = "zitronenporling"
+unterschied = "Fleisch und Oberflaeche verfaerben zitronengelb, ohne zu roeten, bei Fichte auf kalkreichem Boden."
+eigenerUnterschied = "Hut weißlich bis ockerlich, Fleisch rötet deutlich, Poren gilben nicht zitronengelb."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -19,7 +19,6 @@ export const TAG_TEXT: Record<Tag, TranslationKey> = {
   vorhersage: 'art.tag.vorhersage',
   saison: 'art.tag.saison',
   profil: 'art.tag.profil',
-  verwechslung: 'art.tag.verwechslung',
   roehrling: 'art.tag.roehrling',
   raufussroehrling: 'art.tag.raufussroehrling',
   schmierroehrling: 'art.tag.schmierroehrling',
@@ -106,10 +105,7 @@ export const FEATURE_TEXT: Record<FeatureKey, TranslationKey> = {
 };
 
 export const EDIBILITY_TEXT: Record<Essbarkeit, TranslationKey> = {
-  sehrGuterSpeisepilz: 'art.essbar.sehrGuterSpeisepilz',
-  guterSpeisepilz: 'art.essbar.guterSpeisepilz',
   essbar: 'art.essbar.essbar',
-  minderwertig: 'art.essbar.minderwertig',
   bedingtEssbar: 'art.essbar.bedingtEssbar',
   ungeniessbar: 'art.essbar.ungeniessbar',
   giftig: 'art.essbar.giftig',
@@ -118,10 +114,7 @@ export const EDIBILITY_TEXT: Record<Essbarkeit, TranslationKey> = {
 
 /** Grün, was in die Pfanne darf; rot, was schadet; grau der Rest. */
 export const EDIBILITY_BADGE: Record<Essbarkeit, BadgeVariant> = {
-  sehrGuterSpeisepilz: 'success',
-  guterSpeisepilz: 'success',
   essbar: 'success',
-  minderwertig: 'neutral',
   bedingtEssbar: 'warning',
   ungeniessbar: 'warning',
   giftig: 'danger',
@@ -138,10 +131,7 @@ export const EDIBILITY_DANGER: Record<Essbarkeit, number> = {
   giftig: 1,
   ungeniessbar: 2,
   bedingtEssbar: 3,
-  minderwertig: 4,
-  essbar: 5,
-  guterSpeisepilz: 6,
-  sehrGuterSpeisepilz: 7,
+  essbar: 4,
 };
 
 /** Die drei Stufen der Mockups: Vorhersage primär, Saison info, Profil neutral. */
@@ -149,7 +139,6 @@ export const LEVEL_BADGE: Record<Level, BadgeVariant> = {
   vorhersage: 'primary',
   saison: 'info',
   profil: 'neutral',
-  verwechslung: 'warning',
 };
 
 /**
@@ -160,7 +149,6 @@ export const LEVEL_RANK: Record<Level, number> = {
   vorhersage: 0,
   saison: 1,
   profil: 2,
-  verwechslung: 3,
 };
 
 export const HAEUFIGKEIT_TEXT: Record<Haeufigkeit, TranslationKey> = {

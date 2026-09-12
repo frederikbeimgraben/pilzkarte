@@ -1,4 +1,4 @@
-name = "Übelriechender Egerling"
+name = "Übelriechender Champignon"
 lateinisch = "Agaricus maleolens"
 gruppe = "champignon"
 speisewert = "ungeniessbar"
@@ -9,12 +9,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungenießbar wegen des widerlich fischartigen Geruchs."
 haeufigkeit = "selten"
-weitereNamen = ["Übelriechender Champignon"]
+weitereNamen = ["Übelriechender Egerling"]
 synonyme = ["Psalliota ingrata", "Agaricus ingratus", "Agaricus bernardii syn. maleolens", "Agaricus ingratus syn. maleolens", "Agaricus ingratus var. maleolens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/UebelriechenderEgerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -62,10 +62,6 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 slug = "rebhuhnegerling"
 unterschied = "Hut graubraun bis rauchschwärzlich, Fleisch chromgelb und später braunrot anlaufend, Geruch karbolartig statt fischartig, Ring gerandet."
-
-[[verwechslungen]]
-slug = "wiesenchampignon"
-unterschied = "Hut weiß und glatt, Ring vergänglich, Stielbasis ohne Knolle, Geruch angenehm pilzig."
 
 [[links]]
 titel = "123pilzsuche.de"

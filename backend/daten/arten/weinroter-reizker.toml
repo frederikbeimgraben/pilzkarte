@@ -1,4 +1,4 @@
-name = "Weinroter Reizker"
+name = "Weinroter Kiefernreizker"
 lateinisch = "Lactarius sanguifluus"
 gruppe = "milchling"
 speisewert = "essbar"
@@ -12,12 +12,12 @@ baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in Deutschland stark gefährdet (Rote Liste 2). Den Fund besser stehen lassen."
 haeufigkeit = "sehrSelten"
 gefaehrdung = "starkGefaehrdet"
-weitereNamen = ["Weinroter Kiefernreizker", "Blutreizker"]
+weitereNamen = ["Weinroter Reizker", "Blutreizker"]
 synonyme = ["Hypophyllum sanguifluum", "Lactifluus sanguifluus", "Lactarius vinosus", "Lactarius violaceus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeinroterReizker.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
@@ -67,14 +67,6 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "spangruener-kiefernreizker"
 unterschied = "Milch orangerot und erst später weinrot, Fleisch weißlich bis gelblich, Geschmack herb und bitterlich."
-
-[[verwechslungen]]
-slug = "fichtenreizker"
-unterschied = "Bei Fichte, Stiel ohne Grübchen und ohne weinroten Grund, Milch karottenrot und erst nach etwa 15 Minuten weinrot."
-
-[[verwechslungen]]
-slug = "lachsreizker"
-unterschied = "Überwiegend bei Weißtanne, Stiel orange mit rötlichen Grübchen, Milch karottenrot bis orange."
 
 [[links]]
 titel = "123pilzsuche.de"

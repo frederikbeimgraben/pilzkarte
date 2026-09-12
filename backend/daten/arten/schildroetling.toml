@@ -14,7 +14,7 @@ synonyme = ["Agaricus clypeatus", "Rhodophyllus clypeatus", "Hyporrhodius clypea
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schildroetling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "anilin"
@@ -66,24 +66,25 @@ vorkommen = "Symbiosepilz bei Rosengewächsen, in Parks, auf Wiesen und Obstwies
 zeit = "Frühjahr bis Frühsommer."
 
 [[verwechslungen]]
-slug = "riesenroetling"
-unterschied = "Deutlich größer und kräftiger, Lamellen jung gelblich, Geruch unangenehm säuerlich mehlig, bei Eiche, Buche und Espe."
-
-[[verwechslungen]]
 slug = "fruehlingsroetling"
 unterschied = "Nur 1 bis 4 cm breit, Lamellen grau bis lilarötlich, Fleisch gelbbraun, Geruch und Geschmack nicht mehlig."
+eigenerUnterschied = "Größer, Hut graubraun und seidig faserig, Geruch und Geschmack stark mehlartig."
 
 [[verwechslungen]]
-slug = "ziegelroter-risspilz"
-unterschied = "Hut ziegelrot bis ockerbraun, Fleisch verfärbt sich rot, Geruch spermatisch."
+slug = "maipilz"
+unterschied = "Hut weiß bis cremeweiß und glatt, Lamellen bleiben weiß bis gelblich, Sporenpulver weiß, Geruch stark mehlig."
+
+[[verwechslungen]]
+slug = "riesenroetling"
+unterschied = "Deutlich größer und kräftiger, Lamellen jung gelblich, Geruch unangenehm säuerlich mehlig, bei Eiche, Buche und Espe."
 
 [[verwechslungen]]
 slug = "schlehenroetling"
 unterschied = "Hut sehr blass, Insektenfraßgänge laufen schnell orangebraun an, Fleisch verfärbt bei Verletzung braunrot bis safranfarben."
 
 [[verwechslungen]]
-slug = "maipilz"
-unterschied = "Hut weiß bis cremeweiß und glatt, Lamellen bleiben weiß bis gelblich, Sporenpulver weiß, Geruch stark mehlig."
+slug = "ziegelroter-risspilz"
+unterschied = "Hut ziegelrot bis ockerbraun, Fleisch verfärbt sich rot, Geruch spermatisch."
 
 [[links]]
 titel = "123pilzsuche.de"

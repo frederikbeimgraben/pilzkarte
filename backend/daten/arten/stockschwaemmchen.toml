@@ -1,7 +1,7 @@
 name = "Stockschwämmchen"
 lateinisch = "Kuehneromyces mutabilis"
 gruppe = "schueppling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
@@ -16,7 +16,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Stockschwaemmchen.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -68,24 +68,29 @@ vorkommen = "Folgezersetzer an totem Laubholz, an Stümpfen und Ästen, über 70
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-slug = "gifthaeubling"
-unterschied = "Stiel unter dem Ring nicht schuppig, sondern seidig faserig und silbrig, Ring dünn und faserig."
-
-[[verwechslungen]]
-slug = "gruenblaettriger-schwefelkopf"
-unterschied = "Hut kahl, gelb bis schwefelgelb oder grünlich, Lamellen grün bis grüngelb, alt olivbräunlich."
-
-[[verwechslungen]]
 slug = "feuchtstellen-schueppling"
 unterschied = "Hut kastanienbraun bis gelbocker, Lamellen hell cremegelb, später zimtbraun, alt dunkel purpurbraun."
+eigenerUnterschied = "Wächst büschelig an Laubholzstümpfen, Stiel unter dem Ring dunkelbraun beschuppt."
+
+[[verwechslungen]]
+slug = "gifthaeubling"
+unterschied = "Stiel unter dem Ring nicht schuppig, sondern seidig faserig und silbrig, Ring dünn und faserig."
+eigenerUnterschied = "Stiel unterhalb des Rings braun geschuppt statt weiß-silbrig überfasert, Geruch angenehm pilzig."
 
 [[verwechslungen]]
 slug = "glattstieliges-stockschwaemmchen"
 unterschied = "Kleiner, 1 bis 3, selten bis 5 cm breit, Stiel dunkelbraun bis schwarzbraun und glatt, nur selten mit Schüppchen."
+eigenerUnterschied = "Stiel unterhalb der Ringzone braun geschuppt, mit deutlicherem Ring."
+
+[[verwechslungen]]
+slug = "gruenblaettriger-schwefelkopf"
+unterschied = "Hut kahl, gelb bis schwefelgelb oder grünlich, Lamellen grün bis grüngelb, alt olivbräunlich."
+eigenerUnterschied = "Hut zweifarbig ausblassend, Lamellen zimtbraun, Stiel unter dem Ring braun beschuppt, Geschmack mild."
 
 [[verwechslungen]]
 slug = "rauchblaettriger-schwefelkopf"
 unterschied = "Hut ockerbraun bis gelbbraun und kahl, ohne Schüppchen, Lamellen grau bis graulila, nie gelb oder grün."
+eigenerUnterschied = "Hut zweifarbig hygrophan, Lamellen zimtbraun, Stiel unter dem Ring dunkelbraun beschuppt."
 
 [[links]]
 titel = "123pilzsuche.de"

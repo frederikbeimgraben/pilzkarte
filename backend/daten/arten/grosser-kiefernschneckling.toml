@@ -17,7 +17,7 @@ synonyme = ["Hygrophorus fuscoalbus", "Hygrophorus limacinus", "Hygrophorus oliv
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrosserKiefernschneckling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
@@ -61,10 +61,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Symbiosepilz bei Kiefer, auf kalkreichem Boden, in Wäldern, Parks, an Waldrändern und in Heiden. Sehr selten, in Deutschland gefährdet."
 zeit = "Spätsommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "maerzschneckling"
-unterschied = "Hut aschgrau bis schwarzgrau marmoriert, im Vorfrühling am Schneerand."
 
 [[links]]
 titel = "123pilzsuche.de"

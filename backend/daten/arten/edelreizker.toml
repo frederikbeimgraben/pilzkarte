@@ -13,7 +13,7 @@ weitereNamen = ["Echter Reizker", "Kiefernreizker", "Kiefern Blutreizker", "Rös
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Edelreizker.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
@@ -65,14 +65,17 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "fichtenreizker"
 unterschied = "Milch wird nach etwa 15 Minuten weinrot, Stiel ohne Grübchen, bei Fichte."
+eigenerUnterschied = "Milch bleibt karottenrot, Stiel mit orangefarbenen Grübchen, bei Kiefer."
 
 [[verwechslungen]]
 slug = "lachsreizker"
 unterschied = "Hut genabelt bis trichterförmig, bei Tanne."
+eigenerUnterschied = "Hut mit konzentrisch getropften Flecken, Milch kaum veränderlich, Stiel kurz und mit orangefarbenen Grübchen, bei Kiefer."
 
 [[verwechslungen]]
 slug = "spangruener-kiefernreizker"
 unterschied = "Lamellen mit deutlich blaugrünen Tönen, Stielgrübchen flach."
+eigenerUnterschied = "Milch karottenrot bis orangerot und kaum veränderlich, Geschmack mild nach Weißkraut."
 
 [[links]]
 titel = "123pilzsuche.de"

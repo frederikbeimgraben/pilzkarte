@@ -1,5 +1,5 @@
 name = "Violettstieliger Pfirsichtäubling"
-lateinisch = "Russula violeipes (russula amoena var. violeipes, russula violeipes f. citrina)"
+lateinisch = "Russula violeipes"
 gruppe = "taeubling"
 speisewert = "essbar"
 geschuetzt = false
@@ -12,10 +12,11 @@ baeume = []
 speisewertHinweis = "Ältere Fruchtkörper riechen heringsartig; dann besser stehen lassen."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Violettstieliger Brätlingstäubling"]
+synonyme = ["Russula amoena var. violeipes", "Russula violeipes f. citrina"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ViolettstieligerPfirsichtaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"

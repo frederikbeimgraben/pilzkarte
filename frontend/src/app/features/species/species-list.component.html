@@ -14,6 +14,12 @@
     [label]="'arten.filter' | t"
     (valueChange)="selectChip($event)"
   />
+  <app-chip-group
+    [chips]="edibilityChips()"
+    [value]="edibility()"
+    [label]="'arten.filter.speisewert' | t"
+    (valueChange)="selectEdibility($event)"
+  />
   <app-note class="species__count">{{ countText() }}</app-note>
   @if (rows().length === 0) {
     <app-empty-state icon="suche" [text]="'arten.leer' | t" />

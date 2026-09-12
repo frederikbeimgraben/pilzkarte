@@ -14,7 +14,7 @@ synonyme = ["Sarcoscypha craterium", "Geopyxis craterium"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzerKelchpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
@@ -52,10 +52,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Auf Erde an Wurzeln von Gebüsch und an faulenden Holzresten wie Ästen und Sägespänen, feuchtigkeitsliebend. Sehr selten."
 zeit = "Winter bis Frühling, in der frostfreien Zeit."
-
-[[verwechslungen]]
-slug = "totentrompete"
-unterschied = "Trichterig bis röhrig durchbohrt, dünnfleischig und biegsam, Außenseite aschgrau bereift, im Herbst unter Buche und Eiche."
 
 [[links]]
 titel = "123pilzsuche.de"

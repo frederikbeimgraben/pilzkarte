@@ -1,4 +1,4 @@
-name = "Gelbgrüner Kammporling"
+name = "Grüner Kammporling"
 lateinisch = "Albatrellus cristatus"
 gruppe = "porling"
 speisewert = "ungeniessbar"
@@ -9,12 +9,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "kastanie", "tanne", "laerche", "fichte"]
 speisewertHinweis = "Riecht unangenehm bis stinkend und schmeckt bitter."
 haeufigkeit = "selten"
-weitereNamen = ["Grüner Kammporling"]
+weitereNamen = ["Gelbgrüner Kammporling"]
 synonyme = ["Scutiger cristatus", "Polypilus poripes", "Polyporus cristatiformis", "Boletus cristatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenerKamm.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -65,10 +65,6 @@ geschmack = "Unangenehm und bitterlich."
 sporenpulver = "Weiß, durchscheinend."
 vorkommen = "Symbiosepilz im Mischwald, meist mit Laubbäumen, gern bei Buche, Eiche und Kastanie, seltener bei Tanne, Lärche oder Fichte. Selten."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "schafporling"
-unterschied = "Hut weißlich bis cremefarben ohne Grünton, Poren weiß, Fleisch weiß und mild."
 
 [[verwechslungen]]
 slug = "semmelporling"

@@ -12,7 +12,7 @@ synonyme = ["Russula emetica var. betularum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenspeitaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -70,6 +70,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 slug = "buchenspeitaeubling"
 unterschied = "Hut zinnoberrot bis karminrot, Huthaut matt samtig und kaum abziehbar, bei Buche auf kalkhaltigem Boden."
+eigenerUnterschied = "Wächst bei Birke, Stiel oft mit rosa Ton, Hut heller."
 
 [[links]]
 titel = "123pilzsuche.de"

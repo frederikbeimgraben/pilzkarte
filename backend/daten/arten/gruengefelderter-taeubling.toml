@@ -14,7 +14,7 @@ synonyme = ["Agaricus virescens", "Russula virescens var. albidocitrina", "Russu
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruengefelderterTaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -74,20 +74,17 @@ vorkommen = "Symbiosepilz meist im Laubwald, gern bei Buche, Eiche und Hainbuche
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
+slug = "grasgruener-taeubling"
+unterschied = "Hut graugrün bis grasgrün und feucht schmierig, ohne Felder, Stiel längsgerieft."
+
+[[verwechslungen]]
 slug = "gruener-knollenblaetterpilz"
 unterschied = "Hut gleichmäßig olivgrün ohne Felder, Lamellen frei, Stiel mit Ring und häutiger Scheide an der Knolle."
 
 [[verwechslungen]]
-slug = "frauentaeubling"
-unterschied = "Huthaut glatt und nicht felderig aufgerissen, Farben von grün über braun bis lila, Lamellen biegsam und nicht brechend."
-
-[[verwechslungen]]
 slug = "rissiger-frauentaeubling"
 unterschied = "Huthaut nur in der Mitte rissig, Farben oft violett bis lila, Lamellen biegsam."
-
-[[verwechslungen]]
-slug = "grasgruener-taeubling"
-unterschied = "Hut graugrün bis grasgrün und feucht schmierig, ohne Felder, Stiel längsgerieft."
+eigenerUnterschied = "Hut grasgruen bis graugruen, Huthaut feldrig aufgerissen, Lamellen bruechig."
 
 [[links]]
 titel = "123pilzsuche.de"

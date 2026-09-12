@@ -13,7 +13,7 @@ synonyme = ["Rhodophyllus lividoalbus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Weisstieligerroetling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -58,10 +58,6 @@ geschmack = "Mild, mehlig."
 sporenpulver = "Rosa."
 vorkommen = "Symbiosepilz in Mischwäldern, Parks und auf Wiesen."
 zeit = "Frühling bis Herbst."
-
-[[verwechslungen]]
-slug = "bueschliger-rasling"
-unterschied = "Lamellen bleiben weißlich, Sporenpulver ist reinweiß, und er wächst büschelig aus einem Strunk."
 
 [[verwechslungen]]
 slug = "schildroetling"

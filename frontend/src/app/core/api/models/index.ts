@@ -48,7 +48,6 @@ export type {
   SpeciesCatalogue,
   SpeciesBrief,
   BaeumeAusErfahrung,
-  Betrifft,
   Baumart,
   Essbarkeit,
   Gefaehrdung,

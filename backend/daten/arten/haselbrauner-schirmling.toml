@@ -12,7 +12,7 @@ weitereNamen = ["Rosabrauner Schirmling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Haselbrauner.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 8.0, einheit = "cm" }
@@ -53,10 +53,6 @@ geschmack = "Nicht kosten."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer im Mischwald, überwiegend im Nadelwald, vereinzelt im Laubwald."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "safranschirmling"
-unterschied = "Viel größer, Hut über 8 cm mit groben aufgerissenen Schuppen, Fleisch rötet safranrot, Ring dick und verschiebbar."
 
 [[links]]
 titel = "123pilzsuche.de"

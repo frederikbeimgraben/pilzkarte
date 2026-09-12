@@ -15,7 +15,7 @@ synonyme = ["Leccinum pseudoscabrum", "Leccinum carpini", "Leccinum griseum", "L
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hainbuchenroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 13.0, einheit = "cm" }
@@ -61,6 +61,7 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 slug = "roetender-birkenpilz"
 unterschied = "Bei Birke, Huthaut glatt statt gehämmert, Fleisch rötet und wird nicht schwarz."
+eigenerUnterschied = "Bei Hainbuche und Hasel, Hut ockerbraun mit hammerschlagartig unebener Oberflaeche."
 
 [[links]]
 titel = "123pilzsuche.de"

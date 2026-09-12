@@ -15,7 +15,7 @@ weitereNamen = ["Maskierter Ritterling", "Maskierter Rötelritterling", "Fleisch
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LilastieligerRoetelritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -63,10 +63,11 @@ zeit = "Herbst bis Winteranfang, selten im Frühling."
 [[verwechslungen]]
 slug = "bocksdickfuss"
 unterschied = "Geruch widerlich nach Ziegenbock und Schweißfüßen, Lamellen laufen zimtbraun an, Stiel mit rostbraunem Sporenpulver behaftet."
+eigenerUnterschied = "Hut grauviolett bis beigebräunlich, Lamellen weißlich lila, Geruch leicht fruchtig."
 
 [[verwechslungen]]
-slug = "violetter-roetelritterling"
-unterschied = "Auch der Hut ist lilaviolett, Geruch stärker parfümiert, im Laubwald."
+slug = "horngrauer-roetelritterling"
+unterschied = "Hut graubraun mit konzentrischen Wasserflecken, Geruch mehlartig statt parfümiert."
 
 [[verwechslungen]]
 slug = "lavendelfarbener-roetelritterling"
@@ -77,8 +78,9 @@ slug = "schmutziger-roetelritterling"
 unterschied = "Deutlich kleiner, Lamellen schmutzig weiß bis graurosa und etwas herablaufend."
 
 [[verwechslungen]]
-slug = "horngrauer-roetelritterling"
-unterschied = "Hut graubraun mit konzentrischen Wasserflecken, Geruch mehlartig statt parfümiert."
+slug = "violetter-roetelritterling"
+unterschied = "Auch der Hut ist lilaviolett, Geruch stärker parfümiert, im Laubwald."
+eigenerUnterschied = "Hut grauviolett bis graubräunlich statt lilaviolett, Lamellen nur weißlich lila."
 
 [[links]]
 titel = "123pilzsuche.de"

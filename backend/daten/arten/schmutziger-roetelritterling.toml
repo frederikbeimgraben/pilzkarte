@@ -15,7 +15,7 @@ synonyme = ["Lepista sordida var. lilacea", "Lepista sordida var. obscurata", "R
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchmutzigerRoetelritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
@@ -64,10 +64,6 @@ zeit = "Frühling bis Winteranfang."
 [[verwechslungen]]
 slug = "bocksdickfuss"
 unterschied = "Riecht stark nach Ziegenbock, Lamellen und Sporenpulver rostbraun."
-
-[[verwechslungen]]
-slug = "violetter-roetelritterling"
-unterschied = "Deutlich größer und kräftiger violett, Geruch stärker parfümiert."
 
 [[verwechslungen]]
 slug = "lavendelfarbener-roetelritterling"

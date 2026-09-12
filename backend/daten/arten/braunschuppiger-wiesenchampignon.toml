@@ -15,7 +15,7 @@ synonyme = ["Agaricus floccipes", "Agaricus campestris cf. var floccipes", "Psal
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WiesenchampinonVAR.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -76,10 +76,6 @@ unterschied = "Fleisch und Stielbasis kräftig gilbend, Geruch unangenehm nach K
 [[verwechslungen]]
 slug = "uebelriechender-egerling"
 unterschied = "Unangenehmer Geruch, kein Marzipanton."
-
-[[verwechslungen]]
-slug = "wiesenchampignon"
-unterschied = "Hut ohne die großen braunen Schuppen, rein weiß bis cremefarben."
 
 [[links]]
 titel = "123pilzsuche.de"

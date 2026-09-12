@@ -15,7 +15,7 @@ synonyme = ["Hygrophoropsis olida", "Cantharellus olidus", "Aphroditeola roch", 
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/PurpurorangerAfterleistling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
@@ -59,10 +59,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer in Nadel- und Mischwäldern auf vergrabenem Holz, auf kalkhaltigen Böden. Extrem selten, in Deutschland vom Aussterben bedroht."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "falscher-pfifferling"
-unterschied = "Hut gleichmäßig orangegelb ohne Purpurton, Lamellen orange und dicht gegabelt, an Nadelholz."
 
 [[verwechslungen]]
 slug = "oelbaumtrichterling"

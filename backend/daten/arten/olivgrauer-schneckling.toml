@@ -16,7 +16,7 @@ synonyme = ["Limacium mesotephrum", "Limacium arbustivum var. mesotephrum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OlivgrauerSchneckling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -70,10 +70,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Symbiosepilz im Laubwald, gern bei Eiche und Buche, auf kalkreichem Boden. Sehr selten, in Deutschland gefährdet."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "buchen-schleimruebling"
-unterschied = "Hut weiß und stark schleimig, Stiel mit häutigem Ring, wächst an Totholz von Buche statt am Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -12,7 +12,7 @@ weitereNamen = ["Reinseidiger Egerlingsschirmpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SeidigerEgerlingsschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
@@ -57,10 +57,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer in Parks, Gärten, Wäldern, auf Wiesen und Ruderalstellen."
 zeit = "Frühling bis Spätherbst."
-
-[[verwechslungen]]
-slug = "rosablaettriger-egerlingsschirmling"
-unterschied = "Lamellen laufen im Alter rosa an, Hut rein weiß und glatt."
 
 [[links]]
 titel = "123pilzsuche.de"

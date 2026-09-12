@@ -1,4 +1,4 @@
-name = "Fuchsiger Rötelritterling"
+name = "Fuchsiger Röteltrichterling"
 lateinisch = "Lepista flaccida"
 gruppe = "trichterling"
 speisewert = "essbar"
@@ -10,7 +10,7 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Die DGfM nennt einen ungeklärten Fall mit muscarinartigen Beschwerden. Zäh und ohne großen Wert; wer ihn nicht sicher von giftigen Trichterlingen trennt, lässt ihn stehen."
 haeufigkeit = "sehrHaeufig"
-weitereNamen = ["Fuchsiger Röteltrichterling", "Fuchsiger Trichterling"]
+weitereNamen = ["Fuchsiger Rötelritterling", "Fuchsiger Trichterling"]
 synonyme = ["Agaricus flaccidus", "Clitocybe flaccida"]
 
 [baeumeAusErfahrung]
@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FuchsigerRoeteltrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -71,14 +71,6 @@ vorkommen = "Folgezersetzer im Mischwald, bildet Hexenringe. Sehr häufig."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "wohlriechender-trichterling"
-unterschied = "Hut karamell- bis graubraun, Lamellen grauweiß, deutlich kleiner."
-
-[[verwechslungen]]
-slug = "purpuroranger-afterleistling"
-unterschied = "Hut braunorange bis purpurorange, Lamellen fleischrosa bis gelborange."
-
-[[verwechslungen]]
 slug = "falscher-pfifferling"
 unterschied = "Hut leuchtend orange, Lamellen gelb bis orangegelb und vielfach gegabelt."
 
@@ -89,6 +81,15 @@ unterschied = "Viel größer, Hut mit stumpfem Buckel, Stiel kräftig und keulig
 [[verwechslungen]]
 slug = "ockerbrauner-trichterling"
 unterschied = "Hut blass lederfarben bis cremeocker, Lamellen weiß bis creme."
+eigenerUnterschied = "Lamellen fuchsig bis ockergelb und gegabelt, Sporenpulver mit einem Hauch Rosa, Geruch nach frisch geschnittenem Gras."
+
+[[verwechslungen]]
+slug = "purpuroranger-afterleistling"
+unterschied = "Hut braunorange bis purpurorange, Lamellen fleischrosa bis gelborange."
+
+[[verwechslungen]]
+slug = "wohlriechender-trichterling"
+unterschied = "Hut karamell- bis graubraun, Lamellen grauweiß, deutlich kleiner."
 
 [[links]]
 titel = "123pilzsuche.de"

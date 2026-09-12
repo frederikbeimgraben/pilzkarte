@@ -15,7 +15,7 @@ synonyme = ["Lactarius salmoneus", "Lactarius subsalmoneus", "Lactarius thyinos"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Lachsreizker.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
@@ -60,20 +60,14 @@ vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier überwiegend
 zeit = "Herbst bis Spätherbst."
 
 [[verwechslungen]]
-slug = "fichtenreizker"
-unterschied = "Hut mit kräftigen grünen Flecken vor allem in der Mitte, Stiel ohne Grübchen, bei Fichte."
-
-[[verwechslungen]]
-slug = "edelreizker"
-unterschied = "Hut mit konzentrisch getropften Flecken, Milch kaum veränderlich, Stiel kurz und mit orangefarbenen Grübchen, bei Kiefer."
-
-[[verwechslungen]]
 slug = "blaureizker"
 unterschied = "Hut graurosa bis rosa-lehmfarben, Grübchen am Stiel blassgrünlich, Milch erst nach 20 Minuten weinrötlich."
+eigenerUnterschied = "Stiel mit rötlichen bis orangeroten Grübchen, bei Weißtanne."
 
 [[verwechslungen]]
 slug = "weinroter-reizker"
 unterschied = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkel blutrot, Milch nach 20 Minuten grünend."
+eigenerUnterschied = "Überwiegend bei Weißtanne, Stiel orange mit rötlichen Grübchen, Milch karottenrot bis orange."
 
 [[links]]
 titel = "123pilzsuche.de"

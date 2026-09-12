@@ -1,4 +1,4 @@
-name = "Grauer Dachpilz"
+name = "Graugrüner Dachpilz"
 lateinisch = "Pluteus salicinus"
 gruppe = "roetling"
 speisewert = "giftig"
@@ -8,11 +8,11 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = ["buche", "weide"]
 speisewertHinweis = "Leicht giftig, weil er Psilocybin enthält und halluzinogen wirkt. Erkennbar am grünlich-bläulichen Schein des Stiels."
-weitereNamen = ["Graugrüner Dachpilz", "Silbriger Dachpilz", "Grünlichgrauer Dachpilz"]
+weitereNamen = ["Grauer Dachpilz", "Silbriger Dachpilz", "Grünlichgrauer Dachpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerDachpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
@@ -58,6 +58,7 @@ zeit = "Frühling bis Herbst."
 [[verwechslungen]]
 slug = "seidiger-dachpilz"
 unterschied = "Hut heller und seidig, Stiel ohne grünlichen Schein. Ohne Mikroskop oft kaum zu trennen."
+eigenerUnterschied = "Hut grau bis graubraun, ohne die weißliche Grundfarbe."
 
 [[links]]
 titel = "123pilzsuche.de"

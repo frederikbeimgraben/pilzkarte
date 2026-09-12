@@ -1,7 +1,7 @@
 name = "Rillstieliger Weichritterling"
 lateinisch = "Melanoleuca grammopodia"
 gruppe = "ritterling"
-speisewert = "minderwertig"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 4
 marktfaehigSchweiz = true
@@ -13,7 +13,7 @@ synonyme = ["Melanoleuca grammopus", "Agaricus grammopodius", "Tricholoma grammo
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RillstieligerWeichritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
@@ -58,10 +58,6 @@ geschmack = "Mild, mehlartig bis angenehm pilzig. Die mehlige Note fehlt manchma
 sporenpulver = "Weißlich bis hell gelblich oder cremeweiß."
 vorkommen = "Im Mischwald, in Parks, auf grasigen Flächen, an Waldwegen und Waldrändern, gern auf kalkreichem Boden."
 zeit = "Frühsommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "moenchskopf"
-unterschied = "Hut ockerbraun mit deutlichem Buckel, Lamellen weit herablaufend, Geruch süßlich parfümiert."
 
 [[links]]
 titel = "123pilzsuche.de"

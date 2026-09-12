@@ -15,7 +15,7 @@ synonyme = ["Hericium erinaceum", "Hericium erinaceus forma caput-medusae", "Mar
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Igelstachelbart.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 20.0, seltenBis = 60.0, einheit = "cm" }

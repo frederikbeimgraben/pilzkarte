@@ -13,7 +13,7 @@ weitereNamen = ["Gestreifter Frühlingsrötling", "Aprilrötling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fruehlingsroetling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0, einheit = "cm" }
@@ -54,10 +54,6 @@ geschmack = "Pilzig und mild, nicht mehlig."
 sporenpulver = "Rotbraun, rosabraun bis pink."
 vorkommen = "Symbiosepilz an Hecken, in Gärten, auf Wiesen, Heiden und Weiden an grasigen Stellen, selten im Mischwald, gern auf saurem Boden. Meist häufig."
 zeit = "Frühling bis Frühsommer, nach der Schneeschmelze."
-
-[[verwechslungen]]
-slug = "schildroetling"
-unterschied = "Größer, Hut graubraun und seidig faserig, Geruch und Geschmack stark mehlartig."
 
 [[links]]
 titel = "123pilzsuche.de"

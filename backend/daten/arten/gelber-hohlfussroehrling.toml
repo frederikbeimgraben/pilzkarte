@@ -15,7 +15,7 @@ synonyme = ["Suillus cavipes f. aereus", "Boletinus cavipes f. aureus", "Boletin
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/HohlfussroehrlingGelb.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -59,10 +59,6 @@ geschmack = "Mild."
 sporenpulver = "Gelboliv."
 vorkommen = "Symbiosepilz unter Lärche, hauptsächlich auf saurem Boden."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "goldroehrling"
-unterschied = "Stiel voll und mit häutigem Ring, Hut feucht schmierig statt filzig-schuppig."
 
 [[verwechslungen]]
 slug = "elfenbeinroehrling"

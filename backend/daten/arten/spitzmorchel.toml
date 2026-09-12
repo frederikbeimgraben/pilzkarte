@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Spitzmorchel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 8.0, einheit = "cm" }
@@ -60,10 +60,6 @@ zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai, andernorts bis J
 [[verwechslungen]]
 slug = "zipfellorchel"
 unterschied = "Hut 4 bis 11, selten bis 14 cm breit, bräunlich, aderig und zipfelmützenartig hoch gestellt, ohne Waben oder Kammern."
-
-[[verwechslungen]]
-slug = "speisemorchel"
-unterschied = "Käppchen eiförmig mit runden Waben statt Längsrippen, gelb bis hellbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

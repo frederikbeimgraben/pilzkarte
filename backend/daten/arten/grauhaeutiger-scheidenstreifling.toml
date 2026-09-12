@@ -13,7 +13,7 @@ weitereNamen = ["Grüngelber Scheidenstreifling", "Grüner Streifling", "Grünbr
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauhautigerSS.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }

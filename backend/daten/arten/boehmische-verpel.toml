@@ -17,7 +17,7 @@ synonyme = ["Ptychverpa bohemica"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BoehmischeVerpel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 4.0, seltenBis = 5.0, einheit = "cm" }
@@ -57,24 +57,25 @@ vorkommen = "Folgezersetzer in Misch- und Auwald, gern in Rindenmulch, oft zusam
 zeit = "Februar bis Juni, in kälteren Lagen nicht vor Anfang April."
 
 [[verwechslungen]]
-slug = "runzelige-fingerhutverpel"
-unterschied = "Hut stark hirnartig gerunzelt, kastanien- bis rotbraun."
-
-[[verwechslungen]]
 slug = "glatte-fingerhutverpel"
 unterschied = "Hut nur gerunzelt mit Querrillen, ohne hochgestellte Längsrillen."
 
 [[verwechslungen]]
 slug = "kaeppchenmorchel"
 unterschied = "Stiel hohl, das Käppchen ist zu einem Drittel mit ihm verwachsen und meist zugespitzt."
+eigenerUnterschied = "Käppchen rundlich statt zugespitzt, runzelig labyrinthartig, nur an der Spitze flach mit dem Stiel verwachsen."
 
 [[verwechslungen]]
-slug = "spitzmorchel"
-unterschied = "Käppchen mit Kammern und ganz am Stiel angewachsen."
+slug = "runzelige-fingerhutverpel"
+unterschied = "Hut stark hirnartig gerunzelt, kastanien- bis rotbraun."
 
 [[verwechslungen]]
 slug = "speisemorchel"
 unterschied = "Käppchen wabenartig und ganz am Stiel angewachsen."
+
+[[verwechslungen]]
+slug = "spitzmorchel"
+unterschied = "Käppchen mit Kammern und ganz am Stiel angewachsen."
 
 [[links]]
 titel = "123pilzsuche.de"

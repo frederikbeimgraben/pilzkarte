@@ -13,7 +13,7 @@ synonyme = ["Lepista nuda var. glaucocana", "Rhodopaxillus glaucocanus", "Clitoc
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LavendelRoetelritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
@@ -56,16 +56,12 @@ vorkommen = "Folgezersetzer in Mischwald, Parks, Gärten und auf Ruderalflächen
 zeit = "Herbst bis Winteranfang."
 
 [[verwechslungen]]
-slug = "riesenroetling"
-unterschied = "Hut elfenbeinfarben bis bleigrau ohne Lilaton, Lamellen jung gelblich, später rosaocker, Geruch säuerlich mehlig."
-
-[[verwechslungen]]
 slug = "bocksdickfuss"
 unterschied = "Lamellen bald zimtbraun, Sporenpulver gelbbräunlich, Geruch widerlich nach Ziegenbock."
 
 [[verwechslungen]]
-slug = "violetter-roetelritterling"
-unterschied = "Hut kräftig lilaviolett, Lamellen blaulila und nie bräunlich."
+slug = "riesenroetling"
+unterschied = "Hut elfenbeinfarben bis bleigrau ohne Lilaton, Lamellen jung gelblich, später rosaocker, Geruch säuerlich mehlig."
 
 [[links]]
 titel = "123pilzsuche.de"

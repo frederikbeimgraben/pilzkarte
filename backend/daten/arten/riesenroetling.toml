@@ -13,7 +13,7 @@ synonyme = ["Rhodophyllus sinuatus", "Agaricus sinuatus", "Agaricus fertilis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenroetling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 16.0, einheit = "cm" }
@@ -61,12 +61,9 @@ vorkommen = "Symbiosepilz bei Laubbäumen wie Eiche, Buche und Espe, gern auf le
 zeit = "Frühling bis Spätherbst, häufiger im Herbst."
 
 [[verwechslungen]]
-slug = "maipilz"
-unterschied = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch stark mehlig und angenehm, im Frühling."
-
-[[verwechslungen]]
 slug = "schlehenroetling"
 unterschied = "Kleiner und schlanker, Hut graubraun, an Schlehen- und Weißdornhecken im Frühling."
+eigenerUnterschied = "Deutlich größer, Hut gelblich grau, wächst im Laubwald und auf Wiesen, nicht büschelig unter Schlehen."
 
 [[links]]
 titel = "123pilzsuche.de"

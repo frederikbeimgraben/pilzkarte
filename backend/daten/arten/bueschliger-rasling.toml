@@ -1,4 +1,4 @@
-name = "Büscheliger Rasling"
+name = "Brauner Rasling"
 lateinisch = "Lyophyllum decastes"
 gruppe = "rasling"
 speisewert = "essbar"
@@ -8,12 +8,12 @@ marktfaehigSchweiz = true
 marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-weitereNamen = ["Brauner Rasling", "Büschelrasling", "Geselliger Rasling", "Gepanzerter Rasling", "Knorpeliger Knäuelrasling", "Frostrasling", "Geselliger Ritterling", "Buchele"]
+weitereNamen = ["Büscheliger Rasling", "Büschelrasling", "Geselliger Rasling", "Gepanzerter Rasling", "Knorpeliger Knäuelrasling", "Frostrasling", "Geselliger Ritterling", "Buchele"]
 synonyme = ["Lyophyllum aggregatum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerRasling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 13.0, einheit = "cm" }
@@ -60,20 +60,23 @@ vorkommen = "Folgezersetzer im Laubwald, auf Wegen, an Wegrändern und in Parks,
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "weissstieliger-roetling"
-unterschied = "Lamellen laufen rosa an, Sporenpulver rosa, wächst nicht büschelig."
+slug = "frostrasling"
+unterschied = "Hut aschgrau bis dunkel graubraun, Stiele meist einzeln nebeneinander und tief im Boden."
 
 [[verwechslungen]]
 slug = "nebelkappe"
 unterschied = "Hut nebelgrau, Geruch auffallend süßlich, wächst in Reihen statt in Büscheln."
+eigenerUnterschied = "Hut ledergelb bis orangebraun, wächst büschelig aus einem Strunk, Fleisch zäh und elastisch."
 
 [[verwechslungen]]
 slug = "panzerrasling"
 unterschied = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
+eigenerUnterschied = "Hut heller braun und ohne die knorpelige Panzerschicht, Fleisch unter der Huthaut nicht dunkel durchfärbt."
 
 [[verwechslungen]]
-slug = "frostrasling"
-unterschied = "Hut aschgrau bis dunkel graubraun, Stiele meist einzeln nebeneinander und tief im Boden."
+slug = "weissstieliger-roetling"
+unterschied = "Lamellen laufen rosa an, Sporenpulver rosa, wächst nicht büschelig."
+eigenerUnterschied = "Lamellen bleiben weißlich, Sporenpulver ist reinweiß, und er wächst büschelig aus einem Strunk."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,7 +1,7 @@
 name = "Ockertäubling"
 lateinisch = "Russula ochroleuca"
 gruppe = "taeubling"
-speisewert = "minderwertig"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 5
 marktfaehig = false
@@ -14,7 +14,7 @@ synonyme = ["Russula citrina", "Russula granulosa", "Russula ochroleuca var. gra
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ockertaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "guajak"
@@ -78,10 +78,6 @@ geschmack = "Mild, manchmal leicht schärflich und etwas bitterlich, aber nicht 
 sporenpulver = "Hellgelb, blasscreme, fast weiß."
 vorkommen = "Symbiosepilz in Mischwald, überwiegend im Nadelwald, vereinzelt bei Espe und Erle, gern auf saurem Boden."
 zeit = "Frühsommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "blassgelber-taeubling"
-unterschied = "Kleiner, Hut jung zitronengelb, Stiel keulig und schnell hohl, Geschmack scharf."
 
 [[links]]
 titel = "123pilzsuche.de"

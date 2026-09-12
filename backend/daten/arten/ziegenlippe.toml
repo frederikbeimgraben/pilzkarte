@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ziegenlippe.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -86,22 +86,16 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "brauner-filzroehrling"
 unterschied = "Stiel gelblich bis bräunlich mit Netzzeichnung statt fast weiß."
-
-[[verwechslungen]]
-slug = "samtiger-filzroehrling"
-unterschied = "Hut auch rotbraun, Stiel mit Netz von der Mitte bis zur Spitze, Geruch nach Schwefel."
-
-[[verwechslungen]]
-slug = "rotfussroehrling"
-unterschied = "Hut später aufgerissen, Stiel rötlich punktiert, Röhren gelb bis olivgelb und etwas herablaufend."
+eigenerUnterschied = "Hut hell olivbraun bis olivocker, Stiel fast weiß und ohne Netzzeichnung."
 
 [[verwechslungen]]
 slug = "goldroehrling"
 unterschied = "Hut schleimig und schmierig, hellgelb bis orangerötlich, Röhren auf Druck rosalila fleckend, Stiel mit Ring."
 
 [[verwechslungen]]
-slug = "kuhroehrling"
-unterschied = "Hut bräunlich, schmierig, glatt und kahl, Röhren graugelb bis rotbraun, Stiel deutlich dünner."
+slug = "samtiger-filzroehrling"
+unterschied = "Hut auch rotbraun, Stiel mit Netz von der Mitte bis zur Spitze, Geruch nach Schwefel."
+eigenerUnterschied = "Hut olivbraun bis gelbbraun und samtig, Stiel ohne Netz, unter der Huthaut nicht rosa."
 
 [[links]]
 titel = "123pilzsuche.de"

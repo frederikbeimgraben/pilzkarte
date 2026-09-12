@@ -13,7 +13,7 @@ weitereNamen = ["Kiefernsteini", "Steinpilze", "Herrenpilz", "Dobberniggl", "Gem
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kiefernsteinpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 25.0, seltenBis = 30.0, einheit = "cm" }
@@ -57,16 +57,17 @@ slug = "gallenroehrling"
 unterschied = "Röhren jung weiß, dann rosa, Netz am Stiel braun. Schon ein kleines Stück Fleisch schmeckt sehr bitter."
 
 [[verwechslungen]]
-slug = "steinpilz"
-unterschied = "Hut wildlederbraun bis haselnussbraun statt rotbraun, Rand weiß, Netz am Stiel weiß und erst im Alter bräunlich."
+slug = "maronenroehrling"
+unterschied = "Röhren auf Druck blaugrün, Stiel längsfaserig und ohne Netz."
 
 [[verwechslungen]]
 slug = "sommersteinpilz"
 unterschied = "Hut hell lederbraun bis milchkaffeebraun, Fleisch unter der Huthaut weiß ohne Rottöne, Netz am Stiel stark erhaben."
 
 [[verwechslungen]]
-slug = "maronenroehrling"
-unterschied = "Röhren auf Druck blaugrün, Stiel längsfaserig und ohne Netz."
+slug = "steinpilz"
+unterschied = "Hut wildlederbraun bis haselnussbraun statt rotbraun, Rand weiß, Netz am Stiel weiß und erst im Alter bräunlich."
+eigenerUnterschied = "Hut rotbraun, weinrot bis purpurbraun, Stiel nuss- bis rotbräunlich."
 
 [[links]]
 titel = "123pilzsuche.de"

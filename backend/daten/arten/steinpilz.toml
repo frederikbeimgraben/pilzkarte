@@ -14,7 +14,7 @@ weitereNamen = ["Steinpilze", "Herrenpilz", "Dobberniggl", "Fichtensteinpilz", "
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Steinpilze.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -66,18 +66,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "gallenroehrling"
 unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
-
-[[verwechslungen]]
-slug = "maronenroehrling"
-unterschied = "Hut dunkel- bis hellbraun und feucht glatt, Röhren auf Druck blaugrün, Stiel ohne Netz."
-
-[[verwechslungen]]
-slug = "sommersteinpilz"
-unterschied = "Netz zieht sich über den ganzen Stiel, Fleisch unter der Huthaut weiß, Huthaut bei Trockenheit felderig rissig."
-
-[[verwechslungen]]
-slug = "kiefernsteinpilz"
-unterschied = "Hut rotbraun, weinrot bis purpurbraun, Stiel nuss- bis rotbräunlich."
+eigenerUnterschied = "Röhren weiß, dann gelb bis oliv, nie rosa, Netz am Stiel weiß, Geschmack mild und nussig."
 
 [[verwechslungen]]
 slug = "gelbfleckiger-steinpilz"

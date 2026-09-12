@@ -15,7 +15,7 @@ synonyme = ["Verpa conica var. cerebriformis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RunzeligeVerpel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }

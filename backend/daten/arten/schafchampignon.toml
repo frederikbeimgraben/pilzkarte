@@ -1,4 +1,4 @@
-name = "Schafchampignon"
+name = "Weißer Anis-Champignon"
 lateinisch = "Agaricus arvensis"
 gruppe = "champignon"
 speisewert = "essbar"
@@ -9,11 +9,11 @@ marktfaehig = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Anis-Egerlinge gilben nur an der Oberfläche. Gilbt die Stielbasis im Schnitt kräftig und riecht der Pilz nach Karbol, ist es ein Karbolegerling."
-weitereNamen = ["Schaf-Champignon", "Weißer Anisegerling", "Ackerblätterling", "Schaf-Egerling", "Weißer Anis-Champignon"]
+weitereNamen = ["Schafchampignon", "Schaf-Champignon", "Weißer Anisegerling", "Ackerblätterling", "Schaf-Egerling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schafegerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -68,20 +68,22 @@ vorkommen = "Folgezersetzer auf mit Pferdemist gedüngten Wiesen, auf Kuhweiden 
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-slug = "weisser-knollenblaetterpilz"
-unterschied = "Lamellen bleiben weiß, Stiel mit häutigem Ring, Basis mit gerandeter Knolle in einer sackartigen Scheide."
+slug = "falscher-wiesenegerling"
+unterschied = "Stielbasis gilbt auf Druck, Lamellenschneiden fast schwarz, Geruch karbolartig."
+eigenerUnterschied = "Riecht nach Anis, gilbt nur an der Oberfläche, nicht an der Schnittstelle in der Stielbasis."
 
 [[verwechslungen]]
 slug = "karbolegerling"
 unterschied = "Stielbasis läuft im Schnitt kräftig gelb an, Geruch tintig bis karbolartig."
 
 [[verwechslungen]]
-slug = "falscher-wiesenegerling"
-unterschied = "Stielbasis gilbt auf Druck, Lamellenschneiden fast schwarz, Geruch karbolartig."
+slug = "weisser-knollenblaetterpilz"
+unterschied = "Lamellen bleiben weiß, Stiel mit häutigem Ring, Basis mit gerandeter Knolle in einer sackartigen Scheide."
 
 [[verwechslungen]]
 slug = "wiesenchampignon"
 unterschied = "Kleiner, ohne Anisgeruch, Ring verkümmert, Stiel ohne Knolle, Fleisch rötet statt zu gilben."
+eigenerUnterschied = "Größer, Hut weiß mit seidiger Haut, Lamellen jung grauweiß, Geruch nach Anis, Stiel gilbend und unter dem Ring körnig."
 
 [[links]]
 titel = "123pilzsuche.de"

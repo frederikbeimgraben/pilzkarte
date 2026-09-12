@@ -13,7 +13,7 @@ synonyme = ["Merulioporia violacea", "Stereum mesentericum", "Meruliopsis violac
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GezonterOhrlappenpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 25.0, einheit = "cm" }
@@ -56,10 +56,6 @@ geschmack = "Unbedeutend."
 sporenpulver = "Weiß, transparent."
 vorkommen = "Folgezersetzer und Weißfäuleerreger an Totholz von Laubbäumen, bevorzugt Esche, Pappel, Buche und Birke, an Stümpfen und an Baumrinde. In Wäldern und Parkanlagen, gern in Auwäldern und Flussniederungen."
 zeit = "Ganzjährig."
-
-[[verwechslungen]]
-slug = "judasohr"
-unterschied = "Dünner und ohrförmig, gegen das Licht durchscheinend, Oberfläche nur fein filzig und nicht bunt gezont."
 
 [[links]]
 titel = "123pilzsuche.de"

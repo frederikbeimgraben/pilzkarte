@@ -1,4 +1,4 @@
-name = "Erdritterling"
+name = "Gemeiner Erdritterling"
 lateinisch = "Tricholoma terreum"
 gruppe = "ritterling"
 speisewert = "toedlichGiftig"
@@ -8,11 +8,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer", "fichte", "tanne", "douglasie"]
 warnung = "123pilzsuche führt den Erdritterling als tödlich giftig. Die grauen Ritterlinge sind untereinander kaum zu trennen, und einige schädigen die Muskulatur. Er steht hier, weil die Kette ihn zählt, nicht weil man ihn sammeln soll."
 speisewertHinweis = "123pilzsuche führt ihn als tödlich giftig. Er galt lange als Speisepilz; die grauen Ritterlinge sind untereinander kaum zu trennen und einige schädigen die Muskulatur. Stehen lassen."
-weitereNamen = ["Gemeiner Erdritterling", "Silber Erdritterling"]
+weitereNamen = ["Erdritterling", "Silber Erdritterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeinerErdritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -56,10 +56,6 @@ vorkommen = "Symbiosepilz mit Nadelbäumen, gern Kiefer, Fichte, Tanne und Dougl
 zeit = "Frühsommer bis Spätherbst, im Herbst häufiger."
 
 [[verwechslungen]]
-slug = "tigerritterling"
-unterschied = "Hut weiß mit silbergrauen bis graubraunen Schuppen, Lamellen im Alter gelblich, Stiel keulig."
-
-[[verwechslungen]]
 slug = "gilbender-erdritterling"
 unterschied = "Lamellen gilben beim Reiben."
 
@@ -68,12 +64,16 @@ slug = "mausgrauer-erdritterling"
 unterschied = "Hut mausgrau bis aschgrau mit bläulichem Ton, Stiel jung mit weißem Haarschleier."
 
 [[verwechslungen]]
+slug = "risspilzaehnlicher-erdritterling"
+unterschied = "Hut lilabraun getönt, Lamellen mit Zwischenlamellen."
+
+[[verwechslungen]]
 slug = "roetender-erdritterling"
 unterschied = "Lamellen schimmern rötlich, Stiel mit dunklen Fasern."
 
 [[verwechslungen]]
-slug = "risspilzaehnlicher-erdritterling"
-unterschied = "Hut lilabraun getönt, Lamellen mit Zwischenlamellen."
+slug = "tigerritterling"
+unterschied = "Hut weiß mit silbergrauen bis graubraunen Schuppen, Lamellen im Alter gelblich, Stiel keulig."
 
 [[links]]
 titel = "123pilzsuche.de"

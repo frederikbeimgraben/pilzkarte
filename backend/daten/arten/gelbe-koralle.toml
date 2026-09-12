@@ -16,7 +16,7 @@ synonyme = ["Clavaria botrys", "Corallium flavum", "Coralloides flavus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbeKoralle1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 0.5, bis = 1.0, seltenBis = 1.2, einheit = "cm" }

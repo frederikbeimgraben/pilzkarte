@@ -14,7 +14,7 @@ weitereNamen = ["Grossscheidiger Streifling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrossscheidigerStreifling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0, einheit = "cm" }
@@ -57,12 +57,12 @@ vorkommen = "Symbiosepilz im Mischwald, meist in Laubwäldern, gern an Waldränd
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "pantherpilz"
-unterschied = "Mit Ring am Stiel, Hutrand nur schwach gerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
-
-[[verwechslungen]]
 slug = "koenigsfliegenpilz"
 unterschied = "Mit Ring am Stiel, Hut braun mit weißen Flocken, Fleisch unter der Huthaut gelb."
+
+[[verwechslungen]]
+slug = "pantherpilz"
+unterschied = "Mit Ring am Stiel, Hutrand nur schwach gerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -15,7 +15,7 @@ synonyme = ["Boletus fechtneri"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Silberroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 19.0, einheit = "cm" }
@@ -62,16 +62,12 @@ vorkommen = "Symbiosepilz in Laub- und Auwäldern, gern bei Buche und Eiche, auf
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-slug = "wurzelnder-bitterroehrling"
-unterschied = "Hut grau bis graubraun, Geschmack bitter, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
-
-[[verwechslungen]]
 slug = "schoenfussroehrling"
 unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch sofort blauend, Geschmack bitter."
 
 [[verwechslungen]]
-slug = "koenigsroehrling"
-unterschied = "Hut rosa bis karminrot, Fleisch nur schwach blauend."
+slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis graubraun, Geschmack bitter, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
 
 [[links]]
 titel = "123pilzsuche.de"

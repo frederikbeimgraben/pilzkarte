@@ -14,7 +14,7 @@ weitereNamen = ["Violettgrüner Frauentäubling", "Blautäubling", "Rissighütig
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Frauentaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "phenol"
@@ -82,24 +82,28 @@ vorkommen = "Symbiosepilz im Mischwald, regional sehr häufig."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "rissiger-frauentaeubling"
-unterschied = "Huthaut in der Mitte deutlich rissig aufgesprungen."
-
-[[verwechslungen]]
-slug = "olivfarbener-frauentaeubling"
-unterschied = "Hut olivgrün mit violetten Flecken."
+slug = "grasgruener-taeubling"
+unterschied = "Hut graugrün bis grasgrün, Lamellen brüchig, Stiel längsgerieft."
+eigenerUnterschied = "Hut bunt gemischt aus Grün, Violett, Grau und Rosa, Lamellen deutlich brüchig."
 
 [[verwechslungen]]
 slug = "gruengefelderter-taeubling"
 unterschied = "Huthaut reißt in felderige Schollen auf, Lamellen brüchig."
+eigenerUnterschied = "Huthaut glatt und nicht felderig aufgerissen, Farben von grün über braun bis lila, Lamellen biegsam und nicht brechend."
 
 [[verwechslungen]]
-slug = "grasgruener-taeubling"
-unterschied = "Hut graugrün bis grasgrün, Lamellen brüchig, Stiel längsgerieft."
+slug = "olivfarbener-frauentaeubling"
+unterschied = "Hut olivgrün mit violetten Flecken."
+eigenerUnterschied = "Hut grün, braun, blau bis lila gemischt, ohne den reinen Olivton mit violetten Flecken."
+
+[[verwechslungen]]
+slug = "rissiger-frauentaeubling"
+unterschied = "Huthaut in der Mitte deutlich rissig aufgesprungen."
 
 [[verwechslungen]]
 slug = "taubentaeubling"
 unterschied = "Hut schwarzoliv bis olivgrau, Lamellen sehr brüchig."
+eigenerUnterschied = "Lamellen biegsam und meist nicht brechend, Sporenpulver weiß statt hellgelb, Fleisch nicht rosaviolett verfärbend."
 
 [[links]]
 titel = "123pilzsuche.de"

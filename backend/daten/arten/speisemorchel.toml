@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speisemorchel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -58,16 +58,18 @@ vorkommen = "In Auwäldern, Parks, Gärten, an Waldrändern, auf Waldwiesen und 
 zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai."
 
 [[verwechslungen]]
+slug = "dickfuessige-morchel"
+unterschied = "Stiel klumpig dick und längs gefurcht, sonst gleich."
+eigenerUnterschied = "Kleiner, Stiel schlank und nicht klumpig verdickt."
+
+[[verwechslungen]]
 slug = "gemeine-morchel"
 unterschied = "Kleiner, 2 bis 6, selten bis 8 cm breit, hellbraun, graubraun bis rußbraun mit rostfarbenen Flecken."
 
 [[verwechslungen]]
-slug = "dickfuessige-morchel"
-unterschied = "Stiel klumpig dick und längs gefurcht, sonst gleich."
-
-[[verwechslungen]]
 slug = "spitzmorchel"
 unterschied = "Käppchen zugespitzt, olivbeige bis graubraun, mit Längsrippen und Kammern statt runder Waben."
+eigenerUnterschied = "Käppchen eiförmig mit runden Waben statt Längsrippen, gelb bis hellbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

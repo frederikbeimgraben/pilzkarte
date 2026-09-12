@@ -1,4 +1,4 @@
-name = "Gallenröhrling"
+name = "Gemeiner Gallenröhrling"
 lateinisch = "Tylopilus felleus"
 gruppe = "roehrling"
 speisewert = "giftig"
@@ -8,11 +8,11 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Schon ein kleines Stück Fleisch auf der Zunge schmeckt sehr bitter; ein einziger Fruchtkörper verdirbt ein ganzes Gericht. Er enthält etwas Bufotenin. Vereinzelt gab es Vergiftungen mit Erbrechen, Durchfall, Bauchkoliken, Schwindel und Schweißausbrüchen."
-weitereNamen = ["Bitterröhrling", "Bitterling"]
+weitereNamen = ["Gallenröhrling", "Bitterröhrling", "Bitterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bitterroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -73,14 +73,12 @@ zeit = "Frühjahr bis Spätherbst."
 [[verwechslungen]]
 slug = "schoenfussroehrling"
 unterschied = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
+eigenerUnterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Fleisch blaut nicht, Geschmack sehr bitter."
 
 [[verwechslungen]]
 slug = "wurzelnder-bitterroehrling"
 unterschied = "Hut grau bis weißgrau, Röhren gelb, Fleisch stark blauend, Geruch nach Tinte."
-
-[[verwechslungen]]
-slug = "steinpilz"
-unterschied = "Röhren weiß, dann gelb bis oliv, nie rosa, Netz am Stiel weiß, Geschmack mild und nussig."
+eigenerUnterschied = "Röhren jung weiß, später rosa, Stiel mit grobem dunklem Netz, Fleisch blaut nicht."
 
 [[links]]
 titel = "123pilzsuche.de"

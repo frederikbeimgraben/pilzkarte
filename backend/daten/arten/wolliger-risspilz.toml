@@ -12,7 +12,7 @@ synonyme = ["Astrosporina lanuginosa", "Agaricus lanuginosus", "Inocybe lanugino
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WolligeRisspilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -55,10 +55,6 @@ geschmack = "Mild, etwas muffig."
 sporenpulver = "Tabakbraun bis dunkelbraun."
 vorkommen = "Symbiosepilz im Mischwald, gern im feuchten Nadelwald, auf verrottetem Holz."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "dunkler-hallimasch"
-unterschied = "Wächst büschelig an Holz, hat einen Ring am Stiel und weißliche bis cremefarbene Lamellen."
 
 [[links]]
 titel = "123pilzsuche.de"

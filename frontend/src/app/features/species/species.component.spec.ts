@@ -93,7 +93,7 @@ describe('ArtComponent', () => {
   it('zeigt den Speisewert und jede Verwechslung als Badge', async () => {
     await build(STEINPILZ);
 
-    expect(screen.getAllByText('Guter Speisepilz').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Essbar').length).toBeGreaterThan(0);
     expect(screen.getByText('Ungenießbar')).toBeInTheDocument();
     expect(screen.getByText('Giftig')).toBeInTheDocument();
   });
@@ -113,7 +113,7 @@ describe('ArtComponent', () => {
   it('zeigt die geprüften Angaben mit Quelle', async () => {
     await build(STEINPILZ);
 
-    expect(screen.getByText('Auf der Positivliste der DGfM Stand 1. Mai 2026')).toBeInTheDocument();
+    expect(screen.getByText('Auf der Positivliste der DGfM Stand 10. September 2026')).toBeInTheDocument();
     expect(screen.getByText('Häufig')).toBeInTheDocument();
     expect(
       screen.getByText(
@@ -142,15 +142,18 @@ describe('ArtComponent', () => {
     expect(screen.getByText('Fleisch blass braun.')).toBeInTheDocument();
   });
 
-  it('verlinkt eine Verwechslung auf ihr eigenes Profil', async () => {
+  it('verlinkt jede Verwechslung auf ihr eigenes Profil', async () => {
     await build(STEINPILZ);
 
-    // Der Satansröhrling hat kein eigenes Profil, der Gallenröhrling schon.
+    // Jedes Paar zeigt auf ein Profil, seit der Katalog nur noch Verweise hält.
     expect(screen.getByRole('link', { name: 'Gallenröhrling' })).toHaveAttribute(
       'href',
       '/arten/gallenroehrling',
     );
-    expect(screen.queryByRole('link', { name: 'Satansröhrling' })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Satansröhrling' })).toHaveAttribute(
+      'href',
+      '/arten/satansroehrling',
+    );
   });
 
   it('warnt bei einer giftigen Art groß und mit Symbol', async () => {

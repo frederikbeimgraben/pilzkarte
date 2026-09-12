@@ -18,7 +18,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
@@ -72,12 +72,12 @@ slug = "genabelter-semmelstoppelpilz"
 unterschied = "Fast gleich, Stiel 2,5 bis 6 cm hoch. Sicher nur unter dem Mikroskop zu trennen, sehr selten."
 
 [[verwechslungen]]
-slug = "semmelporling"
-unterschied = "Unterseite mit Poren statt Stoppeln, mehrere Stiele oft miteinander verwachsen."
-
-[[verwechslungen]]
 slug = "schafporling"
 unterschied = "Hut weiß, später gelblich, braun- bis graugelb, Unterseite mit Poren, Stiel mit graubraunen bis dunkelbraunen Flecken."
+
+[[verwechslungen]]
+slug = "semmelporling"
+unterschied = "Unterseite mit Poren statt Stoppeln, mehrere Stiele oft miteinander verwachsen."
 
 [[links]]
 titel = "123pilzsuche.de"

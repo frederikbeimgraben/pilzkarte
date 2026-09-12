@@ -14,7 +14,7 @@ synonyme = ["Creolophus cirrhatus", "Creolophus cirratus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DornigerStachelbart.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
@@ -60,6 +60,7 @@ zeit = "Spätsommer bis Winter, sporadisch schon ab Juni."
 [[verwechslungen]]
 slug = "noerdlicher-stachelseitling"
 unterschied = "Hüte dachziegelig übereinander am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
+eigenerUnterschied = "Aus einzelnen, unregelmäßig gelappten weißen Hüten aufgebaut, Fleisch weich und bei Verletzung gilbend, Geruch angenehm."
 
 [[links]]
 titel = "123pilzsuche.de"

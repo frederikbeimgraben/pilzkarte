@@ -12,7 +12,7 @@ weitereNamen = ["Gelbstieliger Zwergknäueling", "Später Seitling", "Gelber Mus
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbstieligerMuschelseitling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0, einheit = "cm" }
@@ -61,16 +61,12 @@ vorkommen = "Folgezersetzer, teils parasitisch, auf Laubholz, gern zusammen mit 
 zeit = "Herbst bis Frühling."
 
 [[verwechslungen]]
-slug = "austernseitling"
-unterschied = "Stiel ohne gelbe Töne, die Lamellen laufen ohne Abgrenzung tief am Stiel herab."
+slug = "berindeter-seitling"
+unterschied = "Hut hellbraun und trocken, Stiel ohne gelbe Schüppchen."
 
 [[verwechslungen]]
 slug = "rillstieliger-seitling"
 unterschied = "Stiel deutlich gerillt, Hut hell graubraun, Fleisch nicht bitter."
-
-[[verwechslungen]]
-slug = "berindeter-seitling"
-unterschied = "Hut hellbraun und trocken, Stiel ohne gelbe Schüppchen."
 
 [[links]]
 titel = "123pilzsuche.de"

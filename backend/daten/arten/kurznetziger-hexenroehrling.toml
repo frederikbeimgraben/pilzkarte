@@ -13,7 +13,7 @@ synonyme = ["Boletus mendax"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KurznetzHexe.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0, einheit = "cm" }
@@ -58,10 +58,6 @@ geschmack = "Mild."
 sporenpulver = "Goldgelb bis olivgelb."
 vorkommen = "Symbiosepilz in Laubwäldern und Parkanlagen, wärmeliebend. Zum Boden gibt es widersprüchliche Angaben, teils kalkhaltig, teils sauer."
 zeit = "Frühling bis Spätherbst."
-
-[[verwechslungen]]
-slug = "blaufleckender-purpurroehrling"
-unterschied = "Hut purpurrot bis weinrosa und blau fleckend, Röhren später purpurrot, Fleisch schnell stark blauend, alt aasartiger Geruch."
 
 [[verwechslungen]]
 slug = "falscher-satansroehrling"

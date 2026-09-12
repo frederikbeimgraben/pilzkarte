@@ -10,7 +10,7 @@ baeume = ["tanne"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LeuchtenderWeich.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -54,16 +54,8 @@ vorkommen = "Folgezersetzer an Totholz und Bauholz, meist Nadelholz, gern Weißt
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "zimtfarbiger-weichporling"
+slug = "zimtfarbener-weichporling"
 unterschied = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
-
-[[verwechslungen]]
-slug = "duftender-goldporling"
-unterschied = "Liegt dem Holz flach auf und wirkt, als bestehe er nur aus Röhren. Geruch nach Anis oder Aprikose."
-
-[[verwechslungen]]
-slug = "schwefelporling"
-unterschied = "Hüte fächerförmig und dachziegelartig, gelb bis orange, Poren gelb, Geruch säuerlich obstartig."
 
 [[links]]
 titel = "123pilzsuche.de"

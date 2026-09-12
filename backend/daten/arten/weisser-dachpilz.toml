@@ -14,7 +14,7 @@ synonyme = ["Agaricus pellitus", "Rhodosporus pellitus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserDachpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -58,10 +58,6 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 slug = "grauer-dachpilz"
 unterschied = "Hut blassgrau bis mausgrau, Stiel mit grünlich bläulichem Schein, enthält Psilocybin."
-
-[[verwechslungen]]
-slug = "seidiger-dachpilz"
-unterschied = "Scheitel mit dunkleren Faserschuppen, bei Trockenheit sparrig schuppig, Sporenpulver rostbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

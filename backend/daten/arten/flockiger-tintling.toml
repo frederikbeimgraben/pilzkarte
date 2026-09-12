@@ -13,7 +13,7 @@ synonyme = ["Coprinus rostrupianus", "Coprinus flocculosus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlockigerTintling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 6.0, einheit = "cm" }
@@ -61,6 +61,7 @@ unterschied = "Hut gerieft und faltig, Lamellen angewachsen, Stielbasis mit Ring
 [[verwechslungen]]
 slug = "spechttintling"
 unterschied = "Hut mit groben braunen Velumschuppen auf hellem Grund, Stielbasis ohne Volva."
+eigenerUnterschied = "Deutlich kleiner, Hut graubraun mit weißlichen Velumflocken, Stielbasis verdickt und oft mit Volva."
 
 [[links]]
 titel = "123pilzsuche.de"

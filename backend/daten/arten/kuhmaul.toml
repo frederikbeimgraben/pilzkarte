@@ -13,7 +13,7 @@ weitereNamen = ["Großer Gelbfuß", "Großer Schmierling", "Großer Keilpilz", "
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kuhmaul.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
@@ -60,8 +60,8 @@ vorkommen = "Symbiosepilz im Nadelwald bei Fichte, auf saurem Boden."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "rosenroter-gelbfuss"
-unterschied = "Hut rosenrot und samtig, nur schmierig statt schleimig, bei Kiefer auf dem Myzel des Kuhröhrlings."
+slug = "aprikosen-gelbfuss"
+unterschied = "Hut orangebraun, rosa bis violett, Lamellen jung purpurbraun, Stiel mit orangefarbener Ringzone."
 
 [[verwechslungen]]
 slug = "gefleckter-gelbfuss"
@@ -70,14 +70,16 @@ unterschied = "Hut hell zimtbraun mit dunkler Mitte, Stiel auf weißem Grund rot
 [[verwechslungen]]
 slug = "gelbgestiefelter-schleimkopf"
 unterschied = "Lamellen cremegrau bis ockerbraun, Stiel mit braunfuchsigen Velumbändern und knolliger Basis, bei Birke."
+eigenerUnterschied = "Lamellen dick, weit stehend und herablaufend, Hut graubraun und schleimig, Stielbasis innen leuchtend gelb."
 
 [[verwechslungen]]
 slug = "kupferroter-gelbfuss"
 unterschied = "Lamellen und Fleisch gelborange, bei Verletzung rötend, bei Kiefer."
 
 [[verwechslungen]]
-slug = "aprikosen-gelbfuss"
-unterschied = "Hut orangebraun, rosa bis violett, Lamellen jung purpurbraun, Stiel mit orangefarbener Ringzone."
+slug = "rosenroter-gelbfuss"
+unterschied = "Hut rosenrot und samtig, nur schmierig statt schleimig, bei Kiefer auf dem Myzel des Kuhröhrlings."
+eigenerUnterschied = "Hut graubraun bis violettbraun und stark schleimig, Stielbasis leuchtend chromgelb, bei Fichte."
 
 [[links]]
 titel = "123pilzsuche.de"

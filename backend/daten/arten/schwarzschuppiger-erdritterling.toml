@@ -13,7 +13,7 @@ weitereNamen = ["Schwarzschuppiger Ritterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzschuppigerRitterlingEssbar.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -61,16 +61,17 @@ vorkommen = "Symbiosepilz im Mischwald, häufiger bei Nadelbäumen."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "tigerritterling"
-unterschied = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Lamellen oft mit Tröpfchen, Geruch mehlig."
-
-[[verwechslungen]]
 slug = "gilbender-erdritterling"
 unterschied = "Fleisch und Stielbasis gilben deutlich, Geruch unangenehm."
 
 [[verwechslungen]]
 slug = "seifenritterling"
 unterschied = "Fleisch rötet an verletzten Stellen, besonders an der Stielbasis, Geruch nach Seifenlauge."
+eigenerUnterschied = "Hut grauschwarz und wollig schuppig, Fleisch rötet nicht, Geruch mehlartig."
+
+[[verwechslungen]]
+slug = "tigerritterling"
+unterschied = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Lamellen oft mit Tröpfchen, Geruch mehlig."
 
 [[links]]
 titel = "123pilzsuche.de"

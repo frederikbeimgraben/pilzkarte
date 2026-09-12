@@ -1,4 +1,4 @@
-name = "Verbogener Leistling"
+name = "Krause Kraterelle"
 lateinisch = "Pseudocraterellus undulatus"
 gruppe = "leistling"
 speisewert = "essbar"
@@ -11,11 +11,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Nicht selten, aber wegen der kleinen, dunklen Fruchtkörper schwer zu finden."
 haeufigkeit = "selten"
-weitereNamen = ["Krause Kraterelle", "Vollstieliger Leistling", "Krauser Leistling"]
+weitereNamen = ["Verbogener Leistling", "Vollstieliger Leistling", "Krauser Leistling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KrausenKantarelle.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
@@ -55,10 +55,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Symbiosepilz im Laubwald, gern bei Buche."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "grauer-leistling"
-unterschied = "Hut schwarzgrau bis graubraun und feinschuppig, Leisten heller weißlichgrau, Geruch nach Pflaumen."
 
 [[links]]
 titel = "123pilzsuche.de"

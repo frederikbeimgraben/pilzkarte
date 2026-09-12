@@ -12,7 +12,7 @@ synonyme = ["Coprinus acuminatus", "Coprinus atramentarius var. acuminatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SpitzTintling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
@@ -52,10 +52,6 @@ geschmack = "Mild."
 sporenpulver = "Schwarz."
 vorkommen = "Folgezersetzer an Waldwegen und in Gärten, liebt lehm- und kalkreichen Boden."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "faltentintling"
-unterschied = "Hut ohne spitzen Scheitel, Lamellen abgerundet angewachsen bis schmal angeheftet, Sporenpulver schwarzbraun."
 
 [[verwechslungen]]
 slug = "spechttintling"

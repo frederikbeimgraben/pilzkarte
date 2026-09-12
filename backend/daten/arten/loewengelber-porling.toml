@@ -11,7 +11,7 @@ synonyme = ["Polyporus leptocephalus", "(polyporus varius", "Boletus leptocephal
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/LoewenPorling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -65,10 +65,6 @@ geschmack = "Mild, etwas bitterlich."
 sporenpulver = "Weißlich."
 vorkommen = "Folgezersetzer an Laubholz, gern Buche."
 zeit = "Frühling bis Herbst."
-
-[[verwechslungen]]
-slug = "schuppiger-porling"
-unterschied = "Viel größer, Hut mit groben braunen Schuppen, Poren weißlich und nur ein bis zwei je Millimeter."
 
 [[links]]
 titel = "123pilzsuche.de"

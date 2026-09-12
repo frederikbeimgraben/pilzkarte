@@ -14,7 +14,7 @@ synonyme = ["Boletopsis elegans", "Suillus grevillei forma badius", "Ixocomus el
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Goldroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -76,22 +76,25 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "dottergelber-klumpfuss"
 unterschied = "Lamellen statt Röhren, Stiel mit gerandeter Knolle und rostbraunem Sporenpulver, Geruch widerlich erdig."
-
-[[verwechslungen]]
-slug = "gelber-hohlfussroehrling"
-unterschied = "Hut kanariengelb und bräunlich schuppig filzig, Stiel hohl, Röhren wabenartig und schwer vom Hut trennbar."
-
-[[verwechslungen]]
-slug = "goldporiger-roehrling"
-unterschied = "Hut gelbrosa bis beigerosa, Röhren grobporig, Fleisch weiß mit rosaviolettem Ton, im Laubwald."
-
-[[verwechslungen]]
-slug = "kuhroehrling"
-unterschied = "Hut bräunlich, Röhren graugelb bis rotbraun mit weiten Mündungen, kein Ring, bei Kiefer."
+eigenerUnterschied = "Röhren statt Lamellen, Stiel mit Ring und ohne gerandete Knolle, Geruch angenehm."
 
 [[verwechslungen]]
 slug = "elfenbeinroehrling"
 unterschied = "Hut weiß bis cremefarben, Stiel mit braunen harzigen Pünktchen, bei Zirbel- und Weymouthskiefer."
+
+[[verwechslungen]]
+slug = "gelber-hohlfussroehrling"
+unterschied = "Hut kanariengelb und bräunlich schuppig filzig, Stiel hohl, Röhren wabenartig und schwer vom Hut trennbar."
+eigenerUnterschied = "Stiel voll und mit häutigem Ring, Hut feucht schmierig statt filzig-schuppig."
+
+[[verwechslungen]]
+slug = "goldporiger-roehrling"
+unterschied = "Hut gelbrosa bis beigerosa, Röhren grobporig, Fleisch weiß mit rosaviolettem Ton, im Laubwald."
+eigenerUnterschied = "Bei Lärche, Hut goldgelb und schleimig, Stiel mit Ring."
+
+[[verwechslungen]]
+slug = "kuhroehrling"
+unterschied = "Hut bräunlich, Röhren graugelb bis rotbraun mit weiten Mündungen, kein Ring, bei Kiefer."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -16,7 +16,7 @@ synonyme = ["Clitocybe gibba", "Agaricus gibbus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ockertrichter.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -71,10 +71,6 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 slug = "moenchskopf"
 unterschied = "Deutlich größer, Hut bräunlich mit warzenartigem Buckel in der Mitte, Geruch süßlich nach Bittermandel."
-
-[[verwechslungen]]
-slug = "fuchsiger-roetelritterling"
-unterschied = "Lamellen fuchsig bis ockergelb und gegabelt, Sporenpulver mit einem Hauch Rosa, Geruch nach frisch geschnittenem Gras."
 
 [[links]]
 titel = "123pilzsuche.de"

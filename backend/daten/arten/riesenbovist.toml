@@ -13,7 +13,7 @@ synonyme = ["Langermannia gigantea", "Lycoperdon giganteum", "Clavatia maxima", 
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenbovist.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -56,12 +56,9 @@ vorkommen = "Folgezersetzer auf Wiesen, in Parks und an Waldrändern."
 zeit = "Frühling bis Sommer."
 
 [[verwechslungen]]
-slug = "weisser-knollenblaetterpilz"
-unterschied = "Jung kugelig, im Schnitt aber schon mit Hut- und Lamellenansatz, Basis in einer häutigen sackartigen Scheide."
-
-[[verwechslungen]]
-slug = "hasenbovist"
-unterschied = "Nur 3 bis 16 cm breit, jung mit plattenartigen Erhebungen, auf Wiesen und Weiden, gern in Gebirgslagen."
+slug = "beutelstaeubling"
+unterschied = "Bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun bis lilabraun."
+eigenerUnterschied = "Kugelig und bis über 50 cm breit, Haut glatt und lederartig, ohne Stielteil."
 
 [[verwechslungen]]
 slug = "flaschenbovist"
@@ -70,10 +67,11 @@ unterschied = "Klein, keulig bis birnenförmig mit stielartigem Fuß, mit körni
 [[verwechslungen]]
 slug = "weisser-grossstaeubling"
 unterschied = "3 bis 9 cm breit, Oberfläche netzartig fleckig bis hirnartig gewunden, oft mit Stielteil."
+eigenerUnterschied = "Viel größer, bis 50 und selten bis 150 cm breit, Haut glatt und lederartig, alt urinartig riechend."
 
 [[verwechslungen]]
-slug = "beutelstaeubling"
-unterschied = "Bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun bis lilabraun."
+slug = "weisser-knollenblaetterpilz"
+unterschied = "Jung kugelig, im Schnitt aber schon mit Hut- und Lamellenansatz, Basis in einer häutigen sackartigen Scheide."
 
 [[links]]
 titel = "123pilzsuche.de"

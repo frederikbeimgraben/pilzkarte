@@ -14,7 +14,7 @@ synonyme = ["Leucopaxillus candidus paxillus giganteus", "Aspropaxillus giganteu
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Krempentrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 30.0, seltenBis = 40.0, einheit = "cm" }
@@ -71,6 +71,7 @@ unterschied = "Hut nebelgrau statt weiß, Geruch süßlich parfümiert, Lamellen
 [[verwechslungen]]
 slug = "riesentrichterling"
 unterschied = "Hut ockerbraun bis hellbraun und seidig glatt, Lamellen weit herablaufend, Stiel schlanker."
+eigenerUnterschied = "Hut weiß bis cremeweiß, Rand krempenartig gerollt, Stiel kurz und dick."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -12,7 +12,7 @@ synonyme = ["Inocybe erubescens", "Inocybe patouillardii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZiegelroterRisspilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -54,10 +54,6 @@ geschmack = "Mild und fruchtig, aber eher unangenehm."
 sporenpulver = "Dunkelbraun."
 vorkommen = "In Laubwald, Parks, an Waldwegen und auf Ruderalflächen, gern bei Linde und Buche auf kalk- und nährstoffreichem Boden."
 zeit = "Frühling bis Spätherbst."
-
-[[verwechslungen]]
-slug = "maipilz"
-unterschied = "Lamellen bleiben weiß, Geruch stark mehlartig, Fleisch verfärbt sich nicht rot."
 
 [[links]]
 titel = "123pilzsuche.de"

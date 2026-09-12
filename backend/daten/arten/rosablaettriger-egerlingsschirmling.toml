@@ -12,7 +12,7 @@ weitereNamen = ["Rosablättriger Egerlingsschirmpilz", "Gemeiner Egerlingsschirm
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RosablaettrigerEggerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 15.0, einheit = "cm" }
@@ -61,8 +61,8 @@ vorkommen = "Folgezersetzer in Parks, Gärten, Wäldern und auf Wiesen, oft zwis
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-slug = "weisser-knollenblaetterpilz"
-unterschied = "Stielbasis in einer häutigen sackartigen Scheide, Lamellen bleiben weiß, Sporenpulver weiß. Nur bei Bäumen."
+slug = "fleischblaettriger-egerlingsschirmling"
+unterschied = "Lamellen gelb bis gelbbraun, im Alter rot bis orangerot, Fleisch gelb."
 
 [[verwechslungen]]
 slug = "kegelhuetiger-knollenblaetterpilz"
@@ -71,10 +71,11 @@ unterschied = "Hut spitzkegelig gebuckelt, Basis in einer eierschalenartigen Sch
 [[verwechslungen]]
 slug = "seidiger-egerlingsschirmling"
 unterschied = "Lamellen bleiben weiß und stehen an einem feinen Collar, Fleisch gilbt bei Berührung und graut später, Sporenpulver weiß."
+eigenerUnterschied = "Lamellen laufen im Alter rosa an, Hut rein weiß und glatt."
 
 [[verwechslungen]]
-slug = "fleischblaettriger-egerlingsschirmling"
-unterschied = "Lamellen gelb bis gelbbraun, im Alter rot bis orangerot, Fleisch gelb."
+slug = "weisser-knollenblaetterpilz"
+unterschied = "Stielbasis in einer häutigen sackartigen Scheide, Lamellen bleiben weiß, Sporenpulver weiß. Nur bei Bäumen."
 
 [[verwechslungen]]
 slug = "wurzelnder-egerlingsschirmling"

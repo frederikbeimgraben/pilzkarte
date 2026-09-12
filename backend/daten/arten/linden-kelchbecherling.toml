@@ -14,7 +14,7 @@ synonyme = ["Sarcoscypha coccinea var. jurana + sarcoscypha emarginata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Linden-Kelchbecherling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "melzer"
@@ -60,10 +60,12 @@ zeit = "Winter bis Mai."
 [[verwechslungen]]
 slug = "oesterreichischer-prachtbecherling"
 unterschied = "Wächst an Erle, Weide und Espe, die Haare der Außenseite sind korkenzieherartig gewunden."
+eigenerUnterschied = "Wächst an verrotteten Lindenzweigen, sonst kaum zu trennen."
 
 [[verwechslungen]]
 slug = "scharlachroter-kelchbecherling"
 unterschied = "Außenseite im unteren Teil ganz weiß und kleiig, mit weißem Rand an der Flächengrenze."
+eigenerUnterschied = "Wächst an Linde, Innenseite etwas blasser rot."
 
 [[links]]
 titel = "123pilzsuche.de"

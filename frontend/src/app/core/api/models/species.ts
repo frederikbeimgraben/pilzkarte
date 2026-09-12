@@ -7,11 +7,11 @@
  */
 
 /**
- * Was die App zu einer Art zeigen kann. Die Datenlage entscheidet. `verwechslung`
- * steht für ein Profil, das man nicht sammelt: es steht im Katalog, weil eine
- * sammelbare Art ihm ähnlich sieht.
+ * Was die App zu einer Art zeigen kann. Die Datenlage entscheidet. Eine
+ * Verwechslung ist keine Stufe: sie ist eine Beziehung zwischen zwei Arten und
+ * steht in `verwechslungen`.
  */
-export const LEVELS = ['vorhersage', 'saison', 'profil', 'verwechslung'] as const;
+export const LEVELS = ['vorhersage', 'saison', 'profil'] as const;
 export type Level = (typeof LEVELS)[number];
 
 /** Die Verwandtschaft, mit der eine Art im Katalog steht. */
@@ -86,17 +86,11 @@ export type Baumart = (typeof BAUMARTEN)[number];
 export const SEASONS = ['fruehling', 'sommer', 'herbst', 'winter'] as const;
 export type SeasonOfYear = (typeof SEASONS)[number];
 
-/** Was mit einer Art in der Pfanne passieren darf. */
-export const EDIBILITIES = [
-  'sehrGuterSpeisepilz',
-  'guterSpeisepilz',
-  'essbar',
-  'minderwertig',
-  'bedingtEssbar',
-  'ungeniessbar',
-  'giftig',
-  'toedlichGiftig',
-] as const;
+/**
+ * Wie gefährlich eine Art in der Pfanne ist. Fünf Stufen, mehr nicht. Wie gut
+ * eine essbare Art schmeckt, steht als `wertigkeit` daneben.
+ */
+export const EDIBILITIES = ['essbar', 'bedingtEssbar', 'ungeniessbar', 'giftig', 'toedlichGiftig'] as const;
 export type Essbarkeit = (typeof EDIBILITIES)[number];
 
 /** Die Zeilen der Merkmalstabelle, in der Reihenfolge der Artseite. */
@@ -190,10 +184,13 @@ export interface Source {
   geprueftAm: string;
 }
 
-/** Ob die DGfM die Art auf ihrer Positivliste der Speisepilze führt. */
+/**
+ * Ob die DGfM die Art auf ihrer Positivliste der Speisepilze führt und ob die
+ * Schweiz sie zulässt. Die Quelle gilt für das ganze Profil und steht dort.
+ */
 export interface Marktfaehigkeit {
   marktfaehig: boolean;
-  quelle: Source;
+  schweiz: boolean | null;
 }
 
 /**
@@ -223,31 +220,20 @@ export interface YearRange {
   bis: number;
 }
 
-/** Eine Art, die man mit dieser verwechselt, und das trennende Merkmal. */
 /**
- * Eine Art, die man mit dieser verwechselt, und das trennende Merkmal.
+ * Die andere Art eines Verwechslungspaares, aufgelöst.
  *
- * D1g stellt den Vertrag gerade um: der Eintrag trägt dann nur noch `slug` und
- * `unterschied`, alles Weitere kommt aufgelöst dazu. Bis dahin heißen dieselben
- * Angaben `merkmal` und `essbar`. Beide Namen stehen hier, damit die Artseite
- * über den Wechsel hinweg läuft.
+ * Das Paar steht in genau einer der zwei Profildateien und gilt in beide
+ * Richtungen. `unterschied` bleibt leer, wo nur die andere Seite einen Satz
+ * dazu trägt; der Name allein ist dann immer noch die Warnung, die zählt.
  */
 export interface Confusable {
-  name: string;
-  /** Das eigene Profil des Partners, wenn es eines gibt. */
-  slug: string | null;
-  lateinisch?: string;
-  unterschied?: string;
-  merkmal?: string;
-  speisewert?: Essbarkeit;
-  essbar?: Essbarkeit;
-  warnung?: string | null;
-}
-
-/** Eine Art, bei der dieser Pilz als Verwechslung steht. Der Rückweg von D1g. */
-export interface Betrifft {
   slug: string;
   name: string;
+  lateinisch: string;
+  unterschied: string | null;
+  speisewert: Essbarkeit;
+  warnung: string | null;
 }
 
 /** Ein Link nach draußen. Nur die Adresse, kein fremder Text. */
@@ -298,8 +284,7 @@ export interface SpeciesBrief {
   kartenSlug: string | null;
   /** Ob man die Art sammelt. Ein Verwechslungsprofil steht auf `false`. */
   sammelbar: boolean;
-  marktfaehig: boolean;
-  marktfaehigSchweiz: boolean | null;
+  marktfaehigkeit: Marktfaehigkeit;
   wertigkeit: number | null;
   haeufigkeit: Haeufigkeit | null;
   gefaehrdung: Gefaehrdung | null;
@@ -307,26 +292,24 @@ export interface SpeciesBrief {
   jahreszeiten: SeasonOfYear[];
   baeume: Baumart[];
   baeumeAusErfahrung: BaeumeAusErfahrung | null;
+  weitereNamen: string[];
+  synonyme: string[];
   /** Genug Funde für ein eigenes Modell, aber noch keine Karte. */
   vorhersageGeplant: boolean;
   begehungenMitFund: number;
   spitzeWoche: number | null;
-  /** Eine Art, die niemand sammelt, trägt keine Saisonkurve. */
+  /** Eine Art ohne Zeile in der Saisontabelle trägt keine Kurve. */
   saison: SeasonCurveBrief | null;
 }
 
 /** Eine Art mit Profil, so wie die Artseite sie braucht. */
 export interface Species extends Omit<SpeciesBrief, 'saison'> {
-  marktfaehigkeit: Marktfaehigkeit;
-  weitereNamen: string[];
-  synonyme: string[];
   masse: Masse;
   quelle: Source;
   merkmale: Feature[];
   reagenzien: Reagenzeintrag[];
+  /** Beide Richtungen in einer Liste, denn ein Paar gilt für beide Arten. */
   verwechslungen: Confusable[];
-  /** Die Arten, bei denen dieser Pilz als Verwechslung steht. Kommt mit D1g. */
-  betrifft?: Betrifft[];
   links: Link[];
   saison: SeasonCurveData | null;
 }

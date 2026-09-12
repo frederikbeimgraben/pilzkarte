@@ -1,4 +1,4 @@
-name = "Rauer Stäubling"
+name = "Weißer Igelstäubling"
 lateinisch = "Geastrum pedicellatum"
 gruppe = "staeubling"
 speisewert = "essbar"
@@ -10,12 +10,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten. Von den anderen weißen Stäublingen lässt er sich meist nur mikroskopisch sicher trennen. Nur solange das Innere rein weiß ist."
 haeufigkeit = "sehrSelten"
-weitereNamen = ["Weißer Igelstäubling", "Geschwänzsporiger Stäublings", "Moor-Stäubling"]
+weitereNamen = ["Rauer Stäubling", "Geschwänzsporiger Stäublings", "Moor-Stäubling"]
 synonyme = ["Lycoperdon caudatum", "Lycoperdon pedicellatum", "Bovistella pedicellata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserIgelstaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
@@ -59,10 +59,6 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "igelstaeubling"
 unterschied = "Stacheln länger und braunspitzig, Fruchtkörper ohne die langen Myzelwurzeln."
-
-[[verwechslungen]]
-slug = "flaschenbovist"
-unterschied = "Deutlich flaschen- bis birnenförmig mit langem Stielteil, Haut nur feinwarzig."
 
 [[verwechslungen]]
 slug = "weisser-grossstaeubling"

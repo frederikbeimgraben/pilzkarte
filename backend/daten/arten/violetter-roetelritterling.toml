@@ -1,7 +1,7 @@
 name = "Violetter Rötelritterling"
 lateinisch = "Lepista nuda"
 gruppe = "roetelritterling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/VioletterRoetelritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 18.0, seltenBis = 22.0, einheit = "cm" }
@@ -67,22 +67,21 @@ zeit = "Herbst bis Winteranfang. Die Fruchtkörper kommen oft erst nach einem Te
 [[verwechslungen]]
 slug = "bocksdickfuss"
 unterschied = "Lamellen lila, im Alter zimtbraun, Stiel mit rostbraunen Sporenpulverresten und weißviolettem Velum."
+eigenerUnterschied = "Lamellen rein lila und nie bräunlich, kein Sporenpulver am Stiel, Geruch parfümiert und fruchtig."
+
+[[verwechslungen]]
+slug = "lavendelfarbener-roetelritterling"
+unterschied = "Hut rötlichlila bis lavendelfarben, ebenfalls hygrophan."
+eigenerUnterschied = "Hut kräftig lilaviolett, Lamellen blaulila und nie bräunlich."
 
 [[verwechslungen]]
 slug = "nebelkappe"
 unterschied = "Hut graubraun bis weißgrau und etwas radialfaserig, Lamellen weißlich bis cremegelb und herablaufend."
 
 [[verwechslungen]]
-slug = "lilastieliger-roetelritterling"
-unterschied = "Hut grauviolett bis graubräunlich statt lilaviolett, Lamellen nur weißlich lila."
-
-[[verwechslungen]]
-slug = "lavendelfarbener-roetelritterling"
-unterschied = "Hut rötlichlila bis lavendelfarben, ebenfalls hygrophan."
-
-[[verwechslungen]]
 slug = "schmutziger-roetelritterling"
 unterschied = "Kleinster der Rötelritterlinge, Lamellen schmutzig weiß bis graurosa, Geruch beim Anwärmen staubartig."
+eigenerUnterschied = "Deutlich größer und kräftiger violett, Geruch stärker parfümiert."
 
 [[links]]
 titel = "123pilzsuche.de"

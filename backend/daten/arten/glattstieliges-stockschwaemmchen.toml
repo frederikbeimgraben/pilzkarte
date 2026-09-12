@@ -12,7 +12,7 @@ weitereNamen = ["Glattstieliges Frühlings-Stockschwämmchen"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GlattstielStockschwamm.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 5.0, einheit = "cm" }
@@ -60,10 +60,6 @@ zeit = "Frühling bis Spätherbst."
 [[verwechslungen]]
 slug = "gifthaeubling"
 unterschied = "Geruch muffig nach faulendem Holz, Sporenpulver rostbraun, meist an Nadelholz."
-
-[[verwechslungen]]
-slug = "stockschwaemmchen"
-unterschied = "Stiel unterhalb der Ringzone braun geschuppt, mit deutlicherem Ring."
 
 [[links]]
 titel = "123pilzsuche.de"

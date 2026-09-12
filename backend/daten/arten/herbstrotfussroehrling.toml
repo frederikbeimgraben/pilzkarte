@@ -14,7 +14,7 @@ weitereNamen = ["Herbstrotfuß", "Bereifter Rotfuß", "Stattlicher Rotfuß"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotfussHerbst.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "melzer"
@@ -66,16 +66,12 @@ vorkommen = "Symbiosepilz im Mischwald. Sehr häufig."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "schoenfussroehrling"
-unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot und mit Netz, Fleisch blaut sofort."
-
-[[verwechslungen]]
-slug = "rotfussroehrling"
-unterschied = "Stiel schlanker, Hut stärker aufreißend mit rotem Grund, Fleisch weniger gelb."
-
-[[verwechslungen]]
 slug = "maronenroehrling"
 unterschied = "Hut kastanienbraun, Röhren gelb und auf Druck deutlich blauend, Stiel ohne rote Punkte."
+
+[[verwechslungen]]
+slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot und mit Netz, Fleisch blaut sofort."
 
 [[links]]
 titel = "123pilzsuche.de"

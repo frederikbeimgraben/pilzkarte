@@ -11,7 +11,7 @@ weitereNamen = ["Butterröhrling", "Huasara", "Schmalzer", "Schmerzling", "Butte
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Butterroehring.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
@@ -57,20 +57,21 @@ vorkommen = "Symbiosepilz bei Kiefer."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "ringloser-butterroehrling"
-unterschied = "Ohne Ring am Stiel, Stielbasis rosa."
-
-[[verwechslungen]]
 slug = "goldroehrling"
 unterschied = "Hut hellgelb bis orangerötlich, bei Lärche."
 
 [[verwechslungen]]
-slug = "koernchenroehrling"
-unterschied = "Ohne Ring, Stiel dicht gekörnelt, Röhren jung milchig tropfend."
-
-[[verwechslungen]]
 slug = "grauer-laerchenroehrling"
 unterschied = "Hut olivgrau bis gelbgrau, Röhren grau, bei Lärche."
+
+[[verwechslungen]]
+slug = "koernchenroehrling"
+unterschied = "Ohne Ring, Stiel dicht gekörnelt, Röhren jung milchig tropfend."
+eigenerUnterschied = "Stiel mit braunviolettem Ring."
+
+[[verwechslungen]]
+slug = "ringloser-butterpilz"
+unterschied = "Ohne Ring am Stiel, Stielbasis rosa."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -15,7 +15,7 @@ synonyme = ["Lycoperdon pyriforme", "Morganella pyriformis", "Utraria pyriformis
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birnenstaeubling1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -55,16 +55,14 @@ vorkommen = "Folgezersetzer auf alten toten Ästen und auf Holzabfällen, oft b�
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "flaschenbovist"
-unterschied = "Blasse, spitzkegelige Stacheln, wächst aus Erde und nicht büschelig auf Holz."
-
-[[verwechslungen]]
 slug = "braeunlicher-staeubling"
 unterschied = "Dunkelbraune weiche Stacheln, nach dem Abwaschen bleibt kein Netzmuster, am Boden im Nadelwald."
+eigenerUnterschied = "Büschelig auf Holz, mit dunkelbraunen kleiigen Körnchen, Geruch gasartig."
 
 [[verwechslungen]]
 slug = "igelstaeubling"
 unterschied = "Stacheln mit helleren Spitzen, nach dem Abwaschen bleibt ein deutliches Netzmuster."
+eigenerUnterschied = "Mit dunkelbraunen kleiigen Warzen statt Stacheln, wächst büschelig auf altem Holz."
 
 [[links]]
 titel = "123pilzsuche.de"

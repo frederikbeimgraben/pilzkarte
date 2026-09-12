@@ -16,7 +16,7 @@ synonyme = ["Leccinum aurantiacum var. quercinum", "Leccinum rufum", "Boletus qu
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenrot.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 17.0, seltenBis = 21.0, einheit = "cm" }
@@ -62,14 +62,11 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "fichtenrotkappe"
 unterschied = "Stielschuppen schwarz, wächst bei Nadelbäumen."
+eigenerUnterschied = "Hut ziegelrot bis orangebraun, Stielschuppen rotbraun, bei Eiche."
 
 [[verwechslungen]]
-slug = "kiefernrotkappe"
+slug = "fuchsrotkappe"
 unterschied = "Hut fuchsrot und samtig, Schuppen erst hellbraun, dann rötlich, bei Kiefer."
-
-[[verwechslungen]]
-slug = "birken-rotkappe"
-unterschied = "Stielschuppen schwärzlich statt rötlich, wächst bei Birke."
 
 [[links]]
 titel = "123pilzsuche.de"

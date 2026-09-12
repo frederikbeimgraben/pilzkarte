@@ -14,7 +14,7 @@ synonyme = ["Agaricus helvus", "Galorrheus helvus", "Lactifluus helvus", "Agaric
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BruchreizkerMaggipilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }

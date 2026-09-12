@@ -13,7 +13,7 @@ weitereNamen = ["Maichampignon", "Feldegerling", "Wiesenegerling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Wiesenchampinon.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -68,24 +68,23 @@ vorkommen = "Folgezersetzer in Gärten, auf Wiesen und Weiden und in Maisfeldern
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "karbolegerling"
-unterschied = "Stielbasis läuft im Schnitt gelb an, Geruch nach Karbol oder Tinte, Hut weiß mit bräunlicher Mitte."
-
-[[verwechslungen]]
-slug = "uebelriechender-egerling"
-unterschied = "Hut schmutzigbraun bis gelbbraun und braunschuppig, Lamellen graurosa, Stiel mit doppeltem Ring und braunfleckiger Basis."
-
-[[verwechslungen]]
-slug = "schafchampignon"
-unterschied = "Größer, Hut weiß mit seidiger Haut, Lamellen jung grauweiß, Geruch nach Anis, Stiel gilbend und unter dem Ring körnig."
+slug = "braunschuppiger-wiesenchampignon"
+unterschied = "Varietät des Wiesenchampignons, Hut braun schuppig, Ring ebenso verkümmert."
+eigenerUnterschied = "Hut ohne die großen braunen Schuppen, rein weiß bis cremefarben."
 
 [[verwechslungen]]
 slug = "fruehlingschampignon"
 unterschied = "Hut weiß bis gelblich und bei Berührung strohgelb verfärbend, Stiel gilbend, Spitze etwas rötlich."
 
 [[verwechslungen]]
-slug = "braunschuppiger-wiesenchampignon"
-unterschied = "Varietät des Wiesenchampignons, Hut braun schuppig, Ring ebenso verkümmert."
+slug = "karbolegerling"
+unterschied = "Stielbasis läuft im Schnitt gelb an, Geruch nach Karbol oder Tinte, Hut weiß mit bräunlicher Mitte."
+eigenerUnterschied = "Stielbasis nicht knollig und nicht gelb verfärbend, Geruch angenehm pilzig."
+
+[[verwechslungen]]
+slug = "uebelriechender-egerling"
+unterschied = "Hut schmutzigbraun bis gelbbraun und braunschuppig, Lamellen graurosa, Stiel mit doppeltem Ring und braunfleckiger Basis."
+eigenerUnterschied = "Hut weiß und glatt, Ring vergänglich, Stielbasis ohne Knolle, Geruch angenehm pilzig."
 
 [[links]]
 titel = "123pilzsuche.de"

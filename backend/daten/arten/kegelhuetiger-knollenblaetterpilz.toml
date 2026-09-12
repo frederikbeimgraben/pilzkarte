@@ -12,7 +12,7 @@ weitereNamen = ["Spitzhütiger Knollenblätterpilz", "Kegeliger Wulstling", "Wei
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KegelhuetigerKnollenblaetterpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 14.0, seltenBis = 18.0, einheit = "cm" }
@@ -57,10 +57,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "weisser-knollenblaetterpilz"
 unterschied = "Hut flach ausgebreitet statt spitzkegelig, Stiel nur mit angedrückten Velumschüppchen, Knolle gerandet."
-
-[[verwechslungen]]
-slug = "gruener-knollenblaetterpilz"
-unterschied = "Hut olivgrün, gelbgrün bis ocker statt weiß."
+eigenerUnterschied = "Hut kegelig gebuckelt, Huthaut färbt sich mit Kalilauge gelb."
 
 [[links]]
 titel = "123pilzsuche.de"

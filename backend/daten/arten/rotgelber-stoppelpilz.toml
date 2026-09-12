@@ -18,7 +18,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Semmelstoppelpilze.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
@@ -72,12 +72,12 @@ slug = "genabelter-semmelstoppelpilz"
 unterschied = "Hutmitte genabelt und vertieft, extrem selten."
 
 [[verwechslungen]]
-slug = "semmelporling"
-unterschied = "Poren statt Stoppeln, Hut semmelgelb bis orangebraun, schmeckt schnell bitterlich."
-
-[[verwechslungen]]
 slug = "schafporling"
 unterschied = "Poren statt Stoppeln, Hut weiß bis schmutzig weiß, Stiel mit graubraunen Flecken."
+
+[[verwechslungen]]
+slug = "semmelporling"
+unterschied = "Poren statt Stoppeln, Hut semmelgelb bis orangebraun, schmeckt schnell bitterlich."
 
 [[links]]
 titel = "123pilzsuche.de"

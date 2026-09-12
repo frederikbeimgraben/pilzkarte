@@ -13,7 +13,7 @@ weitereNamen = ["Dichtblättriger Egerlingsschirmling", "Grauhütiger Egerlingss
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FleischblaettrigeEgerlingsschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 14.0, einheit = "cm" }

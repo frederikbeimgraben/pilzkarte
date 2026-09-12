@@ -78,11 +78,11 @@ interface FeatureRow {
 
 interface ConfusableRow {
   name: string;
-  lateinisch: string | null;
+  lateinisch: string;
   merkmal: string;
-  badge: Marke | null;
-  /** Der Weg zum eigenen Profil des Partners, wenn es eines gibt. */
-  route: string | null;
+  badge: Marke;
+  /** Der Weg zum Profil der anderen Art. Jedes Paar zeigt auf ein Profil. */
+  route: string;
 }
 
 interface Reagenzzeile {
@@ -108,7 +108,6 @@ interface Viewport {
   merkmale: FeatureRow[];
   reagenzien: Reagenzzeile[];
   verwechslungen: ConfusableRow[];
-  betrifft: { name: string; route: string }[];
   links: Link[];
   geprueft: string;
   kartenSlug: string | null;
@@ -120,7 +119,7 @@ interface Viewport {
  * der Sprung auf die Karte. Das Profil kommt aus dem Katalog im Speicher; ein
  * zweiter Besuch derselben Art fragt den Server nicht noch einmal.
  *
- * Nicht jede Art hier wird gesammelt: 224 Profile stehen im Katalog, weil eine
+ * Nicht jede Art hier wird gesammelt: 221 Profile stehen im Katalog, weil eine
  * sammelbare Art ihnen ähnlich sieht. Sie tragen keine Saison und keinen Weg
  * auf die Karte, dafür oben den Hinweis und den Rückweg.
  */
@@ -251,21 +250,13 @@ export class SpeciesComponent {
       }),
       merkmale: this.featureRows(art, reagenzien.length > 0),
       reagenzien,
-      verwechslungen: art.verwechslungen.map((confusable) => {
-        // D1g nennt die Felder `unterschied` und `speisewert`, heute heißen sie
-        // `merkmal` und `essbar`. Die Seite liest beide.
-        const stufe = confusable.speisewert ?? confusable.essbar ?? null;
-        return {
-          name: confusable.name,
-          lateinisch: confusable.lateinisch ?? null,
-          merkmal: confusable.unterschied ?? confusable.merkmal ?? '',
-          badge: stufe === null ? null : this.essbar(stufe),
-          route: confusable.slug === null ? null : `/arten/${confusable.slug}`,
-        };
-      }),
-      betrifft: (art.betrifft ?? []).map((entry) => ({
-        name: entry.name,
-        route: `/arten/${entry.slug}`,
+      verwechslungen: art.verwechslungen.map((confusable) => ({
+        name: confusable.name,
+        lateinisch: confusable.lateinisch,
+        // Ohne Satz zählt der Name: das Paar steht in der anderen Datei.
+        merkmal: confusable.unterschied ?? '',
+        badge: this.essbar(confusable.speisewert),
+        route: `/arten/${confusable.slug}`,
       })),
       links: art.links,
       geprueft: this.i18n.translate('art.geprueft', {
@@ -317,7 +308,7 @@ export class SpeciesComponent {
       schluessel: this.i18n.translate('art.merkmal.marktfaehig'),
       text: `${this.i18n.translate(art.marktfaehigkeit.marktfaehig ? 'art.markt.ja' : 'art.markt.nein')} ${this.i18n.translate(
         'art.markt.stand',
-        { datum: longDate(art.marktfaehigkeit.quelle.geprueftAm, this.i18n.locale()) },
+        { datum: longDate(art.quelle.geprueftAm, this.i18n.locale()) },
       )}`,
     });
     if (art.haeufigkeit !== null) {

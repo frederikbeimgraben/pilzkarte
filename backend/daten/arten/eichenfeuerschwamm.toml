@@ -12,7 +12,7 @@ synonyme = ["Phellinus robustus", "Phellinus aestriplex", "Polyporus robustus", 
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenfeuer.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 5.0, bis = 15.0, seltenBis = 35.0, einheit = "cm" }

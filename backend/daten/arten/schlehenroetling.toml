@@ -15,7 +15,7 @@ synonyme = ["Rhodophyllus sepius", "Agaricus sepius", "Entoloma saundersii sensu
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schlehenroetling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "anilin"
@@ -70,10 +70,6 @@ geschmack = "Mild, mehlig."
 sporenpulver = "Rosa bis hell braunrosa."
 vorkommen = "Symbiosepilz von Rosengewächsen, an Waldrändern, in Gärten und Parks unter Schlehe, Weißdorn und Pflaumenbaum, büschelig gedrängt. Selten."
 zeit = "Frühling bis Sommer."
-
-[[verwechslungen]]
-slug = "riesenroetling"
-unterschied = "Deutlich größer, Hut gelblich grau, wächst im Laubwald und auf Wiesen, nicht büschelig unter Schlehen."
 
 [[verwechslungen]]
 slug = "maipilz"

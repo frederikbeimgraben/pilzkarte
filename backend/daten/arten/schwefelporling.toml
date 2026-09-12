@@ -14,7 +14,7 @@ synonyme = ["Sulphurina sulphurea", "Tyromyces sulphureus", "Sporotrichum versis
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schwefelporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -59,24 +59,26 @@ vorkommen = "An Laubbäumen, in höheren Lagen auch bei Lärche. Parasit oder Fo
 zeit = "Mai bis September."
 
 [[verwechslungen]]
-slug = "zimtfarbener-weichporling"
-unterschied = "Fleisch dickfleischig, weich und zimtbraun bis rosabraun, nicht gelb."
-
-[[verwechslungen]]
 slug = "duftender-goldporling"
 unterschied = "Liegt dem Holz flach auf, ohne abstehende Fächer, Myzel orangerot."
+eigenerUnterschied = "Bildet dachziegelige Konsolen mit Hutkante, wächst an Laubholz."
 
 [[verwechslungen]]
 slug = "leuchtender-weichporling"
 unterschied = "Flach am Substrat angewachsen, Fleisch gelblich bis orangerot, jung weich und saftig."
+eigenerUnterschied = "Hüte fächerförmig und dachziegelartig, gelb bis orange, Poren gelb, Geruch säuerlich obstartig."
+
+[[verwechslungen]]
+slug = "nadelholzschwefelporling"
+unterschied = "Sieht gleich aus, wächst aber an Nadelholz, meist Fichte und Tanne."
 
 [[verwechslungen]]
 slug = "riesenporling"
 unterschied = "Hut jung fast weiß, später hellbraun, Fleisch weiß und im Schnitt langsam braunschwarz anlaufend."
 
 [[verwechslungen]]
-slug = "nadelholzschwefelporling"
-unterschied = "Sieht gleich aus, wächst aber an Nadelholz, meist Fichte und Tanne."
+slug = "zimtfarbener-weichporling"
+unterschied = "Fleisch dickfleischig, weich und zimtbraun bis rosabraun, nicht gelb."
 
 [[links]]
 titel = "123pilzsuche.de"

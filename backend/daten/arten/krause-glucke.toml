@@ -13,7 +13,7 @@ weitereNamen = ["Fette Henne", "Bärenschädel"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KrauseGlucke.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 6.0, bis = 30.0, seltenBis = 50.0, einheit = "cm" }
@@ -53,24 +53,26 @@ vorkommen = "Parasit und Folgezersetzer am Wurzelgeflecht von Kiefern, seltener 
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "bauchwehkoralle"
-unterschied = "Korallenartig verzweigt statt kraus gelappt, Astspitzen mit lilarötlichen Zähnchen, Druckstellen braun bis rot."
-
-[[verwechslungen]]
-slug = "weinbraunverfaerbende-koralle"
-unterschied = "Korallenartig verzweigt, Fleisch an der Luft schnell rotbraun bis schwarzbraun, Geschmack stark bitter."
-
-[[verwechslungen]]
-slug = "breitblaettrige-glucke"
-unterschied = "Lappen breiter und hirnartig, an Laubholz, beim Kochen Waschküchengeruch."
-
-[[verwechslungen]]
 slug = "aestiger-stachelbart"
 unterschied = "Weiß, mit aufwärts gerichteten Ästen und Stacheln, an Totholz von Laubbäumen."
 
 [[verwechslungen]]
+slug = "bauchwehkoralle"
+unterschied = "Korallenartig verzweigt statt kraus gelappt, Astspitzen mit lilarötlichen Zähnchen, Druckstellen braun bis rot."
+eigenerUnterschied = "Blumenkohlartig gekräuselt statt verästelt, am Wurzelgeflecht von Kiefern."
+
+[[verwechslungen]]
+slug = "breitblaettrige-glucke"
+unterschied = "Lappen breiter und hirnartig, an Laubholz, beim Kochen Waschküchengeruch."
+eigenerUnterschied = "Schmalere, stärker gekrauste Lappen, wächst an Kiefer statt an Laubholz."
+
+[[verwechslungen]]
 slug = "gelbe-koralle"
 unterschied = "Gelb bis goldgelb, ästig verzweigt aus einem weißen Strunk, Astspitzen alt bitterlich."
+
+[[verwechslungen]]
+slug = "weinbraunverfaerbende-koralle"
+unterschied = "Korallenartig verzweigt, Fleisch an der Luft schnell rotbraun bis schwarzbraun, Geschmack stark bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

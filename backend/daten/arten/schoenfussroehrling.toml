@@ -12,7 +12,7 @@ weitereNamen = ["Hantling", "Dickfußröhrling", "Dickfuß", "Bitterpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schoenfussroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 18.0, einheit = "cm" }
@@ -59,16 +59,13 @@ vorkommen = "Symbiosepilz im Mischwald, gern im Nadelwald, auf saurem, nährstof
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-slug = "gallenroehrling"
-unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Fleisch blaut nicht, Geschmack sehr bitter."
+slug = "satansroehrling"
+unterschied = "Hut weißlich bis hellgrau, Röhrenmündungen karminrot, Stiel bauchig mit rotem Netz."
 
 [[verwechslungen]]
 slug = "wurzelnder-bitterroehrling"
 unterschied = "Hut grau bis weißgrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Stielbasis wurzelnd."
-
-[[verwechslungen]]
-slug = "satansroehrling"
-unterschied = "Hut weißlich bis hellgrau, Röhrenmündungen karminrot, Stiel bauchig mit rotem Netz."
+eigenerUnterschied = "Hut lehmgrau und samtig, Stiel zur Basis karminrot, Fleisch blaut sofort, Geruch nicht nach Maggi."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,4 +1,4 @@
-name = "Weinbraunverfärbende Koralle"
+name = "Weinbraune Koralle"
 lateinisch = "Ramaria bataillei"
 gruppe = "stachelbart"
 speisewert = "ungeniessbar"
@@ -9,11 +9,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "buche"]
 speisewertHinweis = "Ungenießbar wegen des stark bitterlichen Geschmacks."
 haeufigkeit = "selten"
-weitereNamen = ["Weinbraune Koralle", "Kalkbuchenwald-Koralle", "Batailles Koralle"]
+weitereNamen = ["Weinbraunverfärbende Koralle", "Kalkbuchenwald-Koralle", "Batailles Koralle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeinbrauneKoralle.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 15.0, einheit = "cm" }

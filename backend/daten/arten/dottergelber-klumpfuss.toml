@@ -12,7 +12,7 @@ synonyme = ["Cortinarius splendens var. meinhardii", "Cortinarius vitellinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DottergelberKlumpfuss.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -56,10 +56,6 @@ geschmack = "Mild."
 sporenpulver = "Rostbraun."
 vorkommen = "Symbiosepilz im Nadelwald, gern bei Fichte, auch bei Buche und Eiche, gern auf kalkreichem Boden."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "goldroehrling"
-unterschied = "Röhren statt Lamellen, Stiel mit Ring und ohne gerandete Knolle, Geruch angenehm."
 
 [[links]]
 titel = "123pilzsuche.de"

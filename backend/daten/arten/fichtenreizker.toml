@@ -15,7 +15,7 @@ synonyme = ["Lactarius deliciosus var. deterrimus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fichtenreizker.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
@@ -64,20 +64,19 @@ vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier bei Fichte."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "edelreizker"
-unterschied = "Milch bleibt karottenrot, Stiel mit orangefarbenen Grübchen, bei Kiefer."
+slug = "blaureizker"
+unterschied = "Hut graurosa bis rosa-lehmfarben, Lamellen laufen grünlich bis weinrot an."
+eigenerUnterschied = "Hut feucht stark schleimig und grünfleckig, Stiel ohne Grübchen, bei Fichte."
 
 [[verwechslungen]]
 slug = "lachsreizker"
 unterschied = "Hut genabelt bis trichterförmig, bei Tanne."
-
-[[verwechslungen]]
-slug = "blaureizker"
-unterschied = "Hut graurosa bis rosa-lehmfarben, Lamellen laufen grünlich bis weinrot an."
+eigenerUnterschied = "Hut mit kräftigen grünen Flecken vor allem in der Mitte, Stiel ohne Grübchen, bei Fichte."
 
 [[verwechslungen]]
 slug = "weinroter-reizker"
 unterschied = "Stiel weißlich bereift auf weinrotem Grund, Lamellen bei Verletzung dunkelbraun."
+eigenerUnterschied = "Bei Fichte, Stiel ohne Grübchen und ohne weinroten Grund, Milch karottenrot und erst nach etwa 15 Minuten weinrot."
 
 [[links]]
 titel = "123pilzsuche.de"

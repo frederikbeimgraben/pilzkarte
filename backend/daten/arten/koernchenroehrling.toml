@@ -15,7 +15,7 @@ synonyme = ["Boletus granulatus", "Ixocomus granulatus", "Boletus lactifluus", "
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koernchenroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -59,24 +59,21 @@ vorkommen = "Symbiosepilz bei Kiefer, auf kalkhaltigem oder saurem Boden, oft zu
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-slug = "ringloser-butterpilz"
-unterschied = "Stielbasis rosa, unter der abgezogenen Huthaut bleibt eine braune Faserung sichtbar."
-
-[[verwechslungen]]
-slug = "butterpilz"
-unterschied = "Stiel mit braunviolettem Ring."
-
-[[verwechslungen]]
 slug = "goldroehrling"
 unterschied = "Hut hellgelb, später orangerötlich, mit gelblichem Ring, Röhren auf Druck rosalila fleckend, bei Lärche."
 
 [[verwechslungen]]
-slug = "sandroehrling"
-unterschied = "Huthaut körnig filzig und matt, Röhren bräunlich bis rostgelb, Fleisch bei Verletzung blauend."
-
-[[verwechslungen]]
 slug = "mediterraner-roehrling"
 unterschied = "Röhren oft mit gelben Tröpfchen, Stielbasis rosaviolett, Myzelfäden rosa."
+
+[[verwechslungen]]
+slug = "ringloser-butterpilz"
+unterschied = "Stielbasis rosa, unter der abgezogenen Huthaut bleibt eine braune Faserung sichtbar."
+eigenerUnterschied = "Stiel oben mit milchigen Tröpfchen und Drüsenpunkten, Stielbasis nicht rosa."
+
+[[verwechslungen]]
+slug = "sandroehrling"
+unterschied = "Huthaut körnig filzig und matt, Röhren bräunlich bis rostgelb, Fleisch bei Verletzung blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

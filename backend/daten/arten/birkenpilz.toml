@@ -14,7 +14,7 @@ weitereNamen = ["Gemeiner Birkenpilz", "Langhaxen", "Graugrüner Birkenpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 16.0, seltenBis = 26.0, einheit = "cm" }
@@ -61,20 +61,20 @@ vorkommen = "Symbiosepilz bei Birke."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "roetender-birkenpilz"
-unterschied = "Fleisch läuft im Schnitt rosa bis korallenrot an."
+slug = "hainbuchenroehrling"
+unterschied = "Huthaut wie gehämmert runzelig, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila."
 
 [[verwechslungen]]
-slug = "vielverfaerbender-birkenpilz"
-unterschied = "Fleisch erst hellrosa, dann stark kornblumenblau."
+slug = "roetender-birkenpilz"
+unterschied = "Fleisch läuft im Schnitt rosa bis korallenrot an."
 
 [[verwechslungen]]
 slug = "schwarzhuetiger-birkenpilz"
 unterschied = "Hut dunkel schwarzbraun und feinsamtig, Stielbasis keulig und oft schwarz."
 
 [[verwechslungen]]
-slug = "hainbuchenroehrling"
-unterschied = "Huthaut wie gehämmert runzelig, Fleisch im Anschnitt erst rötlich, dann grauviolett bis schwarzlila."
+slug = "vielverfaerbender-birkenpilz"
+unterschied = "Fleisch erst hellrosa, dann stark kornblumenblau."
 
 [[links]]
 titel = "123pilzsuche.de"

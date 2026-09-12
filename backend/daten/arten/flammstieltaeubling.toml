@@ -1,4 +1,4 @@
-name = "Flammstieltäubling"
+name = "Flammenstieltäubling"
 lateinisch = "Russula rhodopus"
 gruppe = "taeubling"
 speisewert = "ungeniessbar"
@@ -10,12 +10,12 @@ baeume = ["fichte"]
 speisewertHinweis = "Brennend scharf und bitter. In Deutschland gefährdet."
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
-weitereNamen = ["Flammenstieltäubling"]
+weitereNamen = ["Flammstieltäubling"]
 synonyme = ["Russula rhodopoda"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flammstiel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -71,12 +71,12 @@ vorkommen = "Symbiosepilz in feuchten Nadelwäldern, oft im Moos saurer Bergwäl
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "kiefernspeitaeubling"
-unterschied = "Stiel rein weiß ohne rote Flammung, bei Kiefer."
-
-[[verwechslungen]]
 slug = "buchenspeitaeubling"
 unterschied = "Stiel weiß, Hut heller rot, im Laubwald bei Buche."
+
+[[verwechslungen]]
+slug = "kiefernspeitaeubling"
+unterschied = "Stiel rein weiß ohne rote Flammung, bei Kiefer."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -14,7 +14,7 @@ weitereNamen = ["Laubwald Anhängselröhrling", "Gelber Steinpilz", "Gelber Bron
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Anhaengselroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -63,14 +63,6 @@ vorkommen = "Symbiosepilz in Laubwäldern bei Buche, Eiche und Hasel, vereinzelt
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "wurzelnder-bitterroehrling"
-unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte."
-
-[[verwechslungen]]
-slug = "schoenfussroehrling"
-unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch blaut sofort."
-
-[[verwechslungen]]
 slug = "falscher-anhaengselroehrling"
 unterschied = "Röhren zitronengelb und nie blauend, Fleisch unter den Röhren schwefelgelb."
 
@@ -79,8 +71,16 @@ slug = "koenigsroehrling"
 unterschied = "Hut blutrot bis purpurrot statt ockerbraun."
 
 [[verwechslungen]]
+slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis rot, Fleisch blaut sofort."
+
+[[verwechslungen]]
 slug = "silberroehrling"
 unterschied = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau."
+
+[[verwechslungen]]
+slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte."
 
 [[links]]
 titel = "123pilzsuche.de"

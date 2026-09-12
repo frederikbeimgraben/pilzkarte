@@ -1,4 +1,4 @@
-name = "Fuchsiger Scheidenstreifling"
+name = "Rotbrauner Scheidenstreifling"
 lateinisch = "Amanita fulva"
 gruppe = "wulstling"
 speisewert = "essbar"
@@ -9,11 +9,11 @@ marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "birke"]
 speisewertHinweis = "Roh unverträglich. Nur für Sammler, die den Pantherpilz sicher trennen: jeden Fruchtkörper mit ganzer Stielbasis ausgraben und die Scheide prüfen."
-weitereNamen = ["Rotbrauner Scheidenstreifling", "Rotbrauner Streifling", "Gelbbräunlicher Scheidenstreifling"]
+weitereNamen = ["Fuchsiger Scheidenstreifling", "Rotbrauner Streifling", "Gelbbräunlicher Scheidenstreifling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerScheidens.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -69,24 +69,25 @@ vorkommen = "Symbiosepilz im Mischwald, meist Nadelwald, auf moorigen Böden."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "pantherpilz"
-unterschied = "Hut mit weißen Flocken, Stiel mit Ring und gerandeter Knolle."
-
-[[verwechslungen]]
-slug = "isabellfarbige-wulstling"
-unterschied = "Hut cremeweiß bis isabellfarben, Stiel rübenartig verdickt."
-
-[[verwechslungen]]
-slug = "grossscheidiger-scheidenstreifling"
-unterschied = "Hut braun bis lederbraun, Scheide auffallend groß."
+slug = "gelber-scheidenstreifling"
+unterschied = "Hut gelb bis orange, Stiel weiß genattert auf hellbraunem Grund."
+eigenerUnterschied = "Hut fuchsig orangebraun statt gelb, Stiel ohne die deutliche Natterung."
 
 [[verwechslungen]]
 slug = "grauhaeutiger-scheidenstreifling"
 unterschied = "Hut graubraun bis grauocker, Stiel graubraun genattert."
 
 [[verwechslungen]]
-slug = "gelber-scheidenstreifling"
-unterschied = "Hut gelb bis orange, Stiel weiß genattert auf hellbraunem Grund."
+slug = "grossscheidiger-scheidenstreifling"
+unterschied = "Hut braun bis lederbraun, Scheide auffallend groß."
+
+[[verwechslungen]]
+slug = "isabellfarbige-wulstling"
+unterschied = "Hut cremeweiß bis isabellfarben, Stiel rübenartig verdickt."
+
+[[verwechslungen]]
+slug = "pantherpilz"
+unterschied = "Hut mit weißen Flocken, Stiel mit Ring und gerandeter Knolle."
 
 [[links]]
 titel = "123pilzsuche.de"

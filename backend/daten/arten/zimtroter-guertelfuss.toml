@@ -11,7 +11,7 @@ synonyme = ["Telamonia praesignis", "Telamonia macropus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZimtroterGuertelfuss.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
@@ -51,10 +51,6 @@ geschmack = "Mild."
 sporenpulver = "Rostbraun."
 vorkommen = "Symbiosepilz im Mischwald, gern im Nadelwald bei Fichte oder Tanne, gern auf moosigem, kalkreichem Boden."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "reifpilz"
-unterschied = "Hut mit weißem Reifüberzug, Stiel mit häutigem Ring statt wolliger Gürtelung."
 
 [[links]]
 titel = "123pilzsuche.de"

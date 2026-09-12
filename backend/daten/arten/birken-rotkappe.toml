@@ -14,7 +14,7 @@ weitereNamen = ["Birkenrotkappe", "Heiderotkappe", "Schwarzschuppiger Birkenröh
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenrotkappe2004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 22.0, einheit = "cm" }
@@ -63,20 +63,24 @@ vorkommen = "Symbiosepilz bei Birke, in Deutschland häufig."
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-slug = "fichtenrotkappe"
-unterschied = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
-
-[[verwechslungen]]
 slug = "eichenrotkappe"
 unterschied = "Stielschuppen rötlich bis rotgrau auf weißem Grund, Huthaut meist verkürzt."
+eigenerUnterschied = "Stielschuppen schwärzlich statt rötlich, wächst bei Birke."
 
 [[verwechslungen]]
 slug = "espen-rotkappe"
 unterschied = "Stielschuppen jung weißlich, später orangebraun, Fleisch graulila."
+eigenerUnterschied = "Stielschuppen schwärzlich statt orangebraun, bei Birke."
 
 [[verwechslungen]]
-slug = "kiefernrotkappe"
+slug = "fichtenrotkappe"
+unterschied = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
+eigenerUnterschied = "Stielschuppen jung weiß bis hellbraun, bei Birke."
+
+[[verwechslungen]]
+slug = "fuchsrotkappe"
 unterschied = "Hut fuchsrot bis rotbraun und samtig, Schuppen erst hellbraun, dann rötlich."
+eigenerUnterschied = "Stielschuppen jung weiß, bei Birke."
 
 [[links]]
 titel = "123pilzsuche.de"

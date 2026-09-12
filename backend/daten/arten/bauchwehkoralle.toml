@@ -15,7 +15,7 @@ synonyme = ["Ramaria pallida", "Ramaria roseola", "Clavaria pallida"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BauchwehkoralleGiftig1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 22.0, einheit = "cm" }
@@ -55,12 +55,9 @@ vorkommen = "Symbiosepilz im Misch- und Laubwald, selten im Nadelwald, gern bei 
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-slug = "krause-glucke"
-unterschied = "Blumenkohlartig gekräuselt statt verästelt, am Wurzelgeflecht von Kiefern."
-
-[[verwechslungen]]
 slug = "breitblaettrige-glucke"
 unterschied = "Hirnartig breit gekräuselte Lappen, an den Wurzeln von Laubbäumen."
+eigenerUnterschied = "Korallenartig verzweigt statt gekräuselt, Äste mit rötlichen Spitzen."
 
 [[links]]
 titel = "123pilzsuche.de"
