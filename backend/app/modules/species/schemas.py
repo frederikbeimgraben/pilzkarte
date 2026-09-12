@@ -630,6 +630,9 @@ class ResolvedLookalike(BaseSchema):
 
     ``unterschied`` bleibt leer, solange nur die andere Seite einen Satz zu dem
     Paar traegt. Der Name allein ist dann immer noch die Warnung, die zaehlt.
+
+    Die Hutfarben stehen mit dabei. Die Artseite zeigt sie als Feld vor dem
+    Namen, und fuenf Profile nachzuladen fuer fuenf Farbflaechen waere Unsinn.
     """
 
     slug: str
@@ -640,6 +643,11 @@ class ResolvedLookalike(BaseSchema):
     )
     edibility: Edibility = Field(validation_alias="speisewert", serialization_alias="speisewert")
     warning: str | None = Field(validation_alias="warnung", serialization_alias="warnung")
+    cap_colours: list[Colour] = Field(
+        validation_alias="hutFarben",
+        serialization_alias="hutFarben",
+        default_factory=list["Colour"],
+    )
 
 
 class ReagentEntry(BaseSchema):

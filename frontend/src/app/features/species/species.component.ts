@@ -1,7 +1,14 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, input } from '@angular/core';
 import { Router } from '@angular/router';
 import { BadgeComponent, CardComponent } from '@stupa-makers/ui-kit';
-import type { Species, Entwicklung, Reagenzeintrag, SeasonCurveData, Link } from '../../core/api/models';
+import type {
+  Species,
+  Entwicklung,
+  Farbe,
+  Reagenzeintrag,
+  SeasonCurveData,
+  Link,
+} from '../../core/api/models';
 import { TIER_WEAKEST } from '../../core/api/models';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -101,6 +108,10 @@ interface ConfusableRow {
   route: string;
   /** Der Weg zur Gegenüberstellung beider Arten. */
   vergleich: string;
+  /** Die Hutfarben des Partners. Leer, wo die Quelle keine nennt. */
+  farben: Farbe[];
+  /** Die Beschriftung des Farbfelds für Hilfsmittel. */
+  farbenLabel: string;
 }
 
 /** Eine Zeile der Fruchtschicht: das Wort links, der Wert rechts. */
@@ -316,6 +327,10 @@ export class SpeciesComponent {
         badge: this.essbar(confusable.speisewert),
         route: `/arten/${confusable.slug}`,
         vergleich: `/arten/${art.slug}/vergleich/${confusable.slug}`,
+        farben: confusable.hutFarben,
+        farbenLabel: this.i18n.translate('art.farbe.beschriftung', {
+          farben: confusable.hutFarben.map((farbe) => farbe.name).join(', '),
+        }),
       })),
       links: art.links,
       geprueft: this.i18n.translate('art.geprueft', {
