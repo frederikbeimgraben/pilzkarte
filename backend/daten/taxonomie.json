@@ -1,0 +1,1453 @@
+{
+ "erzeugtAm": "2026-09-12",
+ "quellen": {
+  "einordnung": "https://api.gbif.org/v1/species/match",
+  "namen": "https://www.123pilzsuche.de/"
+ },
+ "raenge": [
+  "gattung",
+  "familie",
+  "ordnung",
+  "klasse"
+ ],
+ "taxa": [
+  {
+   "slug": "agaricus",
+   "rang": "gattung",
+   "lateinisch": "Agaricus",
+   "name": "Champignon-Egerlinge",
+   "elter": "agaricaceae",
+   "belege": {
+    "Champignon-Egerlinge": 10
+   }
+  },
+  {
+   "slug": "albatrellus",
+   "rang": "gattung",
+   "lateinisch": "Albatrellus",
+   "name": "Albatrellus",
+   "elter": "albatrellaceae"
+  },
+  {
+   "slug": "aleuria",
+   "rang": "gattung",
+   "lateinisch": "Aleuria",
+   "name": "Aleuria",
+   "elter": "pyronemataceae"
+  },
+  {
+   "slug": "amanita",
+   "rang": "gattung",
+   "lateinisch": "Amanita",
+   "name": "Wulstlinge",
+   "elter": "amanitaceae",
+   "belege": {
+    "Wulstlinge": 9
+   }
+  },
+  {
+   "slug": "aphroditeola",
+   "rang": "gattung",
+   "lateinisch": "Aphroditeola",
+   "name": "Aphroditeola",
+   "elter": "hygrophoraceae"
+  },
+  {
+   "slug": "apioperdon",
+   "rang": "gattung",
+   "lateinisch": "Apioperdon",
+   "name": "Apioperdon",
+   "elter": "lycoperdaceae"
+  },
+  {
+   "slug": "armillaria",
+   "rang": "gattung",
+   "lateinisch": "Armillaria",
+   "name": "Armillaria",
+   "elter": "physalacriaceae"
+  },
+  {
+   "slug": "atractosporocybe",
+   "rang": "gattung",
+   "lateinisch": "Atractosporocybe",
+   "name": "Atractosporocybe",
+   "elter": "tricholomataceae"
+  },
+  {
+   "slug": "aureoboletus",
+   "rang": "gattung",
+   "lateinisch": "Aureoboletus",
+   "name": "Goldporröhrlinge",
+   "elter": "boletaceae",
+   "belege": {
+    "Goldporröhrlinge": 1
+   }
+  },
+  {
+   "slug": "auricularia",
+   "rang": "gattung",
+   "lateinisch": "Auricularia",
+   "name": "Auricularia",
+   "elter": "auriculariaceae"
+  },
+  {
+   "slug": "auriporia",
+   "rang": "gattung",
+   "lateinisch": "Auriporia",
+   "name": "Auriporia",
+   "elter": "fomitopsidaceae"
+  },
+  {
+   "slug": "boletus",
+   "rang": "gattung",
+   "lateinisch": "Boletus",
+   "name": "Boletus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "bondarzewia",
+   "rang": "gattung",
+   "lateinisch": "Bondarzewia",
+   "name": "Bondarzewia",
+   "elter": "bondarzewiaceae"
+  },
+  {
+   "slug": "butyriboletus",
+   "rang": "gattung",
+   "lateinisch": "Butyriboletus",
+   "name": "Butyriboletus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "caloboletus",
+   "rang": "gattung",
+   "lateinisch": "Caloboletus",
+   "name": "Caloboletus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "calocybe",
+   "rang": "gattung",
+   "lateinisch": "Calocybe",
+   "name": "Calocybe",
+   "elter": "lyophyllaceae"
+  },
+  {
+   "slug": "calvatia",
+   "rang": "gattung",
+   "lateinisch": "Calvatia",
+   "name": "Calvatia",
+   "elter": "lycoperdaceae"
+  },
+  {
+   "slug": "cantharellus",
+   "rang": "gattung",
+   "lateinisch": "Cantharellus",
+   "name": "Cantharellus",
+   "elter": "hydnaceae"
+  },
+  {
+   "slug": "cerioporus",
+   "rang": "gattung",
+   "lateinisch": "Cerioporus",
+   "name": "Cerioporus",
+   "elter": "polyporaceae"
+  },
+  {
+   "slug": "chlorophyllum",
+   "rang": "gattung",
+   "lateinisch": "Chlorophyllum",
+   "name": "Chlorophyllum",
+   "elter": "agaricaceae"
+  },
+  {
+   "slug": "chroogomphus",
+   "rang": "gattung",
+   "lateinisch": "Chroogomphus",
+   "name": "Chroogomphus",
+   "elter": "gomphidiaceae"
+  },
+  {
+   "slug": "chrysomphalina",
+   "rang": "gattung",
+   "lateinisch": "Chrysomphalina",
+   "name": "Nabelinge",
+   "elter": "hygrophoraceae",
+   "belege": {
+    "Nabelinge": 1,
+    "Holznabelinge": 1
+   }
+  },
+  {
+   "slug": "climacodon",
+   "rang": "gattung",
+   "lateinisch": "Climacodon",
+   "name": "Stachelseitlinge",
+   "elter": "meruliaceae",
+   "belege": {
+    "Stachelseitlinge": 1
+   }
+  },
+  {
+   "slug": "clitocybe",
+   "rang": "gattung",
+   "lateinisch": "Clitocybe",
+   "name": "Clitocybe",
+   "elter": "tricholomataceae"
+  },
+  {
+   "slug": "clitopilus",
+   "rang": "gattung",
+   "lateinisch": "Clitopilus",
+   "name": "Räslinge",
+   "elter": "entolomataceae",
+   "belege": {
+    "Räslinge": 1
+   }
+  },
+  {
+   "slug": "coprinellus",
+   "rang": "gattung",
+   "lateinisch": "Coprinellus",
+   "name": "Coprinellus",
+   "elter": "psathyrellaceae"
+  },
+  {
+   "slug": "coprinopsis",
+   "rang": "gattung",
+   "lateinisch": "Coprinopsis",
+   "name": "Coprinopsis",
+   "elter": "psathyrellaceae"
+  },
+  {
+   "slug": "coprinus",
+   "rang": "gattung",
+   "lateinisch": "Coprinus",
+   "name": "Coprinus",
+   "elter": "agaricaceae"
+  },
+  {
+   "slug": "cortinarius",
+   "rang": "gattung",
+   "lateinisch": "Cortinarius",
+   "name": "Schleierlinge",
+   "elter": "cortinariaceae",
+   "belege": {
+    "Schleierlinge": 4
+   }
+  },
+  {
+   "slug": "craterellus",
+   "rang": "gattung",
+   "lateinisch": "Craterellus",
+   "name": "Craterellus",
+   "elter": "hydnaceae"
+  },
+  {
+   "slug": "cyphella",
+   "rang": "gattung",
+   "lateinisch": "Cyphella",
+   "name": "Basidiobecherlinge",
+   "elter": "cyphellaceae",
+   "belege": {
+    "Basidiobecherlinge": 1
+   }
+  },
+  {
+   "slug": "desarmillaria",
+   "rang": "gattung",
+   "lateinisch": "Desarmillaria",
+   "name": "Desarmillaria",
+   "elter": "physalacriaceae"
+  },
+  {
+   "slug": "discina",
+   "rang": "gattung",
+   "lateinisch": "Discina",
+   "name": "Lorcheln",
+   "elter": "discinaceae",
+   "belege": {
+    "Lorcheln": 1
+   }
+  },
+  {
+   "slug": "echinoderma",
+   "rang": "gattung",
+   "lateinisch": "Echinoderma",
+   "name": "Stachelschirmlinge",
+   "elter": "agaricaceae",
+   "belege": {
+    "Stachelschirmlinge": 1
+   }
+  },
+  {
+   "slug": "entoloma",
+   "rang": "gattung",
+   "lateinisch": "Entoloma",
+   "name": "Rötlinge",
+   "elter": "entolomataceae",
+   "belege": {
+    "Rötlinge": 5
+   }
+  },
+  {
+   "slug": "exidia",
+   "rang": "gattung",
+   "lateinisch": "Exidia",
+   "name": "Drüslinge",
+   "elter": "auriculariaceae",
+   "belege": {
+    "Drüslinge": 1
+   }
+  },
+  {
+   "slug": "faerberia",
+   "rang": "gattung",
+   "lateinisch": "Faerberia",
+   "name": "Kohlenleistling",
+   "elter": "polyporaceae",
+   "belege": {
+    "Kohlenleistling": 1
+   }
+  },
+  {
+   "slug": "fistulina",
+   "rang": "gattung",
+   "lateinisch": "Fistulina",
+   "name": "Fistulina",
+   "elter": "fistulinaceae"
+  },
+  {
+   "slug": "flammulina",
+   "rang": "gattung",
+   "lateinisch": "Flammulina",
+   "name": "Samtfußrüblinge",
+   "elter": "physalacriaceae",
+   "belege": {
+    "Samtfußrüblinge": 1
+   }
+  },
+  {
+   "slug": "fomitiporia",
+   "rang": "gattung",
+   "lateinisch": "Fomitiporia",
+   "name": "Feuerschwämme",
+   "elter": "hymenochaetaceae",
+   "belege": {
+    "Feuerschwämme": 1
+   }
+  },
+  {
+   "slug": "galerina",
+   "rang": "gattung",
+   "lateinisch": "Galerina",
+   "name": "Häublinge",
+   "elter": "hymenogastraceae",
+   "belege": {
+    "Häublinge": 1
+   }
+  },
+  {
+   "slug": "geastrum",
+   "rang": "gattung",
+   "lateinisch": "Geastrum",
+   "name": "Geastrum",
+   "elter": "geastraceae"
+  },
+  {
+   "slug": "gomphidius",
+   "rang": "gattung",
+   "lateinisch": "Gomphidius",
+   "name": "Gomphidius",
+   "elter": "gomphidiaceae"
+  },
+  {
+   "slug": "gomphus",
+   "rang": "gattung",
+   "lateinisch": "Gomphus",
+   "name": "Schweinsohr",
+   "elter": "gomphaceae",
+   "belege": {
+    "Schweinsohr": 1
+   }
+  },
+  {
+   "slug": "grifola",
+   "rang": "gattung",
+   "lateinisch": "Grifola",
+   "name": "Grifola",
+   "elter": "grifolaceae"
+  },
+  {
+   "slug": "gymnopilus",
+   "rang": "gattung",
+   "lateinisch": "Gymnopilus",
+   "name": "Flämmlinge",
+   "elter": "hymenogastraceae",
+   "belege": {
+    "Flämmlinge": 3
+   }
+  },
+  {
+   "slug": "gymnopus",
+   "rang": "gattung",
+   "lateinisch": "Gymnopus",
+   "name": "Gymnopus",
+   "elter": "omphalotaceae"
+  },
+  {
+   "slug": "gyrodon",
+   "rang": "gattung",
+   "lateinisch": "Gyrodon",
+   "name": "Erlengrüblinge",
+   "elter": "paxillaceae",
+   "belege": {
+    "Erlengrüblinge": 1
+   }
+  },
+  {
+   "slug": "hapalopilus",
+   "rang": "gattung",
+   "lateinisch": "Hapalopilus",
+   "name": "Hapalopilus",
+   "elter": "phanerochaetaceae"
+  },
+  {
+   "slug": "hericium",
+   "rang": "gattung",
+   "lateinisch": "Hericium",
+   "name": "Hericium",
+   "elter": "hericiaceae"
+  },
+  {
+   "slug": "hydnum",
+   "rang": "gattung",
+   "lateinisch": "Hydnum",
+   "name": "Stoppelpilze",
+   "elter": "hydnaceae",
+   "belege": {
+    "Stoppelpilze": 4
+   }
+  },
+  {
+   "slug": "hygrocybe",
+   "rang": "gattung",
+   "lateinisch": "Hygrocybe",
+   "name": "Saftlinge",
+   "elter": "hygrophoraceae",
+   "belege": {
+    "Saftlinge": 1
+   }
+  },
+  {
+   "slug": "hygrophoropsis",
+   "rang": "gattung",
+   "lateinisch": "Hygrophoropsis",
+   "name": "Hygrophoropsis",
+   "elter": "hygrophoropsidaceae"
+  },
+  {
+   "slug": "hygrophorus",
+   "rang": "gattung",
+   "lateinisch": "Hygrophorus",
+   "name": "Schnecklinge",
+   "elter": "hygrophoraceae",
+   "belege": {
+    "Schnecklinge": 5
+   }
+  },
+  {
+   "slug": "hypholoma",
+   "rang": "gattung",
+   "lateinisch": "Hypholoma",
+   "name": "Schwefelköpfe",
+   "elter": "strophariaceae",
+   "belege": {
+    "Schwefelköpfe": 2
+   }
+  },
+  {
+   "slug": "imleria",
+   "rang": "gattung",
+   "lateinisch": "Imleria",
+   "name": "Imleria",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "imperator",
+   "rang": "gattung",
+   "lateinisch": "Imperator",
+   "name": "Imperator",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "infundibulicybe",
+   "rang": "gattung",
+   "lateinisch": "Infundibulicybe",
+   "name": "Infundibulicybe",
+   "elter": "tricholomataceae"
+  },
+  {
+   "slug": "inocybe",
+   "rang": "gattung",
+   "lateinisch": "Inocybe",
+   "name": "Inocybe",
+   "elter": "inocybaceae"
+  },
+  {
+   "slug": "inonotus",
+   "rang": "gattung",
+   "lateinisch": "Inonotus",
+   "name": "Inonotus",
+   "elter": "hymenochaetaceae"
+  },
+  {
+   "slug": "inosperma",
+   "rang": "gattung",
+   "lateinisch": "Inosperma",
+   "name": "Inosperma",
+   "elter": "inocybaceae"
+  },
+  {
+   "slug": "jahnoporus",
+   "rang": "gattung",
+   "lateinisch": "Jahnoporus",
+   "name": "Jahnoporus",
+   "elter": "dacryobolaceae"
+  },
+  {
+   "slug": "kuehneromyces",
+   "rang": "gattung",
+   "lateinisch": "Kuehneromyces",
+   "name": "Kuehneromyces",
+   "elter": "strophariaceae"
+  },
+  {
+   "slug": "lactarius",
+   "rang": "gattung",
+   "lateinisch": "Lactarius",
+   "name": "Milchlinge",
+   "elter": "russulaceae",
+   "belege": {
+    "Milchlinge": 11,
+    "Reizker": 6
+   }
+  },
+  {
+   "slug": "lactifluus",
+   "rang": "gattung",
+   "lateinisch": "Lactifluus",
+   "name": "Lactifluus",
+   "elter": "russulaceae"
+  },
+  {
+   "slug": "laetiporus",
+   "rang": "gattung",
+   "lateinisch": "Laetiporus",
+   "name": "Laetiporus",
+   "elter": "laetiporaceae"
+  },
+  {
+   "slug": "leccinellum",
+   "rang": "gattung",
+   "lateinisch": "Leccinellum",
+   "name": "Leccinellum",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "leccinum",
+   "rang": "gattung",
+   "lateinisch": "Leccinum",
+   "name": "Raufußröhrlinge",
+   "elter": "boletaceae",
+   "belege": {
+    "Raufußröhrlinge": 5
+   }
+  },
+  {
+   "slug": "lepiota",
+   "rang": "gattung",
+   "lateinisch": "Lepiota",
+   "name": "Lepiota",
+   "elter": "agaricaceae"
+  },
+  {
+   "slug": "lepista",
+   "rang": "gattung",
+   "lateinisch": "Lepista",
+   "name": "Rötelritterling",
+   "elter": "tricholomataceae",
+   "belege": {
+    "Rötelritterling": 4
+   }
+  },
+  {
+   "slug": "leucoagaricus",
+   "rang": "gattung",
+   "lateinisch": "Leucoagaricus",
+   "name": "Egerlingsschirmlinge",
+   "elter": "agaricaceae",
+   "belege": {
+    "Egerlingsschirmlinge": 5
+   }
+  },
+  {
+   "slug": "leucopaxillus",
+   "rang": "gattung",
+   "lateinisch": "Leucopaxillus",
+   "name": "Krempentrichterlinge",
+   "elter": "tricholomataceae",
+   "belege": {
+    "Krempentrichterlinge": 1,
+    "Krempenritterlinge": 1
+   }
+  },
+  {
+   "slug": "lycoperdon",
+   "rang": "gattung",
+   "lateinisch": "Lycoperdon",
+   "name": "Lycoperdon",
+   "elter": "lycoperdaceae"
+  },
+  {
+   "slug": "lyophyllum",
+   "rang": "gattung",
+   "lateinisch": "Lyophyllum",
+   "name": "Raslinge",
+   "elter": "lyophyllaceae",
+   "belege": {
+    "Raslinge": 3
+   }
+  },
+  {
+   "slug": "macrolepiota",
+   "rang": "gattung",
+   "lateinisch": "Macrolepiota",
+   "name": "Macrolepiota",
+   "elter": "agaricaceae"
+  },
+  {
+   "slug": "marasmius",
+   "rang": "gattung",
+   "lateinisch": "Marasmius",
+   "name": "Schwindlinge",
+   "elter": "marasmiaceae",
+   "belege": {
+    "Schwindlinge": 2
+   }
+  },
+  {
+   "slug": "melanoleuca",
+   "rang": "gattung",
+   "lateinisch": "Melanoleuca",
+   "name": "Weichritterlinge",
+   "elter": "tricholomataceae",
+   "belege": {
+    "Weichritterlinge": 1
+   }
+  },
+  {
+   "slug": "meripilus",
+   "rang": "gattung",
+   "lateinisch": "Meripilus",
+   "name": "Meripilus",
+   "elter": "meripilaceae"
+  },
+  {
+   "slug": "mitrophora",
+   "rang": "gattung",
+   "lateinisch": "Mitrophora",
+   "name": "Mitrophora",
+   "elter": "morchellaceae"
+  },
+  {
+   "slug": "morchella",
+   "rang": "gattung",
+   "lateinisch": "Morchella",
+   "name": "Morchella",
+   "elter": "morchellaceae"
+  },
+  {
+   "slug": "mucidula",
+   "rang": "gattung",
+   "lateinisch": "Mucidula",
+   "name": "Schleimrüblinge",
+   "elter": "physalacriaceae",
+   "belege": {
+    "Schleimrüblinge": 1
+   }
+  },
+  {
+   "slug": "mucronella",
+   "rang": "gattung",
+   "lateinisch": "Mucronella",
+   "name": "Stachelpilze",
+   "elter": "clavariaceae",
+   "belege": {
+    "Stachelpilze": 1
+   }
+  },
+  {
+   "slug": "neoboletus",
+   "rang": "gattung",
+   "lateinisch": "Neoboletus",
+   "name": "Neoboletus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "neolentinus",
+   "rang": "gattung",
+   "lateinisch": "Neolentinus",
+   "name": "Knäuelinge",
+   "elter": "gloeophyllaceae",
+   "belege": {
+    "Knäuelinge": 2
+   }
+  },
+  {
+   "slug": "omphalotus",
+   "rang": "gattung",
+   "lateinisch": "Omphalotus",
+   "name": "Omphalotus",
+   "elter": "omphalotaceae"
+  },
+  {
+   "slug": "osteina",
+   "rang": "gattung",
+   "lateinisch": "Osteina",
+   "name": "Hartporlinge",
+   "elter": "dacryobolaceae",
+   "belege": {
+    "Hartporlinge": 1
+   }
+  },
+  {
+   "slug": "panellus",
+   "rang": "gattung",
+   "lateinisch": "Panellus",
+   "name": "Muschelinge",
+   "elter": "sarcomyxaceae",
+   "belege": {
+    "Muschelinge": 1
+   }
+  },
+  {
+   "slug": "pholiota",
+   "rang": "gattung",
+   "lateinisch": "Pholiota",
+   "name": "Schüpplinge",
+   "elter": "strophariaceae",
+   "belege": {
+    "Schüpplinge": 4
+   }
+  },
+  {
+   "slug": "piptoporus",
+   "rang": "gattung",
+   "lateinisch": "Piptoporus",
+   "name": "Piptoporus",
+   "elter": "fomitopsidaceae"
+  },
+  {
+   "slug": "pleurocybella",
+   "rang": "gattung",
+   "lateinisch": "Pleurocybella",
+   "name": "Pleurocybella",
+   "elter": "marasmiaceae"
+  },
+  {
+   "slug": "pleurotus",
+   "rang": "gattung",
+   "lateinisch": "Pleurotus",
+   "name": "Pleurotus",
+   "elter": "pleurotaceae"
+  },
+  {
+   "slug": "pluteus",
+   "rang": "gattung",
+   "lateinisch": "Pluteus",
+   "name": "Dachpilze",
+   "elter": "pluteaceae",
+   "belege": {
+    "Dachpilze": 3
+   }
+  },
+  {
+   "slug": "polyporus",
+   "rang": "gattung",
+   "lateinisch": "Polyporus",
+   "name": "Polyporus",
+   "elter": "polyporaceae"
+  },
+  {
+   "slug": "pseudocraterellus",
+   "rang": "gattung",
+   "lateinisch": "Pseudocraterellus",
+   "name": "Pseudocraterellus",
+   "elter": "hydnaceae"
+  },
+  {
+   "slug": "pseudoinonotus",
+   "rang": "gattung",
+   "lateinisch": "Pseudoinonotus",
+   "name": "Pseudoinonotus",
+   "elter": "hymenochaetaceae"
+  },
+  {
+   "slug": "pycnoporellus",
+   "rang": "gattung",
+   "lateinisch": "Pycnoporellus",
+   "name": "Pycnoporellus",
+   "elter": "pycnoporellaceae"
+  },
+  {
+   "slug": "ramaria",
+   "rang": "gattung",
+   "lateinisch": "Ramaria",
+   "name": "Korallen",
+   "elter": "gomphaceae",
+   "belege": {
+    "Korallen": 3
+   }
+  },
+  {
+   "slug": "rubroboletus",
+   "rang": "gattung",
+   "lateinisch": "Rubroboletus",
+   "name": "Rubroboletus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "russula",
+   "rang": "gattung",
+   "lateinisch": "Russula",
+   "name": "Täublinge",
+   "elter": "russulaceae",
+   "belege": {
+    "Täublinge": 16
+   }
+  },
+  {
+   "slug": "sarcodon",
+   "rang": "gattung",
+   "lateinisch": "Sarcodon",
+   "name": "Sarcodon",
+   "elter": "bankeraceae"
+  },
+  {
+   "slug": "sarcoscypha",
+   "rang": "gattung",
+   "lateinisch": "Sarcoscypha",
+   "name": "Kelchbecherlinge",
+   "elter": "sarcoscyphaceae",
+   "belege": {
+    "Kelchbecherlinge": 3
+   }
+  },
+  {
+   "slug": "schizophyllum",
+   "rang": "gattung",
+   "lateinisch": "Schizophyllum",
+   "name": "Schizophyllum",
+   "elter": "schizophyllaceae"
+  },
+  {
+   "slug": "sparassis",
+   "rang": "gattung",
+   "lateinisch": "Sparassis",
+   "name": "Glucken",
+   "elter": "sparassidaceae",
+   "belege": {
+    "Glucken": 2
+   }
+  },
+  {
+   "slug": "suillellus",
+   "rang": "gattung",
+   "lateinisch": "Suillellus",
+   "name": "Suillellus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "suillus",
+   "rang": "gattung",
+   "lateinisch": "Suillus",
+   "name": "Schmierröhrlinge",
+   "elter": "suillaceae",
+   "belege": {
+    "Schmierröhrlinge": 8
+   }
+  },
+  {
+   "slug": "tarzetta",
+   "rang": "gattung",
+   "lateinisch": "Tarzetta",
+   "name": "Tarzetta",
+   "elter": "tarzettaceae"
+  },
+  {
+   "slug": "tricholoma",
+   "rang": "gattung",
+   "lateinisch": "Tricholoma",
+   "name": "Ritterlinge",
+   "elter": "tricholomataceae",
+   "belege": {
+    "Ritterlinge": 11,
+    "Erdritterlinge": 6
+   }
+  },
+  {
+   "slug": "tylopilus",
+   "rang": "gattung",
+   "lateinisch": "Tylopilus",
+   "name": "Rosasporröhrlinge",
+   "elter": "boletaceae",
+   "belege": {
+    "Rosasporröhrlinge": 1
+   }
+  },
+  {
+   "slug": "urnula",
+   "rang": "gattung",
+   "lateinisch": "Urnula",
+   "name": "Urnula",
+   "elter": "sarcosomataceae"
+  },
+  {
+   "slug": "vascellum",
+   "rang": "gattung",
+   "lateinisch": "Vascellum",
+   "name": "Vascellum",
+   "elter": "lycoperdaceae"
+  },
+  {
+   "slug": "verpa",
+   "rang": "gattung",
+   "lateinisch": "Verpa",
+   "name": "Schlauchpilze",
+   "elter": "morchellaceae",
+   "belege": {
+    "Schlauchpilze": 2
+   }
+  },
+  {
+   "slug": "xerocomellus",
+   "rang": "gattung",
+   "lateinisch": "Xerocomellus",
+   "name": "Xerocomellus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "xerocomus",
+   "rang": "gattung",
+   "lateinisch": "Xerocomus",
+   "name": "Xerocomus",
+   "elter": "boletaceae"
+  },
+  {
+   "slug": "agaricaceae",
+   "rang": "familie",
+   "lateinisch": "Agaricaceae",
+   "name": "Agaricaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "albatrellaceae",
+   "rang": "familie",
+   "lateinisch": "Albatrellaceae",
+   "name": "Albatrellaceae",
+   "elter": "russulales"
+  },
+  {
+   "slug": "amanitaceae",
+   "rang": "familie",
+   "lateinisch": "Amanitaceae",
+   "name": "Amanitaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "auriculariaceae",
+   "rang": "familie",
+   "lateinisch": "Auriculariaceae",
+   "name": "Auriculariaceae",
+   "elter": "auriculariales"
+  },
+  {
+   "slug": "bankeraceae",
+   "rang": "familie",
+   "lateinisch": "Bankeraceae",
+   "name": "Bankeraceae",
+   "elter": "thelephorales"
+  },
+  {
+   "slug": "boletaceae",
+   "rang": "familie",
+   "lateinisch": "Boletaceae",
+   "name": "Boletaceae",
+   "elter": "boletales"
+  },
+  {
+   "slug": "bondarzewiaceae",
+   "rang": "familie",
+   "lateinisch": "Bondarzewiaceae",
+   "name": "Bondarzewiaceae",
+   "elter": "russulales"
+  },
+  {
+   "slug": "clavariaceae",
+   "rang": "familie",
+   "lateinisch": "Clavariaceae",
+   "name": "Clavariaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "cortinariaceae",
+   "rang": "familie",
+   "lateinisch": "Cortinariaceae",
+   "name": "Cortinariaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "cyphellaceae",
+   "rang": "familie",
+   "lateinisch": "Cyphellaceae",
+   "name": "Cyphellaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "dacryobolaceae",
+   "rang": "familie",
+   "lateinisch": "Dacryobolaceae",
+   "name": "Dacryobolaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "discinaceae",
+   "rang": "familie",
+   "lateinisch": "Discinaceae",
+   "name": "Discinaceae",
+   "elter": "pezizales"
+  },
+  {
+   "slug": "entolomataceae",
+   "rang": "familie",
+   "lateinisch": "Entolomataceae",
+   "name": "Entolomataceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "fistulinaceae",
+   "rang": "familie",
+   "lateinisch": "Fistulinaceae",
+   "name": "Fistulinaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "fomitopsidaceae",
+   "rang": "familie",
+   "lateinisch": "Fomitopsidaceae",
+   "name": "Fomitopsidaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "geastraceae",
+   "rang": "familie",
+   "lateinisch": "Geastraceae",
+   "name": "Geastraceae",
+   "elter": "geastrales"
+  },
+  {
+   "slug": "gloeophyllaceae",
+   "rang": "familie",
+   "lateinisch": "Gloeophyllaceae",
+   "name": "Gloeophyllaceae",
+   "elter": "gloeophyllales"
+  },
+  {
+   "slug": "gomphaceae",
+   "rang": "familie",
+   "lateinisch": "Gomphaceae",
+   "name": "Gomphaceae",
+   "elter": "gomphales"
+  },
+  {
+   "slug": "gomphidiaceae",
+   "rang": "familie",
+   "lateinisch": "Gomphidiaceae",
+   "name": "Schmierlinge",
+   "elter": "boletales",
+   "belege": {
+    "Schmierlinge": 4
+   }
+  },
+  {
+   "slug": "grifolaceae",
+   "rang": "familie",
+   "lateinisch": "Grifolaceae",
+   "name": "Grifolaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "hericiaceae",
+   "rang": "familie",
+   "lateinisch": "Hericiaceae",
+   "name": "Hericiaceae",
+   "elter": "russulales"
+  },
+  {
+   "slug": "hydnaceae",
+   "rang": "familie",
+   "lateinisch": "Hydnaceae",
+   "name": "Leistlinge",
+   "elter": "cantharellales",
+   "belege": {
+    "Leistlinge": 7
+   }
+  },
+  {
+   "slug": "hygrophoraceae",
+   "rang": "familie",
+   "lateinisch": "Hygrophoraceae",
+   "name": "Hygrophoraceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "hygrophoropsidaceae",
+   "rang": "familie",
+   "lateinisch": "Hygrophoropsidaceae",
+   "name": "Hygrophoropsidaceae",
+   "elter": "boletales"
+  },
+  {
+   "slug": "hymenochaetaceae",
+   "rang": "familie",
+   "lateinisch": "Hymenochaetaceae",
+   "name": "Schillerporlinge",
+   "elter": "hymenochaetales",
+   "belege": {
+    "Schillerporlinge": 2
+   }
+  },
+  {
+   "slug": "hymenogastraceae",
+   "rang": "familie",
+   "lateinisch": "Hymenogastraceae",
+   "name": "Hymenogastraceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "inocybaceae",
+   "rang": "familie",
+   "lateinisch": "Inocybaceae",
+   "name": "Risspilze",
+   "elter": "agaricales",
+   "belege": {
+    "Risspilze": 3
+   }
+  },
+  {
+   "slug": "laetiporaceae",
+   "rang": "familie",
+   "lateinisch": "Laetiporaceae",
+   "name": "Laetiporaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "lycoperdaceae",
+   "rang": "familie",
+   "lateinisch": "Lycoperdaceae",
+   "name": "Stäublinge",
+   "elter": "agaricales",
+   "belege": {
+    "Stäublinge": 9,
+    "Staubpilze": 9,
+    "Bauchpilze": 9
+   }
+  },
+  {
+   "slug": "lyophyllaceae",
+   "rang": "familie",
+   "lateinisch": "Lyophyllaceae",
+   "name": "Lyophyllaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "marasmiaceae",
+   "rang": "familie",
+   "lateinisch": "Marasmiaceae",
+   "name": "Marasmiaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "meripilaceae",
+   "rang": "familie",
+   "lateinisch": "Meripilaceae",
+   "name": "Meripilaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "meruliaceae",
+   "rang": "familie",
+   "lateinisch": "Meruliaceae",
+   "name": "Meruliaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "morchellaceae",
+   "rang": "familie",
+   "lateinisch": "Morchellaceae",
+   "name": "Morcheln",
+   "elter": "pezizales",
+   "belege": {
+    "Morcheln": 6
+   }
+  },
+  {
+   "slug": "omphalotaceae",
+   "rang": "familie",
+   "lateinisch": "Omphalotaceae",
+   "name": "Omphalotaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "paxillaceae",
+   "rang": "familie",
+   "lateinisch": "Paxillaceae",
+   "name": "Paxillaceae",
+   "elter": "boletales"
+  },
+  {
+   "slug": "phanerochaetaceae",
+   "rang": "familie",
+   "lateinisch": "Phanerochaetaceae",
+   "name": "Phanerochaetaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "physalacriaceae",
+   "rang": "familie",
+   "lateinisch": "Physalacriaceae",
+   "name": "Hallimasche",
+   "elter": "agaricales",
+   "belege": {
+    "Hallimasche": 4
+   }
+  },
+  {
+   "slug": "pleurotaceae",
+   "rang": "familie",
+   "lateinisch": "Pleurotaceae",
+   "name": "Pleurotaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "pluteaceae",
+   "rang": "familie",
+   "lateinisch": "Pluteaceae",
+   "name": "Pluteaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "polyporaceae",
+   "rang": "familie",
+   "lateinisch": "Polyporaceae",
+   "name": "Polyporaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "psathyrellaceae",
+   "rang": "familie",
+   "lateinisch": "Psathyrellaceae",
+   "name": "Tintlinge",
+   "elter": "agaricales",
+   "belege": {
+    "Tintlinge": 5
+   }
+  },
+  {
+   "slug": "pycnoporellaceae",
+   "rang": "familie",
+   "lateinisch": "Pycnoporellaceae",
+   "name": "Pycnoporellaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "pyronemataceae",
+   "rang": "familie",
+   "lateinisch": "Pyronemataceae",
+   "name": "Pyronemataceae",
+   "elter": "pezizales"
+  },
+  {
+   "slug": "russulaceae",
+   "rang": "familie",
+   "lateinisch": "Russulaceae",
+   "name": "Russulaceae",
+   "elter": "russulales"
+  },
+  {
+   "slug": "sarcomyxaceae",
+   "rang": "familie",
+   "lateinisch": "Sarcomyxaceae",
+   "name": "Sarcomyxaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "sarcoscyphaceae",
+   "rang": "familie",
+   "lateinisch": "Sarcoscyphaceae",
+   "name": "Sarcoscyphaceae",
+   "elter": "pezizales"
+  },
+  {
+   "slug": "sarcosomataceae",
+   "rang": "familie",
+   "lateinisch": "Sarcosomataceae",
+   "name": "Sarcosomataceae",
+   "elter": "pezizales"
+  },
+  {
+   "slug": "schizophyllaceae",
+   "rang": "familie",
+   "lateinisch": "Schizophyllaceae",
+   "name": "Schizophyllaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "sparassidaceae",
+   "rang": "familie",
+   "lateinisch": "Sparassidaceae",
+   "name": "Sparassidaceae",
+   "elter": "polyporales"
+  },
+  {
+   "slug": "strophariaceae",
+   "rang": "familie",
+   "lateinisch": "Strophariaceae",
+   "name": "Strophariaceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "suillaceae",
+   "rang": "familie",
+   "lateinisch": "Suillaceae",
+   "name": "Suillaceae",
+   "elter": "boletales"
+  },
+  {
+   "slug": "tarzettaceae",
+   "rang": "familie",
+   "lateinisch": "Tarzettaceae",
+   "name": "Tarzettaceae",
+   "elter": "pezizales"
+  },
+  {
+   "slug": "tricholomataceae",
+   "rang": "familie",
+   "lateinisch": "Tricholomataceae",
+   "name": "Tricholomataceae",
+   "elter": "agaricales"
+  },
+  {
+   "slug": "agaricales",
+   "rang": "ordnung",
+   "lateinisch": "Agaricales",
+   "name": "Agaricales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "auriculariales",
+   "rang": "ordnung",
+   "lateinisch": "Auriculariales",
+   "name": "Auriculariales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "boletales",
+   "rang": "ordnung",
+   "lateinisch": "Boletales",
+   "name": "Röhrlinge",
+   "elter": "agaricomycetes",
+   "belege": {
+    "Röhrlinge": 50
+   }
+  },
+  {
+   "slug": "cantharellales",
+   "rang": "ordnung",
+   "lateinisch": "Cantharellales",
+   "name": "Cantharellales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "geastrales",
+   "rang": "ordnung",
+   "lateinisch": "Geastrales",
+   "name": "Geastrales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "gloeophyllales",
+   "rang": "ordnung",
+   "lateinisch": "Gloeophyllales",
+   "name": "Gloeophyllales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "gomphales",
+   "rang": "ordnung",
+   "lateinisch": "Gomphales",
+   "name": "Gomphales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "hymenochaetales",
+   "rang": "ordnung",
+   "lateinisch": "Hymenochaetales",
+   "name": "Hymenochaetales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "pezizales",
+   "rang": "ordnung",
+   "lateinisch": "Pezizales",
+   "name": "Pezizales",
+   "elter": "pezizomycetes"
+  },
+  {
+   "slug": "polyporales",
+   "rang": "ordnung",
+   "lateinisch": "Polyporales",
+   "name": "Polyporales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "russulales",
+   "rang": "ordnung",
+   "lateinisch": "Russulales",
+   "name": "Russulales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "thelephorales",
+   "rang": "ordnung",
+   "lateinisch": "Thelephorales",
+   "name": "Thelephorales",
+   "elter": "agaricomycetes"
+  },
+  {
+   "slug": "agaricomycetes",
+   "rang": "klasse",
+   "lateinisch": "Agaricomycetes",
+   "name": "Agaricomycetes",
+   "elter": null
+  },
+  {
+   "slug": "pezizomycetes",
+   "rang": "klasse",
+   "lateinisch": "Pezizomycetes",
+   "name": "Pezizomycetes",
+   "elter": null
+  }
+ ]
+}

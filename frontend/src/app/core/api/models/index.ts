@@ -23,6 +23,8 @@ export {
   TIER_BEST,
   TIER_WEAKEST,
 } from './species';
+export { TAXON_RANKS } from './taxonomy';
+export type { Taxon, TaxonChild, TaxonRank, TaxonStep } from './taxonomy';
 export { PERMISSIONS, PERMISSION_AREAS } from './access';
 export type {
   MyPermissions,

@@ -21,7 +21,7 @@ from app.models import SpeciesImage, utc_now
 from app.modules.access.guard import Rights, Viewer, Visitor, requires
 from app.modules.access.permissions import Permission
 from app.modules.species.catalog import Catalog
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from app.modules.species_images import service
 from app.modules.species_images.schemas import (
     ImageIn,

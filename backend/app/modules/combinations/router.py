@@ -22,7 +22,7 @@ from app.modules.combinations.schemas import (
 )
 from app.modules.combinations.sources import layer_names
 from app.modules.species.catalog import Catalog
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from app.shared.objects import apply_patch, owned
 from app.shared.paging import Page, Paging, load_page
 

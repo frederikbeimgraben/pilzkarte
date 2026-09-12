@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+// Der Inhalt scrollt, die Kopfleiste bleibt stehen. Maße wie auf der Artseite,
+// aus `docs/mockups/bauen.py`, Klasse `.scroll`.
+.taxonomy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px var(--pilz-gutter);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.taxonomy__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-block-start: -4px;
+}
+
+// Die Abschnittsüberschrift der Mockups, Klasse `.h2`.
+.taxonomy__section {
+  margin: 0 0 10px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

@@ -11,7 +11,7 @@ from starlette.requests import Request
 
 from app.core.errors import NotFound
 from app.modules.internal.router import only_from_host
-from app.modules.species.router import current_catalog
+from app.modules.species.dependencies import current_catalog
 from tests.conftest import FakeIdp
 from tests.objects import catalog_for_tests
 from tests.test_finds import OTHER, OWN, as_user, create_find

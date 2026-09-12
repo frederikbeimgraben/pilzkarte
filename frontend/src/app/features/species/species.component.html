@@ -242,6 +242,24 @@
       </section>
     }
 
+    @if (viewport.taxonomie.length) {
+      <section>
+        <h2 class="species__section">{{ 'taxonomie.abschnitt.einordnung' | t }}</h2>
+        <app-card class="flush">
+          <app-key-value-table>
+            @for (step of viewport.taxonomie; track step.route) {
+              <app-key-value-row
+                [schluessel]="step.name"
+                [keyRoute]="step.route"
+                [unter]="step.rank"
+                [value]="step.latin ?? ''"
+              />
+            }
+          </app-key-value-table>
+        </app-card>
+      </section>
+    }
+
     <section>
       <h2 class="species__section">{{ 'art.verwechslung' | t }}</h2>
       <app-card class="flush">

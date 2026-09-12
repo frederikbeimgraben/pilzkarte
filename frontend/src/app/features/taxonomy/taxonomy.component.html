@@ -1,0 +1,91 @@
+@if (viewport(); as viewport) {
+  <app-page-header [titel]="viewport.name" [back]="true" (backClick)="back()" />
+  <div class="taxonomy">
+    <div class="taxonomy__head">
+      <app-note variant="unter">{{ viewport.rank }}</app-note>
+      @if (viewport.latin; as latin) {
+        <app-note variant="unter" [italic]="true">{{ latin }}</app-note>
+      }
+      @if (viewport.countText; as count) {
+        <app-note variant="unter">{{ count }}</app-note>
+      }
+    </div>
+
+    @if (viewport.description; as description) {
+      <app-note>{{ description }}</app-note>
+    }
+
+    <section>
+      <h2 class="taxonomy__section">{{ 'taxonomie.abschnitt.pfad' | t }}</h2>
+      @if (viewport.path.length) {
+        <app-card class="flush">
+          <app-key-value-table>
+            @for (step of viewport.path; track step.route) {
+              <app-key-value-row
+                [schluessel]="step.name"
+                [keyRoute]="step.route"
+                [unter]="step.rank"
+                [value]="step.latin ?? ''"
+              />
+            }
+          </app-key-value-table>
+        </app-card>
+      } @else {
+        <app-info-text>{{ 'taxonomie.wurzel' | t }}</app-info-text>
+      }
+    </section>
+
+    <section>
+      <h2 class="taxonomy__section">{{ 'taxonomie.abschnitt.geschwister' | t }}</h2>
+      @if (viewport.siblings.length) {
+        <app-card class="flush">
+          @for (step of viewport.siblings; track step.route) {
+            <app-list-row
+              [titel]="step.name"
+              [subline]="step.latin ?? undefined"
+              [clickable]="true"
+              (chosen)="toStep(step.route)"
+            />
+          }
+        </app-card>
+      } @else {
+        <app-info-text>{{ 'taxonomie.keineGeschwister' | t }}</app-info-text>
+      }
+    </section>
+
+    <section>
+      <h2 class="taxonomy__section">{{ 'taxonomie.abschnitt.kinder' | t }}</h2>
+      @if (viewport.children.length) {
+        <app-card class="flush">
+          @for (step of viewport.children; track step.route) {
+            <app-list-row
+              [titel]="step.name"
+              [subline]="step.latin ?? undefined"
+              [value]="step.count ?? undefined"
+              [clickable]="true"
+              (chosen)="toStep(step.route)"
+            />
+          }
+        </app-card>
+      } @else {
+        <app-info-text>{{ 'taxonomie.keineKinder' | t }}</app-info-text>
+      }
+    </section>
+
+    <section>
+      <h2 class="taxonomy__section">{{ 'taxonomie.abschnitt.arten' | t }}</h2>
+      @if (viewport.species.length) {
+        <app-card class="flush">
+          @for (art of viewport.species; track art.slug) {
+            <app-species-row [name]="art.name" [latin]="art.latin" (chosen)="toSpecies(art.slug)" />
+          }
+        </app-card>
+      } @else {
+        <app-info-text>{{ 'taxonomie.keineArten' | t }}</app-info-text>
+      }
+    </section>
+  </div>
+} @else if (unknown()) {
+  <app-page-header [titel]="'taxonomie.titel' | t" [back]="true" (backClick)="back()" />
+  <app-empty-state [text]="'taxonomie.nichtGefunden' | t" />
+}

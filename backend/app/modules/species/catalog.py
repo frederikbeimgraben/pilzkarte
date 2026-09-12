@@ -55,7 +55,7 @@ from app.modules.species.schemas import (
     TreeSpecies,
     YearRange,
 )
-from app.shared.schemas import Week
+from app.shared.schemas import TaxonStep, Week
 
 # Der Ordner liegt neben ``app`` und wird mit dem Backend ausgeliefert. Ein
 # eigener Pfad in der Umgebung waere ein weiterer Vertrag zum NixOS-Modul.
@@ -602,8 +602,12 @@ class Catalog:
         pairs = sorted(self.relations[slug], key=lambda pair: self.profiles[pair[0]].name)
         return [self._resolve(other, difference) for other, difference in pairs]
 
-    def species(self, slug: str) -> Species:
-        """Eine Art mit Profil. Ein unbekannter Slug ist ein 404."""
+    def species(self, slug: str, *, taxonomy: Sequence[TaxonStep] = ()) -> Species:
+        """Eine Art mit Profil. Ein unbekannter Slug ist ein 404.
+
+        Die Einordnung steht in der Datenbank und nicht in der Datei, darum
+        reicht der Endpunkt sie herein. Ohne sie bleibt das Feld leer.
+        """
         profile = self.profiles.get(slug)
         if profile is None:
             raise NotFound(f"Die Art {slug} steht nicht im Katalog.")
@@ -640,6 +644,7 @@ class Catalog:
             lookalikes=self.lookalikes(slug),
             links=profile.links,
             season=season,
+            taxonomy=list(taxonomy),
         )
 
 

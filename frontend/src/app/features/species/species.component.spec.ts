@@ -119,6 +119,11 @@ describe('ArtComponent', () => {
       // Danach die eigene Tabelle der Reagenzien. Die Verwechslungen stehen in
       // einem eigenen Baustein, weil ihre Marke eine eigene Zeile braucht.
       'Kalilauge (KOH)',
+      // Zuletzt die Einordnung: jede Stufe führt auf ihre eigene Seite.
+      'Agaricomycetes',
+      'Röhrlinge',
+      'Boletaceae',
+      'Boletus',
     ]);
     const partner = [...container.querySelectorAll('.lookalike__name')].map((cell) =>
       cell.textContent.trim(),
@@ -414,6 +419,25 @@ describe('ArtComponent', () => {
     await userEvent.click(within(head).getByRole('button', { name: 'Zurück' }));
 
     expect(calls).toHaveBeenCalledWith(['/arten']);
+  });
+
+  it('führt von der Art in die Einordnung', async () => {
+    await build(STEINPILZ);
+
+    expect(screen.getByRole('link', { name: 'Boletus' })).toHaveAttribute(
+      'href',
+      '/taxonomie/gattung/boletus',
+    );
+    expect(screen.getByRole('link', { name: 'Boletaceae' })).toHaveAttribute(
+      'href',
+      '/taxonomie/familie/boletaceae',
+    );
+  });
+
+  it('lässt die Einordnung weg, wo das Profil keine trägt', async () => {
+    await build(MORCHEL, 'speisemorchel');
+
+    expect(screen.queryByText('Einordnung')).toBeNull();
   });
 
   it('stellt das Titelbild über die Art und nennt Fotograf und Lizenz', async () => {

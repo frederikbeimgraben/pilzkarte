@@ -58,6 +58,7 @@ people who report the same flush produce near-duplicate rows.
     src/pilze/gbif_fetch.py     occurrence records from GBIF
     src/pilze/dwd_fetch.py      DWD 1 km daily grids
     src/pilze/static_fetch.py   elevation, soil, OpenStreetMap extract
+    src/pilze/taxonomy_fetch.py class, order, family and genus of the catalogue
     correspondence/             data-request emails, drafts
     docs/data-sources.md        every source, with license and access notes
     data/raw/                   downloads, not in version control
@@ -68,6 +69,8 @@ The fetchers use the Python standard library only. They run with any Python
 3.11 or later.
 
     python src/pilze/gbif_fetch.py --out data/raw/gbif --start 1970 --end 2026
+    python src/pilze/taxonomy_fetch.py --profiles ../backend/daten/arten \
+        --out ../backend/daten/taxonomie.json --cache data/raw/taxonomie
     python src/pilze/dwd_fetch.py hyras --start 2010 --end 2026
     python src/pilze/dwd_fetch.py soil --start 2010 --end 2026 --depth 0-30
     python src/pilze/static_fetch.py dem
