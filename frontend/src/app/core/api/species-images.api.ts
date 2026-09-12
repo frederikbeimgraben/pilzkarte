@@ -39,13 +39,17 @@ export class SpeciesImagesApi {
     return this.api.postFile<ImageSubmission>('/species-images', 'file', file, { ...input });
   }
 
-  mine(): Observable<Page<ImageSubmission>> {
-    return this.api.get<Page<ImageSubmission>>('/species-images/mine');
+  mine(offset: number, limit: number): Observable<Page<ImageSubmission>> {
+    return this.api.get<Page<ImageSubmission>>('/species-images/mine', { offset, limit });
   }
 
   /** Der Eingang der Prüfung. Braucht `image.review`. */
-  submissions(state: ImageState): Observable<Page<ImageSubmission>> {
-    return this.api.get<Page<ImageSubmission>>('/species-images/submissions', { state });
+  submissions(state: ImageState, offset: number, limit: number): Observable<Page<ImageSubmission>> {
+    return this.api.get<Page<ImageSubmission>>('/species-images/submissions', {
+      state,
+      offset,
+      limit,
+    });
   }
 
   approve(id: string): Observable<ImageSubmission> {

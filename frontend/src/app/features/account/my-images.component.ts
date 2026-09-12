@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { BadgeComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
+import { BadgeComponent, ButtonComponent, CardComponent, type BadgeVariant } from '@stupa-makers/ui-kit';
 import type { ImageState, ImageSubmission } from '../../core/api/models';
+import { PagedList } from '../../core/api/paged-list';
 import { SpeciesImagesApi } from '../../core/api/species-images.api';
 import { longDate } from '../../core/i18n/dates';
 import { I18nService } from '../../core/i18n/i18n.service';
@@ -46,6 +47,7 @@ interface Row {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     BadgeComponent,
+    ButtonComponent,
     CardComponent,
     EmptyStateComponent,
     NoteComponent,
@@ -62,11 +64,19 @@ export class MyImagesComponent {
   private readonly router = inject(Router);
   private readonly species = inject(SpeciesState);
 
-  private readonly held = signal<readonly ImageSubmission[] | null>(null);
+  private readonly held = new PagedList<ImageSubmission>((offset, limit) => this.api.mine(offset, limit));
 
-  protected readonly loaded = computed(() => this.held() !== null);
+  protected readonly loaded = this.held.loaded;
+  protected readonly more = this.held.more;
+  protected readonly loading = this.held.busy;
+  protected readonly shown = computed(() =>
+    this.i18n.translate('bild.vonGesamt', {
+      geladen: this.held.entries().length,
+      gesamt: this.held.total(),
+    }),
+  );
   protected readonly rows = computed<Row[]>(() =>
-    (this.held() ?? []).map((image) => {
+    this.held.entries().map((image) => {
       const name = this.species.nameOf(image.speciesSlug) ?? image.speciesSlug;
       return {
         id: image.id,
@@ -85,14 +95,11 @@ export class MyImagesComponent {
 
   constructor() {
     this.species.loadAll();
-    this.api.mine().subscribe({
-      next: (page) => {
-        this.held.set(page.eintraege);
-      },
-      error: () => {
-        this.held.set([]);
-      },
-    });
+    this.held.restart();
+  }
+
+  protected loadMore(): void {
+    this.held.next();
   }
 
   protected back(): void {

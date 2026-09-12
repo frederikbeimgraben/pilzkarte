@@ -41,6 +41,14 @@
       }
     </ul>
     <app-note>{{ 'bild.eingangHinweis' | t }}</app-note>
+    @if (more()) {
+      <div class="images__more">
+        <app-note variant="unter">{{ shown() }}</app-note>
+        <app-button variant="secondary" [disabled]="loading()" (click)="loadMore()">
+          {{ 'bild.mehr' | t }}
+        </app-button>
+      </div>
+    }
   }
 </div>
 
