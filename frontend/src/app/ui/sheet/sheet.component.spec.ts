@@ -193,6 +193,26 @@ function wirtVon(container: Element): HTMLElement {
   return host;
 }
 
+/** Die gerechneten Stile eines Elements, das es geben muss. */
+function styleOf(element: Element | null): CSSStyleDeclaration {
+  if (element === null) throw new Error('Das Element steht nicht im Baum.');
+  return getComputedStyle(element);
+}
+
+describe('SheetComponent, Griff', () => {
+  it('spannt den Griff über die ganze Breite, damit der Balken mittig sitzt', async () => {
+    // Ein <button> ist von sich aus nur so breit wie sein Inhalt. Ohne diese
+    // Breite klebte der Balken am linken Rand, obwohl er zentriert ausgerichtet
+    // ist. jsdom misst nicht, darum steht hier die Angabe statt der Geometrie.
+    const { container } = await render(HostComponent);
+
+    const handle = styleOf(container.querySelector('.sheet__handle'));
+
+    expect(handle.inlineSize).toBe('100%');
+    expect(handle.justifyContent).toBe('center');
+  });
+});
+
 describe('SheetComponent, Ziehfläche', () => {
   it('zieht auch am Kopf, nicht nur am Griff', async () => {
     const { fixture, container } = await render(HeadHostComponent);
