@@ -486,6 +486,91 @@ Abnahme:
 - Offline zeigt die App den zuletzt geladenen Katalog
 - Ein geänderter Text erscheint nach dem Speichern ohne Neuladen
 
+### R4 Datenmodell aufräumen
+
+Das Entitätendiagramm aus M1 hat vier Mängel sichtbar gemacht. Dreizehn
+Tabellen tragen vier Fremdschlüssel. Acht Verweise auf eine Person sind lose
+Zeichenketten, darum zeigt nichts auf `nutzer`, und die Zugehörigkeit von
+Fund, Marker, Zone, Kombination und Artbild ist im Modell unsichtbar. Es gibt
+zwei Fototabellen mit verschiedenen Spalten und verschiedenen Lebenszyklen.
+Es gibt keine Art als Entität. Die Bezeichner sind halb deutsch, halb
+englisch.
+
+Das Ziel liegt als Diagramm vor:
+https://claude.ai/code/artifact/d51d6f6e-b1fc-4157-a302-971b5364a3cd
+
+Vierundzwanzig Tabellen, rund vierzig Beziehungen. Grundsätze: eine Person
+ist eine Entität, eine Art ist eine Entität, ein Foto ist ein Foto, jedes
+strukturierte Merkmal bekommt eine Spalte oder eine Kindtabelle und niemals
+ein Attribut-Wert-Paar, und alles heißt englisch in `snake_case`.
+
+#### R4a Zugehörigkeit als Fremdschlüssel
+
+Der schmale erste Schritt: die vorhandenen Spalten behalten Name und Typ, sie
+bekommen nur den Fremdschlüssel, der ihnen fehlt.
+
+Umfang: `fund.besitzer_sub`, `marker.besitzer_sub`, `zone.besitzer_sub`,
+`kombination.besitzer_sub`, `species_image.uploader_sub`,
+`species_image.reviewed_by`, `text.updated_by` und `user_role.user_sub`
+verweisen auf `nutzer.sub`. Wer sich zum ersten Mal anmeldet, bekommt seine
+Zeile in `nutzer`, bevor das erste Objekt entsteht. Vor der Wanderung zählt
+die Migration die Waisen im Bestand und bricht mit einer lesbaren Meldung ab,
+statt an einer Bedingung zu scheitern. `fund.besitzer_name` bleibt vorerst,
+es fällt mit R4d.
+
+Keine Abfrage ändert sich, keine Antwort ändert sich. Das Diagramm bekommt
+acht Linien.
+
+Abnahme:
+- Ein Test lehnt ein Objekt ab, dessen Person es nicht gibt
+- Ein Test hält fest, dass die Anmeldung die Zeile in `nutzer` anlegt
+- Das Diagramm zeigt die Zugehörigkeit aller fünf besitzbaren Tabellen
+
+#### R4d Bezeichner und Schlüssel
+
+Umfang: Spalten und Tabellen auf Englisch, damit Schema und Code dieselbe
+Sprache sprechen — heute bildet `Find.owner_sub` auf `fund.besitzer_sub` ab.
+Dazu `user.id` als UUID mit `sub` als eindeutiger Spalte daneben, und die
+acht Verweise wandern von `sub` auf `id`. `fund.besitzer_name` fällt weg, der
+Name kommt aus der Verbindung. Das ist das alte R3, um die Schlüssel
+erweitert.
+
+Abnahme:
+- Kein deutscher Spaltenname mehr im Schema
+- Ein Fund liefert den Namen seines Besitzers wie vorher
+- Ein Test hält fest, dass `sub` eindeutig bleibt
+
+#### R4b Art als Entität
+
+Umfang: Die Profile wandern in eine Tabelle mit Kindtabellen für Namen, Maße,
+Farben, Verfärbung, Stielmerkmale, Reagenzien, Quellen, Begriffe und Bäume,
+wie im Zieldiagramm. Die TOML-Dateien bleiben Anfangsbestand, wie
+`translations.ts` bei den Texten aus G1: die Migration liest sie ein, danach
+ist die Tabelle die Wahrheit, und der Start gleicht nur noch ab. `fund` und
+die Fotos verweisen per Fremdschlüssel, leer erlaubt. Leer heißt unbekannt.
+
+Nach D8, sonst schreibt der Katalog in Dateien, die zur Tabelle werden.
+
+Abnahme:
+- Ein Fund mit unbekannter Art lässt sich speichern und lesen
+- Ein Fund mit einer Art, die es nicht gibt, wird abgelehnt
+- Der Katalog antwortet wie vorher, gemessen an den Tests aus D1 bis D8
+
+#### R4c Ein Foto
+
+Umfang: `foto` und `species_image` werden eine Tabelle mit Urheber, Lizenz,
+Prüfzustand, grobem Ort und wahlfreien Verweisen auf Fund und Art. Ein
+Fundfoto mit bestimmter Art ist damit auch ein Artfoto und erscheint nach
+Freigabe auf der Artseite. Braucht R4b.
+
+Abnahme:
+- Ein Foto am Fund mit gesetzter Art erscheint nach Freigabe auf der Artseite
+- Ein Foto ohne Fund und ohne Art wird abgelehnt
+- Die Ablage bleibt, wo sie ist, kein zweiter Pfad
+
+Reihenfolge: R4a hängt an nichts und geht sofort. R4d folgt, wenn wenige
+Zweige offen sind, es fasst alles an. R4b wartet auf D8, R4c auf R4b.
+
 ## Block 4, Offline und Feinschliff
 
 ### F1 Offline-Warteschlange und PWA
