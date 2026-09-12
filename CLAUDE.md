@@ -99,6 +99,12 @@ Baustein, lege ihn in `src/app/ui/` an, nicht in der Seite. Im Backend
 liegen Besitzerprüfung, Paging, Fehler, Wochenformat und Bild-Pipeline einmal
 in `app/core/` oder `app/shared/`.
 
+**Aus `ui/index.ts` importiert nur, wer faul geladen wird.** Das Sammelmodul
+zieht jeden Baustein mit, den es kennt. Wer beim Start mitlädt — `app.ts`,
+`shell/`, das Anmelde-Blatt — nimmt seine Bausteine einzeln aus ihrer Datei.
+Über das Sammelmodul lagen Saisonkurve, Zeitleiste, Histogramm und
+Farbfelder im ersten Bündel, 81 kB für Screens, die niemand offen hatte.
+
 ## Regeln
 
 - **Der Kartenzustand lebt in der App, nicht in der Adresse.** Art, Woche,
