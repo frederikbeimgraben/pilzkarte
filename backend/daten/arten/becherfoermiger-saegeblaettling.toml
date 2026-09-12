@@ -15,7 +15,7 @@ synonyme = ["Lentinus cyathiformis", "Agaricus cyathiformis", "Neolentinus schae
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BecherfoermigerSaegeblaettling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
@@ -61,16 +61,17 @@ vorkommen = "Folgezersetzer und Braunfäuleerreger auf Laub- und Nadelholz, meis
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-slug = "schuppiger-saegeblaettling"
-unterschied = "Hut mit rotbraunen Schuppen auf gelblichem Grund, Lamellenschneiden stark gesägt, Geruch nach Anis, an Nadelholz."
+slug = "berindeter-seitling"
+unterschied = "Hut grau bis hellbraun, Stiel mit flüchtigem Ring, Lamellenschneiden nicht gesägt."
 
 [[verwechslungen]]
 slug = "brauner-haarstielporling"
 unterschied = "Unterseite mit weißlichen Poren statt Lamellen, Stiel weißlich filzig."
 
 [[verwechslungen]]
-slug = "berindeter-seitling"
-unterschied = "Hut grau bis hellbraun, Stiel mit flüchtigem Ring, Lamellenschneiden nicht gesägt."
+slug = "schuppiger-saegeblaettling"
+unterschied = "Hut mit rotbraunen Schuppen auf gelblichem Grund, Lamellenschneiden stark gesägt, Geruch nach Anis, an Nadelholz."
+eigenerUnterschied = "Hut becherförmig vertieft, Schuppen schwächer, an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

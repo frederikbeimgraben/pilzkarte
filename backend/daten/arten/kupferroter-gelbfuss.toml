@@ -13,7 +13,7 @@ synonyme = ["Chroogomphus britannicus", "Gomphidius rutilus forma testaceus", "C
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KupferroterGelbfuss.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.5, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -61,20 +61,23 @@ vorkommen = "Symbiosepilz unter Kiefern, vereinzelt parasitisch an Myzelien von 
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "spitzgebuckelter-raukopf"
-unterschied = "Hut meist spitz gebuckelt, radialfaserig und rau, Lamellen zimtbraun und nur angeheftet, Stiel rostbraun genattert."
+slug = "aprikosen-gelbfuss"
+unterschied = "Hut orangebraun, rosa bis violett, Stiel mit hellerer orangefarbener Ringzone."
+eigenerUnterschied = "Hut braun, orangebraun bis graubraun ohne rosa und violette Töne, wächst unter Kiefern."
 
 [[verwechslungen]]
 slug = "filziger-gelbfuss"
 unterschied = "Hut filzig schuppig, Lamellen weniger weit herablaufend, bei Fichte."
+eigenerUnterschied = "Lamellen deutlicher herablaufend, Hut weniger filzig schuppig, wächst bei Kiefer."
 
 [[verwechslungen]]
 slug = "schweinsohr"
 unterschied = "Trichterförmig, mit stumpfen Leisten statt Lamellen, ganz violett."
+eigenerUnterschied = "Hut kupferrot bis orangebraun, Leisten weinrötlich, Stielbasis leuchtend gelb."
 
 [[verwechslungen]]
-slug = "aprikosen-gelbfuss"
-unterschied = "Hut orangebraun, rosa bis violett, Stiel mit hellerer orangefarbener Ringzone."
+slug = "spitzgebuckelter-raukopf"
+unterschied = "Hut meist spitz gebuckelt, radialfaserig und rau, Lamellen zimtbraun und nur angeheftet, Stiel rostbraun genattert."
 
 [[links]]
 titel = "123pilzsuche.de"

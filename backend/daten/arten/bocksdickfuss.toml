@@ -12,7 +12,7 @@ haeufigkeit = "haeufig"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bocksdickfuss105.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
@@ -52,14 +52,6 @@ geschmack = "Unangenehm und widerlich."
 sporenpulver = "Gelbbräunlich."
 vorkommen = "Symbiosepilz im Nadelwald auf moosigem, feuchtem Boden. Häufig."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "violetter-roetelritterling"
-unterschied = "Lamellen rein lila und nie bräunlich, kein Sporenpulver am Stiel, Geruch parfümiert und fruchtig."
-
-[[verwechslungen]]
-slug = "lilastieliger-roetelritterling"
-unterschied = "Hut grauviolett bis beigebräunlich, Lamellen weißlich lila, Geruch leicht fruchtig."
 
 [[links]]
 titel = "123pilzsuche.de"

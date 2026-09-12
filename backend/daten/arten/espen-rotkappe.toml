@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Espenrotkappe.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "formalin"
@@ -76,16 +76,14 @@ vorkommen = "Symbiosepilz bei Espe und Zitterpappel. In Deutschland auf der Rote
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-slug = "birken-rotkappe"
-unterschied = "Stielschuppen schwärzlich statt orangebraun, bei Birke."
-
-[[verwechslungen]]
 slug = "fichtenrotkappe"
 unterschied = "Stielschuppen schwarz, Fleisch weiß, dann rötlich und später violett."
+eigenerUnterschied = "Hut orangerot, Stielschuppen erst weiß, dann rotbraun, bei Espe und Pappel."
 
 [[verwechslungen]]
 slug = "fuchsrotkappe"
 unterschied = "Hut fuchsrot bis rotbraun und samtig, Fleisch am Stiel rosa bis braun."
+eigenerUnterschied = "Hut orangerot, bei Espe und Pappel."
 
 [[links]]
 titel = "123pilzsuche.de"

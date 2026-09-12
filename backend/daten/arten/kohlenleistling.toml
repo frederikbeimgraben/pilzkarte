@@ -11,7 +11,7 @@ haeufigkeit = "selten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kohlenleistling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 6.0, einheit = "cm" }
@@ -56,10 +56,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer im Mischwald, gern an Brandstellen zwischen verkohltem Holz. Selten."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "grauer-leistling"
-unterschied = "Leisten heller weißlich-grau und queraderig, Geruch fruchtig nach Pflaumen, im Buchenwald statt auf Brandstellen."
 
 [[verwechslungen]]
 slug = "verbogener-leistling"

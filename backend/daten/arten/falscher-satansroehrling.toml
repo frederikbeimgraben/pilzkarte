@@ -1,4 +1,4 @@
-name = "Falscher Satansröhrling"
+name = "Gelbhütiger Purpurröhrling"
 lateinisch = "Imperator luteocupreus"
 gruppe = "roehrling"
 speisewert = "giftig"
@@ -9,11 +9,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche", "kastanie"]
 speisewertHinweis = "Roh giftig und unverträglich. Er trägt purpurrote bis blutrote Röhren, einen kräftig roten Stiel mit rotem Netz und chromgelbes Fleisch, das sofort stark blaut. Dem Satansröhrling sehr ähnlich."
 haeufigkeit = "sehrSelten"
-weitereNamen = ["Gelbhütiger Purpurröhrling"]
+weitereNamen = ["Falscher Satansröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbhuetigerPurpurroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 6.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -59,14 +59,6 @@ geschmack = "Mild, roh giftig und unverträglich."
 sporenpulver = "Olivbraun."
 vorkommen = "Symbiosepilz in Laub- und Nadelwald, gern bei Rotbuche, Kastanie und Eiche. Sehr selten."
 zeit = "Frühsommer bis Herbst."
-
-[[verwechslungen]]
-slug = "blaufleckender-purpurroehrling"
-unterschied = "Hut heller, auf Druck fleckig blauend."
-
-[[verwechslungen]]
-slug = "flockenstieliger-hexenroehrling"
-unterschied = "Stiel ohne Netz, nur rot geflockt, Hut dunkelbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

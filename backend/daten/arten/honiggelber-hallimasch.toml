@@ -16,7 +16,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/HoniggelberHallimasch.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -75,14 +75,11 @@ unterschied = "Lamellen grün bis grüngelb, Stiel mit Cortina statt Ring, Gesch
 [[verwechslungen]]
 slug = "ringloser-hallimasch"
 unterschied = "Stiel ohne Ring, Hut rotbraun und kleiner, gern an Eiche."
+eigenerUnterschied = "Hut honiggelb, Stiel mit gelbflockigem Ring."
 
 [[verwechslungen]]
 slug = "sparriger-schueppling"
 unterschied = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivbraun, Geruch rettichartig."
-
-[[verwechslungen]]
-slug = "dunkler-hallimasch"
-unterschied = "Hut rotbraun statt gelblich, Stiel unter dem Ring mit weißen wolligen Schüppchen, an Nadelholz, schlechter verträglich."
 
 [[links]]
 titel = "123pilzsuche.de"

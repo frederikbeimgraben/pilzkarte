@@ -1,4 +1,4 @@
-name = "Schwarzhütiger Birkenpilz"
+name = "Schwärzlicher Birkenpilz"
 lateinisch = "Leccinum melaneum"
 gruppe = "raufussroehrling"
 speisewert = "essbar"
@@ -11,12 +11,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Guter Speisepilz, als Raufußröhrling aber besonders geschützt. Nur wenige Stücke für den Eigenbedarf nehmen."
 haeufigkeit = "selten"
-weitereNamen = ["Schwärzlicher Birkenpilz"]
+weitereNamen = ["Schwarzhütiger Birkenpilz"]
 synonyme = ["Leccinum scabrum var. melaneum", "Krombholzia scabra f. melanea", "Krombholziella melanea", "Boletus melaneus", "Boletus scaber var. melaneus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerBirkenpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 10.0, seltenBis = 12.0, einheit = "cm" }
@@ -58,16 +58,16 @@ vorkommen = "Symbiosepilz bei Birke. Selten."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "vielverfaerbender-birkenpilz"
-unterschied = "Fleisch im Schnitt rosa, dann grau bis schwärzlich verfärbend."
+slug = "hainbuchenroehrling"
+unterschied = "Hut ocker- bis graubraun und im Alter runzelig, bei Hainbuche, Fleisch rötend."
 
 [[verwechslungen]]
 slug = "roetender-birkenpilz"
 unterschied = "Fleisch im Schnitt deutlich rötend, vor allem im Stiel."
 
 [[verwechslungen]]
-slug = "hainbuchenroehrling"
-unterschied = "Hut ocker- bis graubraun und im Alter runzelig, bei Hainbuche, Fleisch rötend."
+slug = "vielverfaerbender-birkenpilz"
+unterschied = "Fleisch im Schnitt rosa, dann grau bis schwärzlich verfärbend."
 
 [[links]]
 titel = "123pilzsuche.de"

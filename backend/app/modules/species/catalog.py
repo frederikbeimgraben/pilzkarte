@@ -13,15 +13,14 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
+from typing import TypedDict
 
 from app.core.errors import NotFound
 from app.modules.species.schemas import (
-    WEEKS,
     Colours,
     Edibility,
     Frequency,
     Group,
-    Lookalike,
     Marketability,
     Period,
     Profile,
@@ -29,6 +28,7 @@ from app.modules.species.schemas import (
     Reagent,
     RedListStatus,
     ResolvedLookalike,
+    Season,
     SeasonBrief,
     SeasonCurve,
     SeasonTable,
@@ -40,6 +40,8 @@ from app.modules.species.schemas import (
     Tier,
     Trait,
     TraitKey,
+    TreeSource,
+    TreeSpecies,
     YearRange,
 )
 from app.shared.schemas import Week
@@ -54,11 +56,8 @@ SEASON_THRESHOLD = 60
 # Diese Texte stehen in der Merkmalstabelle der Artseite. Sie tragen darum
 # Umlaute, anders als die Bezeichner und Docstrings dieses Projekts.
 EDIBILITY_TEXT: dict[Edibility, str] = {
-    Edibility.EXCELLENT: "Sehr guter Speisepilz.",
-    Edibility.CHOICE: "Guter Speisepilz.",
     Edibility.EDIBLE: "Essbar.",
-    Edibility.POOR: "Essbar, aber minderwertig.",
-    Edibility.EDIBLE_WHEN_COOKED: "Giftig, erst nach Vorbehandlung essbar.",
+    Edibility.EDIBLE_WHEN_COOKED: "Nur unter einer Bedingung essbar.",
     Edibility.INEDIBLE: "Ungenie\u00dfbar.",
     Edibility.POISONOUS: "Giftig.",
     Edibility.DEADLY: "T\u00f6dlich giftig.",
@@ -89,18 +88,13 @@ REAGENT_TEXT: dict[Reagent, str] = {
 }
 
 
-def tier_for(visits_with_find: int, *, has_map: bool, collectable: bool = True) -> Tier:
+def tier_for(visits_with_find: int, *, has_map: bool) -> Tier:
     """Die Stufe einer Art: was die App zu ihr zeigen kann, heute.
 
     ``vorhersage`` heisst, dass eine Karte da ist. Die Datenlage allein reicht
     nicht: 23 Arten tragen ein Modell, gerendert sind erst 13. Der Chip "mit
     Vorhersage" zeigte sonst zehn Arten ohne Karte.
-
-    ``verwechslung`` traegt eine Art, die niemand sammelt. Sie steht im Katalog,
-    weil eine sammelbare Art ihr aehnlich sieht.
     """
-    if not collectable:
-        return Tier.LOOKALIKE
     if has_map:
         return Tier.FORECAST
     if visits_with_find >= SEASON_THRESHOLD:
@@ -263,35 +257,97 @@ class SpeciesFilter:
         return all(checks)
 
 
+def check_names(profiles: dict[str, Profile]) -> None:
+    """Prueft, dass keine Art zweimal im Katalog steht.
+
+    Zwei Dateien zu derselben Art sind der Weg, auf dem die Artenliste
+    Doppelte bekommt: dieselbe Quellseite, zwei Namen, zwei Slugs. Der
+    lateinische Name ist der Schluessel zur Saisontabelle und darf darum nur
+    einmal vorkommen, der deutsche Name nur einmal in der Liste.
+    """
+    doubled: list[str] = []
+    for field, values in (
+        ("Lateinischer Name", [profile.scientific for profile in profiles.values()]),
+        ("Name", [profile.name for profile in profiles.values()]),
+    ):
+        doubled += [f"{field} {value}" for value in sorted(set(values)) if values.count(value) > 1]
+    if doubled:
+        raise ValueError("Diese Angaben stehen doppelt im Katalog: " + ", ".join(doubled))
+
+
 def check_references(profiles: dict[str, Profile]) -> None:
-    """Prueft, dass jede Verwechslung auf ein Profil zeigt.
+    """Prueft, dass jedes Paar einmal steht und auf ein Profil zeigt.
 
     Ein Slug ohne Ziel ist ein Fehler beim Start und kein stiller Ausfall in
     der Oberflaeche: das Frontend kann einen Verweis nicht aufloesen, den es
     erst beim Antippen als kaputt erkennt.
+
+    Ein Paar, das in beiden Dateien steht, hat zwei Saetze zu derselben
+    Beziehung. Sie laufen auseinander, sobald jemand einen davon aendert.
     """
-    missing = [
+    faults = [
         f"{slug} zeigt auf {lookalike.slug}"
         for slug, profile in profiles.items()
         for lookalike in profile.lookalikes
-        if lookalike.slug not in profiles
+        if lookalike.slug not in profiles or lookalike.slug == slug
     ]
-    if missing:
-        raise ValueError("Verwechslungen ohne Ziel: " + ", ".join(sorted(missing)))
+    if faults:
+        raise ValueError("Verwechslungen ohne gueltiges Ziel: " + ", ".join(sorted(faults)))
+    pairs = [
+        " und ".join(sorted((slug, lookalike.slug)))
+        for slug, profile in profiles.items()
+        for lookalike in profile.lookalikes
+    ]
+    twice = sorted({pair for pair in pairs if pairs.count(pair) > 1})
+    if twice:
+        raise ValueError("Diese Paare stehen zweimal: " + ", ".join(twice))
 
 
-def build_affects(profiles: dict[str, Profile]) -> dict[str, list[str]]:
-    """Dreht die Verweise um: welche Arten nennen diese als Verwechslung."""
-    result: dict[str, list[str]] = {slug: [] for slug in profiles}
+def build_relations(profiles: dict[str, Profile]) -> dict[str, list[tuple[str, str | None]]]:
+    """Loest die Paare in beide Richtungen auf: Slug der Art, dann Gegenueber.
+
+    Ein Paar steht in einer der zwei Dateien. Die andere Seite bekommt es
+    hier, mit dem Satz, der zu ihrer Blickrichtung gehoert.
+    """
+    result: dict[str, list[tuple[str, str | None]]] = {slug: [] for slug in profiles}
     for slug, profile in profiles.items():
         for lookalike in profile.lookalikes:
-            result[lookalike.slug].append(slug)
-    return {slug: sorted(sources) for slug, sources in result.items()}
+            result[slug].append((lookalike.slug, lookalike.difference))
+            result[lookalike.slug].append((slug, lookalike.own_difference))
+    return result
 
 
 def read_season(file: Path) -> SeasonTable:
     """Liest die Saisontabelle, die die Kette erzeugt hat."""
     return SeasonTable.model_validate_json(file.read_text(encoding="utf-8"))
+
+
+class CommonFields(TypedDict):
+    """Die Felder, die ``SpeciesBrief`` und ``Species`` gemeinsam tragen."""
+
+    slug: str
+    name: str
+    scientific: str
+    group: Group
+    tier: Tier
+    tags: list[Tag]
+    protected: bool
+    edibility: Edibility
+    map_slug: str | None
+    collectable: bool
+    marketability: Marketability
+    rating: int | None
+    frequency: Frequency | None
+    red_list: RedListStatus | None
+    warning: str | None
+    seasons: list[Season]
+    trees: list[TreeSpecies]
+    trees_from_experience: TreeSource | None
+    other_names: list[str]
+    synonyms: list[str]
+    forecast_planned: bool
+    visits_with_find: int
+    peak_week: int | None
 
 
 @dataclass(frozen=True)
@@ -301,20 +357,14 @@ class Catalog:
     table: SeasonTable
     profiles: dict[str, Profile]
     maps: dict[str, str]
-    affects: dict[str, list[str]]
+    relations: dict[str, list[tuple[str, str | None]]]
 
-    def _counts(self, profile: Profile) -> SpeciesCounts:
+    def _counts(self, profile: Profile) -> SpeciesCounts | None:
         # Eine Art ohne Zeile in der Tabelle hat seit 2015 keine Begehung
         # getragen. Sie steht als Profil im Katalog, nicht als Luecke.
-        empty = SpeciesCounts(
-            visits_with_find=0,
-            finds_per_week=[0] * WEEKS,
-            finds_per_week_current_year=[0] * WEEKS,
-        )
-        return self.table.species.get(profile.scientific, empty)
+        return self.table.species.get(profile.scientific)
 
-    def _series(self, profile: Profile) -> tuple[list[float], list[float]]:
-        counts = self._counts(profile)
+    def _series(self, counts: SpeciesCounts) -> tuple[list[float], list[float]]:
         all_years = share_per_week(counts.finds_per_week, self.table.visits_per_week)
         current = share_per_week(
             counts.finds_per_week_current_year,
@@ -339,6 +389,45 @@ class Catalog:
     def _visits_current_year(self) -> list[int]:
         return self.table.visits_per_week_current_year[: self.table.as_of_week]
 
+    def _common(self, slug: str, profile: Profile) -> CommonFields:
+        """Die Felder, die Liste und Artseite gleich tragen.
+
+        Sie stehen hier einmal. Zweimal geschrieben liefen sie auseinander,
+        sobald ein Feld dazukommt.
+        """
+        counts = self._counts(profile)
+        visits = counts.visits_with_find if counts else 0
+        map_name = self.maps.get(slug)
+        tier = tier_for(visits, has_map=map_name is not None)
+        return CommonFields(
+            slug=slug,
+            name=profile.name,
+            scientific=profile.scientific,
+            group=profile.group,
+            tier=tier,
+            tags=build_tags(profile, tier),
+            protected=profile.protected,
+            edibility=profile.edibility,
+            map_slug=map_name,
+            collectable=profile.collectable,
+            marketability=Marketability(
+                marketable=profile.marketable,
+                switzerland=profile.marketable_switzerland,
+            ),
+            rating=profile.rating,
+            frequency=profile.frequency,
+            red_list=profile.red_list,
+            warning=profile.warning,
+            seasons=profile.seasons,
+            trees=profile.trees,
+            trees_from_experience=profile.trees_from_experience,
+            other_names=profile.other_names,
+            synonyms=profile.synonyms,
+            forecast_planned=forecast_planned(visits),
+            visits_with_find=visits,
+            peak_week=peak_week_of(self._series(counts)[0]) if counts else None,
+        )
+
     def listing(
         self,
         *,
@@ -359,51 +448,19 @@ class Catalog:
         for slug, profile in self.profiles.items():
             if only_collectable is not None and profile.collectable is not only_collectable:
                 continue
-            counts = self._counts(profile)
-            all_years, current = self._series(profile)
-            map_name = self.maps.get(slug)
-            tier = tier_for(
-                counts.visits_with_find,
-                has_map=map_name is not None,
-                collectable=profile.collectable,
-            )
-            if not wanted.matches(profile, tier):
+            common = self._common(slug, profile)
+            if not wanted.matches(profile, common["tier"]):
                 continue
-            species.append(
-                SpeciesBrief(
-                    slug=slug,
-                    name=profile.name,
-                    scientific=profile.scientific,
-                    group=profile.group,
-                    tier=tier,
-                    tags=build_tags(profile, tier),
-                    protected=profile.protected,
-                    edibility=profile.edibility,
-                    map_slug=map_name,
-                    collectable=profile.collectable,
-                    marketable=profile.marketable,
-                    marketable_switzerland=profile.marketable_switzerland,
-                    rating=profile.rating,
-                    frequency=profile.frequency,
-                    red_list=profile.red_list,
-                    warning=profile.warning,
-                    seasons=profile.seasons,
-                    trees=profile.trees,
-                    trees_from_experience=profile.trees_from_experience,
-                    other_names=profile.other_names,
-                    synonyms=profile.synonyms,
-                    forecast_planned=forecast_planned(counts.visits_with_find),
-                    visits_with_find=counts.visits_with_find,
-                    peak_week=peak_week_of(all_years) if profile.collectable else None,
-                    season=SeasonBrief(
-                        all_years=all_years,
-                        current_year=current,
-                        maximum=max([*all_years, *current]),
-                    )
-                    if profile.collectable
-                    else None,
+            counts = self._counts(profile)
+            season = None
+            if counts:
+                all_years, current = self._series(counts)
+                season = SeasonBrief(
+                    all_years=all_years,
+                    current_year=current,
+                    maximum=max([*all_years, *current]),
                 )
-            )
+            species.append(SpeciesBrief(**common, season=season))
         species.sort(key=lambda species: species.name)
         return SpeciesList(
             as_of=self._as_of,
@@ -435,16 +492,21 @@ class Catalog:
         profile = self.profiles.get(slug)
         return None if profile is None else profile.scientific
 
-    def _resolve(self, lookalike: Lookalike) -> ResolvedLookalike:
-        target = self.profiles[lookalike.slug]
+    def _resolve(self, other: str, difference: str | None) -> ResolvedLookalike:
+        target = self.profiles[other]
         return ResolvedLookalike(
-            slug=lookalike.slug,
+            slug=other,
             name=target.name,
             scientific=target.scientific,
-            difference=lookalike.difference,
+            difference=difference,
             edibility=target.edibility,
             warning=target.warning,
         )
+
+    def lookalikes(self, slug: str) -> list[ResolvedLookalike]:
+        """Alle Arten, mit denen diese verwechselt wird, aus beiden Richtungen."""
+        pairs = sorted(self.relations[slug], key=lambda pair: self.profiles[pair[0]].name)
+        return [self._resolve(other, difference) for other, difference in pairs]
 
     def species(self, slug: str) -> Species:
         """Eine Art mit Profil. Ein unbekannter Slug ist ein 404."""
@@ -452,56 +514,10 @@ class Catalog:
         if profile is None:
             raise NotFound(f"Die Art {slug} steht nicht im Katalog.")
         counts = self._counts(profile)
-        all_years, current = self._series(profile)
-        map_name = self.maps.get(slug)
-        tier = tier_for(
-            counts.visits_with_find,
-            has_map=map_name is not None,
-            collectable=profile.collectable,
-        )
-        return Species(
-            slug=slug,
-            name=profile.name,
-            scientific=profile.scientific,
-            group=profile.group,
-            tier=tier,
-            tags=build_tags(profile, tier),
-            protected=profile.protected,
-            edibility=profile.edibility,
-            map_slug=map_name,
-            collectable=profile.collectable,
-            marketable=profile.marketable,
-            marketable_switzerland=profile.marketable_switzerland,
-            marketability=Marketability(
-                marketable=profile.marketable,
-                switzerland=profile.marketable_switzerland,
-                source=profile.source,
-            ),
-            rating=profile.rating,
-            frequency=profile.frequency,
-            red_list=profile.red_list,
-            warning=profile.warning,
-            seasons=profile.seasons,
-            trees=profile.trees,
-            trees_from_experience=profile.trees_from_experience,
-            other_names=profile.other_names,
-            synonyms=profile.synonyms,
-            measurements=profile.measurements,
-            colours=profile.colours,
-            period=profile.period,
-            protection=profile.protection,
-            smell=profile.smell,
-            taste=profile.taste,
-            reagents=profile.reagents,
-            source=profile.source,
-            forecast_planned=forecast_planned(counts.visits_with_find),
-            visits_with_find=counts.visits_with_find,
-            peak_week=peak_week_of(all_years) if profile.collectable else None,
-            traits=build_traits(profile),
-            lookalikes=[self._resolve(lookalike) for lookalike in profile.lookalikes],
-            affects=self.affects.get(slug, []),
-            links=profile.links,
-            season=SeasonCurve(
+        season = None
+        if counts:
+            all_years, current = self._series(counts)
+            season = SeasonCurve(
                 all_years=all_years,
                 current_year=current,
                 maximum=max([*all_years, *current]),
@@ -511,8 +527,20 @@ class Catalog:
                 visits_per_week_all_years=self._visits_all_years,
                 visits_per_week_current_year=self._visits_current_year,
             )
-            if profile.collectable
-            else None,
+        return Species(
+            **self._common(slug, profile),
+            measurements=profile.measurements,
+            colours=profile.colours,
+            period=profile.period,
+            protection=profile.protection,
+            smell=profile.smell,
+            taste=profile.taste,
+            reagents=profile.reagents,
+            source=profile.source,
+            traits=build_traits(profile),
+            lookalikes=self.lookalikes(slug),
+            links=profile.links,
+            season=season,
         )
 
 
@@ -534,11 +562,12 @@ def find_maps(profiles: dict[str, Profile], maps: Path) -> dict[str, str]:
 def catalog(data: Path, maps: Path) -> Catalog:
     """Baut den Katalog aus den Dateien. Der Prozess liest sie einmal."""
     profiles = read_profiles(data / "arten")
+    check_names(profiles)
     check_references(profiles)
     table = read_season(data / "saison.json")
     return Catalog(
         table=table,
         profiles=profiles,
         maps=find_maps(profiles, maps),
-        affects=build_affects(profiles),
+        relations=build_relations(profiles),
     )

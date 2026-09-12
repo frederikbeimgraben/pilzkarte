@@ -14,7 +14,7 @@ synonyme = ["Pluteus curtisii sensu", "Agaricus cervinus var. patricius", "Plute
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SeidigerDachpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -62,12 +62,9 @@ vorkommen = "Folgezersetzer auf totem Laubholz von Rosskastanie, Linde, Birke un
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-slug = "grauer-dachpilz"
-unterschied = "Hut grau bis graubraun, ohne die weißliche Grundfarbe."
-
-[[verwechslungen]]
 slug = "weisser-dachpilz"
 unterschied = "Ganz weiß, Hut ohne dunklere Faserschuppen, kleiner."
+eigenerUnterschied = "Scheitel mit dunkleren Faserschuppen, bei Trockenheit sparrig schuppig, Sporenpulver rostbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

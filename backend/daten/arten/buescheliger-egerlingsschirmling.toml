@@ -14,7 +14,7 @@ synonyme = ["Leucoagaricus bresadolae"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BuscheliegerEgerlingsschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 stielLaengeCm = { von = 6.0, bis = 18.0, seltenBis = 21.0, einheit = "cm" }
@@ -62,16 +62,12 @@ vorkommen = "Folgezersetzer in Parks und Gärten, auf Kompost und Rindenmulch. S
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "karbolegerling"
-unterschied = "Lamellen rosa, dann schokoladenbraun, Stielbasis chromgelb, Geruch nach Karbol."
-
-[[verwechslungen]]
 slug = "gerandetknolliger-garten-safranschirmling"
 unterschied = "Stiel mit gerandeter Knolle, Fleisch rötet ohne den starken Gelbton."
 
 [[verwechslungen]]
-slug = "safranschirmling"
-unterschied = "Stielbasis knollig ohne Rand, Fleisch rötet safranrot, ohne kräftiges Gilben."
+slug = "karbolegerling"
+unterschied = "Lamellen rosa, dann schokoladenbraun, Stielbasis chromgelb, Geruch nach Karbol."
 
 [[links]]
 titel = "123pilzsuche.de"

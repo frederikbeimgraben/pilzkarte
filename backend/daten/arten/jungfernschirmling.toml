@@ -14,7 +14,7 @@ synonyme = ["Macrolepiota puellaris", "Macrolepiota nympharum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Jungfernschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
@@ -63,14 +63,6 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "buescheliger-egerlingsschirmling"
 unterschied = "Fleisch stark gilbend und rötend, später weinrot, Stiel bei Verletzung intensiv gelb bis rotbraun, wächst büschelig auf Kompost und Rindenmulch."
-
-[[verwechslungen]]
-slug = "parasol"
-unterschied = "Stiel mit dunkelbrauner Natterung, Hut bis 25, selten 30 cm breit, Geruch nussartig."
-
-[[verwechslungen]]
-slug = "safranschirmling"
-unterschied = "Fleisch bei Verletzung sofort safranrötlich anlaufend, Stielbasis verdickt aber ohne abgesetzte Knolle."
 
 [[links]]
 titel = "123pilzsuche.de"

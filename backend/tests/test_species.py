@@ -19,14 +19,16 @@ from app.core.errors import NotFound
 from app.main import build_app
 from app.modules.species.catalog import (
     DATA,
+    EDIBILITY_TEXT,
     PROTECTED_TEXT,
     UNPROTECTED_TEXT,
     Catalog,
     SpeciesFilter,
-    build_affects,
+    build_relations,
     build_tags,
     build_traits,
     catalog,
+    check_names,
     check_references,
     colour_names,
     covers_month,
@@ -73,7 +75,7 @@ PENNY_BUN = """
 name = "Steinpilz"
 lateinisch = "Boletus edulis"
 gruppe = "roehrling"
-speisewert = "guterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = true
 jahreszeiten = ["herbst"]
 baeume = ["fichte", "buche"]
@@ -99,6 +101,7 @@ zeit = "Herbst."
 [[verwechslungen]]
 slug = "gallenroehrling"
 unterschied = "Bitter."
+eigenerUnterschied = "Mild."
 
 [[links]]
 titel = "Wikipedia"
@@ -109,7 +112,7 @@ ST_GEORGES = """
 name = "Maipilz"
 lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
-speisewert = "guterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 jahreszeiten = ["fruehling"]
 baeume = []
@@ -141,7 +144,7 @@ SAFFRON_MILKCAP = """
 name = "Braetling"
 lateinisch = "Lactarius volemus"
 gruppe = "milchling"
-speisewert = "guterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = true
 jahreszeiten = ["sommer"]
 baeume = ["buche"]
@@ -202,10 +205,6 @@ geschmack = "Sehr bitter."
 sporenpulver = "Rosa."
 vorkommen = "Bei Fichte."
 zeit = "Juni bis Oktober."
-
-[[verwechslungen]]
-slug = "steinpilz"
-unterschied = "Roehren bleiben weiss bis oliv, Netz weiss, Geschmack mild."
 
 [[links]]
 titel = "123pilzsuche.de"
@@ -372,7 +371,7 @@ def test_tiers_come_from_map_and_table(built: Catalog) -> None:
         "steinpilz": Tier.FORECAST,
         "maipilz": Tier.SEASON,
         "braetling": Tier.PROFILE,
-        "gallenroehrling": Tier.LOOKALIKE,
+        "gallenroehrling": Tier.PROFILE,
     }
 
 
@@ -418,14 +417,13 @@ def test_the_tier_follows_the_map_even_without_visits(data: Path, tmp_path: Path
     assert saffron_milkcap.forecast_planned is False
 
 
-def test_species_without_a_table_row_stays_empty(built: Catalog) -> None:
+def test_a_species_without_a_table_row_shows_no_curve(built: Catalog) -> None:
     species = built.species("braetling")
-    curve = curve_of(built, "braetling")
 
+    # Eine Kurve aus lauter Nullen behauptet eine Messung, die es nicht gibt.
     assert species.visits_with_find == 0
     assert species.peak_week is None
-    assert curve.maximum == 0.0
-    assert set(curve.all_years) == {0.0}
+    assert species.season is None
 
 
 def test_the_season_curve_computes_both_series(built: Catalog) -> None:
@@ -527,45 +525,39 @@ def test_an_unknown_slug_is_an_error(built: Catalog) -> None:
         built.species("gibt-es-nicht")
 
 
-def test_a_lookalike_species_carries_no_season_curve(built: Catalog) -> None:
+def test_a_species_without_a_row_in_the_table_carries_no_curve(built: Catalog) -> None:
     gall = built.species("gallenroehrling")
 
-    assert gall.tier == Tier.LOOKALIKE
+    assert gall.tier == Tier.PROFILE
     assert gall.collectable is False
     assert gall.season is None
     assert gall.peak_week is None
     assert gall.map_slug is None
 
 
-def test_collectable_species_carry_the_curve(built: Catalog) -> None:
-    collectable = {
-        species.slug: species.collectable
-        for species in built.listing(only_collectable=None).species
-    }
+def test_the_curve_follows_the_table_not_the_flag(built: Catalog) -> None:
+    species = {species.slug: species for species in built.listing(only_collectable=None).species}
 
-    assert collectable == {
+    assert {slug: row.collectable for slug, row in species.items()} == {
         "steinpilz": True,
         "maipilz": True,
         "braetling": True,
         "gallenroehrling": False,
     }
-    assert all(
-        species.season is not None
-        for species in built.listing(only_collectable=None).species
-        if species.collectable
-    )
-    assert all(
-        species.season is None
-        for species in built.listing(only_collectable=None).species
-        if not species.collectable
-    )
+    # Der Braetling ist sammelbar und steht trotzdem nicht in der Tabelle.
+    assert {slug: row.season is not None for slug, row in species.items()} == {
+        "steinpilz": True,
+        "maipilz": True,
+        "braetling": False,
+        "gallenroehrling": False,
+    }
 
 
 def test_a_lookalike_links_its_own_profile(built: Catalog) -> None:
     gall = built.species("gallenroehrling")
+    row = next(row for row in gall.lookalikes if row.slug == "steinpilz")
 
-    assert gall.lookalikes[0].slug == "steinpilz"
-    assert built.species(gall.lookalikes[0].slug or "").name == "Steinpilz"
+    assert built.species(row.slug).name == "Steinpilz"
 
 
 def test_a_species_that_is_not_collectable_has_no_map() -> None:
@@ -600,7 +592,7 @@ def test_traits_follow_the_order_of_the_species_page(built: Catalog) -> None:
 def test_edibility_and_protection_carry_the_note(built: Catalog) -> None:
     lines = {line.key: line.text for line in built.species("steinpilz").traits}
 
-    assert lines[TraitKey.EDIBILITY] == "Guter Speisepilz. Jung sammeln."
+    assert lines[TraitKey.EDIBILITY] == "Essbar. Jung sammeln."
     assert lines[TraitKey.PROTECTION] == f"{PROTECTED_TEXT} Auch die Verwandten schont man."
 
 
@@ -608,7 +600,7 @@ def test_without_protection_the_second_sentence_stands(built: Catalog) -> None:
     lines = {line.key: line.text for line in built.species("maipilz").traits}
 
     assert lines[TraitKey.PROTECTION] == UNPROTECTED_TEXT
-    assert lines[TraitKey.EDIBILITY] == "Guter Speisepilz."
+    assert lines[TraitKey.EDIBILITY] == "Essbar."
 
 
 def test_every_edibility_has_a_sentence(built: Catalog) -> None:
@@ -735,7 +727,7 @@ async def test_the_listing_answers_in_camel_case(app: FastAPI) -> None:
         "begehungenJeWocheLaufendesJahr",
         "arten",
     }
-    first_one = body["arten"][0]
+    first_one = next(row for row in body["arten"] if row["slug"] == "steinpilz")
     assert set(first_one) == {
         "slug",
         "name",
@@ -747,8 +739,7 @@ async def test_the_listing_answers_in_camel_case(app: FastAPI) -> None:
         "speisewert",
         "kartenSlug",
         "sammelbar",
-        "marktfaehig",
-        "marktfaehigSchweiz",
+        "marktfaehigkeit",
         "wertigkeit",
         "haeufigkeit",
         "gefaehrdung",
@@ -780,13 +771,21 @@ async def test_the_profile_answers_with_table_and_curve(app: FastAPI) -> None:
     assert body["merkmale"][0] == {"schluessel": "hut", "text": "Braun."}
     assert body["verwechslungen"] == [
         {
+            "slug": "braetling",
+            "name": "Braetling",
+            "lateinisch": "Lactarius volemus",
+            "unterschied": None,
+            "speisewert": "essbar",
+            "warnung": None,
+        },
+        {
             "slug": "gallenroehrling",
             "name": "Gallenroehrling",
             "lateinisch": "Tylopilus felleus",
             "unterschied": "Bitter.",
             "speisewert": "ungeniessbar",
             "warnung": None,
-        }
+        },
     ]
     assert body["links"][0]["url"].startswith("https://")
     assert set(body["saison"]) == {
@@ -825,7 +824,7 @@ async def test_the_listing_needs_no_token(app: FastAPI) -> None:
 def test_every_shipped_profile_is_valid() -> None:
     profiles = read_profiles(DATA / "arten")
 
-    assert len(profiles) == 311
+    assert len(profiles) == 306
     assert sum(1 for profile in profiles.values() if profile.collectable) == 85
 
 
@@ -929,7 +928,7 @@ def test_every_profile_names_its_source() -> None:
     for slug, profile in read_profiles(DATA / "arten").items():
         assert profile.source is not None, slug
         assert profile.source.url.startswith("https://www.123pilzsuche.de/"), slug
-        assert profile.source.checked_on == "2026-09-10", slug
+        assert profile.source.checked_on == "2026-09-12", slug
 
 
 def test_every_lookalike_carries_a_slug_and_a_difference() -> None:
@@ -937,6 +936,7 @@ def test_every_lookalike_carries_a_slug_and_a_difference() -> None:
         for lookalike in profile.lookalikes:
             assert lookalike.slug.strip(), slug
             assert lookalike.difference.strip(), slug
+            assert lookalike.own_difference is None or lookalike.own_difference.strip(), slug
 
 
 def test_no_trait_and_no_note_is_empty() -> None:
@@ -959,12 +959,12 @@ def test_every_lookalike_points_at_a_profile() -> None:
 
 def test_no_file_carries_a_name_or_edibility_in_a_lookalike() -> None:
     # Der Umbau ist nur fertig, wenn die doppelten Felder wirklich weg sind.
-    allowed = {"slug", "unterschied"}
+    allowed = {"slug", "unterschied", "eigenerUnterschied"}
 
     for path in sorted((DATA / "arten").glob("*.toml")):
         raw = tomllib.loads(path.read_text(encoding="utf-8"))
         for lookalike in raw.get("verwechslungen", []):
-            assert set(lookalike) == allowed, f"{path.stem}: {sorted(lookalike)}"
+            assert set(lookalike) <= allowed, f"{path.stem}: {sorted(lookalike)}"
 
 
 def test_the_collectable_species_stay_eightyfive() -> None:
@@ -973,14 +973,16 @@ def test_the_collectable_species_stay_eightyfive() -> None:
     assert sum(1 for profile in profiles.values() if profile.collectable) == 85
 
 
-def test_lookalike_species_carry_the_lookalike_tier(tmp_path: Path) -> None:
+def test_a_species_nobody_collects_carries_no_curve_and_no_map(tmp_path: Path) -> None:
     built = catalog(DATA, _chain_maps(tmp_path / "maps"))
     species = {species.slug: species for species in built.listing(only_collectable=None).species}
     profiles = read_profiles(DATA / "arten")
 
     for slug, profile in profiles.items():
-        if not profile.collectable:
-            assert species[slug].tier == Tier.LOOKALIKE, slug
+        if profile.collectable:
+            assert species[slug].season is not None, slug
+        else:
+            assert species[slug].tier == Tier.PROFILE, slug
             assert species[slug].season is None, slug
             assert species[slug].map_slug is None, slug
 
@@ -1038,12 +1040,12 @@ def test_marketable_follows_the_dgfm_positive_list(tmp_path: Path) -> None:
     assert built.species("gruener-knollenblaetterpilz").marketability.marketable is False
 
 
-def test_marketability_names_its_source(tmp_path: Path) -> None:
+def test_marketability_carries_no_source_of_its_own(tmp_path: Path) -> None:
     species = catalog(DATA, tmp_path).species("steinpilz")
 
-    # Die Zeile "Relativer Speisewert" steht auf der Artseite selbst.
-    assert species.marketability.source == species.source
-    assert species.marketability.source.url.startswith("https://www.123pilzsuche.de/")
+    # Die Zeile "Relativer Speisewert" steht auf derselben Seite wie der Rest.
+    assert "source" not in type(species.marketability).model_fields
+    assert species.source.url.startswith("https://www.123pilzsuche.de/")
 
 
 def test_the_measurements_come_from_the_source_page(tmp_path: Path) -> None:
@@ -1092,6 +1094,8 @@ async def test_the_profile_returns_the_numbers_of_the_source() -> None:
 # oder in einer Zeile der Merkmalstabelle aufgeht, sagt es diese Zuordnung.
 PROFILE_FIELD_ON_THE_WIRE: dict[str, str | None] = {
     "map_name": "map_slug",
+    "marketable": "marketability",
+    "marketable_switzerland": "marketability",
     "edibility_note": None,
     "protection_note": None,
 }
@@ -1158,11 +1162,11 @@ async def test_the_real_listing_shows_eightyfive_species() -> None:
     assert len(response.json()["arten"]) == 85
 
 
-async def test_the_real_listing_knows_all_threehundrednine() -> None:
+async def test_the_real_listing_knows_all_threehundredsix() -> None:
     async with client(build_app()) as call:
         response = await call.get("/api/arten", params={"alle": "true"})
 
-    assert len(response.json()["arten"]) == 311
+    assert len(response.json()["arten"]) == 306
 
 
 # ------------------------------------------------- Baeume, Warnung, Reagenzien
@@ -1254,12 +1258,11 @@ async def test_the_profile_returns_marketability_and_measurements() -> None:
         response = await call.get("/api/arten/steinpilz")
 
     body = response.json()
-    assert body["marktfaehig"] is True
-    assert body["marktfaehigkeit"]["quelle"]["url"].startswith("https://www.123pilzsuche.de/")
-    assert body["marktfaehigSchweiz"] is True
+    assert body["marktfaehigkeit"] == {"marktfaehig": True, "schweiz": True}
+    assert body["quelle"]["url"].startswith("https://www.123pilzsuche.de/")
     assert body["baeume"]
     assert set(body) >= {
-        "marktfaehig",
+        "marktfaehigkeit",
         "wertigkeit",
         "haeufigkeit",
         "gefaehrdung",
@@ -1273,6 +1276,81 @@ async def test_the_profile_returns_marketability_and_measurements() -> None:
         "baeume",
         "baeumeAusErfahrung",
     }
+
+
+# ------------------------------------------------- Stufen der Essbarkeit
+
+
+def test_the_levels_name_the_danger_not_the_taste() -> None:
+    # Sehr gut, gut und minderwertig sind Bewertungen. Sie stehen als
+    # Wertigkeit im Profil und waeren hier eine zweite Skala im selben Feld.
+    assert [level.value for level in Edibility] == [
+        "essbar",
+        "bedingtEssbar",
+        "ungeniessbar",
+        "giftig",
+        "toedlichGiftig",
+    ]
+
+
+def test_every_level_carries_a_sentence() -> None:
+    assert set(EDIBILITY_TEXT) == set(Edibility)
+
+
+def test_the_word_essbar_hides_inside_ungeniessbar() -> None:
+    # Wer die Kopfzeile der Quellseite nach "ESSBAR" durchsucht, findet sie
+    # auch in "UNGENIESSBAR". Die zwei Stufen bleiben getrennte Werte.
+    assert Edibility.EDIBLE.value in Edibility.INEDIBLE.value
+    assert Edibility.EDIBLE is not Edibility.INEDIBLE
+
+
+def test_the_filter_narrows_the_listing(built: Catalog) -> None:
+    chosen = SpeciesFilter(edibility=Edibility.INEDIBLE)
+    listing = built.listing(only_collectable=None, chosen=chosen)
+
+    assert [species.slug for species in listing.species] == ["gallenroehrling"]
+
+
+def test_the_filter_holds_together_with_the_collectable_flag(built: Catalog) -> None:
+    chosen = SpeciesFilter(edibility=Edibility.INEDIBLE)
+
+    assert built.listing(only_collectable=True, chosen=chosen).species == []
+
+
+async def test_the_endpoint_takes_the_edibility_filter(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get(
+            "/api/arten", params={"alle": "true", "speisewert": "ungeniessbar"}
+        )
+
+    assert response.status_code == 200
+    assert [row["slug"] for row in response.json()["arten"]] == ["gallenroehrling"]
+
+
+async def test_a_level_outside_the_enum_is_rejected(app: FastAPI) -> None:
+    async with client(app) as call:
+        response = await call.get("/api/arten", params={"speisewert": "lecker"})
+
+    assert response.status_code == 422
+    assert response.headers["content-type"].startswith("application/problem+json")
+
+
+async def test_the_real_listing_filters_by_level() -> None:
+    async with client(build_app()) as call:
+        deadly = await call.get(
+            "/api/arten", params={"alle": "true", "speisewert": "toedlichGiftig"}
+        )
+        edible = await call.get("/api/arten", params={"alle": "true", "speisewert": "essbar"})
+
+    assert len(deadly.json()["arten"]) == 21
+    assert len(edible.json()["arten"]) == 180
+    assert all(row["speisewert"] == "toedlichGiftig" for row in deadly.json()["arten"])
+
+
+def test_every_level_stands_in_the_catalog() -> None:
+    profiles = read_profiles(DATA / "arten")
+
+    assert {profile.edibility for profile in profiles.values()} == set(Edibility)
 
 
 # ------------------------------------------------- Verweise statt Kopien
@@ -1302,7 +1380,7 @@ def test_the_check_runs_when_the_catalog_is_built(data: Path, tmp_path: Path) ->
         (data / "saison.json").read_text(encoding="utf-8"), encoding="utf-8"
     )
 
-    with pytest.raises(ValueError, match="ohne Ziel"):
+    with pytest.raises(ValueError, match="ohne gueltiges Ziel"):
         catalog(broken, tmp_path / "leer")
 
 
@@ -1318,42 +1396,125 @@ def test_a_resolved_lookalike_shows_the_profile_of_its_target(built: Catalog) ->
 
 def test_the_difference_belongs_to_the_pair(built: Catalog) -> None:
     # Derselbe Gallenroehrling, zwei Arten, zwei Saetze.
-    from_boletus = built.species("steinpilz").lookalikes[0]
-    from_maipilz = built.species("maipilz").lookalikes[0]
+    from_boletus = next(
+        row for row in built.species("steinpilz").lookalikes if row.slug == "gallenroehrling"
+    )
+    from_maipilz = next(
+        row for row in built.species("maipilz").lookalikes if row.slug == "gallenroehrling"
+    )
 
-    assert from_boletus.slug == from_maipilz.slug
     assert from_boletus.difference != from_maipilz.difference
 
 
-def test_the_reverse_direction_names_every_source(built: Catalog) -> None:
-    assert built.species("gallenroehrling").affects == ["maipilz", "steinpilz"]
-    assert built.species("braetling").affects == []
-
-
-def test_the_reverse_direction_is_computed_not_read(data: Path) -> None:
-    profiles = read_profiles(data / "arten")
-
-    assert build_affects(profiles)["steinpilz"] == ["braetling", "gallenroehrling"]
-
-
-def test_every_reverse_direction_matches_a_forward_one() -> None:
-    profiles = read_profiles(DATA / "arten")
-    affects = build_affects(profiles)
-
-    for slug, sources in affects.items():
-        for source in sources:
-            assert slug in [look.slug for look in profiles[source].lookalikes]
-    assert sum(len(sources) for sources in affects.values()) == sum(
-        len(profile.lookalikes) for profile in profiles.values()
+def test_the_pair_reaches_both_species(built: Catalog) -> None:
+    # Der Datensatz steht beim Steinpilz. Der Gallenroehrling zeigt ihn auch.
+    from_boletus = next(
+        row for row in built.species("steinpilz").lookalikes if row.slug == "gallenroehrling"
+    )
+    from_gall = next(
+        row for row in built.species("gallenroehrling").lookalikes if row.slug == "steinpilz"
     )
 
+    assert from_boletus.difference == "Bitter."
+    assert from_gall.difference == "Mild."
 
-async def test_the_profile_answers_with_references_and_reverse_direction(app: FastAPI) -> None:
+
+def test_a_pair_without_a_second_sentence_still_reaches_back(built: Catalog) -> None:
+    # Der Braetling nennt den Steinpilz, der Steinpilz nichts zum Braetling.
+    from_boletus = next(
+        row for row in built.species("steinpilz").lookalikes if row.slug == "braetling"
+    )
+
+    assert from_boletus.difference is None
+
+
+def test_a_pair_stands_in_one_file_only(data: Path) -> None:
+    profiles = read_profiles(data / "arten")
+    profiles["gallenroehrling"] = profiles["gallenroehrling"].model_copy(
+        update={"lookalikes": [Lookalike(slug="steinpilz", difference="Mild.")]}
+    )
+
+    with pytest.raises(ValueError, match="zweimal"):
+        check_references(profiles)
+
+
+def test_a_species_is_no_lookalike_of_itself(data: Path) -> None:
+    profiles = read_profiles(data / "arten")
+    profiles["steinpilz"] = profiles["steinpilz"].model_copy(
+        update={"lookalikes": [Lookalike(slug="steinpilz", difference="x")]}
+    )
+
+    with pytest.raises(ValueError, match="ohne gueltiges Ziel"):
+        check_references(profiles)
+
+
+def test_the_same_pair_twice_in_one_file_is_refused() -> None:
+    with pytest.raises(ValidationError, match="doppelt"):
+        Profile.model_validate(
+            {
+                **tomllib.loads(PENNY_BUN),
+                "verwechslungen": [
+                    {"slug": "gallenroehrling", "unterschied": "a"},
+                    {"slug": "gallenroehrling", "unterschied": "b"},
+                ],
+            }
+        )
+
+
+def test_every_pair_of_the_catalog_stands_once() -> None:
+    profiles = read_profiles(DATA / "arten")
+
+    check_references(profiles)
+
+    relations = build_relations(profiles)
+    records = sum(len(profile.lookalikes) for profile in profiles.values())
+    assert sum(len(rows) for rows in relations.values()) == 2 * records
+
+
+def test_no_species_stands_twice_in_the_catalog() -> None:
+    check_names(read_profiles(DATA / "arten"))
+
+
+def test_a_second_file_for_the_same_species_is_caught(data: Path) -> None:
+    profiles = read_profiles(data / "arten")
+    profiles["steinpilz-zweitname"] = profiles["steinpilz"]
+
+    with pytest.raises(ValueError, match="Lateinischer Name Boletus edulis"):
+        check_names(profiles)
+
+
+def test_two_files_with_the_same_german_name_are_caught(data: Path) -> None:
+    profiles = read_profiles(data / "arten")
+    profiles["zwilling"] = profiles["steinpilz"].model_copy(
+        update={"scientific": "Boletus separatus"}
+    )
+
+    with pytest.raises(ValueError, match="Name Steinpilz"):
+        check_names(profiles)
+
+
+def test_the_name_check_runs_when_the_catalog_is_built(data: Path, tmp_path: Path) -> None:
+    doubled = tmp_path / "doppelt"
+    (doubled / "arten").mkdir(parents=True)
+    for file in (data / "arten").glob("*.toml"):
+        (doubled / "arten" / file.name).write_text(
+            file.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+    (doubled / "arten" / "steinpilz-zweitname.toml").write_text(PENNY_BUN, encoding="utf-8")
+    (doubled / "saison.json").write_text(
+        (data / "saison.json").read_text(encoding="utf-8"), encoding="utf-8"
+    )
+
+    with pytest.raises(ValueError, match="doppelt im Katalog"):
+        catalog(doubled, tmp_path / "leer")
+
+
+async def test_the_profile_answers_with_both_directions(app: FastAPI) -> None:
     async with client(app) as call:
         answer = await call.get("/api/arten/gallenroehrling")
 
     body = answer.json()
-    assert body["betrifft"] == ["maipilz", "steinpilz"]
+    assert [row["slug"] for row in body["verwechslungen"]] == ["maipilz", "steinpilz"]
     assert set(body["verwechslungen"][0]) == {
         "slug",
         "name",
@@ -1523,7 +1684,7 @@ async def test_the_endpoint_takes_every_filter() -> None:
                 "monat": "9",
                 "baum": "",
                 "schutz": "keiner",
-                "speisewert": "sehrGuterSpeisepilz",
+                "speisewert": "essbar",
             },
         )
 

@@ -18,7 +18,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ReifpilzEssbar1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 15.0, einheit = "cm" }
@@ -65,16 +65,17 @@ vorkommen = "Symbiosepilz im Nadelwald, gern unter Kiefern und Fichten, auf saur
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
+slug = "gruener-knollenblaetterpilz"
+unterschied = "Hut olivgrün bis gelbgrün, Lamellen weiß und frei, Stielbasis in einer eierschaligen Volva, Sporenpulver weiß."
+
+[[verwechslungen]]
 slug = "kegelhuetiger-knollenblaetterpilz"
 unterschied = "Hut weißlich und seidig radialfaserig, Lamellen bleiben weiß, Stielbasis in einer häutigen Scheide, Sporenpulver weiß. Gleicher Standort und gleicher Boden."
 
 [[verwechslungen]]
-slug = "giftchampignon"
-unterschied = "Hut olivgrün bis gelbgrün, Lamellen weiß und frei, Stielbasis in einer eierschaligen Volva, Sporenpulver weiß."
-
-[[verwechslungen]]
 slug = "zimtroter-guertelfuss"
 unterschied = "Lamellen zimtrot bis rotbraun, Hut ohne Reifüberzug, Stiel wollig gegürtelt statt mit häutigem Ring, Geruch rettichartig."
+eigenerUnterschied = "Hut mit weißem Reifüberzug, Stiel mit häutigem Ring statt wolliger Gürtelung."
 
 [[links]]
 titel = "123pilzsuche.de"

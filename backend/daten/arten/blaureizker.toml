@@ -1,4 +1,4 @@
-name = "Blaureizker"
+name = "Wechselblauer Edelreizker"
 lateinisch = "Lactarius quieticolor"
 gruppe = "milchling"
 speisewert = "essbar"
@@ -10,11 +10,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in der Schweiz stark gefährdet. Wenn überhaupt, nur wenige Fruchtkörper nehmen."
 haeufigkeit = "sehrSelten"
-weitereNamen = ["Wechselblauer Edelreizker", "Blaumilch-Kiefernreizker", "Brauner Kiefern-Blutreizker"]
+weitereNamen = ["Blaureizker", "Blaumilch-Kiefernreizker", "Brauner Kiefern-Blutreizker"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BlauerReizker.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
@@ -64,14 +64,6 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "spangruener-kiefernreizker"
 unterschied = "Milch orangerot und bald weinrot bis dunkelrot, Geschmack herb und bitterlich, Stiel mit flachen dunklen Grübchen."
-
-[[verwechslungen]]
-slug = "fichtenreizker"
-unterschied = "Hut feucht stark schleimig und grünfleckig, Stiel ohne Grübchen, bei Fichte."
-
-[[verwechslungen]]
-slug = "lachsreizker"
-unterschied = "Stiel mit rötlichen bis orangeroten Grübchen, bei Weißtanne."
 
 [[links]]
 titel = "123pilzsuche.de"

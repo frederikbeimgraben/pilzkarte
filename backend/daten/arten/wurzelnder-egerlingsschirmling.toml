@@ -11,7 +11,7 @@ weitereNamen = ["Wurzelnder Egerlingsschirmpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WurzelnderEgerlingsschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 16.0, einheit = "cm" }

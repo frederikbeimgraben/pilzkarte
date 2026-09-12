@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flocki.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
@@ -68,24 +68,26 @@ vorkommen = "Symbiosepilz im Mischwald, gern bei Fichte und Buche, auf saurem Bo
 zeit = "Frühling bis Spätherbst, oft schon ab April."
 
 [[verwechslungen]]
-slug = "ochsenroehrling"
-unterschied = "Hut goldgelb bis braungelb, Stielbasis stark verdickt."
-
-[[verwechslungen]]
 slug = "blaufleckender-purpurroehrling"
 unterschied = "Hut purpurrot bis weinrosa, Stiel mit rötlichem Netz."
-
-[[verwechslungen]]
-slug = "falscher-satansroehrling"
-unterschied = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz."
 
 [[verwechslungen]]
 slug = "buescheliger-hexenroehrling"
 unterschied = "Hut kupfer- bis granatrot, Stiel rötlich benetzt, wächst büschelig."
 
 [[verwechslungen]]
+slug = "falscher-satansroehrling"
+unterschied = "Hut purpurrosa bis rostgelb, Stiel kräftig rot mit rotem Netz."
+eigenerUnterschied = "Stiel ohne Netz, nur rot geflockt, Hut dunkelbraun."
+
+[[verwechslungen]]
 slug = "glattstieliger-hexenroehrling"
 unterschied = "Stiel ohne Flöckchen und ohne Netz, Röhrenmündungen gelborange."
+
+[[verwechslungen]]
+slug = "ochsenroehrling"
+unterschied = "Hut goldgelb bis braungelb, Stielbasis stark verdickt."
+eigenerUnterschied = "Stiel ohne Netz, mit roten Flöckchen auf gelbem Grund, Hut dunkelbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

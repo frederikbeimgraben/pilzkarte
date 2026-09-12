@@ -12,7 +12,7 @@ weitereNamen = ["Gerandetknolliger Gartenriesenschirmling", "Safranschirmling-Ga
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gartenschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
@@ -62,6 +62,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "gruensporschirmling"
 unterschied = "Lamellen im Alter grünlich, Sporenpulver grün, Fleisch nur schwach rötend."
+eigenerUnterschied = "Stielbasis mit gerandeter Knolle, Fleisch rötet kräftig, Sporenpulver weiß."
 
 [[verwechslungen]]
 slug = "parasol"

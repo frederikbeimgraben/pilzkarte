@@ -1,5 +1,5 @@
 name = "Falscher Wiesenegerling"
-lateinisch = "Agaricus pseudopratensis (agaricus xanthoderma var. pseudopratensis)"
+lateinisch = "Agaricus pseudopratensis"
 gruppe = "champignon"
 speisewert = "giftig"
 geschuetzt = false
@@ -10,10 +10,11 @@ baeume = []
 speisewertHinweis = "Er riecht unangenehm nach Karbol, Tinte oder Urin, nicht pilzig wie die Wiesenchampignons. Die Stielbasis gilbt auf Druck oder im Schnitt, manchmal nur schwach und später rötend. Riecht ein Champignon nicht nach Champignon, bleibt er stehen."
 gefaehrdung = "extremSelten"
 weitereNamen = ["Falscher Wiesen-Egerling", "Schmalberingter Karbol-Egerling", "Rötender Karbolegerling"]
+synonyme = ["Agaricus xanthoderma var. pseudopratensis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalscherWiesenegerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -74,10 +75,6 @@ unterschied = "Riecht ebenfalls nach Karbol, Stielbasis im Schnitt kräftig chro
 [[verwechslungen]]
 slug = "wiesenchampignon"
 unterschied = "Riecht angenehm pilzig, gilbt nicht, Ring einfach und dünn."
-
-[[verwechslungen]]
-slug = "schafchampignon"
-unterschied = "Riecht nach Anis, gilbt nur an der Oberfläche, nicht an der Schnittstelle in der Stielbasis."
 
 [[links]]
 titel = "123pilzsuche.de"

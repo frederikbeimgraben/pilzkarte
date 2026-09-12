@@ -12,7 +12,7 @@ synonyme = ["Russula peltereaui", "Russula cyanoxantha forma peltereaui", "Russu
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OlivfarbenerFrauentaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -66,10 +66,6 @@ geschmack = "Mild, angenehm."
 sporenpulver = "Weiß."
 vorkommen = "Symbiosepilz im Mischwald."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "frauentaeubling"
-unterschied = "Hut grün, braun, blau bis lila gemischt, ohne den reinen Olivton mit violetten Flecken."
 
 [[links]]
 titel = "123pilzsuche.de"

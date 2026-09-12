@@ -13,7 +13,7 @@ weitereNamen = ["Rauer Schirmling", "Kegelschuppiger Schirmling", "Spitzschuppig
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SpitzschuppigerSchirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 17.0, einheit = "cm" }
@@ -55,10 +55,6 @@ geschmack = "Unbedeutend bis mild, teils etwas unangenehm."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer in Gärten, an Wegrändern und auf Schutt, gern auf kalkreichem Boden, einzeln oder gesellig, häufig."
 zeit = "Frühsommer bis Herbst."
-
-[[verwechslungen]]
-slug = "riesenchampignon"
-unterschied = "Hut mit braunen Schuppen statt Stacheln, Lamellen blassrosa und später braun, Sporenpulver purpurbraun, Geruch anisartig."
 
 [[links]]
 titel = "123pilzsuche.de"

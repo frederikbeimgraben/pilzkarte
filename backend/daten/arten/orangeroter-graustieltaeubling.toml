@@ -12,7 +12,7 @@ baeume = ["kiefer", "tanne", "fichte"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OrangGraustieltaeub.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -74,10 +74,6 @@ geschmack = "Mild, leicht schärflich."
 sporenpulver = "Hellocker bis dunkelcreme."
 vorkommen = "Symbiosepilz im Nadelwald und in Torfmooren, gern bei Kiefer, Tanne und Fichte. Im Flachland fehlend."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "gelber-graustieltaeubling"
-unterschied = "Hut rein chromgelb bis zitronengelb, nicht orangerot. Auf moorigem saurem Boden bei Birke."
 
 [[links]]
 titel = "123pilzsuche.de"

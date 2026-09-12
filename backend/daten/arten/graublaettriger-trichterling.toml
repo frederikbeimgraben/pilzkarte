@@ -12,7 +12,7 @@ synonyme = ["Clitocybe inornata", "Omphalia inornata", "Paxillus inornatus", "Ag
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GraublaettrigerTrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -56,10 +56,6 @@ geschmack = "Mild, mehlig-ranzig, unangenehm."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer im Mischwald auf kalkreichem Boden."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "nebelkappe"
-unterschied = "Deutlich größer, Hut grau und wie bereift, Geruch stark mehlig-süßlich, Lamellen weißlich."
 
 [[links]]
 titel = "123pilzsuche.de"

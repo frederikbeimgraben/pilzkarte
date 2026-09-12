@@ -1,4 +1,4 @@
-name = "Flaschenbovist"
+name = "Flaschenstäubling"
 lateinisch = "Lycoperdon perlatum"
 gruppe = "staeubling"
 speisewert = "essbar"
@@ -10,12 +10,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 karte = "flaschenbovist"
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden."
-weitereNamen = ["Flaschenstäubling", "Warzen-Stäubling", "Würziger Staubbuff", "Warziger Staubbuff", "Nonnefürzli", "Judenfurzpilz", "Fohenfist"]
+weitereNamen = ["Flaschenbovist", "Warzen-Stäubling", "Würziger Staubbuff", "Warziger Staubbuff", "Nonnefürzli", "Judenfurzpilz", "Fohenfist"]
 synonyme = ["Lycoperdon perlatum var. perlatum", "Lycoperdon gemmatum var. perlatum", "Lycoperdon gemmatum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flaschenstaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
@@ -54,24 +54,29 @@ vorkommen = "Folgezersetzer im Mischwald, aus der Erde, selten aus verrottetem T
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
+slug = "beutelstaeubling"
+unterschied = "Bis 25 cm hoch, Außenhaut fällt großflächig ab, Fleisch alt purpurbraun."
+eigenerUnterschied = "Kleiner und keulig, mit blassen pyramidenartigen Stacheln besetzt."
+
+[[verwechslungen]]
 slug = "birnenstaeubling"
 unterschied = "Kugelig, bräunlich, Geruch unangenehm gasartig."
+eigenerUnterschied = "Blasse, spitzkegelige Stacheln, wächst aus Erde und nicht büschelig auf Holz."
 
 [[verwechslungen]]
 slug = "braeunlicher-staeubling"
 unterschied = "Birnenförmig, bräunlich, mit dunkelbraunen Stacheln."
+eigenerUnterschied = "Blasse, spitzkegelige Stacheln auf hellem Grund, Fruchtkörper deutlich keulig gestielt."
 
 [[verwechslungen]]
 slug = "igelstaeubling"
 unterschied = "Stacheln stehen in Gruppen zusammengeneigt, Spitzen weißlich."
+eigenerUnterschied = "Keulig bis birnenförmig mit stielartigem Teil, Stacheln blass und pyramidenartig, ohne bleibendes Netzmuster."
 
 [[verwechslungen]]
 slug = "rauer-staeubling"
 unterschied = "Weißlich, kugelig, zur Basis zugespitzt, mit langen Myzelsträngen."
-
-[[verwechslungen]]
-slug = "beutelstaeubling"
-unterschied = "Bis 25 cm hoch, Außenhaut fällt großflächig ab, Fleisch alt purpurbraun."
+eigenerUnterschied = "Deutlich flaschen- bis birnenförmig mit langem Stielteil, Haut nur feinwarzig."
 
 [[links]]
 titel = "123pilzsuche.de"

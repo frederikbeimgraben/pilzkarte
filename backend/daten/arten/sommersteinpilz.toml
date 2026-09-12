@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sommersteinpilz2004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 22.0, seltenBis = 28.0, einheit = "cm" }
@@ -61,16 +61,17 @@ slug = "gallenroehrling"
 unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack bitter."
 
 [[verwechslungen]]
-slug = "steinpilz"
-unterschied = "Netz nur im oberen Stielteil, unter der Huthaut eine rotbräunliche Zone."
-
-[[verwechslungen]]
 slug = "maronenroehrling"
 unterschied = "Hut glatt und feucht, Röhren gelblich bis grüngelb und auf Druck blaugrün, Stiel ohne Netz."
 
 [[verwechslungen]]
 slug = "schwarzhuetiger-steinpilz"
 unterschied = "Hut kastanien- bis schwarzbraun oder hell bronzefarben, Stiel faserig rillig."
+
+[[verwechslungen]]
+slug = "steinpilz"
+unterschied = "Netz nur im oberen Stielteil, unter der Huthaut eine rotbräunliche Zone."
+eigenerUnterschied = "Netz zieht sich über den ganzen Stiel, Fleisch unter der Huthaut weiß, Huthaut bei Trockenheit felderig rissig."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -13,7 +13,7 @@ synonyme = ["Agaricus limonius", "Cortinarius callisteus sensu", "Gomphos limoni
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZitronengelberRaukopf.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -58,10 +58,6 @@ geschmack = "Mild, aber niemals kosten."
 sporenpulver = "Rostbraun."
 vorkommen = "Symbiosepilz im moosigen, feuchten Nadelwald, gern bei Fichte auf sauren, mageren Böden, gern bei Torfmoosen und Heidelbeeren."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "spitzgebuckelter-raukopf"
-unterschied = "Hut nicht hygrophan, mit deutlichem spitzem Buckel, filzig schuppig."
 
 [[verwechslungen]]
 slug = "goldroehrling"

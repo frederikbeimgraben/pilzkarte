@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Totentrompete.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
@@ -63,16 +63,17 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Eiche und Buche, kalkliebend. Se
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
+slug = "grauer-leistling"
+unterschied = "Hut schwarzgrau bis graubraun und feinschuppig, Rand wellig, Fleisch schmutzig weißlich bis grau."
+
+[[verwechslungen]]
 slug = "kohlenleistling"
 unterschied = "1 bis 4, selten bis 6 cm breit, Unterseite mit grauweißen, eng stehenden Lamellen statt fast glatter Leisten."
 
 [[verwechslungen]]
 slug = "schwarzer-kelchpilz"
 unterschied = "Kelchförmig, ohne Leisten, Fleisch braun und fleischig lederartig, Stiel nach unten verjüngt."
-
-[[verwechslungen]]
-slug = "grauer-leistling"
-unterschied = "Hut schwarzgrau bis graubraun und feinschuppig, Rand wellig, Fleisch schmutzig weißlich bis grau."
+eigenerUnterschied = "Trichterig bis röhrig durchbohrt, dünnfleischig und biegsam, Außenseite aschgrau bereift, im Herbst unter Buche und Eiche."
 
 [[verwechslungen]]
 slug = "verbogener-leistling"

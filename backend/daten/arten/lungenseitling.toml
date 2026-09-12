@@ -14,7 +14,7 @@ synonyme = ["Agaricus pulmonarius", "Pleurotus ostreatus var. pulmonarius", "Ple
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Lungenseitling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -71,16 +71,14 @@ vorkommen = "Folgezersetzer an Laubholz, gern Buche, Esche, Pappel und Birke. In
 zeit = "Frühling bis Herbst."
 
 [[verwechslungen]]
-slug = "rosenseitling"
-unterschied = "Hut und Lamellen gelblich bis rosenrot, Geruch beißend nitratartig. In Europa nur als Zuchtpilz."
-
-[[verwechslungen]]
 slug = "rillstieliger-seitling"
 unterschied = "Lamellen queradrig netzig verbunden und bis zur Stielbasis herablaufend, Stiel längsrillig, Geruch mehlartig."
+eigenerUnterschied = "Hut weißlich bis cremefarben, Stiel sehr kurz und seitlich, ohne Längsrillen."
 
 [[verwechslungen]]
-slug = "austernseitling"
-unterschied = "Hut silbergrau bis graubraun statt cremeweiß, dickfleischiger. Er braucht einen Kältereiz und kommt erst im Winter."
+slug = "rosenseitling"
+unterschied = "Hut und Lamellen gelblich bis rosenrot, Geruch beißend nitratartig. In Europa nur als Zuchtpilz."
+eigenerUnterschied = "Hut milchweiss bis cremeweiss und duennfleischig, im Sommer an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

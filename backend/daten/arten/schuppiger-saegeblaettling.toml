@@ -1,7 +1,7 @@
 name = "Schuppiger Sägeblättling"
 lateinisch = "Neolentinus lepideus"
 gruppe = "seitling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 wertigkeit = 4
 marktfaehig = false
@@ -12,7 +12,7 @@ speisewertHinweis = "Ungenießbar, weil das Fleisch rasch zäh wird. Nur ganz ju
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchuppigerSaegeblaettling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 10.0, seltenBis = 16.0, einheit = "cm" }
@@ -59,14 +59,6 @@ geschmack = "Mild, pilzig."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer an Nadelholz und Totholz, gern bei Lärche und Kiefer, auch an Eisenbahnschwellen, Pfählen und Holzbrücken. Löst deutliche Würfelbraunfäule aus und gilt als Gebäudeschädling."
 zeit = "Selten schon im Frühling, meist Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "becherfoermiger-saegeblaettling"
-unterschied = "Hut becherförmig vertieft, Schuppen schwächer, an Laubholz."
-
-[[verwechslungen]]
-slug = "schuppiger-porling"
-unterschied = "Unterseite mit weiten Poren statt Lamellen, Stielbasis schwarz."
 
 [[verwechslungen]]
 slug = "sklerotienporling"

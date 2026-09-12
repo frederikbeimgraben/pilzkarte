@@ -14,7 +14,7 @@ synonyme = ["Amanita flavescens", "Amanitopsis flavescens", "Amanitopsis vaginat
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelberStreifling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "phenol"
@@ -58,10 +58,6 @@ geschmack = "Mild, roh giftig."
 sporenpulver = "Weiß."
 vorkommen = "Symbiosepilz im Laubwald, nur bei Birke. Relativ selten."
 zeit = "Frühsommer bis Herbst."
-
-[[verwechslungen]]
-slug = "fuchsiger-scheidenstreifling"
-unterschied = "Hut fuchsig orangebraun statt gelb, Stiel ohne die deutliche Natterung."
 
 [[links]]
 titel = "123pilzsuche.de"

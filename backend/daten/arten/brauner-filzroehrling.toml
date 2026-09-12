@@ -14,7 +14,7 @@ weitereNamen = ["Filziger Röhrling", "Braune Ziegenlippe"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerFilzroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -78,16 +78,13 @@ vorkommen = "Symbiosepilz im Mischwald, besonders gern bei Fichte. Häufig."
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-slug = "ziegenlippe"
-unterschied = "Hut hell olivbraun bis olivocker, Stiel fast weiß und ohne Netzzeichnung."
+slug = "rotfussroehrling"
+unterschied = "Stiel rötlich punktiert und ohne Netz, unter der Huthaut rot."
 
 [[verwechslungen]]
 slug = "samtiger-filzroehrling"
 unterschied = "Netz nur von der Stielmitte bis zur Spitze, Geruch leicht nach Schwefel, bei Buche und Eiche."
-
-[[verwechslungen]]
-slug = "rotfussroehrling"
-unterschied = "Stiel rötlich punktiert und ohne Netz, unter der Huthaut rot."
+eigenerUnterschied = "Stiel ohne Netzzeichnung, Hut olivbraun, Fleisch kaum blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

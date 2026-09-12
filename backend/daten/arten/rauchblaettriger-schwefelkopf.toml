@@ -1,7 +1,7 @@
 name = "Rauchblättriger Schwefelkopf"
 lateinisch = "Hypholoma capnoides"
 gruppe = "schueppling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
@@ -12,7 +12,7 @@ weitereNamen = ["Graublättriger Schwefelkopf"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rauchblaettrige.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -59,16 +59,12 @@ vorkommen = "Folgezersetzer auf Nadelholzstümpfen, gern Kiefer, Fichte und Doug
 zeit = "Herbst bis Spätherbst, selten im Frühjahr."
 
 [[verwechslungen]]
-slug = "rotbrauner-flaemmling"
-unterschied = "Lamellen und Sporenpulver rostbraun statt grau, Geschmack bitter."
-
-[[verwechslungen]]
 slug = "nadelschueppling"
 unterschied = "Hut gelbbraun und schuppig, Lamellen bräunlich, Geschmack bitter."
 
 [[verwechslungen]]
-slug = "stockschwaemmchen"
-unterschied = "Hut zweifarbig hygrophan, Lamellen zimtbraun, Stiel unter dem Ring dunkelbraun beschuppt."
+slug = "rotbrauner-flaemmling"
+unterschied = "Lamellen und Sporenpulver rostbraun statt grau, Geschmack bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

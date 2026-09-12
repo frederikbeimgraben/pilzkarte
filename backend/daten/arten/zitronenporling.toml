@@ -11,7 +11,7 @@ baeume = []
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Zitronenporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -62,16 +62,12 @@ vorkommen = "In Nadel- und Mischwäldern auf Nadelstreu oder nacktem Boden, gern
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "weisser-knochenporling"
-unterschied = "Bleibt weiß bis cremefarben, Fleisch trocken steinhart, wächst an Lärchenholz."
-
-[[verwechslungen]]
-slug = "roetender-schafeuterporling"
-unterschied = "Hut weißlich bis ockerlich, Fleisch rötet deutlich, Poren gilben nicht zitronengelb."
-
-[[verwechslungen]]
 slug = "semmelporling"
 unterschied = "Hut semmelgelb bis blass orange ohne Zitronengelb, Fruchtkörper oft miteinander verwachsen."
+
+[[verwechslungen]]
+slug = "weisser-knochenporling"
+unterschied = "Bleibt weiß bis cremefarben, Fleisch trocken steinhart, wächst an Lärchenholz."
 
 [[links]]
 titel = "123pilzsuche.de"

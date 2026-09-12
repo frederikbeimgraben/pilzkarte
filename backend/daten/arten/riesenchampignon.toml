@@ -14,7 +14,7 @@ synonyme = ["Agaricus augustus var. perrarus", "Psalliota subrufescens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenchampignon.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -69,8 +69,13 @@ vorkommen = "Folgezersetzer im Mischwald und in Parks, auf humusreichem Boden."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "spitzschuppiger-schirmling"
-unterschied = "Lamellen bleiben weißlich bis hellbräunlich und werden nie rosa, Ring nicht verschiebbar, Geruch stechend gasartig."
+slug = "grosser-waldchampignon"
+unterschied = "Fleisch verfärbt sich im Schnitt sofort blutrot, Geruch nicht anisartig, im Nadelwald."
+eigenerUnterschied = "Riecht nach Anis, das Fleisch gilbt statt zu röten."
+
+[[verwechslungen]]
+slug = "kleiner-wald-champignon"
+unterschied = "Deutlich kleiner, Fleisch bei Verletzung gelborange und später blutrot, im sauren Nadelwald."
 
 [[verwechslungen]]
 slug = "perlhuhnchampignon"
@@ -79,14 +84,12 @@ unterschied = "Hut fein grau bis schwarzbraun geschuppt, Geruch nach Karbol oder
 [[verwechslungen]]
 slug = "rebhuhnegerling"
 unterschied = "Hut graubraun bis rauchschwärzlich mit faserigen Schuppen, Geruch schwach karbolartig, Stielbasis chromgelb, dann braunrot."
+eigenerUnterschied = "Deutlich größer, Geruch anisartig nach Bittermandeln, Ring breit und dick."
 
 [[verwechslungen]]
-slug = "grosser-waldchampignon"
-unterschied = "Fleisch verfärbt sich im Schnitt sofort blutrot, Geruch nicht anisartig, im Nadelwald."
-
-[[verwechslungen]]
-slug = "kleiner-wald-champignon"
-unterschied = "Deutlich kleiner, Fleisch bei Verletzung gelborange und später blutrot, im sauren Nadelwald."
+slug = "spitzschuppiger-schirmling"
+unterschied = "Lamellen bleiben weißlich bis hellbräunlich und werden nie rosa, Ring nicht verschiebbar, Geruch stechend gasartig."
+eigenerUnterschied = "Hut mit braunen Schuppen statt Stacheln, Lamellen blassrosa und später braun, Sporenpulver purpurbraun, Geruch anisartig."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,5 +1,5 @@
 name = "Ohrförmiger Seitling"
-lateinisch = "Pleurocybella porrigens (var. phyllotus porrigens, nothopanus porrigens, agaricus porrigens, pleuropus porrigens, pleurotus porrigens, nothopanus porrigens, pleurotellus porrigens, geopetalum porrigens, dendrosarcus porrigens, calathinus porrigens, pleurotus albolanatus, agaricus porrigens var. dimidiatus, agaricus porrigens var. infundibuliformis)"
+lateinisch = "Pleurocybella porrigens"
 gruppe = "seitling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
@@ -10,10 +10,11 @@ baeume = []
 speisewertHinweis = "In Japan gab es mehrere Todesfälle, vor allem bei älteren Menschen mit Nierenschaden und Dialyse. Die Symptome ähneln einem Schlaganfall, dazu Fieber und Krampfanfälle. Vorsicht bei allen ungestielten weißen Seitlingen an Nadelholz."
 haeufigkeit = "selten"
 weitereNamen = ["Ohrförmiger Weißseitling", "Engelsflügel"]
+synonyme = ["Phyllotus porrigens", "Nothopanus porrigens", "Agaricus porrigens", "Pleuropus porrigens", "Pleurotus porrigens", "Pleurotellus porrigens", "Geopetalum porrigens", "Dendrosarcus porrigens", "Calathinus porrigens", "Pleurotus albolanatus", "Agaricus porrigens var. dimidiatus", "Agaricus porrigens var. infundibuliformis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/OhrfoermigerSeitling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }

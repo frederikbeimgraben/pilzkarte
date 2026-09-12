@@ -1,7 +1,7 @@
 name = "Sandröhrling"
 lateinisch = "Suillus variegatus"
 gruppe = "schmierroehrling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = false
@@ -15,7 +15,7 @@ synonyme = ["Boletus variegatus", "Versipellis variegata", "Suillus variegatus f
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sandroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 18.0, einheit = "cm" }
@@ -65,10 +65,6 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "ziegenlippe"
 unterschied = "Hut olivbraun bis gelbbraun und samtig, Roehren grob und gelb, bei Laubbaeumen."
-
-[[verwechslungen]]
-slug = "kuhroehrling"
-unterschied = "Hut ockerbraun und schmierig, Roehren weitloecherig und herablaufend, Fleisch kaum blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

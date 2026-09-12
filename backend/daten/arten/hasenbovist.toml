@@ -1,4 +1,4 @@
-name = "Hasenbovist"
+name = "Hasenstäubling"
 lateinisch = "Lycoperdon utriforme"
 gruppe = "staeubling"
 speisewert = "essbar"
@@ -9,12 +9,12 @@ marktfaehig = true
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur jung, solange das Innere rein weiß ist. Jedes Stück längs durchschneiden: zeigt der Schnitt Lamellenansätze, ist es ein junger Knollenblätterpilz."
-weitereNamen = ["Hasenstäubling"]
+weitereNamen = ["Hasenbovist"]
 synonyme = ["Handkea utriformis", "Calvatia utriformis", "Calvatia caelata", "Lycoperdon sinclairii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hasenstaubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 16.0, seltenBis = 18.0, einheit = "cm" }
@@ -50,24 +50,27 @@ vorkommen = "Folgezersetzer auf Wiesen, Weiden, Rasen, in Hecken und Obstgärten
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "weisser-knollenblaetterpilz"
-unterschied = "Jung kugelig, im Schnitt aber mit Hut, Lamellen und Stiel angelegt, Basis in einer häutigen Scheide."
-
-[[verwechslungen]]
-slug = "riesenbovist"
-unterschied = "Deutlich größer, kugelig, Haut glatt und lederartig, Geruch unangenehm."
+slug = "beutelstaeubling"
+unterschied = "Kleiner, bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun."
+eigenerUnterschied = "Ballon-, sack- oder kreiselförmig und meist viel größer, ohne abgesetzten Stielteil, auf Wiesen und Weiden."
 
 [[verwechslungen]]
 slug = "flaschenbovist"
 unterschied = "Kleiner, keulig bis birnenförmig mit stielartigem Fuß, mit körnigen Stacheln besetzt."
 
 [[verwechslungen]]
-slug = "beutelstaeubling"
-unterschied = "Kleiner, bis 25 cm hoch, Außenhaut mit spitzen ablösbaren Warzen, Fleisch alt purpurbraun."
+slug = "riesenbovist"
+unterschied = "Deutlich größer, kugelig, Haut glatt und lederartig, Geruch unangenehm."
+eigenerUnterschied = "Nur 3 bis 16 cm breit, jung mit plattenartigen Erhebungen, auf Wiesen und Weiden, gern in Gebirgslagen."
+
+[[verwechslungen]]
+slug = "weisser-knollenblaetterpilz"
+unterschied = "Jung kugelig, im Schnitt aber mit Hut, Lamellen und Stiel angelegt, Basis in einer häutigen Scheide."
 
 [[verwechslungen]]
 slug = "wiesenstaeubling"
 unterschied = "Kleiner, kugel- bis birnenförmig, Basis mit weißem Myzelfilz und kräftigen Strängen."
+eigenerUnterschied = "Größer, die Außenhaut reißt im Alter netzig felderig auf."
 
 [[links]]
 titel = "123pilzsuche.de"

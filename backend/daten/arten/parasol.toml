@@ -1,7 +1,7 @@
 name = "Parasol"
 lateinisch = "Macrolepiota procera"
 gruppe = "schirmling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
@@ -14,7 +14,7 @@ weitereNamen = ["Riesenschirmling", "Riesenschirmpilz", "Paukenschläger", "Pauk
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Parasol.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 25.0, seltenBis = 30.0, einheit = "cm" }
@@ -58,24 +58,29 @@ vorkommen = "Folgezersetzer in Mischwäldern, an Waldrändern, auf Waldwegen und
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
+slug = "ackerschirmpilz"
+unterschied = "Stiel ohne Natterung, von der Spitze bis zum Ring fein gerieft, auf Äckern, Wiesen und Brachflächen."
+eigenerUnterschied = "Deutlich größer, Stiel mit dunkelbrauner Natterung."
+
+[[verwechslungen]]
 slug = "jungfernschirmling"
 unterschied = "Stiel ohne Natterung, Lamellen gilben leicht, Fleisch rötet nicht. Im Nadelwald auf saurem Boden."
+eigenerUnterschied = "Stiel mit dunkelbrauner Natterung, Hut bis 25, selten 30 cm breit, Geruch nussartig."
 
 [[verwechslungen]]
 slug = "safranschirmling"
 unterschied = "Fleisch läuft bei Verletzung sofort rötlich an und wird später weinbraun, Stiel ohne Natterung, Basis mit gerandeter Knolle."
-
-[[verwechslungen]]
-slug = "zitzen-riesenschirmling"
-unterschied = "Hut braunocker mit grob schollig abreißenden Schuppen und braunem Buckel, Natterung am Stiel nur schwach."
+eigenerUnterschied = "Stiel deutlich dunkelbraun genattert, Fleisch rötet nicht, wächst im Wald."
 
 [[verwechslungen]]
 slug = "sternschuppiger-riesenschirmpilz"
 unterschied = "Hutschuppen kastanienbraun und sternförmig auseinanderlaufend, Mitte schwarzbraun und gebuckelt."
+eigenerUnterschied = "Hutschuppen weich und wollig, nicht sternförmig aufreißend, Sporenpulver weiß."
 
 [[verwechslungen]]
-slug = "ackerschirmpilz"
-unterschied = "Stiel ohne Natterung, von der Spitze bis zum Ring fein gerieft, auf Äckern, Wiesen und Brachflächen."
+slug = "zitzen-riesenschirmling"
+unterschied = "Hut braunocker mit grob schollig abreißenden Schuppen und braunem Buckel, Natterung am Stiel nur schwach."
+eigenerUnterschied = "Deutlich größer, Stiel kräftig genattert, Doppelring stark ausgeprägt, Buckel meist nur stumpf."
 
 [[links]]
 titel = "123pilzsuche.de"

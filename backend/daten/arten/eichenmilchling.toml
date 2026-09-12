@@ -14,7 +14,7 @@ synonyme = ["Lactarius quieta", "Agaricus quietus", "Lactifluus quietus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenmilchling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
@@ -63,6 +63,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "rotbrauner-milchling"
 unterschied = "Milch weiß und bleibend, Geschmack scharf, Geruch ohne Wanzennote."
+eigenerUnterschied = "Bei Eiche, Hut mit undeutlichen dunkleren Zonen, Geruch oelig bis wanzenartig."
 
 [[links]]
 titel = "123pilzsuche.de"

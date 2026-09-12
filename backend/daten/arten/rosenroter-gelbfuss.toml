@@ -15,7 +15,7 @@ synonyme = ["Agaricus glutinosus roseus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RosenroterGelbfuss.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -60,10 +60,6 @@ geschmack = "Mild."
 sporenpulver = "Dunkelbraun bis schwarzbraun."
 vorkommen = "Bei Kiefer auf sandigem, saurem Boden. Wächst parasitisch auf dem Myzel des Kuhröhrlings. Selten."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "kuhmaul"
-unterschied = "Hut graubraun bis violettbraun und stark schleimig, Stielbasis leuchtend chromgelb, bei Fichte."
 
 [[links]]
 titel = "123pilzsuche.de"

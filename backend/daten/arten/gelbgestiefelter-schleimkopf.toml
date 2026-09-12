@@ -16,7 +16,7 @@ synonyme = ["Cortinarius crocolitus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbgestiefelteSchleimkopf.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -60,10 +60,6 @@ geschmack = "Mild."
 sporenpulver = "Ockerbraun."
 vorkommen = "Symbiosepilz bei Birke, im Laubwald sowie in Parks und Gärten. Selten."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "kuhmaul"
-unterschied = "Lamellen dick, weit stehend und herablaufend, Hut graubraun und schleimig, Stielbasis innen leuchtend gelb."
 
 [[links]]
 titel = "123pilzsuche.de"

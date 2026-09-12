@@ -13,7 +13,7 @@ synonyme = ["Laetiporus conifericola", "Laetiporus huroniensis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/NadelholzSchwefelporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 5.0, bis = 30.0, seltenBis = 50.0, einheit = "cm" }
@@ -48,16 +48,16 @@ vorkommen = "An Nadelholz, meist Fichte und Tanne, in höheren Lagen auch Lärch
 zeit = "Die Fruchtkörper sind einjährig; die Seite nennt keine Monate."
 
 [[verwechslungen]]
-slug = "zimtfarbener-weichporling"
-unterschied = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
-
-[[verwechslungen]]
 slug = "duftender-goldporling"
 unterschied = "Liegt dem Holz flach auf, orange bis blutrot, Geruch nach Anis oder Aprikose."
 
 [[verwechslungen]]
 slug = "leuchtender-weichporling"
 unterschied = "Oberfläche filzig und orangerot, Fleisch mit KOH weinrot."
+
+[[verwechslungen]]
+slug = "zimtfarbener-weichporling"
+unterschied = "Fruchtkörper zimtbraun bis rosabraun, Fleisch weich und dick, meist an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

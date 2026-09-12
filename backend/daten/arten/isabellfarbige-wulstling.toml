@@ -1,4 +1,4 @@
-name = "Isabellfarbige Wulstling"
+name = "Isabellfarbiger Wulstling"
 lateinisch = "Amanita eliae"
 gruppe = "wulstling"
 speisewert = "giftig"
@@ -10,12 +10,12 @@ baeume = ["buche", "hasel", "eiche", "birke", "kiefer"]
 speisewertHinweis = "Erkennbar am kammförmig gerieften Hutrand, an der rübenartigen Stielbasis mit warzigem Gürtel statt häutiger Scheide und am unbedeutenden Geruch."
 haeufigkeit = "sehrSelten"
 gefaehrdung = "unbekanntesAusmass"
-weitereNamen = ["Kammrandiger Wulstling"]
+weitereNamen = ["Isabellfarbige Wulstling", "Kammrandiger Wulstling"]
 synonyme = ["Amanitaria eliae", "Amanita eliae f. griseovelata", "Amanita raymondii", "Amanita griseovelata", "Amanita eliae var. griseovelata", "Amanitaria eliae f. exannulata"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KammrandigerWulstling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"

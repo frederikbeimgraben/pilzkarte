@@ -16,7 +16,7 @@ synonyme = ["Scutiger confluens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Semmelporling0804.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -60,14 +60,6 @@ geschmack = "Schnell bitterlich, nur ganz junge Exemplare mild."
 sporenpulver = "Weiß."
 vorkommen = "Meist im Nadelwald auf saurem Boden, vermutlich Symbiosepilz, nach anderen Autoren auch Folgezersetzer. Kann im Mischwald zusammen mit Schafporlingen auftreten. In Deutschland gefährdet."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "schafporling"
-unterschied = "Hut weißlich bis cremefarben, Fruchtkörper meist einzeln statt stark verwachsen, Fleisch mild."
-
-[[verwechslungen]]
-slug = "roetender-schafeuterporling"
-unterschied = "Fleisch rötet bei Verletzung und im Alter."
 
 [[verwechslungen]]
 slug = "weisser-knochenporling"

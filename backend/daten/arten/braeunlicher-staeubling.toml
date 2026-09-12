@@ -1,4 +1,4 @@
-name = "Bräunlicher Stäubling"
+name = "Brauner Stäubling"
 lateinisch = "Lycoperdon umbrinum"
 gruppe = "staeubling"
 speisewert = "essbar"
@@ -9,12 +9,12 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Gekocht schmeckt er sehr fade. Braune Stäublinge sind minderwertig, junge Fruchtkörper allenfalls Beikost."
-weitereNamen = ["Brauner Stäubling", "Brauner Staubbovist"]
+weitereNamen = ["Bräunlicher Stäubling", "Brauner Staubbovist"]
 synonyme = ["Lycoperdon umbrinum var. hirtum", "Lycoperdon hirtum", "Lycoperdon umbrinum var. curtisiiforme", "Lycoperdon umbrinum f. fissispinum", "Lycoperdon umbrinum var. hirsutum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerStaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
@@ -50,16 +50,9 @@ vorkommen = "Folgezersetzer im Nadelwald, selten im Laubwald, gern bei Fichte. A
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "flaschenbovist"
-unterschied = "Blasse, spitzkegelige Stacheln auf hellem Grund, Fruchtkörper deutlich keulig gestielt."
-
-[[verwechslungen]]
-slug = "birnenstaeubling"
-unterschied = "Büschelig auf Holz, mit dunkelbraunen kleiigen Körnchen, Geruch gasartig."
-
-[[verwechslungen]]
 slug = "igelstaeubling"
 unterschied = "Stacheln mit helleren Spitzen, nach dem Abwaschen bleibt ein deutliches Netzmuster."
+eigenerUnterschied = "Stachelspitzen braun statt weißlich, Stacheln leicht abwischbar, danach kein Netzmuster."
 
 [[links]]
 titel = "123pilzsuche.de"

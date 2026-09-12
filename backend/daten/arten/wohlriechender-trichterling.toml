@@ -1,4 +1,4 @@
-name = "Wohlriechender Trichterling"
+name = "Fleischbräunlicher Anistrichterling"
 lateinisch = "Clitocybe obsoleta"
 gruppe = "trichterling"
 speisewert = "giftig"
@@ -8,12 +8,12 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Giftig. Zu erkennen am aufdringlich anis- bis fenchelartigen Geruch, am hygrophanen graubraunen Hut mit eingedrückter Mitte und am knorpelig-elastischen, oft breitgedrückten Stiel."
-weitereNamen = ["Fleischbräunlicher Anistrichterling"]
+weitereNamen = ["Wohlriechender Trichterling"]
 synonyme = ["Omphalia obsoleta", "Agaricus obsoletus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FleischAnistrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }

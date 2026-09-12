@@ -12,7 +12,7 @@ synonyme = ["Auriculariopsis ampala", "Cyphella ampla", "Auriculariopsis floccul
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KleinesJudasohr.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 0.5, bis = 1.0, seltenBis = 2.0, einheit = "cm" }
@@ -50,12 +50,13 @@ vorkommen = "Folgezersetzer an Laubholzästen in Auwald und Bruchwald, gern an Z
 zeit = "Herbst bis Winter."
 
 [[verwechslungen]]
-slug = "weisstannenfingerhut"
-unterschied = "Außen raukörnig und haselnussbraun bis graulila, innen weißlich mit rosa Hauch, an Nadelholz, gern Weißtanne."
-
-[[verwechslungen]]
 slug = "gezonter-ohrlappenpilz"
 unterschied = "4 bis 12, selten bis 25 cm breit, dachziegelartig übereinander sitzend, Oberseite striegelig behaart und bunt gezont."
+
+[[verwechslungen]]
+slug = "weisstannenfingerhut"
+unterschied = "Außen raukörnig und haselnussbraun bis graulila, innen weißlich mit rosa Hauch, an Nadelholz, gern Weißtanne."
+eigenerUnterschied = "Gallertartig elastisch und ohrförmig, wächst an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

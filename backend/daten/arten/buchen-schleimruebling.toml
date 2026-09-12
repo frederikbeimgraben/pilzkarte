@@ -1,4 +1,4 @@
-name = "Buchen-Schleimrübling"
+name = "Beringter Schleimrübling"
 lateinisch = "Mucidula mucida"
 gruppe = "schleimruebling"
 speisewert = "essbar"
@@ -9,12 +9,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 karte = "schleimruebling"
 speisewertHinweis = "Essbar, aber ohne Wert. Die Huthaut lässt sich gummiartig abziehen."
-weitereNamen = ["Beringter Schleimrübling", "Buchenschleimrübling"]
+weitereNamen = ["Buchen-Schleimrübling", "Buchenschleimrübling"]
 synonyme = ["Oudemansiella mucida", "Agaricus mucidus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BeringterSchleimruebling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -67,20 +67,21 @@ slug = "grauer-dachpilz"
 unterschied = "Hut grau bis graubraun, Lamellen erst weiß, dann rosa, frei. Kein Ring am Stiel."
 
 [[verwechslungen]]
-slug = "weisser-dachpilz"
-unterschied = "Hut weiß, im Alter rosabraun, Lamellen werden fleischrot, ohne Ring."
+slug = "olivgrauer-schneckling"
+unterschied = "Hut dunkelbraun bis olivgrau, Stiel genattert, Lamellen wachsartig."
+eigenerUnterschied = "Hut weiß und stark schleimig, Stiel mit häutigem Ring, wächst an Totholz von Buche statt am Boden."
+
+[[verwechslungen]]
+slug = "schleimigberingter-schneckling"
+unterschied = "Lamellen sehr weit auseinander, Stielbasis keulig, an Nadelholz."
 
 [[verwechslungen]]
 slug = "seidiger-dachpilz"
 unterschied = "Hut elfenbeinweiß mit dunklerem Scheitel, Lamellen später rotbraun, ohne Ring."
 
 [[verwechslungen]]
-slug = "olivgrauer-schneckling"
-unterschied = "Hut dunkelbraun bis olivgrau, Stiel genattert, Lamellen wachsartig."
-
-[[verwechslungen]]
-slug = "schleimigberingter-schneckling"
-unterschied = "Lamellen sehr weit auseinander, Stielbasis keulig, an Nadelholz."
+slug = "weisser-dachpilz"
+unterschied = "Hut weiß, im Alter rosabraun, Lamellen werden fleischrot, ohne Ring."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -16,7 +16,7 @@ synonyme = ["Boletus subappendiculatus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalschAnhaengselroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -64,16 +64,16 @@ vorkommen = "Symbiosepilz im Nadelwald, größtenteils bei Fichte, gern auf saur
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "wurzelnder-bitterroehrling"
-unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Tinte, Geschmack bitter."
-
-[[verwechslungen]]
 slug = "schoenfussroehrling"
 unterschied = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
 
 [[verwechslungen]]
 slug = "steinpilz"
 unterschied = "Röhren weiß, dann gelb bis oliv, Netz am Stiel weiß, Fleisch weiß und nicht zitronengelb."
+
+[[verwechslungen]]
+slug = "wurzelnder-bitterroehrling"
+unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Tinte, Geschmack bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -12,7 +12,7 @@ synonyme = ["Pholiota jahnii sensu", "Hypodendrum floccosum", "Fungus squarrosus
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SparrigerSchueppling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 5.0, seltenBis = 10.0, einheit = "cm" }
@@ -54,10 +54,6 @@ geschmack = "Rübenartig, rettichartig."
 sporenpulver = "Rostbraun."
 vorkommen = "Folgezersetzer und Weißfäuleerreger, gern an Laubholz und Obstbäumen, seltener an Nadelholz wie Fichte."
 zeit = "Spätsommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "bleicher-schueppling"
-unterschied = "Grundfarbe cremeweiß bis sehr hellbraun, Geruch obstartig nach Fruchtbonbon, Geschmack bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

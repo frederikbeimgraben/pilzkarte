@@ -1,5 +1,5 @@
 name = "Gilbender Erdritterling"
-lateinisch = "Tricholoma scalpturatum = gilbender erdritterling + tricholoma scalpturatum var. argyraceum = schmalsporiger gilbender erdritterling"
+lateinisch = "Tricholoma scalpturatum"
 gruppe = "ritterling"
 speisewert = "giftig"
 geschuetzt = false
@@ -10,10 +10,11 @@ baeume = []
 speisewertHinweis = "Kenntlich an den beim Reiben gilbenden Lamellen und am ranzig mehligen Geruch. Die Gilbung bleibt oft aus, deshalb ist er schwer zu bestimmen und von den giftigen Erdritterlingen kaum sicher zu trennen."
 haeufigkeit = "sehrSelten"
 weitereNamen = ["Gilbernder Erdritterling", "Silbergrauer Erdritterling"]
+synonyme = ["Tricholoma scalpturatum var. argyraceum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GilbenderErd.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
@@ -61,16 +62,17 @@ vorkommen = "Symbiosepilz mit verschiedenen Sträuchern, im Mischwald, auf Wiese
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "tigerritterling"
-unterschied = "Hut mit grauen, tigerartig angeordneten Schuppen, Lamellen nicht gilbend."
+slug = "mausgrauer-erdritterling"
+unterschied = "Hut mausgrau und faserig, Lamellen nicht gilbend."
+eigenerUnterschied = "Lamellen gilben beim Reiben, Fleisch gilbt im Alter, Geruch ranzig mehlig."
 
 [[verwechslungen]]
 slug = "seifenritterling"
 unterschied = "Geruch nach Kernseife, Fleisch bei Verletzung rötend."
 
 [[verwechslungen]]
-slug = "mausgrauer-erdritterling"
-unterschied = "Hut mausgrau und faserig, Lamellen nicht gilbend."
+slug = "tigerritterling"
+unterschied = "Hut mit grauen, tigerartig angeordneten Schuppen, Lamellen nicht gilbend."
 
 [[links]]
 titel = "123pilzsuche.de"

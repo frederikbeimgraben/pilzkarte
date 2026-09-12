@@ -13,7 +13,7 @@ haeufigkeit = "sehrSelten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GelbfleckigerSteinpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }

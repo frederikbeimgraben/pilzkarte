@@ -14,7 +14,7 @@ synonyme = ["Mariaella bovina", "Ixocomus bovinus", "Boletus bovinus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kuhroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -63,10 +63,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "erlengruebling"
 unterschied = "Hut gelblich bis olivgelb mit grübchenartig vertiefter Oberfläche, Röhren auf Druck grünblau, nur bei Erle."
-
-[[verwechslungen]]
-slug = "sandroehrling"
-unterschied = "Röhren fein und eng statt grob und eckig, Stielfleisch gelblich und blauend, Basis meist keulig verdickt."
+eigenerUnterschied = "Röhren weiter und nicht so fein, Hut ohne Grübchen, wächst bei Kiefer."
 
 [[verwechslungen]]
 slug = "hohlfussroehrling"
@@ -77,8 +74,14 @@ slug = "koernchenroehrling"
 unterschied = "Röhren zitronengelb und jung milchig tropfend, Stiel bräunlich punktiert."
 
 [[verwechslungen]]
+slug = "sandroehrling"
+unterschied = "Röhren fein und eng statt grob und eckig, Stielfleisch gelblich und blauend, Basis meist keulig verdickt."
+eigenerUnterschied = "Hut ockerbraun und schmierig, Roehren weitloecherig und herablaufend, Fleisch kaum blauend."
+
+[[verwechslungen]]
 slug = "ziegenlippe"
 unterschied = "Hut wildlederartig filzig, Röhren jung leuchtend gelb, Stiel fast weiß, lang und schlank."
+eigenerUnterschied = "Hut bräunlich, schmierig, glatt und kahl, Röhren graugelb bis rotbraun, Stiel deutlich dünner."
 
 [[links]]
 titel = "123pilzsuche.de"

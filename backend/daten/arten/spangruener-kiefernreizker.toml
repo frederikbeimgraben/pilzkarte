@@ -14,7 +14,7 @@ gefaehrdung = "gefaehrdet"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeinerReizker.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 11.0, seltenBis = 13.0, einheit = "cm" }
@@ -60,10 +60,6 @@ geschmack = "Herb, bitterlich."
 sporenpulver = "Blass ockerlich."
 vorkommen = "Symbiosepilz, wie alle Reizker nur bei Nadelholz, hier bei Kiefer. Sehr selten."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "edelreizker"
-unterschied = "Milch karottenrot bis orangerot und kaum veränderlich, Geschmack mild nach Weißkraut."
 
 [[verwechslungen]]
 slug = "fichtenreizker"

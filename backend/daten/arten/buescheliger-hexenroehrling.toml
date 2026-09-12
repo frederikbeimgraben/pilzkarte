@@ -12,7 +12,7 @@ synonyme = ["Boletus permagnificus", "Exsudoporus permagnificus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BuescheligerHexenRoehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }

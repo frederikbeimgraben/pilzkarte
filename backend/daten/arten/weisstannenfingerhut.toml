@@ -15,7 +15,7 @@ synonyme = ["Aleurodiscus digitali", "Peziza digitalis"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Weisstannenfingerhut.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 0.5, bis = 1.5, seltenBis = 2.0, einheit = "cm" }
@@ -50,10 +50,6 @@ geschmack = "Mild, unbedeutend."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer an Nadelholz, gern Weißtanne, Tanne oder Kiefer, sehr selten Fichte, meist gesellig an Weißtannenästen. Selten, in Deutschland stark gefährdet."
 zeit = "Winter bis Frühjahr."
-
-[[verwechslungen]]
-slug = "kleines-judasohr"
-unterschied = "Gallertartig elastisch und ohrförmig, wächst an Laubholz."
 
 [[links]]
 titel = "123pilzsuche.de"

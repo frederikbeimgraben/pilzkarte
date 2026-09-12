@@ -18,7 +18,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/NetzstieligeHexenroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -73,6 +73,14 @@ vorkommen = "Symbiosepilz in Laubwäldern und Parkanlagen, auf kalkhaltigem Bode
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
+slug = "blaufleckender-purpurroehrling"
+unterschied = "Hut purpurrot bis weinrosa und blau fleckend, Stielbasis karminrot, Fleisch sofort stark blauend."
+
+[[verwechslungen]]
+slug = "flockenstieliger-hexenroehrling"
+unterschied = "Stiel mit roten Flöckchen und ohne jedes Netz, Hut dunkelbraun, auf saurem Boden."
+
+[[verwechslungen]]
 slug = "kurznetziger-hexenroehrling"
 unterschied = "Netz nur im oberen Stielteil, im Alter zur Mitte hin verschoben, Stielfleisch stark weinrot, Röhrenboden orangerot."
 
@@ -83,14 +91,6 @@ unterschied = "Hut weiß bis hellgrau oder grauoliv, Stielbasis dick knollig und
 [[verwechslungen]]
 slug = "schoenfussroehrling"
 unterschied = "Röhren gelblich statt rot, Hut lehmgrau und trocken samtig, Geschmack bitter."
-
-[[verwechslungen]]
-slug = "blaufleckender-purpurroehrling"
-unterschied = "Hut purpurrot bis weinrosa und blau fleckend, Stielbasis karminrot, Fleisch sofort stark blauend."
-
-[[verwechslungen]]
-slug = "flockenstieliger-hexenroehrling"
-unterschied = "Stiel mit roten Flöckchen und ohne jedes Netz, Hut dunkelbraun, auf saurem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

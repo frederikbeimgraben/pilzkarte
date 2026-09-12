@@ -12,7 +12,7 @@ synonyme = ["Tricholoma virgatum var. sciodes", "Tricholoma sciodes var. sciodes
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchaerflicherRitterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -60,16 +60,12 @@ vorkommen = "Symbiosepilz im Laubwald, gern bei Buche."
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "tigerritterling"
-unterschied = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Geschmack mild, Geruch mehlartig."
-
-[[verwechslungen]]
-slug = "brennendscharfer-ritterling"
-unterschied = "Hut heller graubraun, Geschmack sofort brennend scharf, Lamellenschneiden schwärzen nicht."
-
-[[verwechslungen]]
 slug = "roetender-erdritterling"
 unterschied = "Hut grau geschuppt, Fleisch und Lamellen röten bei Verletzung."
+
+[[verwechslungen]]
+slug = "tigerritterling"
+unterschied = "Größer und kräftiger, Hut mit dachziegelig angeordneten dunkelgrauen Schuppen, Geschmack mild, Geruch mehlartig."
 
 [[links]]
 titel = "123pilzsuche.de"

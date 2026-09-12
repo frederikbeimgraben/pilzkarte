@@ -1,4 +1,4 @@
-name = "Bleiweißer Trichterling"
+name = "Bleiweißer Firnistrichterling"
 lateinisch = "Clitocybe phyllophila"
 gruppe = "trichterling"
 speisewert = "toedlichGiftig"
@@ -9,11 +9,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Er wird für den Mehlräsling gehalten, riecht aber nicht nach Mehl, sondern muffig süßlich bis parfümiert. Weiße Trichterlinge gelten als Muscarinträger; weiße Pilze aus Wald und Garten gehören nicht in den Korb."
 haeufigkeit = "haeufig"
-weitereNamen = ["Bleiweißer Firnistrichterling", "Laubfreundtrichterling", "Streuliebender Trichterling", "Fichtentrichterling"]
+weitereNamen = ["Bleiweißer Trichterling", "Laubfreundtrichterling", "Streuliebender Trichterling", "Fichtentrichterling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BleiweisserTrichterling2004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 14.0, einheit = "cm" }
@@ -63,10 +63,7 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "rinnigbereifter-trichterling"
 unterschied = "Hutrand weiß bereift mit konzentrisch angeordneten ockerlichen Flecken, Stiel kürzer, auf Wiesen, Feldern und an Wegrändern."
-
-[[verwechslungen]]
-slug = "mehlraesling"
-unterschied = "Riecht und schmeckt stark nach Mehl und Gurke, Hut samtig bereift, Fleisch fest."
+eigenerUnterschied = "Hut rein weiss und mehlig bereift, ohne konzentrische Zonen."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -7,12 +7,13 @@ marktfaehig = false
 sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
+weitereNamen = ["Zimtfarbiger Weichporling"]
 speisewertHinweis = "Tödlich giftig. Zu erkennen am durchgehend zimt- bis rosabraunen weichen Fleisch und an den gleichfarbigen Poren des stiellosen, tellerförmig abstehenden Fruchtkörpers an Laubholz."
 synonyme = ["Hapalopilus nidulans"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/ZimtfarbenerWeichporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 sporenLaengeUm = { von = 3.4, bis = 5.1, einheit = "um" }
@@ -50,10 +51,6 @@ geschmack = "Mild."
 sporenpulver = "Weißlich bis hellbräunlich."
 vorkommen = "Folgezersetzer meist an Laubholz."
 zeit = "Ganzjährig."
-
-[[verwechslungen]]
-slug = "eichenzunge"
-unterschied = "Zungenförmig an Eiche, Fleisch rotbraun marmoriert und saftig, Poren cremefarben."
 
 [[links]]
 titel = "123pilzsuche.de"

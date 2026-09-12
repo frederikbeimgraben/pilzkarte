@@ -15,7 +15,7 @@ synonyme = ["Calvatia excipuliformis", "Calvatia excipuliformis forma elata", "H
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Beutelstaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 9.0, seltenBis = 11.0, einheit = "cm" }
@@ -49,18 +49,6 @@ geschmack = "Mild und angenehm."
 sporenpulver = "Olivbraun, purpurbraun bis lilabraun."
 vorkommen = "Folgezersetzer im Mischwald, auf Wiesen und Weiden sowie in Hecken."
 zeit = "Frühsommer bis Herbst."
-
-[[verwechslungen]]
-slug = "hasenbovist"
-unterschied = "Ballon-, sack- oder kreiselförmig und meist viel größer, ohne abgesetzten Stielteil, auf Wiesen und Weiden."
-
-[[verwechslungen]]
-slug = "flaschenbovist"
-unterschied = "Kleiner und keulig, mit blassen pyramidenartigen Stacheln besetzt."
-
-[[verwechslungen]]
-slug = "riesenbovist"
-unterschied = "Kugelig und bis über 50 cm breit, Haut glatt und lederartig, ohne Stielteil."
 
 [[links]]
 titel = "123pilzsuche.de"

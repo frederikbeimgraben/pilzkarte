@@ -1,7 +1,7 @@
 name = "Nelkenschwindling"
 lateinisch = "Marasmius oreades"
 gruppe = "schwindling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehig = true
@@ -14,7 +14,7 @@ synonyme = ["Collybia oreades", "Agaricus coriaceus", "Agaricus pseudomouceron",
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Nelkenschwindling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
@@ -57,24 +57,26 @@ vorkommen = "Folgezersetzer auf Rasen, Wiesen, in Parks und Gärten, an Waldrän
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-slug = "rinnigbereifter-trichterling"
-unterschied = "Hut weißlich und weiß bereift, Lamellen fast gerade angewachsen und sehr gedrängt, Stiel kurz und brüchig. Auf denselben Wiesen."
-
-[[verwechslungen]]
-slug = "ziegelroter-risspilz"
-unterschied = "Hut radialfaserig aufreißend, ziegelrot bis ockerbraun, Lamellen später rötlich bis olivbraun, Fleisch rötend."
+slug = "brennender-ruebling"
+unterschied = "Lamellen gelbbraun bis dottergelb, Stiel sehr dünn, Geschmack nach kurzer Zeit scharf pfefferig. Auf Laub- und Nadelstreu im Wald."
+eigenerUnterschied = "Hut ledergelb bis hellbraun, Lamellen weißlich und entfernt, Stiel zäh und hornartig, Geschmack bleibt mild."
 
 [[verwechslungen]]
 slug = "gruenender-risspilz"
 unterschied = "Hut strohgelb bis grünlichbraun und radialrissig, Stiel von unten her blaugrün, Fleisch bei Verletzung grünend."
+eigenerUnterschied = "Hut ledergelb mit stumpfem Buckel, Lamellen blass creme und entfernt, Stiel zäh und verdrehbar, Sporenpulver weiß."
 
 [[verwechslungen]]
 slug = "huegelschwindling"
 unterschied = "Geruch nach Zedernholz, zerrieben mehlig ranzig, nie nach Bittermandel. Geschmack unangenehm. Wächst in dichten Büscheln."
 
 [[verwechslungen]]
-slug = "brennender-ruebling"
-unterschied = "Lamellen gelbbraun bis dottergelb, Stiel sehr dünn, Geschmack nach kurzer Zeit scharf pfefferig. Auf Laub- und Nadelstreu im Wald."
+slug = "rinnigbereifter-trichterling"
+unterschied = "Hut weißlich und weiß bereift, Lamellen fast gerade angewachsen und sehr gedrängt, Stiel kurz und brüchig. Auf denselben Wiesen."
+
+[[verwechslungen]]
+slug = "ziegelroter-risspilz"
+unterschied = "Hut radialfaserig aufreißend, ziegelrot bis ockerbraun, Lamellen später rötlich bis olivbraun, Fleisch rötend."
 
 [[links]]
 titel = "123pilzsuche.de"

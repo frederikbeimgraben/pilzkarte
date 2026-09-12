@@ -1,4 +1,4 @@
-name = "Wiesenstäubling"
+name = "Wiesenstaubbecher"
 lateinisch = "Vascellum pratense"
 gruppe = "staeubling"
 speisewert = "essbar"
@@ -10,12 +10,12 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur solange das Innere rein weiß ist. Sobald das Fleisch gilbt oder olivbraun wird, ist er nicht mehr brauchbar."
-weitereNamen = ["Wiesenstaubbecher", "Niedergedrückter Stäubling", "Münzstäubling"]
+weitereNamen = ["Wiesenstäubling", "Niedergedrückter Stäubling", "Münzstäubling"]
 synonyme = ["Lycoperdon pratense"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Wiesenstaubbecher.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -55,16 +55,12 @@ vorkommen = "Folgezersetzer auf Rasenflächen, Wiesen und Viehweiden."
 zeit = "Frühling ab April bis Spätherbst."
 
 [[verwechslungen]]
-slug = "weisser-knollenblaetterpilz"
-unterschied = "Junge Eier zeigen im Längsschnitt schon Hut, Lamellen und Stiel, Stäublinge sind innen gleichmäßig weiß."
-
-[[verwechslungen]]
 slug = "riesenbovist"
 unterschied = "Weiß und rundlich, aber 10 bis 50 cm groß, ohne Stielteil."
 
 [[verwechslungen]]
-slug = "hasenbovist"
-unterschied = "Größer, die Außenhaut reißt im Alter netzig felderig auf."
+slug = "weisser-knollenblaetterpilz"
+unterschied = "Junge Eier zeigen im Längsschnitt schon Hut, Lamellen und Stiel, Stäublinge sind innen gleichmäßig weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

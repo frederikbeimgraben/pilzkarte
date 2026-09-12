@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Perlpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -69,24 +69,24 @@ vorkommen = "Symbiosepilz im Mischwald, bei Nadel- und Laubbäumen."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "pantherpilz"
-unterschied = "Hut mit rein weißen, gleichmäßig angeordneten Flöckchen, Fleisch rötet nie, Knolle abgesetzt mit Söckchen, Ring nicht gerieft."
+slug = "grauer-wulstling"
+unterschied = "Der ganze Pilz ohne Rottöne, Geruch rüben- bis rettichartig, Knolle abgesetzt und ohne Söckchen."
 
 [[verwechslungen]]
 slug = "gruener-knollenblaetterpilz"
 unterschied = "Hut olivgrün bis gelbgrün, Fleisch unveränderlich, Stielbasis in einer häutigen Volva."
 
 [[verwechslungen]]
-slug = "rauer-wulstling"
-unterschied = "Velumreste am Hut und der Warzengürtel am Stiel sind gelblich, Fleisch rötet nicht."
-
-[[verwechslungen]]
 slug = "koenigsfliegenpilz"
 unterschied = "Hut braun bis gelbbraun mit gelblichen Flocken, Fleisch unter der Huthaut gelb bis gelbgrün, Basis mit Söckchen."
 
 [[verwechslungen]]
-slug = "grauer-wulstling"
-unterschied = "Der ganze Pilz ohne Rottöne, Geruch rüben- bis rettichartig, Knolle abgesetzt und ohne Söckchen."
+slug = "pantherpilz"
+unterschied = "Hut mit rein weißen, gleichmäßig angeordneten Flöckchen, Fleisch rötet nie, Knolle abgesetzt mit Söckchen, Ring nicht gerieft."
+
+[[verwechslungen]]
+slug = "rauer-wulstling"
+unterschied = "Velumreste am Hut und der Warzengürtel am Stiel sind gelblich, Fleisch rötet nicht."
 
 [[links]]
 titel = "123pilzsuche.de"

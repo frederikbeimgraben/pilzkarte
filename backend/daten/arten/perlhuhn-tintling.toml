@@ -12,7 +12,7 @@ synonyme = ["Coprinus strossmayeri"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Perlhuhn-Tintling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }

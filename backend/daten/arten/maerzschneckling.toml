@@ -15,7 +15,7 @@ synonyme = ["Limacium camarophyllum subsp. marzuolum", "Agaricus marzuolus", "Cl
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Maerzschneckling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
@@ -62,12 +62,13 @@ vorkommen = "Symbiosepilz im Mischwald, gern bei Tanne und Fichte, seltener bei 
 zeit = "Frühling."
 
 [[verwechslungen]]
-slug = "risspilzartiger-schneckling"
-unterschied = "Hut braunschuppig auf hellgrauem Grund, Rand fransig, Stiel ebenso braunschuppig."
-
-[[verwechslungen]]
 slug = "grosser-kiefernschneckling"
 unterschied = "Hut graubraun bis olivbraun mit stumpfem Buckel, Stiel schleimig mit Ringzone, bei Kiefer und erst im Spätsommer und Herbst."
+eigenerUnterschied = "Hut aschgrau bis schwarzgrau marmoriert, im Vorfrühling am Schneerand."
+
+[[verwechslungen]]
+slug = "risspilzartiger-schneckling"
+unterschied = "Hut braunschuppig auf hellgrauem Grund, Rand fransig, Stiel ebenso braunschuppig."
 
 [[links]]
 titel = "123pilzsuche.de"

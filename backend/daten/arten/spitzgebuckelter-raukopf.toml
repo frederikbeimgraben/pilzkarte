@@ -12,7 +12,7 @@ weitereNamen = ["Spitzbuckeliger Raukopf", "Prächtiger Schleierling", "Spitzgeb
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SpitzbuckligeRauhkopf.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -65,6 +65,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "zitronengelber-raukopf"
 unterschied = "Hut hygrophan und ausbleichend, Lamellen und Fleisch gelblich bis zitronengelb, Stiel mit gelben Velumresten. Ebenfalls tödlich giftig."
+eigenerUnterschied = "Hut nicht hygrophan, mit deutlichem spitzem Buckel, filzig schuppig."
 
 [[links]]
 titel = "123pilzsuche.de"

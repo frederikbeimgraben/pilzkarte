@@ -13,7 +13,7 @@ synonyme = ["Coprinus picaceus", "Agaricus picaceus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Spechttintling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 4.0, seltenBis = 8.0, einheit = "cm" }
@@ -59,10 +59,6 @@ zeit = "Sommer bis Herbst."
 [[verwechslungen]]
 slug = "faltentintling"
 unterschied = "Hut grauweiß bis graubraun mit braunen Schuppen, ohne weiße Flocken, Stielbasis mit angedeutetem Ringwulst."
-
-[[verwechslungen]]
-slug = "flockiger-tintling"
-unterschied = "Deutlich kleiner, Hut graubraun mit weißlichen Velumflocken, Stielbasis verdickt und oft mit Volva."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,7 +1,7 @@
 name = "Schopftintling"
 lateinisch = "Coprinus comatus"
 gruppe = "tintling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
@@ -15,7 +15,7 @@ synonyme = ["Coprinus porcellanus", "Coprinus ovatus", "Coprinus comatus var. ca
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schopftintling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 15.0, einheit = "cm" }
@@ -68,8 +68,8 @@ slug = "faltentintling"
 unterschied = "Hut grauweiß bis graubraun, gerieft und faltig, Lamellen angewachsen statt frei, Stielbasis mit scheidenartigem Wulst."
 
 [[verwechslungen]]
-slug = "spitzkegeliger-tintling"
-unterschied = "Hut grauweiß mit braunen Schuppen, gerieft, Scheitel stumpf zugespitzt, Stielbasis mit ringartigem Wulst."
+slug = "flockiger-tintling"
+unterschied = "Hut graubraun bis ockerbräunlich mit weißlichen Velumflocken, Stielbasis oft mit Volva."
 
 [[verwechslungen]]
 slug = "perlhuhn-tintling"
@@ -80,8 +80,8 @@ slug = "spechttintling"
 unterschied = "Hut braun mit weißen flockigen Schuppen, Stiel bis 25 cm lang und etwas genattert, Geruch muffig."
 
 [[verwechslungen]]
-slug = "flockiger-tintling"
-unterschied = "Hut graubraun bis ockerbräunlich mit weißlichen Velumflocken, Stielbasis oft mit Volva."
+slug = "spitzkegeliger-tintling"
+unterschied = "Hut grauweiß mit braunen Schuppen, gerieft, Scheitel stumpf zugespitzt, Stielbasis mit ringartigem Wulst."
 
 [[links]]
 titel = "123pilzsuche.de"

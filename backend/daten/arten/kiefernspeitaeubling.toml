@@ -13,7 +13,7 @@ synonyme = ["Russula emetica var. silvestris"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Speitaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -79,10 +79,6 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "birkenspeitaeubling"
 unterschied = "Hut blasser, weißlich bis rosenrot, Rand schwach kammartig gerieft, bei Birke auf feuchtem Boden."
-
-[[verwechslungen]]
-slug = "buchenspeitaeubling"
-unterschied = "Huthaut matt-samtig und kaum abziehbar, stellenweise weißfleckig, bei Buche auf kalkhaltigem Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

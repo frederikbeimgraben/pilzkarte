@@ -12,7 +12,7 @@ weitereNamen = ["Grünlichverfärbender Risspilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenenderRisspilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
@@ -56,10 +56,6 @@ geschmack = "Mild."
 sporenpulver = "Lehmbraun."
 vorkommen = "Symbiosepilz bei Laubbäumen, gern Pappel, Weide, Linde und Eiche, auf feuchtem sandigem Boden. In Mischwald, Parks und Gärten."
 zeit = "Frühling bis Sommer."
-
-[[verwechslungen]]
-slug = "nelkenschwindling"
-unterschied = "Hut ledergelb mit stumpfem Buckel, Lamellen blass creme und entfernt, Stiel zäh und verdrehbar, Sporenpulver weiß."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,4 +1,4 @@
-name = "Maipilz"
+name = "Mairitterling"
 lateinisch = "Calocybe gambosa"
 gruppe = "ritterling"
 speisewert = "essbar"
@@ -10,7 +10,7 @@ jahreszeiten = ["fruehling", "sommer"]
 baeume = ["pappel", "laerche"]
 speisewertHinweis = "Ohne den starken Mehlgeruch stehen lassen. Zur selben Zeit und am selben Ort wachsen tödlich giftige Risspilze."
 haeufigkeit = "sehrHaeufig"
-weitereNamen = ["Mairitterling", "Georgsritterling", "Gelber Schönkopf", "Maischönkopf", "Huf-Ritterling Mairitterling", "Maiblattl", "Huf-Ritterling"]
+weitereNamen = ["Maipilz", "Georgsritterling", "Gelber Schönkopf", "Maischönkopf", "Huf-Ritterling Mairitterling", "Maiblattl", "Huf-Ritterling"]
 
 [baeumeAusErfahrung]
 baeume = ["hainbuche", "eiche"]
@@ -18,7 +18,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Mairitterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
@@ -67,24 +67,26 @@ vorkommen = "Folgezersetzer auf Wiesen, in Parks, Laubwäldern und Auwald, bei E
 zeit = "Frühling bis Frühsommer."
 
 [[verwechslungen]]
-slug = "riesenroetling"
-unterschied = "Riecht ebenfalls mehlig, Lamellen jung gelblich, später rotocker bis rostgelb, Sporenpulver rosabraun. Erscheint meist erst ab August."
-
-[[verwechslungen]]
-slug = "ziegelroter-risspilz"
-unterschied = "Hut radialfaserig aufreißend, gelb- bis ziegelrotbraun, Fleisch rötend, Geruch spermatisch oder obstartig ohne Mehlnote."
-
-[[verwechslungen]]
 slug = "bleiweisser-trichterling"
 unterschied = "Kleiner und dünnfleischig, Hut weiß und glasig bereift, Lamellen herablaufend statt ausgebuchtet."
+
+[[verwechslungen]]
+slug = "mehlraesling"
+unterschied = "Lamellen laufen herab und werden rosa, Sporenpulver rosa."
 
 [[verwechslungen]]
 slug = "orangeroter-mairitterling"
 unterschied = "Hut mit rötlichem Unterton, Geruch schwächer und weniger angenehm, bei Lärche. Sehr selten."
 
 [[verwechslungen]]
-slug = "mehlraesling"
-unterschied = "Lamellen laufen herab und werden rosa, Sporenpulver rosa."
+slug = "riesenroetling"
+unterschied = "Riecht ebenfalls mehlig, Lamellen jung gelblich, später rotocker bis rostgelb, Sporenpulver rosabraun. Erscheint meist erst ab August."
+eigenerUnterschied = "Lamellen bleiben weiß, Sporenpulver weiß, Geruch stark mehlig und angenehm, im Frühling."
+
+[[verwechslungen]]
+slug = "ziegelroter-risspilz"
+unterschied = "Hut radialfaserig aufreißend, gelb- bis ziegelrotbraun, Fleisch rötend, Geruch spermatisch oder obstartig ohne Mehlnote."
+eigenerUnterschied = "Lamellen bleiben weiß, Geruch stark mehlartig, Fleisch verfärbt sich nicht rot."
 
 [[links]]
 titel = "123pilzsuche.de"

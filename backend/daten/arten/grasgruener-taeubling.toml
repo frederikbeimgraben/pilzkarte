@@ -14,7 +14,7 @@ synonyme = ["Russula furcata", "Russula graminicolor"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrasgruenerTaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -93,10 +93,6 @@ unterschied = "Mit häutigem Ring, zwiebelknolliger Basis und Volva, Lamellen we
 [[verwechslungen]]
 slug = "violettstieliger-pfirsichtaeubling"
 unterschied = "Hut ockergelb bis pfirsichfarben, Stiel violett überhaucht."
-
-[[verwechslungen]]
-slug = "frauentaeubling"
-unterschied = "Hut bunt gemischt aus Grün, Violett, Grau und Rosa, Lamellen deutlich brüchig."
 
 [[links]]
 titel = "123pilzsuche.de"

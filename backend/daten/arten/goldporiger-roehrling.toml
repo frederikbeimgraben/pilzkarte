@@ -14,7 +14,7 @@ weitereNamen = ["Goldporiger Pulverröhrling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GoldporigerRoehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
@@ -59,10 +59,6 @@ geschmack = "Leicht säuerlich."
 sporenpulver = "Olivgelb."
 vorkommen = "Symbiosepilz im Laubwald bei Buche, Eiche und Esskastanie, wärmeliebend. Selten, in Deutschland gefährdet."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "goldroehrling"
-unterschied = "Bei Lärche, Hut goldgelb und schleimig, Stiel mit Ring."
 
 [[verwechslungen]]
 slug = "ziegenlippe"

@@ -16,7 +16,7 @@ synonyme = ["Russula cyanoxantha var. cutefracta"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RissigerFrauentaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -64,16 +64,12 @@ vorkommen = "Symbiosepilz im Mischwald, im Bergland haeufiger im Nadelwald. Die 
 zeit = "Fruehsommer bis Spaetherbst."
 
 [[verwechslungen]]
-slug = "gruengefelderter-taeubling"
-unterschied = "Hut grasgruen bis graugruen, Huthaut feldrig aufgerissen, Lamellen bruechig."
+slug = "grasgruener-taeubling"
+unterschied = "Hut gleichmaessig grasgruen, Huthaut nicht gefeldert."
 
 [[verwechslungen]]
 slug = "olivfarbener-frauentaeubling"
 unterschied = "Huthaut glatt statt rissig, Hut einfarbig olivfarben."
-
-[[verwechslungen]]
-slug = "grasgruener-taeubling"
-unterschied = "Hut gleichmaessig grasgruen, Huthaut nicht gefeldert."
 
 [[links]]
 titel = "123pilzsuche.de"

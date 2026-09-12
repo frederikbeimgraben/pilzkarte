@@ -1,5 +1,5 @@
 name = "Breitblättrige Glucke"
-lateinisch = "Sparassis brevipes (eichenglucke: (sparassis laminosa), tannen-glucke"
+lateinisch = "Sparassis brevipes"
 gruppe = "glucke"
 speisewert = "essbar"
 geschuetzt = false
@@ -12,11 +12,11 @@ baeume = ["eiche", "tanne"]
 speisewertHinweis = "Das Fleisch ist zäh und gummiartig, roh gilt die Wertigkeit 4 bis 5. Erst mit langer, besonderer Zubereitung wird sie brauchbar. In Deutschland gefährdet, regional stark gefährdet, deshalb besser stehen lassen."
 gefaehrdung = "unbekanntesAusmass"
 weitereNamen = ["Eichenglucke", "Tannenglucke", "Bärenschädel", "Breitblättrige Krause-Glucke"]
-synonyme = ["Sparassis nemecii"]
+synonyme = ["Sparassis nemecii", "Eichenglucke: (sparassis laminosa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BreitblaettrigeKrauseGlucke2004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 6.0, bis = 30.0, seltenBis = 100.0, einheit = "cm" }
@@ -54,14 +54,6 @@ geschmack = "Mild, alt bitterlich."
 sporenpulver = "Weiß bis blassocker."
 vorkommen = "Am Wurzelgeflecht von Laubbäumen, gern Eiche, seltener an Nadelholz wie Tanne. In Deutschland gefährdet, regional stark gefährdet."
 zeit = "Sommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "bauchwehkoralle"
-unterschied = "Korallenartig verzweigt statt gekräuselt, Äste mit rötlichen Spitzen."
-
-[[verwechslungen]]
-slug = "krause-glucke"
-unterschied = "Schmalere, stärker gekrauste Lappen, wächst an Kiefer statt an Laubholz."
 
 [[verwechslungen]]
 slug = "gelbe-koralle"

@@ -15,7 +15,7 @@ synonyme = ["Hericium ramosum = buchenstachelbart"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/StachelbartEssbar1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 25.0, einheit = "cm" }
@@ -54,20 +54,20 @@ vorkommen = "Folgezersetzer an Totholz von Laubbäumen, gern Buche, vereinzelt a
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "noerdlicher-stachelseitling"
-unterschied = "Dachziegelig übereinanderstehende Hüte am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
-
-[[verwechslungen]]
-slug = "rasiges-stachelspitzchen"
-unterschied = "Nur ein bis drei Millimeter groß, einzelne weiße Stacheln auf dem Holz."
+slug = "dorniger-stachelbart"
+unterschied = "Aus einzelnen dachziegeligen Hüten aufgebaut, gilbt bei Verletzung."
 
 [[verwechslungen]]
 slug = "igelstachelbart"
 unterschied = "Unverzweigt, ein Klumpen mit langen herabhängenden Stacheln."
 
 [[verwechslungen]]
-slug = "dorniger-stachelbart"
-unterschied = "Aus einzelnen dachziegeligen Hüten aufgebaut, gilbt bei Verletzung."
+slug = "noerdlicher-stachelseitling"
+unterschied = "Dachziegelig übereinanderstehende Hüte am Stamm, Oberseite rauhaarig, Fleisch zäh und elastisch."
+
+[[verwechslungen]]
+slug = "rasiges-stachelspitzchen"
+unterschied = "Nur ein bis drei Millimeter groß, einzelne weiße Stacheln auf dem Holz."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -11,7 +11,7 @@ weitereNamen = ["Maitake", "Spatelhütiger Porling", "Laubporling", "Kamm-Porlin
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Klapperschwamm.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -57,24 +57,27 @@ vorkommen = "Parasit und Folgezersetzer im Wurzelbereich von Eiche und Kastanie,
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "eichhase"
-unterschied = "Viele kleine runde Porenpilze mit mittigem Stielchen an einem Strunk, Fruchtkörper heller und gesprenkelt bräunlich."
-
-[[verwechslungen]]
 slug = "bergporling"
 unterschied = "Hüte braun und samtig, fächerförmig ineinander verwachsen, Geschmack jung mild und schnell extrem scharf, bei Weißtanne."
-
-[[verwechslungen]]
-slug = "krause-glucke"
-unterschied = "Blumenkohlartig aus krausen Lappen, ohne Hüte und ohne Röhren, am Wurzelgeflecht von Kiefern."
+eigenerUnterschied = "Graubraune halbierte Einzelhüte in Büscheln, im Wurzelbereich von Eiche und Kastanie."
 
 [[verwechslungen]]
 slug = "breitblaettrige-glucke"
 unterschied = "Hirnartig breit gekräuselt, ohne Hüte und ohne Röhren, beim Kochen Waschküchengeruch."
 
 [[verwechslungen]]
+slug = "eichhase"
+unterschied = "Viele kleine runde Porenpilze mit mittigem Stielchen an einem Strunk, Fruchtkörper heller und gesprenkelt bräunlich."
+eigenerUnterschied = "Hüte breiter und zungenförmig, grau bis graubraun, in einem großen Büschel am Stammfuß."
+
+[[verwechslungen]]
+slug = "krause-glucke"
+unterschied = "Blumenkohlartig aus krausen Lappen, ohne Hüte und ohne Röhren, am Wurzelgeflecht von Kiefern."
+
+[[verwechslungen]]
 slug = "riesenporling"
 unterschied = "Einzelhüte viel größer, Poren auf Druck und Fleisch im Schnitt schwärzend."
+eigenerUnterschied = "Graubraune Einzelhüte, rosettenartig verwachsen, Röhren schwärzen auf Druck nicht, am Wurzelbereich von Eiche."
 
 [[links]]
 titel = "123pilzsuche.de"

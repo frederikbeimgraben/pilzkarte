@@ -12,7 +12,7 @@ weitereNamen = ["Nadelholzhäubling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Gifthaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -73,10 +73,6 @@ geschmack = "Mild bis widerlich holzartig. Niemals probieren."
 sporenpulver = "Rostbraun, rostocker bis zimtbraun."
 vorkommen = "Folgezersetzer an Baumstümpfen und vergrabenem Holz, größtenteils bei Nadelhölzern, inzwischen auch auf Laubbaumstümpfen gemeinsam mit dem Stockschwämmchen. Einzeln bis gesellig."
 zeit = "Winterende bis Spätherbst."
-
-[[verwechslungen]]
-slug = "stockschwaemmchen"
-unterschied = "Stiel unterhalb des Rings braun geschuppt statt weiß-silbrig überfasert, Geruch angenehm pilzig."
 
 [[links]]
 titel = "123pilzsuche.de"

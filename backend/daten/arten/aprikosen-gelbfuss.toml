@@ -15,7 +15,7 @@ synonyme = ["Chroogomphus rutilus var. fulmineus", "Gomphidius viscidus var. ful
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Aprikosen-Gelbfuss.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -66,16 +66,12 @@ vorkommen = "Symbiosepilz in Mischwald und Kiefernwald, besonders dort, wo Eiche
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "spitzgebuckelter-raukopf"
-unterschied = "Hut braun bis orangerot mit spitzem Buckel, radialfaserig und rau, Lamellen zimtbraun, Geruch rettichartig."
-
-[[verwechslungen]]
-slug = "kupferroter-gelbfuss"
-unterschied = "Hut braun, orangebraun bis graubraun ohne rosa und violette Töne, wächst unter Kiefern."
-
-[[verwechslungen]]
 slug = "schweinsohr"
 unterschied = "Violett, keulen- bis trichterförmig, mit Leisten statt Lamellen."
+
+[[verwechslungen]]
+slug = "spitzgebuckelter-raukopf"
+unterschied = "Hut braun bis orangerot mit spitzem Buckel, radialfaserig und rau, Lamellen zimtbraun, Geruch rettichartig."
 
 [[links]]
 titel = "123pilzsuche.de"

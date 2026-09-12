@@ -16,7 +16,7 @@ synonyme = ["Boletus porosporus", "Xerocomus porosporus", "Boletus porosporus va
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotfussFalsch.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -63,16 +63,16 @@ vorkommen = "Symbiosepilz im Mischwald. In Europa selten."
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "schoenfussroehrling"
-unterschied = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
+slug = "herbstrotfussroehrling"
+unterschied = "Stiel deutlich rot punktiert, unter der Huthaut eine kräftig rote Schicht."
 
 [[verwechslungen]]
 slug = "maronenroehrling"
 unterschied = "Hut kastanienbraun, Röhren gelb und auf Druck blau, Stiel ohne rote Punkte."
 
 [[verwechslungen]]
-slug = "herbstrotfussroehrling"
-unterschied = "Stiel deutlich rot punktiert, unter der Huthaut eine kräftig rote Schicht."
+slug = "schoenfussroehrling"
+unterschied = "Hut lehmgrau und samtig, Stiel zur Basis kräftig rot, Fleisch blaut sofort."
 
 [[links]]
 titel = "123pilzsuche.de"

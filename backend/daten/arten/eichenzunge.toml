@@ -16,7 +16,7 @@ synonyme = ["Antrodia quercina", "Polyporus quercicola", "Polystictus fuscopelli
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenzunge.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 5.0, bis = 25.0, seltenBis = 30.0, einheit = "cm" }
@@ -57,8 +57,9 @@ vorkommen = "Meist parasitisch an Eichen, seltener folgezersetzend, löst Braunf
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "zimtfarbiger-weichporling"
+slug = "zimtfarbener-weichporling"
 unterschied = "Zimtbraune Farbtöne, Fleisch weich und saftig, wächst meist an Nadelholz."
+eigenerUnterschied = "Zungenförmig an Eiche, Fleisch rotbraun marmoriert und saftig, Poren cremefarben."
 
 [[links]]
 titel = "123pilzsuche.de"

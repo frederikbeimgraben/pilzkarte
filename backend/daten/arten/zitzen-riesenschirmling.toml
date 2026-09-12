@@ -13,7 +13,7 @@ weitereNamen = ["Schlanker Riesenschirmling", "Zitzenwarziger Riesenschirmling",
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchlankerRiesenschirmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 19.0, einheit = "cm" }
@@ -59,24 +59,20 @@ vorkommen = "Folgezersetzer in Mischwäldern, Parks, Gärten und Heiden."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "jungfernschirmling"
-unterschied = "Hut hellbraun mit gezonten, weichen, wolligen, abstehenden Schuppen, Lamellen weiß und leicht gilbend."
-
-[[verwechslungen]]
 slug = "gruensporschirmling"
 unterschied = "Hut weiß und wollig, jung mit hellbrauner landkartenartiger Zeichnung, Lamellen im Alter grünlich."
 
 [[verwechslungen]]
-slug = "parasol"
-unterschied = "Deutlich größer, Stiel kräftig genattert, Doppelring stark ausgeprägt, Buckel meist nur stumpf."
-
-[[verwechslungen]]
-slug = "sternschuppiger-riesenschirmpilz"
-unterschied = "Hut mit braunen, sternförmig aufreißenden Schuppen, Stiel fein braun genattert, Stielrinde rötend."
+slug = "jungfernschirmling"
+unterschied = "Hut hellbraun mit gezonten, weichen, wolligen, abstehenden Schuppen, Lamellen weiß und leicht gilbend."
 
 [[verwechslungen]]
 slug = "safranschirmling"
 unterschied = "Fleisch läuft safranrot an, Hut hellbraun bis olivbraun, Lamellen cremeweiß mit Zwischenlamellen."
+
+[[verwechslungen]]
+slug = "sternschuppiger-riesenschirmpilz"
+unterschied = "Hut mit braunen, sternförmig aufreißenden Schuppen, Stiel fein braun genattert, Stielrinde rötend."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -13,7 +13,7 @@ synonyme = ["Coprinus atramentarius", "Agaricus atramentarius"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Faltentintling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
@@ -59,6 +59,7 @@ zeit = "Frühjahr bis Spätherbst."
 [[verwechslungen]]
 slug = "spitzkegeliger-tintling"
 unterschied = "Deutlich kleiner, Hut spitzkegelig und stark gerieft, Stielbasis ohne Ringwulst."
+eigenerUnterschied = "Hut ohne spitzen Scheitel, Lamellen abgerundet angewachsen bis schmal angeheftet, Sporenpulver schwarzbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

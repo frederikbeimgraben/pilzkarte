@@ -12,7 +12,7 @@ weitereNamen = ["Sparrigschuppiger Risspilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SparrigerRisspilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -58,16 +58,12 @@ vorkommen = "Symbiosepilz im Mischwald, gern auf kalkreichem Boden. Bäume nennt
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
-slug = "wolliger-risspilz"
-unterschied = "Hut wollig-filzig, nicht sparrig-stachelig, Schneiden weißlich bewimpert. Ebenfalls tödlich giftig."
-
-[[verwechslungen]]
 slug = "sparriger-schueppling"
 unterschied = "Lamellen olivgelb bis olivbraun, Sporenpulver rostbraun, Geruch rettichartig, wächst büschelig an Holz."
 
 [[verwechslungen]]
-slug = "dunkler-hallimasch"
-unterschied = "Wächst büschelig an Holz, Stiel mit dickem Ring, Sporenpulver weiß."
+slug = "wolliger-risspilz"
+unterschied = "Hut wollig-filzig, nicht sparrig-stachelig, Schneiden weißlich bewimpert. Ebenfalls tödlich giftig."
 
 [[links]]
 titel = "123pilzsuche.de"

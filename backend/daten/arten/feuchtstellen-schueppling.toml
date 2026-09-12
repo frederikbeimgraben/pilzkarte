@@ -13,7 +13,7 @@ synonyme = ["Pholiota graminis", "Pholiota inaurata", "Hypholoma graminis", "Fla
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Feuchtstellenschueppling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 5.0, seltenBis = 7.0, einheit = "cm" }
@@ -63,10 +63,6 @@ unterschied = "Hut ockerbraun und beim Abtrocknen verblassend, Stiel unter dem R
 [[verwechslungen]]
 slug = "nadelschueppling"
 unterschied = "Wächst an Nadelholz, Hut gelblich und schuppig."
-
-[[verwechslungen]]
-slug = "stockschwaemmchen"
-unterschied = "Wächst büschelig an Laubholzstümpfen, Stiel unter dem Ring dunkelbraun beschuppt."
 
 [[links]]
 titel = "123pilzsuche.de"

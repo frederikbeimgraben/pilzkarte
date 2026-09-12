@@ -1,5 +1,5 @@
 name = "Grüner Knollenblätterpilz"
-lateinisch = "Amanita phalloides (var. amanita phalloides f. citrina, amanita phalloides f. dunensis, amanita phalloides var. umbrina, amanita phalloides var. euphalloides, amanita phalloides var. larroquei, amanita phalloides var. pulla, amanita phalloides var. verna, amanita phalloides var. striatula)"
+lateinisch = "Amanita phalloides"
 gruppe = "wulstling"
 speisewert = "toedlichGiftig"
 geschuetzt = false
@@ -9,11 +9,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche", "eiche"]
 speisewertHinweis = "Absolut tödlich, schon 20 Gramm genügen. Das Gift schädigt die Leber. Die wichtigsten Merkmale sind weiße Lamellen, ein häutiger Ring, ein radialfaserig eingewachsener Hut mit wie ein Tortenstück abziehbarer Haut und eine abgerundete Knolle mit häutiger Scheide."
 haeufigkeit = "haeufig"
-weitereNamen = ["Grüner Mörder"]
+weitereNamen = ["Grüner Mörder", "Giftchampignon"]
+synonyme = ["Amanita phalloides f. citrina", "Amanita phalloides f. dunensis", "Amanita phalloides var. umbrina", "Amanita phalloides var. euphalloides", "Amanita phalloides var. larroquei", "Amanita phalloides var. pulla", "Amanita phalloides var. verna", "Amanita phalloides var. striatula"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -64,16 +65,18 @@ vorkommen = "Symbiosepilz meist bei Laubbäumen wie Eiche und Buche, selten bei 
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "weisser-knollenblaetterpilz"
-unterschied = "Ganz weiß, Hut ohne Grün- oder Olivton."
+slug = "frauentaeubling"
+unterschied = "Ohne Ring, ohne Knolle und ohne Scheide, Lamellen und Fleisch brüchig."
 
 [[verwechslungen]]
 slug = "kegelhuetiger-knollenblaetterpilz"
 unterschied = "Hut weiß bis cremefarben und kegelig, Huthaut wird mit KOH gelb."
+eigenerUnterschied = "Hut olivgrün, gelbgrün bis ocker statt weiß."
 
 [[verwechslungen]]
-slug = "frauentaeubling"
-unterschied = "Ohne Ring, ohne Knolle und ohne Scheide, Lamellen und Fleisch brüchig."
+slug = "weisser-knollenblaetterpilz"
+unterschied = "Ganz weiß, Hut ohne Grün- oder Olivton."
+eigenerUnterschied = "Hut grünlich, oliv bis gelbgrün statt rein weißlich."
 
 [[links]]
 titel = "123pilzsuche.de"

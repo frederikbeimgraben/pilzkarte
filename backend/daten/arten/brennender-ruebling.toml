@@ -14,7 +14,7 @@ synonyme = ["Collybia peronata", "Marasmius peronatus", "Chamaeceras urens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrennenderRuebling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -55,10 +55,6 @@ geschmack = "Zuerst mild, nach einiger Zeit scharf und pfefferig."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer im Mischwald auf Blatt- und Nadelstreu, häufig."
 zeit = "Spätfrühling bis Herbst."
-
-[[verwechslungen]]
-slug = "nelkenschwindling"
-unterschied = "Hut ledergelb bis hellbraun, Lamellen weißlich und entfernt, Stiel zäh und hornartig, Geschmack bleibt mild."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -14,7 +14,7 @@ gefaehrdung = "gefaehrdet"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GeGraustiel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "phenol"
@@ -87,12 +87,13 @@ slug = "ockertaeubling"
 unterschied = "Hut gelbocker, honiggelb bis rostrot und matt, Fleisch grauend ohne vorheriges Röten, Geschmack etwas bitterlich."
 
 [[verwechslungen]]
-slug = "violettstieliger-pfirsichtaeubling"
-unterschied = "Stiel später rosalila überhaucht und netzig warzig, Geruch im Alter heringsartig."
-
-[[verwechslungen]]
 slug = "orangeroter-graustieltaeubling"
 unterschied = "Hut gelborange, ziegelrot bis kupferfarben, im Nadelwald und Torfmoor."
+eigenerUnterschied = "Hut rein chromgelb bis zitronengelb, nicht orangerot. Auf moorigem saurem Boden bei Birke."
+
+[[verwechslungen]]
+slug = "violettstieliger-pfirsichtaeubling"
+unterschied = "Stiel später rosalila überhaucht und netzig warzig, Geruch im Alter heringsartig."
 
 [[links]]
 titel = "123pilzsuche.de"

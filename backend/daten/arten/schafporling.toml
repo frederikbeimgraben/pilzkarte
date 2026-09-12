@@ -14,7 +14,7 @@ synonyme = ["Scutiger ovinus", "Polyporus limonius", "Polyporus lutescens", "Cal
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schafporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -63,20 +63,23 @@ vorkommen = "Im Mischwald, überwiegend bei Nadelbäumen und dort gern bei Ficht
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "weisser-knochenporling"
-unterschied = "Wächst an toten Lärchenstämmen und Strünken, Fleisch elastisch zäh und trocken sehr hart."
-
-[[verwechslungen]]
 slug = "gelbgruener-kammporling"
 unterschied = "Hut gelbgrün bis olivgrün, Geruch unangenehm stinkend, Geschmack bitter."
-
-[[verwechslungen]]
-slug = "semmelporling"
-unterschied = "Hut semmelgelb bis orangebraun, Stiel kürzer, schmeckt schnell bitterlich."
+eigenerUnterschied = "Hut weißlich bis cremefarben ohne Grünton, Poren weiß, Fleisch weiß und mild."
 
 [[verwechslungen]]
 slug = "roetender-schafeuterporling"
 unterschied = "Hut fleischrosa bis rosa getönt, Druckstellen röten und gilben."
+eigenerUnterschied = "Hut weiss bis cremefarben, Fleisch gilbt nur und roetet nicht."
+
+[[verwechslungen]]
+slug = "semmelporling"
+unterschied = "Hut semmelgelb bis orangebraun, Stiel kürzer, schmeckt schnell bitterlich."
+eigenerUnterschied = "Hut weißlich bis cremefarben, Fruchtkörper meist einzeln statt stark verwachsen, Fleisch mild."
+
+[[verwechslungen]]
+slug = "weisser-knochenporling"
+unterschied = "Wächst an toten Lärchenstämmen und Strünken, Fleisch elastisch zäh und trocken sehr hart."
 
 [[verwechslungen]]
 slug = "zitronenporling"

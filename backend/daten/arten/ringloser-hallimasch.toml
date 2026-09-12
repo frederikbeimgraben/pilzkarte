@@ -16,7 +16,7 @@ synonyme = ["Armillaria tabescens", "Agaricus tabescens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RingloserHallimasch.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -68,10 +68,6 @@ zeit = "Sommer bis Spaetherbst."
 [[verwechslungen]]
 slug = "dunkler-hallimasch"
 unterschied = "Stiel mit deutlichem haeutigem Ring, Hut graubraun und dunkel beschuppt."
-
-[[verwechslungen]]
-slug = "honiggelber-hallimasch"
-unterschied = "Hut honiggelb, Stiel mit gelbflockigem Ring."
 
 [[verwechslungen]]
 slug = "gruenblaettriger-schwefelkopf"

@@ -14,7 +14,7 @@ synonyme = ["Russula ochroleuca var. raoultii", "Russula emetica f. raoultii", "
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BlassgelberTaeubling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "feso4"
@@ -82,6 +82,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "ockertaeubling"
 unterschied = "Größer, Hut gelbocker bis olivocker, Geschmack höchstens leicht schärflich, Sporenpulver gelblich."
+eigenerUnterschied = "Kleiner, Hut jung zitronengelb, Stiel keulig und schnell hohl, Geschmack scharf."
 
 [[links]]
 titel = "123pilzsuche.de"

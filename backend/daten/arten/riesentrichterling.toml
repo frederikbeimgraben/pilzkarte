@@ -1,5 +1,5 @@
 name = "Riesentrichterling"
-lateinisch = "Clitocybe maxima (infundibulicybe geotropa var. maxima)"
+lateinisch = "Clitocybe maxima"
 gruppe = "trichterling"
 speisewert = "essbar"
 geschuetzt = false
@@ -9,11 +9,11 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 haeufigkeit = "haeufig"
-synonyme = ["Clitocybe maxima", "Infundibulicybe geotropa", "Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe geotropa var. minor", "Clitocybe maxima sensu"]
+synonyme = ["Infundibulicybe geotropa", "Clitocybe geotropa", "Omphalia geotropa var. geotropa", "Omphalia geotropa", "Clitocybe subinvoluta sensu", "Clitocybe geotropa var. minor", "Clitocybe maxima sensu", "Infundibulicybe geotropa var. maxima"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesentrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 30.0, einheit = "cm" }
@@ -59,14 +59,6 @@ geschmack = "Mild."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer im Laub- und Nadelwald, meist gesellig in Hexenringen. Regional häufig, sonst sehr selten."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "moenchskopf"
-unterschied = "Hut mit deutlich fühlbarem Buckel in der Mitte, sonst sehr ähnlich."
-
-[[verwechslungen]]
-slug = "riesenkrempentrichterling"
-unterschied = "Hut weiß bis cremeweiß, Rand krempenartig gerollt, Stiel kurz und dick."
 
 [[verwechslungen]]
 slug = "fuchsiger-roetelritterling"

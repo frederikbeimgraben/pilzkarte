@@ -1,7 +1,7 @@
 name = "Mehlräsling"
 lateinisch = "Clitopilus prunulus"
 gruppe = "roetling"
-speisewert = "sehrGuterSpeisepilz"
+speisewert = "essbar"
 geschuetzt = false
 wertigkeit = 1
 marktfaehigSchweiz = true
@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/MehlraeslingEssbar1004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -70,6 +70,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "bleiweisser-trichterling"
 unterschied = "Sporenpulver weiß bis leicht gelblich statt rosa, Geruch süßlich aromatisch ohne Mehlnote, dünnfleischiger und wässrig zäh."
+eigenerUnterschied = "Riecht und schmeckt stark nach Mehl und Gurke, Hut samtig bereift, Fleisch fest."
 
 [[links]]
 titel = "123pilzsuche.de"

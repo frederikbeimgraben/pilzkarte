@@ -1,4 +1,4 @@
-name = "Gelbschuppiger Hallimasch"
+name = "Fleischfarbener Hallimasch"
 lateinisch = "Armillaria gallica"
 gruppe = "hallimasch"
 speisewert = "bedingtEssbar"
@@ -10,7 +10,7 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als giftig und erst nach besonderer Vorbehandlung essbar. Nur die Hüte, mindestens 20 Minuten abkochen und das Kochwasser weggießen. Nach Frost und bei alten Stücken steigt die Unverträglichkeit. Auch dann vertragen ihn nicht alle."
 haeufigkeit = "haeufig"
-weitereNamen = ["Fleischfarbener Hallimasch", "Dunkler Laubholzhallimasch"]
+weitereNamen = ["Gelbschuppiger Hallimasch", "Dunkler Laubholzhallimasch"]
 
 [baeumeAusErfahrung]
 baeume = ["buche", "eiche"]
@@ -18,7 +18,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FleischfarbeneHallimarsch.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
@@ -67,24 +67,20 @@ vorkommen = "An Laubbäumen, parasitisch an kranken Bäumen, sonst Folgezersetze
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "sparriger-schueppling"
-unterschied = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivgelb bis olivbraun, Geruch rettichartig."
+slug = "bleicher-schueppling"
+unterschied = "Hut cremeweiß bis hellbraun mit spitzen sparrigen Schüppchen, Lamellen gelbbraun, Geschmack bitter."
+
+[[verwechslungen]]
+slug = "honiggelber-hallimasch"
+unterschied = "Hut gelblich bis zitronengelb, Stiel mit gelbbeigen Flocken, besser verträglich."
 
 [[verwechslungen]]
 slug = "ringloser-hallimasch"
 unterschied = "Stiel ohne Ring, Hut kleiner und rotbraun, gern an Eiche."
 
 [[verwechslungen]]
-slug = "bleicher-schueppling"
-unterschied = "Hut cremeweiß bis hellbraun mit spitzen sparrigen Schüppchen, Lamellen gelbbraun, Geschmack bitter."
-
-[[verwechslungen]]
-slug = "dunkler-hallimasch"
-unterschied = "Hut rotbraun, Ring ohne goldgelben Rand, an Nadelholz."
-
-[[verwechslungen]]
-slug = "honiggelber-hallimasch"
-unterschied = "Hut gelblich bis zitronengelb, Stiel mit gelbbeigen Flocken, besser verträglich."
+slug = "sparriger-schueppling"
+unterschied = "Hut strohgelb und trocken, mit abstehenden sparrigen Schuppen, Lamellen olivgelb bis olivbraun, Geruch rettichartig."
 
 [[links]]
 titel = "123pilzsuche.de"

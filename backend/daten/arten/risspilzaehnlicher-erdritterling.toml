@@ -12,7 +12,7 @@ synonyme = ["Tricholoma inocybeoides", "Tricholoma inocyboides", "Tricholoma sca
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RisspilzErdritterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -59,16 +59,16 @@ vorkommen = "Symbiosepilz mit verschiedenen Straeuchern in Mischwald, auf Wiesen
 zeit = "Sommer bis Spaetherbst."
 
 [[verwechslungen]]
-slug = "tigerritterling"
-unterschied = "Deutlich groesser und kraeftiger, Hut mit groben dunkelgrauen Schuppen auf hellem Grund, Lamellen mit gelblichen Tropfen."
-
-[[verwechslungen]]
 slug = "schwarzschuppiger-erdritterling"
 unterschied = "Hut mit groben, abstehenden schwarzen Schuppen."
 
 [[verwechslungen]]
 slug = "seifenritterling"
 unterschied = "Geruch seifenartig, Fleisch bei Verletzung langsam roetend."
+
+[[verwechslungen]]
+slug = "tigerritterling"
+unterschied = "Deutlich groesser und kraeftiger, Hut mit groben dunkelgrauen Schuppen auf hellem Grund, Lamellen mit gelblichen Tropfen."
 
 [[links]]
 titel = "123pilzsuche.de"

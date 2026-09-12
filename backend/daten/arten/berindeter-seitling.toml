@@ -15,7 +15,7 @@ synonyme = ["Lentodiopsis dryina", "Pleurotus corticatus var. albertinii"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BerindeterSeitling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 25.0, einheit = "cm" }
@@ -59,10 +59,6 @@ geschmack = "Mild, nussartig und angenehm."
 sporenpulver = "Weiß."
 vorkommen = "Parasit und Folgezersetzer an Laubholzstämmen, gern Eiche, Buche und Esche, außergewöhnlich an Fichte oder Tanne. Weißfäuleerreger, nur teilweise selten, in der Schweiz potenziell gefährdet."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "schuppiger-porling"
-unterschied = "Hut mit konzentrisch angeordneten braunen Schuppen, Unterseite mit Poren, Stielbasis im Alter schwarz."
 
 [[verwechslungen]]
 slug = "lungenseitling"

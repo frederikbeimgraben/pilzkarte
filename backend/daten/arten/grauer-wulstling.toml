@@ -1,5 +1,5 @@
 name = "Grauer Wulstling"
-lateinisch = "Amanita spissa (zusammengefasste syn. amanita excelsa, amanita spissa var. valida, amanita spissa var. cariosa, amanita cariosa)"
+lateinisch = "Amanita spissa"
 gruppe = "wulstling"
 speisewert = "essbar"
 geschuetzt = false
@@ -10,10 +10,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Roh giftig. Er schmeckt muffig und herb, 123pilzsuche gibt ihm nur die Wertigkeit 4. Wegen der Ähnlichkeit mit dem tödlich giftigen Pantherpilz ist er kein Pilz für Anfänger."
 weitereNamen = ["Hoher Wulstling", "Gedrungener Wulstling", "Eingesenkter Wulstling", "Schäler"]
+synonyme = ["Amanita excelsa", "Amanita spissa var. valida", "Amanita spissa var. cariosa", "Amanita cariosa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerWulstling0904.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 3.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -60,12 +61,14 @@ vorkommen = "Symbiosepilz, bevorzugt in sauren Mischwäldern, gern bei Fichte."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "pantherpilz"
-unterschied = "Hutrand gerieft, Ring ungerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
-
-[[verwechslungen]]
 slug = "koenigsfliegenpilz"
 unterschied = "Hut braun mit weißen Flocken, Fleisch unter der Huthaut gelb, Knolle mit warzigen Gürteln."
+eigenerUnterschied = "Hut hellbräunlich bis schwarzbraun mit grauweißen Velumresten, Stiel weiß bis grauweiß, Geruch rettich- bis rübenartig."
+
+[[verwechslungen]]
+slug = "pantherpilz"
+unterschied = "Hutrand gerieft, Ring ungerieft, Stielbasis mit abgesetzter Knolle und weißen Gürteln."
+eigenerUnterschied = "Ring deutlich gerieft, Knolle nicht abgesetzt und ohne Söckchen, Geruch rettichartig."
 
 [[links]]
 titel = "123pilzsuche.de"

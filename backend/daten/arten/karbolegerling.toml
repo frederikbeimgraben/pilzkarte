@@ -1,4 +1,4 @@
-name = "Karbolegerling"
+name = "Karbol-Champignon"
 lateinisch = "Agaricus xanthodermus"
 gruppe = "champignon"
 speisewert = "giftig"
@@ -8,11 +8,11 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Zu erkennen am tinten- bis karbolartigen Geruch nach Phenol und an der starken Gelbfärbung der Stielbasis beim Anschneiden. Die Vergiftung ist nicht gefährlich, aber sehr unangenehm: meist Bauchschmerzen über einige Stunden, in Ausnahmefällen Schwindel und Sehstörungen. Bei jungen Stücken ist der Geruch oft nicht eindeutig; dann den Pilz stehen lassen."
-weitereNamen = ["Giftchampignon", "Tintenegerling", "Giftegerling", "Karbolchampignon"]
+weitereNamen = ["Karbolegerling", "Giftchampignon", "Tintenegerling", "Giftegerling", "Karbolchampignon"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Karbolegerling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -66,14 +66,6 @@ zeit = "Frühling bis Herbst."
 [[verwechslungen]]
 slug = "uebelriechender-egerling"
 unterschied = "Hut schmutzigbraun bis gelbbraun, Fleisch braunrosa anlaufend, Geruch widerlich fischartig statt karbolartig."
-
-[[verwechslungen]]
-slug = "wiesenchampignon"
-unterschied = "Stielbasis nicht knollig und nicht gelb verfärbend, Geruch angenehm pilzig."
-
-[[verwechslungen]]
-slug = "fruehlingschampignon"
-unterschied = "Geruch mandel- bis anisartig, Hut mit seidigen gelbbraunen Radialfasern."
 
 [[links]]
 titel = "123pilzsuche.de"

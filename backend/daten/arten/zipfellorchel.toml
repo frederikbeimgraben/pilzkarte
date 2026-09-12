@@ -13,7 +13,7 @@ synonyme = ["Gyromitra fastigiata", "Gyromitra fastigiata var. brunnea", "Gyromi
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Zipfellorchel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 11.0, seltenBis = 14.0, einheit = "cm" }

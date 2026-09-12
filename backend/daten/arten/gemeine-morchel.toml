@@ -15,7 +15,7 @@ synonyme = ["Morchella esculenta var. vulgaris"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeineMorchel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
@@ -59,10 +59,6 @@ zeit = "Frühling, Februar bis Juni."
 [[verwechslungen]]
 slug = "zipfellorchel"
 unterschied = "Hut zipfelig gelappt statt wabig gekammert, Rand frei und nicht mit dem Stiel verwachsen."
-
-[[verwechslungen]]
-slug = "dickfuessige-morchel"
-unterschied = "Stiel auffällig dick und breit, der Hut wirkt dagegen klein."
 
 [[links]]
 titel = "123pilzsuche.de"

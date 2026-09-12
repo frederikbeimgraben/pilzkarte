@@ -15,7 +15,7 @@ synonyme = ["Lyophyllum fumosum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Frostrasling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 6.0, seltenBis = 8.0, einheit = "cm" }
@@ -57,16 +57,16 @@ vorkommen = "Folgezersetzer auf Wegen, an Wegrändern und in Parks, gern an Dist
 zeit = "Spätsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "weissstieliger-roetling"
-unterschied = "Lamellen laufen rosa an, Sporenpulver ist rosa, Geruch mehlig. Giftig."
-
-[[verwechslungen]]
 slug = "nebelkappe"
 unterschied = "Hut nebelgrau, Geruch auffallend süßlich, wächst in Reihen statt in Büscheln."
 
 [[verwechslungen]]
 slug = "panzerrasling"
 unterschied = "Hut dunkelbraun bis schwarzbraun, Fleisch unter der Huthaut stark bräunlich durchfärbt."
+
+[[verwechslungen]]
+slug = "weissstieliger-roetling"
+unterschied = "Lamellen laufen rosa an, Sporenpulver ist rosa, Geruch mehlig. Giftig."
 
 [[links]]
 titel = "123pilzsuche.de"

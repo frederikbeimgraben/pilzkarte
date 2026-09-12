@@ -13,7 +13,7 @@ synonyme = ["Agaricus collinus", "Gymnopus collinus", "Collybia collina"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Huegelschwindling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 6.0, seltenBis = 7.0, einheit = "cm" }
@@ -57,16 +57,16 @@ vorkommen = "Folgezersetzer in Parks, Gärten, auf Rasen und Wiesen, an Waldrän
 zeit = "Frühling bis Spätherbst."
 
 [[verwechslungen]]
-slug = "ziegelroter-risspilz"
-unterschied = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Fleisch rot verfärbend, Sporenpulver dunkelbraun."
+slug = "brennender-ruebling"
+unterschied = "Lamellen gelbbraun bis dottergelb und entfernt stehend, Geschmack nach kurzer Zeit scharf bis pfefferig."
 
 [[verwechslungen]]
 slug = "gruenender-risspilz"
 unterschied = "Stiel von unten nach oben blaugrün, Fleisch bei Verletzung grün bis blaugrün, Sporenpulver lehmbraun."
 
 [[verwechslungen]]
-slug = "brennender-ruebling"
-unterschied = "Lamellen gelbbraun bis dottergelb und entfernt stehend, Geschmack nach kurzer Zeit scharf bis pfefferig."
+slug = "ziegelroter-risspilz"
+unterschied = "Hut ziegelrot bis rotbraun und radialfaserig aufreißend, Fleisch rot verfärbend, Sporenpulver dunkelbraun."
 
 [[links]]
 titel = "123pilzsuche.de"

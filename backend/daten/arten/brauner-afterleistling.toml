@@ -13,7 +13,7 @@ synonyme = ["Hygrophoropsis aurantiaca var. rufa"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BrauneAfterleistling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 12.0, seltenBis = 15.0, einheit = "cm" }
@@ -61,6 +61,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "falscher-pfifferling"
 unterschied = "Hut leuchtend orange statt braun, Stiel dünner, im Nadelwald auf Nadelstreu."
+eigenerUnterschied = "Hut graubraun bis olivbraun statt leuchtend orange."
 
 [[verwechslungen]]
 slug = "oelbaumtrichterling"

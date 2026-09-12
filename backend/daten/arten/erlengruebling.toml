@@ -13,7 +13,7 @@ synonyme = ["Boletus chrysenteron var. lividus", "Gyrodon labyrinthicus", "Gyrod
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Erlengruebling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "ammoniak"
@@ -63,10 +63,6 @@ geschmack = "Säuerlich und leicht bitterlich."
 sporenpulver = "Olivbraun bis ockerbraun."
 vorkommen = "Symbiosepilz im Laubwald, gern im Auwald, fast nur bei Erlen. Sehr selten."
 zeit = "Sommer bis Herbst."
-
-[[verwechslungen]]
-slug = "kuhroehrling"
-unterschied = "Röhren weiter und nicht so fein, Hut ohne Grübchen, wächst bei Kiefer."
 
 [[verwechslungen]]
 slug = "ziegenlippe"

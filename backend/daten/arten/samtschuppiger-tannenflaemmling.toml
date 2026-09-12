@@ -12,7 +12,7 @@ weitereNamen = ["Scaly Rustgill"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SamttannFlaemmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -59,10 +59,6 @@ geschmack = "Meist bitterlich, die Bitterkeit ist oft kaum wahrnehmbar."
 sporenpulver = "Orangebraun bis rostbraun."
 vorkommen = "Folgezersetzer auf Nadeltotholz, bevorzugt an Tanne und Kiefer, auch auf Zapfen und Holzresten."
 zeit = "Sommer bis Spaetherbst."
-
-[[verwechslungen]]
-slug = "geflecktblaettriger-flaemmling"
-unterschied = "Hut glatt bis fein faserig statt schuppig, Lamellen mit auffaelligen rostbraunen Flecken."
 
 [[links]]
 titel = "123pilzsuche.de"

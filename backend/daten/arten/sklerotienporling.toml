@@ -13,7 +13,7 @@ weitereNamen = ["Kleiner Schuppenporling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sklerotienporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -61,10 +61,6 @@ geschmack = "Leicht bitterlich, das verliert sich beim Zubereiten."
 sporenpulver = "Weiß."
 vorkommen = "Folgezersetzer, teils Parasit, meist an umgefallenen und leicht verrotteten Laubholzästen und Stämmen, auch an abgestorbenen Bereichen am Baum. Löst Weißfäule aus."
 zeit = "Frühling bis Herbst."
-
-[[verwechslungen]]
-slug = "schuppiger-porling"
-unterschied = "Deutlich größer, Hut mit groben braunen Schuppen, Stielbasis schwarz."
 
 [[links]]
 titel = "123pilzsuche.de"

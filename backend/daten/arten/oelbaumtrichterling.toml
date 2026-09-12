@@ -1,4 +1,4 @@
-name = "Ölbaumtrichterling"
+name = "Ölbaumpilz"
 lateinisch = "Omphalotus olearius"
 gruppe = "trichterling"
 speisewert = "giftig"
@@ -9,12 +9,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["eiche", "kastanie"]
 speisewertHinweis = "Sehr giftig. Er verursacht heftige Brechdurchfälle nach 15 Minuten bis 4 Stunden, meist durch Iludin; Leberschäden sind nicht ausgeschlossen. Er hat echte, ablösbare Lamellen statt Leisten, und Myzel und Lamellen leuchten nachts."
 haeufigkeit = "haeufig"
-weitereNamen = ["Ölbaumpilz", "Orangefarbener Ölbaumtrichterling", "Dunkler Ölbaumtrichterling"]
+weitereNamen = ["Ölbaumtrichterling", "Orangefarbener Ölbaumtrichterling", "Dunkler Ölbaumtrichterling"]
 synonyme = ["Omphalotus illudens"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Olbaumtrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -67,10 +67,6 @@ geschmack = "Mild, unangenehm."
 sporenpulver = "Weiß, cremefarben bis hellgelb."
 vorkommen = "Parasit oder Folgezersetzer an Laubholz, an Ölbaum, Eiche, Edelkastanie und Bambus, wärmeliebend. In Europa überwiegend im Mittelmeerraum, sonst sehr selten."
 zeit = "Frühsommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "falscher-pfifferling"
-unterschied = "Hut feinfilzig, Lamellen ablösbar und viele gegabelt, Fleisch dünn und biegsam, auf Nadelstreu."
 
 [[verwechslungen]]
 slug = "fuchsiger-roetelritterling"

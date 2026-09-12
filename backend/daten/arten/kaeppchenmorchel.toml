@@ -17,7 +17,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kaeppchen.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 2.0, bis = 4.5, seltenBis = 6.0, einheit = "cm" }
@@ -57,16 +57,12 @@ vorkommen = "Folgezersetzer in Mischwald und Auwald, gern bei Pappeln und Espen 
 zeit = "Februar bis Juni, in kälteren Lagen nicht vor Anfang April."
 
 [[verwechslungen]]
-slug = "zipfellorchel"
-unterschied = "Hut zipfelmützenartig hoch gestülpt und aderig statt wabenartig, mit heller Verbindungsnaht."
-
-[[verwechslungen]]
-slug = "boehmische-verpel"
-unterschied = "Käppchen rundlich statt zugespitzt, runzelig labyrinthartig, nur an der Spitze flach mit dem Stiel verwachsen."
-
-[[verwechslungen]]
 slug = "spitzmorchel"
 unterschied = "Käppchen kammerig und mit dem Rand ganz am Stiel angewachsen, Fruchtkörper deutlich größer."
+
+[[verwechslungen]]
+slug = "zipfellorchel"
+unterschied = "Hut zipfelmützenartig hoch gestülpt und aderig statt wabenartig, mit heller Verbindungsnaht."
 
 [[links]]
 titel = "123pilzsuche.de"

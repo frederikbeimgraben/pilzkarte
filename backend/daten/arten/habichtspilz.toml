@@ -1,7 +1,7 @@
 name = "Habichtspilz"
 lateinisch = "Sarcodon imbricatus"
 gruppe = "stachelpilz"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 wertigkeit = 3
 marktfaehigSchweiz = true
@@ -15,7 +15,7 @@ weitereNamen = ["Habichtsstacheling", "Rehpilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Habichtspilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 6.0, bis = 15.0, seltenBis = 30.0, einheit = "cm" }
@@ -59,6 +59,7 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "gallenstacheling"
 unterschied = "Hut dunkelbraun und feiner braunschuppig, Stielbasis bläulich grünlich, Fleisch dort schwarzblau, Geschmack extrem scharf und bitter."
+eigenerUnterschied = "Hut mit groben, dachziegelig aufgerichteten dunkelbraunen Schuppen, Geschmack mild bis leicht bitter, Stielbasis nicht schwarzblau."
 
 [[links]]
 titel = "123pilzsuche.de"

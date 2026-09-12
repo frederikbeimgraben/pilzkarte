@@ -14,7 +14,7 @@ synonyme = ["Gymnopilus spumosus", "Pholiotina spumosa", "Pholiota graveolens", 
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Nadelschueppling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 4.0, seltenBis = 6.0, einheit = "cm" }
@@ -65,10 +65,6 @@ unterschied = "Hut hellbraun bis dunkelbraun und meist gebuckelt, Stiel silbrig 
 [[verwechslungen]]
 slug = "samtschuppiger-tannenflaemmling"
 unterschied = "Hut gelbfuchsig mit trockener, schuppiger Oberfläche, Lamellen mit rostbraunen Flecken, an Tanne und Kiefer."
-
-[[verwechslungen]]
-slug = "gruenblaettriger-schwefelkopf"
-unterschied = "Lamellen grün bis grüngelb, Sporenpulver purpurbraun, Geschmack stark bitter."
 
 [[links]]
 titel = "123pilzsuche.de"

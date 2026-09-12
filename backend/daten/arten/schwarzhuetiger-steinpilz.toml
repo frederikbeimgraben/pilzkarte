@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerSteini.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 15.0, seltenBis = 20.0, einheit = "cm" }
@@ -65,16 +65,16 @@ vorkommen = "Symbiosepilz im Laubwald, meist bei Eiche und Edelkastanie. Selten.
 zeit = "Sommer bis Herbst."
 
 [[verwechslungen]]
+slug = "anhaengselroehrling"
+unterschied = "Röhren gelblich, Fleisch zitronengelb und leicht blauend, Stielbasis mit wurzelndem Anhängsel."
+
+[[verwechslungen]]
 slug = "gallenroehrling"
 unterschied = "Röhren jung weiß, später rosa, Stiel mit grobem braunem Netz, Geschmack immer sehr bitter."
 
 [[verwechslungen]]
 slug = "wurzelnder-bitterroehrling"
 unterschied = "Hut grau bis braungrau, Fleisch stark blauend, Geruch nach Maggi oder Tinte, Geschmack sehr bitter."
-
-[[verwechslungen]]
-slug = "anhaengselroehrling"
-unterschied = "Röhren gelblich, Fleisch zitronengelb und leicht blauend, Stielbasis mit wurzelndem Anhängsel."
 
 [[links]]
 titel = "123pilzsuche.de"

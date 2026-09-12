@@ -14,7 +14,7 @@ synonyme = ["Boletus regius"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koenigesroehrling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 12.0, seltenBis = 20.0, einheit = "cm" }
@@ -68,6 +68,7 @@ unterschied = "Hut lehmgrau bis tonfarben und samtig, Stiel zur Basis rötlich, 
 [[verwechslungen]]
 slug = "silberroehrling"
 unterschied = "Hut silbergrau bis milchkaffeebraun, Fleisch im Schnitt lagunenblau, Geruch nach Marzipan."
+eigenerUnterschied = "Hut rosa bis karminrot, Fleisch nur schwach blauend."
 
 [[links]]
 titel = "123pilzsuche.de"

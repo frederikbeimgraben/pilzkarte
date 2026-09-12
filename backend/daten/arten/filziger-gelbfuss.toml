@@ -15,7 +15,7 @@ synonyme = ["Gomphidus helveticus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FilzigerGelbfuss.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -69,10 +69,6 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "spitzgebuckelter-raukopf"
 unterschied = "Hut orangebraun und spitz gebuckelt, Lamellen zimtbraun, Sporenpulver rostbraun. Zerstört mit langer Verzögerung die Nieren."
-
-[[verwechslungen]]
-slug = "kupferroter-gelbfuss"
-unterschied = "Lamellen deutlicher herablaufend, Hut weniger filzig schuppig, wächst bei Kiefer."
 
 [[links]]
 titel = "123pilzsuche.de"

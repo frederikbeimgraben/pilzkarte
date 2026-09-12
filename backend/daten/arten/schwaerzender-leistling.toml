@@ -15,7 +15,7 @@ weitereNamen = ["Gelbvioletter Pfifferling", "Schwärzender Pfifferling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwaerzenderLeistling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 14.0, seltenBis = 16.0, einheit = "cm" }
@@ -64,14 +64,6 @@ zeit = "Frühsommer bis Herbst."
 [[verwechslungen]]
 slug = "flaemmiger-saftling"
 unterschied = "Kleiner, Hut orangerot, mit wachsartigen Lamellen statt dicker Leisten, auf Wiesen."
-
-[[verwechslungen]]
-slug = "trompetenpfifferling"
-unterschied = "Hut braun und trichterig durchbohrt, Leisten grau, Stiel hohl und gelb, Fleisch schwärzt nicht."
-
-[[verwechslungen]]
-slug = "gelbstieliger-trompetenpfifferling"
-unterschied = "Unterseite fast glatt bis nur schwach faltig und orangegelb, Fleisch schwärzt nicht."
 
 [[links]]
 titel = "123pilzsuche.de"

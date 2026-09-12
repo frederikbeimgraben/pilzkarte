@@ -1,4 +1,4 @@
-name = "Rosenseitling"
+name = "Rosenroter Seitling"
 lateinisch = "Pleurotus djamor"
 gruppe = "seitling"
 speisewert = "essbar"
@@ -9,11 +9,11 @@ sammelbar = false
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
 speisewertHinweis = "Essbar. In Mitteleuropa ist er nur als Zuchtpilz zu erwarten."
-weitereNamen = ["Rosenroter Seitling", "Rosa Seitling", "Rosafarbener Seitling"]
+weitereNamen = ["Rosenseitling", "Rosa Seitling", "Rosafarbener Seitling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rosenseitling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 10.0, einheit = "cm" }
@@ -58,16 +58,12 @@ vorkommen = "Folgezersetzer und Weissfaeuleerreger in Tropen und Subtropen an Pa
 zeit = "Ganzjaehrig."
 
 [[verwechslungen]]
-slug = "schweinsohr"
-unterschied = "Trichterfoermig mit derben herablaufenden Leisten statt Lamellen, am Boden im Nadelwald."
-
-[[verwechslungen]]
-slug = "lungenseitling"
-unterschied = "Hut milchweiss bis cremeweiss und duennfleischig, im Sommer an Laubholz."
-
-[[verwechslungen]]
 slug = "rillstieliger-seitling"
 unterschied = "Stiel deutlich ausgepraegt und rillig, Lamellen queradrig verbunden."
+
+[[verwechslungen]]
+slug = "schweinsohr"
+unterschied = "Trichterfoermig mit derben herablaufenden Leisten statt Lamellen, am Boden im Nadelwald."
 
 [[links]]
 titel = "123pilzsuche.de"

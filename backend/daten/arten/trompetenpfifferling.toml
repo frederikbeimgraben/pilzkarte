@@ -19,7 +19,7 @@ quelle = "eigene Erfahrung"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Trompetenpfifferlinge.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -64,22 +64,21 @@ zeit = "Sommer bis Spätherbst."
 [[verwechslungen]]
 slug = "flaemmiger-saftling"
 unterschied = "Nur 1 bis 2, selten bis 3 cm breit, Hut gelb, goldgelb bis orange, mit echten Lamellen statt Leisten."
+eigenerUnterschied = "Hut graubraun und trichterig durchbohrt, Unterseite mit Leisten statt Lamellen, Stiel gelb und hohl."
 
 [[verwechslungen]]
 slug = "gruengelber-nabeling"
 unterschied = "1 bis 3, selten bis 4 cm breit, Hut gelb, olivgelb bis grüngelb, mit dicklichen gelben Lamellen."
+eigenerUnterschied = "Hut graubraun und trichterig, Unterseite mit graulila Leisten, wächst am Boden."
 
 [[verwechslungen]]
 slug = "mehltrichterling"
 unterschied = "Hut dunkelgrau bis graubraun und hellgrau bereift, mit grauen Lamellen, wächst in Wiesen."
 
 [[verwechslungen]]
-slug = "gelbstieliger-trompetenpfifferling"
-unterschied = "Stiel leuchtend gelb statt gelbbraun."
-
-[[verwechslungen]]
 slug = "schwaerzender-leistling"
 unterschied = "Größer, Hut eidottergelb bis braungelb, Fleisch bei Verletzung und im Alter schwärzend."
+eigenerUnterschied = "Hut braun und trichterig durchbohrt, Leisten grau, Stiel hohl und gelb, Fleisch schwärzt nicht."
 
 [[links]]
 titel = "123pilzsuche.de"

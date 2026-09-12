@@ -13,7 +13,7 @@ synonyme = ["Clitocybe rivulosa var. dealbata", "Clitocybe dealbata var. rivulos
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rinnigertrichterling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 10.0, seltenBis = 13.0, einheit = "cm" }
@@ -58,10 +58,6 @@ geschmack = "Mild, oft angenehm pilzartig, etwas adstringierend."
 sporenpulver = "Weiss bis hell cremeweiss."
 vorkommen = "Folgezersetzer an pflanzlichen Abfaellen auf Wiesen, Feldern, in Parks sowie an Weg- und Waldraendern, auf saurem Boden."
 zeit = "Sommer bis Spaetherbst."
-
-[[verwechslungen]]
-slug = "bleiweisser-trichterling"
-unterschied = "Hut rein weiss und mehlig bereift, ohne konzentrische Zonen."
 
 [[verwechslungen]]
 slug = "mehlraesling"

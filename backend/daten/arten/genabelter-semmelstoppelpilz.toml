@@ -15,7 +15,7 @@ synonyme = ["Dentinum umbilicatum"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GenabelterSemmelstoppelpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 4.0, bis = 20.0, seltenBis = 25.0, einheit = "cm" }
@@ -62,16 +62,12 @@ vorkommen = "Symbiosepilz in Mischwäldern. Extrem selten."
 zeit = "Frühsommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "ellipsoidsporige-stoppelpilz"
-unterschied = "Hutmitte nicht genabelt, Stacheln dichter stehend."
+slug = "schafporling"
+unterschied = "Hut weißlich, Unterseite mit feinen weißen Poren."
 
 [[verwechslungen]]
 slug = "semmelporling"
 unterschied = "Unterseite mit Poren statt mit Stacheln."
-
-[[verwechslungen]]
-slug = "schafporling"
-unterschied = "Hut weißlich, Unterseite mit feinen weißen Poren."
 
 [[links]]
 titel = "123pilzsuche.de"

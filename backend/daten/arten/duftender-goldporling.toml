@@ -13,7 +13,7 @@ gefaehrdung = "extremSelten"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DuftenderGoldporling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 5.0, bis = 13.0, seltenBis = 30.0, einheit = "cm" }
@@ -55,16 +55,13 @@ vorkommen = "Folgezersetzer an totem Nadelholz, gern an verrottetem Holz von Fic
 zeit = "Ganzjährig."
 
 [[verwechslungen]]
-slug = "zimtfarbiger-weichporling"
-unterschied = "Zimtbraune bis rostbraune Farben statt Orange, ohne Anisgeruch."
-
-[[verwechslungen]]
 slug = "leuchtender-weichporling"
 unterschied = "Blasser gelborange, ohne den süßlichen Anisgeruch."
+eigenerUnterschied = "Liegt dem Holz flach auf und wirkt, als bestehe er nur aus Röhren. Geruch nach Anis oder Aprikose."
 
 [[verwechslungen]]
-slug = "schwefelporling"
-unterschied = "Bildet dachziegelige Konsolen mit Hutkante, wächst an Laubholz."
+slug = "zimtfarbener-weichporling"
+unterschied = "Zimtbraune bis rostbraune Farben statt Orange, ohne Anisgeruch."
 
 [[links]]
 titel = "123pilzsuche.de"

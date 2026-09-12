@@ -12,7 +12,7 @@ weitereNamen = ["Gefleckter Flämmling", "Gemeiner Flämmling", "Schupopilz"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GefleckterFlaemmling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 12.0, einheit = "cm" }
@@ -60,16 +60,18 @@ vorkommen = "Folgezersetzer an Totholz, meist auf Nadelholzstümpfen und dicken 
 zeit = "Frühsommer bis Herbst."
 
 [[verwechslungen]]
-slug = "rotbrauner-flaemmling"
-unterschied = "Hut mehr rotbraun, Lamellen weniger deutlich rostfleckig."
-
-[[verwechslungen]]
 slug = "gruenblaettriger-schwefelkopf"
 unterschied = "Lamellen jung schwefelgelb, später grünlich, wächst büschelig an Stümpfen."
 
 [[verwechslungen]]
+slug = "rotbrauner-flaemmling"
+unterschied = "Hut mehr rotbraun, Lamellen weniger deutlich rostfleckig."
+eigenerUnterschied = "Lamellen mit auffaelligen rostbraunen Flecken, Stiel heller und nicht dunkelbraun."
+
+[[verwechslungen]]
 slug = "samtschuppiger-tannenflaemmling"
 unterschied = "Hut samtig bis feinschuppig, an Nadelholz, ebenfalls bitter."
+eigenerUnterschied = "Hut glatt bis fein faserig statt schuppig, Lamellen mit auffaelligen rostbraunen Flecken."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -12,7 +12,7 @@ weitereNamen = ["Gelbgrüner Ellerling", "Olivgelber Nabeling", "Gelbgrüner Nab
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruengelberNabeling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 3.0, seltenBis = 4.0, einheit = "cm" }
@@ -60,10 +60,6 @@ zeit = "Herbst bis Winter."
 [[verwechslungen]]
 slug = "gelbstieliger-trompetenpfifferling"
 unterschied = "Hut braun bis graubraun, Stiel leuchtend gelb, Unterseite mit Leisten statt Lamellen, wächst am Boden."
-
-[[verwechslungen]]
-slug = "trompetenpfifferling"
-unterschied = "Hut graubraun und trichterig, Unterseite mit graulila Leisten, wächst am Boden."
 
 [[links]]
 titel = "123pilzsuche.de"

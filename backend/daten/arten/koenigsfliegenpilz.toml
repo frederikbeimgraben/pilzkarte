@@ -13,7 +13,7 @@ synonyme = ["Amanita muscaria var. regalis", "Amanita regalis forma umbrina", "A
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Koenigsfliegenpilz.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 stielLaengeCm = { von = 7.0, bis = 16.0, seltenBis = 20.0, einheit = "cm" }
@@ -58,10 +58,7 @@ zeit = "Frühsommer bis Spätherbst."
 [[verwechslungen]]
 slug = "pantherpilz"
 unterschied = "Hut kastanien- bis graubraun mit rein weißen, gleichmäßig angeordneten Velumflocken, Stiel weiß mit abgesetzter Knolle, Fleisch unter der Huthaut nicht gelb."
-
-[[verwechslungen]]
-slug = "grauer-wulstling"
-unterschied = "Hut hellbräunlich bis schwarzbraun mit grauweißen Velumresten, Stiel weiß bis grauweiß, Geruch rettich- bis rübenartig."
+eigenerUnterschied = "Hut braun mit gelblichen bis ockerfarbenen Velumresten, Ring oberseits gerieft."
 
 [[links]]
 titel = "123pilzsuche.de"

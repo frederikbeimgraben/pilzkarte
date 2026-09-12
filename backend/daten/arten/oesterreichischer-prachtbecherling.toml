@@ -14,7 +14,7 @@ synonyme = ["Molliardiomyces coccineus", "Peziza austriaca", "Lachnea austriaca"
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/AustriaPrachtbecherling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -53,10 +53,6 @@ geschmack = "Mild, neutral."
 sporenpulver = "Weiß bis farblos."
 vorkommen = "Folgezersetzer an Laubholzästen, gern in Auwäldern bei Erle, Weide und Espe, seltener Linde. Gern auf sandigem, kalkreichem Boden."
 zeit = "Winter bis Mai."
-
-[[verwechslungen]]
-slug = "linden-kelchbecherling"
-unterschied = "Wächst an verrotteten Lindenzweigen, sonst kaum zu trennen."
 
 [[verwechslungen]]
 slug = "scharlachroter-kelchbecherling"

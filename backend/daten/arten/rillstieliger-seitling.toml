@@ -15,7 +15,7 @@ synonyme = ["Pleurotus ostreatus var. cornucopiae", "Crepidotus cornucopiae", "P
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RillstieligerSeitling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 11.0, seltenBis = 15.0, einheit = "cm" }
@@ -65,14 +65,6 @@ zeit = "Frühjahr bis Spätherbst."
 [[verwechslungen]]
 slug = "ohrfoermiger-seitling"
 unterschied = "Klein und ohrförmig, ohne echten Stiel, an Nadelholz."
-
-[[verwechslungen]]
-slug = "austernseitling"
-unterschied = "Hut muschelförmig und grau bis graubraun, Lamellen laufen nicht bis zur Stielbasis, im Winterhalbjahr."
-
-[[verwechslungen]]
-slug = "lungenseitling"
-unterschied = "Hut weißlich bis cremefarben, Stiel sehr kurz und seitlich, ohne Längsrillen."
 
 [[links]]
 titel = "123pilzsuche.de"

@@ -1,4 +1,4 @@
-name = "Judasohr"
+name = "Glatter Ohrlappenpilz"
 lateinisch = "Auricularia auricula-judae"
 gruppe = "ohrlappenpilz"
 speisewert = "essbar"
@@ -8,12 +8,12 @@ marktfaehigSchweiz = true
 marktfaehig = true
 jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = ["holunder", "birke"]
-weitereNamen = ["Holunderschwammpilz", "Holunderpilz", "Holunderschwamm", "Black Fungus", "Weißes Judasohr"]
+weitereNamen = ["Judasohr", "Holunderschwammpilz", "Holunderpilz", "Holunderschwamm", "Black Fungus", "Weißes Judasohr"]
 synonyme = ["Auricularia auricula", "Auricularia sambucina oder hirneola auricula-judae", "Auricularia polytricha"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Judasohr.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 sporenLaengeUm = { von = 11.0, bis = 23.0, einheit = "um" }
@@ -52,24 +52,26 @@ vorkommen = "Meist an Laubholz, vor allem Holunder, auch Birke und anderes Laubh
 zeit = "Ganzjährig, Schwerpunkt Winter und Frühjahr bei feuchtem Wetter."
 
 [[verwechslungen]]
-slug = "kleines-judasohr"
-unterschied = "Nur 0,5 bis 1, selten bis 2 cm breit, Oberseite mit weißlichem haarigem Filz, an Zitterpappel und Weide."
-
-[[verwechslungen]]
 slug = "gezonter-ohrlappenpilz"
 unterschied = "Oberseite striegelig filzig behaart und bunt gezont, Hütchen dachziegelig nebeneinander, Fleisch gegen das Licht undurchsichtig."
-
-[[verwechslungen]]
-slug = "weisstannenfingerhut"
-unterschied = "Nur 0,5 bis 1,5, selten bis 2 cm breit, becher- bis fingerhutförmig, außen raukörnig, an Nadelholz."
+eigenerUnterschied = "Dünner und ohrförmig, gegen das Licht durchscheinend, Oberfläche nur fein filzig und nicht bunt gezont."
 
 [[verwechslungen]]
 slug = "kerbrandiger-napfbecherling"
 unterschied = "Schüsselförmig, hellbraun mit gekerbtem Rand, Fleisch brüchig statt gallertartig, wächst auf Erde."
+eigenerUnterschied = "Ohrförmig und gallertartig, wächst an Laubholz, meist an Holunder, nicht auf Erde."
+
+[[verwechslungen]]
+slug = "kleines-judasohr"
+unterschied = "Nur 0,5 bis 1, selten bis 2 cm breit, Oberseite mit weißlichem haarigem Filz, an Zitterpappel und Weide."
 
 [[verwechslungen]]
 slug = "kreisel-druesling"
 unterschied = "Kreisel- bis becherförmig, haselnuss- bis kandisbraun, Fleisch weich und schwabbelig, meist an Weide."
+
+[[verwechslungen]]
+slug = "weisstannenfingerhut"
+unterschied = "Nur 0,5 bis 1,5, selten bis 2 cm breit, becher- bis fingerhutförmig, außen raukörnig, an Nadelholz."
 
 [[links]]
 titel = "123pilzsuche.de"

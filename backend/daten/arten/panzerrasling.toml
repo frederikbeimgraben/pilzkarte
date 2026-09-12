@@ -1,4 +1,4 @@
-name = "Panzerrasling"
+name = "Gepanzerter Rasling"
 lateinisch = "Lyophyllum decastes var. loricatum"
 gruppe = "rasling"
 speisewert = "essbar"
@@ -9,11 +9,11 @@ marktfaehig = true
 sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
-weitereNamen = ["Gepanzerter Rasling", "Erdzimmerling", "Erdzimmermandl", "Knorpeliger Knäuelrasling", "Büschelrasling", "Brauner Rasling"]
+weitereNamen = ["Panzerrasling", "Erdzimmerling", "Erdzimmermandl", "Knorpeliger Knäuelrasling", "Büschelrasling", "Brauner Rasling"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/PanzerRasling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 1.0, bis = 8.0, seltenBis = 11.0, einheit = "cm" }
@@ -53,10 +53,6 @@ geschmack = "Mild, angenehm, süßlich."
 sporenpulver = "Rein weiß."
 vorkommen = "Folgezersetzer auf grasigen Wegen, an Wegrändern und in Parks, kalkliebend. Meist büschelig aus einem Strunk."
 zeit = "Frühsommer bis Spätherbst."
-
-[[verwechslungen]]
-slug = "bueschliger-rasling"
-unterschied = "Hut heller braun und ohne die knorpelige Panzerschicht, Fleisch unter der Huthaut nicht dunkel durchfärbt."
 
 [[links]]
 titel = "123pilzsuche.de"

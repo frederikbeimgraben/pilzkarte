@@ -15,7 +15,7 @@ weitereNamen = ["Dickfüßige Speisemorchel"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DickfuessigeMorchel.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 3.0, bis = 7.0, seltenBis = 9.0, einheit = "cm" }
@@ -56,16 +56,13 @@ vorkommen = "In Auwäldern, Parks und Gärten, an Waldrändern, auf Waldwiesen u
 zeit = "Frühling, in Bayern meist erst ab April bis Mitte Mai."
 
 [[verwechslungen]]
-slug = "zipfellorchel"
-unterschied = "Kappe sattelförmig gelappt statt wabig, Stiel längsrunzelig, nicht dick und klumpig."
-
-[[verwechslungen]]
-slug = "speisemorchel"
-unterschied = "Kleiner, Stiel schlank und nicht klumpig verdickt."
-
-[[verwechslungen]]
 slug = "gemeine-morchel"
 unterschied = "Kappe rundlicher und dunkler, Stiel deutlich dünner."
+eigenerUnterschied = "Stiel auffällig dick und breit, der Hut wirkt dagegen klein."
+
+[[verwechslungen]]
+slug = "zipfellorchel"
+unterschied = "Kappe sattelförmig gelappt statt wabig, Stiel längsrunzelig, nicht dick und klumpig."
 
 [[links]]
 titel = "123pilzsuche.de"

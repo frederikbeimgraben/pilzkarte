@@ -14,7 +14,7 @@ weitereNamen = ["Zinnoberroter Kelchbecherling", "Gemeiner Kelchbecherling", "Bl
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Prachtbecherling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 fruchtkoerperBreiteCm = { von = 1.0, bis = 7.0, seltenBis = 15.0, einheit = "cm" }
@@ -52,10 +52,6 @@ geschmack = "Neutral, mild."
 sporenpulver = "Weiß bis farblos."
 vorkommen = "Folgezersetzer an Laubholzästen und vergrabenem Holz, meist bei Erle, Weide und Espe, gern auf kalkreichem, sandigem Boden. In Deutschland gefährdet."
 zeit = "Winter bis Mai."
-
-[[verwechslungen]]
-slug = "linden-kelchbecherling"
-unterschied = "Wächst an Linde, Innenseite etwas blasser rot."
 
 [[links]]
 titel = "123pilzsuche.de"

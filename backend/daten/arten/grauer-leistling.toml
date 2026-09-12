@@ -1,4 +1,4 @@
-name = "Grauer Leistling"
+name = "Graue Kraterelle"
 lateinisch = "Cantharellus cinereus"
 gruppe = "leistling"
 speisewert = "essbar"
@@ -11,12 +11,12 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Nur wenig oder gar nichts mitnehmen."
 gefaehrdung = "gefaehrdet"
-weitereNamen = ["Graue Kraterelle", "Grauer Pfifferling"]
+weitereNamen = ["Grauer Leistling", "Grauer Pfifferling"]
 synonyme = ["Craterellus cinereus", "Pseudocraterellus cinereus", "Merulius cinereus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauerLeistling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 8.0, seltenBis = 9.0, einheit = "cm" }
@@ -57,12 +57,14 @@ vorkommen = "Symbiosepilz im Laubwald, gern im Buchenwald. In Deutschland gefäh
 zeit = "Sommer bis Spätherbst."
 
 [[verwechslungen]]
-slug = "verbogener-leistling"
-unterschied = "Kleiner und dünner, Hut graubraun bis olivbraun, Leisten gelblich bis grau."
-
-[[verwechslungen]]
 slug = "kohlenleistling"
 unterschied = "Wächst auf Brandstellen, Fruchtkörper klein und graubraun."
+eigenerUnterschied = "Leisten heller weißlich-grau und queraderig, Geruch fruchtig nach Pflaumen, im Buchenwald statt auf Brandstellen."
+
+[[verwechslungen]]
+slug = "verbogener-leistling"
+unterschied = "Kleiner und dünner, Hut graubraun bis olivbraun, Leisten gelblich bis grau."
+eigenerUnterschied = "Hut schwarzgrau bis graubraun und feinschuppig, Leisten heller weißlichgrau, Geruch nach Pflaumen."
 
 [[links]]
 titel = "123pilzsuche.de"

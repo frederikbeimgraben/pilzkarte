@@ -1,7 +1,7 @@
 name = "Rotbrauner Milchling"
 lateinisch = "Lactarius rufus"
 gruppe = "milchling"
-speisewert = "essbar"
+speisewert = "bedingtEssbar"
 geschuetzt = false
 marktfaehig = false
 sammelbar = false
@@ -13,7 +13,7 @@ synonyme = ["Lactarius mollis", "Lactifluus rufus"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerMilchling2004.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [masse]
 hutBreiteCm = { von = 2.0, bis = 9.0, seltenBis = 12.0, einheit = "cm" }
@@ -60,10 +60,6 @@ zeit = "Sommer bis Spaetherbst."
 [[verwechslungen]]
 slug = "maggipilz"
 unterschied = "Geruch stark nach Maggi oder Liebstoeckel, besonders beim Trocknen, Geschmack mild."
-
-[[verwechslungen]]
-slug = "eichenmilchling"
-unterschied = "Bei Eiche, Hut mit undeutlichen dunkleren Zonen, Geruch oelig bis wanzenartig."
 
 [[links]]
 titel = "123pilzsuche.de"

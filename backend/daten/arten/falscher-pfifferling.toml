@@ -13,7 +13,7 @@ synonyme = ["Hygrophoropsis aurantiaca var. nigripes", "Hygrophoropsis aurantiac
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalscherPfifferling.htm"
-geprueftAm = "2026-09-10"
+geprueftAm = "2026-09-12"
 
 [[reagenzien]]
 reagenz = "koh"
@@ -66,14 +66,12 @@ zeit = "Sommer bis Winter."
 [[verwechslungen]]
 slug = "oelbaumtrichterling"
 unterschied = "Wächst büschelig an Laubholzstrünken, Hut orangebraun, Lamellen leuchten im Dunkeln schwach."
-
-[[verwechslungen]]
-slug = "brauner-afterleistling"
-unterschied = "Hut graubraun bis olivbraun statt leuchtend orange."
+eigenerUnterschied = "Hut feinfilzig, Lamellen ablösbar und viele gegabelt, Fleisch dünn und biegsam, auf Nadelstreu."
 
 [[verwechslungen]]
 slug = "purpuroranger-afterleistling"
 unterschied = "Hut und Lamellen mit purpurnem bis rötlichem Ton."
+eigenerUnterschied = "Hut gleichmäßig orangegelb ohne Purpurton, Lamellen orange und dicht gegabelt, an Nadelholz."
 
 [[links]]
 titel = "123pilzsuche.de"
