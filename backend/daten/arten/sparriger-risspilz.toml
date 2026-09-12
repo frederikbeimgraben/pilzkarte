@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Tödlich giftig; wie alle Risspilze mindestens verdächtig. Zu erkennen an den braunen, dornartigen Schuppen auf Hut und Stiel, dem fransigen Hutrand und dem moderig-spermatischen Geruch."
 weitereNamen = ["Sparrigschuppiger Risspilz"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutrand = { von = ["ueberstehend", "fransig"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SparrigerRisspilz.htm"

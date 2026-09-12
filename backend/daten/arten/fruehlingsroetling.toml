@@ -9,6 +9,11 @@ baeume = []
 speisewertHinweis = "Tödlich giftig. Er wächst von März bis Mai, wenn kaum Speisepilze da sind. Kennzeichen sind das rosabraune Sporenpulver, der gefurchte, zerbrechliche Stiel und der fehlende Mehlgeruch."
 haeufigkeit = "haeufig"
 weitereNamen = ["Gestreifter Frühlingsrötling", "Aprilrötling"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", schneide = "gesaegt" }
+hutform = { von = "flach" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["ueberstehend", "gerieft"] }
+stielmerkmale = ["faserig", "gerieft", "bruechig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Fruehlingsroetling.htm"

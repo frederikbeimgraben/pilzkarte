@@ -8,6 +8,9 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilzsuche führt ihn als ungenießbar und verdächtig. Nicht essen."
 synonyme = ["Coprinus strossmayeri"]
+fruchtschicht = { art = "lamellen" }
+hutform = { von = "glockig" }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Perlhuhn-Tintling.htm"

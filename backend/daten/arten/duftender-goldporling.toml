@@ -9,6 +9,8 @@ baeume = ["fichte", "kiefer"]
 speisewertHinweis = "Er wächst flach auf dem Holz und besteht fast nur aus Röhren. Als Speisepilz kommt er nicht infrage. In Deutschland extrem selten, deshalb stehen lassen."
 haeufigkeit = "selten"
 gefaehrdung = "extremSelten"
+fruchtschicht = { art = "poren" }
+hutrand = { von = ["fransig"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DuftenderGoldporling.htm"

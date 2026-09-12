@@ -10,6 +10,8 @@ baeume = ["kiefer", "fichte"]
 speisewertHinweis = "Er ist häufig von Maden befallen."
 weitereNamen = ["Zigeuner", "Runzelschüppling", "Hühnerkoppe", "Scheidenrunzling Reifpilz"]
 synonyme = ["Rozites caperatus", "Rozites caperata", "Agaricus caperatus", "Pholiota caperata", "Dryophila caperata", "Togaria caperata"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", schneide = "gesaegt" }
+stielmerkmale = ["faserig", "voll", "ring", "knolle"]
 
 [baeumeAusErfahrung]
 baeume = ["birke"]

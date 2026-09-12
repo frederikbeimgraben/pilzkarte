@@ -12,6 +12,8 @@ speisewertHinweis = "Selten und wärmeliebend, in der Schweiz auf der Roten List
 haeufigkeit = "selten"
 weitereNamen = ["Nadelwald Anhängselröhrling", "Gelber Steinpilz"]
 synonyme = ["Boletus subappendiculatus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FalschAnhaengselroehrling.htm"

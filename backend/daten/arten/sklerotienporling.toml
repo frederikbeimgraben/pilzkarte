@@ -9,6 +9,9 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur junge Fruchtkörper verwenden, ältere werden zäh. Der leicht bittere Geschmack verliert sich beim Zubereiten."
 weitereNamen = ["Kleiner Schuppenporling"]
+fruchtschicht = { art = "poren" }
+hutrand = { von = ["fransig"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Sklerotienporling.htm"

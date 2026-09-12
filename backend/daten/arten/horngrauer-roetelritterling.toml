@@ -9,6 +9,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 weitereNamen = ["Graubräunlicher Rötelritterling", "Marmorierter Röteltrichterling"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutmerkmale = ["gezont"]
+hutrand = { von = ["wellig"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/HorngrauerRoetelritterling.htm"

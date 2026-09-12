@@ -10,6 +10,9 @@ baeume = []
 speisewertHinweis = "Nur die Hüte verwenden. Die Stiele sind zäh und taugen höchstens als Pilzpulver."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Gemeiner Samtfußrübling", "Enoki", "Winterrübling", "Winterlinge"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [baeumeAusErfahrung]
 baeume = ["weide", "pappel", "buche"]

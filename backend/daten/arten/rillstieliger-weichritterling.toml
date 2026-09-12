@@ -9,6 +9,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 synonyme = ["Melanoleuca grammopus", "Agaricus grammopodius", "Tricholoma grammopodium", "Gyrophila grammopodia", "Melanoleuca subbrevipes", "Melanoleuca grammopodia var. subbrevipes", "Melanoleuca grammopodia var. pseudoevenosa", "Melanoleuca grammopodia var. obscura"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+hutmerkmale = ["vertieft", "gebuckelt"]
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["gerieft", "faserig", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RillstieligerWeichritterling.htm"

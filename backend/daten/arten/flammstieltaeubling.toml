@@ -11,6 +11,9 @@ haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Flammstieltäubling"]
 synonyme = ["Russula rhodopoda"]
+fruchtschicht = { art = "lamellen", stand = "eng" }
+hutrand = { von = ["eingerollt", "hoeckerig"] }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Flammstiel.htm"

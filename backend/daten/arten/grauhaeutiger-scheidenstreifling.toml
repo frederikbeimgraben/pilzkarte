@@ -9,6 +9,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "tanne", "laerche", "birke", "buche", "hasel"]
 speisewertHinweis = "Roh giftig, also keine Kostversuche. Er kann so grün aussehen wie der Grüne Knollenblätterpilz. Scheidenstreiflinge haben aber keinen Ring und einen stark gerieften Hutrand."
 weitereNamen = ["Grüngelber Scheidenstreifling", "Grüner Streifling", "Grünbrauner Streifling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutform = { von = "flach" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["genattert", "beflockt", "hohl", "scheide"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GrauhautigerSS.htm"

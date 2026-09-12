@@ -11,6 +11,10 @@ baeume = ["buche"]
 speisewertHinweis = "Nicht selten, aber wegen der kleinen, dunklen Fruchtkörper schwer zu finden."
 haeufigkeit = "selten"
 weitereNamen = ["Verbogener Leistling", "Vollstieliger Leistling", "Krauser Leistling"]
+fruchtschicht = { art = "leisten" }
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["wellig", "gerieft"] }
+stielmerkmale = ["voll", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KrausenKantarelle.htm"

@@ -8,6 +8,8 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 weitereNamen = ["Napfförmiger Kelchbecherling"]
 synonyme = ["Pustulina cupularis", "Tarzetta cupularis var. velata"]
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["hoeckerig"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KerbrandigerNapf.htm"

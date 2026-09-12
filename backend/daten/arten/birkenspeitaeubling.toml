@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke"]
 speisewertHinweis = "Der extrem scharfe Geschmack verrät ihn. Speitäublinge reizen Magen und Darm, vor allem roh und in größerer Menge."
 synonyme = ["Russula emetica var. betularum"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["bruechig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenspeitaeubling.htm"

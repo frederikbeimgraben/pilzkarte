@@ -9,6 +9,10 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = ["laerche"]
 weitereNamen = ["Brauner Hohlfussröhrling"]
+fruchtschicht = { art = "roehren" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["hohl", "faserig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hohlfussroehrling.htm"

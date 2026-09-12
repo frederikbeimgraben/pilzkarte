@@ -9,6 +9,7 @@ jahreszeiten = ["winter", "fruehling"]
 baeume = ["pappel"]
 speisewertHinweis = "Roh giftig wie alle Morcheln. Gut durchgaren, sonst drohen Magen-Darm-Vergiftungen. Dazu kommt das Morchella-Syndrom mit Trunkenheitsgefühl, Zittern und Schwindel. Besonders geschützt, nur für den Eigenbedarf sammeln."
 weitereNamen = ["Halbfreie Morchel", "Glockenmorchel", "Mützenmorchel"]
+stielmerkmale = ["gerieft", "hohl", "beflockt"]
 
 [baeumeAusErfahrung]
 baeume = ["esche"]

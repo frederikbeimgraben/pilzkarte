@@ -10,6 +10,9 @@ karte = "schleimruebling"
 speisewertHinweis = "Essbar, aber ohne Wert. Die Huthaut lässt sich gummiartig abziehen."
 weitereNamen = ["Buchen-Schleimrübling", "Buchenschleimrübling"]
 synonyme = ["Oudemansiella mucida", "Agaricus mucidus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["faserig", "genattert", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BeringterSchleimruebling.htm"

@@ -10,6 +10,9 @@ speisewertHinweis = "Roh zersetzt er rote Blutkörperchen. Nur durchgegart essen
 haeufigkeit = "selten"
 weitereNamen = ["Löffelförmiger Seitling", "Cremeweißer Seitling", "Sommer-Austernseitling"]
 synonyme = ["Agaricus pulmonarius", "Pleurotus ostreatus var. pulmonarius", "Pleurotus populinus (nur bei espen + pappeln"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng", schneide = "glatt" }
+hutrand = { von = ["eingerollt"], nach = ["wellig"] }
+stielmerkmale = ["behaart"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Lungenseitling.htm"

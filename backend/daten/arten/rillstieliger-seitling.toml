@@ -11,6 +11,10 @@ speisewertHinweis = "Roh enthält er Hämolysine und zersetzt rote Blutkörperch
 haeufigkeit = "selten"
 weitereNamen = ["Verzweigter Austernseitling"]
 synonyme = ["Pleurotus ostreatus var. cornucopiae", "Crepidotus cornucopiae", "Pocillaria cornucopioides"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutform = { von = "trichterfoermig" }
+hutrand = { von = ["gerissen", "wellig"] }
+stielmerkmale = ["gerieft"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RillstieligerSeitling.htm"

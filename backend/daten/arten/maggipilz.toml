@@ -10,6 +10,10 @@ speisewertHinweis = "In größeren Mengen verursacht er heftige Magen-Darm-Stör
 haeufigkeit = "selten"
 weitereNamen = ["Bruchreizker"]
 synonyme = ["Agaricus helvus", "Galorrheus helvus", "Lactifluus helvus", "Agaricus tomentosus", "Lactarius tomentosus", "Lactarius aquifluus", "Lactifluus aquifluus", "Lactarius helvus var. aquifluus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutform = { von = "gewoelbt", nach = "niedergedrueckt" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["bruechig", "hohl", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BruchreizkerMaggipilz.htm"

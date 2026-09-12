@@ -9,6 +9,10 @@ baeume = ["eiche", "buche", "pappel"]
 speisewertHinweis = "Zu erkennen am fleischrötlichen Sporenpulver, an den jung gelblichen und später rotocker bis rosaocker werdenden Lamellen, die am Stiel ausgebuchtet sind und praktisch nie herablaufen, und am unangenehm säuerlich-mehligen Geruch. Keine Kostversuche."
 weitereNamen = ["Stinkender Rötling"]
 synonyme = ["Rhodophyllus sinuatus", "Agaricus sinuatus", "Agaricus fertilis"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutform = { von = "halbkugelig", nach = "flach" }
+hutmerkmale = ["unregelmaessig", "gebuckelt"]
+stielmerkmale = ["faserig", "gerieft", "knolle", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Riesenroetling.htm"

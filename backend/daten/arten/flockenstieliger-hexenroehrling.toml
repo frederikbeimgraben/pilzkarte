@@ -11,6 +11,9 @@ karte = "hexen_flock"
 speisewertHinweis = "Roh unverträglich. Gut durchgaren."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Flocki", "Zigeuner", "Hexenpilz"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "halbkugelig" }
+stielmerkmale = ["beflockt"]
 
 [baeumeAusErfahrung]
 baeume = ["tanne"]

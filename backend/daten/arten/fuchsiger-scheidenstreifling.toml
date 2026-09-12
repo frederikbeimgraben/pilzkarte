@@ -9,6 +9,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "birke"]
 speisewertHinweis = "Roh unverträglich. Nur für Sammler, die den Pantherpilz sicher trennen: jeden Fruchtkörper mit ganzer Stielbasis ausgraben und die Scheide prüfen."
 weitereNamen = ["Fuchsiger Scheidenstreifling", "Rotbrauner Streifling", "Gelbbräunlicher Scheidenstreifling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["beflockt", "hohl", "scheide"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerScheidens.htm"

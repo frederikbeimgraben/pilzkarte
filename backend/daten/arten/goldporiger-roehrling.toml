@@ -10,6 +10,8 @@ speisewertHinweis = "Selten, in Deutschland gefährdet und in der Schweiz verlet
 haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Goldporiger Pulverröhrling"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["ueberstehend"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GoldporigerRoehrling.htm"

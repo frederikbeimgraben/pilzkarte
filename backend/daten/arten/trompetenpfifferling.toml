@@ -11,6 +11,9 @@ speisewertHinweis = "Gut zum Trocknen und als Mischpilz. Beim Putzen den hohlen 
 schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Der Trompetenpfifferling steht heute meist als Craterellus tubaeformis und wird hier mit ihnen geschützt."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Trompetenpfifferlinge", "Durchbohrter Leistling", "Hohlstieliger Leistling"]
+fruchtschicht = { art = "leisten" }
+hutrand = { von = ["wellig"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [baeumeAusErfahrung]
 baeume = ["fichte", "buche"]

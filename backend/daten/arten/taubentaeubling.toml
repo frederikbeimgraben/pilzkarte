@@ -9,6 +9,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["birke", "buche", "eiche"]
 weitereNamen = ["Grauvioletter Reif-Täubling"]
 synonyme = ["Russula palumbina"]
+fruchtschicht = { art = "lamellen", stand = "eng", schneide = "glatt" }
+hutmerkmale = ["vertieft"]
+hutrand = { von = ["gerieft"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Taubentaebling.htm"

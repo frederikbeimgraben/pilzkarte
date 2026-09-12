@@ -12,6 +12,11 @@ speisewertHinweis = "In südlichen Ländern gibt es den sehr giftigen Wohlrieche
 haeufigkeit = "haeufig"
 weitereNamen = ["Ockertrichterling"]
 synonyme = ["Clitocybe gibba", "Agaricus gibbus"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutform = { von = "trichterfoermig" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["wellig", "gerieft"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ockertrichter.htm"

@@ -11,6 +11,7 @@ speisewertHinweis = "Nur junge Fruchtkörper. Im Alter wird er bitter und ist da
 haeufigkeit = "haeufig"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Habichtsstacheling", "Rehpilz"]
+fruchtschicht = { art = "stacheln" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Habichtspilz.htm"

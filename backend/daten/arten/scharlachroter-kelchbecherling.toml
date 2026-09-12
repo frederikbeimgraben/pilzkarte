@@ -10,6 +10,7 @@ baeume = ["weide", "pappel"]
 speisewertHinweis = "Ohne Speisewert, 123pilze gibt die relative Wertigkeit 5. In Deutschland gefährdet, darum stehen lassen."
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Zinnoberroter Kelchbecherling", "Gemeiner Kelchbecherling", "Blutroter Prachtbecherling", "Scharlachroter Prachtbecherling"]
+hutform = { von = "trichterfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Prachtbecherling.htm"

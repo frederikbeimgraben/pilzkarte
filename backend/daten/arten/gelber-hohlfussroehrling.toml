@@ -11,6 +11,10 @@ baeume = ["laerche"]
 speisewertHinweis = "In dieser gelben Form sehr selten. Die Schweiz führt ihn als nicht marktfähig."
 haeufigkeit = "sehrSelten"
 synonyme = ["Suillus cavipes f. aereus", "Boletinus cavipes f. aureus", "Boletinus cavipes var. aureus", "Boletus cavipes", "Suillus cavipes var. aureus", "Boletinus cavipes", "Boletinus cavipe", "Paxillus porosus"]
+fruchtschicht = { art = "roehren" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["hohl", "beflockt", "faserig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/HohlfussroehrlingGelb.htm"

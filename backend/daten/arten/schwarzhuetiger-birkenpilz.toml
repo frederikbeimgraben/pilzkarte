@@ -12,6 +12,8 @@ speisewertHinweis = "Guter Speisepilz, als Raufußröhrling aber besonders gesch
 haeufigkeit = "selten"
 weitereNamen = ["Schwarzhütiger Birkenpilz"]
 synonyme = ["Leccinum scabrum var. melaneum", "Krombholzia scabra f. melanea", "Krombholziella melanea", "Boletus melaneus", "Boletus scaber var. melaneus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchwarzhuetigerBirkenpilz.htm"

@@ -9,6 +9,9 @@ baeume = []
 speisewertHinweis = "Nur jung essbar und dann relativ minderwertig. 123pilze gibt ihm die Relative Wertigkeit 4."
 weitereNamen = ["Schuppiger Stielporling", "Schwarzfußporling", "Schuppiger Schwarzfußporling"]
 synonyme = ["Polyporus squamosus", "Bresadolia squamosa", "Polyporus squamosus forma rostkovii", "Polyporus westii", "Polyporellus squamosus forma rostkovii", "Polyporus squamosus forma michelii", "Polyporus retirugus"]
+fruchtschicht = { art = "poren" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["genetzt"]
 
 [baeumeAusErfahrung]
 baeume = ["ahorn", "esche", "ulme"]

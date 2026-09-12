@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "123pilze gibt ihm die Relative Wertigkeit 6."
 synonyme = ["Lycoperdon gemmatum var. echinatum", "Utraria echinata", "Lycoperdon hoylei", "Lycoperdum echinatum sensu"]
+fruchtschicht = { art = "stacheln" }
+hutform = { von = "kugelig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Igelstaeubling.htm"

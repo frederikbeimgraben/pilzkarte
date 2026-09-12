@@ -9,6 +9,9 @@ baeume = ["buche"]
 speisewertHinweis = "Giftig und wie alle Erdritterlinge verdaechtig. Er ist an den bei Verletzung roetenden Lamellen und der blaugruenen bis rosaroten Stielbasis zu erkennen."
 weitereNamen = ["Rötende Erd-Ritterling"]
 synonyme = ["Gyrophila orirubens", "Tricholoma horribile", "Tricholoma orirubens var. basirubens"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetenderErd-Ritterling.htm"

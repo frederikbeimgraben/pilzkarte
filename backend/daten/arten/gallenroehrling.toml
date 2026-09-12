@@ -8,6 +8,8 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Schon ein kleines Stück Fleisch auf der Zunge schmeckt sehr bitter; ein einziger Fruchtkörper verdirbt ein ganzes Gericht. Er enthält etwas Bufotenin. Vereinzelt gab es Vergiftungen mit Erbrechen, Durchfall, Bauchkoliken, Schwindel und Schweißausbrüchen."
 weitereNamen = ["Gallenröhrling", "Bitterröhrling", "Bitterling"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Bitterroehrling.htm"

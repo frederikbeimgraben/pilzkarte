@@ -10,6 +10,10 @@ speisewertHinweis = "123pilzsuche führt ihn als giftig, mindestens aber als seh
 haeufigkeit = "selten"
 weitereNamen = ["Schuppiger Saftling", "Grobschuppiger Moorsaftling", "Rußigflockiger Saftling"]
 synonyme = ["Flammiger saftling = hygrocybe turunda var. sphagnophila"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
+hutmerkmale = ["vertieft"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FlammigerSaftling.htm"

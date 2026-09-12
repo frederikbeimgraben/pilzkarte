@@ -10,6 +10,9 @@ baeume = ["buche", "birke"]
 speisewertHinweis = "In Deutschland und der Schweiz auf der Roten Liste und generell sehr selten. Den Fund besser stehen lassen."
 gefaehrdung = "unbekanntesAusmass"
 synonyme = ["Creolophus cirrhatus", "Creolophus cirratus"]
+fruchtschicht = { art = "stacheln" }
+hutmerkmale = ["unregelmaessig"]
+hutrand = { von = ["hoeckerig"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DornigerStachelbart.htm"

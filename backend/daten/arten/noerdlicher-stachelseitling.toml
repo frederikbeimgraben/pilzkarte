@@ -8,6 +8,7 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 haeufigkeit = "sehrSelten"
 gefaehrdung = "vomAussterbenBedroht"
+fruchtschicht = { art = "stacheln" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/NoerdlicherStachelseitling.htm"

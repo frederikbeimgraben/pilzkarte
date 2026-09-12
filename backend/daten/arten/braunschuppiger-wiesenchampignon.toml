@@ -11,6 +11,9 @@ baeume = []
 speisewertHinweis = "Er wächst gern am Straßenrand und auf gedüngten Weiden. Solche Funde besser stehen lassen."
 weitereNamen = ["Kleinsporiger Wiesenegerling", "Varietät Wiesenchampignon", "Braunschuppiger Wiesenegerling", "Kleinsporiger Weidechampignon", "Feld-Egerling"]
 synonyme = ["Agaricus floccipes", "Agaricus campestris cf. var floccipes", "Psalliota campestris var. floccipes", "Agaricus campestris var. floccipes"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutrand = { von = ["ueberstehend"] }
+stielmerkmale = ["bruechig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WiesenchampinonVAR.htm"

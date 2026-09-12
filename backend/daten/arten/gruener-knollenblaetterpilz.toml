@@ -10,6 +10,9 @@ speisewertHinweis = "Absolut tödlich, schon 20 Gramm genügen. Das Gift schädi
 haeufigkeit = "haeufig"
 weitereNamen = ["Grüner Mörder", "Giftchampignon"]
 synonyme = ["Amanita phalloides f. citrina", "Amanita phalloides f. dunensis", "Amanita phalloides var. umbrina", "Amanita phalloides var. euphalloides", "Amanita phalloides var. larroquei", "Amanita phalloides var. pulla", "Amanita phalloides var. verna", "Amanita phalloides var. striatula"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutform = { von = "eifoermig", nach = "flach" }
+stielmerkmale = ["faserig", "genattert", "knolle", "scheide", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenerKnollenblaetterpilz0904.htm"

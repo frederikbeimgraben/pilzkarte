@@ -8,6 +8,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungeniessbar. Erdritterlinge sind schwer zu trennen und gelten als verdaechtig, deshalb keine Kostproben."
 synonyme = ["Tricholoma inocybeoides", "Tricholoma inocyboides", "Tricholoma scalpturatum var. argyraceum", "Tricholoma argyraceum forma inocybeoides", "Tricholoma myomyces var. argyraceum"]
+fruchtschicht = { art = "lamellen" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RisspilzErdritterling.htm"

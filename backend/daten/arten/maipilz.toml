@@ -10,6 +10,10 @@ baeume = ["pappel", "laerche"]
 speisewertHinweis = "Ohne den starken Mehlgeruch stehen lassen. Zur selben Zeit und am selben Ort wachsen tödlich giftige Risspilze."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Maipilz", "Georgsritterling", "Gelber Schönkopf", "Maischönkopf", "Huf-Ritterling Mairitterling", "Maiblattl", "Huf-Ritterling"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+hutmerkmale = ["unregelmaessig"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["faserig"]
 
 [baeumeAusErfahrung]
 baeume = ["hainbuche", "eiche"]

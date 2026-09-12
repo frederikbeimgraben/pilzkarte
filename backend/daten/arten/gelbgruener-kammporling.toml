@@ -10,6 +10,8 @@ speisewertHinweis = "Riecht unangenehm bis stinkend und schmeckt bitter."
 haeufigkeit = "selten"
 weitereNamen = ["Gelbgrüner Kammporling"]
 synonyme = ["Scutiger cristatus", "Polypilus poripes", "Polyporus cristatiformis", "Boletus cristatus"]
+fruchtschicht = { art = "poren" }
+hutrand = { von = ["wellig"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GruenerKamm.htm"

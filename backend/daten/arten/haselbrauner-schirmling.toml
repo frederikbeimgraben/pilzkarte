@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Tödlich giftig, wie alle kleinen Schirmlinge verdächtig. Keine Kostprobe: schon das Kosten kann Organe schädigen."
 weitereNamen = ["Rosabrauner Schirmling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutmerkmale = ["gezont"]
+stielmerkmale = ["hohl", "ring", "faserig", "genattert"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Haselbrauner.htm"

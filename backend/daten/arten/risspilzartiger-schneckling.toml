@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Ungeniessbar und in Europa sehr selten, deshalb stehen lassen."
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutrand = { von = ["fransig"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RisspilzartigerSchneckling.htm"

@@ -9,6 +9,8 @@ baeume = ["weide"]
 haeufigkeit = "selten"
 weitereNamen = ["Feuchtstellen Schüppling", "Weidenschüppling", "Weißbehangener Schüppling", "Feuchtstellenschüppling"]
 synonyme = ["Pholiota graminis", "Pholiota inaurata", "Hypholoma graminis", "Flammula graminis", "Flammula muricella", "Dryophila muricella var. graminis"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", stand = "eng" }
+stielmerkmale = ["faserig", "beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Feuchtstellenschueppling.htm"

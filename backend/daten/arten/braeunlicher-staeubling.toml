@@ -10,6 +10,7 @@ baeume = ["fichte"]
 speisewertHinweis = "Gekocht schmeckt er sehr fade. Braune Stäublinge sind minderwertig, junge Fruchtkörper allenfalls Beikost."
 weitereNamen = ["Bräunlicher Stäubling", "Brauner Staubbovist"]
 synonyme = ["Lycoperdon umbrinum var. hirtum", "Lycoperdon hirtum", "Lycoperdon umbrinum var. curtisiiforme", "Lycoperdon umbrinum f. fissispinum", "Lycoperdon umbrinum var. hirsutum"]
+hutform = { von = "birnenfoermig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/BraunerStaeubling.htm"

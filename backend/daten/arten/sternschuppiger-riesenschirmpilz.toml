@@ -11,6 +11,9 @@ baeume = []
 speisewertHinweis = "Das Fleisch rötet nie; das trennt ihn vom Safranschirmling. Wie alle Riesenschirmlinge nur durchgegart essen."
 weitereNamen = ["Essbarer Gartenriesenschirmling"]
 synonyme = ["Macrolepiota rhodosperma", "Macrolepiota konradii", "Leucocoprinus fuliginosus"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["genattert", "knolle", "faserig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SternschuppigerRiesenschirmling.htm"

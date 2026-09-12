@@ -7,6 +7,9 @@ sammelbar = false
 jahreszeiten = ["sommer", "herbst"]
 baeume = []
 haeufigkeit = "selten"
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend", stand = "eng" }
+hutmerkmale = ["genabelt"]
+stielmerkmale = ["faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kohlenleistling.htm"

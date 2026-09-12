@@ -8,6 +8,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Eine der wenigen roh essbaren Arten, als Salatpilz oder zum Füllen der Kelche. Er hat kaum Eigengeschmack und ist oft sandig."
 weitereNamen = ["Gemeiner Orangebecherling", "Orangeroter Becherling", "Feuerroter Becherpilz", "Orangeroter Becherpilz", "Pomeranzenfarbiger Becherpilz"]
+hutform = { von = "trichterfoermig", nach = "flach" }
+hutmerkmale = ["unregelmaessig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Orangebecherling.htm"

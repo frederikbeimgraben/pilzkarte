@@ -10,6 +10,7 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nur essbar, solange das Innere rein weiß ist; später wird es gelb und ungenießbar. Jeden Fruchtkörper aufschneiden, um junge Knollenblätterpilze auszuschließen."
 synonyme = ["Langermannia candida", "Lycoperdon candidum", "Aussereuropäische form: calvatia craniiformis"]
+hutform = { von = "kugelig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/WeisserGrossstaeubling.htm"

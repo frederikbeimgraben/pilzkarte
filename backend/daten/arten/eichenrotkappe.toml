@@ -12,6 +12,8 @@ speisewertHinweis = "Raufußröhrlinge sind besonders geschützt und die Art ist
 haeufigkeit = "selten"
 weitereNamen = ["Eichenraufuss", "Laubwald-Rotkappe"]
 synonyme = ["Leccinum aurantiacum var. quercinum", "Leccinum rufum", "Boletus quercinus", "Krombholziella quercina"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Eichenrot.htm"

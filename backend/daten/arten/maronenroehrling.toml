@@ -9,6 +9,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Roh unverträglich, er enthält Xerocomsäure. Mindestens 15 bis 20 Minuten garen. Er nimmt Cäsium 137 stärker auf als die meisten Arten; für Kinder und Schwangere sind größere Mengen nicht zu empfehlen."
 weitereNamen = ["Braunkappen", "Braunkuppen", "Braune", "Bräunling", "Marone"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["faserig", "knolle"]
 
 [baeumeAusErfahrung]
 baeume = ["fichte", "kiefer", "buche"]

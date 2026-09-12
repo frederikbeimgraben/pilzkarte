@@ -8,6 +8,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "buche", "birke", "eiche"]
 speisewertHinweis = "Absolut tödlich, schon 20 Gramm genügen. Zu erkennen am rein weißen spitzkegeligen Hut ohne Riefung, am weiß genatterten Stiel mit häutigem Ring und an der zwiebelknolligen Basis in eierschalenartiger weißer Scheide. Keine Kostversuche wegen der Leberschädigung."
 weitereNamen = ["Spitzhütiger Knollenblätterpilz", "Kegeliger Wulstling", "Weisser Knolli"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutform = { von = "halbkugelig", nach = "flach" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["faserig", "genattert", "beflockt", "hohl", "voll", "knolle", "scheide", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KegelhuetigerKnollenblaetterpilz.htm"

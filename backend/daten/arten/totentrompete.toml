@@ -11,6 +11,9 @@ speisewertHinweis = "Gut zum Trocknen. Beim Putzen den hohlen Stiel prüfen, dor
 schutzHinweis = "Die Verordnung führt die Pfifferlinge als Gattung Cantharellus. Die Totentrompete steht heute als Craterellus cornucopioides und wird hier mit ihnen geschützt."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Herbsttrompete", "Füllhorn", "Kraterpilz", "Herbstleistling"]
+fruchtschicht = { art = "leisten" }
+hutform = { von = "trichterfoermig" }
+hutmerkmale = ["genabelt"]
 
 [baeumeAusErfahrung]
 baeume = ["hainbuche"]

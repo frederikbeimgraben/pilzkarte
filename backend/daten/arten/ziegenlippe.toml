@@ -11,6 +11,8 @@ speisewertHinweis = "Es gibt drei Ziegenlippen-Arten mit gleichem Speisewert. Si
 haeufigkeit = "haeufig"
 weitereNamen = ["Schafheiterl", "Gänsemaul", "Mooshäuptchen", "Hellstieliger Filz-Röhrling"]
 synonyme = ["Boletus subtomentosus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["gerieft"]
 
 [baeumeAusErfahrung]
 baeume = ["buche", "eiche", "fichte"]

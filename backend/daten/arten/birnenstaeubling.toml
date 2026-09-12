@@ -11,6 +11,7 @@ baeume = []
 speisewertHinweis = "Nur solange die innere Fruchtschicht rein weiß ist. Er schmeckt fade und gilt in der Schweiz als nicht marktfähig."
 haeufigkeit = "sehrHaeufig"
 synonyme = ["Lycoperdon pyriforme", "Morganella pyriformis", "Utraria pyriformis"]
+hutform = { von = "kugelig" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birnenstaeubling1004.htm"

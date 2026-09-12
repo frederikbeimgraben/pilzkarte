@@ -11,6 +11,9 @@ baeume = ["hainbuche", "hasel"]
 speisewertHinweis = "Als Raufußröhrling besonders geschützt, also nur für den Eigenbedarf sammeln. Das Fleisch wird beim Kochen schwarz."
 weitereNamen = ["Hainbuchenraufußröhrling"]
 synonyme = ["Leccinum pseudoscabrum", "Leccinum carpini", "Leccinum griseum", "Leccinellum carpini", "Boletus scaber var. carpini", "Boletus pseudoscaber"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Hainbuchenroehrling.htm"

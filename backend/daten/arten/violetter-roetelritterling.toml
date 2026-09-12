@@ -9,6 +9,10 @@ jahreszeiten = ["herbst", "winter"]
 baeume = []
 speisewertHinweis = "Roh giftig. Er zersetzt rote Blutkörperchen und enthält Blausäure. Immer gut durchgaren oder trocknen, dann zerfällt die Blausäure."
 weitereNamen = ["Nackter Rötelritterling", "Violetter Röteltrichterling"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+hutmerkmale = ["hygrophan"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["beflockt", "faserig", "voll"]
 
 [baeumeAusErfahrung]
 baeume = ["buche", "fichte"]

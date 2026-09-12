@@ -9,6 +9,10 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Nicht roh verwenden. Der Ring muss sich am Stiel verschieben lassen, sonst ist es kein Riesenschirmling; sitzt das Velum noch am Hutrand, löst man es mit den Fingern und prüft den Ring. Riesenschirmlinge aus Gärten und von Komposthaufen stehen lassen, dort wächst der Gift-Riesenschirmling. Auch kleine Schirmlinge ohne verschiebbaren Ring bleiben stehen."
 weitereNamen = ["Schlanker Riesenschirmling", "Zitzenwarziger Riesenschirmling", "Warzenschirmpilz", "Gedrungener Riesen-Zitzenschirmling", "Spitzgebuckelter Riesenschirmling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei" }
+hutform = { von = "eifoermig" }
+hutmerkmale = ["gebuckelt"]
+stielmerkmale = ["faserig", "ring", "genattert"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchlankerRiesenschirmling.htm"

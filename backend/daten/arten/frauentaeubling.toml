@@ -10,6 +10,9 @@ baeume = ["buche", "eiche"]
 speisewertHinweis = "Die biegsamen, nicht brechenden Lamellen sind sein sicherstes Merkmal."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Violettgrüner Frauentäubling", "Blautäubling", "Rissighütiger Frauentäubling", "Bläulicher Täubling", "Grüntäubling"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["vertieft"]
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Frauentaeubling.htm"

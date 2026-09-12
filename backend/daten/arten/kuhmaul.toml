@@ -9,6 +9,7 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte"]
 speisewertHinweis = "Die schleimige Huthaut schon im Wald abziehen. Sonst färbt der Pilz im Korb die Berührungsstellen an Pfifferlingen schwarz; das ist nicht giftig, sieht aber unappetitlich aus."
 weitereNamen = ["Großer Gelbfuß", "Großer Schmierling", "Großer Keilpilz", "Großer Schleimpilz", "Rotzer", "Rotznase", "Schafsnase"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Kuhmaul.htm"

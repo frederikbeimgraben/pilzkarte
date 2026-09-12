@@ -11,6 +11,9 @@ baeume = ["fichte"]
 speisewertHinweis = "Raufußröhrlinge sind in Deutschland besonders geschützt. Die Art ist sehr selten; nur wenige Fruchtkörper für den Eigenbedarf nehmen oder den Fund stehen lassen."
 haeufigkeit = "sehrSelten"
 synonyme = ["Krombholziella piceina", "Leccinum piceinum pilát", "Boletus piceinus"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["ueberstehend", "eingerollt"] }
+stielmerkmale = ["beflockt", "faserig"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/FichtenRotkappe.htm"

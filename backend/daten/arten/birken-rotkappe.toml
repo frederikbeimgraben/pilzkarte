@@ -10,6 +10,9 @@ baeume = ["birke"]
 speisewertHinweis = "Roh führt er zu Vergiftungen. Durchgaren und nur junge Stücke nehmen, im Alter wird das Fleisch schwarz und ist dann nicht mehr essbar."
 haeufigkeit = "haeufig"
 weitereNamen = ["Birkenrotkappe", "Heiderotkappe", "Schwarzschuppiger Birkenröhrling"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["ueberstehend"] }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Birkenrotkappe2004.htm"

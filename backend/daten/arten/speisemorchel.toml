@@ -9,6 +9,9 @@ jahreszeiten = ["fruehling"]
 baeume = []
 speisewertHinweis = "Roh giftig. Gut durchgaren. Besonders geschützt, deshalb nur kleine Mengen für den Eigenbedarf."
 weitereNamen = ["Morchel", "Rundmorchel"]
+hutform = { von = "eifoermig" }
+hutmerkmale = ["unregelmaessig"]
+stielmerkmale = ["hohl"]
 
 [baeumeAusErfahrung]
 baeume = ["esche", "ulme", "obstbaum"]

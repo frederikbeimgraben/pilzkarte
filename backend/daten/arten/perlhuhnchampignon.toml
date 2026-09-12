@@ -9,6 +9,8 @@ baeume = []
 speisewertHinweis = "Zu erkennen an dem tintigen, karbolartigen Geruch nach Phenol, Jodoform oder faulem Stroh und am Gilben des Fleisches, vor allem an der Stielbasis. Der Hut ist grau bis schwarzbraun geschuppt wie ein Perlhuhngefieder. Nicht essen."
 weitereNamen = ["Perlhuhnchampignon"]
 synonyme = ["Agaricus meleagris", "Agaricus praeclaresquamosus", "Agaricus placomyces var. meleagris", "Agaricus xanthodermus var. obscuratus", "Psalliota meleagris var. obscurata"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", schneide = "gesaegt" }
+stielmerkmale = ["faserig", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Perhuhnegerling.htm"

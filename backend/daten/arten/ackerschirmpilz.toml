@@ -11,6 +11,9 @@ speisewertHinweis = "Bei allen Riesenschirmlingen muss der Ring am Stiel verschi
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Ackerriesenschirmpilz", "Geschundener Schirmling", "Ackerschirmling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng", schneide = "bewimpert" }
+hutform = { von = "glockig", nach = "flach" }
+stielmerkmale = ["gerieft", "hohl", "knolle", "wurzelnd", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Ackerschirmpilz.htm"

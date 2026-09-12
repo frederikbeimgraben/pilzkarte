@@ -9,6 +9,8 @@ baeume = []
 speisewertHinweis = "Der Seitenkopf nennt ihn nur bedingt essbar und mit Alkohol giftig. Von ihm stammt der Rat, zum Pilzgericht keinen Alkohol zu trinken; er verursacht dann Magen-Darm-Beschwerden. Alte Pilze sind vom Netzstieligen Hexenröhrling nur mikroskopisch zu trennen."
 weitereNamen = ["Trügerischer Hexenpilz"]
 synonyme = ["Boletus mendax"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/KurznetzHexe.htm"

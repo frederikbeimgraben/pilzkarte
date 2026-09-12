@@ -9,6 +9,10 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Anis-Egerlinge gilben nur an der Oberfläche. Gilbt die Stielbasis im Schnitt kräftig und riecht der Pilz nach Karbol, ist es ein Karbolegerling."
 weitereNamen = ["Schafchampignon", "Schaf-Champignon", "Weißer Anisegerling", "Ackerblätterling", "Schaf-Egerling"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+hutform = { von = "flach" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["knolle", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Schafegerling.htm"

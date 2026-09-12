@@ -10,6 +10,10 @@ baeume = ["birke", "pappel"]
 speisewertHinweis = "Sehr selten und in Deutschland gefährdet. Nur einzelne Fruchtkörper nehmen. Ritzt man den Stiel schon im Wald an, färbt sich die Stelle nach etwa 15 Minuten rötlich und nach ein bis zwei Stunden grau; das erspart die Kostprobe."
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
+fruchtschicht = { art = "lamellen" }
+hutmerkmale = ["vertieft"]
+hutrand = { von = ["gerieft"] }
+stielmerkmale = ["voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GeGraustiel.htm"

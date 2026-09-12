@@ -10,6 +10,8 @@ baeume = ["eiche", "buche", "weide"]
 speisewertHinweis = "Nur jung nehmen. Der säuerliche Geschmack bleibt auch nach dem Garen; die Seite empfiehlt vor allem Pilzpulver."
 weitereNamen = ["Ochsenzunge", "Leberpilz"]
 synonyme = ["Fistulina hepatica var. endoxantha", "Confistulina hepatica", "Ptychogaster hepaticus", "Fistulina endoxantha", "Ceriomyces hepaticus"]
+fruchtschicht = { art = "poren" }
+hutform = { von = "muschelfoermig" }
 
 [baeumeAusErfahrung]
 baeume = ["kastanie"]

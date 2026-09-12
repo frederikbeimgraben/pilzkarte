@@ -8,6 +8,8 @@ jahreszeiten = ["fruehling", "sommer", "herbst"]
 baeume = []
 speisewertHinweis = "Giftig. Alle Egerlingsschirmlinge gelten als verdächtig."
 weitereNamen = ["Reinseidiger Egerlingsschirmpilz"]
+fruchtschicht = { art = "lamellen", ansatz = "frei", stand = "eng" }
+stielmerkmale = ["ring", "knolle", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SeidigerEgerlingsschirmling.htm"

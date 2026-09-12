@@ -11,6 +11,9 @@ baeume = ["birke"]
 speisewertHinweis = "Raufussroehrlinge sind besonders geschuetzt, diese Art ist zudem extrem selten. Nur kleine Mengen fuer den Eigenbedarf oder den Fund stehen lassen."
 haeufigkeit = "sehrSelten"
 synonyme = ["Leccinum scabrum var. oxydabile", "Krombholzia oxydabilis", "Krombholzia scabra f. oxydabilis", "Boletus scaber var. oxydabilis", "Boletus scaber f. oxydabilis"]
+fruchtschicht = { art = "roehren" }
+hutform = { von = "gewoelbt" }
+stielmerkmale = ["beflockt"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RoetenderBirkenpilz.htm"

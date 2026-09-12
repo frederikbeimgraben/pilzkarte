@@ -9,6 +9,7 @@ baeume = ["laerche"]
 speisewertHinweis = "Ungenießbar, weil das Fleisch zäh ist und trocken steinhart wird. Vermutlich ungiftig."
 gefaehrdung = "extremSelten"
 synonyme = ["Grifola ossea", "Oligoporus obductus", "Grifola obducta", "Scutiger osseus", "Polypilus osseus"]
+fruchtschicht = { art = "roehren" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Knochenporling.htm"

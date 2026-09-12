@@ -13,6 +13,8 @@ haeufigkeit = "selten"
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Gelbstieliger Trompetenpfifferling", "Duftleistling", "Starkriechender Pfifferling", "Gelbe Kraterelle", "Gelbstieliger Leistling", "Gelbe Kantherelle", "Goldstieliger Pfifferling", "Wohlriechende Craterelle"]
 synonyme = ["Cantharellus aurora", "Cantarellus lutescens", "Cantarellus aurora", "Weiße arten: cantarellus lutescens forma schizocroica"]
+fruchtschicht = { art = "leisten" }
+stielmerkmale = ["hohl"]
 
 [baeumeAusErfahrung]
 baeume = ["fichte", "kiefer"]

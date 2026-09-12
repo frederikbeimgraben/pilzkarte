@@ -10,6 +10,8 @@ speisewertHinweis = "Schüpplinge taugen meist nicht als Speisepilze, einige sin
 haeufigkeit = "selten"
 weitereNamen = ["Nadelwaldschüppling", "Nadelholzschüppling"]
 synonyme = ["Gymnopilus spumosus", "Pholiotina spumosa", "Pholiota graveolens", "Naucoria spuniosa"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+stielmerkmale = ["faserig", "ring", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Nadelschueppling.htm"

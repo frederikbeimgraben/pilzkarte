@@ -10,6 +10,8 @@ karte = "hexen_netz"
 speisewertHinweis = "123pilzsuche führt ihn als nur bedingt essbar. Gut durchgaren und nicht mit Alkohol zusammen essen, das gibt Magen-Darm-Beschwerden. Etwa ein bis fünf von hundert Personen vertragen ihn nicht; darum nicht weitergeben und Vorräte deutlich beschriften."
 weitereNamen = ["Netzstielige Hexenröhrling", "Netzhexe"]
 synonyme = ["Boletus luridus"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["genetzt"]
 
 [baeumeAusErfahrung]
 baeume = ["eiche", "buche", "linde"]

@@ -11,6 +11,9 @@ karte = "pfifferling"
 speisewertHinweis = "Besonders geschützt. Nur kleine Mengen für den Eigenbedarf sammeln."
 haeufigkeit = "sehrHaeufig"
 weitereNamen = ["Pfifferling", "Eierschwamm", "Rehgeiserl", "Reherl", "Gemeiner Pfifferling", "Eierleistling", "Eierpilz"]
+fruchtschicht = { art = "leisten" }
+hutform = { von = "trichterfoermig" }
+stielmerkmale = ["voll"]
 
 [baeumeAusErfahrung]
 baeume = ["fichte", "buche", "eiche", "kiefer"]

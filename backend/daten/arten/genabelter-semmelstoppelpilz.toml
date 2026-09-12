@@ -11,6 +11,9 @@ baeume = []
 speisewertHinweis = "Extrem selten, deshalb besser stehen lassen. Alte Fruchtkörper werden bitter."
 haeufigkeit = "sehrSelten"
 synonyme = ["Dentinum umbilicatum"]
+fruchtschicht = { art = "stacheln" }
+hutmerkmale = ["genabelt", "vertieft"]
+hutrand = { von = ["eingerollt"] }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GenabelterSemmelstoppelpilz.htm"

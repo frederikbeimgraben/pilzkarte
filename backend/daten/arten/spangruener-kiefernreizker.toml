@@ -10,6 +10,9 @@ baeume = ["kiefer"]
 speisewertHinweis = "Sehr selten und in Deutschland gefährdet (Rote Liste 3). Das Fleisch schmeckt herb bis bitterlich."
 haeufigkeit = "sehrSelten"
 gefaehrdung = "gefaehrdet"
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen" }
+hutmerkmale = ["gezont", "vertieft"]
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/GemeinerReizker.htm"

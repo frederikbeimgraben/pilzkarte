@@ -8,6 +8,11 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["buche"]
 speisewertHinweis = "Giftig. Kennzeichen sind der graubraune, wie bei einem Risspilz radial einreißende Hut, die alt schwärzenden Lamellenschneiden und der nach kurzem Kauen brennend scharfe Geschmack."
 synonyme = ["Tricholoma virgatum var. sciodes", "Tricholoma sciodes var. sciodes", "Agaricus murinaceus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet", schneide = "gesaegt" }
+hutform = { von = "flach" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingebogen"] }
+stielmerkmale = ["faserig", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SchaerflicherRitterling.htm"

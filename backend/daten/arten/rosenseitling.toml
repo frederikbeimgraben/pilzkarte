@@ -9,6 +9,7 @@ jahreszeiten = ["fruehling", "sommer", "herbst", "winter"]
 baeume = []
 speisewertHinweis = "Essbar. In Mitteleuropa ist er nur als Zuchtpilz zu erwarten."
 weitereNamen = ["Rosenseitling", "Rosa Seitling", "Rosafarbener Seitling"]
+fruchtschicht = { art = "lamellen", ansatz = "herablaufend" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rosenseitling.htm"

@@ -10,6 +10,9 @@ baeume = ["buche", "eiche", "hasel", "fichte"]
 speisewertHinweis = "In Deutschland gefährdet und besonders geschützt. Wenn überhaupt, nur einen Fruchtkörper für den Eigenbedarf."
 gefaehrdung = "gefaehrdet"
 weitereNamen = ["Laubwald Anhängselröhrling", "Gelber Steinpilz", "Gelber Bronzeröhrling", "Gelber Steini"]
+fruchtschicht = { art = "roehren" }
+hutrand = { von = ["ueberstehend", "scharf"] }
+stielmerkmale = ["genetzt", "wurzelnd"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Anhaengselroehrling.htm"

@@ -8,6 +8,9 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["tanne", "kiefer"]
 speisewertHinweis = "Giftig und halluzinogen. Der bitterliche Geschmack, die gelben bis rostbraunen Lamellen und das rostbraune Sporenpulver kennzeichnen ihn."
 weitereNamen = ["Scaly Rustgill"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", schneide = "gesaegt" }
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["behaart", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SamttannFlaemmling.htm"

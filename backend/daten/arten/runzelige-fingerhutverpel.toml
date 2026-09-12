@@ -11,6 +11,8 @@ baeume = []
 speisewertHinweis = "Roh giftig. Nur gut durchgegart verwenden und das Kochwasser weggiessen. Er ist selten und sollte besser stehen bleiben."
 haeufigkeit = "selten"
 synonyme = ["Verpa conica var. cerebriformis"]
+hutform = { von = "eifoermig" }
+stielmerkmale = ["genattert", "beflockt", "hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RunzeligeVerpel.htm"

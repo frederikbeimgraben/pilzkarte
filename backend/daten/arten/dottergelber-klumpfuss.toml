@@ -8,6 +8,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["fichte", "buche", "eiche"]
 speisewertHinweis = "Er ist wegen der Verwechslungsgefahr gefährlich. Zu erkennen an schwefelgelbem, schmierigem Hut mit rotbraunen Schuppen, chromgelbem Stiel mit gerandeter Knolle, rostbraunem Sporenpulver auf dem Stiel und dem widerlich erdigen Geruch."
 synonyme = ["Cortinarius splendens var. meinhardii", "Cortinarius vitellinus"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
+stielmerkmale = ["knolle"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/DottergelberKlumpfuss.htm"

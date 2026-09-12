@@ -9,6 +9,11 @@ baeume = ["kiefer", "fichte", "birke", "buche"]
 speisewertHinweis = "Ungeniessbar durch die extreme Schaerfe, die erst nach etwa einer Minute einsetzt. Bei empfindlichen Personen kann er Lippenblaeschen ausloesen, deshalb nur sehr vorsichtig kosten."
 weitereNamen = ["Paprikapilz", "Braunroter Milchling"]
 synonyme = ["Lactarius mollis", "Lactifluus rufus"]
+fruchtschicht = { art = "lamellen", schneide = "glatt" }
+hutform = { von = "flach" }
+hutmerkmale = ["gebuckelt"]
+hutrand = { von = ["eingerollt"] }
+stielmerkmale = ["hohl"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/RotbraunerMilchling2004.htm"

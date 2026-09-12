@@ -7,6 +7,8 @@ jahreszeiten = ["sommer", "herbst"]
 baeume = ["kiefer"]
 speisewertHinweis = "Die schleimige Huthaut vor dem Garen abziehen."
 weitereNamen = ["Butterröhrling", "Huasara", "Schmalzer", "Schmerzling", "Butter-Schmerling", "Schmalzling", "Schleimchen"]
+fruchtschicht = { art = "roehren" }
+stielmerkmale = ["ring", "voll"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Butterroehring.htm"

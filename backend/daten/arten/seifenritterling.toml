@@ -9,6 +9,7 @@ baeume = []
 speisewertHinweis = "Nur leicht giftig, dazu bitter. Er verrät sich durch den Geruch nach Seifenlauge und das rötende Fleisch, vor allem an der Stielbasis."
 weitereNamen = ["Waschküchenritterling", "Seifen-Ritterling"]
 synonyme = ["Gyrophila saponacea", "Agaricus fusiformis", "Agaricus atrovirens"]
+fruchtschicht = { art = "lamellen", ansatz = "ausgebuchtet" }
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/SeifenritterlingGiftig1004.htm"

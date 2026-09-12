@@ -8,6 +8,8 @@ sammelbar = false
 jahreszeiten = ["herbst", "fruehling"]
 baeume = ["kiefer", "fichte", "douglasie"]
 weitereNamen = ["Graublättriger Schwefelkopf"]
+fruchtschicht = { art = "lamellen", ansatz = "angewachsen", stand = "eng" }
+stielmerkmale = ["faserig", "hohl", "ring"]
 
 [quelle]
 url = "https://www.123pilzsuche.de/daten/details/Rauchblaettrige.htm"
