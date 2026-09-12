@@ -13,7 +13,7 @@ from pydantic import AfterValidator, BeforeValidator, Field, model_validator
 
 from app.models import SpeciesImage
 from app.shared.images import Size
-from app.shared.schemas import BaseSchema, ImageState, Licence, Timestamp
+from app.shared.schemas import BaseSchema, ImageState, Latitude, Licence, Longitude, Timestamp
 
 # Der Pfad, unter dem eine Bilddatei liegt. Der Client baut ihn nicht selbst
 # zusammen, er bekommt ihn fertig in der Antwort.
@@ -58,6 +58,10 @@ class ImageIn(BaseSchema):
     source: Source = None
     taken_on: date | None = None
     caption: Caption = None
+    # Der Ort der Aufnahme, wahlfrei. Beide Zahlen kommen zusammen oder gar
+    # nicht; eine halbe Angabe zeigt auf den Nullmeridian.
+    lat: Latitude | None = None
+    lon: Longitude | None = None
     # Nur ein freigegebenes Bild kann Titelbild sein. Auf einer Einreichung
     # bleibt der Wunsch unbeachtet, bis jemand sie freigibt.
     lead: bool = False
@@ -99,6 +103,9 @@ class ImageOut(BaseSchema):
     source: str | None
     taken_on: date | None
     caption: str | None
+    # Der Ort steht immer auf dem Raster. Einen genauen kennt der Dienst nicht.
+    lat: float | None
+    lon: float | None
     lead: bool
     width: int
     height: int
@@ -130,6 +137,8 @@ def image_out(image: SpeciesImage) -> ImageOut:
         source=image.source,
         taken_on=image.taken_on,
         caption=image.caption,
+        lat=image.lat,
+        lon=image.lon,
         lead=image.lead,
         width=image.width,
         height=image.height,

@@ -1,8 +1,10 @@
 """Vorrichtungen fuer Funde, Marker und Zonen.
 
-Der Katalog hier haelt drei erfundene Arten: zwei geschuetzte mit Karte
-(Steinpilz, Pfifferling) und eine ungeschuetzte ohne Karte (Parasol). Damit
-laesst sich die Rundung geschuetzter Arten gegen ihr Gegenstueck pruefen.
+Der Katalog hier haelt vier erfundene Arten: zwei besonders geschuetzte mit
+Karte (Steinpilz, Pfifferling), eine ungeschuetzte ohne Karte (Parasol) und
+eine streng geschuetzte (Kaiserling). Damit laesst sich die Rundung
+geschuetzter Arten gegen ihr Gegenstueck pruefen und die Regel, dass eine
+streng geschuetzte Art gar keinen Ort traegt.
 """
 
 import io
@@ -72,14 +74,20 @@ def polygon(ring: list[list[float]] | None = None) -> dict[str, Any]:
     return {"type": "Polygon", "coordinates": [ring if ring is not None else ZONE_RING]}
 
 
-def _profile(name: str, scientific: str, *, protected: bool, reference: str = "parasol") -> Profile:
+def _profile(
+    name: str,
+    scientific: str,
+    *,
+    protection: ProtectionStatus,
+    reference: str = "parasol",
+) -> Profile:
     return Profile(
         name=name,
         scientific=scientific,
         group=Group.BOLETE,
         edibility=Edibility.EDIBLE,
         protection=Protection(
-            status=ProtectionStatus.SPECIAL if protected else ProtectionStatus.NONE,
+            status=protection,
             source="Bundesartenschutzverordnung, Anlage 1",
         ),
         seasons=[Season.AUTUMN],
@@ -101,7 +109,7 @@ def _profile(name: str, scientific: str, *, protected: bool, reference: str = "p
 
 
 def catalog_for_tests() -> Catalog:
-    """Der Katalog der Tests: Steinpilz und Pfifferling geschuetzt, Parasol nicht."""
+    """Der Katalog der Tests: zwei besonders geschuetzt, einer gar nicht, einer streng."""
     counts = SpeciesCounts(
         visits_with_find=900,
         finds_per_week=[10] * WEEKS,
@@ -119,13 +127,25 @@ def catalog_for_tests() -> Catalog:
             "Boletus edulis": counts,
             "Cantharellus cibarius": counts,
             "Macrolepiota procera": counts,
+            "Amanita caesarea": counts,
         },
     )
     profiles = {
-        "steinpilz": _profile("Steinpilz", "Boletus edulis", protected=True),
-        "pfifferling": _profile("Pfifferling", "Cantharellus cibarius", protected=True),
+        "steinpilz": _profile("Steinpilz", "Boletus edulis", protection=ProtectionStatus.SPECIAL),
+        "pfifferling": _profile(
+            "Pfifferling", "Cantharellus cibarius", protection=ProtectionStatus.SPECIAL
+        ),
         "parasol": _profile(
-            "Parasol", "Macrolepiota procera", protected=False, reference="steinpilz"
+            "Parasol",
+            "Macrolepiota procera",
+            protection=ProtectionStatus.NONE,
+            reference="steinpilz",
+        ),
+        "kaiserling": _profile(
+            "Kaiserling",
+            "Amanita caesarea",
+            protection=ProtectionStatus.STRICT,
+            reference="steinpilz",
         ),
     }
     return Catalog(

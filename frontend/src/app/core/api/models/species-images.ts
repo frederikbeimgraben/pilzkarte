@@ -26,6 +26,12 @@ export interface SpeciesImage {
   source: string | null;
   takenOn: string | null;
   caption: string | null;
+  /**
+   * Der Ort der Aufnahme. Er steht immer auf dem 5-km-Raster; einen genauen
+   * kennt der Dienst nicht.
+   */
+  lat: number | null;
+  lon: number | null;
   /** Das Titelbild der Art. Höchstens eines trägt es. */
   lead: boolean;
   width: number;

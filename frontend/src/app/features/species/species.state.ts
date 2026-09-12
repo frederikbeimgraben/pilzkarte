@@ -2,7 +2,7 @@ import { Injectable, inject, signal, type WritableSignal } from '@angular/core';
 import { SpeciesApi } from '../../core/api/species.api';
 import { SpeciesImagesApi } from '../../core/api/species-images.api';
 import type { ProblemDetail } from '../../core/api/problem';
-import type { Species, SpeciesCatalogue, SpeciesImage } from '../../core/api/models';
+import type { Species, SpeciesBrief, SpeciesCatalogue, SpeciesImage } from '../../core/api/models';
 
 /**
  * Der Katalog im Speicher. Die Liste hängt an keiner Seite: sie wird einmal
@@ -101,16 +101,21 @@ export class SpeciesState {
     });
   }
 
+  /** Eine Art aus einem der geladenen Kataloge, sonst nichts. */
+  briefOf(slug: string): SpeciesBrief | null {
+    for (const catalogue of [this.alle(), this.catalogue(), this.verwechslungen()]) {
+      const found = catalogue?.arten.find((art) => art.slug === slug);
+      if (found) return found;
+    }
+    return null;
+  }
+
   /**
    * Der Name einer Art, sobald ein Katalog geladen ist. Ohne ihn bleibt nur
    * der Slug, und der steht in keiner Oberfläche.
    */
   nameOf(slug: string): string | null {
-    for (const catalogue of [this.alle(), this.catalogue(), this.verwechslungen()]) {
-      const found = catalogue?.arten.find((art) => art.slug === slug);
-      if (found) return found.name;
-    }
-    return null;
+    return this.briefOf(slug)?.name ?? null;
   }
 
   /**

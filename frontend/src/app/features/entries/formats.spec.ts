@@ -1,5 +1,6 @@
 import { asDate, longDate } from '../../core/i18n/dates';
-import { hectaresText, isoDatum, shortDate, locationText } from './formats';
+import { locationText } from '../../core/i18n/places';
+import { hectaresText, isoDatum, shortDate } from './formats';
 
 describe('Formate', () => {
   it('schreibt ein Datum als ISO-Tag in der Zeitzone des Geräts', () => {
@@ -35,5 +36,9 @@ describe('Formate', () => {
   it('schreibt eine kleine Fläche mit einer Stelle und eine große ohne', () => {
     expect(hectaresText(4.25, 'de')).toBe('4,3');
     expect(hectaresText(42.4, 'de')).toBe('42');
+  });
+
+  it('nennt einen groben Ort mit weniger Stellen', () => {
+    expect(locationText(48.5203, 9.0511, 'de', 2)).toEqual({ lat: '48,52', lon: '9,05' });
   });
 });

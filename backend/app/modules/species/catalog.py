@@ -531,14 +531,22 @@ class Catalog:
         """Sagt, ob der Slug im Katalog steht."""
         return slug in self.profiles
 
+    def protection_of(self, slug: str) -> ProtectionStatus:
+        """Der Schutz einer Art nach Bundesartenschutzverordnung.
+
+        Ein unbekannter Slug gilt als streng geschuetzt. Im Zweifel geht ein
+        Ort gar nicht heraus.
+        """
+        profile = self.profiles.get(slug)
+        return ProtectionStatus.STRICT if profile is None else profile.protection.status
+
     def is_protected(self, slug: str) -> bool:
-        """Sagt, ob die Art besonders geschuetzt ist.
+        """Sagt, ob die Art unter Schutz steht.
 
         Ein unbekannter Slug gilt als geschuetzt. Ein Fundort geht so im
         Zweifel grob heraus und nicht genau.
         """
-        profile = self.profiles.get(slug)
-        return profile is None or profile.protection.restricted
+        return self.protection_of(slug) is not ProtectionStatus.NONE
 
     def scientific(self, slug: str) -> str | None:
         """Der wissenschaftliche Name einer Art, oder nichts fuer einen unbekannten Slug.

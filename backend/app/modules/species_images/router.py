@@ -49,12 +49,20 @@ Reviews = Annotated[User, Depends(requires(Permission.IMAGE_REVIEW))]
 Submitted = Annotated[ImageIn, Form()]
 
 
-def checked(payload: ImageIn, catalog: Catalog) -> ImageIn:
-    """Prueft, was der Dienst vor dem Oeffnen der Datei wissen muss."""
+def checked(payload: ImageIn, catalog: Catalog, state: ImageState) -> service.Arrival:
+    """Prueft, was der Dienst vor dem Oeffnen der Datei wissen muss.
+
+    Der Ort geht schon hier durch das Raster. Weiter als bis hierher kommt der
+    genaue Punkt nicht.
+    """
     if payload.file.content_type not in images.MEDIA_TYPES:
         raise UnsupportedMediaType("Der Dienst nimmt nur JPEG und WebP an.")
     service.check_species(catalog, payload.species_slug)
-    return payload
+    return service.Arrival(
+        payload=payload,
+        place=service.coarse_place(payload, catalog),
+        state=state,
+    )
 
 
 async def with_names(session: AsyncSession, rows: list[SpeciesImage]) -> list[SubmissionOut]:
@@ -144,9 +152,8 @@ async def create_image(
     image = await service.create(
         session,
         settings,
-        payload=checked(payload, catalog),
-        user=user,
-        state=ImageState.APPROVED,
+        checked(payload, catalog, ImageState.APPROVED),
+        user,
     )
     return await one_submission(session, image)
 
@@ -170,9 +177,8 @@ async def create_submission(
     image = await service.create(
         session,
         settings,
-        payload=checked(payload, catalog),
-        user=user,
-        state=ImageState.SUBMITTED,
+        checked(payload, catalog, ImageState.SUBMITTED),
+        user,
     )
     return await one_submission(session, image)
 

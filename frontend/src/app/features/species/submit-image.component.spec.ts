@@ -5,12 +5,12 @@ import { TestBed } from '@angular/core/testing';
 import { Router, provideRouter } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
-import type { Permission } from '../../core/api/models';
+import type { Permission, SpeciesCatalogue } from '../../core/api/models';
 import { AccessApiDouble, accessApiProvider } from '../../testing/access-fixture';
 import { AuthStub, authStubProviders } from '../../testing/auth-stub';
 import { noViolations } from '../../testing/axe';
 import { ANY_ROUTE } from '../../testing/routes';
-import { SPECIES_LIST } from '../../testing/species-fixture';
+import { PENNY_BUN_BRIEF, SPECIES_LIST } from '../../testing/species-fixture';
 import { toastSpy } from '../../testing/toast-spy';
 import { SubmitImageComponent } from './submit-image.component';
 
@@ -23,7 +23,34 @@ interface Setup {
 
 const IMAGE = new File(['x'], 'pilz.jpg', { type: 'image/jpeg' });
 
-async function build(held: Permission[] = []): Promise<Setup> {
+/**
+ * Was das Gerät auf `watchPosition` antwortet: ein Punkt, eine abgelehnte
+ * Freigabe, oder nichts — noch kein Signal.
+ */
+type Answer = readonly [number, number] | 'abgelehnt' | 'still';
+
+function stubGeolocation(answer: Answer): void {
+  const value: Partial<Geolocation> = {
+    watchPosition: (success: PositionCallback, failure?: PositionErrorCallback | null) => {
+      if (answer === 'abgelehnt') {
+        failure?.({
+          code: 1,
+          PERMISSION_DENIED: 1,
+          message: 'abgelehnt',
+        } as GeolocationPositionError);
+      } else if (answer !== 'still') {
+        success({
+          coords: { longitude: answer[0], latitude: answer[1], accuracy: 12 },
+        } as GeolocationPosition);
+      }
+      return 1;
+    },
+    clearWatch: () => undefined,
+  };
+  Object.defineProperty(navigator, 'geolocation', { configurable: true, value });
+}
+
+async function build(held: Permission[] = [], catalogue: SpeciesCatalogue = SPECIES_LIST): Promise<Setup> {
   vi.stubGlobal('URL', {
     ...URL,
     createObjectURL: () => 'blob:eins',
@@ -42,7 +69,8 @@ async function build(held: Permission[] = []): Promise<Setup> {
     ],
   });
   const http = TestBed.inject(HttpTestingController);
-  http.expectOne('/api/arten?alle=true').flush(SPECIES_LIST);
+  // Der Katalog nennt Namen und Schutz; der Schutz entscheidet über den Ort.
+  http.expectOne('/api/arten?alle=true').flush(catalogue);
   TestBed.inject(ApplicationRef).tick();
   detectChanges();
   return { container, http, router: TestBed.inject(Router), refresh: detectChanges };
@@ -131,5 +159,85 @@ describe('SubmitImageComponent', () => {
     await vi.waitFor(() => {
       expect(router.url).toBe('/arten/steinpilz');
     });
+  });
+
+  it('bietet den Ort an und nennt die Rundung', async () => {
+    stubGeolocation([9.0511, 48.5203]);
+    const { refresh } = await build();
+
+    expect(screen.getByText(/Er wird auf 5 km gerundet gespeichert, nie genau\./)).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Standort dieses Geräts übernehmen' }));
+    await vi.waitFor(() => {
+      refresh();
+      expect(screen.getByText('48,52 · 9,05, auf 5 km gerundet')).toBeInTheDocument();
+    });
+  });
+
+  it('schickt den genauen Punkt mit; gerundet wird im Dienst', async () => {
+    stubGeolocation([9.0511, 48.5203]);
+    const { container, http, refresh } = await build();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Standort dieses Geräts übernehmen' }));
+    await vi.waitFor(() => {
+      refresh();
+      expect(screen.getByRole('button', { name: 'Ort entfernen' })).toBeInTheDocument();
+    });
+    await pick(container);
+    await userEvent.type(screen.getByLabelText('Foto'), 'Marie Weber');
+    refresh();
+    await userEvent.click(screen.getByRole('button', { name: 'Zur Prüfung einreichen' }));
+
+    const body = http.expectOne('/api/species-images/submissions').request.body as FormData;
+    expect(body.get('lat')).toBe('48.5203');
+    expect(body.get('lon')).toBe('9.0511');
+  });
+
+  it('nimmt den Ort wieder weg', async () => {
+    stubGeolocation([9.0511, 48.5203]);
+    const { refresh } = await build();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Standort dieses Geräts übernehmen' }));
+    await vi.waitFor(() => {
+      refresh();
+      expect(screen.getByRole('button', { name: 'Ort entfernen' })).toBeInTheDocument();
+    });
+    await userEvent.click(screen.getByRole('button', { name: 'Ort entfernen' }));
+    refresh();
+
+    expect(screen.getByRole('button', { name: 'Standort dieses Geräts übernehmen' })).toBeInTheDocument();
+  });
+
+  it('sagt Bescheid, solange kein Standort da ist', async () => {
+    stubGeolocation('still');
+    await build();
+    const toasts = toastSpy();
+
+    await userEvent.click(screen.getByRole('button', { name: 'Standort dieses Geräts übernehmen' }));
+
+    expect(toasts.failure).toContain('Kein Standort. Ohne Freigabe oder ohne Signal bleibt das Feld leer.');
+  });
+
+  it('bietet den Ort nicht an, wenn die Freigabe abgelehnt ist', async () => {
+    stubGeolocation('abgelehnt');
+    const { refresh } = await build();
+    refresh();
+
+    expect(
+      screen.queryByRole('button', { name: 'Standort dieses Geräts übernehmen' }),
+    ).not.toBeInTheDocument();
+  });
+
+  it('bietet einer streng geschützten Art gar keinen Ort an', async () => {
+    stubGeolocation([9.0511, 48.5203]);
+    const strict = {
+      ...PENNY_BUN_BRIEF,
+      schutz: { status: 'strengGeschuetzt', quelle: 'BArtSchV' },
+    } as const;
+    await build([], { ...SPECIES_LIST, arten: [strict, ...SPECIES_LIST.arten.slice(1)] });
+
+    expect(
+      screen.queryByRole('button', { name: 'Standort dieses Geräts übernehmen' }),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText('Ort')).not.toBeInTheDocument();
   });
 });
