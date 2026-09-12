@@ -46,6 +46,123 @@
     }
 
     <section>
+      <h2 class="species__section">{{ 'art.abschnitt.einstufung' | t }}</h2>
+      <app-card class="flush">
+        <app-key-value-table>
+          @for (row of viewport.einstufung; track row.schluessel) {
+            <app-key-value-row [schluessel]="row.schluessel">
+              @if (row.pill; as pill) {
+                <app-level-pill [text]="pill.text" [colour]="pill.colour" />
+              }
+              @if (row.badge; as badge) {
+                <app-badge [variant]="badge.variant">{{ badge.text }}</app-badge>
+              }
+            </app-key-value-row>
+          }
+        </app-key-value-table>
+      </app-card>
+    </section>
+
+    @if (viewport.masse.length) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.masse' | t }}</h2>
+        <app-card class="flush">
+          <app-key-value-table>
+            @for (row of viewport.masse; track row.extent + row.schluessel + row.von) {
+              <app-key-value-row [schluessel]="row.schluessel" [unter]="row.unter">
+                <app-measurement
+                  [extent]="row.extent"
+                  [from]="row.von"
+                  [to]="row.bis"
+                  [unit]="row.einheit"
+                  [label]="row.zeichen"
+                />
+              </app-key-value-row>
+            }
+          </app-key-value-table>
+        </app-card>
+      </section>
+    }
+
+    @if (viewport.farben.length) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.farbe' | t }}</h2>
+        <app-card class="flush">
+          <app-key-value-table>
+            @for (row of viewport.farben; track row.schluessel) {
+              <app-key-value-row [schluessel]="row.schluessel" [unter]="row.unter">
+                <app-colour-field [colours]="row.farben" [label]="row.label" />
+              </app-key-value-row>
+            }
+          </app-key-value-table>
+        </app-card>
+      </section>
+    }
+
+    @if (viewport.verfaerbung; as wandel) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.verfaerbung' | t }}</h2>
+        <app-card class="flush">
+          <app-key-value-table>
+            <app-key-value-row [schluessel]="'art.verfaerbung.zeile' | t">
+              <app-colour-change
+                [from]="wandel.von"
+                [to]="wandel.nach"
+                [fromLabel]="wandel.vonLabel"
+                [toLabel]="wandel.nachLabel"
+                [duration]="wandel.dauer"
+                [arrowLabel]="wandel.pfeil"
+              />
+            </app-key-value-row>
+          </app-key-value-table>
+        </app-card>
+      </section>
+    }
+
+    @if (viewport.zeit; as zeit) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.zeit' | t }}</h2>
+        <app-card class="flush">
+          <div class="species__period">
+            <div class="species__periodHead">
+              <span>{{ 'art.zeile.wachstum' | t }}</span>
+              <span class="species__periodText">{{ zeit.text }}</span>
+            </div>
+            <app-year-band
+              [fromMonth]="zeit.von"
+              [toMonth]="zeit.bis"
+              [peakFromMonth]="zeit.beobachtetVon"
+              [peakToMonth]="zeit.beobachtetBis"
+              [months]="zeit.marken"
+              [label]="zeit.label"
+            />
+          </div>
+        </app-card>
+      </section>
+    }
+
+    @if (viewport.sinne.length) {
+      <section>
+        <h2 class="species__section">{{ 'art.abschnitt.sinne' | t }}</h2>
+        <app-card class="flush">
+          @for (row of viewport.sinne; track row.schluessel) {
+            <div class="species__sense">
+              <span class="species__senseName">{{ row.schluessel }}</span>
+              @if (row.tags.length) {
+                <app-tag-list [tags]="row.tags" [label]="row.label" />
+              } @else {
+                <app-note variant="unter">{{ 'art.sinne.leer' | t }}</app-note>
+              }
+              @if (row.text; as text) {
+                <app-note variant="unter">{{ text }}</app-note>
+              }
+            </div>
+          }
+        </app-card>
+      </section>
+    }
+
+    <section>
       <h2 class="species__section">{{ 'art.merkmale' | t }}</h2>
       <app-card class="flush">
         <app-key-value-table>

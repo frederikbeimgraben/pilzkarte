@@ -4,6 +4,9 @@ import { RouterLink } from '@angular/router';
 /**
  * Eine Zeile der Merkmalstabelle. Der Wert kommt als Text oder, wenn er ein
  * Badge trägt, als Inhalt.
+ *
+ * Unter dem Schlüssel steht Platz für ein Wort, das den Wert benennt: die
+ * Farbe heißt „hell bis dunkelbraun“, gezeigt wird sie rechts als Fläche.
  */
 @Component({
   selector: 'app-key-value-row',
@@ -20,4 +23,6 @@ export class KeyValueRowComponent {
    * zeigt damit auf das Profil des Partners.
    */
   readonly keyRoute = input<string | null>(null);
+  /** Die Unterzeile am Schlüssel. Sie nennt, was rechts als Wert steht. */
+  readonly unter = input<string | null>(null);
 }

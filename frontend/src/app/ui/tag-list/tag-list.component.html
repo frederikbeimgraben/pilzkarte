@@ -1,0 +1,5 @@
+<ul class="tags" [attr.aria-label]="label()">
+  @for (tag of tags(); track tag) {
+    <li class="tags__tag">{{ tag }}</li>
+  }
+</ul>

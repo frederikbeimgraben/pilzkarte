@@ -70,7 +70,9 @@ describe('ArtComponent', () => {
     );
     expect(screen.getByRole('link', { name: 'Wikipedia' })).toBeInTheDocument();
     await noViolations(container);
-  });
+    // Die Artseite trägt seit D4b sechs Abschnitte mehr; axe braucht dafür
+    // mehr als die fünf Sekunden, die eine Prüfung sonst genügen.
+  }, 30_000);
 
   it('stellt die Merkmale in der Reihenfolge der Artseite auf', async () => {
     const { container } = await build(STEINPILZ);
@@ -78,6 +80,19 @@ describe('ArtComponent', () => {
     const schluessel = [...container.querySelectorAll('.tz__key')].map((cell) => cell.textContent.trim());
 
     expect(schluessel).toEqual([
+      // Erst die Einstufung, dann die Werte, dann die Farben.
+      'Speisewert',
+      'Schutz',
+      'Handel',
+      'Hut',
+      'Sporen',
+      'Sporen',
+      'Hut',
+      'Sporenlager',
+      'Stiel',
+      'Sporenpulver',
+      'Auf Druck oder im Schnitt',
+      // Danach die Merkmalstabelle, wie gehabt.
       'Hut',
       'Röhren',
       'Stiel',
@@ -93,7 +108,6 @@ describe('ArtComponent', () => {
       'Marktfähigkeit',
       'Häufigkeit',
       'Schutz',
-      'Maße',
       'Weitere Namen',
       'Synonyme',
       // Danach die eigene Tabelle der Reagenzien. Die Verwechslungen stehen in
@@ -104,6 +118,79 @@ describe('ArtComponent', () => {
       cell.textContent.trim(),
     );
     expect(partner).toEqual(['Gallenröhrling', 'Satansröhrling']);
+  });
+
+  it('stellt die Einstufung als Stufe, Schutz und Handel', async () => {
+    const { container } = await build(STEINPILZ);
+
+    // Die Stufe trägt ihre eigene Farbe: sie warnt, bevor man das Wort liest.
+    const pill = container.querySelector<HTMLElement>('.level');
+    expect(pill?.textContent.trim()).toBe('Essbar');
+    expect(pill?.style.getPropertyValue('--pilz-level-colour')).toBe('#4f9d6f');
+    expect(screen.getByText('für den Eigenbedarf')).toBeInTheDocument();
+    expect(screen.getByText('auf der Positivliste')).toBeInTheDocument();
+  });
+
+  it('zeigt jedes Maß mit Zeichen, Zahl und Einheit', async () => {
+    await build(STEINPILZ);
+
+    expect(screen.getByRole('img', { name: 'Hutbreite' })).toBeInTheDocument();
+    // Die Spore trägt ihr eigenes Zeichen, nicht das des Hutes.
+    expect(screen.getAllByRole('img', { name: 'Sporenlänge' })).toHaveLength(2);
+    expect(screen.getByText('4 – 20')).toBeInTheDocument();
+    expect(screen.getByText('12,4 – 19,2')).toBeInTheDocument();
+    // Zwei Zeilen heißen „Sporen“; erst dann sagt die Unterzeile, welche gemeint ist.
+    expect(screen.getByText('Länge')).toBeInTheDocument();
+    expect(screen.getByText('Breite')).toBeInTheDocument();
+  });
+
+  it('nennt den selteneren Wert als Wort, nicht als zweite Zahl', async () => {
+    await build(STEINPILZ);
+
+    expect(screen.getByText('selten bis 25 cm')).toBeInTheDocument();
+  });
+
+  it('zeigt jede Farbe als Fläche, das Wort daneben', async () => {
+    const { container } = await build(STEINPILZ);
+
+    expect(screen.getByText('hellbraun, dunkelbraun')).toBeInTheDocument();
+    const field = screen.getByRole('img', { name: 'Farbe: hellbraun, dunkelbraun' });
+    expect(field).toHaveStyle({
+      background: 'linear-gradient(104deg,#e2c79a 0% 50%,#6b4423 50% 100%)',
+    });
+    // Ein Körperteil ohne Farbe steht nicht da.
+    expect(container.textContent).not.toContain('Fleisch:');
+  });
+
+  it('zeigt die Verfärbung als von, Pfeil, nach und Dauer', async () => {
+    await build(STEINPILZ);
+
+    expect(screen.getByRole('img', { name: 'wird zu' })).toBeInTheDocument();
+    expect(screen.getByText('sofort')).toBeInTheDocument();
+  });
+
+  it('zeichnet die Zeit als Bahn und nennt beide Zeiträume', async () => {
+    const { container } = await build(STEINPILZ);
+
+    expect(screen.getByText('Juni bis November · beobachtet August bis Oktober')).toBeInTheDocument();
+    expect(
+      screen.getByRole('img', {
+        name: 'Wachstum von Juni bis November, am häufigsten August bis Oktober',
+      }),
+    ).toBeInTheDocument();
+    // Genannte Zeit blass, gemessene Zeit kräftig.
+    expect(container.querySelectorAll('.year__body')).toHaveLength(2);
+    expect(container.querySelectorAll('.year__body--muted')).toHaveLength(1);
+  });
+
+  it('stellt Geruch und Geschmack als Kategorien neben den Satz', async () => {
+    await build(STEINPILZ);
+
+    expect(screen.getByRole('list', { name: 'Geruch' })).toBeInTheDocument();
+    expect(screen.getByText('pilzig')).toBeInTheDocument();
+    expect(screen.getByText('Sehr angenehm, pilzig.')).toBeInTheDocument();
+    expect(screen.getByRole('list', { name: 'Geschmack' })).toBeInTheDocument();
+    expect(screen.getByText('Mild und nussig.')).toBeInTheDocument();
   });
 
   it('zeigt den Speisewert und jede Verwechslung als Badge', async () => {
@@ -120,7 +207,8 @@ describe('ArtComponent', () => {
     expect(screen.getByText('Schätzung dieses Jahr')).toBeInTheDocument();
     expect(screen.getByText('Mittelwert 2015 bis 2024')).toBeInTheDocument();
     expect(screen.getByText('32 %')).toBeInTheDocument();
-    expect(screen.getByText('Jan')).toBeInTheDocument();
+    // Die Kurve und die Jahresbahn tragen beide eine Marke für Januar.
+    expect(screen.getAllByText('Jan').length).toBe(2);
     expect(screen.getByText('Dez')).toBeInTheDocument();
     // Das laufende Jahr endet mit einem Punkt auf der letzten vollen Woche.
     expect(container.querySelector('.spark__end')).not.toBeNull();
@@ -131,11 +219,9 @@ describe('ArtComponent', () => {
 
     expect(screen.getByText('Auf der Positivliste der DGfM Stand 10. September 2026')).toBeInTheDocument();
     expect(screen.getByText('Häufig')).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        'Hut 4 bis 20, selten bis 25 cm breit · Sporen 12,4 bis 19,2 µm lang · Sporen 4,5 bis 5,5 µm breit',
-      ),
-    ).toBeInTheDocument();
+    // Die Maße stehen als eigener Abschnitt, nicht mehr als Satz in der Tabelle.
+    expect(screen.getByText('4 – 20')).toBeInTheDocument();
+    expect(screen.getByText('selten bis 25 cm')).toBeInTheDocument();
     expect(screen.getByText('Herrenpilz, Fichtensteinpilz')).toBeInTheDocument();
     expect(screen.getByText('Boletus bulbosus')).toBeInTheDocument();
     expect(screen.getByText(/Angaben geprüft am 10. September 2026/)).toBeInTheDocument();
@@ -178,7 +264,7 @@ describe('ArtComponent', () => {
     expect(screen.getByText('Giftig. Diese Art gehört nicht in die Pfanne.')).toBeInTheDocument();
     expect(container.querySelector('.species__warnung app-svg-icon')).not.toBeNull();
     await noViolations(container);
-  });
+  }, 30_000);
 
   it('nimmt einem Verwechslungsprofil Saison und Karte, gibt ihm den Rückweg', async () => {
     const { container } = await build(GALLENROEHRLING, 'gallenroehrling');
@@ -192,7 +278,7 @@ describe('ArtComponent', () => {
     expect(screen.queryByRole('button', { name: 'Auf der Karte anzeigen' })).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Zu den Arten' })).toBeInTheDocument();
     await noViolations(container);
-  });
+  }, 30_000);
 
   it('führt vom Verwechslungsprofil zu der Art zurück, von der man kam', async () => {
     const { router, state, refresh } = await build(GALLENROEHRLING, 'gallenroehrling');
@@ -224,7 +310,7 @@ describe('ArtComponent', () => {
     expect(screen.getByRole('button', { name: 'Auf der Karte anzeigen' })).toBeDisabled();
     expect(screen.getByText('Für diese Art gibt es keine Vorhersage')).toBeInTheDocument();
     await noViolations(container);
-  });
+  }, 30_000);
 
   it('führt aus einem 404 mit Zurück in die Liste', async () => {
     const { container, router } = await build('fehlt', 'gibtsnicht');
@@ -235,7 +321,7 @@ describe('ArtComponent', () => {
 
     expect(calls).toHaveBeenCalledWith(['/arten']);
     await noViolations(container);
-  });
+  }, 30_000);
 
   it('führt der Zurück-Knopf einer gefundenen Art in die Liste', async () => {
     const { router } = await build(STEINPILZ);

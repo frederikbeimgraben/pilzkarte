@@ -1,0 +1,18 @@
+<div class="year" role="img" [attr.aria-label]="label()">
+  @for (body of stated(); track body.left) {
+    <i
+      class="year__body"
+      [class.year__body--muted]="muted()"
+      [style.left.%]="body.left"
+      [style.width.%]="body.width"
+    ></i>
+  }
+  @for (body of observed(); track body.left) {
+    <i class="year__body" [style.left.%]="body.left" [style.width.%]="body.width"></i>
+  }
+</div>
+<div class="year__marks" aria-hidden="true">
+  @for (month of months(); track month) {
+    <span>{{ month }}</span>
+  }
+</div>

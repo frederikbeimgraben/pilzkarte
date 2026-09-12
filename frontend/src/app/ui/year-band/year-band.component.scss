@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.year {
+  position: relative;
+  block-size: 14px;
+  border-radius: 6px;
+  background: var(--color-bg-subtle, var(--color-bg));
+  overflow: hidden;
+}
+
+.year__body {
+  position: absolute;
+  inset-block: 0;
+  display: block;
+  border-radius: 6px;
+  background: var(--color-primary);
+}
+
+// Die genannte Zeit tritt zurück, sobald die gemessene daneben liegt.
+.year__body--muted {
+  opacity: 0.3;
+}
+
+.year__marks {
+  display: flex;
+  margin-block-start: 5px;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.year__marks span {
+  flex: 1;
+}

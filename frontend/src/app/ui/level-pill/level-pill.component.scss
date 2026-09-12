@@ -1,0 +1,24 @@
+:host {
+  display: inline-flex;
+}
+
+.level {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 11px;
+  border: var(--border-width) solid color-mix(in srgb, var(--pilz-level-colour) 30%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--pilz-level-colour) 14%, transparent);
+  color: var(--pilz-level-colour);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+}
+
+.level__dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: var(--pilz-level-colour);
+}

@@ -17,8 +17,9 @@ describe('BausteineComponent', () => {
     expect(screen.getAllByRole('button', { name: 'Speichern' })).toHaveLength(2);
     await noViolations(container);
     // Die Seite trägt jeden Baustein doppelt; axe braucht dafür mehr als die
-    // fünf Sekunden, die eine Prüfung sonst genügen.
-  }, 30_000);
+    // fünf Sekunden, die eine Prüfung sonst genügen. Mit den Bausteinen aus
+    // D4b sind es mehr geworden.
+  }, 90_000);
 
   it('legt die Theme-Werte des Kits auf die beiden Felder', async () => {
     const style = document.createElement('style');

@@ -22,6 +22,22 @@
   border-block-end: 0;
 }
 
+.tz__label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-inline-size: 0;
+}
+
+// Das Wort zum Wert steht klein unter dem Schlüssel. Rechts steht daneben
+// nichts als der Wert selbst, sonst kämpfen Wort und Fläche um den Blick.
+.tz__note {
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+}
+
 .tz__key {
   max-inline-size: 145px;
   font-weight: var(--fw-semibold);

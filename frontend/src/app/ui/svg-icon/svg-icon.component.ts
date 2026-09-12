@@ -38,7 +38,13 @@ export type IconName =
   | 'kuppe'
   | 'kolben'
   | 'koerner'
-  | 'bodenschichten';
+  | 'bodenschichten'
+  | 'hutbreite'
+  | 'stielhoehe'
+  | 'stieldicke'
+  | 'sporenlaenge'
+  | 'wandelt'
+  | 'dauer';
 
 /** Die drei gefüllten Pfeile der Kopfzeile sitzen auf einem 12er-Raster. */
 const FILLED: readonly IconName[] = ['links', 'rechts', 'abspielen', 'pause'];
