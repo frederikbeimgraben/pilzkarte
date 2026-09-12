@@ -19,7 +19,7 @@ from sqlalchemy import (
     false,
 )
 from sqlalchemy import Enum as SaEnum
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from sqlalchemy.orm import DeclarativeBase, Mapped, declared_attr, mapped_column, relationship
 from sqlalchemy.types import TypeDecorator
 
 from app.shared.schemas import Color, ImageState, Licence, Rule, Visibility
@@ -72,6 +72,46 @@ class UtcTime(TypeDecorator[datetime]):
 
 class Base(DeclarativeBase):
     """Gemeinsame Wurzel aller Tabellen."""
+
+
+# Wie ein Verweis auf ``nutzer`` reagiert, wenn das Konto verschwindet.
+#
+# ``RESTRICT`` traegt alles, was jemand angelegt hat und was ohne ihn weiter
+# gilt: Funde, Marker, Zonen, Kombinationen und eingereichte Bilder. Ein
+# geloeschtes Konto darf sie nicht stillschweigend mitreissen. Heute loescht
+# der Dienst kein Konto; wer das baut, stoesst an diese Sperre und muss je
+# Tabelle entscheiden, was mit dem Bestand geschieht. Genau diese Entscheidung
+# soll er treffen muessen.
+OWNED_BY_PERSON: Final = "RESTRICT"
+
+
+def person_key(table: str, column: str) -> str:
+    """Der Name einer Bedingung auf ``nutzer.sub``.
+
+    Ein Name ist noetig, weil SQLite eine Bedingung nur ueber ihn wiederfindet:
+    die Migration muss wissen, ob sie schon steht, und ein spaeterer Schritt
+    muss sie loesen koennen.
+    """
+    return f"fk_{table}_{column}_nutzer"
+
+
+# ``SET NULL`` traegt die wahlfreien Spuren einer Handlung. Der geprueften
+# Aufnahme bleibt ihr Zustand, dem Text sein Wortlaut; nur der Name dahinter
+# faellt weg. Ein Verbot haette hier nichts zu schuetzen.
+TRACE_OF_PERSON: Final = "SET NULL"
+
+# Die acht Spalten, die auf ein Konto zeigen, mit ihrer Loeschregel. Migration
+# und Zaehlwerkzeug lesen daraus, damit die Liste an einer Stelle steht.
+PERSON_KEYS: Final[tuple[tuple[str, str, str], ...]] = (
+    ("fund", "besitzer_sub", OWNED_BY_PERSON),
+    ("marker", "besitzer_sub", OWNED_BY_PERSON),
+    ("zone", "besitzer_sub", OWNED_BY_PERSON),
+    ("kombination", "besitzer_sub", OWNED_BY_PERSON),
+    ("species_image", "uploader_sub", OWNED_BY_PERSON),
+    ("species_image", "reviewed_by", TRACE_OF_PERSON),
+    ("text", "updated_by", TRACE_OF_PERSON),
+    ("user_role", "user_sub", "CASCADE"),
+)
 
 
 class Person(Base):
@@ -145,7 +185,14 @@ class UserRole(Base):
 
     __tablename__ = "user_role"
 
-    user_sub: Mapped[str] = mapped_column(String(255), primary_key=True, index=True)
+    # ``CASCADE``: eine Rolle an einem Konto, das es nicht mehr gibt, sagt
+    # nichts und traegt nichts. Sie geht mit, wie sie mit der Rolle mitgeht.
+    user_sub: Mapped[str] = mapped_column(
+        String(255),
+        ForeignKey("nutzer.sub", ondelete="CASCADE", name=person_key("user_role", "user_sub")),
+        primary_key=True,
+        index=True,
+    )
     role_id: Mapped[str] = mapped_column(
         ForeignKey("role.id", ondelete="CASCADE"),
         primary_key=True,
@@ -186,7 +233,11 @@ class UiText(Base):
     value: Mapped[str] = mapped_column(Text)
     updated_at: Mapped[datetime] = mapped_column(UtcTime, default=utc_now, onupdate=utc_now)
     # Wer zuletzt geschrieben hat. Leer heisst: so kam der Text aus der Vorgabe.
-    updated_by: Mapped[str | None] = mapped_column(String(255), default=None)
+    updated_by: Mapped[str | None] = mapped_column(
+        String(255),
+        ForeignKey("nutzer.sub", ondelete=TRACE_OF_PERSON, name=person_key("text", "updated_by")),
+        default=None,
+    )
 
 
 class Owned(Base):
@@ -200,7 +251,26 @@ class Owned(Base):
     __abstract__ = True
 
     id: Mapped[str] = mapped_column(String(ID_LENGTH), primary_key=True, default=new_identifier)
-    owner_sub: Mapped[str] = mapped_column("besitzer_sub", String(255), index=True)
+
+    @declared_attr
+    @classmethod
+    def owner_sub(cls) -> Mapped[str]:
+        """Der Besitzer, je Tabelle mit eigenem Namen der Bedingung.
+
+        Der Name muss die Tabelle nennen: vier Tabellen erben diese Spalte, und
+        zwei Bedingungen desselben Namens gaebe es nicht.
+        """
+        return mapped_column(
+            "besitzer_sub",
+            String(255),
+            ForeignKey(
+                "nutzer.sub",
+                ondelete=OWNED_BY_PERSON,
+                name=person_key(cls.__tablename__, "besitzer_sub"),
+            ),
+            index=True,
+        )
+
     created_at: Mapped[datetime] = mapped_column("erstellt_am", UtcTime, default=utc_now)
     updated_at: Mapped[datetime] = mapped_column(
         "geaendert_am", UtcTime, default=utc_now, onupdate=utc_now
@@ -282,7 +352,13 @@ class SpeciesImage(Base):
 
     id: Mapped[str] = mapped_column(String(ID_LENGTH), primary_key=True, default=new_identifier)
     species_slug: Mapped[str] = mapped_column(String(80), index=True)
-    uploader_sub: Mapped[str] = mapped_column(String(255), index=True)
+    uploader_sub: Mapped[str] = mapped_column(
+        String(255),
+        ForeignKey(
+            "nutzer.sub", ondelete=OWNED_BY_PERSON, name=person_key("species_image", "uploader_sub")
+        ),
+        index=True,
+    )
     photographer: Mapped[str] = mapped_column(String(120))
     licence: Mapped[Licence] = mapped_column(_enum_column(Licence))
     source: Mapped[str | None] = mapped_column(Text, default=None)
@@ -302,7 +378,13 @@ class SpeciesImage(Base):
     )
     # Der Grund einer Absage. Er geht an die einreichende Person zurueck.
     reject_reason: Mapped[str | None] = mapped_column(String(200), default=None)
-    reviewed_by: Mapped[str | None] = mapped_column(String(255), default=None)
+    reviewed_by: Mapped[str | None] = mapped_column(
+        String(255),
+        ForeignKey(
+            "nutzer.sub", ondelete=TRACE_OF_PERSON, name=person_key("species_image", "reviewed_by")
+        ),
+        default=None,
+    )
     reviewed_at: Mapped[datetime | None] = mapped_column(UtcTime, default=None)
     width: Mapped[int] = mapped_column()
     height: Mapped[int] = mapped_column()

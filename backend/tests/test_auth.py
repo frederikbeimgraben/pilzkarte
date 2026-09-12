@@ -15,7 +15,9 @@ from app.core.auth import (
     optional_user,
     user_from_token,
 )
+from app.core.db import session_factory
 from app.core.errors import NotAuthenticated, register_error_handlers
+from app.models import Person
 from tests.conftest import ISSUER, FakeIdp, auth_header, ec_key, rsa_key
 
 
@@ -200,6 +202,23 @@ async def test_guarded_with_a_valid_token(idp: FakeIdp) -> None:
 
     assert response.status_code == 200
     assert response.json() == {"sub": "nutzer-1"}
+
+
+@pytest.mark.usefixtures("schema")
+async def test_a_login_creates_the_account(idp: FakeIdp) -> None:
+    """Die Zeile in ``nutzer`` entsteht bei der Anmeldung, nicht beim ersten Objekt.
+
+    Der Fremdschluessel auf ``nutzer.sub`` haengt daran. Kaeme die Zeile erst
+    mit dem ersten Fund, scheiterte genau dieser Fund an der Bedingung.
+    """
+    async with client(app_with_guard()) as call:
+        await call.get("/geschuetzt", headers=auth_header(idp.token()))
+
+    async with session_factory()() as session:
+        person = await session.get(Person, "nutzer-1")
+
+    assert person is not None
+    assert (person.email, person.name) == ("pilz@example.test", "Pilzsammlerin")
 
 
 @pytest.mark.usefixtures("idp")

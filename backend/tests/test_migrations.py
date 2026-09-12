@@ -1,5 +1,6 @@
 """Die Migrationskette. Der Dienst faehrt sie bei jedem Start hoch."""
 
+import re
 import sqlite3
 from contextlib import closing
 from pathlib import Path
@@ -15,6 +16,9 @@ from app.modules.access.permissions import Permission
 from app.modules.access.service import BUILT_IN_ROLES
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# Der letzte Schritt vor den Fremdschluesseln aus R4a.
+BEFORE_PERSON_KEYS = "e7c3b58a10d2"
 
 
 def configuration() -> Config:
@@ -136,3 +140,173 @@ def test_a_second_upgrade_seeds_nothing_twice(
 
     assert len(rows(file, "SELECT slug FROM role")) == len(BUILT_IN_ROLES)
     assert len(rows(file, "SELECT key FROM permission")) == len(Permission)
+
+
+# Der Verweis auf ``nutzer``, so wie SQLite ihn in der Tabellendefinition fuehrt.
+PERSON_KEY = re.compile(
+    r",\s*CONSTRAINT fk_\w+_nutzer FOREIGN KEY\([^)]*\)"
+    r" REFERENCES nutzer \(sub\)(?: ON DELETE [A-Z ]+)?"
+)
+
+# Die Tabellen, die nach R4a auf ein Konto zeigen.
+POINTING_AT_A_PERSON = (
+    "fund",
+    "marker",
+    "zone",
+    "kombination",
+    "species_image",
+    "text",
+    "user_role",
+)
+
+
+def as_before_the_keys(file: Path, table: str) -> None:
+    """Baut eine Tabelle ohne ihren Verweis auf ``nutzer`` nach.
+
+    Die Baseline legt das Schema aus den Modellen an, darum traegt schon eine
+    frische Datenbank den Fremdschluessel. Der Bestand im Betrieb ist aelter
+    und traegt ihn nicht. Nur an diesem aelteren Stand laesst sich pruefen, was
+    die Wanderung tut.
+    """
+    with closing(sqlite3.connect(file)) as connection:
+        query = "SELECT sql FROM sqlite_master WHERE type='table' AND name=?"
+        (definition,) = connection.execute(query, (table,)).fetchone()
+        # Ohne ``legacy_alter_table`` zieht SQLite jeden Verweis auf diese
+        # Tabelle auf den neuen Namen um. ``foto`` zeigte danach auf
+        # ``fund_alt``, und die Vorrichtung baute einen Fehler nach, den es
+        # nicht gibt. Alembic schaltet die Pragma aus demselben Grund.
+        connection.executescript(
+            "PRAGMA legacy_alter_table=ON;"  # noqa: S608 - Name aus POINTING_AT_A_PERSON
+            f"ALTER TABLE {table} RENAME TO {table}_alt;"
+            f"{PERSON_KEY.sub('', definition)};"
+            f"INSERT INTO {table} SELECT * FROM {table}_alt;"
+            f"DROP TABLE {table}_alt;"
+            "PRAGMA legacy_alter_table=OFF;"
+        )
+        connection.commit()
+
+
+def grown_database(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, name: str) -> Path:
+    """Eine Datenbank auf dem Stand vor R4a, so wie sie im Betrieb steht."""
+    file = tmp_path / name
+    monkeypatch.setenv("PILZE_DB", f"sqlite+aiosqlite:///{file}")
+    get_settings.cache_clear()
+    db.engine.cache_clear()
+    command.upgrade(configuration(), BEFORE_PERSON_KEYS)
+    for table in POINTING_AT_A_PERSON:
+        as_before_the_keys(file, table)
+    db.engine.cache_clear()
+    return file
+
+
+def add_find(file: Path, sub: str) -> None:
+    """Legt einen Fund an, ohne den Weg ueber die Modelle."""
+    with closing(sqlite3.connect(file)) as connection:
+        connection.execute(
+            "INSERT INTO fund (id, besitzer_sub, erstellt_am, geaendert_am, art_slug,"
+            " lat, lon, datum, fuer_training, sichtbarkeit)"
+            " VALUES (?, ?, '2026-09-01 00:00:00', '2026-09-01 00:00:00', 'steinpilz',"
+            " 48.5, 9.2, '2026-09-01', 0, 'privat')",
+            (f"fund-{sub}", sub),
+        )
+        connection.commit()
+
+
+def add_person(file: Path, sub: str) -> None:
+    with closing(sqlite3.connect(file)) as connection:
+        connection.execute(
+            "INSERT INTO nutzer (sub, erstellt_am) VALUES (?, '2026-09-01 00:00:00')",
+            (sub,),
+        )
+        connection.commit()
+
+
+def points_at(file: Path, table: str) -> set[str]:
+    """Die Tabellen, auf die eine Tabelle verweist."""
+    with closing(sqlite3.connect(file)) as connection:
+        return {row[2] for row in connection.execute(f"PRAGMA foreign_key_list({table})")}
+
+
+def test_a_grown_database_starts_without_the_keys(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    # Haelt die Vorrichtung selbst fest: ohne diesen Ausgangsstand pruefen die
+    # beiden Tests darunter nichts.
+    file = grown_database(tmp_path, monkeypatch, "vorher.sqlite")
+
+    assert points_at(file, "fund") == set()
+    assert points_at(file, "user_role") == {"role"}
+    assert points_at(file, "foto") == {"fund"}
+
+
+def test_a_find_without_an_account_stops_the_upgrade(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    # Ohne die Zaehlung braeche die Wanderung erst an der Bedingung ab und
+    # nennte eine einzelne Zeile. Die Meldung soll sagen, wo und wie viele.
+    file = grown_database(tmp_path, monkeypatch, "waise.sqlite")
+    add_find(file, "niemand")
+
+    with pytest.raises(RuntimeError) as stopped:
+        command.upgrade(configuration(), "head")
+
+    assert "fund.besitzer_sub: 1" in str(stopped.value)
+    assert points_at(file, "fund") == set()
+
+
+def test_the_upgrade_adds_the_keys_to_a_grown_database(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    file = grown_database(tmp_path, monkeypatch, "gewachsen.sqlite")
+    add_person(file, "nutzer-1")
+    add_find(file, "nutzer-1")
+
+    command.upgrade(configuration(), "head")
+
+    for table in POINTING_AT_A_PERSON:
+        assert "nutzer" in points_at(file, table), table
+
+
+def test_the_downgrade_takes_the_keys_away_again(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    file = grown_database(tmp_path, monkeypatch, "zurueck.sqlite")
+    command.upgrade(configuration(), "head")
+    db.engine.cache_clear()
+
+    command.downgrade(configuration(), BEFORE_PERSON_KEYS)
+
+    assert points_at(file, "fund") == set()
+    assert points_at(file, "user_role") == {"role"}
+
+
+def add_photo(file: Path, find_id: str) -> None:
+    with closing(sqlite3.connect(file)) as connection:
+        connection.execute(
+            "INSERT INTO foto (id, fund_id, dateiname, breite, hoehe, erstellt_am)"
+            " VALUES ('foto-1', ?, 'bild.jpg', 1600, 1200, '2026-09-01 00:00:00')",
+            (find_id,),
+        )
+        connection.commit()
+
+
+def test_the_upgrade_keeps_the_photos_of_a_find(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    # Die Wanderung baut ``fund`` neu, und ``foto.fund_id`` loescht mit dem
+    # Fund. Baute sie die Tabelle bei eingeschalteten Fremdschluesseln ab,
+    # naehme sie die Fotos still mit. Dieser Test haelt fest, dass sie bleiben.
+    file = grown_database(tmp_path, monkeypatch, "mit_foto.sqlite")
+    add_person(file, "nutzer-1")
+    add_find(file, "nutzer-1")
+    add_photo(file, "fund-nutzer-1")
+
+    command.upgrade(configuration(), "head")
+
+    assert rows(file, "SELECT id FROM foto") == [("foto-1",)]
+    assert points_at(file, "foto") == {"fund"}
