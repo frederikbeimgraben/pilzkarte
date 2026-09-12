@@ -1,7 +1,7 @@
 """Die Einordnung der Arten und ihr Anfangsbestand.
 
 Revision ID: b8e4d1a37f26
-Revises: e7c3b58a10d2
+Revises: a8f2c50d7b31
 """
 
 from collections.abc import Sequence
@@ -14,7 +14,7 @@ from app.models import Base, new_identifier
 from app.modules.taxonomy.seed import seed_taxa
 
 revision: str = "b8e4d1a37f26"
-down_revision: str | None = "e7c3b58a10d2"
+down_revision: str | None = "a8f2c50d7b31"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
