@@ -43,10 +43,16 @@
   border-radius: var(--radius-lg);
 }
 
+.block__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .block__row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
@@ -137,7 +143,7 @@
 }
 
 .block__stage--sheet {
-  block-size: 128px;
+  block-size: 320px;
   background: var(--color-surface-sunken);
 }
 
@@ -177,16 +183,16 @@
 }
 
 .block__stage--popover {
-  block-size: 300px;
+  block-size: 380px;
   background: var(--color-surface-sunken);
 }
 
 .block__stage--reject {
-  block-size: 466px;
+  block-size: 373px;
 }
 
 .block__stage--confirm {
-  block-size: 222px;
+  block-size: 190px;
 }
 
 .block__stage--photo {

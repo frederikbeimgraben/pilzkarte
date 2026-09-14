@@ -46,3 +46,25 @@ app-building-blocks .block--nolabel app-input label {
   white-space: nowrap;
   border: 0;
 }
+
+// Der Knopf misst 44 px, der große 48. Das Kit rechnet die Höhe aus Polster
+// und Zeilenhöhe und schreibt sie im eigenen Stilblatt fest.
+.btn--md,
+.btn--lg {
+  padding-block: 0 !important;
+}
+
+.btn--md {
+  block-size: var(--size-tap) !important;
+  font-size: 15px !important;
+}
+
+.btn--lg {
+  block-size: var(--size-floating) !important;
+}
+
+// Eingabe und Auswahl messen 44 px.
+.field__control,
+.sel__control {
+  block-size: var(--size-tap) !important;
+}
