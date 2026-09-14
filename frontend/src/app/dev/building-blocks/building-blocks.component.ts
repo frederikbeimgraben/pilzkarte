@@ -228,10 +228,10 @@ export class BuildingBlocksComponent {
   protected readonly filterSheetOpen = signal(true);
 
   protected readonly objectMenuTarget: ObjectMenuTarget = { x: 90, y: 60 };
-  protected readonly popoverAnchor: PopoverAnchor = { top: 16, end: 16 };
+  protected readonly popoverAnchor: PopoverAnchor = { top: 0, end: 0 };
 
   /** Das Board zeichnet die unterste Raste des Blatts 120 px hoch. */
-  protected readonly sheetDetents: readonly [DetentSize, DetentSize, DetentSize] = ['120px', 0.4, 0.9];
+  protected readonly sheetDetents: readonly [DetentSize, DetentSize, DetentSize] = ['320px', 0.4, 0.9];
   protected readonly navTabs = { map: '/karte', species: '/arten' };
 
   protected readonly badgeVariants: readonly { variant: BadgeVariant; label: string }[] = [
@@ -245,6 +245,13 @@ export class BuildingBlocksComponent {
   protected readonly fleshOptions: SelectOption[] = [
     { value: 'candidus', label: this.text('beispiel.farbe.fleisch') },
     { value: 'caeruleus', label: this.text('beispiel.farbe.blau') },
+  ];
+
+  protected readonly backgrounds = [
+    { value: 'karte', label: this.text('map.basemap.map') },
+    { value: 'hell', label: this.text('map.basemap.light') },
+    { value: 'topo', label: this.text('map.basemap.topo') },
+    { value: 'satellit', label: this.text('map.basemap.satellite') },
   ];
 
   protected readonly viewModes = [
@@ -325,6 +332,8 @@ export class BuildingBlocksComponent {
     range: this.text('beispiel.faktor.bodenPhUnter'),
     condition: this.text('beispiel.faktor.bodenPhBedingung'),
   };
+
+  protected readonly compareNames = [this.text('art.boletus_edulis'), this.text('beispiel.gallenroehrling')];
 
   protected readonly stats = [
     { value: 12, label: this.text('entry.finds') },

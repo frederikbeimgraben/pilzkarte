@@ -180,6 +180,10 @@ app-toast {
   --radius-md: 10px;
 }
 
+app-button {
+  --space-5: 20px;
+}
+
 // Ohne diese Regeln markiert ein langer Druck Text und ein Tipp blitzt blau auf.
 body {
   user-select: none;

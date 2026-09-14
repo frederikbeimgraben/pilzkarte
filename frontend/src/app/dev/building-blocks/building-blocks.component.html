@@ -5,20 +5,27 @@
       <app-button variant="primary">{{ 'common.save' | t }}</app-button>
       <app-button variant="secondary">{{ 'common.cancel' | t }}</app-button>
       <app-button variant="ghost">{{ 'common.more' | t }}</app-button>
-      <app-button variant="danger">{{ 'common.delete' | t }}</app-button>
-      <app-button variant="danger-outline">{{ 'map.factor.remove' | t }}</app-button>
+      <app-button variant="danger">{{ 'beispiel.variante.danger' | t }}</app-button>
+      <app-button variant="danger-outline">{{ 'beispiel.variante.dangerOutline' | t }}</app-button>
     </div>
   </section>
 
   <section class="block block--nolabel">
     <h2 class="block__head">{{ 'blocks.input' | t }}</h2>
-    <app-input [label]="text('common.name')" [ngModel]="text('beispiel.person')" />
-    <app-input
-      [label]="text('species.fieldLabel')"
-      [placeholder]="text('species.search.placeholder')"
-      [ngModel]="''"
-    />
-    <app-input [label]="text('melden.anzahl')" [error]="text('beispiel.feld.pflicht')" [ngModel]="''" />
+    <div class="block__fields">
+      <app-input [label]="text('common.name')" [ngModel]="text('beispiel.person')" />
+      <app-input
+        [label]="text('species.fieldLabel')"
+        [placeholder]="text('species.search.placeholder')"
+        [ngModel]="''"
+      />
+      <app-input
+        [label]="text('melden.anzahl')"
+        [placeholder]="text('melden.anzahl')"
+        [error]="text('beispiel.feld.pflicht')"
+        [ngModel]="''"
+      />
+    </div>
   </section>
 
   <section class="block">
@@ -34,7 +41,7 @@
 
   <section class="block">
     <h2 class="block__head">{{ 'blocks.card' | t }}</h2>
-    <app-card>
+    <app-card class="flush">
       <app-list-row [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
         <app-badge trail variant="primary">{{ 'account.role.admin' | t }}</app-badge>
       </app-list-row>
@@ -80,12 +87,18 @@
     <h2 class="block__head">{{ 'blocks.sheet' | t }}</h2>
     <div class="block__stage block__stage--sheet">
       <app-sheet
-        [label]="text('entry.reportFind.title')"
+        [label]="text('map.combination.save')"
         [detent]="detent()"
         [detents]="sheetDetents"
         (detentChange)="detent.set($event)"
       >
-        <app-sheet-head head [title]="text('entry.reportFind.title')" [arrows]="false" />
+        <app-sheet-head head [title]="text('map.combination.save')" [arrows]="false" />
+        <app-form-field
+          [label]="text('common.name')"
+          [value]="text('beispiel.kombination')"
+          [readOnly]="true"
+        />
+        <app-action-bar [primary]="text('common.save')" [secondary]="text('common.cancel')" />
       </app-sheet>
     </div>
   </section>
@@ -167,9 +180,11 @@
     <h2 class="block__head">{{ 'blocks.popover' | t }}</h2>
     <div class="block__stage block__stage--popover">
       <app-popover [open]="true" [anchor]="popoverAnchor" [label]="text('map.layers.button')">
-        <app-segmented [options]="viewModes" [value]="viewMode()" [label]="text('map.basemap.title')" />
+        <app-segmented [options]="backgrounds" value="karte" [label]="text('map.basemap.title')" />
         <app-choice-row [label]="text('map.layers.sharedFinds')" count="12" [checked]="true" />
         <app-choice-row [label]="text('map.layers.myMarkers')" count="5" [checked]="true" />
+        <app-choice-row [label]="text('entry.zones')" count="2" [checked]="true" />
+        <app-range-slider [min]="0" [max]="100" [from]="80" [to]="100" handles="from" />
       </app-popover>
     </div>
   </section>
@@ -177,12 +192,7 @@
   <section class="block">
     <h2 class="block__head">{{ 'blocks.confirmDialog' | t }}</h2>
     <div class="block__stage block__stage--confirm">
-      <app-confirm-dialog
-        [open]="true"
-        [title]="text('entry.fund.delete')"
-        [meta]="text('beispiel.dialogMeta')"
-        [danger]="true"
-      />
+      <app-confirm-dialog [open]="true" [title]="text('entry.fund.delete')" [danger]="true" />
     </div>
   </section>
 
@@ -266,15 +276,23 @@
   <section class="block">
     <h2 class="block__head">{{ 'blocks.keyValueTable' | t }}</h2>
     <app-key-value-table>
-      <app-key-value-row [key]="text('species.field.edibility')" [value]="text('enum.edibility.edible')" />
-      <app-key-value-row [key]="text('art.mass.zeichen.hutbreite')">
-        <app-measurement extent="width" [spans]="capWidthSpans" [unit]="text('unit.cm')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('art.farbe.hut')">
-        <app-colour-field [colours]="gradientColours" mode="gradient" [label]="text('art.farbe.hut')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('species.field.stem')" [value]="text('art.stielmerkmal.voll')" />
-      <app-key-value-row [key]="text('species.field.habitat')" route="." [hint]="text('common.open')" />
+      <app-key-value-row key="" [values]="compareNames" [head]="true" />
+      <app-key-value-row
+        [key]="text('species.field.edibility')"
+        [values]="[text('enum.edibility.edible'), text('enum.edibility.inedible')]"
+      />
+      <app-key-value-row
+        [key]="text('art.mass.zeichen.hutbreite')"
+        [values]="[text('beispiel.vergleich.hutbreiteEins'), text('beispiel.vergleich.hutbreiteZwei')]"
+      />
+      <app-key-value-row
+        [key]="text('beispiel.vergleich.stielnetz')"
+        [values]="[text('beispiel.vergleich.netzEins'), text('beispiel.vergleich.hutfarbeZwei')]"
+      />
+      <app-key-value-row
+        [key]="text('species.field.taste')"
+        [values]="[text('beispiel.vergleich.geschmackZwei'), text('beispiel.vergleich.geschmackZwei')]"
+      />
     </app-key-value-table>
   </section>
 
@@ -448,7 +466,7 @@
   <section class="block">
     <h2 class="block__head">{{ 'blocks.measurement' | t }}</h2>
     <app-key-value-table>
-      <app-key-value-row [key]="text('art.mass.zeichen.hutbreite')">
+      <app-key-value-row [key]="text('art.mass.zeichen.hutbreite')" [hint]="text('beispiel.mass.selten')">
         <app-measurement extent="width" [spans]="capWidthSpans" [unit]="text('unit.cm')" />
       </app-key-value-row>
     </app-key-value-table>

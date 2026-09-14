@@ -159,7 +159,22 @@
     "beispiel.wachstum.zeitraum": "Juni bis Oktober",
     "beispiel.fortschritt": "62 %",
     "blocks.rejectDialog": "app-reject-dialog · radius 18 · griff 36 × 4",
-    "blocks.popover": "app-popover · 300 px · radius 12 · scrim"
+    "blocks.popover": "app-popover · 300 px · radius 12 · scrim",
+    "beispiel.mass.selten": "selten bis 25 cm",
+    "beispiel.gallenroehrling": "Gallenröhrling",
+    "beispiel.vergleich.hutbreiteEins": "4 – 20 cm",
+    "beispiel.vergleich.hutbreiteZwei": "4 – 12 cm",
+    "beispiel.vergleich.hutfarbeZwei": "hellbraun",
+    "beispiel.vergleich.roehrenEins": "weiß bis gelb",
+    "beispiel.vergleich.roehrenZwei": "rosa",
+    "beispiel.vergleich.druckprobe": "Druckprobe",
+    "beispiel.vergleich.stielnetz": "Stielnetz",
+    "beispiel.vergleich.netzEins": "weiß, fein",
+    "beispiel.vergleich.netzZwei": "dunkelbraun, grob",
+    "beispiel.vergleich.geschmackEins": "mild, nussig",
+    "beispiel.vergleich.geschmackZwei": "bitter",
+    "beispiel.variante.danger": "danger",
+    "beispiel.variante.dangerOutline": "danger-outline"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -321,6 +336,21 @@
     "beispiel.wachstum.zeitraum": "June to October",
     "beispiel.fortschritt": "62 %",
     "blocks.rejectDialog": "app-reject-dialog · radius 18 · handle 36 × 4",
-    "blocks.popover": "app-popover · 300 px · radius 12 · scrim"
+    "blocks.popover": "app-popover · 300 px · radius 12 · scrim",
+    "beispiel.mass.selten": "rarely up to 25 cm",
+    "beispiel.gallenroehrling": "Bitter bolete",
+    "beispiel.vergleich.hutbreiteEins": "4 – 20 cm",
+    "beispiel.vergleich.hutbreiteZwei": "4 – 12 cm",
+    "beispiel.vergleich.hutfarbeZwei": "light brown",
+    "beispiel.vergleich.roehrenEins": "white to yellow",
+    "beispiel.vergleich.roehrenZwei": "pink",
+    "beispiel.vergleich.druckprobe": "Bruising",
+    "beispiel.vergleich.stielnetz": "Stem net",
+    "beispiel.vergleich.netzEins": "white, fine",
+    "beispiel.vergleich.netzZwei": "dark brown, coarse",
+    "beispiel.vergleich.geschmackEins": "mild, nutty",
+    "beispiel.vergleich.geschmackZwei": "bitter",
+    "beispiel.variante.danger": "danger",
+    "beispiel.variante.dangerOutline": "danger-outline"
   }
 }
