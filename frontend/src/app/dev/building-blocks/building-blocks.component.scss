@@ -43,6 +43,11 @@
   border-radius: var(--radius-lg);
 }
 
+// Der Vergleich gibt der Schlüsselspalte 76 px, wie das Board es nennt.
+.block__compare {
+  --key-value-table-label: 76px;
+}
+
 .block__list {
   display: flex;
   flex-direction: column;
@@ -198,6 +203,10 @@
 
 .block__stage--confirm {
   block-size: 190px;
+}
+
+.block__stage--picker {
+  block-size: 180px;
 }
 
 .block__stage--photo {
