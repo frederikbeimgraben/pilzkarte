@@ -105,6 +105,7 @@
 
   <section class="block">
     <h2 class="block__head">{{ 'blocks.sheetHead' | t }}</h2>
+    <span class="block__handle" aria-hidden="true"></span>
     <app-sheet-head [title]="text('art.boletus_edulis')" [titleLink]="true" [week]="text('beispiel.woche')">
       <app-timeline
         [weeks]="weeks"
@@ -277,7 +278,7 @@
 
   <section class="block">
     <h2 class="block__head">{{ 'blocks.keyValueTable' | t }}</h2>
-    <app-key-value-table>
+    <app-key-value-table class="block__compare" [columns]="2">
       <app-key-value-row key="" [values]="compareNames" [head]="true" />
       <app-key-value-row
         [key]="text('species.field.edibility')"
@@ -286,6 +287,22 @@
       <app-key-value-row
         [key]="text('art.mass.zeichen.hutbreite')"
         [values]="[text('beispiel.vergleich.hutbreiteEins'), text('beispiel.vergleich.hutbreiteZwei')]"
+      />
+      <app-key-value-row
+        [key]="text('art.farbe.hut')"
+        [values]="[text('beispiel.vergleich.hutfarbeZwei'), text('beispiel.vergleich.hutfarbeZwei')]"
+      />
+      <app-key-value-row
+        [key]="text('species.field.tubes')"
+        [values]="[text('beispiel.farbe.fleisch'), text('beispiel.vergleich.roehrenZwei')]"
+      />
+      <app-key-value-row
+        [key]="text('beispiel.vergleich.druckprobe')"
+        [values]="[text('enum.speed.stays'), text('enum.speed.min1')]"
+      />
+      <app-key-value-row
+        [key]="text('species.field.time')"
+        [values]="[text('art.monat.juni'), text('art.monat.okt')]"
       />
       <app-key-value-row
         [key]="text('beispiel.vergleich.stielnetz')"
@@ -401,12 +418,14 @@
 
   <section class="block">
     <h2 class="block__head">{{ 'blocks.speciesPicker' | t }}</h2>
-    <app-species-picker
-      [species]="pickerRows"
-      [selected]="speciesChoice()"
-      [label]="text('beispiel.artenTitel')"
-      (chosen)="speciesChoice.set($event)"
-    />
+    <div class="block__stage block__stage--picker">
+      <app-species-picker
+        [species]="pickerRows"
+        [selected]="speciesChoice()"
+        [label]="text('beispiel.artenTitel')"
+        (chosen)="speciesChoice.set($event)"
+      />
+    </div>
   </section>
 
   <section class="block">
@@ -467,11 +486,7 @@
 
   <section class="block">
     <h2 class="block__head">{{ 'blocks.measurement' | t }}</h2>
-    <app-key-value-table>
-      <app-key-value-row [key]="text('art.mass.zeichen.hutbreite')" [hint]="text('beispiel.mass.selten')">
-        <app-measurement extent="width" [spans]="capWidthSpans" [unit]="text('unit.cm')" />
-      </app-key-value-row>
-    </app-key-value-table>
+    <app-measurement-group [part]="text('species.field.cap')" [measurements]="capRareMeasurement" />
   </section>
 
   <section class="block">

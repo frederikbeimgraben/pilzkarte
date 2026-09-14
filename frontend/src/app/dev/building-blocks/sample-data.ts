@@ -98,6 +98,12 @@ export const COLOUR_CODE = '#7A3B6A';
 
 /** Zwei Spannen: die übliche Breite, darunter die seltene Ausnahme. */
 export const CAP_WIDTH_SPANS: readonly Span[] = [{ from: 4, to: 20 }];
+
+/** Dieselbe Breite mit der seltenen Ausnahme darüber. */
+export const CAP_RARE_SPANS: readonly Span[] = [
+  { from: 4, to: 20 },
+  { from: 20, to: 25 },
+];
 export const SPORE_LENGTH_SPANS: readonly Span[] = [
   { from: 12.4, to: 19.2 },
   { from: 4.5, to: 5.5 },

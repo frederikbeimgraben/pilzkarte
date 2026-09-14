@@ -84,6 +84,7 @@ import {
 import {
   BRUISE_COLOURS,
   CAP_COLOURS,
+  CAP_RARE_SPANS,
   CAP_WIDTH_SPANS,
   COLOUR_CODE,
   FLESH_COLOURS,
@@ -340,6 +341,10 @@ export class BuildingBlocksComponent {
     { value: 4, label: this.text('entry.markers') },
     { value: 2, label: this.text('entry.zones') },
     { value: 3, label: this.text('entry.images') },
+  ];
+
+  protected readonly capRareMeasurement = [
+    { extent: 'width' as const, spans: CAP_RARE_SPANS, unit: this.text('unit.cm') },
   ];
 
   protected readonly capMeasurements = [
