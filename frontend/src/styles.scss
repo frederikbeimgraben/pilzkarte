@@ -68,3 +68,13 @@ app-building-blocks .block--nolabel app-input label {
 .sel__control {
   block-size: var(--size-tap) !important;
 }
+
+// Die Meldung misst 36 px.
+.toast {
+  padding-block: 10px !important;
+  font-size: 13px !important;
+}
+
+.toasts {
+  gap: var(--space-2) !important;
+}

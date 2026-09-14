@@ -43,6 +43,11 @@
   border-radius: var(--radius-lg);
 }
 
+.block__list {
+  display: flex;
+  flex-direction: column;
+}
+
 .block__fields {
   display: flex;
   flex-direction: column;
@@ -139,7 +144,7 @@
 }
 
 .block__stage--rail {
-  block-size: 288px;
+  block-size: 280px;
 }
 
 .block__stage--sheet {
@@ -153,11 +158,11 @@
 }
 
 .block__stage--filter {
-  block-size: 218px;
+  block-size: 210px;
 }
 
 .block__stage--split {
-  block-size: 288px;
+  block-size: 280px;
   background: var(--color-surface-sunken);
 }
 
@@ -166,7 +171,7 @@
 }
 
 .block__stage--toast {
-  block-size: 100px;
+  block-size: 80px;
 }
 
 .block__stage--review {
@@ -174,11 +179,11 @@
 }
 
 .block__stage--viewer {
-  block-size: 212px;
+  block-size: 204px;
 }
 
 .block__stage--fixed {
-  block-size: 136px;
+  block-size: 128px;
   background: var(--color-surface-sunken);
 }
 
@@ -196,7 +201,7 @@
 }
 
 .block__stage--photo {
-  block-size: 108px;
+  block-size: 100px;
 }
 
 // Das Board zeigt zwei Zeilen und eine Attrappe, der Baustein reiht drei.
@@ -206,5 +211,5 @@
 }
 
 .block__stage--crosshair {
-  block-size: 108px;
+  block-size: 100px;
 }

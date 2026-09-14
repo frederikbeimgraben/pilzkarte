@@ -251,8 +251,10 @@
 
   <section class="block">
     <h2 class="block__head">{{ 'blocks.entryRow' | t }}</h2>
-    <app-entry-row [entry]="entries[0]" [pending]="true" />
-    <app-entry-row [entry]="entries[1]" />
+    <div class="block__list">
+      <app-entry-row [entry]="entries[0]" [pending]="true" />
+      <app-entry-row [entry]="entries[1]" />
+    </div>
   </section>
 
   <section class="block">
