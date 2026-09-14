@@ -11,6 +11,7 @@
     type="button"
     data-press="scale"
     [class.field--empty]="empty()"
+    [class.field--multiline]="multiline()"
     (click)="displayClick.emit()"
   >
     @if (icon(); as glyph) {
