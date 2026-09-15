@@ -78,3 +78,18 @@ app-building-blocks .block--nolabel app-input label {
 .toasts {
   gap: var(--space-2) !important;
 }
+
+// Das Board polstert die Marke mit 3 px, das Kit mit 4 px.
+.badge {
+  padding-block: 3px !important;
+}
+
+// Das Board zeichnet den Kasten mit 20 px und den Fehlertext mit 14 px.
+.cbx__input {
+  inline-size: var(--size-checkbox) !important;
+  block-size: var(--size-checkbox) !important;
+}
+
+p.text-xs.text-danger {
+  font-size: 14px;
+}

@@ -89,10 +89,10 @@
     "beispiel.fund.steinpilzMeta": "6. Sept. · Frederik",
     "beispiel.badge.ausstehend": "Übertragung ausstehend",
     "beispiel.badge.gemeldet": "Gemeldet",
-    "beispiel.badge.neutral": "Neutral",
-    "beispiel.badge.geschuetzt": "Geschützt",
+    "beispiel.badge.neutral": "neutral",
+    "beispiel.badge.geschuetzt": "geschützt",
     "beispiel.badge.prognose": "Prognose",
-    "beispiel.badge.gespeichert": "Gespeichert",
+    "beispiel.badge.gespeichert": "gespeichert",
     "beispiel.aktion.speichern": "Speichern",
     "beispiel.aktion.faktorHinzufuegen": "Faktor hinzufügen",
     "beispiel.aktion.bearbeiten": "Bearbeiten",
@@ -118,7 +118,7 @@
     "beispiel.metrik.fundeUnter": "alle Arten, alle Jahre",
     "beispiel.metrik.fundeWert": "2",
     "beispiel.kurve.laufend": "2025 bis KW 39",
-    "beispiel.kurve.jahre": "2015 bis 2024, Anteil der Begehungen mit Fund",
+    "beispiel.kurve.jahre": "2015 bis 2024",
     "beispiel.faktor.niederschlag": "Niederschlag",
     "beispiel.faktor.niederschlagUnter": "Summe KW 37 bis 40",
     "beispiel.faktor.niederschlagBedingung": "≥ 80 mm",
@@ -177,7 +177,8 @@
     "beispiel.variante.dangerOutline": "danger-outline",
     "beispiel.farbe.braun": "Braun",
     "blocks.addRow": "app-add-row · 48 px · radius 10 · rand gestrichelt",
-    "beispiel.zeile.faktor": "Faktor"
+    "beispiel.zeile.faktor": "Faktor",
+    "beispiel.badge.abgelehnt": "abgelehnt"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -269,10 +270,10 @@
     "beispiel.fund.steinpilzMeta": "6 Sept · Frederik",
     "beispiel.badge.ausstehend": "Transfer pending",
     "beispiel.badge.gemeldet": "Reported",
-    "beispiel.badge.neutral": "Neutral",
-    "beispiel.badge.geschuetzt": "Protected",
+    "beispiel.badge.neutral": "neutral",
+    "beispiel.badge.geschuetzt": "protected",
     "beispiel.badge.prognose": "Forecast",
-    "beispiel.badge.gespeichert": "Saved",
+    "beispiel.badge.gespeichert": "saved",
     "beispiel.aktion.speichern": "Save",
     "beispiel.aktion.faktorHinzufuegen": "Add a factor",
     "beispiel.aktion.bearbeiten": "Edit",
@@ -298,7 +299,7 @@
     "beispiel.metrik.fundeUnter": "all species, all years",
     "beispiel.metrik.fundeWert": "2",
     "beispiel.kurve.laufend": "2025 to CW 39",
-    "beispiel.kurve.jahre": "2015 to 2024, share of the visits with a find",
+    "beispiel.kurve.jahre": "2015 to 2024",
     "beispiel.faktor.niederschlag": "Rainfall",
     "beispiel.faktor.niederschlagUnter": "Sum of CW 37 to 40",
     "beispiel.faktor.niederschlagBedingung": "≥ 80 mm",
@@ -357,6 +358,7 @@
     "beispiel.variante.dangerOutline": "danger-outline",
     "beispiel.farbe.braun": "Brown",
     "blocks.addRow": "app-add-row · 48 px · radius 10 · dashed edge",
-    "beispiel.zeile.faktor": "Factor"
+    "beispiel.zeile.faktor": "Factor",
+    "beispiel.badge.abgelehnt": "rejected"
   }
 }

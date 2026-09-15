@@ -238,7 +238,7 @@ export class BuildingBlocksComponent {
     { variant: 'info', label: this.text('beispiel.badge.prognose') },
     { variant: 'success', label: this.text('beispiel.badge.gespeichert') },
     { variant: 'warning', label: this.text('beispiel.badge.geschuetzt') },
-    { variant: 'danger', label: this.text('bild.zustand.abgelehnt') },
+    { variant: 'danger', label: this.text('beispiel.badge.abgelehnt') },
   ];
 
   protected readonly fleshOptions: SelectOption[] = [
@@ -359,6 +359,7 @@ export class BuildingBlocksComponent {
     { text: this.text('art.monat.apr'), week: 14 },
     { text: this.text('art.monat.jul'), week: 27 },
     { text: this.text('art.monat.okt'), week: 40 },
+    { text: this.text('art.monat.dez'), week: 52 },
   ];
 
   protected readonly months = [

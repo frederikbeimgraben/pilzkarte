@@ -2,16 +2,16 @@
 import type { Licence, Photo } from '../../core/api/models';
 import type { ColourValue, Span, TimelineWeek } from '../../ui';
 
-/** Die acht Wochen des Artboards. Die Jahresmarke fällt auf KW 41. */
+/** Die acht Wochen des Artboards, die letzten drei als Vorhersage. */
 export const SAMPLE_WEEKS: readonly TimelineWeek[] = [
   { year: 2025, week: 36, share: 0.48, forecast: false },
   { year: 2025, week: 37, share: 0.62, forecast: false },
   { year: 2025, week: 38, share: 0.7, forecast: false },
   { year: 2025, week: 39, share: 0.88, forecast: false },
   { year: 2025, week: 40, share: 1, forecast: false },
-  { year: 2026, week: 41, share: 0.76, forecast: true },
-  { year: 2026, week: 42, share: 0.6, forecast: true },
-  { year: 2026, week: 43, share: 0.45, forecast: true },
+  { year: 2025, week: 41, share: 0.76, forecast: true },
+  { year: 2025, week: 42, share: 0.6, forecast: true },
+  { year: 2025, week: 43, share: 0.45, forecast: true },
 ];
 
 /** Die Saisonkurve als Glocke um die Spitzenwoche. */
