@@ -69,8 +69,10 @@
 
 // Der Griff des Blattes: eine Zeile von 24 px mit einem Balken von 40 × 4.
 // Im Board reicht die Wochenleiste an den Rand der Karte.
-.block__sheethead {
-  --sheet-head-bleed: calc(-1 * var(--space-4));
+// Im Board reicht der Blattkopf an den Rand der Karte und sitzt am Griff.
+.block__sheethead app-sheet-head {
+  margin-block-start: -10px;
+  margin-inline: calc(-1 * var(--space-4));
 }
 
 .block__handle {
@@ -204,15 +206,16 @@
 }
 
 .block__compare .block__chips {
-  --tag-list-height: 19px;
-  --tag-list-padding: 0 8px;
-  --tag-list-size: 11px;
-
-  padding-block-end: 3px;
+  --pilz-tag-height: 19px;
+  --pilz-tag-inset: 8px;
+  --pilz-tag-size: 11px;
+  --pilz-tag-gap: 4px;
+  --pilz-tag-border: var(--color-border-strong);
+  --pilz-tag-drop: 3px;
 }
 
 .block__compare .block__span {
-  --year-band-height: 10px;
+  --pilz-year-height: 10px;
 
   inline-size: 100%;
 }
