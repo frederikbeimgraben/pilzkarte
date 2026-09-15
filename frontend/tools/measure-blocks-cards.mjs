@@ -5,9 +5,9 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { chromium } from '@playwright/test';
 import { crop, decode, encode } from './png.mjs';
+import { artboards, FLAGS, fontSheet } from './render-boards.mjs';
 
 const BOARD = 'Blocks';
-const VIEW = { width: 900, height: 9144 };
 
 /** Sucht einen Ordner der Artefakte von `root` aufwärts. */
 function findSource(root, part) {
@@ -42,11 +42,21 @@ function frame(box) {
   return { x: Math.floor(box.x), y: Math.floor(box.y), w: Math.round(box.w), h: Math.round(box.h) };
 }
 
-/** Liest die Kartengeometrie aus dem Board. */
-async function boxes(htmlPath) {
-  const browser = await chromium.launch({ executablePath: process.env['BROWSER_PATH'] || undefined });
-  const page = await browser.newPage({ viewport: VIEW, colorScheme: 'dark', locale: 'de-DE' });
-  await page.goto(pathToFileURL(htmlPath).href);
+/** Liest die Kartengeometrie aus dem Board, gerendert wie die Baseline. */
+async function boxes(root, board) {
+  const sheet = fontSheet(join(root, 'node_modules/@stupa-makers/ui-kit/assets/fonts'));
+  const browser = await chromium.launch({
+    executablePath: process.env['BROWSER_PATH'],
+    args: FLAGS,
+  });
+  const context = await browser.newContext({ deviceScaleFactor: 1, colorScheme: 'dark' });
+  await context.route('https://fonts.googleapis.com/**', async (route) => {
+    await route.fulfill({ status: 200, contentType: 'text/css', body: sheet });
+  });
+  const page = await context.newPage();
+  await page.setViewportSize({ width: board.width, height: board.height });
+  await page.goto(pathToFileURL(board.file).href);
+  await page.evaluate(() => document.fonts.ready);
   const found = await page.evaluate(() =>
     Array.from(document.querySelectorAll('[data-block]')).map((el) => {
       const r = el.getBoundingClientRect();
@@ -69,7 +79,10 @@ export async function measure(root) {
   const images = findSource(root, 'artefakte/mockups/bilder');
   if (!source || !images) return null;
 
-  const cards = (await boxes(join(source, `${BOARD}.dc.html`))).map((box, order) => ({
+  const board = artboards(source).find((entry) => entry.stem === BOARD);
+  if (!board) throw new Error(`${BOARD} steht nicht in canvas.json`);
+
+  const cards = (await boxes(root, board)).map((box, order) => ({
     selector: box.selector,
     stem: cardStem(box.selector),
     order,
@@ -86,10 +99,10 @@ export async function measure(root) {
   mkdirSync(folder, { recursive: true });
   writeIfNew(join(target, 'blocks-cards.json'), Buffer.from(JSON.stringify(cards, null, 2) + '\n'));
 
-  const board = decode(readFileSync(join(images, `${BOARD}.png`)));
+  const image = decode(readFileSync(join(images, `${BOARD}.png`)));
   let fresh = 0;
   for (const card of cards) {
-    if (writeIfNew(join(folder, `${card.stem}.png`), encode(crop(board, card)))) fresh += 1;
+    if (writeIfNew(join(folder, `${card.stem}.png`), encode(crop(image, card)))) fresh += 1;
   }
   let stale = 0;
   for (const name of readdirSync(folder)) {
