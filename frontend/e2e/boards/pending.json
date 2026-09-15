@@ -30,6 +30,7 @@
   "Factor",
   "FactorPicker",
   "FilterDesktop",
+  "FilterDesktopGroup",
   "FilterResult",
   "FindDelete",
   "FindEdit",
