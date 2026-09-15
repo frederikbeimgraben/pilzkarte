@@ -424,7 +424,7 @@ export class BuildingBlocksComponent {
     this.text('beispiel.tag.herbst'),
   ];
 
-  protected readonly colourChangeTriggers = [this.text('art.verfaerbung.zeile')];
+  protected readonly colourChangeTriggers = [this.text('admin.characteristic.trigger.pressure')];
   protected readonly colourChangeFrom = [FLESH_COLOURS];
   protected readonly colourChangeTo = [BRUISE_COLOURS];
   protected readonly colourChangeFromLabels = [this.text('art.farbe.fleisch')];

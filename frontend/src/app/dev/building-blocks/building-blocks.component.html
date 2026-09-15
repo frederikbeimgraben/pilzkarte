@@ -36,7 +36,7 @@
   <section class="block" data-block="app-checkbox">
     <h2 class="block__head">{{ 'blocks.checkbox' | t }}</h2>
     <app-checkbox [ngModel]="true">{{ 'beispiel.schutz.bartschv' | t }}</app-checkbox>
-    <app-checkbox [ngModel]="false">{{ 'enum.protection.personal_use' | t }}</app-checkbox>
+    <app-checkbox [ngModel]="false">{{ 'beispiel.schutz.eigenbedarf' | t }}</app-checkbox>
   </section>
 
   <section class="block" data-block="app-card">
@@ -250,7 +250,7 @@
   <section class="block" data-block="app-list-row">
     <h2 class="block__head">{{ 'blocks.listRow' | t }}</h2>
     <div class="block__card">
-      <app-list-row [title]="text('beispiel.zeile.rollen')" value="4 · 12" [chevron]="true" />
+      <app-list-row [title]="text('beispiel.zeile.rollen')" subline="4 · 12" [chevron]="true" />
       <app-list-row [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
         <app-badge trail variant="primary">{{ 'account.role.admin' | t }}</app-badge>
       </app-list-row>
@@ -700,7 +700,7 @@
 
   <section class="block" data-block="app-floating-button">
     <h2 class="block__head">{{ 'blocks.floatingButton' | t }}</h2>
-    <div class="block__row">
+    <div class="block__row block__row--fab">
       <app-floating-button icon="layers" variant="default" [label]="text('map.layers.title')" />
       <app-floating-button icon="location" variant="default" [label]="text('map.centre')" />
       <app-floating-button icon="plus" variant="primary" [label]="text('entry.create')" />
@@ -716,10 +716,10 @@
 
   <section class="block" data-block="app-svg-icon">
     <h2 class="block__head">{{ 'blocks.svgIcon' | t }}</h2>
-    <div class="block__row">
+    <div class="block__row block__row--icons">
       <app-svg-icon name="map" [size]="24" [label]="text('nav.tab.map')" />
       <app-svg-icon name="location" [size]="24" [label]="text('map.centre')" />
-      <app-svg-icon name="layers" [size]="24" [label]="text('map.layers.title')" />
+      <app-svg-icon name="zone" [size]="24" [label]="text('entry.zones')" />
       <app-svg-icon name="plus" [size]="24" [label]="text('entry.create')" />
       <app-svg-icon name="species" [size]="24" [label]="text('nav.tab.species')" />
     </div>
@@ -732,7 +732,7 @@
 
   <section class="block block__plain" data-block="app-empty-state">
     <h2 class="block__head">{{ 'blocks.emptyState' | t }}</h2>
-    <app-empty-state icon="search" [text]="text('state.noSpeciesMatch')" [action]="text('common.reset')" />
+    <app-empty-state icon="search" [text]="text('state.noSpeciesMatch')" [action]="text('filter.resetAll')" />
   </section>
 
   <section class="block" data-block="app-error-state">

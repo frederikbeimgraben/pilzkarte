@@ -61,7 +61,7 @@ export const CAP_COLOURS: readonly ColourValue[] = [
   { name: 'fulvus', hex: '#c8a25a' },
   { name: 'badius', hex: '#6b4423' },
 ];
-export const FLESH_COLOURS: readonly ColourValue[] = [{ name: 'candidus', hex: '#f4efe2' }];
+export const FLESH_COLOURS: readonly ColourValue[] = [{ name: 'olivaceus', hex: '#cfd08a' }];
 export const BRUISE_COLOURS: readonly ColourValue[] = [{ name: 'caeruleus', hex: '#3f6ea8' }];
 export const GRADIENT_COLOURS: readonly ColourValue[] = [
   { name: 'stramineus', hex: '#e2c79a' },

@@ -246,6 +246,14 @@
   gap: 6px;
 }
 
+.block__row--fab {
+  gap: 10px;
+}
+
+.block__row--icons {
+  gap: 14px;
+}
+
 .block__band {
   display: flex;
   flex-direction: column;
@@ -282,6 +290,8 @@
   align-self: flex-end;
   font-size: 11px;
   font-weight: var(--fw-semibold);
+  color: var(--color-on-media);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
 }
 
 .block__reviewcard {
@@ -427,5 +437,8 @@
 }
 
 .block__stage--crosshair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   block-size: 100px;
 }

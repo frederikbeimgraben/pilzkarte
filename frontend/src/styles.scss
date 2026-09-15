@@ -64,6 +64,12 @@ app-building-blocks .block--nolabel app-input label {
   font-size: 15px !important;
 }
 
+// Die Schrift im Knopf steht auf der Linie des Boards, wenn die Zeile
+// nur so hoch ist wie die Schrift.
+.btn__label {
+  line-height: var(--lh-normal) !important;
+}
+
 // Eingabe und Auswahl messen 44 px.
 .field__control,
 .sel__control {
@@ -147,6 +153,10 @@ app-building-blocks .block__swatchrows {
   --key-value-row-zebra: transparent;
   --key-value-row-padding: 12.5px;
   --key-value-row-key: 15px;
+  --key-value-row-line: var(--lh-normal);
+  --key-value-row-key-weight: var(--fw-regular);
+  --key-value-row-key-colour: var(--color-text);
+  --key-value-table-gutter: 14px;
   --key-value-table-label: 240px;
   --pilz-colour-width: 96px;
   --pilz-colour-height: 30px;
