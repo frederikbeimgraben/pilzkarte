@@ -76,7 +76,9 @@
   "blocks/app-factor-row",
   "blocks/app-filter-sheet",
   "blocks/app-form-field",
+  "blocks/app-image-viewer",
   "blocks/app-list-row",
+  "blocks/app-private-image",
   "blocks/app-review-queue",
   "blocks/app-species-row",
   "blocks/app-tag-list"

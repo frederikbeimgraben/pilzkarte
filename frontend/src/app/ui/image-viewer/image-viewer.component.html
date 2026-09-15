@@ -9,16 +9,19 @@
     @if (image()?.caption; as caption) {
       <p class="viewer__caption">{{ caption }}</p>
     }
-    <div class="viewer__facts">
-      @for (row of details(); track row.labelKey) {
-        <app-list-row kind="catalogue" [title]="row.labelKey | t" [value]="row.text">
-          @if (row.badgeKey || row.badgeText) {
-            <app-badge trail variant="primary">{{
-              row.badgeKey ? (row.badgeKey | t) : row.badgeText
-            }}</app-badge>
-          }
-        </app-list-row>
-      }
-    </div>
+    <section class="viewer__block">
+      <h2 class="viewer__label">{{ 'image.section.image' | t }}</h2>
+      <div class="viewer__facts">
+        @for (row of details(); track row.labelKey) {
+          <app-list-row kind="catalogue" [title]="row.labelKey | t" [value]="row.text">
+            @if (row.badgeKey || row.badgeText) {
+              <app-badge trail variant="primary">{{
+                row.badgeKey ? (row.badgeKey | t) : row.badgeText
+              }}</app-badge>
+            }
+          </app-list-row>
+        }
+      </div>
+    </section>
   </div>
 }
