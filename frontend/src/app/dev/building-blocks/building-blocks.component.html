@@ -479,7 +479,11 @@
     <h2 class="block__head">{{ 'blocks.levelPill' | t }}</h2>
     <app-level-pill [text]="text('enum.edibility.edible')" colour="var(--color-success)" />
     <app-level-pill [text]="text('enum.edibility.poisonous')" colour="var(--color-warning)" />
-    <app-level-pill [text]="text('enum.protection.none')" colour="var(--color-text-muted)" />
+    <app-level-pill
+      [text]="text('enum.protection.none')"
+      colour="var(--color-text-muted)"
+      background="var(--color-surface-sunken)"
+    />
   </section>
 
   <section class="block" data-block="app-tag-list">
@@ -541,9 +545,9 @@
           <span class="block__muted">{{ 'beispiel.wachstum.zeitraum' | t }}</span>
         </div>
         <app-year-band
-          [fromMonth]="6"
+          [fromMonth]="5"
           [toMonth]="11"
-          [peakFromMonth]="8"
+          [peakFromMonth]="6"
           [peakToMonth]="10"
           [months]="months"
           [label]="text('species.growthPeriod')"
