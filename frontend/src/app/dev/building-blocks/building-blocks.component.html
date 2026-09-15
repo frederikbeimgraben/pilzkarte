@@ -154,12 +154,17 @@
   <section class="block" data-block="app-action-bar">
     <h2 class="block__head">{{ 'blocks.actionBar' | t }}</h2>
     <app-action-bar [primary]="text('common.save')" [secondary]="text('common.cancel')" />
-    <app-action-bar [primary]="text('common.delete')" [secondary]="text('common.cancel')" [danger]="true" />
+    <app-action-bar
+      [primary]="text('common.delete')"
+      [secondary]="text('common.cancel')"
+      [danger]="true"
+      [row]="true"
+    />
   </section>
 
   <section class="block" data-block="app-icon-button">
     <h2 class="block__head">{{ 'blocks.iconButton' | t }}</h2>
-    <div class="block__row block__row--tight">
+    <div class="block__row">
       <app-icon-button icon="close" variant="secondary" [label]="text('common.cancel')" />
       <app-icon-button icon="check" variant="primary" [label]="text('common.select')" />
       <app-icon-button icon="delete" variant="secondary" [label]="text('common.delete')" />

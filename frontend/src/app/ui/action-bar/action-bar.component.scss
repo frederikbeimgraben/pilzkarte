@@ -16,11 +16,22 @@
   border: 0;
 }
 
+// Zwei gleich breite Spalten: die Gefahr links, der Rückweg rechts.
+.footer--row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 .footer__main {
   --fs-md: var(--action-bar-size, 1rem);
 
   block-size: var(--action-bar-height, auto);
   min-block-size: var(--action-bar-height, 48px);
+}
+
+.footer--row .footer__main {
+  min-block-size: var(--size-tap);
 }
 
 // Im Modal misst die Aktion vierundvierzig Punkte, wie das Board sie zeigt.
