@@ -199,6 +199,8 @@ export const SAMPLE_IMAGE: Photo = {
 export const SAMPLE_IMAGE_LARGE: SpeciesImage = {
   ...SAMPLE_IMAGE,
   id: 'bild-zwei',
+  lat: 48.51,
+  lon: 9.06,
   url: '/api/species-images/bild-zwei/full',
   thumbUrl: '/api/species-images/bild-zwei/thumb',
 };
