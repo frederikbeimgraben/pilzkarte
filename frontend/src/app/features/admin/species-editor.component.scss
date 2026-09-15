@@ -29,7 +29,6 @@
   --list-row-inline: 14px;
   --size-row-tall: var(--size-row);
   --list-row-sub: var(--fs-row-meta);
-  --list-row-sub-height: 1.4;
   --list-row-title-height: normal;
   --space-row-stack: 2px;
 }
@@ -38,9 +37,15 @@
 .editor__stats {
   --fs-xl: var(--fs-lg);
   --fs-xs: var(--fs-caption);
+  --fw-semibold: var(--fw-bold);
   --space-1: 2px;
 
-  padding-block: 12px;
+  padding-block: 14px;
+}
+
+.editor__stats app-stat-row {
+  gap: 4px;
+  padding: 0;
 }
 
 .editor__source {
