@@ -1,5 +1,5 @@
 /** Beispielwerte der Werkstattseite: Zahlen und lateinische Namen ohne eigenen Textschlüssel. */
-import type { Licence, Photo } from '../../core/api/models';
+import { photoPath, type Licence, type Photo } from '../../core/api/models';
 import type { ColourValue, Span, TimelineWeek } from '../../ui';
 
 /** Die acht Wochen des Artboards. Die Jahresmarke steht auf KW 41. */
@@ -199,17 +199,15 @@ export const SAMPLE_IMAGE: Photo = {
 };
 
 /** Das Bild des Betrachters. Das Board zeigt es höher als die Kachel. */
-export const SAMPLE_IMAGE_LARGE: SpeciesImage = {
+export const SAMPLE_IMAGE_LARGE: Photo = {
   ...SAMPLE_IMAGE,
   id: 'bild-zwei',
   lat: 48.51,
   lon: 9.06,
-  url: '/api/species-images/bild-zwei/full',
-  thumbUrl: '/api/species-images/bild-zwei/thumb',
 };
 
 /** Das Bild hinter dem Schloss. Das Board zeigt es flacher als die Kachel. */
-export const SAMPLE_IMAGE_PRIVATE = '/api/species-images/bild-drei/thumb';
+export const SAMPLE_IMAGE_PRIVATE = photoPath('bild-drei', 'thumb');
 
 /** Zwei Vorschaubilder der Fotowahl, in den Farben des Boards. */
 export const SAMPLE_THUMBS: readonly string[] = [
@@ -219,11 +217,11 @@ export const SAMPLE_THUMBS: readonly string[] = [
 
 /** Die Vorschaubilder der Arten, wie das Board sie einfärbt. */
 export const SPECIES_THUMBS = {
-  stein: '/api/species-images/art-stein/thumb',
-  steinHell: '/api/species-images/art-stein-hell/thumb',
-  marone: '/api/species-images/art-marone/thumb',
-  pfifferling: '/api/species-images/art-pfifferling/thumb',
+  stein: photoPath('art-stein', 'thumb'),
+  steinHell: photoPath('art-stein-hell', 'thumb'),
+  marone: photoPath('art-marone', 'thumb'),
+  pfifferling: photoPath('art-pfifferling', 'thumb'),
 } as const;
 
 /** Das Foto der Prüfkarte. Das Board zeichnet es wärmer als eine Fläche. */
-export const SAMPLE_PHOTO = '/api/species-images/bild-vier/full';
+export const SAMPLE_PHOTO = photoPath('bild-vier', 'full');

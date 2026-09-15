@@ -213,13 +213,10 @@ export class BuildingBlocksComponent {
   protected readonly histogramm = SAMPLE_HISTOGRAM;
   protected readonly objectColors = OBJECT_COLOURS;
   protected readonly sampleImage = SAMPLE_IMAGE;
-<<<<<<< HEAD
   protected readonly sampleImagePath = photoPath(SAMPLE_IMAGE.id, 'thumb');
-=======
   protected readonly sampleImageLarge = SAMPLE_IMAGE_LARGE;
   protected readonly samplePrivate = SAMPLE_IMAGE_PRIVATE;
   protected readonly samplePhoto = SAMPLE_PHOTO;
->>>>>>> ea8e22d7 (fix(ui): zeichnet Platzhalter und Dialog wie das Board)
   protected readonly capColours = CAP_COLOURS;
   protected readonly gradientColours = GRADIENT_COLOURS;
   protected readonly multiColours = MULTI_COLOURS;
@@ -372,17 +369,43 @@ export class BuildingBlocksComponent {
   /** Die Druckprobe der beiden Arten: erster Ton, dann der spätere. */
   protected readonly pressColours = PRESS_COLOURS;
 
+  /** Der Speisewert beider Arten: Wort, Schrift und Grund der Marke. */
+  protected readonly compareLevels = [
+    {
+      text: this.text('art.essbar.essbar'),
+      colour: 'var(--color-success)',
+      background: 'var(--color-primary-subtle)',
+    },
+    {
+      text: this.text('art.essbar.ungeniessbar'),
+      colour: 'var(--color-text-muted)',
+      background: 'var(--color-surface-sunken)',
+    },
+  ];
+
   /** Eine Farbzelle des Vergleichs: ihre Töne und wie sie zu malen sind. */
-  protected readonly compareColours: Record<string, readonly CompareColour[]> = {
-    [this.text('beispiel.vergleich.hutfarbe')]: [
-      { mode: 'gradient', colours: CAP_GRADIENTS[0] },
-      { mode: 'gradient', colours: CAP_GRADIENTS[1] },
-    ],
-    [this.text('art.merkmal.roehren')]: [
-      { mode: 'multiple', colours: TUBE_COLOURS[0] },
-      { mode: 'single', colours: TUBE_COLOURS[1] },
-    ],
-  };
+  protected readonly capColourCells: readonly CompareColour[] = [
+    { mode: 'gradient', colours: CAP_GRADIENTS[0] },
+    { mode: 'gradient', colours: CAP_GRADIENTS[1] },
+  ];
+
+  protected readonly tubeColourCells: readonly CompareColour[] = [
+    { mode: 'multiple', colours: TUBE_COLOURS[0] },
+    { mode: 'single', colours: TUBE_COLOURS[1] },
+  ];
+
+  /** Die Druckprobe je Art: erster Ton, späterer Ton und das Wort dazu. */
+  protected readonly pressCells = [
+    { ...PRESS_COLOURS[0], note: this.text('beispiel.vergleich.bleibt') },
+    { ...PRESS_COLOURS[1], note: this.text('enum.speed.min1') },
+  ];
+
+  protected readonly flavourCells = [
+    this.text('beispiel.vergleich.geschmackEins').split(', '),
+    this.text('beispiel.vergleich.geschmackZwei').split(', '),
+  ];
+
+  protected readonly spanCells = ['', ''];
 
   protected readonly stats = [
     { value: 12, label: this.text('entry.finds') },
