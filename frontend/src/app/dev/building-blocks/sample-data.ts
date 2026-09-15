@@ -72,6 +72,36 @@ export const MULTI_COLOURS: readonly ColourValue[] = [
   { name: 'olivaceus', hex: '#cfd08a' },
 ];
 
+/** Die Hutfarben der beiden verglichenen Arten, je ein Verlauf. */
+export const CAP_GRADIENTS: readonly (readonly ColourValue[])[] = [
+  [
+    { name: 'stramineus', hex: '#e2c79a' },
+    { name: 'badius', hex: '#6b4423' },
+  ],
+  [
+    { name: 'cremeus', hex: '#d8b98a' },
+    { name: 'umbrinus', hex: '#8a6a3a' },
+  ],
+];
+
+/** Die Röhren der beiden Arten: zwei Töne hart getrennt, dann einer. */
+export const TUBE_COLOURS: readonly (readonly ColourValue[])[] = [
+  [
+    { name: 'eburneus', hex: '#f0ece0' },
+    { name: 'olivaceus', hex: '#cfd08a' },
+  ],
+  [{ name: 'roseus', hex: '#e8c8cf' }],
+];
+
+/** Die Druckprobe je Art: der erste Ton, dann der spätere, wenn er kommt. */
+export const PRESS_COLOURS: readonly {
+  readonly from: readonly ColourValue[];
+  readonly to: readonly ColourValue[];
+}[] = [
+  { from: [{ name: 'eburneus', hex: '#f0ece0' }], to: [] },
+  { from: [{ name: 'roseus', hex: '#e8c8cf' }], to: [{ name: 'rubens', hex: '#d9a0ac' }] },
+];
+
 /** Drei Töne über eine Fläche, wie das Board sie am Täubling zeigt. */
 export const TRIPLE_COLOURS: readonly ColourValue[] = [
   { name: 'purpureus', hex: '#7a3b6a' },

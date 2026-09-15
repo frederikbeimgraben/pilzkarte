@@ -194,7 +194,12 @@
     "beispiel.ton.grau": "Grau",
     "beispiel.frauentaeubling": "Frauentäubling",
     "beispiel.vergleich.hutfarbe": "Hutfarbe",
-    "beispiel.toene.katalog": "Nächste Töne im Katalog · 41 Arten"
+    "beispiel.toene.katalog": "Nächste Töne im Katalog · 41 Arten",
+    "beispiel.vergleich.zeit": "Zeit",
+    "beispiel.geschmack.mild": "mild",
+    "beispiel.geschmack.nussig": "nussig",
+    "beispiel.geschmack.bitter": "bitter",
+    "beispiel.vergleich.bleibt": "bleibt"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -391,6 +396,11 @@
     "beispiel.ton.grau": "Grey",
     "beispiel.frauentaeubling": "Russula cyanoxantha",
     "beispiel.vergleich.hutfarbe": "Cap colour",
-    "beispiel.toene.katalog": "Nearest tones in the catalogue · 41 species"
+    "beispiel.toene.katalog": "Nearest tones in the catalogue · 41 species",
+    "beispiel.vergleich.zeit": "Time",
+    "beispiel.geschmack.mild": "mild",
+    "beispiel.geschmack.nussig": "nutty",
+    "beispiel.geschmack.bitter": "bitter",
+    "beispiel.vergleich.bleibt": "stays"
   }
 }
