@@ -179,7 +179,19 @@
     "blocks.addRow": "app-add-row · 48 px · radius 10 · rand gestrichelt",
     "beispiel.zeile.faktor": "Faktor",
     "beispiel.badge.abgelehnt": "abgelehnt",
-    "beispiel.pruefung.herkunft": "Jonas · 6. Sept · Schönbuch"
+    "beispiel.pruefung.herkunft": "Jonas · 6. Sept · Schönbuch",
+    "beispiel.ton.weiss": "Weiß",
+    "beispiel.ton.creme": "Creme",
+    "beispiel.ton.gelb": "Gelb",
+    "beispiel.ton.orange": "Orange",
+    "beispiel.ton.rotbraun": "Rotbraun",
+    "beispiel.ton.braun": "Braun",
+    "beispiel.ton.dunkelbraun": "Dunkelbraun",
+    "beispiel.ton.oliv": "Oliv",
+    "beispiel.ton.gruen": "Grün",
+    "beispiel.ton.rot": "Rot",
+    "beispiel.ton.violett": "Violett",
+    "beispiel.ton.grau": "Grau"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -361,6 +373,18 @@
     "blocks.addRow": "app-add-row · 48 px · radius 10 · dashed edge",
     "beispiel.zeile.faktor": "Factor",
     "beispiel.badge.abgelehnt": "rejected",
-    "beispiel.pruefung.herkunft": "Jonas · 6 Sept · Schönbuch"
+    "beispiel.pruefung.herkunft": "Jonas · 6 Sept · Schönbuch",
+    "beispiel.ton.weiss": "White",
+    "beispiel.ton.creme": "Cream",
+    "beispiel.ton.gelb": "Yellow",
+    "beispiel.ton.orange": "Orange",
+    "beispiel.ton.rotbraun": "Red brown",
+    "beispiel.ton.braun": "Brown",
+    "beispiel.ton.dunkelbraun": "Dark brown",
+    "beispiel.ton.oliv": "Olive",
+    "beispiel.ton.gruen": "Green",
+    "beispiel.ton.rot": "Red",
+    "beispiel.ton.violett": "Violet",
+    "beispiel.ton.grau": "Grey"
   }
 }

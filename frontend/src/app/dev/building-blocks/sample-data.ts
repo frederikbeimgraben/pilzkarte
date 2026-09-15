@@ -67,6 +67,22 @@ export const MULTI_COLOURS: readonly ColourValue[] = [
   { name: 'olivaceus', hex: '#6f7d3c' },
 ];
 
+/** Die Schlüssel zu den zwölf Tönen, in derselben Reihenfolge. */
+export const PICKER_TONE_KEYS = [
+  'beispiel.ton.weiss',
+  'beispiel.ton.creme',
+  'beispiel.ton.gelb',
+  'beispiel.ton.orange',
+  'beispiel.ton.rotbraun',
+  'beispiel.ton.braun',
+  'beispiel.ton.dunkelbraun',
+  'beispiel.ton.oliv',
+  'beispiel.ton.gruen',
+  'beispiel.ton.rot',
+  'beispiel.ton.violett',
+  'beispiel.ton.grau',
+] as const;
+
 /** Die zwölf Töne der Farbwahl, wie das Board sie zeigt. */
 export const PICKER_TONES: readonly string[] = [
   '#f3efe6',
