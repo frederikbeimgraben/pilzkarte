@@ -23,7 +23,7 @@ export class HistogramComponent {
   readonly to = input(1);
 
   protected readonly width = 326;
-  protected readonly height = 28;
+  protected readonly height = 64;
 
   protected readonly bars = computed<Bar[]>(() => {
     const shares = this.shares();
