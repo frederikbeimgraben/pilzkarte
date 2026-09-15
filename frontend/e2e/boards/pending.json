@@ -72,7 +72,6 @@
   "blocks/app-card",
   "blocks/app-check-row",
   "blocks/app-checkbox",
-  "blocks/app-choice-row",
   "blocks/app-colour-change",
   "blocks/app-colour-field",
   "blocks/app-confirm-dialog",

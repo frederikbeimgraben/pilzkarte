@@ -184,11 +184,22 @@
     <h2 class="block__head">{{ 'blocks.popover' | t }}</h2>
     <div class="block__stage block__stage--popover">
       <app-popover [open]="true" [anchor]="popoverAnchor" [label]="text('map.layers.button')">
-        <app-segmented [options]="backgrounds" value="karte" [label]="text('map.basemap.title')" />
-        <app-choice-row [label]="text('map.layers.sharedFinds')" count="12" [checked]="true" />
-        <app-choice-row [label]="text('map.layers.myMarkers')" count="5" [checked]="true" />
-        <app-choice-row [label]="text('entry.zones')" count="2" [checked]="true" />
-        <app-range-slider [min]="0" [max]="100" [from]="80" [to]="100" handles="from" />
+        <div class="block__group">
+          <p class="block__grouphead">{{ 'map.basemap.title' | t }}</p>
+          <app-segmented [options]="backgrounds" value="karte" [label]="text('map.basemap.title')" />
+        </div>
+        <div class="block__group">
+          <p class="block__grouphead">{{ 'map.layers.title' | t }}</p>
+          <div class="block__switches">
+            <app-choice-row [label]="text('map.layers.sharedFinds')" count="12" [checked]="true" />
+            <app-choice-row [label]="text('map.layers.myMarkers')" count="5" [checked]="true" />
+            <app-choice-row [label]="text('entry.zones')" count="2" [checked]="true" />
+          </div>
+        </div>
+        <div class="block__group">
+          <p class="block__grouphead">{{ 'map.opacity' | t }}</p>
+          <app-range-slider [min]="0" [max]="100" [from]="80" [to]="100" handles="from" />
+        </div>
       </app-popover>
     </div>
   </section>
