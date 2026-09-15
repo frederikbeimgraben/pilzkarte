@@ -155,9 +155,10 @@ app-building-blocks .block__pagehead .btn {
 // Der Vergleich gibt der Schlüsselspalte 76 px, wie das Board es nennt.
 // Der Schlüssel steht dort kleiner, sonst bricht er in der schmalen Spalte.
 app-building-blocks .block__compare {
+  --key-value-table-anchor: center;
   --key-value-table-gutter: 9px;
   --key-value-table-gap: 9px;
-  --key-value-table-label: 76px;
+  --key-value-table-label: 58px;
   --key-value-table-text: 12px;
   --key-value-table-weight: var(--fw-regular);
   --key-value-table-nowrap: nowrap;

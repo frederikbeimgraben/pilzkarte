@@ -4,6 +4,12 @@
 :host {
   display: flex;
   flex-direction: column;
+  gap: var(--space-3);
+}
+
+// Auf der Bildseite steht der Kopf flacher als auf einer Listenseite.
+.viewer__head {
+  --size-header: var(--size-row-wide);
 }
 
 .viewer__count {
@@ -15,8 +21,7 @@
 .viewer__body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: var(--size-gutter);
+  gap: var(--space-3);
 }
 
 .viewer__image {
@@ -31,10 +36,6 @@
   margin: 0;
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
-}
-
-.viewer__label {
-  @include card.section-title;
 }
 
 app-badge {
