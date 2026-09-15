@@ -92,6 +92,13 @@
   border-radius: 2px;
 }
 
+// Das Board zeigt den Leerzustand ohne eigenen Kasten: die Karte trägt ihn.
+.block__plain app-empty-state {
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
 .block__list {
   display: flex;
   flex-direction: column;
@@ -280,7 +287,7 @@
 
 // Das Board zeigt zwei Zeilen und eine Attrappe, der Baustein reiht drei.
 .block__card--list {
-  block-size: 190px;
+  block-size: 188px;
   overflow: hidden;
 }
 

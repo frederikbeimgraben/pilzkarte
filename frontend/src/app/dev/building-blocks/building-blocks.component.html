@@ -146,7 +146,12 @@
   <section class="block" data-block="app-action-bar">
     <h2 class="block__head">{{ 'blocks.actionBar' | t }}</h2>
     <app-action-bar [primary]="text('common.save')" [secondary]="text('common.cancel')" />
-    <app-action-bar [primary]="text('common.delete')" [danger]="true" />
+    <app-action-bar
+      [primary]="text('common.delete')"
+      [secondary]="text('common.cancel')"
+      [danger]="true"
+      [row]="true"
+    />
   </section>
 
   <section class="block" data-block="app-icon-button">
@@ -624,7 +629,7 @@
     <app-stat-row [stats]="stats" />
   </section>
 
-  <section class="block" data-block="app-empty-state">
+  <section class="block block__plain" data-block="app-empty-state">
     <h2 class="block__head">{{ 'blocks.emptyState' | t }}</h2>
     <app-empty-state icon="search" [text]="text('state.noSpeciesMatch')" [action]="text('common.reset')" />
   </section>
