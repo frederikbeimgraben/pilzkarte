@@ -164,8 +164,7 @@
 .block__card app-list-row,
 .block__rows app-list-row {
   --size-row-tall: var(--size-row);
-  --list-row-title: var(--fs-row-title);
-  --list-row-title-weight: var(--fw-regular);
+  --list-row-inline: var(--space-row-inline);
 }
 
 // Im Vergleich sind die Zellen kleiner als auf einer Artseite.
@@ -327,7 +326,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 14px 16px;
+  padding: 13px 15px;
 }
 
 .block__reviewtitle {

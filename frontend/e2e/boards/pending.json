@@ -66,8 +66,6 @@
   "ZoneDraw",
   "ZoneEdit",
   "ZoneSheet",
-  "blocks/app-banner",
-  "blocks/app-card",
   "blocks/app-check-row",
   "blocks/app-colour-change",
   "blocks/app-factor-row",
@@ -77,6 +75,5 @@
   "blocks/app-list-row",
   "blocks/app-private-image",
   "blocks/app-review-queue",
-  "blocks/app-species-row",
-  "blocks/app-tag-list"
+  "blocks/app-species-row"
 ]

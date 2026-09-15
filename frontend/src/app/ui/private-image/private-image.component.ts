@@ -8,11 +8,13 @@ import {
   type OnDestroy,
 } from '@angular/core';
 import { ApiClient } from '../../core/api/api-client';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 /** Ein Bild ohne öffentlichen Zugriff. Es lädt mit Token als Objekt-URL. */
 @Component({
   selector: 'app-private-image',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SvgIconComponent],
   templateUrl: './private-image.component.html',
   styleUrl: './private-image.component.scss',
 })
@@ -24,6 +26,8 @@ export class PrivateImageComponent implements OnDestroy {
   readonly alt = input.required<string>();
   /** Ein Bild in voller Ansicht wird eingepasst, eine Kachel füllt die Fläche. */
   readonly fit = input<'cover' | 'contain'>('cover');
+  /** Zeigt das Schloss, wenn nur der Besitzer das Bild sehen darf. */
+  readonly locked = input(false);
 
   protected readonly source = signal<string | null>(null);
 
