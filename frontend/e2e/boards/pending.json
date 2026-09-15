@@ -36,6 +36,7 @@
   "FindSheet",
   "ImageQueueEmpty",
   "ImageReject",
+  "ImageViewAdmin",
   "MapDesktopAdd",
   "MapDesktopCombinationSave",
   "MapDesktopCombinations",
@@ -70,11 +71,17 @@
   "ZoneDraw",
   "ZoneEdit",
   "ZoneSheet",
+  "blocks/app-add-row",
   "blocks/app-check-row",
+  "blocks/app-chip-group",
   "blocks/app-colour-change",
   "blocks/app-factor-row",
+  "blocks/app-filter-chip",
   "blocks/app-filter-sheet",
   "blocks/app-list-row",
   "blocks/app-review-queue",
-  "blocks/app-species-row"
+  "blocks/app-search-field",
+  "blocks/app-segmented",
+  "blocks/app-species-row",
+  "blocks/app-stat-row"
 ]

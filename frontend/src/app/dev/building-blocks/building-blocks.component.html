@@ -39,6 +39,20 @@
     <app-checkbox [ngModel]="false">{{ 'beispiel.schutz.eigenbedarf' | t }}</app-checkbox>
   </section>
 
+  <section class="block" data-block="app-switch">
+    <h2 class="block__head">{{ 'blocks.switch' | t }}</h2>
+    <div class="block__switchrow">
+      <span class="block__switchitem">
+        <app-switch [checked]="false" [label]="text('beispiel.schalter.aus')" />
+        <span class="block__switchlabel">{{ 'beispiel.schalter.aus' | t }}</span>
+      </span>
+      <span class="block__switchitem">
+        <app-switch [checked]="true" [label]="text('beispiel.schalter.an')" />
+        <span class="block__switchlabel">{{ 'beispiel.schalter.an' | t }}</span>
+      </span>
+    </div>
+  </section>
+
   <section class="block" data-block="app-card">
     <h2 class="block__head">{{ 'blocks.card' | t }}</h2>
     <app-card class="flush block__rows">

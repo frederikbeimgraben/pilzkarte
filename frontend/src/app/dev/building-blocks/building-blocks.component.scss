@@ -154,6 +154,22 @@
   margin-block-start: 12px;
 }
 
+// Das Board stellt den Schalter aus und an nebeneinander, je mit seinem Wort.
+.block__switchrow {
+  display: flex;
+  gap: 24px;
+}
+
+.block__switchitem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.block__switchlabel {
+  font-size: var(--fs-row-title);
+}
+
 .block__switches {
   display: flex;
   flex-direction: column;

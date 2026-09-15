@@ -12,7 +12,7 @@
   display: flex;
   gap: var(--space-3);
   align-items: center;
-  padding-block: var(--check-row-block, var(--space-3));
+  padding-block: var(--check-row-block, 14px);
 }
 
 .row__input {
