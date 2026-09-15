@@ -9,6 +9,9 @@
 
   // Die Vorschläge stehen gedrängt, das Blatt trägt sie nur als Angebot.
   --size-chip: 32px;
+  --chip-group-size: 13px;
+  --chip-group-inline: 14px;
+  --form-field-size: 15px;
   --form-field-multiline: 88px;
   --form-field-multiline-pad: 12px;
 
@@ -48,6 +51,6 @@ app-button {
 .reject__title {
   margin: 0;
   font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
   line-height: normal;
-  font-weight: var(--fw-semibold);
 }

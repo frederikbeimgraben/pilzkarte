@@ -154,6 +154,9 @@ export const NEAREST_TONES: readonly string[] = [
 /** Der Wert des Farbcode-Felds. */
 export const COLOUR_CODE = '#7A3B6A';
 
+/** Der Ton zum Farbcode, wie ihn das Board als Fläche daneben zeigt. */
+export const CODE_COLOUR: readonly ColourValue[] = [{ name: 'purpureus', hex: '#7a3b6a' }];
+
 /** Zwei Spannen: die übliche Breite, darunter die seltene Ausnahme. */
 export const CAP_WIDTH_SPANS: readonly Span[] = [{ from: 4, to: 20 }];
 
