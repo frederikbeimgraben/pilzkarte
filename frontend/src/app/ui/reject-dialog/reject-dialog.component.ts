@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, output, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  linkedSignal,
+  output,
+  signal,
+} from '@angular/core';
 import { ButtonComponent } from '@stupa-makers/ui-kit';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -27,12 +36,14 @@ export class RejectDialogComponent {
   private readonly i18n = inject(I18nService);
 
   readonly open = input.required<boolean>();
+  /** Ein Vorschlag, der schon gewählt ist, wenn das Blatt aufgeht. */
+  readonly suggestion = input('');
 
   readonly rejected = output<string>();
   readonly closed = output();
 
   /** Der gewählte Vorschlag. Das Feld daneben bleibt frei. */
-  protected readonly chosen = signal('');
+  protected readonly chosen = linkedSignal(() => this.suggestion());
   /** Der geschriebene Grund. Er geht vor dem Vorschlag hinaus. */
   protected readonly written = signal('');
 

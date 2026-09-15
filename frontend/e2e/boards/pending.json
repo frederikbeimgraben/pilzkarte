@@ -77,7 +77,6 @@
   "blocks/app-filter-sheet",
   "blocks/app-form-field",
   "blocks/app-list-row",
-  "blocks/app-reject-dialog",
   "blocks/app-review-queue",
   "blocks/app-species-row",
   "blocks/app-tag-list"
