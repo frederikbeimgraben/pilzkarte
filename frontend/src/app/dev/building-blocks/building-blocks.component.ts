@@ -101,6 +101,7 @@ import {
   SAMPLE_IMAGE_LARGE,
   SAMPLE_IMAGE_PRIVATE,
   SAMPLE_PHOTO,
+  SAMPLE_THUMBS,
   SAMPLE_WEEKS,
   STEM_HEIGHT_SPANS,
   STEM_THICKNESS_SPANS,
@@ -238,7 +239,7 @@ export class BuildingBlocksComponent {
   protected readonly yearFrom = signal(4);
   protected readonly yearTo = signal(10);
   protected readonly speciesChoice = signal<string | null>(LATIN_NAMES[0]);
-  protected readonly photoFiles = signal<readonly File[]>([this.sampleFile(), this.sampleFile()]);
+  protected readonly photoFiles = signal<readonly File[]>([this.sampleFile(0), this.sampleFile(1)]);
   protected readonly overlayOpen = signal(true);
   protected readonly filterSheetOpen = signal(true);
 
@@ -419,7 +420,9 @@ export class BuildingBlocksComponent {
     return this.i18n.translate(schluessel);
   }
 
-  private sampleFile(): File {
-    return new File(['x'], 'pilz.jpg', { type: 'image/jpeg' });
+  private sampleFile(index: number): File {
+    const raw = atob(SAMPLE_THUMBS[index]);
+    const bytes = Uint8Array.from(raw, (sign) => sign.charCodeAt(0));
+    return new File([bytes], 'pilz.png', { type: 'image/png' });
   }
 }

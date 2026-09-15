@@ -111,3 +111,9 @@ app-building-blocks .block__swatchrows app-key-value-row:last-child .kv__label,
 app-building-blocks .block__swatchrows app-key-value-row:last-child .kv__value {
   border-block-end: var(--border-width) solid var(--color-border) !important;
 }
+
+// Im Vergleich beginnt jeder Wert links, unter dem Namen seiner Art.
+app-building-blocks .block__compare .kv__value {
+  align-items: flex-start !important;
+  text-align: start !important;
+}

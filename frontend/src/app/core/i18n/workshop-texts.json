@@ -192,7 +192,8 @@
     "beispiel.ton.rot": "Rot",
     "beispiel.ton.violett": "Violett",
     "beispiel.ton.grau": "Grau",
-    "beispiel.frauentaeubling": "Frauentäubling"
+    "beispiel.frauentaeubling": "Frauentäubling",
+    "beispiel.vergleich.hutfarbe": "Hutfarbe"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -387,6 +388,7 @@
     "beispiel.ton.rot": "Red",
     "beispiel.ton.violett": "Violet",
     "beispiel.ton.grau": "Grey",
-    "beispiel.frauentaeubling": "Russula cyanoxantha"
+    "beispiel.frauentaeubling": "Russula cyanoxantha",
+    "beispiel.vergleich.hutfarbe": "Cap colour"
   }
 }
