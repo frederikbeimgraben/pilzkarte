@@ -45,12 +45,6 @@ export interface SeasonSeries {
   readonly legend?: string;
 }
 
-/** Eine gesetzte Monatsmarke: Anteil der Breite, auf dem sie sitzt. */
-interface PlacedMark {
-  text: string;
-  left: number;
-}
-
 interface Drawing {
   width: number;
   height: number;
@@ -131,13 +125,8 @@ export class SeasonCurveComponent {
     };
   }
 
-  /** Die Monatsmarken auf derselben Skala wie die Kurve, als Anteil der Breite. */
-  protected readonly monthMarks = computed<PlacedMark[]>(() =>
-    this.months().map((badge) => ({
-      text: badge.text,
-      left: ((badge.week - 1) / 51) * 100,
-    })),
-  );
+  /** Die Monatsmarken stehen gleich verteilt unter der Grundlinie. */
+  protected readonly monthMarks = computed<readonly MonthMark[]>(() => this.months());
 
   /** Wochen, in denen eine Reihe auf wenigen Begehungen ruht, je eigener Skala. */
   private thinWeeks(width: number): Strip[] {

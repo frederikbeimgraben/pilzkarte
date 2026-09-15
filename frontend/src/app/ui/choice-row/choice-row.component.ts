@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 /** Die Zeile steht in einer Liste oder als Kasten mit eigenem Rand. */
@@ -20,6 +20,9 @@ export class ChoiceRowComponent {
   readonly variant = input<ChoiceRowVariant>('list');
 
   readonly toggled = output<boolean>();
+
+  /** Im Kasten misst das Kästchen weniger, der Haken darin ebenso. */
+  protected readonly tick = computed(() => (this.variant() === 'boxed' ? 12 : 15));
 
   protected onChange(event: Event): void {
     this.toggled.emit((event.target as HTMLInputElement).checked);

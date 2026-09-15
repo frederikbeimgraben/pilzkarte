@@ -265,6 +265,7 @@ export class BuildingBlocksComponent {
 
   /** Das Board zeichnet die unterste Raste des Blatts 120 px hoch. */
   protected readonly sheetDetents: readonly [DetentSize, DetentSize, DetentSize] = ['320px', 0.4, 0.9];
+  protected readonly overlayDetents: readonly [DetentSize, DetentSize, DetentSize] = [0.45, 0.7, 0.9];
   protected readonly navTabs = { map: '/karte', species: '/arten' };
 
   protected readonly badgeVariants: readonly { variant: BadgeVariant; label: string }[] = [

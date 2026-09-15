@@ -70,6 +70,16 @@ app-building-blocks .block--nolabel app-input label {
   line-height: var(--lh-normal) !important;
 }
 
+// Die Schrift auf dem roten Knopf bleibt weiß, in jedem Thema.
+.btn--danger {
+  color: var(--color-on-media) !important;
+}
+
+// Im mehrzeiligen Feld steht die erste Zeile auf der Linie des Boards.
+.field--multiline {
+  line-height: var(--lh-normal) !important;
+}
+
 // Eingabe und Auswahl messen 44 px.
 .field__control,
 .sel__control {

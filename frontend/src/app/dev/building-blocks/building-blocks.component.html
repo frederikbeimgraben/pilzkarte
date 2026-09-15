@@ -119,8 +119,10 @@
   <section class="block" data-block="app-overlay-host">
     <h2 class="block__head">{{ 'blocks.overlayHost' | t }}</h2>
     <div class="block__stage block__stage--overlay">
-      <app-overlay-host [open]="overlayOpen()" (closed)="overlayOpen.set(false)">
-        <app-sheet-head [title]="text('entry.fund.delete')" [arrows]="false" />
+      <app-overlay-host [open]="overlayOpen()" [modal]="true" (closed)="overlayOpen.set(false)">
+        <app-sheet [label]="text('beispiel.marker.loeschen')" [detent]="0" [detents]="overlayDetents">
+          <app-sheet-head head [title]="text('beispiel.marker.loeschen')" [arrows]="false" />
+        </app-sheet>
       </app-overlay-host>
     </div>
   </section>
@@ -194,14 +196,24 @@
         <div class="block__group">
           <p class="block__grouphead">{{ 'map.layers.title' | t }}</p>
           <div class="block__switches">
-            <app-choice-row [label]="text('map.layers.sharedFinds')" count="12" [checked]="true" />
-            <app-choice-row [label]="text('map.layers.myMarkers')" count="5" [checked]="true" />
-            <app-choice-row [label]="text('entry.zones')" count="2" [checked]="true" />
+            <app-choice-row
+              variant="boxed"
+              [label]="text('map.layers.sharedFinds')"
+              count="12"
+              [checked]="true"
+            />
+            <app-choice-row
+              variant="boxed"
+              [label]="text('map.layers.myMarkers')"
+              count="5"
+              [checked]="true"
+            />
+            <app-choice-row variant="boxed" [label]="text('entry.zones')" count="2" [checked]="true" />
           </div>
         </div>
         <div class="block__group">
           <p class="block__grouphead">{{ 'map.opacity' | t }}</p>
-          <app-range-slider [min]="0" [max]="100" [from]="80" [to]="100" handles="from" />
+          <app-range-slider [min]="0" [max]="100" [from]="0" [to]="80" handles="to" variant="dot" />
         </div>
       </app-popover>
     </div>
