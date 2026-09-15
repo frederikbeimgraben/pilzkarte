@@ -67,7 +67,7 @@ app-building-blocks .block--nolabel app-input label {
 // Die Schrift im Knopf steht auf der Linie des Boards, wenn die Zeile
 // nur so hoch ist wie die Schrift.
 .btn__label {
-  line-height: var(--lh-normal) !important;
+  line-height: normal !important;
 }
 
 // Die Schrift auf dem roten Knopf bleibt weiß, in jedem Thema.
@@ -77,7 +77,7 @@ app-building-blocks .block--nolabel app-input label {
 
 // Im mehrzeiligen Feld steht die erste Zeile auf der Linie des Boards.
 .field--multiline {
-  line-height: var(--lh-normal) !important;
+  line-height: normal !important;
 }
 
 // Eingabe und Auswahl messen 44 px.
@@ -163,7 +163,7 @@ app-building-blocks .block__swatchrows {
   --key-value-row-zebra: transparent;
   --key-value-row-padding: 12.5px;
   --key-value-row-key: 15px;
-  --key-value-row-line: var(--lh-normal);
+  --key-value-row-line: normal;
   --key-value-row-key-weight: var(--fw-regular);
   --key-value-row-key-colour: var(--color-text);
   --key-value-table-gutter: 14px;
