@@ -20,6 +20,8 @@ export class ActionBarComponent {
   readonly secondaryDanger = input(false);
   /** Im Modal stehen die Knöpfe nebeneinander am rechten Rand. */
   readonly inline = input(false);
+  /** Teilt den Fuß in zwei gleiche Spalten; die Gefahr steht dort als Umriss. */
+  readonly row = input(false);
   /** Zwei gleichrangige Wege: die erste Aktion trägt kein Gewicht. */
   readonly quiet = input(false);
   /** Die letzte Aktion steht ohne Rahmen und misst vierundvierzig Punkte. */
@@ -31,7 +33,7 @@ export class ActionBarComponent {
   readonly secondaryClick = output();
 
   protected readonly primaryVariant = computed<ButtonVariant>(() => {
-    if (this.danger()) return 'danger';
+    if (this.danger()) return this.row() ? 'danger-outline' : 'danger';
     if (this.ghost() && this.secondary() === undefined) return 'ghost';
     return this.quiet() ? 'secondary' : 'primary';
   });
