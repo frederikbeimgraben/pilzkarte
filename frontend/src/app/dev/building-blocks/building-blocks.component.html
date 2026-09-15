@@ -416,10 +416,19 @@
       [readOnly]="true"
     />
     <app-form-field
+      class="block__codefield"
       [label]="text('admin.characteristic.colourCode')"
       [value]="colourCode"
       [readOnly]="true"
-    />
+    >
+      <app-colour-field
+        lead
+        class="block__codeswatch"
+        [colours]="codeColour"
+        mode="single"
+        [label]="text('admin.characteristic.colourCode')"
+      />
+    </app-form-field>
   </section>
 
   <section class="block" data-block="app-search-field">

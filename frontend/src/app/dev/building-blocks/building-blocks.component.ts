@@ -93,6 +93,7 @@ import {
   LATIN_NAMES,
   MULTI_COLOURS,
   CAP_GRADIENTS,
+  CODE_COLOUR,
   PRESS_COLOURS,
   TRIPLE_COLOURS,
   TUBE_COLOURS,
@@ -226,6 +227,7 @@ export class BuildingBlocksComponent {
   protected readonly capWidthSpans = CAP_WIDTH_SPANS;
   protected readonly nearestTones = NEAREST_TONES;
   protected readonly colourCode = COLOUR_CODE;
+  protected readonly codeColour = CODE_COLOUR;
   protected readonly reviewItems = LATIN_NAMES.map((latin) => ({
     latin,
     title: this.text('beispiel.pfifferling'),

@@ -61,6 +61,7 @@ app-building-blocks .block--nolabel app-input label {
 
 .btn--lg {
   block-size: var(--size-floating) !important;
+  font-size: 15px !important;
 }
 
 // Eingabe und Auswahl messen 44 px.
@@ -128,4 +129,30 @@ app-building-blocks .block__pagehead .btn {
 .cbx__input + .cbx__label {
   margin-inline-start: 4px;
   font-size: 15px;
+}
+
+// Der Vergleich gibt der Schlüsselspalte 76 px, wie das Board es nennt.
+// Der Schlüssel steht dort kleiner, sonst bricht er in der schmalen Spalte.
+app-building-blocks .block__compare {
+  --key-value-table-gutter: 9px;
+  --key-value-table-gap: 9px;
+  --key-value-table-label: 58px;
+  --key-value-row-key: var(--fs-xs);
+  --key-value-row-key-weight: 400;
+  --key-value-row-key-space: nowrap;
+  --key-value-row-padding: 10px;
+  --key-value-row-head: 11px;
+  --key-value-row-text: 13px;
+  --key-value-row-value-start: 9px;
+  --key-value-row-line: normal;
+}
+
+// Im Board stehen die Farbflächen 96 × 30 in Zeilen von 56 px, ohne Zebra.
+app-building-blocks .block__swatchrows {
+  --key-value-row-zebra: transparent;
+  --key-value-row-padding: 12.5px;
+  --key-value-row-key: 15px;
+  --key-value-table-label: 240px;
+  --pilz-colour-width: 96px;
+  --pilz-colour-height: 30px;
 }
