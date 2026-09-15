@@ -21,10 +21,17 @@
       }
     </header>
     <div #content class="filtersheet__content" appScrollFade><ng-content /></div>
-    <footer class="filtersheet__foot">
-      <button class="filtersheet__primary tap" type="button" data-press="scale" (click)="primaryClick.emit()">
-        {{ primaryLabel() }}
-      </button>
-    </footer>
+    @if (primaryLabel(); as label) {
+      <footer class="filtersheet__foot">
+        <button
+          class="filtersheet__primary tap"
+          type="button"
+          data-press="scale"
+          (click)="primaryClick.emit()"
+        >
+          {{ label }}
+        </button>
+      </footer>
+    }
   </section>
 </app-overlay-host>
