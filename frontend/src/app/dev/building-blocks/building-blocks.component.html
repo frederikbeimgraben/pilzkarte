@@ -88,11 +88,13 @@
     <div class="block__stage block__stage--sheet">
       <app-sheet [label]="text('map.combination.save')" [detent]="0" [detents]="sheetDetents">
         <app-sheet-head head [title]="text('map.combination.save')" [arrows]="false" />
-        <app-form-field
-          [label]="text('common.name')"
-          [value]="text('beispiel.kombination')"
-          [readOnly]="true"
-        />
+        <div class="block__sheetbody">
+          <app-form-field
+            [label]="text('common.name')"
+            [value]="text('beispiel.kombination')"
+            [readOnly]="true"
+          />
+        </div>
         <app-action-bar [primary]="text('common.save')" [secondary]="text('common.cancel')" />
       </app-sheet>
     </div>
@@ -127,11 +129,12 @@
         [open]="filterSheetOpen()"
         [title]="text('common.filter')"
         [resetEnabled]="true"
-        [primaryLabel]="text('filter.showSpecies')"
         (closed)="filterSheetOpen.set(false)"
       >
-        <app-choice-row [label]="text('entry.filter.own')" count="12" [checked]="true" />
-        <app-choice-row [label]="text('entry.filter.shared')" count="38" />
+        <div class="block__card">
+          <app-choice-row [label]="text('entry.filter.own')" count="12" [checked]="true" />
+          <app-choice-row [label]="text('entry.filter.shared')" count="38" />
+        </div>
       </app-filter-sheet>
     </div>
   </section>
