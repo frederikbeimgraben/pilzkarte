@@ -68,8 +68,8 @@
   outline: none;
 }
 
-// Am Rechner steht jedes Blatt als zentriertes Modal über der ganzen Seite:
-// Spalte und Leiste dunkeln mit ab.
+// Der Scrim dunkelt am Rechner die ganze Seite ab, auch Spalte und Leiste.
+// Das Modal selbst bleibt über dem Inhalt rechts der Spalte zentriert.
 .sheet__scrim {
   position: fixed;
   inset: 0;
@@ -109,6 +109,10 @@
 
 .sheet--modal.sheet--compact {
   inline-size: var(--size-modal-compact);
+}
+
+:host-context(.shell--column) .sheet--modal {
+  inset-inline-start: calc(var(--size-rail) + var(--size-column));
 }
 
 .sheet--modal .sheet__drag {
