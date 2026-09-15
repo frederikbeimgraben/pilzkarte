@@ -276,11 +276,25 @@
   <section class="block" data-block="app-list-row">
     <h2 class="block__head">{{ 'blocks.listRow' | t }}</h2>
     <div class="block__card">
-      <app-list-row [title]="text('beispiel.zeile.rollen')" subline="4 · 12" [chevron]="true" />
-      <app-list-row [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
+      <app-list-row
+        kind="catalogue"
+        [title]="text('beispiel.zeile.rollen')"
+        subline="4 · 12"
+        [chevron]="true"
+      />
+      <app-list-row kind="catalogue" [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
         <app-badge trail variant="primary">{{ 'account.role.admin' | t }}</app-badge>
       </app-list-row>
       <app-list-row
+        kind="catalogue"
+        icon="cloud"
+        [title]="text('layer.regen_4w')"
+        [value]="text('enum.unit.mm')"
+        [chevron]="true"
+        [clickable]="true"
+      />
+      <app-list-row
+        kind="catalogue"
         [title]="text('account.profile')"
         [subline]="text('beispiel.avatar')"
         [chevron]="true"

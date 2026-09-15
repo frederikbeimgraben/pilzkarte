@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { BadgeComponent } from '@stupa-makers/ui-kit';
 import { ImageCreditComponent } from '../image-credit/image-credit.component';
 import { PrivateImageComponent } from '../private-image/private-image.component';
-import { SvgIconComponent } from '../svg-icon/svg-icon.component';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import { photoPath, type Photo } from '../../core/api/models';
 
 /** Eine Bildkachel mit Titelbild-Marke und Herkunftszeile. */
 @Component({
   selector: 'app-image-tile',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ImageCreditComponent, PrivateImageComponent, SvgIconComponent],
+  imports: [BadgeComponent, ImageCreditComponent, PrivateImageComponent, TranslatePipe],
   templateUrl: './image-tile.component.html',
   styleUrl: './image-tile.component.scss',
 })

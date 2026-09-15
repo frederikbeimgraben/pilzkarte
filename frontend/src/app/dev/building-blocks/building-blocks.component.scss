@@ -40,9 +40,8 @@
 // Eine Fläche ohne Innenabstand: die Karte des Kits polstert ihren Rumpf und
 // rückt jede Zeile vom Rand ab.
 .block__card {
-  // Im Board steht der Titel einer Zeile 15 px und ohne Fettung.
-  --list-row-title: var(--fs-row-title);
-  --list-row-title-weight: var(--fw-regular);
+  // Im Board rückt die Zeile vierzehn Punkte vom Rand ab.
+  --list-row-inline: var(--space-row-inline);
 
   overflow: hidden;
   background: var(--color-surface);
