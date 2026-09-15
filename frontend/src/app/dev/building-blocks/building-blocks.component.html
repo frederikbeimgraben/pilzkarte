@@ -477,17 +477,23 @@
 
   <section class="block" data-block="app-colour-field">
     <h2 class="block__head">{{ 'blocks.colourField' | t }}</h2>
-    <app-key-value-table>
-      <app-key-value-row [key]="text('art.farbe.hut')">
-        <app-colour-field [colours]="gradientColours" mode="gradient" [label]="text('art.farbe.hut')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('species.field.tubes')">
-        <app-colour-field [colours]="multiColours" mode="multiple" [label]="text('species.field.tubes')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('art.farbe.sporenpulver')">
-        <app-colour-field [colours]="capColours" mode="single" [label]="text('art.farbe.sporenpulver')" />
-      </app-key-value-row>
-    </app-key-value-table>
+    <div class="block__card">
+      <app-key-value-table class="block__swatchrows">
+        <app-key-value-row [key]="text('art.farbe.hut')">
+          <app-colour-field [colours]="gradientColours" mode="gradient" [label]="text('art.farbe.hut')" />
+        </app-key-value-row>
+        <app-key-value-row [key]="text('species.field.tubes')">
+          <app-colour-field [colours]="multiColours" mode="multiple" [label]="text('species.field.tubes')" />
+        </app-key-value-row>
+        <app-key-value-row [key]="text('beispiel.frauentaeubling')">
+          <app-colour-field
+            [colours]="tripleColours"
+            mode="gradient"
+            [label]="text('beispiel.frauentaeubling')"
+          />
+        </app-key-value-row>
+      </app-key-value-table>
+    </div>
   </section>
 
   <section class="block" data-block="app-colour-change">

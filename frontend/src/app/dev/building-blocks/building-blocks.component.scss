@@ -140,6 +140,16 @@
   --ramp-ends-gap: 16px;
 }
 
+// Im Board stehen die Farbflächen 96 × 30 in Zeilen von 56 px, ohne Zebra.
+.block__swatchrows {
+  --key-value-row-zebra: transparent;
+  --key-value-row-padding: 12.5px;
+  --key-value-row-key: 15px;
+  --key-value-table-label: 240px;
+  --pilz-colour-width: 96px;
+  --pilz-colour-height: 30px;
+}
+
 .block__list {
   display: flex;
   flex-direction: column;

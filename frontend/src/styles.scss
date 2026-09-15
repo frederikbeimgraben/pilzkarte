@@ -106,6 +106,8 @@ app-building-blocks .block__wide .btn {
 
 // Im Board endet auch die letzte Zeile der Tabelle mit einer Linie.
 app-building-blocks .block__compare app-key-value-row:last-child .kv__label,
-app-building-blocks .block__compare app-key-value-row:last-child .kv__value {
+app-building-blocks .block__compare app-key-value-row:last-child .kv__value,
+app-building-blocks .block__swatchrows app-key-value-row:last-child .kv__label,
+app-building-blocks .block__swatchrows app-key-value-row:last-child .kv__value {
   border-block-end: var(--border-width) solid var(--color-border) !important;
 }

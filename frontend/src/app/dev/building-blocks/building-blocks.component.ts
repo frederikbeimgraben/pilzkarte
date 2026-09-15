@@ -90,6 +90,7 @@ import {
   GRADIENT_COLOURS,
   LATIN_NAMES,
   MULTI_COLOURS,
+  TRIPLE_COLOURS,
   NEAREST_TONES,
   PICKER_TONE_KEYS,
   PICKER_TONES,
@@ -205,6 +206,7 @@ export class BuildingBlocksComponent {
   protected readonly capColours = CAP_COLOURS;
   protected readonly gradientColours = GRADIENT_COLOURS;
   protected readonly multiColours = MULTI_COLOURS;
+  protected readonly tripleColours = TRIPLE_COLOURS;
   protected readonly capWidthSpans = CAP_WIDTH_SPANS;
   protected readonly nearestTones = NEAREST_TONES;
   protected readonly colourCode = COLOUR_CODE;
