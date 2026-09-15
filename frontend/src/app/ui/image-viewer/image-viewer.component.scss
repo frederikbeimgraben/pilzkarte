@@ -27,7 +27,7 @@
 .viewer__image {
   display: block;
   inline-size: 100%;
-  block-size: var(--image-viewer-height, 200px);
+  block-size: var(--image-viewer-height, 300px);
   background: var(--color-surface-sunken);
   border-radius: var(--radius-lg);
 }

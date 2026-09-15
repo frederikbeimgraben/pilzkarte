@@ -84,6 +84,7 @@
 }
 
 .field--multiline {
+  align-items: flex-start;
   block-size: var(--form-field-lines, 80px);
   padding-block-start: var(--form-field-lines-top, 10px);
   resize: none;
