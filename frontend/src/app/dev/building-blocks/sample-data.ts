@@ -58,13 +58,19 @@ export const CAP_COLOURS: readonly ColourValue[] = [
 export const FLESH_COLOURS: readonly ColourValue[] = [{ name: 'candidus', hex: '#f4efe2' }];
 export const BRUISE_COLOURS: readonly ColourValue[] = [{ name: 'caeruleus', hex: '#3f6ea8' }];
 export const GRADIENT_COLOURS: readonly ColourValue[] = [
-  { name: 'candidus', hex: '#f4efe2' },
-  { name: 'fulvus', hex: '#c8a25a' },
+  { name: 'stramineus', hex: '#e2c79a' },
   { name: 'badius', hex: '#6b4423' },
 ];
 export const MULTI_COLOURS: readonly ColourValue[] = [
-  { name: 'candidus', hex: '#f4efe2' },
-  { name: 'olivaceus', hex: '#6f7d3c' },
+  { name: 'eburneus', hex: '#f0ece0' },
+  { name: 'olivaceus', hex: '#cfd08a' },
+];
+
+/** Drei Töne über eine Fläche, wie das Board sie am Täubling zeigt. */
+export const TRIPLE_COLOURS: readonly ColourValue[] = [
+  { name: 'purpureus', hex: '#7a3b6a' },
+  { name: 'viridis', hex: '#4f7a3a' },
+  { name: 'olivaceus', hex: '#7f8a3a' },
 ];
 
 /** Die Schlüssel zu den zwölf Tönen, in derselben Reihenfolge. */
