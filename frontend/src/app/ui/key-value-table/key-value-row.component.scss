@@ -70,6 +70,7 @@
   color: var(--color-text-muted);
   white-space: var(--key-value-table-nowrap, normal);
   overflow-wrap: anywhere;
+  white-space: var(--key-value-row-key-space, normal);
 }
 
 .kv__key--link {
