@@ -656,9 +656,12 @@
 
   <section class="block" data-block="app-image-viewer">
     <h2 class="block__head">{{ 'blocks.imageViewer' | t }}</h2>
-    <div class="block__stage block__stage--viewer">
-      <app-image-viewer [image]="sampleImageLarge" [title]="text('art.boletus_edulis')" />
-    </div>
+    <app-image-viewer
+      [image]="sampleImageLarge"
+      [title]="text('art.boletus_edulis')"
+      [index]="2"
+      [count]="4"
+    />
   </section>
 
   <section class="block" data-block="app-private-image">
