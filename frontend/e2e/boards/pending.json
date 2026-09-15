@@ -106,6 +106,5 @@
   "blocks/app-review-queue",
   "blocks/app-sheet-head",
   "blocks/app-species-row",
-  "blocks/app-tag-list",
-  "blocks/app-timeline-app-week-button"
+  "blocks/app-tag-list"
 ]
