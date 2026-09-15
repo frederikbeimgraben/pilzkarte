@@ -87,7 +87,9 @@
           <path d="M5 12l5 5 9-10" />
         </svg>
       </button>
-      <span class="queue__balance" aria-hidden="true"></span>
+      @if (balance()) {
+        <span class="queue__balance" aria-hidden="true"></span>
+      }
     </div>
   }
 </div>

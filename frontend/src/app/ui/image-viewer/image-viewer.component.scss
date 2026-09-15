@@ -7,13 +7,9 @@
   gap: var(--space-3);
 }
 
-// Auf der Bildseite steht der Kopf flacher als auf einer Listenseite.
-.viewer__head {
-  --size-header: var(--size-row-wide);
-}
-
 .viewer__count {
   font-size: var(--fs-row-meta);
+  line-height: 1.4;
   color: var(--color-text-muted);
   font-variant-numeric: tabular-nums;
 }
