@@ -2,17 +2,23 @@
 import type { Licence, Photo } from '../../core/api/models';
 import type { ColourValue, Span, TimelineWeek } from '../../ui';
 
-/** Die acht Wochen des Artboards, die letzten drei als Vorhersage. */
+/** Die acht Wochen des Artboards. Die Jahresmarke steht auf KW 41. */
 export const SAMPLE_WEEKS: readonly TimelineWeek[] = [
   { year: 2025, week: 36, share: 0.48, forecast: false },
   { year: 2025, week: 37, share: 0.62, forecast: false },
   { year: 2025, week: 38, share: 0.7, forecast: false },
   { year: 2025, week: 39, share: 0.88, forecast: false },
   { year: 2025, week: 40, share: 1, forecast: false },
-  { year: 2025, week: 41, share: 0.76, forecast: true },
-  { year: 2025, week: 42, share: 0.6, forecast: true },
-  { year: 2025, week: 43, share: 0.45, forecast: true },
+  { year: 2026, week: 41, share: 0.76, forecast: true },
+  { year: 2026, week: 42, share: 0.6, forecast: true },
+  { year: 2026, week: 43, share: 0.45, forecast: true },
 ];
+
+/** Dieselben Wochen ohne Jahreswechsel: das Blatt zeigt keine Marke. */
+export const SAMPLE_WEEKS_FLAT: readonly TimelineWeek[] = SAMPLE_WEEKS.map((week) => ({
+  ...week,
+  year: 2025,
+}));
 
 /** Die Saisonkurve als Glocke um die Spitzenwoche. */
 function seasonValue(week: number, peak: number, offset: number, factor: number): number {
@@ -175,6 +181,14 @@ export const SAMPLE_THUMBS: readonly string[] = [
   'iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAIAAADajyQQAAABh0lEQVR42t3aYQ7CIAyG4TbpubyQN/HUFtygwNj821fjNqdjeWIk5QP7vF+qKiJhI+GwHJRt22v8/Dg5Xd8bCd+OjYwXLY2EU/FeD42M9zKkyh+GVPmBIVVafzGgyk8ZUuVPQ6pK54FU+RtDqs7uHqeq3T1RVbt7oursPHAq3xtSJa0Ihql+JRVQVXpFpKqOx4iqUgQjVf4ypErPETRNVcdjRJXGIpik6kUwTHUUwTzVJn7Lr7qK3xCqJX6jqMb4DaQK8RtL1UbQNFWN34iq2t0TVeU/hlSJLvEbQzXHbxjVEL+RVDLNQWNUGotgkqoXwTDVUQTzVLfxW2bVPn5LrtrEb/lVV/EbQrXEbxTVGL+BVCF+Y6mW5RAUlQ7LIUAq6cshWKq2loqm0nUOmqGSaQ4ao9JYBJNUvQiGqdoCFprqj/gtp+opfkuruo3fMqv28Vty1SZ+y6+6it8QqiV+o6jG+A2k0h6/sVRtBE1T/ZZDAFW6zkEzVDLNQWNUGotgkqoXwTCV774FmRlBUMNqygAAAABJRU5ErkJggg==',
   'iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAIAAADajyQQAAABaElEQVR42t3ZQQ7CIBBGYUg4Xe/gGbz/TlqstjAD0+X/YkJj7ebL6LyF5fXecs4ppe/xP1P4/u3jxf39+L26J+L3u5dxvyBV9V1BqupRkKr9q4hUdRPjqPLxGwOq6gMFqcrnVqSp2m8MqGpbEagKdkxPFemYpGrZMVXVvGPCqknHtFVex+RVZscIqrFjEJW3FeVV5lYkqMatCFF1W5GjahMDqp50TEoV7piaKtYxQVWgY5qqVcdkVdOOKav8jomrnI7pq6yOIVRDxyiqe8dAqkvHWKqzYzjVsRWJqmNiRNX+5zpSVa8FqWoTA6raxICqbmIcVT0KUpXS445pqNrEgKpHHVNSxTsmpgp2TE8V6ZikatkxVdW8Y8KqSce0VV7H5FVmxwiqsWMQlbcV5VXmViSoxq0IUXVbkaNqEwOqAh3TVK06JquadkxZ5XdMXOV0TF9ldQyhGjpGUd07BlJdJsZSnR3DqerlA0eYHYDEOqZ1AAAAAElFTkSuQmCC',
 ];
+
+/** Die Vorschaubilder der Arten, wie das Board sie einfärbt. */
+export const SPECIES_THUMBS = {
+  stein: '/api/species-images/art-stein/thumb',
+  steinHell: '/api/species-images/art-stein-hell/thumb',
+  marone: '/api/species-images/art-marone/thumb',
+  pfifferling: '/api/species-images/art-pfifferling/thumb',
+} as const;
 
 /** Das Foto der Prüfkarte. Das Board zeichnet es wärmer als eine Fläche. */
 export const SAMPLE_PHOTO = '/api/species-images/bild-vier/full';

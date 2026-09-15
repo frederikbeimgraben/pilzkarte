@@ -102,7 +102,9 @@ import {
   SAMPLE_IMAGE_PRIVATE,
   SAMPLE_PHOTO,
   SAMPLE_THUMBS,
+  SPECIES_THUMBS,
   SAMPLE_WEEKS,
+  SAMPLE_WEEKS_FLAT,
   STEM_HEIGHT_SPANS,
   STEM_THICKNESS_SPANS,
 } from './sample-data';
@@ -194,6 +196,8 @@ export class BuildingBlocksComponent {
   private readonly i18n = inject(I18nService).addFallback(inject(WORKSHOP_TEXTS));
 
   protected readonly weeks = SAMPLE_WEEKS;
+
+  protected readonly weeksFlat = SAMPLE_WEEKS_FLAT;
   protected readonly histogramm = SAMPLE_HISTOGRAM;
   protected readonly objectColors = OBJECT_COLOURS;
   protected readonly sampleImage = SAMPLE_IMAGE;
@@ -238,7 +242,7 @@ export class BuildingBlocksComponent {
   protected readonly searchValue = signal(this.text('beispiel.suche.stein'));
   protected readonly yearFrom = signal(4);
   protected readonly yearTo = signal(10);
-  protected readonly speciesChoice = signal<string | null>(LATIN_NAMES[0]);
+  protected readonly speciesChoice = signal<string | null>(null);
   protected readonly photoFiles = signal<readonly File[]>([this.sampleFile(0), this.sampleFile(1)]);
   protected readonly overlayOpen = signal(true);
   protected readonly filterSheetOpen = signal(true);
@@ -300,7 +304,7 @@ export class BuildingBlocksComponent {
       latin: LATIN_NAMES[0],
       levelText: this.text('enum.edibility.edible'),
       levelColour: 'var(--color-success)',
-      image: null,
+      image: SPECIES_THUMBS.stein,
     },
     {
       value: LATIN_NAMES[4],
@@ -308,7 +312,7 @@ export class BuildingBlocksComponent {
       latin: LATIN_NAMES[4],
       levelText: this.text('enum.edibility.edible'),
       levelColour: 'var(--color-success)',
-      image: null,
+      image: SPECIES_THUMBS.marone,
     },
   ];
 
@@ -320,7 +324,7 @@ export class BuildingBlocksComponent {
       latin: LATIN_NAMES[1],
       levelText: this.text('enum.edibility.edible'),
       levelColour: 'var(--color-success)',
-      image: null,
+      image: SPECIES_THUMBS.pfifferling,
     },
   ];
 

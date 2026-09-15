@@ -105,7 +105,7 @@
     <span class="block__handle" aria-hidden="true"><i></i></span>
     <app-sheet-head [title]="text('art.boletus_edulis')" [titleLink]="true" [week]="text('beispiel.woche')">
       <app-timeline
-        [weeks]="weeks"
+        [weeks]="weeksFlat"
         [active]="activeWeek()"
         [label]="text('zeitleiste.beschriftung')"
         (chosen)="activeWeek.set({ year: $event.year, week: $event.week })"
