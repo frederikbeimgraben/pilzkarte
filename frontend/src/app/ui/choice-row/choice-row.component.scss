@@ -15,12 +15,6 @@
   border-radius: 10px;
 }
 
-// Im Kasten misst das Kästchen zwanzig Punkte, wie das Board der Karte.
-:host(.choice-row--boxed) .row__box {
-  inline-size: 20px;
-  block-size: 20px;
-}
-
 .row {
   display: flex;
   gap: var(--space-3);
@@ -48,6 +42,14 @@
   color: var(--color-on-primary);
   border: 1.5px solid var(--color-border-strong);
   border-radius: 6px;
+}
+
+// Auf der Karte misst das Kästchen zwanzig Punkte und trägt einen dünnen Rand.
+:host(.choice-row--boxed) .row__box {
+  inline-size: 20px;
+  block-size: 20px;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 4px;
 }
 
 .row__input:checked + .row__box {

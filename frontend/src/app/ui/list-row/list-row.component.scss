@@ -3,11 +3,11 @@
   flex-direction: column;
   box-sizing: border-box;
   min-block-size: var(--size-row);
-  border-block-start: var(--border-width) solid var(--color-border);
+  border-block-end: var(--border-width) solid var(--color-border);
 }
 
-:host(:first-child) {
-  border-block-start: 0;
+:host(:last-child) {
+  border-block-end: 0;
 }
 
 // Die Zeile ist der Rahmen, das Feld darin der tippbare Teil. Eine Aktion am

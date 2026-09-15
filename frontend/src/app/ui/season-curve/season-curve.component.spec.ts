@@ -106,7 +106,7 @@ describe('SeasonCurveComponent', () => {
     expect(screen.getByText('Dez')).toBeInTheDocument();
   });
 
-  it.each([390, 1440])('legt bei %i px die Marke Okt unter Woche 40', async (width) => {
+  it.each([390, 1440])('verteilt bei %i px die Monatsmarken gleich', async (width) => {
     const { container } = await render(
       `<div style="width: ${width.toString()}px">
          <app-season-curve [series]="series" [months]="months" [large]="true" label="Saisonkurve" />
@@ -117,17 +117,13 @@ describe('SeasonCurveComponent', () => {
       },
     );
 
-    // Die Kurve füllt die Breite, die Stelle einer Woche ist darum ein Anteil.
-    // Der Vergleich holt sie aus dem Pfad, den die Kurve wirklich malt.
-    const okt = [...container.querySelectorAll<HTMLElement>('.spark__month')].find(
-      (badge) => badge.textContent === 'Okt',
-    );
-    expect(okt?.style.left).toBe(`${((39 / 51) * 100).toString()}%`);
-
-    // Dieselbe Stelle malt auch die Kurve für Woche 40, auf eine Nachkommastelle gerundet.
-    const path = container.querySelector('.spark__all')?.getAttribute('d') ?? '';
-    const xValues = [...path.matchAll(/L(\d+\.\d)/g)].map((matches) => Number(matches[1]));
-    expect((xValues[39] / 330) * 100).toBeCloseTo(Number.parseFloat(okt?.style.left ?? ''), 1);
+    // Die Marken stehen in der Reihenfolge der Monate, die erste am linken
+    // Rand, die letzte am rechten. Dazwischen teilt sich der Platz gleich auf.
+    const marks = [...container.querySelectorAll<HTMLElement>('.spark__month')];
+    expect(marks.map((mark) => mark.textContent)).toEqual(MONTHS.map((month) => month.text));
+    const rows = [...container.querySelectorAll<HTMLElement>('.spark__months')];
+    expect(rows).toHaveLength(1);
+    expect(getComputedStyle(rows[0]).justifyContent).toBe('space-between');
     expect(container.querySelector('.spark')).toHaveAttribute('preserveAspectRatio', 'none');
   });
 
