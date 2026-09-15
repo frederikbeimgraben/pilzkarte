@@ -65,14 +65,8 @@
 </div>
 @if (monthMarks().length) {
   <div class="spark__months">
-    @for (badge of monthMarks(); track badge.text; let erster = $first; let letzter = $last) {
-      <span
-        class="spark__month"
-        [class.spark__month--first]="erster"
-        [class.spark__month--last]="letzter"
-        [style.left.%]="badge.left"
-        >{{ badge.text }}</span
-      >
+    @for (badge of monthMarks(); track badge.text) {
+      <span class="spark__month">{{ badge.text }}</span>
     }
   </div>
 }

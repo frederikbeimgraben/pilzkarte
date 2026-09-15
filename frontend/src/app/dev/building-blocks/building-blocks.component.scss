@@ -149,9 +149,10 @@
 
 // Im Aufklapper liegt der Regler flach: der Griff ragt über seine Spur.
 .block__group app-range-slider {
-  --range-slider-lane: 14px;
-  --range-slider-handle: 18px;
-  --range-slider-border: 0px;
+  --range-slider-lane: 4px;
+
+  display: block;
+  margin-block-start: 12px;
 }
 
 .block__switches {
@@ -270,7 +271,8 @@
 }
 
 .block__muted {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-row-meta);
+  line-height: 1.4;
   color: var(--color-text-muted);
 }
 

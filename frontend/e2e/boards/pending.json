@@ -70,15 +70,10 @@
   "blocks/app-filter-sheet",
   "blocks/app-infinite-list",
   "blocks/app-list-row",
-  "blocks/app-overlay-host",
   "blocks/app-photo-picker",
-  "blocks/app-popover",
-  "blocks/app-reject-dialog",
-  "blocks/app-season-curve",
   "blocks/app-sheet-head",
   "blocks/app-species-picker",
   "blocks/app-species-row",
   "blocks/app-timeline-app-week-button",
-  "blocks/app-toast",
-  "blocks/app-year-band"
+  "blocks/app-toast"
 ]
