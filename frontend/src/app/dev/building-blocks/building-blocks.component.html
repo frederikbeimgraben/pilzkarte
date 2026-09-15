@@ -135,8 +135,24 @@
         (closed)="filterSheetOpen.set(false)"
       >
         <div class="block__card">
-          <app-choice-row [label]="text('entry.filter.own')" count="12" [checked]="true" />
-          <app-choice-row [label]="text('entry.filter.shared')" count="38" />
+          <app-list-row
+            kind="filter"
+            [title]="text('art.merkmal.speisewert')"
+            [value]="text('art.essbar.essbar')"
+            [accent]="true"
+            [chevron]="true"
+            [clickable]="true"
+          />
+          <app-list-row
+            kind="filter"
+            [title]="text('filter.group.hutform')"
+            [chevron]="true"
+            [clickable]="true"
+          />
+        </div>
+        <div class="block__card">
+          <app-choice-row [label]="text('enum.edibility.edible')" count="77" [checked]="true" />
+          <app-choice-row [label]="text('enum.edibility.poisonous')" count="68" />
         </div>
       </app-filter-sheet>
     </div>
@@ -227,7 +243,7 @@
   <section class="block" data-block="app-reject-dialog">
     <h2 class="block__head">{{ 'blocks.rejectDialog' | t }}</h2>
     <div class="block__stage block__stage--reject">
-      <app-reject-dialog [open]="true" [suggestion]="text('bild.grund.nichtErkennbar')" />
+      <app-reject-dialog [open]="true" />
     </div>
   </section>
 
@@ -238,7 +254,7 @@
       <span class="block__reviewcount">{{ text('beispiel.pruefung.zaehler') }}</span>
     </div>
     <div class="block__stage">
-      <app-review-queue [items]="reviewItems" [showCounter]="false">
+      <app-review-queue [items]="reviewItems">
         <ng-template let-item>
           <div class="block__reviewcard">
             <app-private-image class="block__reviewimage" [path]="samplePhoto" [alt]="item.latin" />

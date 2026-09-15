@@ -30,9 +30,6 @@ export class ActionBarComponent {
   readonly primaryClick = output();
   readonly secondaryClick = output();
 
-  /** Nebeneinander misst der Knopf vierundvierzig Punkte, gestapelt achtundvierzig. */
-  protected readonly flat = computed(() => this.row() || this.inline());
-
   protected readonly primaryVariant = computed<ButtonVariant>(() => {
     if (this.danger()) return 'danger';
     if (this.ghost() && this.secondary() === undefined) return 'ghost';
