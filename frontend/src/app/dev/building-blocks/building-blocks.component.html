@@ -289,41 +289,43 @@
 
   <section class="block" data-block="app-key-value-table, app-key-value-row">
     <h2 class="block__head">{{ 'blocks.keyValueTable' | t }}</h2>
-    <app-key-value-table class="block__compare" [columns]="2">
-      <app-key-value-row key="" [values]="compareNames" [head]="true" />
-      <app-key-value-row
-        [key]="text('species.field.edibility')"
-        [values]="[text('enum.edibility.edible'), text('enum.edibility.inedible')]"
-      />
-      <app-key-value-row
-        [key]="text('art.mass.zeichen.hutbreite')"
-        [values]="[text('beispiel.vergleich.hutbreiteEins'), text('beispiel.vergleich.hutbreiteZwei')]"
-      />
-      <app-key-value-row
-        [key]="text('art.farbe.hut')"
-        [values]="[text('beispiel.vergleich.hutfarbeZwei'), text('beispiel.vergleich.hutfarbeZwei')]"
-      />
-      <app-key-value-row
-        [key]="text('species.field.tubes')"
-        [values]="[text('beispiel.farbe.fleisch'), text('beispiel.vergleich.roehrenZwei')]"
-      />
-      <app-key-value-row
-        [key]="text('beispiel.vergleich.druckprobe')"
-        [values]="[text('enum.speed.stays'), text('enum.speed.min1')]"
-      />
-      <app-key-value-row
-        [key]="text('species.field.time')"
-        [values]="[text('art.monat.juni'), text('art.monat.okt')]"
-      />
-      <app-key-value-row
-        [key]="text('beispiel.vergleich.stielnetz')"
-        [values]="[text('beispiel.vergleich.netzEins'), text('beispiel.vergleich.hutfarbeZwei')]"
-      />
-      <app-key-value-row
-        [key]="text('species.field.taste')"
-        [values]="[text('beispiel.vergleich.geschmackZwei'), text('beispiel.vergleich.geschmackZwei')]"
-      />
-    </app-key-value-table>
+    <div class="block__card">
+      <app-key-value-table class="block__compare" [columns]="2">
+        <app-key-value-row key="" [values]="compareNames" [head]="true" />
+        <app-key-value-row
+          [key]="text('species.field.edibility')"
+          [values]="[text('enum.edibility.edible'), text('enum.edibility.inedible')]"
+        />
+        <app-key-value-row
+          [key]="text('art.mass.zeichen.hutbreite')"
+          [values]="[text('beispiel.vergleich.hutbreiteEins'), text('beispiel.vergleich.hutbreiteZwei')]"
+        />
+        <app-key-value-row
+          [key]="text('art.farbe.hut')"
+          [values]="[text('beispiel.vergleich.hutfarbeZwei'), text('beispiel.vergleich.hutfarbeZwei')]"
+        />
+        <app-key-value-row
+          [key]="text('species.field.tubes')"
+          [values]="[text('beispiel.farbe.fleisch'), text('beispiel.vergleich.roehrenZwei')]"
+        />
+        <app-key-value-row
+          [key]="text('beispiel.vergleich.druckprobe')"
+          [values]="[text('enum.speed.stays'), text('enum.speed.min1')]"
+        />
+        <app-key-value-row
+          [key]="text('species.field.time')"
+          [values]="[text('art.monat.juni'), text('art.monat.okt')]"
+        />
+        <app-key-value-row
+          [key]="text('beispiel.vergleich.stielnetz')"
+          [values]="[text('beispiel.vergleich.netzEins'), text('beispiel.vergleich.hutfarbeZwei')]"
+        />
+        <app-key-value-row
+          [key]="text('species.field.taste')"
+          [values]="[text('beispiel.vergleich.geschmackZwei'), text('beispiel.vergleich.geschmackZwei')]"
+        />
+      </app-key-value-table>
+    </div>
   </section>
 
   <section class="block" data-block="app-choice-row">
@@ -418,14 +420,16 @@
 
   <section class="block" data-block="app-colour-picker">
     <h2 class="block__head">{{ 'blocks.colourPicker' | t }}</h2>
-    <app-list-row [title]="text('art.farbe.hut')" [value]="text('beispiel.farbe.braun')" [chevron]="true" />
-    <app-colour-picker
-      [colours]="colourPickerSwatches"
-      [value]="colourTone()"
-      [label]="text('art.farbe.hut')"
-      [nearest]="nearestTones"
-      (valueChange)="colourTone.set($event)"
-    />
+    <div class="block__card">
+      <app-list-row [title]="text('art.farbe.hut')" [value]="text('beispiel.farbe.braun')" [chevron]="true" />
+      <app-colour-picker
+        [colours]="colourPickerSwatches"
+        [value]="colourTone()"
+        [label]="text('art.farbe.hut')"
+        [nearest]="nearestTones"
+        (valueChange)="colourTone.set($event)"
+      />
+    </div>
   </section>
 
   <section class="block" data-block="app-species-picker">
@@ -566,7 +570,7 @@
     />
   </section>
 
-  <section class="block" data-block="app-image-tile">
+  <section class="block block__tile" data-block="app-image-tile">
     <h2 class="block__head">{{ 'blocks.imageTile' | t }}</h2>
     <app-image-tile [image]="sampleImage" [lead]="true" />
   </section>
@@ -650,9 +654,13 @@
     </div>
   </section>
 
-  <section class="block" data-block="app-skeleton">
+  <section class="block block__skeleton" data-block="app-skeleton">
     <h2 class="block__head">{{ 'blocks.skeleton' | t }}</h2>
-    <app-skeleton kind="row" />
+    <app-skeleton kind="line" />
+    <div class="block__skeletonrow">
+      <app-skeleton kind="tile" />
+      <app-skeleton class="block__skeletonbar" kind="line" />
+    </div>
     <app-skeleton kind="block" />
   </section>
 

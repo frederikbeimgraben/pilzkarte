@@ -91,6 +91,7 @@ import {
   LATIN_NAMES,
   MULTI_COLOURS,
   NEAREST_TONES,
+  PICKER_TONE_KEYS,
   PICKER_TONES,
   SAMPLE_ALL_YEARS,
   SAMPLE_CURRENT_YEAR,
@@ -277,7 +278,7 @@ export class BuildingBlocksComponent {
 
   protected readonly colourPickerSwatches = PICKER_TONES.map((value, i) => ({
     value,
-    label: `${this.text('common.colour')} ${String(i + 1)}`,
+    label: this.text(PICKER_TONE_KEYS[i]),
   }));
 
   protected readonly speciesRows = [

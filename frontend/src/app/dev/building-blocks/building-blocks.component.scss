@@ -99,6 +99,34 @@
   box-shadow: none;
 }
 
+// Das Board zeigt Strich, Kachel mit Strich und Fläche.
+.block__skeleton {
+  --size-tile: 56px;
+}
+
+.block__skeleton app-skeleton {
+  --skeleton-block-height: 60px;
+}
+
+.block__skeletonrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.block__skeletonbar {
+  --skeleton-line-width: 140px;
+  --skeleton-line-height: 12px;
+}
+
+// Im Board zeigt die Kachel das Titelbild über die ganze Breite.
+.block__tile app-image-tile {
+  --image-tile-width: 100%;
+  --image-tile-height: 120px;
+
+  display: block;
+}
+
 .block__list {
   display: flex;
   flex-direction: column;
@@ -192,7 +220,7 @@
 
 .block__reviewmeta {
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 18px;
   color: var(--color-text-muted);
 }
 
@@ -270,7 +298,7 @@
 }
 
 .block__stage--reject {
-  block-size: 373px;
+  block-size: 374px;
 }
 
 .block__stage--confirm {

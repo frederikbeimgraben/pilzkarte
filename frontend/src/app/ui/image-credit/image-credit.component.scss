@@ -4,6 +4,7 @@
 }
 
 .credit {
+  display: block;
   font-size: var(--image-credit-size, 14px);
   line-height: var(--image-credit-line, normal);
   color: var(--color-text-muted);
