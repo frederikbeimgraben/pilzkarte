@@ -174,7 +174,8 @@
     "beispiel.vergleich.geschmackEins": "mild, nussig",
     "beispiel.vergleich.geschmackZwei": "bitter",
     "beispiel.variante.danger": "danger",
-    "beispiel.variante.dangerOutline": "danger-outline"
+    "beispiel.variante.dangerOutline": "danger-outline",
+    "beispiel.farbe.braun": "Braun"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -351,6 +352,7 @@
     "beispiel.vergleich.geschmackEins": "mild, nutty",
     "beispiel.vergleich.geschmackZwei": "bitter",
     "beispiel.variante.danger": "danger",
-    "beispiel.variante.dangerOutline": "danger-outline"
+    "beispiel.variante.dangerOutline": "danger-outline",
+    "beispiel.farbe.braun": "Brown"
   }
 }

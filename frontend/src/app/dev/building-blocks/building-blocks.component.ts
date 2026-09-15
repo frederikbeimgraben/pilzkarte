@@ -76,7 +76,6 @@ import {
   YearBandComponent,
   YearBandInputComponent,
   OBJECT_COLOURS,
-  type Detent,
   type DetentSize,
   type ObjectMenuTarget,
   type PopoverAnchor,
@@ -212,7 +211,6 @@ export class BuildingBlocksComponent {
   ];
 
   protected readonly activeWeek = signal({ year: 2025, week: 40 });
-  protected readonly detent = signal<Detent>(1);
   protected readonly viewMode = signal('ebene');
   protected readonly chip = signal<readonly string[]>(['steinpilz']);
   protected readonly checked = signal(true);

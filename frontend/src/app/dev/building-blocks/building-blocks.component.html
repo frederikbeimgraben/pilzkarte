@@ -86,12 +86,7 @@
   <section class="block">
     <h2 class="block__head">{{ 'blocks.sheet' | t }}</h2>
     <div class="block__stage block__stage--sheet">
-      <app-sheet
-        [label]="text('map.combination.save')"
-        [detent]="detent()"
-        [detents]="sheetDetents"
-        (detentChange)="detent.set($event)"
-      >
+      <app-sheet [label]="text('map.combination.save')" [detent]="0" [detents]="sheetDetents">
         <app-sheet-head head [title]="text('map.combination.save')" [arrows]="false" />
         <app-form-field
           [label]="text('common.name')"
@@ -106,6 +101,7 @@
   <section class="block">
     <h2 class="block__head">{{ 'blocks.sheetHead' | t }}</h2>
     <span class="block__handle" aria-hidden="true"></span>
+    <span class="block__handle" aria-hidden="true"><i></i></span>
     <app-sheet-head [title]="text('art.boletus_edulis')" [titleLink]="true" [week]="text('beispiel.woche')">
       <app-timeline
         [weeks]="weeks"
@@ -407,6 +403,7 @@
 
   <section class="block">
     <h2 class="block__head">{{ 'blocks.colourPicker' | t }}</h2>
+    <app-list-row [title]="text('art.farbe.hut')" [value]="text('beispiel.farbe.braun')" [chevron]="true" />
     <app-colour-picker
       [colours]="colourPickerSwatches"
       [value]="colourTone()"
