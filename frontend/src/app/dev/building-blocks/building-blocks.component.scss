@@ -160,13 +160,33 @@
 
 .block__reviewcard {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  block-size: 100%;
-  padding: 16px;
-  font-weight: var(--fw-semibold);
-  background: var(--color-surface-sunken);
+  flex-direction: column;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-xl);
+}
+
+.block__reviewimage {
+  display: block;
+  block-size: 120px;
+}
+
+.block__reviewtext {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+}
+
+.block__reviewtitle {
+  font-size: 18px;
+  font-weight: var(--fw-semibold);
+}
+
+.block__reviewmeta {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
 }
 
 // Die Bühne ist der Bildschirm: `contain` bindet `position: fixed` an sie,

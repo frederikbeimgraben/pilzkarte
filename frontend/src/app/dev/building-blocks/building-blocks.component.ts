@@ -198,7 +198,11 @@ export class BuildingBlocksComponent {
   protected readonly capWidthSpans = CAP_WIDTH_SPANS;
   protected readonly nearestTones = NEAREST_TONES;
   protected readonly colourCode = COLOUR_CODE;
-  protected readonly reviewItems = LATIN_NAMES;
+  protected readonly reviewItems = LATIN_NAMES.map((latin) => ({
+    latin,
+    title: this.text('beispiel.pfifferling'),
+    origin: this.text('beispiel.pruefung.herkunft'),
+  }));
   protected readonly infiniteRows = LATIN_NAMES;
 
   protected readonly seasonSeries = [

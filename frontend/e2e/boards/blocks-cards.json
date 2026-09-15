@@ -1,605 +1,605 @@
 [
   {
     "selector": "app-button",
+    "stem": "app-button",
     "order": 0,
     "x": 24,
     "y": 24,
     "w": 414,
-    "h": 239,
-    "stem": "app-button"
+    "h": 239
   },
   {
     "selector": "app-input",
+    "stem": "app-input",
     "order": 1,
     "x": 462,
     "y": 24,
     "w": 414,
-    "h": 239,
-    "stem": "app-input"
+    "h": 239
   },
   {
     "selector": "app-select",
+    "stem": "app-select",
     "order": 2,
     "x": 24,
     "y": 287,
     "w": 414,
-    "h": 118,
-    "stem": "app-select"
+    "h": 118
   },
   {
     "selector": "app-checkbox",
+    "stem": "app-checkbox",
     "order": 3,
     "x": 462,
     "y": 287,
     "w": 414,
-    "h": 118,
-    "stem": "app-checkbox"
+    "h": 118
   },
   {
     "selector": "app-card",
+    "stem": "app-card",
     "order": 4,
     "x": 24,
     "y": 429,
     "w": 414,
-    "h": 122,
-    "stem": "app-card"
+    "h": 122
   },
   {
     "selector": "app-badge",
+    "stem": "app-badge",
     "order": 5,
     "x": 462,
     "y": 429,
     "w": 414,
-    "h": 122,
-    "stem": "app-badge"
+    "h": 122
   },
   {
     "selector": "app-toast",
+    "stem": "app-toast",
     "order": 6,
     "x": 24,
     "y": 575,
     "w": 414,
-    "h": 148,
-    "stem": "app-toast"
+    "h": 148
   },
   {
     "selector": "app-page-header",
+    "stem": "app-page-header",
     "order": 7,
     "x": 462,
     "y": 575,
     "w": 414,
-    "h": 148,
-    "stem": "app-page-header"
+    "h": 148
   },
   {
     "selector": "app-nav",
+    "stem": "app-nav",
     "order": 8,
     "x": 24,
     "y": 747,
     "w": 414,
-    "h": 434,
-    "stem": "app-nav"
+    "h": 434
   },
   {
     "selector": "app-sheet",
+    "stem": "app-sheet",
     "order": 9,
     "x": 462,
     "y": 747,
     "w": 414,
-    "h": 434,
-    "stem": "app-sheet"
+    "h": 434
   },
   {
     "selector": "app-sheet-head",
+    "stem": "app-sheet-head",
     "order": 10,
     "x": 24,
     "y": 1205,
     "w": 414,
-    "h": 241,
-    "stem": "app-sheet-head"
+    "h": 241
   },
   {
     "selector": "app-overlay-host",
+    "stem": "app-overlay-host",
     "order": 11,
     "x": 462,
     "y": 1205,
     "w": 414,
-    "h": 241,
-    "stem": "app-overlay-host"
+    "h": 241
   },
   {
     "selector": "app-filter-sheet",
+    "stem": "app-filter-sheet",
     "order": 12,
     "x": 24,
     "y": 1470,
     "w": 414,
-    "h": 278,
-    "stem": "app-filter-sheet"
+    "h": 278
   },
   {
     "selector": "app-object-menu",
+    "stem": "app-object-menu",
     "order": 13,
     "x": 462,
     "y": 1470,
     "w": 414,
-    "h": 278,
-    "stem": "app-object-menu"
+    "h": 278
   },
   {
     "selector": "app-action-bar",
+    "stem": "app-action-bar",
     "order": 14,
     "x": 24,
     "y": 1772,
     "w": 414,
-    "h": 286,
-    "stem": "app-action-bar"
+    "h": 286
   },
   {
     "selector": "app-icon-button",
+    "stem": "app-icon-button",
     "order": 15,
     "x": 462,
     "y": 1772,
     "w": 414,
-    "h": 286,
-    "stem": "app-icon-button"
+    "h": 286
   },
   {
     "selector": "app-split-layout",
+    "stem": "app-split-layout",
     "order": 16,
     "x": 24,
     "y": 2082,
     "w": 414,
-    "h": 448,
-    "stem": "app-split-layout"
+    "h": 448
   },
   {
     "selector": "app-popover",
+    "stem": "app-popover",
     "order": 17,
     "x": 462,
     "y": 2082,
     "w": 414,
-    "h": 448,
-    "stem": "app-popover"
+    "h": 448
   },
   {
     "selector": "app-confirm-dialog",
+    "stem": "app-confirm-dialog",
     "order": 18,
     "x": 24,
     "y": 2554,
     "w": 414,
-    "h": 442,
-    "stem": "app-confirm-dialog"
+    "h": 442
   },
   {
     "selector": "app-reject-dialog",
+    "stem": "app-reject-dialog",
     "order": 19,
     "x": 462,
     "y": 2554,
     "w": 414,
-    "h": 442,
-    "stem": "app-reject-dialog"
+    "h": 442
   },
   {
     "selector": "app-review-queue",
+    "stem": "app-review-queue",
     "order": 20,
     "x": 24,
     "y": 3020,
     "w": 414,
-    "h": 342,
-    "stem": "app-review-queue"
+    "h": 342
   },
   {
     "selector": "app-banner",
+    "stem": "app-banner",
     "order": 21,
     "x": 462,
     "y": 3020,
     "w": 414,
-    "h": 342,
-    "stem": "app-banner"
+    "h": 342
   },
   {
     "selector": "app-list-row",
+    "stem": "app-list-row",
     "order": 22,
     "x": 24,
     "y": 3386,
     "w": 414,
-    "h": 226,
-    "stem": "app-list-row"
+    "h": 226
   },
   {
     "selector": "app-species-row",
+    "stem": "app-species-row",
     "order": 23,
     "x": 462,
     "y": 3386,
     "w": 414,
-    "h": 226,
-    "stem": "app-species-row"
+    "h": 226
   },
   {
     "selector": "app-entry-row",
+    "stem": "app-entry-row",
     "order": 24,
     "x": 24,
     "y": 3636,
     "w": 414,
-    "h": 240,
-    "stem": "app-entry-row"
+    "h": 240
   },
   {
     "selector": "app-add-row",
+    "stem": "app-add-row",
     "order": 25,
     "x": 462,
     "y": 3636,
     "w": 414,
-    "h": 240,
-    "stem": "app-add-row"
+    "h": 240
   },
   {
     "selector": "app-check-row",
+    "stem": "app-check-row",
     "order": 26,
     "x": 24,
     "y": 3900,
     "w": 414,
-    "h": 200,
-    "stem": "app-check-row"
+    "h": 200
   },
   {
     "selector": "app-factor-row",
+    "stem": "app-factor-row",
     "order": 27,
     "x": 462,
     "y": 3900,
     "w": 414,
-    "h": 200,
-    "stem": "app-factor-row"
+    "h": 200
   },
   {
     "selector": "app-key-value-table, app-key-value-row",
+    "stem": "app-key-value-table-app-key-value-row",
     "order": 28,
     "x": 24,
     "y": 4124,
     "w": 414,
-    "h": 435,
-    "stem": "app-key-value-table-app-key-value-row"
+    "h": 435
   },
   {
     "selector": "app-choice-row",
+    "stem": "app-choice-row",
     "order": 29,
     "x": 462,
     "y": 4124,
     "w": 414,
-    "h": 435,
-    "stem": "app-choice-row"
+    "h": 435
   },
   {
     "selector": "app-form-field",
+    "stem": "app-form-field",
     "order": 30,
     "x": 24,
     "y": 4583,
     "w": 414,
-    "h": 325,
-    "stem": "app-form-field"
+    "h": 325
   },
   {
     "selector": "app-search-field",
+    "stem": "app-search-field",
     "order": 31,
     "x": 462,
     "y": 4583,
     "w": 414,
-    "h": 325,
-    "stem": "app-search-field"
+    "h": 325
   },
   {
     "selector": "app-segmented",
+    "stem": "app-segmented",
     "order": 32,
     "x": 24,
     "y": 4932,
     "w": 414,
-    "h": 112,
-    "stem": "app-segmented"
+    "h": 112
   },
   {
     "selector": "app-chip-group",
+    "stem": "app-chip-group",
     "order": 33,
     "x": 462,
     "y": 4932,
     "w": 414,
-    "h": 112,
-    "stem": "app-chip-group"
+    "h": 112
   },
   {
     "selector": "app-filter-chip",
+    "stem": "app-filter-chip",
     "order": 34,
     "x": 24,
     "y": 5068,
     "w": 414,
-    "h": 100,
-    "stem": "app-filter-chip"
+    "h": 100
   },
   {
     "selector": "app-range-slider",
+    "stem": "app-range-slider",
     "order": 35,
     "x": 462,
     "y": 5068,
     "w": 414,
-    "h": 100,
-    "stem": "app-range-slider"
+    "h": 100
   },
   {
     "selector": "app-colour-swatches",
+    "stem": "app-colour-swatches",
     "order": 36,
     "x": 24,
     "y": 5192,
     "w": 414,
-    "h": 417,
-    "stem": "app-colour-swatches"
+    "h": 417
   },
   {
     "selector": "app-colour-picker",
+    "stem": "app-colour-picker",
     "order": 37,
     "x": 462,
     "y": 5192,
     "w": 414,
-    "h": 417,
-    "stem": "app-colour-picker"
+    "h": 417
   },
   {
     "selector": "app-species-picker",
+    "stem": "app-species-picker",
     "order": 38,
     "x": 24,
     "y": 5633,
     "w": 414,
-    "h": 248,
-    "stem": "app-species-picker"
+    "h": 248
   },
   {
     "selector": "app-photo-picker",
+    "stem": "app-photo-picker",
     "order": 39,
     "x": 462,
     "y": 5633,
     "w": 414,
-    "h": 248,
-    "stem": "app-photo-picker"
+    "h": 248
   },
   {
     "selector": "app-year-band-input",
+    "stem": "app-year-band-input",
     "order": 40,
     "x": 24,
     "y": 5905,
     "w": 414,
-    "h": 156,
-    "stem": "app-year-band-input"
+    "h": 156
   },
   {
     "selector": "app-level-pill",
+    "stem": "app-level-pill",
     "order": 41,
     "x": 462,
     "y": 5905,
     "w": 414,
-    "h": 156,
-    "stem": "app-level-pill"
+    "h": 156
   },
   {
     "selector": "app-tag-list",
+    "stem": "app-tag-list",
     "order": 42,
     "x": 24,
-    "y": 6086,
+    "y": 6085,
     "w": 414,
-    "h": 238,
-    "stem": "app-tag-list"
+    "h": 238
   },
   {
     "selector": "app-colour-field",
+    "stem": "app-colour-field",
     "order": 43,
     "x": 462,
-    "y": 6086,
+    "y": 6085,
     "w": 414,
-    "h": 238,
-    "stem": "app-colour-field"
+    "h": 238
   },
   {
     "selector": "app-colour-change",
+    "stem": "app-colour-change",
     "order": 44,
     "x": 24,
-    "y": 6348,
+    "y": 6347,
     "w": 414,
-    "h": 170,
-    "stem": "app-colour-change"
+    "h": 170
   },
   {
     "selector": "app-measurement",
+    "stem": "app-measurement",
     "order": 45,
     "x": 462,
-    "y": 6348,
+    "y": 6347,
     "w": 414,
-    "h": 170,
-    "stem": "app-measurement"
+    "h": 170
   },
   {
     "selector": "app-measurement-group",
+    "stem": "app-measurement-group",
     "order": 46,
     "x": 24,
-    "y": 6542,
+    "y": 6541,
     "w": 414,
-    "h": 326,
-    "stem": "app-measurement-group"
+    "h": 326
   },
   {
     "selector": "app-year-band",
+    "stem": "app-year-band",
     "order": 47,
     "x": 462,
-    "y": 6542,
+    "y": 6541,
     "w": 414,
-    "h": 326,
-    "stem": "app-year-band"
+    "h": 326
   },
   {
     "selector": "app-season-curve",
+    "stem": "app-season-curve",
     "order": 48,
     "x": 24,
-    "y": 6892,
+    "y": 6891,
     "w": 414,
-    "h": 202,
-    "stem": "app-season-curve"
+    "h": 202
   },
   {
     "selector": "app-histogram",
+    "stem": "app-histogram",
     "order": 49,
     "x": 462,
-    "y": 6892,
+    "y": 6891,
     "w": 414,
-    "h": 202,
-    "stem": "app-histogram"
+    "h": 202
   },
   {
     "selector": "app-ramp",
+    "stem": "app-ramp",
     "order": 50,
     "x": 24,
-    "y": 7118,
+    "y": 7117,
     "w": 414,
-    "h": 150,
-    "stem": "app-ramp"
+    "h": 150
   },
   {
     "selector": "app-timeline, app-week-button",
+    "stem": "app-timeline-app-week-button",
     "order": 51,
     "x": 462,
-    "y": 7118,
+    "y": 7117,
     "w": 414,
-    "h": 150,
-    "stem": "app-timeline-app-week-button"
+    "h": 150
   },
   {
     "selector": "app-image-tile",
+    "stem": "app-image-tile",
     "order": 52,
     "x": 24,
-    "y": 7292,
+    "y": 7291,
     "w": 414,
-    "h": 212,
-    "stem": "app-image-tile"
+    "h": 212
   },
   {
     "selector": "app-image-credit",
+    "stem": "app-image-credit",
     "order": 53,
     "x": 462,
-    "y": 7292,
+    "y": 7291,
     "w": 414,
-    "h": 212,
-    "stem": "app-image-credit"
+    "h": 212
   },
   {
     "selector": "app-image-viewer",
+    "stem": "app-image-viewer",
     "order": 54,
     "x": 24,
-    "y": 7528,
+    "y": 7527,
     "w": 414,
-    "h": 272,
-    "stem": "app-image-viewer"
+    "h": 272
   },
   {
     "selector": "app-private-image",
+    "stem": "app-private-image",
     "order": 55,
     "x": 462,
-    "y": 7528,
+    "y": 7527,
     "w": 414,
-    "h": 272,
-    "stem": "app-private-image"
+    "h": 272
   },
   {
     "selector": "app-avatar-button",
+    "stem": "app-avatar-button",
     "order": 56,
     "x": 24,
-    "y": 7824,
+    "y": 7823,
     "w": 414,
-    "h": 116,
-    "stem": "app-avatar-button"
+    "h": 116
   },
   {
     "selector": "app-floating-button",
+    "stem": "app-floating-button",
     "order": 57,
     "x": 462,
-    "y": 7824,
+    "y": 7823,
     "w": 414,
-    "h": 116,
-    "stem": "app-floating-button"
+    "h": 116
   },
   {
     "selector": "app-crosshair",
+    "stem": "app-crosshair",
     "order": 58,
     "x": 24,
-    "y": 7964,
+    "y": 7963,
     "w": 414,
-    "h": 168,
-    "stem": "app-crosshair"
+    "h": 168
   },
   {
     "selector": "app-svg-icon",
+    "stem": "app-svg-icon",
     "order": 59,
     "x": 462,
-    "y": 7964,
+    "y": 7963,
     "w": 414,
-    "h": 168,
-    "stem": "app-svg-icon"
+    "h": 168
   },
   {
     "selector": "app-stat-row",
+    "stem": "app-stat-row",
     "order": 60,
     "x": 24,
-    "y": 8156,
+    "y": 8155,
     "w": 414,
-    "h": 279,
-    "stem": "app-stat-row"
+    "h": 279
   },
   {
     "selector": "app-empty-state",
+    "stem": "app-empty-state",
     "order": 61,
     "x": 462,
-    "y": 8156,
+    "y": 8155,
     "w": 414,
-    "h": 279,
-    "stem": "app-empty-state"
+    "h": 279
   },
   {
     "selector": "app-error-state",
+    "stem": "app-error-state",
     "order": 62,
     "x": 24,
-    "y": 8459,
+    "y": 8458,
     "w": 414,
-    "h": 279,
-    "stem": "app-error-state"
+    "h": 279
   },
   {
     "selector": "app-infinite-list",
+    "stem": "app-infinite-list",
     "order": 63,
     "x": 462,
-    "y": 8459,
+    "y": 8458,
     "w": 414,
-    "h": 279,
-    "stem": "app-infinite-list"
+    "h": 279
   },
   {
     "selector": "app-skeleton",
+    "stem": "app-skeleton",
     "order": 64,
     "x": 24,
-    "y": 8762,
+    "y": 8761,
     "w": 414,
-    "h": 218,
-    "stem": "app-skeleton"
+    "h": 218
   },
   {
     "selector": "app-progress",
+    "stem": "app-progress",
     "order": 65,
     "x": 462,
-    "y": 8762,
+    "y": 8761,
     "w": 414,
-    "h": 218,
-    "stem": "app-progress"
+    "h": 218
   },
   {
     "selector": "app-button busy",
+    "stem": "app-button-busy",
     "order": 66,
     "x": 24,
-    "y": 9004,
+    "y": 9003,
     "w": 414,
-    "h": 116,
-    "stem": "app-button-busy"
+    "h": 116
   }
 ]
