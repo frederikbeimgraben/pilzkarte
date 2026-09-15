@@ -199,7 +199,9 @@
     "beispiel.geschmack.mild": "mild",
     "beispiel.geschmack.nussig": "nussig",
     "beispiel.geschmack.bitter": "bitter",
-    "beispiel.vergleich.bleibt": "bleibt"
+    "beispiel.vergleich.bleibt": "bleibt",
+    "blocks.reviewTitle": "Bilder prüfen",
+    "beispiel.pruefung.zaehler": "1 von 4"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -401,6 +403,8 @@
     "beispiel.geschmack.mild": "mild",
     "beispiel.geschmack.nussig": "nutty",
     "beispiel.geschmack.bitter": "bitter",
-    "beispiel.vergleich.bleibt": "stays"
+    "beispiel.vergleich.bleibt": "stays",
+    "blocks.reviewTitle": "Review images",
+    "beispiel.pruefung.zaehler": "1 of 4"
   }
 }

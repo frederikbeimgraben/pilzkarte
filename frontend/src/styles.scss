@@ -95,11 +95,6 @@ p.text-xs.text-danger {
   font-size: 14px;
 }
 
-// Das Board zeigt die Prüfkarte ohne Zähler: nur Bild, Name und Herkunft.
-app-building-blocks .queue__counter {
-  display: none;
-}
-
 // Im Board füllt der ladende Knopf die Karte.
 app-building-blocks .block__wide .btn {
   inline-size: 100%;
@@ -155,4 +150,17 @@ app-building-blocks .block__swatchrows {
   --key-value-table-label: 240px;
   --pilz-colour-width: 96px;
   --pilz-colour-height: 30px;
+}
+
+// Im Board füllt das Filterblatt seine Bühne und zeigt keinen Schließen-Knopf.
+app-building-blocks .block__stage--filter .overlay__panel {
+  inset-block-start: 0;
+}
+
+app-building-blocks .block__stage--filter .filtersheet {
+  block-size: 100%;
+}
+
+app-building-blocks .block__stage--filter .filtersheet__close {
+  display: none;
 }

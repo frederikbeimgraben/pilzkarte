@@ -102,8 +102,12 @@ export async function measure(root) {
   writeIfNew(join(target, 'blocks-cards.json'), Buffer.from(JSON.stringify(cards, null, 2) + '\n'));
 
   const image = decode(readFileSync(join(images, `${BOARD}.png`)));
+  // Ein Bild ohne die letzte Zeile gibt einen falschen Ausschnitt. Solche
+  // Karten bleiben ohne Bild und stehen im Ergebnis.
+  const clipped = cards.filter((card) => card.y + card.h > image.height).map((card) => card.stem);
   let fresh = 0;
   for (const card of cards) {
+    if (clipped.includes(card.stem)) continue;
     if (writeIfNew(join(folder, `${card.stem}.png`), encode(crop(image, card)))) fresh += 1;
   }
   let stale = 0;
@@ -112,7 +116,14 @@ export async function measure(root) {
     rmSync(join(folder, name));
     stale += 1;
   }
-  return { count: cards.length, fresh, same: cards.length - fresh, stale };
+  return {
+    count: cards.length,
+    fresh,
+    same: cards.length - fresh - clipped.length,
+    stale,
+    clipped,
+    height: image.height,
+  };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
@@ -125,4 +136,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   console.log(
     `${result.count} Karten: ${result.fresh} neu, ${result.same} unverändert, ${result.stale} entfernt`,
   );
+  if (result.clipped.length > 0) {
+    console.error(
+      `${BOARD}.png hat ${result.height} Zeilen und schneidet ${result.clipped.join(', ')} ab. ` +
+        'Die Höhe in canvas.json ist kleiner als der Inhalt des Boards.',
+    );
+  }
 }

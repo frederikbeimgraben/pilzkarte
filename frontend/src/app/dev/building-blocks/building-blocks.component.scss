@@ -292,6 +292,20 @@
   border-radius: var(--radius-xl);
 }
 
+// Der Zähler steht im Kopf der Seite, nicht über dem Stapel.
+.block__reviewhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.block__reviewcount {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .block__reviewimage {
   display: block;
   block-size: 120px;
@@ -306,6 +320,11 @@
 
 .block__reviewtitle {
   font-size: 18px;
+  font-weight: var(--fw-semibold);
+}
+
+.block__reviewlabel {
+  font-size: 15px;
   font-weight: var(--fw-semibold);
 }
 
@@ -365,6 +384,8 @@
 }
 
 .block__stage--filter {
+  --filter-sheet-handle: var(--size-handle-height);
+
   block-size: 210px;
 }
 
