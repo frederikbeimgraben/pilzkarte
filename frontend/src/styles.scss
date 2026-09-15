@@ -93,3 +93,13 @@ app-building-blocks .block--nolabel app-input label {
 p.text-xs.text-danger {
   font-size: 14px;
 }
+
+// Das Board zeigt die Prüfkarte ohne Zähler: nur Bild, Name und Herkunft.
+app-building-blocks .queue__counter {
+  display: none;
+}
+
+// Im Board füllt der ladende Knopf die Karte.
+app-building-blocks .block__wide .btn {
+  inline-size: 100%;
+}

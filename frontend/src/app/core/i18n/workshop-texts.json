@@ -178,7 +178,8 @@
     "beispiel.farbe.braun": "Braun",
     "blocks.addRow": "app-add-row · 48 px · radius 10 · rand gestrichelt",
     "beispiel.zeile.faktor": "Faktor",
-    "beispiel.badge.abgelehnt": "abgelehnt"
+    "beispiel.badge.abgelehnt": "abgelehnt",
+    "beispiel.pruefung.herkunft": "Jonas · 6. Sept · Schönbuch"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -359,6 +360,7 @@
     "beispiel.farbe.braun": "Brown",
     "blocks.addRow": "app-add-row · 48 px · radius 10 · dashed edge",
     "beispiel.zeile.faktor": "Factor",
-    "beispiel.badge.abgelehnt": "rejected"
+    "beispiel.badge.abgelehnt": "rejected",
+    "beispiel.pruefung.herkunft": "Jonas · 6 Sept · Schönbuch"
   }
 }

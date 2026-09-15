@@ -204,7 +204,13 @@
     <div class="block__stage block__stage--review">
       <app-review-queue [items]="reviewItems">
         <ng-template let-item>
-          <div class="block__reviewcard">{{ item }}</div>
+          <div class="block__reviewcard">
+            <app-private-image class="block__reviewimage" [path]="sampleImage.url" [alt]="item.latin" />
+            <div class="block__reviewtext">
+              <span class="block__reviewtitle">{{ item.title }}</span>
+              <span class="block__reviewmeta">{{ item.origin }}</span>
+            </div>
+          </div>
         </ng-template>
       </app-review-queue>
     </div>
@@ -653,10 +659,8 @@
     </div>
   </section>
 
-  <section class="block" data-block="app-button busy">
+  <section class="block block__wide" data-block="app-button busy">
     <h2 class="block__head">{{ 'blocks.buttonBusy' | t }}</h2>
-    <div class="block__row">
-      <app-button variant="primary" size="lg" [loading]="true" [ariaLabel]="text('common.loading')" />
-    </div>
+    <app-button variant="primary" size="lg" [loading]="true" [ariaLabel]="text('common.loading')" />
   </section>
 </div>

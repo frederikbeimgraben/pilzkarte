@@ -27,7 +27,8 @@
     "e2e": "playwright test",
     "e2e:boards": "node tools/check-boards.mjs && playwright test --project=phone --project=desktop --project=wide --project=blocks",
     "e2e:flows": "playwright test --project=flows",
-    "lighthouse": "lhci autorun"
+    "lighthouse": "lhci autorun",
+    "boards:cards": "node tools/measure-blocks-cards.mjs"
   },
   "dependencies": {
     "@angular/common": "^22.1.0",
