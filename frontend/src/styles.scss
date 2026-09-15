@@ -117,3 +117,15 @@ app-building-blocks .block__compare .kv__value {
   align-items: flex-start !important;
   text-align: start !important;
 }
+
+// Im Board steht der Knopf der Kopfzeile 40 px hoch.
+app-building-blocks .block__pagehead .btn {
+  block-size: 40px !important;
+  padding-inline: var(--size-gutter);
+}
+
+// Das Board stellt den Haken 12 px vor seinen Text und schreibt ihn 15 px.
+.cbx__input + .cbx__label {
+  margin-inline-start: 4px;
+  font-size: 15px;
+}

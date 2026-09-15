@@ -66,8 +66,11 @@
 
   <section class="block" data-block="app-page-header">
     <h2 class="block__head">{{ 'blocks.pageHeader' | t }}</h2>
-    <app-page-header [title]="text('entry.list.title')" [back]="true">
-      <app-button variant="primary">{{ 'entry.create' | t }}</app-button>
+    <app-page-header class="block__pagehead" [title]="text('entry.list.title')">
+      <app-button variant="primary">
+        <app-svg-icon name="plus" [size]="16" />
+        {{ 'entry.create' | t }}
+      </app-button>
     </app-page-header>
   </section>
 
@@ -100,7 +103,7 @@
     </div>
   </section>
 
-  <section class="block" data-block="app-sheet-head">
+  <section class="block block__sheethead" data-block="app-sheet-head">
     <h2 class="block__head">{{ 'blocks.sheetHead' | t }}</h2>
     <span class="block__handle" aria-hidden="true"><i></i></span>
     <app-sheet-head [title]="text('art.boletus_edulis')" [titleLink]="true" [week]="text('beispiel.woche')">
@@ -220,7 +223,7 @@
 
   <section class="block" data-block="app-review-queue">
     <h2 class="block__head">{{ 'blocks.reviewQueue' | t }}</h2>
-    <div class="block__stage block__stage--review">
+    <div class="block__stage">
       <app-review-queue [items]="reviewItems">
         <ng-template let-item>
           <div class="block__reviewcard">

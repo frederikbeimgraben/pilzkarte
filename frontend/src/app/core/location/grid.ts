@@ -6,8 +6,8 @@
  * verspräche die Oberfläche etwas anderes als die Datenbank hält.
  */
 
-/** Maschenweite in Kilometern, wie `shared/geometry.GRID_KM` im Backend. */
-export const GRID_KM = 5;
+/** Maschenweite in Kilometern, wie `shared.geometry.coarse` sie rundet. */
+export const GRID_KM = 1;
 
 /**
  * Zwei Nachkommastellen sind gut einen Kilometer. Vier wären eine Genauigkeit,
