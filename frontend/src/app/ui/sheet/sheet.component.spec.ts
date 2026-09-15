@@ -34,6 +34,17 @@ class HostComponent {}
 })
 class HeadHostComponent {}
 
+/** Die Spalte am Rechner: das Blatt sitzt darin als Modal über der ganzen Seite. */
+@Component({
+  imports: [SheetComponent],
+  template: `
+    <div class="shell--column">
+      <app-sheet label="Fund melden" [modal]="true"></app-sheet>
+    </div>
+  `,
+})
+class ColumnHostComponent {}
+
 /** jsdom misst keine Höhen, das Blatt braucht sie aber, um zu rasten. */
 function fakeSize(host: HTMLElement, hostHeight: number, sheetHeight: number): void {
   Object.defineProperty(host, 'clientHeight', { value: hostHeight, configurable: true });
@@ -273,6 +284,40 @@ describe('SheetComponent', () => {
 
       expect(calls).toBe(1);
       expect(scrim).toHaveClass('tap');
+    });
+
+    it('dunkelt die ganze Seite ab, auch die Spalte und die Leiste', async () => {
+      const { container } = await render(ColumnHostComponent, { providers: [WIDE] });
+
+      const scrim = container.querySelector<HTMLElement>('.sheet__scrim');
+      if (scrim === null) throw new Error('Scrim fehlt.');
+
+      expect(getComputedStyle(scrim).position).toBe('fixed');
+      expect(getComputedStyle(scrim).insetInlineStart).not.toContain('size-rail');
+    });
+
+    it('folgt mit der Höhe immer dem Inhalt', async () => {
+      const { container } = await render(SheetComponent, {
+        inputs: { label: 'Fund melden', title: 'Fund melden' },
+        providers: [WIDE],
+      });
+
+      const modal = container.querySelector<HTMLElement>('.sheet--modal');
+      if (modal === null) throw new Error('Modal fehlt.');
+
+      expect(getComputedStyle(modal).blockSize).toBe('auto');
+    });
+
+    it('deckelt die Höhe bei 80 % der Seitenhöhe', async () => {
+      const { container } = await render(SheetComponent, {
+        inputs: { label: 'Fund melden', title: 'Fund melden' },
+        providers: [WIDE],
+      });
+
+      const modal = container.querySelector<HTMLElement>('.sheet--modal');
+      if (modal === null) throw new Error('Modal fehlt.');
+
+      expect(getComputedStyle(modal).maxBlockSize).toBe('80%');
     });
 
     it('meldet das Schließen auf Escape und lässt die Taste nicht weiter', async () => {

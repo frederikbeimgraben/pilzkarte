@@ -71,8 +71,6 @@ export class SheetComponent {
   readonly note = input('');
   /** Ein Modal für wenige Zeilen: schmaler und nur so hoch wie sein Inhalt. */
   readonly compact = input(false);
-  /** Ein Modal, das seinem Inhalt folgt und bei 80 % der Höhe stehen bleibt. */
-  readonly fit = input(false);
 
   readonly detentChange = output<Detent>();
   readonly closed = output();
