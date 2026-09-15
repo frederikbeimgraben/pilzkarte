@@ -1,4 +1,10 @@
-<svg class="histogram" [attr.viewBox]="'0 0 ' + width + ' ' + height" role="img" [attr.aria-label]="label()">
+<svg
+  class="histogram"
+  [attr.viewBox]="'0 0 ' + width + ' ' + height()"
+  [style.block-size.px]="height()"
+  role="img"
+  [attr.aria-label]="label()"
+>
   @for (bar of bars(); track $index) {
     <rect
       [class.histogram__bar--inside]="bar.inside"
