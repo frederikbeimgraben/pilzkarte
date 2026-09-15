@@ -24,8 +24,9 @@ export class FilterSheetComponent {
   readonly open = input.required<boolean>();
   readonly title = input.required<string>();
   readonly resetEnabled = input(false);
-  readonly primaryLabel = input.required<string>();
-  /** Eine Gruppe zeigt den Pfeil zurück statt Zurücksetzen. */
+  /** Ohne Beschriftung bleibt der Fuß aus: das Blatt endet am Inhalt. */
+  readonly primaryLabel = input<string>();
+  /** Eine Gruppe zeigt den Pfeil zurück statt Zurücksetzen und X. */
   readonly back = input(false);
 
   readonly resetClick = output();

@@ -127,6 +127,13 @@
   display: block;
 }
 
+// Der Rumpf des Blattes trägt das Polster, der Fuß liegt daneben.
+.block__sheetbody {
+  flex: 1 1 auto;
+  min-block-size: 0;
+  padding: var(--size-gutter) var(--size-gutter) var(--space-6);
+}
+
 .block__list {
   display: flex;
   flex-direction: column;
