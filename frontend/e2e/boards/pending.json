@@ -106,7 +106,6 @@
   "blocks/app-ramp",
   "blocks/app-range-slider",
   "blocks/app-reject-dialog",
-  "blocks/app-review-queue",
   "blocks/app-season-curve",
   "blocks/app-sheet",
   "blocks/app-sheet-head",

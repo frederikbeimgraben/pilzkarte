@@ -152,3 +152,17 @@ export const SAMPLE_IMAGE: Photo = {
   createdAt: '2026-09-06T08:00:00+02:00',
   updatedAt: '2026-09-06T08:00:00+02:00',
 };
+
+/** Das Bild des Betrachters. Das Board zeigt es höher als die Kachel. */
+export const SAMPLE_IMAGE_LARGE: SpeciesImage = {
+  ...SAMPLE_IMAGE,
+  id: 'bild-zwei',
+  url: '/api/species-images/bild-zwei/full',
+  thumbUrl: '/api/species-images/bild-zwei/thumb',
+};
+
+/** Das Bild hinter dem Schloss. Das Board zeigt es flacher als die Kachel. */
+export const SAMPLE_IMAGE_PRIVATE = '/api/species-images/bild-drei/thumb';
+
+/** Das Foto der Prüfkarte. Das Board zeichnet es wärmer als eine Fläche. */
+export const SAMPLE_PHOTO = '/api/species-images/bild-vier/full';

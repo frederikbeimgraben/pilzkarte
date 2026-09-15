@@ -213,7 +213,7 @@
       <app-review-queue [items]="reviewItems">
         <ng-template let-item>
           <div class="block__reviewcard">
-            <app-private-image class="block__reviewimage" [path]="sampleImage.url" [alt]="item.latin" />
+            <app-private-image class="block__reviewimage" [path]="samplePhoto" [alt]="item.latin" />
             <div class="block__reviewtext">
               <span class="block__reviewtitle">{{ item.title }}</span>
               <span class="block__reviewmeta">{{ item.origin }}</span>
@@ -554,7 +554,7 @@
     />
   </section>
 
-  <section class="block" data-block="app-ramp">
+  <section class="block block__ramp" data-block="app-ramp">
     <h2 class="block__head">{{ 'blocks.ramp' | t }}</h2>
     <app-ramp
       [label]="text('map.legend.findProbability')"
@@ -586,14 +586,18 @@
   <section class="block" data-block="app-image-viewer">
     <h2 class="block__head">{{ 'blocks.imageViewer' | t }}</h2>
     <div class="block__stage block__stage--viewer">
-      <app-image-viewer [image]="sampleImage" [title]="text('art.boletus_edulis')" />
+      <app-image-viewer [image]="sampleImageLarge" [title]="text('art.boletus_edulis')" />
     </div>
   </section>
 
   <section class="block" data-block="app-private-image">
     <h2 class="block__head">{{ 'blocks.privateImage' | t }}</h2>
     <div class="block__stage block__stage--photo">
+<<<<<<< HEAD
       <app-private-image [path]="sampleImagePath" [alt]="text('art.boletus_edulis')" />
+=======
+      <app-private-image [path]="samplePrivate" [alt]="text('art.boletus_edulis')" />
+>>>>>>> ea8e22d7 (fix(ui): zeichnet Platzhalter und Dialog wie das Board)
     </div>
   </section>
 

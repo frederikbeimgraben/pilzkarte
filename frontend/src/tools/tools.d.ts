@@ -91,3 +91,14 @@ declare module '*/tools/sync-boards.mjs' {
   export function sync(root: string): SyncResult | null;
   export function cardStem(selector: string): string;
 }
+
+declare module '*/tools/png.mjs' {
+  export interface Raster {
+    width: number;
+    height: number;
+    pixels: Buffer;
+  }
+  export function decode(file: Buffer): Raster;
+  export function encode(raster: Raster): Buffer;
+  export function crop(image: Raster, box: { x: number; y: number; w: number; h: number }): Raster;
+}

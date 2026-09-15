@@ -134,6 +134,12 @@
   padding: var(--size-gutter) var(--size-gutter) var(--space-6);
 }
 
+// Im Board stehen Beschriftung, Rampe und Enden als Kinder der Karte.
+.block__ramp app-ramp {
+  --ramp-label-gap: 20px;
+  --ramp-ends-gap: 16px;
+}
+
 .block__list {
   display: flex;
   flex-direction: column;
