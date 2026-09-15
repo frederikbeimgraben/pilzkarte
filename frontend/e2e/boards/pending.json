@@ -107,7 +107,6 @@
   "blocks/app-sheet",
   "blocks/app-sheet-head",
   "blocks/app-skeleton",
-  "blocks/app-species-picker",
   "blocks/app-stat-row",
   "blocks/app-svg-icon",
   "blocks/app-tag-list",

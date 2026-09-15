@@ -358,8 +358,11 @@
   block-size: 190px;
 }
 
+// Im Baustein-Board stehen Suchfeld und Liste 10 px auseinander.
 .block__stage--picker {
-  block-size: 180px;
+  --species-picker-gap: 10px;
+
+  block-size: 178px;
 }
 
 .block__stage--photo {

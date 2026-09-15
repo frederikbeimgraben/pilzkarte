@@ -2,7 +2,7 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--species-picker-gap, var(--space-5));
   min-block-size: 0;
 }
 
