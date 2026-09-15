@@ -100,7 +100,6 @@
 
   <section class="block" data-block="app-sheet-head">
     <h2 class="block__head">{{ 'blocks.sheetHead' | t }}</h2>
-    <span class="block__handle" aria-hidden="true"></span>
     <span class="block__handle" aria-hidden="true"><i></i></span>
     <app-sheet-head [title]="text('art.boletus_edulis')" [titleLink]="true" [week]="text('beispiel.woche')">
       <app-timeline
@@ -254,7 +253,7 @@
     </div>
   </section>
 
-  <section class="block" data-block="app-add-row">
+  <section class="block block__add" data-block="app-add-row">
     <h2 class="block__head">{{ 'blocks.addRow' | t }}</h2>
     <app-add-row [label]="text('beispiel.zeile.faktor')" />
   </section>
@@ -271,7 +270,7 @@
     </div>
   </section>
 
-  <section class="block" data-block="app-factor-row">
+  <section class="block block__factors" data-block="app-factor-row">
     <h2 class="block__head">{{ 'blocks.factorRow' | t }}</h2>
     <app-factor-row [factor]="factor" icon="cloud" [removeLabel]="text('map.factor.remove')" />
     <app-factor-row [factor]="soilFactor" icon="layers" [removeLabel]="text('map.factor.remove')" />
@@ -517,9 +516,14 @@
     </div>
   </section>
 
-  <section class="block" data-block="app-season-curve">
+  <section class="block block__curve" data-block="app-season-curve">
     <h2 class="block__head">{{ 'blocks.seasonCurve' | t }}</h2>
-    <app-season-curve [series]="seasonSeries" [months]="monthMarks" [label]="text('saison.beschriftung')" />
+    <app-season-curve
+      [series]="seasonSeries"
+      [months]="monthMarks"
+      [large]="true"
+      [label]="text('saison.beschriftung')"
+    />
   </section>
 
   <section class="block" data-block="app-histogram">
@@ -558,9 +562,7 @@
 
   <section class="block" data-block="app-image-credit">
     <h2 class="block__head">{{ 'blocks.imageCredit' | t }}</h2>
-    <div class="block__card">
-      <app-image-credit [photographer]="sampleImage.photographer" [licence]="sampleImage.licence" />
-    </div>
+    <app-image-credit [photographer]="sampleImage.photographer" [licence]="sampleImage.licence" />
   </section>
 
   <section class="block" data-block="app-image-viewer">

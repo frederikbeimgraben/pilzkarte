@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 6px;
   margin: 0;
   inline-size: var(--size-tile);
 }
@@ -33,5 +33,8 @@
 }
 
 .tile__credit {
+  --image-credit-size: 13px;
+  --image-credit-line: 1.4;
+
   margin: 0;
 }

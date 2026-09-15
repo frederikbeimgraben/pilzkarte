@@ -4,7 +4,7 @@
 }
 
 .credit {
-  font-size: var(--fs-xs);
-  line-height: var(--lh-normal);
+  font-size: var(--image-credit-size, 14px);
+  line-height: var(--image-credit-line, normal);
   color: var(--color-text-muted);
 }
