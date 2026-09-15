@@ -4,7 +4,8 @@ import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync 
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const EXCLUDED = new Set(['SpecLevels.png']);
+// `measure-blocks-cards.mjs` zerlegt das Baustein-Board in Karten.
+const EXCLUDED = new Set(['SpecLevels.png', 'Blocks.png']);
 
 /** Sucht einen Ordner der Artefakte von `root` aufwärts. */
 function findSource(root, part) {

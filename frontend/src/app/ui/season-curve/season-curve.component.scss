@@ -74,34 +74,25 @@
   display: flex;
   gap: var(--space-3);
   justify-content: space-between;
-  margin-block-start: var(--space-2);
+  margin-block-start: var(--season-curve-legend-gap, var(--space-2));
   font-size: 13px;
+  line-height: normal;
   color: var(--color-text-muted);
 }
 
 .spark__months {
-  position: relative;
-  block-size: 19px;
-  margin-block-start: 6px;
+  display: flex;
+  justify-content: space-between;
+  block-size: 14px;
+  margin-block-start: var(--season-curve-months-gap, 6px);
   font-size: 13px;
+  line-height: normal;
   color: var(--color-text-muted);
   font-variant-numeric: tabular-nums;
 }
 
 .spark__month {
-  position: absolute;
-  inset-block-start: 0;
   white-space: nowrap;
-  transform: translateX(-50%);
-}
-
-// Die äußeren Marken rücken nach innen, sonst stünden sie halb außerhalb.
-.spark__month--first {
-  transform: none;
-}
-
-.spark__month--last {
-  transform: translateX(-100%);
 }
 
 // Die Jahreszahl des laufenden Jahres bricht nicht um; die längere Erklärung

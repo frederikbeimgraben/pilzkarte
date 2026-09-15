@@ -6,32 +6,26 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 6px;
   margin: 0;
-  inline-size: var(--size-tile);
+  inline-size: var(--image-tile-width, var(--size-tile));
 }
 
 .tile__image {
   display: block;
-  inline-size: var(--size-tile);
-  block-size: var(--size-tile);
+  inline-size: var(--image-tile-width, var(--size-tile));
+  block-size: var(--image-tile-height, var(--size-tile));
 }
 
 .tile__badge {
   position: absolute;
-  inset-block-start: var(--space-1);
-  inset-inline-start: var(--space-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  inline-size: var(--size-checkbox);
-  block-size: var(--size-checkbox);
-  color: var(--color-on-primary);
-  background: var(--color-primary);
-  border-radius: 50%;
-  box-shadow: var(--shadow-sm);
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--space-2);
 }
 
 .tile__credit {
+  --image-credit-size: 13px;
+  --image-credit-line: 1.4;
+
   margin: 0;
 }

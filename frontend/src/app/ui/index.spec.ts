@@ -3,7 +3,8 @@ import { join } from 'node:path';
 import { reflectComponentType, type Type } from '@angular/core';
 import * as ui from './index';
 
-/** Die Liste aus `artefakte/komponenten.md`, Abschnitt Gerüst und weitere. */
+/** Die Liste aus `artefakte/komponenten.md`, Abschnitt Gerüst und weitere,
+ * dazu die Meldung, die das Board flach über die Breite zeichnet. */
 const BLOCKS = [
   'app-page-header',
   'app-nav',
@@ -67,6 +68,7 @@ const BLOCKS = [
   'app-infinite-list',
   'app-skeleton',
   'app-progress',
+  'app-toast',
 ] as const;
 
 const UI_ROOT = join(process.cwd(), 'src', 'app', 'ui');

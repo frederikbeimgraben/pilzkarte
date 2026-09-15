@@ -7,7 +7,6 @@ import {
   CheckboxComponent,
   InputComponent,
   SelectComponent,
-  ToastComponent,
   ToastService,
   type BadgeVariant,
   type SelectOption,
@@ -17,6 +16,7 @@ import { WORKSHOP_TEXTS } from '../../core/i18n/workshop-texts';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import {
   ActionBarComponent,
+  AddRowComponent,
   AvatarButtonComponent,
   BannerComponent,
   CheckRowComponent,
@@ -24,6 +24,8 @@ import {
   ChoiceRowComponent,
   ColourChangeComponent,
   ColourFieldComponent,
+  type ColourMode,
+  type ColourValue,
   ColourPickerComponent,
   ColourSwatchesComponent,
   ConfirmDialogComponent,
@@ -46,7 +48,6 @@ import {
   KeyValueTableComponent,
   LevelPillComponent,
   ListRowComponent,
-  MeasurementComponent,
   MeasurementGroupComponent,
   NavComponent,
   ObjectMenuComponent,
@@ -72,11 +73,11 @@ import {
   StatRowComponent,
   SvgIconComponent,
   TagListComponent,
+  ToastComponent,
   TimelineComponent,
   YearBandComponent,
   YearBandInputComponent,
   OBJECT_COLOURS,
-  type Detent,
   type DetentSize,
   type ObjectMenuTarget,
   type PopoverAnchor,
@@ -84,19 +85,32 @@ import {
 import {
   BRUISE_COLOURS,
   CAP_COLOURS,
+  CAP_RARE_SPANS,
   CAP_WIDTH_SPANS,
   COLOUR_CODE,
   FLESH_COLOURS,
   GRADIENT_COLOURS,
   LATIN_NAMES,
   MULTI_COLOURS,
+  CAP_GRADIENTS,
+  CODE_COLOUR,
+  PRESS_COLOURS,
+  TRIPLE_COLOURS,
+  TUBE_COLOURS,
   NEAREST_TONES,
+  PICKER_TONE_KEYS,
   PICKER_TONES,
   SAMPLE_ALL_YEARS,
   SAMPLE_CURRENT_YEAR,
   SAMPLE_HISTOGRAM,
   SAMPLE_IMAGE,
+  SAMPLE_IMAGE_LARGE,
+  SAMPLE_IMAGE_PRIVATE,
+  SAMPLE_PHOTO,
+  SAMPLE_THUMBS,
+  SPECIES_THUMBS,
   SAMPLE_WEEKS,
+  SAMPLE_WEEKS_FLAT,
   STEM_HEIGHT_SPANS,
   STEM_THICKNESS_SPANS,
 } from './sample-data';
@@ -106,12 +120,19 @@ const THEME_ATTRIBUTE = 'data-theme';
 const DARK = 'dark';
 
 /** Die Werkstattseite: eine Karte je Baustein, in der Reihenfolge des Boards. */
+/** Eine Farbzelle des Vergleichs: ihre Töne und wie sie zu malen sind. */
+interface CompareColour {
+  readonly mode: ColourMode;
+  readonly colours: readonly ColourValue[];
+}
+
 @Component({
   selector: 'app-building-blocks',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ToastService],
   imports: [
     ActionBarComponent,
+    AddRowComponent,
     AvatarButtonComponent,
     BadgeComponent,
     BannerComponent,
@@ -147,7 +168,6 @@ const DARK = 'dark';
     KeyValueTableComponent,
     LevelPillComponent,
     ListRowComponent,
-    MeasurementComponent,
     MeasurementGroupComponent,
     NavComponent,
     ObjectMenuComponent,
@@ -188,17 +208,28 @@ export class BuildingBlocksComponent {
   private readonly i18n = inject(I18nService).addFallback(inject(WORKSHOP_TEXTS));
 
   protected readonly weeks = SAMPLE_WEEKS;
+
+  protected readonly weeksFlat = SAMPLE_WEEKS_FLAT;
   protected readonly histogramm = SAMPLE_HISTOGRAM;
   protected readonly objectColors = OBJECT_COLOURS;
   protected readonly sampleImage = SAMPLE_IMAGE;
   protected readonly sampleImagePath = photoPath(SAMPLE_IMAGE.id, 'thumb');
+  protected readonly sampleImageLarge = SAMPLE_IMAGE_LARGE;
+  protected readonly samplePrivate = SAMPLE_IMAGE_PRIVATE;
+  protected readonly samplePhoto = SAMPLE_PHOTO;
   protected readonly capColours = CAP_COLOURS;
   protected readonly gradientColours = GRADIENT_COLOURS;
   protected readonly multiColours = MULTI_COLOURS;
+  protected readonly tripleColours = TRIPLE_COLOURS;
   protected readonly capWidthSpans = CAP_WIDTH_SPANS;
   protected readonly nearestTones = NEAREST_TONES;
   protected readonly colourCode = COLOUR_CODE;
-  protected readonly reviewItems = LATIN_NAMES;
+  protected readonly codeColour = CODE_COLOUR;
+  protected readonly reviewItems = LATIN_NAMES.map((latin) => ({
+    latin,
+    title: this.text('beispiel.pfifferling'),
+    origin: this.text('beispiel.pruefung.herkunft'),
+  }));
   protected readonly infiniteRows = LATIN_NAMES;
 
   protected readonly seasonSeries = [
@@ -211,7 +242,6 @@ export class BuildingBlocksComponent {
   ];
 
   protected readonly activeWeek = signal({ year: 2025, week: 40 });
-  protected readonly detent = signal<Detent>(1);
   protected readonly viewMode = signal('ebene');
   protected readonly chip = signal<readonly string[]>(['steinpilz']);
   protected readonly checked = signal(true);
@@ -220,18 +250,19 @@ export class BuildingBlocksComponent {
   protected readonly farbe = signal<string>(OBJECT_COLOURS[0]);
   protected readonly colourTone = signal<string | null>(PICKER_TONES[5]);
   protected readonly searchValue = signal(this.text('beispiel.suche.stein'));
-  protected readonly yearFrom = signal(4);
+  protected readonly yearFrom = signal(6);
   protected readonly yearTo = signal(10);
-  protected readonly speciesChoice = signal<string | null>(LATIN_NAMES[0]);
-  protected readonly photoFiles = signal<readonly File[]>([this.sampleFile(), this.sampleFile()]);
+  protected readonly speciesChoice = signal<string | null>(null);
+  protected readonly photoFiles = signal<readonly File[]>([this.sampleFile(0), this.sampleFile(1)]);
   protected readonly overlayOpen = signal(true);
   protected readonly filterSheetOpen = signal(true);
 
-  protected readonly objectMenuTarget: ObjectMenuTarget = { x: 90, y: 60 };
-  protected readonly popoverAnchor: PopoverAnchor = { top: 16, end: 16 };
+  protected readonly objectMenuTarget: ObjectMenuTarget = { x: 0, y: 0 };
+  protected readonly popoverAnchor: PopoverAnchor = { top: 0, end: 0 };
 
   /** Das Board zeichnet die unterste Raste des Blatts 120 px hoch. */
-  protected readonly sheetDetents: readonly [DetentSize, DetentSize, DetentSize] = ['120px', 0.4, 0.9];
+  protected readonly sheetDetents: readonly [DetentSize, DetentSize, DetentSize] = ['320px', 0.4, 0.9];
+  protected readonly overlayDetents: readonly [DetentSize, DetentSize, DetentSize] = [0.45, 0.7, 0.9];
   protected readonly navTabs = { map: '/karte', species: '/arten' };
 
   protected readonly badgeVariants: readonly { variant: BadgeVariant; label: string }[] = [
@@ -239,12 +270,19 @@ export class BuildingBlocksComponent {
     { variant: 'info', label: this.text('beispiel.badge.prognose') },
     { variant: 'success', label: this.text('beispiel.badge.gespeichert') },
     { variant: 'warning', label: this.text('beispiel.badge.geschuetzt') },
-    { variant: 'danger', label: this.text('bild.zustand.abgelehnt') },
+    { variant: 'danger', label: this.text('beispiel.badge.abgelehnt') },
   ];
 
   protected readonly fleshOptions: SelectOption[] = [
     { value: 'candidus', label: this.text('beispiel.farbe.fleisch') },
     { value: 'caeruleus', label: this.text('beispiel.farbe.blau') },
+  ];
+
+  protected readonly backgrounds = [
+    { value: 'karte', label: this.text('map.basemap.map') },
+    { value: 'hell', label: this.text('map.basemap.light') },
+    { value: 'topo', label: this.text('map.basemap.topo') },
+    { value: 'satellit', label: this.text('map.basemap.satellite') },
   ];
 
   protected readonly viewModes = [
@@ -267,7 +305,7 @@ export class BuildingBlocksComponent {
 
   protected readonly colourPickerSwatches = PICKER_TONES.map((value, i) => ({
     value,
-    label: `${this.text('common.colour')} ${String(i + 1)}`,
+    label: this.text(PICKER_TONE_KEYS[i]),
   }));
 
   protected readonly speciesRows = [
@@ -277,7 +315,7 @@ export class BuildingBlocksComponent {
       latin: LATIN_NAMES[0],
       levelText: this.text('enum.edibility.edible'),
       levelColour: 'var(--color-success)',
-      image: null,
+      image: SPECIES_THUMBS.stein,
     },
     {
       value: LATIN_NAMES[4],
@@ -285,7 +323,7 @@ export class BuildingBlocksComponent {
       latin: LATIN_NAMES[4],
       levelText: this.text('enum.edibility.edible'),
       levelColour: 'var(--color-success)',
-      image: null,
+      image: SPECIES_THUMBS.marone,
     },
   ];
 
@@ -297,7 +335,7 @@ export class BuildingBlocksComponent {
       latin: LATIN_NAMES[1],
       levelText: this.text('enum.edibility.edible'),
       levelColour: 'var(--color-success)',
-      image: null,
+      image: SPECIES_THUMBS.pfifferling,
     },
   ];
 
@@ -326,11 +364,58 @@ export class BuildingBlocksComponent {
     condition: this.text('beispiel.faktor.bodenPhBedingung'),
   };
 
+  protected readonly compareNames = [this.text('art.boletus_edulis'), this.text('beispiel.gallenroehrling')];
+
+  /** Die Druckprobe der beiden Arten: erster Ton, dann der spätere. */
+  protected readonly pressColours = PRESS_COLOURS;
+
+  /** Der Speisewert beider Arten: Wort, Schrift und Grund der Marke. */
+  protected readonly compareLevels = [
+    {
+      text: this.text('art.essbar.essbar'),
+      colour: 'var(--color-success)',
+      background: 'var(--color-primary-subtle)',
+    },
+    {
+      text: this.text('art.essbar.ungeniessbar'),
+      colour: 'var(--color-text-muted)',
+      background: 'var(--color-surface-sunken)',
+    },
+  ];
+
+  /** Eine Farbzelle des Vergleichs: ihre Töne und wie sie zu malen sind. */
+  protected readonly capColourCells: readonly CompareColour[] = [
+    { mode: 'gradient', colours: CAP_GRADIENTS[0] },
+    { mode: 'gradient', colours: CAP_GRADIENTS[1] },
+  ];
+
+  protected readonly tubeColourCells: readonly CompareColour[] = [
+    { mode: 'multiple', colours: TUBE_COLOURS[0] },
+    { mode: 'single', colours: TUBE_COLOURS[1] },
+  ];
+
+  /** Die Druckprobe je Art: erster Ton, späterer Ton und das Wort dazu. */
+  protected readonly pressCells = [
+    { ...PRESS_COLOURS[0], note: this.text('beispiel.vergleich.bleibt') },
+    { ...PRESS_COLOURS[1], note: this.text('enum.speed.min1') },
+  ];
+
+  protected readonly flavourCells = [
+    this.text('beispiel.vergleich.geschmackEins').split(', '),
+    this.text('beispiel.vergleich.geschmackZwei').split(', '),
+  ];
+
+  protected readonly spanCells = ['', ''];
+
   protected readonly stats = [
     { value: 12, label: this.text('entry.finds') },
     { value: 4, label: this.text('entry.markers') },
     { value: 2, label: this.text('entry.zones') },
     { value: 3, label: this.text('entry.images') },
+  ];
+
+  protected readonly capRareMeasurement = [
+    { extent: 'width' as const, spans: CAP_RARE_SPANS, unit: this.text('unit.cm') },
   ];
 
   protected readonly capMeasurements = [
@@ -347,6 +432,7 @@ export class BuildingBlocksComponent {
     { text: this.text('art.monat.apr'), week: 14 },
     { text: this.text('art.monat.jul'), week: 27 },
     { text: this.text('art.monat.okt'), week: 40 },
+    { text: this.text('art.monat.dez'), week: 52 },
   ];
 
   protected readonly months = [
@@ -362,7 +448,7 @@ export class BuildingBlocksComponent {
     this.text('beispiel.tag.herbst'),
   ];
 
-  protected readonly colourChangeTriggers = [this.text('art.verfaerbung.zeile')];
+  protected readonly colourChangeTriggers = [this.text('admin.characteristic.trigger.pressure')];
   protected readonly colourChangeFrom = [FLESH_COLOURS];
   protected readonly colourChangeTo = [BRUISE_COLOURS];
   protected readonly colourChangeFromLabels = [this.text('art.farbe.fleisch')];
@@ -390,7 +476,9 @@ export class BuildingBlocksComponent {
     return this.i18n.translate(schluessel);
   }
 
-  private sampleFile(): File {
-    return new File(['x'], 'pilz.jpg', { type: 'image/jpeg' });
+  private sampleFile(index: number): File {
+    const raw = atob(SAMPLE_THUMBS[index]);
+    const bytes = Uint8Array.from(raw, (sign) => sign.charCodeAt(0));
+    return new File([bytes], 'pilz.png', { type: 'image/png' });
   }
 }

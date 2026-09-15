@@ -3,6 +3,7 @@
   type="button"
   data-press="scale"
   [class.icon-button--primary]="variant() === 'primary'"
+  [class.icon-button--delete]="icon() === 'delete' && variant() !== 'primary'"
   [attr.aria-label]="label()"
   [disabled]="disabled()"
   (click)="pressed.emit()"

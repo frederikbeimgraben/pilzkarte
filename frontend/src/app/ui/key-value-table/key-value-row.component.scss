@@ -28,7 +28,8 @@
   flex-direction: column;
   align-items: flex-end;
   min-inline-size: 0;
-  padding-inline-end: var(--key-value-table-gutter);
+  padding-inline: var(--key-value-table-start, 0) var(--key-value-table-gutter);
+  font-size: var(--key-value-table-value, var(--key-value-table-text, var(--fs-sm)));
   color: var(--color-text);
   text-align: end;
   overflow-wrap: anywhere;
@@ -67,7 +68,7 @@
 // `--key-value-table-nowrap` überstehen, damit die Zeile flach bleibt.
 .kv__key {
   font-weight: var(--key-value-table-weight, var(--fw-semibold));
-  color: var(--color-text-muted);
+  color: var(--key-value-table-key-colour, var(--color-text-muted));
   white-space: var(--key-value-table-nowrap, normal);
   overflow-wrap: anywhere;
 }

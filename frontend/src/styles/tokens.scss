@@ -90,13 +90,24 @@
   --shadow-lg: 0 10px 32px rgb(0 0 0 / 60%);
 }
 
-// Ein Grün: zwei Grüntöne auf einer Zeile lesen sich wie ein Versehen.
+// Das Grün der Meldung steht heller als die Marke, wie die Bretter es malen.
 :root,
 :root[data-theme='light'],
 :root[data-theme='dark'] {
   --color-success: var(--color-primary);
   --color-success-subtle: var(--color-primary-subtle);
   --color-handle: #ffffff;
+  --color-on-media: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  --color-success: #5fb37f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-success: #5fb37f;
+  }
 }
 
 :root {
@@ -136,8 +147,9 @@
   --size-crosshair: 52px;
   --size-modal: 480px;
   --size-modal-compact: 420px;
+  --size-row-wide: 56px;
 
-  --lh-normal: 1.2;
+  --lh-normal: normal;
 
   // Masse der Zeilen und Koepfe aus den Brettern.
   --fs-row-title: 15px;
@@ -146,7 +158,7 @@
   --fs-header-flat: 19px;
   --space-row-inline: 14px;
   --space-header-inline: 20px;
-  --space-row-stack: 1px;
+  --space-row-stack: 2px;
   --fw-row-filter: var(--fw-medium);
   --space-row-names: 2px;
   --space-card-stack: 14px;
@@ -178,6 +190,10 @@ app-input,
 app-select,
 app-toast {
   --radius-md: 10px;
+}
+
+app-button {
+  --space-5: 20px;
 }
 
 // Ohne diese Regeln markiert ein langer Druck Text und ein Tipp blitzt blau auf.

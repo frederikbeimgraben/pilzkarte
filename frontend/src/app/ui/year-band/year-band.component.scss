@@ -22,7 +22,7 @@
 
 // Die genannte Zeit tritt zurück, sobald die gemessene daneben liegt.
 .year__body--muted {
-  opacity: 0.3;
+  background: var(--color-primary-subtle);
 }
 
 .year__marks {

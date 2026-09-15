@@ -47,10 +47,17 @@ declare module '*/tools/check-size.mjs' {
 }
 
 declare module '*/tools/check-boards.mjs' {
+  export interface CardCoverage {
+    checked: number;
+    pending: string[];
+    lost: string[];
+    extra: string[];
+  }
   export interface BoardCoverage {
     checked: string[];
     pending: string[];
     missing: string[];
+    cards: CardCoverage;
   }
   export function checkBoards(root: string): BoardCoverage;
 }
@@ -78,6 +85,20 @@ declare module '*/tools/sync-boards.mjs' {
     /** Wo die Kartenbilder lagen, oder `null`, wenn es keine gibt. */
     fixtureSource: string | null;
     fixtures: CopyResult;
+    /** Was aus `Blocks.png` geschnitten wurde, oder `null` ohne Manifest. */
+    cards: { fresh: number; same: number; stale: number } | null;
   }
   export function sync(root: string): SyncResult | null;
+  export function cardStem(selector: string): string;
+}
+
+declare module '*/tools/png.mjs' {
+  export interface Raster {
+    width: number;
+    height: number;
+    pixels: Buffer;
+  }
+  export function decode(file: Buffer): Raster;
+  export function encode(raster: Raster): Buffer;
+  export function crop(image: Raster, box: { x: number; y: number; w: number; h: number }): Raster;
 }

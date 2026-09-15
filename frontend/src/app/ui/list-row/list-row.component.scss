@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   min-block-size: var(--size-row);
   border-block-end: var(--border-width) solid var(--color-border);
@@ -13,6 +14,7 @@
 // Ende bleibt daneben: ein Knopf im Knopf wäre für Hilfsmittel ein Fehler.
 .row {
   display: flex;
+  flex: 1;
   align-items: stretch;
   inline-size: 100%;
 }
@@ -96,13 +98,7 @@
 .row__title {
   font-size: var(--fs-md);
   font-weight: var(--fw-semibold);
-  line-height: var(--list-row-title-height, inherit);
-}
-
-// Die Zeile misst innen einundfünfzig Punkte; nur eine gerade Summe setzt
-// den Text auf dieselbe Linie wie das Board.
-.row__title--default {
-  padding-block-start: 2px;
+  line-height: var(--list-row-title-height, normal);
 }
 
 // Im Katalog ist der Titel eine Beschriftung, keine Überschrift.

@@ -2,7 +2,7 @@
   <input class="row__input" type="checkbox" [checked]="checked()" (change)="onChange($event)" />
   <span class="row__box" aria-hidden="true">
     @if (checked()) {
-      <app-svg-icon name="check" [size]="15" [strokeWidth]="2.6" />
+      <app-svg-icon name="check" [size]="tick()" [strokeWidth]="stroke()" />
     }
   </span>
   <span class="row__label">{{ label() }}</span>

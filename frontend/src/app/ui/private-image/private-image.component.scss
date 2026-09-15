@@ -1,6 +1,7 @@
 // Die Fläche steht schon, bevor das Bild da ist. Sonst springt die Zeile,
 // sobald die Antwort kommt.
 :host {
+  position: relative;
   display: block;
   overflow: hidden;
   background: var(--color-surface-sunken);
@@ -17,4 +18,19 @@
 
 .private__image--contain {
   object-fit: contain;
+}
+
+// Das Schloss sitzt in der Ecke des Bildes, auf dunklem Grund.
+.private__lock {
+  position: absolute;
+  inset-block-start: var(--space-2);
+  inset-inline-end: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 28px;
+  block-size: 28px;
+  color: var(--color-on-media);
+  background: rgb(0 0 0 / 45%);
+  border-radius: 50%;
 }

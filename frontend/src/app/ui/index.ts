@@ -75,6 +75,7 @@ export { SpeciesRowComponent, type SpeciesRowSpecies } from './species-row/speci
 export { SplitLayoutComponent } from './split-layout/split-layout.component';
 export { StatRowComponent, type Stat } from './stat-row/stat-row.component';
 export { SvgIconComponent, type IconName } from './svg-icon/svg-icon.component';
+export { ToastComponent } from './toast/toast.component';
 export { TagListComponent } from './tag-list/tag-list.component';
 export { TimelineComponent, type TimelineWeek } from './timeline/timeline.component';
 export { WeekButtonComponent } from './timeline/week-button.component';

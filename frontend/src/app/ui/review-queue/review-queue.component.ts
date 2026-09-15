@@ -29,6 +29,8 @@ const TILT_DIVISOR = 18;
 })
 export class ReviewQueueComponent<T> {
   readonly items = input.required<readonly T[]>();
+  /** Gleicht den Zurück-Knopf der Seite aus, damit die Knöpfe mittig stehen. */
+  readonly balance = input(false);
   readonly card = contentChild.required(TemplateRef);
 
   readonly accepted = output<T>();

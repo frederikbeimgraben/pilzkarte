@@ -11,11 +11,13 @@
     type="button"
     data-press="scale"
     [class.field--empty]="empty()"
+    [class.field--multiline]="multiline()"
     (click)="displayClick.emit()"
   >
     @if (icon(); as glyph) {
       <app-svg-icon class="field__lead" [name]="glyph" [size]="22" [strokeWidth]="1.8" />
     }
+    <ng-content select="[lead]" />
     {{ empty() ? placeholder() : value() }}
     @if (chevron()) {
       <app-svg-icon class="field__trail" name="chevron" [size]="18" />

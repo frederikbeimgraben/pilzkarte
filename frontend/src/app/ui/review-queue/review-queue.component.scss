@@ -7,7 +7,7 @@
 .queue {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
 }
 
 .queue__stack {
@@ -49,8 +49,8 @@
   gap: 22px;
 }
 
-// Der leere Platz rechts wiegt den Zurück-Knopf auf: Ablehnen und Annehmen
-// stehen darum in der Mitte.
+// Der leere Platz wiegt den Zurück-Knopf der Seite auf: Ablehnen und
+// Annehmen stehen damit in der Mitte des Fensters.
 .queue__balance {
   inline-size: var(--size-tap);
 }

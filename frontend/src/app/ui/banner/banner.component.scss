@@ -6,9 +6,9 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 10px var(--space-4);
-  font-size: 13px;
-  line-height: 18px;
+  padding: 10px var(--space-row-inline);
+  font-size: var(--fs-row-meta);
+  line-height: normal;
   font-weight: var(--fw-semibold);
   color: var(--color-warning);
   background: var(--color-warning-subtle);

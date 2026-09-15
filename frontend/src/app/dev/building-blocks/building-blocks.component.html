@@ -1,47 +1,54 @@
 <div class="board">
-  <section class="block">
+  <section class="block" data-block="app-button">
     <h2 class="block__head">{{ 'blocks.button' | t }}</h2>
     <div class="block__row">
       <app-button variant="primary">{{ 'common.save' | t }}</app-button>
       <app-button variant="secondary">{{ 'common.cancel' | t }}</app-button>
       <app-button variant="ghost">{{ 'common.more' | t }}</app-button>
-      <app-button variant="danger">{{ 'common.delete' | t }}</app-button>
-      <app-button variant="danger-outline">{{ 'map.factor.remove' | t }}</app-button>
+      <app-button variant="danger">{{ 'beispiel.variante.danger' | t }}</app-button>
+      <app-button variant="danger-outline">{{ 'beispiel.variante.dangerOutline' | t }}</app-button>
     </div>
   </section>
 
-  <section class="block block--nolabel">
+  <section class="block block--nolabel" data-block="app-input">
     <h2 class="block__head">{{ 'blocks.input' | t }}</h2>
-    <app-input [label]="text('common.name')" [ngModel]="text('beispiel.person')" />
-    <app-input
-      [label]="text('species.fieldLabel')"
-      [placeholder]="text('species.search.placeholder')"
-      [ngModel]="''"
-    />
-    <app-input [label]="text('melden.anzahl')" [error]="text('beispiel.feld.pflicht')" [ngModel]="''" />
+    <div class="block__fields">
+      <app-input [label]="text('common.name')" [ngModel]="text('beispiel.person')" />
+      <app-input
+        [label]="text('species.fieldLabel')"
+        [placeholder]="text('species.search.placeholder')"
+        [ngModel]="''"
+      />
+      <app-input
+        [label]="text('melden.anzahl')"
+        [placeholder]="text('melden.anzahl')"
+        [error]="text('beispiel.feld.pflicht')"
+        [ngModel]="''"
+      />
+    </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-select">
     <h2 class="block__head">{{ 'blocks.select' | t }}</h2>
     <app-select [ariaLabel]="text('species.field.flesh')" [options]="fleshOptions" [ngModel]="'candidus'" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-checkbox">
     <h2 class="block__head">{{ 'blocks.checkbox' | t }}</h2>
     <app-checkbox [ngModel]="true">{{ 'beispiel.schutz.bartschv' | t }}</app-checkbox>
-    <app-checkbox [ngModel]="false">{{ 'enum.protection.personal_use' | t }}</app-checkbox>
+    <app-checkbox [ngModel]="false">{{ 'beispiel.schutz.eigenbedarf' | t }}</app-checkbox>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-card">
     <h2 class="block__head">{{ 'blocks.card' | t }}</h2>
-    <app-card>
-      <app-list-row [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
+    <app-card class="flush block__rows">
+      <app-list-row kind="catalogue" [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
         <app-badge trail variant="primary">{{ 'account.role.admin' | t }}</app-badge>
       </app-list-row>
     </app-card>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-badge">
     <h2 class="block__head">{{ 'blocks.badge' | t }}</h2>
     <div class="block__row block__row--tight">
       @for (badge of badgeVariants; track badge.variant) {
@@ -50,21 +57,22 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-toast">
     <h2 class="block__head">{{ 'blocks.toast' | t }}</h2>
-    <div class="block__stage block__stage--toast">
-      <app-toast />
-    </div>
+    <app-toast />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-page-header">
     <h2 class="block__head">{{ 'blocks.pageHeader' | t }}</h2>
-    <app-page-header [title]="text('entry.list.title')" [back]="true">
-      <app-button variant="primary">{{ 'entry.create' | t }}</app-button>
+    <app-page-header class="block__pagehead" [title]="text('entry.list.title')">
+      <app-button variant="primary">
+        <app-svg-icon name="plus" [size]="16" />
+        {{ 'entry.create' | t }}
+      </app-button>
     </app-page-header>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-nav">
     <h2 class="block__head">{{ 'blocks.nav' | t }}</h2>
     <div class="block__stage block__stage--nav">
       <app-nav variant="bottom" [active]="navTabs.map" />
@@ -76,25 +84,29 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-sheet">
     <h2 class="block__head">{{ 'blocks.sheet' | t }}</h2>
     <div class="block__stage block__stage--sheet">
-      <app-sheet
-        [label]="text('entry.reportFind.title')"
-        [detent]="detent()"
-        [detents]="sheetDetents"
-        (detentChange)="detent.set($event)"
-      >
-        <app-sheet-head head [title]="text('entry.reportFind.title')" [arrows]="false" />
+      <app-sheet [label]="text('map.combination.save')" [detent]="0" [detents]="sheetDetents">
+        <app-sheet-head head [title]="text('map.combination.save')" [arrows]="false" />
+        <div class="block__sheetbody">
+          <app-form-field
+            [label]="text('common.name')"
+            [value]="text('beispiel.kombination')"
+            [readOnly]="true"
+          />
+        </div>
+        <app-action-bar [primary]="text('common.save')" [secondary]="text('common.cancel')" />
       </app-sheet>
     </div>
   </section>
 
-  <section class="block">
+  <section class="block block__sheethead" data-block="app-sheet-head">
     <h2 class="block__head">{{ 'blocks.sheetHead' | t }}</h2>
+    <span class="block__handle" aria-hidden="true"><i></i></span>
     <app-sheet-head [title]="text('art.boletus_edulis')" [titleLink]="true" [week]="text('beispiel.woche')">
       <app-timeline
-        [weeks]="weeks"
+        [weeks]="weeksFlat"
         [active]="activeWeek()"
         [label]="text('zeitleiste.beschriftung')"
         (chosen)="activeWeek.set({ year: $event.year, week: $event.week })"
@@ -102,54 +114,78 @@
     </app-sheet-head>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-overlay-host">
     <h2 class="block__head">{{ 'blocks.overlayHost' | t }}</h2>
     <div class="block__stage block__stage--overlay">
-      <app-overlay-host [open]="overlayOpen()" (closed)="overlayOpen.set(false)">
-        <app-sheet-head [title]="text('entry.fund.delete')" [arrows]="false" />
+      <app-overlay-host [open]="overlayOpen()" [modal]="true" (closed)="overlayOpen.set(false)">
+        <app-sheet [label]="text('beispiel.marker.loeschen')" [detent]="0" [detents]="overlayDetents">
+          <app-sheet-head head [title]="text('beispiel.marker.loeschen')" [arrows]="false" />
+        </app-sheet>
       </app-overlay-host>
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-filter-sheet">
     <h2 class="block__head">{{ 'blocks.filterSheet' | t }}</h2>
     <div class="block__stage block__stage--filter">
       <app-filter-sheet
         [open]="filterSheetOpen()"
         [title]="text('common.filter')"
         [resetEnabled]="true"
-        [primaryLabel]="text('filter.showSpecies')"
         (closed)="filterSheetOpen.set(false)"
       >
-        <app-choice-row [label]="text('entry.filter.own')" count="12" [checked]="true" />
-        <app-choice-row [label]="text('entry.filter.shared')" count="38" />
+        <div class="block__card">
+          <app-list-row
+            kind="filter"
+            [title]="text('art.merkmal.speisewert')"
+            [value]="text('art.essbar.essbar')"
+            [accent]="true"
+            [chevron]="true"
+            [clickable]="true"
+          />
+          <app-list-row
+            kind="filter"
+            [title]="text('filter.group.hutform')"
+            [chevron]="true"
+            [clickable]="true"
+          />
+        </div>
+        <div class="block__card">
+          <app-choice-row [label]="text('enum.edibility.edible')" count="77" [checked]="true" />
+          <app-choice-row [label]="text('enum.edibility.poisonous')" count="68" />
+        </div>
       </app-filter-sheet>
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-object-menu">
     <h2 class="block__head">{{ 'blocks.objectMenu' | t }}</h2>
     <div class="block__stage block__stage--fixed">
       <app-object-menu [target]="objectMenuTarget" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-action-bar">
     <h2 class="block__head">{{ 'blocks.actionBar' | t }}</h2>
     <app-action-bar [primary]="text('common.save')" [secondary]="text('common.cancel')" />
-    <app-action-bar [primary]="text('common.delete')" [danger]="true" />
+    <app-action-bar
+      [primary]="text('common.delete')"
+      [secondary]="text('common.cancel')"
+      [danger]="true"
+      [row]="true"
+    />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-icon-button">
     <h2 class="block__head">{{ 'blocks.iconButton' | t }}</h2>
-    <div class="block__row block__row--tight">
+    <div class="block__row">
       <app-icon-button icon="close" variant="secondary" [label]="text('common.cancel')" />
       <app-icon-button icon="check" variant="primary" [label]="text('common.select')" />
       <app-icon-button icon="delete" variant="secondary" [label]="text('common.delete')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-split-layout">
     <h2 class="block__head">{{ 'blocks.splitLayout' | t }}</h2>
     <div class="block__stage block__stage--split">
       <app-split-layout>
@@ -163,60 +199,102 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-popover">
     <h2 class="block__head">{{ 'blocks.popover' | t }}</h2>
     <div class="block__stage block__stage--popover">
       <app-popover [open]="true" [anchor]="popoverAnchor" [label]="text('map.layers.button')">
-        <app-segmented [options]="viewModes" [value]="viewMode()" [label]="text('map.basemap.title')" />
-        <app-choice-row [label]="text('map.layers.sharedFinds')" count="12" [checked]="true" />
-        <app-choice-row [label]="text('map.layers.myMarkers')" count="5" [checked]="true" />
+        <div class="block__group">
+          <p class="block__grouphead">{{ 'map.basemap.title' | t }}</p>
+          <app-segmented [options]="backgrounds" value="karte" [label]="text('map.basemap.title')" />
+        </div>
+        <div class="block__group">
+          <p class="block__grouphead">{{ 'map.layers.title' | t }}</p>
+          <div class="block__switches">
+            <app-choice-row
+              variant="boxed"
+              [label]="text('map.layers.sharedFinds')"
+              count="12"
+              [checked]="true"
+            />
+            <app-choice-row
+              variant="boxed"
+              [label]="text('map.layers.myMarkers')"
+              count="5"
+              [checked]="true"
+            />
+            <app-choice-row variant="boxed" [label]="text('entry.zones')" count="2" [checked]="true" />
+          </div>
+        </div>
+        <div class="block__group">
+          <p class="block__grouphead">{{ 'map.opacity' | t }}</p>
+          <app-range-slider [min]="0" [max]="100" [from]="0" [to]="80" handles="to" variant="dot" />
+        </div>
       </app-popover>
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-confirm-dialog">
     <h2 class="block__head">{{ 'blocks.confirmDialog' | t }}</h2>
     <div class="block__stage block__stage--confirm">
-      <app-confirm-dialog
-        [open]="true"
-        [title]="text('entry.fund.delete')"
-        [meta]="text('beispiel.dialogMeta')"
-        [danger]="true"
-      />
+      <app-confirm-dialog [open]="true" [title]="text('entry.fund.delete')" [danger]="true" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-reject-dialog">
     <h2 class="block__head">{{ 'blocks.rejectDialog' | t }}</h2>
     <div class="block__stage block__stage--reject">
-      <app-reject-dialog [open]="true" />
+      <app-reject-dialog [open]="true" [suggestion]="text('image.rejectReason.speciesUnclear')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-review-queue">
     <h2 class="block__head">{{ 'blocks.reviewQueue' | t }}</h2>
-    <div class="block__stage block__stage--review">
+    <div class="block__reviewhead">
+      <span class="block__reviewlabel">{{ 'blocks.reviewTitle' | t }}</span>
+      <span class="block__reviewcount">{{ text('beispiel.pruefung.zaehler') }}</span>
+    </div>
+    <div class="block__stage">
       <app-review-queue [items]="reviewItems">
         <ng-template let-item>
-          <div class="block__reviewcard">{{ item }}</div>
+          <div class="block__reviewcard">
+            <app-private-image class="block__reviewimage" [path]="samplePhoto" [alt]="item.latin" />
+            <div class="block__reviewtext">
+              <span class="block__reviewtitle">{{ item.title }}</span>
+              <span class="block__reviewmeta">{{ item.origin }}</span>
+            </div>
+          </div>
         </ng-template>
       </app-review-queue>
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-banner">
     <h2 class="block__head">{{ 'blocks.banner' | t }}</h2>
     <app-banner kind="pending" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-list-row">
     <h2 class="block__head">{{ 'blocks.listRow' | t }}</h2>
     <div class="block__card">
-      <app-list-row [title]="text('beispiel.zeile.rollen')" value="4 · 12" [chevron]="true" />
-      <app-list-row [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
+      <app-list-row
+        kind="catalogue"
+        [title]="text('beispiel.zeile.rollen')"
+        subline="4 · 12"
+        [chevron]="true"
+      />
+      <app-list-row kind="catalogue" [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
         <app-badge trail variant="primary">{{ 'account.role.admin' | t }}</app-badge>
       </app-list-row>
       <app-list-row
+        kind="catalogue"
+        icon="cloud"
+        [title]="text('layer.regen_4w')"
+        [value]="text('enum.unit.mm')"
+        [chevron]="true"
+        [clickable]="true"
+      />
+      <app-list-row
+        kind="catalogue"
         [title]="text('account.profile')"
         [subline]="text('beispiel.avatar')"
         [chevron]="true"
@@ -226,7 +304,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-species-row">
     <h2 class="block__head">{{ 'blocks.speciesRow' | t }}</h2>
     <div class="block__card">
       @for (row of speciesRows; track row.value) {
@@ -239,13 +317,20 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-entry-row">
     <h2 class="block__head">{{ 'blocks.entryRow' | t }}</h2>
-    <app-entry-row [entry]="entries[0]" [pending]="true" />
-    <app-entry-row [entry]="entries[1]" />
+    <div class="block__list">
+      <app-entry-row [entry]="entries[0]" [pending]="true" />
+      <app-entry-row [entry]="entries[1]" />
+    </div>
   </section>
 
-  <section class="block">
+  <section class="block block__add" data-block="app-add-row">
+    <h2 class="block__head">{{ 'blocks.addRow' | t }}</h2>
+    <app-add-row [label]="text('beispiel.zeile.faktor')" [action]="text('map.factor.add')" />
+  </section>
+
+  <section class="block" data-block="app-check-row">
     <h2 class="block__head">{{ 'blocks.checkRow' | t }}</h2>
     <div class="block__card">
       <app-check-row
@@ -257,28 +342,97 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block block__factors" data-block="app-factor-row">
     <h2 class="block__head">{{ 'blocks.factorRow' | t }}</h2>
     <app-factor-row [factor]="factor" icon="cloud" [removeLabel]="text('map.factor.remove')" />
     <app-factor-row [factor]="soilFactor" icon="layers" [removeLabel]="text('map.factor.remove')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-key-value-table, app-key-value-row">
     <h2 class="block__head">{{ 'blocks.keyValueTable' | t }}</h2>
-    <app-key-value-table>
-      <app-key-value-row [key]="text('species.field.edibility')" [value]="text('enum.edibility.edible')" />
-      <app-key-value-row [key]="text('art.mass.zeichen.hutbreite')">
-        <app-measurement extent="width" [spans]="capWidthSpans" [unit]="text('unit.cm')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('art.farbe.hut')">
-        <app-colour-field [colours]="gradientColours" mode="gradient" [label]="text('art.farbe.hut')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('species.field.stem')" [value]="text('art.stielmerkmal.voll')" />
-      <app-key-value-row [key]="text('species.field.habitat')" route="." [hint]="text('common.open')" />
-    </app-key-value-table>
+    <div class="block__card">
+      <app-key-value-table class="block__compare" [columns]="2">
+        <app-key-value-row key="" [values]="compareNames" [head]="true" />
+        <app-key-value-row [key]="text('art.merkmal.speisewert')" [cells]="compareLevels">
+          <ng-template let-cell>
+            <app-level-pill [text]="cell.text" [colour]="cell.colour" [background]="cell.background" />
+          </ng-template>
+        </app-key-value-row>
+        <app-key-value-row
+          [key]="text('art.mass.zeichen.hutbreite')"
+          [values]="[text('beispiel.vergleich.hutbreiteEins'), text('beispiel.vergleich.hutbreiteZwei')]"
+        />
+        <app-key-value-row [key]="text('beispiel.vergleich.hutfarbe')" [cells]="capColourCells">
+          <ng-template let-cell>
+            <app-colour-field
+              class="block__swatch"
+              [colours]="cell.colours"
+              [mode]="cell.mode"
+              [label]="text('beispiel.vergleich.hutfarbe')"
+            />
+          </ng-template>
+        </app-key-value-row>
+        <app-key-value-row [key]="text('art.merkmal.roehren')" [cells]="tubeColourCells">
+          <ng-template let-cell>
+            <app-colour-field
+              class="block__swatch"
+              [colours]="cell.colours"
+              [mode]="cell.mode"
+              [label]="text('art.merkmal.roehren')"
+            />
+          </ng-template>
+        </app-key-value-row>
+        <app-key-value-row [key]="text('beispiel.vergleich.druckprobe')" [cells]="pressCells">
+          <ng-template let-cell>
+            <span class="block__press">
+              <span class="block__presscolours">
+                <app-colour-field
+                  class="block__presscolour"
+                  [colours]="cell.from"
+                  mode="single"
+                  [label]="text('beispiel.vergleich.druckprobe')"
+                />
+                @if (cell.to.length) {
+                  <app-svg-icon name="forward" [size]="12" />
+                  <app-colour-field
+                    class="block__presscolour"
+                    [colours]="cell.to"
+                    mode="single"
+                    [label]="text('beispiel.vergleich.druckprobe')"
+                  />
+                }
+              </span>
+              <span class="block__pressnote">{{ cell.note }}</span>
+            </span>
+          </ng-template>
+        </app-key-value-row>
+        <app-key-value-row
+          [key]="text('beispiel.vergleich.stielnetz')"
+          [values]="[text('beispiel.vergleich.netzEins'), text('beispiel.vergleich.netzZwei')]"
+        />
+        <app-key-value-row [key]="text('art.merkmal.geschmack')" [cells]="flavourCells">
+          <ng-template let-cell>
+            <app-tag-list class="block__chips" [tags]="cell" [label]="text('art.merkmal.geschmack')" />
+          </ng-template>
+        </app-key-value-row>
+        <app-key-value-row [key]="text('beispiel.vergleich.zeit')" [cells]="spanCells">
+          <ng-template>
+            <app-year-band
+              class="block__span"
+              [fromMonth]="5"
+              [toMonth]="11"
+              [peakFromMonth]="6"
+              [peakToMonth]="10"
+              [months]="[]"
+              [label]="text('species.growthPeriod')"
+            />
+          </ng-template>
+        </app-key-value-row>
+      </app-key-value-table>
+    </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-choice-row">
     <h2 class="block__head">{{ 'blocks.choiceRow' | t }}</h2>
     <div class="block__card">
       <app-choice-row [label]="text('enum.edibility.edible')" count="77" [checked]="true" />
@@ -286,7 +440,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-form-field">
     <h2 class="block__head">{{ 'blocks.formField' | t }}</h2>
     <app-form-field
       [label]="text('melden.datum')"
@@ -300,13 +454,22 @@
       [readOnly]="true"
     />
     <app-form-field
+      class="block__codefield"
       [label]="text('admin.characteristic.colourCode')"
       [value]="colourCode"
       [readOnly]="true"
-    />
+    >
+      <app-colour-field
+        lead
+        class="block__codeswatch"
+        [colours]="codeColour"
+        mode="single"
+        [label]="text('admin.characteristic.colourCode')"
+      />
+    </app-form-field>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-search-field">
     <h2 class="block__head">{{ 'blocks.searchField' | t }}</h2>
     <app-search-field value="" [placeholder]="text('species.search.placeholder')" />
     <app-search-field
@@ -316,7 +479,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-segmented">
     <h2 class="block__head">{{ 'blocks.segmented' | t }}</h2>
     <app-segmented
       [options]="viewModes"
@@ -326,7 +489,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-chip-group">
     <h2 class="block__head">{{ 'blocks.chipGroup' | t }}</h2>
     <app-chip-group
       [chips]="speciesChips"
@@ -337,7 +500,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-filter-chip">
     <h2 class="block__head">{{ 'blocks.filterChip' | t }}</h2>
     <div class="block__row block__row--tight">
       @for (label of filterChips; track label) {
@@ -346,7 +509,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-range-slider">
     <h2 class="block__head">{{ 'blocks.rangeSlider' | t }}</h2>
     <app-range-slider
       [min]="0"
@@ -358,7 +521,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-swatches">
     <h2 class="block__head">{{ 'blocks.colourSwatches' | t }}</h2>
     <app-colour-swatches
       [colours]="colourSwatches"
@@ -368,33 +531,39 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-picker">
     <h2 class="block__head">{{ 'blocks.colourPicker' | t }}</h2>
-    <app-colour-picker
-      [colours]="colourPickerSwatches"
-      [value]="colourTone()"
-      [label]="text('art.farbe.hut')"
-      [nearest]="nearestTones"
-      (valueChange)="colourTone.set($event)"
-    />
+    <div class="block__card">
+      <app-list-row [title]="text('art.farbe.hut')" [value]="text('beispiel.farbe.braun')" [chevron]="true" />
+      <app-colour-picker
+        [colours]="colourPickerSwatches"
+        [value]="colourTone()"
+        [label]="text('art.farbe.hut')"
+        [nearest]="nearestTones"
+        [nearestLabel]="text('beispiel.toene.katalog')"
+        (valueChange)="colourTone.set($event)"
+      />
+    </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-species-picker">
     <h2 class="block__head">{{ 'blocks.speciesPicker' | t }}</h2>
-    <app-species-picker
-      [species]="pickerRows"
-      [selected]="speciesChoice()"
-      [label]="text('beispiel.artenTitel')"
-      (chosen)="speciesChoice.set($event)"
-    />
+    <div class="block__stage block__stage--picker">
+      <app-species-picker
+        [species]="pickerRows"
+        [selected]="speciesChoice()"
+        [label]="text('beispiel.artenTitel')"
+        (chosen)="speciesChoice.set($event)"
+      />
+    </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-photo-picker">
     <h2 class="block__head">{{ 'blocks.photoPicker' | t }}</h2>
     <app-photo-picker [files]="photoFiles()" (filesChange)="photoFiles.set($event)" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-year-band-input">
     <h2 class="block__head">{{ 'blocks.yearBandInput' | t }}</h2>
     <app-year-band-input
       [from]="yearFrom()"
@@ -405,34 +574,44 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-level-pill">
     <h2 class="block__head">{{ 'blocks.levelPill' | t }}</h2>
     <app-level-pill [text]="text('enum.edibility.edible')" colour="var(--color-success)" />
     <app-level-pill [text]="text('enum.edibility.poisonous')" colour="var(--color-warning)" />
-    <app-level-pill [text]="text('enum.protection.none')" colour="var(--color-text-muted)" />
+    <app-level-pill
+      [text]="text('enum.protection.none')"
+      colour="var(--color-text-muted)"
+      background="var(--color-surface-sunken)"
+    />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-tag-list">
     <h2 class="block__head">{{ 'blocks.tagList' | t }}</h2>
     <app-tag-list [tags]="treeTags" [label]="text('filter.group.treePartner')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-field">
     <h2 class="block__head">{{ 'blocks.colourField' | t }}</h2>
-    <app-key-value-table>
-      <app-key-value-row [key]="text('art.farbe.hut')">
-        <app-colour-field [colours]="gradientColours" mode="gradient" [label]="text('art.farbe.hut')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('species.field.tubes')">
-        <app-colour-field [colours]="multiColours" mode="multiple" [label]="text('species.field.tubes')" />
-      </app-key-value-row>
-      <app-key-value-row [key]="text('art.farbe.sporenpulver')">
-        <app-colour-field [colours]="capColours" mode="single" [label]="text('art.farbe.sporenpulver')" />
-      </app-key-value-row>
-    </app-key-value-table>
+    <div class="block__card">
+      <app-key-value-table class="block__swatchrows">
+        <app-key-value-row [key]="text('art.farbe.hut')">
+          <app-colour-field [colours]="gradientColours" mode="gradient" [label]="text('art.farbe.hut')" />
+        </app-key-value-row>
+        <app-key-value-row [key]="text('species.field.tubes')">
+          <app-colour-field [colours]="multiColours" mode="multiple" [label]="text('species.field.tubes')" />
+        </app-key-value-row>
+        <app-key-value-row [key]="text('beispiel.frauentaeubling')">
+          <app-colour-field
+            [colours]="tripleColours"
+            mode="gradient"
+            [label]="text('beispiel.frauentaeubling')"
+          />
+        </app-key-value-row>
+      </app-key-value-table>
+    </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-change">
     <h2 class="block__head">{{ 'blocks.colourChange' | t }}</h2>
     <app-colour-change
       [triggers]="colourChangeTriggers"
@@ -445,22 +624,18 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-measurement">
     <h2 class="block__head">{{ 'blocks.measurement' | t }}</h2>
-    <app-key-value-table>
-      <app-key-value-row [key]="text('art.mass.zeichen.hutbreite')">
-        <app-measurement extent="width" [spans]="capWidthSpans" [unit]="text('unit.cm')" />
-      </app-key-value-row>
-    </app-key-value-table>
+    <app-measurement-group [part]="text('species.field.cap')" [measurements]="capRareMeasurement" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-measurement-group">
     <h2 class="block__head">{{ 'blocks.measurementGroup' | t }}</h2>
     <app-measurement-group [part]="text('species.field.cap')" [measurements]="capMeasurements" />
     <app-measurement-group [part]="text('species.field.stem')" [measurements]="stemMeasurements" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-year-band">
     <h2 class="block__head">{{ 'blocks.yearBand' | t }}</h2>
     <div class="block__card">
       <div class="block__band">
@@ -469,9 +644,9 @@
           <span class="block__muted">{{ 'beispiel.wachstum.zeitraum' | t }}</span>
         </div>
         <app-year-band
-          [fromMonth]="6"
+          [fromMonth]="5"
           [toMonth]="11"
-          [peakFromMonth]="8"
+          [peakFromMonth]="6"
           [peakToMonth]="10"
           [months]="months"
           [label]="text('species.growthPeriod')"
@@ -480,14 +655,20 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block block__curve" data-block="app-season-curve">
     <h2 class="block__head">{{ 'blocks.seasonCurve' | t }}</h2>
-    <app-season-curve [series]="seasonSeries" [months]="monthMarks" [label]="text('saison.beschriftung')" />
+    <app-season-curve
+      [series]="seasonSeries"
+      [months]="monthMarks"
+      [large]="true"
+      [label]="text('saison.beschriftung')"
+    />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-histogram">
     <h2 class="block__head">{{ 'blocks.histogram' | t }}</h2>
     <app-histogram
+      [height]="64"
       [shares]="histogramm"
       [label]="text('beispiel.histogramm')"
       [from]="from() / 240"
@@ -495,7 +676,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block block__ramp" data-block="app-ramp">
     <h2 class="block__head">{{ 'blocks.ramp' | t }}</h2>
     <app-ramp
       [label]="text('map.legend.findProbability')"
@@ -504,7 +685,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-timeline, app-week-button">
     <h2 class="block__head">{{ 'blocks.timeline' | t }}</h2>
     <app-timeline
       [weeks]="weeks"
@@ -514,82 +695,83 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block block__tile" data-block="app-image-tile">
     <h2 class="block__head">{{ 'blocks.imageTile' | t }}</h2>
     <app-image-tile [image]="sampleImage" [lead]="true" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-image-credit">
     <h2 class="block__head">{{ 'blocks.imageCredit' | t }}</h2>
-    <div class="block__card">
-      <app-image-credit [photographer]="sampleImage.photographer" [licence]="sampleImage.licence" />
-    </div>
+    <app-image-credit [photographer]="sampleImage.photographer" [licence]="sampleImage.licence" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-image-viewer">
     <h2 class="block__head">{{ 'blocks.imageViewer' | t }}</h2>
-    <div class="block__stage block__stage--viewer">
-      <app-image-viewer [image]="sampleImage" [title]="text('art.boletus_edulis')" />
-    </div>
+    <app-image-viewer
+      [image]="sampleImageLarge"
+      [title]="text('art.boletus_edulis')"
+      [index]="2"
+      [count]="4"
+    />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-private-image">
     <h2 class="block__head">{{ 'blocks.privateImage' | t }}</h2>
     <div class="block__stage block__stage--photo">
-      <app-private-image [path]="sampleImagePath" [alt]="text('art.boletus_edulis')" />
+      <app-private-image [path]="samplePrivate" [alt]="text('art.boletus_edulis')" [locked]="true" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-avatar-button">
     <h2 class="block__head">{{ 'blocks.avatarButton' | t }}</h2>
     <div class="block__row">
       <app-avatar-button [name]="text('beispiel.avatar')" [label]="text('nav.konto')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-floating-button">
     <h2 class="block__head">{{ 'blocks.floatingButton' | t }}</h2>
-    <div class="block__row">
+    <div class="block__row block__row--fab">
       <app-floating-button icon="layers" variant="default" [label]="text('map.layers.title')" />
       <app-floating-button icon="location" variant="default" [label]="text('map.centre')" />
       <app-floating-button icon="plus" variant="primary" [label]="text('entry.create')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-crosshair">
     <h2 class="block__head">{{ 'blocks.crosshair' | t }}</h2>
     <div class="block__stage block__stage--crosshair">
       <app-crosshair [label]="text('common.select')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-svg-icon">
     <h2 class="block__head">{{ 'blocks.svgIcon' | t }}</h2>
-    <div class="block__row">
+    <div class="block__row block__row--icons">
       <app-svg-icon name="map" [size]="24" [label]="text('nav.tab.map')" />
       <app-svg-icon name="location" [size]="24" [label]="text('map.centre')" />
-      <app-svg-icon name="layers" [size]="24" [label]="text('map.layers.title')" />
+      <app-svg-icon name="zone" [size]="24" [label]="text('entry.zones')" />
       <app-svg-icon name="plus" [size]="24" [label]="text('entry.create')" />
       <app-svg-icon name="species" [size]="24" [label]="text('nav.tab.species')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-stat-row">
     <h2 class="block__head">{{ 'blocks.statRow' | t }}</h2>
     <app-stat-row [stats]="stats" />
   </section>
 
-  <section class="block">
+  <section class="block block__plain" data-block="app-empty-state">
     <h2 class="block__head">{{ 'blocks.emptyState' | t }}</h2>
-    <app-empty-state icon="search" [text]="text('state.noSpeciesMatch')" [action]="text('common.reset')" />
+    <app-empty-state icon="search" [text]="text('state.noSpeciesMatch')" [action]="text('filter.resetAll')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-error-state">
     <h2 class="block__head">{{ 'blocks.errorState' | t }}</h2>
     <app-error-state [text]="text('state.loadFailed')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-infinite-list">
     <h2 class="block__head">{{ 'blocks.infiniteList' | t }}</h2>
     <div class="block__card block__card--list">
       <app-infinite-list [pageSize]="40" [hasMore]="true" [pending]="true">
@@ -600,13 +782,17 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block block__skeleton" data-block="app-skeleton">
     <h2 class="block__head">{{ 'blocks.skeleton' | t }}</h2>
-    <app-skeleton kind="row" />
+    <app-skeleton kind="line" />
+    <div class="block__skeletonrow">
+      <app-skeleton kind="tile" />
+      <app-skeleton class="block__skeletonbar" kind="line" />
+    </div>
     <app-skeleton kind="block" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-progress">
     <h2 class="block__head">{{ 'blocks.progress' | t }}</h2>
     <div class="block__meter">
       <span class="block__percent">{{ 'beispiel.fortschritt' | t }}</span>
@@ -614,10 +800,8 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block block__wide" data-block="app-button busy">
     <h2 class="block__head">{{ 'blocks.buttonBusy' | t }}</h2>
-    <div class="block__row">
-      <app-button variant="primary" size="lg" [loading]="true" [ariaLabel]="text('common.loading')" />
-    </div>
+    <app-button variant="primary" size="lg" [loading]="true" [ariaLabel]="text('common.loading')" />
   </section>
 </div>

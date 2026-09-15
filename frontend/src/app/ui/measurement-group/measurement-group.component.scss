@@ -18,8 +18,7 @@
   color: var(--color-text);
 }
 
-// Ohne eine Zeile darunter bliebe die Trennlinie doppelt: sie läge direkt auf
-// dem unteren Kartenrand.
+// Ohne eine Zeile darunter läge die Trennlinie auf dem Kartenrand.
 .group__part--bare {
   border-block-end: 0;
 }

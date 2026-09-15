@@ -92,7 +92,8 @@ export class TimelineComponent {
     const button = (this.buttons()[index] as WeekButtonComponent | undefined)?.element();
     const bar = this.bar().nativeElement;
     if (!button) return;
-    const center = button.offsetLeft - (bar.clientWidth - button.offsetWidth) / 2;
+    // Die Mitte fällt auf einen ganzen Punkt, sonst steht die Leiste auf halber Linie.
+    const center = Math.round(button.offsetLeft - (bar.clientWidth - button.offsetWidth) / 2);
     bar.scrollTo({ left: Math.max(center, 0), behavior: 'smooth' });
     if (withFocus) button.focus();
   }

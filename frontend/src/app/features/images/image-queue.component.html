@@ -3,7 +3,13 @@
 </app-page-header>
 
 <div class="queue">
-  <app-review-queue [items]="cards()" (accepted)="accept($event)" (rejected)="ask($event)" (undone)="undo()">
+  <app-review-queue
+    [balance]="true"
+    [items]="cards()"
+    (accepted)="accept($event)"
+    (rejected)="ask($event)"
+    (undone)="undo()"
+  >
     <ng-template let-card>
       <article class="card">
         <app-private-image class="card__image" [path]="card.path" [alt]="card.alt" />

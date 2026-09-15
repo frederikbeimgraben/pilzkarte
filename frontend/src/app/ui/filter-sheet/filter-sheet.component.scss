@@ -20,7 +20,7 @@
   flex: none;
   align-items: center;
   justify-content: center;
-  block-size: 22px;
+  block-size: var(--filter-sheet-handle, 22px);
 }
 
 .filtersheet__handle-line {

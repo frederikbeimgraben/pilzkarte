@@ -47,7 +47,8 @@ export type IconName =
   | 'undo'
   | 'filter'
   | 'camera'
-  | 'chevron';
+  | 'chevron'
+  | 'hourglass';
 
 /** Die drei gefüllten Pfeile und die Wiedergabe sitzen auf einem 12er-Raster. */
 export const FILLED_ICONS: readonly IconName[] = ['left', 'right', 'play', 'pause'];
@@ -72,7 +73,7 @@ export const ICONS: Record<IconName, string> = {
   warning: '<path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4M12 17.2v.1"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.8v.1"/>',
   compare: '<path d="M4 9h15M16 6l3 3-3 3"/><path d="M20 15H5M8 18l-3-3 3-3"/>',
-  lock: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/>',
+  lock: '<rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/>',
   empty: '<path d="M4 10h16l-1.6 9H5.6z"/><path d="M4 10l4-6M20 10l-4-6"/><path d="M10 13.5v2M14 13.5v2"/>',
   'image-gap':
     '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M6.5 15c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5z"/><path d="M12 15v2.5"/>',
@@ -111,4 +112,5 @@ export const ICONS: Record<IconName, string> = {
   camera:
     '<path d="M4 8a1 1 0 0 1 1-1h2l1.5-2h7L17 7h2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><circle cx="12" cy="13" r="3.5"/>',
   chevron: '<path d="M9 5l7 7-7 7"/>',
+  hourglass: '<path d="M6 3h12M6 21h12M8 3v4l4 5 4-5V3M8 21v-4l4-5 4 5v4"/>',
 };

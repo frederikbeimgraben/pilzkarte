@@ -8,6 +8,7 @@
 
 .viewer__count {
   font-size: var(--fs-row-meta);
+  line-height: 1.4;
   color: var(--color-text-muted);
   font-variant-numeric: tabular-nums;
 }
@@ -19,10 +20,14 @@
   padding: var(--size-gutter);
 }
 
+.viewer__label {
+  @include card.section-title;
+}
+
 .viewer__image {
   display: block;
   inline-size: 100%;
-  block-size: var(--image-viewer-height, 200px);
+  block-size: var(--image-viewer-height, 300px);
   background: var(--color-surface-sunken);
   border-radius: var(--radius-lg);
 }
@@ -31,10 +36,6 @@
   margin: 0;
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
-}
-
-.viewer__label {
-  @include card.section-title;
 }
 
 app-badge {

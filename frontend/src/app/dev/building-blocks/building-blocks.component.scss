@@ -30,28 +30,228 @@
   font-size: 12px;
   font-weight: var(--fw-semibold);
   color: var(--color-text-muted);
+  line-height: normal;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  // Das Kit gleicht Ueberschriften aus, das Board bricht nach der Breite.
+  text-wrap: wrap;
 }
 
 // Eine Fläche ohne Innenabstand: die Karte des Kits polstert ihren Rumpf und
 // rückt jede Zeile vom Rand ab.
 .block__card {
+  // Im Board rückt die Zeile vierzehn Punkte vom Rand ab.
+  --list-row-inline: var(--space-row-inline);
+
   overflow: hidden;
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
+// Im Board stehen Kurve, Monate und Legende als drei Kinder der Karte und
+// tragen deren Abstand von 10 px.
+.block__curve {
+  --season-curve-months-gap: 16px;
+  --season-curve-legend-gap: 18px;
+}
+
+// Im Board endet auch die letzte Zeile mit einer Linie.
+.block__factors app-factor-row:last-child,
+.block__list app-entry-row:last-child {
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+// Das Board rückt die Zeile zusätzlich zum Abstand der Karte ab.
+.block__add app-add-row {
+  margin-block-start: 10px;
+}
+
+// Im Board reicht der Blattkopf an den Rand der Karte und sitzt am Griff.
+.block__sheethead app-sheet-head {
+  margin-block-start: -10px;
+  margin-inline: calc(-1 * var(--space-4));
+}
+
+.block__handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: var(--size-handle-height);
+}
+
+.block__handle i {
+  inline-size: var(--size-handle-width);
+  block-size: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+// Das Board zeigt den Leerzustand ohne eigenen Kasten: die Karte trägt ihn.
+.block__plain app-empty-state {
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+// Das Board zeigt Strich, Kachel mit Strich und Fläche.
+.block__skeleton {
+  --size-tile: 56px;
+}
+
+.block__skeleton app-skeleton {
+  --skeleton-block-height: 60px;
+}
+
+.block__skeletonrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.block__skeletonbar {
+  --skeleton-line-width: 140px;
+  --skeleton-line-height: 12px;
+}
+
+// Im Board zeigt die Kachel das Titelbild über die ganze Breite.
+.block__tile app-image-tile {
+  --image-tile-width: 100%;
+  --image-tile-height: 120px;
+
+  display: block;
+}
+
+// Der Rumpf des Blattes trägt das Polster, der Fuß liegt daneben.
+.block__sheetbody {
+  flex: 1 1 auto;
+  min-block-size: 0;
+  padding: var(--size-gutter) var(--size-gutter) var(--space-6);
+}
+
+// Im Board stehen Beschriftung, Rampe und Enden als Kinder der Karte.
+.block__ramp app-ramp {
+  --ramp-label-gap: 20px;
+  --ramp-ends-gap: 16px;
+}
+
+// Im Board trägt jede Gruppe des Aufklappers eine kleine Überschrift.
+.block__grouphead {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: var(--fw-semibold);
+  line-height: normal;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// Im Aufklapper liegt der Regler flach: der Griff ragt über seine Spur.
+.block__group app-range-slider {
+  --range-slider-lane: 4px;
+
+  display: block;
+  margin-block-start: 12px;
+}
+
+.block__switches {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+// Im Board steht auch eine Zeile mit Unterzeile 52 px hoch.
+.block__card app-list-row,
+.block__rows app-list-row {
+  --size-row-tall: var(--size-row);
+  --list-row-inline: var(--space-row-inline);
+}
+
+// Im Vergleich sind die Zellen kleiner als auf einer Artseite.
+.block__compare .block__swatch {
+  --pilz-colour-width: 64px;
+  --pilz-colour-height: 22px;
+  --pilz-colour-radius: 7px;
+}
+
+// Die Druckprobe zeigt zwei Töne mit Pfeil und darunter, wann sie kommt.
+.block__press {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.block__presscolours {
+  display: grid;
+  grid-template-columns: 30px 12px 30px;
+  gap: 4px;
+  align-items: center;
+  color: var(--color-text-muted);
+}
+
+.block__presscolour {
+  --pilz-colour-width: 30px;
+  --pilz-colour-height: 18px;
+  --pilz-colour-radius: 5px;
+}
+
+.block__pressnote {
+  margin-block-start: 4px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.block__compare .block__chips {
+  --pilz-tag-height: 19px;
+  --pilz-tag-inset: 8px;
+  --pilz-tag-size: 11px;
+  --pilz-tag-gap: 4px;
+  --pilz-tag-border: var(--color-border-strong);
+  --pilz-tag-drop: 3px;
+}
+
+.block__compare .block__span {
+  --pilz-year-height: 10px;
+
+  inline-size: 100%;
+}
+
+// Der Farbcode trägt seine Fläche voran, 22 px im Quadrat.
+.block__codeswatch {
+  --pilz-colour-width: 22px;
+  --pilz-colour-height: 22px;
+  --pilz-colour-radius: 6px;
+}
+
+.block__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.block__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .block__row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .block__row--tight {
   gap: 6px;
+}
+
+.block__row--fab {
+  gap: 10px;
+}
+
+.block__row--icons {
+  gap: 14px;
 }
 
 .block__band {
@@ -70,7 +270,8 @@
 }
 
 .block__muted {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-row-meta);
+  line-height: 1.4;
   color: var(--color-text-muted);
 }
 
@@ -88,25 +289,60 @@
 
 .block__percent {
   align-self: flex-end;
-  font-size: var(--fs-xs);
+  font-size: 11px;
   font-weight: var(--fw-semibold);
-}
-
-.block__stack {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  color: var(--color-on-media);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
 }
 
 .block__reviewcard {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  block-size: 100%;
-  padding: 16px;
-  font-weight: var(--fw-semibold);
-  background: var(--color-surface-sunken);
+  flex-direction: column;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-xl);
+}
+
+// Der Zähler steht im Kopf der Seite, nicht über dem Stapel.
+.block__reviewhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.block__reviewcount {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.block__reviewimage {
+  display: block;
+  block-size: 120px;
+}
+
+.block__reviewtext {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 13px 15px;
+}
+
+.block__reviewtitle {
+  font-size: 18px;
+  font-weight: var(--fw-semibold);
+}
+
+.block__reviewlabel {
+  font-size: 15px;
+  font-weight: var(--fw-semibold);
+}
+
+.block__reviewmeta {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
 }
 
 // Die Bühne ist der Bildschirm: `contain` bindet `position: fixed` an sie,
@@ -132,73 +368,74 @@
   block-size: var(--size-nav);
 }
 
+.block__stage--split,
 .block__stage--rail {
-  block-size: 288px;
+  block-size: 280px;
+}
+
+.block__stage--rail {
+  margin-block-start: 12px;
+}
+
+// Eine Bühne mit Grund: der Baustein liegt darauf wie auf dem Bildschirm.
+.block__stage--sheet,
+.block__stage--overlay,
+.block__stage--split,
+.block__stage--fixed,
+.block__stage--popover {
+  background: var(--color-surface-sunken);
 }
 
 .block__stage--sheet {
-  block-size: 128px;
-  background: var(--color-surface-sunken);
+  block-size: 320px;
 }
 
 .block__stage--overlay {
   block-size: 150px;
-  background: var(--color-surface-sunken);
 }
 
 .block__stage--filter {
-  block-size: 218px;
-}
+  --filter-sheet-handle: var(--size-handle-height);
 
-.block__stage--split {
-  block-size: 288px;
-  background: var(--color-surface-sunken);
-}
-
-.block__stage--dialog {
-  block-size: 293px;
-}
-
-.block__stage--toast {
-  block-size: 100px;
-}
-
-.block__stage--review {
-  block-size: 273px;
-}
-
-.block__stage--viewer {
-  block-size: 212px;
+  block-size: 330px;
 }
 
 .block__stage--fixed {
-  block-size: 136px;
-  background: var(--color-surface-sunken);
+  block-size: 128px;
 }
 
 .block__stage--popover {
-  block-size: 300px;
-  background: var(--color-surface-sunken);
+  block-size: 380px;
 }
 
 .block__stage--reject {
-  block-size: 466px;
+  block-size: 374px;
 }
 
 .block__stage--confirm {
-  block-size: 222px;
+  block-size: 190px;
+}
+
+// Im Baustein-Board stehen Suchfeld und Liste 10 px auseinander.
+.block__stage--picker {
+  --species-picker-gap: 10px;
+
+  block-size: 178px;
 }
 
 .block__stage--photo {
-  block-size: 108px;
+  block-size: 100px;
 }
 
 // Das Board zeigt zwei Zeilen und eine Attrappe, der Baustein reiht drei.
 .block__card--list {
-  block-size: 190px;
+  block-size: 188px;
   overflow: hidden;
 }
 
 .block__stage--crosshair {
-  block-size: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 100px;
 }

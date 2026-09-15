@@ -1,0 +1,12 @@
+<div class="toasts" aria-live="polite" aria-atomic="false">
+  @for (toast of toasts.toasts(); track toast.id) {
+    <p class="toast" [class]="'toast--' + toast.variant" role="status">
+      <app-svg-icon
+        [name]="glyph(toast.variant).name"
+        [size]="16"
+        [strokeWidth]="glyph(toast.variant).stroke"
+      />
+      {{ toast.message }}
+    </p>
+  }
+</div>

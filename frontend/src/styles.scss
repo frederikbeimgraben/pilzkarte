@@ -46,3 +46,154 @@ app-building-blocks .block--nolabel app-input label {
   white-space: nowrap;
   border: 0;
 }
+
+// Der Knopf misst 44 px, der große 48. Das Kit rechnet die Höhe aus Polster
+// und Zeilenhöhe und schreibt sie im eigenen Stilblatt fest.
+.btn--md,
+.btn--lg {
+  padding-block: 0 !important;
+}
+
+.btn--md {
+  block-size: var(--size-tap) !important;
+  font-size: 15px !important;
+}
+
+.btn--lg {
+  block-size: var(--size-floating) !important;
+  font-size: 15px !important;
+}
+
+// Die Schrift im Knopf steht auf der Linie des Boards, wenn die Zeile
+// nur so hoch ist wie die Schrift.
+.btn__label {
+  line-height: normal !important;
+}
+
+// Die Schrift auf dem roten Knopf bleibt weiß, in jedem Thema.
+.btn--danger {
+  color: var(--color-on-media) !important;
+}
+
+// Im mehrzeiligen Feld steht die erste Zeile auf der Linie des Boards.
+.field--multiline {
+  line-height: normal !important;
+}
+
+// Der Knopf im Fuß füllt seine Zeile: die Höhe steht am Fuß, nicht am Knopf.
+.footer__main .btn {
+  block-size: 100% !important;
+}
+
+// Auf der Werkstattseite steht die Meldung in ihrer Karte, nicht über allem.
+app-building-blocks app-toast {
+  --toast-flow: static;
+}
+
+// Eingabe und Auswahl messen 44 px.
+.field__control,
+.sel__control {
+  block-size: var(--size-tap) !important;
+}
+
+// Die Meldung misst 36 px.
+.toast {
+  padding-block: 10px !important;
+  font-size: 13px !important;
+}
+
+.toasts {
+  gap: var(--space-2) !important;
+}
+
+// Das Board polstert die Marke mit 3 / 10 px, das Kit mit 4 / 12 px.
+.badge {
+  padding: 3px 10px !important;
+}
+
+// Das Board zeichnet den Kasten mit 20 px und den Fehlertext mit 14 px.
+.cbx__input {
+  inline-size: var(--size-checkbox) !important;
+  block-size: var(--size-checkbox) !important;
+}
+
+p.text-xs.text-danger {
+  font-size: 14px;
+}
+
+// Im Board füllt der ladende Knopf die Karte.
+app-building-blocks .block__wide .btn {
+  inline-size: 100%;
+}
+
+// Im Board endet auch die letzte Zeile der Tabelle mit einer Linie.
+app-building-blocks .block__compare app-key-value-row:last-child .kv__label,
+app-building-blocks .block__compare app-key-value-row:last-child .kv__value,
+app-building-blocks .block__swatchrows app-key-value-row:last-child .kv__label,
+app-building-blocks .block__swatchrows app-key-value-row:last-child .kv__value {
+  border-block-end: var(--border-width) solid var(--color-border) !important;
+}
+
+// Im Vergleich beginnt jeder Wert links, unter dem Namen seiner Art.
+app-building-blocks .block__compare .kv__value {
+  align-items: flex-start !important;
+  text-align: start !important;
+}
+
+// Im Board steht der Knopf der Kopfzeile 40 px hoch.
+app-building-blocks .block__pagehead .btn {
+  block-size: 40px !important;
+  padding-inline: var(--size-gutter);
+}
+
+// Das Board stellt den Haken 12 px vor seinen Text und schreibt ihn 15 px.
+.cbx__input + .cbx__label {
+  margin-inline-start: 4px;
+  font-size: 15px;
+}
+
+// Der Vergleich gibt der Schlüsselspalte 76 px, wie das Board es nennt.
+// Der Schlüssel steht dort kleiner, sonst bricht er in der schmalen Spalte.
+app-building-blocks .block__compare {
+  --key-value-table-anchor: center;
+  --key-value-table-gutter: 9px;
+  --key-value-table-gap: 9px;
+  --key-value-table-label: 58px;
+  --key-value-table-text: 12px;
+  --key-value-table-weight: var(--fw-regular);
+  --key-value-table-nowrap: nowrap;
+  --key-value-table-pad: 10px;
+  --key-value-table-head: 11px;
+  --key-value-table-value: 13px;
+  --key-value-table-start: 9px;
+  --key-value-table-line: normal;
+  --key-value-table-last: var(--border-width);
+}
+
+// Im Board stehen die Farbflächen 96 × 30 in Zeilen von 56 px, ohne Zebra.
+app-building-blocks .block__swatchrows {
+  --key-value-table-pad: 12.5px;
+  --key-value-table-text: 15px;
+  --key-value-table-line: normal;
+  --key-value-table-anchor: center;
+  --key-value-table-weight: var(--fw-regular);
+  --key-value-table-key-colour: var(--color-text);
+  --key-value-table-gutter: 14px;
+  --key-value-table-label: 240px;
+  --key-value-table-last: var(--border-width);
+  --pilz-colour-width: 96px;
+  --pilz-colour-height: 30px;
+}
+
+// Im Board füllt das Filterblatt seine Bühne und zeigt keinen Schließen-Knopf.
+app-building-blocks .block__stage--filter .overlay__panel {
+  inset-block-start: 0;
+}
+
+app-building-blocks .block__stage--filter .filtersheet {
+  block-size: 100%;
+}
+
+app-building-blocks .block__stage--filter .filtersheet__close {
+  display: none;
+}

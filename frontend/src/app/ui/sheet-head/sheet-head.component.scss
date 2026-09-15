@@ -106,3 +106,8 @@
 .head__arrow:first-child {
   border-inline-start: 0;
 }
+
+// Die Leiste reicht an den Rand, wo der Wirt sie nicht schon füllt.
+.head__bar {
+  margin-inline: var(--sheet-head-bleed, 0);
+}

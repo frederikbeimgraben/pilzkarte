@@ -8,6 +8,7 @@
 
 .level {
   display: inline-flex;
+  flex: 1 1 auto;
   align-items: center;
   padding: var(--pilz-level-padding-block) var(--pilz-level-padding-inline);
   border-radius: var(--radius-pill);

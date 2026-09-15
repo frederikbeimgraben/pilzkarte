@@ -8,7 +8,7 @@
   @include modal-layer.panel;
 
   inset-block-start: 50%;
-  inset-inline: var(--space-5);
+  inset-inline: 24px;
   gap: 14px;
   padding: 20px;
   border-radius: var(--radius-lg);
@@ -20,6 +20,7 @@
   font-size: var(--fs-lg);
   line-height: normal;
   font-weight: var(--fw-semibold);
+  line-height: normal;
 }
 
 .confirm__meta {
