@@ -5,6 +5,8 @@ import { boardCards, expectCard, skipPending } from './board';
 const CARDS = boardCards();
 
 test('Blocks', async ({ page }) => {
+  // Das Board ist 900 × 9144 gross und läuft nur in seinem eigenen Projekt.
+  test.skip(test.info().project.name !== 'blocks', 'Blocks hat ein eigenes Fenster');
   skipPending('Blocks');
   await mockApi(page);
   await page.goto('/bausteine');
