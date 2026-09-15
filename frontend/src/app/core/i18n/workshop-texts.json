@@ -193,7 +193,8 @@
     "beispiel.ton.violett": "Violett",
     "beispiel.ton.grau": "Grau",
     "beispiel.frauentaeubling": "Frauentäubling",
-    "beispiel.vergleich.hutfarbe": "Hutfarbe"
+    "beispiel.vergleich.hutfarbe": "Hutfarbe",
+    "beispiel.toene.katalog": "Nächste Töne im Katalog · 41 Arten"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -389,6 +390,7 @@
     "beispiel.ton.violett": "Violet",
     "beispiel.ton.grau": "Grey",
     "beispiel.frauentaeubling": "Russula cyanoxantha",
-    "beispiel.vergleich.hutfarbe": "Cap colour"
+    "beispiel.vergleich.hutfarbe": "Cap colour",
+    "beispiel.toene.katalog": "Nearest tones in the catalogue · 41 species"
   }
 }
