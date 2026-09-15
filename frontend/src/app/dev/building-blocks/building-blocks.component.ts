@@ -97,6 +97,9 @@ import {
   SAMPLE_CURRENT_YEAR,
   SAMPLE_HISTOGRAM,
   SAMPLE_IMAGE,
+  SAMPLE_IMAGE_LARGE,
+  SAMPLE_IMAGE_PRIVATE,
+  SAMPLE_PHOTO,
   SAMPLE_WEEKS,
   STEM_HEIGHT_SPANS,
   STEM_THICKNESS_SPANS,
@@ -192,7 +195,13 @@ export class BuildingBlocksComponent {
   protected readonly histogramm = SAMPLE_HISTOGRAM;
   protected readonly objectColors = OBJECT_COLOURS;
   protected readonly sampleImage = SAMPLE_IMAGE;
+<<<<<<< HEAD
   protected readonly sampleImagePath = photoPath(SAMPLE_IMAGE.id, 'thumb');
+=======
+  protected readonly sampleImageLarge = SAMPLE_IMAGE_LARGE;
+  protected readonly samplePrivate = SAMPLE_IMAGE_PRIVATE;
+  protected readonly samplePhoto = SAMPLE_PHOTO;
+>>>>>>> ea8e22d7 (fix(ui): zeichnet Platzhalter und Dialog wie das Board)
   protected readonly capColours = CAP_COLOURS;
   protected readonly gradientColours = GRADIENT_COLOURS;
   protected readonly multiColours = MULTI_COLOURS;

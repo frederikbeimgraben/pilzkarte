@@ -1,8 +1,8 @@
 .ramp__label {
-  margin-block-end: var(--space-2);
+  margin-block-end: var(--ramp-label-gap, var(--space-2));
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
-  line-height: var(--lh-tight);
+  line-height: normal;
 }
 
 .ramp {
@@ -19,8 +19,9 @@
 .ramp__ends {
   display: flex;
   justify-content: space-between;
-  margin-block-start: 6px;
+  margin-block-start: var(--ramp-ends-gap, 6px);
   font-size: 13px;
+  line-height: normal;
   font-variant-numeric: tabular-nums;
   color: var(--color-text-muted);
 }
