@@ -36,6 +36,17 @@ function pendingStems(dir) {
   return new Set(JSON.parse(readFileSync(join(dir, 'pending.json'), 'utf8')));
 }
 
+/** Vergleicht die Ausschnitte der Bausteine mit `blocks-cards.json`. */
+function checkCards(dir, pending) {
+  const manifest = JSON.parse(readFileSync(join(dir, 'blocks-cards.json'), 'utf8'));
+  const wanted = manifest.map((card) => card.stem);
+  const found = baselineStems(join(dir, 'baseline', 'blocks'));
+  const lost = wanted.filter((stem) => !found.has(stem)).sort();
+  const extra = [...found].filter((stem) => !wanted.includes(stem)).sort();
+  const waiting = wanted.filter((stem) => pending.has(`blocks/${stem}`)).sort();
+  return { checked: wanted.length - waiting.length, pending: waiting, lost, extra };
+}
+
 /** Vergleicht baseline, Tests und `pending.json` unter `root/e2e/boards`. */
 export function checkBoards(root) {
   const dir = join(root, 'e2e', 'boards');
@@ -47,20 +58,24 @@ export function checkBoards(root) {
   const waiting = [...baseline].filter((stem) => pending.has(stem)).sort();
   const missing = [...baseline].filter((stem) => !tested.has(stem) && !pending.has(stem)).sort();
 
-  return { checked, pending: waiting, missing };
+  return { checked, pending: waiting, missing, cards: checkCards(dir, pending) };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const ROOT = fileURLToPath(new URL('..', import.meta.url));
-  const { checked, pending, missing } = checkBoards(ROOT);
+  const { checked, pending, missing, cards } = checkBoards(ROOT);
 
   for (const stem of missing) {
     console.log(`${stem}: kein Test und kein Eintrag in pending.json`);
   }
+  for (const stem of cards.lost) console.log(`blocks/${stem}: der Ausschnitt fehlt`);
+  for (const stem of cards.extra) console.log(`blocks/${stem}: keine Karte im Manifest`);
   console.log(`Boards: geprüft ${checked.length}, ausstehend ${pending.length}.`);
+  console.log(`Bausteine: geprüft ${cards.checked}, ausstehend ${cards.pending.length}.`);
 
-  if (missing.length > 0) {
-    console.error(`Boards ohne Test und ohne Pending-Eintrag: ${missing.length}.`);
+  const broken = missing.length + cards.lost.length + cards.extra.length;
+  if (broken > 0) {
+    console.error(`Boards ohne Test und ohne Pending-Eintrag: ${broken}.`);
     process.exit(1);
   }
 }
