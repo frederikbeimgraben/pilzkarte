@@ -186,7 +186,7 @@
     "x": 24,
     "y": 3020,
     "w": 414,
-    "h": 342
+    "h": 343
   },
   {
     "selector": "app-banner",
@@ -195,7 +195,7 @@
     "x": 462,
     "y": 3020,
     "w": 414,
-    "h": 342
+    "h": 343
   },
   {
     "selector": "app-list-row",
@@ -204,7 +204,7 @@
     "x": 24,
     "y": 3386,
     "w": 414,
-    "h": 226
+    "h": 227
   },
   {
     "selector": "app-species-row",
@@ -213,7 +213,7 @@
     "x": 462,
     "y": 3386,
     "w": 414,
-    "h": 226
+    "h": 227
   },
   {
     "selector": "app-entry-row",
@@ -222,7 +222,7 @@
     "x": 24,
     "y": 3636,
     "w": 414,
-    "h": 240
+    "h": 241
   },
   {
     "selector": "app-add-row",
@@ -231,7 +231,7 @@
     "x": 462,
     "y": 3636,
     "w": 414,
-    "h": 240
+    "h": 241
   },
   {
     "selector": "app-check-row",
@@ -240,7 +240,7 @@
     "x": 24,
     "y": 3900,
     "w": 414,
-    "h": 200
+    "h": 201
   },
   {
     "selector": "app-factor-row",
@@ -249,7 +249,7 @@
     "x": 462,
     "y": 3900,
     "w": 414,
-    "h": 200
+    "h": 201
   },
   {
     "selector": "app-key-value-table, app-key-value-row",
@@ -258,7 +258,7 @@
     "x": 24,
     "y": 4124,
     "w": 414,
-    "h": 435
+    "h": 436
   },
   {
     "selector": "app-choice-row",
@@ -267,7 +267,7 @@
     "x": 462,
     "y": 4124,
     "w": 414,
-    "h": 435
+    "h": 436
   },
   {
     "selector": "app-form-field",
@@ -276,7 +276,7 @@
     "x": 24,
     "y": 4583,
     "w": 414,
-    "h": 325
+    "h": 326
   },
   {
     "selector": "app-search-field",
@@ -285,7 +285,7 @@
     "x": 462,
     "y": 4583,
     "w": 414,
-    "h": 325
+    "h": 326
   },
   {
     "selector": "app-segmented",
@@ -294,7 +294,7 @@
     "x": 24,
     "y": 4932,
     "w": 414,
-    "h": 112
+    "h": 113
   },
   {
     "selector": "app-chip-group",
@@ -303,7 +303,7 @@
     "x": 462,
     "y": 4932,
     "w": 414,
-    "h": 112
+    "h": 113
   },
   {
     "selector": "app-filter-chip",
@@ -312,7 +312,7 @@
     "x": 24,
     "y": 5068,
     "w": 414,
-    "h": 100
+    "h": 101
   },
   {
     "selector": "app-range-slider",
@@ -321,7 +321,7 @@
     "x": 462,
     "y": 5068,
     "w": 414,
-    "h": 100
+    "h": 101
   },
   {
     "selector": "app-colour-swatches",
@@ -330,7 +330,7 @@
     "x": 24,
     "y": 5192,
     "w": 414,
-    "h": 417
+    "h": 418
   },
   {
     "selector": "app-colour-picker",
@@ -339,7 +339,7 @@
     "x": 462,
     "y": 5192,
     "w": 414,
-    "h": 417
+    "h": 418
   },
   {
     "selector": "app-species-picker",
@@ -348,7 +348,7 @@
     "x": 24,
     "y": 5633,
     "w": 414,
-    "h": 246
+    "h": 247
   },
   {
     "selector": "app-photo-picker",
@@ -357,7 +357,7 @@
     "x": 462,
     "y": 5633,
     "w": 414,
-    "h": 246
+    "h": 247
   },
   {
     "selector": "app-year-band-input",
@@ -366,7 +366,7 @@
     "x": 24,
     "y": 5903,
     "w": 414,
-    "h": 156
+    "h": 157
   },
   {
     "selector": "app-level-pill",
@@ -375,7 +375,7 @@
     "x": 462,
     "y": 5903,
     "w": 414,
-    "h": 156
+    "h": 157
   },
   {
     "selector": "app-tag-list",
@@ -384,7 +384,7 @@
     "x": 24,
     "y": 6083,
     "w": 414,
-    "h": 238
+    "h": 239
   },
   {
     "selector": "app-colour-field",
@@ -393,7 +393,7 @@
     "x": 462,
     "y": 6083,
     "w": 414,
-    "h": 238
+    "h": 239
   },
   {
     "selector": "app-colour-change",
@@ -402,7 +402,7 @@
     "x": 24,
     "y": 6345,
     "w": 414,
-    "h": 170
+    "h": 171
   },
   {
     "selector": "app-measurement",
@@ -411,7 +411,7 @@
     "x": 462,
     "y": 6345,
     "w": 414,
-    "h": 170
+    "h": 171
   },
   {
     "selector": "app-measurement-group",
@@ -420,7 +420,7 @@
     "x": 24,
     "y": 6539,
     "w": 414,
-    "h": 326
+    "h": 327
   },
   {
     "selector": "app-year-band",
@@ -429,7 +429,7 @@
     "x": 462,
     "y": 6539,
     "w": 414,
-    "h": 326
+    "h": 327
   },
   {
     "selector": "app-season-curve",
@@ -438,7 +438,7 @@
     "x": 24,
     "y": 6889,
     "w": 414,
-    "h": 202
+    "h": 203
   },
   {
     "selector": "app-histogram",
@@ -447,7 +447,7 @@
     "x": 462,
     "y": 6889,
     "w": 414,
-    "h": 202
+    "h": 203
   },
   {
     "selector": "app-ramp",
@@ -456,7 +456,7 @@
     "x": 24,
     "y": 7115,
     "w": 414,
-    "h": 150
+    "h": 151
   },
   {
     "selector": "app-timeline, app-week-button",
@@ -465,7 +465,7 @@
     "x": 462,
     "y": 7115,
     "w": 414,
-    "h": 150
+    "h": 151
   },
   {
     "selector": "app-image-tile",
@@ -474,7 +474,7 @@
     "x": 24,
     "y": 7289,
     "w": 414,
-    "h": 212
+    "h": 213
   },
   {
     "selector": "app-image-credit",
@@ -483,7 +483,7 @@
     "x": 462,
     "y": 7289,
     "w": 414,
-    "h": 212
+    "h": 213
   },
   {
     "selector": "app-image-viewer",
@@ -492,7 +492,7 @@
     "x": 24,
     "y": 7525,
     "w": 414,
-    "h": 272
+    "h": 559
   },
   {
     "selector": "app-private-image",
@@ -501,105 +501,105 @@
     "x": 462,
     "y": 7525,
     "w": 414,
-    "h": 272
+    "h": 559
   },
   {
     "selector": "app-avatar-button",
     "stem": "app-avatar-button",
     "order": 56,
     "x": 24,
-    "y": 7821,
+    "y": 8107,
     "w": 414,
-    "h": 116
+    "h": 117
   },
   {
     "selector": "app-floating-button",
     "stem": "app-floating-button",
     "order": 57,
     "x": 462,
-    "y": 7821,
+    "y": 8107,
     "w": 414,
-    "h": 116
+    "h": 117
   },
   {
     "selector": "app-crosshair",
     "stem": "app-crosshair",
     "order": 58,
     "x": 24,
-    "y": 7961,
+    "y": 8247,
     "w": 414,
-    "h": 168
+    "h": 169
   },
   {
     "selector": "app-svg-icon",
     "stem": "app-svg-icon",
     "order": 59,
     "x": 462,
-    "y": 7961,
+    "y": 8247,
     "w": 414,
-    "h": 168
+    "h": 169
   },
   {
     "selector": "app-stat-row",
     "stem": "app-stat-row",
     "order": 60,
     "x": 24,
-    "y": 8153,
+    "y": 8439,
     "w": 414,
-    "h": 279
+    "h": 280
   },
   {
     "selector": "app-empty-state",
     "stem": "app-empty-state",
     "order": 61,
     "x": 462,
-    "y": 8153,
+    "y": 8439,
     "w": 414,
-    "h": 279
+    "h": 280
   },
   {
     "selector": "app-error-state",
     "stem": "app-error-state",
     "order": 62,
     "x": 24,
-    "y": 8456,
+    "y": 8742,
     "w": 414,
-    "h": 279
+    "h": 280
   },
   {
     "selector": "app-infinite-list",
     "stem": "app-infinite-list",
     "order": 63,
     "x": 462,
-    "y": 8456,
+    "y": 8742,
     "w": 414,
-    "h": 279
+    "h": 280
   },
   {
     "selector": "app-skeleton",
     "stem": "app-skeleton",
     "order": 64,
     "x": 24,
-    "y": 8759,
+    "y": 9045,
     "w": 414,
-    "h": 218
+    "h": 219
   },
   {
     "selector": "app-progress",
     "stem": "app-progress",
     "order": 65,
     "x": 462,
-    "y": 8759,
+    "y": 9045,
     "w": 414,
-    "h": 218
+    "h": 219
   },
   {
     "selector": "app-button busy",
     "stem": "app-button-busy",
     "order": 66,
     "x": 24,
-    "y": 9001,
+    "y": 9287,
     "w": 414,
-    "h": 116
+    "h": 117
   }
 ]

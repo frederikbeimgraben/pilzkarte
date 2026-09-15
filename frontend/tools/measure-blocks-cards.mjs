@@ -36,10 +36,12 @@ function writeIfNew(path, body) {
   return true;
 }
 
-// Der Ausschnitt beginnt auf der angebrochenen Zeile, wie der Browser sie
-// zeichnet. Aufrunden verschöbe die Schrift um eine Zeile.
+// Der Ausschnitt deckt jede angebrochene Zeile ab, wie Playwright ein
+// Element aufnimmt. Sonst fehlt der Karte eine Zeile.
 function frame(box) {
-  return { x: Math.floor(box.x), y: Math.floor(box.y), w: Math.round(box.w), h: Math.round(box.h) };
+  const x = Math.floor(box.x);
+  const y = Math.floor(box.y);
+  return { x, y, w: Math.ceil(box.x + box.w) - x, h: Math.ceil(box.y + box.h) - y };
 }
 
 /** Liest die Kartengeometrie aus dem Board, gerendert wie die Baseline. */

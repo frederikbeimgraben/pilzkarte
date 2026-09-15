@@ -25,6 +25,8 @@ import {
   ChoiceRowComponent,
   ColourChangeComponent,
   ColourFieldComponent,
+  type ColourMode,
+  type ColourValue,
   ColourPickerComponent,
   ColourSwatchesComponent,
   ConfirmDialogComponent,
@@ -90,7 +92,10 @@ import {
   GRADIENT_COLOURS,
   LATIN_NAMES,
   MULTI_COLOURS,
+  CAP_GRADIENTS,
+  PRESS_COLOURS,
   TRIPLE_COLOURS,
+  TUBE_COLOURS,
   NEAREST_TONES,
   PICKER_TONE_KEYS,
   PICKER_TONES,
@@ -114,6 +119,12 @@ const THEME_ATTRIBUTE = 'data-theme';
 const DARK = 'dark';
 
 /** Die Werkstattseite: eine Karte je Baustein, in der Reihenfolge des Boards. */
+/** Eine Farbzelle des Vergleichs: ihre Töne und wie sie zu malen sind. */
+interface CompareColour {
+  readonly mode: ColourMode;
+  readonly colours: readonly ColourValue[];
+}
+
 @Component({
   selector: 'app-building-blocks',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -354,6 +365,21 @@ export class BuildingBlocksComponent {
   };
 
   protected readonly compareNames = [this.text('art.boletus_edulis'), this.text('beispiel.gallenroehrling')];
+
+  /** Die Druckprobe der beiden Arten: erster Ton, dann der spätere. */
+  protected readonly pressColours = PRESS_COLOURS;
+
+  /** Eine Farbzelle des Vergleichs: ihre Töne und wie sie zu malen sind. */
+  protected readonly compareColours: Record<string, readonly CompareColour[]> = {
+    [this.text('beispiel.vergleich.hutfarbe')]: [
+      { mode: 'gradient', colours: CAP_GRADIENTS[0] },
+      { mode: 'gradient', colours: CAP_GRADIENTS[1] },
+    ],
+    [this.text('art.merkmal.roehren')]: [
+      { mode: 'multiple', colours: TUBE_COLOURS[0] },
+      { mode: 'single', colours: TUBE_COLOURS[1] },
+    ],
+  };
 
   protected readonly stats = [
     { value: 12, label: this.text('entry.finds') },

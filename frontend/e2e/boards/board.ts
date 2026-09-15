@@ -27,6 +27,17 @@ export interface BoardCard {
   readonly h: number;
 }
 
+/** Deckt jede angebrochene Zeile ab, wie Playwright ein Element aufnimmt. */
+function frame(box: { x: number; y: number; width: number; height: number }): {
+  w: number;
+  h: number;
+} {
+  return {
+    w: Math.ceil(box.x + box.width) - Math.floor(box.x),
+    h: Math.ceil(box.y + box.height) - Math.floor(box.y),
+  };
+}
+
 /** Liest das Manifest der Baustein-Karten. */
 export function boardCards(): BoardCard[] {
   return JSON.parse(readFileSync(join(__dirname, 'blocks-cards.json'), 'utf8')) as BoardCard[];
@@ -40,8 +51,7 @@ export async function expectCard(page: Page, card: BoardCard): Promise<void> {
   if (pendingStems().has(`blocks/${card.stem}`)) return;
   const block = page.locator(`[data-block="${card.selector}"]`);
   const box = await block.boundingBox();
-  const size = { w: Math.round(box?.width ?? 0), h: Math.round(box?.height ?? 0) };
-  expect.soft(size, card.selector).toEqual({ w: card.w, h: card.h });
+  expect.soft(box ? frame(box) : null, card.selector).toEqual({ w: card.w, h: card.h });
   await expect.soft(block, card.selector).toHaveScreenshot(['blocks', `${card.stem}.png`]);
 }
 
