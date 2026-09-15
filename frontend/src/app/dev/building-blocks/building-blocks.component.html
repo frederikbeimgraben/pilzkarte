@@ -41,7 +41,7 @@
 
   <section class="block" data-block="app-card">
     <h2 class="block__head">{{ 'blocks.card' | t }}</h2>
-    <app-card class="flush">
+    <app-card class="flush block__rows">
       <app-list-row [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
         <app-badge trail variant="primary">{{ 'account.role.admin' | t }}</app-badge>
       </app-list-row>
@@ -441,6 +441,7 @@
         [value]="colourTone()"
         [label]="text('art.farbe.hut')"
         [nearest]="nearestTones"
+        [nearestLabel]="text('beispiel.toene.katalog')"
         (valueChange)="colourTone.set($event)"
       />
     </div>
