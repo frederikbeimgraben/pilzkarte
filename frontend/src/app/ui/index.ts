@@ -1,4 +1,5 @@
 /** Alle gemeinsamen Bausteine an einer Stelle. Seiten fügen zusammen. */
+export { AddRowComponent } from './add-row/add-row.component';
 export { ActionBarComponent } from './action-bar/action-bar.component';
 export { AddRowComponent } from './add-row/add-row.component';
 export { AvatarButtonComponent } from './avatar-button/avatar-button.component';

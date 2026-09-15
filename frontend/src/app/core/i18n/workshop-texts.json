@@ -175,7 +175,9 @@
     "beispiel.vergleich.geschmackZwei": "bitter",
     "beispiel.variante.danger": "danger",
     "beispiel.variante.dangerOutline": "danger-outline",
-    "beispiel.farbe.braun": "Braun"
+    "beispiel.farbe.braun": "Braun",
+    "blocks.addRow": "app-add-row · 48 px · radius 10 · rand gestrichelt",
+    "beispiel.zeile.faktor": "Faktor"
   },
   "en": {
     "blocks.button": "app-button · 44 / 48 px · radius 10 · edge 1",
@@ -353,6 +355,8 @@
     "beispiel.vergleich.geschmackZwei": "bitter",
     "beispiel.variante.danger": "danger",
     "beispiel.variante.dangerOutline": "danger-outline",
-    "beispiel.farbe.braun": "Brown"
+    "beispiel.farbe.braun": "Brown",
+    "blocks.addRow": "app-add-row · 48 px · radius 10 · dashed edge",
+    "beispiel.zeile.faktor": "Factor"
   }
 }

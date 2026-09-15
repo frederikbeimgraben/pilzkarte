@@ -17,6 +17,7 @@ import { WORKSHOP_TEXTS } from '../../core/i18n/workshop-texts';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import {
   ActionBarComponent,
+  AddRowComponent,
   AvatarButtonComponent,
   BannerComponent,
   CheckRowComponent,
@@ -46,7 +47,6 @@ import {
   KeyValueTableComponent,
   LevelPillComponent,
   ListRowComponent,
-  MeasurementComponent,
   MeasurementGroupComponent,
   NavComponent,
   ObjectMenuComponent,
@@ -112,6 +112,7 @@ const DARK = 'dark';
   providers: [ToastService],
   imports: [
     ActionBarComponent,
+    AddRowComponent,
     AvatarButtonComponent,
     BadgeComponent,
     BannerComponent,
@@ -147,7 +148,6 @@ const DARK = 'dark';
     KeyValueTableComponent,
     LevelPillComponent,
     ListRowComponent,
-    MeasurementComponent,
     MeasurementGroupComponent,
     NavComponent,
     ObjectMenuComponent,

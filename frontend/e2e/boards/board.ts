@@ -19,6 +19,32 @@ export function skipPending(board: string): void {
   test.skip(pendingStems().has(board), `${board} steht in pending.json`);
 }
 
+/** Eine Karte des Baustein-Boards mit Lage, Groesse und Dateinamen. */
+export interface BoardCard {
+  readonly selector: string;
+  readonly stem: string;
+  readonly w: number;
+  readonly h: number;
+}
+
+/** Liest das Manifest der Baustein-Karten. */
+export function boardCards(): BoardCard[] {
+  return JSON.parse(readFileSync(join(__dirname, 'blocks-cards.json'), 'utf8')) as BoardCard[];
+}
+
+/**
+ * Prüft Groesse und Bild einer Karte gegen `baseline/blocks/<stem>.png`,
+ * Toleranz 0,5 % Pixel. Eine Karte aus `pending.json` bleibt aus.
+ */
+export async function expectCard(page: Page, card: BoardCard): Promise<void> {
+  if (pendingStems().has(`blocks/${card.stem}`)) return;
+  const block = page.locator(`[data-block="${card.selector}"]`);
+  const box = await block.boundingBox();
+  const size = { w: Math.round(box?.width ?? 0), h: Math.round(box?.height ?? 0) };
+  expect.soft(size, card.selector).toEqual({ w: card.w, h: card.h });
+  await expect.soft(block, card.selector).toHaveScreenshot(['blocks', `${card.stem}.png`]);
+}
+
 /** Ein Board, dessen Seite noch lädt, wartet nicht auf Ruhe im Netz. */
 export interface BoardOptions {
   idle?: boolean;

@@ -1,5 +1,5 @@
 <div class="board">
-  <section class="block">
+  <section class="block" data-block="app-button">
     <h2 class="block__head">{{ 'blocks.button' | t }}</h2>
     <div class="block__row">
       <app-button variant="primary">{{ 'common.save' | t }}</app-button>
@@ -10,7 +10,7 @@
     </div>
   </section>
 
-  <section class="block block--nolabel">
+  <section class="block block--nolabel" data-block="app-input">
     <h2 class="block__head">{{ 'blocks.input' | t }}</h2>
     <div class="block__fields">
       <app-input [label]="text('common.name')" [ngModel]="text('beispiel.person')" />
@@ -28,18 +28,18 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-select">
     <h2 class="block__head">{{ 'blocks.select' | t }}</h2>
     <app-select [ariaLabel]="text('species.field.flesh')" [options]="fleshOptions" [ngModel]="'candidus'" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-checkbox">
     <h2 class="block__head">{{ 'blocks.checkbox' | t }}</h2>
     <app-checkbox [ngModel]="true">{{ 'beispiel.schutz.bartschv' | t }}</app-checkbox>
     <app-checkbox [ngModel]="false">{{ 'enum.protection.personal_use' | t }}</app-checkbox>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-card">
     <h2 class="block__head">{{ 'blocks.card' | t }}</h2>
     <app-card class="flush">
       <app-list-row [title]="text('beispiel.avatar')" [subline]="text('beispiel.mail')">
@@ -48,7 +48,7 @@
     </app-card>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-badge">
     <h2 class="block__head">{{ 'blocks.badge' | t }}</h2>
     <div class="block__row block__row--tight">
       @for (badge of badgeVariants; track badge.variant) {
@@ -57,21 +57,21 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-toast">
     <h2 class="block__head">{{ 'blocks.toast' | t }}</h2>
     <div class="block__stage block__stage--toast">
       <app-toast />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-page-header">
     <h2 class="block__head">{{ 'blocks.pageHeader' | t }}</h2>
     <app-page-header [title]="text('entry.list.title')" [back]="true">
       <app-button variant="primary">{{ 'entry.create' | t }}</app-button>
     </app-page-header>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-nav">
     <h2 class="block__head">{{ 'blocks.nav' | t }}</h2>
     <div class="block__stage block__stage--nav">
       <app-nav variant="bottom" [active]="navTabs.map" />
@@ -83,7 +83,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-sheet">
     <h2 class="block__head">{{ 'blocks.sheet' | t }}</h2>
     <div class="block__stage block__stage--sheet">
       <app-sheet [label]="text('map.combination.save')" [detent]="0" [detents]="sheetDetents">
@@ -98,7 +98,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-sheet-head">
     <h2 class="block__head">{{ 'blocks.sheetHead' | t }}</h2>
     <span class="block__handle" aria-hidden="true"></span>
     <span class="block__handle" aria-hidden="true"><i></i></span>
@@ -112,7 +112,7 @@
     </app-sheet-head>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-overlay-host">
     <h2 class="block__head">{{ 'blocks.overlayHost' | t }}</h2>
     <div class="block__stage block__stage--overlay">
       <app-overlay-host [open]="overlayOpen()" (closed)="overlayOpen.set(false)">
@@ -121,7 +121,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-filter-sheet">
     <h2 class="block__head">{{ 'blocks.filterSheet' | t }}</h2>
     <div class="block__stage block__stage--filter">
       <app-filter-sheet
@@ -137,20 +137,20 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-object-menu">
     <h2 class="block__head">{{ 'blocks.objectMenu' | t }}</h2>
     <div class="block__stage block__stage--fixed">
       <app-object-menu [target]="objectMenuTarget" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-action-bar">
     <h2 class="block__head">{{ 'blocks.actionBar' | t }}</h2>
     <app-action-bar [primary]="text('common.save')" [secondary]="text('common.cancel')" />
     <app-action-bar [primary]="text('common.delete')" [danger]="true" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-icon-button">
     <h2 class="block__head">{{ 'blocks.iconButton' | t }}</h2>
     <div class="block__row block__row--tight">
       <app-icon-button icon="close" variant="secondary" [label]="text('common.cancel')" />
@@ -159,7 +159,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-split-layout">
     <h2 class="block__head">{{ 'blocks.splitLayout' | t }}</h2>
     <div class="block__stage block__stage--split">
       <app-split-layout>
@@ -173,7 +173,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-popover">
     <h2 class="block__head">{{ 'blocks.popover' | t }}</h2>
     <div class="block__stage block__stage--popover">
       <app-popover [open]="true" [anchor]="popoverAnchor" [label]="text('map.layers.button')">
@@ -186,21 +186,21 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-confirm-dialog">
     <h2 class="block__head">{{ 'blocks.confirmDialog' | t }}</h2>
     <div class="block__stage block__stage--confirm">
       <app-confirm-dialog [open]="true" [title]="text('entry.fund.delete')" [danger]="true" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-reject-dialog">
     <h2 class="block__head">{{ 'blocks.rejectDialog' | t }}</h2>
     <div class="block__stage block__stage--reject">
       <app-reject-dialog [open]="true" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-review-queue">
     <h2 class="block__head">{{ 'blocks.reviewQueue' | t }}</h2>
     <div class="block__stage block__stage--review">
       <app-review-queue [items]="reviewItems">
@@ -211,12 +211,12 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-banner">
     <h2 class="block__head">{{ 'blocks.banner' | t }}</h2>
     <app-banner kind="pending" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-list-row">
     <h2 class="block__head">{{ 'blocks.listRow' | t }}</h2>
     <div class="block__card">
       <app-list-row [title]="text('beispiel.zeile.rollen')" value="4 · 12" [chevron]="true" />
@@ -233,7 +233,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-species-row">
     <h2 class="block__head">{{ 'blocks.speciesRow' | t }}</h2>
     <div class="block__card">
       @for (row of speciesRows; track row.value) {
@@ -246,7 +246,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-entry-row">
     <h2 class="block__head">{{ 'blocks.entryRow' | t }}</h2>
     <div class="block__list">
       <app-entry-row [entry]="entries[0]" [pending]="true" />
@@ -254,7 +254,12 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-add-row">
+    <h2 class="block__head">{{ 'blocks.addRow' | t }}</h2>
+    <app-add-row [label]="text('beispiel.zeile.faktor')" />
+  </section>
+
+  <section class="block" data-block="app-check-row">
     <h2 class="block__head">{{ 'blocks.checkRow' | t }}</h2>
     <div class="block__card">
       <app-check-row
@@ -266,13 +271,13 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-factor-row">
     <h2 class="block__head">{{ 'blocks.factorRow' | t }}</h2>
     <app-factor-row [factor]="factor" icon="cloud" [removeLabel]="text('map.factor.remove')" />
     <app-factor-row [factor]="soilFactor" icon="layers" [removeLabel]="text('map.factor.remove')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-key-value-table, app-key-value-row">
     <h2 class="block__head">{{ 'blocks.keyValueTable' | t }}</h2>
     <app-key-value-table class="block__compare" [columns]="2">
       <app-key-value-row key="" [values]="compareNames" [head]="true" />
@@ -311,7 +316,7 @@
     </app-key-value-table>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-choice-row">
     <h2 class="block__head">{{ 'blocks.choiceRow' | t }}</h2>
     <div class="block__card">
       <app-choice-row [label]="text('enum.edibility.edible')" count="77" [checked]="true" />
@@ -319,7 +324,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-form-field">
     <h2 class="block__head">{{ 'blocks.formField' | t }}</h2>
     <app-form-field
       [label]="text('melden.datum')"
@@ -339,7 +344,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-search-field">
     <h2 class="block__head">{{ 'blocks.searchField' | t }}</h2>
     <app-search-field value="" [placeholder]="text('species.search.placeholder')" />
     <app-search-field
@@ -349,7 +354,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-segmented">
     <h2 class="block__head">{{ 'blocks.segmented' | t }}</h2>
     <app-segmented
       [options]="viewModes"
@@ -359,7 +364,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-chip-group">
     <h2 class="block__head">{{ 'blocks.chipGroup' | t }}</h2>
     <app-chip-group
       [chips]="speciesChips"
@@ -370,7 +375,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-filter-chip">
     <h2 class="block__head">{{ 'blocks.filterChip' | t }}</h2>
     <div class="block__row block__row--tight">
       @for (label of filterChips; track label) {
@@ -379,7 +384,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-range-slider">
     <h2 class="block__head">{{ 'blocks.rangeSlider' | t }}</h2>
     <app-range-slider
       [min]="0"
@@ -391,7 +396,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-swatches">
     <h2 class="block__head">{{ 'blocks.colourSwatches' | t }}</h2>
     <app-colour-swatches
       [colours]="colourSwatches"
@@ -401,7 +406,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-picker">
     <h2 class="block__head">{{ 'blocks.colourPicker' | t }}</h2>
     <app-list-row [title]="text('art.farbe.hut')" [value]="text('beispiel.farbe.braun')" [chevron]="true" />
     <app-colour-picker
@@ -413,7 +418,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-species-picker">
     <h2 class="block__head">{{ 'blocks.speciesPicker' | t }}</h2>
     <div class="block__stage block__stage--picker">
       <app-species-picker
@@ -425,12 +430,12 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-photo-picker">
     <h2 class="block__head">{{ 'blocks.photoPicker' | t }}</h2>
     <app-photo-picker [files]="photoFiles()" (filesChange)="photoFiles.set($event)" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-year-band-input">
     <h2 class="block__head">{{ 'blocks.yearBandInput' | t }}</h2>
     <app-year-band-input
       [from]="yearFrom()"
@@ -441,19 +446,19 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-level-pill">
     <h2 class="block__head">{{ 'blocks.levelPill' | t }}</h2>
     <app-level-pill [text]="text('enum.edibility.edible')" colour="var(--color-success)" />
     <app-level-pill [text]="text('enum.edibility.poisonous')" colour="var(--color-warning)" />
     <app-level-pill [text]="text('enum.protection.none')" colour="var(--color-text-muted)" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-tag-list">
     <h2 class="block__head">{{ 'blocks.tagList' | t }}</h2>
     <app-tag-list [tags]="treeTags" [label]="text('filter.group.treePartner')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-field">
     <h2 class="block__head">{{ 'blocks.colourField' | t }}</h2>
     <app-key-value-table>
       <app-key-value-row [key]="text('art.farbe.hut')">
@@ -468,7 +473,7 @@
     </app-key-value-table>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-colour-change">
     <h2 class="block__head">{{ 'blocks.colourChange' | t }}</h2>
     <app-colour-change
       [triggers]="colourChangeTriggers"
@@ -481,18 +486,18 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-measurement">
     <h2 class="block__head">{{ 'blocks.measurement' | t }}</h2>
     <app-measurement-group [part]="text('species.field.cap')" [measurements]="capRareMeasurement" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-measurement-group">
     <h2 class="block__head">{{ 'blocks.measurementGroup' | t }}</h2>
     <app-measurement-group [part]="text('species.field.cap')" [measurements]="capMeasurements" />
     <app-measurement-group [part]="text('species.field.stem')" [measurements]="stemMeasurements" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-year-band">
     <h2 class="block__head">{{ 'blocks.yearBand' | t }}</h2>
     <div class="block__card">
       <div class="block__band">
@@ -512,12 +517,12 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-season-curve">
     <h2 class="block__head">{{ 'blocks.seasonCurve' | t }}</h2>
     <app-season-curve [series]="seasonSeries" [months]="monthMarks" [label]="text('saison.beschriftung')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-histogram">
     <h2 class="block__head">{{ 'blocks.histogram' | t }}</h2>
     <app-histogram
       [shares]="histogramm"
@@ -527,7 +532,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-ramp">
     <h2 class="block__head">{{ 'blocks.ramp' | t }}</h2>
     <app-ramp
       [label]="text('map.legend.findProbability')"
@@ -536,7 +541,7 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-timeline, app-week-button">
     <h2 class="block__head">{{ 'blocks.timeline' | t }}</h2>
     <app-timeline
       [weeks]="weeks"
@@ -546,40 +551,40 @@
     />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-image-tile">
     <h2 class="block__head">{{ 'blocks.imageTile' | t }}</h2>
     <app-image-tile [image]="sampleImage" [lead]="true" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-image-credit">
     <h2 class="block__head">{{ 'blocks.imageCredit' | t }}</h2>
     <div class="block__card">
       <app-image-credit [photographer]="sampleImage.photographer" [licence]="sampleImage.licence" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-image-viewer">
     <h2 class="block__head">{{ 'blocks.imageViewer' | t }}</h2>
     <div class="block__stage block__stage--viewer">
       <app-image-viewer [image]="sampleImage" [title]="text('art.boletus_edulis')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-private-image">
     <h2 class="block__head">{{ 'blocks.privateImage' | t }}</h2>
     <div class="block__stage block__stage--photo">
       <app-private-image [path]="sampleImagePath" [alt]="text('art.boletus_edulis')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-avatar-button">
     <h2 class="block__head">{{ 'blocks.avatarButton' | t }}</h2>
     <div class="block__row">
       <app-avatar-button [name]="text('beispiel.avatar')" [label]="text('nav.konto')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-floating-button">
     <h2 class="block__head">{{ 'blocks.floatingButton' | t }}</h2>
     <div class="block__row">
       <app-floating-button icon="layers" variant="default" [label]="text('map.layers.title')" />
@@ -588,14 +593,14 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-crosshair">
     <h2 class="block__head">{{ 'blocks.crosshair' | t }}</h2>
     <div class="block__stage block__stage--crosshair">
       <app-crosshair [label]="text('common.select')" />
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-svg-icon">
     <h2 class="block__head">{{ 'blocks.svgIcon' | t }}</h2>
     <div class="block__row">
       <app-svg-icon name="map" [size]="24" [label]="text('nav.tab.map')" />
@@ -606,22 +611,22 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-stat-row">
     <h2 class="block__head">{{ 'blocks.statRow' | t }}</h2>
     <app-stat-row [stats]="stats" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-empty-state">
     <h2 class="block__head">{{ 'blocks.emptyState' | t }}</h2>
     <app-empty-state icon="search" [text]="text('state.noSpeciesMatch')" [action]="text('common.reset')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-error-state">
     <h2 class="block__head">{{ 'blocks.errorState' | t }}</h2>
     <app-error-state [text]="text('state.loadFailed')" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-infinite-list">
     <h2 class="block__head">{{ 'blocks.infiniteList' | t }}</h2>
     <div class="block__card block__card--list">
       <app-infinite-list [pageSize]="40" [hasMore]="true" [pending]="true">
@@ -632,13 +637,13 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-skeleton">
     <h2 class="block__head">{{ 'blocks.skeleton' | t }}</h2>
     <app-skeleton kind="row" />
     <app-skeleton kind="block" />
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-progress">
     <h2 class="block__head">{{ 'blocks.progress' | t }}</h2>
     <div class="block__meter">
       <span class="block__percent">{{ 'beispiel.fortschritt' | t }}</span>
@@ -646,7 +651,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" data-block="app-button busy">
     <h2 class="block__head">{{ 'blocks.buttonBusy' | t }}</h2>
     <div class="block__row">
       <app-button variant="primary" size="lg" [loading]="true" [ariaLabel]="text('common.loading')" />
