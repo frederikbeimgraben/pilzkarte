@@ -182,7 +182,7 @@ export const SAMPLE_IMAGE: Photo = {
   findId: null,
   width: 1600,
   height: 1200,
-  photographer: 'Marie Weber',
+  photographer: 'Frederik Beimgraben',
   ownerName: 'Marie',
   licence: LICENCE,
   caption: null,

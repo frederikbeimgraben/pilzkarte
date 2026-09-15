@@ -1,9 +1,7 @@
 <figure class="tile">
   <app-private-image class="tile__image" [path]="path()" [alt]="alt()" />
   @if (lead()) {
-    <span class="tile__badge" aria-hidden="true">
-      <app-svg-icon name="check" [size]="12" />
-    </span>
+    <app-badge class="tile__badge" variant="primary">{{ 'image.cover' | t }}</app-badge>
   }
   <figcaption class="tile__credit">
     <app-image-credit [photographer]="image().photographer" [licence]="image().licence" />
