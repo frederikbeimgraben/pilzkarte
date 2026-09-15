@@ -44,4 +44,9 @@
   :host-context(.shell--column) .overlay-body {
     padding: var(--size-gutter) 20px 20px;
   }
+
+  // Ohne Kopfzeile trägt der Rumpf ringsum denselben Abstand.
+  :host-context(.shell--column) .overlay-body:not(.overlay-body--roomy) {
+    padding: 20px;
+  }
 }
