@@ -97,6 +97,7 @@
   --color-success: var(--color-primary);
   --color-success-subtle: var(--color-primary-subtle);
   --color-handle: #ffffff;
+  --color-on-media: #ffffff;
 }
 
 :root {
@@ -147,7 +148,7 @@
   --fs-header-flat: 19px;
   --space-row-inline: 14px;
   --space-header-inline: 20px;
-  --space-row-stack: 1px;
+  --space-row-stack: 2px;
   --fw-row-filter: var(--fw-medium);
   --space-row-names: 2px;
   --space-card-stack: 14px;

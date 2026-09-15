@@ -25,6 +25,7 @@ export interface Span {
 /** Eine Zeile Maß: das Wort der Strecke, der Wert, darunter die seltene Ausnahme. */
 @Component({
   selector: 'app-measurement',
+  host: { '[class.measure--rare]': 'rare()' },
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslatePipe],
   templateUrl: './measurement.component.html',

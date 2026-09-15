@@ -1,18 +1,20 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   min-block-size: var(--size-row);
-  border-block-end: var(--border-width) solid var(--color-border);
+  border-block-start: var(--border-width) solid var(--color-border);
 }
 
-:host(:last-child) {
-  border-block-end: 0;
+:host(:first-child) {
+  border-block-start: 0;
 }
 
 // Die Zeile ist der Rahmen, das Feld darin der tippbare Teil. Eine Aktion am
 // Ende bleibt daneben: ein Knopf im Knopf wäre für Hilfsmittel ein Fehler.
 .row {
   display: flex;
+  flex: 1;
   align-items: stretch;
   inline-size: 100%;
 }
