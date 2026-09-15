@@ -9,7 +9,7 @@
 // Die Zeilen stehen in einer Karte, das Suchfeld darüber bleibt frei.
 .picker__rows {
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   flex-direction: column;
   min-block-size: 0;
   overflow-y: auto;

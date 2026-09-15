@@ -68,8 +68,8 @@
   outline: none;
 }
 
-// Am Rechner steht jedes Blatt als zentriertes Modal über dem Inhalt rechts
-// der Spalte. Die Spalte bleibt hell: man sieht, worüber man entscheidet.
+// Der Scrim dunkelt am Rechner die ganze Seite ab, auch Spalte und Leiste.
+// Das Modal selbst bleibt über dem Inhalt rechts der Spalte zentriert.
 .sheet__scrim {
   position: fixed;
   inset: 0;
@@ -93,7 +93,7 @@
   inset-inline: 0;
   z-index: calc(var(--z-dialog) + 1);
   inline-size: var(--size-modal);
-  block-size: 70%;
+  block-size: auto;
   max-block-size: 80%;
   margin-inline: auto;
   overflow: hidden;
@@ -107,16 +107,10 @@
   }
 }
 
-.sheet--modal.sheet--fit {
-  block-size: auto;
-}
-
 .sheet--modal.sheet--compact {
   inline-size: var(--size-modal-compact);
-  block-size: auto;
 }
 
-:host-context(.shell--column) .sheet__scrim,
 :host-context(.shell--column) .sheet--modal {
   inset-inline-start: calc(var(--size-rail) + var(--size-column));
 }
