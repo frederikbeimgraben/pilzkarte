@@ -668,6 +668,7 @@
   <section class="block" data-block="app-histogram">
     <h2 class="block__head">{{ 'blocks.histogram' | t }}</h2>
     <app-histogram
+      [height]="64"
       [shares]="histogramm"
       [label]="text('beispiel.histogramm')"
       [from]="from() / 240"

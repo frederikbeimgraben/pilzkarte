@@ -21,9 +21,10 @@ export class HistogramComponent {
   /** Untere und obere Grenze der Bedingung, Werte zwischen 0 und 1. */
   readonly from = input(0);
   readonly to = input(1);
+  /** Die Höhe der Fläche. Die Werkstatt zeigt sie höher als die Karte. */
+  readonly height = input(28);
 
   protected readonly width = 326;
-  protected readonly height = 64;
 
   protected readonly bars = computed<Bar[]>(() => {
     const shares = this.shares();
@@ -31,11 +32,11 @@ export class HistogramComponent {
     const top = Math.max(...shares, Number.EPSILON);
     const step = this.width / count;
     return shares.map((value, i) => {
-      const height = (value / top) * (this.height - 4);
+      const height = (value / top) * (this.height() - 4);
       const position = i / count;
       return {
         x: position * this.width,
-        y: this.height - height,
+        y: this.height() - height,
         width: Math.max(step - 1.5, 0.5),
         height,
         inside: position >= this.from() && position <= this.to(),
