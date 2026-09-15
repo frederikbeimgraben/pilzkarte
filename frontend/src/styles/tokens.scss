@@ -90,7 +90,7 @@
   --shadow-lg: 0 10px 32px rgb(0 0 0 / 60%);
 }
 
-// Ein Grün: zwei Grüntöne auf einer Zeile lesen sich wie ein Versehen.
+// Das Grün der Meldung steht heller als die Marke, wie die Bretter es malen.
 :root,
 :root[data-theme='light'],
 :root[data-theme='dark'] {
@@ -98,6 +98,16 @@
   --color-success-subtle: var(--color-primary-subtle);
   --color-handle: #ffffff;
   --color-on-media: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  --color-success: #5fb37f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-success: #5fb37f;
+  }
 }
 
 :root {

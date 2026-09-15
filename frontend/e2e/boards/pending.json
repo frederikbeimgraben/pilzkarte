@@ -103,6 +103,5 @@
   "blocks/app-sheet-head",
   "blocks/app-species-picker",
   "blocks/app-species-row",
-  "blocks/app-timeline-app-week-button",
-  "blocks/app-toast"
+  "blocks/app-timeline-app-week-button"
 ]
