@@ -240,7 +240,7 @@ export class BuildingBlocksComponent {
   protected readonly farbe = signal<string>(OBJECT_COLOURS[0]);
   protected readonly colourTone = signal<string | null>(PICKER_TONES[5]);
   protected readonly searchValue = signal(this.text('beispiel.suche.stein'));
-  protected readonly yearFrom = signal(4);
+  protected readonly yearFrom = signal(6);
   protected readonly yearTo = signal(10);
   protected readonly speciesChoice = signal<string | null>(null);
   protected readonly photoFiles = signal<readonly File[]>([this.sampleFile(0), this.sampleFile(1)]);

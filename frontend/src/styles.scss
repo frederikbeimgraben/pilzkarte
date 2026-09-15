@@ -79,9 +79,9 @@ app-building-blocks .block--nolabel app-input label {
   gap: var(--space-2) !important;
 }
 
-// Das Board polstert die Marke mit 3 px, das Kit mit 4 px.
+// Das Board polstert die Marke mit 3 / 10 px, das Kit mit 4 / 12 px.
 .badge {
-  padding-block: 3px !important;
+  padding: 3px 10px !important;
 }
 
 // Das Board zeichnet den Kasten mit 20 px und den Fehlertext mit 14 px.
