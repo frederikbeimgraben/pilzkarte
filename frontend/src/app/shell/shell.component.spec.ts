@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { DeferBlockBehavior, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
+import { provideServiceWorker } from '@angular/service-worker';
 import { render, screen } from '@testing-library/angular';
 import { AuthService } from '../core/auth';
+import { PwaService } from '../core/pwa/pwa.service';
 import { ViewportService } from '../core/layout/viewport.service';
 import { MapRouteComponent } from '../features/map/map-route.component';
 import { SyncStub, syncStubProviders } from '../testing/sync-double';
@@ -32,11 +34,20 @@ const ROUTES = [
 ];
 
 /** Je Test eine eigene Attrappe, sonst trüge eine Anmeldung in den nächsten. */
-async function shell() {
+async function shell(updateReady = false) {
   const manager = new ManagerDouble();
   const sync = new SyncStub();
   const result = await render(ShellComponent, {
-    providers: [provideRouter(ROUTES), ...authProvider(manager), ...syncStubProviders(sync)],
+    providers: [
+      provideRouter(ROUTES),
+      provideServiceWorker('ngsw-worker.js', { enabled: false }),
+      ...authProvider(manager),
+      ...syncStubProviders(sync),
+      {
+        provide: PwaService,
+        useValue: { updateReady: signal(updateReady), activate: () => Promise.resolve() },
+      },
+    ],
   });
   return { ...result, manager, sync };
 }
@@ -105,6 +116,44 @@ describe('ShellComponent', () => {
     await noViolations(container);
   });
 
+  it('zeigt die Aktualisierungsleiste und schiebt den Avatar herab, sobald eine Fassung bereitsteht', async () => {
+    const { container, navigate } = await shell(true);
+    await navigate('/karte');
+
+    expect(screen.getByRole('status')).toHaveTextContent('Neue Version');
+    expect(screen.getByRole('button', { name: 'Neu laden' })).toBeInTheDocument();
+    expect(container.querySelector('.shell')).toHaveStyle({
+      '--top-bar-height': 'calc(38px + env(safe-area-inset-top, 0px))',
+    });
+  });
+
+  it('lässt keine Leiste ohne bereitstehende Fassung', async () => {
+    await shell(false);
+
+    expect(screen.queryByRole('status')).toBeNull();
+  });
+
+  it('schiebt den Avatar auch für die eigene Zustandsleiste der Karte herab', async () => {
+    const { container, navigate, sync, detectChanges } = await shell();
+    await navigate('/karte');
+    sync.online.set(false);
+    detectChanges();
+
+    expect(container.querySelector('.shell')).toHaveStyle({
+      '--top-bar-height': 'calc(38px + env(safe-area-inset-top, 0px))',
+    });
+    expect(screen.getByRole('button', { name: 'Konto' })).toBeInTheDocument();
+  });
+
+  it('lässt die Karte ohne Netz auf einem anderen Reiter ohne Versatz', async () => {
+    const { container, navigate, sync, detectChanges } = await shell();
+    await navigate('/arten');
+    sync.online.set(false);
+    detectChanges();
+
+    expect(container.querySelector('.shell')).toHaveStyle({ '--top-bar-height': '0px' });
+  });
+
   it('markiert den Reiter auch bei einer Adresse mit Abfrage', async () => {
     const { navigate } = await shell();
 
@@ -166,6 +215,7 @@ async function wideShell(): Promise<{
     deferBlockBehavior: DeferBlockBehavior.Playthrough,
     providers: [
       provideRouter(WIDE_ROUTES),
+      provideServiceWorker('ngsw-worker.js', { enabled: false }),
       ...authProvider(new ManagerDouble()),
       { provide: ViewportService, useValue: { wide: signal(true) } },
     ],

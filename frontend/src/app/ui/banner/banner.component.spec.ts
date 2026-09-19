@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/angular';
+import userEvent from '@testing-library/user-event';
 import { noViolations } from '../../testing/axe';
 import { EMPTY_CATALOG, noGermanText } from '../../testing/i18n';
 import { BannerComponent } from './banner.component';
@@ -29,5 +30,34 @@ describe('BannerComponent', () => {
     });
 
     noGermanText(container);
+  });
+
+  it('meldet eine bereitstehende Fassung ohne Piktogramm', async () => {
+    const { container } = await render(BannerComponent, {
+      inputs: { kind: 'update' },
+    });
+
+    expect(screen.getByRole('status')).toHaveTextContent('Neue Version');
+    expect(container.querySelector('.banner__glyph')).toBeNull();
+    await noViolations(container);
+  });
+
+  it('trägt eine Aktion und meldet ihren Klick', async () => {
+    const { container, fixture } = await render(BannerComponent, {
+      inputs: { kind: 'update', actionIcon: 'refresh', actionLabel: 'app.update.reload' },
+    });
+    let calls = 0;
+    fixture.componentInstance.actionClick.subscribe(() => (calls += 1));
+
+    await userEvent.click(screen.getByRole('button', { name: 'Neu laden' }));
+
+    expect(calls).toBe(1);
+    await noViolations(container);
+  });
+
+  it('trägt ohne Aktion keinen Knopf', async () => {
+    await render(BannerComponent, { inputs: { kind: 'noConnection' } });
+
+    expect(screen.queryByRole('button')).toBeNull();
   });
 });

@@ -50,7 +50,8 @@ export type IconName =
   | 'filter'
   | 'camera'
   | 'chevron'
-  | 'hourglass';
+  | 'hourglass'
+  | 'refresh';
 
 /** Die drei gefüllten Pfeile und die Wiedergabe sitzen auf einem 12er-Raster. */
 export const FILLED_ICONS: readonly IconName[] = ['left', 'right', 'play', 'pause'];
@@ -119,4 +120,5 @@ export const ICONS: Record<IconName, string> = {
     '<path d="M4 8a1 1 0 0 1 1-1h2l1.5-2h7L17 7h2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><circle cx="12" cy="13" r="3.5"/>',
   chevron: '<path d="M9 5l7 7-7 7"/>',
   hourglass: '<path d="M6 3h12M6 21h12M8 3v4l4 5 4-5V3M8 21v-4l4-5 4 5v4"/>',
+  refresh: '<path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/>',
 };

@@ -1,31 +1,40 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import { SvgIconComponent, type IconName } from '../svg-icon/svg-icon.component';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 import type { TranslationKey } from '../../core/i18n/translations';
 
-/** Der Zustand, den die Leiste meldet. Beide teilen sich die Warnfarbe. */
-export type BannerKind = 'noConnection' | 'pending';
-
-/** Das Piktogramm der Leiste. Es gibt nur ein Bild dafür. */
-export type BannerIcon = 'offline';
+/** Der Zustand, den die Leiste meldet. */
+export type BannerKind = 'noConnection' | 'pending' | 'update';
 
 const TEXT: Record<BannerKind, TranslationKey> = {
   noConnection: 'state.noConnection',
   pending: 'state.offlinePending',
+  update: 'app.update.ready',
 };
 
-/**
- * Die Zustandsleiste am Kopf einer Seite. Sie meldet kein Netz oder Abgleich.
- */
+/** Die Zustandsleiste am Kopf einer Seite: kein Netz, Abgleich oder eine bereitstehende Fassung. */
 @Component({
   selector: 'app-banner',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TranslatePipe],
+  imports: [SvgIconComponent, TranslatePipe],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
 export class BannerComponent {
   readonly kind = input<BannerKind>('noConnection');
-  readonly icon = input<BannerIcon>('offline');
+  readonly icon = input<IconName>('wifi-off');
+  readonly actionIcon = input<IconName>();
+  readonly actionLabel = input<TranslationKey>();
+
+  readonly actionClick = output();
 
   protected readonly textKey = computed(() => TEXT[this.kind()]);
+  protected readonly showsIcon = computed(() => this.kind() !== 'update');
+
+  /** Icon und Beschriftung gehören zusammen: eine Aktion ohne Namen wäre stumm. */
+  protected readonly action = computed(() => {
+    const icon = this.actionIcon();
+    const label = this.actionLabel();
+    return icon && label ? { icon, label } : null;
+  });
 }

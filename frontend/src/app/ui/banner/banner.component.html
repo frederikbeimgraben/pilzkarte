@@ -1,24 +1,17 @@
-<div class="banner" role="status">
-  <svg
-    class="banner__glyph"
-    viewBox="0 0 24 24"
-    width="16"
-    height="16"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.8"
-    stroke-linecap="round"
-    aria-hidden="true"
-  >
-    @switch (icon()) {
-      @case ('offline') {
-        <path d="M3 3l18 18" />
-        <path d="M5 9a15 15 0 0 1 6.5-3.4M19 9a15 15 0 0 0-3.2-2.2" />
-        <path d="M8.5 12.6a9 9 0 0 1 4-1.7M15.5 12.6a9 9 0 0 0-1.7-1.1" />
-        <path d="M12 16.2a4 4 0 0 1 1.8.8" />
-        <circle cx="12" cy="19.5" r="1" />
-      }
-    }
-  </svg>
+<div class="banner" [class.banner--update]="kind() === 'update'" role="status">
+  @if (showsIcon()) {
+    <app-svg-icon class="banner__glyph" [name]="icon()" [size]="18" [strokeWidth]="1.8" />
+  }
   <span class="banner__text">{{ textKey() | t }}</span>
+  @if (action(); as action) {
+    <button
+      class="banner__action tap"
+      type="button"
+      data-press="scale"
+      [attr.aria-label]="action.label | t"
+      (click)="actionClick.emit()"
+    >
+      <app-svg-icon [name]="action.icon" [size]="18" [strokeWidth]="1.8" />
+    </button>
+  }
 </div>

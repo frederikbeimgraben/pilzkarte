@@ -109,7 +109,7 @@ describe('MapComponent', () => {
 
     const compass = screen.getByRole('button', { name: 'Nach Norden drehen' });
     expect(compass).toBeInTheDocument();
-    expect(container.querySelector('.map__add')).toHaveClass('map__add--low');
+    expect(container.querySelector('.map__compass')).not.toBeNull();
     expect(compass.querySelector('app-svg-icon')).toHaveStyle({ rotate: '30deg' });
   });
 

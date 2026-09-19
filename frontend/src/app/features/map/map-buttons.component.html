@@ -12,11 +12,3 @@
     (pressed)="located.emit()"
   />
 }
-@if (turned()) {
-  <app-floating-button
-    icon="compass"
-    [label]="'map.compass' | t"
-    [rotation]="needle()"
-    (pressed)="northed.emit()"
-  />
-}

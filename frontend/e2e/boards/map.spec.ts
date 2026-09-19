@@ -183,6 +183,20 @@ test('Combinations', async ({ page }) => {
   await board(page, 'Combinations', 'map-schnitt-300.png');
 });
 
+test('MapUpdate', async ({ page }) => {
+  guard('MapUpdate', 'phone');
+  await openMap(page);
+  await page.evaluate(() => {
+    navigator.serviceWorker.dispatchEvent(
+      new MessageEvent('message', {
+        data: { type: 'VERSION_READY', currentVersion: { hash: 'a' }, latestVersion: { hash: 'b' } },
+      }),
+    );
+  });
+  await expect(page.getByRole('status')).toContainText('Neue Version');
+  await board(page, 'MapUpdate');
+});
+
 test('MapOffline', async ({ page }) => {
   guard('MapOffline', 'phone');
   await openMap(page);

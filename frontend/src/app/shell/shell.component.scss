@@ -31,9 +31,17 @@
 
 .shell__avatar {
   position: absolute;
-  inset-block-start: 12px;
+  inset-block-start: calc(var(--top-bar-height, 0px) + 12px);
   inset-inline-start: 12px;
   z-index: 2;
+}
+
+.shell__banner {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 6;
+  margin-block-start: env(safe-area-inset-top, 0px);
 }
 
 // Am Rechner liegt die Karte über der ganzen Fläche und schiebt ihre eigene

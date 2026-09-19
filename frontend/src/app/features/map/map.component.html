@@ -47,21 +47,26 @@
         [layersOpen]="state.layersSheetOpen()"
         [showsLocation]="!tall()"
         [locationAllowed]="locating.allowed()"
-        [turned]="turned()"
-        [needle]="needle()"
         (layersToggled)="state.layersSheetOpen.set(!state.layersSheetOpen())"
         (located)="surface.locate()"
-        (northed)="surface.resetNorth()"
       />
 
       @if (showsAdd()) {
         <app-floating-button
           class="map__add"
-          [class.map__add--low]="turned()"
           icon="plus"
           variant="primary"
           [label]="'entry.create' | t"
           (pressed)="openAddEntry()"
+        />
+      }
+      @if (turned()) {
+        <app-floating-button
+          class="map__compass"
+          icon="compass"
+          [label]="'map.compass' | t"
+          [rotation]="needle()"
+          (pressed)="surface.resetNorth()"
         />
       }
     }

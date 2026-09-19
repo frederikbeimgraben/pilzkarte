@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { NavigationEnd, Router } from '@angular/router';
 import { SwUpdate, type VersionEvent, type VersionReadyEvent } from '@angular/service-worker';
 import { Subject } from 'rxjs';
 import { PwaService } from './pwa.service';
@@ -26,22 +25,14 @@ class SwUpdateDouble {
   readonly activateUpdate = vi.fn().mockResolvedValue(true);
 }
 
-/** `Router` mit steuerbarem Strom für `events`. */
-class RouterDouble {
-  readonly events = new Subject<unknown>();
-}
-
 function setVisibility(state: DocumentVisibilityState): void {
   Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => state });
   document.dispatchEvent(new Event('visibilitychange'));
 }
 
-function service(swUpdate: SwUpdateDouble, router = new RouterDouble()): PwaService {
+function service(swUpdate: SwUpdateDouble): PwaService {
   TestBed.configureTestingModule({
-    providers: [
-      { provide: SwUpdate, useValue: swUpdate },
-      { provide: Router, useValue: router },
-    ],
+    providers: [{ provide: SwUpdate, useValue: swUpdate }],
   });
   const pwa = TestBed.inject(PwaService);
   pwa.init();
@@ -126,32 +117,28 @@ describe('PwaService', () => {
       expect(reload).not.toHaveBeenCalled();
     });
 
-    it('aktiviert eine späte Fassung beim nächsten Wechsel auf sichtbar', async () => {
+    it('aktiviert eine späte Fassung nicht beim Wechsel auf sichtbar', async () => {
       const swUpdate = new SwUpdateDouble();
-      service(swUpdate);
+      const pwa = service(swUpdate);
       await vi.advanceTimersByTimeAsync(10_001);
       swUpdate.versionUpdates.next(VERSION_READY);
 
       setVisibility('visible');
 
-      await vi.waitFor(() => {
-        expect(swUpdate.activateUpdate).toHaveBeenCalledOnce();
-      });
-      expect(reload).toHaveBeenCalledOnce();
+      expect(swUpdate.activateUpdate).not.toHaveBeenCalled();
+      expect(reload).not.toHaveBeenCalled();
+      expect(pwa.updateReady()).toBe(true);
     });
 
-    it('aktiviert eine späte Fassung beim nächsten Routenwechsel', async () => {
+    it('aktiviert eine bereitstehende Fassung auf Wunsch', async () => {
       const swUpdate = new SwUpdateDouble();
-      const router = new RouterDouble();
-      service(swUpdate, router);
+      const pwa = service(swUpdate);
       await vi.advanceTimersByTimeAsync(10_001);
       swUpdate.versionUpdates.next(VERSION_READY);
 
-      router.events.next(new NavigationEnd(1, '/a', '/a'));
+      await pwa.activate();
 
-      await vi.waitFor(() => {
-        expect(swUpdate.activateUpdate).toHaveBeenCalledOnce();
-      });
+      expect(swUpdate.activateUpdate).toHaveBeenCalledOnce();
       expect(reload).toHaveBeenCalledOnce();
     });
 
@@ -183,6 +170,17 @@ describe('PwaService', () => {
       setVisibility('visible');
 
       expect(swUpdate.checkForUpdate).not.toHaveBeenCalled();
+      expect(pwa.updateReady()).toBe(false);
+    });
+
+    it('läuft ohne `provideServiceWorker` ohne Fehler', async () => {
+      TestBed.configureTestingModule({});
+      const pwa = TestBed.inject(PwaService);
+
+      expect(() => {
+        pwa.init();
+      }).not.toThrow();
+      await expect(pwa.activate()).resolves.toBeUndefined();
       expect(pwa.updateReady()).toBe(false);
     });
   });

@@ -11,10 +11,12 @@ import { I18nService } from '../core/i18n/i18n.service';
 // braucht. Das waren 81 kB.
 import { AvatarButtonComponent } from '../ui/avatar-button/avatar-button.component';
 import { NavComponent } from '../ui/nav/nav.component';
+import { BannerComponent } from '../ui/banner/banner.component';
 import { MapComponent } from '../features/map/map.component';
 import { MapState } from '../features/map/map.state';
 import { AddEntryState } from '../features/add-entry/add-entry.state';
 import { SyncService } from '../core/offline/sync.service';
+import { PwaService } from '../core/pwa/pwa.service';
 
 /** Reiter, die am Rechner ihre eigenen Spalten mitbringen. */
 const FULL_WIDTH: readonly string[] = ['/verwaltung', '/arten'];
@@ -40,7 +42,7 @@ const WITHOUT_NAV: readonly RegExp[] = [
 @Component({
   selector: 'app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AvatarButtonComponent, NavComponent, MapComponent, RouterOutlet],
+  imports: [AvatarButtonComponent, NavComponent, BannerComponent, MapComponent, RouterOutlet],
   templateUrl: './shell.component.html',
   styleUrl: './shell.component.scss',
 })
@@ -52,6 +54,9 @@ export class ShellComponent {
   private readonly map = inject(MapState);
   private readonly addEntry = inject(AddEntryState);
   private readonly sync = inject(SyncService);
+  private readonly pwa = inject(PwaService);
+
+  protected readonly updateReady = this.pwa.updateReady;
 
   private readonly adresse = toSignal(
     this.router.events.pipe(
@@ -68,8 +73,15 @@ export class ShellComponent {
 
   protected readonly onTheMap = computed(() => this.active() === '/karte');
 
-  /** Ohne Netz trägt die Leiste den oberen Rand; das Konto tritt zurück. */
-  protected readonly showAvatar = computed(() => this.onTheMap() && this.sync.online());
+  protected readonly showAvatar = this.onTheMap;
+
+  /** Ob die Karte ihre eigene Zustandsleiste zeigt: kein Netz auf dem Reiter Karte. */
+  private readonly mapOffline = computed(() => this.onTheMap() && !this.sync.online());
+
+  /** Höhe der sichtbaren oberen Leiste: schiebt schwebende Elemente und Seitenkopf. */
+  protected readonly topBarHeight = computed(() =>
+    this.updateReady() || this.mapOffline() ? 'calc(38px + env(safe-area-inset-top, 0px))' : '0px',
+  );
 
   /**
    * Die Verwaltung trägt am Rechner ihre eigenen zwei Spalten und braucht dafür
@@ -105,5 +117,9 @@ export class ShellComponent {
 
   protected toAccount(): void {
     void this.router.navigate(['/konto']);
+  }
+
+  protected reload(): void {
+    void this.pwa.activate();
   }
 }

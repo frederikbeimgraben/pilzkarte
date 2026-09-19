@@ -1,4 +1,13 @@
-<div class="shell" [class.shell--column]="wide()">
+<div class="shell" [class.shell--column]="wide()" [style.--top-bar-height]="topBarHeight()">
+  @if (updateReady()) {
+    <app-banner
+      class="shell__banner"
+      kind="update"
+      actionIcon="refresh"
+      actionLabel="app.update.reload"
+      (actionClick)="reload()"
+    />
+  }
   @if (wide()) {
     @defer (when wide()) {
       <app-map class="shell__map" [class.shell__map--lead]="mapInFront()" [surfaceOnly]="!onTheMap()" />

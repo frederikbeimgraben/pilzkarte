@@ -206,6 +206,8 @@
   "admin.texts.searchPlaceholder": "Text suchen",
   "admin.texts.title": "Texte",
   "admin.title": "Verwaltung",
+  "app.update.ready": "Neue Version",
+  "app.update.reload": "Neu laden",
   "common.add": "Hinzufügen",
   "common.all": "Alle",
   "common.apply": "Übernehmen",
