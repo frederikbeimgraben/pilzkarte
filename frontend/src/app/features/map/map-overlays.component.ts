@@ -10,7 +10,6 @@ import { LayerListComponent } from './layer-list.component';
 import { ActionBarComponent } from '../../ui/action-bar/action-bar.component';
 import { FormFieldComponent } from '../../ui/form-field/form-field.component';
 import { CombinationsComponent } from './combinations.component';
-import { FactorPickerComponent } from './factor-picker.component';
 import { FactorSheetComponent } from './factor-sheet.component';
 import { OverlayHostComponent } from '../../ui/overlay-host/overlay-host.component';
 import { SheetComponent, type Detent } from '../../ui/sheet/sheet.component';
@@ -26,7 +25,6 @@ export type Overlay = 'species' | 'layer' | 'factors' | 'factor' | 'combinations
 const TITLE: Partial<Record<NonNullable<Overlay>, TranslationKey>> = {
   species: 'map.species.choose',
   layer: 'map.tab.layer',
-  factors: 'map.factor.choose',
   combinations: 'map.combination.list',
   save: 'map.combination.save',
 };
@@ -43,7 +41,6 @@ export function overlayDetent(open: Overlay): Detent {
   imports: [
     ActionBarComponent,
     CombinationsComponent,
-    FactorPickerComponent,
     FactorSheetComponent,
     FormFieldComponent,
     LayerListComponent,
@@ -69,7 +66,6 @@ export class MapOverlaysComponent {
   readonly closed = output();
   readonly factorApplied = output<Factor>();
   readonly factorRemoved = output<Factor>();
-  readonly sourceChosen = output<Layer>();
   readonly saved = output<string>();
 
   /** Ein Blatt über der Karte steht in derselben obersten Raste. */
@@ -78,9 +74,9 @@ export class MapOverlaysComponent {
   /** Der Name einer Kombination braucht wenig Platz, der Rest die ganze Höhe. */
   protected readonly detent = computed(() => overlayDetent(this.open()));
 
-  /** Am Rechner steht der Faktor in der Spalte, nicht im Modal. */
+  /** Die Faktorwahl trägt ihr eigenes Blatt. Am Rechner steht der Faktor in der Spalte. */
   protected readonly shown = computed(
-    () => this.open() !== null && !(this.wide() && this.open() === 'factor'),
+    () => this.open() !== null && this.open() !== 'factors' && !(this.wide() && this.open() === 'factor'),
   );
 
   protected readonly title = computed(() => {
@@ -99,16 +95,6 @@ export class MapOverlaysComponent {
   protected readonly histogram = computed(() => {
     const layer = this.factorLayer();
     return layer === null ? null : histogramFor(layer, this.view.weekKey());
-  });
-
-  protected readonly usedSources = computed(
-    () => new Set(this.combination.factors().map((factor) => factor.source)),
-  );
-
-  /** Als Faktor steht die Vorhersage der Art bereit, die die Karte zeigt. */
-  protected readonly speciesLayers = computed<readonly Layer[]>(() => {
-    const layer = this.view.sources().get(this.view.slug());
-    return layer ? [layer] : [];
   });
 
   protected chooseSpecies(slug: string): void {

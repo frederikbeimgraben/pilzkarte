@@ -19,7 +19,6 @@
       />
     </div>
   }
-
   <div
     #canvas
     appMapObjects
@@ -34,7 +33,6 @@
   @if (view.loading()) {
     <app-skeleton class="map__skeleton" kind="grid" [count]="48" />
   }
-
   @if (offline()) {
     <div class="map__grey" aria-hidden="true"></div>
     <app-banner class="map__banner" kind="noConnection" />
@@ -105,8 +103,15 @@
       (closed)="overlayNav.close()"
       (factorApplied)="overlayNav.applyFactor($event)"
       (factorRemoved)="overlayNav.removeFactor($event)"
-      (sourceChosen)="overlayNav.chooseSource($event)"
       (saved)="saveCombination($event)"
+    />
+    <app-factor-picker
+      [open]="overlay() === 'factors'"
+      [layers]="view.layers()"
+      [species]="speciesLayers()"
+      [assigned]="usedSources()"
+      (chosen)="overlayNav.chooseSource($event)"
+      (closed)="overlayNav.close()"
     />
   }
 

@@ -1,0 +1,47 @@
+<app-overlay-host [open]="open()" [modal]="dims()" (closed)="closed.emit()">
+  @if (open()) {
+    <app-sheet
+      [label]="title()"
+      [title]="title()"
+      [modal]="true"
+      [detent]="detent()"
+      [detents]="detents()"
+      (closed)="closed.emit()"
+    >
+      <div class="overlay-body">
+        <div class="overlay-body__head">
+          <h2 class="overlay-body__title">{{ title() }}</h2>
+          <button
+            class="overlay-body__close tap"
+            type="button"
+            data-press="scale"
+            [attr.aria-label]="'common.close' | t"
+            (click)="closed.emit()"
+          >
+            <app-svg-icon name="close" [size]="18" />
+          </button>
+        </div>
+        <div class="option-sheet__scroll" appScrollFade role="group" [attr.aria-label]="title()">
+          <div class="option-sheet__card">
+            @for (option of options(); track option.id) {
+              <app-list-row
+                kind="filter"
+                [title]="option.title"
+                [icon]="option.icon ?? undefined"
+                [value]="option.value"
+                [chevron]="option.id !== selected()"
+                [clickable]="true"
+                [selected]="option.id === selected()"
+                (chosen)="chosen.emit(option.id)"
+              >
+                @if (option.id === selected()) {
+                  <app-svg-icon trail name="check" [size]="18" [strokeWidth]="2.4" />
+                }
+              </app-list-row>
+            }
+          </div>
+        </div>
+      </div>
+    </app-sheet>
+  }
+</app-overlay-host>

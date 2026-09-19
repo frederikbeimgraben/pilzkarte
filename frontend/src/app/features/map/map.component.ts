@@ -17,6 +17,7 @@ import { ViewportService } from '../../core/layout/viewport.service';
 import { LocationService } from '../../core/location/location.service';
 import { SyncService } from '../../core/offline/sync.service';
 import { TileService } from '../../core/tiles/tile.service';
+import type { Layer } from '../../core/tiles/layers';
 import { VisibilityService } from '../../core/visibility/visibility.service';
 import { MAP_PROVIDERS } from '../../map/map.tokens';
 import { BannerComponent } from '../../ui/banner/banner.component';
@@ -31,6 +32,7 @@ import { EntriesState } from '../entries/entries.state';
 import { MapObjectsDirective } from '../objects/map-objects.directive';
 import { ObjectSheetComponent } from '../objects/object-sheet.component';
 import { CombinationState } from './combination.state';
+import { FactorPickerComponent } from './factor-picker.component';
 import { LayersSheetComponent } from './layers-sheet.component';
 import { MapButtonsComponent } from './map-buttons.component';
 import { MapColumnComponent } from './map-column.component';
@@ -50,6 +52,7 @@ import { MapView } from './map.view';
   imports: [
     AddEntryComponent,
     BannerComponent,
+    FactorPickerComponent,
     FloatingButtonComponent,
     LayersSheetComponent,
     MapButtonsComponent,
@@ -101,6 +104,17 @@ export class MapComponent implements OnDestroy {
 
   /** Ein Blatt in voller Höhe lässt nur den Ebenen-Knopf stehen. */
   protected readonly tall = computed(() => this.covered() && overlayDetent(this.overlay()) === 2);
+
+  /** Die Quellen, die schon einen Faktor haben; die Wahl lässt sie weg. */
+  protected readonly usedSources = computed(
+    () => new Set(this.combination.factors().map((factor) => factor.source)),
+  );
+
+  /** Als Faktor steht die Vorhersage der Art bereit, die die Karte zeigt. */
+  protected readonly speciesLayers = computed<readonly Layer[]>(() => {
+    const layer = this.view.sources().get(this.view.slug());
+    return layer ? [layer] : [];
+  });
   /** Der Kompass steht nur über einer gedrehten oder geneigten Karte. */
   protected readonly turned = computed(() => {
     const turn = this.surface.rotation();

@@ -22,15 +22,6 @@
         />
       </div>
     }
-    @case ('factors') {
-      <app-factor-picker
-        [layers]="view.layers()"
-        [species]="speciesLayers()"
-        [assigned]="usedSources()"
-        (chosen)="sourceChosen.emit($event)"
-        (closed)="closed.emit()"
-      />
-    }
     @case ('factor') {
       @if (factor(); as chosen) {
         @if (factorLayer(); as layer) {
